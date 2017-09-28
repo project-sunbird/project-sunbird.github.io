@@ -1,0 +1,54 @@
+$font-family-sans-serif:  "Open Sans", Helvetica, Arial, sans-serif;
+$brand-primary: #4D8099; // #5691AD;
+$border-radius-base: 2px;
+$btn-default-color: $brand-primary;
+$btn-default-border: $brand-primary;
+$padding-base-vertical: 4px;
+$padding-base-horizontal: 14px;
+$link-color: #5691AD;
+$link-color-hover: #6EBADF;
+
+@import "bootstrap.scss";
+@import "fonts.scss";
+@import "highlightjs.scss";
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.btn { font-size: 16.8px; }
+
+.btn-lg-icon {
+	padding:10px 35px 10px 25px;
+	font-size:24px;
+	font-weight:100;
+
+	i {
+		margin-right:6px;
+		margin-bottom:4px;
+		font-size:1.1em;
+		vertical-align: middle;
+	}
+}
+
+.btn-highlighted {
+	color: #FFF;
+	background: $link-color-hover;
+}
+
+.btn-highlighted:hover {
+	color:#FFF;
+	opacity:0.85;
+}
+
+.btn-highlighted:focus {
+	color:#FFF;
+}
+.readMore,
+.readLess{font-weight:bold;color:#2a6fa8; }
+iframe.freshwidget-embedded-form{max-width:700px; margin:0 auto;display: block;}
+iframe .btn.omega{background: #fb4b00;
+    color: #FFF;
+    border: 1px solid #fb4b00;
+    padding: 8px 16px;}
