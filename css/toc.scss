@@ -1,0 +1,28 @@
+.anchor {
+  position: relative;
+  top: -100px;
+  display: block;
+}
+
+.inner__content h4.toc-title {
+  font-weight: lighter;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-transform: none;
+}
+
+.inner__content .toc-number, .toc-list {
+  margin-bottom: 30px;
+}
+
+.inner__content .toc-number {
+  padding-left: 30px;
+}
+
+.toc-list li {
+  display: block;
+}
+
+.toc-steps {
+  margin-top: 0px;
+}

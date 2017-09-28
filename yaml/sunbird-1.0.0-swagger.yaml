@@ -1,0 +1,2071 @@
+swagger: '2.0'
+info:
+  description: >-
+    This is a Sunbird server. You can find out more about Sunbird at
+    [http://sunbird.edu](http://sunbird.edu) or on [irc.freenode.net,
+    #sunbird](http://sunbird.io/irc/).      For this example, you can use the
+    api key `special-key` to test the authorization parts of the API.
+  version: 1.0.0
+  title: Sunbird
+  termsOfService: 'http://sunbird.io/terms/'
+  contact:
+    email: apis@sunbird.io
+  license:
+    name: Unknown
+    url: 'http://www.standardsorg.org/licenses/LICENSE-V.I.html'
+host: sunbird.swagger.io
+basePath: /v1
+tags:
+  - name: community
+    description: Groups of people working to get things done!
+  - name: community.members
+    description: Community Members
+  - name: community.template
+    description: Community templates
+  - name: community.tools
+    description: Community tools
+  - name: people
+    description: It's all about the people
+  - name: course
+    description: Courses for the people
+  - name: assessment
+    description: Assessing your progress on courses
+  - name: 
+schemes:
+  - http
+  - https
+paths:
+  /course:
+    post:
+      tags:
+        - course
+      summary: Add a new course to sunbird
+      description: ''
+      operationId: createCourse
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Course object to be added to Sunbird
+          required: true
+          schema:
+            $ref: '#/definitions/Course'
+      responses:
+        '201':
+          description: Course created
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/Course'
+        '405':
+          description: Invalid course data provided
+      security:
+        - sunbird_auth:
+            - 'write:courses'
+            - 'read:courses'
+    get:
+      tags:
+        - course
+      summary: List courses using filters
+      description: Multiple filters can be provided in the query params
+      operationId: findCourses
+      produces:
+        - application/json
+      parameters:
+        - name: <TBD>
+          in: query
+          description: Values to be considered for filters
+          required: true
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/Course'
+                  paging:
+                    $ref: '#/definitions/Pager'
+        '400':
+          description: Invalid filter value
+      security:
+        - api_key: []
+    put:
+      tags:
+        - course
+      summary: Update an existing course
+      description: ''
+      operationId: updateCourse
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Course object to be added to the store
+          required: true
+          schema:
+            $ref: '#/definitions/Course'
+      responses:
+        '200':
+          description: Course updated
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/Course'
+        '400':
+          description: Invalid course data supplied
+        '404':
+          description: Course not found
+        '405':
+          description: Invalid course data provided
+      security:
+        - sunbird_auth:
+            - 'write:courses'
+            - 'read:courses'
+  '/course/{course_id}':
+    get:
+      tags:
+        - course
+      summary: Find a course instance by ID
+      description: Returns a single course
+      operationId: getCourseById
+      produces:
+        - application/json
+      parameters:
+        - name: course_id
+          in: path
+          description: ID of course to return
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Course'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Course not found
+      security:
+        - api_key: []
+    patch:
+      tags:
+        - course
+      summary: Update parts of a course instance by ID
+      description: ''
+      operationId: updateCourseById
+      produces:
+        - application/json
+      parameters:
+        - name: course_id
+          in: path
+          description: ID of course to update
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Course'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Course not found
+      security:
+        - api_key: []
+    delete:
+      tags:
+        - course
+      summary: Deletes a course
+      description: ''
+      operationId: deleteCourseById
+      produces:
+        - application/json
+      parameters:
+        - name: api_key
+          in: header
+          required: false
+          type: string
+        - name: course_id
+          in: path
+          description: Course id to delete
+          required: true
+          type: string
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Course not found
+      security:
+        - api_key: []
+  '/course/{course_id}/toc':
+    post:
+      tags:
+        - course
+      summary: creates an item in the contents of a course
+      description: ''
+      operationId: createCourseToc
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: course_id
+          in: path
+          description: ID of the course to update
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: Course object to be added to Sunbird
+          required: true
+          schema:
+            $ref: '#/definitions/CourseToc'
+      responses:
+        '201':
+          description: Course content created
+          schema:
+            $ref: '#/definitions/CourseContent'
+        '405':
+          description: Invalid course content provided
+      security:
+        - api_key: []
+    get:
+      tags:
+        - course
+      summary: Get the items in a course's toc
+      operationId: getCourseToc
+      produces:
+        - application/json
+      parameters:
+        - name: course_id
+          in: path
+          description: ID of course
+          required: true
+          type: string
+      responses:
+        '200':
+          description: toc successfully found
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CourseToc'
+            required:
+              - result
+        '400':
+          description: Invalid course ID supplied
+        '404':
+          description: Course not found
+      security:
+        - api_key: []
+  '/course/{course_id}/toc/{toc_id}':
+    get:
+      tags:
+        - course
+      summary: Get an item of course content by ID
+      description: Returns a single item of content in a course
+      operationId: getCourseTocById
+      produces:
+        - application/json
+      parameters:
+        - name: course_id
+          in: path
+          description: ID of course to return
+          required: true
+          type: string
+        - name: toc_id
+          in: path
+          description: ID of toc to return
+          required: true
+          type: string
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/CourseToc'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Course ToC not found
+      security:
+        - api_key: []
+    delete:
+      tags:
+        - course
+      summary: Deletes an item of content from a course
+      description: ''
+      operationId: deleteCourseTocById
+      produces:
+        - application/json
+      parameters:
+        - name: course_id
+          in: path
+          description: Course id from which to delete content
+          required: true
+          type: string
+        - name: toc_id
+          in: path
+          description: ID of content item to delete
+          required: true
+          type: string
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Course ToC not found
+      security:
+        - api_key: []
+  /user:
+    post:
+      tags:
+        - people
+      summary: Create user
+      description: ''
+      operationId: createUser
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Created user object
+          required: true
+          schema:
+            $ref: '#/definitions/UserDetail'
+      responses:
+        '201':
+          description: User created
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/User'
+        '303':
+          description: User already exists
+        '405':
+          description: Invalid user data provided
+    get:
+      tags:
+        - people
+      summary: Lists users in the system
+      description: Filters can be provided in the query
+      operationId: listUsers
+      produces:
+        - application/json
+      parameters:
+        - name: q
+          in: query
+          description: constraints to filter users
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        '200':
+          description: Users found
+          schema:
+            type: object
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      - $ref: '#/definitions/User'
+                  paging:
+                    $ref: '#/definitions/Pager'
+            required:
+              - result
+  /user/login:
+    post:
+      tags:
+        - people
+      summary: Logs user into the system
+      description: ''
+      operationId: loginUser
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      parameters:
+        - name: email
+          in: formData
+          description: The user name for login
+          required: true
+          type: string
+        - name: password
+          in: formData
+          description: The password for login in clear text
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Login succeeded
+          schema:
+            $ref: '#/definitions/UserDetail'
+          headers:
+            X-Rate-Limit:
+              type: integer
+              format: int32
+              description: calls per hour allowed by the user
+            X-Expires-After:
+              type: string
+              format: date-time
+              description: date in UTC when token expires
+        '400':
+          description: Invalid username/password supplied
+  /user/logout:
+    post:
+      tags:
+        - people
+      summary: Logs out current logged in user session
+      description: ''
+      operationId: logoutUser
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        default:
+          description: successful operation
+  '/user/{uid}':
+    get:
+      tags:
+        - people
+      summary: Get user by id
+      description: ''
+      operationId: getUserById
+      produces:
+        - application/json
+      parameters:
+        - name: uid
+          in: path
+          description: The user which needs to be fetched.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: success
+          schema:
+            $ref: '#/definitions/UserDetail'
+        '400':
+          description: Invalid user id supplied
+        '404':
+          description: User not found
+    patch:
+      tags:
+        - people
+      summary: Updated user
+      description: This can only be done by the logged in user.
+      operationId: updateUser
+      produces:
+        - application/json
+      parameters:
+        - name: uid
+          in: path
+          description: The user which needs to be updated
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated user object
+          required: true
+          schema:
+            $ref: '#/definitions/UserDetail'
+      responses:
+        '200':
+          description: success
+          schema:
+            $ref: '#/definitions/User'
+        '400':
+          description: Invalid user supplied
+        '404':
+          description: User id not found
+    delete:
+      tags:
+        - people
+      summary: Delete user
+      description: This can only be done by the logged in user.
+      operationId: deleteUser
+      produces:
+        - application/json
+      parameters:
+        - name: uid
+          in: path
+          description: The user id that needs to be deleted
+          required: true
+          type: string
+      responses:
+        '200':
+          description: The user was deleted
+        '400':
+          description: Invalid user id supplied
+        '404':
+          description: User not found
+  '/user/{uid}/bookmark':
+    post:
+      tags:
+        - people
+      summary: Create a new bookmark for a user
+      operationId: createUserBookmark
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: uid
+          in: path
+          description: User id for whom bookmark is created
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: Bookmark object to be added
+          required: true
+          schema:
+            $ref: '#/definitions/Bookmark'
+      responses:
+        '200':
+          description: bookmark created
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/Bookmark'
+        '400':
+          description: Invalid bookmark data provided
+        '404':
+          description: User ID not found
+    get:
+      tags:
+        - people
+      summary: Fetch a user's  bookmarks
+      description: Filters can be used to restrict scope
+      operationId: getUserBookmarks
+      produces:
+        - application/json
+      parameters:
+        - name: uid
+          in: path
+          description: The user id whose bookmarks are fetched
+          required: true
+          type: string
+      responses:
+        '200':
+          description: bookmarks fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/Bookmark'
+            required:
+              - result
+        '400':
+          description: Invalid user ID supplied
+        '404':
+          description: User ID not found
+  '/user/{uid}/activity':
+    get:
+      tags:
+        - people
+      summary: Fetch activity for the user
+      parameters:
+        - name: uid
+          in: path
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Activity stream fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityActivity'
+                  paging:
+                    $ref: '#/definitions/Pager'
+        '400':
+          description: Invalid user id supplied
+        '404':
+          description: User id not found
+  '/user/{uid}/community':
+    get:
+      tags:
+        - people
+        - community
+      summary: Get a user's communities
+      operationId: getUserCommunities
+      produces:
+        - application/json
+      parameters:
+        - name: uid
+          in: path
+          type: string
+          required: true
+        - name: q
+          in: query
+          description: 'Can be used to filter the user''s communities. Eg: q=purpose:course'
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+          maxItems: 10
+        - name: cursor
+          in: query
+          description: Cursor to use when paginating
+          required: false
+          type: string
+        - name: psize
+          in: query
+          description: Page size to use when paginating
+          required: false
+          type: integer
+          format: int32
+          default: 20
+          maximum: 100
+        - name: sort
+          in: query
+          description: The field to use to sort the communities
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: csv
+      responses:
+        '200':
+          description: Users communities were fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityMembership'
+                  paging:
+                    $ref: '#/definitions/Pager'
+  '/bookmark/{bookmark_id}':
+    get:
+      tags:
+        - people
+      summary: Fetch the contents of a bookmark
+      description: ''
+      operationId: getBookmarkById
+      produces:
+        - application/json
+      parameters:
+        - name: bookmark_id
+          in: path
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Bookmark fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/Bookmark'
+      security:
+        - api_key: []
+    patch:
+      tags:
+        - people
+      summary: Update one or more fields of a user's bookmark
+      description: ''
+      operationId: updateBookmarkById
+      produces:
+        - application/json
+      parameters:
+        - name: bookmark_id
+          in: path
+          description: The bookmark id which will be updated
+          required: true
+          type: string
+        - name: bookmark
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Bookmark'
+      responses:
+        '200':
+          description: Bookmark updated
+          schema:
+            $ref: '#/definitions/Bookmark'
+        '400':
+          description: Invalid ID provided
+        '404':
+          description: Could not find user or bookmark ID
+      security:
+        - api_key: []
+    delete:
+      tags:
+        - people
+      summary: Delete a bookmark
+      description: ''
+      operationId: deleteBookmarkById
+      produces:
+        - application/json
+      parameters:
+        - name: bookmark_id
+          in: path
+          description: The bookmark id that needs to be deleted
+          required: true
+          type: string
+      responses:
+        '200':
+          description: The user was deleted
+        '400':
+          description: Invalid bookmark id supplied
+        '404':
+          description: Bookmark not found
+  /community/template:
+    post:
+      tags:
+        - community.template
+      summary: Creates a new template
+      description: Templates are used to create new communities
+      operationId: createCommunityTemplate
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CommunityTemplate'
+      responses:
+        '200':
+          description: Create community template succeeded
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/CommunityTemplate'
+        '400':
+          description: Invalid community template supplied
+          schema:
+            $ref: '#/definitions/ApiResponse'
+    get:
+      tags:
+        - community.template
+      summary: Fetches the list of community templates available
+      description: Every community is created from a template
+      operationId: getCommunityTemplates
+      produces:
+        - application/json
+      parameters:
+        - name: q
+          in: query
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        '200':
+          description: Fetched list of community templates
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityTemplate'
+  /community:
+    post:
+      tags:
+        - community
+      summary: Create a new community
+      description: ''
+      operationId: createCommunity
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Community object to created
+          required: true
+          schema:
+            allOf:
+              - $ref: '#/definitions/Community'
+              - properties:
+                  template_id:
+                    type: string
+              - required:
+                  - access
+                  - name
+                  - template_id
+                  - created_by
+      responses:
+        '201':
+          description: Community created
+          schema:
+            $ref: '#/definitions/Community'
+        '405':
+          description: Invalid community data provided
+        '409':
+          description: A community already exists
+    get:
+      tags:
+        - community
+      summary: Lists and searches for communities in the system
+      description: Filters can be provided in the query
+      operationId: listCommunities
+      produces:
+        - application/json
+      parameters:
+        - name: q
+          in: query
+          description: Open-ended constraints to filter by
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        - name: lg
+          in: query
+          description: Filter communities by language
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        - name: gd
+          in: query
+          description: Filter communities by grade
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        - name: sj
+          in: query
+          description: Filter communities by subject
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+        - name: cursor
+          in: query
+          description: Cursor to use when paginating results
+          required: false
+          type: string
+        - name: psize
+          in: query
+          description: Size of a page
+          required: false
+          type: integer
+          format: int32
+          default: 20
+          maximum: 100
+      responses:
+        '200':
+          description: Communities found
+          schema:
+            type: object
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/Community'
+                  paging:
+                    $ref: '#/definitions/Pager'
+            required:
+              - result
+  /community/tool:
+    get:
+      tags:
+        - community.tools
+      summary: Fetch the list of tools available for a community
+      description: From the registry of tools available
+      operationId: getRegisteredCommunityTools
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Tools fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityTool'
+                  paging:
+                    $ref: '#/definitions/Pager'
+              - required:
+                  - result
+  '/community/{community_id}':
+    get:
+      tags:
+        - community
+      summary: Get community by id
+      description: ''
+      operationId: getCommunityById
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The community id to be fetched.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: success
+          schema:
+            $ref: '#/definitions/CommunityDetail'
+        '400':
+          description: Invalid community id supplied
+        '404':
+          description: Community not found
+    patch:
+      tags:
+        - community
+      summary: Update a community
+      description: ''
+      operationId: updateCommunity
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The community id to be updated
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated community object
+          required: true
+          schema:
+            $ref: '#/definitions/Community'
+      responses:
+        '200':
+          description: success
+          schema:
+            $ref: '#/definitions/CommunityDetail'
+        '400':
+          description: Invalid community supplied
+        '404':
+          description: Community not found
+    delete:
+      tags:
+        - community
+      summary: Delete a community
+      description: ''
+      operationId: deleteCommunity
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The community id to be deleted
+          required: true
+          type: string
+      responses:
+        '200':
+          description: The community was deleted
+        '400':
+          description: Invalid community id supplied
+        '404':
+          description: Community not found
+  '/community/{community_id}/tool':
+    post:
+      tags:
+        - community.tools
+      summary: Enable a tool for a community
+      operationId: addCommunityTool
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: tool_id
+          in: query
+          type: string
+          required: true
+        - name: config
+          in: body
+          required: false
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Community tool added
+        '400':
+          description: Invalid community or tool data provided
+        '404':
+          description: Community id not found
+    get:
+      tags:
+        - community.tools
+      summary: Get the set of tools enabled for a community
+      operationId: getCommunityTools
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Community tools fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/CommunityTool'
+                  paging:
+                    $ref: '#/definitions/Pager'
+              - required:
+                  - result
+        '400':
+          description: Invalid community id provided
+        '404':
+          description: Community ID not found
+  '/community/{community_id}/tool/{tool_type}':
+    get:
+      tags:
+        - community.tools
+      summary: Get a community tool detail
+      operationId: getCommunityTool
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: tool_type
+          in: path
+          description: The type of tool for this community
+          type: string
+          enum:
+            - announce
+            - calendar
+            - forum
+            - report
+          required: true
+      responses:
+        '200':
+          description: Tool data fetched
+        '400':
+          description: Invalid community or tool id provided
+        '404':
+          description: Community or tool id not found
+    patch:
+      tags:
+        - community.tools
+      summary: Update a community tool detail
+      operationId: updateCommunityTool
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: tool_type
+          in: path
+          type: string
+          enum:
+            - announce
+            - calendar
+            - forum
+            - report
+          required: true
+      responses:
+        '200':
+          description: Tool data updated
+        '400':
+          description: Invalid community or tool id provided
+        '404':
+          description: Community or tool id not found
+    delete:
+      tags:
+        - community.tools
+      summary: Delete a community tool
+      operationId: deleteCommunityTool
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: tool_type
+          in: path
+          type: string
+          enum:
+            - announce
+            - calendar
+            - forum
+            - report
+          required: true
+      responses:
+        '200':
+          description: Tool deteled from community
+        '400':
+          description: Invalid community or tool id provided
+        '404':
+          description: Community or tool id not found
+  '/community/{community_id}/tool/{tool_type}/{tool_api}':
+    get:
+      tags:
+        - community.tools
+      summary: Invoke a read api within a tool enabled for a community
+      description: 'The {tool_api} is defined internally by the tool.'
+      operationId: getCommunityToolApi
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: tool_type
+          in: path
+          type: string
+          enum:
+            - announce
+            - calendar
+            - forum
+          required: true
+        - name: tool_api
+          in: path
+          description: 'API endpoint for a community tool, may span multiple path elements.'
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Tool operation successful
+        '400':
+          description: Invalid request to tool
+        '404':
+          description: Community id or tol id not found
+    post:
+      tags:
+        - community.tools
+      summary: Invoke a write api within a tool enabled for a community
+      operationId: postCommunityToolApi
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: tool_type
+          in: path
+          type: string
+          enum:
+            - announce
+            - calendar
+            - forum
+          required: true
+        - name: tool_api
+          in: path
+          description: 'API endpoint for a community tool, may span multiple path elements.'
+          type: string
+          required: true
+        - name: body
+          in: body
+          required: false
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Tool operation successful
+        '400':
+          description: Invalid request to tool
+        '404':
+          description: Community id or tol id not found
+  '/community/{community_id}/invite':
+    post:
+      tags:
+        - community.members
+      summary: Invite a person to join a community
+      parameters:
+        - name: community_id
+          in: path
+          required: true
+          type: string
+        - name: invite
+          in: body
+          required: true
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Invitiation sent
+        '400':
+          description: Invalid invitation
+        '404':
+          description: Community id not found
+  '/community/{community_id}/member':
+    post:
+      tags:
+        - community.members
+      summary: Add new members for to a community
+      operationId: addCommunityMember
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: Community id for whom member is added
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: Users to be made members with their roles
+          required: true
+          schema:
+            type: object
+            properties:
+              members:
+                type: array
+                items:
+                  $ref: '#/definitions/WriteCommunityMembership'
+      responses:
+        '200':
+          description: Members added
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityMembership'
+        '400':
+          description: Invalid user data provided
+        '403':
+          description: The user is not allowed to join this community.
+        '404':
+          description: Community or user id not found
+    get:
+      tags:
+        - community.members
+      summary: Fetch a community's  members
+      description: Filters can be used to restrict scope
+      operationId: getCommunityMembership
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The community ID whose members are fetched
+          required: true
+          type: string
+        - name: cursor
+          description: Cursor for paginating results
+          in: query
+          required: false
+          type: string
+        - name: count
+          description: Number of results in a page
+          in: query
+          required: false
+          type: integer
+        - name: q
+          in: query
+          description: Filters to select only some members
+          required: false
+          type: array
+          items:
+            type: string
+          collectionFormat: multi
+      responses:
+        '200':
+          description: Members fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityMembership'
+                  paging:
+                    $ref: '#/definitions/Pager'
+            required:
+              - result
+        '400':
+          description: Invalid community ID supplied
+        '404':
+          description: Community ID not found
+    delete:
+      tags:
+        - community.members
+      summary: Remove many users from a community
+      operationId: deleteManyCommunityMemberships
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The community id from which to remove membership
+          type: string
+          required: true
+        - name: members
+          in: body
+          required: true
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: Members successfully removed
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityMembership'
+              - required:
+                  - result
+        '400':
+          description: Invalid community id or member id supplied
+        '404':
+          description: Community id not found
+  '/community/{community_id}/member/{uid}':
+    get:
+      tags:
+        - community.members
+      summary: Get information about a user's membership in a community
+      operationId: getCommunityMemberStatus
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The community id in which membership is queried
+          required: true
+          type: string
+        - name: uid
+          in: path
+          description: The user id whose membership is queried
+          required: true
+          type: string
+      responses:
+        '200':
+          description: User membership fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/CommunityMembership'
+        '400':
+          description: Invalid id provided
+        '404':
+          description: Either community id or user id not found
+    patch:
+      tags:
+        - community.members
+      summary: Update a user's membership in a community
+      description: >-
+        This operation can be user to change a user's role, status or suspension
+        status in a community
+      operationId: updateCommunityMembership
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The id of the community whose member is being queried
+          type: string
+          required: true
+        - name: uid
+          in: path
+          description: The id of the user whose membership is being queried
+          type: string
+          required: true
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/WriteCommunityMembership'
+      responses:
+        '200':
+          description: Membership updated
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/CommunityMembership'
+        '400':
+          description: Invalid id provided in request
+        '404':
+          description: Community or user id not found
+    delete:
+      tags:
+        - community.members
+      summary: Remove a user's membership in a community
+      operationId: deleteCommunityMembership
+      produces:
+        - application/json
+      parameters:
+        - name: community_id
+          in: path
+          description: The community id from which to remove membership
+          type: string
+          required: true
+        - name: uid
+          in: path
+          description: The user id whose membership is removed
+          type: string
+          required: true
+      responses:
+        '200':
+          description: User removed from community
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: object
+      security:
+        - api_key: []
+  '/community/{community_id}/activity':
+    post:
+      tags:
+        - community
+      summary: Add an item of activity to the community
+      description: ''
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CommunityActivity'
+      responses:
+        '200':
+          description: Activity added successfully
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/CommunityActivity'
+        '400':
+          description: Invalid activity data provided
+        '404':
+          description: Community id not found.
+    get:
+      tags:
+        - community
+        - people
+      summary: Fetch activity from the community
+      parameters:
+        - name: community_id
+          in: path
+          type: string
+          required: true
+        - name: cursor
+          in: query
+          type: string
+          required: false
+        - name: user.id
+          in: query
+          type: string
+          required: false
+        - name: user
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/Entity'
+      responses:
+        '200':
+          description: Activity stream fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/definitions/CommunityActivity'
+                  paging:
+                    $ref: '#/definitions/Pager'
+        '400':
+          description: Invalid community id supplied
+        '404':
+          description: Community id not found
+  '/template/{template_id}':
+    get:
+      tags:
+        - community.template
+      summary: Fetch the contents of a template
+      description: ''
+      operationId: getTemplateById
+      produces:
+        - application/json
+      parameters:
+        - name: template_id
+          in: path
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Template fetched
+          schema:
+            allOf:
+              - $ref: '#/definitions/ApiResponse'
+              - properties:
+                  result:
+                    $ref: '#/definitions/CommunityTemplate'
+      security:
+        - api_key: []
+    patch:
+      tags:
+        - community.template
+      summary: Update one or more fields of a template
+      description: ''
+      operationId: updateTemplateById
+      produces:
+        - application/json
+      parameters:
+        - name: template_id
+          in: path
+          description: The template id which will be updated
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/CommunityTemplate'
+      responses:
+        '200':
+          description: Template updated
+          schema:
+            $ref: '#/definitions/CommunityTemplate'
+        '400':
+          description: Invalid template ID provided
+        '404':
+          description: Could not find template ID
+      security:
+        - api_key: []
+    delete:
+      tags:
+        - community.template
+      summary: Delete a template
+      description: ''
+      operationId: deleteTemplateById
+      produces:
+        - application/json
+      parameters:
+        - name: template_id
+          in: path
+          description: The template id that needs to be deleted
+          required: true
+          type: string
+      responses:
+        '200':
+          description: The template was deleted
+        '400':
+          description: Invalid template id supplied
+        '404':
+          description: Template id not found
+securityDefinitions:
+  sunbird_auth:
+    type: oauth2
+    authorizationUrl: 'http://sunbird.swagger.io/oauth/dialog'
+    flow: implicit
+    scopes:
+      'write:courses': create new courses
+      'read:courses': read existing courses
+  api_key:
+    type: apiKey
+    name: api_key
+    in: header
+definitions:
+  Bookmark:
+    description: API representation of a bookamrk
+    type: object
+    allOf:
+      - $ref: '#/definitions/Entity'
+      - properties:
+          resource:
+            type: object
+            properties:
+              uri:
+                type: string
+              resource_type:
+                type: string
+              resource_id:
+                type: string
+            required:
+              - uri
+          owner:
+            $ref: '#/definitions/User'
+          created_at:
+            type: integer
+            format: int64
+          updated_at:
+            type: integer
+            format: int64
+    required:
+      - name
+      - resource
+      - owner
+  Community:
+    description: API representation of a community
+    type: object
+    allOf:
+      - $ref: '#/definitions/Entity'
+      - properties:
+          access:
+            type: string
+            enum:
+              - open
+              - moderated
+              - restricted
+          visibility:
+            type: string
+            enum:
+              - public
+              - private
+          description:
+            type: string
+          purpose:
+            type: string
+            enum:
+              - course
+              - org
+              - practice
+          of_entity:
+            $ref: '#/definitions/Entity'
+          meta:
+            type: object
+            properties:
+              language:
+                type: string
+              subject:
+                type: string
+              grade:
+                type: string
+          logo:
+            $ref: '#/definitions/ImageRef'
+          created_by:
+            type: string
+    required:
+      - type
+      - purpose
+      - name
+      - logo
+  CommunityDetail:
+    description: API representation when the details of a community are required.
+    type: object
+    allOf:
+      - $ref: '#/definitions/Community'
+      - properties:
+          icon:
+            type: string
+          banner_image:
+            type: string
+          links:
+            allOf:
+              - $ref: '#/definitions/EntityLinks'
+              - properties:
+                  members:
+                    type: string
+                  template:
+                    type: string
+              - required:
+                  - self
+                  - members
+          tools:
+            type: array
+            items:
+              type: object
+          stats:
+            $ref: '#/definitions/CommunityStats'
+  CommunityActivity:
+    description: API representation of an item of activity happening in a community
+    type: object
+    properties:
+      actor:
+        $ref: '#/definitions/User'
+      type:
+        type: string
+        enum:
+          - announce
+          - comment
+          - join
+          - post
+          - schedule
+          - vote
+        description: The type of activity
+      origin:
+        type: object
+        description: The entity where this activity occurred
+      attn:
+        allOf:
+          - $ref: '#/definitions/User'
+          - description: The person for whom this activity is intended. May be absent.
+      summary:
+        description: A summary of the activity
+        type: string
+      preview:
+        description: A preview of the activity content.
+        type: object
+        properties:
+          render_url:
+            type: string
+            description: >-
+              A url which accepts a POST request and returns a rendered view of
+              this activity
+          data:
+            type: object
+            description: Payload which will be POSTed to the `render_url`
+          html:
+            type: string
+            description: A pre-rendered version of the activity preview
+  CommunityStats:
+    description: API representation of community statistics
+    type: object
+    properties:
+      rating:
+        type: integer
+        format: int32
+      member_c:
+        type: integer
+        format: int64
+      activity:
+        type: object
+        properties:
+          activity_c:
+            type: integer
+            format: int64
+          last_at:
+            type: integer
+            format: int64
+          intensity:
+            type: number
+            format: float
+            description: >-
+              Intensity of activity in this community as a number between
+              0.0-1.0
+          top_active:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+          interval:
+            $ref: '#/definitions/TimeInterval'
+    required:
+      - rating
+      - member_c
+  CommunityTemplate:
+    description: API representation of a template to create a community
+    type: object
+    allOf:
+      - $ref: '#/definitions/Entity'
+      - properties:
+          community_config:
+            type: object
+  CommunityTool:
+    description: API representation of a tool available for a community
+    type: object
+    allOf:
+      - $ref: '#/definitions/Entity'
+  WriteCommunityMembership:
+    description: API model used to write community membership
+    type: object
+    properties:
+      community:
+        type: string
+      user:
+        type: string
+      role:
+        type: string
+        enum:
+          - owner
+          - admin
+          - member
+      status:
+        type: string
+        enum:
+          - active
+          - pending
+          - suspended
+          - left
+    required:
+      - community
+      - user
+      - role
+  CommunityMembership:
+    description: API model used to read community membership
+    type: object
+    allOf:
+      - $ref: '#/definitions/WriteCommunityMembership'
+      - properties:
+          community:
+            $ref: '#/definitions/Community'
+          user:
+            $ref: '#/definitions/User'
+          duration:
+            $ref: '#/definitions/TimeInterval'
+    required:
+      - community
+      - user
+      - role
+      - status
+      - duration
+  Course:
+    description: API representation of a course
+    type: object
+    allOf:
+      - $ref: '#/definitions/Entity'
+      - properties:
+          preview:
+            $ref: '#/definitions/ImageRef'
+    required:
+      - name
+      - preview
+  CourseToc:
+    description: API representation of the ToC for a course
+    type: object
+  CourseContent:
+    description: API representation of an item of content for a course
+    type: object
+  User:
+    description: API representation of a Sunbird user
+    type: object
+    allOf:
+      - $ref: '#/definitions/Entity'
+      - properties:
+          email:
+            type: string
+          first_name:
+            type: string
+          last_name:
+            type: string
+          avatar:
+            $ref: '#/definitions/ImageRef'
+    required:
+      - email
+      - first_name
+      - last_name
+      - avatar
+  UserDetail:
+    description: API representation of details of a Sunbird user
+    type: object
+    allOf:
+      - $ref: '#/definitions/User'
+      - properties:
+          password:
+            type: string
+          language:
+            type: string
+          gender:
+            type: string
+          phone:
+            type: string
+          address:
+            type: object
+            properties:
+              state:
+                type: string
+              city:
+                type: string
+              postal_code:
+                type: string
+          past_address:
+            type: array
+            items:
+              type: object
+              properties:
+                state:
+                  type: string
+                city:
+                  type: string
+                postal_code:
+                  type: string
+          aadhaar:
+            type: string
+  ApiResponse:
+    type: object
+    properties:
+      id:
+        description: id of the request which was made
+        type: string
+      ver:
+        description: version of the API which was used
+        type: string
+      ts:
+        description: UTC timestamp in milliseconds since epoch
+        type: integer
+        format: int64
+      params:
+        type: object
+        properties:
+          msgid:
+            description: The id of the message sent
+            type: string
+          resmsgid:
+            description: The ide of the reply message
+            type: string
+          err:
+            type: string
+          err_msg:
+            type: string
+          err_detail:
+            type: object
+          status:
+            type: string
+            enum:
+              - success
+              - error
+        required:
+          - msgid
+          - resmsgid
+          - status
+      responseCode:
+        type: string
+    required:
+      - id
+      - ver
+      - ts
+      - params
+  Entity:
+    description: Base model for all entities
+    type: object
+    properties:
+      kind:
+        type: string
+      id:
+        type: string
+      uri:
+        type: string
+      name:
+        type: string
+      links:
+        $ref: '#/definitions/EntityLinks'
+    required:
+      - kind
+      - id
+      - uri
+  EntityLinks:
+    description: Links from an entity to other entities
+    type: object
+    properties:
+      self:
+        type: string
+    required:
+      - self
+  ImageRef:
+    description: Common model for image references.
+    type: object
+    properties:
+      thumbnail_url:
+        type: string
+      large_url:
+        type: string
+  Pager:
+    description: API representation for pagination
+    type: object
+    properties:
+      prev:
+        type: object
+        properties:
+          number:
+            type: integer
+            format: int32
+          cursor:
+            type: string
+          url:
+            type: string
+      current:
+        type: object
+        properties:
+          number:
+            type: integer
+            format: int32
+          cursor:
+            type: string
+          url:
+            type: string
+      next:
+        type: object
+        properties:
+          number:
+            type: integer
+            format: int32
+          cursor:
+            type: string
+          url:
+            type: string
+  TimeInterval:
+    description: API representation of a time interval
+    type: object
+    properties:
+      start_at:
+        type: integer
+        format: int64
+      end_at:
+        type: integer
+        format: int64
+      display:
+        type: string
+      granularity:
+        type: string
+        enum:
+          - minute
+          - hour
+          - day
+          - week
+          - month
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'

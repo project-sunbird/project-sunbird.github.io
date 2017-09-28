@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Conceptual View - Sunbird</title>
+
+	<meta name="keywords" content="Conceptual View" />
+	<meta name="description" content="Conceptual View" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
+
+	<meta name="msapplication-TileColor" content="#65d3f7">
+	<meta name="msapplication-TileImage" content="/img/favicon/mstile-144x144.png">
+
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Conceptual View - Sunbird" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="/architecture/views/conceptual/" />
+	<meta property="og:image" content="/img/og_image.png" />
+	<meta property="og:description" content="Conceptual View" />
+
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@sunbird" />
+	<meta name="twitter:title" content="Conceptual View" />
+	<meta name="twitter:description" content="Conceptual View" />
+	<meta name="twitter:image" content="/img/og_image.png" />
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/js/all.js"></script>
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/owl/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/style.css" rel="stylesheet" type="text/css" />
+
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments)};
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-106552125-1');
+	</script>
+	
+
+</head>
+
+
+
+
+  <body>
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="/">
+          <img src="/img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <div class="inner__searchbar">
+        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#0p1r9vvek0v")[0]); });</script><div id="0p1r9vvek0v"><div class="search" data-reactid=".2arsyax085u" data-react-checksum="-1474846897"><div class="search-icon" data-reactid=".2arsyax085u.0"><i class="material-icons" data-reactid=".2arsyax085u.0.0">search</i></div><div class="search-bar" data-reactid=".2arsyax085u.1"><form data-reactid=".2arsyax085u.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".2arsyax085u.1.0.0"></form></div><div class="search-results" data-reactid=".2arsyax085u.2"></div></div></div>
+      </div>
+      <div class="inner__sidebar">
+        <div id="">
+	<div class="sidebar-wrapper">
+		<div class="" >
+			<a href="/architecture">
+				<h4 class="sidebar-group-title">Architecture</h4>
+			</a>
+			<ul class="sidebar-group" >
+				<li>
+					<a href="/architecture">Overview</a>
+				</li>
+				<li>
+					<a href="/architecture/design">Design</a>
+				</li>
+				<li>
+					<div class="">
+						<h4 class="sidebar-group-title">Elementary Views</h4>
+						<ul class="sidebar-group">
+							<li>
+								<a href="/architecture/views/logical">Logical View</a>
+							</li>
+							<li>
+								<a href="/architecture/views/physical">Physical View</a>
+							</li>
+							<li>
+								<a class="sidebar-link-selected" href="/architecture/views/conceptual">Conceptual View</a>
+							</li>
+							<li>
+								<a href="/architecture/views/deployment">Deployment View</a>
+							</li>
+							<li>
+								<a href="/architecture/views/implementation">Implemenatation View</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<a href="/features-documentation/">
+				<h4 class="sidebar-group-title">Features</h4>
+			</a>
+			<a href="/developer-docs/">
+				<h4 class="sidebar-group-title">Developer Documentation</h4>
+			</a>
+			
+		</div>
+	</div>
+</div>
+
+      </div>
+     <!-- <div class="inner__supportbar">
+        <a href="#">Help & Support</a>
+      </div>-->
+    </nav>
+    <div class="content">
+      <div class="inner__content header">
+
+        <script type="text/javascript">$(function() { React.render(React.createElement(Breadcrumbs, {current_path: "architecture/views/conceptual", page_title: "Conceptual View", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, layout: [{"title":"Architecture","directory":"architecture","children":["/architecture/design",{"title":"Elementary Views","directory":"views","children":["/architecture/views/logical","/architecture/views/physical","/architecture/views/conceptual","/architecture/views/deployment","/architecture/views/implemenatation"]}]}]}), $("#mv4nakxhmkq")[0]); });</script><div id="mv4nakxhmkq"><ul class="breadcrumbs" data-reactid=".1pv7j6eio18" data-react-checksum="1136399149"></ul></div>
+        <h1>Conceptual View </h1>
+
+        
+          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "architecture/views/conceptual", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#g1nopeqap2r")[0]); });</script><div id="g1nopeqap2r"><div class="section-selector" data-reactid=".zmser5g2sm" data-react-checksum="412486356"><div class="section-group" data-reactid=".zmser5g2sm.0"><a class="section section-inactive" href="/architecture/views/conceptual/" data-reactid=".zmser5g2sm.0.$overview">Overview</a><a class="section section-inactive" href="/architecture/views/conceptual//" data-reactid=".zmser5g2sm.0.$guide">Guide</a><a class="section section-inactive" href="/architecture/views/conceptual//" data-reactid=".zmser5g2sm.0.$support">Support</a><a class="section section-inactive" href="/architecture/views/conceptual//" data-reactid=".zmser5g2sm.0.$advanced">Advanced</a><a class="section section-inactive" href="/architecture/views/conceptual//" data-reactid=".zmser5g2sm.0.$examples">Examples</a></div></div></div></span>
+        
+      </div>
+
+      
+
+      <div id="main-content" class="inner__content">
+        
+          <h1 id="conceptual-view">Conceptual View</h1>
+
+<h3 id="conceptual-view-1">Conceptual view</h3>
+
+<p>The conceptual view or functional view is built on the core stakeholders in Sunbird which comprises of:</p>
+
+<ul>
+  <li>Organization</li>
+  <li>Users</li>
+  <li>Courses</li>
+  <li>Assessment</li>
+  <li>Forums</li>
+</ul>
+
+<p><a target="_blank" href="/pages/architecture/image/conceptualview.jpg">
+        <img src="/pages/architecture/image/conceptualview.jpg" alt="General Conceptual View" class="plugin center" width="100%" />
+      </a></p>
+
+<h4 id="organization">Organization</h4>
+
+<p>In Sunbird, the User base is not just limited to individuals but it spans across organizations like schools, colleges, education boards &amp; departments, etc.In broader terms, Sunbird architecture defines users as “Organizations”. Following is the hierarchical structure of organization, the basic entity is a “Member”,where in a member can play following roles:</p>
+
+<ul>
+  <li><strong>Admin:</strong> In Sunbird, the “Admin” has capabilities of adding or removing, changing the roles of other members. Also, an Admin can add or remove sub-hierarchical organizations.</li>
+  <li><strong>Member:</strong> A member can be a part of an organization also a member can view other members of an organization too.</li>
+</ul>
+
+<p>The <strong>organization</strong> in Sunbird is designed around the following objects with following attributes:
+<strong>Organization:</strong> Organization Id, Name, Description ,Parent Organization Id etc.</p>
+
+<p><strong>Organization Members:</strong> Organization Id,Member Id,Role,Date Joined etc.</p>
+
+<p><strong>Organization Hierarchy:</strong> Organization Id,Parent Organization Id,Relation.</p>
+
+<h3 id="users">Users</h3>
+
+<p>User Model contains the identity information that is required to uniquely identify the user and the static profile of the user and its demographic information, etc. A user can be a member of one or more organizations.
+Typically, a user can be a member of one or more organizations. “User” Model in Sunbird contains the identity information that is required to uniquely identify the user and the static profile of the user like demographic information, etc. In addition, a user will have a profile that gets refined as users interact with Sunbird platform.</p>
+
+<h4 id="course">Course</h4>
+
+<p>A course is an illustration of content that comprises of the contextual information like the duration of course, type of delivery, organization offering the course, faculty, etc. The course becomes available for Sunbird users based on above contextual information.</p>
+
+<p><strong>Course Management</strong></p>
+
+<p>An organization or a user, with course creation privileges, creates and launches a course in Sunbird. 
+The course content, structure, information and meta data of the course are stored in Sunbird platform. The platform empowers vast flexibility in course creation, delivery and consumption. Information like the start &amp; end dates of the course, type of the course, user &amp; organization who created the course, etc.is stored in the course entity at Sunbird layer. A course is visible to users only when the course is in “Live” state. The course creator change the status. There is no versioning of courses in Sunbird. Versioning is prime function of Sunbird platform itself.
+The Course entity in Sunbird is designed around the following objects and attributes.</p>
+
+<p><strong>Course:</strong> Course Id,Content Id,Version,Created By,Organization Id,Faculty Id, Tutors,Course Type, etc.</p>
+
+<p><strong>User Courses</strong></p>
+
+<p>Users in Sunbird can explore and subscribe for the Live courses. Once subscribed, the user’s progress and activity within the course is stored in “user courses” entities. User courses contains the subscription data, progress, grade &amp; current position of the user in a course.“User Content State” and “User Assessment Items” data gets populated by listening to the telemetry events generated by the client applications. Asynchronous back-end jobs listening for updates on “User Assessment Items” and “User Content State” updates the progress, grade and last position in the course for each user’s course subscription.</p>
+
+<p>User courses entity in Sunbird is designed around the following objects and attributes:</p>
+
+<p><strong>User Courses:</strong> User Id,Course Id,Delta-TOC,Progress,Grade,Last Content Id.</p>
+
+<p><strong>User content state</strong></p>
+
+<p>It contains the consumption details of content (inside or outside a course) by a user.User Content State entity in Sunbird is designed around the following objects and attributes: 
+<strong>User Content State</strong>:User Id,Content Id,Course Id, Consumption Status,Score,Result,Grade,View Count,Completion Count,etc.</p>
+
+<h3 id="assessment">Assessment</h3>
+
+<p>In addition to the learning content, a course also encompasses assessments. Sunbird content containing ItemSets are used to deliver assessments in a course. An ItemSet is a collection of assessment items and configuration to be used by player to play it.</p>
+
+<p>The assessment is based on the following:</p>
+
+<ul>
+  <li>
+    <p><strong>Release Criteria:</strong> The criteria for releasing assessment depends on course completion and or duration (i.e. they have a start and/or end date).</p>
+  </li>
+  <li>
+    <p><strong>Evaluation Rubric:</strong> Rubric is the scoring guide to evaluate the assessment and generate a grade.</p>
+  </li>
+</ul>
+
+<p>The content player uses ItemSet and its configuration to show the assessment and the course player uses the release criteria &amp; rubric to release and evaluate the assessment.
+The Assessment entity in Sunbird is designed around the following objects:</p>
+
+<p><strong>AssessmentId:</strong> Identifier of the Sunbird content which contains the assessment,other attributes <strong>ReleaseCriteria</strong>, <strong>Rubric</strong>.</p>
+
+<p>Sunbird ItemSets and content is flexible and reusable in multiple contexts. This data is stored within the Sunbird infrastructure
+User Assessment Items contains the details of each attempt of all assessment items by the user are stored in “User Assessment Items” model.User Assessment Items entity in Sunbird is designed around the following objects:</p>
+
+<p><strong>User assessment:</strong> User Id,Course Id,Assessment Id,Assessment Item Id,Score,
+,Result,Attempt Number,Last Attempted On.</p>
+
+
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var platformSelector = $("#platform-selector");
+    var mainContent = $("#main-content");
+
+    $(".content").scroll(function() {
+
+      if (this.scrollTop > 264) {
+        platformSelector.addClass("fixed");
+        mainContent.addClass("no-selector");
+      }
+      else {
+        platformSelector.removeClass("fixed");
+        mainContent.removeClass("no-selector");
+      }
+
+    });
+  </script>
+
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+          $('#dropdown-trigger').click(function(e){
+              var $elm = $('#mobile-dropdown');
+              if($elm.is(":visible")){
+                  $elm.stop().slideUp();
+              }else{
+                  $elm.stop().slideDown();
+                  $('html,body').scrollTop(0);
+              }
+              e.stopPropagation();
+          });
+      });
+
+  </script>
+
+  </body>
+
+</html>

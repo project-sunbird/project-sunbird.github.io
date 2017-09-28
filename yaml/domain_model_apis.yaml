@@ -1,0 +1,1483 @@
+swagger: '2.0'
+info:
+  version: 2.0.0
+  title: Domain Model API
+  description: >-
+    Domain model encapsulates the WHAT TO TEACH (Dimensions and Concepts) and
+    HOW TO TEACH (Methods) aspects of Ekstep Learning Platform
+  license:
+    name: Ekstep License
+host: dev.ekstep.in
+schemes:
+  - https
+securityDefinitions: {}
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: Domains
+    description: Everything related to the Domain operations
+  - name: Domain Objects
+    description: Everything related to all Domain Objects & Operations
+paths:
+  /v3/public/domains/list:
+    get:
+      summary: Gets All Live Domains
+      description: >-
+        This _domains_ endpoint is used to get the list of all live domains
+        available in the  _EkStep Learning Platform_
+      operationId: domain.list
+      produces:
+        - application/json
+      tags:
+        - Domains
+      responses:
+        '200':
+          description: Gets All live Domains
+          schema:
+            $ref: '#/definitions/getAllDomains'
+        '400':
+          description: >-
+            Error While fetching all domains! | Error occurred while operation,
+            mostly because of the input given by client, In general it is
+            'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching all domains! | Error occurred while operation,
+            mostly because of erroneous condition on server, In general it is
+            'Server Exception' or 'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/read/{domainId}':
+    get:
+      summary: Gets Specific Domain
+      description: >-
+        The _domain/{domainId}_ endpoint with 'GET' method is used to fetch the
+        specific domain from the _EkStep Platform_. This endpoint returns the
+        entire domain Object with default fields and relations 
+      tags:
+        - Domains
+      operationId: domain.info
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: Domain ID to query the details
+          type: string
+      responses:
+        '200':
+          description: Gets details of specific domain
+          schema:
+            $ref: '#/definitions/getSpecificDomain'
+        '400':
+          description: >-
+            Error While fetching the Specific domain! | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching specific domain! | Error occurred while
+            operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/graph/{domainId}?depth={depthValue}*':
+    get:
+      summary: Gets Specific Domain Graph
+      description: >-
+        This API gets details of specific domain. The functionality of the API
+        is identical to Domain Search based on the field values
+      tags:
+        - Domains
+      operationId: domain.graph
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: Domain ID to query the details
+          type: string
+        - name: depthValue
+          in: path
+          required: true
+          description: depth
+          type: number
+      responses:
+        '200':
+          description: Gets details about domain
+          schema:
+            $ref: '#/definitions/getDomainsGraph'
+        '400':
+          description: >-
+            Error While fetching the domain graph! | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching the domain graph! | Error occurred while
+            operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/dimensions/list/{domainId}':
+    get:
+      summary: Gets All Live Dimensions
+      description: >-
+        This _dimension_ endpoint with 'GET' method is used to get all the live
+        dimensions of given domainId from the domain graph of Ekstep
+        Platform,This API Returns the details of all dimension, and optionally,
+        the sub-graph within it
+      tags:
+        - Domain Objects
+      operationId: domain.dimension.list
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: Domain within which to return the dimensions
+          type: string
+      responses:
+        '200':
+          description: all dimension objects returned successfully
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/getAllDimensions'
+        '400':
+          description: >-
+            Error While fetching all dimensions within the specified domain! |
+            Error occurred while operation, mostly because of the input given by
+            client, In general it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching all dimensions within the specified domain! |
+            Error occurred while operation, mostly because of erroneous
+            condition on server, In general it is 'Server Exception' or
+            'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/private/domains/dimensions/create/{domainId}':
+    post:
+      summary: Creates New Dimension
+      description: >-
+        The _dimension_ endpoint is used to create the dimension into the
+        _EkStep Platform_ with the metadata provided as part of request body,
+        there are certain fields marked as mandatory for which the value has to
+        be given in order to create the dimension into the platfrom, The
+        _dimension_ endpoint returns the node id as _node_id_ i.e. the
+        identifier of created dimension.
+      tags:
+        - Domain Objects
+      operationId: domain.object.create
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain ID to query the details
+          type: string
+        - $ref: '#/parameters/createDimension'
+      responses:
+        '200':
+          description: >-
+            domainId - Domain ID within which the dimension is created
+            successfully
+          schema:
+            $ref: '#/definitions/createDimension'
+        '400':
+          description: >-
+            Error While creating dimension within domain | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While creating dimension within domain | Error occurred while
+            operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/dimensions/read/{domainId}/{dimensionId}':
+    get:
+      summary: Gets Specific Dimension
+      description: >-
+        This _dimension_ endpoint with 'GET' method is used to get the dimension
+        Object from the domain graph of Ekstep Platform,This API Returns the
+        details of the given dimension, and optionally, the sub-graph within it.
+      tags:
+        - Domain Objects
+      operationId: domain.dimension.info
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: Domain ID to query the details
+          type: string
+        - name: dimensionId
+          in: path
+          required: true
+          description: Dimension to return (concepts are unique within a domain)
+          type: string
+      responses:
+        '200':
+          description: Returns the details of the given dimension
+          schema:
+            $ref: '#/definitions/getSpecificDimension'
+        '400':
+          description: >-
+            Error While fetching specified dimension  | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching the specific dimension | Error occurred while
+            operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/private/domains/dimensions/update/{domainId}/{dimensionId}':
+    patch:
+      summary: Updates Specific Dimension
+      description: >-
+        This _dimension_  update API with 'PATCH' method is used to update the
+        given dimension, with the metadata provided as part of request body,
+        there are certain fields marked as mandatory for which the value has to
+        be given in order to update the dimension into the platfrom, The
+        _dimension_ endpoint returns the node id as _node_id_ i.e. the
+        identifier of updated dimension
+      tags:
+        - Domain Objects
+      operationId: domain.dimension.update
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain ID to query the details
+          type: string
+        - name: dimensionId
+          in: path
+          required: true
+          description: dimension ID to query the details
+          type: string
+        - $ref: '#/parameters/updateDimension'
+      responses:
+        '200':
+          description: >-
+            domainId - Domain ID within which the dimension is created
+            successfully
+          schema:
+            $ref: '#/definitions/updateDimension'
+        '400':
+          description: >-
+            Error While updating the dimension! | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While updating the dimension! | Error occurred while
+            operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/dimensions/search/{domainId}':
+    post:
+      summary: Search Dimensions Based On Search Criteria
+      description: >-
+        This _dimension_  search API with 'POST' method is used run a search
+        query on the domian graph for a given domainId to fetch the dimensions
+        from the domain of the Ekstep platform.This API returns the dimensions
+        based on the search criteria provided in the request body
+      tags:
+        - Domain Objects
+      operationId: domain.dimension.search
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain ID to query the details
+          type: string
+        - $ref: '#/parameters/searchDimension'
+      responses:
+        '200':
+          description: >-
+            domainId - Domain ID within which the dimension is searched
+            successfully
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/searchDimension'
+        '400':
+          description: >-
+            Error While searching dimensions within the domain! | Error occurred
+            while operation, mostly because of the input given by client, In
+            general it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While searching for dimensions within the specified domain !|
+            Error occurred while operation, mostly because of erroneous
+            condition on server, In general it is 'Server Exception' or
+            'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/concepts/list/{domainId}':
+    get:
+      summary: Gets All Live Concepts
+      description: >-
+        The _concept_ endpoint is used to get the list of concepts  and their
+        properties and relations as definied in the  _EkStep Platform_
+      tags:
+        - Domain Objects
+      operationId: domain.concept.list
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: Domain ID to query the details
+          type: string
+      responses:
+        '200':
+          description: Gets all Concepts of given domainId
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/getAllConcepts'
+        '400':
+          description: >-
+            Error While fetching all Concepts ! | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching all Concepts | Error occurred while operation,
+            mostly because of erroneous condition on server, In general it is
+            'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/private/domains/concepts/create/{domainId}':
+    post:
+      summary: Creates New Concept
+      description: >-
+        The _concept_ endpoint is used to create the concept into the _EkStep
+        Platform_ with the metadata provided as part of request body, there are
+        certain fields marked as mandatory for which the value has to be given
+        in order to create the content into the platfrom, The _concept_ endpoint
+        returns the node id as _node_id_ i.e. the identifier of created concept.
+      tags:
+        - Domain Objects
+      operationId: domain.concept.save
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain for which all concepts are required
+          type: string
+        - $ref: '#/parameters/createConcept'
+      responses:
+        '200':
+          description: Node ID created in the graph
+          schema:
+            $ref: '#/definitions/createConcept'
+        '400':
+          description: >-
+            Error While Concept Creation! | Error occurred while operation,
+            mostly because of the input given by client, In general it is
+            'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While Concept Creation! | Error occurred while operation,
+            mostly because of erroneous condition on server, In general it is
+            'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/private/domains/concepts/retire/{domainId}/{conceptId}':
+    delete:
+      summary: Retires Specific Concept.
+      description: >-
+        This API retires the Concept. The concept is marked as deprecated and
+        the concept data is still retained in the system. Retired concepts are not returned by the
+        APIs.
+      tags:
+        - Domain Objects
+      operationId: domain.concept.retire
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: ' Domain within which to search'
+          type: string
+        - name: conceptId
+          in: path
+          required: true
+          description: Concept to be retired
+          type: string
+      responses:
+        '200':
+          description: Node ID created in the graph
+          schema:
+            $ref: '#/definitions/retireConcept'
+        '400':
+          description: >-
+            Error While retiring the specified concept! | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While retiring the specified concept! | Error occurred while
+            operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/concepts/read/{domainId}/{conceptId}':
+    get:
+      summary: Gets Specific Concept
+      description: >-
+        The _concept/{conceptId}_ endpoint with 'GET' method is used to fetch
+        the specific concept from the _EkStep Platform_. This endpoint returns
+        the entire concept Object with default fields.
+      tags:
+        - Domain Objects
+      operationId: domain.concept.info
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: Domain ID to query the details
+          type: string
+        - name: conceptId
+          in: path
+          required: true
+          description: concept ID to query the details
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/getSpecificConcept'
+        '400':
+          description: >-
+            Error While fetching the specific concept! | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching the specific concept! | Error occurred while
+            operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/private/domains/concepts/update/{domainId}/{conceptId}':
+    patch:
+      summary: Updates Specific Concept
+      description: >-
+        This _concept_  update API with 'PATCH' method is used to update the
+        given concept, with the metadata provided as part of request body, there
+        are certain fields marked as mandatory for which the value has to be
+        given in order to update the concept into the platfrom, The _concept_
+        endpoint returns the node id as _node_id_ i.e. the identifier of updated
+        concept.
+      tags:
+        - Domain Objects
+      operationId: domain.concept.update
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain for which all concepts are required
+          type: string
+        - name: conceptId
+          in: path
+          required: true
+          description: Concept identifier (concepts are unique within a domain)
+          type: string
+        - $ref: '#/parameters/updateConceptData'
+      responses:
+        '200':
+          description: Updates the concept data
+          schema:
+            $ref: '#/definitions/updateConceptData'
+        '400':
+          description: >-
+            Error While updating the concept! | Error occurred while operation,
+            mostly because of the input given by client, In general it is
+            'Client Exception' 
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While updating the concept! | Error occurred while operation,
+            mostly because of erroneous condition on server, In general it is
+            'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/concepts/search/{domainId}':
+    post:
+      summary: Search Concepts Based On Search Criteria
+      description: >-
+        This _Concepts_  search API with 'POST' method is used run a search
+        query on the domian graph for a given domainId to fetch the concepts
+        from the domain of the Ekstep platform.This API returns the concepts
+        based on the search criteria provided in the request body
+      tags:
+        - Domain Objects
+      operationId: domain.concepts.search
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain ID to query the details
+          type: string
+        - $ref: '#/parameters/searchConcepts'
+      responses:
+        '200':
+          description: >-
+            domainId - Domain ID within which the concept is searched
+            successfully
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/searchConcepts'
+        '400':
+          description: >-
+            Error While searching concepts within domain! | Error occurred while
+            operation, mostly because of the input given by client, In general
+            it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While searching concepts withing domain! | Error occurred
+            while operation, mostly because of erroneous condition on server, In
+            general it is 'Server Exception' or 'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/methods/list/{domainId}':
+    get:
+      summary: Gets All Live Methods
+      description: >-
+        This _methods_ endpoint with 'GET' method is used to get all the live
+        methods of given domainId from the domain graph of Ekstep Platform,This
+        API Returns the details of all methods
+      tags:
+        - Domain Objects
+      operationId: domain.methods.list
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domainId for which all methods are required
+          type: string
+      responses:
+        '200':
+          description: Returns all methods in a domain
+          schema:
+            $ref: '#/definitions/getAllMethods'
+        '400':
+          description: >-
+            Error While fetching all methods within the specified domain! |
+            Error occurred while operation, mostly because of the input given by
+            client, In general it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching all methods within the specified domain! |
+            Error occurred while operation, mostly because of erroneous
+            condition on server, In general it is 'Server Exception' or
+            'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/private/domains/methods/create/{domainId}':
+    post:
+      summary: Creates New Method
+      description: >-
+        The _method_ endpoint is used to create the method into the _EkStep
+        Platform_ with the metadata provided as part of request body, there are
+        certain fields marked as mandatory for which the value has to be given
+        in order to create the method into the platfrom, The _method_ endpoint
+        returns the node id as _node_id_ i.e. the identifier of created method.
+      tags:
+        - Domain Objects
+      operationId: domain.method.save
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain for the method
+          type: string
+        - $ref: '#/parameters/createMethod'
+      responses:
+        '200':
+          description: node_id - Node ID created in the graph
+          schema:
+            $ref: '#/definitions/createMethod'
+        '400':
+          description: >-
+            Error While Creating method within the specified domain! | Error
+            occurred while operation, mostly because of the input given by
+            client, In general it is 'Client Exception' 
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While Creating method within the specified domain! | Error
+            occurred while operation, mostly because of erroneous condition on
+            server, In general it is 'Server Exception' or 'Exception'.
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/methods/read/{domainId}/{methodId}':
+    get:
+      summary: Gets Specific Method
+      description: >-
+        This _method_ endpoint with 'GET' method is used to get specific method
+        object of given domainId from the domain graph of Ekstep Platform,This
+        API Returns the details of specific method and its relations
+      tags:
+        - Domain Objects
+      operationId: domain.method.info
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: Domain ID to query the details
+          type: string
+        - name: methodId
+          in: path
+          required: true
+          description: >-
+            (Path Parameter) Method to return (methods are unique within a
+            domain)
+          type: string
+      responses:
+        '200':
+          description: Returns the details of specific Method
+          schema:
+            $ref: '#/definitions/getSpecificMethod'
+        '400':
+          description: >-
+            Error While fetching all methods within specified domain! | Error
+            occurred while operation, mostly because of the input given by
+            client, In general it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While fetching all methods within specified domain! | Error
+            occurred while operation, mostly because of erroneous condition on
+            server, In general it is 'Server Exception' or 'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/private/domains/methods/update/{domainId}/{methodId}':
+    patch:
+      summary: Updates Specific Method
+      description: >-
+        This _method_  update API with 'PATCH' method is used to update the
+        given method, with the metadata provided as part of request body, there
+        are certain fields marked as mandatory for which the value has to be
+        given in order to update the concept into the platfrom, The _method_
+        endpoint returns the node id as _node_id_ i.e. the identifier of updated
+        method.
+      tags:
+        - Domain Objects
+      operationId: domain.method.update
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain ID to query the details
+          type: string
+        - name: methodId
+          in: path
+          required: true
+          description: method ID to query the details
+          type: string
+        - $ref: '#/parameters/updateMethod'
+      responses:
+        '200':
+          description: method updated successfully
+          schema:
+            $ref: '#/definitions/updateMethod'
+        '400':
+          description: >-
+            Error While updating the method within the specified domain! | Error
+            occurred while operation, mostly because of the input given by
+            client, In general it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While updating the method within the specified domain! | Error
+            occurred while operation, mostly because of erroneous condition on
+            server, In general it is 'Server Exception' or 'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+  '/v3/public/domains/methods/search/{domainId}':
+    post:
+      summary: Search Methods Based On Search Criteria
+      description: >-
+        This _methods_ search API with 'POST' method is used run a search query
+        on the domian graph for a given domainId to fetch the methods from the
+        domain of the Ekstep platform.This API returns the methods based on the
+        search criteria provided in the request body
+      tags:
+        - Domain Objects
+      operationId: domain.object.search
+      produces:
+        - application/json
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          description: domain ID to query the details
+          type: string
+        - $ref: '#/parameters/searchMethods'
+      responses:
+        '200':
+          description: domain objects retreived successfully
+          schema:
+            $ref: '#/definitions/searchMethods'
+        '400':
+          description: >-
+            Error While searching the methods within the domain! | Error
+            occurred while operation, mostly because of the input given by
+            client, In general it is 'Client Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: >-
+            Error While searching the methods within the domain! | Error
+            occurred while operation, mostly because of erroneous condition on
+            server, In general it is 'Server Exception' or 'Exception'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security: []
+parameters:
+  createDimension:
+    name: Request
+    in: body
+    description: dimension Request Object which contains the dimension object
+    required: true
+    schema:
+      $ref: '#/definitions/dimensions'
+  updateDimension:
+    name: Request
+    in: body
+    description: dimension Request Object which contains the dimension object
+    required: true
+    schema:
+      $ref: '#/definitions/dimensions'
+  searchDimension:
+    name: Request
+    in: body
+    description: search Request Object
+    required: true
+    schema:
+      $ref: '#/definitions/dimensions'
+  createConcept:
+    name: Request
+    in: body
+    description: Concept Request Object which contains the concept object
+    required: true
+    schema:
+      $ref: '#/definitions/concept'
+  updateConceptData:
+    name: Request
+    in: body
+    description: Concept Request Object which contains the concept object
+    required: true
+    schema:
+      $ref: '#/definitions/concept'
+  searchConcepts:
+    name: Request
+    in: body
+    description: search Request Object
+    required: true
+    schema:
+      $ref: '#/definitions/concept'
+  createMethod:
+    name: Request
+    in: body
+    description: method Request Object
+    required: true
+    schema:
+      $ref: '#/definitions/methods'
+  updateMethod:
+    name: Request
+    in: body
+    description: method Request Object
+    required: true
+    schema:
+      $ref: '#/definitions/methods'
+  searchMethods:
+    name: Request
+    in: body
+    description: search Request Object
+    required: true
+    schema:
+      $ref: '#/definitions/methods'
+definitions:
+  getAllDomains:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/getAllDomainsObject'
+  getAllDomainsObject:
+    title: getAllDomains
+    properties:
+      domains:
+        type: array
+        items:
+          $ref: '#/definitions/allDomains'
+  getSpecificDomain:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/domains'
+  getDomainsGraph:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/domains'
+  getAllConcepts:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        type: array
+        items:
+          $ref: '#/definitions/conceptObject'
+  conceptObject:
+    properties:
+      concept:
+        $ref: '#/definitions/conceptMetadata1'
+      owner:
+        $ref: '#/definitions/conceptMetadata2'
+      relation:
+        $ref: '#/definitions/conceptMetadata3'
+      metadata:
+        $ref: '#/definitions/concept'
+  getSpecificConcept:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/concept'
+  createConcept:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/NodeId'
+  retireConcept:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      body:
+        $ref: '#/definitions/result'
+  updateConceptData:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/NodeId'
+  searchConcepts:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        type: array
+        items:
+          $ref: '#/definitions/conceptObject'
+  getAllDimensions:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        type: array
+        items:
+          $ref: '#/definitions/dimensions'
+  getSpecificDimension:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/dimensions'
+  createDimension:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/NodeId'
+  updateDimension:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/NodeId'
+  searchDimension:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        type: array
+        items:
+          $ref: '#/definitions/dimensions'
+  searchMethods:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        type: array
+        items:
+          $ref: '#/definitions/methods'
+  getAllMethods:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        type: array
+        items:
+          $ref: '#/definitions/methods'
+  getSpecificMethod:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/methods'
+  createMethod:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/NodeId'
+  updateMethod:
+    type: object
+    properties:
+      header:
+        $ref: '#/definitions/ResponseHeader'
+      result:
+        $ref: '#/definitions/NodeId'
+  result:
+    type: object
+    properties: {}
+  concept:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      subject:
+        type: string
+        description: domain subject
+      code:
+        type: string
+        description: code of the domain
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+      parent:
+        $ref: '#/definitions/Children'
+      externalValidation:
+        $ref: '#/definitions/externalValidation'
+      osId:
+        type: string
+        description: osId
+      mimeType:
+        type: string
+        description: mimeTYpe
+      tags:
+        $ref: '#/definitions/tags'
+      gradeLevel:
+        $ref: '#/definitions/gradelevel'
+  conceptMetadata1:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      subject:
+        type: string
+        description: domain subject
+      code:
+        type: string
+        description: code of the domain
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+      gradeLevel:
+        $ref: '#/definitions/gradelevel'
+      lastUpdatedOn:
+        type: string
+        description: ''
+      createdOn:
+        type: string
+        description: ''
+      tags:
+        $ref: '#/definitions/tags'
+  conceptMetadata2:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      subject:
+        type: string
+        description: domain subject
+      code:
+        type: string
+        description: code of the domain
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+      parent:
+        $ref: '#/definitions/Children'
+      thumbnail:
+        type: string
+        description: thumbnail
+      lastUpdatedOn:
+        type: string
+        description: ''
+      createdOn:
+        type: string
+        description: ''
+      tags:
+        $ref: '#/definitions/tags'
+      osId:
+        type: string
+        description: osId
+      mimeType:
+        type: string
+        description: mimeTYpe
+      gradeLevel:
+        $ref: '#/definitions/gradelevel'
+      learningObjective:
+        $ref: '#/definitions/learningObjective'
+      pre_requisite:
+        $ref: '#/definitions/pre_requisite'
+      co_occurrence:
+        $ref: '#/definitions/pre_requisite'
+  conceptMetadata3:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      subject:
+        type: string
+        description: domain subject
+      code:
+        type: string
+        description: code of the domain
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+      owner:
+        type: string
+        description: owner
+      lastUpdatedOn:
+        type: string
+        description: ''
+      createdOn:
+        type: string
+        description: ''
+      tags:
+        $ref: '#/definitions/tags'
+      osId:
+        type: string
+        description: osId
+      mimeType:
+        type: string
+        description: mimeTYpe
+      gradeLevel:
+        $ref: '#/definitions/gradelevel'
+      learningObjective:
+        $ref: '#/definitions/learningObjective'
+  pre_requisite:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      description:
+        type: string
+        description: description
+      relation:
+        type: string
+        description: relation
+      index:
+        type: string
+        description: index
+  allDomains:
+    title: domains
+    type: object
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      code:
+        type: string
+        description: code of the domain
+      children:
+        type: array
+        items:
+          $ref: '#/definitions/Children'
+      subject:
+        type: string
+        description: domain subject
+      name:
+        type: string
+        description: domain name
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+      tags:
+        type: object
+        description: tags
+  domains:
+    title: domain
+    type: object
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      code:
+        type: string
+        description: code of the domain
+      children:
+        type: array
+        items:
+          $ref: '#/definitions/Children'
+      subject:
+        type: string
+        description: domain subject
+      name:
+        type: string
+        description: domain name
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+      tags:
+        type: object
+        description: tags
+      dimension_count:
+        type: integer
+        description: number of dimensions under specified domain
+      misconception_count:
+        type: integer
+        description: number of misconceptions under specified domain
+      concept_count:
+        type: integer
+        description: number of concepts under specified domain
+      method_count:
+        type: integer
+        description: number of methods under specified domain
+      content_count:
+        type: integer
+        description: number of contents under specified domain
+  dimensions:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      subject:
+        type: string
+        description: domain subject
+      code:
+        type: string
+        description: code of the domain
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+      parent:
+        type: array
+        items:
+          $ref: '#/definitions/Children'
+      children:
+        type: array
+        items:
+          $ref: '#/definitions/Children'
+  Children:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      objectType:
+        type: string
+        description: objectType
+      relation:
+        type: string
+        description: realtion
+      description:
+        type: string
+        description: description
+      index:
+        type: string
+        description: index
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  methods:
+    allOf:
+      - $ref: '#/definitions/index'
+      - $ref: '#/definitions/methodMetaData'
+  complexity:
+    type: object
+  skills:
+    type: object
+  interactivity:
+    type: object
+  cognitiveProcessing:
+    type: object
+  material:
+    type: object
+  gradelevel:
+    type: object
+  tags:
+    type: object
+  externalValidation:
+    type: object
+  learningObjective:
+    type: object
+  methodMetaData:
+    properties:
+      complexity:
+        type: array
+        items:
+          $ref: '#/definitions/complexity'
+      learningStyle:
+        type: string
+        description: learningStyle
+      createdOn:
+        type: string
+        description: createdOn
+      skills:
+        type: array
+        items:
+          $ref: '#/definitions/skills'
+      cognitiveProcessing:
+        type: array
+        items:
+          $ref: '#/definitions/cognitiveProcessing'
+      lastUpdatedOn:
+        type: number
+        description: latest Update
+      material:
+        type: array
+        items:
+          $ref: '#/definitions/material'
+      interactivity:
+        type: array
+        items:
+          $ref: '#/definitions/interactivity'
+  index:
+    properties:
+      identifier:
+        type: string
+        description: Domain Identifier
+      name:
+        type: string
+        description: specific domain childName
+      subject:
+        type: string
+        description: domain subject
+      code:
+        type: string
+        description: code of the domain
+      description:
+        type: string
+        description: description about domain
+      status:
+        type: string
+        description: 'status about the domain eg: LIVE, RETIRED, DRAFT'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: API response code
+  ResponseParams:
+    title: Response Params
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  FailedResponseHeader:
+    title: FailureResponse
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+      result:
+        type: string
