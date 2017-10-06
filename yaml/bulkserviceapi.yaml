@@ -1,0 +1,362 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Bulk Upload Service API(s)
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: admin@open-sunbird.org
+  description: >-
+        The  Bulk Upload resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include Uploads, Updations ,
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /bulk/user/upload:
+    post:
+      description: >-
+       This API is associated with upload users in bulk on the Sunbird Platform.
+          - The **_/bulk/user/upload_** endpoint executes " bulk upload user" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Uploads user in bulk
+      tags:
+      - Bulk Operation APIs
+      operationId: bulk upload user req1
+      produces:
+      - application/json
+      consumes:
+      - multipart/form-data
+      parameters:
+      - name: organisationId
+        in: formData
+        required: true
+        type: string
+        description: 'The Id identifies an Organisation uniquely. This Id is provided at the time of organisational registration'
+      - name: user
+        in: formData
+        required: true
+        type: file
+        format: file
+        description: >-
+          This is a .csv file.
+            - Each line of the file is a data record. Each record consists of one or more fields, separated by commas.
+            
+          This format of this file is as :
+            - firstName,
+            - lastName,
+            - phone,
+            - email,
+            - userName,
+            - password,
+            - phoneVerified, 
+            - emailVerified,
+            - roles,
+            - position,
+            - grade,
+            - location,
+            - dob,
+            - aadhaarNo,
+            - gender,
+            - language,
+            - profileSummary,
+            - subject,' 
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."bulk upload user" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "bulk upload user" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /batch/bulk/enrollment:
+    post:
+      description: >-
+       This API is associated with bulk batch enrollment on the Sunbird Platform.
+          - The **_/batch/bulk/enrollment_** endpoint executes "bulk batch enrollment" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Uploads batches in bulk
+      tags:
+      - Bulk Operation APIs
+      operationId: bulk batch enrollment req
+      produces:
+      - application/json
+      consumes:
+      - multipart/form-data
+      parameters:
+      - name: batch
+        in: formData
+        required: true
+        type: file
+        format: file
+        description: >-
+          This is a .csv file.
+            - Each line of the file is a data record. Each record consists of one or more fields, separated by commas.
+           This format of this file is as :
+            - batchId,
+            - userIds,
+            Please omit (-) 
+             (-) is used to enhance readibility here.
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."bulk batch enrollment " operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "bulk batch enrollment" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /upload/status/{Job_Id}:
+    parameters:
+      - in: path
+        name: Job_Id
+        type: string
+        required: true
+        description: 'Please append a valid Job Id To the Request URL'
+    get:
+      description: >-
+       This API is associated with check the uploasd status on the Sunbird Platform.
+          - The **_/upload/status/_** endpoint executes "get status" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Checks upload Status
+      tags:
+      - Bulk Operation APIs
+      operationId: getStatus
+      produces:
+      - application/json
+      parameters:
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."get status" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "get status" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /upload/status/01233701572763648024
+          headers:
+            Accept: application/json
+            Content-Type: application/json
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkMTc1MDIwNDdlODc0ODZjOTM0ZDQ1ODdlYTQ4MmM3MyJ9.7LWocwCn5rrCScFQYOne8_Op2EOo-xTCK5JCFarHKSs
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: getStatus
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /org/upload :
+    post:
+      description: >-
+       This API is associated with bulk uploading organisations on the Sunbird Platform.
+          - The **_/org/upload_** endpoint executes "bulk org upload" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Uploads organisations in bulk 
+      tags:
+      - Bulk Operation APIs
+      operationId: bulk org upload req
+      produces:
+      - application/json
+      consumes:
+      - multipart/form-data
+      parameters:
+      - name: org
+        in: formData
+        required: true
+        type: file
+        format: file
+        description: >-
+          This is a .csv file.
+            - Each line of the file is a data record. Each record consists of one or more fields, separated by commas.
+            
+          This format of this file is as :
+            - orgName,
+            - isRootOrg,
+            - channel,
+            - externalId,
+            - provider,
+            - description,
+            - homeUrl,
+            - orgCode,
+            - orgType,
+            - preferredLanguage,
+            - theme,
+            - contactDetail
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."bulk org upload " operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "bulk org upload " operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result

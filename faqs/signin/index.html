@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Signin - Sunbird</title>
+
+	<meta name="keywords" content="Sign in, Registration, Credential, Individual User, Organizational User, Policy, Decision, Administrator " />
+	<meta name="description" content="Registration and user credential" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
+
+	<meta name="msapplication-TileColor" content="#65d3f7">
+	<meta name="msapplication-TileImage" content="/img/favicon/mstile-150x150.png">
+
+	<!-- Open Graph tags -->
+	<meta property="og:title" content="Signin - Sunbird" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="/faqs/signin/" />
+	<meta property="og:image" content="/img/og_image.png" />
+	<meta property="og:description" content="Registration and user credential" />
+
+	<!-- Twitter Card tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@sunbird" />
+	<meta name="twitter:title" content="Signin" />
+	<meta name="twitter:description" content="Registration and user credential" />
+	<meta name="twitter:image" content="/img/og_image.png" />
+	
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 2018 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/js/all.js?1.0.0"></script>
+
+	<link href="/css/owl/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+	<link href="/css/style.css?1.0.0" rel="stylesheet" type="text/css" />
+
+	
+	
+
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments)};
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-106552125-1');
+	</script>
+</head>
+
+
+
+
+  <body>
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="/">
+          <img src="/img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <!--<div class="inner__searchbar">
+        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#g6yp7as04wj")[0]); });</script><div id="g6yp7as04wj"><div class="search" data-reactid=".17wk2kbs6be" data-react-checksum="-1388077478"><div class="search-icon" data-reactid=".17wk2kbs6be.0"><i class="material-icons" data-reactid=".17wk2kbs6be.0.0">search</i></div><div class="search-bar" data-reactid=".17wk2kbs6be.1"><form data-reactid=".17wk2kbs6be.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".17wk2kbs6be.1.0.0"></form></div><div class="search-results" data-reactid=".17wk2kbs6be.2"></div></div></div>
+      </div>-->
+      <div class="inner__sidebar">
+        <div id="">
+	<div class="sidebar-wrapper">
+		<div class="" >
+			<a href="/architecture">
+				<h4 class="sidebar-group-title">Architecture</h4>
+			</a>
+			<ul class="sidebar-group" >
+				<li>
+					<a href="/architecture">Overview</a>
+				</li>
+				<li>
+					<a href="/architecture/design">Design</a>
+				</li>
+				<li>
+					<div class="">
+						<h4 class="sidebar-group-title">Elementary Views</h4>
+						<ul class="sidebar-group">
+							<li>
+								<a href="/architecture/views/logical">Logical View</a>
+							</li>
+							<li>
+								<a href="/architecture/views/physical">Physical View</a>
+							</li>
+							<li>
+								<a href="/architecture/views/conceptual">Conceptual View</a>
+							</li>
+							<li>
+								<a href="/architecture/views/deployment">Deployment View</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			<a href="/features-documentation/">
+				<h4 class="sidebar-group-title">Product Features</h4>
+			</a>
+			<ul class="sidebar-group" >
+				<li>
+					<a href="/features-documentation/">Onboarding</a>
+				</li>
+				<li>
+					<a href="/features-documentation/login">Login</a>
+				</li>
+				<li>
+					<a href="/features-documentation/administration">Administration</a>
+				</li>
+				<li>
+					<a href="/features-documentation/userrolepermission">User Roles and Permissions</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="/features-documentation/userprofile">User Profile</a>
+							</li>
+							<li>
+								<a href="/features-documentation/workspace">Workspace</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="/features-documentation/coursetraining">Courses and Training</a>
+				</li>
+				<li>
+					<a href="/features-documentation/resources">Resources</a>
+				</li>
+				<li>
+					<div class="">
+						<a href="/features-documentation/contentlifecycle" class="sidebar-group-title">Content Lifecycle</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="/features-documentation/contentlifecycle">Content Creation</a>
+							</li>
+							<li>
+								<a href="/features-documentation/review">Review</a>
+							</li>
+							<li>
+								<a href="/features-documentation/publishing">Publishing</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="/features-documentation/contenteditor">Content Editor</a>
+				</li>
+				<li>
+					<div class="">
+						<a href="/features-documentation/guidelines" class="sidebar-group-title">Guidelines</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="/features-documentation/intellectualproperty">Intellectual Property</a>
+							</li>
+							<li>
+								<a href="/features-documentation/contentsubmission">Content Submission</a>
+							</li>
+							<li>
+								<a href="/features-documentation/codesubmission">Code Submission</a>
+							</li>
+							<li>
+								<a href="/features-documentation/review">Review</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a href="/participate/">Participate</a>
+						<!--<ul class="sidebar-group">
+							<li>
+								<a href="/participate/">Participation Process</a>
+							</li>
+							<li>
+								<a href="#">Suggest Design</a>
+							</li>
+							<li>
+								<a href="#">Write Documentation</a>
+							</li>
+							<li>
+								<a href="#">Write Code</a>
+							</li>
+							<li>
+								<a href="#">Test</a>
+							</li>
+							<li>
+								<a href="#">Answer Questions</a>
+							</li>
+							<li>
+								<a href="#">Review</a>
+							</li>
+							<li>
+								<a href="#">Mentor</a>
+							</li>
+							<li>
+								<a href="#">Maintain</a>
+							</li>
+						</ul>-->
+					</div>
+				</li>
+				<li>
+					<a href="/features-documentation/reportinganalytics">Reporting and Analytics</a>
+				</li>
+				<li>
+					<a href="/features-documentation/collaborationpartnership">Collaboration and Partnership</a>
+				</li>
+				<li>
+					<a href="/features-documentation/supportedenvironment">Supported Environments</a>
+				</li>
+			</ul>
+			<a href="/developer-docs">
+				<h4 class="sidebar-group-title">Developer Documentation</h4>
+			</a>
+			<ul class="sidebar-group" >
+				<li>
+					<a href="/developer-docs/getting_started/">Getting Started</a>
+					<ul class="sidebar-group">
+						<li>
+							<a href="/developer-docs/getting_started/">Supported Environments</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+				</li>
+				<li>
+					<div class="">
+						<a class="sidebar-group-title" href="/developer-docs/developer_install/">Installing Sunbird</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="/developer-docs/developer_install/#prerequisites">Prerequisites</a>
+							</li>
+							<!--<li>
+								<a href="/developer-docs/developer_install/#setup">Quick Installation</a>
+							</li>-->
+							<li>
+								<a href="/developer-docs/developer_install/#setup">Complete Installation Procedure</a>
+							</li>
+							<li>
+								<a href="/developer-docs/medium_scale_deploy">Medium Scale Deployment</a>
+							</li>
+							<li>
+								<a href="/developer-docs/large_scale_deploy">Large Scale Deployment</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a class="sidebar-group-title" href="/developer-docs/extending_sunbird/">Extending Sunbird</a>
+						<!--<ul class="sidebar-group">
+							<li>
+								<a href="/developer-docs/extending_sunbird/">Overview</a>
+							</li>
+							<li>
+								<a href="/developer-docs/extending_sunbird/">Extension Points</a>
+							</li>
+							<li>
+								<a href="/developer-docs/extending_sunbird/">Extension Options</a>
+							</li>
+						</ul>-->
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a class="sidebar-group-title" href="/developer-docs/customize_sunbird/">Customizing Sunbird</a>
+						<!--<ul class="sidebar-group">
+							<li>
+								<a href="/developer-docs/customize_sunbird/#changing-the-look-and-feel">Changing the Look and Feel</a>
+							</li>
+						</ul>-->
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a class="sidebar-group-title" href="/apis/">API Reference</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="/developer-docs/api_ref/">Custom Javascript Plugins</a>
+							</li>
+							<li>
+								<a href="/apis/">Sunbird REST APIs</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<div class="">
+						<a class="sidebar-group-title">Code Contribution</a>
+						<!--<ul class="sidebar-group">
+							<li>
+								<a href="/developer-docs/code_contribute/">Overview</a>
+							</li>
+							<li>
+								<a href="/developer-docs/code_contribute/">Guidelines</a>
+							</li>
+							<li>
+								<a href="/developer-docs/code_contribute/">Contributor Roles</a>
+							</li>
+						</ul>-->
+					</div>
+				</li>
+			</ul>
+			<a href="/faqs/">
+				<h4 class="sidebar-group-title">Frequently asked questions</h4>
+			</a>
+			<ul class="sidebar-group" >
+				<li>
+					<a href="/faqs/audience">Audience</a>
+				</li>
+				<li>
+					<a href="/faqs/contentcreation">Content Creation</a>
+				</li>
+				<li>
+					<a href="/faqs/content_format">Content Format</a>
+				</li>
+				<li>
+					<a href="/faqs/content_repo">Content Repo</a>
+				</li>
+				<li>
+					<a href="/faqs/contentreviews">Content Review</a>
+				</li>
+				<li>
+					<a href="/faqs/content_types">Content Types</a>
+				</li>
+				<li>
+					<a href="/faqs/content_upload">Content Upload</a>
+				</li>
+				<li>
+					<a href="/faqs/feature">Features</a>
+				</li>
+				<li>
+					<a href="/faqs/fixerrors">Fix Errors</a>
+				</li>
+				<li>
+					<a href="/faqs/glossary">Glossary</a>
+				</li>
+				<li>
+					<a href="/faqs/helpsupport">Help Support</a>
+				</li>
+				<li>
+					<a href="/faqs/intellectual_propertylicensesstandards">Intellectual Property Licenses Standards</a>
+				</li>
+				<li>
+					<a href="/faqs/registrationenrolment">Registration Enrollment</a>
+				</li>
+				<li>
+					<a href="/faqs/signin">Sign In</a>
+				</li>
+				<li>
+					<a href="/faqs/taxonomymetadataframework">Taxonomy Meta Data Framework</a>
+				</li>
+				<li>
+					<a href="/faqs/user_rightspermissions">Users Rights Permission</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+      </div>
+     <!-- <div class="inner__supportbar">
+        <a href="#">Help & Support</a>
+      </div>-->
+    </nav>
+    <div class="content">
+      <div class="inner__content header">
+
+        <h1>Signin </h1>
+
+        
+          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "faqs/signin", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#u6sa5vcfrg")[0]); });</script><div id="u6sa5vcfrg"><div class="section-selector" data-reactid=".zwdgxsa7dc" data-react-checksum="-1349851377"><div class="section-group" data-reactid=".zwdgxsa7dc.0"><a class="section section-inactive" href="/faqs/signin/" data-reactid=".zwdgxsa7dc.0.$overview">Overview</a><a class="section section-inactive" href="/faqs/signin//" data-reactid=".zwdgxsa7dc.0.$guide">Guide</a><a class="section section-inactive" href="/faqs/signin//" data-reactid=".zwdgxsa7dc.0.$support">Support</a><a class="section section-inactive" href="/faqs/signin//" data-reactid=".zwdgxsa7dc.0.$advanced">Advanced</a><a class="section section-inactive" href="/faqs/signin//" data-reactid=".zwdgxsa7dc.0.$examples">Examples</a></div></div></div></span>
+        
+      </div>
+
+      
+
+      <div id="main-content" class="inner__content">
+        
+          <h2 id="signin">Signin</h2>
+
+<p><strong>How can you register and get user credentials to sign in to the platform?</strong></p>
+
+<p>The platform has the provision to register and provide user credentials (user ID and password) to: 
+- Individual users (users that do not belong to any organization), and 
+- Organizational users (users that are part of an organization)</p>
+
+<p>The states and organizations make a policy decision to allow / disallow registering single individual users.</p>
+
+<p>Contact your organization administrator for details</p>
+
+
+        
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var platformSelector = $("#platform-selector");
+    var mainContent = $("#main-content");
+
+    $(".content").scroll(function() {
+
+      if (this.scrollTop > 264) {
+        platformSelector.addClass("fixed");
+        mainContent.addClass("no-selector");
+      }
+      else {
+        platformSelector.removeClass("fixed");
+        mainContent.removeClass("no-selector");
+      }
+
+    });
+  </script>
+
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+          $('#dropdown-trigger').click(function(e){
+              var $elm = $('#mobile-dropdown');
+              if($elm.is(":visible")){
+                  $elm.stop().slideUp();
+              }else{
+                  $elm.stop().slideDown();
+                  $('html,body').scrollTop(0);
+              }
+              e.stopPropagation();
+          });
+      });
+
+  </script>
+
+  </body>
+
+</html>

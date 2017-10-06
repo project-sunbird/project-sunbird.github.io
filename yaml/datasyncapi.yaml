@@ -1,0 +1,220 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Data Sync API(s)
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: admin@open-sunbird.org
+  description: >-
+        The  Data synchronization API resources perform operations related to data on the Sunbird Platform. Data synchronization API(s) are responsible for establishing consistency among data from a source to a target data storage and vice versa with continuous harmonization of the data over time.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /sync:
+    post:
+      description: >-
+       This API is associated with synchnorization of data on the Sunbird Platform.
+          - The format of the request URL is '{{host}}/data/v1/index/sync'
+          - The **_/sync/_** endpoint executes "data sync" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Syncs data
+      operationId: '{{host}}/data/v1/index/sync'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about synchronization of data.
+        schema:
+          $ref: '#/definitions/{{host}}~1data~1v1~1index~1syncrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **data sync** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. ''The Registered User ID to execute the API.'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Data sync" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"Data sync" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /sync
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkMTc1MDIwNDdlODc0ODZjOTM0ZDQ1ODdlYTQ4MmM3MyJ9.7LWocwCn5rrCScFQYOne8_Op2EOo-xTCK5JCFarHKSs
+          body: "{\r\n    \"params\": {},\r\n    \"request\": {\r\n        \"objectType\": \"user\"\r\n       \r\n    }\r\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/data/v1/index/sync'
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  '{{host}}/data/v1/index/syncrequest':
+    title: '{{host}}/data/v1/index/syncRequest'
+    example:
+      params: {}
+      request:
+        objectType: user
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request'
+    required:
+    - params
+    - request
+  Request:
+    title: Request
+    type: object
+    properties:
+      objectType:
+        description: ''
+        type: string
+    required:
+    - objectType
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result

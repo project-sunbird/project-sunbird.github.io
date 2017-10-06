@@ -1,2 +1,24 @@
 <h1 id="deployment-view">Deployment View</h1>
-<p>Page in progress</p>
+
+<h2 id="deployment-architecture">Deployment Architecture</h2>
+
+<h3 id="infrastructure">Infrastructure</h3>
+<p>Sunbird can run on Virtual Machines (VMs) on various Cloud providers or bare metal. Cloud Infrastructure automation is work in progress.</p>
+
+<h3 id="stable-builds-registry">Stable Builds Registry</h3>
+<p>Sunbird builds are available at a <a href="https://hub.docker.com/u/sunbird/dashboard/">Image Registry</a>. These builds are in the form of a <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>. Stable releases are tagged as <code>gold</code>. Deployment scripts pull the <code>gold</code> images for production deployment. The <code>gold</code> images are also versioned to allow for release management and upgrade paths.</p>
+
+<h3 id="software-runtime">Software Runtime</h3>
+<p>Most runtimes in Sunbird are containerized as <a href="https://www.docker.com/what-container">Docker containers</a> for portability, process isolation and standardization.<br />
+For container orchestration, this repo contains scripts to run Sunbird on <a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a>. Cloud providers provide container services. In this repo, we are using <a href="https://github.com/Azure/acs-engine">ACS-Engine</a>.</p>
+
+<h3 id="logging-monitoring-and-operational-dashboards">Logging, Monitoring and Operational dashboards</h3>
+<p>Sunbird comes with log aggregation and metrics reporting out of the box. For log aggregation, Sunbird is using a combination of <a href="https://github.com/google/cadvisor">cAdvisor</a>, <a href="https://www.elastic.co/webinars/introduction-elk-stack">ELK stack</a>, <a href="https://prometheus.io/">Prometheus</a> and their plugin ecosystem.
+Ops dashboards are built using <a href="https://grafana.com/">Grafana</a> with some <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/cloud/monitoring/grafana">reference</a> dashboards.</p>
+
+<h3 id="custom-builds">Custom builds</h3>
+<p>Sunbird is extendible. Sunbird can be taken as a base image with custom implementation of public interfaces and rebuilt for deployment. Scripts are available for ramping up of complex deployments with support to run local build promotions and deployments.</p>
+
+<h2 id="license">License</h2>
+<p>The code in this repository is licensed under AGPL-3.0 unless otherwise noted. Please see the <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/LICENSE">LICENSE</a> file for details.</p>
+

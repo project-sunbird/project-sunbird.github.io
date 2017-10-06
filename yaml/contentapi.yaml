@@ -1,0 +1,1648 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Sunbird Content API(s)
+  description: >-
+    The Content API resources perform operations related to 
+    _Content_ on the Sunbird Platform. The operations include the basic CRUD (Create, Update,Read and Delete) operations and other operations such as upload, publish.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/content/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description: >-
+       This API is associated with creating content on the Sunbird Platform .
+          - **_/create/_** endpoint executes the "Create Content" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Create Content
+      tags:
+        - Content APIs
+      operationId: Create Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be created, i.e an array of parameters which describes the content.
+          schema:
+            $ref: '#/definitions/CreateContentrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.' 
+        - name: X-Channel-id
+          in: header
+          required: true
+          type: string
+          description: 'The unique ID provided to the State to which the user belongs.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation.The 'Create Content' operation was successfuly executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST. The "Create Content" operation failed ! The possible reason for failure is that you may have
+            missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/create
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              X-Channel-id: channel
+              Authorization: 'Bearer {{api_key}}'
+            body: |-
+              {
+                "request": {
+                  "content": {
+                    "visibility": "Default",
+                    "status": "Draft",
+                    "contentType": "Story",
+                    "code": "test_cwp_3",
+                    "osId": "org.ekstep.quiz.app",
+                    "languageCode": "hi",
+                    "name": "Test Content",
+                    "description": "Test Content",
+                    "language": [
+                      "Hindi"
+                    ],
+                    "createdFor": [
+                      "012297427021119488540"
+                    ],
+                    "createdBy": "89cf1a7e-dfd3-46c9-a428-d37e9a2bc001",
+                    "mimeType": "application/vnd.ekstep.ecml-archive"
+                  }
+                }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Create Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update/{Content_Id}:
+     parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+     patch:
+      description: >-
+        This API is associated with updating content on the Sunbird Platform .
+          - **_/Update/_** endpoint executes the "Update Content" request based on parameters provided as metadata in the request body.
+          - {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Update Content
+      tags:
+        - Content APIs
+      operationId: Update Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be updated.
+          schema:
+            $ref: '#/definitions/UpdateContentrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID used to execute the API.'
+        - name: X-Channel-id
+          in: header
+          required: true
+          type: string
+          description: 'The unique ID provided to the State to which the user belongs.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation.Content update operation was successfuly executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST. The 'Create Content' operation failed ! The possible reason for failure is that you may have
+            missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: PATCH
+            uri: /content/v1/update/{Content_Id}
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              X-Channel-id: channel
+              Authorization: 'Bearer {{api_key}}'
+            body: |-
+              {
+                "request": {
+                  "content": {
+                    "languageCode": "string",
+                    "name": "string",
+                    "description": "string",
+                    "language": [
+                      "Hindi"
+                    ],
+                    "createdFor": [
+                      "012297427021119488540"
+                    ]
+                  }
+                }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Update Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /publish/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: ''
+    post:
+      description: >-
+        This API is associated with publishing content on the Sunbird Platform .
+          - **_/publish/_** endpoint executes the "Publish Content" request based on parameters provided as metadata in the request body.
+         -  {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Publish Content
+      tags:
+        - Content APIs
+      operationId: Publish Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >- 
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be published.
+          schema:
+            $ref: '#/definitions/PublishContentrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'User Registered ID , which is used for logging In'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: Authorizing user in order to grant access.
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **publish** request was sent. '
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation.**Content publish operation was
+            successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Content Update** operation failed ! You might have missed typing a required parameter.Re-check the input given by you.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/publish/{Content_Id}
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              Authorization: 'Bearer {{api_key}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: |-
+              {
+                "request": {
+                  "content": {
+                    "lastPublishedBy": "89cf1a7e-dfd3-46c9-a428-d37e9a2bc001"
+                  }
+                }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Publish Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /retire/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    delete:
+      description: >-
+        This API is associated with publishing content on the Sunbird Platform .
+          - The **_/retire/{contentId}_** endpoint executes  "Retire Content" request based on content Id to delete the specific content.'
+          - {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
+          - It is mandatory to provide values for parameters.
+          - Mandatory fields cannot be null or empty.
+      summary: Retire Content
+      tags:
+        - Content APIs
+      operationId: Retire Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be deleted.
+          schema:
+            $ref: '#/definitions/RetireContentrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **delete** request was sent.'
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation.**Content deletion operation was successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+           BAD REQUEST. The 'Retire Content' operation failed ! The possible reason for failure is that you may have
+            missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: DELETE
+            uri: /content/v1/retire/{Content_Id}
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              Authorization: 'Bearer {{api_key}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: |-
+              {
+                "request": {
+                  "contentIds": [
+                    "do_3123180264398192642407"
+                  ]
+                }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Retire Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /review/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    post:
+      description: >-
+       >-
+       This API is associated with Submission of content for Review  on the Sunbird Platform .
+          - The**_/review/{content Id}_** endpoint executes "Submit for Review" request based on parameters provided as metadata in the request body.
+          - {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
+          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - It is mandatory to provide values for parameters marked with *. 
+      summary: Submit for Review
+      tags:
+        - Content APIs
+      operationId: Submit for Review
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be sent for review.
+          schema:
+            type: object
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **review** request was sent. '
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation.Content sent for review operation was
+            successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Content Publishing** operation failed ! You might have
+            missed typing a required parameter.Re-check the input given by you.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! We track
+            these errors automatically, but if the problem persists feel free to
+            contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/review/{contentId}
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              Authorization: 'Bearer {{api_key}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: '{ }'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Submit for Review
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /upload/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    post:
+      description:  >-
+       This API is associated with uploading content on the Sunbird Platform .
+          - The**_/upload/{content Id}_** endpoint executes "Create Content" request based on parameters provided as metadata in the request body.
+          - {...}refers to a section of upload endpoint URL path that needs to be replaced by appropriate Id.
+          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Upload Content
+      tags:
+        - Content APIs
+      operationId: Upload Content
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: file
+          in: formData
+          required: true
+          type: file
+          format: file
+          description: 'Content package file which you intend to upload'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: Time Stamp at which **upload** request was sent.
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation."Content upload" operation was successfully
+            executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST. The "Upload Content" operation failed ! The possible reason for failure is that you may have
+            missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /search:
+    post:
+      description: >-
+        This API is associated with Searching content on the Sunbird Platform .
+          - The**_/search/_** endpoint executes "Search Content" request for fetching the contents as results for a particular search criterion.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Search Content
+      tags:
+        - Content APIs
+      operationId: Search Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be fetched.
+          schema:
+            $ref: '#/definitions/SearchContentrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **Search** request was sent.'
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation."Search content"operation was
+            successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST. The "Search content" operation failed ! The possible reason for failure is that you may have
+            missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/search
+            headers:
+              Content-Type: application/json
+              Authorization: 'Bearer {{api_key}}'
+              X-Authenticated-Userid: '{{user_id}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: |-
+              {
+
+                  "request": {
+
+                      "filters":{
+
+                          "channel": "505c7c48ac6dc1edc9b08f21db5a571d",
+
+                          "objectType": ["Content"],
+
+                          "contentType": ["Story", "Worksheet", "Textbook", "Course", "Collection"],
+
+                    "status":["Live"]
+
+                      },
+
+                      "sort_by": {"createdOn": "asc"},
+
+                      "fields": ["name", "contentType", "createdFor", "createdBy", "createdOn", "status", "mimeType", "channel", "lastUpdatedOn"]
+
+                  }
+
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Search Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /flag/accept/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    post:
+      description: >-
+        This API is associated with setting Accept Flag for content under review process on the Sunbird Platform .
+          - The **_/flag/accept/_**endpoint executes request for flagging content under review to "Accept flag", if content is found appropriate.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Accept Flag
+      tags:
+        - Content APIs
+      operationId: Accept Flag
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains request about setting flag to accept for content in review process.
+          schema:
+            type: object
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.' 
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: Time Stamp at which **Accept Flag** request was sent.
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation."Accept Flag" operation was
+            successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >- 
+              BAD REQUEST. The "Accept Flag" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/flag/accept/<contentId>
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              Authorization: 'Bearer {{api_key}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: '{}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Accept Flag
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /flag/reject/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    post:
+      description: >-
+        This API is associated with setting Reject Flag for content under review process on the Sunbird Platform .
+          - The **_/flag/reject/_**endpoint executes request for flagging content under review to "Reject flag", if content is found in-appropriate.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Reject Flag
+      tags:
+        - Content APIs
+      operationId: Reject Flag
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains request about setting flag to accept for content in review process.
+          schema:
+            type: object
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **Accept Flag** request was sent.'
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation."Reject Flag" operation was
+            successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST. The "Reject Flag" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/flag/reject/<contentId>
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              Authorization: 'Bearer {{api_key}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: '{}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Reject Flag
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /reject/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    post:
+      description: >-
+        This API is associated with Rejecting rejecting content
+        under review after "Reject content flag" has been set on the Sunbird Platform .
+          - The **_/reject/{contentId}_** endpoint executes request for rejecting content which is under review. 
+          - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
+          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Reject Content Review
+      tags:
+        - Content APIs
+      operationId: Reject Content Review
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+             - The body contains request about setting flag to reject for content in review process.
+          schema:
+            type: object
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: Time Stamp at which **Content Reject** request was sent.
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation."Content reject" operation was successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST. The "Content reject" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/reject/<contentId>
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              Authorization: 'Bearer {{api_key}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: '{}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Reject Content Review
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /flag/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    post:
+      description: >-
+        This API is associated with setting Flag for content under review on the Sunbird Platform .
+          - The **_/flag/{content Id}_** endpoint executes a request to set flagging status for content ,flag can either be set to "Accepted" or "Rejected".
+          - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
+          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Flag Content
+      tags:
+        - Content APIs
+      operationId: Flag Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+           The body refers to the format of the request.
+            - The body contains request about setting flag to "Accept" or "Reject" for content in review process.
+          schema:
+            $ref: '#/definitions/FlagContentrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **Flag content** request was sent.'
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation."Content Flagging" operation was successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Content Flag** operation failed !.The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/flag/<contentId>
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              Authorization: 'Bearer {{api_key}}'
+              ts: '2017-05-25 10:18:56:578+0530'
+            body: |-
+              {
+                "request": {
+                  "content": {
+                    "flaggedBy": "89cf1a7e-dfd3-46c9-a428-d37e9a2bc001",
+                    "flagReasons": ["Flag comment"],
+                    "flags": ["InAppropriate Content"]
+                  }
+                }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Flag Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /read/{Content_Id}:
+    parameters:
+      - in: path
+        name: Content_Id
+        type: string
+        required: true
+        description: 'Please append a valid Content Id To the Request URL'   
+    get:
+      description: >-
+        This API is associated with viewing and reading out the content on the Sunbird Platform .
+          - The **_/read/{contentId}_** endpoint executes request for fetching the contents to be viewed and read.
+          - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
+          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Read Content
+      tags:
+        - Content APIs
+      operationId: Read Content
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.'
+        - name: X-Channel-id
+          in: header
+          required: true
+          type: string
+          description:  'The unique ID provided to the State to which the user belongs.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: >-
+            OK ! Successful operation."Read content" operation was
+            successfully executed.
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Content Read** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /content/v1/read/<contentId>
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              X-Channel-id: channel
+              Authorization: 'Bearer {{api_key}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Read Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  UpdateContentrequest:
+    title: Update ContentRequest
+    example:
+      request:
+        content:
+          languageCode: hi
+          name: Test Content
+          description: Test Content
+          language:
+            - Hindi
+          createdFor:
+            - 12297427021119488000
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request8'
+    required:
+      - request
+  Request8:
+    title: Request8
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/Content'
+    required:
+      - content
+  Content:
+    title: Content
+    type: object
+    properties:
+      languageCode:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      language:
+        description: ''
+        type: array
+        items:
+          type: string
+      createdFor:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+      - languageCode
+      - name
+      - description
+      - language
+      - createdFor
+  PublishContentrequest:
+    title: Publish ContentRequest
+    example:
+      request:
+        content:
+          lastPublishedBy: 89cf1a7e-dfd3-46c9-a428-d37e9a2bc001
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request11'
+    required:
+      - request
+  Request11:
+    title: Request11
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/Content12'
+    required:
+      - content
+  Content12:
+    title: Content12
+    type: object
+    properties:
+      lastPublishedBy:
+        description: ''
+        type: string
+    required:
+      - lastPublishedBy
+  RetireContentrequest:
+    title: Retire ContentRequest
+    example:
+      request:
+        contentIds:
+          - do_3123180264398192642407
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request14'
+    required:
+      - request
+  Request14:
+    title: Request14
+    type: object
+    properties:
+      contentIds:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+      - contentIds
+  CreateContentrequest:
+    title: Create ContentRequest
+    example:
+      request:
+        content:
+          visibility: Default
+          status: Draft
+          contentType: Story
+          code: test_cwp_3
+          osId: org.ekstep.quiz.app
+          languageCode: hi
+          name: Test Content
+          description: Test Content
+          language:
+            - Hindi
+          createdFor:
+            - 12297427021119488000
+          createdBy: 89cf1a7e-dfd3-46c9-a428-d37e9a2bc001
+          mimeType: application/vnd.ekstep.ecml-archive
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request26'
+    required:
+      - request
+  Request26:
+    title: Request26
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/Content27'
+    required:
+      - content
+  Content27:
+    title: Content27
+    type: object
+    properties:
+      visibility:
+        description: ''
+        type: string
+      status:
+        description: ''
+        type: string
+      contentType:
+        description: ''
+        type: string
+      code:
+        description: ''
+        type: string
+      osId:
+        description: ''
+        type: string
+      languageCode:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      language:
+        description: ''
+        type: array
+        items:
+          type: string
+      createdFor:
+        description: ''
+        type: array
+        items:
+          type: string
+      createdBy:
+        description: ''
+        type: string
+      mimeType:
+        description: ''
+        type: string
+    required:
+      - visibility
+      - status
+      - contentType
+      - code
+      - osId
+      - languageCode
+      - name
+      - description
+      - language
+      - createdFor
+      - createdBy
+      - mimeType
+  SearchContentrequest:
+    title: Search ContentRequest
+    example:
+      request:
+        filters:
+          channel: 505c7c48ac6dc1edc9b08f21db5a571d
+          objectType:
+            - Content
+          contentType:
+            - Story
+            - Worksheet
+            - Textbook
+            - Course
+            - Collection
+          status:
+            - Live
+        sort_by:
+          createdOn: asc
+        fields:
+          - name
+          - contentType
+          - createdFor
+          - createdBy
+          - createdOn
+          - status
+          - mimeType
+          - channel
+          - lastUpdatedOn
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request38'
+    required:
+      - request
+  Request38:
+    title: Request38
+    type: object
+    properties:
+      filters:
+        $ref: '#/definitions/Filters39'
+      sort_by:
+        $ref: '#/definitions/SortBy'
+      fields:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+      - filters
+      - sort_by
+      - fields
+  Filters39:
+    title: Filters39
+    type: object
+    properties:
+      channel:
+        description: ''
+        type: string
+      objectType:
+        description: ''
+        type: array
+        items:
+          type: string
+      contentType:
+        description: ''
+        type: array
+        items:
+          type: string
+      status:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+      - channel
+      - objectType
+      - contentType
+      - status
+  SortBy:
+    title: SortBy
+    type: object
+    properties:
+      createdOn:
+        description: ''
+        type: string
+    required:
+      - createdOn
+  FlagContentrequest:
+    title: Flag ContentRequest
+    example:
+      request:
+        content:
+          flaggedBy: 89cf1a7e-dfd3-46c9-a428-d37e9a2bc001
+          flagReasons:
+            - Flag comment
+          flags:
+            - InAppropriate Content
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request46'
+    required:
+      - request
+  Request46:
+    title: Request46
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/Content47'
+    required:
+      - content
+  Content47:
+    title: Content47
+    type: object
+    properties:
+      flaggedBy:
+        description: ''
+        type: string
+      flagReasons:
+        description: ''
+        type: array
+        items:
+          type: string
+      flags:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+      - flaggedBy
+      - flagReasons
+      - flags
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'

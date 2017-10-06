@@ -98,8 +98,8 @@
 		padding: 0 0 10px 15px;
 		@media (min-width: $screen-sm-max) {
 			position: fixed;
-			bottom: 41px;
-			top: 114px;
+			bottom: 0px;
+			top: 60px;
 			width: 275px;
 			&::-webkit-scrollbar {
 		    width: 10px;
@@ -127,7 +127,7 @@
 						font-weight:normal;
 						text-decoration: none;
 						line-height: 19px;
-						margin: 10px 0 0 0;
+						margin: 7px 0 0 0;
 						display: block;
 						color: #ddd;
 					}

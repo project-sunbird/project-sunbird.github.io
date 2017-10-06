@@ -1,0 +1,1434 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Org. API(s)
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: admin@open-sunbird.org
+  description: >-
+    The Organisation Management API resources perform operations related to management of Organisation on the Sunbird Platform. The basic operations include Creation, Updation,joining ,approving.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/org/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description: >-
+          This API is associated with creation of a new Organisation on the Sunbird Platform.
+            - The **_/create/_** endpoint executes the "Organization-Create" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Creates a new Organization
+      tags:
+      - Org. APIs
+      operationId: Organization-Create
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about the new Organisation to be created.
+        schema:
+          $ref: '#/definitions/OrganizationCreaterequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Organization-Create** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User Id to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Organization-Create" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Organization-Create" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /org/v1/create
+          headers:
+            Content-Type: application/json
+            Accept: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+          body: "{\n  \"request\":{ \n      \"orgName\": \"Ekstep_12\",\n      \"description\": \"description\",\n       \"externalId\": \"1206\",\n        \"provider\": \"test12\",\n        \"isRootOrg\":true,\n         \"channel\":\"test12\"\n     \n   }\n}\n\n\n"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Organization-Create
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /join:
+    post:
+      description: >-
+          This API is associated with creation of a new Organisation on the Sunbird Platform.
+            - Format of the URL is : *http://{{host}}/v1/user/org/join* 
+            - The **_/join/_** endpoint executes the "joining organisation" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Join organisation 
+      tags:
+      - Org. APIs
+      operationId: http://{{host}}/v1/user/org/join
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request to join an organization to be created.
+        schema:
+          $ref: '#/definitions/Http:~1~1{{host}}~1v1~1user~1org~1joinrequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Organization-Create** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Join Organization" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Join Organization" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update:
+    patch:
+      description: >-
+          This API is associated with creation of a new Organisation on the Sunbird Platform.
+            - The **_/update/_** endpoint executes the "Organization-Update" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Updates Organization
+      tags:
+      - Org. APIs
+      operationId: Organization-Update
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request to update an organization.
+        schema:
+          $ref: '#/definitions/OrganizationUpdaterequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Organization-Update** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Organization Update " operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Organization Update" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /v1/org/update
+          headers:
+            Content-Type: application/json
+            Accept: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkMTc1MDIwNDdlODc0ODZjOTM0ZDQ1ODdlYTQ4MmM3MyJ9.7LWocwCn5rrCScFQYOne8_Op2EOo-xTCK5JCFarHKSs
+          body: "{\r\n \"params\": { },\r\n    \"request\":{\r\n       \"externalId\": \"1206\",\r\n        \"provider\": \"test\",\r\n       \"description\": \"Anhra State Boardsssssss\",\r\n        \"address\": {\r\n                \"country\": \"India\",\r\n                \"zipCode\": \"560035\",\r\n                \"createdDate\": \"2017-07-12 03:46:11:112+0530\",\r\n                \"city\": \"bangalore\",\r\n                \"createdBy\": \"7d086e8c-68ac-4aaa-8b91-d75ff922bae5\",\r\n                \"state\": \"Karnataka\"\r\n                \r\n            }\r\n     }\r\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Organization-Update
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/remove:
+    post:
+      description: >-
+          This API is associated with removal of member from an organization on the Sunbird Platform.
+            - The **_/member/remove/_** endpoint executes the "Organization-Update" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Remove Member from Org.
+      tags:
+      - Org. APIs
+      operationId: Remove Member from Org
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:   >-
+            The body refers to the format of the request.
+              - The body contains metadata about the removal of a member from an organization.
+        schema:
+          $ref: '#/definitions/RemoveMemberFromOrgrequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Remove Member from Org** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Remove Member from Org" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Remove Member from Org" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/org/member/remove
+          headers:
+            Content-Type: application/json
+            Accept: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+          body: " {\n\"id\":\"unique API ID\",\n\"ts\":\"2013/10/15 16:16:39\",\n  \"params\": {\n      \n    },\n \"request\":{\n            \"userId\":\"123\",\n            \"organisationId\":\"0122852782085816320\"\n            \n           }\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Remove Member from Org
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /org/approve:
+    post:
+      description: >-
+          This API is associated with grant of approval to a newly added Organisation on the Sunbird Platform.
+            - The **_/org/approve/_** endpoint executes the "Organization-Approve" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Organization Approval
+      tags:
+      - Org. APIs
+      operationId: Organization-Approve
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:   >-
+            The body refers to the format of the request.
+              - The body contains metadata about approving a newly created Organisation.
+        schema:
+          $ref: '#/definitions/OrganizationApproverequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Organization-Approve** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Organization-Approve" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Organization-Approve" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/org/approve
+          headers:
+            Content-Type: application/json
+            Accept: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+          body: >-
+            {
+             "params": { },
+                "request":{
+                                    "orgId":"0122839668758282240",
+                                    "isApproved": true
+                                }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Organization-Approve
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /member/add:
+    post:
+      description: >-
+          This API is associated with adding members to an existing organisation on the Sunbird Platform.
+            - The **_/member/add/_** endpoint executes the "Add Member To Org" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Add Member To Org
+      tags:
+      - Org. APIs
+      operationId: Add Member To Org
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:   >-
+            The body refers to the format of the request.
+              - The body contains metadata about adding a new member to an existing organization.
+        schema:
+          $ref: '#/definitions/AddMemberToOrgrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Add Member To Org** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Add Member To Org" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Add Member To Org" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /i/org/v1/member/add
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkMTc1MDIwNDdlODc0ODZjOTM0ZDQ1ODdlYTQ4MmM3MyJ9.7LWocwCn5rrCScFQYOne8_Op2EOo-xTCK5JCFarHKSs
+          body: " {\n\"id\":\"unique API ID\",\n\"ts\":\"2013/10/15 16:16:39\",\n  \"params\": {\n      \n    },\n \"request\":{\n            \"userName\": \"testuser11\",\n            \"provider\": \"sunbird-integrator-test.org\",\n            \"organisationId\":\"012307211894210560374\",\n            \"roles\": [\"CONTENT_CREATOR\", \"CONTENT_REVIEWER\"]\n            \n           }\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Add Member To Org
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /read :
+    post:
+      description: >-
+          This API is associated with fetching a specific Organization , It fetches and displays the appropriate org based on the Id provided on the Sunbird Platform.
+            - The **_/read/_** endpoint executes the "Get Organization" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Fetch a particular Organization 
+      tags:
+      - Org. APIs
+      operationId: Organisation -Get
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:   >-
+            The body refers to the format of the request.
+              - The body contains metadata to fetch a particular Organisation .
+        schema:
+          $ref: '#/definitions/Organisation Getrequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Get Organization** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get Organization" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Get Organization" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: '/org/v1/read '
+          headers:
+            Content-Type: application/json
+            Accept: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+          body: "{\n \"params\": { },\n    \"request\":{\n               \"organisationId\": \"0123215468873728000\"\n                       \n                       \n       }\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Organisation -Get
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /approve:
+    post:
+      description: >-
+          This API is associated with approving user a membership for  specific Organisation on the Sunbird Platform.
+            - Format of the URL is : http://{{host}}/v1/user/org/v1/user/org/approve 
+            - The **_/approve/_** endpoint executes the "approving user membership for an org." request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary:  Approve user request for membership for a specific Org.
+      tags:
+      - Org. APIs
+      operationId: http://{{host}}/v1/user/org/v1/user/org/approve
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:   >-
+            The body refers to the format of the request.
+              - The body contains metadata about approving user Organisation.
+        schema:
+          $ref: '#/definitions/Http:~1~1{{host}}~1v1~1user~1org~1v1~1user~1org~1approverequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Approve user membership for an org.** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Approve User membership for an Org." operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Approve User membership for an Org." operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /reject:
+    post:
+      description: >-
+          This API is associated with rejecting user a membership for  specific Organisation on the Sunbird Platform.
+            - Format of the URL is : http://{{host}}/v1/user/org/reject
+            - The **_/reject/_** endpoint executes the "rejecting user a membership for a specific Organisation" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Rejecting user request for membership for a specific Org.
+      tags:
+      - Org. APIs
+      operationId: http://{{host}}/v1/user/org/reject
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:   >-
+            The body refers to the format of the request.
+              - The body contains metadata about the new Organisation to be created.
+        schema:
+          $ref: '#/definitions/Http:~1~1{{host}}~1v1~1user~1org~1joinrequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **rejecting user request for membership of a specific Organisation**'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."rejecting user request for membership of a specific Organisation" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "rejecting user request for membership of a specific Organisation" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update/status:
+    patch:
+      description: >-
+          This API is associated with fetching update status of an organisation on the Sunbird Platform.
+            - The **_/update/status_** endpoint executes the "fetch update status of an organisation" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for parameters marked with *. 
+            - Mandatory fields cannot be null or empty.
+      summary: Organization update status
+      tags:
+      - Org. APIs
+      operationId: Organization-Update status
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:   >-
+            The body refers to the format of the request.
+              - The body contains metadata about the new Organisation to be created.
+        schema:
+          $ref: '#/definitions/OrganizationUpdate statusrequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Organization-Create** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."fetching update status of an organisation" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "fetch update status of an organisation" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /v1/org/update/status
+          headers:
+            Content-Type: application/json
+            Accept: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+          body: >-
+            {
+             "params": { },
+                "request":{
+                    "orgId":"0122839668758282240",
+                                    "status": "blocked"
+                                }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Organization-Update status
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  OrganizationUpdaterequest:
+    title: Organization-UpdateRequest
+    example:
+      params: {}
+      request:
+        externalId: 1206
+        provider: test
+        description: Anhra State Boardsssssss
+        address:
+          country: India
+          zipCode: 560035
+          createdDate: 2017-07-12 03:46:11:112+0530
+          city: bangalore
+          createdBy: 7d086e8c-68ac-4aaa-8b91-d75ff922bae5
+          state: Karnataka
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request'
+    required:
+    - params
+    - request
+  Request:
+    title: Request
+    type: object
+    properties:
+      externalId:
+        description: ''
+        type: string
+      provider:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      address:
+        $ref: '#/definitions/Address'
+    required:
+    - externalId
+    - provider
+    - description
+    - address
+  Address:
+    title: Address
+    type: object
+    properties:
+      country:
+        description: ''
+        type: string
+      zipCode:
+        description: ''
+        type: string
+      createdDate:
+        description: ''
+        type: string
+      city:
+        description: ''
+        type: string
+      createdBy:
+        description: ''
+        type: string
+      state:
+        description: ''
+        type: string
+    required:
+    - country
+    - zipCode
+    - createdDate
+    - city
+    - createdBy
+    - state
+  Http://{{host}}/v1/user/org/joinrequest:
+    title: http://{{host}}/v1/user/org/joinRequest
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request4'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request4:
+    title: Request4
+    type: object
+    properties:
+      userId:
+        description: ''
+        type: string
+      source:
+        description: ''
+        type: string
+      externalId:
+        description: ''
+        type: string
+    required:
+    - userId
+    - source
+    - externalId
+  RemoveMemberFromOrgrequest:
+    title: Remove Member from OrgRequest
+    example:
+      id: unique API ID
+      ts: 2013/10/15 16:16:39
+      params: {}
+      request:
+        userId: 123
+        organisationId: 0122852782085816320
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request6'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request6:
+    title: Request6
+    type: object
+    properties:
+      userId:
+        description: ''
+        type: string
+      organisationId:
+        description: ''
+        type: string
+    required:
+    - userId
+    - organisationId
+  OrganizationApproverequest:
+    title: Organization-ApproveRequest
+    example:
+      params: {}
+      request:
+        orgId: 0122839668758282240
+        isApproved: true
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request8'
+    required:
+    - params
+    - request
+  Request8:
+    title: Request8
+    type: object
+    properties:
+      orgId:
+        description: ''
+        type: string
+      isApproved:
+        description: ''
+        type: boolean
+    required:
+    - orgId
+    - isApproved
+  AddMemberToOrgrequest:
+    title: Add Member To OrgRequest
+    example:
+      id: unique API ID
+      ts: 2013/10/15 16:16:39
+      params: {}
+      request:
+        userName: testuser11
+        provider: sunbird-integrator-test.org
+        organisationId: 012307211894210560374
+        roles:
+        - CONTENT_CREATOR
+        - CONTENT_REVIEWER
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request10'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request10:
+    title: Request10
+    type: object
+    properties:
+      userName:
+        description: ''
+        type: string
+      provider:
+        description: ''
+        type: string
+      organisationId:
+        description: ''
+        type: string
+      roles:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - userName
+    - provider
+    - organisationId
+    - roles
+  Organisation Getrequest:
+    title: Organisation -GetRequest
+    example:
+      params: {}
+      request:
+        organisationId: 0123215468873728000
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request12'
+    required:
+    - params
+    - request
+  Request12:
+    title: Request12
+    type: object
+    properties:
+      organisationId:
+        description: ''
+        type: string
+    required:
+    - organisationId
+  OrganizationCreaterequest:
+    title: Organization-CreateRequest
+    example:
+      request:
+        orgName: Ekstep_12
+        description: description
+        externalId: 1206
+        provider: test12
+        isRootOrg: true
+        channel: test12
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request14'
+    required:
+    - request
+  Request14:
+    title: Request14
+    type: object
+    properties:
+      orgName:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      externalId:
+        description: ''
+        type: string
+      provider:
+        description: ''
+        type: string
+      isRootOrg:
+        description: ''
+        type: boolean
+      channel:
+        description: ''
+        type: string
+    required:
+    - orgName
+    - description
+    - externalId
+    - provider
+    - isRootOrg
+    - channel
+  Http://{{host}}/v1/user/org/v1/user/org/approverequest:
+    title: http://{{host}}/v1/user/org/v1/user/org/approveRequest
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request16'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request16:
+    title: Request16
+    type: object
+    properties:
+      userId:
+        description: ''
+        type: string
+      source:
+        description: ''
+        type: string
+      externalId:
+        description: ''
+        type: string
+      roles:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - userId
+    - source
+    - externalId
+    - roles
+  OrganizationUpdate statusrequest:
+    title: Organization-Update statusRequest
+    example:
+      params: {}
+      request:
+        orgId: 0122839668758282240
+        status: blocked
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request20'
+    required:
+    - params
+    - request
+  Request20:
+    title: Request20
+    type: object
+    properties:
+      orgId:
+        description: ''
+        type: string
+      status:
+        description: ''
+        type: string
+    required:
+    - orgId
+    - status
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
