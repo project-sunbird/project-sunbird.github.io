@@ -1,0 +1,83 @@
+<h1 id="medium-scale-deployment-of-sunbird">Medium scale Deployment of Sunbird</h1>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This section should expand as open source contributions to support multiple run times increase over time. Presently, the software and reference steps consider the following tech stack:</p>
+
+<p>Required:
+- Linux, preferably Ubuntu
+- <a href="https://docs.docker.com/engine/swarm/">Docker Swarm Mode</a>
+- <a href="https://www.ansible.com/">Ansible</a></p>
+
+<p>Optional:
+- A CI server, e.x. <a href="https://jenkins.io/">Jenkins</a>, to build extensions and take future upgrades
+- a source control mechanism, e.x. <a href="https://github.com/">Git</a></p>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="production">Production</h3>
+<p>You have a choice to use bare metal machines or go with a Cloud provider of your choice, which can provide you Linux runtime with root access. Initial scripts contain automation to setup Sunbird on <a href="https://azure.microsoft.com/en-in/">Azure</a> and assume that you have a Unix runtime on the machine you are initiating the installation.
+- Create a RSA 2048 bit SSH keypair
+- Set up Docker Swarm Mode using <a href="https://github.com/Azure/acs-engine">ACS-Engine</a>
+- Bootstrap the servers using <a href="#machine-bootstrap">Bootstrap script</a>
+- SSH into Master node
+- Clone <a href="https://github.com/project-sunbird/sunbird-devops">this repo</a>
+- Bootstrap <a href="#configuration-bootstrap">configuration</a>
+- Install <a href="#database-installations">databases</a>
+- Bootstrap <a href="#database-bootstrap">databases</a>
+- Deploy <a href="#service-deploy">services</a></p>
+
+<h2 id="installation-details">Installation Details</h2>
+<p>Getting started with installation can be a daunting task. Fortunately, we’ve simplified the installation process.</p>
+
+<h3 id="machine-bootstrap">Machine bootstrap</h3>
+<p>This bootstraps the VMs with initial configuration needed for automated script access.
+<code>
+ansible-playbook -i inventory/? --tags "bootstrap_any" -e "hosts=?" -e "bootstrap_secret_file=production" bootstrap.yml --ask-vault-pass
+</code></p>
+
+<h3 id="configuration-bootstrap">Configuration bootstrap</h3>
+<p>Typically, this step configures the production environment with the basic configuration required to boot up services, e.x. DB connection strings, secrets, etc</p>
+
+<p><code>ansible-playbook -i ansible/inventory/? ansible/bootstrap.yml --extra-vars hosts=production-swarm-manager swarm_master=true --tags bootstrap_swarm --vault-password-file /run/secrets/vault-pass</code></p>
+
+<h3 id="install-database">Install Database</h3>
+
+<p>Sunbird uses <a href="https://www.mongodb.com/">Mongo</a>, <a href="http://cassandra.apache.org/">Cassandra</a>, <a href="https://www.postgresql.org/">Postgres</a> and <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a> for various scaleable persistence and query needs.</p>
+
+<p>This repo contains provisioning scripts for DBs at <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/ansible/provision.yml">ansible/provision.yml</a>. You may use these or setup/reuse DB as appropriate in your deployment environments.</p>
+
+<p>All DBs have Backup and Restore <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/ansible">scripts</a>.</p>
+
+<h3 id="service-deploy">Service deploy</h3>
+<p>Sunbird has a set of services, serving separate functional needs. Refer to <a href="https://github.com/project-sunbird/sunbird-commons">sunbird-commons</a> for a better understanding of the service oriented design.</p>
+
+<h4 id="api-manager">API Manager</h4>
+
+<p><code>METADATA_FILE=? ARTIFACT_LABEL=gold ENV=production ./pipelines/api-manager/deploy.sh</code></p>
+
+<h4 id="proxy">Proxy</h4>
+
+<p><code>METADATA_FILE=? ARTIFACT_LABEL=gold ENV=production ./pipelines/proxy/deploy.sh</code></p>
+
+<h4 id="frontend">FrontEnd</h4>
+
+<h5 id="player">Player</h5>
+
+<p><code>METADATA_FILE=? ENV=production ARTIFACT_LABEL=gold ./pipelines/sunbird-player/deploy.sh</code></p>
+
+<h4 id="middleware">Middleware</h4>
+
+<h5 id="actor-service">Actor Service</h5>
+
+<p><code>METADATA_FILE=? ENV=production ARTIFACT_LABEL=gold ./pipelines/sunbird-actor-service/deploy.sh</code></p>
+
+<h5 id="content-service">Content Service</h5>
+
+<p><code>METADATA_FILE=? ENV=production ARTIFACT_LABEL=gold ./pipelines/sunbird-content-service/deploy.sh</code></p>
+
+<h5 id="learner-service">Learner Service</h5>
+
+<p><code>METADATA_FILE=? ENV=ntp-production ARTIFACT_LABEL=gold ./pipelines/sunbird-learner-service/deploy.sh</code>
+<code>METADATA_FILE</code> describes the version needed for deployment.</p>
+
+<p>.</p>

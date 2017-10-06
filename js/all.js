@@ -5547,6 +5547,12 @@ exports.cloneDom = function(dom, options) {
 
 },{"./parse":"/home/ttpllt11/Documents/git/sunbird/node_modules/cheerio/lib/parse.js","dom-serializer":"/home/ttpllt11/Documents/git/sunbird/node_modules/dom-serializer/index.js"}],"/home/ttpllt11/Documents/git/sunbird/node_modules/cheerio/package.json":[function(require,module,exports){
 module.exports={
+  "_args": [
+    [
+      "cheerio@0.19.0",
+      "/home/ttpllt11/Documents/git/sunbird"
+    ]
+  ],
   "_from": "cheerio@0.19.0",
   "_id": "cheerio@0.19.0",
   "_inBundle": false,
@@ -5567,8 +5573,7 @@ module.exports={
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/cheerio/-/cheerio-0.19.0.tgz",
-  "_shasum": "772e7015f2ee29965096d71ea4175b75ab354925",
-  "_spec": "cheerio@0.19.0",
+  "_spec": "0.19.0",
   "_where": "/home/ttpllt11/Documents/git/sunbird",
   "author": {
     "name": "Matt Mueller",
@@ -5578,7 +5583,6 @@ module.exports={
   "bugs": {
     "url": "https://github.com/cheeriojs/cheerio/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "css-select": "~1.0.0",
     "dom-serializer": "~0.1.0",
@@ -5586,7 +5590,6 @@ module.exports={
     "htmlparser2": "~3.8.1",
     "lodash": "^3.2.0"
   },
-  "deprecated": false,
   "description": "Tiny, fast, and elegant implementation of core jQuery designed specifically for the server",
   "devDependencies": {
     "benchmark": "~1.0.0",

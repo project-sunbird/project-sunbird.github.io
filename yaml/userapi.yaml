@@ -1,0 +1,838 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Sunbird User API(s)
+  description: >-
+    The User API resources perform operations related to 
+    the _Users_ on the Sunbird Platform. The basic operations include Creation, Updation,Reading & searching.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/user/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+ /create:
+    post:
+      description: >-
+       This API is associated with creation of user on the Sunbird Platform.
+          - **_/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Create User
+      tags:
+      - User APIs
+      operationId: Create User
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the user to be created, i.e an array of parameters known as attributes of the user the content.
+        schema:
+          $ref: '#/definitions/CreateUserrequest'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **create user** request was sent.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Create User" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Create Content" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /search:
+    post:
+      description: >-
+       This API is associated with searching a user on the Sunbird Platform.
+          - **_/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Search User
+      tags:
+      - User APIs
+      operationId: Search User
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the user to be fetched.
+        schema:
+          $ref: '#/definitions/SearchUserrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Search User** request was sent.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Search User" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Search User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /user/v1/search
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer {{api_key}}
+            X-Authenticated-Userid: '{{user_id}}'
+            ts: 2017-05-25 10:18:56:578+0530
+          body: >-
+            {
+
+                "request": {
+
+                    "filters":{
+
+                      "provider": ["apekx"]
+
+                    },
+
+                    "limit": 500
+
+                }
+
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Search User
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /profile/read:
+    post:
+      description: >-
+        This API is associated with fetching User profile on the Sunbird Platform.
+          - **_/profile/read_** endpoint executes the "Get User By Login Id" request to fetch the User profile.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Get User by Login Id
+      tags:
+      - User APIs
+      operationId: Get User by Login Id
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the user to be created, i.e an array of parameters known as attributes of the user the content.
+        schema:
+          $ref: '#/definitions/GetUserByLoginIdrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: X-Authenticated-UserId
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Get User by Login Id** request was sent.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Fetching User profile" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"Fetching User profile" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /user/v1/profile/read
+          headers:
+            Content-Type: application/json
+            X-Authenticated-UserId: '{{user_id}}'
+            ts: 2017-05-25 10:18:56:578+0530
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "loginId": "test_apis_2@sunbird-integrator-test.org"
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get User by Login Id
+        x-testDescription: create user
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /read/{User_Id}:
+    parameters:
+      - in: path
+        name: User_Id
+        type: string
+        required: true
+        description: 'Please append a valid User Id To the Request URL'   
+    get:
+      description: >-
+        This API is associated with searching user on the Sunbird Platform.
+          - **_/read/{User_Id}_** endpoint executes the "Fetch User profile" request. 
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Get User by Id
+      tags:
+      - User APIs
+      operationId: Get User by Id
+      produces:
+      - application/json
+      parameters:
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Get User by Login Id** request was sent.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get User by Id" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"Get User by Id" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /user/v1/read/{User_Id}
+          headers:
+            X-Authenticated-Userid: '{{user_id}}'
+            Content-Type: application/json
+            ts: 2017-05-25 10:18:56:578+0530
+            Authorization: Bearer {{api_key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get User by Id
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false      
+ /update:
+    patch:
+      description:  >-
+        This API is associated with updating user details on the Sunbird Platform.
+          - **_/update/_** endpoint executes the "Fetch User profile" request 
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Update User
+      tags:
+      - User APIs
+      operationId: Update User
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about the user to be updated.
+        schema:
+          $ref: '#/definitions/UpdateUserrequest'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Update User** request was sent.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Update User" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Update User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false  
+definitions:
+  CreateUserrequest:
+    title: Create UserRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+      - request
+  Request:
+    title: Request
+    type: object
+    properties:
+      firstName:
+        description: ''
+        type: string
+      lastName:
+        description: ''
+        type: string
+      password:
+        description: ''
+        type: string
+      provider:
+        description: ''
+        type: string
+      email:
+        description: ''
+        type: string
+      userName:
+        description: ''
+        type: string
+      phone:
+        description: ''
+        type: string
+      gender:
+        description: ''
+        type: string
+      rootOrgId:
+        description: ''
+        type: string
+      avatar:
+        description: ''
+        type: string
+      dob:
+        description: ''
+        type: string
+      aadhaarNo:
+        description: ''
+        type: string
+      language:
+        description: ''
+        type: array
+        items:
+          type: string
+      subject:
+        description: ''
+        type: array
+        items:
+          type: string
+      address:
+        description: ''
+        type: array
+        items:
+          $ref: '#/definitions/Address'
+      education:
+        description: ''
+        type: array
+        items:
+          $ref: '#/definitions/Education'
+      jobProfile:
+        description: ''
+        type: array
+        items:
+          $ref: '#/definitions/JobProfile'
+    required:
+      - firstName
+      - lastName
+      - password
+      - provider
+      - email
+      - userName
+      - phone
+      - gender
+      - rootOrgId
+      - avatar
+      - dob
+      - aadhaarNo
+      - language
+      - subject
+      - address
+      - education
+      - jobProfile
+  Address:
+    title: Address
+    type: object
+    properties:
+      addType:
+        description: ''
+        type: string
+      addressLine1:
+        description: ''
+        type: string
+      addressLine2:
+        description: ''
+        type: string
+      city:
+        description: ''
+        type: string
+      state:
+        description: ''
+        type: string
+      zipCode:
+        description: ''
+        type: string
+    required:
+      - addType
+      - addressLine1
+      - addressLine2
+      - city
+      - state
+      - zipCode
+  Education:
+    title: Education
+    type: object
+    properties:
+      degree:
+        description: ''
+        type: string
+      yearOfPassing:
+        description: ''
+        type: integer
+        format: int32
+      name:
+        description: ''
+        type: string
+      boardOrUniversity:
+        description: ''
+        type: string
+      address:
+        $ref: '#/definitions/Address4'
+      percentage:
+        description: ''
+        type: number
+        format: double
+      grade:
+        description: ''
+        type: string
+    required:
+      - degree
+      - yearOfPassing
+      - name
+      - boardOrUniversity
+      - address
+  Address4:
+    title: Address4
+    type: object
+    properties:
+      addressLine1:
+        description: ''
+        type: string
+      addressLine2:
+        description: ''
+        type: string
+      city:
+        description: ''
+        type: string
+      state:
+        description: ''
+        type: string
+      zipCode:
+        description: ''
+        type: string
+    required:
+      - addressLine1
+      - addressLine2
+      - city
+      - state
+      - zipCode
+  JobProfile:
+    title: JobProfile
+    type: object
+    properties:
+      jobName:
+        description: ''
+        type: string
+      role:
+        description: ''
+        type: string
+      joiningDate:
+        description: ''
+        type: string
+      endDate:
+        description: ''
+        type: string
+      orgId:
+        description: ''
+        type: string
+      orgName:
+        description: ''
+        type: string
+      subject:
+        description: ''
+        type: array
+        items:
+          type: string
+      address:
+        $ref: '#/definitions/Address4'
+    required:
+      - jobName
+      - role
+      - joiningDate
+      - endDate
+      - orgId
+      - orgName
+      - subject
+      - address
+  GetUserByLoginIdrequest:
+    title: Get User by Login IdRequest
+    example:
+      request:
+        loginId: test_apis_2@sunbird-integrator-test.org
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request50'
+    required:
+      - request
+  Request50:
+    title: Request50
+    type: object
+    properties:
+      loginId:
+        description: ''
+        type: string
+    required:
+      - loginId
+  SearchUserrequest:
+    title: Search UserRequest
+    example:
+      request:
+        filters:
+          provider:
+          - apekx
+        limit: 500
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request18'
+    required:
+    - request
+  Request18:
+    title: Request18
+    type: object
+    properties:
+      filters:
+        $ref: '#/definitions/Filters'
+      limit:
+        description: ''
+        type: integer
+        format: int32
+    required:
+    - filters
+    - limit
+  Filters:
+    title: Filters
+    type: object
+    properties:
+      provider:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - provider
+  UpdateUserrequest:
+    title: Update UserRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request74'
+    required:
+    - request
+  Request74:
+    title: Request74
+    type: object
+    properties:
+      userId:
+        description: ''
+        type: string
+      firstName:
+        description: ''
+        type: string
+      lastName:
+        description: ''
+        type: string
+      gender:
+        description: ''
+        type: string
+      rootOrgId:
+        description: ''
+        type: string
+      avatar:
+        description: ''
+        type: string
+      dob:
+        description: ''
+        type: string
+      aadhaarNo:
+        description: ''
+        type: string
+      language:
+        description: ''
+        type: array
+        items:
+          type: string
+      subject:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - userId
+    - firstName
+    - lastName
+    - gender
+    - rootOrgId
+    - avatar
+    - dob
+    - aadhaarNo
+    - language
+    - subject
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'

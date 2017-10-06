@@ -1,0 +1,888 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Course Batch Management API(s)
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: admin@open-sunbird.org
+  description: >-
+        The Course Batch Management API resources perform operations related to management of batches for courses on the Sunbird Platform. The basic operations include Creation, Updation,joining ,listing.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /batch/create:
+    post:
+      description: >-
+        This API is associated with creating a batch on the Sunbird Platform.
+          - The Format of the resource URL is '{{host}}/v1/course/batch/create' 
+          - The **_/batch/create_** endpoint executes "create batch" request to create a new batch.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Creates a Batch
+      tags:
+      - Course Batch APIs
+      operationId: '{{host}}/v1/course/batch/create'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the new batch to be created.
+        schema:
+          $ref: '#/definitions/{{host}}~1v1~1course~1batch~1createrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **create batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."create batch " operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"create batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /batch/create
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+          body: "{\n\"request\": {\n      \"courseId\": \"do_212282810555342848180\", \n      \"name\": \"Batch-3\", \n      \"description\": \"batch description1\", \n      \"enrollmentType\": \"open\", \n      \"startDate\": \"2017-09-04\", \n      \"endDate\": \"2017-12-12\" \n     \n}\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/course/batch/create'
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /batch/read/{Batch_Id}:
+    parameters:
+      - in: path
+        name: Batch_Id
+        type: string
+        required: true
+        description: 'Please append a valid Batch Id To the Request URL'   
+    get:
+      description: >-
+        This API is associated with fetching a particular batch on the Sunbird Platform.
+          - {...}refers to a section of read/{Batch_Id} endpoint URL path that needs to be replaced by appropriate Id.
+          - The **_/batch/read/{Batch_Id}_** endpoint executes "Fetch a batch" request to fetch a particular batch.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Fetches a particular Batch
+      tags:
+      - Course Batch APIs
+      operationId: getBatch
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Fetch a batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Fetch a batch" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"Fetch a batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /batch/read/{Batch_Id}
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: getBatch
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /batch/user/add/{Batch_Id}:
+    parameters:
+      - in: path
+        name: Batch_Id
+        type: string
+        required: true
+        description: 'Please append a valid Batch Id To the Request URL'   
+    post:
+      description: >-
+        This API is associated with addding a user  to a particular batch on the Sunbird Platform.
+          - The format of the resource URL is '{{host}}/course/v1/batch/user/add/{Batch_Id}'
+          - The **_/batch/user/add/{Batch_Id}_** endpoint executes "Add user to a batch" request to add a registered user to a specific batch.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Add User to a specific batch
+      tags:
+      - Course Batch APIs
+      operationId: '{{host}}/course/v1/batch/user/add/0123164681508700160'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the user to be added to a batch.
+        schema:
+          $ref: '#/definitions/{{host}}~1course~1v1~1batch~1user~1add~10123164681508700160request'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Add user to a batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Add user to a batch" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"Add user to a batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /batch/user/add/{Batch_Id}
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+          body: "{\n\"request\": {\n      \"userIds\":[\"f741322b-41f9-4392-b4ac-6aa7d878afbb\"]\n     \n}\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/course/v1/batch/user/add/0123164681508700160'
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /user/enrollment/list/{Batch_Id}:
+    parameters:
+      - in: path
+        name: Batch_Id
+        type: string
+        required: true
+        description: 'Please append a valid Batch Id To the Request URL'   
+    get:
+      description: >-
+        This API is associated with fetching a list of enrolled users in a particular batch on the Sunbird Platform.
+          - The format of the resource URL is '{{host}}/v1/user/enrollment/list/{Batch_Id}'
+          - The **_/user/enrollment/list/{Batch_Id}_** endpoint executes "List users enrolled in a specific batch" request to fetch the the list of users enrolled in a particular batch.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Lists the enrolled users in a batch
+      tags:
+      - Course Batch APIs
+      operationId: '{{host}}/v1/user/enrollment/list/f741322b-41f9-4392-b4ac-6aa7d878afbb'
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **List users enrolled in a specific batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."List users enrolled in a specific batch" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"List users enrolled in a specific batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /user/enrollment/list/f741322b-41f9-4392-b4ac-6aa7d878afbb
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/user/enrollment/list/f741322b-41f9-4392-b4ac-6aa7d878afbb'
+        x-testDescription: 'get course enrollemnt '
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /batch/list:
+    post:
+      description: >-
+        This API is associated with fetching and listing the existing batches on the Sunbird Platform.
+          - The format of the resource URL is '{{host}}/course/v1/batch/list'
+          - The **_/batch/read_** endpoint executes "Lists the existing batches" request to fetch the existing batches.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Lists the existing batches
+      tags:
+      - Course Batch APIs
+      operationId: '{{host}}/course/v1/batch/list'
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Lists the existing batches** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Lists the existing batches" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"Lists the existing batches" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /batch/list
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/course/v1/batch/list'
+        x-testDescription: Search batch
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /batch/update:
+    patch:
+      description: >-
+        This API is associated with updating a batch on the Sunbird Platform.
+          - The **_/batch/update_** endpoint executes "Update a batch" request to update an existing batch.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Course Batch Update
+      tags:
+      - Course Batch APIs
+      operationId: Course Batch Update
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the batch to be updated.
+        schema:
+          $ref: '#/definitions/CourseBatchUpdaterequest'
+      - name: Accept
+        in: header
+        required: true
+        type: string
+        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Update a batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird. '
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Update a batch" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST,"Update a batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /batch/update
+          headers:
+            Content-Type: application/json
+            Accept: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+          body: "{\n  \"request\": {\n    \"createdFor\": [\n      \"01230654824904294426\"\n    ],\n    \"endDate\": \"2017-12-31\",\n    \"description\": \"Take a few minutes to explore the organization of Sunbird.\",\n    \"name\": \"Batch_4 for Test_Course_2\",\n    \"id\": \"01232504793065062411\",\n    \"enrollmentType\": \"open\",\n    \"courseId\": \"do_212282810437918720179\",\n    \"status\": 0,\n    \"hashTagId\":\"01232504793065062413\"\n  }\n} "
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Course Batch Update
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  '{{host}}/course/v1/batch/user/add/0123164681508700160request':
+    title: '{{host}}/course/v1/batch/user/add/0123164681508700160Request'
+    example:
+      request:
+        userIds:
+        - f741322b-41f9-4392-b4ac-6aa7d878afbb
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+    - request
+  Request:
+    title: Request
+    type: object
+    properties:
+      userIds:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - userIds
+  CreateCourseBatchRequest:
+    title: create course batch Request
+    example:
+      request:
+        courseId: do_212282810555342848180
+        name: Batch-test
+        description: batch description1
+        enrollmentType: invite-only
+        startDate: 2017-08-09
+        endDate: 2017-12-12
+        createdBy: 123
+        createdFor:
+        - 01230315770395852827
+        - 01230315919474688028
+        mentors:
+        - d6592369-1bba-4be5-8cda-03fab7c16277
+        - c4d0bc97-32a4-4352-85ac-95067dff6d83
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request3'
+    required:
+    - request
+  Request3:
+    title: Request3
+    type: object
+    properties:
+      courseId:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      enrollmentType:
+        description: ''
+        type: string
+      startDate:
+        description: ''
+        type: string
+      endDate:
+        description: ''
+        type: string
+      createdBy:
+        description: ''
+        type: string
+      createdFor:
+        description: ''
+        type: array
+        items:
+          type: string
+      mentors:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+    - courseId
+    - name
+    - description
+    - enrollmentType
+    - startDate
+    - endDate
+    - createdBy
+    - createdFor
+    - mentors
+  '{{host}}/v1/course/batch/createrequest':
+    title: '{{host}}/v1/course/batch/createRequest'
+    example:
+      request:
+        courseId: do_212282810555342848180
+        name: Batch-3
+        description: batch description1
+        enrollmentType: open
+        startDate: 2017-09-04
+        endDate: 2017-12-12
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request5'
+    required:
+    - request
+  Request5:
+    title: Request5
+    type: object
+    properties:
+      courseId:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      enrollmentType:
+        description: ''
+        type: string
+      startDate:
+        description: ''
+        type: string
+      endDate:
+        description: ''
+        type: string
+    required:
+    - courseId
+    - name
+    - description
+    - enrollmentType
+    - startDate
+    - endDate
+  CourseBatchUpdaterequest:
+    title: Course Batch UpdateRequest
+    example:
+      request:
+        createdFor:
+        - 01230654824904294426
+        endDate: 2017-12-31
+        description: Take a few minutes to explore the organization of Udacity Retain.
+        name: Batch_4 for Test_Course_2
+        id: 01232504793065062411
+        enrollmentType: open
+        courseId: do_212282810437918720179
+        status: 0
+        hashTagId: 01232504793065062413
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request7'
+    required:
+    - request
+  Request7:
+    title: Request7
+    type: object
+    properties:
+      createdFor:
+        description: ''
+        type: array
+        items:
+          type: string
+      endDate:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: string
+      id:
+        description: ''
+        type: string
+      enrollmentType:
+        description: ''
+        type: string
+      courseId:
+        description: ''
+        type: string
+      status:
+        description: ''
+        type: integer
+        format: int32
+      hashTagId:
+        description: ''
+        type: string
+    required:
+    - createdFor
+    - endDate
+    - description
+    - name
+    - id
+    - enrollmentType
+    - courseId
+    - status
+    - hashTagId
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
