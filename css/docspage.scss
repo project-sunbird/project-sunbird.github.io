@@ -142,6 +142,9 @@
 .inner__content.header{padding:0 45px;}
 .inner__content.header h1{margin:0; padding:0;line-height: 1;}
 @media screen and (max-width:768px){
+.inner__content.header{padding:0 15px;}
+}
+@media screen and (max-width:768px){
 .logo{padding-bottom:0;}
 .logo img{max-height:45px;}
 .search-cover{padding-top:0;}

@@ -3338,7 +3338,7 @@ iframe .btn.omega {
 
 .footer {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   font-size: 14px; }
   .footer .footer__top {
     width: 100%;
@@ -3419,6 +3419,9 @@ iframe .btn.omega {
 iframe#freshwidget-embedded-form .copyright {
   display: none !important; }
 
+@media screen and (min-width: 992px) {
+  .page-footer {
+    display: none; } }
 h2, h3, h4 {
   margin-top: 30px;
   display: inline-block;
@@ -3486,6 +3489,10 @@ body > header {
 
 .fixed-content {
   margin-top: 75px; }
+
+.inner__content.header {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px !important; }
 
 .inner__content .tabs .switcher {
   margin-bottom: 20px;
@@ -3562,7 +3569,7 @@ body > header {
 @media (min-width: 991px) {
   .sidebar-container .inner__searchbar {
     position: fixed;
-    top: 51px;
+    top: 70px;
     width: 275px; } }
 .sidebar-container .inner__searchbar .search .search-icon {
   position: absolute;
@@ -3679,6 +3686,20 @@ body > header {
     background: -webkit-linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
     background: linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 ); } }
+
+.sidebar-group.architecture,
+.sidebar-group.features-documentation,
+.sidebar-group.developer-docs,
+.sidebar-group.faqs {
+  display: none !important; }
+
+.sidebar-wrapper.architecture .sidebar-group.architecture,
+.sidebar-wrapper.architecture-views .sidebar-group.architecture,
+.sidebar-wrapper.features-documentation .sidebar-group.features-documentation,
+.sidebar-wrapper.developer-docs .sidebar-group.developer-docs,
+.sidebar-wrapper.apis .sidebar-group.developer-docs,
+.sidebar-wrapper.faqs .sidebar-group.faqs {
+  display: block !important; }
 
 .inner__content blockquote {
   background: #FFFFFF;
@@ -3990,6 +4011,9 @@ img.nofloat {
   line-height: 1; }
 
 @media screen and (max-width: 768px) {
+  .inner__content.header {
+    padding: 0 15px; } }
+@media screen and (max-width: 768px) {
   .logo {
     padding-bottom: 0; }
 
@@ -4073,7 +4097,7 @@ img.nofloat {
     left: 275px; } }
 @media (max-width: 991px) {
   .content {
-    margin-top: 53px;
+    margin-top: 70px;
     margin-bottom: 53px; } }
 
 .inner__content.no-selector {
