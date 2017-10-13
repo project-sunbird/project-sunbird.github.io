@@ -39,3 +39,7 @@ body > header {
     display: block;
 }
 .fixed-content{margin-top:75px;}
+.inner__content.header {
+	border-bottom:2px solid #ddd;
+	padding-bottom:10px !important;
+}

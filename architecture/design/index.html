@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html>
-  
-<head>
+  <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-	<title>Architecture Design - Sunbird</title>
-
-	<meta name="keywords" content="Architecture Design" />
-	<meta name="description" content="Architecture Design" />
-
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
-
 	<meta name="msapplication-TileColor" content="#65d3f7">
 	<meta name="msapplication-TileImage" content="/img/favicon/mstile-150x150.png">
-
-	<!-- Open Graph tags -->
-	<meta property="og:title" content="Architecture Design - Sunbird" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="/architecture/design/" />
-	<meta property="og:image" content="/img/og_image.png" />
-	<meta property="og:description" content="Architecture Design" />
-
-	<!-- Twitter Card tags -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@sunbird" />
-	<meta name="twitter:title" content="Architecture Design" />
-	<meta name="twitter:description" content="Architecture Design" />
-	<meta name="twitter:image" content="/img/og_image.png" />
 	
+	<title>Sunbird Design</title>
+	<meta name="description" content="Sunbird Site Architecture Design"/>
+
 	<meta http-equiv="cache-control" content="max-age=0" />
 	<meta http-equiv="cache-control" content="no-cache" />
-	<meta http-equiv="expires" content="0" />
-	<meta http-equiv="expires" content="Tue, 01 Jan 2018 1:00:00 GMT" />
+	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
+	<meta name="last-modified" content="2017-10-13 18:41:27 +0530">
+	<meta http-equiv="Expires" content="600" />
+	
+	
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<link rel="stylesheet" href="/css/owl/owl.carousel.min.css?13102017"  />
+	<link rel="stylesheet" href="/css/style.css?13102017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="/js/all.js?1.0.0"></script>
-
-	<link href="/css/owl/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-	<link href="/css/style.css?1.0.0" rel="stylesheet" type="text/css" />
-
-	
-	
+	<script type="text/javascript" src="/js/bootstrap.min.js?13102017"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js?13102017"></script>
 
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -60,9 +40,6 @@
 	  gtag('config', 'UA-106552125-1');
 	</script>
 </head>
-
-
-
 
   <body>
   <div class="container inner container-height docs">
@@ -77,371 +54,322 @@
       </button>
     </header>
     <nav class="sidebar-container" id="mobile-dropdown">
-      <!--<div class="inner__searchbar">
-        <script type="text/javascript">$(function() { React.render(React.createElement(SearchBar, null), $("#g6yp7as04wj")[0]); });</script><div id="g6yp7as04wj"><div class="search" data-reactid=".17wk2kbs6be" data-react-checksum="-1388077478"><div class="search-icon" data-reactid=".17wk2kbs6be.0"><i class="material-icons" data-reactid=".17wk2kbs6be.0.0">search</i></div><div class="search-bar" data-reactid=".17wk2kbs6be.1"><form data-reactid=".17wk2kbs6be.1.0"><input type="text" name="search" class="" autocomplete="off" placeholder="Search" value="" data-reactid=".17wk2kbs6be.1.0.0"></form></div><div class="search-results" data-reactid=".17wk2kbs6be.2"></div></div></div>
-      </div>-->
       <div class="inner__sidebar">
         <div id="">
-	<div class="sidebar-wrapper">
+	<div class="sidebar-wrapper architecture">
 		<div class="" >
-			<a href="/architecture">
+			<a href="/architecture/">
 				<h4 class="sidebar-group-title">Architecture</h4>
 			</a>
-			<ul class="sidebar-group" >
+			<ul class="sidebar-group architecture">
 				<li>
-					<a href="/architecture">Overview</a>
+					<a href="/architecture/overview/">Overview</a>
 				</li>
 				<li>
-					<a href="/architecture/design">Design</a>
+					<a href="/architecture/design/">Design</a>
 				</li>
 				<li>
 					<div class="">
-						<h4 class="sidebar-group-title">Elementary Views</h4>
+						<a href="/architecture/views/elementryview/">Views</a>
 						<ul class="sidebar-group">
 							<li>
-								<a href="/architecture/views/logical">Logical View</a>
+								<a href="/architecture/views/logical/">Logical View</a>
 							</li>
 							<li>
-								<a href="/architecture/views/physical">Physical View</a>
+								<a href="/architecture/views/physical/">Physical View</a>
 							</li>
 							<li>
-								<a href="/architecture/views/conceptual">Conceptual View</a>
+								<a href="/architecture/views/conceptual/">Conceptual View</a>
 							</li>
 							<li>
-								<a href="/architecture/views/deployment">Deployment View</a>
+								<a href="/architecture/views/deployment/">Deployment View</a>
 							</li>
 						</ul>
 					</div>
+				</li>
+				<li>
+					<a href="/architecture/usecase/">Use Cases</a>
 				</li>
 			</ul>
 			<a href="/features-documentation/">
 				<h4 class="sidebar-group-title">Product Features</h4>
 			</a>
-			<ul class="sidebar-group" >
+			<ul class="sidebar-group features-documentation" >
 				<li>
-					<a href="/features-documentation/">Onboarding</a>
+					<a href="/features-documentation/onboarding/">Onboarding</a>
 				</li>
 				<li>
-					<a href="/features-documentation/login">Login</a>
+					<a href="/features-documentation/login/">Login</a>
 				</li>
 				<li>
-					<a href="/features-documentation/administration">Administration</a>
-				</li>
-				<li>
-					<a href="/features-documentation/userrolepermission">User Roles and Permissions</a>
-				</li>
-				<li>
-					<div class="">
-						<ul class="sidebar-group">
-							<li>
-								<a href="/features-documentation/userprofile">User Profile</a>
-							</li>
-							<li>
-								<a href="/features-documentation/workspace">Workspace</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="/features-documentation/coursetraining">Courses and Training</a>
-				</li>
-				<li>
-					<a href="/features-documentation/resources">Resources</a>
-				</li>
-				<li>
-					<div class="">
-						<a href="/features-documentation/contentlifecycle" class="sidebar-group-title">Content Lifecycle</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="/features-documentation/contentlifecycle">Content Creation</a>
-							</li>
-							<li>
-								<a href="/features-documentation/review">Review</a>
-							</li>
-							<li>
-								<a href="/features-documentation/publishing">Publishing</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<a href="/features-documentation/contenteditor">Content Editor</a>
-				</li>
-				<li>
-					<div class="">
-						<a href="/features-documentation/guidelines" class="sidebar-group-title">Guidelines</a>
-						<ul class="sidebar-group">
-							<li>
-								<a href="/features-documentation/intellectualproperty">Intellectual Property</a>
-							</li>
-							<li>
-								<a href="/features-documentation/contentsubmission">Content Submission</a>
-							</li>
-							<li>
-								<a href="/features-documentation/codesubmission">Code Submission</a>
-							</li>
-							<li>
-								<a href="/features-documentation/review">Review</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li>
-					<div class="">
-						<a href="/participate/">Participate</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/participate/">Participation Process</a>
-							</li>
-							<li>
-								<a href="#">Suggest Design</a>
-							</li>
-							<li>
-								<a href="#">Write Documentation</a>
-							</li>
-							<li>
-								<a href="#">Write Code</a>
-							</li>
-							<li>
-								<a href="#">Test</a>
-							</li>
-							<li>
-								<a href="#">Answer Questions</a>
-							</li>
-							<li>
-								<a href="#">Review</a>
-							</li>
-							<li>
-								<a href="#">Mentor</a>
-							</li>
-							<li>
-								<a href="#">Maintain</a>
-							</li>
-						</ul>-->
-					</div>
-				</li>
-				<li>
-					<a href="/features-documentation/reportinganalytics">Reporting and Analytics</a>
-				</li>
-				<li>
-					<a href="/features-documentation/collaborationpartnership">Collaboration and Partnership</a>
-				</li>
-				<li>
-					<a href="/features-documentation/supportedenvironment">Supported Environments</a>
-				</li>
-			</ul>
-			<a href="/developer-docs">
-				<h4 class="sidebar-group-title">Developer Documentation</h4>
-			</a>
-			<ul class="sidebar-group" >
-				<li>
-					<a href="/developer-docs/getting_started/">Getting Started</a>
+					<a href="/features-documentation/administration/">Administration</a>
 					<ul class="sidebar-group">
 						<li>
-							<a href="/developer-docs/getting_started/">Supported Environments</a>
+							<a href="/features-documentation/register_org/">Register Organizations</a>
+						</li>
+						<li>
+							<a href="/features-documentation/register_user/">Register Users</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="/developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+					<a href="/features-documentation/userrolepermission/">User Roles and Permissions</a>
 				</li>
 				<li>
 					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/developer_install/">Installing Sunbird</a>
 						<ul class="sidebar-group">
 							<li>
-								<a href="/developer-docs/developer_install/#prerequisites">Prerequisites</a>
-							</li>
-							<!--<li>
-								<a href="/developer-docs/developer_install/#setup">Quick Installation</a>
-							</li>-->
-							<li>
-								<a href="/developer-docs/developer_install/#setup">Complete Installation Procedure</a>
+								<a href="/features-documentation/userprofile/">User Profile</a>
 							</li>
 							<li>
-								<a href="/developer-docs/medium_scale_deploy">Medium Scale Deployment</a>
-							</li>
-							<li>
-								<a href="/developer-docs/large_scale_deploy">Large Scale Deployment</a>
+								<a href="/features-documentation/workspace/">Workspace</a>
 							</li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/extending_sunbird/">Extending Sunbird</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/extending_sunbird/">Overview</a>
-							</li>
-							<li>
-								<a href="/developer-docs/extending_sunbird/">Extension Points</a>
-							</li>
-							<li>
-								<a href="/developer-docs/extending_sunbird/">Extension Options</a>
-							</li>
-						</ul>-->
-					</div>
+					<a href="/features-documentation/coursetraining/">Courses and Training</a>
+				</li>
+				<li>
+					<a href="/features-documentation/resources/">Resources</a>
+				</li>
+				<li>
+					<a href="/features-documentation/contentlifecycle/">Content Lifecycle</a>
+				</li>
+				<li>
+					<a href="/features-documentation/contentcreation/">Content Creation</a>
+				</li>
+				<li>
+					<a href="/features-documentation/contenteditor/">Content Editor</a>
+				</li>
 				</li>
 				<li>
 					<div class="">
-						<a class="sidebar-group-title" href="/developer-docs/customize_sunbird/">Customizing Sunbird</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/customize_sunbird/#changing-the-look-and-feel">Changing the Look and Feel</a>
-							</li>
-						</ul>-->
-					</div>
-				</li>
-				<li>
-					<div class="">
-						<a class="sidebar-group-title" href="/apis/">API Reference</a>
+						<a href="/features-documentation/guidelines/" >Guidelines</a>
 						<ul class="sidebar-group">
 							<li>
-								<a href="/developer-docs/api_ref/">Custom Javascript Plugins</a>
-							</li>
-							<li>
-								<a href="/apis/">Sunbird REST APIs</a>
+								<a href="/features-documentation/intellectualproperty/">Intellectual Property</a>
 							</li>
 						</ul>
 					</div>
 				</li>
+				<!--<li>
+					<a href="/features-documentation/reportinganalytics/">Reporting and Analytics</a>
+				</li>-->
 				<li>
-					<div class="">
-						<a class="sidebar-group-title">Code Contribution</a>
-						<!--<ul class="sidebar-group">
-							<li>
-								<a href="/developer-docs/code_contribute/">Overview</a>
-							</li>
-							<li>
-								<a href="/developer-docs/code_contribute/">Guidelines</a>
-							</li>
-							<li>
-								<a href="/developer-docs/code_contribute/">Contributor Roles</a>
-							</li>
-						</ul>-->
-					</div>
+					<a href="/features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
 				</li>
-			</ul>
-			<a href="/faqs/">
-				<h4 class="sidebar-group-title">Frequently asked questions</h4>
-			</a>
-			<ul class="sidebar-group" >
-				<li>
-					<a href="/faqs/audience">Audience</a>
-				</li>
-				<li>
-					<a href="/faqs/contentcreation">Content Creation</a>
-				</li>
-				<li>
-					<a href="/faqs/content_format">Content Format</a>
-				</li>
-				<li>
-					<a href="/faqs/content_repo">Content Repo</a>
-				</li>
-				<li>
-					<a href="/faqs/contentreviews">Content Review</a>
-				</li>
-				<li>
-					<a href="/faqs/content_types">Content Types</a>
-				</li>
-				<li>
-					<a href="/faqs/content_upload">Content Upload</a>
-				</li>
-				<li>
-					<a href="/faqs/feature">Features</a>
-				</li>
-				<li>
-					<a href="/faqs/fixerrors">Fix Errors</a>
-				</li>
-				<li>
-					<a href="/faqs/glossary">Glossary</a>
-				</li>
-				<li>
-					<a href="/faqs/helpsupport">Help Support</a>
-				</li>
-				<li>
-					<a href="/faqs/intellectual_propertylicensesstandards">Intellectual Property Licenses Standards</a>
-				</li>
-				<li>
-					<a href="/faqs/registrationenrolment">Registration Enrollment</a>
-				</li>
-				<li>
-					<a href="/faqs/signin">Sign In</a>
-				</li>
-				<li>
-					<a href="/faqs/taxonomymetadataframework">Taxonomy Meta Data Framework</a>
-				</li>
-				<li>
-					<a href="/faqs/user_rightspermissions">Users Rights Permission</a>
-				</li>
-			</ul>
-		</div>
+				</ul>
+				<a href="/developer-docs/">
+					<h4 class="sidebar-group-title">Developer Documentation</h4>
+				</a>
+				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="/developer-docs/installation_overview/">Installation Overview</a>
+					</li>
+					<!--<li>
+						<a href="/developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+					</li>-->
+					<li>
+						<a  href="/developer-docs/developer_install/">Install Sunbird on Laptop</a>
+					</li>
+					<li>
+						<a href="/developer-docs/medium_scale_deploy/">Medium Scale Deployment</a>
+					</li>
+					<!--<li>
+						<div class="">
+							<a class="sidebar-group-title" href="/developer-docs/extending_sunbird/">Extending Sunbird</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a class="sidebar-group-title" href="/developer-docs/customize_sunbird/">Customizing Sunbird</a>
+						</div>
+					</li>-->
+					<li>
+						<div class="">
+							<a  href="/apis/">API References</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="/apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a>
+								</li>
+								<li>
+									<a href="/apis/content/" target="_blank">Content APIs</a>
+								</li>
+								<li>
+									<a href="/apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a>
+								</li>
+								<li>
+									<a href="/apis/datasyncapi/" target="_blank">Data Sync APIs</a>
+								</li>
+								<li>
+									<a href="/apis/metricsapi/" target="_blank">Metrics APIs</a>
+								</li>
+								<li>
+									<a href="/apis/notificationapi/" target="_blank">Notification  APIs</a>
+								</li>
+								<li>
+									<a href="/apis/orgapi/" target="_blank">Organisation Management APIs</a>
+								</li>
+								<li>
+									<a href="/apis/userapi/" target="_blank">User APIs</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</div>
+			</li>
+		</ul>
+		<a href="/faqs/">
+			<h4 class="sidebar-group-title">Frequently asked questions</h4>
+		</a>
+		<ul class="sidebar-group faqs" >
+			<li>
+				<a href="/faqs/audience/">Audience</a>
+			</li>
+			<li>
+				<a href="/faqs/content_format/">Content Format</a>
+			</li>
+			<li>
+				<a href="/faqs/content_repo/">Content Repo</a>
+			</li>
+			<li>
+				<a href="/faqs/contentreviews/">Content Review</a>
+			</li>
+			<li>
+				<a href="/faqs/content_types/">Content Types</a>
+			</li>
+			<li>
+				<a href="/faqs/content_upload/">Content Upload</a>
+			</li>
+			<li>
+				<a href="/faqs/feature/">Features</a>
+			</li>
+			<li>
+				<a href="/faqs/fixerrors/">Fix Errors</a>
+			</li>
+			<li>
+				<a href="/faqs/helpsupport/">Help Support</a>
+			</li>
+			<li>
+				<a href="/faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
+			</li>
+			<li>
+				<a href="/faqs/registrationenrolment/">Registration and Enrollment</a>
+			</li>
+			<li>
+				<a href="/faqs/signin/">Sign In</a>
+			</li>
+			<li>
+				<a href="/faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
+			</li>
+			<li>
+				<a href="/faqs/user_rightspermissions/">Users Rights and Permission</a>
+			</li>
+		</ul>
+		<a href="/faqs/glossary/">
+			<h4 class="sidebar-group-title">Glossary</h4>
+		</a>
 	</div>
 </div>
+<script>
+$("a[href$='/architecture/design/']").addClass("sidebar-link-selected");
+</script>
 
       </div>
-     <!-- <div class="inner__supportbar">
-        <a href="#">Help & Support</a>
-      </div>-->
     </nav>
     <div class="content">
       <div class="inner__content header">
-
-        <h1>Architecture Design </h1>
-
-        
-          <span class="hide-selector"><script type="text/javascript">$(function() { React.render(React.createElement(SectionSelector, {current_path: "architecture/design", site_map: {"marketing-channels":{},"cross-channel-analytics":{},"data-exchange":{},"basic-setup":{},"next-steps":{},"github-sdks":{},"getting-started":{},"other":{}}, sections: [{"key":"overview","name":"Overview"},{"key":"guide","name":"Guide"},{"key":"support","name":"Support"},{"key":"advanced","name":"Advanced"},{"key":"examples","name":"Examples"}], platforms: {}, url_section: ""}), $("#j6ygf9ly94")[0]); });</script><div id="j6ygf9ly94"><div class="section-selector" data-reactid=".1prmhb0swba" data-react-checksum="-2123171736"><div class="section-group" data-reactid=".1prmhb0swba.0"><a class="section section-inactive" href="/architecture/design/" data-reactid=".1prmhb0swba.0.$overview">Overview</a><a class="section section-inactive" href="/architecture/design//" data-reactid=".1prmhb0swba.0.$guide">Guide</a><a class="section section-inactive" href="/architecture/design//" data-reactid=".1prmhb0swba.0.$support">Support</a><a class="section section-inactive" href="/architecture/design//" data-reactid=".1prmhb0swba.0.$advanced">Advanced</a><a class="section section-inactive" href="/architecture/design//" data-reactid=".1prmhb0swba.0.$examples">Examples</a></div></div></div></span>
-        
+        <h1>Design </h1>
       </div>
 
-      
-
       <div id="main-content" class="inner__content">
-        
-          <h1 id="architecture-design">Architecture Design</h1>
+          <h2 id="architecture-design">Architecture Design</h2>
 
-<p>With a multi-tenant and robust framework ,Sunbird Architectural design is  resilient,flexible and agile.The Service Oriented &amp; Microservice patterns enhances the structure and functionality of Sunbird .In addition, the design patterns provide services.The architectural design is structured in such a manner that it maximizes on abstraction and security , enables portability , augments testing ,provides seamless maintainability, gives better scalability, provides higher availability, Interoperability and Rationalization.Sunbird architectural design is amalgamation of Layered Architectural Style and Service-Oriented Architectural Style.</p>
+<p>With a multi-tenant and robust framework, Sunbird Architectural Design is resilient, flexible and agile. The Service Oriented &amp; Microservice patterns enhances the structure and functionality of Sunbird.Sunbird Architectural design is amalgamation of Layered Architectural Style and Service-Oriented Architectural Style.It follows the following design principles that maximizes on abstraction and security, enables portability, augments testing, provides seamless maintainability, gives better scalability, provides higher availability, interoperability and rationalization.</p>
 
-<p>The components provide varied functionalities and thus are in different layers and structures as per their relevance to the layer schema. The layered hierarchy follows the below sequence.</p>
+<p><strong>Architectural Design Principles</strong></p>
 
 <ul>
   <li>
-    <p><strong>Presentation Layer:</strong> Comprises of User Interface (UI) and UI related services of sunbird. The Users can access Sunbird and its resources via web portal or a mobile app, envisioned for M-Learning. Moreover, presentation layer Contains all the interfaces with which users can interact with Sunbird resources. It features interactive and user-friendly environment to access the content.The presentation layer is responsible for providing input services and inputs.</p>
+    <p><strong>Avoid Duplication of Effort via Shared Infrastructure</strong>:
+This shared infrastructure model allows organizations to participate in a larger movement for learning and democratise the creation and consumption of the content on the platform. 
+Shared infrastructure includes the underlying technology infrastructure as well as content and metadata that gets co-created on the platform by participating organizations. This approach avoids duplication of effort by organizations, bring down development costs and create a shared body of knowledge.</p>
   </li>
   <li>
-    <p><strong>Business Layer:</strong> The business layer of Sunbird contains application facade. The major functional entities of Sunbird like Course Assessments, users, organizations, their CRUD functions are brought about and controlled in the layer.In addition to this, the domain logic about their associations and work flow is delineated in this layer also.It overlays a way to extend Sunbird by implementing and enabling logic for plugins. It also addresses to other necessary services as authentication, authorization and other Sunbird infrastructure services. These classes are encapsulated in wrapper API’s. Moreover, these classes process user input and control output to the user also any changes are processed through this layer.</p>
+    <p><strong>Allow Interoperability via Open-ness and Use of Open Standards</strong>:
+Open and seamless interoperability is an absolute requirement for the wide adoption of an open learning platform on which many applications can be built. Therefore, Sunbird is built using open standards and technologies, without affinity to specific platforms, programming languages or network technologies. In addition, all components within the platform are loosely coupled using open interfaces (APIs) ensuring interoperability.</p>
   </li>
   <li>
-    <p><strong>Data Layer:</strong> The data layer of Sunbird provides all data related functionalities.It provides the services for content storage,retrieval and updation.Its primary function is to keep data integration intact and keep data secure. In addition to storing content and having services for it ,Sunbird data layer also provides language platforms. the language platform packages are stored and their services are part of business layer.
-Sunbird delivers content in intuitive and specialized  way ,to make this happen, business layer provides the services for data and analytics and data exhaust.It also has   responsibility to generate and store the content changes to repository.</p>
+    <p><strong>Enable Extensibility via Layerability and Modular Design</strong>:
+The system design and architecture of Sunbird is modular with clear separation of concerns for data storage, service and API layers. All components of the infrastructure are independently replaceable and extensible. This enables diverse use cases by allowing the creation of contextual solutions to suit specific purposes.</p>
+  </li>
+  <li>
+    <p><strong>Allow Configurable Design with Plug-n-Play Capabilities</strong>:
+The modular design of the platform allows organizations to configure, adapt the platform and use plug-n-play components depending on their needs. Decoupling of business parameters, rules, master data from the rest of the solution architecture allows for a great deal of flexibility by allowing organizations to define what modules and features to enable basis their contextual use cases.</p>
+  </li>
+  <li>
+    <p><strong>Build Diverse Solutions via Open Application Program Interfaces</strong>:
+Adopting open standards with an API-driven architecture is important to ensure that the platform doesn’t hold monolithic solutions and that the latest technologies can be integrated with the platform at a later date. Open APIs allow innovative contextual solutions to be built on top of the platform, thereby amplifying existing resources and enabling new innovations for the ecosystem. Third parties can also build custom applications for the platform such as attendance trackers, translation modules, etc to significantly extend the capabilities exposed to end users.</p>
+  </li>
+  <li>
+    <p><strong>Create Common Public Good via Open Source</strong>:
+Sunbird takes advantage of available open source resources, open infrastructures and core web-scale services. Using open source will allow flexibility in feature enhancements, give full code control, avoid lock-in to proprietary systems, and allow any adopter to build solutions on top of Sunbird. Building the platform using open source tools and OER strengthens and amplifies the pool of common public resources and solutions available to the platform and ecosystem.</p>
+  </li>
+  <li>
+    <p><strong>Create Transparency and Accountability via Open Data</strong>:
+Sunbird enables capture and measurements of data at a high degree of granularity. Well-defined metrics, and feedback loops for insights and learnings can be shared with the ecosystem for continuous improvement. Data is openly available via APIs for transparency and accountability. Access to data will ensure that the quality of content and tools on the platform is measured systematically and enable quicker responsiveness to user needs and shorter improvement cycles.</p>
+  </li>
+  <li>
+    <p><strong>Permit Distributed Access via Multiple Delivery Channels</strong>:
+Sunbird will enable multiple channels/interfaces to users for interaction. With high penetration of mobile devices and internet usage through mobile devices, an important consideration is that end-user devices and their screen capabilities (including browser variations) are numerous and are constantly evolving. Hence, Sunbird is designed to enable an ecosystem of delivery applications to evolve including desktop access, offline &amp; online mobile access, and TVs.</p>
+  </li>
+  <li>
+    <p><strong>Designed to Scale via Commodity Computing</strong>:
+The Sunbird platform is architected to scale horizontally to millions of users and can reliably handle data records in billions. All components including computer, network and storage will scale horizontally to ensure that additional resources can be added as and when needed to achieve required scale. Being cloud-ready and using commodity hardware will ensure that capital investments will be made only when required. Using commodity hardware also gives a choice of infrastructure and allows heterogeneous infrastructures to co-exist.</p>
+  </li>
+  <li>
+    <p><strong>Data Security and Privacy by Design</strong>:
+Managing security and privacy of data will be a critical part of the design of Sunbird. Data is digitally signed to ensure privacy and all data access is through API calls to ensure centralised management of security controls. Direct access is prohibited for internal data access (access between various modules) and use of APIs is highly encouraged. Encapsulating access controls, auditing, confidentiality (via encryption), and integrity (via signatures) is enabled via common APIs. No application can access data directly from the data storage. This ensures privacy and data integrity and will disseminate data to authenticated and authorised users only (both internal and external).</p>
   </li>
 </ul>
 
 
-        
       </div>
     </div>
+    <div class="page-footer">
+		<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="row">
+				
+			<div class="col-md-4 col-sm-12">
+			</div>
+			
+			<div class="col-md-2 col-sm-6 ">
+				<ul>
+					<li><a href="/about/">About Sunbird</a></li>
+					<li><a href="/contact/">Contact Us</a></li>
+					<li><a href="/privacy-policy/">Privacy Policy</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-2 col-sm-6 sideline">
+				<ul>
+					<li><a href="/docs/">Documentation</a></li>
+					<li><a href="/features/">Features</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-12">
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
   </div>
-
-  <script>
-    var platformSelector = $("#platform-selector");
-    var mainContent = $("#main-content");
-
-    $(".content").scroll(function() {
-
-      if (this.scrollTop > 264) {
-        platformSelector.addClass("fixed");
-        mainContent.addClass("no-selector");
-      }
-      else {
-        platformSelector.removeClass("fixed");
-        mainContent.removeClass("no-selector");
-      }
-
-    });
-  </script>
-
   <script type="text/javascript">
 
       $(document).ready(function(){
@@ -458,7 +386,5 @@ Sunbird delivers content in intuitive and specialized  way ,to make this happen,
       });
 
   </script>
-
   </body>
-
 </html>

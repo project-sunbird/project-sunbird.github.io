@@ -1,6 +1,6 @@
 .footer {
 	position:relative;
-	z-index:2;
+	z-index:1;
 	font-size: 14px;
 	//display: none;
 
@@ -95,3 +95,6 @@
 }
 .footer .footer__top a.social-icon{display:inline-block; margin:5px; color:#b5b5b5;font-size: 16px;}
 iframe#freshwidget-embedded-form .copyright{display:none !important;}
+@media screen and (min-width:992px){
+.page-footer{display:none;}
+}
