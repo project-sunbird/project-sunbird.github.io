@@ -1,0 +1,28 @@
+#=======================================
+# Exclude Site Generated
+#=======================================
+_site
+#=======================================
+# Exclude Node Modules 
+#=======================================
+node_modules/**
+package-lock.json
+#=======================================
+# Exclude SASS Cache
+#=======================================
+.sass-cache
+#=======================================
+# Exclude File types & Files
+#=======================================
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+*.log
+.DS_Store
+npm-debug.log
+Gemfile.lock
+node.txt
+.idea
+yarn.lock
+

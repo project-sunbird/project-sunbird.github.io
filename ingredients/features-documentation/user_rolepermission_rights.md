@@ -1,0 +1,1 @@
+All the portal members are Users. Based on user responsibilities, users are given rights to create, review, publish or consume content. Specific users are granted administration rights to manage user or organization profile creation, on-boarding, deletion, passwords, and site look-and-feel customization.

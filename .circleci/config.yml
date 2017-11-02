@@ -1,0 +1,87 @@
+version: 2
+jobs:
+  staging:
+    working_directory: /project/workplace/
+    docker:
+      - image: lakhanmandloi/sunbird-ubuntu-full
+    steps:
+    
+      #Checkout
+      - checkout
+            
+      # Run Build command
+      - type: shell
+        command: |
+          bundle exec jekyll build
+   
+      # Deploy to Gitpages
+      - type: shell
+        command: |
+           bundle exec s3_website push
+          
+  prod:
+    working_directory: /project/workspace/
+    docker:
+      - image: lakhanmandloi/sunbird-ubuntu-full
+    steps:
+      
+      #Checkout
+      - checkout
+          
+      # Add SSH Key   
+      - add_ssh_keys:
+          fingerprints:
+            - "95:dd:d1:b9:84:d7:bc:96:88:c2:f9:0f:4d:96:fc:17"
+      #Add User
+      - type: shell
+        command: |
+          git config --global user.email "lakhan_m@tekditechnologies.com"
+          git config --global user.name "Lakhan Mandloi"
+      
+      # Pull Code from staging site
+      - type: shell
+        command: |
+          cd ..
+          mkdir downloads
+          cd downloads
+          aws s3 sync --delete s3://sunbird-trial/ .
+           
+      # Deploy to Gitpages
+      - type: shell
+        command: |
+          cd ..
+          mkdir deploy
+          cd deploy
+          git clone git@github.com:lakhanmandloi/sunbird-commons.git
+          cd sunbird-commons
+          git checkout gh-pages
+          cp -R .git/ ../
+          rm -rf *
+          cd ..
+          cp -R ../downloads/* sunbird-commons/
+          cp -R .git/ sunbird-commons/
+          cd sunbird-commons/
+          git add -A
+          git commit -m "$CIRCLE_TAG"
+          git push origin gh-pages
+          
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - staging:
+          filters:
+            tags:
+              only: /^dev.*/
+            branches:
+              ignore:
+                - master
+                - gh-pages
+      - prod:
+          filters:
+            tags:
+              only: /^prod.*/
+            branches:
+              ignore:
+                - master
+                - gh-pages

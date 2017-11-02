@@ -1,0 +1,1 @@
+Yes. States and content organisation administrators can create their own frameworks to tag their content. They can also tag their content to other frameworks as and when applicable. The system has the intelligence to associate the tags and link content to different frameworks, based on the vocabulary used to tag the content.

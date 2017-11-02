@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="/">
+          <img src="/img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <div class="inner__sidebar">
+        {% include sidebar.html %}
+      </div>
+    </nav>
+    <div class="content">
+      <div class="inner__content header">
+        <h1>{{ page.title }} </h1>
+      </div>
+
+      <div id="main-content" class="inner__content">
+          {{ content }}
+      </div>
+    </div>
+    <div class="page-footer">
+		{% include footer.html %}
+	</div>
+  </div>
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+          $('#dropdown-trigger').click(function(e){
+              var $elm = $('#mobile-dropdown');
+              if($elm.is(":visible")){
+                  $elm.stop().slideUp();
+              }else{
+                  $elm.stop().slideDown();
+                  $('html,body').scrollTop(0);
+              }
+              e.stopPropagation();
+          });
+      });
+
+  </script>
+  </body>
+</html>

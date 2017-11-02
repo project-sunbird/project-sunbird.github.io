@@ -1,0 +1,1 @@
+Metadata is a set of fields that must be entered by creators or content providers prior to submission of content for review. The metadata pronounces and gives detailed information about the content in platform.

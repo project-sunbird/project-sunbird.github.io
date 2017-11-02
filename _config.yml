@@ -1,0 +1,33 @@
+# Site settings
+title: Sunbird
+name: Sunbird
+email: info@sunbird.org
+description: "Sunbird Site"
+environment: production
+permalink: pretty
+markdown: kramdown
+highlighter: pygments
+safe: false
+ga: UA-106552125-1
+
+exclude:
+- vendor
+- .gitignore
+- README.md
+- ingredients
+- js/components
+- js/stores
+- js/actions
+- js/support
+- node_modules
+- package.json
+- package-lock.json
+- node.txt
+- Gemfile
+- Gemfile.lock
+- circle.yml
+- s3_website.yml
+- staging
+
+sass:
+    sass_dir: css

@@ -1,0 +1,1 @@
+In the context of our platform, the framework is a string of vocabularies arranged to achieve a learning outcome. The focus of the framework is not the content within it, but the sequencing of the objectives or vocabulary such that it achieves the stated outcome. The framework helps the system recommend prerequisite, next or related content to the learner.
