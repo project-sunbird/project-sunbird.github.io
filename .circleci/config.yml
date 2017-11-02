@@ -31,7 +31,7 @@ jobs:
       # Add SSH Key   
       - add_ssh_keys:
           fingerprints:
-            - "95:dd:d1:b9:84:d7:bc:96:88:c2:f9:0f:4d:96:fc:17"
+            - "fa:30:b3:04:87:9f:18:7b:64:47:2f:33:c9:8c:23:7f"
       #Add User
       - type: shell
         command: |
@@ -44,7 +44,7 @@ jobs:
           cd ..
           mkdir downloads
           cd downloads
-          aws s3 sync --delete s3://sunbird-trial/ .
+          aws s3 sync --delete s3://sunbird-docs-qa/ .
            
       # Deploy to Gitpages
       - type: shell
@@ -74,14 +74,10 @@ workflows:
             tags:
               only: /^dev.*/
             branches:
-              ignore:
-                - master
-                - gh-pages
+              ignore: /.*/
       - prod:
           filters:
             tags:
               only: /^prod.*/
             branches:
-              ignore:
-                - master
-                - gh-pages
+              ignore: /.*/
