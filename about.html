@@ -1,0 +1,54 @@
+---
+---
+<!DOCTYPE html>
+<html>
+	{% include head.html %}
+  <body>
+	  {% include header.html %}
+    <div class="aboutpage fill-height inner__content fixed-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h1>About Sunbird</h1>
+						<p><strong>Sunbird - Open modular learning management platform</strong></p>
+						<p>Making learning happen for a large population is a result of concerted, coordinated efforts of the government, multiple organizations and individuals - parents, teachers and several other stakeholders including the learner. Technology can hasten access to and amplify learning opportunities for large underserved populations.</p>
+						<p>Sunbird is an open source, configurable, extendable, modular learning management platform architected for scale and designed to support multiple teaching and learning solutions supporting multiple languages and available for online and offline use. Sunbird is the open source platform developed by EkStep Foundation is licensed under AGPL licence. EkStep Foundation is a not for profit foundation registered in India and co-founded by Nandan Nilekani, Rohini Nilekani and Shankar Maruwada.  &nbsp; <a class="readMore">Show more...</a></p>
+						<div class="more-text" style="display:none;">
+						<p>Sunbird makes it possible to leverage technology for education by providing building blocks for the creation of learning solutions. Sunbird contains well architected common building blocks that can be orchestrated to create multiple solutions without a need to build from scratch. The architecture also allows for re-use of common infrastructure components for a learning platform such as taxonomy, frameworks, classroom efficiency tools, content assets and machine learning insights.</p>	
+						<p><strong>Sunbird covers the following broad feature areas:</strong></p>
+						<ul>
+							<li>Courses, trainings, lesson plans and assessments</li>
+							<li>Resources for use by practitioners and professionals</li>
+							<li>Dashboards for progress and assessment</li>
+							<li>Student and practitioner profile and registry services</li>
+							<li>Communities of practice for collaboration and discussions</li>
+							<li>Announcements, notifications and circulars</li>
+							
+						</ul>
+						<p>Sunbird has been developed and made open source so as to enable the education and learning ecosystem to innovate and imagine solutions for lifelong learning.</p>
+						<p><a class="readLess">Show less ...</a></p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+	{% include footer.html %}
+	<script>
+	$(document).ready(function(){
+		$(".readMore").click(function(){
+			$(".more-text").slideDown('slow','swing');
+			$(".readMore").addClass("hide");
+		});
+		$(".readLess").click(function(){
+			$(".more-text").slideUp('slow','swing');
+			$(".readMore").removeClass("hide");
+		});
+		
+		
+	});
+	
+	</script>
+  </body>
+</html>

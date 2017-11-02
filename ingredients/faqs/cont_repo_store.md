@@ -1,0 +1,1 @@
+All content uploaded and published on the platform is stored in platform's content repository.

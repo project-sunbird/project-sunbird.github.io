@@ -1,0 +1,1 @@
+All content published on this platform has a learning objective and hence has a target audience. The audience for the content can either be learners or instructors. The content is tagged appropriately.

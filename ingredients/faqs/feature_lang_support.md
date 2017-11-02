@@ -1,0 +1,1 @@
+Currently, this platform supports 10 Indian languages viz. Hindi, English, Gujarati, Bengali, Assamese, Marathi, Odia, Kannada, Tamil and Telugu, both for creating and viewing content. Later, there will be support for more Indian languages.
