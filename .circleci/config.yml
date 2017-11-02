@@ -52,18 +52,18 @@ jobs:
           cd ..
           mkdir deploy
           cd deploy
-          git clone git@github.com:lakhanmandloi/sunbird-commons.git
-          cd sunbird-commons
-          git checkout gh-pages
+          git clone git@github.com:project-sunbird/project-sunbird.github.io.git
+          cd project-sunbird.github.io
+          git checkout master
           cp -R .git/ ../
           rm -rf *
           cd ..
-          cp -R ../downloads/* sunbird-commons/
-          cp -R .git/ sunbird-commons/
-          cd sunbird-commons/
+          cp -R ../downloads/* project-sunbird.github.io/
+          cp -R .git/ project-sunbird.github.io/
+          cd project-sunbird.github.io/
           git add -A
           git commit -m "$CIRCLE_TAG"
-          git push origin gh-pages
+          git push origin master
           
 workflows:
   version: 2
