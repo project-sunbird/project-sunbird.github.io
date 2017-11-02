@@ -10,8 +10,8 @@
 	<meta name="msapplication-TileColor" content="#65d3f7">
 	<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 	
-	<title>Sunbird Register Organizations</title>
-	<meta name="description" content="Sunbird Site Register and Enrollment"/>
+	<title>Sunbird Install Sunbird on Laptop</title>
+	<meta name="description" content="Sunbird Site Install Sunbird on Laptop"/>
 
 	<meta http-equiv="cache-control" content="max-age=0" />
 	<meta http-equiv="cache-control" content="no-cache" />
@@ -57,7 +57,7 @@
     <nav class="sidebar-container" id="mobile-dropdown">
       <div class="inner__sidebar">
         <div id="">
-	<div class="sidebar-wrapper features-documentation">
+	<div class="sidebar-wrapper developer-docs-installation">
 		<div class="" >
 			<a href="/architecture/">
 				<h4 class="sidebar-group-title">Architecture</h4>
@@ -277,89 +277,97 @@
 	</div>
 </div>
 <script>
-$("a[href$='/features-documentation/register_org/']").addClass("sidebar-link-selected");
+$("a[href$='/developer-docs/installation/installing_sunbirdon_laptop/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header">
-        <h1>Register Organizations </h1>
+        <h1>Install Sunbird on Laptop </h1>
       </div>
 
       <div id="main-content" class="inner__content">
-          <h2 id="register-organizations">Register Organizations</h2>
+          <h2 id="installing-sunbird">Installing Sunbird</h2>
 
-<p>Organization administrators can use the credentials received to sign in and upload organization details. Administrators of administrating organizations can add other organization details.</p>
+<p>Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface.</p>
 
-<p><strong>Uploading Organizations</strong></p>
+<p><strong>Sunbird Portal Setup</strong></p>
+
+<p>To setup the Sunbird portal follow the steps sequentially.</p>
 
 <ol>
-  <li>Click <strong>Upload Organizations</strong>. The upload organizations page is displayed</li>
-  <li>Download the csv file for reference</li>
-  <li>You can add or upload details of up to 200 organizations at a time in one csv</li>
-  <li>The <strong>OrgName</strong> column is mandatory. Enter organization name in this column</li>
-  <li>Enter each organization’s name in a separate row</li>
-  <li>
-    <p>Entering details in all other columns is optional</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Column Title</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>isRootOrg</td>
-          <td>Valid value for this column is True</td>
-        </tr>
-        <tr>
-          <td>channel</td>
-          <td>Unique ID provided during master organization creation</td>
-        </tr>
-        <tr>
-          <td>externalId</td>
-          <td>Unique ID associated with each organization in the administrating organization’s repository</td>
-        </tr>
-        <tr>
-          <td>provider</td>
-          <td>Channel ID of the administrator organization</td>
-        </tr>
-        <tr>
-          <td>description</td>
-          <td>Details describing the organization</td>
-        </tr>
-        <tr>
-          <td>homeUrl</td>
-          <td>Organization’s homepage url</td>
-        </tr>
-        <tr>
-          <td>orgCode</td>
-          <td>Organization’s unique code, if any,</td>
-        </tr>
-        <tr>
-          <td>orgType</td>
-          <td>Type of organization, such as, NGO, primary school, secondary school etc</td>
-        </tr>
-        <tr>
-          <td>preferredLanguage</td>
-          <td>Language preferences for the organization, if any</td>
-        </tr>
-        <tr>
-          <td>contactDetail</td>
-          <td>Organization’s phone number and email ID. Details should be entered within single quotes. For 	example: ‘Phonenumber’</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>Save the csv file to your computer</li>
-  <li>Click UPLOAD ORGANIZATIONS CSV. The explorer window is displayed</li>
-  <li>Select the saved csv file and click open</li>
-  <li>On successful file upload, a process ID will be generated, else an error message is displayed</li>
+  <li>Prerequisites</li>
 </ol>
 
+<p>Please complete the following pre-requisites before installing and running the sunbird-player application</p>
+
+<p><strong>Software dependencies</strong></p>
+
+<ul>
+  <li><a href="https://nodejs.org/en/download/">Node</a> - install the latest release of 6.x.x LTS series</li>
+  <li><a href="https://bower.io/#install-bower">Bower</a> - latest version of bower: <code>npm install -g bower</code></li>
+  <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Gulp</a> - latest version of gulp: <code>npm install -g gulp-cli</code></li>
+  <li><a href="https://www.mongodb.com/">Mongo DB</a> - v3.4.1 and newer</li>
+</ul>
+
+<ol>
+  <li>API Keys</li>
+</ol>
+
+<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when <a href="#edit-the-application-config">configuring the application</a>.</p>
+
+<ol>
+  <li>Setup
+* Checkout the code from <code>https://github.com/project-sunbird/sunbird-portal.git</code>
+* Run the following commands
+<code>
+$ cd &lt;PROJECT-FOLDER&gt;/src
+$ npm install
+$ bower cache clean
+$ bower install --force
+</code></li>
+  <li>Backend Service Stack</li>
+</ol>
+
+<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs can be run in a distributed environment, for instance when you deploy to production, or they can be run locally on a single server for ease of use and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
+
+<p><em>Please note</em>: the cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
+
+<p><strong>Edit the application config</strong></p>
+
+<ul>
+  <li>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in your favourite text editor. Update the file so it contains the following values:  <br />
+<code>
+module.exports = {
+LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    // 1. LEARNER_URL
+CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                    // 2. CONTENT_URL
+CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    // 3. CONTENT_PROXY
+PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
+PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     // 4. PORTAL_AUTH_SERVER_URL
+PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
+...
+PORTAL_PORT: env.sunbird_port || 3000,
+PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            // 5. PORTAL_API_AUTH_TOKEN
+PORTAL_MONGODB_IP: env.sunbird_mongodb_ip,
+...
+PORTAL_SSO_ENABLED: env.sunbird_sso_enabled || false,
+PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       // 6. PORTAL_ECHO_API_URL
+...
+}
+</code>
+5. Run Application</li>
+  <li>Run the following commands:
+<code>
+$ gulp build`
+$ cd &lt;PROJECT-FOLDER&gt;/src/app
+$ node server.js
+</code></li>
+  <li>Open <code>http://localhost:3000</code> in browser</li>
+</ul>
+
+<p><strong>Sunbird Services Setup</strong>
+Coming soon!</p>
 
       </div>
     </div>
