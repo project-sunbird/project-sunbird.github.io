@@ -1,7 +1,7 @@
 s3_id: <%= ENV['S3_ID'] %>
 s3_secret: <%= ENV['S3_SECRET'] %>
-s3_bucket: sunbird-trial
-s3_endpoint: ap-southeast-1
+s3_bucket: sunbird-docs-qa
+s3_endpoint: ap-south-1
 
 
 max_age:
