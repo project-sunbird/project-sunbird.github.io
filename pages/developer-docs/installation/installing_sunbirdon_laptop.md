@@ -16,7 +16,7 @@ Installing Sunbird requires two primary software components, the Sunbird portal 
 
 To setup the Sunbird portal follow the steps sequentially.
 
-1. Prerequisites
+**Prerequisites**
 
 Please complete the following pre-requisites before installing and running the sunbird-player application
 
@@ -27,7 +27,7 @@ Please complete the following pre-requisites before installing and running the s
 * [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) - latest version of gulp: `npm install -g gulp-cli`
 * [Mongo DB](https://www.mongodb.com/) - v3.4.1 and newer
 
-2. API Keys
+**API Keys**
 
 This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when [configuring the application](#edit-the-application-config).
 
@@ -40,13 +40,13 @@ $ npm install
 $ bower cache clean
 $ bower install --force
 ```
-4. Backend Service Stack
+**Backend Service Stack**
 
 The Sunbird portal application is powered by a set of Service APIs. These Service APIs can be run in a distributed environment, for instance when you deploy to production, or they can be run locally on a single server for ease of use and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes. 
 
 *Please note*: the cloud instance of the APIs hosted by Project Sunbird are not for production usage.
 
-**Edit the application config**
+*Edit the application config*
 
 * Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in your favourite text editor. Update the file so it contains the following values:    
 ```
@@ -67,14 +67,18 @@ module.exports = {
   ...
 }
 ```
-5. Run Application
+
+**Run Application**
+
 * Run the following commands:
 ```
 $ gulp build`
 $ cd <PROJECT-FOLDER>/src/app
 $ node server.js
 ```
+
 * Open `http://localhost:3000` in browser
+
 
 **Sunbird Services Setup**
 Coming soon!
