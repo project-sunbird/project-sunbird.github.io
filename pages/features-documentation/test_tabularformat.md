@@ -78,6 +78,6 @@ Enter your User ID       									|
 Enter your password     									|
 Click login button         									| 
 You will land to the Home page        						| {% image src="/pages/features-documentation/images/workspace2.png" right quarter alt="Workspace image"%}
-You will land to Course page                                | {img src="/pages/features-documentation/images/consumecourse3.png" right quarter alt=""}
+You will land to Course page                                | {img src="/pages/features-documentation/images/consumecourse3.png" right quarter alt=""%}
 
 
