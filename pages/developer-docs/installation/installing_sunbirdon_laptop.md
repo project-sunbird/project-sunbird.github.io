@@ -72,8 +72,4 @@ module.exports = {
 	- ```$ cd <PROJECT-FOLDER>/src/app```
 	- ```$ node server.js```
 
-* Open `http://localhost:3000` in browser
-
-
-**Sunbird Services Setup**
-Coming soon!
+* Open `http://localhost:3000` in browser.
