@@ -28,11 +28,11 @@ Line break
 
 Steps   													| Images
 ------------------------------------------------------------|-----------------------------------------------
-Sign in Sunbird portal using your registered credential:	| {image src="/pages/features-documentation/images/login1.png" half right alt="login"}
+Sign in Sunbird portal using your registered credential:	| {% image src="/pages/features-documentation/images/login1.png" half right alt="login" %}
 Enter your User ID       									| 
 Enter your password     									|
 Click login button         									| 
-You will land to the Home page        						| {image src="/pages/features-documentation/images/workspace2.png" half right alt="workspace"}
+You will land to the Home page        						| {% image src="/pages/features-documentation/images/workspace2.png" half right alt="workspace" %}
 
 
 
