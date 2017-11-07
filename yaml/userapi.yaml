@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: '1.0'
-  title: Sunbird User API(s)
+  title: User Management  API(s)
   description: >-
     The User API resources perform operations related to 
     the _Users_ on the Sunbird Platform. The basic operations include Creation, Updation,Reading & searching.
@@ -43,7 +43,7 @@ paths:
         required: true
         description: >-
             The body refers to the format of the request.
-              - The body contains metadata about the user to be created, i.e an array of parameters known as attributes of the user the content.
+              - The body contains metadata about the user to be created.
         schema:
           $ref: '#/definitions/CreateUserrequest'
       - name: X-Authenticated-Userid
@@ -76,7 +76,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateResponse'
         '400':
-          description: 'BAD REQUEST. The "Create Content" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          description: 'BAD REQUEST. The "Create User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
         '500':
@@ -94,7 +94,7 @@ paths:
  /search:
     post:
       description: >-
-       This API is associated with searching a user on the Sunbird Platform.
+       This API is associated for searching a particular user on the Sunbird Platform.
           - **_/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
@@ -193,7 +193,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /profile/read:
+ /getuser:
     post:
       description: >-
         This API is associated with fetching User profile on the Sunbird Platform.
@@ -212,7 +212,7 @@ paths:
         required: true
         description: >-
             The body refers to the format of the request.
-              - The body contains metadata about the user to be created, i.e an array of parameters known as attributes of the user the content.
+              - The body contains metadata about the user profile to be fetched using Login Id.
         schema:
           $ref: '#/definitions/GetUserByLoginIdrequest'
       - name: Content-Type
@@ -298,7 +298,7 @@ paths:
           - **_/read/{User_Id}_** endpoint executes the "Fetch User profile" request. 
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-      summary: Get User by Id
+      summary: Fetch User by User Id
       tags:
       - User APIs
       operationId: Get User by Id
@@ -373,10 +373,10 @@ paths:
     patch:
       description:  >-
         This API is associated with updating user details on the Sunbird Platform.
-          - **_/update/_** endpoint executes the "Fetch User profile" request 
+          - **_/update/_** endpoint executes the "Update User" request.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-      summary: Update User
+      summary: Updates User
       tags:
       - User APIs
       operationId: Update User
@@ -436,6 +436,599 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
+ /logout:
+    post:
+      description: >-
+       This API is associated with Logging out users on the Sunbird Platform.
+          - The **_/logout_** endpoint executes the "logout" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: {{host}}/v1/user/logout
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Logs Out a User
+      tags:
+      - User APIs
+      operationId: '{{host}}/v1/user/logout'
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+          The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Logout User** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Logout User" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Logout User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/user/logout
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: xyz-123-000-9888
+            X-Device-ID: X-Device-ID
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: fe109c81be7e08b5e049e57a51343dfec2fbeaa062f9ecaf7b86852aaa28eb38
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/user/logout'
+        x-testDescription: Logout api
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /login:
+    post:
+      description: >-
+       This API is associated with Logging in users on the Sunbird Platform.
+          - The **_/login_** endpoint executes the "logs in a user" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: {{host}}/v1/user/login
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Logs In a User
+      tags:
+      - User APIs
+      operationId: '{{host}}/v1/user/login'
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+          The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: Time Stamp at which **LogIn User** request was sent.
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."LogIn User" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "LogIn  User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/user/login
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/user/login'
+        x-testDescription: User login api
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /forgotpassword:
+    post:
+      description:  >-
+       This API is associated with resetting a forgotten password on the Sunbird Platform.
+          - The **_/forgotpassword_** endpoint executes the "forgot password" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is:  {{host}}/v1/user/forgotpassword
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Resets Forgotten Password
+      tags:
+      - User APIs
+      operationId: '{{host}}/v1/user/forgotpassword'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          The body refers to the format of the request.
+            - The body contains metadata about forgot password fields. 
+        schema:
+          $ref: '#/definitions/{{host}}~1v1~1user~1forgotpasswordrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+          The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **forgot password** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."forgot password" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "forgot password" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/user/forgotpassword
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: xyz-123-000-9888
+            X-Device-ID: X-Device-ID
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: fe109c81be7e08b5e049e57a51343dfec2fbeaa062f9ecaf7b86852aaa28eb38
+          body: " {\r\n\"id\":\"unique API ID\",\r\n\"ts\":\"2013/10/15 16:16:39\",\r\n  \"params\": {\r\n      \r\n    },\r\n \"request\":{\r\n           \"userName\":\"amit127.kumar17\"       \r\n       }\r\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/user/forgotpassword'
+        x-testDescription: Forgot password api.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /badges/add:
+    post:
+      description: >-
+       This API is associated with adding badges to a user on the Sunbird Platform.
+          - The **_/badges/add_** endpoint executes the "add badges to user" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Add badges to user
+      tags:
+      - User APIs
+      operationId: add badges to user
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          The body refers to the format of the request.
+            - The body contains metadata about badges to be added to a user. 
+        schema:
+          $ref: '#/definitions/AddBadgesToUserrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+          The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Add badges to user** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Add badges to user" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Add badges to user" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/user/badges/add
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+          body: "{\r\n \"params\": { },\r\n    \"request\":{                 \r\n      \"badgeTypeId\": \"123343444\",\r\n    \"receiverId\" :\"5de6b1af-82c3-4f1b-afef-007db7390841\"\r\n      \r\n    }\r\n } "
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: add badges to user
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /changepassword:
+    post:
+      description: >-
+       This API is associated with changing user password on the Sunbird Platform.
+          - The **_/changepassword_** endpoint executes the "change password" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: {{host}}/v1/user/changepassword 
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Changes User Password
+      tags:
+      - User APIs
+      operationId: '{{host}}/v1/user/changepassword'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          The body refers to the format of the request.
+            - The body contains metadata about changing user password. 
+        schema:
+          $ref: '#/definitions/{{host}}~1v1~1user~1changepasswordrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+          The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **change password** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."change password" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "change password" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/user/changepassword
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+          body: "{\r\n\r\n  \"params\": {\r\n       \r\n    },\r\n    \"request\":{ \r\n             \"password\":\"password\",\r\n             \"newPassword\" :\"new password value\"\r\n         }\r\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/user/changepassword'
+        x-testDescription: Change password api.
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /update/logintime:
+    patch:
+      description: >-
+       This API is associated with resetting a forgotten password on the Sunbird Platform.
+          - The **_/forgotpassword_** endpoint executes the "forgot password" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is:  {{host}}/v1/user/updatelogin
+          - It is mandatory to provide values for parameters marked with *.
+          - Mandatory fields cannot be null or empty.
+      summary: Adds Users Current  Login Time
+      tags:
+      - User APIs
+      operationId: '{{host}}/v1/user/updatelogin'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          The body refers to the format of the request.
+            - The body contains metadata about forgot password fields. 
+        schema:
+          $ref: '#/definitions/{{host}}~1v1~1user~1updateloginrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+          The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **Login Time** request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Device-ID
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
+      - name: X-Authenticated-Userid
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Login Time" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Login Time" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /v1/user/update/logintime
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: 
+          body: "{\r\n \"params\": { },\r\n    \"request\":{   \r\n      \"userId\":\"9b679965-c38a-4099-a9e8-9ca89e20eab3\"\r\n    }\r\n}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/user/updatelogin'
+        x-testDescription: Add user current login time
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
 definitions:
   CreateUserrequest:
     title: Create UserRequest
@@ -836,3 +1429,189 @@ definitions:
     allOf:
       - $ref: '#/definitions/EmptyResult'
       - $ref: '#/definitions/ResponseHeader'
+  '{{host}}/v1/user/forgotpasswordrequest':
+    title: '{{host}}/v1/user/forgotpasswordRequest'
+    example:
+      id: unique API ID
+      ts: 2013/10/15 16:16:39
+      params: {}
+      request:
+        userName: amit127.kumar17
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request10'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request10:
+    title: Request10
+    type: object
+    properties:
+      userName:
+        description: ''
+        type: string
+    required:
+    - userName
+  AddBadgesToUserrequest:
+    title: add badges to userRequest
+    example:
+      params: {}
+      request:
+        badgeTypeId: 123343444
+        receiverId: 5de6b1af-82c3-4f1b-afef-007db7390841
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request14'
+    required:
+    - params
+    - request
+  Request14:
+    title: Request14
+    type: object
+    properties:
+      badgeTypeId:
+        description: ''
+        type: string
+      receiverId:
+        description: ''
+        type: string
+    required:
+    - badgeTypeId
+    - receiverId
+  '{{host}}/user/v1/searchrequest':
+    title: '{{host}}/user/v1/searchRequest'
+    example:
+      id: unique API ID
+      ts: 2013/10/15 16:16:39
+      params: {}
+      request:
+        query: ntp
+        filters: {}
+        offset: 0
+        limit: 300
+        sort_by:
+          createdDate: desc
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request16'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request16:
+    title: Request16
+    type: object
+    properties:
+      query:
+        description: ''
+        type: string
+      filters:
+        description: ''
+        type: object
+      offset:
+        description: ''
+        type: integer
+        format: int32
+      limit:
+        description: ''
+        type: integer
+        format: int32
+      sort_by:
+        $ref: '#/definitions/SortBy'
+    required:
+    - query
+    - filters
+    - offset
+    - limit
+    - sort_by
+  SortBy:
+    title: SortBy
+    type: object
+    properties:
+      createdDate:
+        description: ''
+        type: string
+    required:
+    - createdDate
+  '{{host}}/v1/user/changepasswordrequest':
+    title: '{{host}}/v1/user/changepasswordRequest'
+    example:
+      params: {}
+      request:
+        password: password
+        newPassword: new password value
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request21'
+    required:
+    - params
+    - request
+  Request21:
+    title: Request21
+    type: object
+    properties:
+      password:
+        description: ''
+        type: string
+      newPassword:
+        description: ''
+        type: string
+    required:
+    - password
+    - newPassword
+  '{{host}}/v1/user/updateloginrequest':
+    title: '{{host}}/v1/user/updateloginRequest'
+    example:
+      params: {}
+      request:
+        userId: 9b679965-c38a-4099-a9e8-9ca89e20eab3
+    type: object
+    properties:
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request23'
+    required:
+    - params
+    - request
+  Request23:
+    title: Request23
+    type: object
+    properties:
+      userId:
+        description: ''
+        type: string
+    required:
+    - userId
