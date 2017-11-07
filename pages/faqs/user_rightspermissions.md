@@ -7,11 +7,8 @@ description: Product features
 keywords: >-
   Content creator, Content provider, Feature, Platform, Product, Administrator
   ID, User ID, Content Creation Rights
-hide_platform_selector: true
-hide_section_selector: true
 published: true
----
-## User Rights and Permissions	
+---	
 
 **What user roles does the platform support?**
 

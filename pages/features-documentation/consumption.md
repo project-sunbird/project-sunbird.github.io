@@ -5,8 +5,6 @@ title: Consume Study Material
 page_title: Consume Study Material
 description: Consume Study Material
 keywords: Consume Study Material
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 

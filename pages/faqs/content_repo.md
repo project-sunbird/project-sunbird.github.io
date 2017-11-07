@@ -7,12 +7,9 @@ description: Content and Organization's repositories
 keywords: >-
   Content, Repository, Repositories, Upload, Uploaded, Original, Organization,
   Platform, Stored 
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 
-## Content Repositories
 
 **After content is uploaded on the platform, do updates made to the original content in the organization’s repository reflect automatically in platform's repository?**
 

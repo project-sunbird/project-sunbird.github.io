@@ -7,11 +7,8 @@ description: Who and how to register & enroll in the platform
 keywords: >-
   Platform, Upload, User, Organization, Teacher, Teacher Registry, Database,
   Profile, Teacher Profile, Integrage
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Registration and Enrollment
 
 **How do you sign up on the platform?**
 

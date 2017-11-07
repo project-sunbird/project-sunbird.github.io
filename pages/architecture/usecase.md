@@ -5,8 +5,6 @@ title: Use Cases
 page_title: Use case
 description: Architecture Use case
 keywords: Architecture, use case
-hide_platform_selector: true
-hide_section_selector: true
 alias:
   - /architecture/usecase/
 published: true

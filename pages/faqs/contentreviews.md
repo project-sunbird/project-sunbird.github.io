@@ -5,11 +5,8 @@ title: Content Review
 page_title: Content Review
 description: Review and its lifecycle
 keywords: 'Content, Review, Criteria, Guideline, Send for Review '
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Content Review
 
 **Who reviews content?**
 

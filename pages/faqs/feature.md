@@ -7,12 +7,9 @@ description: Product features
 keywords: >-
   Content creator, Content provider, Feature, Platform, Product, Languages,
   Languages Supported, Multilingual Support, Indian Languages
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 
-## Features
 
 **Which product features are relevant for content creators and content providers?**
 

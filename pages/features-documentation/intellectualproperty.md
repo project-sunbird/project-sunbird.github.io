@@ -5,12 +5,9 @@ title: Intellectual Property
 page_title: Intelletual Property
 description: Intellectual Property
 keywords: 'copyrights assertion, guidelines'
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 
-# Intellectual Property
 
 Content creators on Sunbird can be individuals or organisations. The content creators are owners of the content. All creators should ensure that their work does not violate any rights and possible claims of third parties. They are solely responsible for any violation of third party rights. Sunbird is not responsible towards any third party for actions or inactions of Sunbird users.
 

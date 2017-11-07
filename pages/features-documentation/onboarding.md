@@ -5,11 +5,9 @@ title: Onboarding
 page_title: Onboarding
 description: Onboarding
 keywords: 'Org Admin, Onboard, user sign in, first time, register'
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Onboarding
+
 
 Users can get on board Sunbird either as individuals or as part of an organization. The onboarding process is simple. 
 Individuals can contact us by submitting the form available on the **[Contact us](contact){:target="_blank"}** page. We will get back to you with user credentials. 
