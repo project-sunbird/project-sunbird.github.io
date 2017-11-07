@@ -9,7 +9,7 @@ hide_section_selector: true
 published: true
 ---
 
-1. **Pre-requisites**
+**Pre-requisites**
 
 You will need servers with the following minimum system requirements:
 
@@ -18,18 +18,20 @@ You will need servers with the following minimum system requirements:
 - CPU: 2 core, >2 GHz
 - root access (should be able to sudo)
 
-2. **Variables relevant to deployment**
+**Variables relevant to deployment**
 
 - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
 - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
-**Step 1: Provisioning your servers**
+**Step 1:** Provisioning your servers
 
 For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
 - **Automated**
+
 The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.
 **Automation for Azure**
-- **Run Time**: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.
+
+-**Run Time**: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.
 
 Run the following steps from a machine which is connected to the internet:
 
@@ -59,7 +61,7 @@ Not automated as of now but you are free to contribute back! Send in a PR.
 **Manual**
 Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.
 
-**Step 2: Setup your DBs**
+**Step 2:** Setup your DBs
 
 You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:
 
@@ -76,28 +78,33 @@ Run the following steps starting from your local machine:
 - Run `./sunbird-devops/deploy/generate-config.sh <implementation-name> <environment-name>`. Example `./sunbird-devops/deploy/generate-config.sh ntp production deploy`. This creates `ntp-devops` directory with *incomplete* configurations. You **WILL** need to supply missing configuration.
 - Modify all the configurations under `# DB CONFIGURATION` block in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`
 
-## DB creation
+**DB creation**
 
-### Via automation
+**Via automation**
+
 **Run Time**: 15-30 mins to prepare and 30 mins to complete.
+
 Following is a set of scripts which install the DBs into the `db-server` and copy over `master` data.
 
 - Run `cd sunbird-devops/deploy`
 - Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
 
-### Manual
+**Manual**
+
 Refer to DB user guides.
 
-#### Automation Walkthrough
+**Automation Walkthrough**
 Included in the next demo
 
-# Step 3: Initialize DBs
+**Step 3:** Initialize DBs**
 - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
 
-#### Automation Walkthrough
+**Automation Walkthrough**
+
 [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
 
-# Step 4: Setup Application and Core services
+**Step 4:** Setup Application and Core services
+
 - SSH into `admin-server`. If you have used automated scripts used here, then this server would be `vm-1`.
 - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
 - Copy over the configuration directory from the DB server(`<implementation-name>-devops`) to this machine
@@ -133,44 +140,45 @@ Included in the next demo
 - Update following configs
 
 ```yml
-# Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
+**Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format**
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password
 
-# Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
+**Login to the keycloak admin console, goto the clients->portal->Installation->Select json format**
 keycloak_realm:  # Eg: sunbird
 sunbird_keycloak_client_id: # Eg: portal
 
-# Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
+**Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format**
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 ```
 
-### Additional config to customize Sunbird instance
+**Additional config to customize Sunbird instance**
+
 Sunbird supports customization of home page, logo, and fav icon for the portal. The customizations can be loaded by mounting the volume containing the customizations into the docker container.
 
 - Uncomment and set the value for the variable `player_tenant_dir` in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`. For example, `player_tenant_dir: /data/extensions/tenant`.
-  - **NOTE**: If the variable `player_tenant_dir` is commented, the volume will not be mounted and customizations will not be loaded.
+- **NOTE**: If the variable `player_tenant_dir` is commented, the volume will not be mounted and customizations will not be loaded.
 - Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be `mode=0775`,`user=root` and `group=root`.
 - This [wiki](https://github.com/project-sunbird/sunbird-commons/wiki/Deploying-Custom-html-pages-and-images) contains the instructions to deploy custom home pages and images.
 
-### Deploying Sunbird services
+**Deploying Sunbird services**
 - Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will setup all the sunbird core services.
 - Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will setup sunbird proxy services.
 
-#### Automation Walkthrough
+**Automation Walkthrough**
+
 [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
 [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
 [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
 
-# Step 5: Check Installation
+**Step 5:** Check Installation
 
 - Browse Sunbird Portal by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).
 
-**TODO** Need link to functional documentation to perform just enough user flows to ensure Sunbird implementation is functional
+**Step 6:** Upgrade with a new version of Sunbird
 
-# Step 6: Upgrade with a new version of Sunbird
 To update/redeploy sunbird please follow these steps:
 
 - Update the Sunbird image versions to latest gold version (e.g. `PLAYER_VERSION`).
