@@ -29,9 +29,10 @@ For a non production setup, you could skip the automation and proceed to the man
 - **Automated**
 
 The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.
+
 **Automation for Azure**
 
--**Run Time**: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.
+- **Run Time**: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.
 
 Run the following steps from a machine which is connected to the internet:
 
