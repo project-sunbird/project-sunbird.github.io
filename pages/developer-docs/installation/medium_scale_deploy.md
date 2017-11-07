@@ -49,9 +49,9 @@ Run the following steps from a machine which is connected to the internet:
 
 **Automation walkthrough**
 
-[Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif)
+[Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
 
-[Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif)
+[Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 **Others**
 
@@ -102,7 +102,7 @@ Included in the next demo
 
 **Automation Walkthrough**
 
-[Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
+[Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}
 
 **Step 4:** Setup Application and Core services
 
@@ -110,7 +110,7 @@ Included in the next demo
 - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
 - Copy over the configuration directory from the DB server(`<implementation-name>-devops`) to this machine
 - Modify all the configurations under `# APPLICATION CONFIGURATION` block
-- The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Updating-SSL-certificates-in-Sunbird-Proxy-service) for details on how to do this. Note: If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate), steps for this are detailed in [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Generating-a-self-signed-certificate)
+- The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Updating-SSL-certificates-in-Sunbird-Proxy-service){:target="_blank"} for details on how to do this. Note: If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate){:target="_blank"}, steps for this are detailed in [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Generating-a-self-signed-certificate){:target="_blank"}
 - Run `cd sunbird-devops/deploy`
 - Run `sudo ./install-deps.sh`. This will install dependencies.
 - Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will onboard various APIs and consumer groups.
@@ -126,7 +126,7 @@ Included in the next demo
   *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro*", "Updating rate_limit for consumer player for API cr......"]}
 
 - Update `sunbird_api_auth_token` in your configuration with the above copied token.
-- Obtain API token from Ekstep platform by following steps listed [here](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
+- Obtain API token from Ekstep platform by following steps listed [here](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs){:target="_blank"}
 - Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal
 
 - Keycloak is deployed on vm. RUN `./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>` this script creates the keycloak username,groupname and servicify keycloak service on vm.
@@ -138,7 +138,7 @@ Included in the next demo
 ```
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
-- Follow the instructions [here](https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration) to setup auth realm in keycloak.
+- Follow the instructions [here](https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration){:target="_blank"} to setup auth realm in keycloak.
 
 - Update following configs
 
@@ -173,11 +173,11 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 **Automation Walkthrough**
 
-[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
+[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
 
-[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
+[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
 
-[Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
+[Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
 
 **Step 5:** Check Installation
 
