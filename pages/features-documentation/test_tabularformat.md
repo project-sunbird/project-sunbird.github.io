@@ -62,3 +62,22 @@ Line Break
 - You can land to Course page
     1. In the Course page, you can find details about the course content, structure, progress etc
     1. Click (pdf icon) link, to read printable study material
+    
+    
+    
+    
+
+
+
+Line Break
+
+Steps   													| Images
+------------------------------------------------------------|-----------------------------------------------
+Sign in Sunbird portal using your registered credential:	| {img src="/pages/features-documentation/images/login1.png" right quarter alt=""}
+Enter your User ID       									| 
+Enter your password     									|
+Click login button         									| 
+You will land to the Home page        						| {% image src="/pages/features-documentation/images/workspace2.png" right quarter alt="Workspace image"%}
+You will land to Course page                                | {img src="/pages/features-documentation/images/consumecourse3.png" right quarter alt=""}
+
+
