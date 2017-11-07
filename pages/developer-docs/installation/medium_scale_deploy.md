@@ -23,6 +23,7 @@ You will need servers with the following minimum system requirements:
 **Step 1:** Provisioning your servers
 
 For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
+
 - **Automated**
 
 The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.
@@ -49,9 +50,9 @@ Run the following steps from a machine which is connected to the internet:
 
 **Automation walkthrough**
 
-[Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
+- [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
 
-[Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
+- [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 **Others**
 
@@ -76,7 +77,7 @@ Run the following steps starting from your local machine:
 
 - SSH into the `db-server`. If you have not edited the default configuration, then the name of the DB VM would be `db-1`. Automated setup does not expose the DB to the Internet, so to SSH into the DB, you will need to SSH to `vm-1` (check out `masterFQDN` above) with `ssh -A` (key forwarding) and then SSH to `db-1`.
 - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
-- Run `./sunbird-devops/deploy/generate-config.sh <implementation-name> <environment-name>`. Example `./sunbird-devops/deploy/generate-config.sh ntp production deploy`. This creates `ntp-devops` directory with *incomplete* configurations. You **WILL** need to supply missing configuration.
+- Run `./sunbird-devops/deploy/generate-config.sh <implementation-name> <environment-name>`. Example `./sunbird-devops/deploy/generate-config.sh ntp production deploy`. This creates `ntp-devops` directory with *incomplete* configurations. You will need to supply missing configuration.
 - Modify all the configurations under `# DB CONFIGURATION` block in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`
 
 **DB creation**
@@ -88,7 +89,9 @@ Run the following steps starting from your local machine:
 Following is a set of scripts which install the DBs into the `db-server` and copy over `master` data.
 
 - Run `cd sunbird-devops/deploy`
-- Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
+- Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. 
+
+This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
 
 **Manual**
 
@@ -102,7 +105,7 @@ Included in the next demo
 
 **Automation Walkthrough**
 
-[Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}
+- [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}
 
 **Step 4:** Setup Application and Core services
 
@@ -128,14 +131,15 @@ Included in the next demo
 - Update `sunbird_api_auth_token` in your configuration with the above copied token.
 - Obtain API token from Ekstep platform by following steps listed [here](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs){:target="_blank"}
 - Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal
-
 - Keycloak is deployed on vm. RUN `./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>` this script creates the keycloak username,groupname and servicify keycloak service on vm.
 
 - Update below variables in the config ` <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`.
+
 ```
  keycloak_password: (which admin initial password)
  keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
 ```
+
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
 - Follow the instructions [here](https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration){:target="_blank"} to setup auth realm in keycloak.
@@ -173,11 +177,11 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 **Automation Walkthrough**
 
-[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
+- [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
 
-[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
+- [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
 
-[Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
+- [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
 
 **Step 5:** Check Installation
 
