@@ -12,11 +12,11 @@ hide_section_selector: true
 
 Steps   												  | Images
 ----------------------------------------------------------|--------
-Sign in Sunbird portal using your registered credential:  | {% image src='/pages/features-documentation/images/login1.png' full                                                                   |  center alt='Login' %}
+Sign in Sunbird portal using your registered credential:  | {% image src='/pages/features-documentation/images/login1.png' half                                                                   |  center alt='Login' %}
 Enter your User ID                                        | 
 Enter your password       								               
 Click login button         								                
-You will land to the Home page    					              | {% image src='/pages/features-documentation/images/workspace2.png' full     center alt='Workspace' %}
+You will land to the Home page    					              | {% image src='/pages/features-documentation/images/workspace2.png'  half center alt='Workspace' %}
 
 
 
@@ -28,11 +28,11 @@ Line break
 
 Steps   													| Images
 ------------------------------------------------------------|-----------------------------------------------
-Sign in Sunbird portal using your registered credential:	| {img style="float:right" src="/pages/features-documentation/images/login1.png'}
+Sign in Sunbird portal using your registered credential:	| {img src="/pages/features-documentation/images/login1.png" half right alt=""}
 Enter your User ID       									| 
 Enter your password     									|
 Click login button         									| 
-You will land to the Home page        						| {img style="float:right" src="/pages/features-documentation/images/workspace2.png'}
+You will land to the Home page        						| {img src="/pages/features-documentation/images/workspace2.png" half right alt=""}
 
 
 
@@ -43,14 +43,14 @@ You will land to the Home page        						| {img style="float:right" src="/pag
 
 Line Break
 
-{img style="float:right" src="/pages/features-documentation/images/login1.png}
+{img src="/pages/features-documentation/images/login1.png" half right alt=""}
 
 - Sign in Sunbird portal using registered credential:
     1. Enter your User ID
     1. Enter your password
     1. Click Login button
 
-{img style="float:right" src="/pages/features-documentation/images/workspace2.png}
+{img src="/pages/features-documentation/images/workspace2.png" half right alt=""}
 
 - You will land to Home page
     1. In the Home page, you can find your courses that your are enrolled to
