@@ -12,8 +12,8 @@ hide_section_selector: true
 
 Steps   												  | Images
 ----------------------------------------------------------|--------
-Sign in Sunbird portal using your registered credential:  | <pre>{% image src='/pages/features-documentation/images/login1.png' full                                                               |  centeralt='Login' %}</pre> 
-----------------------------------------------------------|-----------------------------------------------------
+Sign in Sunbird portal using your registered credential:  | {% image src='/pages/features-documentation/images/login1.png' full                                                                   |  center alt='Login' %}
+                                                          |
 Enter your User ID                                        | 
 Enter your password       								  |
 Click login button         								  | 
