@@ -1,12 +1,10 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/installation/
 title: Installation  Overview
 page_title: Installation
 description: installation overview
 keywords: 'Try Sunbird, Installation method, Pre-requisites, Sandbox'
-hide_platform_selector: true
-hide_section_selector: true
 ---
 This page provides a summarized listing of the essential steps for planning, installing, and configuring Sunbird deployment in a live environment.The deployment of Sunbird requires several distributed components for runtime operation. Getting started with this can be cumbersome. Fortunately,the installation process is simplified for some common scenarios.
 
