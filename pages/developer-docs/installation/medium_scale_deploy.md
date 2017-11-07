@@ -1,12 +1,9 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/installation/
 title: Medium Scale Deployment
 page_title: Medium Scale Deployment
 description: About how developer can deploy
-hide_platform_selector: true
-hide_section_selector: true
-published: true
 ---
 
 **Pre-requisites**

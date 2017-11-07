@@ -11,7 +11,6 @@ alias:
   - /architecture/usecase/
 published: true
 ---
-**Use Cases**
 
 **Ensure free access to high quality and well organized open teaching and content resources**
 
