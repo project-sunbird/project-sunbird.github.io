@@ -5,12 +5,10 @@ title: Developer Documentation
 page_title: Developer Documentation
 description: Developer Documentation Overview
 keywords: 'Installation, pre requisite, extending sunbird'
-hide_platform_selector: true
-hide_section_selector: true
+
 published: true
 ---
 
-## Developer Documentation 
 
 The Developer Documentation provides a way through, that will not only help you get started as a Sunbird contributor, but that you'll find useful to refer to even if you are already an experienced contributor. The Sunbird community prides itself on being an open, accessible and friendly for new participants. 
 

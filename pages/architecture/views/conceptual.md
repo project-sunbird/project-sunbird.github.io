@@ -5,11 +5,8 @@ title: Conceptual View
 page_title: Conceptual View
 description: Conceptual View
 keywords: Conceptual View
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Conceptual View
 
 {% ingredient /architecture/archd_con_view_desc %}{% endingredient %}
 

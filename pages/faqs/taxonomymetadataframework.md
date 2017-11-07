@@ -8,11 +8,9 @@ keywords: >-
   taxonomy, metadata, framework, coourse metadata, book metadata, collection
   metadata, lesson metadata, contribute taxonomy, different frameworks, tags,
   tagging on platform, add taxonomy, create vocabulary list, vocabulary list
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Taxonomy, Metadata and Framework
+
 
 **What is taxonomy? Why do you need to tag content using the taxonomy provided?**
 

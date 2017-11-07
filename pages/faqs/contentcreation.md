@@ -7,12 +7,9 @@ description: Content Creation
 keywords: >-
   Platform, Content creation, Creating content, Course, Course Unit, Book, Book
   Unit, Collection, Worksheet, Stories, Modify
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 
-## Creating Content
 
 **Who can create content on the platform?**
 

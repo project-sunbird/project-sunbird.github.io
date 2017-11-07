@@ -7,11 +7,8 @@ description: Information on intelluctual property rights
 keywords: >-
   Content creator, Content provider, License Fraework, CC-BY, SCORM, Content
   Reference Model, Free Content, Open Content, Third Party Rights
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Intellectual Property Licenses & Standards
 
 **Who owns content on the platform?**
 

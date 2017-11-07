@@ -7,12 +7,9 @@ description: Content Creation
 keywords: >-
   content editor, create course, create content, create lesson, textbook,
   collection, course
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 
-## Content Creation
 
 {% ingredient /faqs/createcont_add_cont_course %}{% endingredient %}
 

@@ -4,13 +4,10 @@ directory: developer-docs
 title: Hosting
 page_title: Hosting
 description: Hosting
-keywords: 'Hosting,'
-hide_platform_selector: true
-hide_section_selector: true
+keywords: 'Hosting'
 published: true
 ---
 
-# Hosting
 
 {% ingredient /developer-docs/hosting_description %}{% endingredient %}
 

@@ -5,11 +5,9 @@ title: Courses and Training
 page_title: Courses and Training
 description: Course Training
 keywords: 'teacher training, training, assessment, training instituites, teacher educator'
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Courses and Training
+
 **Courses**
 
 Course is a content provided in sequence, broken down in modules, open for enrolment and completion for a duration. You can attach prerequisites for a course, and it may contain assessments.

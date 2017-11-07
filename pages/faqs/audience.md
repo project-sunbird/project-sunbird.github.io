@@ -8,11 +8,8 @@ keywords: >-
   Audience, Consumer, Who visits the platform, Who can consume content, Target
   Audience, Credit for creator, credit for author, content contributor,
   Instructor, Learner
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Audience
 
 **Who is the audience for the content on the platform?**
 

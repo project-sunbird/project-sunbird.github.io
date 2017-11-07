@@ -8,12 +8,9 @@ keywords: >-
   Glossary, domain, taxonomy, metadata, searchability,
   discoverability,vocabulary,framework,user, content provider, content creator,
   platform, product, information
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 
-## **Glossary** ##
 
 Term | Definition |Usage/Example
 -----|------------|-----------------

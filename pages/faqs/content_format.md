@@ -9,11 +9,8 @@ description: >-
 keywords: >-
   Content, Format, Support, File Size, Metadata, Youtube, Video, Maximum File
   size 
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## Content Formats
 
 **What content formats are supported on the platform?**
 

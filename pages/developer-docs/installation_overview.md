@@ -5,11 +5,9 @@ title: Installation  Overview
 page_title: Installation
 description: installation overview
 keywords: 'Try Sunbird, Installation method, Pre-requisites, Sandbox'
-hide_platform_selector: true
-hide_section_selector: true
 ---
 
-## Installation Overview
+
 
 {% ingredient /developer-docs/install_sb_overview_p1 %}{% endingredient %}
 

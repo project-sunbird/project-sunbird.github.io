@@ -5,11 +5,9 @@ title: User Profile
 page_title: User Profile
 description: User Profile
 keywords: 'Profile, create profile, log in, sign in '
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
-## User Profile
+
 Creating and updating your profile, gives you a unique identity on the platform. This helps the system identify your skill set, experience, location, etc. Providing this information helps the system provide personalized recommendations for courses to upgrade your skills, selects you for custom programs, connects you to others in the community, build bridges for collaboration, etc. You may choose to create, update or edit your profile information at any time.
 
 To create or update your profile:
