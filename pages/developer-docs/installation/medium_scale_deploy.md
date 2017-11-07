@@ -119,8 +119,10 @@ Included in the next demo
 
 - deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for "JWT token for player is :", copy the corresponding token. Example output below, token is highlighted in italics:
 
-  > changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py
-  /tmp/kong_consumers.json ....... "**JWT token for player is :**
+  changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py
+  /tmp/kong_consumers.json ....... "
+  
+  **JWT token for player is :**
   *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro*", "Updating rate_limit for consumer player for API cr......"]}
 
 - Update `sunbird_api_auth_token` in your configuration with the above copied token.
@@ -136,11 +138,11 @@ Included in the next demo
 ```
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
-- Follow the instructions [here](https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration) to setup auth realm in keycloak
+- Follow the instructions [here](https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration) to setup auth realm in keycloak.
 
 - Update following configs
 
-```yml
+<pre>
 **Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format**
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
@@ -153,7 +155,7 @@ sunbird_keycloak_client_id: # Eg: portal
 **Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format**
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
-```
+</pre>
 
 **Additional config to customize Sunbird instance**
 
@@ -165,6 +167,7 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 - Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be `mode=0775`,`user=root` and `group=root`.
 
 **Deploying Sunbird services**
+
 - Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will setup all the sunbird core services.
 - Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will setup sunbird proxy services.
 
