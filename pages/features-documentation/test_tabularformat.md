@@ -4,9 +4,9 @@
 Steps   												  | Images
 ----------------------------------------------------------|--------
 Sign in Sunbird portal using your registered credential:  | {% image src='/pages/features-documentation/images/login1.png' full center alt='Login' %}
-1. Enter your User ID   								  | 
-2. Enter your password  								  |
-3. Click login button   								  | 
+Enter your User ID                                        | 
+Enter your password       								  |
+Click login button         								  | 
 You will land to the Home page    					      | {% image src='/pages/features-documentation/images/workspace2.png' full center alt='Workspace' %}
 
 
@@ -20,10 +20,10 @@ Line break
 Steps   													| Images
 ------------------------------------------------------------|-----------------------------------------------
 Sign in Sunbird portal using your registered credential:	| {img style="float:right" src="/pages/features-documentation/images/login1.png'}
-1. Enter your User ID   									| 
-2. Enter your password  									|
-3. Click login button   									| 
-You will land to the Home page    						| {img style="float:right" src="/pages/features-documentation/images/workspace2.png'}
+Enter your User ID       									| 
+Enter your password     									|
+Click login button         									| 
+You will land to the Home page        						| {img style="float:right" src="/pages/features-documentation/images/workspace2.png'}
 
 
 
