@@ -73,7 +73,7 @@ You are free to either use existing DBs, create DBs manually or run the followin
   - Mongo
   - Elasticsearch
 
-- **Preparation**
+**Preparation**
 
 Run the following steps starting from your local machine:
 
