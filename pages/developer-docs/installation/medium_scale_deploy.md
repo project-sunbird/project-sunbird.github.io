@@ -174,7 +174,9 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 **Automation Walkthrough**
 
 [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
+
 [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
+
 [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
 
 **Step 5:** Check Installation
