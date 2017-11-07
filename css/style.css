@@ -3697,6 +3697,7 @@ body > header {
 .sidebar-wrapper.architecture-views .sidebar-group.architecture,
 .sidebar-wrapper.features-documentation .sidebar-group.features-documentation,
 .sidebar-wrapper.developer-docs .sidebar-group.developer-docs,
+.sidebar-wrapper.developer-docs-installation .sidebar-group.developer-docs,
 .sidebar-wrapper.apis .sidebar-group.developer-docs,
 .sidebar-wrapper.faqs .sidebar-group.faqs {
   display: block !important; }
@@ -4074,6 +4075,11 @@ img.nofloat {
 .inner__content.header h1 {
   margin-top: 10px; }
 
+.btn-edit {
+  background: #eee;
+  padding: 5px 10px;
+  border-radius: 3px; }
+
 .container-height {
   overflow: hidden; }
 
@@ -4150,7 +4156,7 @@ img.nofloat {
     .inner__content a.link:hover .material-icons {
       opacity: 1; }
   .inner__content h2, .inner__content h3, .inner__content h4, .inner__content h5 {
-    font-weight: lighter;
+    font-weight: 500;
     margin: 30px 0 20px 0;
     line-height: 1.4; }
     .inner__content h2 a:nth-child(2), .inner__content h3 a:nth-child(2), .inner__content h4 a:nth-child(2), .inner__content h5 a:nth-child(2) {

@@ -17,7 +17,7 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="last-modified" content="2017-11-02 16:45:15 +0530">
+	<meta name="last-modified" content="2017-11-07 18:56:34 +0530">
 	<meta http-equiv="Expires" content="600" />
 	
 	
@@ -26,12 +26,12 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?02112017"  />
-	<link rel="stylesheet" href="css/style.css?02112017"  />
+	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?07112017"  />
+	<link rel="stylesheet" href="css/style.css?07112017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js?02112017"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js?02112017"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js?07112017"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js?07112017"></script>
 
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -169,16 +169,16 @@
 				</a>
 				<ul class="sidebar-group developer-docs">
 					<li>
-						<a href="/developer-docs/installation_overview/">Installation Overview</a>
+						<a href="/developer-docs/installation/">Installation Overview</a>
 					</li>
 					<!--<li>
 						<a href="/developer-docs/hosting_sunbird/">Hosting Sunbird</a>
 					</li>-->
 					<li>
-						<a  href="/developer-docs/developer_install/">Install Sunbird on Laptop</a>
+						<a  href="/developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
 					</li>
 					<li>
-						<a href="/developer-docs/medium_scale_deploy/">Medium Scale Deployment</a>
+						<a href="/developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
 					</li>
 					<!--<li>
 						<div class="">
@@ -288,9 +288,8 @@ $("a[href$='/architecture/views/deployment/']").addClass("sidebar-link-selected"
       </div>
 
       <div id="main-content" class="inner__content">
-          <h2 id="deployment-view">Deployment View</h2>
-
-<p><strong>Infrastructure</strong></p>
+		  <p class="text-right pull-right"><a target="_blank"  class="btn btn-edit" href="https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/architecture/views/deployment.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></p>
+          <p><strong>Infrastructure</strong></p>
 
 <p>Sunbird can run on Virtual Machines (VMs) using various Cloud providers or even bare metal. 
 Cloud Infrastructure automation process will be updated soon on the website.</p>
@@ -298,28 +297,31 @@ Cloud Infrastructure automation process will be updated soon on the website.</p>
 <p><strong>Stable Builds Registry</strong></p>
 
 <ul>
-  <li>Sunbird builds are available at a <a href="https://hub.docker.com/u/sunbird">Image Registry</a>.</li>
-  <li>These builds are in the form of a <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a>.</li>
+  <li>Sunbird builds are available at a <a href="https://hub.docker.com/u/sunbird" target="_blank">Image Registry</a>.</li>
+  <li>These builds are in the form of a <a href="https://docs.docker.com/engine/reference/builder/" target="_blank">Dockerfile</a>.</li>
   <li>Sunbird stable releases are tagged as <code>gold</code>. While as Deployment scripts pull the <code>gold</code> images for production deployment.</li>
   <li>The <code>gold</code> images are also versioned to allow release management and upgrade paths.</li>
 </ul>
 
 <p><strong>Software Runtime</strong></p>
 
-<p>Most runtimes in Sunbird are containerized as <a href="https://www.docker.com/what-container">Docker containers</a> for: 
+<p>Most runtimes in Sunbird are containerized as <a href="https://www.docker.com/what-container" target="_blank">Docker containers</a> for: 
 - Portability
 - Process isolation
 - Standardization.<br />
-For container orchestration, this repo contains scripts to run Sunbird on <a href="https://docs.docker.com/engine/swarm/">Docker Swarm</a>. Most of the cloud providers provide these container services. In our repo, we are using <a href="https://github.com/Azure/acs-engine">ACS-Engine</a>.</p>
+For container orchestration, this repo contains scripts to run Sunbird on <a href="https://docs.docker.com/engine/swarm/" target="_blank">Docker Swarm</a>. Most of the cloud providers provide these container services. In our repo, we are using <a href="https://github.com/Azure/acs-engine" target="_blank">ACS-Engine</a>.</p>
 
 <p><strong>Logging, Monitoring and Operational dashboards</strong></p>
 
-<p>Sunbird comes with log aggregation and metrics reporting out of the box. For log aggregation, Sunbird is using a combination of 
-- <a href="https://github.com/google/cadvisor">cAdvisor</a>
-- <a href="https://www.elastic.co/webinars/introduction-elk-stack">ELK stack</a>
-- <a href="https://prometheus.io/">Prometheus</a> and their plugin ecosystem.</p>
+<p>Sunbird comes with log aggregation and metrics reporting out of the box. For log aggregation, Sunbird is using a combination of</p>
 
-<p>Ops dashboards are built using:<a href="https://grafana.com/">Grafana</a> with some <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/cloud/monitoring/grafana">reference</a> dashboards.</p>
+<ul>
+  <li><a href="https://github.com/google/cadvisor" target="_blank">cAdvisor</a></li>
+  <li><a href="https://www.elastic.co/webinars/introduction-elk-stack" target="_blank">ELK stack</a></li>
+  <li><a href="https://prometheus.io/" target="_blank">Prometheus</a> and their plugin ecosystem.</li>
+</ul>
+
+<p>Ops dashboards are built using: <a href="https://grafana.com/" target="_blank">Grafana</a> with some <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/cloud/monitoring/grafana" target="_blank">reference</a> dashboards.</p>
 
 <p><strong>Custom builds</strong></p>
 
@@ -327,7 +329,7 @@ For container orchestration, this repo contains scripts to run Sunbird on <a hre
 
 <p><strong>License</strong></p>
 
-<p>The code in this repository is licensed under AGPL-3.0 unless otherwise noted. Please see the <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/LICENSE">LICENSE</a> file for details.</p>
+<p>The code in this repository is licensed under AGPL-3.0 unless otherwise noted. Please see the <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/LICENSE" target="_blank">LICENSE</a> file for details.</p>
 
 
       </div>
