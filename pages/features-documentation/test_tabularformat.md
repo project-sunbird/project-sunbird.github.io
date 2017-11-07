@@ -43,21 +43,21 @@ You will land to the Home page        						| {img src="/pages/features-document
 
 Line Break
 
-{img style="float:right" src="/pages/features-documentation/images/login1.png"}
+{img src="/pages/features-documentation/images/login1.png" half right alt="login"}
 
 - Sign in Sunbird portal using registered credential:
     1. Enter your User ID
     1. Enter your password
     1. Click Login button
 
-{img style="float:right" src="/pages/features-documentation/images/workspace2.png"}
+{img src="/pages/features-documentation/images/workspace2.png" half right alt="workspace"}
 
 - You will land to Home page
     1. In the Home page, you can find your courses that your are enrolled to
     1. Locate all the courses that you are enrolled to in To Do
     1. Click Resume button to take up a course
 
-{img style="float:right" src="/pages/features-documentation/images/consumecourse3.png"}
+{img src="/pages/features-documentation/images/consumecourse3.png" half right alt="consume course"}
 
 - You can land to Course page
     1. In the Course page, you can find details about the course content, structure, progress etc
@@ -73,11 +73,11 @@ Line Break
 
 Steps   													| Images
 ------------------------------------------------------------|-----------------------------------------------
-Sign in Sunbird portal using your registered credential:	| {img src="/pages/features-documentation/images/login1.png" right quarter alt=""}
+Sign in Sunbird portal using your registered credential:	| {img src="/pages/features-documentation/images/login1.png" right quarter alt="login"}
 Enter your User ID       									| 
 Enter your password     									|
 Click login button         									| 
 You will land to the Home page        						| {% image src="/pages/features-documentation/images/workspace2.png" right quarter alt="Workspace image"%}
-You will land to Course page                                | {img src="/pages/features-documentation/images/consumecourse3.png" right quarter alt=""}
+You will land to Course page                                | {img src="/pages/features-documentation/images/consumecourse3.png" right quarter alt="consume course"}
 
 
