@@ -20,7 +20,7 @@ You will need servers with the following minimum system requirements:
 - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
 - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
-- ####Step 1: Provisioning your servers**
+#### Step 1: Provisioning your servers**
 
 For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
 
@@ -28,7 +28,7 @@ For a non production setup, you could skip the automation and proceed to the man
 
 The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above-mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.
 
-Automation for Azure
+- **Automation for Azure**
 
 Run Time: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.
 
@@ -48,17 +48,17 @@ Run the following steps from a machine which is connected to the internet:
 - Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
 - If you could SSH, you have successfully created the server platform.
 
-- Automation walkthrough
+- **Automation walkthrough**
 
 - [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif)
 
 - [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif)
 
-Manual
+- **Manual**
 
 Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.
 
-- **Step 2:** Setup your DBs
+#### **Step 2:** Setup your DBs
 You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:
 
 - Cassandra
