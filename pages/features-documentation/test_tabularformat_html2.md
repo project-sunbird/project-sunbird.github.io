@@ -35,9 +35,9 @@ table, th, td {
     		<li> Sign in the portal using your registered credential</li>
         </ul>
     	<ol>
-            1. Enter your User ID
-   			2. Enter your password
-    		3. Click log in button
+            <li> Enter your User ID</li>
+            <li> Enter your password</li>
+            <li> Click log in button</li>
     	</ol>
     </td>
     <td> <img src="/pages/features-documentation/images/login1.png" style="float:centre;width:95%;height:75%;">       
@@ -49,9 +49,9 @@ table, th, td {
         	<li> You will land to the Home page: </li>
         </ul>
         <ol>
-            <li> 1. In the Home page, you can find your courses that your are enrolled to  </li>
-            <li> 2. Locate all the courses that you are enrolled to in To Do  </li>
-            <li> 3. Click on Resume button, to take up a course </li>
+            <li> In the Home page, you can find your courses that your are enrolled to  </li>
+            <li> Locate all the courses that you are enrolled to in To Do  </li>
+            <li> Click on Resume button, to take up a course </li>
          </ol>
     </td>
     <td><img src="/pages/features-documentation/images/workspace2.png" style="float:centre;width:95%;height:75%;"> 
