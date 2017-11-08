@@ -10,7 +10,6 @@ hide_section_selector: true
 published: true
 ---
 
-<!DOCTYPE html>
 <html>
 <style>
 table, th, td {

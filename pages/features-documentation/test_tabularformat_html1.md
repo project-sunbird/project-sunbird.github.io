@@ -10,7 +10,6 @@ hide_section_selector: true
 published: true
 ---
 
-<!DOCTYPE html>
 <html>
 <style>
 table, th, td {
@@ -36,7 +35,7 @@ table, th, td {
     		<li> Click log in button</li>
     	</ul>
     </td>
-    <td> <img src="/pages/features-documentation/images/login1.png" width="850" height="450">       
+    <td> <img src="/pages/features-documentation/images/login1.png" width="500" height="200">       
     </td>
   </tr>
   <tr>
@@ -48,7 +47,7 @@ table, th, td {
             <li> Click on Resume button, to take up a course </li>
          </ul>
     </td>
-    <td><img src="/pages/features-documentation/images/workspace2.png" width="850" height="450"> 
+    <td><img src="/pages/features-documentation/images/workspace2.png" width="500" height="200"> 
     </td>
   </tr>
 </table>
