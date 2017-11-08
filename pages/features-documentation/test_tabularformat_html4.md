@@ -15,9 +15,9 @@ published: true
 <body style="background-color:light grey">
 <H1>SUNBIRD</H1>
 
-<p> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:600px;height:500px;border:solid black;padding:8px"></p>
+<p1> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:500px;height:300px;border:solid black;"></p1>
 
-<p><strong>Step 1: </strong>
+<p2><strong>Step 1: </strong>
     <ul>
       <li> Sign in the portal, using your registered credential:</li>
     </ul>
@@ -26,11 +26,11 @@ published: true
         <li> Enter your password</li>
         <li> Click log in button</li>
     </ol>
-</p>
+</p2>
 
-<p> <img src="/pages/features-documentation/images/workspace2.png" style="float:left;width:700px;height:500px;border:solid black;padding:8px"> </p>
+<p3> <img src="/pages/features-documentation/images/workspace2.png" style="float:left;width:500px;height:300px;border:solid black;padding:8px"> </p3>
 
-<p><strong>Step 2:</strong>
+<p4><strong>Step 2:</strong>
     <ul>
         <li> You will land to the Home page:</li>
     </ul>
@@ -39,6 +39,6 @@ published: true
         <li> Locate all the courses that you are enrolled to in To Do  </li>
         <li> Click on Resume button, to take up a course </li>
      </ol>
-</p>
+</p4>
 </body>
 </html>
