@@ -11,6 +11,7 @@ safe: false
 ga: UA-106552125-1
 anchorPrefix: link
 tocTopTag: h2
+showToggleButton: true
 
 exclude:
 - vendor
