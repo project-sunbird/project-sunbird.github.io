@@ -15,7 +15,7 @@ published: true
 <body style="background-color:light grey">
 <H1>SUNBIRD</H1>
 
-<p1> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:500px;height:300px;border:solid black;padding:8px"></p1>
+<p1> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:500px;height:300px;border:solid black;"></p1>
 
 <p2><strong>Step 1: </strong>
     <ul>
