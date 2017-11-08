@@ -14,7 +14,9 @@ published: true
 <html>
 <body style="background-color:light grey">
 <H1>SUNBIRD</H1>
-<p> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:600px;height:500px;border:solid black"></p>
+
+<p> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:600px;height:500px;border:solid black;padding:8px"></p>
+
 <p><strong>Step 1: </strong>
     <ul>
       <li> Sign in the portal, using your registered credential:</li>
@@ -25,7 +27,9 @@ published: true
         <li> Click log in button</li>
     </ol>
 </p>
-<p> <img src="/pages/features-documentation/images/workspace2.png" style="float:left;width:700px;height:500px;border:solid black"> </p>
+
+<p> <img src="/pages/features-documentation/images/workspace2.png" style="float:left;width:700px;height:500px;border:solid black;padding:8px"> </p>
+
 <p><strong>Step 2:</strong>
     <ul>
         <li> You will land to the Home page:</li>
