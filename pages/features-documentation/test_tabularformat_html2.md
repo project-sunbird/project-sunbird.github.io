@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation
-title: test tabularformat html1
-page_title: test tabularformat html1
+title: test tabularformat html2
+page_title: test tabularformat html2
 description: Administration
 keywords: 'System Admin,Org Admin,Network Admin,Roles, Permissions, Rights'
 hide_platform_selector: true
