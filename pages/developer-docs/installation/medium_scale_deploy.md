@@ -20,11 +20,11 @@ You will need servers with the following minimum system requirements:
 - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
 - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
-- **Step 1: Provisioning your servers**
+- ####Step 1: Provisioning your servers**
 
 For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
 
-- Automated
+- **Automated**
 
 The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above-mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.
 
