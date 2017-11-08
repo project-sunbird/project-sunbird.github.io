@@ -10,15 +10,15 @@ description: About how developer can deploy
 
 You will need servers with the following minimum system requirements:
 
-  - Operating System: Ubuntu 16.04 LTS
-  - RAM: 7GB
-  - CPU: 2 core, >2 GHz
-  - root access (should be able to sudo)
+    - Operating System: Ubuntu 16.04 LTS
+    - RAM: 7GB
+    - CPU: 2 core, >2 GHz
+    - root access (should be able to sudo)
 
 ### Variables relevant to deployment
 
-  - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
-  - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
+    - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
+    - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
 #### Step 1: Provisioning your servers**
 
@@ -34,39 +34,40 @@ Run Time: 30 mins first time. Scripts can be re-tried and will not create a new 
 
 Run the following steps from a machine which is connected to the internet:
 
-  - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
-  - Run `./sunbird-devops/deploy/generate-config.sh ntp production cloud` This will create config files for you in `./ntp-devops/test/azure`. Here, `ntp` is the **implementation-name** and `production` is the **environment-name**.
-  - Edit BOTH the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
-  -  Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
-  - Run `export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/app`
-  - Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/db`
-  - Run `cd sunbird-devops/deploy`
-  - Run `./provision-servers.sh`
-  - Login to Azure when CLI instructs
-  - Wait for deployment to complete
-  - Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details.
-  - Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
-  - If you could SSH, you have successfully created the server platform.
+    - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
+    - Run `./sunbird-devops/deploy/generate-config.sh ntp production cloud` This will create config files for you in `./ntp-devops/test/azure`. Here, `ntp` is the **implementation-name** and `production` is the **environment-name**.
+    - Edit BOTH the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
+    -  Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
+    - Run `export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/app`
+    - Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/db`
+    - Run `cd sunbird-devops/deploy`
+    - Run `./provision-servers.sh`
+    - Login to Azure when CLI instructs
+    - Wait for deployment to complete
+    - Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details.
+    - Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
+    - If you could SSH, you have successfully created the server platform.
 
 - **Automation walkthrough**
 
-  - [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif)
+    - [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif)
 
-  - [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif)
+    - [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif)
 
 - **Manual**
 
 Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.
 
 #### **Step 2:** Setup your DBs
+
 You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:
 
-- Cassandra
-- Postgres
-- Mongo
-- Elasticsearch
+    - Cassandra
+    - Postgres
+    - Mongo
+    - Elasticsearch
 
-- Preparation
+    - Preparation
 
 Run the following steps starting from your local machine:
 
