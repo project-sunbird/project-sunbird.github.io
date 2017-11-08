@@ -21,7 +21,7 @@ body > header {
     right: 20px;
     top: 20px;
 }
-.search-cover{padding-top:20px;padding-bottom:10px;}
+.search-cover{padding-top:20px;padding-bottom:10px;max-width: 250px;display:none;}
 .signup{padding-top:25px; padding-bottom:10px;}
 .main-menu{min-height:0;margin-bottom: 0;}
 .navbar-nav > li{list-style:none;padding:5px 10px;}
@@ -42,4 +42,9 @@ body > header {
 .inner__content.header {
 	border-bottom:2px solid #ddd;
 	padding-bottom:10px !important;
+}
+@media (min-width: 768px){
+	.main-menu .navbar-nav {
+		padding:0;
+	}
 }
