@@ -12,7 +12,7 @@ Installing Sunbird requires two primary software components, the Sunbird portal 
 
 To setup the Sunbird portal follow the steps sequentially.
 
-###Prerequisites
+##Prerequisites
 
 Please complete the following pre-requisites before installing and running the sunbird-player application
 
@@ -35,7 +35,7 @@ Please complete the following pre-requisites before installing and running the s
 		- ```$ bower cache clean```
 		- ```$ bower install --force```
 
-###Backend Service Stack
+##Backend Service Stack
 
 The Sunbird portal application is powered by a set of Service APIs. These Service APIs can be run in a distributed environment, for instance when you deploy to production, or they can be run locally on a single server for ease of use and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes. 
 
