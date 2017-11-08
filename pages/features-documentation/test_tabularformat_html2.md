@@ -14,9 +14,9 @@ published: true
 <html>
 <style>
 table, th, td {
-    style="width:100%"
-    style="background-color:DodgerBlue"
-    border: 5px solid black;
+    style="width:100%";
+    style="background-color:LightGrey"
+    border: 5px #0000ff;
     border-collapse: collapse;
 }
 </style>
@@ -40,19 +40,21 @@ table, th, td {
     		3. Click log in button
     	</ol>
     </td>
-    <td> <img src="/pages/features-documentation/images/login1.png" width="95%" height="80%">       
+    <td> <img src="/pages/features-documentation/images/login1.png" style="float:centre;width:95%;height:75%;">       
     </td>
   </tr>
   <tr>
     <td>Step 2: 
     	<ul>
         	<li> You will land to the Home page: </li>
-            <li> In the Home page, you can find your courses that your are enrolled to  </li>
-            <li> Locate all the courses that you are enrolled to in To Do  </li>
-            <li> Click on Resume button, to take up a course </li>
-         </ul>
+        </ul>
+        <ol>
+            <li> 1. In the Home page, you can find your courses that your are enrolled to  </li>
+            <li> 2. Locate all the courses that you are enrolled to in To Do  </li>
+            <li> 3. Click on Resume button, to take up a course </li>
+         </ol>
     </td>
-    <td><img src="/pages/features-documentation/images/workspace2.png" width="95%" height="80%"> 
+    <td><img src="/pages/features-documentation/images/workspace2.png" style="float:centre;width:95%;height:75%;"> 
     </td>
   </tr>
 </table>
