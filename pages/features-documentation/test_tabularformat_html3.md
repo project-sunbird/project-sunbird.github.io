@@ -10,23 +10,22 @@ hide_section_selector: true
 published: true
 ---
 
-<!DOCTYPE html>
 <html>
 <style>
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    
 }
 
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 1px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: white;
 }
 </style>
 <body>
@@ -49,7 +48,7 @@ tr:nth-child(even) {
             <li> Click log in button</li>
     	</ol>
     </td>
-    <td> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:80%;height:70%;border:solid black">       
+    <td> <img src="/pages/features-documentation/images/login1.png" style="float:centre;width:80%;height:70%;border:solid black">       
     </td>
   </tr>
   <tr>
@@ -63,7 +62,7 @@ tr:nth-child(even) {
             <li> Click on Resume button, to take up a course </li>
          </ol>
     </td>
-    <td><img src="/pages/features-documentation/images/workspace2.png" style="float:left;width:80%;height:70%;border:solid black"> 
+    <td><img src="/pages/features-documentation/images/workspace2.png" style="float:centre;width:80%;height:70%;border:solid black"> 
     </td>
   </tr>
 </table>
