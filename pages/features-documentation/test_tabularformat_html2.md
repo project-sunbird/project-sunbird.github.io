@@ -33,10 +33,12 @@ table, th, td {
     <td>Step 1: 
     	<ul>
     		<li> Sign in the portal using your registered credential</li>
-    		<li> Enter your User ID</li>
-   			<li> Enter your password</li>
-    		<li> Click log in button</li>
-    	</ul>
+        </ul>
+    	<ol>
+            1. Enter your User ID
+   			2. Enter your password
+    		3. Click log in button
+    	</ol>
     </td>
     <td> <img src="/pages/features-documentation/images/login1.png" width="95%" height="80%">       
     </td>
