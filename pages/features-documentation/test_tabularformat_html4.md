@@ -17,15 +17,15 @@ published: true
 <p> <img src="/pages/features-documentation/images/login1.png" style="float:left;width:600px;height:500px;border:solid black"></p>
 <p><strong>Step 1: </strong>
     <ul>
-      <li> Sign in the portal, using your registered credential<li>
+      <li> Sign in the portal, using your registered credential:</li>
     </ul>
     <ol>
         <li>Enter your User ID</li>
         <li> Enter your password</li>
         <li> Click log in button</li>
     </ol>
-    </p>
-<p> <img src="/pages/features-documentation/images/workspace2.png" style="float:left;width:600px;height:500px;border:solid black"> </p>
+</p>
+<p> <img src="/pages/features-documentation/images/workspace2.png" style="float:left;width:700px;height:500px;border:solid black"> </p>
 <p><strong>Step 2:</strong>
     <ul>
         <li> You will land to the Home page:</li>
