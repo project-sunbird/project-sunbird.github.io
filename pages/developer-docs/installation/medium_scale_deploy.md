@@ -193,7 +193,7 @@ This is required only if you are planning to release your own mobile app using s
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
 - Run it.
 
-```sh
+<pre>
 curl -X POST \
   <sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
   -H 'authorization: Bearer <mobile_admin_jwt_token>' \
@@ -202,12 +202,12 @@ curl -X POST \
   "request": {
     "key": "<implementation-name>-mobile-app-<version-number>"
   }
-}'
-```
+}
+</pre>
 Result will be
-```js
+<pre>
 {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
-```
+</pre/
 - Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app
 
 **Step 7: Upgrade with a new version of Sunbird**
