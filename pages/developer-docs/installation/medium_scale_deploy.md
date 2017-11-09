@@ -80,19 +80,19 @@ Run the following steps starting from your local machine:
 
 - Via automation
 
-    Run Time: 15-30 mins to prepare and 30 mins to complete.
-    Following is a set of scripts which install the DBs into the `db-server` and copy over `master` data.
+Run Time: 15-30 mins to prepare and 30 mins to complete.
+Following is a set of scripts which install the DBs into the `db-server` and copy over `master` data.
 
     - Run `cd sunbird-devops/deploy`
     - Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
 
 - Manual creation
 
-    Refer to DB user guides.
+Refer to DB user guides.
 
 - Automation Walkthrough
 
-    Included in the next demo
+Included in the next demo
 
 **Step 3: Initialize DBs**
 
@@ -108,9 +108,9 @@ Run the following steps starting from your local machine:
 - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
 - Copy over the configuration directory from the DB server(`<implementation-name>-devops`) to this machine
 - Modify all the configurations under `# APPLICATION CONFIGURATION` block
-- The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Updating-SSL-certificates-in-Sunbird-Proxy-service) for details on how to do this. 
+- The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see [this wiki]() for details on how to do this. 
 
-**Note:** If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate), steps for this are detailed in [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Generating-a-self-signed-certificate)
+**Note:** If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate), steps for this are detailed in [this wiki]()
 
 - Run `cd sunbird-devops/deploy`
 - Run `sudo ./install-deps.sh`. This will install dependencies.
@@ -127,7 +127,7 @@ Run the following steps starting from your local machine:
   "Updating rate_limit for consumer player for API cr......"]}
 
 - Update `sunbird_api_auth_token` in your configuration with the above copied token.
-- Obtain API token from Ekstep platform by following steps listed [here](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
+- Obtain API token from Ekstep platform by following steps listed [here]()
 - Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal
 - Keycloak is deployed on vm. RUN `./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>` this script creates the keycloak username,groupname and servicify keycloak service on vm.
 - Update below variables in the config 
@@ -141,7 +141,7 @@ Run the following steps starting from your local machine:
 
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
-- Follow the instructions [here](https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration) to setup auth realm in keycloak
+- Follow the instructions [here]() to setup auth realm in keycloak
 
 - Update following configs
 
@@ -169,7 +169,7 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
  **NOTE**: If the variable `player_tenant_dir` is commented, the volume will not be mounted and customizations will not be loaded.
 
 - Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be `mode=0775`,`user=root` and `group=root`.
-- This [wiki](https://github.com/project-sunbird/sunbird-commons/wiki/Deploying-Custom-html-pages-and-images) contains the instructions to deploy custom home pages and images.
+- This [wiki]() contains the instructions to deploy custom home pages and images.
 
 ### Deploying Sunbird services
 
