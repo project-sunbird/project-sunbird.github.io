@@ -8,11 +8,11 @@ published: true
 
 Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface. 
 
-**Sunbird Portal Setup**
+## Sunbird Portal Setup
 
 To setup the Sunbird portal follow the steps sequentially.
 
-##Prerequisites
+### Prerequisites
 
 Please complete the following pre-requisites before installing and running the sunbird-player application
 
@@ -27,21 +27,20 @@ Please complete the following pre-requisites before installing and running the s
 
 2. **API Keys** - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when [configuring the application](#edit-the-application-config).
 
-3. **Setup** -
-	- Checkout the code from `https://github.com/project-sunbird/sunbird-portal.git`
+3. **Setup**: Checkout the code from `https://github.com/project-sunbird/sunbird-portal.git`
 	- Run the following commands
 		- ```$ cd <PROJECT-FOLDER>/src```
 		- ```$ npm install```
 		- ```$ bower cache clean```
 		- ```$ bower install --force```
 
-##Backend Service Stack
+### Backend Service Stack
 
 The Sunbird portal application is powered by a set of Service APIs. These Service APIs can be run in a distributed environment, for instance when you deploy to production, or they can be run locally on a single server for ease of use and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes. 
 
 **Please note** : the cloud instance of the APIs hosted by Project Sunbird are not for production usage.
 
-**Edit the application config**
+### Edit the application config
 
 Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in your favourite text editor. Update the file so it contains the following values:
 
@@ -64,7 +63,7 @@ module.exports = {
 }
 </pre>
 
-**Run Application**
+### Run Application
 
 * Run the following commands:
 	- ```$ gulp build```
