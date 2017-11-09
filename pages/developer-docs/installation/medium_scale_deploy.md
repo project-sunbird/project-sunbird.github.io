@@ -10,15 +10,15 @@ description: About how developer can deploy
 
 You will need servers with the following minimum system requirements:
 
-    - Operating System: Ubuntu 16.04 LTS
-    - RAM: 7GB
-    - CPU: 2 core, >2 GHz
-    - root access (should be able to sudo)
+   - Operating System: Ubuntu 16.04 LTS
+   - RAM: 7GB
+   - CPU: 2 core, >2 GHz
+   - root access (should be able to sudo)
 
 ## Variables relevant to deployment
 
-    - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
-    - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
+   - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
+   - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
 ### Step 1: Provisioning your servers
 
@@ -67,7 +67,7 @@ You are free to either use existing DBs, create DBs manually or run the followin
     - Mongo
     - Elasticsearch
 
-    - Preparation
+- Preparation
 
 Run the following steps starting from your local machine:
 
@@ -90,17 +90,13 @@ Following is a set of scripts which install the DBs into the `db-server` and cop
 
 Refer to DB user guides.
 
-- Automation Walkthrough
-
-Included in the next demo
-
 **Step 3: Initialize DBs**
 
     - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
 
-    - Automation Walkthrough
+- Automation Walkthrough
 
-[Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
+   [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
 
 **Step 4: Setup Application and Core services**
 
@@ -141,8 +137,6 @@ Included in the next demo
 
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
-- Follow the instructions [here]() to setup auth realm in keycloak
-
 - Update following configs
 
 ```
@@ -169,7 +163,6 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
  **NOTE**: If the variable `player_tenant_dir` is commented, the volume will not be mounted and customizations will not be loaded.
 
 - Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be `mode=0775`,`user=root` and `group=root`.
-- This [wiki]() contains the instructions to deploy custom home pages and images.
 
 ### Deploying Sunbird services
 
@@ -178,11 +171,11 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 - Automation Walkthrough
 
-[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
+    [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
 
-[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
+    [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
 
-[Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
+    [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
 
 **Step 5: Check Installation**
 
@@ -192,9 +185,9 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 This is required only if you are planning to release your own mobile app using sunbird mobile app codebase.
 
-- Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+- Execute & run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
-- Run
+- Run it.
 
 ```sh
 curl -X POST \
