@@ -100,7 +100,7 @@ Refer to DB user guides.
 
 - Automation Walkthrough
 
-   [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
+   - [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
 
 **Step 4: Setup Application and Core services**
 
