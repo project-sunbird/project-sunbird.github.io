@@ -141,8 +141,6 @@ Included in the next demo
 
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
-- Follow the instructions [here]() to setup auth realm in keycloak
-
 - Update following configs
 
 ```
@@ -169,7 +167,6 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
  **NOTE**: If the variable `player_tenant_dir` is commented, the volume will not be mounted and customizations will not be loaded.
 
 - Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be `mode=0775`,`user=root` and `group=root`.
-- This [wiki]() contains the instructions to deploy custom home pages and images.
 
 ### Deploying Sunbird services
 
