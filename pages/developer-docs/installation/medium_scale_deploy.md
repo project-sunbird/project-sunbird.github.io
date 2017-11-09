@@ -83,8 +83,10 @@ Run the following steps starting from your local machine:
 Run Time: 15-30 mins to prepare and 30 mins to complete.
 Following is a set of scripts which install the DBs into the `db-server` and copy over `master` data.
 
-  - Run `cd sunbird-devops/deploy`
-  - Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
+ - Run `cd sunbird-devops/deploy`
+ - Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. 
+ 
+ This script takes 10-15 mins (in an environment with fast internet) and will install the databases.
 
 - Manual creation
 
@@ -92,7 +94,7 @@ Refer to DB user guides.
 
 **Step 3: Initialize DBs**
 
-  - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
+ - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
 
 - Automation Walkthrough
 
