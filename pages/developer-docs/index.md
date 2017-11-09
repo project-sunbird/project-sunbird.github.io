@@ -4,7 +4,7 @@ directory: developer-docs
 title: Developer Documentation 
 page_title: Developer Documentation
 description: Developer Documentation Overview
-keywords: 'Installation, pre requisite, extending sunbird'
+keywords: 'Installation, pre requisite, extending sunbird, installing'
 
 published: true
 ---
