@@ -134,7 +134,7 @@ Refer to DB user guides.
 
    ` <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`.
 
-   ```
+   ```yml
     keycloak_password: (which admin initial password)
     keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-     sunbird/sunbird-devops/tree/master/ansible/artifacts)
    ```
@@ -175,11 +175,11 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 - Automation Walkthrough
 
-    [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
+    - [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
 
-    [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
+    - [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
 
-    [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
+    - [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
 
 **Step 5: Check Installation**
 
