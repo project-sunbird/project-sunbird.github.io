@@ -203,11 +203,13 @@ curl -X POST \
     "key": "<implementation-name>-mobile-app-<version-number>"
   }
 }
+
 ```
 
 Result will be
 ```
 {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
+
 ```
 
 - Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app
