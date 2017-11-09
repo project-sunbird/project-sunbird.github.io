@@ -34,19 +34,19 @@ Run Time: 30 mins first time. Scripts can be re-tried and will not create a new 
 
 Run the following steps from a machine which is connected to the internet:
 
-    - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
-    - Run `./sunbird-devops/deploy/generate-config.sh ntp production cloud` This will create config files for you in `./ntp-devops/test/azure`. Here, `ntp` is the **implementation-name** and `production` is the **environment-name**.
-    - Edit BOTH the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
-    -  Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
-    - Run `export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/app`
-    - Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/db`
-    - Run `cd sunbird-devops/deploy`
-    - Run `./provision-servers.sh`
-    - Login to Azure when CLI instructs
-    - Wait for deployment to complete
-    - Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details.
-    - Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
-    - If you could SSH, you have successfully created the server platform.
+   - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
+   - Run `./sunbird-devops/deploy/generate-config.sh ntp production cloud` This will create config files for you in `./ntp-devops/test/azure`. Here, `ntp` is the **implementation-name** and `production` is the **environment-name**.
+   - Edit BOTH the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
+   -  Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
+   - Run `export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/app`
+   - Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/ntp-devops/production/azure/db`
+   - Run `cd sunbird-devops/deploy`
+   - Run `./provision-servers.sh`
+   - Login to Azure when CLI instructs
+   - Wait for deployment to complete
+   - Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details.
+   - Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
+   - If you could SSH, you have successfully created the server platform.
 
 - **Automation walkthrough**
 
@@ -62,10 +62,10 @@ Get 2 servers and prepare to get your hands dirty when needed. 1st server would 
 
 You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:
 
-    - Cassandra
-    - Postgres
-    - Mongo
-    - Elasticsearch
+   - Cassandra
+   - Postgres
+   - Mongo
+   - Elasticsearch
 
 - Preparation
 
@@ -83,8 +83,8 @@ Run the following steps starting from your local machine:
 Run Time: 15-30 mins to prepare and 30 mins to complete.
 Following is a set of scripts which install the DBs into the `db-server` and copy over `master` data.
 
-    - Run `cd sunbird-devops/deploy`
-    - Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
+  - Run `cd sunbird-devops/deploy`
+  - Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
 
 - Manual creation
 
@@ -92,7 +92,7 @@ Refer to DB user guides.
 
 **Step 3: Initialize DBs**
 
-    - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
+  - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
 
 - Automation Walkthrough
 
@@ -106,7 +106,7 @@ Refer to DB user guides.
 - Modify all the configurations under `# APPLICATION CONFIGURATION` block
 - The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see [this wiki]() for details on how to do this. 
 
-**Note:** If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate), steps for this are detailed in [this wiki]()
+**Note:** If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate).
 
 - Run `cd sunbird-devops/deploy`
 - Run `sudo ./install-deps.sh`. This will install dependencies.
@@ -116,7 +116,7 @@ Refer to DB user guides.
 
 - deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for "JWT token for player is :", copy the corresponding token. Example output below, token is highlighted in italics:
 
-  > changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py
+  changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py
   /tmp/kong_consumers.json ....... "
   **JWT token for player is :**
       *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro*", 
@@ -128,18 +128,18 @@ Refer to DB user guides.
 - Keycloak is deployed on vm. RUN `./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>` this script creates the keycloak username,groupname and servicify keycloak service on vm.
 - Update below variables in the config 
 
-` <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`.
+   ` <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`.
 
-```
- keycloak_password: (which admin initial password)
- keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-```
+   ```
+    keycloak_password: (which admin initial password)
+    keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-     sunbird/sunbird-devops/tree/master/ansible/artifacts)
+   ```
 
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
 - Update following configs
 
-```
+<pre>
 Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
@@ -152,7 +152,7 @@ sunbird_keycloak_client_id: # Eg: portal
 Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
-```
+</pre>
 
 ### Additional config to customize Sunbird instance
 
