@@ -56,7 +56,9 @@ Run the following steps from a machine which is connected to the internet:
 
 - **Manual**
 
-Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.
+Need commissioning of two servers.The 1st server would serve as the DB server and the 2nd would serve as the application server & administration server. 
+
+**Note:** the default automation creates three servers because it separates the application and the administration server.
 
 ### **Step 2:** Setup your DBs
 
