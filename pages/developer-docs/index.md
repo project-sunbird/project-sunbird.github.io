@@ -10,7 +10,7 @@ published: true
 ---
 
 
-The Developer Documentation provides a way through, that will not only help you get started as a Sunbird contributor, but that you'll find useful to refer to even if you are already an experienced contributor. The Sunbird community prides itself on being an open, accessible and friendly for new participants. 
+The Developer Documentation provides a way through, that will not only help you get started as a Sunbird contributor, but that you'll find useful to refer to even if you are already an experienced contributor. The Sunbird community prides itself on being an open, accessible and friendly for new participants.    
 
 There are lots of ways to contribute to the Sunbird project: 
 
