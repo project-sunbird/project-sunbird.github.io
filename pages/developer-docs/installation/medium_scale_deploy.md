@@ -90,15 +90,11 @@ Following is a set of scripts which install the DBs into the `db-server` and cop
 
 Refer to DB user guides.
 
-- Automation Walkthrough
-
-Included in the next demo
-
 **Step 3: Initialize DBs**
 
     - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
 
-    - Automation Walkthrough
+- Automation Walkthrough
 
 [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
 
