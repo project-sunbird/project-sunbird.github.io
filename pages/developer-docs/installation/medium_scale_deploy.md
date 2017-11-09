@@ -96,7 +96,7 @@ Refer to DB user guides.
 
 - Automation Walkthrough
 
-[Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
+   [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
 
 **Step 4: Setup Application and Core services**
 
@@ -185,9 +185,9 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 This is required only if you are planning to release your own mobile app using sunbird mobile app codebase.
 
-- Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+- Execute & run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
-- Run
+- Run it.
 
 ```sh
 curl -X POST \
