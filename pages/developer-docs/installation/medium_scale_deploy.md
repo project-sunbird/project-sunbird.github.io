@@ -20,7 +20,7 @@ You will need servers with the following minimum system requirements:
    - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
    - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
-### Step 1: Provisioning your servers
+**Step 1: Provisioning your servers**
 
 For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
 
@@ -60,7 +60,7 @@ Need commissioning of two servers.The 1st server would serve as the DB server an
 
 **Note:** the default automation creates three servers because it separates the application and the administration server.
 
-### **Step 2:** Setup your DBs
+**Step 2:** Setup your DBs
 
 You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:
 
@@ -78,7 +78,7 @@ Run the following steps starting from your local machine:
 - Run `./sunbird-devops/deploy/generate-config.sh <implementation-name> <environment-name>`. Example `./sunbird-devops/deploy/generate-config.sh ntp production deploy`. This creates `ntp-devops` directory with *incomplete* configurations. You will need to supply missing configuration.
 - Modify all the configurations under `# DB CONFIGURATION` block in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`
 
-### DB creation
+**DB creation**
 
 - Via automation
 
