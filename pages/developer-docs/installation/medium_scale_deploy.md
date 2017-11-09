@@ -205,8 +205,8 @@ curl -X POST \
 }
 
 ```
-
 Result will be
+
 ```
 {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
 
