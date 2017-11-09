@@ -10,15 +10,15 @@ description: About how developer can deploy
 
 You will need servers with the following minimum system requirements:
 
-    - Operating System: Ubuntu 16.04 LTS
-    - RAM: 7GB
-    - CPU: 2 core, >2 GHz
-    - root access (should be able to sudo)
+   - Operating System: Ubuntu 16.04 LTS
+   - RAM: 7GB
+   - CPU: 2 core, >2 GHz
+   - root access (should be able to sudo)
 
 ## Variables relevant to deployment
 
-    - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
-    - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
+   - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
+   - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
 ### Step 1: Provisioning your servers
 
@@ -178,11 +178,11 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 - Automation Walkthrough
 
-[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
+    [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
 
-[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
+    [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
 
-[Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
+    [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
 
 **Step 5: Check Installation**
 
