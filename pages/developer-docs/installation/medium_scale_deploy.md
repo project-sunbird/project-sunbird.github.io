@@ -50,9 +50,9 @@ Run the following steps from a machine which is connected to the internet:
 
 - **Automation walkthrough**
 
-    - [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif)
+    - [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
 
-    - [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif)
+    - [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 - **Manual**
 
@@ -100,7 +100,7 @@ Refer to DB user guides.
 
 - Automation Walkthrough
 
-   - [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
+   - [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}
 
 **Step 4: Setup Application and Core services**
 
@@ -108,9 +108,9 @@ Refer to DB user guides.
 - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
 - Copy over the configuration directory from the DB server(`<implementation-name>-devops`) to this machine
 - Modify all the configurations under `# APPLICATION CONFIGURATION` block
-- The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see [this wiki]() for details on how to do this. 
+- The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration. 
 
-**Note:** If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate).
+**Note:** If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate){:target="_blank"}.
 
 - Run `cd sunbird-devops/deploy`
 - Run `sudo ./install-deps.sh`. This will install dependencies.
@@ -118,26 +118,29 @@ Refer to DB user guides.
 
 **Note:** Next 2 steps are necessary only when the application is being deployed for the first time and could be skipped for subsequent deploys.
 
-- deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for "JWT token for player is :", copy the corresponding token. Example output below, token is highlighted in italics:
-
+- deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for "JWT token for player is :", copy the corresponding token. Example output of token is below:
+<pre>
   changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py
   /tmp/kong_consumers.json ....... "
-  **JWT token for player is :**
-      *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro*", 
+  JWT token for player is :
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro", 
   "Updating rate_limit for consumer player for API cr......"]}
+ </pre>
 
 - Update `sunbird_api_auth_token` in your configuration with the above copied token.
-- Obtain API token from Ekstep platform by following steps listed [here]()
 - Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal
 - Keycloak is deployed on vm. RUN `./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>` this script creates the keycloak username,groupname and servicify keycloak service on vm.
 - Update below variables in the config 
 
    ` <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`.
 
-   ```yml
+   <pre>
     keycloak_password: (which admin initial password)
-    keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-     sunbird/sunbird-devops/tree/master/ansible/artifacts)
-   ```
+    keycloak_theme_path: ex- path/to/the/nile/themes. 
+   </pre>
+   
+Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts){:target="_blank"}
+   
 
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
@@ -175,11 +178,11 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 
 - Automation Walkthrough
 
-    - [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
+    - [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
 
-    - [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif)
+    - [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
 
-    - [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
+    - [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
 
 **Step 5: Check Installation**
 
@@ -193,24 +196,23 @@ This is required only if you are planning to release your own mobile app using s
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
 - Run it.
 
-```
-curl -X POST \
-  <sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
-  -H 'authorization: Bearer <mobile_admin_jwt_token>' \
-  -H 'content-type: application/json' \
-  -d '{
-  "request": {
-    "key": "<implementation-name>-mobile-app-<version-number>"
-  }
-}
+	<pre>
+		curl -X POST \
+		  (sunbird-base-url)/api/api-manager/v1/consumer/mobile_app/credential/register \
+		  -H 'authorization: Bearer (mobile_admin_jwt_token)' \
+		  -H 'content-type: application/json' \
+		  -d '{
+		  "request": {
+			"key": "(implementation-name)-mobile-app-(version-number)"
+		  }'
+		}
+	</pre>
 
-```
-Result will be
+	Result will be
 
-```
-{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
-
-```
+	<pre>
+		{"result":{"key":"(implementation-name)-mobile-app-(version-number)","secret":"(secret)"}}
+	</pre>
 
 - Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app
 
