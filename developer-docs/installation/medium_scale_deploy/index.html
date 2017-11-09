@@ -3,12 +3,12 @@
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<base href="/">
+	<base href="/developer-docs/installation/medium_scale_deploy/">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
-	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
 	<meta name="msapplication-TileColor" content="#65d3f7">
-	<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
+	<meta name="msapplication-TileImage" content="/img/favicon/mstile-150x150.png">
 	
 	<title>Sunbird Medium Scale Deployment</title>
 	<meta name="description" content="Sunbird Site About how developer can deploy"/>
@@ -17,7 +17,7 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="last-modified" content="2017-11-07 18:56:34 +0530">
+	<meta name="last-modified" content="2017-11-09 16:29:10 +0530">
 	<meta http-equiv="Expires" content="600" />
 	
 	
@@ -26,23 +26,27 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?07112017"  />
-	<link rel="stylesheet" href="css/style.css?07112017"  />
+	<link rel="stylesheet" href="/css/owl/owl.carousel.min.css?09112017"  />
+	<link rel="stylesheet" href="/css/style.css?09112017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js?07112017"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js?07112017"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js?09112017"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js?09112017"></script>
+	<script type="text/javascript" src="/js/jquery.tocLight.js?09112017"></script>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments)};
+	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 
 	  gtag('config', 'UA-106552125-1');
 	</script>
+
 </head>
 
-  <body>
+  <body id="body">
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
@@ -283,13 +287,57 @@ $("a[href$='/developer-docs/installation/medium_scale_deploy/']").addClass("side
       </div>
     </nav>
     <div class="content">
-      <div class="inner__content header">
+      <div class="inner__content header" id="heading">
         <h1>Medium Scale Deployment </h1>
       </div>
 
       <div id="main-content" class="inner__content">
-		  <p class="text-right pull-right"><a target="_blank"  class="btn btn-edit" href="https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/developer-docs/installation/medium_scale_deploy.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></p>
-          <p><strong>Pre-requisites</strong></p>
+			<p class="edit-para text-right">
+				<span>
+			<!--<a target="_blank" class="contribute" href="">
+				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			  
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/medium_scale_deploy.md">
+				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+			  </a> 
+			  | 
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				  Report
+			  </a>
+			  </span>
+			</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Pre-requisites</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#link1-2"><span class="tocnumber">2 .</span> <span class="toctext">Variables relevant to deployment</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#link1-2-1"><span class="tocnumber">2.1 .</span> <span class="toctext">Additional config to customize Sunbird instance</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#link1-2-2"><span class="tocnumber">2.2 .</span> <span class="toctext">Deploying Sunbird services</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="link1-1">Pre-requisites</h2>
 
 <p>You will need servers with the following minimum system requirements:</p>
 
@@ -300,25 +348,30 @@ $("a[href$='/developer-docs/installation/medium_scale_deploy/']").addClass("side
   <li>root access (should be able to sudo)</li>
 </ul>
 
-<p><strong>Variables relevant to deployment</strong></p>
+<h2 id="link1-2">Variables relevant to deployment</h2>
 
 <ul>
   <li><strong>implementation-name</strong> - Name of your sunbird implementation. Let’s say for the sake of this document, it is <code>ntp</code>. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.</li>
   <li><strong>environment-name</strong> - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a <code>production</code> environment.</li>
 </ul>
 
-<p><strong>Step 1:</strong> Provisioning your servers</p>
+<p>
+  <strong>Step 1: Provisioning your servers</strong>
+</p>
 
-<p>For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
-- <strong>Automated</strong></p>
-
-<p>The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.</p>
-
-<p><strong>Automation for Azure</strong></p>
+<p>For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.</p>
 
 <ul>
-  <li><strong>Run Time</strong>: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.</li>
+  <li><strong>Automated</strong></li>
 </ul>
+
+<p>The following set of scripts create the network and servers needed to run Sunbird. With the default configuration, you will be creating 3 servers, with the above-mentioned min. requirement. A little knowledge about Azure: VNet, Resource Group, etc would help but is not necessary.</p>
+
+<ul>
+  <li><strong>Automation for Azure</strong></li>
+</ul>
+
+<p>Run Time: 30 mins first time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, you can add/reduce the number of servers and re-run if you want to scale up or down.</p>
 
 <p>Run the following steps from a machine which is connected to the internet:</p>
 
@@ -335,22 +388,27 @@ $("a[href$='/developer-docs/installation/medium_scale_deploy/']").addClass("side
   <li>Wait for deployment to complete</li>
   <li>Check on Azure portal: Resource Group -&gt; Deployments -&gt; Click on deployment to see deployment details.</li>
   <li>Try to SSH. If your <code>masterFQDN</code> from deployment details was <code>production-1a.centralindia.cloudapp.azure.com</code> you can ssh using <code>ssh -A ops@production-1a.centralindia.cloudapp.azure.com</code></li>
-  <li>If you could SSH, you have successfully created the server platform.</li>
+  <li>
+    <p>If you could SSH, you have successfully created the server platform.</p>
+  </li>
+  <li>
+    <p><strong>Automation walkthrough</strong></p>
+
+    <ul>
+      <li>
+        <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif" target="_blank">Part 1</a></p>
+      </li>
+      <li>
+        <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif" target="_blank">Part 2</a></p>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Manual</strong></li>
 </ul>
 
-<p><strong>Automation walkthrough</strong></p>
+<p>Need commissioning of two servers.The 1st server would serve as the DB server and the 2nd would serve as the application server &amp; administration server.</p>
 
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif" target="_blank">Part 1</a></p>
-
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif" target="_blank">Part 2</a></p>
-
-<p><strong>Others</strong></p>
-
-<p>Not automated as of now but you are free to contribute back! Send in a PR.</p>
-
-<p><strong>Manual</strong></p>
-
-<p>Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.</p>
+<p><strong>Note:</strong> the default automation creates three servers because it separates the application and the administration server.</p>
 
 <p><strong>Step 2:</strong> Setup your DBs</p>
 
@@ -360,55 +418,77 @@ $("a[href$='/developer-docs/installation/medium_scale_deploy/']").addClass("side
   <li>Cassandra</li>
   <li>Postgres</li>
   <li>Mongo</li>
-  <li>Elasticsearch</li>
+  <li>
+    <p>Elasticsearch</p>
+  </li>
+  <li>Preparation</li>
 </ul>
-
-<p><strong>Preparation</strong></p>
 
 <p>Run the following steps starting from your local machine:</p>
 
 <ul>
   <li>SSH into the <code>db-server</code>. If you have not edited the default configuration, then the name of the DB VM would be <code>db-1</code>. Automated setup does not expose the DB to the Internet, so to SSH into the DB, you will need to SSH to <code>vm-1</code> (check out <code>masterFQDN</code> above) with <code>ssh -A</code> (key forwarding) and then SSH to <code>db-1</code>.</li>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
-  <li>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>. Example <code>./sunbird-devops/deploy/generate-config.sh ntp production deploy</code>. This creates <code>ntp-devops</code> directory with <em>incomplete</em> configurations. You <strong>WILL</strong> need to supply missing configuration.</li>
+  <li>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>. Example <code>./sunbird-devops/deploy/generate-config.sh ntp production deploy</code>. This creates <code>ntp-devops</code> directory with <em>incomplete</em> configurations. You will need to supply missing configuration.</li>
   <li>Modify all the configurations under <code># DB CONFIGURATION</code> block in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code></li>
 </ul>
 
-<p><strong>DB creation</strong></p>
+<p>
+  <strong>DB creation</strong>
+</p>
 
-<p><strong>Via automation</strong></p>
+<ul>
+  <li>Via automation</li>
+</ul>
 
-<p><strong>Run Time</strong>: 15-30 mins to prepare and 30 mins to complete.</p>
-
-<p>Following is a set of scripts which install the DBs into the <code>db-server</code> and copy over <code>master</code> data.</p>
+<p>Run Time: 15-30 mins to prepare and 30 mins to complete.
+Following is a set of scripts which install the DBs into the <code>db-server</code> and copy over <code>master</code> data.</p>
 
 <ul>
   <li>Run <code>cd sunbird-devops/deploy</code></li>
-  <li>Run <code>sudo ./install-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.</li>
+  <li>Run <code>sudo ./install-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</li>
 </ul>
 
-<p><strong>Manual</strong></p>
+<p>This script takes 10-15 mins (in an environment with fast internet) and will install the databases.</p>
+
+<ul>
+  <li>Manual creation</li>
+</ul>
 
 <p>Refer to DB user guides.</p>
 
-<p><strong>Automation Walkthrough</strong>
-Included in the next demo</p>
+<p>
+  <strong>Step 3: Initialize DBs</strong>
+</p>
 
-<p><strong>Step 3:</strong> Initialize DBs**
-- Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code> to initialize the DB.</p>
+<ul>
+  <li>
+    <p>Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code> to initialize the DB.</p>
+  </li>
+  <li>
+    <p>Automation Walkthrough</p>
 
-<p><strong>Automation Walkthrough</strong></p>
+    <ul>
+      <li><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif" target="_blank">Part 4</a></li>
+    </ul>
+  </li>
+</ul>
 
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif" target="_blank">Part 4</a></p>
-
-<p><strong>Step 4:</strong> Setup Application and Core services</p>
+<p>
+  <strong>Step 4: Setup Application and Core services</strong>
+</p>
 
 <ul>
   <li>SSH into <code>admin-server</code>. If you have used automated scripts used here, then this server would be <code>vm-1</code>.</li>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
   <li>Copy over the configuration directory from the DB server(<code>&lt;implementation-name&gt;-devops</code>) to this machine</li>
   <li>Modify all the configurations under <code># APPLICATION CONFIGURATION</code> block</li>
-  <li>The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see <a href="https://github.com/project-sunbird/sunbird-devops/wiki/Updating-SSL-certificates-in-Sunbird-Proxy-service" target="_blank">this wiki</a> for details on how to do this. Note: If you don’t have SSL certificates and want to get started you could generate and use <a href="https://en.wikipedia.org/wiki/Self-signed_certificate" target="_blank">self-signed certificates</a>, steps for this are detailed in <a href="https://github.com/project-sunbird/sunbird-devops/wiki/Generating-a-self-signed-certificate" target="_blank">this wiki</a></li>
+  <li>The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration.</li>
+</ul>
+
+<p><strong>Note:</strong> If you don’t have SSL certificates and want to get started you could generate and use <a href="https://en.wikipedia.org/wiki/Self-signed_certificate" target="_blank">self-signed certificates</a>.</p>
+
+<ul>
   <li>Run <code>cd sunbird-devops/deploy</code></li>
   <li>Run <code>sudo ./install-deps.sh</code>. This will install dependencies.</li>
   <li>Run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will onboard various APIs and consumer groups.</li>
@@ -417,53 +497,59 @@ Included in the next demo</p>
 <p><strong>Note:</strong> Next 2 steps are necessary only when the application is being deployed for the first time and could be skipped for subsequent deploys.</p>
 
 <ul>
-  <li>
-    <p>deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for “JWT token for player is :”, copy the corresponding token. Example output below, token is highlighted in italics:</p>
+  <li>deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for “JWT token for player is :”, copy the corresponding token. Example output of token is below:</li>
+</ul>
+<pre>
+  changed: [localhost] =&gt; {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py
+  /tmp/kong_consumers.json ....... "
+  JWT token for player is :
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro", 
+  "Updating rate_limit for consumer player for API cr......"]}
+ </pre>
 
-    <p>changed: [localhost] =&gt; {“changed”: true, “cmd”: “python /tmp/kong-api-scripts/kong_consumers.py
-/tmp/kong_consumers.json ……. “</p>
-
-    <p><strong>JWT token for player is :</strong>
-<em>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro</em>”, “Updating rate_limit for consumer player for API cr……”]}</p>
-  </li>
+<ul>
   <li>Update <code>sunbird_api_auth_token</code> in your configuration with the above copied token.</li>
-  <li>Obtain API token from Ekstep platform by following steps listed <a href="https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs" target="_blank">here</a></li>
+  <li>Update <code>sunbird_ekstep_api_key</code> in your configuration with the API token obtained from ekstep portal</li>
+  <li>Keycloak is deployed on vm. RUN <code>./provision-keycloak.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code> this script creates the keycloak username,groupname and servicify keycloak service on vm.</li>
   <li>
-    <p>Update <code>sunbird_ekstep_api_key</code> in your configuration with the API token obtained from ekstep portal</p>
+    <p>Update below variables in the config</p>
+
+    <p><code> &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code>.</p>
+
+    <pre>
+  keycloak_password: (which admin initial password)
+  keycloak_theme_path: ex- path/to/the/nile/themes. 
+ </pre>
   </li>
-  <li>
-    <p>Keycloak is deployed on vm. RUN <code>./provision-keycloak.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code> this script creates the keycloak username,groupname and servicify keycloak service on vm.</p>
-  </li>
-  <li>Update below variables in the config ` <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`.
-```
- keycloak_password: (which admin initial password)
- keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-```</environment-name></environment-name></implementation-name></li>
+</ul>
+
+<p>Sample themes directory of sunbird can be seen <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts" target="_blank">here</a></p>
+
+<ul>
   <li>
     <p>Run <code>sudo ./deploy-keycloak-vm.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
   </li>
   <li>
-    <p>Follow the instructions <a href="https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration" target="_blank">here</a> to setup auth realm in keycloak.</p>
+    <p>Update following configs</p>
   </li>
-  <li>Update following configs</li>
 </ul>
 
 <pre>
-**Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format**
+Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password
 
-**Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format**
+Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format
 keycloak_realm:  # Eg: sunbird
 sunbird_keycloak_client_id: # Eg: portal
 
-**Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format**
+Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 </pre>
 
-<p><strong>Additional config to customize Sunbird instance</strong></p>
+<h3 id="link1-2-1">Additional config to customize Sunbird instance</h3>
 
 <p>Sunbird supports customization of home page, logo, and fav icon for the portal. The customizations can be loaded by mounting the volume containing the customizations into the docker container.</p>
 
@@ -471,31 +557,80 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
   <li>Uncomment and set the value for the variable <code>player_tenant_dir</code> in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code>. For example, <code>player_tenant_dir: /data/extensions/tenant</code>.</li>
 </ul>
 
-<p><strong>NOTE</strong>: If the variable <code>player_tenant_dir</code> is commented, the volume will not be mounted and customizations will not be loaded.
-- Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be <code>mode=0775</code>,<code>user=root</code> and <code>group=root</code>.</p>
+<p><strong>NOTE</strong>: If the variable <code>player_tenant_dir</code> is commented, the volume will not be mounted and customizations will not be loaded.</p>
 
-<p><strong>Deploying Sunbird services</strong></p>
+<ul>
+  <li>Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be <code>mode=0775</code>,<code>user=root</code> and <code>group=root</code>.</li>
+</ul>
+
+<h3 id="link1-2-2">Deploying Sunbird services</h3>
 
 <ul>
   <li>Run <code>sudo ./deploy-core.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will setup all the sunbird core services.</li>
-  <li>Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will setup sunbird proxy services.</li>
+  <li>
+    <p>Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will setup sunbird proxy services.</p>
+  </li>
+  <li>
+    <p>Automation Walkthrough</p>
+
+    <ul>
+      <li>
+        <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">Part 5</a></p>
+      </li>
+      <li>
+        <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">Part 6</a></p>
+      </li>
+      <li>
+        <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">Part 7</a></p>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<p><strong>Automation Walkthrough</strong></p>
-
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">Part 5</a></p>
-
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">Part 6</a></p>
-
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">Part 7</a></p>
-
-<p><strong>Step 5:</strong> Check Installation</p>
+<p>
+  <strong>Step 5: Check Installation</strong>
+</p>
 
 <ul>
   <li>Browse Sunbird Portal by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).</li>
 </ul>
 
-<p><strong>Step 6:</strong> Upgrade with a new version of Sunbird</p>
+<p>
+  <strong>Step 6: Generate key and secrets for mobile app</strong>
+</p>
+
+<p>This is required only if you are planning to release your own mobile app using sunbird mobile app codebase.</p>
+
+<ul>
+  <li>Execute &amp; run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></li>
+  <li>In console output of above script, copy the JWT token printed for <code>mobile_admin</code> user</li>
+  <li>
+    <p>Run it.</p>
+
+    <pre>
+      curl -X POST \
+        (sunbird-base-url)/api/api-manager/v1/consumer/mobile_app/credential/register \
+        -H 'authorization: Bearer (mobile_admin_jwt_token)' \
+        -H 'content-type: application/json' \
+        -d '{
+        "request": {
+          "key": "(implementation-name)-mobile-app-(version-number)"
+        }'
+      }
+  </pre>
+
+    <p>Result will be</p>
+
+    <pre>
+      {"result":{"key":"(implementation-name)-mobile-app-(version-number)","secret":"(secret)"}}
+  </pre>
+  </li>
+  <li>Use the value of “key” and “secret” from the response above for <code>MOBILE_APP_KEY</code> and <code>MOBILE_APP_SECRET</code> configuration in mobile app</li>
+</ul>
+
+<p>
+  <strong>Step 7: Upgrade with a new version of Sunbird</strong>
+</p>
 
 <p>To update/redeploy sunbird please follow these steps:</p>
 
@@ -508,6 +643,27 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
   <li>Run <code>sudo ./deploy-proxy.sh /ansible/inventories/</code>. This will setup sunbird proxy services.</li>
 </ul>
 
+<p>
+  <strong>Step 8: Customize assets</strong>
+</p>
+
+<p>This section is under process and will explain how to give a custom look and feel for Sunbird.</p>
+
+
+          
+          <hr />
+          
+          <p class="edit-para text-right">
+			<!--<a target="_blank"  class="" href="">
+				  <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/medium_scale_deploy.md" title="Fix this page">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
+		  </p>
+		  <a href="/developer-docs/installation/medium_scale_deploy/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+          
       </div>
     </div>
     <div class="page-footer">
@@ -544,20 +700,20 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 	</div>
   </div>
   <script type="text/javascript">
-
-      $(document).ready(function(){
-          $('#dropdown-trigger').click(function(e){
-              var $elm = $('#mobile-dropdown');
-              if($elm.is(":visible")){
-                  $elm.stop().slideUp();
-              }else{
-                  $elm.stop().slideDown();
-                  $('html,body').scrollTop(0);
-              }
-              e.stopPropagation();
-          });
-      });
-
+	//TOC Toggle
+    $(function() {
+        $.toc.clickHideButton();
+    });
+    //Scroll to top
+    $(document).ready(function () {
+		$(".content").scroll(function () {
+			if ($(this).scrollTop() > 250) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+	});
   </script>
   </body>
 </html>

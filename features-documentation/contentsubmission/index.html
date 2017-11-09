@@ -3,12 +3,12 @@
   <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<base href="/">
+	<base href="/features-documentation/contentsubmission/">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
-	<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="/img/favicon/favicon-16x16.png" sizes="16x16">
 	<meta name="msapplication-TileColor" content="#65d3f7">
-	<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
+	<meta name="msapplication-TileImage" content="/img/favicon/mstile-150x150.png">
 	
 	<title>Sunbird Content Submission</title>
 	<meta name="description" content="Sunbird Site Content Submission"/>
@@ -17,7 +17,7 @@
 	<meta http-equiv="cache-control" content="no-cache" />
 	<meta http-equiv="Cache-Control" content="no-store" />
 	<meta http-equiv="pragma" content="no-cache" />
-	<meta name="last-modified" content="2017-11-07 18:56:34 +0530">
+	<meta name="last-modified" content="2017-11-09 16:29:10 +0530">
 	<meta http-equiv="Expires" content="600" />
 	
 	
@@ -26,23 +26,27 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/owl/owl.carousel.min.css?07112017"  />
-	<link rel="stylesheet" href="css/style.css?07112017"  />
+	<link rel="stylesheet" href="/css/owl/owl.carousel.min.css?09112017"  />
+	<link rel="stylesheet" href="/css/style.css?09112017"  />
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js?07112017"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js?07112017"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js?09112017"></script>
+	<script type="text/javascript" src="/js/owl.carousel.min.js?09112017"></script>
+	<script type="text/javascript" src="/js/jquery.tocLight.js?09112017"></script>
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments)};
+	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
 
 	  gtag('config', 'UA-106552125-1');
 	</script>
+
 </head>
 
-  <body>
+  <body id="body">
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
@@ -283,14 +287,43 @@ $("a[href$='/features-documentation/contentsubmission/']").addClass("sidebar-lin
       </div>
     </nav>
     <div class="content">
-      <div class="inner__content header">
+      <div class="inner__content header" id="heading">
         <h1>Content Submission </h1>
       </div>
 
       <div id="main-content" class="inner__content">
-		  <p class="text-right pull-right"><a target="_blank"  class="btn btn-edit" href="https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/features-documentation/contentsubmission.md"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit this page</a></p>
+			<p class="edit-para text-right">
+				<span>
+			<!--<a target="_blank" class="contribute" href="">
+				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			  
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/contentsubmission.md">
+				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+			  </a> 
+			  | 
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				  Report
+			  </a>
+			  </span>
+			</p>
           <p>Page in Progress</p>
 
+          
+          <hr />
+          
+          <p class="edit-para text-right">
+			<!--<a target="_blank"  class="" href="">
+				  <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/contentsubmission.md" title="Fix this page">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
+		  </p>
+		  <a href="/features-documentation/contentsubmission/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+          
       </div>
     </div>
     <div class="page-footer">
@@ -327,20 +360,20 @@ $("a[href$='/features-documentation/contentsubmission/']").addClass("sidebar-lin
 	</div>
   </div>
   <script type="text/javascript">
-
-      $(document).ready(function(){
-          $('#dropdown-trigger').click(function(e){
-              var $elm = $('#mobile-dropdown');
-              if($elm.is(":visible")){
-                  $elm.stop().slideUp();
-              }else{
-                  $elm.stop().slideDown();
-                  $('html,body').scrollTop(0);
-              }
-              e.stopPropagation();
-          });
-      });
-
+	//TOC Toggle
+    $(function() {
+        $.toc.clickHideButton();
+    });
+    //Scroll to top
+    $(document).ready(function () {
+		$(".content").scroll(function () {
+			if ($(this).scrollTop() > 250) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+	});
   </script>
   </body>
 </html>

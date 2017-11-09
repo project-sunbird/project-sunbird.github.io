@@ -1,6 +1,6 @@
 <p>Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface.</p>
 
-<p><strong>Sunbird Portal Setup</strong></p>
+<h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
 
 <p>To setup the Sunbird portal follow the steps sequentially.</p>
 
@@ -20,12 +20,11 @@
     </ul>
   </li>
   <li>
-    <p><strong>API Keys</strong> - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when <a href="#edit-the-application-config">configuring the application</a>.</p>
+    <p><strong>API Keys</strong> - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when configuring the application.</p>
   </li>
   <li>
-    <p><strong>Setup</strong> -</p>
+    <p><strong>Setup</strong>: Checkout the code from <code>https://github.com/project-sunbird/sunbird-portal.git</code></p>
     <ul>
-      <li>Checkout the code from <code>https://github.com/project-sunbird/sunbird-portal.git</code></li>
       <li>Run the following commands
         <ul>
           <li><code>$ cd &lt;PROJECT-FOLDER&gt;/src</code></li>
@@ -44,7 +43,7 @@
 
 <p><strong>Please note</strong> : the cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
 
-<p><strong>Edit the application config</strong></p>
+<h3 id="edit-the-application-config">Edit the application config</h3>
 
 <p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in your favourite text editor. Update the file so it contains the following values:</p>
 
@@ -67,7 +66,7 @@ module.exports = {
 }
 </pre>
 
-<p><strong>Run Application</strong></p>
+<h3 id="run-application">Run Application</h3>
 
 <ul>
   <li>Run the following commands:
