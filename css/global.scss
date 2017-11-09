@@ -51,4 +51,31 @@ iframe.freshwidget-embedded-form{max-width:700px; margin:0 auto;display: block;}
 iframe .btn.omega{background: #fb4b00;
     color: #FFF;
     border: 1px solid #fb4b00;
-    padding: 8px 16px;}
+    padding: 8px 16px;
+}
+.scrollup {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    text-align:center;
+    vertical-align:middle;
+    padding:0;
+    box-shadow: 0 0 1px 1px #ccc;
+    border-radius: 3px;
+    height: 30px;
+    width: 30px;
+    display:none;
+}
+.scrollup i{
+	width: 30px;
+    height: 30px;
+    font-size:30px;
+    line-height:30px;
+	border-radius:3px;
+    color:#fff !important;
+    background: #0d9474;
+    background: -moz-linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
+    background: -webkit-linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
+    background: linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 );
+}
