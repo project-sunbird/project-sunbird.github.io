@@ -41,6 +41,6 @@ If you plan to modify and contribute code to the Sunbird project, we recommend y
 If you plan to run Sunbird in a setting upto 10k users, we recommend you follow the process [Medium scale deployment](/developer-docs/installation/medium_scale_deploy/){:target="_blank"}. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.
 - I want to deploy 10k+ users on Sunbird
 
-If you plan to run Sunbird in a setting with 10k+ users, we recommend you follow the [Large scale deployment](/developer-docs/large_scale_deploy){:target="_blank"} process. 
+If you plan to run Sunbird in a setting with 10k+ users, we recommend you follow the [Large scale deployment](){:target="_blank"} process. 
 This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerised manner. The containers allow you to scale the resources Sunbird consumes based on the usage.
 
