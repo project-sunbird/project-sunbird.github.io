@@ -6,7 +6,7 @@ page_title: Medium Scale Deployment
 description: About how developer can deploy
 ---
 
-### Pre-requisites
+## Pre-requisites
 
 You will need servers with the following minimum system requirements:
 
@@ -15,12 +15,12 @@ You will need servers with the following minimum system requirements:
     - CPU: 2 core, >2 GHz
     - root access (should be able to sudo)
 
-### Variables relevant to deployment
+## Variables relevant to deployment
 
     - **implementation-name** - Name of your sunbird implementation. Let's say for the sake of this document, it is `ntp`. As you may know, National Teacher Platform aka Diksha is also a Sunbird implementation.
     - **environment-name** - Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc. For this document, lets say we are setting up a `production` environment.
 
-#### Step 1: Provisioning your servers**
+### Step 1: Provisioning your servers
 
 For a non production setup, you could skip the automation and proceed to the manual steps. If however, you are setting up Sunbird and are not sure if you are setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users, automation can help you setup your environment the same way we set it up.
 
@@ -58,7 +58,7 @@ Run the following steps from a machine which is connected to the internet:
 
 Get 2 servers and prepare to get your hands dirty when needed. 1st server would serve as the DB server and the 2nd, the application server plus the administration server. Note that the default automation creates 3 servers because it separates the application and the administration server.
 
-#### **Step 2:** Setup your DBs
+### **Step 2:** Setup your DBs
 
 You are free to either use existing DBs, create DBs manually or run the following automation scripts to create them. The DBs Sunbird uses are:
 
@@ -76,7 +76,7 @@ Run the following steps starting from your local machine:
 - Run `./sunbird-devops/deploy/generate-config.sh <implementation-name> <environment-name>`. Example `./sunbird-devops/deploy/generate-config.sh ntp production deploy`. This creates `ntp-devops` directory with *incomplete* configurations. You will need to supply missing configuration.
 - Modify all the configurations under `# DB CONFIGURATION` block in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`
 
-DB creation
+### DB creation
 
 - Via automation
 
@@ -86,23 +86,23 @@ Following is a set of scripts which install the DBs into the `db-server` and cop
 - Run `cd sunbird-devops/deploy`
 - Run `sudo ./install-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This script takes roughly 10-15 mins (in an environment with fast internet) and will install the databases.
 
-Manual
+- Manual creation
 
 Refer to DB user guides.
 
-Automation Walkthrough
+- Automation Walkthrough
 
 Included in the next demo
 
-Step 3: Initialize DBs
+**Step 3: Initialize DBs**
 
 - Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>` to initialize the DB.
 
-Automation Walkthrough
+- Automation Walkthrough
 
 [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif)
 
-Step 4: Setup Application and Core services
+**Step 4: Setup Application and Core services**
 
 - SSH into `admin-server`. If you have used automated scripts used here, then this server would be `vm-1`.
 - Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
@@ -110,26 +110,26 @@ Step 4: Setup Application and Core services
 - Modify all the configurations under `# APPLICATION CONFIGURATION` block
 - The automated setup also creates a proxy server and like all proxy servers, it will require a SSL certificate. Details of the certificates have to added in the configuration, please see [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Updating-SSL-certificates-in-Sunbird-Proxy-service) for details on how to do this. 
 
-Note: If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate), steps for this are detailed in [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Generating-a-self-signed-certificate)
+**Note:** If you don't have SSL certificates and want to get started you could generate and use [self-signed certificates](https://en.wikipedia.org/wiki/Self-signed_certificate), steps for this are detailed in [this wiki](https://github.com/project-sunbird/sunbird-devops/wiki/Generating-a-self-signed-certificate)
 
 - Run `cd sunbird-devops/deploy`
 - Run `sudo ./install-deps.sh`. This will install dependencies.
 - Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will onboard various APIs and consumer groups.
 
-Note: Next 2 steps are necessary only when the application is being deployed for the first time and could be skipped for subsequent deploys.
+**Note:** Next 2 steps are necessary only when the application is being deployed for the first time and could be skipped for subsequent deploys.
 
 - deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for "JWT token for player is :", copy the corresponding token. Example output below, token is highlighted in italics:
 
   > changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py
-  /tmp/kong_consumers.json ....... "**JWT token for player is :**
-  *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro*", "Updating rate_limit for consumer player for API cr......"]}
+  /tmp/kong_consumers.json ....... "
+  **JWT token for player is :**
+      *eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-pBVmrdWhJaZro*", 
+  "Updating rate_limit for consumer player for API cr......"]}
 
 - Update `sunbird_api_auth_token` in your configuration with the above copied token.
 - Obtain API token from Ekstep platform by following steps listed [here](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
 - Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal
-
 - Keycloak is deployed on vm. RUN `./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>` this script creates the keycloak username,groupname and servicify keycloak service on vm.
-
 - Update below variables in the config 
 
 ` <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`.
@@ -138,14 +138,14 @@ Note: Next 2 steps are necessary only when the application is being deployed for
  keycloak_password: (which admin initial password)
  keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
 ```
+
 - Run `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
 - Follow the instructions [here](https://github.com/project-sunbird/sunbird-commons/wiki/Keycloak-realm-configuration) to setup auth realm in keycloak
 
 - Update following configs
 
-```yml
-
+```
 Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
@@ -160,7 +160,7 @@ sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 ```
 
-Additional config to customize Sunbird instance
+### Additional config to customize Sunbird instance
 
 Sunbird supports customization of home page, logo, and fav icon for the portal. The customizations can be loaded by mounting the volume containing the customizations into the docker container.
 
@@ -171,12 +171,12 @@ Sunbird supports customization of home page, logo, and fav icon for the portal. 
 - Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Permissions of the folder should be `mode=0775`,`user=root` and `group=root`.
 - This [wiki](https://github.com/project-sunbird/sunbird-commons/wiki/Deploying-Custom-html-pages-and-images) contains the instructions to deploy custom home pages and images.
 
-Deploying Sunbird services
+### Deploying Sunbird services
 
 - Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will setup all the sunbird core services.
 - Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will setup sunbird proxy services.
 
-Automation Walkthrough
+- Automation Walkthrough
 
 [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
 
@@ -184,11 +184,11 @@ Automation Walkthrough
 
 [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif)
 
-Step 5: Check Installation
+**Step 5: Check Installation**
 
 - Browse Sunbird Portal by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).
 
-Step 6: Generate key and secrets for mobile app
+**Step 6: Generate key and secrets for mobile app**
 
 This is required only if you are planning to release your own mobile app using sunbird mobile app codebase.
 
@@ -213,7 +213,7 @@ Result will be
 ```
 - Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app
 
-Step 7: Upgrade with a new version of Sunbird
+**Step 7: Upgrade with a new version of Sunbird**
 
 To update/redeploy sunbird please follow these steps:
 
@@ -224,6 +224,7 @@ To update/redeploy sunbird please follow these steps:
 - Run `sudo ./deploy-core.sh /ansible/inventories/`. This will setup all the sunbird core services.
 - Run `sudo ./deploy-proxy.sh /ansible/inventories/`. This will setup sunbird proxy services.
 
-Step 8: Customize assets
+**Step 8: Customize assets**
+
 This section is under process and will explain how to give a custom look and feel for Sunbird.
 
