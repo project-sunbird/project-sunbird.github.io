@@ -10,5 +10,15 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<gcse:searchresults-only></gcse:searchresults-only>
+<gcse:search></gcse:search>
 </div>
+<script>
+$( window ).on( "load", function() {
+	$('#gsc-i-id1').attr('placeholder','Search');
+	//$('#gsc-i-id1').removeAttr('placeholder');
+	$('#gsc-i-id1').css('background', 'none');
+	$("#gsc-i-id1").blur(function() {
+	$('#gsc-i-id1').css('background', 'none');
+});
+    });
+</script>

@@ -21,6 +21,7 @@
 		overflow-x: hidden;
 		height: 100%;
 		left: 275px;
+		z-index:-1;
 	}
 	@media (max-width: $screen-sm-max) {
 		margin-top: 60px;
@@ -36,6 +37,7 @@
 	font-size: 15.75px;
 	line-height: 2;
 	color: #0C3C26;
+	
 
 	img {
 		max-width: 870px;
