@@ -16,19 +16,19 @@
 	<changefreq>weekly</changefreq>
 </url>
 <url>
-	<loc>http://www.sunbird.org/docs/</loc>
-	<lastmod>2017-11-02</lastmod>
-	<changefreq>daily</changefreq>
-</url>
-<url>
 	<loc>http://www.sunbird.org/participate/</loc>
 	<lastmod>2017-11-02</lastmod>
-	<changefreq>montly</changefreq>
+	<changefreq>monthly</changefreq>
 </url>
 <url>
 	<loc>http://www.sunbird.org/contact/</loc>
 	<lastmod>2017-11-02</lastmod>
-	<changefreq>montly</changefreq>
+	<changefreq>monthly</changefreq>
+</url>
+<url>
+	<loc>http://www.sunbird.org/docs/</loc>
+	<lastmod>2017-11-02</lastmod>
+	<changefreq>daily</changefreq>
 </url>
 <url>
 	<loc>http://www.sunbird.org/architecture/</loc>
@@ -47,6 +47,21 @@
 </url>
 <url>
 	<loc>http://www.sunbird.org/apis/</loc>
+	<lastmod>2017-11-02</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.sunbird.org/developer-docs/installation/</loc>
+	<lastmod>2017-11-02</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.sunbird.org/faqs/</loc>
+	<lastmod>2017-11-02</lastmod>
+	<changefreq>daily</changefreq>
+</url>
+<url>
+	<loc>http://www.sunbird.org/faqs/glossary/</loc>
 	<lastmod>2017-11-02</lastmod>
 	<changefreq>daily</changefreq>
 </url>
