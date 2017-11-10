@@ -1,4 +1,7 @@
 <div id="">
+	{% if site.showSearch == true %}
+		{% include search.html %}
+	{% endif %}
 	<div class="sidebar-wrapper {{page.directory | slugify}}">
 		<div class="" >
 			<a href="/architecture/">

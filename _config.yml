@@ -12,6 +12,7 @@ ga: UA-106552125-1
 anchorPrefix: link
 tocTopTag: h2
 showToggleButton: true
+showSearch: true
 
 exclude:
 - vendor

@@ -2,21 +2,22 @@
 	padding:0 !important;
 	border:0 !important;
 	background-color:transparent !important;
+	max-width: 230px !important;
 }
-.gsc-search-button{
-	display:none !important;
-}
+
 table.gsc-search-box td{
 	border:0 !important;
 	padding:0 !important;
 }
 .gsc-search-box-tools .gsc-search-box .gsc-input{
 	color:#000;
-	padding:0 5px !important;
+	padding:0 !important;
 	font-family:inherit !important;
 	font-size:13px;
-	height:23px !important;
+	height:25px !important;
 	margin:0 !important;
+	background:none !important;
+	text-indent: 3px !important;
 	
 }
 .gsc-input-box  table{
@@ -25,3 +26,58 @@ table.gsc-search-box td{
 .gsc-input-box{
 	border:0 !important
 }
+.gsc-search-box-tools .gsc-search-box .gsc-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: transparent;
+}
+.gsc-search-box-tools .gsc-search-box .gsc-input::-moz-placeholder { /* Firefox 19+ */
+  color: transparent;
+}
+.gsc-search-box-tools .gsc-search-box .gsc-input:-ms-input-placeholder { /* IE 10+ */
+  color: transparent;
+}
+.gsc-search-box-tools .gsc-search-box .gsc-input:-moz-placeholder { /* Firefox 18- */
+  color: transparent;
+}
+.cse .gsc-search-button input.gsc-search-button-v2, 
+input.gsc-search-button-v2{
+	height:25px !important;
+	width: 25px !important;
+	padding:0 !important;
+	border:0 !important;
+	outline:0 !important;
+	opacity:0 !important;
+	position:absolute !important;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:2;
+}
+.gsc-search-button{
+	height:25px !important;
+	width: 25px !important;
+	padding:0 !important;
+	margin:1px 0 0 0 !important;
+	background-color:#aaa !important;
+	background-image:none !important;
+	border:0 !important;
+	outline:0 !important;
+	border-radius:0 !important;
+	position:relative !important;
+	vertical-align:middle !important;
+	text-align:center !important;
+}
+.gsc-search-button:before{
+	content: "\f002";
+	font: normal normal normal 14px/1 FontAwesome;
+    font-size: 17px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height:25px !important;
+	width: 25px !important;
+	vertical-align:middle !important;
+	text-align:center !important;
+	color:#fff !important;
+}
+.search-cover{padding-top:25px;padding-bottom:10px;}
