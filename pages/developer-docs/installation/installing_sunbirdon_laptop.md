@@ -5,7 +5,6 @@ title: Install Sunbird on Laptop
 page_title: Install Sunbird on Laptop
 published: true
 ---
-
 Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface. 
 
 ## Sunbird Portal Setup
@@ -16,8 +15,6 @@ To setup the Sunbird portal follow the steps sequentially.
 
 Please complete the following pre-requisites before installing and running the sunbird-player application
 
-
-	
 1. **Software dependencies**
 
 	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 6.x.x LTS series
