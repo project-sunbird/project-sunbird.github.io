@@ -1,6 +1,17 @@
 .search-cover{
-	padding-top:25px;
-	padding-bottom:10px;
+	padding:10px 0 10px 0;
+}
+@media screen and (min-width:480px){
+	.search-cover{
+		padding:0 0 10px 0;
+	}
+}
+
+@media screen and (min-width:768px){
+	.search-cover{
+		padding:25px 0 10px 0;
+		max-width:250px;
+	}
 }
 .search-btn{
 	height:25px;
@@ -25,4 +36,6 @@
 	border-radius:0;
 	vertical-align:middle;
 	color:#333;
+	width: calc(100% - 40px);
 }
+
