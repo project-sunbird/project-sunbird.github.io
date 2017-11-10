@@ -1,24 +1,11 @@
 <div class="search-cover">
-<script>
-  (function() {
-    var cx = '011161296167083560120:7zkghjy_4h0';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<gcse:search></gcse:search>
+	<form method="get" action="http://www.google.com/search" target="_blank">
+		<input type="text" value="" name="q" placeholder="Search ..."/ class="search-input">
+		<input type="hidden" value="en" name="hl" />
+		<input type="hidden" name="sitesearch" value="http://www.sunbird.org" />
+		<input type="hidden" value="lang_en" name="lr" />
+		<button type="submit" onclick="submit()" class="search-btn">
+			<i class="fa fa-search"></i>
+		</button>
+	</form>
 </div>
-<script>
-$( window ).on( "load", function() {
-	$('#gsc-i-id1').attr('placeholder','Search');
-	//$('#gsc-i-id1').removeAttr('placeholder');
-	$('#gsc-i-id1').css('background', 'none');
-	$("#gsc-i-id1").blur(function() {
-	$('#gsc-i-id1').css('background', 'none');
-});
-    });
-</script>
