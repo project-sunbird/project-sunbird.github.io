@@ -10,18 +10,6 @@ hide_section_selector: true
 published: true
 ---
 
-<!DOCTYPE html>
-<html>
-<style>
-table, th, td {
-    style="width:100%";
-    style="background-color:LightGrey"
-    border: 5px #0000ff;
-    border-collapse: collapse;
-}
-</style>
-<body>
-<H1>HELLO</H1>
 <p>
 
 <table>
@@ -40,7 +28,7 @@ table, th, td {
             <li> Click log in button</li>
     	</ol>
     </td>
-    <td> <img src="/pages/features-documentation/images/login1.png" style="float:centre;width:95%;height:75%;">       
+    <td> <img src="/pages/features-documentation/images/login1.png">       
     </td>
   </tr>
   <tr>
@@ -54,10 +42,9 @@ table, th, td {
             <li> Click on Resume button, to take up a course </li>
          </ol>
     </td>
-    <td><img src="/pages/features-documentation/images/workspace2.png" style="float:centre;width:95%;height:75%;"> 
+    <td><img src="/pages/features-documentation/images/workspace2.png"> 
     </td>
   </tr>
 </table>
 </p>
-</body>
-</html>
+

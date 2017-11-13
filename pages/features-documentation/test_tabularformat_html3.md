@@ -9,27 +9,6 @@ hide_platform_selector: true
 hide_section_selector: true
 published: true
 ---
-
-<html>
-<style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    
-}
-
-td, th {
-    border: 1px solid black;
-    text-align: left;
-    padding: 1px;
-}
-
-tr:nth-child(even) {
-    background-color: white;
-}
-</style>
-<body>
-<H1>HELLO</H1>
 <p>
 
 <table>
@@ -67,5 +46,3 @@ tr:nth-child(even) {
   </tr>
 </table>
 </p>
-</body>
-</html>
