@@ -9,19 +9,9 @@ hide_platform_selector: true
 hide_section_selector: true
 published: true
 ---
-
-<html>
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-</style>
-<body>
-<H1>HELLO</H1>
 <p>
 
-<table>
+<table class="table-img">
   <tr>
     <th>Steps</th>
     <th>Images</th>
@@ -35,7 +25,7 @@ table, th, td {
     		<li> Click log in button</li>
     	</ul>
     </td>
-    <td> <img src="/pages/features-documentation/images/login1.png" width="570" height="400">       
+    <td> <img src="/pages/features-documentation/images/login1.png">       
     </td>
   </tr>
   <tr>
@@ -47,10 +37,9 @@ table, th, td {
             <li> Click on Resume button, to take up a course </li>
          </ul>
     </td>
-    <td><img src="/pages/features-documentation/images/workspace2.png" width="570" height="400"> 
+    <td><img src="/pages/features-documentation/images/workspace2.png"> 
     </td>
   </tr>
 </table>
 </p>
-</body>
-</html>
+

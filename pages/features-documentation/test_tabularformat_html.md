@@ -10,14 +10,6 @@ hide_section_selector: true
 published: true
 ---
 
-<html>
-<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-<body>
-<H1>HELLO</H1>
 <p>
 
 <table>
@@ -51,5 +43,3 @@ table, th, td {
   </tr>
 </table>
 </p>
-</body>
-</html>
