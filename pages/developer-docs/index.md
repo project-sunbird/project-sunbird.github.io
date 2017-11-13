@@ -5,8 +5,8 @@ title: Developer Documentation
 page_title: Developer Documentation
 description: Developer Documentation Overview
 keywords: 'Installation, pre requisite, extending sunbird'
-
 published: true
+allowSearch: true
 ---
 
 

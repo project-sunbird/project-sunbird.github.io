@@ -8,6 +8,7 @@ keywords: >-
   Sign in, Registration, Credential, Individual User, Organizational User,
   Policy, Decision, Administrator 
 published: true
+allowSearch: true
 ---
 
 **How can you register and get user credentials to sign in to the platform?**

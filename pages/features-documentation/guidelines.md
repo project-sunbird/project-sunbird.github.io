@@ -8,6 +8,7 @@ keywords: >-
   content guidelines, guidelines, upload guidelines, review guideleines,
   publishing guidelines
 published: true
+allowSearch: true
 ---
 
 To ensure quality, there are guidelines for contributions to project sunbird. The guidelines can be categorized into those for:

@@ -6,6 +6,7 @@ page_title: Content Review
 description: Review and its lifecycle
 keywords: 'Content, Review, Criteria, Guideline, Send for Review '
 published: true
+allowSearch: true
 ---
 
 **Who reviews content?**

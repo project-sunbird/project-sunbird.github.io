@@ -6,6 +6,7 @@ page_title: Register Users
 description: Registration and Enrollment
 keywords: 'Users, registration, enrollment'
 published: true
+allowSearch: true
 ---
 
 

@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
+	<head>
+	{% include head.html %}
+	{% if page.allowSearch == true %}
+		<meta name="robots" content="index, follow">
+	{% else %}
+		<meta name="robots" content="noindex, nofollow">
+	{% endif %}
+  </head>
   <body id="body">
   <div class="container inner container-height docs">
     <header class="logo-container">

@@ -9,6 +9,7 @@ keywords: >-
   discoverability,vocabulary,framework,user, content provider, content creator,
   platform, product, information
 published: true
+allowSearch: true
 ---
 
 

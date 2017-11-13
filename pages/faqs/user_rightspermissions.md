@@ -8,6 +8,7 @@ keywords: >-
   Content creator, Content provider, Feature, Platform, Product, Administrator
   ID, User ID, Content Creation Rights
 published: true
+allowSearch: true
 ---	
 
 **What user roles does the platform support?**

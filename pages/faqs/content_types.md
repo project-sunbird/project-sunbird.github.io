@@ -6,6 +6,7 @@ page_title: Content Types
 description: Defination of different content types
 keywords: 'Content types, Content, Course, Book, Difference'
 published: true
+allowSearch: true
 ---
 
 

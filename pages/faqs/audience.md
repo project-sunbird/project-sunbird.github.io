@@ -9,6 +9,7 @@ keywords: >-
   Audience, Credit for creator, credit for author, content contributor,
   Instructor, Learner
 published: true
+allowSearch: true
 ---
 
 **Who is the audience for the content on the platform?**

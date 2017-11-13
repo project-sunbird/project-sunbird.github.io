@@ -6,6 +6,7 @@ page_title: Onboarding
 description: Onboarding
 keywords: 'Org Admin, Onboard, user sign in, first time, register'
 published: true
+allowSearch: true
 ---
 
 

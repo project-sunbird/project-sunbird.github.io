@@ -6,6 +6,7 @@ page_title: Fix Errors
 description: Fixing Error after uploading contents
 keywords: 'Fix Error, Content, Upload'
 published: true
+allowSearch: true
 ---
 
 

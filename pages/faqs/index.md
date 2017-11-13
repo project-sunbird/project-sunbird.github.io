@@ -6,6 +6,7 @@ page_title: Frequently Asked Question
 description: About the Document
 keywords: 'FAQ, Frequently Asked Question,Platform,Starter Guide,Content '
 published: true
+allowSearch: true
 ---
 
 This page addresses the most commonly asked questions of our platform. Here you will find questions on all aspects of the platform such as: 

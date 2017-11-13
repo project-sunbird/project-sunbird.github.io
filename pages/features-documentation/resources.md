@@ -6,6 +6,7 @@ page_title: Resources
 description: Resources
 keywords: 'resources, classroom resources, classroom content, consume resources'
 published: true
+allowSearch: true
 ---
 
 {% ingredient/features-documentation/resource_addfilter%}{% endingredient %}

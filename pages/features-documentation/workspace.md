@@ -6,6 +6,7 @@ page_title: Workspace
 description: Workspace
 keywords: 'Access workspace, view workspace, create workspace'
 published: true
+allowSearch: true
 ---
 
 {% ingredient/features-documentation/workspace_about %}{% endingredient %}

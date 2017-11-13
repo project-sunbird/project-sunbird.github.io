@@ -6,6 +6,7 @@ page_title: Design
 description: Architecture Design
 keywords: Architecture Design
 published: true
+allowSearch: true
 ---
 
 

@@ -6,6 +6,7 @@ page_title: Content Upload
 description: Uploading Content
 keywords: 'Content, Upload, Uploading, Bulk Upload,Time Window, API, Pull content  '
 published: true
+allowSearch: true
 ---
 
 

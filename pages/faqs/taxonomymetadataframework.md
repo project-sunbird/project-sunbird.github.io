@@ -9,6 +9,7 @@ keywords: >-
   metadata, lesson metadata, contribute taxonomy, different frameworks, tags,
   tagging on platform, add taxonomy, create vocabulary list, vocabulary list
 published: true
+allowSearch: true
 ---
 
 

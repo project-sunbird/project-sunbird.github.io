@@ -6,6 +6,7 @@ page_title: Register Organizations
 description: Register and Enrollment
 keywords: 'Org Admin,Registration, Enrollment'
 published: true
+allowSearch: true
 ---
 
 
