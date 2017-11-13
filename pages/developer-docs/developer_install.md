@@ -8,4 +8,3 @@ published: true
 ---
 
 
-{% ingredient /developer-docs/install_wantextsbcontent_p6 %}{% endingredient %}
