@@ -8,6 +8,7 @@ keywords: >-
   content editor, create course, create content, create lesson, textbook,
   collection, course
 published: true
+allowSearch: true
 ---
 
 The Content Editor or Online Authoring Tool allows all users with content creation rights to create multimedia content. Different content editors are available to create content for **Books, Courses, Lessons and Collections**. 

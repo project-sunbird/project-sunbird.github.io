@@ -3,7 +3,9 @@ type: landing
 directory: developer-docs/installation
 title: Install Sunbird on Laptop
 page_title: Install Sunbird on Laptop
+description: Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface.
 published: true
+allowSearch: true
 ---
 Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface. 
 

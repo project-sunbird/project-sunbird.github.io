@@ -6,6 +6,7 @@ page_title: Conceptual View
 description: Conceptual View
 keywords: Conceptual View
 published: true
+allowSearch: true
 ---
 
 {% ingredient /architecture/archd_con_view_desc %}{% endingredient %}

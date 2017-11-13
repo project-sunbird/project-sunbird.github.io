@@ -8,6 +8,7 @@ keywords: >-
   Content creator, Content provider, License Fraework, CC-BY, SCORM, Content
   Reference Model, Free Content, Open Content, Third Party Rights
 published: true
+allowSearch: true
 ---
 
 **Who owns content on the platform?**

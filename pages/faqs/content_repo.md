@@ -8,6 +8,7 @@ keywords: >-
   Content, Repository, Repositories, Upload, Uploaded, Original, Organization,
   Platform, Stored 
 published: true
+allowSearch: true
 ---
 
 

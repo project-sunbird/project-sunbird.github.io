@@ -6,6 +6,7 @@ page_title: APIs Documentation
 description: APIs Documentation
 keywords: APIs Documentation
 published: true
+allowSearch: true
 ---
 
 

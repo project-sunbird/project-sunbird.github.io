@@ -6,6 +6,7 @@ page_title: Courses and Training
 description: Course Training
 keywords: 'teacher training, training, assessment, training instituites, teacher educator'
 published: true
+allowSearch: true
 ---
 
 **Courses**

@@ -6,6 +6,7 @@ page_title: Help & Support
 description: Get answer to your problem
 keywords: 'Help, Support, Problem, Answer, Platform, Email, Response'
 published: true
+allowSearch: true
 ---
 
 

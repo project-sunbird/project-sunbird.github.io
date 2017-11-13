@@ -6,6 +6,7 @@ page_title: Views
 description: Elementary Views
 keywords: Elementary Views
 published: true
+allowSearch: true
 ---
 
 

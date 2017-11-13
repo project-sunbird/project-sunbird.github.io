@@ -6,6 +6,7 @@ page_title: Intelletual Property
 description: Intellectual Property
 keywords: 'copyrights assertion, guidelines'
 published: true
+allowSearch: true
 ---
 
 

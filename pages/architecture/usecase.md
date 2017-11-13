@@ -5,9 +5,8 @@ title: Use Cases
 page_title: Use case
 description: Architecture Use case
 keywords: Architecture, use case
-alias:
-  - /architecture/usecase/
 published: true
+allowSearch: true
 ---
 
 **Ensure free access to high quality and well organized open teaching and content resources**

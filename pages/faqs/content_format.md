@@ -10,6 +10,7 @@ keywords: >-
   Content, Format, Support, File Size, Metadata, Youtube, Video, Maximum File
   size 
 published: true
+allowSearch: true
 ---
 
 **What content formats are supported on the platform?**

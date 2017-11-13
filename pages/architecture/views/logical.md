@@ -6,6 +6,7 @@ page_title: Logical View
 description: Logical View
 keywords: 'Elementary views, Logical View'
 published: true
+allowSearch: true
 ---
 
 {% ingredient /architecture/archa_ele_logv_desc %}{% endingredient %}

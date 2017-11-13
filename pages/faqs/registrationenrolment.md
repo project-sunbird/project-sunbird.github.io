@@ -8,6 +8,7 @@ keywords: >-
   Platform, Upload, User, Organization, Teacher, Teacher Registry, Database,
   Profile, Teacher Profile, Integrage
 published: true
+allowSearch: true
 ---
 
 **How do you sign up on the platform?**

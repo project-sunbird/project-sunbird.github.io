@@ -8,6 +8,7 @@ keywords: >-
   content editor, create course, create content, create lesson, textbook,
   collection, course
 published: true
+allowSearch: true
 ---
 
 
