@@ -83,6 +83,10 @@
 			}
 		});
 	});
+	$('#toc a').each(function(){
+		var url = this.href.replace(window.location.origin + '/', "");
+		this.href = '{{page.url}}' + url;
+    })
   </script>
   </body>
 </html>
