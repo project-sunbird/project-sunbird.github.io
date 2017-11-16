@@ -8,7 +8,7 @@ OR
                 
 Click Profile Icon on the header > select Workspace from the drop-down list
 
-{% image src='/pages/faqs/images/viewwrkspac.png' full center alt='My Workspace' %}
+{% image src='pages/faqs/images/viewwrkspac.png' full center alt='My Workspace' %}
 
 In your Workspace, you can:
 

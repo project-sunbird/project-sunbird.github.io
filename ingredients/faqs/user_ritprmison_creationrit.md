@@ -6,4 +6,4 @@ Content creators use the in-built content authoring tool to create new lessons, 
 
 The process to get content creation rights is depicted in the following conceptual diagram:
 
-{% image src='/pages/faqs/images/usr_functon.png' full center alt='User Functions' %}
+{% image src='pages/faqs/images/usr_functon.png' full center alt='User Functions' %}

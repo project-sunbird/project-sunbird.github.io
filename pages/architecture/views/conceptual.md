@@ -11,7 +11,7 @@ allowSearch: true
 
 {% ingredient /architecture/archd_con_view_desc %}{% endingredient %}
 
-{% image src='/pages/architecture/image/conceptualview.jpg' full center alt='General Conceptual View' %}
+{% image src='pages/architecture/image/conceptualview.jpg' full center alt='General Conceptual View' %}
 
 {% ingredient /architecture/archd_con_ciew_p1 %}{% endingredient %}
 

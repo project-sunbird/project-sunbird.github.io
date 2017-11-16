@@ -36,11 +36,11 @@ If you are looking to experiment with Sunbird and test out its feature set, we r
 
 - I want to extend Sunbird
 
-If you plan to modify and contribute code to the Sunbird project, we recommend you follow the process [Developer installation]( /developer-docs/installation/installing_sunbirdon_laptop/){:target="_blank"}. This will get you started quickly so you can start extending Sunbird.
+If you plan to modify and contribute code to the Sunbird project, we recommend you follow the process [Developer installation]( developer-docs/installation/installing_sunbirdon_laptop/){:target="_blank"}. This will get you started quickly so you can start extending Sunbird.
 
 - I want to deploy 0-10k users on Sunird
 
-If you plan to run Sunbird in a setting upto 10k users, we recommend you follow the process [Medium scale deployment](/developer-docs/installation/medium_scale_deploy/){:target="_blank"}. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.
+If you plan to run Sunbird in a setting upto 10k users, we recommend you follow the process [Medium scale deployment](developer-docs/installation/medium_scale_deploy/){:target="_blank"}. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.
 - I want to deploy 10k+ users on Sunbird
 
 If you plan to run Sunbird in a setting with 10k+ users, we recommend you follow the [Large scale deployment](){:target="_blank"} process. 
