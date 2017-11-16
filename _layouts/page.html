@@ -84,8 +84,8 @@
 		});
 	});
 	$('#toc a').each(function(){
-		var url = this.href.replace(window.location.origin + '/', "");
-		this.href = '{{page.url}}' + url;
+		var url = this.href.replace(baseURL.href, "");
+		this.href = '{{page.url | remove_first: "/" }}' + url;
     })
   </script>
   </body>
