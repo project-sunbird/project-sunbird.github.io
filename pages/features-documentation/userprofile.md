@@ -13,7 +13,7 @@ Creating and updating your profile, gives you a unique identity on the platform.
 
 To create or update your profile:
 
-1. Sign up and sign in  on the platform
+1. Sign up and sign in  on the platform.
 2. Click Profile tab on the header 
 
 {% image src='/pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}
