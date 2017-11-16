@@ -12,8 +12,8 @@
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
-        <a href="/">
-          <img src="/img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        <a href="index.html">
+          <img src="img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
         </a>
       </div>
       <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
@@ -60,7 +60,7 @@
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="{{page.url}}#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="{{page.url | remove_first: "/" }}#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>

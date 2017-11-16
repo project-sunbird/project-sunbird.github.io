@@ -13,7 +13,7 @@ published: true
 
 <H2>SUNBIRD</H2>
 
-<p> <img src="/pages/features-documentation/images/login1.png"></p>
+<p> <img src="pages/features-documentation/images/login1.png"></p>
 
 <p><strong>Step 1: </strong>
     <ul>
@@ -26,7 +26,7 @@ published: true
     </ol>
 </p>
 
-<p> <img src="/pages/features-documentation/images/workspace2.png"> </p>
+<p> <img src="pages/features-documentation/images/workspace2.png"> </p>
 
 <p><strong>Step 2:</strong>
     <ul>

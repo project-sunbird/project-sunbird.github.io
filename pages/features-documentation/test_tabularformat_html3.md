@@ -27,7 +27,7 @@ published: true
             <li> Click log in button</li>
     	</ol>
     </td>
-    <td> <img src="/pages/features-documentation/images/login1.png" style="float:centre;width:80%;height:70%;border:solid black">       
+    <td> <img src="pages/features-documentation/images/login1.png" style="float:centre;width:80%;height:70%;border:solid black">       
     </td>
   </tr>
   <tr>
@@ -41,7 +41,7 @@ published: true
             <li> Click on Resume button, to take up a course </li>
          </ol>
     </td>
-    <td><img src="/pages/features-documentation/images/workspace2.png" style="float:centre;width:80%;height:70%;border:solid black"> 
+    <td><img src="pages/features-documentation/images/workspace2.png" style="float:centre;width:80%;height:70%;border:solid black"> 
     </td>
   </tr>
 </table>

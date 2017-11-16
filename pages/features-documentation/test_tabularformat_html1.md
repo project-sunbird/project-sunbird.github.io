@@ -25,7 +25,7 @@ published: true
     		<li> Click log in button</li>
     	</ul>
     </td>
-    <td> <img src="/pages/features-documentation/images/login1.png">       
+    <td> <img src="pages/features-documentation/images/login1.png">       
     </td>
   </tr>
   <tr>
@@ -37,7 +37,7 @@ published: true
             <li> Click on Resume button, to take up a course </li>
          </ul>
     </td>
-    <td><img src="/pages/features-documentation/images/workspace2.png"> 
+    <td><img src="pages/features-documentation/images/workspace2.png"> 
     </td>
   </tr>
 </table>

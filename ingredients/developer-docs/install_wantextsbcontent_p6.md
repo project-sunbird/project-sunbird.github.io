@@ -10,10 +10,10 @@ Please complete the following pre-requisites before installing and running the s
 
 **Software dependencies**
 
-* [Node](https://nodejs.org/en/download/) - install the latest release of 6.x.x LTS series
-* [Bower](https://bower.io/#install-bower) - latest version of bower: `npm install -g bower`
-* [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) - latest version of gulp: `npm install -g gulp-cli`
-* [Mongo DB](https://www.mongodb.com/) - v3.4.1 and newer
+* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 6.x.x LTS series
+* [Bower](https://bower.io/#install-bower){:target="_blank"} - latest version of bower: `npm install -g bower`
+* [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md){:target="_blank"} - latest version of gulp: `npm install -g gulp-cli`
+* [Mongo DB](https://www.mongodb.com/){:target="_blank"} - v3.4.1 and newer
 
 2. API Keys
 

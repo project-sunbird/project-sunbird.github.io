@@ -6,7 +6,7 @@ OR
         
 Click the Profile Icon and select Profile
 
-{% image src='/pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}
+{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}
 
 2. Click View your Workspace from the right side of the profile page
 

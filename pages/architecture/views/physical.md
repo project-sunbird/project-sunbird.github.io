@@ -10,4 +10,4 @@ allowSearch: true
 ---
 
 {% ingredient /architecture/archd_phy_view %}{% endingredient %}
-{% image src='/pages/architecture/image/phy_arch.png' full center alt='Physical View' %}
+{% image src='pages/architecture/image/phy_arch.png' full center alt='Physical View' %}
