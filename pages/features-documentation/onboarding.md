@@ -14,3 +14,4 @@ Users can get on board Sunbird either as individuals or as part of an organizati
 Individuals can contact us by submitting the form available on the **[Contact us](contact){:target="_blank"}** page. We will get back to you with user credentials. 
 
 Organizations can contact us using the same form and designate an individual who will be the organization's administrator (Org Admin). The Org Admin can create and upload user credentials in bulk for the organization. The Org Admin also has privileges to manage users and user passwords for the organization.
+                
