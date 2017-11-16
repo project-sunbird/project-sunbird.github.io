@@ -1,4 +1,0 @@
-## Provisioning servers
-
-### Manual process
-
