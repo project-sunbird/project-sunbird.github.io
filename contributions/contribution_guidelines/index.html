@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<base id="baseURL" href="/">
+<script>
+	baseURL = document.getElementById('baseURL');
+	// Dynamic Base URL
+	/*function getBase(){
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		if (excludedSites.indexOf(window.location.host) > -1){
+			baseURL.href="/";
+		} else {
+			baseURL.href="";
+		}
+	}
+	getBase();*/
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+<meta name="msapplication-TileColor" content="#65d3f7">
+<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
+
+<title>Sunbird Contributing to Sunbird</title>
+<meta name="description" content="Sunbird Site Contributing to Sunbird"/>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="last-modified" content="2017-11-20 18:16:15 +0530">
+<meta http-equiv="Expires" content="600" />
+
+<!--Build Details-->
+<!--<meta name="buildVersion" content="" />
+<meta name="buildNo" content="" />-->
+<!--/Build Details-->
+
+<!-- CDN's-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- /CDN's-->
+
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20112017"  />
+<link rel="stylesheet" href="css/style.css?20112017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20112017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20112017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20112017"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-106552125-1');
+</script>
+
+	
+		<meta name="robots" content="index, follow">
+	
+  </head>
+  <body id="body">
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <div class="inner__sidebar">
+        <div id="">
+	
+		<div class="search-cover">
+	<form method="get" action="https://www.google.com/search" target="_blank">
+		<input type="text" value="" name="q" placeholder="Search"/ class="search-input" title="Enter keyword to search">
+		<input type="hidden" value="en" name="hl" />
+		<input type="hidden" name="sitesearch" value="http://www.sunbird.org" />
+		<input type="hidden" value="lang_en" name="lr" />
+		<button type="submit" onclick="submit()" class="search-btn" title="Search">
+			<i class="fa fa-search"></i>
+		</button>
+	</form>
+</div>
+
+	
+	<div class="sidebar-wrapper contributions">
+		<div class="" >
+			<a href="architecture/">
+				<h4 class="sidebar-group-title">Architecture</h4>
+			</a>
+			<ul class="sidebar-group architecture">
+				<li>
+					<a href="architecture/overview/">Overview</a>
+				</li>
+				<li>
+					<a href="architecture/design/">Design</a>
+				</li>
+				<li>
+					<div class="">
+						<a href="architecture/views/elementryview/">Views</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="architecture/views/logical/">Logical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/physical/">Physical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/conceptual/">Conceptual View</a>
+							</li>
+							<li>
+								<a href="architecture/views/deployment/">Deployment View</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="architecture/usecase/">Use Cases</a>
+				</li>
+			</ul>
+			<a href="features-documentation/">
+				<h4 class="sidebar-group-title">Product Features</h4>
+			</a>
+			<ul class="sidebar-group features-documentation" >
+				<li>
+					<a href="features-documentation/onboarding/">Onboarding</a>
+				</li>
+				<li>
+					<a href="features-documentation/login/">Login</a>
+				</li>
+				<li>
+					<a href="features-documentation/administration/">Administration</a>
+					<ul class="sidebar-group">
+						<li>
+							<a href="features-documentation/register_org/">Register Organizations</a>
+						</li>
+						<li>
+							<a href="features-documentation/register_user/">Register Users</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="features-documentation/userrolepermission/">User Roles and Permissions</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/userprofile/">User Profile</a>
+							</li>
+							<li>
+								<a href="features-documentation/workspace/">Workspace</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="features-documentation/coursetraining/">Courses and Training</a>
+				</li>
+				<li>
+					<a href="features-documentation/resources/">Resources</a>
+				</li>
+				<li>
+					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
+				</li>
+				<li>
+					<a href="features-documentation/contentcreation/">Content Creation</a>
+				</li>
+				<li>
+					<a href="features-documentation/contenteditor/">Content Editor</a>
+				</li>
+				<!--<li>
+					<a href="features-documentation/consumption/">Consume Study Material</a>
+				</li>-->
+				</li>
+				<li>
+					<div class="">
+						<a href="features-documentation/guidelines/" >Guidelines</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/intellectualproperty/">Intellectual Property</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<!--<li>
+					<a href="features-documentation/reportinganalytics/">Reporting and Analytics</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
+				</li>
+				</ul>
+				<a href="developer-docs/">
+					<h4 class="sidebar-group-title">Developer Documentation</h4>
+				</a>
+				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/installation/">Installation Overview</a>
+					</li>
+					<!--<li>
+						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+					</li>-->
+					<li>
+						<a  href="developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
+					</li>
+					<li>
+						<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
+					</li>
+					<!--<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/extending_sunbird/">Extending Sunbird</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/customize_sunbird/">Customizing Sunbird</a>
+						</div>
+					</li>-->
+					<li>
+						<div class="">
+							<a  href="apis/">API References</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a>
+								</li>
+								<li>
+									<a href="apis/content/" target="_blank">Content APIs</a>
+								</li>
+								<li>
+									<a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a>
+								</li>
+								<li>
+									<a href="apis/datasyncapi/" target="_blank">Data Sync APIs</a>
+								</li>
+								<li>
+									<a href="apis/metricsapi/" target="_blank">Metrics APIs</a>
+								</li>
+								<li>
+									<a href="apis/notificationapi/" target="_blank">Notification  APIs</a>
+								</li>
+								<li>
+									<a href="apis/orgapi/" target="_blank">Organisation Management APIs</a>
+								</li>
+								<li>
+									<a href="apis/userapi/" target="_blank">User APIs</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</div>
+			</li>
+		</ul>
+		<a href="faqs/">
+			<h4 class="sidebar-group-title">Frequently asked questions</h4>
+		</a>
+		<ul class="sidebar-group faqs" >
+			<li>
+				<a href="faqs/audience/">Audience</a>
+			</li>
+			<li>
+				<a href="faqs/content_format/">Content Format</a>
+			</li>
+			<li>
+				<a href="faqs/content_repo/">Content Repo</a>
+			</li>
+			<li>
+				<a href="faqs/contentreviews/">Content Review</a>
+			</li>
+			<li>
+				<a href="faqs/content_types/">Content Types</a>
+			</li>
+			<li>
+				<a href="faqs/content_upload/">Content Upload</a>
+			</li>
+			<li>
+				<a href="faqs/feature/">Features</a>
+			</li>
+			<li>
+				<a href="faqs/fixerrors/">Fix Errors</a>
+			</li>
+			<li>
+				<a href="faqs/helpsupport/">Help Support</a>
+			</li>
+			<li>
+				<a href="faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
+			</li>
+			<li>
+				<a href="faqs/registrationenrolment/">Registration and Enrollment</a>
+			</li>
+			<li>
+				<a href="faqs/signin/">Sign In</a>
+			</li>
+			<li>
+				<a href="faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
+			</li>
+			<li>
+				<a href="faqs/user_rightspermissions/">Users Rights and Permission</a>
+			</li>
+		</ul>
+		<a href="faqs/glossary/">
+			<h4 class="sidebar-group-title">Glossary</h4>
+		</a>
+	</div>
+</div>
+<script>
+$("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-selected");
+</script>
+
+      </div>
+    </nav>
+    <div class="content">
+      <div class="inner__content header" id="heading">
+        <h1>Contributing to Sunbird </h1>
+      </div>
+
+      <div id="main-content" class="inner__content">
+			<p class="edit-para text-right">
+				<span>
+			<a target="_blank" class="contribute" href="contributions/contribution_guidelines">
+				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;
+			  
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/contributions/contribution_guidelines.md">
+				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+			  </a> 
+			  | 
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				  Report
+			  </a>
+			  </span>
+			</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Structure your Content</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">Build Logical Hierarchy</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Build Page Structure</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#link1-4"><span class="tocnumber">2 .</span> <span class="toctext">Edit a Page</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#link1-5"><span class="tocnumber">3 .</span> <span class="toctext">Report an Issue</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#link1-6"><span class="tocnumber">4 .</span> <span class="toctext">Add a page or a section</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#link1-7"><span class="tocnumber">5 .</span> <span class="toctext">Writing Style Guide</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#link1-7-1"><span class="tocnumber">5.1 .</span> <span class="toctext">Voice</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#link1-7-2"><span class="tocnumber">5.2 .</span> <span class="toctext">Titles and headings</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#link1-7-3"><span class="tocnumber">5.3 .</span> <span class="toctext">General text</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-11">
+                  <a href="#link1-7-4"><span class="tocnumber">5.4 .</span> <span class="toctext">Sentence length</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#link1-7-5"><span class="tocnumber">5.5 .</span> <span class="toctext">Blocks</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-13">
+                  <a href="#link1-7-6"><span class="tocnumber">5.6 .</span> <span class="toctext">Contractions</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-14">
+                  <a href="#link1-7-7"><span class="tocnumber">5.7 .</span> <span class="toctext">Procedure style</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-15">
+                  <a href="#link1-7-8"><span class="tocnumber">5.8 .</span> <span class="toctext">Punctuating lists</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-16">
+                  <a href="#link1-7-9"><span class="tocnumber">5.9 .</span> <span class="toctext">Numbers, Dates and Time</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-17">
+                  <a href="#link1-7-10"><span class="tocnumber">5.10 .</span> <span class="toctext">Hyphens</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-18">
+                  <a href="#link1-7-11"><span class="tocnumber">5.11 .</span> <span class="toctext">Links</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>It is our endeavor to ensure that the Sunbird documentation is reliable and up to date. We welcome all contributions to the Sunbird documentation. Your collaboration is essential to keep the documentation current, consistent and error-free. You can help us out by:</p>
+
+<ul>
+  <li>
+    <p>Editing an existing page</p>
+  </li>
+  <li>
+    <p>Reporting an issue</p>
+  </li>
+  <li>
+    <p>Adding a page or a section</p>
+  </li>
+</ul>
+
+<p>Sunbird manages documentation similar to how it manages code. The docs are in a <a href="https://github.com/project-sunbird/project-sunbird.github.io" target="_blank">Github repository</a> as Markdown documents. If you’re comfortable with using git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze.</p>
+
+<p>You may want to brush up on Markdown syntax. Here’s a handy <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown guide</a> and <a href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf" target="_blank">cheat sheet</a>.</p>
+
+<p>Just as Sunbird code follows coding standards and guidelines, it’s documentation has some simple rules. Go through the Structure your Document section and the handy <a href="https://docs.google.com/a/ekstep.org/document/d/1ewD7L1WwewFhIUjq1Iw_b-MTh7AEZV1GmYT7_l2t3zE/edit?usp=sharing" target="_blank">cheat sheet</a> to the Sunbird style guide to avoid rework on the pages you submit.</p>
+
+<h2 id="link1-1">Structure your Content</h2>
+
+<p>Structuring your content is nothing but chunking the information into logical units. Developing a simple framework for your writing before you start can save considerable time and will prevent the text from meandering.</p>
+
+<p>Unless the information is structured logically, it is not easily understood, usable or readable. Titles of the main sections as headings and subheadings within the text help readers navigate through the piece.  However, even if you do not desire to have the section titles in the finished piece, they will help you as an author to structure your writing to the desired framework.</p>
+
+<p>There are no set rules to structuring your content. However, the following is a brief guide.</p>
+
+<p>Read more at: <a href="https://www.skillsyouneed.com/write/structure.html" target="_blank">https://www.skillsyouneed.com/write/structure.html</a></p>
+
+<h3 id="link1-1-1">Build Logical Hierarchy</h3>
+
+<p>Follow a logical hierarchy for your content. Most content is structured into subject, book, chapter, section, subsection, page; with subject being the largest chunk and a page the smallest. For example;</p>
+
+<p>
+  <strong>Sunbird &gt; Installation &gt; Installing Sunbird on Laptop &gt; Prerequisites &gt; Hardware Requirements</strong>
+</p>
+
+<h3 id="link1-1-2">Build Page Structure</h3>
+
+<p>After you have decided the logical hierarchy for your content, structure each page with a logical hierarchy to make it readable and complete. Use headings and subheadings to build the logical structure of the page. For Sunbird, you can use three levels of headings.</p>
+
+<p>Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.</p>
+
+<p><strong>Note</strong>: Go through the section Writing Style Guide for a few more guidelines.</p>
+
+<h2 id="link1-4">Edit a Page</h2>
+
+<p>You can edit an existing page to correct inconsistencies or add missing information</p>
+
+<table class="table table-img">
+  <tr>
+    <td>Step</td>
+    <td>Screen</td>
+  </tr>
+  <tr>
+    <td>Step 1: Sunbird web page
+        <ol>
+        <li>Click the Edit button from the top or bottom of the required Sunbird web page</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit1.png" /></td>
+  </tr>
+  <tr>
+    <td>Step 2: Page opens on Github
+        <ol>
+        <li>Edit the content</li>
+        <li>Complete all your edits</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit2.png" /></td>
+  </tr>
+  <tr>
+    <td>Step 3: Scroll to the Propose file change section
+        <ol>
+        <li>The first text box automatically mentions that there is an update to the file name. Do not change the file name title</li>
+        <li>If required further describe your changes in the second text box</li>
+        <li>Click Propose file change button</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit3.png" /></td>
+  </tr>
+  <tr>
+    <td>Step 4: Comparing changes page is displayed
+        <ol>
+        <li>Click Create pull request button</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit4.png" /></td>
+  </tr>
+  <tr>
+    <td>Step 5: Open a pull request page is displayed
+        <ol>
+        <li>You can modify your previous comments, if required</li>
+        <li>Click Create pull request button</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit5.png" /> </td>
+  </tr>
+  <tr>
+    <td colspan="2">Step 6: Review by team
+        <ol>
+        <li>The team gets an alert about review the request and page edits</li>
+        <li>The team will start review process</li>
+        <li>Once the review process is complete  You will be notified in comments whether the suggested edits will be accepted or not.The team may suggest you to rework on the submitted changes discard them altogether as modifications</li>
+        </ol>
+        Step 7: Revisit and Re-work (if needed)
+        <ol>
+        <li>You will get Github alert with the team’s comments regarding acceptance/rejection or  there might be suggestions regarding the content</li>
+        <li>Click Review changes button</li>
+        <li>Take up the suggestions and re-work accordingly, once done</li>
+        <li>Go to the pull request created for the file</li>
+        <li>Click Commit button</li>
+        <li>The same pull request is updated</li>
+        <li>Repetition of Step :6 and Step 7 is required if content does not meet the reviewers requirements</li>
+        </ol>
+        Step 8: Content Acceptance
+        <ol>
+        <li>If the content is found appropriate as per set guidelines, it's accepted</li>
+        <li>Accepted content is then made live on the website</li>
+        </ol>
+    </td>
+  </tr>
+ </table>
+
+<h2 id="link1-5">Report an Issue</h2>
+
+<p>There could be inconsistencies in formatting, gaps in information that you notice (but cannot fix), etc. In such cases all you need to do is report the issue .</p>
+
+<p>Before reporting any of these inconsistencies :</p>
+
+<ul>
+  <li>
+    <p>Check whether the issue already exists by checking the issues present in issue tracker.</p>
+  </li>
+  <li>
+    <p>If the issue has already been raised, check if the solution is given in comments .</p>
+  </li>
+  <li>
+    <p>If either there is no solution to the issue raised , or the issue you are trying to raise is not present proceed with following steps:</p>
+  </li>
+</ul>
+
+<table class="table table-img">
+  <tr>
+    <td>Step</td>
+    <td>Screen</td>
+  </tr>
+  <tr>
+    <td>Step 1: Sunbird web page
+        <ol>
+        <li>Click the Report button from the top or bottom of the required web page</li>
+        </ol>
+	</td>
+    <td><img src="pages/contributions/images/report_issue1.png" /></td>
+  </tr>
+  <tr>
+    <td>Step 2: Page opens on Github
+        <ol>
+        <li>The issue tracker opens on Github</li>
+        <li>Click New Issue button</li>
+        </ol>
+	</td>
+    <td><img src="pages/contributions/images/report_issue2.png" /></td>
+  </tr>
+  <tr>
+    <td>Step 3: A form opens up
+        <ol>
+        <li>Fill in appropriate details viz. Title and Description</li>
+        <li>Click Submit new issue</li>
+        <li>The issue is logged in the issue tracker, with an appropriate issue number</li>
+        <li>You need to remember your issue number for future reference and correspondence</li>
+        <li>The team reviews and takes required action on the reported issue</li>
+        </ol>
+        Note: You can track the progress and update on the reported issue using the issue number.
+    </td>
+    <td><img src="pages/contributions/images/report_issue3.png" /></td>
+  </tr>
+</table>
+
+<h2 id="link1-6">Add a page or a section</h2>
+
+<p>To ensure that Sunbird users benefit most, enhancing the knowledge base is of primary importance</p>
+
+<ol>
+  <li>
+    <p>Follow all steps in the <strong>Reporting an Issue</strong> section</p>
+  </li>
+  <li>
+    <p>While adding the issue description, mention that you would like to contribute by adding a page or section before you submit the issue</p>
+  </li>
+  <li>
+    <p>Make a note of the issue number so that you can track your issue for future references.</p>
+  </li>
+  <li>
+    <p>The team assigns the issue to you and provides you with a link to an editable blank .md file.</p>
+  </li>
+  <li>
+    <p>Click the link and follow instructions from Step 2 viz Step 6  from the <strong>Editing an Existing Page</strong> section.</p>
+  </li>
+</ol>
+
+<p><strong>Note</strong>: When executing instruction step:5 , append the issue number to the file name title. For example; # 25</p>
+
+<p>After your contributions are published on the Sunbird website, you will be included as a Sunbird documentation contributors list.</p>
+
+<h2 id="link1-7">Writing Style Guide</h2>
+
+<h3 id="link1-7-1">Voice</h3>
+
+<p><strong>Reinforce the Sunbird brand:</strong> Anything written at Sunbird.org becomes part of the Sunbird experience and should convey the Sunbird spirit.</p>
+
+<p>Always try to be:</p>
+
+<ul>
+  <li>
+    <p>Be clear, simple, and concise.</p>
+  </li>
+  <li>
+    <p>Be respectful, honest, and approachable.</p>
+  </li>
+  <li>
+    <p>Be engaging, welcoming, lively, and fun where appropriate.</p>
+  </li>
+  <li>
+    <p>Use ordinary, everyday language instead of words that sound more elevated.</p>
+  </li>
+</ul>
+
+<p><strong>Know your audience</strong>: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:</p>
+
+<ul>
+  <li>
+    <p>Major landing pages must be approachable and appropriate for a wide audience that could include beginners, company managers, designers, developers, business owners, first-time bloggers, tech-savvy entrepreneurs, educational organizations, or advanced Sunbird developers. Keep them in mind.</p>
+  </li>
+  <li>
+    <p>Use empathy: Put yourself in the place of the readers. Try to look at your text through the eyes of a variety of visitors.</p>
+  </li>
+  <li>
+    <p>You don’t need the word “Please” in order to sound friendly. At times, it will be appropriate; usually, it will not. It sometimes comes across as condescending.</p>
+  </li>
+</ul>
+
+<p><strong>Get them there</strong>: Ask yourself what visitors want to get done and help them get there quickly.</p>
+
+<p><strong>Short isn’t always best</strong>: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?</p>
+
+<p><strong>Open source not market-speak</strong>: Avoid fluffy sales talk. “We’re great! Sunbird is great!” “We’re the best!” These sentences are only believed by those who write them, not those who read them.</p>
+
+<p>Words such as “very, really, truly” tend to weaken a statement, not strengthen it.</p>
+
+<p>Eg.:</p>
+
+<p>
+  <em>This module reduces the time you need to set up a forum.</em>
+</p>
+
+<p>This can be written as :</p>
+
+<p>
+  <em>This module reduces forum set-up time.</em>
+</p>
+
+<p><strong>Edit and edit again:</strong> Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren’t always necessary.</p>
+
+<p><strong>Be clear about benefits for the reader:</strong> Sunbird is here to make people feel privileged and awesome at what they do. Using the word “you” can be powerful.</p>
+
+<p><strong>In general, use active, not passive, voice</strong>: In active voice, the subject performs the action (“The dog ate the bone.”). In passive voice, the subject is the target of the action (“The bone was eaten by the dog.”).</p>
+
+<p>Don’t twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.</p>
+
+<p><strong>Avoid first-person</strong>: Avoid first-person (I, we, my, our) on editorial/landing pages. Use “Sunbird” instead. At times, because Sunbird is community-based, use “we” to sound inclusive or to reinforce the community concept.</p>
+
+<p><strong>Balance the needs of new and experienced users.</strong> Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.</p>
+
+<p><strong>User-test your writing</strong>: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.</p>
+
+<h3 id="link1-7-2">Titles and headings</h3>
+
+<p><strong>Use short descriptive titles</strong>:Titles should be 80 characters or fewer. Avoid redundancy.All main headings and subheadings use sentence caps: only the first letter of the first word is capitalized. Everything else except proper names is in lowercase. (Sunbird is a proper name.)</p>
+
+<h3 id="link1-7-3">General text</h3>
+
+<p>Use short and appropriate sentences.Try to write in a very clear and concise manner. Avoid using jargons and words that are hard to understand. Be specific about who your audience is.</p>
+
+<h3 id="link1-7-4">Sentence length</h3>
+
+<p>Keep sentences to 15 words or fewer. Do not be wordy. Long sentences are difficult to understand.</p>
+
+<h3 id="link1-7-5">Blocks</h3>
+
+<p>Code segments are usually written in blocks.Use blocks if code segments are more than one line.</p>
+
+<h3 id="link1-7-6">Contractions</h3>
+
+<p>Avoid using contractions , rather use the full word itself .</p>
+
+<h3 id="link1-7-7">Procedure style</h3>
+
+<p>For sequential steps, use a numbered (ordered) list. For a set of options, use bullets (unordered list). When describing actions, avoid unnecessary words.</p>
+
+<h3 id="link1-7-8">Punctuating lists</h3>
+
+<p>Precede an ordered or bulleted list with a sentence or phrase ending in a colon. For example;</p>
+
+<p>
+  <em>In communities, you can：</em>
+</p>
+
+<ul>
+  <li>
+    <p><em>Get to know other Sunbird users</em></p>
+  </li>
+  <li>
+    <p><em>Collaborate on projects in a small group</em></p>
+  </li>
+  <li>
+    <p><em>Voice your opinion on a particular project</em></p>
+  </li>
+</ul>
+
+<p>Begin each item with a capital letter (unless it is a product or company name that begins with a lowercase letter).</p>
+
+<p><strong>Note:</strong> Complete sentences in a list should have a period at the end. If a line item is not a complete sentence, do not use a period. If you are breaking a sentence into a list, as in the first example in this section (In communities), periods aren’t necessary.</p>
+
+<p>Be consistent, if possible, when writing the items in the list. Make them “parallel.” In the first example, Get, Collaborate, and Voice are the same form of verb.</p>
+
+<h3 id="link1-7-9">Numbers, Dates and Time</h3>
+
+<ul>
+  <li>
+    <p>A billion is defined as an American billion: 1,000,000,000</p>
+  </li>
+  <li>
+    <p>Thousands should be separated by commas, i.e 100,000</p>
+  </li>
+</ul>
+
+<h4 id="dates">Dates</h4>
+
+<p>Express dates either in full (December 6, 2008) or use the proper <a href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO date format</a>: yyyy-mm-dd, as in 2008-12-06, depending on where it is being used. This may be unfamiliar to some users of American English, but the ISO standard is the widely-accepted date format for modern software.</p>
+
+<h4 id="time">Time</h4>
+
+<p>ISO 8601 uses the 24-hour clock system. The basic format is [hh][mm][ss] and the extended format is [hh]:[mm]:[ss], for example 13:47, or 13:47:30.</p>
+
+<h3 id="link1-7-10">Hyphens</h3>
+
+<p>Use em dashes (HTML entity 8212, “—”) for abrupt breaks in a sentence, to temporarily change subject within a sentence, for clarity, to draw attention to a point, or to signify the origin or author of a quotation.</p>
+
+<ul>
+  <li>
+    <p>Don’t use double hyphens; use the HTML entity.</p>
+  </li>
+  <li>
+    <p>Don’t place spaces on either side. There shouldn’t be any space between the word or words next to an em dash and the en dash.</p>
+  </li>
+</ul>
+
+<p>Use an en dash (HTML entity 8211, “–”) to indicate a range of numbers or dates. (See <a href="http://www.alistapart.com/articles/emen/" target="_blank">www.alistapart.com/articles/emen/</a> for more information about the subject of dashes and hyphens.)</p>
+
+<h3 id="link1-7-11">Links</h3>
+
+<p>When embedding a link in a documentation page, always make sure the link text describes the destination of the link. “Click here” is not a good description, because it does not tell the user where the link will take them. If you can’t fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text" target="_blank">used appropriately</a>, are important for making the pages accessible.</p>
+
+          
+          <hr />
+          
+          <p class="edit-para text-right">
+			<!--<a target="_blank"  class="" href="">
+				  <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/contributions/contribution_guidelines.md" title="Fix this page">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
+		  </p>
+		  <a href="contributions/contribution_guidelines/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+          
+      </div>
+    </div>
+    <div class="page-footer">
+		<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="row">
+				
+			<div class="col-md-4 col-sm-12">
+			</div>
+			
+			<div class="col-md-2 col-sm-6 ">
+				<ul>
+					<li><a href="about/">About Sunbird</a></li>
+					<li><a href="contact/">Contact Us</a></li>
+					<li><a href="privacy-policy/">Privacy Policy</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-2 col-sm-6 sideline">
+				<ul>
+					<li><a href="docs/">Documentation</a></li>
+					<li><a href="features/">Features</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-12">
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+  </div>
+  <script type="text/javascript">
+	//TOC Toggle
+    $(function() {
+        $.toc.clickHideButton();
+    });
+    //Scroll to top
+    $(document).ready(function () {
+		$(".content").scroll(function () {
+			if ($(this).scrollTop() > 250) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+	});
+	$('#toc a').each(function(){
+		var url = this.href.replace(baseURL.href, "");
+		this.href = 'contributions/contribution_guidelines/' + url;
+    })
+  </script>
+  </body>
+</html>

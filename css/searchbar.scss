@@ -1,27 +1,41 @@
-.cse .gsc-control-cse, .gsc-control-cse{
-	padding:0 !important;
-	border:0 !important;
-	background-color:transparent !important;
+.search-cover{
+	padding:10px 0 10px 0;
 }
-.gsc-search-button{
-	display:none !important;
+@media screen and (min-width:480px){
+	.search-cover{
+		padding:0 0 10px 0;
+	}
 }
-table.gsc-search-box td{
-	border:0 !important;
-	padding:0 !important;
+
+@media screen and (min-width:768px){
+	.search-cover{
+		padding:25px 0 10px 0;
+		max-width:250px;
+	}
 }
-.gsc-search-box-tools .gsc-search-box .gsc-input{
-	color:#000;
-	padding:0 5px !important;
-	font-family:inherit !important;
-	font-size:13px;
-	height:23px !important;
-	margin:0 !important;
-	
+.search-btn{
+	height:25px;
+	width: 25px;
+	padding:0;
+	margin:0;
+	background-color:#aaa;
+	background-image:none;
+	border:0;
+	outline:0;
+	border-radius:0;
+	vertical-align:middle;
+	text-align:center;
+	color:#fff;
 }
-.gsc-input-box  table{
-	margin:0 !important;
+.search-input{
+	height:25px;
+	padding:0 5px;
+	margin:0;
+	border:0;
+	outline:0;
+	border-radius:0;
+	vertical-align:middle;
+	color:#333;
+	width: calc(100% - 40px);
 }
-.gsc-input-box{
-	border:0 !important
-}
+

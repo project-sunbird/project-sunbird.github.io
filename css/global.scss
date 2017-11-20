@@ -79,3 +79,21 @@ iframe .btn.omega{background: #fb4b00;
     background: linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 );
 }
+
+@media screen and (max-width:600px){
+.col-xxs-3{width:25% !important; padding-left:15px; padding-right:15px; position:relative; float:left;}
+.col-xxs-4{width:33.33% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxs-6{width:50% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxs-9{width:75% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxs-12{width:100% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+}
+@media screen and (max-width:480px){
+.col-xxxs-1{width:8.33% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxxs-2{width:16.66% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxxs-3{width:25% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxxs-4{width:33.33% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxxs-6{width:50% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxxs-10{width:83.34% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxxs-11{width:91.64% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+.col-xxxs-12{width:100% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
+}
