@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: contributions
 title: Contributing to Sunbird
 page_title: Contributing to Sunbird
 description: Contributing to Sunbird
@@ -8,7 +8,6 @@ keywords: 'Contribute, Code, Code contribution'
 published: true
 allowSearch: true
 ---
-# Contributing to Sunbird Documentation
 
 It is our endeavor to ensure that the Sunbird documentation is reliable and up to date. We welcome all contributions to the Sunbird documentation. Your collaboration is essential to keep the documentation current, consistent and error-free. You can help us out by:
 
@@ -18,11 +17,11 @@ It is our endeavor to ensure that the Sunbird documentation is reliable and up t
 
 * Adding a page or a section
 
-Sunbird manages documentation similar to how it manages code. The docs are in a [Github repository](https://github.com/project-sunbird/project-sunbird.github.io) as Markdown documents. If you’re comfortable with using git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze. 
+Sunbird manages documentation similar to how it manages code. The docs are in a [Github repository](https://github.com/project-sunbird/project-sunbird.github.io){:target="_blank"} as Markdown documents. If you’re comfortable with using git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze. 
 
-You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/) and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf).
+You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
-Just as Sunbird code follows coding standards and guidelines, it’s documentation has some simple rules. Go through the [Structure your Document ](#heading=h.8ss4iuin2omd)section and the handy [cheat sheet](https://docs.google.com/a/ekstep.org/document/d/1ewD7L1WwewFhIUjq1Iw_b-MTh7AEZV1GmYT7_l2t3zE/edit?usp=sharing) to the Sunbird style guide to avoid rework on the pages you submit. 
+Just as Sunbird code follows coding standards and guidelines, it’s documentation has some simple rules. Go through the Structure your Document section and the handy [cheat sheet](https://docs.google.com/a/ekstep.org/document/d/1ewD7L1WwewFhIUjq1Iw_b-MTh7AEZV1GmYT7_l2t3zE/edit?usp=sharing){:target="_blank"} to the Sunbird style guide to avoid rework on the pages you submit. 
 
 ## Structure your Content
 
@@ -32,13 +31,13 @@ Unless the information is structured logically, it is not easily understood, usa
 
 There are no set rules to structuring your content. However, the following is a brief guide. 
 
-Read more at: [https://www.skillsyouneed.com/write/structure.html](https://www.skillsyouneed.com/write/structure.html)
+Read more at: [https://www.skillsyouneed.com/write/structure.html](https://www.skillsyouneed.com/write/structure.html){:target="_blank"}
 
 ### Build Logical Hierarchy 
 
 Follow a logical hierarchy for your content. Most content is structured into subject, book, chapter, section, subsection, page; with subject being the largest chunk and a page the smallest. For example;
 
-**Sunbird **> **Installation**>** Installing Sunbird on Laptop**> **Prerequisites**>**Hardware Requirements**
+**Sunbird > Installation > Installing Sunbird on Laptop > Prerequisites > Hardware Requirements**
 
 ### Build Page Structure
 
@@ -46,17 +45,16 @@ After you have decided the logical hierarchy for your content, structure each pa
 
 Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.   
  
-**Note**: Go through the section [Writing Style Guide](#heading=h.tsxrfsck1uhz) for a few more guidelines.
+**Note**: Go through the section Writing Style Guide for a few more guidelines.
 
 ## Edit a Page
 
 You can edit an existing page to correct inconsistencies or add missing information 
 
-
-<table>
+ <table class="table">
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <td>Step</td>
+    <td>Screen</td>
   </tr>
   <tr>
     <td>Step 1: Sunbird web page
@@ -72,13 +70,13 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>Edit the content</li>
         <li>Complete all your edits</li>
         </ol>
-        </td>
+    </td>
     <td><img src="pages/features-documentation/images/login1.png"></td>
   </tr>
   <tr>
     <td>Step 3: Scroll to the Propose file change section
         <ol>
-        <li>The first text box automatically mentions that there is an update to the file <name>. Do not change the file name title</li>
+        <li>The first text box automatically mentions that there is an update to the file name. Do not change the file name title</li>
         <li>If required further describe your changes in the second text box</li>
         <li>Click Propose file change button</li>
         </ol>
@@ -103,7 +101,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><img src="pages/features-documentation/images/login1.png"> </td>
   </tr>
   <tr>
-    <td>Step 6: Review by team
+    <td colspan="2">Step 6: Review by team
         <ol>
         <li>The team gets an alert about review the request and page edits</li>
         <li>The team will start review process</li>
@@ -126,7 +124,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
         </ol>
     </td>
   </tr>
-</table>
+ </table>
 
 
 ## Report an Issue
@@ -151,7 +149,7 @@ Before reporting any of these inconsistencies :
         <ol>
         <li>Click the Report button from the top or bottom of the required web page</li>
         </ol>
-</td>
+	</td>
     <td><img src="pages/features-documentation/images/login1.png"></td>
   </tr>
   <tr>
@@ -160,7 +158,7 @@ Before reporting any of these inconsistencies :
         <li>The issue tracker opens on Github</li>
         <li>Click New Issue button</li>
         </ol>
-</td>
+	</td>
     <td><img src="pages/features-documentation/images/login1.png"></td>
   </tr>
   <tr>
@@ -193,7 +191,7 @@ To ensure that Sunbird users benefit most, enhancing the knowledge base is of pr
 
 5. Click the link and follow instructions from Step 2 viz Step 6  from the **Editing an Existing Page** section.
 
-**Note**:* When executing instruction step:5 , append the issue number to the file name title. For example; # 25*
+**Note**: When executing instruction step:5 , append the issue number to the file name title. For example; # 25
 
 After your contributions are published on the Sunbird website, you will be included as a Sunbird documentation contributors list.
 
@@ -201,7 +199,7 @@ After your contributions are published on the Sunbird website, you will be inclu
 
 ### Voice
 
-**Reinforce the Sunbird brand: **Anything written at Sunbird.org becomes part of the Sunbird experience and should convey the Sunbird spirit.
+**Reinforce the Sunbird brand:** Anything written at Sunbird.org becomes part of the Sunbird experience and should convey the Sunbird spirit.
 
 Always try to be:
 
@@ -239,7 +237,7 @@ This can be written as :
 
 **Edit and edit again:** Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren't always necessary.
 
-**Be clear about benefits for the reader: **Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
+**Be clear about benefits for the reader:** Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
 
 **In general, use active, not passive, voice**: In active voice, the subject performs the action ("The dog ate the bone."). In passive voice, the subject is the target of the action ("The bone was eaten by the dog.").
 
@@ -289,7 +287,7 @@ Precede an ordered or bulleted list with a sentence or phrase ending in a colon.
 
 Begin each item with a capital letter (unless it is a product or company name that begins with a lowercase letter).
 
-**Note: **Complete sentences in a list should have a period at the end. If a line item is not a complete sentence, do not use a period. If you are breaking a sentence into a list, as in the first example in this section (In communities), periods aren't necessary.
+**Note:** Complete sentences in a list should have a period at the end. If a line item is not a complete sentence, do not use a period. If you are breaking a sentence into a list, as in the first example in this section (In communities), periods aren't necessary.
 
 Be consistent, if possible, when writing the items in the list. Make them "parallel." In the first example, Get, Collaborate, and Voice are the same form of verb.
 
@@ -301,7 +299,7 @@ Be consistent, if possible, when writing the items in the list. Make them "paral
 
 #### Dates
 
-Express dates either in full (December 6, 2008) or use the proper [ISO date format](http://www.iso.org/iso/home/standards/iso8601.htm): yyyy-mm-dd, as in 2008-12-06, depending on where it is being used. This may be unfamiliar to some users of American English, but the ISO standard is the widely-accepted date format for modern software. 
+Express dates either in full (December 6, 2008) or use the proper [ISO date format](http://www.iso.org/iso/home/standards/iso8601.htm){:target="_blank"}: yyyy-mm-dd, as in 2008-12-06, depending on where it is being used. This may be unfamiliar to some users of American English, but the ISO standard is the widely-accepted date format for modern software. 
 
 #### Time
 
@@ -315,8 +313,8 @@ Use em dashes (HTML entity 8212, "—") for abrupt breaks in a sentence, to temp
 
 * Don't place spaces on either side. There shouldn't be any space between the word or words next to an em dash and the en dash.
 
-Use an en dash (HTML entity 8211, "–") to indicate a range of numbers or dates. (See [www.alistapart.com/articles/emen/](http://www.alistapart.com/articles/emen/) for more information about the subject of dashes and hyphens.)
+Use an en dash (HTML entity 8211, "–") to indicate a range of numbers or dates. (See [www.alistapart.com/articles/emen/](http://www.alistapart.com/articles/emen/){:target="_blank"} for more information about the subject of dashes and hyphens.)
 
 ### Links
 
-When embedding a link in a documentation page, always make sure the link text describes the destination of the link. "Click here" is not a good description, because it does not tell the user where the link will take them. If you can't fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, [used appropriately](http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text), are important for making the pages accessible.
+When embedding a link in a documentation page, always make sure the link text describes the destination of the link. "Click here" is not a good description, because it does not tell the user where the link will take them. If you can't fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, [used appropriately](http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text){:target="_blank"}, are important for making the pages accessible.
