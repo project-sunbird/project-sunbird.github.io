@@ -147,19 +147,18 @@ Sample themes directory of sunbird can be seen [here](https://github.com/project
 
 - Update following configs
 
+Assuming you imported the sample realm, use the below values for config -
+
 <pre>
-Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
-sunbird_sso_client_id: # Eg: admin-cli
-sunbird_sso_username: # keycloak user name
-sunbird_sso_password: # keycloak user password
+sunbird_sso_client_id: admin-cli
+sunbird_sso_username: ## username for the user you created ##
+sunbird_sso_password: ## password for the user you created ##
 
-Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
-keycloak_realm:  # Eg: sunbird
-sunbird_keycloak_client_id: # Eg: portal
+keycloak_realm: sunbird
+sunbird_keycloak_client_id: portal
 
-Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
-sunbird_trampoline_client_id:  # Eg: trampoline
-sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
+sunbird_trampoline_client_id: trampoline
+sunbird_trampoline_secret: ## secret that you regenerated for the trampoline client ##
 </pre>
 
 ### Additional config to customize Sunbird instance
