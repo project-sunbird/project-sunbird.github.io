@@ -62,7 +62,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>Click the Edit button from the top or bottom of the required Sunbird web page</li>
         </ol>
     </td>
-    <td><img src="pages/features-documentation/images/login1.png"></td>
+    <td><img src="pages/contributions/images/edit1.png"></td>
   </tr>
   <tr>
     <td>Step 2: Page opens on Github
@@ -71,7 +71,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>Complete all your edits</li>
         </ol>
     </td>
-    <td><img src="pages/features-documentation/images/login1.png"></td>
+    <td><img src="pages/contributions/images/edit2.png"></td>
   </tr>
   <tr>
     <td>Step 3: Scroll to the Propose file change section
@@ -81,7 +81,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>Click Propose file change button</li>
         </ol>
     </td>
-    <td><img src="pages/features-documentation/images/login1.png"></td>
+    <td><img src="pages/contributions/images/edit3.png"></td>
   </tr>
   <tr>
     <td>Step 4: Comparing changes page is displayed
@@ -89,7 +89,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>Click Create pull request button</li>
         </ol>
     </td>
-    <td><img src="pages/features-documentation/images/login1.png"></td>
+    <td><img src="pages/contributions/images/edit4.png"></td>
   </tr>
   <tr>
     <td>Step 5: Open a pull request page is displayed
@@ -98,7 +98,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>Click Create pull request button</li>
         </ol>
     </td>
-    <td><img src="pages/features-documentation/images/login1.png"> </td>
+    <td><img src="pages/contributions/images/edit5.png"> </td>
   </tr>
   <tr>
     <td colspan="2">Step 6: Review by team
@@ -150,7 +150,7 @@ Before reporting any of these inconsistencies :
         <li>Click the Report button from the top or bottom of the required web page</li>
         </ol>
 	</td>
-    <td><img src="pages/features-documentation/images/login1.png"></td>
+    <td><img src="pages/contributions/images/report_issue1.png"></td>
   </tr>
   <tr>
     <td>Step 2: Page opens on Github
@@ -159,7 +159,7 @@ Before reporting any of these inconsistencies :
         <li>Click New Issue button</li>
         </ol>
 	</td>
-    <td><img src="pages/features-documentation/images/login1.png"></td>
+    <td><img src="pages/contributions/images/report_issue2.png"></td>
   </tr>
   <tr>
     <td>Step 3: A form opens up
@@ -172,7 +172,7 @@ Before reporting any of these inconsistencies :
         </ol>
         Note: You can track the progress and update on the reported issue using the issue number.
     </td>
-    <td><img src="pages/features-documentation/images/login1.png"></td>
+    <td><img src="pages/contributions/images/report_issue3.png"></td>
   </tr>
 </table>
 
