@@ -51,7 +51,7 @@ Other than heading levels, you can structure the information on a page using par
 
 You can edit an existing page to correct inconsistencies or add missing information 
 
- <table class="table">
+ <table class="table table-img">
   <tr>
     <td>Step</td>
     <td>Screen</td>
@@ -139,7 +139,7 @@ Before reporting any of these inconsistencies :
 
 * If either there is no solution to the issue raised , or the issue you are trying to raise is not present proceed with following steps:
 
-<table>
+<table class="table table-img">
   <tr>
     <td>Step</td>
     <td>Screen</td>
