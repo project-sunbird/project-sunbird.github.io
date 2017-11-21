@@ -21,7 +21,7 @@ Sunbird manages documentation similar to how it manages code. The docs are in a 
 
 You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
-Just as Sunbird code follows coding standards and guidelines, it’s documentation has some simple rules. Go through the Structure your Document section and the handy [cheat sheet](https://docs.google.com/a/ekstep.org/document/d/1ewD7L1WwewFhIUjq1Iw_b-MTh7AEZV1GmYT7_l2t3zE/edit?usp=sharing){:target="_blank"} to the Sunbird style guide to avoid rework on the pages you submit. 
+Just as Sunbird code follows coding standards and guidelines, it’s documentation has some simple rules. Go through the Structure your Document section and the handy [cheat sheet]{% ingredient /contributions/sunbird_styleguide_cheatsheet %}{% endingredient %}{:target="_blank"} to the Sunbird style guide to avoid rework on the pages you submit. 
 
 ## Structure your Content
 
