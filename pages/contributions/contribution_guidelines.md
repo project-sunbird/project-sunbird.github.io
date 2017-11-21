@@ -108,7 +108,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
   <tr>
     <td>Step 1: Sunbird web page
         <ol>
-        <li>Click the Edit button from the top or bottom of the required Sunbird web page</li>
+        <li>Click the **Edit** button from the top or bottom of the required Sunbird web page</li>
         </ol>
     </td>
     <td><img src="pages/contributions/images/edit1.png"></td>
@@ -127,24 +127,24 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <ol>
         <li>The first text box automatically mentions that there is an update to the file name. Do not change the file name title</li>
         <li>If required further describe your changes in the second text box</li>
-        <li>Click Propose file change button</li>
+        <li>Click **Propose file change** button</li>
         </ol>
     </td>
     <td><img src="pages/contributions/images/edit3.png"></td>
   </tr>
   <tr>
-    <td>Step 4: Comparing changes page is displayed
+    <td>Step 4: **Comparing changes** page is displayed
         <ol>
-        <li>Click Create pull request button</li>
+        <li>Click **Create pull request** button</li>
         </ol>
     </td>
     <td><img src="pages/contributions/images/edit4.png"></td>
   </tr>
   <tr>
-    <td>Step 5: Open a pull request page is displayed
+    <td>Step 5: **Open a pull request** page is displayed
         <ol>
         <li>You can modify your previous comments, if required</li>
-        <li>Click Create pull request button</li>
+        <li>Click **Create pull request** button</li>
         </ol>
     </td>
     <td><img src="pages/contributions/images/edit5.png"></td>
@@ -154,7 +154,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <ol>
         <li>The team gets an alert about review the request and page edits</li>
         <li>The team will start review process</li>
-        <li>Once the review process is complete  You will be notified in comments whether the suggested edits will be accepted or not.The team may suggest you to rework on the submitted changes discard them altogether as modifications</li>
+        <li>Once the review process is complete, you will be notified in comments whether the suggested edits will be accepted or not.The team may suggest you to rework on the submitted changes discard them altogether as modifications</li>
         </ol>
     </td>
   </tr>
@@ -162,10 +162,10 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td colspan="2">Step 7: Revisit and Re-work (if needed)
         <ol>
         <li>You will get Github alert with the team’s comments regarding acceptance/rejection or  there might be suggestions regarding the content</li>
-        <li>Click Review changes button</li>
+        <li>Click **Review changes** button</li>
         <li>Take up the suggestions and re-work accordingly, once done</li>
         <li>Go to the pull request created for the file</li>
-        <li>Click Commit button</li>
+        <li>Click **Commit** button</li>
         <li>The same pull request is updated</li>
         <li>Repetition of Step :6 and Step 7 is required if content does not meet the reviewers requirements</li>
         </ol>
