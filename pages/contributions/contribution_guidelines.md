@@ -102,19 +102,19 @@ You can edit an existing page to correct inconsistencies or add missing informat
 
  <table class="table table-img">
   <tr>
-    <td>Step</td>
-    <td>Screen</td>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
   </tr>
   <tr>
-    <td>Step 1: Sunbird web page
+     <td>Step 1: <strong>Sunbird web page</strong>
         <ol>
-        <li>Click the **Edit** button from the top or bottom of the required Sunbird web page</li>
+	<li>Click the <strong>Edit</strong> button from the top or bottom of the required Sunbird web page</li>
         </ol>
-    </td>
+     </td>
     <td><img src="pages/contributions/images/edit1.png"></td>
   </tr>
   <tr>
-    <td>Step 2: Page opens on Github
+     <td>Step 2: <strong>Page opens on Github</strong>
         <ol>
         <li>Edit the content</li>
         <li>Complete all your edits</li>
@@ -123,34 +123,34 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><img src="pages/contributions/images/edit2.png"></td>
   </tr>
   <tr>
-    <td>Step 3: Scroll to the Propose file change section
+    <td>Step 3: <strong>Scroll to the Propose file change section</strong>
         <ol>
         <li>The first text box automatically mentions that there is an update to the file name. Do not change the file name title</li>
         <li>If required further describe your changes in the second text box</li>
-        <li>Click **Propose file change** button</li>
+	<li>Click <strong>Propose file change</strong> button</li>
         </ol>
     </td>
     <td><img src="pages/contributions/images/edit3.png"></td>
   </tr>
   <tr>
-    <td>Step 4: **Comparing changes** page is displayed
+    <td>Step 4: <strong>Comparing changes page is displayed</strong>
         <ol>
-        <li>Click **Create pull request** button</li>
+	<li>Click <strong>Create pull request</strong> button</li>
         </ol>
     </td>
     <td><img src="pages/contributions/images/edit4.png"></td>
   </tr>
   <tr>
-    <td>Step 5: **Open a pull request** page is displayed
+    <td>Step 5: <strong>Open a pull request page is displayed</strong>
         <ol>
         <li>You can modify your previous comments, if required</li>
-        <li>Click **Create pull request** button</li>
+	<li>Click <strong>Create pull request</strong> button</li>
         </ol>
     </td>
     <td><img src="pages/contributions/images/edit5.png"></td>
   </tr>
   <tr>
-    <td colspan="2">Step 6: Review by team
+    <td colspan="2">Step 6: <strong>Review by team</strong>
         <ol>
         <li>The team gets an alert about review the request and page edits</li>
         <li>The team will start review process</li>
@@ -159,20 +159,20 @@ You can edit an existing page to correct inconsistencies or add missing informat
     </td>
   </tr>
   <tr>
-    <td colspan="2">Step 7: Revisit and Re-work (if needed)
+     <td colspan="2">Step 7: <strong>Revisit and Re-work (if needed)</strong>
         <ol>
         <li>You will get Github alert with the team’s comments regarding acceptance/rejection or  there might be suggestions regarding the content</li>
-        <li>Click **Review changes** button</li>
+	<li>Click <strong>Review changes</strong> button</li>
         <li>Take up the suggestions and re-work accordingly, once done</li>
         <li>Go to the pull request created for the file</li>
-        <li>Click **Commit** button</li>
+	<li>Click <strong>Commit</strong> button</li>
         <li>The same pull request is updated</li>
         <li>Repetition of Step :6 and Step 7 is required if content does not meet the reviewers requirements</li>
         </ol>
     </td>
   </tr>
   <tr>
-    <td>Step 8: Content Acceptance
+    <td>Step 8: <strong>Content Acceptance</strong>
         <ol>
         <li>If the content is found appropriate as per set guidelines, it's accepted</li>
         <li>Accepted content is then made live on the website</li>
