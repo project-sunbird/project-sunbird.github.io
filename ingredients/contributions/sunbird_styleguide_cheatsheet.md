@@ -5,9 +5,8 @@
 **Guidelines that are to be adhered while creating a content**
 
 1. Instructions should begin with an Active voice. Start with a Verb:
-**Examples** |
--------------|
-**Click** Create button  |
-Press **Enter** to save  |
-**Go to** homepage>create lessons to start |
-**Enter** the information here |
+      **Examples** 
+      **Click** Create button  
+      Press **Enter** to save  
+      **Go to** homepage>create lessons to start 
+      **Enter** the information here
