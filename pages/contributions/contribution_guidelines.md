@@ -83,7 +83,10 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>The team will start review process</li>
         <li>Once the review process is complete  You will be notified in comments whether the suggested edits will be accepted or not.The team may suggest you to rework on the submitted changes discard them altogether as modifications</li>
         </ol>
-        Step 7: Revisit and Re-work (if needed)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">Step 7: Revisit and Re-work (if needed)
         <ol>
         <li>You will get Github alert with the team’s comments regarding acceptance/rejection or  there might be suggestions regarding the content</li>
         <li>Click Review changes button</li>
@@ -93,7 +96,10 @@ You can edit an existing page to correct inconsistencies or add missing informat
         <li>The same pull request is updated</li>
         <li>Repetition of Step :6 and Step 7 is required if content does not meet the reviewers requirements</li>
         </ol>
-        Step 8: Content Acceptance
+    </td>
+  </tr>
+  <tr>
+    <td>Step 8: Content Acceptance
         <ol>
         <li>If the content is found appropriate as per set guidelines, it's accepted</li>
         <li>Accepted content is then made live on the website</li>
@@ -251,20 +257,18 @@ Unless the information is structured logically, it is not easily understood, usa
 
 There are no set rules to structuring your content. However, the following is a brief guide. Read more at: [https://www.skillsyouneed.com/write/structure.html](https://www.skillsyouneed.com/write/structure.html){:target="_blank"}
 
-### Logical Hierarchy 
+#### Logical Hierarchy 
 
 Follow a logical hierarchy for your content. Most content is structured into subject, book, chapter, section, subsection, page; with subject being the largest chunk and a page the smallest. For example;
 
 **Sunbird > Installation > Installing Sunbird on Laptop > Prerequisites > Hardware Requirements**
 
-### Page Structure
+#### Page Structure
 
 After you have decided the logical hierarchy for your content, structure each page with a logical hierarchy to make it readable and complete. Use headings and subheadings to build the logical structure of the page. For Sunbird, you can use three levels of headings.
 
 Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.   
  
-**Note**: Go through the section Writing Style Guide for a few more guidelines.
-
 ### Voice
 
 **Reinforce the Sunbird brand:** Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.
@@ -279,40 +283,24 @@ Always try to be:
 
 * Use ordinary, everyday language instead of words that sound more elevated.
 
-**Know your audience**: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:
+1. **Know your audience**: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:
+    * Major landing pages must be approachable and appropriate for a wide audience that could include beginners, company managers, designers, developers, business owners, first-time bloggers, tech-savvy entrepreneurs, educational organizations, or advanced Sunbird developers. Keep them in mind.
+    * Use empathy: Put yourself in the place of the readers. Try to look at your text through the eyes of a variety of visitors.
+    * You don't need the word "Please" in order to sound friendly. At times, it will be appropriate; usually, it will not. It sometimes comes across as condescending.
 
-* Major landing pages must be approachable and appropriate for a wide audience that could include beginners, company managers, designers, developers, business owners, first-time bloggers, tech-savvy entrepreneurs, educational organizations, or advanced Sunbird developers. Keep them in mind.
+2. **Get them there**: Ask yourself what visitors want to get done and help them get there quickly.
+3. **Short isn't always best**: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?
+4. **Open source not market-speak**: Avoid fluffy sales talk. "We're great! Sunbird is great!" "We're the best!" These sentences are only believed by those who write them, not those who read them.
+5. Words such as "very, really, truly" tend to weaken a statement, not strengthen it.
+6. **Edit and edit again:** Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren't always necessary.
+    Eg.:
+      *This module reduces the time you need to set up a forum.*
+    This can be written as :
+      *This module reduces forum set-up time.*
+7. **Be clear about benefits for the reader:** Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
+8. **In general, use active, not passive, voice**: In active voice, the subject performs the action ("The dog ate the bone."). In passive voice, the subject is the target of the action ("The bone was eaten by the dog.").
 
-* Use empathy: Put yourself in the place of the readers. Try to look at your text through the eyes of a variety of visitors.
-
-* You don't need the word "Please" in order to sound friendly. At times, it will be appropriate; usually, it will not. It sometimes comes across as condescending.
-
-**Get them there**: Ask yourself what visitors want to get done and help them get there quickly.
-
-**Short isn't always best**: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?
-
-**Open source not market-speak**: Avoid fluffy sales talk. "We're great! Sunbird is great!" "We're the best!" These sentences are only believed by those who write them, not those who read them.
-
-Words such as "very, really, truly" tend to weaken a statement, not strengthen it.
-
-Eg.:
-
-*This module reduces the time you need to set up a forum.*
-
-This can be written as :
-
-*This module reduces forum set-up time.*
-
-**Edit and edit again:** Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren't always necessary.
-
-**Be clear about benefits for the reader:** Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
-
-**In general, use active, not passive, voice**: In active voice, the subject performs the action ("The dog ate the bone."). In passive voice, the subject is the target of the action ("The bone was eaten by the dog.").
-
-Don't twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.
-
-**Avoid first-person**: Avoid first-person (I, we, my, our) on editorial/landing pages. Use "Sunbird" instead. At times, because Sunbird is community-based, use "we" to sound inclusive or to reinforce the community concept. 
-
-**Balance the needs of new and experienced users.** Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.
-
-**User-test your writing**: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.
+    Don't twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.
+9. **Avoid first-person**: Avoid first-person (I, we, my, our) on editorial/landing pages. Use "Sunbird" instead. At times, because Sunbird is community-based, use "we" to sound inclusive or to reinforce the community concept. 
+10. **Balance the needs of new and experienced users.** Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.
+11. **User-test your writing**: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.
