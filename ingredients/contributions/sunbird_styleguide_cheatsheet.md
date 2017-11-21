@@ -16,5 +16,25 @@
             </ul>
       </td>
       </tr>
+</table>
+
+1. All UI and Keyboard elements should be written in Bold:
+
+<table>
+      <tr>
+            <td><strong>Example</strong>
+                  <ul>
+                        <li>Click <strong>Create</strong> button 
+                        <li>Press <strong>Enter</strong> to save         
+                  </ul>
+            </td>
+      </tr>
+</table>
+
+1. Process instructions should be numbered.
+                  
+                  
+
+
        
       
