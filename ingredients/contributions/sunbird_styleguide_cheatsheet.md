@@ -105,7 +105,7 @@
       </tr>
 </table>
 
-*Note*: For further reading, please refer:
+***Note***: For further reading, please refer:
 <https://material.io/guidelines/style/writing.html>
 
 
