@@ -29,11 +29,11 @@ You can use the following styles when formatting your document.
 
 #### Titles and headings
 
-**Use short descriptive titles**:Titles should be 80 characters or fewer. Avoid redundancy. All main headings and subheadings use sentence caps: only the first letter of the first word is capitalized. Everything else except proper names is in lowercase. (Sunbird is a proper name.)
+**Use short descriptive titles**: Titles should be 80 characters or fewer. Avoid redundancy. For all main headings and subheadings use title case: only the first letter of the first word is capitalized. Everything else except proper names is in lowercase. (Sunbird is a proper name)
 
 #### General text 
 
-Use short and appropriate sentences.Try to write in a very clear and concise manner. Avoid using jargons and words that are hard to understand. Be specific about who your audience is.
+Use short and appropriate sentences. Try to write in a very clear and concise manner. Avoid using jargons and words that are hard to understand. Be specific about who your audience is.
 
 #### Sentence length 
 
@@ -41,11 +41,11 @@ Keep sentences to 15 words or fewer. Do not be wordy. Long sentences are difficu
 
 #### Blocks 
 
-Code segments are usually written in blocks.Use blocks if code segments are more than one line. 
+Code segments are usually written in blocks. Use blocks if code segments are more than one line. 
 
 #### Contractions 
 
-Avoid using contractions , rather use the full word itself . 
+Avoid using contractions, rather use the full word itself. 
 
 #### Procedure style
 
@@ -69,7 +69,7 @@ Begin each item with a capital letter (unless it is a product or company name th
 
 Be consistent, if possible, when writing the items in the list. Make them "parallel." In the first example, Get, Collaborate, and Voice are the same form of verb.
 
-#### Numbers, Dates and Time
+#### Numbers
 
 * A billion is defined as an American billion: 1,000,000,000
 
@@ -87,9 +87,9 @@ ISO 8601 uses the 24-hour clock system. The basic format is [hh][mm][ss] and the
 
 Use em dashes (HTML entity 8212, "—") for abrupt breaks in a sentence, to temporarily change subject within a sentence, for clarity, to draw attention to a point, or to signify the origin or author of a quotation.
 
-* Don't use double hyphens; use the HTML entity.
+* Donot use double hyphens; use the HTML entity.
 
-* Don't place spaces on either side. There shouldn't be any space between the word or words next to an em dash and the en dash.
+* Donot place spaces on either side. There shouldn't be any space between the word or words next to an em dash and the en dash.
 
 Use an en dash (HTML entity 8211, "–") to indicate a range of numbers or dates. (See [www.alistapart.com/articles/emen/](http://www.alistapart.com/articles/emen/){:target="_blank"} for more information about the subject of dashes and hyphens.)
 
