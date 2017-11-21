@@ -19,8 +19,8 @@ allowSearch: true
 	  **Example**
 	 
 	 - Click **Create** button
-     	 - Press **Enter** to save
-     	 - **Go to** homepage > create lessons to start
+	 - Press **Enter** to save
+	 - **Go to** homepage > create lessons to start
 
 2. Write all UI and keyboard elements in bold:<br />
 
