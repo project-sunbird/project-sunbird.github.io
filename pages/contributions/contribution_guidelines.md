@@ -106,7 +106,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><strong>Screen</strong></td>
   </tr>
   <tr>
-     <td>Step 1: <strong>Sunbird web page</strong>
+     <td><strong>Step 1: Sunbird web page</strong>
         <ol>
 	<li>Click the <strong>Edit</strong> button from the top or bottom of the required Sunbird web page</li>
         </ol>
@@ -114,7 +114,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><img src="pages/contributions/images/edit1.png"></td>
   </tr>
   <tr>
-     <td>Step 2: <strong>Page opens on Github</strong>
+     <td><strong>Step 2: Page opens on Github</strong>
         <ol>
         <li>Edit the content</li>
         <li>Complete all your edits</li>
@@ -123,7 +123,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><img src="pages/contributions/images/edit2.png"></td>
   </tr>
   <tr>
-    <td>Step 3: <strong>Scroll to the Propose file change section</strong>
+    <td><strong>Step 3: Scroll to the Propose file change section</strong>
         <ol>
         <li>The first text box automatically mentions that there is an update to the file name. Do not change the file name title</li>
         <li>If required further describe your changes in the second text box</li>
@@ -133,7 +133,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><img src="pages/contributions/images/edit3.png"></td>
   </tr>
   <tr>
-    <td>Step 4: <strong>Comparing changes page is displayed</strong>
+    <td><strong>Step 4: Comparing changes page is displayed</strong>
         <ol>
 	<li>Click <strong>Create pull request</strong> button</li>
         </ol>
@@ -141,7 +141,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><img src="pages/contributions/images/edit4.png"></td>
   </tr>
   <tr>
-    <td>Step 5: <strong>Open a pull request page is displayed</strong>
+    <td><strong>Step 5: Open a pull request page is displayed</strong>
         <ol>
         <li>You can modify your previous comments, if required</li>
 	<li>Click <strong>Create pull request</strong> button</li>
@@ -150,7 +150,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     <td><img src="pages/contributions/images/edit5.png"></td>
   </tr>
   <tr>
-    <td colspan="2">Step 6: <strong>Review by team</strong>
+    <td colspan="2"><strong>Step 6: Review by team</strong>
         <ol>
         <li>The team gets an alert about review the request and page edits</li>
         <li>The team will start review process</li>
@@ -159,9 +159,9 @@ You can edit an existing page to correct inconsistencies or add missing informat
     </td>
   </tr>
   <tr>
-     <td colspan="2">Step 7: <strong>Revisit and Re-work (if needed)</strong>
+     <td colspan="2"><strong>Step 7: Revisit and Re-work (if needed)</strong>
         <ol>
-        <li>You will get Github alert with the team’s comments regarding acceptance/rejection or  there might be suggestions regarding the content</li>
+        <li>You will get Github alert with the team’s comments regarding acceptance/rejection or there might be suggestions regarding the content</li>
 	<li>Click <strong>Review changes</strong> button</li>
         <li>Take up the suggestions and re-work accordingly, once done</li>
         <li>Go to the pull request created for the file</li>
@@ -172,7 +172,7 @@ You can edit an existing page to correct inconsistencies or add missing informat
     </td>
   </tr>
   <tr>
-    <td>Step 8: <strong>Content Acceptance</strong>
+    <td><strong>Step 8: Content Acceptance</strong>
         <ol>
         <li>If the content is found appropriate as per set guidelines, it's accepted</li>
         <li>Accepted content is then made live on the website</li>
@@ -214,36 +214,36 @@ Before reporting any of these inconsistencies :
 
 <table class="table table-img">
   <tr>
-    <td>Step</td>
-    <td>Screen</td>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
   </tr>
   <tr>
-    <td>Step 1: Sunbird web page
+    <td><strong>Step 1: Sunbird web page</strong>
         <ol>
-        <li>Click the Report button from the top or bottom of the required web page</li>
+	<li>Click the <strong>Report</strong> button from the top or bottom of the required web page</li>
         </ol>
 	</td>
     <td><img src="pages/contributions/images/report_issue1.png"></td>
   </tr>
   <tr>
-    <td>Step 2: Page opens on Github
+    <td><strong>Step 2: Page opens on Github</strong>
         <ol>
         <li>The issue tracker opens on Github</li>
-        <li>Click New Issue button</li>
+	<li>Click <strong>New Issue</strong> button</li>
         </ol>
 	</td>
     <td><img src="pages/contributions/images/report_issue2.png"></td>
   </tr>
   <tr>
-    <td>Step 3: A form opens up
+    <td><strong>Step 3: A form opens up</strong>
         <ol>
-        <li>Fill in appropriate details viz. Title and Description</li>
-        <li>Click Submit new issue</li>
+	<li>Fill in appropriate details viz. <strong>Title</strong> and <strong>Description</strong></li>
+	<li>Click <strong>Submit new issue</strong></li>
         <li>The issue is logged in the issue tracker, with an appropriate issue number</li>
         <li>You need to remember your issue number for future reference and correspondence</li>
         <li>The team reviews and takes required action on the reported issue</li>
         </ol>
-        Note: You can track the progress and update on the reported issue using the issue number.
+        <strong>Note: You can track the progress and update on the reported issue using the issue number</strong>
     </td>
     <td><img src="pages/contributions/images/report_issue3.png"></td>
   </tr>
