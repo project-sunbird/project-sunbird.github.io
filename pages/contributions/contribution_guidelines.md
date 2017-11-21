@@ -22,166 +22,14 @@ Sunbird manages documentation similar to how it manages code. The docs are in a 
 You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
 ## Guidelines
-Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [Documentation Structure](#structure-your-document) section and the Sunbird [documentation style guide](contributions/styleguide){:target="_blank"} to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
-
-## Edit a Page
-You can edit an existing page to correct inconsistencies or add missing information 
-
- <table class="table table-img">
-  <tr>
-    <td>Step</td>
-    <td>Screen</td>
-  </tr>
-  <tr>
-    <td>Step 1: Sunbird web page
-        <ol>
-        <li>Click the Edit button from the top or bottom of the required Sunbird web page</li>
-        </ol>
-    </td>
-    <td><img src="pages/contributions/images/edit1.png"></td>
-  </tr>
-  <tr>
-    <td>Step 2: Page opens on Github
-        <ol>
-        <li>Edit the content</li>
-        <li>Complete all your edits</li>
-        </ol>
-    </td>
-    <td><img src="pages/contributions/images/edit2.png"></td>
-  </tr>
-  <tr>
-    <td>Step 3: Scroll to the Propose file change section
-        <ol>
-        <li>The first text box automatically mentions that there is an update to the file name. Do not change the file name title</li>
-        <li>If required further describe your changes in the second text box</li>
-        <li>Click Propose file change button</li>
-        </ol>
-    </td>
-    <td><img src="pages/contributions/images/edit3.png"></td>
-  </tr>
-  <tr>
-    <td>Step 4: Comparing changes page is displayed
-        <ol>
-        <li>Click Create pull request button</li>
-        </ol>
-    </td>
-    <td><img src="pages/contributions/images/edit4.png"></td>
-  </tr>
-  <tr>
-    <td>Step 5: Open a pull request page is displayed
-        <ol>
-        <li>You can modify your previous comments, if required</li>
-        <li>Click Create pull request button</li>
-        </ol>
-    </td>
-    <td><img src="pages/contributions/images/edit5.png"> </td>
-  </tr>
-  <tr>
-    <td colspan="2">Step 6: Review by team
-        <ol>
-        <li>The team gets an alert about review the request and page edits</li>
-        <li>The team will start review process</li>
-        <li>Once the review process is complete  You will be notified in comments whether the suggested edits will be accepted or not.The team may suggest you to rework on the submitted changes discard them altogether as modifications</li>
-        </ol>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">Step 7: Revisit and Re-work (if needed)
-        <ol>
-        <li>You will get Github alert with the team’s comments regarding acceptance/rejection or  there might be suggestions regarding the content</li>
-        <li>Click Review changes button</li>
-        <li>Take up the suggestions and re-work accordingly, once done</li>
-        <li>Go to the pull request created for the file</li>
-        <li>Click Commit button</li>
-        <li>The same pull request is updated</li>
-        <li>Repetition of Step :6 and Step 7 is required if content does not meet the reviewers requirements</li>
-        </ol>
-    </td>
-  </tr>
-  <tr>
-    <td>Step 8: Content Acceptance
-        <ol>
-        <li>If the content is found appropriate as per set guidelines, it's accepted</li>
-        <li>Accepted content is then made live on the website</li>
-        </ol>
-    </td>
-  </tr>
- </table>
-
-## Add a page or a section
-
-To ensure that Sunbird users benefit enhancing the knowledge base is of primary importance
-
-1. Follow all steps in the **Reporting an Issue** section 
-
-2. While adding the issue description, mention that you would like to contribute by adding a page or section before you submit the issue
-
-3. Make a note of the issue number so that you can track your issue for future references.  
-
-4. The team assigns the issue to you and provides you with a link to an editable blank .md file.
-
-5. Click the link and follow instructions from Step 2 viz Step 6  from the **Editing an Existing Page** section.
-
-**Note**: When executing instruction step:5 , append the issue number to the file name title. For example; # 25
-
-After your contributions are published on the Sunbird website, you will be included as a Sunbird documentation contributors list.
-
-
-## Report an Issue
-
-There could be inconsistencies in formatting, gaps in information that you notice (but cannot fix), etc. In such cases all you need to do is report the issue . 
-
-Before reporting any of these inconsistencies : 
-
-* Check whether the issue already exists by checking the issues present in issue tracker.
-
-* If the issue has already been raised, check if the solution is given in comments .
-
-* If either there is no solution to the issue raised , or the issue you are trying to raise is not present proceed with following steps:
-
-<table class="table table-img">
-  <tr>
-    <td>Step</td>
-    <td>Screen</td>
-  </tr>
-  <tr>
-    <td>Step 1: Sunbird web page
-        <ol>
-        <li>Click the Report button from the top or bottom of the required web page</li>
-        </ol>
-	</td>
-    <td><img src="pages/contributions/images/report_issue1.png"></td>
-  </tr>
-  <tr>
-    <td>Step 2: Page opens on Github
-        <ol>
-        <li>The issue tracker opens on Github</li>
-        <li>Click New Issue button</li>
-        </ol>
-	</td>
-    <td><img src="pages/contributions/images/report_issue2.png"></td>
-  </tr>
-  <tr>
-    <td>Step 3: A form opens up
-        <ol>
-        <li>Fill in appropriate details viz. Title and Description</li>
-        <li>Click Submit new issue</li>
-        <li>The issue is logged in the issue tracker, with an appropriate issue number</li>
-        <li>You need to remember your issue number for future reference and correspondence</li>
-        <li>The team reviews and takes required action on the reported issue</li>
-        </ol>
-        Note: You can track the progress and update on the reported issue using the issue number.
-    </td>
-    <td><img src="pages/contributions/images/report_issue3.png"></td>
-  </tr>
-</table>
-
-## Documentation Guidelines
+Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [Structure](#structure) section and the [Sunbird style guide](#styles) which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
 
 ### Styles
+You can use the following styles when formatting your document.
+
 #### Titles and headings
 
-**Use short descriptive titles**:Titles should be 80 characters or fewer. Avoid redundancy.All main headings and subheadings use sentence caps: only the first letter of the first word is capitalized. Everything else except proper names is in lowercase. (Sunbird is a proper name.)
+**Use short descriptive titles**:Titles should be 80 characters or fewer. Avoid redundancy. All main headings and subheadings use sentence caps: only the first letter of the first word is capitalized. Everything else except proper names is in lowercase. (Sunbird is a proper name.)
 
 #### General text 
 
@@ -249,7 +97,159 @@ Use an en dash (HTML entity 8211, "–") to indicate a range of numbers or dates
 
 When embedding a link in a documentation page, always make sure the link text describes the destination of the link. "Click here" is not a good description, because it does not tell the user where the link will take them. If you can't fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, [used appropriately](http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text){:target="_blank"}, are important for making the pages accessible.
 
-### Structure
+### How to edit an existing documentation page?
+You can edit an existing page to correct inconsistencies or add missing information 
+
+ <table class="table table-img">
+  <tr>
+    <td>Step</td>
+    <td>Screen</td>
+  </tr>
+  <tr>
+    <td>Step 1: Sunbird web page
+        <ol>
+        <li>Click the Edit button from the top or bottom of the required Sunbird web page</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit1.png"></td>
+  </tr>
+  <tr>
+    <td>Step 2: Page opens on Github
+        <ol>
+        <li>Edit the content</li>
+        <li>Complete all your edits</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit2.png"></td>
+  </tr>
+  <tr>
+    <td>Step 3: Scroll to the Propose file change section
+        <ol>
+        <li>The first text box automatically mentions that there is an update to the file name. Do not change the file name title</li>
+        <li>If required further describe your changes in the second text box</li>
+        <li>Click Propose file change button</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit3.png"></td>
+  </tr>
+  <tr>
+    <td>Step 4: Comparing changes page is displayed
+        <ol>
+        <li>Click Create pull request button</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit4.png"></td>
+  </tr>
+  <tr>
+    <td>Step 5: Open a pull request page is displayed
+        <ol>
+        <li>You can modify your previous comments, if required</li>
+        <li>Click Create pull request button</li>
+        </ol>
+    </td>
+    <td><img src="pages/contributions/images/edit5.png"></td>
+  </tr>
+  <tr>
+    <td colspan="2">Step 6: Review by team
+        <ol>
+        <li>The team gets an alert about review the request and page edits</li>
+        <li>The team will start review process</li>
+        <li>Once the review process is complete  You will be notified in comments whether the suggested edits will be accepted or not.The team may suggest you to rework on the submitted changes discard them altogether as modifications</li>
+        </ol>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">Step 7: Revisit and Re-work (if needed)
+        <ol>
+        <li>You will get Github alert with the team’s comments regarding acceptance/rejection or  there might be suggestions regarding the content</li>
+        <li>Click Review changes button</li>
+        <li>Take up the suggestions and re-work accordingly, once done</li>
+        <li>Go to the pull request created for the file</li>
+        <li>Click Commit button</li>
+        <li>The same pull request is updated</li>
+        <li>Repetition of Step :6 and Step 7 is required if content does not meet the reviewers requirements</li>
+        </ol>
+    </td>
+  </tr>
+  <tr>
+    <td>Step 8: Content Acceptance
+        <ol>
+        <li>If the content is found appropriate as per set guidelines, it's accepted</li>
+        <li>Accepted content is then made live on the website</li>
+        </ol>
+    </td>
+  </tr>
+ </table>
+
+### How to add a page or a section?
+
+To ensure that Sunbird users benefit enhancing the knowledge base is of primary importance
+
+1. Follow all steps in the **Reporting an Issue** section 
+
+2. While adding the issue description, mention that you would like to contribute by adding a page or section before you submit the issue
+
+3. Make a note of the issue number so that you can track your issue for future references.  
+
+4. The team assigns the issue to you and provides you with a link to an editable blank .md file.
+
+5. Click the link and follow instructions from Step 2 viz Step 6  from the **Editing an Existing Page** section.
+
+**Note**: When executing instruction step:5 , append the issue number to the file name title. For example; # 25
+
+After your contributions are published on the Sunbird website, you will be included as a Sunbird documentation contributors list.
+
+
+## How to report an issue?
+
+There could be inconsistencies in formatting, gaps in information that you notice (but cannot fix), etc. In such cases all you need to do is report the issue . 
+
+Before reporting any of these inconsistencies : 
+
+* Check whether the issue already exists by checking the issues present in issue tracker.
+
+* If the issue has already been raised, check if the solution is given in comments .
+
+* If either there is no solution to the issue raised , or the issue you are trying to raise is not present proceed with following steps:
+
+<table class="table table-img">
+  <tr>
+    <td>Step</td>
+    <td>Screen</td>
+  </tr>
+  <tr>
+    <td>Step 1: Sunbird web page
+        <ol>
+        <li>Click the Report button from the top or bottom of the required web page</li>
+        </ol>
+	</td>
+    <td><img src="pages/contributions/images/report_issue1.png"></td>
+  </tr>
+  <tr>
+    <td>Step 2: Page opens on Github
+        <ol>
+        <li>The issue tracker opens on Github</li>
+        <li>Click New Issue button</li>
+        </ol>
+	</td>
+    <td><img src="pages/contributions/images/report_issue2.png"></td>
+  </tr>
+  <tr>
+    <td>Step 3: A form opens up
+        <ol>
+        <li>Fill in appropriate details viz. Title and Description</li>
+        <li>Click Submit new issue</li>
+        <li>The issue is logged in the issue tracker, with an appropriate issue number</li>
+        <li>You need to remember your issue number for future reference and correspondence</li>
+        <li>The team reviews and takes required action on the reported issue</li>
+        </ol>
+        Note: You can track the progress and update on the reported issue using the issue number.
+    </td>
+    <td><img src="pages/contributions/images/report_issue3.png"></td>
+  </tr>
+</table>
+
+### Documentation Structure
 
 Structuring your content is nothing but chunking the information into logical units. Developing a simple framework for your writing before you start can save considerable time and will prevent the text from meandering.
 
