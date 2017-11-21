@@ -25,5 +25,5 @@ Then we have to set the env. variable to **sunbird_learner_service_upstream_url*
 We have API mapping for both services.
 If we want to add any new API. we have to follow below steps
 1. Open the file - proxy/localProxy.js
-2. If API related to content service add API in  **ContentUrlMap**, 
-if API related to learner service add API in **lsUrlMap**.
+2. If API related to content service add API in  **contentServiceApi**, 
+if API related to learner service add API in **learnerServiceApi**.
