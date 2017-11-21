@@ -6,9 +6,15 @@
 
 1. Instructions should begin with an Active voice. Start with a Verb:
       
-     **Examples** 
-     
-      + **Click** Create button  
-      + Press **Enter** to save  
-      + **Go to** homepage>create lessons to start 
-      + **Enter** the information here
+<table>
+      <tr>
+      <td><strong>Examples</strong>
+            <ul>
+                  <li> Click <strong>Create</strong> button</li>
+                  <li> Press <strong>Enter</strong> to save</li>
+                  <li><strong> Go to</strong> homepage>create lessons to start</li>
+            </ul>
+      </td>
+      </tr>
+       
+      
