@@ -14,22 +14,22 @@ allowSearch: true
 
 **Guidelines that are to be adhered while creating a content**
 
-1. Instructions should begin with an Active voice. Start with a Verb: <br />
+1. Begin each instruction with a Verb: <br />
 
 	  **Examples**
 	 
 	 - Click **Create** button
-     - Press **Enter** to save
-     - **Go to** homepage > create lessons to start
+     	 - Press **Enter** to save
+     	 - **Go to** homepage > create lessons to start
 
-2. All UI and Keyboard elements should be written in Bold:<br />
+2. Write all UI and keyboard elements in bold:<br />
 
       **Examples**
       
 	  - Click **Create** button
 	  - Press **Enter** to save 
 
-3. Process instructions should be numbered.<br />
+3. Use numbered list for process instructions:<br />
 
       **Examples**
       
@@ -37,30 +37,30 @@ allowSearch: true
 	  - Press **Enter** to save 
 
 
-4. Bullets should be used for non-sequential content.<br />
+4. Use bullets for non-sequential content:<br />
 
       **Examples**
       
 	  - This document contains zip file
 	  - All the files are size specific
 
-5. The content should be in Active Voice using second person.
+5. Write content in active voice, using second person.
 
-6. Bullet points should not have full stops.
+6. Donot put full stops for bullet points.
 
-7. No exclamations. Sentences should be short and crisp. Any sentence that runs beyond a line should be broken down into clauses.
+7. Donot put exclamations. Write sentences short and crisp. Break down sentences that runs beyond a line into clauses.
 
-8. No ampersands and non-standard abbreviations.
+8. Donot use ampersands and non-standard abbreviations.
 
-9. Avoid long headings. Heading should begin with an infinitive verb.<br />
+9. Avoid long headings. Start each heading with an infinitive verb.<br />
 
       **Examples**
       
 	  - Instead of writing “Create Lesson”, write “Creating Lessons”
 
-10. No punctuations on headings.
+10. Donot put punctuations on headings.
 
-11. Headings should not be numbered.
+11. Donot put numbers on headings.
 
 12. Avoid adjectives in instructions.<br />
 
@@ -69,7 +69,7 @@ allowSearch: true
 	  - Lessons can be created very easily. Very easily is the adjective
 
 
-13. Navigation to any screen should be followed by an angular bracket.<br />
+13. Use angular bracket for navigation, for a screen.<br />
 
       **Examples**
       
