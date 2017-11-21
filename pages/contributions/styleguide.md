@@ -52,7 +52,7 @@ allowSearch: true
 
 8. Donot use ampersands and non-standard abbreviations.
 
-9. Avoid long headings. Start each heading with an infinitive verb.<br />
+9. Avoid long headings. Start each heading with an infinitive verb:<br />
 
       **Examples**
       
@@ -62,14 +62,14 @@ allowSearch: true
 
 11. Donot put numbers on headings.
 
-12. Avoid adjectives in instructions.<br />
+12. Avoid adjectives in instructions:<br />
 
       **Examples**
       
 	  - Lessons can be created very easily. Very easily is the adjective
 
 
-13. Use angular bracket for navigation, for a screen.<br />
+13. Use angular bracket for navigation, for a screen:<br />
 
       **Examples**
       
