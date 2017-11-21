@@ -16,7 +16,7 @@ allowSearch: true
 
 1. Begin each instruction with a Verb: <br />
 
-	  **Examples**
+	  **Example**
 	 
 	 - Click **Create** button
      	 - Press **Enter** to save
@@ -24,14 +24,14 @@ allowSearch: true
 
 2. Write all UI and keyboard elements in bold:<br />
 
-      **Examples**
+      **Example**
       
 	  - Click **Create** button
 	  - Press **Enter** to save 
 
 3. Use numbered list for process instructions:<br />
 
-      **Examples**
+      **Example**
       
 	  - Click the **Edit** button
 	  - Press **Enter** to save 
@@ -39,7 +39,7 @@ allowSearch: true
 
 4. Use bullets for non-sequential content:<br />
 
-      **Examples**
+      **Example**
       
 	  - This document contains zip file
 	  - All the files are size specific
@@ -54,7 +54,7 @@ allowSearch: true
 
 9. Avoid long headings. Start each heading with an infinitive verb:<br />
 
-      **Examples**
+      **Example**
       
 	  - Instead of writing “Create Lesson”, write “Creating Lessons”
 
@@ -64,14 +64,14 @@ allowSearch: true
 
 12. Avoid adjectives in instructions:<br />
 
-      **Examples**
+      **Example**
       
 	  - Lessons can be created very easily. Very easily is the adjective
 
 
 13. Use angular bracket for navigation, for a screen:<br />
 
-      **Examples**
+      **Example**
       
 	  - **Create new lesson > Create new collection > Title**
 	  
