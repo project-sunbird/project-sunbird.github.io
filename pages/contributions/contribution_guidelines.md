@@ -22,7 +22,7 @@ Sunbird manages documentation similar to how it manages code. The docs are in a 
 You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
 ## Guidelines
-Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [Structure](#structure) section and the [Sunbird style guide](#styles) which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
+Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [Structure](contributions/contribution_guidelines/#link1-5-1) section and the [Sunbird style guide](contributions/styleguide) which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
 
 ### Styles
 You can use the following styles when formatting your document.
