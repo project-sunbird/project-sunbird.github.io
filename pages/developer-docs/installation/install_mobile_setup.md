@@ -1,5 +1,11 @@
-### Generate key and secrets for mobile app
-
+---
+type: landing
+directory: developer-docs/installation/
+title: Mobile app installation
+page_title: title: Mobile app installation
+description: About mobile app
+allowSearch: true
+---
 This section details the sequence of steps required if you plan to release your own mobile app using the Sunbird mobile app codebase.
 
 * Execute & run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
@@ -52,13 +58,13 @@ To update/redeploy sunbird please follow these steps:
 
 3. Run `cd sunbird-devops/deploy`
 
-#4.Executing the following command will onboard various APIs and consumer groups.
+4. Executing the following command will onboard various APIs and consumer groups.
 
-4. Run `sudo ./deploy-apis.sh /ansible/inventoriesRun `
+Run `sudo ./deploy-apis.sh /ansible/inventoriesRun `
 
-#5.Executing the following command will setup all the sunbird core services.
+5. Executing the following command will setup all the sunbird core services.
 
-5. sudo ./deploy-core.sh /ansible/inventories/`. 
+Run `sudo ./deploy-core.sh /ansible/inventories/`.
 
 #6.Executing the following command will setup sunbird proxy services.
 
