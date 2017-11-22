@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: developer-docs/installation/
-title: Medium Scale Deployment
-page_title: Medium Scale Deployment
-description: About how developer can deploy
+title: Upgrading to new version of Sunbird
+page_title: upgrading Sunbird
+description: upgrading Sunbird
 allowSearch: true
 ---
 ## Upgrade with a new version of Sunbird
