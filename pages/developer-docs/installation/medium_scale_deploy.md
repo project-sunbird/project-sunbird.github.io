@@ -159,7 +159,10 @@ The Sunbird services are  categorized into :
 * Sunbird Core Services
 * Sunbird proxy services
 
-You can visit [Deploying Sunbird services]() for more detais.
+You can visit [Deploying Sunbird services](pages/developer-docs/installation/deploy_sb_services) for more detais.
+
+### Customize Assets
+This section will explain how to customize look and feel of Sunbird. You can visit [Customizing Assets](pages/developer-docs/installation/cust_sunbird)
 
 ### Check  the Installation
 
@@ -167,4 +170,5 @@ To check if Sunbird is properly installed:
 
 Browse Sunbird Portal  by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).
 
-If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app]()
+## For making your own Mobile app
+If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app](pages/developer-docs/installation/install_mobile_setup)
