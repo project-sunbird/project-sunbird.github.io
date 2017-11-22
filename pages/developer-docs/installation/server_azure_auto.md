@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: developer-docs/installation/
-title: Server Automation via Azure
+title: Provisioning Servers
 page_title: Server Automation via Azure
 description: Provisioning server
 allowSearch: true
