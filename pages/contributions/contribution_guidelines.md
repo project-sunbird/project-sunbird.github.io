@@ -22,7 +22,7 @@ Sunbird manages documentation similar to how it manages code. The docs are in a 
 You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
 ## Guidelines
-Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [Documentation Structure](contributions/contribution_guidelines/#link1-5-1) section and the [Sunbird style guide](contributions/styleguide) which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
+Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [Documentation Structure](contributions/contribution_guidelines/#link1-1-2) section and the [Sunbird style guide](contributions/styleguide) which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
 
 ### Styles
 You can use the following styles when formatting your document.
@@ -159,11 +159,11 @@ Always try to be:
 
 The process flow diagram will help you in building the understanding on how to contribute to Sunbird page. It will be an enriching experience for the contributors. Following are the different process flow diagrams for:
 
-- [Contribute to Sunbird Documentation](pages/contributions/images/contribute_to_sunbird.png)
-- [Editing Sunbird Page](pages/contributions/images/edit_on_sunbird.png)
-- [Reporting an Issue](pages/contributions/images/report_issue.png)
-- [Adding page or a section](pages/contributions/images/add_pageorsection.png)
-- [Review Process](pages/contributions/images/review_process.png)
+- [Contribute to Sunbird Documentation](pages/contributions/images/contribute_to_sunbird){:target="_blank"}
+- [Editing Sunbird Page](pages/contributions/images/edit_on_sunbird.png){:target="_blank"}
+- [Reporting an Issue](pages/contributions/images/report_issue.png){:target="_blank"}
+- [Adding page or a section](pages/contributions/images/add_pageorsection.png){:target="_blank"}
+- [Review Process](pages/contributions/images/review_process.png){:target="_blank"}
 
 ## How to edit an existing documentation page?
 
