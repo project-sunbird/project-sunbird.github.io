@@ -1,12 +1,11 @@
 ---
 type: landing
 directory: developer-docs/installation/
-title: Medium Scale Deployment
-page_title: Medium Scale Deployment
-description: About how developer can deploy
+title: Set up Application and Core services
+page_title: Set up Application and Core services
+description: Set up Application and Core services
 allowSearch: true
 ---
-### Set up Application and Core services
 
 For Setting up the Application and the core services :
 
