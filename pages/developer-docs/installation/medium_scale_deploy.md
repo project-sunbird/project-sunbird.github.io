@@ -64,7 +64,7 @@ Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory.
 
 **Note:** The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
 
-### Others
+#### Others
 
 Not automated as of now but you are free to contribute. Follow our contribution guidelines to contribute.
 
@@ -98,7 +98,7 @@ You can either use existing databases, create them manually or run the automatio
    - Postgres
    - Mongo
    - Elasticsearch
-### Preparation to Set Up Databases
+#### Preparation to Set Up Databases
 
 Run the following steps from your local machine:
 
@@ -125,9 +125,9 @@ The missing configuration needs to be done afterwards.
 
 The estimated  run time for  preparation to Set up Databases is 15-30mins and another 30 mins to complete complete the process.
 
-#### Creating Databases using  automation
+#### Creating Databases using automation
 
-Estimated elapsed time is  10-15 mins (in an environment with fast internet).
+Estimated elapsed time is 10-15 mins (in an environment with fast internet).
 
 Following is a set of scripts which installs the Databases into the `db-server` and copies over the `master` data.
 
@@ -164,11 +164,11 @@ You can visit [Deploying Sunbird services](pages/developer-docs/installation/dep
 ### Customize Assets
 This section will explain how to customize look and feel of Sunbird. You can visit [Customizing Assets](pages/developer-docs/installation/cust_sunbird)
 
-### Check  the Installation
+### Check the Installation
 
 To check if Sunbird is properly installed:
 
 Browse Sunbird Portal  by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).
 
-## For making your own Mobile app
+### For making your own Mobile app
 If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app](pages/developer-docs/installation/install_mobile_setup)
