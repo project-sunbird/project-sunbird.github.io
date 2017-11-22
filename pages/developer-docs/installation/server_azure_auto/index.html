@@ -1,0 +1,20 @@
+<p>The automated provisioning of servers is done via Automation for Azure.
+Estimated run time: 30 mins for the fresh  time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process ,if you plan for scaling up or down.
+Run the following steps from a machine which is connected to the internet:</p>
+
+<ol>
+  <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
+  <li>Run <code>./sunbird-devops/deploy/generate-config.sh mysb production cloud</code> This will create config files for you in <code>./mysb-devops/test/azure</code>.</li>
+  <li>Here, <code>mysb</code> is the <strong>implementation-name</strong> and <code>production</code> is the <strong>environment-name</strong>.</li>
+  <li>Edit both the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the app.</li>
+  <li>Edit the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the db.</li>
+  <li>Run <code>export APP_DEPLOYMENT_JSON_PATH=&lt;absolute path of azuredeploy.parameters.json&gt;</code>. For instance, on my laptop it is <code>export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/app</code></li>
+  <li>Run <code>export DB_DEPLOYMENT_JSON_PATH=&lt;absolute path of azuredeploy.parameters.json&gt;</code>. For instance, on my laptop it is <code>export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db</code></li>
+  <li>Run <code>cd sunbird-devops/deploy</code></li>
+  <li>Run <code>./provision-servers.sh</code></li>
+  <li>Login to Azure when CLI instructs to</li>
+  <li>Wait for deployment to complete</li>
+  <li>Check on Azure portal: Resource Group -&gt; Deployments -&gt; Click on deployment to see deployment details</li>
+  <li>Try to SSH. If your <code>masterFQDN</code> from deployment details was <code>production-1a.centralindia.cloudapp.azure.com</code> you can ssh using <code>ssh -A ops@production-1a.centralindia.cloudapp.azure.com</code></li>
+  <li>If you could SSH, you have successfully created the server platform.</li>
+</ol>
