@@ -66,7 +66,7 @@ Run `sudo ./deploy-apis.sh /ansible/inventoriesRun `
 
 Run `sudo ./deploy-core.sh /ansible/inventories/`.
 
-#6.Executing the following command will setup sunbird proxy services.
+6. Executing the following command will setup sunbird proxy services.
 
-6. Run `sudo ./deploy-proxy.sh /ansible/inventories/`. 
+Run `sudo ./deploy-proxy.sh /ansible/inventories/`. 
 
