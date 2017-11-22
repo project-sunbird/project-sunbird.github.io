@@ -59,7 +59,7 @@ Follow either an automated or manual process to provision the servers. For setup
 
 #### Automation
 
-The set of scripts on the [Automation for Azur]()) page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
+The set of scripts on the [Automation for Azur]() page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory. 
 
 **Note:** The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
