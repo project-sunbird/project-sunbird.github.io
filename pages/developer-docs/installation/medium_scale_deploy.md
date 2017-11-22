@@ -59,7 +59,7 @@ Follow either an automated or manual process to provision the servers. For setup
 
 #### Automation
 
-The set of scripts on the [Automation for Azure](pages/developer-docs/installation/server_azure_auto){:target="_blank"} page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
+The set of scripts on the [Automation for Azure](developer-docs/installation/server_azure_auto){:target="_blank"} page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory. 
 
 **Note:** The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
@@ -160,11 +160,11 @@ The Sunbird services are  categorized into :
 * Sunbird Core Services
 * Sunbird proxy services
 
-You can visit [Deploying Sunbird services](pages/developer-docs/installation/deploy_sb_services){:target="_blank"} for more detais.
+You can visit [Deploying Sunbird services](developer-docs/installation/deploy_sb_services){:target="_blank"} for more detais.
 
 ### Customize Assets
 
-This section will explain how to customize look and feel of Sunbird. You can visit [Customizing Assets](pages/developer-docs/installation/cust_sunbird){:target="_blank"}
+This section will explain how to customize look and feel of Sunbird. You can visit [Customizing Assets](developer-docs/installation/cust_sunbird){:target="_blank"}
 
 ### Check the Installation
 
@@ -174,4 +174,4 @@ Browse Sunbird Portal  by accessing https://{proxy_server_name}/ (publicly acces
 
 ### For making your own Mobile app
 
-If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app](pages/developer-docs/installation/install_mobile_setup){:target="_blank"}
+If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app](developer-docs/installation/install_mobile_setup){:target="_blank"}
