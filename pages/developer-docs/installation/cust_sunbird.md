@@ -8,7 +8,7 @@ allowSearch: true
 ---
 This section will explain how to give a custom look and feel for Sunbird.
 
-### Additional config to customize Sunbird instance
+### Configuration to customize Sunbird instance
 Sunbird supports customization of home page, logo, and icon for the portal. 
 These customizations can be loaded by mounting the volume containing the customizations into the docker container.
 For loading the volume containing the customizations to docker container follow these steps:
