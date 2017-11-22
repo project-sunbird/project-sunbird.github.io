@@ -155,7 +155,18 @@ Always try to be:
 10. **Balance the needs of new and experienced users.** Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.
 11. **User-test your writing**: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.
 
+## Contribution process for documentation
+
+The process flow diagram will help you in building the understanding on how to contribute to Sunbird page. It will be an enriching experience for the contributors. Following are the different process flow diagrams for:
+
+- [Contribute to Sunbird Documentation](contributions/images/contribute_to_sunbird.png)
+- [Editing Sunbird Page](contributions/images/edit_on_sunbird.png)
+- [Reporting an Issue](contributions/images/report_issue.png)
+- [Adding page or a section](contributions/images/add_pageorsection.png)
+- [Review Process](contributions/images/review_process.png)
+
 ## How to edit an existing documentation page?
+
 You can edit an existing page to correct inconsistencies or add missing information 
 
  <table class="table table-img">
