@@ -59,7 +59,7 @@ Follow either an automated or manual process to provision the servers. For setup
 
 #### Automation
 
-The set of scripts on the [Automation for Azure](pages/developer-docs/installation/server_azure_auto) page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
+The set of scripts on the [Automation for Azure](pages/developer-docs/installation/server_azure_auto){:target="_blank"} page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory. 
 
 **Note:** The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
@@ -70,9 +70,9 @@ Not automated as of now but you are free to contribute. Follow our contribution 
 
 **Automation walkthrough**
 
-[Part 1]([https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target=\"_blank\"})
+[Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
 
-[Part 2]([https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target=\"_blank\"})
+[Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 **Note:** The default automation process creates three servers because it separates the application and the administration server.
 
@@ -108,7 +108,7 @@ Run the following steps from your local machine:
 
   **Cloning the repository**
 
-2. Clone the sunbird-devops repo using `git clone [https://github.com/project-sunbird/sunbird-devops.git`](https://github.com/project-sunbird/sunbird-devops.git`) in the console.
+2. Clone the sunbird-devops repo using `git clone [https://github.com/project-sunbird/sunbird-devops.git`](https://github.com/project-sunbird/sunbird-devops.git`){:target="_blank"} in the console.
 
  **Configuring environment**
 
@@ -137,7 +137,7 @@ Following is a set of scripts which installs the Databases into the `db-server` 
 
 **Automation Walkthrough**
 
-[Part 4]([https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target=\"_blank\"})
+[Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}
 
 #### Create Databases Manually 
 
@@ -159,10 +159,10 @@ The Sunbird services are  categorized into :
 * Sunbird Core Services
 * Sunbird proxy services
 
-You can visit [Deploying Sunbird services](pages/developer-docs/installation/deploy_sb_services) for more detais.
+You can visit [Deploying Sunbird services](pages/developer-docs/installation/deploy_sb_services){:target="_blank"} for more detais.
 
 ### Customize Assets
-This section will explain how to customize look and feel of Sunbird. You can visit [Customizing Assets](pages/developer-docs/installation/cust_sunbird)
+This section will explain how to customize look and feel of Sunbird. You can visit [Customizing Assets](pages/developer-docs/installation/cust_sunbird){:target="_blank"}
 
 ### Check the Installation
 
@@ -171,4 +171,4 @@ To check if Sunbird is properly installed:
 Browse Sunbird Portal  by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).
 
 ### For making your own Mobile app
-If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app](pages/developer-docs/installation/install_mobile_setup)
+If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app](pages/developer-docs/installation/install_mobile_setup){:target="_blank"}
