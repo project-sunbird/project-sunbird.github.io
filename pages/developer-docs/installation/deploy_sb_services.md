@@ -25,8 +25,8 @@ Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<en
 
 ** Automation Walkthrough**
 
- [Part 5]([https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target=\"_blank\"})
+[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
 
-[Part 6]([https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target=\"_blank\"})
+[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
 
 [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
