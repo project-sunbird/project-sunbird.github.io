@@ -6,6 +6,7 @@ page_title: title: Mobile app installation
 description: About mobile app
 allowSearch: true
 ---
+
 This section details the sequence of steps required if you plan to release your own mobile app using the Sunbird mobile app codebase.
 
 * Execute & run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
