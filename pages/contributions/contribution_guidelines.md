@@ -159,7 +159,7 @@ Always try to be:
 
 The process flow diagram will help you in building the understanding on how to contribute to Sunbird page. It will be an enriching experience for the contributors. Following are the different process flow diagrams for:
 
-- [Contribute to Sunbird Documentation](pages/contributions/images/contribute_to_sunbird){:target="_blank"}
+- [Contribute to Sunbird Documentation](pages/contributions/images/contribute_to_sunbird.png){:target="_blank"}
 - [Editing Sunbird Page](pages/contributions/images/edit_on_sunbird.png){:target="_blank"}
 - [Reporting an Issue](pages/contributions/images/report_issue.png){:target="_blank"}
 - [Adding page or a section](pages/contributions/images/add_pageorsection.png){:target="_blank"}
