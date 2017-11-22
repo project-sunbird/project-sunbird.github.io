@@ -2,7 +2,7 @@
 type: landing
 directory: developer-docs/installation/
 title: Deploying Sunbird Services
-page_title: Deploying Sunbird Servives
+page_title: Deploying Sunbird Services
 description: Deploy Sunbird services
 allowSearch: true
 ---
