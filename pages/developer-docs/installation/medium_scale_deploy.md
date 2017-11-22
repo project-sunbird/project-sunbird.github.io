@@ -80,11 +80,12 @@ Not automated as of now but you are free to contribute. Follow our contribution 
 
 The manual procedure commissions two servers. The first server serves as the DB(Database) server and the second serves as the application server & administration server.
 
-The automated provisioning setup sets up: 
+The automated provisioning setup sets up:
+
 * Azure Virtual Network (aka VPC in AWS) 
-* Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers), 
-* Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves, 
-* Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm.
+* Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers) 
+* Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves
+* Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm
 
 The manual setup is cumbersome and exhaustive and thus not recommended. Also, it is not supported currently. It is recommended to use the automation scripts instead. However, you are always welcome to contribute code for making the deployment process simple and easy.
 
