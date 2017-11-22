@@ -14,15 +14,15 @@ To update/redeploy sunbird please follow these steps:
 
 3. Run `cd sunbird-devops/deploy`
 
-4. Executing the following command will onboard various APIs and consumer groups.
+Executing the following command will onboard various APIs and consumer groups.
 
-Run `sudo ./deploy-apis.sh /ansible/inventoriesRun `
+4. Run `sudo ./deploy-apis.sh /ansible/inventoriesRun `
 
-5. Executing the following command will setup all the sunbird core services.
+Executing the following command will setup all the sunbird core services.
 
-Run `sudo ./deploy-core.sh /ansible/inventories/`.
+5. Run `sudo ./deploy-core.sh /ansible/inventories/`.
 
-6. Executing the following command will setup sunbird proxy services.
+Executing the following command will setup sunbird proxy services.
 
-Run `sudo ./deploy-proxy.sh /ansible/inventories/`. 
+6. Run `sudo ./deploy-proxy.sh /ansible/inventories/`. 
 
