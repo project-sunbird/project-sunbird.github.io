@@ -2,7 +2,7 @@
 type: landing
 directory: developer-docs/installation/
 title: Mobile app installation
-page_title: title: Mobile app installation
+page_title: Mobile app installation
 description: About mobile app
 allowSearch: true
 ---
