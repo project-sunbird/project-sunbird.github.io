@@ -17,7 +17,7 @@ It is our endeavor to ensure that the Sunbird documentation is reliable and up t
 
 * Reporting an issue
 
-Sunbird manages documentation similar to how it manages code. The docs are in a [Github repository](https://github.com/project-sunbird/project-sunbird.github.io){:target="_blank"} as Markdown documents. If you’re comfortable with using git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze. 
+Sunbird manages documentation similar to how it manages code. The docs are in a [Github repository](https://github.com/project-sunbird/project-sunbird.github.io){:target="_blank"} as Markdown documents. If you’re comfortable with using Git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze. 
 
 You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
