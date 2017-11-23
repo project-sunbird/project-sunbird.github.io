@@ -29,7 +29,7 @@ You can use the following styles when formatting your document.
 
 #### Titles and headings
 
-**Use short descriptive titles**: Titles should be 80 characters or fewer. Avoid redundancy. For all main headings and subheadings use title case: only the first letter of the first word is capitalized. Everything else except proper names is in lowercase. (Sunbird is a proper name)
+Use short descriptive titles Titles should be 80 characters or fewer. Avoid redundancy. For all main headings and subheadings use title case: only the first letter of the first word is capitalized. Everything else except proper names is in lowercase. (Sunbird is a proper name)
 
 #### General text 
 
