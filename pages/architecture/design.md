@@ -10,4 +10,4 @@ allowSearch: true
 ---
 
 
-{% ingredient /architecture/archdesign_desc %}{% endingredient %}
+{% ingredient /architecture/archdesign_desc %}{% endingredient %} 
