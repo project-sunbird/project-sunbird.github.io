@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 
-It is our endeavor to ensure that the Sunbird documentation is reliable and up to date. We welcome all contributions to the Sunbird documentation. Your collaboration is essential to keep the documentation current, consistent and error-free. You can help us out by:
+It is our endeavor to ensure that Sunbird documentation is reliable and up-to-date. We welcome your collaboration to keep the documentation current, consistent and error-free. You can contribute by:
 
 * Editing an existing page 
 
@@ -17,12 +17,32 @@ It is our endeavor to ensure that the Sunbird documentation is reliable and up t
 
 * Reporting an issue
 
-Sunbird manages documentation similar to how it manages code. The docs are in a [Github repository](https://github.com/project-sunbird/project-sunbird.github.io){:target="_blank"} as Markdown documents. If you’re comfortable with using Git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze. 
+Sunbird manages documentation similar to how it manages code. The docs are in a [Github repository](https://github.com/project-sunbird/project-sunbird.github.io){:target="_blank"} as Markdown documents. If you’re comfortable using Git and Github for source code or any other work, you’ll find editing and updating Sunbird documentation a breeze. 
 
 You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
-## Guidelines
-Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [Documentation Structure](contributions/contribution_guidelines/#link1-7) section and the [Sunbird style guide](contributions/styleguide) which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
+## Writing Guidelines
+Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [How to structure a document?](contributions/contribution_guidelines/#link1-7) section and the [Sunbird style guide](contributions/styleguide) which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
+
+### How to structure a document?
+
+Structuring your content is nothing but chunking the information into logical units. Developing a simple framework for your writing before you start can save considerable time and will prevent the text from meandering.
+
+Unless the information is structured logically, it is not easily understood, usable or readable. Titles of the main sections as headings and subheadings within the text help readers navigate through the piece.  Even if you do not desire to have the section titles in the finished piece, they will help you as an author to structure your writing to the desired framework.
+
+There are no set rules to structuring your content. However, the following is a brief guide. Read more at: [https://www.skillsyouneed.com/write/structure.html](https://www.skillsyouneed.com/write/structure.html){:target="_blank"}
+
+#### Logical Hierarchy 
+
+Follow a logical hierarchy for your content. Most content is structured into subject, book, chapter, section, subsection, page; with subject being the largest chunk and a page the smallest. For example;
+
+**Sunbird > Installation > Installing Sunbird on Laptop > Prerequisites > Hardware Requirements**
+
+#### Page Structure
+
+After you have decided the logical hierarchy for your content, structure each page with a logical hierarchy to make it readable and complete. Use headings and subheadings to build the logical structure of the page. For Sunbird, you can use three levels of headings.
+
+Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.   
 
 ### Styles
 You can use the following styles when formatting your document.
@@ -98,10 +118,46 @@ Use an en dash (HTML entity 8211, "–") to indicate a range of numbers or dates
 #### Links
 
 When embedding a link in a documentation page, always make sure the link text describes the destination of the link. "Click here" is not a good description, because it does not tell the user where the link will take them. If you can't fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, [used appropriately](http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text){:target="_blank"}, are important for making the pages accessible.
+ 
+## Voice
 
-## Contribution process for documentation
+**Reinforce the Sunbird brand:** Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.
 
-The process flow diagram will help you in building the understanding on how to contribute to Sunbird page. It will be an enriching experience for the contributors. Following are the different process flow diagrams for:
+Always try to be:
+
+* Be clear, simple, and concise.
+
+* Be respectful, honest, and approachable.
+
+* Be engaging, welcoming, lively, and fun where appropriate.
+
+* Use ordinary, everyday language instead of words that sound more elevated.
+
+1. **Know your audience**: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:
+    * Major landing pages must be approachable and appropriate for a wide audience that could include beginners, company managers, designers, developers, business owners, first-time bloggers, tech-savvy entrepreneurs, educational organizations, or advanced Sunbird developers. Keep them in mind.
+    * Use empathy: Put yourself in the place of the readers. Try to look at your text through the eyes of a variety of visitors.
+    * You don't need the word "Please" in order to sound friendly. At times, it will be appropriate; usually, it will not. It sometimes comes across as condescending.
+
+2. **Get them there**: Ask yourself what visitors want to get done and help them get there quickly.
+3. **Short isn't always best**: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?
+4. **Open source not market-speak**: Avoid fluffy sales talk. "We're great! Sunbird is great!" "We're the best!" These sentences are only believed by those who write them, not those who read them.
+5. Words such as "very, really, truly" tend to weaken a statement, not strengthen it.
+6. **Edit and edit again:** Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren't always necessary.
+    Eg.:
+      *This module reduces the time you need to set up a forum.*
+    This can be written as :
+      *This module reduces forum set-up time.*
+7. **Be clear about benefits for the reader:** Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
+8. **In general, use active, not passive, voice**: In active voice, the subject performs the action ("The dog ate the bone."). In passive voice, the subject is the target of the action ("The bone was eaten by the dog.").
+
+    Don't twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.
+9. **Avoid first-person**: Avoid first-person (I, we, my, our) on editorial/landing pages. Use "Sunbird" instead. At times, because Sunbird is community-based, use "we" to sound inclusive or to reinforce the community concept. 
+10. **Balance the needs of new and experienced users.** Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.
+11. **User-test your writing**: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.
+
+## Documentation contribution process flows
+
+ Click the links below to view typical workflows to collaborate for Sunbird documentation
 
 - [Contribute to Sunbird Documentation](pages/contributions/images/contribute_to_sunbird.png){:target="_blank"}
 - [Editing Sunbird Page](pages/contributions/images/edit_on_sunbird.png){:target="_blank"}
@@ -260,60 +316,4 @@ To ensure that Sunbird users benefit enhancing the knowledge base is of primary 
 **Note**: When executing instruction step:5 , append the issue number to the file name title. For example; # 25
 
 After your contributions are published on the Sunbird website, you will be included as a Sunbird documentation contributors list.
-
-## Documentation Structure
-
-Structuring your content is nothing but chunking the information into logical units. Developing a simple framework for your writing before you start can save considerable time and will prevent the text from meandering.
-
-Unless the information is structured logically, it is not easily understood, usable or readable. Titles of the main sections as headings and subheadings within the text help readers navigate through the piece.  Even if you do not desire to have the section titles in the finished piece, they will help you as an author to structure your writing to the desired framework.
-
-There are no set rules to structuring your content. However, the following is a brief guide. Read more at: [https://www.skillsyouneed.com/write/structure.html](https://www.skillsyouneed.com/write/structure.html){:target="_blank"}
-
-#### Logical Hierarchy 
-
-Follow a logical hierarchy for your content. Most content is structured into subject, book, chapter, section, subsection, page; with subject being the largest chunk and a page the smallest. For example;
-
-**Sunbird > Installation > Installing Sunbird on Laptop > Prerequisites > Hardware Requirements**
-
-#### Page Structure
-
-After you have decided the logical hierarchy for your content, structure each page with a logical hierarchy to make it readable and complete. Use headings and subheadings to build the logical structure of the page. For Sunbird, you can use three levels of headings.
-
-Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.   
- 
-## Voice
-
-**Reinforce the Sunbird brand:** Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.
-
-Always try to be:
-
-* Be clear, simple, and concise.
-
-* Be respectful, honest, and approachable.
-
-* Be engaging, welcoming, lively, and fun where appropriate.
-
-* Use ordinary, everyday language instead of words that sound more elevated.
-
-1. **Know your audience**: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:
-    * Major landing pages must be approachable and appropriate for a wide audience that could include beginners, company managers, designers, developers, business owners, first-time bloggers, tech-savvy entrepreneurs, educational organizations, or advanced Sunbird developers. Keep them in mind.
-    * Use empathy: Put yourself in the place of the readers. Try to look at your text through the eyes of a variety of visitors.
-    * You don't need the word "Please" in order to sound friendly. At times, it will be appropriate; usually, it will not. It sometimes comes across as condescending.
-
-2. **Get them there**: Ask yourself what visitors want to get done and help them get there quickly.
-3. **Short isn't always best**: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?
-4. **Open source not market-speak**: Avoid fluffy sales talk. "We're great! Sunbird is great!" "We're the best!" These sentences are only believed by those who write them, not those who read them.
-5. Words such as "very, really, truly" tend to weaken a statement, not strengthen it.
-6. **Edit and edit again:** Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren't always necessary.
-    Eg.:
-      *This module reduces the time you need to set up a forum.*
-    This can be written as :
-      *This module reduces forum set-up time.*
-7. **Be clear about benefits for the reader:** Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
-8. **In general, use active, not passive, voice**: In active voice, the subject performs the action ("The dog ate the bone."). In passive voice, the subject is the target of the action ("The bone was eaten by the dog.").
-
-    Don't twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.
-9. **Avoid first-person**: Avoid first-person (I, we, my, our) on editorial/landing pages. Use "Sunbird" instead. At times, because Sunbird is community-based, use "we" to sound inclusive or to reinforce the community concept. 
-10. **Balance the needs of new and experienced users.** Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.
-11. **User-test your writing**: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.
 
