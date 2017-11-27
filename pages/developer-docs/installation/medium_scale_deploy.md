@@ -15,12 +15,6 @@ Before you install Sunbird into the production environment, examine your  enviro
 
 Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.
 
-- System requirements
-- System variables
-- API keys
-- Installation checklist
-- Server Setup
-
 ### System Requirements
 
 To install Sunbird, the servers should have the following minimum system requirements:
@@ -30,17 +24,22 @@ To install Sunbird, the servers should have the following minimum system require
    - CPU: 2 cores, >2 GHz
    - root access (should be able to sudo)
 
-### Relevant Variables
-
-To make the deployment scenario simple and clear, use the following variables:
-
-  - **implementation-name** : This variable refers to the name of sunbird implementation. For example; Sunbird-Demo
-
-  - **environment-name** : This variable refers to the name of the environment where you deploy Sunbird. For example; Development, Test , Staging, Production, etc. 
-
 ### API Keys
 
 API keys are supposed to approve a user or a device with authorization for access.For getting the API keys , you need to send an Email to :[info@sunbird.org](mailto:info@sunbird.org). 
+
+
+### SSL Certificate
+SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. [LetsEncrypt](https://letsencrypt.org/) provides free SSL certificates. You can also use a CA of your choice. 
+
+**Note**: A self-signed certification will cause authentication to fail with an "Access Denied" error because the certificate will not be verified.
+
+### Relevant Variables
+
+To make the deployment scenario simple and clear, we use the following variables:
+
+  - **implementation-name** : This variable refers to the name of sunbird implementation. For example; Sunbird-Demo
+  - **environment-name** : This variable refers to the name of the environment where you deploy Sunbird. For example; Development, Test, Staging, Production, etc. 
 
 ### Installation Checklist
 
