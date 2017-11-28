@@ -18,5 +18,6 @@ This section answers questions raised by users on Sunbird's technical functional
 
 If you have questions that are not answered, you can click on the links at the top or bottom of the page to edit it or report an issue. 
 
-Refer to the [Contribution Guidelines]( to understand the contribution process. 
+If you have questions that are not answered, you can click on the links at the top or bottom of the page to edit it or report an issue.
 
+Refer to the Contribution Guidelines{:target="_blank"} to understand the contribution guidelines.
