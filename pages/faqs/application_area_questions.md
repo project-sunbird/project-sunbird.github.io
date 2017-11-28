@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: faqs
 title: Application Area
 page_title: Application Area
 description: FAQ
