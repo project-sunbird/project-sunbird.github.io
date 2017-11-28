@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: faqs
 title: Database Questions
 page_title: Database Questions
 description: FAQ
