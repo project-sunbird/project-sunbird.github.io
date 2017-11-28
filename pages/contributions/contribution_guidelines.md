@@ -119,41 +119,38 @@ Use an en dash (HTML entity 8211, "–") to indicate a range of numbers or dates
 
 When embedding a link in a documentation page, always make sure the link text describes the destination of the link. "Click here" is not a good description, because it does not tell the user where the link will take them. If you can't fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, [used appropriately](http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text){:target="_blank"}, are important for making the pages accessible.
  
-## Voice
+### Voice
 
-**Reinforce the Sunbird brand:** Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.
-
+* **Reinforce the Sunbird brand:** Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.
 Always try to be:
 
-* Be clear, simple, and concise.
+    * clear, simple, and concise
+    
+    * respectful, honest, and approachable
+    
+    * engaging, welcoming, lively, and fun where appropriate
+    
+    * Use ordinary, everyday language instead of words that sound more elevated.
 
-* Be respectful, honest, and approachable.
-
-* Be engaging, welcoming, lively, and fun where appropriate.
-
-* Use ordinary, everyday language instead of words that sound more elevated.
-
-1. **Know your audience**: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:
+* **Know your audience**: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:
     * Major landing pages must be approachable and appropriate for a wide audience that could include beginners, company managers, designers, developers, business owners, first-time bloggers, tech-savvy entrepreneurs, educational organizations, or advanced Sunbird developers. Keep them in mind.
     * Use empathy: Put yourself in the place of the readers. Try to look at your text through the eyes of a variety of visitors.
     * You don't need the word "Please" in order to sound friendly. At times, it will be appropriate; usually, it will not. It sometimes comes across as condescending.
 
-2. **Get them there**: Ask yourself what visitors want to get done and help them get there quickly.
-3. **Short isn't always best**: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?
-4. **Open source not market-speak**: Avoid fluffy sales talk. "We're great! Sunbird is great!" "We're the best!" These sentences are only believed by those who write them, not those who read them.
-5. Words such as "very, really, truly" tend to weaken a statement, not strengthen it.
-6. **Edit and edit again:** Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren't always necessary.
+* **Get them there**: Ask yourself what visitors want to get done and help them get there quickly.
+* **Short isn't always best**: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?
+* **Open source not market-speak**: Avoid fluffy sales talk. "We're great! Sunbird is great!" "We're the best!" These sentences are only believed by those who write them, not those who read them. Words such as "very, really, truly" tend to weaken a statement, not strengthen it.
+* **Edit and edit again:** Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren't always necessary.
     Eg.:
       *This module reduces the time you need to set up a forum.*
     This can be written as :
       *This module reduces forum set-up time.*
-7. **Be clear about benefits for the reader:** Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
-8. **In general, use active, not passive, voice**: In active voice, the subject performs the action ("The dog ate the bone."). In passive voice, the subject is the target of the action ("The bone was eaten by the dog.").
-
-    Don't twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.
-9. **Avoid first-person**: Avoid first-person (I, we, my, our) on editorial/landing pages. Use "Sunbird" instead. At times, because Sunbird is community-based, use "we" to sound inclusive or to reinforce the community concept. 
-10. **Balance the needs of new and experienced users.** Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.
-11. **User-test your writing**: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.
+* **Be clear about benefits for the reader:** Sunbird is here to make people feel privileged and awesome at what they do. Using the word "you" can be powerful.
+* **In general, use active, not passive, voice**: In active voice, the subject performs the action ("The dog ate the bone."). In passive voice, the subject is the target of the action ("The bone was eaten by the dog.").
+Don't twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.
+* **Avoid first-person**: Avoid first-person (I, we, my, our) on editorial/landing pages. Use "Sunbird" instead. At times, because Sunbird is community-based, use "we" to sound inclusive or to reinforce the community concept. 
+* **Balance the needs of new and experienced users.** Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.
+* **User-test your writing**: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.
 
 ## Documentation contribution process flows
 
