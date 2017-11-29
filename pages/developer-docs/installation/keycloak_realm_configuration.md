@@ -19,7 +19,7 @@ Once the sunbird services are set up, navigate to https://sunbird.example.com/au
 
 ## Setting the Admin password
 
-- Log into the docker container which is running your keycloak service by following below commands
+- Log into the docker container running keycloak by executing the following commands:
 <pre>
 # Find where the container is running
 docker service ps keycloak1
@@ -32,22 +32,24 @@ docker ps | grep keycloak
 docker exec -uroot -it <container-ID> sh
 </pre>
 
-- Change to the keycloak root directory (most likely `/opt/jboss/keycloak`)
+- Change to the path to keycloak root directory (most likely `/opt/jboss/keycloak`)
 
-- Run the following script to set the administrative user and password
-```bash
+- Execute the following script to set the administrator user name and password
+<pre>
 $ ./bin/add-user-keycloak.sh -u <admin> -p <yourpassword>
-```
+</pre>
+The script will execute and creates admin user and password. 
+- You can now log into the administration console using these credentials.
 
-The script will run and create the admin user and password. You can now log into the administration console using these credentials.
-
-Once you are in the administration console, follow the steps below to set up the clients and the secrets.
+Once you view the administration console,clients and the secrets can be set by following steps.
 
 ## Import Realm
 
-To simplify configuration, sunbird provides a ready realm that you can import and start using. Download the realm from here. To import the realm, use the 'Add realm' button (check screenshots below). On the import screen, choose the json file and then click 'Create'.
+To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm from [here]. To import the realm, use the 'Add realm' button, refer to the following images to get more clarity. On the import screen, choose the json file and then click 'Create'.
 
-<link images>
+{% image src='pages/developer-docs/installation/images/keycloack-add-realm.png' half center alt='Keycloak realm' %}
+{% image src='pages/developer-docs/installation/images/keycloak-choose-json.png' half center alt='choose keycloak json' %}
+{% image src='pages/developer-docs/installation/images/keycloak-import-realm.png' half center alt='Keycloak import realm' %}
 
 Once the realm is imported ensure the realm is chosen as the active realm before proceeding with the rest of the configuration
 
@@ -61,7 +63,7 @@ Navigate to Manage > Users and create a new user. Put the username as `user-mana
 
 Next, update the Client roles under Role mappings to ensure that this user has the `manage-users`, `query-users`, `query-groups` and `view-users` roles. The screenshot below has reference configuration.
 
-<link images>
+{% image src='pages/developer-docs/installation/images/keycloak-add-user-manager.png' half center alt='Keycloak use management' %}
 
 Use these username and password values for this user as the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration.
 
