@@ -1,4 +1,11 @@
-
+---
+type: landing
+directory: developer-docs/installation/
+title: Keycloak Configurations
+page_title: Keycloak Configurations
+description: About how developer can configure keycloak
+allowSearch: true
+---
 
 Sunbird uses Keycloak as the identity and authentication provider. Once the sunbird services are set up, navigate to https://sunbird.example.com/auth/admin (Assuming you've set up sunbird on sunbird.example.com) to access the Keycloak administration.
 
@@ -6,17 +13,18 @@ Sunbird uses Keycloak as the identity and authentication provider. Once the sunb
 ## Setting the Admin password
 
 1. Log into the docker container which is running your keycloak service by following below commands
-```bash
+<br /><br />
+<pre>
 # Find where the container is running
 docker service ps keycloak1
 # If you are running all services on single server no need to SSH
 # If you are in a different server, SSH into node running keycloak
-ssh <node-running-keycloak-container>
+ssh (node-running-keycloak-container)
 # Find the keycloak container ID
 docker ps | grep keycloak
 # Login to container
-docker exec -uroot -it <container-ID> sh
-```
+docker exec -uroot -it (container-ID) sh
+</pre>
 
 2. Change to the keycloak root directory (most likely `/opt/jboss/keycloak`)
 
