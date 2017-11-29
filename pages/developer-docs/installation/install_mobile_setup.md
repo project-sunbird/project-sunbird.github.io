@@ -11,7 +11,7 @@ This section details the sequence of steps required if you plan to release your 
 - Run `sudo ./deploy-apis.sh {implementation-name}-devops/ansible/inventories/{environment-name)`
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
 
-```
+<pre>
 curl -X POST 
 
 (sunbird-base-url)/api/api-manager/v1/consumer/mobile_app/credential/register 
@@ -23,7 +23,7 @@ curl -X POST
     "key": "{implementation-name}-mobile-app-{version-number}
   }
 }'
-```
+</pre>
 
 Result will be
 
