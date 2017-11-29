@@ -9,9 +9,7 @@
 <p>Please complete the following pre-requisites before installing and running the sunbird-player application</p>
 
 <ol>
-  <li>
-    <p><strong>Software dependencies</strong></p>
-
+  <li><strong>Software dependencies</strong>
     <ul>
       <li><a href="https://nodejs.org/en/download/" target="_blank">Node</a> - install the latest release of 6.x.x LTS series</li>
       <li><a href="https://bower.io/#install-bower" target="_blank">Bower</a> - latest version of bower: <code>npm install -g bower</code></li>
@@ -19,25 +17,25 @@
       <li><a href="https://www.mongodb.com/" target="_blank">Mongo DB</a> - v3.4.1 and newer</li>
     </ul>
   </li>
+  <li><strong>API Keys</strong> - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when configuring the application.</li>
+</ol>
+
+<h3 id="setup">Setup</h3>
+<ol>
   <li>
-    <p><strong>API Keys</strong> - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when configuring the application.</p>
+    <p><strong>Checkout code</strong>
+ git clone https://github.com/project-sunbird/sunbird-portal.git</p>
   </li>
   <li>
-    <p><strong>Setup</strong>: Checkout the code from <code>https://github.com/project-sunbird/sunbird-portal.git</code></p>
-    <ul>
-      <li>Run the following commands
-        <ul>
-          <li><code>$ cd &lt;PROJECT-FOLDER&gt;/src</code></li>
-          <li><code>$ npm install</code></li>
-          <li><code>$ bower cache clean</code></li>
-          <li><code>$ bower install --force</code></li>
-        </ul>
-      </li>
-    </ul>
+    <p><strong>Run the following commands</strong>
+ $ cd <PROJECT-FOLDER>/src
+ $ npm install
+ $ bower cache clean
+ $ bower install --force</PROJECT-FOLDER></p>
   </li>
 </ol>
 
-<h3 id="backend-service-stack">Backend Service Stack</h3>
+<h2 id="backend-service-stack">Backend Service Stack</h2>
 
 <p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs can be run in a distributed environment, for instance when you deploy to production, or they can be run locally on a single server for ease of use and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
 
@@ -47,8 +45,7 @@
 
 <p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in your favourite text editor. Update the file so it contains the following values:</p>
 
-<pre>
-module.exports = {
+<pre><code>module.exports = {
   LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    // 1. LEARNER_URL
   CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                    // 2. CONTENT_URL
   CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    // 3. CONTENT_PROXY
@@ -61,20 +58,19 @@ module.exports = {
   PORTAL_MONGODB_IP: env.sunbird_mongodb_ip,
   ...
   PORTAL_SSO_ENABLED: env.sunbird_sso_enabled || false,
-  PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       // 6. PORTAL_ECHO_API_URL
-  ...
-}
-</pre>
+  PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       // 6. PORTAL_ECHO_API_URL   ... }
+</code></pre>
 
-<h3 id="run-application">Run Application</h3>
+<h2 id="run-application">Run Application</h2>
 
 <ul>
-  <li>Run the following commands:
-    <ul>
-      <li><code>$ gulp build</code></li>
-      <li><code>$ cd &lt;PROJECT-FOLDER&gt;/src/app</code></li>
-      <li><code>$ node server.js</code></li>
-    </ul>
+  <li>
+    <p>Run the following commands:
+  $ gulp build
+  $ cd <PROJECT-FOLDER>/src/app
+  $ node server.js</PROJECT-FOLDER></p>
   </li>
-  <li>Open <code>http://localhost:3000</code> in browser.</li>
+  <li>
+    <p>Open <code>http://localhost:3000</code> in browser.</p>
+  </li>
 </ul>

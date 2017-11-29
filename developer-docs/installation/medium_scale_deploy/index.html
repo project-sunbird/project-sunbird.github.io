@@ -32,7 +32,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-24 18:28:40 +0530">
+<meta name="last-modified" content="2017-11-29 19:32:08 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
@@ -47,11 +47,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24112017"  />
-<link rel="stylesheet" href="css/style.css?24112017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?24112017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?24112017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?24112017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?29112017"  />
+<link rel="stylesheet" href="css/style.css?29112017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?29112017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?29112017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?29112017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -220,13 +220,22 @@
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
 							<ul class="sidebar-group">
 								<li>
-									<a href="developer-docs/installation/server_azure_auto/">Provisioning Servers</a>
+									<a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/check_installation/">Check Installation</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Keycloak configurations</a>
 								</li>
 							</ul>
 						</div>
@@ -275,6 +284,9 @@
 							</ul>
 						</div>
 					</li>
+					<li>
+						<a href="faqs/database_questions/">Troubleshooting</a>
+					</li>
 				</div>
 			</li>
 		</ul>
@@ -289,7 +301,7 @@
 				<a href="faqs/content_format/">Content Format</a>
 			</li>
 			<li>
-				<a href="faqs/content_repo/">Content Repo</a>
+				<a href="faqs/content_repo/">Content Repositories</a>
 			</li>
 			<li>
 				<a href="faqs/contentreviews/">Content Review</a>
@@ -358,73 +370,15 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
 			  </a>
 			  </span>
 			</p>
-          <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Pre-requisites</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">System Requirements</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-3">
-                  <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Relevant Variables</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#link1-1-3"><span class="tocnumber">1.3 .</span> <span class="toctext">API Keys</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#link1-1-4"><span class="tocnumber">1.4 .</span> <span class="toctext">Installation Checklist</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#link1-1-5"><span class="tocnumber">1.5 .</span> <span class="toctext">Provisioning servers</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-7">
-                  <a href="#link1-1-6"><span class="tocnumber">1.6 .</span> <span class="toctext">Set up Databases</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-8">
-                  <a href="#link1-1-7"><span class="tocnumber">1.7 .</span> <span class="toctext">Deploying Sunbird services</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-9">
-                  <a href="#link1-1-8"><span class="tocnumber">1.8 .</span> <span class="toctext">Customize Assets</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-10">
-                  <a href="#link1-1-9"><span class="tocnumber">1.9 .</span> <span class="toctext">Check the Installation</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-11">
-                  <a href="#link1-1-10"><span class="tocnumber">1.10 .</span> <span class="toctext">For making your own Mobile app</span></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><p>This page provides a summarized listing of the essential steps for planning, installing, and configuring your Sunbird deployment in a live environment. </p>
+          <p>This page provides a summarized listing of the essential steps for planning, installing, and configuring your Sunbird deployment in a live environment. </p>
 
-<h2 id="link1-1">Pre-requisites</h2>
+<h3 id="pre-requisites">Pre-requisites</h3>
 
 <p>Before you install Sunbird into the production environment, examine your  environment and gather data to ensure an optimal installation experience.</p>
 
 <p>Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.</p>
 
-<ul>
-  <li>System requirements</li>
-  <li>System variables</li>
-  <li>API keys</li>
-  <li>Installation checklist</li>
-  <li>Server Setup</li>
-</ul>
-
-<h3 id="link1-1-1">System Requirements</h3>
+<h4 id="system-requirements">System Requirements</h4>
 
 <p>To install Sunbird, the servers should have the following minimum system requirements:</p>
 
@@ -435,24 +389,25 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
   <li>root access (should be able to sudo)</li>
 </ul>
 
-<h3 id="link1-1-2">Relevant Variables</h3>
-
-<p>To make the deployment scenario simple and clear, use the following variables:</p>
-
-<ul>
-  <li>
-    <p><strong>implementation-name</strong> : This variable refers to the name of sunbird implementation. For example; Sunbird-Demo</p>
-  </li>
-  <li>
-    <p><strong>environment-name</strong> : This variable refers to the name of the environment where you deploy Sunbird. For example; Development, Test , Staging, Production, etc.</p>
-  </li>
-</ul>
-
-<h3 id="link1-1-3">API Keys</h3>
+<h4 id="api-keys">API Keys</h4>
 
 <p>API keys are supposed to approve a user or a device with authorization for access.For getting the API keys , you need to send an Email to :<a href="mailto:info@sunbird.org">info@sunbird.org</a>.</p>
 
-<h3 id="link1-1-4">Installation Checklist</h3>
+<h4 id="ssl-certificate">SSL Certificate</h4>
+<p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. <a href="https://letsencrypt.org/">LetsEncrypt</a> provides free SSL certificates. You can also use a CA of your choice.</p>
+
+<p><strong>Note</strong>: A self-signed certification will cause authentication to fail with an “Access Denied” error because the certificate will not be verified.</p>
+
+<h4 id="relevant-variables">Relevant Variables</h4>
+
+<p>To make the deployment scenario simple and clear, we use the following variables:</p>
+
+<ul>
+  <li><strong>implementation-name</strong> : This variable refers to the name of sunbird implementation. For example; Sunbird-Demo</li>
+  <li><strong>environment-name</strong> : This variable refers to the name of the environment where you deploy Sunbird. For example; Development, Test, Staging, Production, etc.</li>
+</ul>
+
+<h3 id="installation-checklist">Installation Checklist</h3>
 
 <p>Before you start the installation process make sure you have successfully</p>
 
@@ -465,155 +420,27 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
   <li>Verify the required network requirements and that ports are available for Sunbird components to communicate</li>
 </ul>
 
-<h3 id="link1-1-5">Provisioning servers</h3>
+<h3 id="provisioning-servers">Provisioning servers</h3>
 
-<p>Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.</p>
+<p>Server provisioning is a set of actions to prepare a server with appropriate systems, data and software, and make it ready for network operation. Refer the link <a href="developer-docs/installation/provisioning_servers" target="_blank">Provisioning Servers</a>to see Automated and Manual process to provision the servers.</p>
 
-<h4 id="automation">Automation</h4>
+<h3 id="setup-databases">Setup Databases</h3>
 
-<p>The set of scripts on the <a href="developer-docs/installation/server_azure_auto" target="_blank">Automation for Azure</a> page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
-Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory.</p>
+<p>Sunbird helps you to setup your database. Visit the link <a href="developer-docs/installation/setup_db" target="_blank">Setup Databases</a>for details.</p>
 
-<p><strong>Note:</strong> The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.</p>
+<h3 id="deploying-sunbird-services">Deploying Sunbird Services</h3>
 
-<h4 id="others">Others</h4>
+<p>Visit <a href="developer-docs/installation/deploy_sb_services" target="_blank">Deploying Sunbird Services</a> for details.</p>
 
-<p>Not automated as of now but you are free to contribute. Follow our contribution guidelines to contribute.</p>
+<h3 id="customizing-assets">Customizing Assets</h3>
 
-<p>
-  <strong>Automation walkthrough</strong>
-</p>
+<p>This section will explain how to customize look and feel of Sunbird. Visit <a href="developer-docs/installation/cust_sunbird" target="_blank">Customizing Assets</a> for details.</p>
 
-<p>
-  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif" target="_blank">Part 1</a>
-</p>
+<h3 id="check-installation">Check Installation</h3>
 
-<p>
-  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif" target="_blank">Part 2</a>
-</p>
+<p>To check if Sunbird is properly installed, refer to the link <a href="developer-docs/installation/check_installation" target="_blank">Check Installation</a></p>
 
-<p><strong>Note:</strong> The default automation process creates three servers because it separates the application and the administration server.</p>
-
-<h4 id="manual">Manual</h4>
-
-<p>The manual procedure commissions two servers. The first server serves as the DB(Database) server and the second serves as the application server &amp; administration server.</p>
-
-<p>The automated provisioning setup sets up:</p>
-
-<ul>
-  <li>Azure Virtual Network (aka VPC in AWS)</li>
-  <li>Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers)</li>
-  <li>Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves</li>
-  <li>Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm</li>
-</ul>
-
-<p>The manual setup is cumbersome and exhaustive and thus not recommended. Also, it is not supported currently. It is recommended to use the automation scripts instead. However, you are always welcome to contribute code for making the deployment process simple and easy.</p>
-
-<p>For some reasons if  you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication.</p>
-
-<h3 id="link1-1-6">Set up Databases</h3>
-
-<p>You can either use existing databases, create them manually or run the automation scripts provided to create them. Sunbird uses  the following databases:</p>
-
-<ul>
-  <li>Cassandra</li>
-  <li>Postgres</li>
-  <li>Mongo</li>
-  <li>Elasticsearch</li>
-</ul>
-
-<h4 id="preparation-to-set-up-databases">Preparation to Set Up Databases</h4>
-
-<p>Run the following steps from your local machine:</p>
-
-<p>
-  <strong>Configuring the database servers</strong>
-</p>
-
-<p>SSH into the <code>db-server</code>. If you have not edited the default configuration, then the name of the DB VM should be <code>db-1</code>. Automated setup does not expose the DB to the Internet, so for SSH to access the DB, it’s important to set SSH to <code>vm-1</code> (check out <code>master FQDN</code> above) with <code>ssh -A</code> (key forwarding) and then SSH to <code>db-1</code>.</p>
-
-<p>
-  <strong>Cloning the repository</strong>
-</p>
-
-<p>Clone the sunbird-devops repo using <code>git clone [https://github.com/project-sunbird/sunbird-devops.git</code>](https://github.com/project-sunbird/sunbird-devops.git){:target=”_blank”} in the console.</p>
-
-<p>
-  <strong>Configuring environment</strong>
-</p>
-
-<p>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>.</p>
-
-<p>E.g. <code>./sunbird-devops/deploy/generate-config.sh mysb production deploy</code>.</p>
-
-<p>This creates <code>mysb-devops</code> directory with <em>incomplete</em> configurations. 
-The missing configuration needs to be done afterwards.</p>
-
-<p>
-  <strong>Modifying configurations</strong>
-</p>
-
-<p>Modify all the configurations under <code># DB CONFIGURATION</code> block in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code></p>
-
-<p>The estimated  run time for  preparation to Set up Databases is 15-30mins and another 30 mins to complete complete the process.</p>
-
-<h4 id="creating-databases-using-automation">Creating Databases using automation</h4>
-
-<p>Estimated elapsed time is 10-15 mins (in an environment with fast internet).</p>
-
-<p>Following is a set of scripts which installs the Databases into the <code>db-server</code> and copies over the <code>master</code> data.</p>
-
-<ul>
-  <li>
-    <p>Run <code>cd sunbird-devops/deploy</code></p>
-  </li>
-  <li>
-    <p>Run <code>sudo ./install-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
-  </li>
-</ul>
-
-<p>
-  <strong>Automation Walkthrough</strong>
-</p>
-
-<p>
-  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif" target="_blank">Part 4</a>
-</p>
-
-<h4 id="create-databases-manually">Create Databases Manually</h4>
-
-<p>To create the databases manually, refer to the corresponding database user guides from their respective websites.</p>
-
-<h4 id="initialize-databases">Initialize Databases</h4>
-
-<p>Initialize the databases after they are installed using the following the procedure:</p>
-
-<p>Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></p>
-
-<p><strong>Note:</strong> The automation walk-through provided (PART 4), shows you the creation of databases and the initialization process.</p>
-
-<h3 id="link1-1-7">Deploying Sunbird services</h3>
-
-<p>The Sunbird services are  categorized into :</p>
-
-<ul>
-  <li>Sunbird Core Services</li>
-  <li>Sunbird proxy services</li>
-</ul>
-
-<p>You can visit <a href="developer-docs/installation/deploy_sb_services" target="_blank">Deploying Sunbird services</a> for more detais.</p>
-
-<h3 id="link1-1-8">Customize Assets</h3>
-
-<p>This section will explain how to customize look and feel of Sunbird. You can visit <a href="developer-docs/installation/cust_sunbird" target="_blank">Customizing Assets</a></p>
-
-<h3 id="link1-1-9">Check the Installation</h3>
-
-<p>To check if Sunbird is properly installed:</p>
-
-<p>Browse Sunbird Portal  by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).</p>
-
-<h3 id="link1-1-10">For making your own Mobile app</h3>
+<h3 id="making-your-own-mobile-app">Making your own Mobile App</h3>
 
 <p>If you plan to release your own mobile app using the Sunbird mobile app codebase visit <a href="developer-docs/installation/install_mobile_setup" target="_blank">Generate key and install mobile app</a></p>
 

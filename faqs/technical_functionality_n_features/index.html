@@ -25,14 +25,14 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Server Automation via Azure</title>
-<meta name="description" content="Sunbird Site Provisioning server"/>
+<title>Sunbird Technical Functionality and Features</title>
+<meta name="description" content="Sunbird Site Technical Functionality and Features"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-24 18:28:40 +0530">
+<meta name="last-modified" content="2017-11-29 19:32:08 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
@@ -47,11 +47,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24112017"  />
-<link rel="stylesheet" href="css/style.css?24112017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?24112017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?24112017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?24112017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?29112017"  />
+<link rel="stylesheet" href="css/style.css?29112017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?29112017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?29112017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?29112017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -95,7 +95,7 @@
 </div>
 
 	
-	<div class="sidebar-wrapper developer-docs-installation">
+	<div class="sidebar-wrapper faqs">
 		<div class="" >
 			<a href="architecture/">
 				<h4 class="sidebar-group-title">Architecture</h4>
@@ -220,13 +220,22 @@
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
 							<ul class="sidebar-group">
 								<li>
-									<a href="developer-docs/installation/server_azure_auto/">Provisioning Servers</a>
+									<a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/check_installation/">Check Installation</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Keycloak configurations</a>
 								</li>
 							</ul>
 						</div>
@@ -275,6 +284,9 @@
 							</ul>
 						</div>
 					</li>
+					<li>
+						<a href="faqs/database_questions/">Troubleshooting</a>
+					</li>
 				</div>
 			</li>
 		</ul>
@@ -289,7 +301,7 @@
 				<a href="faqs/content_format/">Content Format</a>
 			</li>
 			<li>
-				<a href="faqs/content_repo/">Content Repo</a>
+				<a href="faqs/content_repo/">Content Repositories</a>
 			</li>
 			<li>
 				<a href="faqs/contentreviews/">Content Review</a>
@@ -331,14 +343,14 @@
 	</div>
 </div>
 <script>
-$("a[href$='developer-docs/installation/server_azure_auto/']").addClass("sidebar-link-selected");
+$("a[href$='faqs/technical_functionality_n_features/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Provisioning Servers </h1>
+        <h1>Technical Functionality and Features </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -348,7 +360,7 @@ $("a[href$='developer-docs/installation/server_azure_auto/']").addClass("sidebar
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/server_azure_auto.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/faqs/technical_functionality_n_features.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -358,26 +370,20 @@ $("a[href$='developer-docs/installation/server_azure_auto/']").addClass("sidebar
 			  </a>
 			  </span>
 			</p>
-          <p>The automated provisioning of servers is done via Automation for Azure.
-Estimated run time: 30 mins for the fresh  time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process ,if you plan for scaling up or down.
-Run the following steps from a machine which is connected to the internet:</p>
+          <p>This section answers questions raised by users on Sunbird’s technical functionality and issues faced during:</p>
 
-<ol>
-  <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
-  <li>Run <code>./sunbird-devops/deploy/generate-config.sh mysb production cloud</code> This will create config files for you in <code>./mysb-devops/test/azure</code>.</li>
-  <li>Here, <code>mysb</code> is the <strong>implementation-name</strong> and <code>production</code> is the <strong>environment-name</strong>.</li>
-  <li>Edit both the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the app.</li>
-  <li>Edit the new config files <code>azuredeploy.parameters.json</code> and <code>env.sh</code> as per your requirements for the db.</li>
-  <li>Run <code>export APP_DEPLOYMENT_JSON_PATH=&lt;absolute path of azuredeploy.parameters.json&gt;</code>. For instance, on my laptop it is <code>export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/app</code></li>
-  <li>Run <code>export DB_DEPLOYMENT_JSON_PATH=&lt;absolute path of azuredeploy.parameters.json&gt;</code>. For instance, on my laptop it is <code>export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db</code></li>
-  <li>Run <code>cd sunbird-devops/deploy</code></li>
-  <li>Run <code>./provision-servers.sh</code></li>
-  <li>Login to Azure when CLI instructs to</li>
-  <li>Wait for deployment to complete</li>
-  <li>Check on Azure portal: Resource Group -&gt; Deployments -&gt; Click on deployment to see deployment details</li>
-  <li>Try to SSH. If your <code>masterFQDN</code> from deployment details was <code>production-1a.centralindia.cloudapp.azure.com</code> you can ssh using <code>ssh -A ops@production-1a.centralindia.cloudapp.azure.com</code></li>
-  <li>If you could SSH, you have successfully created the server platform.</li>
-</ol>
+<ul>
+  <li>Installation</li>
+  <li>Application Configuration</li>
+  <li>Database configuration</li>
+  <li>Architecture</li>
+</ul>
+
+<p>If you have questions that are not answered, you can click on the links at the top or bottom of the page to edit it or report an issue.</p>
+
+<p>If you have questions that are not answered, you can click on the links at the top or bottom of the page to edit it or report an issue.</p>
+
+<p>Refer to the <a href="contributions/contribution_guidelines" target="_blank">Contribution Guidelines</a> to understand the contribution guidelines.</p>
 
           
           <hr />
@@ -386,12 +392,12 @@ Run the following steps from a machine which is connected to the internet:</p>
 			<!--<a target="_blank"  class="" href="">
 				  <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;-->
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/server_azure_auto.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/faqs/technical_functionality_n_features.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="developer-docs/installation/server_azure_auto/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="faqs/technical_functionality_n_features/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -445,7 +451,7 @@ Run the following steps from a machine which is connected to the internet:</p>
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'developer-docs/installation/server_azure_auto/' + url;
+		this.href = 'faqs/technical_functionality_n_features/' + url;
     })
   </script>
   </body>

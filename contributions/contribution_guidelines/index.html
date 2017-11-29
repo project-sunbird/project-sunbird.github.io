@@ -32,7 +32,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-24 18:28:40 +0530">
+<meta name="last-modified" content="2017-11-29 19:32:08 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
@@ -47,11 +47,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24112017"  />
-<link rel="stylesheet" href="css/style.css?24112017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?24112017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?24112017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?24112017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?29112017"  />
+<link rel="stylesheet" href="css/style.css?29112017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?29112017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?29112017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?29112017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -220,13 +220,22 @@
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
 							<ul class="sidebar-group">
 								<li>
-									<a href="developer-docs/installation/server_azure_auto/">Provisioning Servers</a>
+									<a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/check_installation/">Check Installation</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Keycloak configurations</a>
 								</li>
 							</ul>
 						</div>
@@ -275,6 +284,9 @@
 							</ul>
 						</div>
 					</li>
+					<li>
+						<a href="faqs/database_questions/">Troubleshooting</a>
+					</li>
 				</div>
 			</li>
 		</ul>
@@ -289,7 +301,7 @@
 				<a href="faqs/content_format/">Content Format</a>
 			</li>
 			<li>
-				<a href="faqs/content_repo/">Content Repo</a>
+				<a href="faqs/content_repo/">Content Repositories</a>
 			</li>
 			<li>
 				<a href="faqs/contentreviews/">Content Review</a>
@@ -377,22 +389,22 @@ $("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-se
                 <li class="toc_level-2 toc_section-3">
                   <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Styles</span></a>
                 </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#link1-1-3"><span class="tocnumber">1.3 .</span> <span class="toctext">Voice</span></a>
+                </li>
               </ul>
             </li>
-            <li class="toc_level-1 toc_section-4">
-              <a href="#link1-4"><span class="tocnumber">2 .</span> <span class="toctext">Voice</span></a>
-            </li>
             <li class="toc_level-1 toc_section-5">
-              <a href="#link1-5"><span class="tocnumber">3 .</span> <span class="toctext">Documentation contribution process flows</span></a>
+              <a href="#link1-5"><span class="tocnumber">2 .</span> <span class="toctext">Documentation contribution process flows</span></a>
             </li>
             <li class="toc_level-1 toc_section-6">
-              <a href="#link1-6"><span class="tocnumber">4 .</span> <span class="toctext">How to edit an existing documentation page?</span></a>
+              <a href="#link1-6"><span class="tocnumber">3 .</span> <span class="toctext">How to edit an existing documentation page?</span></a>
             </li>
             <li class="toc_level-1 toc_section-7">
-              <a href="#link1-7"><span class="tocnumber">5 .</span> <span class="toctext">How to report an issue?</span></a>
+              <a href="#link1-7"><span class="tocnumber">4 .</span> <span class="toctext">How to report an issue?</span></a>
             </li>
             <li class="toc_level-1 toc_section-8">
-              <a href="#link1-8"><span class="tocnumber">6 .</span> <span class="toctext">How to add a page or a section?</span></a>
+              <a href="#link1-8"><span class="tocnumber">5 .</span> <span class="toctext">How to add a page or a section?</span></a>
             </li>
           </ul>
         </td>
@@ -535,28 +547,28 @@ $("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-se
 
 <p>When embedding a link in a documentation page, always make sure the link text describes the destination of the link. “Click here” is not a good description, because it does not tell the user where the link will take them. If you can’t fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text" target="_blank">used appropriately</a>, are important for making the pages accessible.</p>
 
-<h2 id="link1-4">Voice</h2>
-
-<p><strong>Reinforce the Sunbird brand:</strong> Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.</p>
-
-<p>Always try to be:</p>
+<h3 id="link1-1-3">Voice</h3>
 
 <ul>
   <li>
-    <p>Be clear, simple, and concise.</p>
-  </li>
-  <li>
-    <p>Be respectful, honest, and approachable.</p>
-  </li>
-  <li>
-    <p>Be engaging, welcoming, lively, and fun where appropriate.</p>
-  </li>
-  <li>
-    <p>Use ordinary, everyday language instead of words that sound more elevated.</p>
-  </li>
-</ul>
+    <p><strong>Reinforce the Sunbird brand:</strong> Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.
+Always try to be:</p>
 
-<ol>
+    <ul>
+      <li>
+        <p>clear, simple, and concise</p>
+      </li>
+      <li>
+        <p>respectful, honest, and approachable</p>
+      </li>
+      <li>
+        <p>engaging, welcoming, lively, and fun where appropriate</p>
+      </li>
+      <li>
+        <p>Use ordinary, everyday language instead of words that sound more elevated.</p>
+      </li>
+    </ul>
+  </li>
   <li><strong>Know your audience</strong>: Tone of voice, use of jargon, and complexity of language should be appropriate for the type of page:
     <ul>
       <li>Major landing pages must be approachable and appropriate for a wide audience that could include beginners, company managers, designers, developers, business owners, first-time bloggers, tech-savvy entrepreneurs, educational organizations, or advanced Sunbird developers. Keep them in mind.</li>
@@ -566,23 +578,19 @@ $("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-se
   </li>
   <li><strong>Get them there</strong>: Ask yourself what visitors want to get done and help them get there quickly.</li>
   <li><strong>Short isn’t always best</strong>: Concise (brief yet comprehensive) is good, but shortness? It depends. What does the user expect and need?</li>
-  <li><strong>Open source not market-speak</strong>: Avoid fluffy sales talk. “We’re great! Sunbird is great!” “We’re the best!” These sentences are only believed by those who write them, not those who read them.</li>
-  <li>Words such as “very, really, truly” tend to weaken a statement, not strengthen it.</li>
+  <li><strong>Open source not market-speak</strong>: Avoid fluffy sales talk. “We’re great! Sunbird is great!” “We’re the best!” These sentences are only believed by those who write them, not those who read them. Words such as “very, really, truly” tend to weaken a statement, not strengthen it.</li>
   <li><strong>Edit and edit again:</strong> Strip away unnecessary words. Examine them. Is each one lively, direct, and doing a job? Or, is it empty or deadening? Because an informal voice is brand-consistent, complete sentences aren’t always necessary.
- Eg.:
-   <em>This module reduces the time you need to set up a forum.</em>
- This can be written as :
-   <em>This module reduces forum set-up time.</em></li>
+  Eg.:
+    <em>This module reduces the time you need to set up a forum.</em>
+  This can be written as :
+    <em>This module reduces forum set-up time.</em></li>
   <li><strong>Be clear about benefits for the reader:</strong> Sunbird is here to make people feel privileged and awesome at what they do. Using the word “you” can be powerful.</li>
-  <li>
-    <p><strong>In general, use active, not passive, voice</strong>: In active voice, the subject performs the action (“The dog ate the bone.”). In passive voice, the subject is the target of the action (“The bone was eaten by the dog.”).</p>
-
-    <p>Don’t twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.</p>
-  </li>
+  <li><strong>In general, use active, not passive, voice</strong>: In active voice, the subject performs the action (“The dog ate the bone.”). In passive voice, the subject is the target of the action (“The bone was eaten by the dog.”).
+Don’t twist sentences into knots trying to avoid this, though. Also, at times, passive voice emphasizes words that active voice would downplay. In that case, use passive voice, but, in general, use it sparingly.</li>
   <li><strong>Avoid first-person</strong>: Avoid first-person (I, we, my, our) on editorial/landing pages. Use “Sunbird” instead. At times, because Sunbird is community-based, use “we” to sound inclusive or to reinforce the community concept.</li>
   <li><strong>Balance the needs of new and experienced users.</strong> Provide links to additional or clarifying information new users may not know. At the same time, experienced users need quick steps.</li>
   <li><strong>User-test your writing</strong>: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.</li>
-</ol>
+</ul>
 
 <h2 id="link1-5">Documentation contribution process flows</h2>
 

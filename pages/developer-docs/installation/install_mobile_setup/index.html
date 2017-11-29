@@ -1,47 +1,25 @@
 <p>This section details the sequence of steps required if you plan to release your own mobile app using the Sunbird mobile app codebase.</p>
 
 <ul>
-  <li>
-    <p>Execute &amp; run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></p>
-  </li>
-  <li>
-    <p>In console output of script, copy the JWT token printed for <code>mobile_admin</code> user</p>
-  </li>
-  <li>
-    <p>Run it.</p>
-
-    <pre>
-
-      curl -X POST \
-
-        (sunbird-base-url)/api/api-manager/v1/consumer/mobile_app/credential/register \
-
-        -H 'authorization: Bearer (mobile_admin_jwt_token)' \
-
-        -H 'content-type: application/json' \
-
-        -d '{
-
-        "request": {
-
-          "key": "(implementation-name)-mobile-app-(version-number)"
-
-        }'
-
-      }
-
-  </pre>
-  </li>
+  <li>Run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></li>
+  <li>In console output of above script, copy the JWT token printed for <code>mobile_admin</code> user</li>
+  <li>Run</li>
 </ul>
 
-<p>The result output will be:</p>
-
-<pre>
-
-		{"result":{"key":"(implementation-name)-mobile-app-(version-number)","secret":"(secret)"}}
-</pre>
-
-<ul>
-  <li>Use the value of “key” and “secret” from the response above for <code>MOBILE_APP_KEY</code> and <code>MOBILE_APP_SECRET</code> configuration in mobile app.</li>
-</ul>
-
+<p>```sh
+curl -X POST \</p>
+<sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
+  -H 'authorization: Bearer <mobile_admin_jwt_token>' \
+  -H 'content-type: application/json' \
+  -d '{
+  "request": {
+    "key": "<implementation-name>-mobile-app-<version-number>"
+  }
+}'
+```
+Result will be
+```js
+{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
+```
+- Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app
+</secret></version-number></implementation-name></version-number></implementation-name></mobile_admin_jwt_token></sunbird-base-url>
