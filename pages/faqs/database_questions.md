@@ -12,6 +12,7 @@ Q: Are there any data initialization scripts?
 A: Cassandra.cql is available for initial data setup. Follow the link and run the file to create initial data base: 
 
 [Create database](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources)
+
 Q: Are there any initial entries for?:
 
 - ORG
