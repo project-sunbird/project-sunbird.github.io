@@ -1,32 +1,28 @@
 ---
 type: landing
 directory: faqs
-title: Database Questions
-page_title: Database Questions
-description: FAQ
-keywords: Frequently asked questions, 'FAQ, questions'
+title: Troubleshooting
+page_title: Troubleshooting
+description: Troubleshooting
+keywords: Troubleshoot, answers, Database, application, Frequently asked questions, 'FAQ, questions'
 published: true
 ---
 ### Database
 
-**Q:** Are there any data initialization scripts?
+**Q:** Are data initialization scripts available?
 
-**A:** Cassandra.cql is available for initial data setup. Follow the link and run the file to create initial data base: 
+**A:** Use the Cassandra.cql file to do the initial data setup. 
+For details, refer [Create database](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"} and run the file, to create the initial Cassandra data base.
 
-For Cassandra initial setup , visit this link [Create database](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
+**Q:** Does the database have initial/ default entries for 'Org', 'Role' and 'Users'?
 
-**Q:** Are there any initial entries for?:
-
-- ORG
-- ROLE
-- USERS
-
-**A:**  There are no initial entries for a user. But default entry for ORG and Roles are available. Refer Cassandra.cql file and the links for two CSV files provided below:
+**A:**  'Users' do not have initial/default entries. There are default entries for 'Org' and 'Roles'. 
+For details, refer Cassandra.cql file and the links for two CSV files provided below:
 
 - For Page Section Details: [pageMgnt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"}
 - For details for particular section: [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv){:target="_blank"}
      
-Run the two Csv under Cassandra. It will have some quey to generate the page data. This works based on BFF(Backend for frontend design pattern).
+Run the two Csv under Cassandra. It will have some query to generate the page data. This works based on BFF(Backend for frontend design pattern).
 
 **Q:**  Which application is using MongoDB? And for what purpose is it being used ?
 
