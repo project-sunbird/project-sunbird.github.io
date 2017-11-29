@@ -9,14 +9,11 @@ published: true
 allowSearch: true
 ---
 
-This page addresses the most commonly asked questions of our platform. Here you will find questions on all aspects of the platform such as: 
+This section answers questions raised by users. The section is further categorized into:
 
-+ Creating content on the platform
-+ Uploading content from the platform
-+ Content Repositories
-+ Copyrights assertions
-+ Fixing errors
-+ Taxonomy and metadata
-+ Glossary
+* Product Functionity and Features
+* Technical Functionality and Features
 
-If you have a question that is not answered here, please send an email to http://www.sunbird.org/contact
+If you have questions that are not answered, you can click on the links at the top or bottom of the page to edit it or report an issue. 
+
+  Refer to the [Contribution Guidelines](contributions/contribution_guidelines){:target="_blank"} to understand the contribution guidelines.  
