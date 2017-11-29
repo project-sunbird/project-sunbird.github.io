@@ -10,7 +10,6 @@ This section details the sequence of steps required if you plan to release your 
 
 - Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
-- Run
 
 ```
 curl -X POST \
@@ -23,8 +22,11 @@ curl -X POST \
   }
 }'
 ```
+
 Result will be
+
 ```js
 {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
 ```
-- Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app
+
+- Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app.
