@@ -1,34 +1,40 @@
 ---
 type: landing
-directory: developer-docs/installation/
-title: Keycloak Configurations
-page_title: Keycloak Configurations
-description: About how developer can configure keycloak
+directory: developer-docs/installation
+title: Configuring Keycloak 
+page_title: Keycloak Configuration
+description: Keycloak configuration
+published: true
 allowSearch: true
 ---
+## Getting Started
 
-Sunbird uses Keycloak as the identity and authentication provider. Once the sunbird services are set up, navigate to https://sunbird.example.com/auth/admin (Assuming you've set up sunbird on sunbird.example.com) to access the Keycloak administration.
+Getting started with keycloak is explained in the following [link] (http://www.keycloak.org/docs/latest/getting_started/index.html), it has step-by-step process to run and up the keycloak server locally.
+If you are new to Keycloak,get started from here and its good to run and up the server locally and play around with it and understand the system.Sunbird uses Keycloak as the identity and authentication provider. 
+
+
+## Access Keycloak
+Once the sunbird services are set up, navigate to https://sunbird.example.com/auth/admin (Assuming you've set up sunbird on sunbird.example.com) to access the Keycloak administration.
 
 
 ## Setting the Admin password
 
-1. Log into the docker container which is running your keycloak service by following below commands
-<br /><br />
+- Log into the docker container which is running your keycloak service by following below commands
 <pre>
 # Find where the container is running
 docker service ps keycloak1
 # If you are running all services on single server no need to SSH
 # If you are in a different server, SSH into node running keycloak
-ssh (node-running-keycloak-container)
+ssh <node-running-keycloak-container>
 # Find the keycloak container ID
 docker ps | grep keycloak
 # Login to container
-docker exec -uroot -it (container-ID) sh
+docker exec -uroot -it <container-ID> sh
 </pre>
 
-2. Change to the keycloak root directory (most likely `/opt/jboss/keycloak`)
+- Change to the keycloak root directory (most likely `/opt/jboss/keycloak`)
 
-3. Run the following script to set the administrative user and password
+- Run the following script to set the administrative user and password
 ```bash
 $ ./bin/add-user-keycloak.sh -u <admin> -p <yourpassword>
 ```
@@ -41,7 +47,7 @@ Once you are in the administration console, follow the steps below to set up the
 
 To simplify configuration, sunbird provides a ready realm that you can import and start using. Download the realm from here. To import the realm, use the 'Add realm' button (check screenshots below). On the import screen, choose the json file and then click 'Create'.
 
-@TODO : Import realm images 1-3
+<link images>
 
 Once the realm is imported ensure the realm is chosen as the active realm before proceeding with the rest of the configuration
 
@@ -55,7 +61,7 @@ Navigate to Manage > Users and create a new user. Put the username as `user-mana
 
 Next, update the Client roles under Role mappings to ensure that this user has the `manage-users`, `query-users`, `query-groups` and `view-users` roles. The screenshot below has reference configuration.
 
-@TODO : User roles image
+<link images>
 
 Use these username and password values for this user as the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration.
 
