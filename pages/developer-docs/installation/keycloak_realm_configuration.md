@@ -21,7 +21,7 @@ Once the sunbird services are set up, [visit](https://sunbird.example.com/auth/a
 
 - Log into the docker container running keycloak by executing the following commands:
 
-```
+<pre>
 #Find where the container is running
 docker service ps keycloak1
 #If you are running all services on single server no need to SSH
@@ -31,7 +31,7 @@ ssh <node-running-keycloak-container>
 docker ps | grep keycloak
 #Login to container
 docker exec -uroot -it <container-ID> 
-```
+</pre>
 
 - Change to the path to keycloak root directory (most likely `/opt/jboss/keycloak`)
 - Execute the following script to set the administrator user name and password
