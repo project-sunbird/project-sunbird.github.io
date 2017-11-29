@@ -15,9 +15,9 @@ For Cassandra initial setup , visit this link [Create database](https://github.c
 
 Q: Are there any initial entries for?:
 
-- ORG
-- ROLE
-- USERS
+     - ORG
+     - ROLE
+     - USERS
 
 A:  There are no initial entries for a user. But default entry for ORG and Roles are available. Refer Cassandra.cql file.
      Under resources folder we have following two CSV.
