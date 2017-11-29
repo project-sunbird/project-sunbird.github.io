@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: faqs
-title: Content Repo
+title: Content Repositories
 page_title: Content Repositories
 description: Content and Organization's repositories
 keywords: >-
