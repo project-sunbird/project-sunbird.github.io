@@ -13,7 +13,7 @@ You can either use existing databases, create them manually or run the automatio
    - Mongo
    - Elasticsearch
    
-**Preparation to Set Up Databases**
+**Preparation to Setup Databases**
 
 Run the following steps from your local machine:
 
