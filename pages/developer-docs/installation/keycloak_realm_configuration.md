@@ -9,12 +9,12 @@ allowSearch: true
 ---
 ### Getting Started
 
-Getting started with keycloak is explained in detail [here] (http://www.keycloak.org/docs/latest/getting_started/index.html).
+Getting started with keycloak is explained in detail [here](http://www.keycloak.org/docs/latest/getting_started/index.html){:target="_blank"}.
 Its a step by step guide to run and provision the keycloak server locally.The Sunbird uses Keycloak as the identity and authentication provider. 
 
 ### Access Keycloak
 
-Once the sunbird services are set up, [visit] https://sunbird.example.com/auth/admin (Assuming you've set up sunbird on sunbird.example.com) to access the Keycloak administration.
+Once the sunbird services are set up, [visit](https://sunbird.example.com/auth/admin){:target="_blank"} (Assuming you've set up sunbird on sunbird.example.com) to access the Keycloak administration.
 
 
 ### Setting the Admin password
