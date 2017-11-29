@@ -12,14 +12,14 @@ published: true
 **Q:** Are data initialization scripts available?
 
 **A:** Use the Cassandra.cql file to do the initial data setup. 
-Click [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"} and run the file to create the initial Cassandra data base.
+Click [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} and run the file to create the initial Cassandra data base.
 
 **Q:** Does the database have initial/ default entries for 'Org', 'Role' and 'Users'?
 
 **A:**  'Users' do not have initial/default entries. There are default entries for 'Org' and 'Roles'. 
 For details, refer the files:
 
-+ [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"} file, for data setup
++ [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file, for data setup
 + [pageMgnt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"}, for page section details
 + [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv){:target="_blank"}, for details of a particular section
      
