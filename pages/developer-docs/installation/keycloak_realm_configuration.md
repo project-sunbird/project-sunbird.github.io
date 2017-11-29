@@ -55,7 +55,9 @@ Once you view the administration console,clients and the secrets can be set by f
 
 ### Import Realm
 
-To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm from [here] (pages/developer-docs/installation/other_files/keycloak-realm){:target="_blank"}. To import the realm, use the 'Add realm' button, refer to the following images to get more clarity. On the import screen, choose the json file and then click 'Create'.
+To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm from [here](pages/developer-docs/installation/other_files/keycloak-realm){:target="_blank"}. 
+
+To import the realm, use the 'Add realm' button, refer to the following images to get more clarity. On the import screen, choose the json file and then click 'Create'.
 
 {% image src='pages/developer-docs/installation/images/keycloack-add-realm.png' half center alt='Keycloak realm' %}
 
