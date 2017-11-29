@@ -26,7 +26,7 @@ Once the sunbird services are set up, [visit](https://sunbird.example.com/auth/a
 docker service ps keycloak1
 #If you are running all services on single server no need to SSH
 #If you are in a different server, SSH into node running keycloak
-ssh node-running-keycloak-container
+ssh {node-running-keycloak-container}
 #Find the keycloak container ID
 docker ps | grep keycloak
 #Login to container
