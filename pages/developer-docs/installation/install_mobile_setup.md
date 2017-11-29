@@ -12,11 +12,13 @@ This section details the sequence of steps required if you plan to release your 
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
 
 ```
-curl -X POST \
-  (sunbird-base-url)/api/api-manager/v1/consumer/mobile_app/credential/register 
+curl -X POST 
+
+(sunbird-base-url)/api/api-manager/v1/consumer/mobile_app/credential/register 
   -H 'authorization: Bearer {mobile_admin_jwt_token}' 
   -H 'content-type: application/json' 
   -d '{
+  
   "request": {
     "key": "{implementation-name}-mobile-app-{version-number}
   }
