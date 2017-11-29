@@ -20,6 +20,7 @@ Once the sunbird services are set up, [visit](https://sunbird.example.com/auth/a
 ### Setting the Admin password
 
 - Log into the docker container running keycloak by executing the following commands:
+
 ```
 Find where the container is running
 # Find where the container is running
