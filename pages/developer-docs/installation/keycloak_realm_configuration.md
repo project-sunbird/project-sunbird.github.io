@@ -80,21 +80,21 @@ Use these username and password values for this user as the values for `sunbird_
 
 Navigate to `Clients` and make the changes listed below to each of the clients. Only change the clients listed below. Settings for other clients need not be changed.
 
-#### account, broker, realm-management
+#### Account, broker, realm-management
 
 Go to the `Credentials` tab and regenerate the Secret and Registration Access Token. Note both, you will need them in a later step.
 
-#### android
+#### Android
 
 Change the Root URL to `https://sunbird.example.com`
 Add a Valid Redirect URI `https://sunbird.example.com/oauth2callback`
 
-#### portal
+#### Portal
 
 Change the Root URL to `https://sunbird.example.com`
 Add Valid Redirect URIs `https://sunbird.example.com/private/*` and `https://sunbird.example.com/`
 
-#### trampoline
+#### Trampoline
 
 Change the Root URL to `https://sunbird.example.com`
 Go to the Credentials tab and regenerate the Secret and Registration Access Token. Use the secret as the value for the `sunbird_trampoline_secret` configuration.
