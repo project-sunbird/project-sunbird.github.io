@@ -60,25 +60,18 @@ Server provisioning is a set of actions to prepare a server with appropriate sys
 
 Sunbird helps you to setup your database. Visit the link [Setup Database](developer-docs/installation/setup_db){:target="_blank"}for details.
 
-### Deploying Sunbird services
+### Deploying Sunbird Services
 
-The Sunbird services are  categorized into :
-
-* Sunbird Core Services
-* Sunbird proxy services
-
-You can visit [Deploying Sunbird services](developer-docs/installation/deploy_sb_services){:target="_blank"} for more details.
+Visit [Deploying Sunbird Services](developer-docs/installation/deploy_sb_services){:target="_blank"} for details.
 
 ### Customize Assets
 
-This section will explain how to customize look and feel of Sunbird. You can visit [Customizing Assets](developer-docs/installation/cust_sunbird){:target="_blank"}
+This section will explain how to customize look and feel of Sunbird. Visit [Customizing Assets](developer-docs/installation/cust_sunbird){:target="_blank"} for details.
 
-### Check the Installation
+### Check Installation
 
-To check if Sunbird is properly installed:
+To check if Sunbird is properly installed, refer to the link [Check Installation](developer-docs/installation/check_installation){:target="_blank"}
 
-Browse Sunbird Portal  by accessing https://{proxy_server_name}/ (publicly accessible URL, it could be the load balancer URL or the actual domain name for production).
-
-### For making your own Mobile app
+### Making your own Mobile App
 
 If you plan to release your own mobile app using the Sunbird mobile app codebase visit [Generate key and install mobile app](developer-docs/installation/install_mobile_setup){:target="_blank"}
