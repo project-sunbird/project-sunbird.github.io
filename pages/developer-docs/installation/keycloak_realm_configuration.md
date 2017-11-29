@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/installation
-title: Configuring Keycloak 
-page_title: Keycloak Configuration
+title: Configure Keycloak 
+page_title: Configure Keycloak
 description: Keycloak configuration
 published: true
 allowSearch: true
@@ -19,25 +19,20 @@ Once the sunbird services are set up, [visit](https://sunbird.example.com/auth/a
 
 ### Setting the Admin password
 
-- Log into the docker container running keycloak by executing the following commands:
+Log into the docker container running keycloak by executing the following commands:
 
 Find where the container is running
 
-```docker service ps keycloak1```
-
+```docker service ps keycloak1
 If you are running all services on single server no need to SSH
-
 If you are in a different server, SSH into node running keycloak
-
-```ssh <node-running-keycloak-container>```
-
+ssh <node-running-keycloak-container>
 Find the keycloak container ID
-
-<pre>
 docker ps | grep keycloak
-</pre>
+```
 
 Login to container
+
 
 ```docker exec -uroot -it <container-ID>```
 
