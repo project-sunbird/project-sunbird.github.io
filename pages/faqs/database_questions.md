@@ -37,7 +37,7 @@ Run the two Csv under Cassandra. It will have some quey to generate the page dat
  
 **Q:** Is there any seed data which gets initiated on launch of any application?
 
-**A:** During application launch, following table data are cached.These data needs to be refreshed on daily basis. 
+**A:** During application launch, following table data are cached. These data needs to be refreshed on daily basis. 
 
 - page_management 
 - page_section
