@@ -30,7 +30,7 @@ ssh <node-running-keycloak-container>
 #Find the keycloak container ID
 docker ps | grep keycloak
 #Login to container
-docker exec -uroot -it <container-ID> 
+docker exec -uroot -it <container-ID> sh
 </pre>
 
 - Change to the path to keycloak root directory (most likely `/opt/jboss/keycloak`)
