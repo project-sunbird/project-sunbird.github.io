@@ -4,18 +4,22 @@ directory: faqs
 title: Database Questions
 page_title: Database Questions
 description: FAQ
-keywords: 'FAQ, questions'
+keywords: Frequently asked questions, 'FAQ, questions'
 published: true
 ---
 Q: Are there any data initialization scripts?
 
-A: For initial data setup we have a file cassandra.cql under below location .
- https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources 
- User need to run that file. this will create the initial Data base.
+A: A Cassandra.cql is available for initial data setup. Follow the link below and run the file to create initial data base: 
 
-Q: Are the any initial entries for ORG, ROLE, USERS etc?
+https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources 
 
-A:  There is no initial entries for User, but default entry for ORG and Roles are there , in side Cassandra.cql file.
+Q: Is there any initial entries for?:
+
+- ORG
+- ROLE
+- USERS
+
+A:  There is no initial entries for User. But default entry for ORG and Roles are available. Refer Cassandra.cql file.
      Under resources folder we have following two CSV.
      a. pageMgmt.CSV ->  this will have page section details inside it. 
      b. pageSection.csv ->  this will have details for a particular section.
