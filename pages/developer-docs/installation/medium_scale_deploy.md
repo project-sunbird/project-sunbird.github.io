@@ -9,7 +9,7 @@ allowSearch: true
 
 This page provides a summarized listing of the essential steps for planning, installing, and configuring your Sunbird deployment in a live environment. 
 
-## Pre-requisites
+### Pre-requisites
 
 Before you install Sunbird into the production environment, examine your  environment and gather data to ensure an optimal installation experience. 
 
