@@ -14,12 +14,11 @@ This section details the sequence of steps required if you plan to release your 
 <pre>
 curl -X POST 
 
-(sunbird-base-url)/api/api-manager/v1/consumer/mobile_app/credential/register 
+sunbird-base-url/api/api-manager/v1/consumer/mobile_app/credential/register 
   -H 'authorization: Bearer {mobile_admin_jwt_token}' 
   -H 'content-type: application/json' 
   -d '{
-  
-  "request": {
+    "request": {
     "key": "{implementation-name}-mobile-app-{version-number}
   }
 }'
