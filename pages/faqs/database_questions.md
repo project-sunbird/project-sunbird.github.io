@@ -11,36 +11,33 @@ Q: Are there any data initialization scripts?
 
 A: Cassandra.cql is available for initial data setup. Follow the link and run the file to create initial data base: 
 
-For Cassandra initial setup , visit this link [Create database](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources)
+For Cassandra initial setup , visit this link [Create database](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
 
 Q: Are there any initial entries for?:
 
-     - ORG
-     - ROLE
-     - USERS
+- ORG
+- ROLE
+- USERS
 
-A:  There are no initial entries for a user. But default entry for ORG and Roles are available. Refer Cassandra.cql file.
-     Under resources folder we have following two CSV.
+A:  There are no initial entries for a user. But default entry for ORG and Roles are available. Refer Cassandra.cql file and the links for two CSV files provided below:
+
+- For Page Section Details: [pageMgnt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"}
+- For details for particular section: [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv){:target="_blank"}
      
-- pageMgmt.CSV ->  this will have page section details inside it. 
-- pageSection.csv ->  this will have details for a particular section.
-     
-This two csv need to be run under cassandra, it will have some quey to generate the page data.This will work based on BFF(Backend for frontend design pattern).
+Run the two Csv under Cassandra. It will have some quey to generate the page data. This works based on BFF(Backend for frontend design pattern).
 
 Q:  Which application is using MongoDB? And for what purpose is it being used ?
 
-A: Application is using following DB : 
+A: The following applications are using Database: 
 
- - Cassandra : Main Data base storage. used by learner-service
- - Elasticsearch :  80% of the data of Cassandra is stored under ES and it's used for Searching purpose
- - Postgres : this DB is used for cron scheduler job , to run in cluster mode
- - MongoDB : this was used for player service to store user session but in last release they are also using Cassandra 
+ - Cassandra : Main Data base storage, used by learner-service
+ - Elasticsearch :  80% of the data of Cassandra is stored under ES and it is used for **Search** purpose
+ - Postgres : This Database is used for cron scheduler job, to run in cluster mode
+ - MongoDB : This is used for player service to store user session
+ 
+Q: Is there any seed data which gets initiated on launch of any application?
 
-Q: Is there any seed data which gets initiated on launch of any application? If so, can you please point to it?
-
-A: At application launch time following table data are cached.
+A: During application launch, following table data are cached.These data needs to be refreshed on daily basis. 
 
 - page_management 
 - page_section
-   
-This data is to be refreshed daily. 
