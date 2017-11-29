@@ -58,13 +58,13 @@ Server provisioning is a set of actions to prepare a server with appropriate sys
 
 ### Setup Databases
 
-Sunbird helps you to setup your database. Visit the link [Setup Database](developer-docs/installation/setup_db){:target="_blank"}for details.
+Sunbird helps you to setup your database. Visit the link [Setup Databases](developer-docs/installation/setup_db){:target="_blank"}for details.
 
 ### Deploying Sunbird Services
 
 Visit [Deploying Sunbird Services](developer-docs/installation/deploy_sb_services){:target="_blank"} for details.
 
-### Customize Assets
+### Customizing Assets
 
 This section will explain how to customize look and feel of Sunbird. Visit [Customizing Assets](developer-docs/installation/cust_sunbird){:target="_blank"} for details.
 
