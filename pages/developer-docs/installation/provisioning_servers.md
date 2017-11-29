@@ -6,7 +6,9 @@ page_title: Server Automation via Azure and Manually
 description: Provisioning server
 allowSearch: true
 ---
-**Automation Process**
+Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.
+
+### Automation for Azure
 
 The set of scripts on the Automation for Azure page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory. 
@@ -31,7 +33,7 @@ Run the following steps from a machine which is connected to the internet:
 
 **Note:** The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
 
-**Automation walkthrough**
+#### Automation walkthrough
 
 [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
 
@@ -39,7 +41,7 @@ Run the following steps from a machine which is connected to the internet:
 
 **Note:** The default automation process creates three servers because it separates the application and the administration server.
 
-**Manual Process**
+### Manual Process
 
 The manual procedure commissions two servers. The first server serves as the DB(Database) server and the second serves as the application server & administration server.
 
