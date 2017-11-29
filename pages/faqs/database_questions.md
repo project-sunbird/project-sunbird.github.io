@@ -7,6 +7,8 @@ description: FAQ
 keywords: Frequently asked questions, 'FAQ, questions'
 published: true
 ---
+### Database
+
 **Q:** Are there any data initialization scripts?
 
 **A:** Cassandra.cql is available for initial data setup. Follow the link and run the file to create initial data base: 
@@ -41,3 +43,5 @@ Run the two Csv under Cassandra. It will have some quey to generate the page dat
 
 - page_management 
 - page_section
+
+### Application 
