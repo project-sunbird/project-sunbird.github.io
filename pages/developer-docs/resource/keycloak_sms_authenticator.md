@@ -23,13 +23,13 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
       	```$ cp target/keycloak-sms-authenticator-sns-*.jar _KEYCLOAK_HOME_/providers/```
 
  -  Add three templates to the Keycloak server:
-
-           ``` $ cp templates/password-reset-email.ftl _KEYCLOAK_HOME_/themes/base/login/
+<pre>
+            $ cp templates/password-reset-email.ftl _KEYCLOAK_HOME_/themes/base/login/
 
         	   $ cp templates/sms-validation.ftl _KEYCLOAK_HOME_/themes/base/login/
 
-  	           $ cp templates/sms-validation-error.ftl _KEYCLOAK_HOME_/themes/base/login/```
-
+  	         $ cp templates/sms-validation-error.ftl _KEYCLOAK_HOME_/themes/base/login/
+</pre>
  - Place the credentials file in the "sms-provider" folder within "bin" folder of the ```_KEYCLOAK_HOME_```with the relevant name.
 
  - The same path has to be provided in the ```KeycloakSmsAuthenticatorConstants``` file with the proper name (ex - 
@@ -37,7 +37,7 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
 
 Template of the credentials file will look like , which can be extended to add all the parameters needed for any specific provider.
 
-``` {
+<pre> {
 
         	"auth_key": "XXXXXXXXXXXXXX",
 
@@ -49,7 +49,7 @@ Template of the credentials file will look like , which can be extended to add a
 
         	"sms_method_type": "XXXX"
 
-  } ```
+  }</pre>
 
  - Configure your REALM to use the SMS Authentication. First create a new REALM (or select a previously created REALM).
 
