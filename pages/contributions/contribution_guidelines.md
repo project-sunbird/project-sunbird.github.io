@@ -122,6 +122,7 @@ When embedding a link in a documentation page, always make sure the link text de
 ### Voice
 
 * **Reinforce the Sunbird brand:** Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.
+
 Always try to be:
 
     * clear, simple, and concise
