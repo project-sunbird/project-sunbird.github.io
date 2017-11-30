@@ -7,7 +7,7 @@ description: Keycloak configuration
 published: true
 allowSearch: true
 ---
-### Getting Started
+## Getting Started
 
 A step by step guide to run and provision the keycloak server locally is explained in detail [here](http://www.keycloak.org/docs/latest/getting_started/index.html){:target="_blank"}.
 The Sunbird uses Keycloak as the identity and authentication provider. 
