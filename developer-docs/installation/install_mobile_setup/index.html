@@ -32,7 +32,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-29 19:32:08 +0530">
+<meta name="last-modified" content="2017-11-30 08:22:29 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
@@ -47,11 +47,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?29112017"  />
-<link rel="stylesheet" href="css/style.css?29112017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?29112017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?29112017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?29112017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?30112017"  />
+<link rel="stylesheet" href="css/style.css?30112017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?30112017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?30112017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?30112017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -229,13 +229,16 @@
 									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+								</li>
+								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/check_installation/">Check Installation</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/keycloak_realm_configuration/">Keycloak configurations</a>
+									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
 								</li>
 							</ul>
 						</div>
@@ -373,28 +376,32 @@ $("a[href$='developer-docs/installation/install_mobile_setup/']").addClass("side
           <p>This section details the sequence of steps required if you plan to release your own mobile app using the Sunbird mobile app codebase.</p>
 
 <ul>
-  <li>Run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></li>
+  <li>Run <code>sudo ./deploy-apis.sh {implementation-name}-devops/ansible/inventories/{environment-name)</code></li>
   <li>In console output of above script, copy the JWT token printed for <code>mobile_admin</code> user</li>
-  <li>Run</li>
 </ul>
 
-<p>```sh
-curl -X POST \</p>
-<sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
-  -H 'authorization: Bearer <mobile_admin_jwt_token>' \
-  -H 'content-type: application/json' \
+<pre>
+curl -X POST 
+
+sunbird-base-url/api/api-manager/v1/consumer/mobile_app/credential/register 
+  -H 'authorization: Bearer {mobile_admin_jwt_token}' 
+  -H 'content-type: application/json' 
   -d '{
-  "request": {
-    "key": "<implementation-name>-mobile-app-<version-number>"
+    "request": {
+    "key": "{implementation-name}-mobile-app-{version-number}
   }
 }'
-```
-Result will be
-```js
-{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
-```
-- Use the value of "key" and "secret" from the response above for `MOBILE_APP_KEY` and `MOBILE_APP_SECRET` configuration in mobile app
-</secret></version-number></implementation-name></version-number></implementation-name></mobile_admin_jwt_token></sunbird-base-url>
+</pre>
+
+<p>Result will be</p>
+
+<p><code>js
+{"result":{"key":"(implementation-name)-mobile-app-(version-number)","secret":"(secret)"}}
+</code></p>
+
+<ul>
+  <li>Use the value of “key” and “secret” from the response above for <code>MOBILE_APP_KEY</code> and <code>MOBILE_APP_SECRET</code> configuration in mobile app.</li>
+</ul>
 
           
           <hr />

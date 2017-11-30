@@ -32,7 +32,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-29 19:32:08 +0530">
+<meta name="last-modified" content="2017-11-30 08:22:29 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
@@ -47,11 +47,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?29112017"  />
-<link rel="stylesheet" href="css/style.css?29112017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?29112017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?29112017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?29112017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?30112017"  />
+<link rel="stylesheet" href="css/style.css?30112017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?30112017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?30112017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?30112017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -229,13 +229,16 @@
 									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+								</li>
+								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/check_installation/">Check Installation</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/keycloak_realm_configuration/">Keycloak configurations</a>
+									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
 								</li>
 							</ul>
 						</div>
@@ -370,7 +373,9 @@ $("a[href$='developer-docs/installation/provisioning_servers/']").addClass("side
 			  </a>
 			  </span>
 			</p>
-          <p><strong>Automation Process</strong></p>
+          <p>Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.</p>
+
+<h3 id="automation-for-azure">Automation for Azure</h3>
 
 <p>The set of scripts on the Automation for Azure page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory.</p>
@@ -397,7 +402,7 @@ Run the following steps from a machine which is connected to the internet:</p>
 
 <p><strong>Note:</strong> The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.</p>
 
-<p><strong>Automation walkthrough</strong></p>
+<h4 id="automation-walkthrough">Automation walkthrough</h4>
 
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif" target="_blank">Part 1</a></p>
 
@@ -405,7 +410,7 @@ Run the following steps from a machine which is connected to the internet:</p>
 
 <p><strong>Note:</strong> The default automation process creates three servers because it separates the application and the administration server.</p>
 
-<p><strong>Manual Process</strong></p>
+<h3 id="manual-process">Manual Process</h3>
 
 <p>The manual procedure commissions two servers. The first server serves as the DB(Database) server and the second serves as the application server &amp; administration server.</p>
 
