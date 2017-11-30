@@ -13,19 +13,16 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
 
  To build the complete project and check the working of the SMS Authenticator follow the steps.
 
- - Import the project, [visit](https://github.com/project-sunbird/sunbird-auth/tree/master/keycloak)   
-
-  to Intellij/Eclipse as Maven project (preference should be given to Intellij Community Edition) to make the process easy .
-
-- Build the artifact(jar) using the command ```mvn clean package``` from the SMS-provider path in the terminal.
-
-- The generated artifact will be in the "target" folder in the project, with the same name as project. (ex - keycloak-email-phone-authenticator-1.0-SNAPSHOT.jar)
-
-- Add the jar to the Keycloak server: ("providers" folder will be created in the Keycloak home path if it does not exist)
+ - Import the project from [here](https://github.com/project-sunbird/sunbird-auth/tree/master/keycloak)  
+   to Intellij/Eclipse as Maven project (preference should be given to Intellij Community Edition) to make the process easy .
+ - Build the artifact(jar) using the command ```mvn clean package``` from the SMS-provider path in the terminal.
+ - The generated artifact will be in the "target" folder in the project, with the same name as project. (ex - keycloak-email-phone-  
+   authenticator-1.0-SNAPSHOT.jar)
+ - Add the jar to the Keycloak server: ("providers" folder will be created in the Keycloak home path if it does not exist)
 
       	```$ cp target/keycloak-sms-authenticator-sns-*.jar _KEYCLOAK_HOME_/providers/```
 
--  Add three templates to the Keycloak server:
+ -  Add three templates to the Keycloak server:
 
            ``` $ cp templates/password-reset-email.ftl _KEYCLOAK_HOME_/themes/base/login/
 
@@ -33,11 +30,12 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
 
   	           $ cp templates/sms-validation-error.ftl _KEYCLOAK_HOME_/themes/base/login/```
 
-- Place the credentials file in the "sms-provider" folder within "bin" folder of the ```_KEYCLOAK_HOME_```with the relevant name.
+ - Place the credentials file in the "sms-provider" folder within "bin" folder of the ```_KEYCLOAK_HOME_```with the relevant name.
 
-- The same path has to be provided in the ```KeycloakSmsAuthenticatorConstants``` file with the proper name (ex - MSG91_SMS_PROVIDER_CONFIGURATIONS_PATH = "sms-provider/Msg91Creds.json")
+ - The same path has to be provided in the ```KeycloakSmsAuthenticatorConstants``` file with the proper name (ex - 
+   MSG91_SMS_PROVIDER_CONFIGURATIONS_PATH = "sms-provider/Msg91Creds.json")
 
-  Template of the credentials file will look like , which can be extended to add all the parameters needed for any specific provider.
+Template of the credentials file will look like , which can be extended to add all the parameters needed for any specific provider.
 
 ``` {
 
@@ -53,22 +51,20 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
 
   } ```
 
-- Configure your REALM to use the SMS Authentication. First create a new REALM (or select a previously created REALM).
+ - Configure your REALM to use the SMS Authentication. First create a new REALM (or select a previously created REALM).
 
-- Under Authentication > Flows:
+ - Under Authentication > Flows:
 
-        	- Copy 'Browse' flow to 'Browser with SMS' flow
+     - Copy 'Browse' flow to 'Browser with SMS' flow
 
-        	- Click on 'Actions > Add execution on the 'Browser with SMS Forms' line and add the 'SMS Authentication'
+     - Click on 'Actions > Add execution on the 'Browser with SMS Forms' line and add the 'SMS Authentication'
 
-        	- Set 'SMS Authentication' to 'REQUIRED' or 'ALTERNATIVE'
+     - Set 'SMS Authentication' to 'REQUIRED' or 'ALTERNATIVE'
 
-        	- To configure the SMS Authenticator, click on Actions Config and fill in the attributes.
+     - To configure the SMS Authenticator, click on Actions Config and fill in the attributes.
 
 - Under Authentication > Bindings:
 
         	- Select 'Browser with SMS' as the 'Browser Flow' for the REALM.
 
- 
-
-The current SMS Authenticator is forked from the github repo [visit](https://github.com/nickpack/keycloak-sms-authenticator-sns)
+ The current SMS Authenticator is forked from the github repo [visit](https://github.com/nickpack/keycloak-sms-authenticator-sns)
