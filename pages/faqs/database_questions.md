@@ -48,7 +48,7 @@ MongoDB   |A store for session data     |The player service
 **Q**: How do I test if the APIs are working ? 
 
 **A**:  Once you complete Sunbird installation, use the GET API https://hostname/health .
-    For details of more API check routes, refer to the [Routes](https://github.com/project-sunbird/sunbird-lms-service/blob/master/service/conf/routes){target="_blank"}
+    For details of more API check routes, refer to the [Routes](https://github.com/project-sunbird/sunbird-lms-service/blob/master/service/conf/routes){:target="_blank"}
      This file has a list of URLs.
  
  **Q**: What Authorization header should be used to access these API ?
@@ -84,6 +84,6 @@ MongoDB   |A store for session data     |The player service
 
 **Q**: Is there any controller for telemetry events in Sunbird? How can telemetry data be accessed from Sunbird?
 
-**A**: Sunbird provides dashboards for admins that provide summary views of the telemetry. For raw telemetry data, you need to pull out the data from the ekstep platform. To do so, use the [On Demand Data Exhaust API](https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api){target="_blank"} 
+**A**: Sunbird provides dashboards for admins that provide summary views of the telemetry. For raw telemetry data, you need to pull out the data from the ekstep platform. To do so, use the [On Demand Data Exhaust API](https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api){:target="_blank"} 
 
 **Note**: Sign in to the Ekstep Community portal to access the API (https://community.ekstep.in)
