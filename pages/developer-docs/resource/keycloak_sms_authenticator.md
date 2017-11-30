@@ -20,7 +20,7 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
    authenticator-1.0-SNAPSHOT.jar)
  - Add the jar to the Keycloak server: ("providers" folder will be created in the Keycloak home path if it does not exist)
 
-     <pre>$ cp target/keycloak-sms-authenticator-sns-*.jar _KEYCLOAK_HOME_/providers/</pre>
+      <pre>$ cp target/keycloak-sms-authenticator-sns-*.jar _KEYCLOAK_HOME_/providers/</pre>
 
  -  Add three templates to the Keycloak server:
 <pre>
