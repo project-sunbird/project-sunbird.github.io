@@ -24,11 +24,11 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
 
  -  Add three templates to the Keycloak server:
 <pre>
-            $ cp templates/password-reset-email.ftl _KEYCLOAK_HOME_/themes/base/login/
+     $ cp templates/password-reset-email.ftl _KEYCLOAK_HOME_/themes/base/login/
 
-        	   $ cp templates/sms-validation.ftl _KEYCLOAK_HOME_/themes/base/login/
+     $ cp templates/sms-validation.ftl _KEYCLOAK_HOME_/themes/base/login/
 
-  	         $ cp templates/sms-validation-error.ftl _KEYCLOAK_HOME_/themes/base/login/
+  	  $ cp templates/sms-validation-error.ftl _KEYCLOAK_HOME_/themes/base/login/
 </pre>
  - Place the credentials file in the "sms-provider" folder within "bin" folder of the ```_KEYCLOAK_HOME_```with the relevant name.
 
