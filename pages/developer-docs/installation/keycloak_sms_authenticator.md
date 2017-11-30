@@ -7,8 +7,6 @@ description: Authenticating user based on OTP
 published: true
 allowSearch: true
 ---
-## Keycloak based (OTP) Authentication
-
 On Sunbird, if a user forgets the password , generally the reset password link is sent on users registered email but in certain cases where users have registered with phone numbers instead of email address, the SMS based verification is done to authenticate the legitimacy of the user. The reset process is started by sending an One Time Password (OTP) as a SMS to the users registered mobile number. This One Time Password (OTP) is used by the user to validate and reset the password.
 
 Implementation of Keycloak authenticator is rather simple. A user with pre-knowledge about various terms used while implementation process makes the whole process quite simple. For further assistance in setting up Keycloak resource ,[visit](http://www.keycloak.org/docs/latest/server_development/index.html#_auth_spi){:target="_blank"}.Also to get a clear understanding about role of  Authentication SPI and Service Provider Interfaces(SPI) in implementation[visit](http://www.keycloak.org/docs/latest/server_development/index.html#_providers){:target="_blank"} 
