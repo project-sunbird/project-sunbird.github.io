@@ -1,5 +1,3 @@
-<h2 id="keycloak-based-otp-authentication">Keycloak based (OTP) Authentication</h2>
-
 <p>On Sunbird, if a user forgets the password , generally the reset password link is sent on users registered email but in certain cases where users have registered with phone numbers instead of email address, the SMS based verification is done to authenticate the legitimacy of the user. The reset process is started by sending an One Time Password (OTP) as a SMS to the users registered mobile number. This One Time Password (OTP) is used by the user to validate and reset the password.</p>
 
 <p>Implementation of Keycloak authenticator is rather simple. A user with pre-knowledge about various terms used while implementation process makes the whole process quite simple. For further assistance in setting up Keycloak resource ,<a href="http://www.keycloak.org/docs/latest/server_development/index.html#_auth_spi" target="_blank">visit</a>.Also to get a clear understanding about role of  Authentication SPI and Service Provider Interfaces(SPI) in implementation<a href="http://www.keycloak.org/docs/latest/server_development/index.html#_providers" target="_blank">visit</a></p>
@@ -8,7 +6,7 @@
 
 <p>Once the understanding is clear about how an authenticator is implemented, you can proceed to SMS Authenticator code which can be accessed <a href="https://github.com/project-sunbird/sunbird-auth/tree/master/keycloak" target="_blank">here</a>,its located in the folder “sms-provider”. This code needs to be imported to Intellij/Eclipse IDE as an Maven Project to start building the authenticator.</p>
 
-<h2 id="build-process-for-keycloak-sms-based-authenticator">Build Process for Keycloak SMS Based Authenticator</h2>
+<h3 id="build-process-for-keycloak-sms-based-authenticator">Build Process for Keycloak SMS Based Authenticator</h3>
 
 <p>To build the complete project and check the working of the SMS Authenticator follow the steps.</p>
 

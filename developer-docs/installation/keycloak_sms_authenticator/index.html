@@ -32,7 +32,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-30 08:22:29 +0530">
+<meta name="last-modified" content="2017-11-30 10:41:07 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
@@ -237,14 +237,14 @@
 								<li>
 									<a href="developer-docs/installation/check_installation/">Check Installation</a>
 								</li>
-								<li>
+								<!--<li>
 									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
-								</li>
+								</li>-->
 							</ul>
 						</div>
 					</li>
 					<li>
-						<a href="developer-docs/installation/install_mobile_setup/">Mobile app installation</a>
+						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
 					</li>
 					<!--<li>
 						<div class="">
@@ -276,7 +276,7 @@
 									<a href="apis/metricsapi/" target="_blank">Metrics APIs</a>
 								</li>
 								<li>
-									<a href="apis/notificationapi/" target="_blank">Notification  APIs</a>
+									<a href="apis/notificationapi/" target="_blank">Notification APIs</a>
 								</li>
 								<li>
 									<a href="apis/orgapi/" target="_blank">Organisation Management APIs</a>
@@ -373,30 +373,7 @@ $("a[href$='developer-docs/installation/keycloak_sms_authenticator/']").addClass
 			  </a>
 			  </span>
 			</p>
-          <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Keycloak based (OTP) Authentication</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-2">
-              <a href="#link1-2"><span class="tocnumber">2 .</span> <span class="toctext">Build Process for Keycloak SMS Based Authenticator</span></a>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><h2 id="link1-1">Keycloak based (OTP) Authentication</h2>
-
-<p>On Sunbird, if a user forgets the password , generally the reset password link is sent on users registered email but in certain cases where users have registered with phone numbers instead of email address, the SMS based verification is done to authenticate the legitimacy of the user. The reset process is started by sending an One Time Password (OTP) as a SMS to the users registered mobile number. This One Time Password (OTP) is used by the user to validate and reset the password.</p>
+          <p>On Sunbird, if a user forgets the password , generally the reset password link is sent on users registered email but in certain cases where users have registered with phone numbers instead of email address, the SMS based verification is done to authenticate the legitimacy of the user. The reset process is started by sending an One Time Password (OTP) as a SMS to the users registered mobile number. This One Time Password (OTP) is used by the user to validate and reset the password.</p>
 
 <p>Implementation of Keycloak authenticator is rather simple. A user with pre-knowledge about various terms used while implementation process makes the whole process quite simple. For further assistance in setting up Keycloak resource ,<a href="http://www.keycloak.org/docs/latest/server_development/index.html#_auth_spi" target="_blank">visit</a>.Also to get a clear understanding about role of  Authentication SPI and Service Provider Interfaces(SPI) in implementation<a href="http://www.keycloak.org/docs/latest/server_development/index.html#_providers" target="_blank">visit</a></p>
 
@@ -404,7 +381,7 @@ $("a[href$='developer-docs/installation/keycloak_sms_authenticator/']").addClass
 
 <p>Once the understanding is clear about how an authenticator is implemented, you can proceed to SMS Authenticator code which can be accessed <a href="https://github.com/project-sunbird/sunbird-auth/tree/master/keycloak" target="_blank">here</a>,its located in the folder “sms-provider”. This code needs to be imported to Intellij/Eclipse IDE as an Maven Project to start building the authenticator.</p>
 
-<h2 id="link1-2">Build Process for Keycloak SMS Based Authenticator</h2>
+<h3 id="build-process-for-keycloak-sms-based-authenticator">Build Process for Keycloak SMS Based Authenticator</h3>
 
 <p>To build the complete project and check the working of the SMS Authenticator follow the steps.</p>
 

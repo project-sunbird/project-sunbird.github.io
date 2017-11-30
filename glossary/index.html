@@ -25,8 +25,8 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Configure Keycloak</title>
-<meta name="description" content="Sunbird Site Keycloak configuration"/>
+<title>Sunbird Glossary</title>
+<meta name="description" content="Sunbird Site About Sunbird Glossary"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
@@ -95,7 +95,7 @@
 </div>
 
 	
-	<div class="sidebar-wrapper developer-docs-installation">
+	<div class="sidebar-wrapper glossary">
 		<div class="" >
 			<a href="architecture/">
 				<h4 class="sidebar-group-title">Architecture</h4>
@@ -346,14 +346,14 @@
 	</div>
 </div>
 <script>
-$("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addClass("sidebar-link-selected");
+$("a[href$='glossary/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Configure Keycloak </h1>
+        <h1>Glossary </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -363,7 +363,7 @@ $("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addCla
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/keycloak_realm_configuration.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/glossary/index.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -373,110 +373,8 @@ $("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addCla
 			  </a>
 			  </span>
 			</p>
-          <h3 id="getting-started">Getting Started</h3>
+          <p><strong>Sunbird Glossary</strong> is an alphabetical list of words relating to a specific concepts, subjects, texts, usage with explanations in its application and portal</p>
 
-<p>A step by step guide to run and provision the keycloak server locally is explained in detail <a href="http://www.keycloak.org/docs/latest/getting_started/index.html" target="_blank">here</a>.
-The Sunbird uses Keycloak as the identity and authentication provider.</p>
-
-<h3 id="access-keycloak">Access Keycloak</h3>
-
-<p>Once the sunbird services are set up, <a href="https://sunbird.example.com/auth/admin" target="_blank">visit</a> (Assuming you’ve set up sunbird on sunbird.example.com) to access the Keycloak administration.</p>
-
-<h3 id="setting-the-admin-password">Setting the Admin password</h3>
-
-<ul>
-  <li>Log into the docker container running keycloak by executing the following commands:</li>
-</ul>
-
-<pre>
-#Find where the container is running
-docker service ps keycloak1
-#If you are running all services on single server no need to SSH
-#If you are in a different server, SSH into node running keycloak
-ssh {node-running-keycloak-container}
-#Find the keycloak container ID
-docker ps | grep keycloak
-#Login to container
-docker exec -uroot -it {container-ID}
-</pre>
-
-<ul>
-  <li>Change to the path to keycloak root directory (most likely <code>/opt/jboss/keycloak</code>)</li>
-  <li>Execute the following script to set the administrator user name and password</li>
-</ul>
-
-<p><code>
-$ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
-</code></p>
-
-<p>The script will execute creating admin user and password.</p>
-
-<ul>
-  <li>You can now log into the administration console using these credentials.</li>
-</ul>
-
-<p>Once you view the administration console,clients and the secrets can be set by following steps:</p>
-
-<h3 id="import-realm">Import Realm</h3>
-
-<p>To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a href="pages/developer-docs/installation/other_files/keycloak-realm" target="_blank">here</a>.</p>
-
-<p>To import the realm, use the ‘Add realm’ button, refer to the following images to get more clarity.</p>
-
-<p><a target="_blank" href="pages/developer-docs/installation/images/keycloack-add-realm.png">
-        <img src="pages/developer-docs/installation/images/keycloack-add-realm.png" alt="Keycloak realm" class="plugin center" width="50%" />
-      </a></p>
-
-<p><a target="_blank" href="pages/developer-docs/installation/images/keycloak-choose-json.png">
-        <img src="pages/developer-docs/installation/images/keycloak-choose-json.png" alt="choose keycloak json" class="plugin center" width="50%" />
-      </a></p>
-
-<p>On the import screen, choose the json file and then click ‘Create’.</p>
-
-<p><a target="_blank" href="pages/developer-docs/installation/images/keycloak-import-realm.png">
-        <img src="pages/developer-docs/installation/images/keycloak-import-realm.png" alt="Keycloak import realm" class="plugin center" width="50%" />
-      </a></p>
-
-<p>Once the realm is imported ensure the realm is set as active realm before proceeding with the rest of the configuration</p>
-
-<h3 id="smtp-configuration">SMTP Configuration</h3>
-
-<p>Email configuration is needed to ensure password reset and user management flows work smoothly. Navigate to <code>Realm Settings &gt; Email</code>. Fill up the SMTP credentials and use the Test Connection button to verify the SMTP connection is working.</p>
-
-<h3 id="create-a-user-who-can-access-the-user-management-api">Create a user who can access the user management API</h3>
-
-<p>Navigate to Manage &gt; Users and create a new user. Put the username as <code>user-manager</code>, set the email to be verified and save. After saving, assign a password to this user.</p>
-
-<p>Next update the client roles under role mappings to ensure that this user has the <code>manage-users</code>, <code>query-users</code>, <code>query-groups</code> and <code>view-users</code> roles.The screenshot below gives a view of reference configuration.</p>
-
-<p><a target="_blank" href="pages/developer-docs/installation/images/keycloak-add-user-manager.png">
-        <img src="pages/developer-docs/installation/images/keycloak-add-user-manager.png" alt="Keycloak use management" class="plugin center" width="50%" />
-      </a></p>
-
-<p>Use corresponding username and password values for this user as the values for <code>sunbird_sso_username</code> and <code>sunbird_sso_password</code> in the configuration.</p>
-
-<h3 id="update-client--secrets">Update Client &amp; Secrets</h3>
-
-<p>Navigate to <code>Clients</code> and make the changes listed below to each of the clients. Only change the clients listed below. Settings for other clients need not be changed.</p>
-
-<h4 id="account-broker-realm-management">Account, broker, realm-management</h4>
-
-<p>Go to the <code>Credentials</code> tab and regenerate the Secret and Registration Access Token. Note both, you will need them in a later step.</p>
-
-<h4 id="android">Android</h4>
-
-<p>Change the Root URL to <code>https://sunbird.example.com</code>
-Add a Valid Redirect URI <code>https://sunbird.example.com/oauth2callback</code></p>
-
-<h4 id="portal">Portal</h4>
-
-<p>Change the Root URL to <code>https://sunbird.example.com</code>
-Add Valid Redirect URIs <code>https://sunbird.example.com/private/*</code> and <code>https://sunbird.example.com/</code></p>
-
-<h4 id="trampoline">Trampoline</h4>
-
-<p>Change the Root URL to <code>https://sunbird.example.com</code>
-Go to the Credentials tab and regenerate the Secret and Registration Access Token. Use the secret as the value for the <code>sunbird_trampoline_secret</code> configuration.</p>
 
           
           <hr />
@@ -485,12 +383,12 @@ Go to the Credentials tab and regenerate the Secret and Registration Access Toke
 			<!--<a target="_blank"  class="" href="">
 				  <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;-->
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/keycloak_realm_configuration.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/glossary/index.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="developer-docs/installation/keycloak_realm_configuration/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="glossary/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -544,7 +442,7 @@ Go to the Credentials tab and regenerate the Secret and Registration Access Toke
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'developer-docs/installation/keycloak_realm_configuration/' + url;
+		this.href = 'glossary/' + url;
     })
   </script>
   </body>
