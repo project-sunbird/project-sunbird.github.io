@@ -1,4 +1,12 @@
-
+---
+type: landing
+directory: developer-docs/installation
+title: Authentication
+page_title: IUser Authentication via OTP
+description: Authenticating user based on OTP
+published: true
+allowSearch: true
+---
 ## Keycloak based (OTP) Authentication
 
 On Sunbird, if a user forgets the password , generally the reset password link is sent on users registered email but in certain cases where users have registered with phone numbers instead of email address, the SMS based verification is done to authenticate the legitimacy of the user. The reset process is started by sending an One Time Password (OTP) as a SMS to the users registered mobile number. This One Time Password (OTP) is used by the user to validate and reset the password.
