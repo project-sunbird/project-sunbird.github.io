@@ -28,9 +28,11 @@ Complete the following pre-requisites before installing and running the Sunbird-
 ### Setup 
 
 1. **Checkout code**
+    
     git clone https://github.com/project-sunbird/sunbird-portal.git
     
 2. **Run the following commands**
+   
     $ cd <PROJECT-FOLDER>/src
     $ npm install
     $ bower cache clean
@@ -66,6 +68,7 @@ Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in your fa
 ## Run Application
 
 * Run the following commands:
+   
     $ gulp build
     $ cd <PROJECT-FOLDER>/src/app
     $ node server.js
