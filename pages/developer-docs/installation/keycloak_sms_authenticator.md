@@ -15,7 +15,7 @@ Meanwhile, a thorough understanding of Authentication SPI i.e., authenticating t
 
  Once the understanding is clear about how an authenticator is implemented, you can proceed to SMS Authenticator code which can be accessed [here](https://github.com/project-sunbird/sunbird-auth/tree/master/keycloak){:target="_blank"},its located in the folder "sms-provider". This code needs to be imported to Intellij/Eclipse IDE as an Maven Project to start building the authenticator.
 
-##  Build Process for Keycloak SMS Based Authenticator
+###  Build Process for Keycloak SMS Based Authenticator
 
  To build the complete project and check the working of the SMS Authenticator follow the steps.
 
