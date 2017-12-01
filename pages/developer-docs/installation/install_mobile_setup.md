@@ -10,6 +10,7 @@ This section details the sequence of steps required if you plan to release your 
 
 - Run `sudo ./deploy-apis.sh {implementation-name}-devops/ansible/inventories/{environment-name)`
 - In console output of above script, copy the JWT token printed for `mobile_admin` user
+- Run
 
 <pre>
 curl -X POST 
