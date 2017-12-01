@@ -2,12 +2,10 @@
 type: landing
 directory: glossary
 title: A
-page_title: A
-description: glossary
-keywords: glossary, letter A, A
-published: true
+page_title: Glossary alphabet A
+description: Glossary alphabet A
+allowSearch: true
 ---
-
 Term | Defination |Sunbird Context
 -----|------------|-----------------
 Academic Calendar   |Academic calender refers to the date range between which significant academic events such as examinations, holidays, semesters etc are decided. Typically, in India, the academic calender starts at June and culminates at March  |
