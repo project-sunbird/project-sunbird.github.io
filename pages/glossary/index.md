@@ -14,43 +14,25 @@ allowSearch: true
 
 Alphabet A - F  | Alphabet G - M  |Alphabet O - T |Alphabet U - Z
 ----------------|-----------------|---------------|--------------
-[A](glossary/a){:target="_blank"}
+[A](glossary/a){:target="_blank"} | [G](glossary/g){:target="_blank"} |[O](glossary/o){:target="_blank"}  |[U](glossary/u){:target="_blank"}
 
-[B](glossary/b){:target="_blank"}
+[B](glossary/b){:target="_blank"} |[H](glossary/h){:target="_blank"}  |[P](glossary/p){:target="_blank"}  |[V](glossary/v){:target="_blank"}
 
-[C](glossary/c){:target="_blank"}
+[C](glossary/c){:target="_blank"} |[I](glossary/i){:target="_blank"}  |[Q](glossary/q){:target="_blank"}  |[W](glossary/w){:target="_blank"}
 
-[D](glossary/d){:target="_blank"}
+[D](glossary/d){:target="_blank"} | [J](glossary/j){:target="_blank"} |[R](glossary/r){:target="_blank"}  |[Z](glossary/z){:target="_blank"}
 
-[E](glossary/e){:target="_blank"}
+[E](glossary/e){:target="_blank"} |[L](glossary/l){:target="_blank"}  |[S](glossary/s){:target="_blank"}
 
-[F](glossary/f){:target="_blank"} |[G](glossary/g){:target="_blank"}
+[F](glossary/f){:target="_blank"} |[M](glossary/m){:target="_blank"}  |[T](glossary/t){:target="_blank"}
 
-[H](glossary/h){:target="_blank"}
 
-[I](glossary/i){:target="_blank"}
 
-[J](glossary/j){:target="_blank"}
 
-[L](glossary/l){:target="_blank"}
 
-[M](glossary/m){:target="_blank"} |[O](glossary/o){:target="_blank"}
 
-[P](glossary/p){:target="_blank"}
 
-[Q](glossary/q){:target="_blank"}
 
-[R](glossary/r){:target="_blank"}
-
-[S](glossary/s){:target="_blank"}
-
-[T](glossary/t){:target="_blank"} | [U](glossary/u){:target="_blank"}
-
-[V](glossary/v){:target="_blank"}
-
-[W](glossary/w){:target="_blank"}
-
-[Z](glossary/z){:target="_blank"}
 
 
 
