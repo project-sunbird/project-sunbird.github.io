@@ -8,12 +8,22 @@ allowSearch: true
 ---
 Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.
 
-### Automation for Azure
+## Automation for Azure
 
 The set of scripts on the Automation for Azure page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory. 
 
-Estimated run time: 30 mins for the fresh  time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
+The automated provisioning of servers is done via Automation for Azure. The automated provisioning setup:
+
+* Azure Virtual Network (aka VPC in AWS) 
+* Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers) 
+* Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves
+* Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm
+
+Estimated run time: 30 mins for the fresh  time. 
+
+Scripts can be re-tried and to create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
+
 Run the following steps from a machine which is connected to the internet:
 
 1. Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
@@ -33,7 +43,7 @@ Run the following steps from a machine which is connected to the internet:
 
 **Note:** The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
 
-#### Automation walkthrough
+### Automation walkthrough
 
 [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
 
@@ -41,18 +51,13 @@ Run the following steps from a machine which is connected to the internet:
 
 **Note:** The default automation process creates three servers because it separates the application and the administration server.
 
-### Manual Process
+## Manual Process
 
-The manual procedure commissions two servers. The first server serves as the DB(Database) server and the second serves as the application server & administration server.
+The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server & administration server.
 
-If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication. The automated provisioning of servers is done via Automation for Azure.
+If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication. 
 
-The automated provisioning setup:
 
-* Azure Virtual Network (aka VPC in AWS) 
-* Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers) 
-* Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves
-* Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm
 
 
 
