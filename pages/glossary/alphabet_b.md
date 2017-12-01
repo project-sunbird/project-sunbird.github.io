@@ -2,10 +2,9 @@
 type: landing
 directory: glossary
 title: B
-page_title: B
-description: glossary
-keywords: glossary, B, alphabet
-published: true
+page_title: Glossary alphabet B
+description: Glossary alphabet B
+allowSearch: true
 ---
 
 Term | Defination |Sunbird Context
