@@ -5,7 +5,7 @@ title: Troubleshooting
 page_title: Troubleshooting
 description: Troubleshooting
 keywords: Troubleshoot, answers, Database, application, Frequently asked questions, 'FAQ, questions'
-published: true
+allowSearch: true
 ---
 ## Database
 
