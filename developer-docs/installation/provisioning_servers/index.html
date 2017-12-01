@@ -32,7 +32,7 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-11-30 10:41:07 +0530">
+<meta name="last-modified" content="2017-12-01 17:21:31 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
@@ -47,11 +47,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?30112017"  />
-<link rel="stylesheet" href="css/style.css?30112017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?30112017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?30112017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?30112017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?01122017"  />
+<link rel="stylesheet" href="css/style.css?01122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?01122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?01122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?01122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -288,7 +288,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="faqs/database_questions/">Troubleshooting</a>
+						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
 				</div>
 			</li>
@@ -340,7 +340,7 @@
 				<a href="faqs/user_rightspermissions/">Users Rights and Permission</a>
 			</li>
 		</ul>
-		<a href="faqs/glossary/">
+		<a href="glossary/">
 			<h4 class="sidebar-group-title">Glossary</h4>
 		</a>
 	</div>
@@ -373,15 +373,53 @@ $("a[href$='developer-docs/installation/provisioning_servers/']").addClass("side
 			  </a>
 			  </span>
 			</p>
-          <p>Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Automation for Azure</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">Automation walkthrough</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#link1-3"><span class="tocnumber">2 .</span> <span class="toctext">Manual Process</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><p>Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.</p>
 
-<h3 id="automation-for-azure">Automation for Azure</h3>
+<h2 id="link1-1">Automation for Azure</h2>
 
 <p>The set of scripts on the Automation for Azure page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory.</p>
 
-<p>Estimated run time: 30 mins for the fresh  time. Scripts can be re-tried and will not create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
-Run the following steps from a machine which is connected to the internet:</p>
+<p>The automated provisioning of servers is done via Automation for Azure. The automated provisioning setup:</p>
+
+<ul>
+  <li>Azure Virtual Network (aka VPC in AWS)</li>
+  <li>Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers)</li>
+  <li>Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves</li>
+  <li>Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm</li>
+</ul>
+
+<p>Estimated run time: 30 mins for the fresh  time.</p>
+
+<p>Scripts can be re-tried and to create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.</p>
+
+<p>Run the following steps from a machine which is connected to the internet:</p>
 
 <ol>
   <li>Clone the sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
@@ -402,28 +440,23 @@ Run the following steps from a machine which is connected to the internet:</p>
 
 <p><strong>Note:</strong> The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.</p>
 
-<h4 id="automation-walkthrough">Automation walkthrough</h4>
+<h3 id="link1-1-1">Automation walkthrough</h3>
 
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif" target="_blank">Part 1</a></p>
+<p>
+  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif" target="_blank">Part 1</a>
+</p>
 
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif" target="_blank">Part 2</a></p>
+<p>
+  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif" target="_blank">Part 2</a>
+</p>
 
 <p><strong>Note:</strong> The default automation process creates three servers because it separates the application and the administration server.</p>
 
-<h3 id="manual-process">Manual Process</h3>
+<h2 id="link1-3">Manual Process</h2>
 
-<p>The manual procedure commissions two servers. The first server serves as the DB(Database) server and the second serves as the application server &amp; administration server.</p>
+<p>The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server &amp; administration server.</p>
 
-<p>If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication. The automated provisioning of servers is done via Automation for Azure.</p>
-
-<p>The automated provisioning setup:</p>
-
-<ul>
-  <li>Azure Virtual Network (aka VPC in AWS)</li>
-  <li>Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers)</li>
-  <li>Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves</li>
-  <li>Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm</li>
-</ul>
+<p>If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication.</p>
 
 
           

@@ -1,0 +1,113 @@
+<h2 id="database">Database</h2>
+
+<p><strong>Q:</strong> Are data initialization scripts available?</p>
+
+<p><strong>A:</strong> Use the Cassandra.cql file to do the initial data setup. 
+Click <a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql" target="_blank">Casandra.cql</a> and run the file to create the initial Cassandra data base.</p>
+
+<p><strong>Q:</strong> Does the database have initial/ default entries for ‘Org’, ‘Role’ and ‘Users’?</p>
+
+<p><strong>A:</strong>  ‘Users’ do not have initial/default entries. There are default entries for ‘Org’ and ‘Roles’. 
+For details, refer the files:</p>
+
+<ul>
+  <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql" target="_blank">Casandra.cql</a> file, for data setup</li>
+  <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv" target="_blank">pageMgnt.csv</a>, for page section details</li>
+  <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv" target="_blank">pageSection.csv</a>, for details of a particular section</li>
+</ul>
+
+<p>Run the two .csv files under Cassandra. It has queries to generate page data and works based on BFF(Backend for frontend) design pattern.</p>
+
+<p><strong>Q:</strong>  Which databases are used in the application and for what purpose?</p>
+
+<p><strong>A:</strong> The following databases are used:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Used As</th>
+      <th>Used By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cassandra</td>
+      <td>Main database storage</td>
+      <td>The learner service</td>
+    </tr>
+    <tr>
+      <td>Elasticsearch</td>
+      <td>80% of the data storage for Cassandra</td>
+      <td>The Search engine</td>
+    </tr>
+    <tr>
+      <td>Postgres</td>
+      <td>A cron scheduler job, to run in cluster mode</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>MongoDB</td>
+      <td>A store for session data</td>
+      <td>The player service</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Q:</strong> Does the launch of any application initaiate seed data?</p>
+
+<p><strong>A:</strong> When an application is launched, the following table data are cached. This data needs to be refreshed daily.</p>
+
+<ul>
+  <li>page_management</li>
+  <li>page_section</li>
+</ul>
+
+<h2 id="application">Application</h2>
+
+<p><strong>Q</strong>: How do I test if the APIs are working ?</p>
+
+<p><strong>A</strong>:  Once you complete Sunbird installation, use the GET API https://hostname/health .
+    For details of more API check routes, refer to the <a href="https://github.com/project-sunbird/sunbird-lms-service/blob/master/service/conf/routes" target="_blank">Routes</a>
+     This file has a list of URLs.</p>
+
+<p><strong>Q</strong>: What Authorization header should be used to access these API ?</p>
+
+<p><strong>A</strong>:  Api requests have following headers:</p>
+
+<ul>
+  <li>Authorization : This has the service access key. For example; Bearer</li>
+  <li>x-authenticated-user-token : The user authentication token, if a particular API requires it</li>
+  <li>X-msgid : The unique message id for each request.</li>
+</ul>
+
+<p><strong>Q</strong>: How do I register my own application with keycloak for development?
+ <strong>Q</strong>: I want to create new APIs as extensions of the existing Sunbird API. Can I register to keycloak and allow communication between them securely?</p>
+
+<p><strong>A</strong>:  You need to install the keycloak. After it is successfully installed, set following details under System Env or sso.properites file to communicate with keycloak.</p>
+
+<ul>
+  <li>sso.url</li>
+  <li>sso.realm</li>
+  <li>sso.username</li>
+  <li>sso.password</li>
+  <li>sso.client.id</li>
+  <li>sso.client.secret // optional</li>
+  <li>sunbird_sso_publickey // it will always read from System ENV</li>
+</ul>
+
+<p><strong>Q</strong>: What are the credentials for super user?</p>
+
+<p><strong>A</strong>:</p>
+
+<p><strong>Q</strong>: Is the user who creates the organizations and grants the existing users permissions the same user-manager created while creating the realm on keycloak?</p>
+
+<p><strong>A</strong>:</p>
+
+<h2 id="telemetry">Telemetry</h2>
+
+<p><strong>Q</strong>: Is there any controller for telemetry events in Sunbird? How can telemetry data be accessed from Sunbird?</p>
+
+<p><strong>A</strong>: Sunbird provides dashboards for admins that provide summary views of the telemetry. For raw telemetry data, you need to pull out the data from the ekstep platform. To do so, use the <a href="https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api" target="_blank">On Demand Data Exhaust API</a></p>
+
+<p><strong>Note</strong>: Sign in to the Ekstep Community portal to access the API (https://community.ekstep.in)</p>

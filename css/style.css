@@ -4320,9 +4320,9 @@ img.nofloat {
         margin-right: -30px;
         background-color: #eeeeee; }
   .inner__content h2 {
-    font-size: 36px; }
-  .inner__content h3 {
     font-size: 30px; }
+  .inner__content h3 {
+    font-size: 24px; }
   .inner__content h4 {
     font-size: 22px;
     font-weight: 300; }

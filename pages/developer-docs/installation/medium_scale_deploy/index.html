@@ -1,12 +1,12 @@
 <p>This page provides a summarized listing of the essential steps for planning, installing, and configuring your Sunbird deployment in a live environment. </p>
 
-<h3 id="pre-requisites">Pre-requisites</h3>
+<h2 id="pre-requisites">Pre-requisites</h2>
 
 <p>Before you install Sunbird into the production environment, examine your  environment and gather data to ensure an optimal installation experience.</p>
 
 <p>Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.</p>
 
-<h4 id="system-requirements">System Requirements</h4>
+<h3 id="system-requirements">System Requirements</h3>
 
 <p>To install Sunbird, the servers should have the following minimum system requirements:</p>
 
@@ -17,25 +17,26 @@
   <li>root access (should be able to sudo)</li>
 </ul>
 
-<h4 id="api-keys">API Keys</h4>
+<h3 id="api-keys">API Keys</h3>
 
 <p>API keys are supposed to approve a user or a device with authorization for access.For getting the API keys , you need to send an Email to :<a href="mailto:info@sunbird.org">info@sunbird.org</a>.</p>
 
-<h4 id="ssl-certificate">SSL Certificate</h4>
+<h3 id="ssl-certificate">SSL Certificate</h3>
+
 <p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. <a href="https://letsencrypt.org/">LetsEncrypt</a> provides free SSL certificates. You can also use a CA of your choice.</p>
 
-<p><strong>Note</strong>: A self-signed certification will cause authentication to fail with an “Access Denied” error because the certificate will not be verified.</p>
+<p><strong><em>Note</em></strong>: A self-signed certification will cause authentication to fail with an “Access Denied” error because the certificate will not be verified.</p>
 
-<h4 id="relevant-variables">Relevant Variables</h4>
+<h3 id="relevant-variables">Relevant Variables</h3>
 
 <p>To make the deployment scenario simple and clear, we use the following variables:</p>
 
 <ul>
-  <li><strong>implementation-name</strong> : This variable refers to the name of sunbird implementation. For example; Sunbird-Demo</li>
+  <li><strong>implementation-name</strong> : This variable refers to the name of Sunbird implementation. For example; Sunbird-Demo</li>
   <li><strong>environment-name</strong> : This variable refers to the name of the environment where you deploy Sunbird. For example; Development, Test, Staging, Production, etc.</li>
 </ul>
 
-<h3 id="installation-checklist">Installation Checklist</h3>
+<h2 id="installation-checklist">Installation Checklist</h2>
 
 <p>Before you start the installation process make sure you have successfully</p>
 
@@ -48,26 +49,26 @@
   <li>Verify the required network requirements and that ports are available for Sunbird components to communicate</li>
 </ul>
 
-<h3 id="provisioning-servers">Provisioning servers</h3>
+<h2 id="provisioning-servers">Provisioning servers</h2>
 
-<p>Server provisioning is a set of actions to prepare a server with appropriate systems, data and software, and make it ready for network operation. Refer the link <a href="developer-docs/installation/provisioning_servers" target="_blank">Provisioning Servers</a>to see Automated and Manual process to provision the servers.</p>
+<p>Server provisioning is a set of actions to prepare a server with appropriate systems, data and software, and make it ready for network operation. <a href="developer-docs/installation/provisioning_servers" target="_blank">Provisioning Servers</a> section will help you to see Automated and Manual process to provision the servers.</p>
 
-<h3 id="setup-databases">Setup Databases</h3>
+<h2 id="setup-databases">Setup Databases</h2>
 
-<p>Sunbird helps you to setup your database. Visit the link <a href="developer-docs/installation/setup_db" target="_blank">Setup Databases</a>for details.</p>
+<p>Sunbird helps you to setup your database. This section <a href="developer-docs/installation/setup_db" target="_blank">Setup Databases</a> contains more detail.</p>
 
-<h3 id="deploying-sunbird-services">Deploying Sunbird Services</h3>
+<h2 id="deploying-sunbird-services">Deploying Sunbird Services</h2>
 
-<p>Visit <a href="developer-docs/installation/deploy_sb_services" target="_blank">Deploying Sunbird Services</a> for details.</p>
+<p>This section <a href="developer-docs/installation/deploy_sb_services" target="_blank">Deploying Sunbird Services</a> explains how to deploy Sunbird services.</p>
 
-<h3 id="customizing-assets">Customizing Assets</h3>
+<h2 id="customizing-assets">Customizing Assets</h2>
 
-<p>This section will explain how to customize look and feel of Sunbird. Visit <a href="developer-docs/installation/cust_sunbird" target="_blank">Customizing Assets</a> for details.</p>
+<p>This section <a href="developer-docs/installation/cust_sunbird" target="_blank">Customizing Assets</a> explains how to customize look and feel of Sunbird.</p>
 
-<h3 id="check-installation">Check Installation</h3>
+<h2 id="check-installation">Check Installation</h2>
 
 <p>To check if Sunbird is properly installed, refer to the link <a href="developer-docs/installation/check_installation" target="_blank">Check Installation</a></p>
 
-<h3 id="making-your-own-mobile-app">Making your own Mobile App</h3>
+<h2 id="making-your-own-mobile-app">Making your own Mobile App</h2>
 
-<p>If you plan to release your own mobile app using the Sunbird mobile app codebase visit <a href="developer-docs/installation/install_mobile_setup" target="_blank">Generate key and install mobile app</a></p>
+<p>If you plan to release your own mobile app using the Sunbird mobile app codebase refer <a href="developer-docs/installation/install_mobile_setup" target="_blank">Generate key and install mobile app</a></p>
