@@ -7,7 +7,7 @@ description: Troubleshooting
 keywords: Troubleshoot, answers, Database, application, Frequently asked questions, 'FAQ, questions'
 published: true
 ---
-### Database
+## Database
 
 **Q:** Are data initialization scripts available?
 
@@ -43,7 +43,7 @@ MongoDB   |A store for session data     |The player service
 - page_management 
 - page_section
 
-### Application 
+## Application 
 
 **Q**: How do I test if the APIs are working ? 
 
@@ -80,7 +80,7 @@ MongoDB   |A store for session data     |The player service
  
  **A**: 
 
-### Telemetry
+## Telemetry
 
 **Q**: Is there any controller for telemetry events in Sunbird? How can telemetry data be accessed from Sunbird?
 
