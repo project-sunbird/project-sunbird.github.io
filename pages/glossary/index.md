@@ -12,6 +12,8 @@ allowSearch: true
 
 **Sunbird Glossary** contains all the definations and usage of importatnt terms and concepts used in the application and the portal. The words are alphabetically arranged, that gives brief definitions and usage related to a specific topic and concepts. 
 
+Alphabet A - F  | Alphabet G - M  |Alphabet O - T |Alphabet U - Z
+----------------|-----------------|---------------|--------------
 [A](glossary/a){:target="_blank"}
 
 [B](glossary/b){:target="_blank"}
@@ -22,9 +24,7 @@ allowSearch: true
 
 [E](glossary/e){:target="_blank"}
 
-[F](glossary/f){:target="_blank"}
-
-[G](glossary/g){:target="_blank"}
+[F](glossary/f){:target="_blank"} |[G](glossary/g){:target="_blank"}
 
 [H](glossary/h){:target="_blank"}
 
@@ -34,9 +34,7 @@ allowSearch: true
 
 [L](glossary/l){:target="_blank"}
 
-[M](glossary/m){:target="_blank"}
-
-[O](glossary/o){:target="_blank"}
+[M](glossary/m){:target="_blank"} |[O](glossary/o){:target="_blank"}
 
 [P](glossary/p){:target="_blank"}
 
@@ -46,9 +44,7 @@ allowSearch: true
 
 [S](glossary/s){:target="_blank"}
 
-[T](glossary/t){:target="_blank"}
-
-[U](glossary/u){:target="_blank"}
+[T](glossary/t){:target="_blank"} | [U](glossary/u){:target="_blank"}
 
 [V](glossary/v){:target="_blank"}
 
