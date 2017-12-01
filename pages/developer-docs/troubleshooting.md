@@ -71,14 +71,6 @@ MongoDB   |A store for session data     |The player service
  + sso.client.id
  + sso.client.secret // optional
  + sunbird_sso_publickey // it will always read from System ENV
- 
- **Q**: What are the credentials for super user? 
- 
- **A**:
- 
- **Q**: Is the user who creates the organizations and grants the existing users permissions the same user-manager created while creating the realm on keycloak? 
- 
- **A**: 
 
 ## Telemetry
 
