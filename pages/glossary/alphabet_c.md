@@ -2,10 +2,9 @@
 type: landing
 directory: glossary
 title: C
-page_title: C
-description: glossary
-keywords: glossary, C, alphabet
-published: true
+page_title: Glossary alphabet C
+description: Glossary alphabet C
+allowSearch: true
 ---
 
 Term | Defination |Sunbird Context
