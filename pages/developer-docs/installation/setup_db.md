@@ -6,14 +6,14 @@ page_title: Setup Database
 description: About setting up DB
 allowSearch: true
 ---
-You can either use existing databases, create them manually or run the automation scripts provided to create them. Sunbird uses  the following databases:
+You can either use existing databases, create them manually or run the automation scripts provided to create them. Sunbird uses the following databases:
 
    - Cassandra
    - Postgres
    - Mongo
    - Elasticsearch
    
-**Preparation to Setup Databases**
+## Preparation to Setup Databases
 
 Run the following steps from your local machine:
 
@@ -40,7 +40,7 @@ Modify all the configurations under `# DB CONFIGURATION` block in `<implementati
 
 The estimated  run time for  preparation to Set up Databases is 15-30mins and another 30 mins to complete complete the process.
 
-**Creating Databases using automation**
+### Creating Databases using automation
 
 Estimated elapsed time is 10-15 mins (in an environment with fast internet).
 
@@ -54,11 +54,11 @@ Following is a set of scripts which installs the Databases into the `db-server` 
 
 [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}
 
-**Create Databases Manually**
+### Create Databases Manually
 
 To create the databases manually, refer to the corresponding database user guides from their respective websites.
 
-**Initialize Databases**
+### Initialize Databases
 
 Initialize the databases after they are installed using the following the procedure:
 
