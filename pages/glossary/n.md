@@ -6,5 +6,5 @@ page_title: Glossary alphabet N
 description: Glossary alphabet N
 allowSearch: true
 ---
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
