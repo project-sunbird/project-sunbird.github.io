@@ -7,7 +7,7 @@ description: Glossary alphabet B
 allowSearch: true
 ---
 
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
 Benchmark   | Benchmark is the standard point of comparison. It is set as the highest point of achievement/comparison.   |
 Benchmark Assessment    |Benchmark assessments are short tests which are administered in class throughout the academic year to help teachers assess the academic performance of students.    |Benchmark assessments can be created on the inbuilt content editor. These assessments can be added to courses, lessons etc. to track the progress of a user’s learning curve.
