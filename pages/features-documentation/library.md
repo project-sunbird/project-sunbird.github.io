@@ -45,9 +45,9 @@ A Library typically refers to a place or a space, housing a large collection of 
           <ul>
             <li>All: To search for all content available in the portal</li>
             <li>Courses: To search for all the courses available in the portal</li>
-            <li>Library: To search for content available in the Library</li>
-            <li>Organizations: To search for Organizations uploaded in the portal</li>
-            <li>Users: To search for Users uploaded in the portal</li>
+            <li>Library: To search for content available in the library</li>
+            <li>Organizations: To search for organizations uploaded in the portal</li>
+            <li>Users: To search for users uploaded in the portal</li>
          </ul>
          <li>Alternatively, you can type and search for the content in the library</li>
          <ul>
@@ -92,7 +92,7 @@ A Library typically refers to a place or a space, housing a large collection of 
    
  ## View Popular Stories
 
-Popular studies materials are listed here. 
+Popular study materials are listed here. 
 
 - Click to view the study materials. 
 - Click right or left **Scroll bar** to scroll
