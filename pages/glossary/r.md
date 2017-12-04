@@ -6,7 +6,7 @@ page_title: Glossary alphabet R
 description: Glossary alphabet R
 allowSearch: true
 ---
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
 Reference |Any additional information for a particular topic/unit/chapter. References aid in understanding any given concept better. |
 Reference Material  |Any study/learning material that provides additional information on any given topic/unit/chapter. |
