@@ -82,7 +82,7 @@ A Library typically refers to a place or a space, housing a large collection of 
          <li>Alternatively, you can type and search for the content in the library</li>
          <ul>
            <li>Click <strong>Apply</strong> to apply the filters</li>
-           <li>Click <strong>Reset</strong> to reset the selected filters
+	   <li>Click <strong>Reset</strong> to reset the selected filters</li>
          </ul>
         </ol>
      </td>
