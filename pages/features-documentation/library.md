@@ -8,7 +8,7 @@ keywords: 'resources, classroom resources, classroom content, consume resources,
 published: true
 allowSearch: true
 ---
-**Library**
+
 
 A Library typically refers to a place or a space, housing a large collection of books, study material or information. On Sunbird, library is one of the key modules where all content created or uploaded.
 
@@ -41,19 +41,21 @@ A Library typically refers to a place or a space, housing a large collection of 
    <td>
        <ol>
          <li>Click the <strong>Dropdown</strong></li>
-         <li>Select from the following lists:</li>
-          <ul>
-            <li>All: To search for all content available in the portal</li>
-            <li>Courses: To search for all the courses available in the portal</li>
-            <li>Library: To search for content available in the library</li>
-            <li>Organizations: To search for organizations uploaded in the portal</li>
-            <li>Users: To search for users uploaded in the portal</li>
-         </ul>
-         <li>Alternatively, you can type and search for the content in the library</li>
-         <ul>
-           <li>Enter the name or keyword of the content in the <strong>Search Bar</strong></li>
-           <li>Click on the search icon or press <strong>Enter</strong></li>
-         </ul>
+         <li>Select from the following lists:
+			<ul>
+				<li>All: To search for all content available in the portal</li>
+				<li>Courses: To search for all the courses available in the portal</li>
+				<li>Library: To search for content available in the library</li>
+				<li>Organizations: To search for organizations uploaded in the portal</li>
+				<li>Users: To search for users uploaded in the portal</li>
+			</ul>
+         </li>
+         <li>Alternatively, you can type and search for the content in the library
+			<ul>
+				<li>Enter the name or keyword of the content in the <strong>Search Bar</strong></li>
+				<li>Click on the search icon or press <strong>Enter</strong></li>
+			</ul>
+         </li>
         </ol>
      </td>
     <td><img src="pages/features-documentation/images/library_search.png"></td>
@@ -71,19 +73,21 @@ A Library typically refers to a place or a space, housing a large collection of 
    <td>
        <ol>
          <li>Click on the <strong>Filter icon</strong></li>
-         <li>You can filter the content by selecting from the respective dropdowns:</li>
-          <ul>
-            <li>Curriculum</li>
-            <li>Content Types</li>
-            <li>Medium</li>
-            <li>Subjects</li>
-            <li>Concepts</li>
+         <li>You can filter the content by selecting from the respective dropdowns:
+			<ul>
+				<li>Curriculum</li>
+				<li>Content Types</li>
+				<li>Medium</li>
+				<li>Subjects</li>
+				<li>Concepts</li>
+			</ul>
+         </li>
+         <li>Alternatively, you can type and search for the content in the library
+			<ul>
+			<li>Click <strong>Apply</strong> to apply the filters</li>
+			<li>Click <strong>Reset</strong> to reset the selected filters</li>
          </ul>
-         <li>Alternatively, you can type and search for the content in the library</li>
-         <ul>
-           <li>Click <strong>Apply</strong> to apply the filters</li>
-	   <li>Click <strong>Reset</strong> to reset the selected filters</li>
-         </ul>
+         </li>
         </ol>
      </td>
     <td><img src="pages/features-documentation/images/library_filter.png"></td>
