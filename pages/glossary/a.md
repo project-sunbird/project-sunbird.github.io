@@ -6,7 +6,7 @@ page_title: Glossary alphabet A
 description: Glossary alphabet A
 allowSearch: true
 ---
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
 Academic Calendar   |Academic calender refers to the date range between which significant academic events such as examinations, holidays, semesters etc are decided. Typically, in India, the academic calender starts at June and culminates at March.  |
 Accreditation   |Accreditation in a process in which certifications of competency, completion, or credibility is issued. Recognized body of individuals does accreditation.  |On Sunbird, users are awarded accreditations for completing one or many courses, or an assessment. Content creators determine what level of completion or what assessment completion entitles the learner to get accredited. Organizations that conduct the course or assessments determine a credible institute or body of individuals to provide accreditation to the users.
