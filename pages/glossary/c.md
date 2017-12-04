@@ -7,7 +7,7 @@ description: Glossary alphabet C
 allowSearch: true
 ---
 
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
 Calendar  |A chronological arrangement of days, and month based on the position of the earth and its proximity to the sun. |Calender is used to mark duration of dates. Date range is required for various references such as duration of course, duration of time required to complete a lesson etc.
 Calendar Entry  |Any entry which is date specific. The entry will be governed by a specific format which is predetermined in the system.  |Sunbird follows the format of dd-mm-yyyy.
