@@ -60,7 +60,7 @@ A Library typically refers to a place or a space, housing a large collection of 
   </tr>
   </table>
    
-## Advance Filter:
+## Advance Filter
 
 <table class="table table-img">
   <tr>
@@ -103,14 +103,14 @@ A Library typically refers to a place or a space, housing a large collection of 
 	       <li>Click on the <strong>Dropdown</strong> option on the right</li>
 	       <li>Sort content based on latest <strong>Modified</strong> or <strong>Created</strong></li>
 	   </ol>
-	</td>
+    </td>
 	<td><img src="pages/features-documentation/images/library_sort.png"></td>
-	</tr>
-	</table>
+    </tr>
+    </table>
 
 ## View Popular Stories
 
-Popular stories are listed here. 
+Popular stories are listed here: 
 
 <table class="table table-img">
   <tr>
@@ -123,10 +123,10 @@ Popular stories are listed here.
 	       <li>Click on any of the story to view</li>
 	       <li>Click right or left <strong>Scroll bar</strong> to scroll</li>
 	   </ol>
-	</td>
-	<td><img src="pages/features-documentation/images/library_popularstory.png"></td>
-	</tr>
-	</table>
+   </td>
+  <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
+  </tr>
+  </table>
 
   
 
