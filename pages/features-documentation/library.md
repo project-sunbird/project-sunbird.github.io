@@ -92,16 +92,41 @@ A Library typically refers to a place or a space, housing a large collection of 
    
 ## Sort content
 
-1. Click on the **Dropdown** option on the right 
-2. Sort content based on latest **Modified** or **Created** 
+<table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
+  <tr>
+   <td>
+       <ol>
+	       <li>Click on the <strong>Dropdown</strong> option on the right</li>
+	       <li>Sort content based on latest <strong>Modified</strong> or <strong>Created</strong></li>
+	   </ol>
+	</td>
+	<td><img src="pages/contributions/images/edit1.png"></td>
+	</tr>
+	</table>
 
 ## View Popular Stories
 
-Popular study materials are listed here. 
+Popular stories are listed here. 
 
-- Click to view the study materials. 
-- Click right or left **Scroll bar** to scroll
-
+<table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
+  <tr>
+   <td>
+       <ol>
+	       <li>Click on any of the story to view</li>
+	       <li>Click right or left <strong>Scroll bar</strong> to scroll</li>
+	   </ol>
+	</td>
+	<td><img src="pages/contributions/images/edit1.png"></td>
+	</tr>
+	</table>
 
   
 
