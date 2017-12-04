@@ -28,8 +28,7 @@ A Library typically refers to a place or a space, housing a large collection of 
      </td>
     <td><img src="pages/contributions/images/edit1.png"></td>
   </tr>
-  <tr>
-     
+       
 ## Search 
 
 <table class="table table-img">
@@ -58,8 +57,7 @@ A Library typically refers to a place or a space, housing a large collection of 
      </td>
     <td><img src="pages/contributions/images/edit1.png"></td>
   </tr>
-  <tr>
-  
+   
 ## Advance Filter:
 
 <table class="table table-img">
@@ -88,9 +86,8 @@ A Library typically refers to a place or a space, housing a large collection of 
      </td>
     <td><img src="pages/contributions/images/edit1.png"></td>
   </tr>
-  <tr> 
-
-## View Popular Stories
+ 
+ ## View Popular Stories
 
 Popular studies materials are listed here. 
 
