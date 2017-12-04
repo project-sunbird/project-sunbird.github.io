@@ -90,17 +90,19 @@ A Library typically refers to a place or a space, housing a large collection of 
   </tr>
   </table>
    
- ## View Popular Stories
+## Sort content
+
+1. Click on the **Dropdown** option on the right 
+2. Sort content based on latest **Modified** or **Created** 
+
+## View Popular Stories
 
 Popular study materials are listed here. 
 
 - Click to view the study materials. 
 - Click right or left **Scroll bar** to scroll
 
-## Sort content
 
-1. Click on the **Dropdown** option on the right 
-2. Sort content based on latest **Modified** or **Created** 
   
 
 
