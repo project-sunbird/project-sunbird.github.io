@@ -4378,7 +4378,7 @@ img.nofloat {
     margin: 30px 0; }
   .inner__content table {
     font-size: 13px;
-    margin: 30px 0; }
+    margin: 20px 0; }
     .inner__content table > tbody > tr > td {
       border-top: 1px solid #c7d4e4;
       padding: 10px 15px;
@@ -4493,6 +4493,19 @@ a:hover {
 
 .inner__content table img {
   width: 100%; }
+
+.glosary-list + table {
+  width: 100%; }
+
+.glosary-list + table td {
+  padding: 10px !important;
+  border: 0 !important; }
+
+.glosary-list + table tr {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 .breadcrumbs {
   list-style: none;

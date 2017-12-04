@@ -198,7 +198,7 @@
 
   table {
     font-size: 13px;
-    margin: 30px 0;
+    margin: 20px 0;
     > tbody {
       > tr > td {
         border-top: 1px solid #c7d4e4;
@@ -347,3 +347,16 @@ a:hover{cursor:pointer;}
 .inner__content table img{
 	width:100%;
 } 
+.glosary-list+table{
+	width:100%;
+}
+.glosary-list+table td{
+	padding:10px !important;
+	border:0 !important;
+}
+.glosary-list+table tr{
+	display:flex;
+	width:100%;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
