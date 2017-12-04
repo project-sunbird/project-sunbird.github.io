@@ -22,7 +22,7 @@ A Library typically refers to a place or a space, housing a large collection of 
   <tr>
    <td>
        <ol>
-	       <li>Login with your regisered credential</li>
+	 <li>Login with your regisered credential</li>
          <li>Click on the <strong>Library</strong> tab</li>
         </ol>
      </td>
