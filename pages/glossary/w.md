@@ -6,7 +6,7 @@ page_title: Glossary alphabet W
 description: Glossary alphabet W
 allowSearch: true
 ---
-Term  |Defination |Sunbird Context 
+Term  |Definition |Sunbird Context 
 ------|-----------|------------------
 Workflow  |A sequence of process for any task or piece of work starting initiation to completion. |On Sunbird, each feature has a workflow. Well defined workflows of the features enables users to toggle through in the portal with ease.
 Worksheet |A set or questions or tasks put together to assess the understanding of any particular topic/unit/chapter. |Worksheets can be created on Sunbord using the inbuilt content editor.
