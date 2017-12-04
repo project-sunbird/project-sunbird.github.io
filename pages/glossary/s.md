@@ -6,7 +6,7 @@ page_title: Glossary alphabet S
 description: Glossary alphabet S
 allowSearch: true
 ---
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
 Searchability |The ability of a human, system or computer to explore or examine, to find information.   |When users type in keywords to search on the platform, Sunbird search engine gets the most relevant and appropriate results in the fastest time.
 Sign in |An action that allows one to access the portal. |
