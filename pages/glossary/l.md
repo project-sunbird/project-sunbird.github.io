@@ -6,7 +6,7 @@ page_title: Glossary alphabet L
 description: Glossary alphabet L
 allowSearch: true
 ---
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
 Learner |A learner is any person who consumes the content on Sunbird. |
 Learning Material |Any content that serves the purpose of imparting any knowledge related information.  |
