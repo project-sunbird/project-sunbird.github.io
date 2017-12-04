@@ -12,6 +12,8 @@ allowSearch: true
 
 A Library typically refers to a place or a space, housing a large collection of books, study material or information. On Sunbird, library is one of the key modules where all content created or uploaded.
 
+<br/><br/>
+
 ## Prerequisite
 
 <table class="table table-img">
