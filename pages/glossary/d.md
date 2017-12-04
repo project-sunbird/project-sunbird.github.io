@@ -7,7 +7,7 @@ description: Glossary alphabet D
 allowSearch: true
 ---
 
-Term | Defination |Sunbird Context
+Term | Definition |Sunbird Context
 -----|------------|-----------------
 Dashboard |Dashboard, in an application, provides an overview of one's activities on the application. A dashboard can be customized to render information according to the user's needs.  |
 Data  |In computing, data is information that has been translated into a form that is efficient for movement or processing.
