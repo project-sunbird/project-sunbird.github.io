@@ -26,7 +26,7 @@ A Library typically refers to a place or a space, housing a large collection of 
          <li>Click on the <strong>Library</strong> tab</li>
         </ol>
      </td>
-    <td><img src="pages/contributions/images/edit1.png"></td>
+    <td><img src="pages/features-documentation/images/library_prerequisite.png"></td>
   </tr>
   </table>
        
@@ -56,7 +56,7 @@ A Library typically refers to a place or a space, housing a large collection of 
          </ul>
         </ol>
      </td>
-    <td><img src="pages/contributions/images/edit1.png"></td>
+    <td><img src="pages/features-documentation/images/library_search.png"></td>
   </tr>
   </table>
    
@@ -86,7 +86,7 @@ A Library typically refers to a place or a space, housing a large collection of 
          </ul>
         </ol>
      </td>
-    <td><img src="pages/contributions/images/edit1.png"></td>
+    <td><img src="pages/features-documentation/images/library_filter.png"></td>
   </tr>
   </table>
    
@@ -104,7 +104,7 @@ A Library typically refers to a place or a space, housing a large collection of 
 	       <li>Sort content based on latest <strong>Modified</strong> or <strong>Created</strong></li>
 	   </ol>
 	</td>
-	<td><img src="pages/contributions/images/edit1.png"></td>
+	<td><img src="pages/features-documentation/images/library_sort.png"></td>
 	</tr>
 	</table>
 
@@ -124,7 +124,7 @@ Popular stories are listed here.
 	       <li>Click right or left <strong>Scroll bar</strong> to scroll</li>
 	   </ol>
 	</td>
-	<td><img src="pages/contributions/images/edit1.png"></td>
+	<td><img src="pages/features-documentation/images/library_popularstory.png"></td>
 	</tr>
 	</table>
 
