@@ -13,7 +13,7 @@ Organization administrators can use the credentials received to sign in and uplo
 
 ## Signing In
 
-1. Sign in to the portal using your registered credentials
+1. Sign in the Sunbird portal using your registered credentials
 
 ## Accessing your Workspace
 
