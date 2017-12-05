@@ -134,6 +134,50 @@ Popular stories are listed here:
   </tr>
   </table>
 
+### Consuming a story
+
+Click on the story you wish to consume. The story is displayed in the content editor
+
+<table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
+  <tr>
+   <td>
+       <ol>
+	       <li>Click on the **Share** icon to the share the story</li>
+	</ol>
+   </td>
+  <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
+  </tr>
+    <tr>
+  <td>
+       <ol>
+	       <li>Click on the **Share** icon to the share the story</li>
+	</ol>
+   </td>
+ <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
+  </tr>	
+    <tr>
+  <td>
+	  <ol>
+		  <li>A screen with the link to the story is dislayed</li>
+		  <li>Click **COPY LINK** to copy the link</li>
+		  <li>Click **Close** icon to go back to the content player</li>
+	   <ol>
+    </td>
+ <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
+  </tr>	
+    <tr>
+  <td>
+	  <ol>
+		  <li>A screen with the link to the story is dislayed</li>
+		  <li>Click **COPY LINK** to copy the link</li>
+		  <li>Click **Close** icon to go back to the content player</li>
+	   <ol>
+  </table>
+
   
 
 
