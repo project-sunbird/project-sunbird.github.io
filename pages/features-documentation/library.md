@@ -144,7 +144,20 @@ Popular stories are listed here. The different story types displayed are:
 
 ### Consuming a story
 
-Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information are of the story provided below the player 
+<table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
+  <tr>
+   <td>
+	   <ul>
+		   <li>Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story provided below the player</li>
+	   </ul>
+	</td>
+	<td><img src="pages/features-documentation/images/library_popularstory.png"></td>
+	</tr>
+	</table>
 
 #### Sharing Stroies
 
@@ -156,12 +169,12 @@ Click on the story you wish to consume. The story is displayed on the inbuilt co
   <tr>
    <td>
        <ol>
-	       <li>Click on the <strong>Share</strong> icon to the share the story</li>
+	       <li>Click on the <strong>Share</strong> icon to share the story</li>
 	</ol>
    </td>
   <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
   </tr>
-    <tr>
+  <tr>
   <td>
        <ol>
 	       <li>A screen with the link to the story is dislayed</li>
@@ -185,7 +198,7 @@ Click on the story you wish to consume. The story is displayed on the inbuilt co
 	  <ol>
 		<li>Click <strong>Flag</strong> icon to flag the displayed content</li>
 		<li>Select a reason to describe why the content should be reviewed again</li>
-		<li>Add additional comments, if any</i>
+		<li>Add additional comments, if any</li>
 	        <li>Click <strong>Submit</strong> to submit the reasons for flagging the story</li>
 	   </ol>
     </td>
@@ -212,12 +225,15 @@ Click on the story you wish to consume. The story is displayed on the inbuilt co
 	<td>
 		<ol>
 			<li>Enter <strong>Title</strong></li>
-		  <li>Enter <strong>Description</strong></li>
-			<li>You can format the description entered with the various formatting options are available here</li>
+		  	<li>Enter <strong>Description</strong></li>
+			<li>You can format the description entered with the various formatting options available</li>
 			<li>Click <strong>Clear</strong> to clear the note</li>
 			<li>Click <strong>Save</strong> to save the note</li>
 			<li>Click <strong>Close</strong> icon to exit the page</li>
-	   <ol>
+	        </ol>
+	</td>
+	<td><img src="pages/features-documentation/images/library_popularstory.png"></td>
+	</tr>
   </table>
 
   
