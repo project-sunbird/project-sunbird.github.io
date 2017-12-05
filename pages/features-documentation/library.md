@@ -216,7 +216,7 @@ Popular stories are listed here. The different story types displayed are:
     <tr>
   <td>
 	  <ol>
-		  <li>Click<strong>TAKE NOTE</strong> icon or link to takes notes while viewing the story</li>
+		  <li>Click <strong>TAKE NOTE</strong> icon or link to take notes while viewing the story</li>
 	    </ol>
 	</td>
 	<td><img src="pages/features-documentation/images/library_popularstory.png"></td>
