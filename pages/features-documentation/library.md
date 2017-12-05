@@ -159,7 +159,7 @@ Popular stories are listed here. The different story types displayed are:
 	</tr>
 	</table>
 
-#### Sharing Stroies
+**Sharing Stroies**
 
 <table class="table table-img">
   <tr>
@@ -182,11 +182,11 @@ Popular stories are listed here. The different story types displayed are:
 	       <li>Click <strong>Close</strong> icon to go back to the content player</li>
 	</ol>
    </td>
- <td><img src="features-documentation/images/library_copylink.png"></td>
+  <td><img src="pages/features-documentation/images/library_copylink.png"></td>
   </tr>
   </table>
   
-  #### Flagging Stories
+  **Flagging Stories**
   
   <table class="table table-img">
   <tr>
@@ -214,7 +214,7 @@ Popular stories are listed here. The different story types displayed are:
   </tr>
   </table>
   
-  #### Taking Notes
+  **Taking Notes**
  
  <table class="table table-img">
   <tr>
