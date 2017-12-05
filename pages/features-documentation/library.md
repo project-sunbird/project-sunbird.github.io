@@ -116,7 +116,15 @@ A Library typically refers to a place or a space, housing a large collection of 
 
 ## View Popular Stories
 
-Popular stories are listed here: 
+Popular stories are listed here. The different story types displayed are:
+
+- YouTube videos
+- Audio Clips
+- Video Clips
+- Assessments
+- Tutorials
+- Presentations
+- Worksheets
 
 <table class="table table-img">
   <tr>
@@ -136,7 +144,9 @@ Popular stories are listed here:
 
 ### Consuming a story
 
-Click on the story you wish to consume. The story is displayed in the content editor
+Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information are of the story provided below the player 
+
+#### Sharing Stroies
 
 <table class="table table-img">
   <tr>
@@ -146,7 +156,7 @@ Click on the story you wish to consume. The story is displayed in the content ed
   <tr>
    <td>
        <ol>
-	       <li>Click on the **Share** icon to the share the story</li>
+	       <li>Click on the <strong>Share</strong> icon to the share the story</li>
 	</ol>
    </td>
   <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
@@ -154,27 +164,59 @@ Click on the story you wish to consume. The story is displayed in the content ed
     <tr>
   <td>
        <ol>
-	       <li>Click on the **Share** icon to the share the story</li>
+	       <li>A screen with the link to the story is dislayed</li>
+	       <li>Click <stong>COPY LINK</strong> to copy the link</li>
+	       <li>Click <strong>Close</strong> icon to go back to the content player</li>
 	</ol>
    </td>
  <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
-  </tr>	
+  </tr>
+  </table>
+  
+  #### Flagging Stories
+  
+  <table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
     <tr>
-  <td>
+    <td>
 	  <ol>
-		  <li>A screen with the link to the story is dislayed</li>
-		  <li>Click **COPY LINK** to copy the link</li>
-		  <li>Click **Close** icon to go back to the content player</li>
-	   <ol>
+		<li>Click <strong>Flag</strong> icon to flag the displayed content</li>
+		<li>Select a reason to describe why the content should be reviewed again</li>
+		<li>Add additional comments, if any</i>
+	        <li>Click <strong>Submit</strong> to submit the reasons for flagging the story</li>
+	   </ol>
     </td>
  <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
-  </tr>	
+  </tr>
+  </table>
+  
+  #### Taking Notes
+ 
+ <table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
     <tr>
   <td>
 	  <ol>
-		  <li>A screen with the link to the story is dislayed</li>
-		  <li>Click **COPY LINK** to copy the link</li>
-		  <li>Click **Close** icon to go back to the content player</li>
+		  <li>Click<strong>TAKE NOTE</strong> icon or link to takes notes while viewing the story</li>
+	    </ol>
+	</td>
+	<td><img src="pages/features-documentation/images/library_popularstory.png"></td>
+	  </tr>
+	   <tr>
+	<td>
+		<ol>
+			<li>Enter <strong>Title</strong></li>
+		  <li>Enter <strong>Description</strong></li>
+			<li>You can format the description entered with the various formatting options are available here</li>
+			<li>Click <strong>Clear</strong> to clear the note</li>
+			<li>Click <strong>Save</strong> to save the note</li>
+			<li>Click <strong>Close</strong> icon to exit the page</li>
 	   <ol>
   </table>
 
