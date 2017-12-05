@@ -41,6 +41,7 @@ Enter OrgID. Unique ID of the administration organization that is generated on S
 6. Descriptions and valid values for each columns are as listed below:
 
 Sl.No |Column Name  |Description  |Column Type  |Field Type |Valid Values
+------|-------------|-------------|-------------|-----------|-------------
 1 |FirstName  |User’s first name  |Alphabetic |Mandatory  |
 2 |LastName |User’s last name |Alphabetic |Optional |
 3 |phone  |User’s phone number  |Numeric  |Optional |
