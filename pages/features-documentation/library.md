@@ -177,7 +177,7 @@ Popular stories are listed here. The different story types displayed are:
   <tr>
   <td>
        <ol>
-	       <li>A screen with the link to the story is dislayed</li>
+	       <li>A screen with the link to the story is displayed</li>
 	       <li>Click <stong>COPY LINK</strong> to copy the link</li>
 	       <li>Click <strong>Close</strong> icon to go back to the content player</li>
 	</ol>
