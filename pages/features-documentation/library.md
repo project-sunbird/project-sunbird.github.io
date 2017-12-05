@@ -152,7 +152,7 @@ Popular stories are listed here. The different story types displayed are:
   <tr>
    <td>
 	   <ul>
-		   <li>Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story provided below the player</li>
+		   <li>Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story are provided below the player</li>
 	   </ul>
 	</td>
 	<td><img src="pages/features-documentation/images/library_desc_cont_inf.png"></td>
