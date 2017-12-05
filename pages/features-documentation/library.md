@@ -199,7 +199,7 @@ Popular stories are listed here. The different story types displayed are:
 		<li>Click <strong>Flag</strong> icon to flag the displayed content</li>
 		<li>Select a reason to describe why the content should be reviewed again</li>
 		<li>Add additional comments, if any</li>
-	        <li>Click <strong>Submit</strong> to submit the reasons for flagging the story</li>
+	        <li>Click <strong>Submit</strong> to submit the reasons for flagging the content</li>
 	   </ol>
     </td>
  <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
