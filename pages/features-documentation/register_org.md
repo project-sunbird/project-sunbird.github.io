@@ -33,8 +33,7 @@ Click the Profile Icon and select Profile
 Sl.No |Column Name  |Description  |Column Type  |Field Type |Valid Values
 ------|-------------|-------------|-------------|-----------|-------------
 1 |orgName  |Organization name  |Alphabetic |Mandatory
-2 |isRootOrg  |Whether the  organization has the authority to upload other organization |Alphabetic |Conditional  |TRUE 
-                                                                                                                   FALSE
+2 |isRootOrg  |Whether the  organization has the authority to upload other organization |Alphabetic |Conditional  |TRUE, FALSE
 3 |channel  |Channel ID provided to the administrator organization by Sunbird |Alphanumeric |Conditional  |
 4 |externalId |Unique ID associated with each organization in the administrating  organization’s repository |Alphanumeric |Optional |
 5 |provider |Channel ID provided to the administrator organization by Sunbird |Alphanumeric |Optional |
