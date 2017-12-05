@@ -17,11 +17,11 @@ Organization administrators can use the credentials received to sign in and uplo
 
 ## Accessing your Workspace
 
-1. Click Profile tab on the header 
+1. Click **Profile** tab on the header 
 
 OR 
 
-Click the Profile Icon and select Profile
+Click the **Profile Icon** and select **Profile**
 
 ## Uploading Organizations
 
