@@ -42,7 +42,7 @@ Sl.No |Column Name  |Description  |Column Type  |Field Type |Valid Values
 8 |orgCode  |Unique code for the organization that is being uploaded  |Alphabetic |Optional |
 9 |orgType  |Type of organization, such as, NGO, primary school, secondary school etc.  |Alphabetic |Optional
 10  |preferredLanguage  |Language preferences for the organization, if any  |Alphabetic |Optional |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu
-11  |contactDetail  |Organization’s phone number, email ID and address  |Alphanumeric |Optional | [{'address':'address','phone':'xxxxxxxx','fax':'xxxxx'}]
+11  |contactDetail  |Organization’s phone number, email ID and address  |Alphanumeric |Optional | 'address':'address','phone':'xxxxxxxx','fax':'xxxxx'
 
 ***Note***: 
 
