@@ -26,15 +26,15 @@ allowSearch: true
 2. Enter Provider details. **Channel ID** of the organization administrator must be entered here
 3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here
     
-    OR
+      OR
     
-    Enter **OrgID**. Unique ID of the admin organization must be entered here
+      Enter **OrgID**. Unique ID of the admin organization must be entered here
     
-   - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. 
+     - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. 
 
-   OR
+      OR
 
-   - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
+      - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
 
 4. Download the csv file for reference
 5. You can add or upload details of up to 200 users at a time in one csv file
@@ -63,9 +63,9 @@ Sl.No |Column Name  |Description  |Column Type  |Field Type |Valid Values
 
 7. All other columns are optional. These columns include information about the user such as:
 
-***Note***: 
+   ***Note***: 
 
-**UserName** and **FirstName** should not be the same.
+   **UserName** and **FirstName** should not be the same.
 
 8. Click **UPLOAD USERS CSV**. The explorer window is displayed
 9. Select the csv file and click **Open**
