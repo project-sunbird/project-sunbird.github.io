@@ -41,8 +41,8 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
   <tr>
    <td>
        <ol>
-         <li>Enter your <strong>Username</strong> or <strong>User ID</strong></li>
-	       <li>Enter your <strong>Password</strong></li>
+         <li>Enter your <strong>Username</strong> or <strong>email ID</strong></li>
+	 <li>Enter your <strong>Password</strong></li>
          <li>Click <strong>Log in</strong> button</li>
 	   </ol>
     </td>
