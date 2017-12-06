@@ -44,9 +44,9 @@ Sl.No |Column Name  |Description  |Column Type  |Field Type |Valid Values
 10  |preferredLanguage  |Language preferences for the organization, if any  |Alphabetic |Optional |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu
 11  |contactDetail  |Organization’s phone number, email ID and address  |Alphanumeric |Optional | 'address':'address','phone':'xxxxxxxx','fax':'xxxxx'
 
-***Note***: 
+   ***Note***: 
 
-Columns titled **isRootOrg** and **channel** have to be filled only uploading an administrator organization. In all other cases, these columns have to be left blank.
+   Columns titled **isRootOrg** and **channel** have to be filled only uploading an administrator organization. In all other cases, these columns have to be left blank.
 
 5. **Save** the csv file to your computer
 6. Click **UPLOAD ORGANIZATIONS CSV**. The explorer window is displayed
