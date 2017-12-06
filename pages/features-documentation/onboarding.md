@@ -10,7 +10,7 @@ allowSearch: true
 ---
 Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body can add their members as registered users of the platform. For example; an organization, state, NGO, certification body or study centre can add their staff and users as Sunbird users. 
 
-### To sign up on the platform,
+### To sign up on the platform
 
 1. Send an email to [content.ntp@centralsquarefoundation.org] with a request for access as the subject line of the mail.
 
@@ -29,4 +29,4 @@ Signing up on Sunbird is a seamless process. Any organized, recognized education
 
 ***Note:***
 
-To sign up on Sunbird individuals have to be part of an organization. Individuals not part of any organization cannot sign up on Sunbird.
+*To sign up on Sunbird individuals have to be part of an organization. Individuals not part of any organization cannot sign up on Sunbird.*
