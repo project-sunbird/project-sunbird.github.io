@@ -46,7 +46,7 @@ Sl.No |Column Name  |Description  |Column Type  |Field Type |Valid Values
 
     ***Note***: 
 
-     Columns titled **isRootOrg** and **channel** have to be filled only uploading an administrator organization. In all other cases, these columns have to be left blank.
+    Columns titled **isRootOrg** and **channel** have to be filled only uploading an administrator organization. In all other cases, these columns have to be left blank.
 
 5. **Save** the csv file to your computer
 6. Click **UPLOAD ORGANIZATIONS CSV**. The explorer window is displayed
