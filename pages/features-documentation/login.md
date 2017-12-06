@@ -46,7 +46,7 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
          <li>Click <strong>Log in</strong> button</li>
 	   </ol>
     </td>
-	<td><img src="pages/features-documentation/images/library_sort.png"></td>
+	<td><img src="pages/features-documentation/images/login1.png"></td>
     </tr>
     </table>
 
@@ -63,7 +63,7 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
          <li>Click <strong>Forgot Password?</strong></li>
 	       </ol>
     </td>
-	<td><img src="pages/features-documentation/images/library_sort.png"></td>
+	<td><img src="pages/features-documentation/images/forgotpassword.png"></td>
     </tr>
     <tr>
   <td>
@@ -73,7 +73,7 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
       <li>Click the Link on the email to reset credentials</li>
     </ol>
   </td>
-  <td><img src="pages/features-documentation/images/library_sort.png"></td>
+  <td><img src="pages/features-documentation/images/forgotpassword1.png"></td>
   </tr>
   <tr>
   <td>
@@ -83,7 +83,7 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
       <li>Click <strong>Submit</strong>
     </ol>
   </td>
-   <td><img src="pages/features-documentation/images/library_sort.png"></td>
+   <td><img src="pages/features-documentation/images/update_password.png"></td>
   </tr>
   <tr>
   <td>
@@ -92,6 +92,7 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
       <li>Enter <strong>Username</strong> and newly created <strong>Password</strong></li>
     </ol>
   </td>
+  <td><img src="pages/features-documentation/images/forgotpassword2.png"></td>
   </tr>  
   </table>
 
