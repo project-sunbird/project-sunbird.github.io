@@ -1,14 +1,13 @@
-**User Categories**
+On Sunbird, there are nine types of users:
 
-Users are broadly categorized for the following roles:
-
-+ Administrators:
-  + System Administrator
-  + Organization Administrator
-
-+ Privileged users:
-  + In Service Teachers 
-  + Teacher Education Institutions(TEI’s)
-  + Content Publishers 
-  + Content Reviewers
-  + Content consumers
+| S. No | User                                   | Definition                                                                                                                        | Sunbird Context                                                                                                                                                                                                                                             |
+|-------|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1.    | Organization Administrator (Org Admin) | A person who manages or oversees the functioning of any body of individuals.                                                      | Org admin is responsible for the upkeep of the portal and managing user roles and permissions.                                                                                                                                                              |
+| 2.    | System Administrator (Sys Admin)       | A system administrator is a person who is responsible for the upkeep, configuration, and reliable operations of computer systems. | On Sunbird, a system admin is mostly a state, an NGO, typically a large body of individuals. Like a state having various education bodies affiliated to it, a system admin is responsible for various body of individuals associated with it.               |
+| 3.    | Registered User                        | A user with registered credentials                                                                                                | On Sunbird, ad registered user can be a learner or an instructor. To consume any content on Sunbird, the user must be registered on the portal by their respective org admins.                                                                              |
+| 4.    | Content Creator                        | An individual who can create any kind of content.                                                                                 | On Sunbird, registered users become content creators when content creation rights are assigned to them.                                                                                                                                                     |
+| 5.    | Content Reviewer                       | A person who assesses content within prescribed guidelines.                                                                       | On Sunbird, there are defined review guidelines. The reviewer assesses the content based on these guidelines. A reviewer has the right to reject or publish the content based on these guidelines.                                                          |
+| 6.    | Flag Reviewer                          | A person who assesses flagged content                                                                                             | On Sunbird, any user can flag a content, if the content is inappropriate. The flag reviewer reviews the content and rejects if the content is inappropriate according to Sunbird review guidelines. The flag is removed if the content fits the guidelines. |
+| 7.    | Course Mentor                          | A person who guides and instructs learners on how to undertake a course.                                                          | On Sunbird, a curse mentor creates batches of users to consume a course. These mentors also ensure completion of the course within a stipulated time.                                                                                                       |
+| 8.    |                                        |                                                                                                                                   |                                                                                                                                                                                                                                                             |
+| 9.    |                                        |                                                                                                                                   |                                                                                                                                                                                                                                                             |
