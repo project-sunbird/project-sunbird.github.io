@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 
-|  Functionality                 | Upload Organization | Upload Users | Delete Users | Assign User Rights | Assign User Rights | Assign Badges | Check Upload Status |
+|  Functionality                 | Upload Organization | Upload Users | Delete Users | Assign User Rights | Update Name and Logo | Assign Badges | Check Upload Status |
 |--------------------------------|---------------------|--------------|--------------|--------------------|--------------------|---------------|---------------------|
 | **System Administrator**       |         Yes         |      Yes     |      Yes     |         Yes        |         Yes        |       No      |         Yes         |
 | **Organization Administrator** |          No         |      Yes     |      Yes     |         Yes        |         Yes        |      Yes      |         Yes         |
