@@ -23,20 +23,20 @@ To create or update your profile:
 |                                                                                                                                                                                                                                                   |                                                                                               |
 
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-yw4l{vertical-align:top}
-</style>
-<table class="tg">
+<table class="table table-img">
+
   <tr>
-    <th class="tg-031e">Step</th>
-    <th class="tg-031e">Screen</th>
+    <td>Step</td>
+    <td>Screen</td>
   </tr>
   <tr>
-    <td class="tg-031e">1. Sign up and sign in,on Sunbird<br>2. Click Profile tab on the header</td>
-    <td class="tg-031e">{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
+    <td>
+	<ol>
+		<li>Sign up and sign in,on Sunbird</li>
+		<li>Click Profile tab on the header</li>
+	</ol>
+	</td>
+    <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
     <td class="tg-031e">1. Depending on your organisation, you may already see,some information available.<br>2. Add or,edit the following details :        <br>            a) Experience: Add your occupation details,such as work title, organization name, joining date, etc</td>
