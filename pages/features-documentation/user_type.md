@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation
-title: Type of Users
-page_title: Type of Users
+title: Types of Users
+page_title: Types of Users
 description: User Roles and Permission
 keywords: 'Admin, System Admin, Org Admin, Instructor, Student, Roles, Permissions'
 published: true
