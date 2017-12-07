@@ -12,7 +12,9 @@ allowSearch: true
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
 | **Content Reviewer** |       No       |       Yes      |       Yes      |       Yes      |           No           |       Yes      |         Yes         |
 
+***Note:***
 
+A reviewer can also have creation rights. However, a review cannot review content created by himself/herself. They can only review content created by others
 
 
 
