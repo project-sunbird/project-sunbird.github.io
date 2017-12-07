@@ -8,7 +8,7 @@ allowSearch: true
 ---
 Term | Definition |Sunbird Context
 -----|------------|-----------------
-Aademic Calendar   |Academic calender refers to the date range between which significant academic events such as examinations, holidays, semesters etc are decided. Typically, in India, the academic calender starts at June and culminates at March.  |
+Academic Calendar   |Academic calender refers to the date range between which significant academic events such as examinations, holidays, semesters etc are decided. Typically, in India, the academic calender starts at June and culminates at March.  |
 Accreditation   |Accreditation in a process in which certifications of competency, completion, or credibility is issued. Recognized body of individuals does accreditation.  |On Sunbird, users are awarded accreditations for completing one or many courses, or an assessment. Content creators determine what level of completion or what assessment completion entitles the learner to get accredited. Organizations that conduct the course or assessments determine a credible institute or body of individuals to provide accreditation to the users.
 Activity    |An engaging task to test or increase cognition.     |On Sunbird, activities can be created on the inbuilt content editor. Activities are small units of content which entail a task or a test. These tasks can be added to lessons to make the lesson more engaging.
 Administration  |The process of running an organization, a business or any collective. Administration is an umbrella term referring to a wide array of activities that ensures an affirmative upkeep of the organization, business etc.  |
