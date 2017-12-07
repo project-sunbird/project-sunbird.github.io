@@ -8,7 +8,7 @@ keywords: 'Admin, System Admin, Org Admin, Instructor, Student, Roles, Permissio
 published: true
 allowSearch: true
 ---
-|  Functionality       | Create Content | Upload Content | Review Content | Reject Content | Review Flagged Content | Delete Content | Update User Profile |
+|  Functionality       | Create Content | Upload Content | Review Content | Reject and Publish Content | Review Flagged Content | Delete Content | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
 | **Content Reviewer** |       No       |       Yes      |       Yes      |       Yes      |           No           |       Yes      |         Yes         |
 
