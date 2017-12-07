@@ -10,7 +10,7 @@ allowSearch: true
 ---
 ## Signing up on the Platform
 
-1. Send an email to [content.ntp@centralsquarefoundation.org] with a request for access as the subject line of the mail.
+1. Send an email to [content.ntp@centralsquarefoundation.org](content.ntp@centralsquarefoundation.org) with a request for access as the subject line of the mail.
 
 2. The team will respond with an information checklist. The checklist includes information such as:
   
@@ -61,7 +61,7 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
    <td>
        <ol>
          <li>Click <strong>Forgot Password?</strong></li>
-	       </ol>
+	</ol>
     </td>
 	<td><img src="pages/features-documentation/images/forgotpassword.png"></td>
     </tr>
@@ -78,9 +78,9 @@ Sign in the Sunbird portal using your registered credentials. For signing in, fo
   <tr>
   <td>
     <ol>
-      <li>Enter <strong>New Password</strong></li>
-      <li>Enter the new password again to confirm it</li>
-      <li>Click <strong>Submit</strong>
+      	<li>Enter <strong>New Password</strong></li>
+        <li>Enter the new password again to confirm it</li>
+	<li>Click <strong>Submit</strong></li>
     </ol>
   </td>
    <td><img src="pages/features-documentation/images/update_password.png"></td>
