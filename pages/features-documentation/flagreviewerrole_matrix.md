@@ -9,6 +9,6 @@ published: true
 allowSearch: true
 ---
 
-|  Functionality    | Create Content | Upload Content | Review Content | Reject and Publish Content | Delete Content | Update User Profile |
-|-------------------|----------------|----------------|----------------|----------------------------|----------------|---------------------|
-| **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |       Yes      |         Yes         |
+|  Functionality    | Create Content | Upload Content | Review Content | Reject and Publish Content | Review Flagged Content | Delete Content | Update User Profile |
+|-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
+| **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |           Yes          |       Yes      | Yes                 |
