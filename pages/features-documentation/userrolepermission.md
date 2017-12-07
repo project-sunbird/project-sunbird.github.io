@@ -8,13 +8,18 @@ keywords: 'Admin, System Admin, Org Admin, Instructor, Student, Roles, Permissio
 published: true
 allowSearch: true
 ---
+All the portal members are Users. Based on user responsibilities, rights are provided to create, review, publish or consume content. Specific users are granted administration rights to manage user or organization profile creation, onboarding, deletion, passwords, and site look-and-feel customization.
 
-{% ingredient/features-documentation/user_rolepermission_rights %}{% endingredient %}
+## [Types of Users:](features-documentation/user_types){:target="_blank"}
 
-{% ingredient/features-documentation/usercategories %}{% endingredient %}
+### [Administrator Role Function Matrix](features-documentation/adminrole_matrix){:target="_blank"}
 
-{% ingredient/features-documentation/adminrolefuncmatrix %}{% endingredient %}
+### [Registered User Role Function Matrix](features-documentation/userrole_matrix){:target="_blank"}
 
-{% ingredient/features-documentation/privuserrolefuncmatrix %}{% endingredient %}
+### [Content Creator Role Function Matrix](features-documentation/creatorrole_matrix){:target="_blank"}
 
-{% ingredient/features-documentation/contconsumerrolefuncmatrix  %}{% endingredient %}
+### [Content Reviewer Role Function Matrix](features-documentation/reviewerrole_matrix){:target="_blank"}
+
+### [Flag Reviewer Role Function Matrix](features-documentation/flagreviewerrole_matrix){:target="_blank"}
+
+### [Course Mentor Role Function Matrix](features-documentation/mentorrole_matrix){:target="_blank"}
