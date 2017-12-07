@@ -39,16 +39,30 @@ To create or update your profile:
     <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
-    <td class="tg-031e">1. Depending on your organisation, you may already see,some information available.<br>2. Add or,edit the following details :        <br>            a) Experience: Add your occupation details,such as work title, organization name, joining date, etc</td>
-    <td class="tg-031e">{% image src='pages/faqs/images/prfilexp.png' full center alt='Experience' %}</td>
+    <td>
+	
+	<ol>
+		
+		<li> 1. Depending on your organisation, you may already see,some information available.<br>2. Add or,edit the following details :        <br>            a) Experience: Add your occupation details,such as work title, organization name, joining date, etc</td>
+    <td>
+	
+	<li>{% image src='pages/faqs/images/prfilexp.png' full center alt='Experience' %}</td>
   </tr>
   <tr>
-    <td class="tg-031e">Address: Add,your permanent and current address</td>
-    <td class="tg-031e">{% image src='pages/faqs/images/prfiladress.png' full center alt='Address' %}</td>
+    <td>
+	
+	<ol>
+		
+		<li>Address: Add,your permanent and current address</td>
+    <td> {% image src='pages/faqs/images/prfiladress.png' full center alt='Address' %}</td>
   </tr>
   <tr>
-    <td class="tg-031e">Education: Add your,academic qualifications, such as degree, year of passing, board or university, etc.</td>
-    <td class="tg-031e">{% image src='pages/faqs/images/prfiledu.png' full center alt='Education' %}</td>
+    <td>
+	
+	<ol>
+		
+		<li>Education: Add your,academic qualifications, such as degree, year of passing, board or university, etc.</td>
+    <td>{% image src='pages/faqs/images/prfiledu.png' full center alt='Education' %}</td>
   </tr>
   <tr>
     <td class="tg-yw4l">Additional Information: Add personal information such as email, Aadhar number, mobile number, languages known, etc.</td>
