@@ -13,94 +13,38 @@ Creating and updating your profile, gives you a unique identity on the platform.
 
 To create or update your profile:
 
-| Step                                                                                                                                                                                                                                              | Screen                                                                                        |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| 1. Sign up and sign in,on Sunbird 2. Click Profile tab on the header                                                                                                                                                                              | {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}                |
-| 1. Depending on your organisation, you may already see,some information available. 2. Add or,edit the following details :                     a) Experience: Add your occupation details,such as work title, organization name, joining date, etc | {% image src='pages/faqs/images/prfilexp.png' full center alt='Experience' %}                 |
-| Address: Add,your permanent and current address                                                                                                                                                                                                   | {% image src='pages/faqs/images/prfiladress.png' full center alt='Address' %}                 |
-| Education: Add your,academic qualifications, such as degree, year of passing, board or university, etc.                                                                                                                                           | {% image src='pages/faqs/images/prfiledu.png' full center alt='Education' %}                  |
-| Additional Information: Add personal information such as email, Aadhar number, mobile number, languages known, etc.                                                                                                                               | {% image src='pages/faqs/images/prfiladdinfo.png' full center alt='Additional Information' %} |
-|                                                                                                                                                                                                                                                   |                                                                                               |
+| Step 	| Screen 	|
+|----------------------------------------------------------------------------------------------------------------------	|--------------------------------------------------------------------------------	|
+| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
+| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
+| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
+| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
+| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
 
 
-<table class="table table-img">
-
+<table>
   <tr>
-    <td>Step</td>
-    <td>Screen</td>
+    <th>Step</th>
+    <th>Screen</th>
   </tr>
   <tr>
-    <td>
-	<ol>
-		<li>Sign up and sign in,on Sunbird</li>
-		<li>Click Profile tab on the header</li>
-	</ol>
-	</td>
+    <td>1. You are currently on My Workspace page<br>2. You want to create a lesson plan<br>3. You have clicked the Lesson Plan tile</td>
     <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
-    <td>
-	
-	<ol>
-		
-		<li> 1. Depending on your organisation, you may already see,some information available.<br>2. Add or,edit the following details :        <br>            a) Experience: Add your occupation details,such as work title, organization name, joining date, etc</td>
-    <td>
-	
-	<li>{% image src='pages/faqs/images/prfilexp.png' full center alt='Experience' %}</td>
+    <td>1. You are currently on My Workspace page<br>2. You want to create a lesson plan<br>3. You have clicked the Lesson Plan tile</td>
+    <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
-    <td>
-	
-	<ol>
-		
-		<li>Address: Add,your permanent and current address</td>
-    <td> {% image src='pages/faqs/images/prfiladress.png' full center alt='Address' %}</td>
+    <td>1. You are currently on My Workspace page<br>2. You want to create a lesson plan<br>3. You have clicked the Lesson Plan tile</td>
+    <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
-    <td>
-	
-	<ol>
-		
-		<li>Education: Add your,academic qualifications, such as degree, year of passing, board or university, etc.</td>
-    <td>{% image src='pages/faqs/images/prfiledu.png' full center alt='Education' %}</td>
+    <td>1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile</td>
+    <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
-    <td class="tg-yw4l">Additional Information: Add personal information such as email, Aadhar number, mobile number, languages known, etc.</td>
-    <td class="tg-yw4l">{% image src='pages/faqs/images/prfiladdinfo.png' full center alt='Additional Information' %}</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile</td>
+    <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
 </table>
-
-
-
-
-
-
-
-
-1. Sign up and sign in  on the platform
-2. Click Profile tab on the header 
-
-{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}
-
-3. Depending on your organisation, you may already see  some information available.
-4. Add or edit the following details :
-
-	a) Experience: Add your occupation details  such as work title, organization name, joining date, etc
-
-	{% image src='pages/faqs/images/prfilexp.png' full center alt='Experience' %}
-
-	b) Address: Add  your permanent and current address
-
-	{% image src='pages/faqs/images/prfiladress.png' full center alt='Address' %}
-
-	c) Education: Add your  academic qualifications, such as degree, year of passing, board or university, etc.
-
-	{% image src='pages/faqs/images/prfiledu.png' full center alt='Education' %}
-
-	d) Additional Information: Add personal information such as email, Aadhar number, mobile number, languages known, etc.
-
-	{% image src='pages/faqs/images/prfiladdinfo.png' full center alt='Additional Information' %}
