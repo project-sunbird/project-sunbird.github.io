@@ -10,7 +10,7 @@ allowSearch: true
 ---
 All the portal members are Users. Based on user responsibilities, rights are provided to create, review, publish or consume content. Specific users are granted administration rights to manage user or organization profile creation, onboarding, deletion, passwords, and site look-and-feel customization.
 
-## [Types of Users:](features-documentation/user_types){:target="_blank"}
+## [Types of Users:](features-documentation/user_type){:target="_blank"}
 
 ### [Administrator Role Function Matrix](features-documentation/adminrole_matrix){:target="_blank"}
 
