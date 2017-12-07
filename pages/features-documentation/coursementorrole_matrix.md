@@ -11,4 +11,4 @@ allowSearch: true
 
 |  Functionality    | Create Content | Upload Content | Review Content | Reject and Publish Content | Delete Content | Create Batch | Add Other Mentors |
 |-------------------|----------------|----------------|----------------|----------------------------|----------------|--------------|-------------------|
-| **Flag Reviewer** |       No       |       No       |       No       |             No             |       No       |      Yes     | Yes               |
+| **Course Mentor** |       No       |       No       |       No       |             No             |       No       |      Yes     | Yes               |
