@@ -16,10 +16,15 @@ All the portal members are Users. Based on user responsibilities, rights are pro
 
 ### [Registered User Role Function Matrix](features-documentation/userrole_matrix){:target="_blank"}
 
-### [Content Creator Role Function Matrix](features-documentation/creatorrole_matrix){:target="_blank"}
+### [Content Creator Role Function Matrix](features-documentation/contentcreatorrole_matrix){:target="_blank"}
 
 ### [Content Reviewer Role Function Matrix](features-documentation/reviewerrole_matrix){:target="_blank"}
 
 ### [Flag Reviewer Role Function Matrix](features-documentation/flagreviewerrole_matrix){:target="_blank"}
 
-### [Course Mentor Role Function Matrix](features-documentation/mentorrole_matrix){:target="_blank"}
+### [Course Creator Role Function Matrix](features-documentation/coursecreatorrole_matrix){:target="_blank"}
+
+### [Course Mentor Role Function Matrix](features-documentation/coursementorrole_matrix){:target="_blank"}
+
+### [Announcement Sender Role Function Matrix](features-documentation/announcement_senderrrole_matrix){:target="_blank"}
+
