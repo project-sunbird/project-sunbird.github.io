@@ -1,21 +1,19 @@
-<base id="baseURL" href="/">
+<base id="baseURL" href="/" />
 <script>
-	baseURL = document.getElementById('baseURL');
 	// Dynamic Base URL
-	/*function getBase(){
+	function getBase(){
 		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		baseURL = document.getElementById('baseURL');
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
 			baseURL.href="{{site.baseurl}}";
 		}
 	}
-	getBase();*/
+	getBase();
 </script>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-touch-fullscreen" content="yes" />
 <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
@@ -33,8 +31,8 @@
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<!--<meta name="buildVersion" content="{{site.buildVersion}}" />
-<meta name="buildNo" content="{{site.buildNo}}" />-->
+<meta name="buildVersion" content="{{site.buildVersion}}" />
+<meta name="buildNo" content="{{site.buildNo}}" />
 <!--/Build Details-->
 
 <!-- CDN's-->

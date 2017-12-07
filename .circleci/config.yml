@@ -1,9 +1,9 @@
 version: 2
 jobs:
-  staging:
+  review:
     working_directory: /project/workplace/
     docker:
-      - image: lakhanmandloi/sunbird-ubuntu-full
+      - image: lakhanmandloi/sunbird-ubuntu-fuller
     steps:
     
       #Checkout
@@ -12,17 +12,62 @@ jobs:
       # Run Build command
       - type: shell
         command: |
-          bundle exec jekyll build
-   
-      # Deploy to Gitpages
+          if [ "$CIRCLE_BRANCH" != "dev" ]
+          then
+          echo "baseurl: /pr/$CIRCLE_PR_NUMBER/" >> _config.yml
+          echo "buildVersion: PR - $CIRCLE_PR_NUMBER" >> _config.yml
+          else
+          echo "baseurl: /review/" >> _config.yml
+          echo "buildVersion: Commit" >> _config.yml
+          fi
+          echo "buildNo: $CIRCLE_BUILD_NUM" >> _config.yml
+          bundle exec jekyll build 
+      # Deploy to s3 bucket
       - type: shell
         command: |
-           bundle exec s3_website push
+           cd _site
+           if [ "$CIRCLE_BRANCH" != "dev" ]
+           then
+           aws s3 sync --delete . s3://sunbird-docs-qa/pr/$CIRCLE_PR_NUMBER
+           prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/project-sunbird/project-sunbird.github.io/issues/$CIRCLE_PR_NUMBER) 
+           username=$(echo "${prdata}" | jq '.user.login')
+           username=${username//\"/}
+           curl \
+              -X POST \
+              -u $guser:x-oauth-basic \
+              -d '{"body": "Hello @'"$username"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'."}' \
+              https://api.github.com/repos/project-sunbird/project-sunbird.github.io/issues/$CIRCLE_PR_NUMBER/comments
+           else
+           aws s3 sync --delete . s3://sunbird-docs-qa/review/
+           fi
+           
+  staging:
+    working_directory: /project/workplace/
+    docker:
+      - image: lakhanmandloi/sunbird-ubuntu-fuller
+    steps:
+    
+      #Checkout
+      - checkout
+            
+      # Run Build command
+      - type: shell
+        command: |
+          echo "baseurl: /releases/$CIRCLE_TAG/" >> _config.yml
+          echo "buildVersion: $CIRCLE_TAG" >> _config.yml
+          echo "buildNo: $CIRCLE_BUILD_NUM" >> _config.yml
+          bundle exec jekyll build
+          
+      # Deploy to s3 bucket
+      - type: shell
+        command: |
+           cd _site
+           aws s3 sync --delete . s3://sunbird-docs-qa/releases/$CIRCLE_TAG
           
   prod:
     working_directory: /project/workspace/
     docker:
-      - image: lakhanmandloi/sunbird-ubuntu-full
+      - image: lakhanmandloi/sunbird-ubuntu-fuller
     steps:
       
       #Checkout
@@ -44,7 +89,7 @@ jobs:
           cd ..
           mkdir downloads
           cd downloads
-          aws s3 sync --delete s3://sunbird-docs-qa/ .
+          aws s3 sync --delete s3://sunbird-docs-qa/releases/$CIRCLE_TAG .
            
       # Deploy to Gitpages
       - type: shell
@@ -69,15 +114,27 @@ workflows:
   version: 2
   build_and_deploy:
     jobs:
+      - review
       - staging:
           filters:
             tags:
-              only: /^dev.*/
+              only: /^release.*/
+            branches:
+              ignore: /.*/
+      - hold:
+          type: approval
+          requires:
+              - staging
+          filters:
+            tags:
+              only: /^release.*/
             branches:
               ignore: /.*/
       - prod:
+          requires:
+              - hold
           filters:
             tags:
-              only: /^prod.*/
+              only: /^release.*/
             branches:
               ignore: /.*/
