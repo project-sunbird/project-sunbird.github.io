@@ -13,14 +13,6 @@ Creating and updating your profile, gives you a unique identity on the platform.
 
 To create or update your profile:
 
-| Step 	| Screen 	|
-|----------------------------------------------------------------------------------------------------------------------	|--------------------------------------------------------------------------------	|
-| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
-| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
-| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
-| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
-| 1. You are currently on My Workspace page2. You want to create a lesson plan3. You have clicked the Lesson Plan tile 	| {% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %} 	|
-
 
 <table>
   <tr>
@@ -32,11 +24,11 @@ To create or update your profile:
     <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
-    <td>1. You are currently on My Workspace page<br>2. You want to create a lesson plan<br>3. You have clicked the Lesson Plan tile</td>
+    <td>1. You are currently on My Workspace page<br>     a. You want to create a lesson plan<br>     b. You have clicked the Lesson Plan tile</td>
     <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
-    <td>1. You are currently on My Workspace page<br>2. You want to create a lesson plan<br>3. You have clicked the Lesson Plan tile</td>
+    <td>1. You are currently on My Workspace page<br>    a. test content<br>    b. new content<br>2. You want to create a lesson plan<br>    a. shdej<br>    b. ggiiijk<br>3. You have clicked the Lesson Plan tile</td>
     <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
   </tr>
   <tr>
