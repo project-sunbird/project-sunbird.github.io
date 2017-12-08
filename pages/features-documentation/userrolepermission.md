@@ -28,3 +28,7 @@ All the portal members are Users. Based on user responsibilities, rights are pro
 
 - [Announcement Sender Role Function Matrix](features-documentation/announcement_senderrrole_matrix){:target="_blank"}
 
+## [User Profile](features-documentation/userprofile){:target="_blank"}
+
+## [Worksapce](features-documentation/workspace){:target="_blank"}
+
