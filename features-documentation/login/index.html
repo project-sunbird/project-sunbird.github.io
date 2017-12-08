@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	<base id="baseURL" href="/">
+	<base id="baseURL" href="/" />
 <script>
-	baseURL = document.getElementById('baseURL');
 	// Dynamic Base URL
-	/*function getBase(){
+	function getBase(){
 		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		baseURL = document.getElementById('baseURL');
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="";
+			baseURL.href="/releases/release.1.1.16/";
 		}
 	}
-	getBase();*/
+	getBase();
 </script>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-	
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=10, user-scalable=yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-touch-fullscreen" content="yes" />
 <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
@@ -32,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-04 23:01:45 +0530">
+<meta name="last-modified" content="2017-12-08 17:53:07 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<!--<meta name="buildVersion" content="" />
-<meta name="buildNo" content="" />-->
+<meta name="buildVersion" content="release.1.1.16" />
+<meta name="buildNo" content="209" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -47,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?04122017"  />
-<link rel="stylesheet" href="css/style.css?04122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?04122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?04122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?04122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08122017"  />
+<link rel="stylesheet" href="css/style.css?08122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -141,15 +139,10 @@
 					<a href="features-documentation/login/">Login</a>
 				</li>
 				<li>
-					<a href="features-documentation/administration/">Administration</a>
-					<ul class="sidebar-group">
-						<li>
-							<a href="features-documentation/register_org/">Register Organizations</a>
-						</li>
-						<li>
-							<a href="features-documentation/register_user/">Register Users</a>
-						</li>
-					</ul>
+					<a href="features-documentation/register_org/">Register Organizations</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_user/">Register Users</a>
 				</li>
 				<li>
 					<a href="features-documentation/userrolepermission/">User Roles and Permissions</a>
@@ -157,6 +150,9 @@
 				<li>
 					<div class="">
 						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/user_type/">Types of Users</a>
+							</li>
 							<li>
 								<a href="features-documentation/userprofile/">User Profile</a>
 							</li>
@@ -373,61 +369,131 @@ $("a[href$='features-documentation/login/']").addClass("sidebar-link-selected");
 			  </a>
 			  </span>
 			</p>
-          <p><strong>Self Enrolling</strong></p>
-
-<ul>
-  <li>Steps for enrolling first time users
-    <ol>
-      <li>Give URL address in Browser, to open Sunbird page</li>
-      <li>Click on SIGN UP button</li>
-      <li>A window opens, give mandatory and other details, User Name, Password, Name, Phone Number, Email and Language</li>
-      <li>Give Optional details Gender and Date of Birth, not necessary</li>
-      <li>Click on SIGN UP button to visit Home page</li>
-    </ol>
-  </li>
-  <li>Steps for enrolling users with credential
-    <ol>
-      <li>Click on LOGIN button</li>
-      <li>Give Login Id and Password</li>
-      <li>Go to Home page to perform action</li>
-    </ol>
-  </li>
-</ul>
-
-<p><strong>Signing In</strong></p>
-
-<p>To sign in with your credentials, follow the steps below:</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Signing up on the Platform</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#link1-2"><span class="tocnumber">2 .</span> <span class="toctext">Signing in</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#link1-2-1"><span class="tocnumber">2.1 .</span> <span class="toctext">Recovering Password</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="link1-1">Signing up on the Platform</h2>
 
 <ol>
-  <li>Click Sign in option on the header</li>
-  <li>Enter  Username or email and Password</li>
-  <li>Click Log in button</li>
+  <li>
+    <p>Send an email to <a href="content.ntp@centralsquarefoundation.org">content.ntp@centralsquarefoundation.org</a> with a request for access as the subject line of the mail.</p>
+  </li>
+  <li>
+    <p>The team will respond with an information checklist. The checklist includes information such as:</p>
+
+    <p>i. Unique and permanent:</p>
+
+    <ul>
+      <li>Organization ID</li>
+      <li>Username for teacher</li>
+      <li>Teacher ID</li>
+    </ul>
+
+    <p>ii. Verified Email ID and mobile number of the teachers</p>
+  </li>
+  <li>On providing the information requested for, the organization’s designated administrator will receive credentials such as User ID, password, Channel ID and Organization ID</li>
+  <li>The organization’s administrator can use the credentials received to sign in and add organization and organization member details.</li>
 </ol>
 
-<p><strong>Signing and accessing your Workspace</strong></p>
+<p>
+  <strong>
+    <em>Note:</em>
+  </strong>
+</p>
 
-<p>The user has to be signed in with registered credentials and should be on his/her workspace. 
-To access workspace,</p>
+<p>
+  <em>To sign up on Sunbird individuals have to be part of an organization. Individuals not part of any organization cannot sign up on Sunbird.</em>
+</p>
 
-<p>1.Click Profile tab on the header</p>
+<h2 id="link1-2">Signing in</h2>
 
-<p>OR</p>
+<p>Sign in the Sunbird portal using your registered credentials. For signing in, follow the steps:</p>
 
-<p>Click the Profile icon and select Profile</p>
+<table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
+  <tr>
+   <td>
+       <ol>
+         <li>Enter your <strong>Username</strong> or <strong>email ID</strong></li>
+	 <li>Enter your <strong>Password</strong></li>
+         <li>Click <strong>Log in</strong> button</li>
+	   </ol>
+    </td>
+	<td><img src="pages/features-documentation/images/login1.png" /></td>
+    </tr>
+    </table>
 
-<p><a target="_blank" href="pages/faqs/images/prfilpg.png">
-        <img src="pages/faqs/images/prfilpg.png" alt="Profile Page" class="plugin center" width="100%" />
-      </a></p>
+<h3 id="link1-2-1">Recovering Password</h3>
 
-<p>2.Click <strong>View your Workspace</strong> from the right side of the profile page</p>
-
-<p>OR</p>
-
-<p>Click Profile icon and select <strong>Workspace</strong> from the drop-down list</p>
-
-<p><a target="_blank" href="pages/faqs/images/viewwrkspac.png">
-        <img src="pages/faqs/images/viewwrkspac.png" alt="View Workspace" class="plugin center" width="100%" />
-      </a></p>
+<table class="table table-img">
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
+  <tr>
+   <td>
+       <ol>
+         <li>Click <strong>Forgot Password?</strong></li>
+	</ol>
+    </td>
+	<td><img src="pages/features-documentation/images/forgotpassword.png" /></td>
+    </tr>
+    <tr>
+  <td>
+    <ol>
+      <li>Enter your <strong>Username</strong> or registered <strong>Email ID</strong></li>
+      <li>Click <strong>Submit</strong>. You will receive a reset password email to your registered email ID</li>
+      <li>Click the Link on the email to reset credentials</li>
+    </ol>
+  </td>
+  <td><img src="pages/features-documentation/images/forgotpassword1.png" /></td>
+  </tr>
+  <tr>
+  <td>
+    <ol>
+      	<li>Enter <strong>New Password</strong></li>
+        <li>Enter the new password again to confirm it</li>
+	<li>Click <strong>Submit</strong></li>
+    </ol>
+  </td>
+   <td><img src="pages/features-documentation/images/update_password.png" /></td>
+  </tr>
+  <tr>
+  <td>
+    <ol>
+      <li>The Sunbird log in page is displayed</li>
+      <li>Enter <strong>Username</strong> and newly created <strong>Password</strong></li>
+    </ol>
+  </td>
+  <td><img src="pages/features-documentation/images/forgotpassword2.png" /></td>
+  </tr>  
+  </table>
 
 
           

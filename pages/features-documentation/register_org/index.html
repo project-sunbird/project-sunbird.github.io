@@ -1,70 +1,137 @@
 <p>Organization administrators can use the credentials received to sign in and upload organization details. Administrators of administrating organizations can add other organization details.</p>
 
-<p><strong>Uploading Organizations</strong></p>
+<h2 id="signing-in">Signing In</h2>
+
+<ol>
+  <li>Sign in the Sunbird portal using your registered credentials</li>
+</ol>
+
+<h2 id="accessing-your-workspace">Accessing your Workspace</h2>
+
+<ol>
+  <li>Click <strong>Profile</strong> tab on the header <br /> OR</li>
+  <li>Click the <strong>Profile Icon</strong> and select <strong>Profile</strong></li>
+</ol>
+
+<h2 id="uploading-organizations">Uploading Organizations</h2>
 
 <ol>
   <li>Click <strong>Upload Organizations</strong>. The upload organizations page is displayed</li>
   <li>Download the csv file for reference</li>
   <li>You can add or upload details of up to 200 organizations at a time in one csv</li>
-  <li>The <strong>OrgName</strong> column is mandatory. Enter organization name in this column</li>
-  <li>Enter each organization’s name in a separate row</li>
   <li>
-    <p>Entering details in all other columns is optional</p>
+    <p>Descriptions and valid values for each columns are as listed below:</p>
 
     <table>
       <thead>
         <tr>
-          <th>Column Title</th>
+          <th>Sl.No</th>
+          <th>Column Name</th>
           <th>Description</th>
+          <th>Column Type</th>
+          <th>Field Type</th>
+          <th>Valid Values</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td>1</td>
+          <td>orgName</td>
+          <td>Organization name</td>
+          <td>Alphabetic</td>
+          <td>Mandatory</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>2</td>
           <td>isRootOrg</td>
-          <td>Valid value for this column is True</td>
+          <td>Whether the  organization has the authority to upload other organization</td>
+          <td>Alphabetic</td>
+          <td>Conditional</td>
+          <td>TRUE, FALSE</td>
         </tr>
         <tr>
+          <td>3</td>
           <td>channel</td>
-          <td>Unique ID provided during master organization creation</td>
+          <td>Channel ID provided to the administrator organization by Sunbird</td>
+          <td>Alphanumeric</td>
+          <td>Conditional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>4</td>
           <td>externalId</td>
-          <td>Unique ID associated with each organization in the administrating organization’s repository</td>
+          <td>Unique ID associated with each organization in the administrating  organization’s repository</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>5</td>
           <td>provider</td>
-          <td>Channel ID of the administrator organization</td>
+          <td>Channel ID provided to the administrator organization by Sunbird</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>6</td>
           <td>description</td>
-          <td>Details describing the organization</td>
+          <td>Details describing  the organization</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>7</td>
           <td>homeUrl</td>
           <td>Organization’s homepage url</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>8</td>
           <td>orgCode</td>
-          <td>Organization’s unique code, if any,</td>
+          <td>Unique code for the organization that is being uploaded</td>
+          <td>Alphabetic</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>9</td>
           <td>orgType</td>
-          <td>Type of organization, such as, NGO, primary school, secondary school etc</td>
+          <td>Type of organization, such as, NGO, primary school, secondary school etc.</td>
+          <td>Alphabetic</td>
+          <td>Optional</td>
+          <td> </td>
         </tr>
         <tr>
+          <td>10</td>
           <td>preferredLanguage</td>
           <td>Language preferences for the organization, if any</td>
+          <td>Alphabetic</td>
+          <td>Optional</td>
+          <td>English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu</td>
         </tr>
         <tr>
+          <td>11</td>
           <td>contactDetail</td>
-          <td>Organization’s phone number and email ID. Details should be entered within single quotes. For 	example: ‘Phonenumber’</td>
+          <td>Organization’s phone number, email ID and address</td>
+          <td>Alphanumeric</td>
+          <td>Optional</td>
+          <td>‘address’:’address’,’phone’:’xxxxxxxx’,’fax’:’xxxxx’</td>
         </tr>
       </tbody>
     </table>
+
+    <p><strong><em>Note</em></strong> :</p>
+
+    <p>Columns titled <strong>isRootOrg</strong> and <strong>channel</strong> have to be filled only uploading an administrator organization. In all other cases, these columns have to be left blank.</p>
   </li>
-  <li>Save the csv file to your computer</li>
-  <li>Click UPLOAD ORGANIZATIONS CSV. The explorer window is displayed</li>
-  <li>Select the saved csv file and click open</li>
+  <li><strong>Save</strong> the csv file to your computer</li>
+  <li>Click <strong>UPLOAD ORGANIZATIONS CSV</strong>. The explorer window is displayed</li>
+  <li>Select the saved csv file and click <strong>Open</strong></li>
   <li>On successful file upload, a process ID will be generated, else an error message is displayed</li>
 </ol>
 
