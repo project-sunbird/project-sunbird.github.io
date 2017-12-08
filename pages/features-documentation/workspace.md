@@ -33,23 +33,12 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <th>Screen</th>
   </tr>
   <tr>
-    <td>
-      <ol>
-        <li>Click <strong>View your Workspace</strong> from the right side of the profile page<br>Or<br></li>
-        <li>Click <strong>Profile</strong> icon on the header<br></li>
-         <li>
-           Select Workspace from the dropdown list <br> In your Workspace you can
-           <ul>
-             <li>Create Book, Course, Study material, Collection, Lesson plan </li>
-             <li>View Drafts </li> 
-             <li>Review content submitted </li>
-             <li>View published content </li> 
-             <li>View all uploaded content </li>
-             <li>Limited publishing</li>
-           </ul>
-        </li>
-      </ol>
+    <td>Click <strong>View your Workspace</strong> to land to <strong>My Workspace</strong> page</td>
+    <td><img src="pages/features-documentation/images/workspace1.png"></td>
+  </tr>
+  <tr>
+    <td>In your Workspace you can <br>Create Book, Course, Study material, Collection, Lesson plan <br>View Drafts <br> Review content submitted <br>View published content <br>View all uploaded content <br>Limited publishing <br>
     </td>
-    <td><img src="pages/faqs/images/viewwrkspac.png"></td>
+    <td><img src="pages/features-documentation/images/workspace3.png"></td>
   </tr>
   </table>
