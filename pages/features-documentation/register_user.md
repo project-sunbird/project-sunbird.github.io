@@ -14,14 +14,14 @@ allowSearch: true
 
 ## Accessing your Workspace
 
-1. Click **Profile** tab on the header <br /> OR
+1. Click **Profile** tab on the header <br /> **OR**
 2. Click the **Profile Icon** and select Profile
 
 ## Uploading Users
 
 1. Click **Upload Users**. The upload users page is displayed 
 2. Enter Provider details. **Channel ID** of the organization administrator must be entered here
-3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here <br /> OR
+3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here <br /> **OR**
 4. Enter **OrgID**. Unique ID of the admin organization must be entered here
     
      - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> OR
@@ -53,7 +53,6 @@ allowSearch: true
    18  |subject  |Taught by the user |Alphanumeric |Optional |Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali
 
 7. All other columns are optional. These columns include information about the user such as: <br /> ***Note***: 
-
    **UserName** and **FirstName** should not be the same.
 
 8. Click **UPLOAD USERS CSV**. The explorer window is displayed
