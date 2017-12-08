@@ -24,7 +24,7 @@ allowSearch: true
 3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here <br /> **OR**
 4. Enter **OrgID**. Unique ID of the admin organization must be entered here
     
-     - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> OR
+     - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> **OR**
       - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
 
 4. Download the csv file for reference
