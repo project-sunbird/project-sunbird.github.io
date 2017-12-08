@@ -37,7 +37,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <td><img src="pages/features-documentation/images/workspace1.png"></td>
   </tr>
   <tr>
-    <td>In your Workspace you can <br>Create Book, Course, Study material, Collection, Lesson plan <br>View Drafts <br> Review content submitted <br>View published content <br>View all uploaded content <br>Limited publishing <br>
+    <td>In your Workspace you can: <br>- Create Book, Course, Study material, Collection, Lesson plan <br>- View Drafts <br>- Review content submitted <br>- View published content <br>- View all uploaded content <br>- Limited publishing <br>
     </td>
     <td><img src="pages/features-documentation/images/workspace3.png"></td>
   </tr>
