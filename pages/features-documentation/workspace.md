@@ -25,7 +25,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
   </tr>
   </table>
 
-### Viewing your Workspace**
+### Viewing your Workspace
 
 <table>
   <tr>
