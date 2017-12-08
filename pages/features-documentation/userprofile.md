@@ -20,7 +20,7 @@ To create or update your profile:
   </tr>
   <tr>
     <td>1. Login with the registered credential, to land into <strong>Home</strong> page<br>2. Click <strong>Profile</strong> tab on the header<br>Or<br>3. Click <strong>Profile</strong> icon to the right</td>
-    <td><img src="pages/features-documentation/images/profileimg1.png></td>
+    <td><img src="pages/features-documentation/images/profileimg1.png"></td>
   </tr>
   <tr>
     <td>1. Depending on your organization, you may see some information are already available, viz: <strong>Username</strong>, <strong> City</strong> you belong to etc<br>2. Click on <strong>Edit</strong> icon on your profile, to add profile image<br>3. You can also see your last <strong>Login Time</strong><br><br>Note: Maximum image upload size is 4 MB</td>
