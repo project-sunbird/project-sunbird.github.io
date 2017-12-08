@@ -40,7 +40,7 @@ To create or update your profile:
   </tr>
   <tr>
       <td><strong>Experience</strong>: Add or edit your experience details, such as work title, organization, designation, joining date, subject taught etc. You can show or hide your experience details from others</td>
-    <td><img src="pages/features-documentation/images/profile_experience.png">;</td>
+    <td><img src="pages/features-documentation/images/profile_experience.png"></td>
   </tr>
   <tr>
       <td><strong>Address</strong>: Add or edit your permanent or current address. You can show or hide the address details from others</td>
