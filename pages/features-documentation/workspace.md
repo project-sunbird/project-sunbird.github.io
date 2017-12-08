@@ -20,8 +20,8 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Profile</strong> tab on the header<br>Or<br>2. Click <strong>Profile</strong> icon and select Profile</td>
-    <td><img src="pages/faqs/images/prfilpg.png"></td>
+    <td>1. Login with the registered credential, to land into <strong>Home</strong> page<br>2. Click <strong>Profile</strong> tab on the header<br>Or<br>3. Click <strong>Profile</strong> icon to the right</td>
+    <td><img src="pages/features-documentation/images/profileimg1.png"></td>
   </tr>
   </table>
 
