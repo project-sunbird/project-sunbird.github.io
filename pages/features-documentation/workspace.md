@@ -21,7 +21,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
   </tr>
   <tr>
     <td>1. Click<strong>Profile</strong> tab on the header<br>Or<br>2. Click <strong>Profile</strong> icon and select Profile</td>
-    <td>{% image src='pages/faqs/images/prfilpg.png' full center alt='Profile Page' %}</td>
+    <td><img src="pages/faqs/images/prfilpg.png"></td>
   </tr>
   </table>
 
@@ -50,5 +50,6 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
         </li>
       </ol>
     </td>
+    <td><img src="pages/faqs/images/viewwrkspac.png"></td>
   </tr>
   </table>
