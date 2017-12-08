@@ -12,7 +12,7 @@ allowSearch: true
 
 The views of Sunbird architecture are classified as: 
 
-- Logical
-- Physical
-- Conceptual
-- Deployment
+- [Logical](architecture/views/logical)
+- [Physical](architecture/views/physical)
+- [Conceptual](architecture/views/conceptual)
+- [Deployment](architecture/views/deployment)
