@@ -20,7 +20,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Click<strong>Profile</strong> tab on the header<br>Or<br>2. Click <strong>Profile</strong> icon and select Profile</td>
+    <td>1. Click <strong>Profile</strong> tab on the header<br>Or<br>2. Click <strong>Profile</strong> icon and select Profile</td>
     <td><img src="pages/faqs/images/prfilpg.png"></td>
   </tr>
   </table>
@@ -35,7 +35,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
   <tr>
     <td>
       <ol>
-        <li>Click<strong>ProfileView your Workspace</strong> from the right side of the profile page<br>Or<br></li>
+        <li>Click <strong>View your Workspace</strong> from the right side of the profile page<br>Or<br></li>
         <li>Click <strong>Profile</strong> icon on the header<br></li>
          <li>
            Select Workspace from the dropdown list <br> In your Workspace you can
