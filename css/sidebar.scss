@@ -54,13 +54,17 @@
 .sidebar-container {
 	@media (max-width: $screen-sm-max) {
 		display: none;
-		position: relative;
-		top: 53px;
+		position: fixed;
+		top: 60px;
 		background: #0d9474;
 		background: -moz-linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
 		background: -webkit-linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
 		background: linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 );
+		z-index:100;
+		max-height:calc(100% - 60px);
+		overflow-y:auto;
+		width:100%;
 	}
 	.inner__searchbar {
 		@media (min-width: $screen-sm-max) {

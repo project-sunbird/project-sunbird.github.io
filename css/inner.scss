@@ -200,6 +200,10 @@
     font-size: 13px;
     margin: 20px 0;
     width:100%;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     > tbody {
       > tr > td {
         border-top: 1px solid #c7d4e4;
