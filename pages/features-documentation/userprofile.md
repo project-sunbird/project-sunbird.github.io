@@ -47,7 +47,7 @@ To create or update your profile:
     <td><img src="pages/features-documentation/images/profile_address.png"></td>
   </tr>
   <tr>
-      <td><strong>Education</strong>: Add or edit your academic qualifications, such as degree, year of passing, percentage, board/university, etc. You can show or hide your academic details from others<strong></td>
+      <td><strong>Education</strong>: Add or edit your academic qualifications, such as degree, year of passing, percentage, board/university, etc. You can show or hide your academic details from others</td>
     <td><img src="pages/features-documentation/images/profile_education.png"></td>
   </tr>
   <tr>
