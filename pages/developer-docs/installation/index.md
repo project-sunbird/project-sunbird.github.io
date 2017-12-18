@@ -15,7 +15,7 @@ The deployment of Sunbird in a live environment requires several distributed com
 ### Size and Verify Your Environment
 
 Requirements for Sunbird installation depend on the environment on which you install Sunbird and how you use Sunbird. 
-For details, check the **Prerequisites** section for your chosen installation type. For example; if you choose to do a medium scale deployment of Sunbird, check [here](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/#link1-1-1){:target="_blank"} 
+For details, check the **Prerequisites** section for your chosen installation method. For example; if you choose to do a medium scale deployment of Sunbird, check [here](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/#link1-1-1){:target="_blank"} 
 
 ### Choosing an Installation method
 
