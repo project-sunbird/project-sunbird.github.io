@@ -7,7 +7,10 @@ description: Installing Sunbird requires two primary software components, the Su
 published: true
 allowSearch: true
 ---
-Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface. 
+Installing Sunbird requires two primary software components:
+
+- Sunbird portal or web application
+- Sunbird services stack or the backend API interface. 
 
 ## Sunbird Portal Setup
 
