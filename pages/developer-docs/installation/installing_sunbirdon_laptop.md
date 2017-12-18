@@ -18,7 +18,7 @@ To setup the Sunbird portal follow the steps sequentially:
 
 ### Prerequisites
 
-Complete the following pre-requisites before installing and running the Sunbird-player application
+Check the following pre-requisites before installing and running the Sunbird-player application
 
 1. **Software dependencies**
 	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 6.x.x LTS series
