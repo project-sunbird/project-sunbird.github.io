@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs/installation
+directory: developer-docs
 title: Telemetry Spec.
 page_title: Telemetry Spec
 description: telemetry specification of Sunbird
