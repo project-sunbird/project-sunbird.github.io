@@ -30,7 +30,7 @@ Complete the following pre-requisites before installing and running the Sunbird-
 
 ### Setup 
 
-**[Checkout the code here]**(https://github.com/project-sunbird/sunbird-portal.git)
+[Checkout the code here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}
 
 Execute the following command 
 
