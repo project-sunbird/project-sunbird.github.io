@@ -9,7 +9,7 @@ allowSearch: true
 
 ---
 
-## Essential Steps to Plan, Install, and Configure Sunbird Deployment
+## Plan, Install and Configure Sunbird 
 The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, check and decide the following:
 
 ### Size and Verify Your Environment
