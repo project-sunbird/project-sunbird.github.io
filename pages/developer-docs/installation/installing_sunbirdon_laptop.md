@@ -37,7 +37,8 @@ Execute the following command
 git clone https://github.com/project-sunbird/sunbird-portal.git
     
 **Run the following commands**
-    $ cd <PROJECT-FOLDER>/src
+   
+   $ cd <PROJECT-FOLDER>/src
     $ npm install
     $ bower cache clean
     $ bower install --force
