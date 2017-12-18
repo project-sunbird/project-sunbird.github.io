@@ -39,9 +39,9 @@ For setting up the application
 [Checkout the code here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}
 
 Execute the following command 
-
+<pre>
 git clone https://github.com/project-sunbird/sunbird-portal.git
-
+</pre>
 Once the git clone command is over , Run the following set of commands:
    
     $ cd <PROJECT-FOLDER>/src
