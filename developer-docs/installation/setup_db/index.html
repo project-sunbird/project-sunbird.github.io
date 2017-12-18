@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.16/";
+			baseURL.href="/releases/release.1.1.17/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-08 17:53:07 +0530">
+<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.16" />
-<meta name="buildNo" content="209" />
+<meta name="buildVersion" content="release.1.1.17" />
+<meta name="buildNo" content="236" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08122017"  />
-<link rel="stylesheet" href="css/style.css?08122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?08122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?08122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?08122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
+<link rel="stylesheet" href="css/style.css?18122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -473,6 +473,18 @@ The missing configuration needs to be done afterwards.</p>
 <p>Initialize the databases after they are installed using the following the procedure:</p>
 
 <p>Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></p>
+
+<p>Once DB initialisation is done then load following to CSV files.
+ 1. pageMgmt.csv
+ 2. pageSection.csv
+  File Locations: https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources</p>
+
+<p>Command to run those files</p>
+
+<p>// change the path of csv file
+ a. COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,organisationid ,portalmap ,updatedby ,updateddate ) FROM ‘/tmp/cql/pageMgmt.csv’;</p>
+
+<p>b. COPY sunbird.page_section(id, alt,createdby ,createddate ,description ,display ,imgurl ,name,searchquery , sectiondatatype ,status , updatedby ,updateddate) FROM   ‘/tmp/cql/pageSection.csv’;</p>
 
 <p><strong><em>Note:</em></strong> The automation walk-through provided (PART 4), shows you the creation of databases and the initialization process.</p>
 

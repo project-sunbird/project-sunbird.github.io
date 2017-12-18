@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.16/";
+			baseURL.href="/releases/release.1.1.17/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-08 17:53:07 +0530">
+<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.16" />
-<meta name="buildNo" content="209" />
+<meta name="buildVersion" content="release.1.1.17" />
+<meta name="buildNo" content="236" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08122017"  />
-<link rel="stylesheet" href="css/style.css?08122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?08122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?08122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?08122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
+<link rel="stylesheet" href="css/style.css?18122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -391,7 +391,7 @@ $("a[href$='developer-docs/installation/installing_sunbirdon_laptop/']").addClas
               </ul>
             </li>
             <li class="toc_level-1 toc_section-4">
-              <a href="#link1-4"><span class="tocnumber">2 .</span> <span class="toctext">Backend Service Stack</span></a>
+              <a href="#link1-4"><span class="tocnumber">2 .</span> <span class="toctext">Configure Backend Service Stack</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-5">
                   <a href="#link1-4-1"><span class="tocnumber">2.1 .</span> <span class="toctext">Edit the Application Config</span></a>
@@ -399,22 +399,35 @@ $("a[href$='developer-docs/installation/installing_sunbirdon_laptop/']").addClas
               </ul>
             </li>
             <li class="toc_level-1 toc_section-6">
-              <a href="#link1-6"><span class="tocnumber">3 .</span> <span class="toctext">Run Application</span></a>
+              <a href="#link1-6"><span class="tocnumber">3 .</span> <span class="toctext">Run the Application</span></a>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><p>Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface.</p>
+</div><p>Installing Sunbird requires two primary software components:</p>
+
+<ul>
+  <li>Sunbird portal or web application</li>
+  <li>Sunbird services stack or the backend API interface.</li>
+</ul>
 
 <h2 id="link1-1">Sunbird Portal Setup</h2>
 
-<p>To setup the Sunbird portal follow the steps sequentially:</p>
+<p>To setup the Sunbird portal follow these steps sequentially:</p>
+
+<ol>
+  <li>Check for the prerequisites</li>
+  <li>Setup</li>
+  <li>Configure Backend Service Stack</li>
+  <li>Edit the Application Config</li>
+  <li>Run the Application</li>
+</ol>
 
 <h3 id="link1-1-1">Prerequisites</h3>
 
-<p>Complete the following pre-requisites before installing and running the Sunbird-player application</p>
+<p>Check the following pre-requisites before installing and running the Sunbird-player application</p>
 
 <ol>
   <li><strong>Software dependencies</strong>
@@ -429,23 +442,26 @@ $("a[href$='developer-docs/installation/installing_sunbirdon_laptop/']").addClas
 </ol>
 
 <h3 id="link1-1-2">Setup</h3>
+<p>For setting up the application 
+<a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">Checkout the code here</a></p>
 
-<ol>
-  <li>
-    <p><strong>Checkout code</strong> git clone https://github.com/project-sunbird/sunbird-portal.git</p>
-  </li>
-  <li>
-    <p><strong>Run the following commands</strong>
- $ cd <project-folder>/src
- $ npm install
- $ bower cache clean
- $ bower install --force</project-folder></p>
-  </li>
-</ol>
+<p>Execute the following command</p>
+<pre>
+git clone https://github.com/project-sunbird/sunbird-portal.git
+</pre>
+<p>Once the git clone command is over , Run the following set of commands:</p>
 
-<h2 id="link1-4">Backend Service Stack</h2>
+<pre>
+  <code>$ cd &lt;PROJECT-FOLDER&gt;/src
+$ npm install
+$ bower cache clean
+$ bower install --force
+</code>
+</pre>
 
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs can be run in a distributed environment, for instance when you deploy to production, or they can be run locally on a single server for ease of use and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
+<h2 id="link1-4">Configure Backend Service Stack</h2>
+
+<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment, for instance when you deploy Sunbird to production, or you can run locally these service APIs locally on a single server for the sake of ease and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
 
 <p><strong><em>Note</em></strong>: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
 
@@ -473,7 +489,7 @@ $("a[href$='developer-docs/installation/installing_sunbirdon_laptop/']").addClas
 </code>
 </pre>
 
-<h2 id="link1-6">Run Application</h2>
+<h2 id="link1-6">Run the Application</h2>
 
 <ul>
   <li>

@@ -1,12 +1,25 @@
-<p>Installing Sunbird requires two primary software components, the Sunbird portal or web application, and the Sunbird services stack or the backend API interface.</p>
+<p>Installing Sunbird requires two primary software components:</p>
+
+<ul>
+  <li>Sunbird portal or web application</li>
+  <li>Sunbird services stack or the backend API interface.</li>
+</ul>
 
 <h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
 
-<p>To setup the Sunbird portal follow the steps sequentially:</p>
+<p>To setup the Sunbird portal follow these steps sequentially:</p>
+
+<ol>
+  <li>Check for the prerequisites</li>
+  <li>Setup</li>
+  <li>Configure Backend Service Stack</li>
+  <li>Edit the Application Config</li>
+  <li>Run the Application</li>
+</ol>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
-<p>Complete the following pre-requisites before installing and running the Sunbird-player application</p>
+<p>Check the following pre-requisites before installing and running the Sunbird-player application</p>
 
 <ol>
   <li><strong>Software dependencies</strong>
@@ -21,23 +34,24 @@
 </ol>
 
 <h3 id="setup">Setup</h3>
+<p>For setting up the application 
+<a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">Checkout the code here</a></p>
 
-<ol>
-  <li>
-    <p><strong>Checkout code</strong> git clone https://github.com/project-sunbird/sunbird-portal.git</p>
-  </li>
-  <li>
-    <p><strong>Run the following commands</strong>
- $ cd <PROJECT-FOLDER>/src
- $ npm install
- $ bower cache clean
- $ bower install --force</PROJECT-FOLDER></p>
-  </li>
-</ol>
+<p>Execute the following command</p>
+<pre>
+git clone https://github.com/project-sunbird/sunbird-portal.git
+</pre>
+<p>Once the git clone command is over , Run the following set of commands:</p>
 
-<h2 id="backend-service-stack">Backend Service Stack</h2>
+<pre><code>$ cd &lt;PROJECT-FOLDER&gt;/src
+$ npm install
+$ bower cache clean
+$ bower install --force
+</code></pre>
 
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs can be run in a distributed environment, for instance when you deploy to production, or they can be run locally on a single server for ease of use and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
+<h2 id="configure-backend-service-stack">Configure Backend Service Stack</h2>
+
+<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment, for instance when you deploy Sunbird to production, or you can run locally these service APIs locally on a single server for the sake of ease and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
 
 <p><strong><em>Note</em></strong>: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
 
@@ -63,7 +77,7 @@
 }
 </code></pre>
 
-<h2 id="run-application">Run Application</h2>
+<h2 id="run-the-application">Run the Application</h2>
 
 <ul>
   <li>
