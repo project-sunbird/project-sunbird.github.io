@@ -36,7 +36,7 @@ Execute the following command
 
 git clone https://github.com/project-sunbird/sunbird-portal.git
 
-Now as cloning is done , Execute the the following commands
+Once the git clone command is over , Run the following set of commands:
    
     $ cd <PROJECT-FOLDER>/src
     $ npm install
