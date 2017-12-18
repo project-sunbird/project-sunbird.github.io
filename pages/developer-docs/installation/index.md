@@ -4,7 +4,7 @@ directory: developer-docs/installation/
 title: Installation  Overview
 page_title: Installation
 description: installation overview
-keywords: 'Try Sunbird, Installation method, Pre-requisites, Sandbox, Deployment'
+keywords: 'Try Sunbird, Installation method, Pre-requisites, prerequisites, Sandbox, Deployment'
 allowSearch: true
 
 ---
@@ -28,7 +28,7 @@ If you install Sunbird on any environment or choose any method of installation, 
    - Use of a Linux OS flavour (developer installation is possible on MacOS)
    - Comfort with use of a terminal as Sunbird installation is triggered from a command-line terminal
 
-***Note: The pre-requisites are not necessary to try the sandbox option***
+***Note: The prerequisites are not necessary to try the sandbox option***
 
 ## Installation options
 
