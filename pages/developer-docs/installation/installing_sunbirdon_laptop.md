@@ -35,8 +35,8 @@ Complete the following pre-requisites before installing and running the Sunbird-
 Execute the following command 
 
 git clone https://github.com/project-sunbird/sunbird-portal.git
-    
-**Run the following commands**
+
+Now as cloning is done , Execute the the following commands
    
     $ cd <PROJECT-FOLDER>/src
     $ npm install
