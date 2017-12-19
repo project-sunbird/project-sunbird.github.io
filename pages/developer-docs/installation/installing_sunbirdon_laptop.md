@@ -36,13 +36,13 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 
 ### Setup 
 For setting up the application 
-[Checkout the code here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}
+[checkout the code here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}
 
 Execute the following command 
-<pre>
-git clone https://github.com/project-sunbird/sunbird-portal.git
-</pre>
-Once the git clone command is over , Run the following set of commands:
+
+    git clone https://github.com/project-sunbird/sunbird-portal.git
+
+Once the git clone command is over, run the following set of commands:
    
     $ cd <PROJECT-FOLDER>/src
     $ npm install
