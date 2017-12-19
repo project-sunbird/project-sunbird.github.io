@@ -28,11 +28,11 @@ This is an example of default URL :      https://ab009.effgg.com/auth/admin
 
 Change it to your configured URL. 
 
-This is an example your configured URL : xxxxxx.yyyyyy.com/auth/admin
+This is an example your configured URL : https://xxxxxx.yyyyyy.com/auth/admin
 
 Where xxxxx and yyyy represent the characters of your configured URL text.
 
-**Note:**The characters "xxxx"and "yyyy" are just used as an example text herein.
+**Note:** The characters "xxxx"and "yyyy" are just used as an example text herein.
 
 ## Setting the Admin password
 
