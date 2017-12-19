@@ -21,7 +21,9 @@ Assuming that you have set up sunbird on **sunbird.example.com**.
 
 - You can open Keycloak administration panel simply by navigating to https://sunbird.example.com/auth/admin.
 
-- Since you might have configured URL with your desired text , you need to replace the default URL address text with your configured URL text to access the Keycloak.
+- Since you might have configured your URL address with some desired text, you need to replace the default URL address text with your configured URL text to access the Keycloak.
+
+Here is what you need to do :
 
 This is an example of default URL :      https://ab009.effgg.com/auth/admin 
 
