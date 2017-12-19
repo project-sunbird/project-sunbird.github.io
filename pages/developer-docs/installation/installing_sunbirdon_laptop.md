@@ -45,11 +45,13 @@ After checking out the code, execute the following command:
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
 Once the git clone command is over, run the following set of commands:
-   
-    $ cd <PROJECT-FOLDER>/src
-    $ npm install
-    $ bower cache clean
-    $ bower install --force
+
+```   
+$ cd <PROJECT-FOLDER>/src
+$ npm install
+$ bower cache clean
+$ bower install --force
+```
 
 ## Configure Backend Service Stack
 
