@@ -53,7 +53,7 @@ Once the git clone command is over, run the following set of commands:
 
 ## Configure Backend Service Stack
 
-The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment, for instance when you deploy Sunbird to production, or you can run locally these service APIs locally on a single server for the sake of ease and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes. 
+The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let's configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
 
 ***Note***: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.
 
