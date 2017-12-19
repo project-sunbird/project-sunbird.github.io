@@ -24,7 +24,8 @@ For example, player_tenant_dir: /data/extensions/tenant.
 
 **NOTE**: If the variable `player_tenant_dir` is commented, the volume will not be mounted, and customizations will not be loaded.
 
-Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Set the permissions for the folder to `mode=0775`,`user=root` and `group=root`.
+- Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. 
+- Set the permissions for the folder to `mode=0775`,`user=root` and `group=root`.
 
 ## Changing Themes
 
