@@ -45,12 +45,15 @@ After checking out the code, execute the following command:
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
 Once the git clone command is over, run the following set of commands:
-<pre>  
-    $ cd <PROJECT-FOLDER>/src
-    $ npm install
-    $ bower cache clean
-    $ bower install --force
+
+<pre>
+$ cd (PROJECT-FOLDER)/src
+$ npm install
+$ bower cache clean
+$ bower install --force
+
 </pre>
+
 ## Configure Backend Service Stack
 
 The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let's configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
