@@ -47,7 +47,7 @@ After checking out the code, execute the following command:
 Once the git clone command is over, run the following set of commands:
 
 <pre>
-$ cd (PROJECT-FOLDER)/src
+$ cd {PROJECT-FOLDER}/src
 $ npm install
 $ bower cache clean
 $ bower install --force
@@ -87,10 +87,11 @@ Once the file is updated with appropriate values, then you can begin with runnin
 
 ## Run the Application
 
- Run the following commands:
+Run the following commands:
+<pre>
+$ gulp build
+$ cd {PROJECT-FOLDER}/src/app
+$ node server.js
 
-    $ gulp build
-    $ cd <PROJECT-FOLDER>/src/app
-    $ node server.js
-
+</pre>
 After executing the commands,open `http://localhost:3000` in browser.
