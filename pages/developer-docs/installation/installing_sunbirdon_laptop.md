@@ -48,8 +48,11 @@ Once the git clone command is over, run the following set of commands:
 
 ```   
 $ cd <PROJECT-FOLDER>/src
+
 $ npm install
+
 $ bower cache clean
+
 $ bower install --force
 ```
 
