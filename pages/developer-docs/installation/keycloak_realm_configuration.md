@@ -23,7 +23,9 @@ Assuming that you have set up sunbird on **sunbird.example.com**.
 
 - Since you might have configured URL with your desired text , you need to replace the default URL address text with your configured URL text to access the Keycloak.
 >This is an example of default URL :      https://ab009.effgg.com/auth/admin 
+
 Change it to your configured URL. 
+
 >This is an example your configured URL : https://xxxxxx.yyyyyy.com/auth/admin
 Where xxxxx and yyyy represent the characters of your configured URL text.
 
