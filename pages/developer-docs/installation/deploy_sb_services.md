@@ -11,17 +11,17 @@ The Sunbird services are categorized into :
 
 ## Sunbird Core Services
 
-## Sunbird proxy services
-
 To deploy the Sunbird core services, execute the following command:
 
 Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. 
 
+## Sunbird proxy services
+
 To deploy  the Sunbird proxy services , execute the following command:
 
-Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. 
+Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
-**Note:** The automation walk-through provided (PART 5)(PART6)&(PART7), shows you the process for  deployment for Sunbird services.
+**Note:** The automation walk-through provided (PART 5) (PART6) & (PART7), shows you the process for  deployment for Sunbird services.
 
 ### Automation Walkthrough
 
