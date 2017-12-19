@@ -12,12 +12,12 @@ allowSearch: true
 A step by step guide to run and provision the keycloak server locally is explained in detail [here](http://www.keycloak.org/docs/latest/getting_started/index.html){:target="_blank"}.
 The Sunbird uses Keycloak as the identity and authentication provider. 
 
-### Access Keycloak
+## Access Keycloak
 
 Once the sunbird services are set up, [visit](https://sunbird.example.com/auth/admin){:target="_blank"} (Assuming you've set up sunbird on sunbird.example.com) to access the Keycloak administration.
 
 
-### Setting the Admin password
+## Setting the Admin password
 
 - Log into the docker container running keycloak by executing the following commands:
 
@@ -46,7 +46,7 @@ The script will execute creating admin user and password.
 
 Once you view the administration console,clients and the secrets can be set by following steps:
 
-### Import Realm
+## Import Realm
 
 To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm [here](pages/developer-docs/installation/other_files/keycloak-realm){:target="_blank"}. 
 
@@ -62,11 +62,11 @@ On the import screen, choose the json file and then click 'Create'.
 
 Once the realm is imported ensure the realm is set as active realm before proceeding with the rest of the configuration
 
-###  SMTP Configuration
+##  SMTP Configuration
 
 Email configuration is needed to ensure password reset and user management flows work smoothly. Navigate to `Realm Settings > Email`. Fill up the SMTP credentials and use the Test Connection button to verify the SMTP connection is working.
 
-### Create a user who can access the user management API
+## Create a user who can access the user management API
 
 Navigate to Manage > Users and create a new user. Put the username as `user-manager`, set the email to be verified and save. After saving, assign a password to this user.
 
@@ -76,25 +76,25 @@ Next update the client roles under role mappings to ensure that this user has th
 
 Use corresponding username and password values for this user as the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration.
 
-### Update Client & Secrets
+## Update Client & Secrets
 
 Navigate to `Clients` and make the changes listed below to each of the clients. Only change the clients listed below. Settings for other clients need not be changed.
 
-#### Account, broker, realm-management
+### Account, broker, realm-management
 
 Go to the `Credentials` tab and regenerate the Secret and Registration Access Token. Note both, you will need them in a later step.
 
-#### Android
+### Android
 
 Change the Root URL to `https://sunbird.example.com`
 Add a Valid Redirect URI `https://sunbird.example.com/oauth2callback`
 
-#### Portal
+### Portal
 
 Change the Root URL to `https://sunbird.example.com`
 Add Valid Redirect URIs `https://sunbird.example.com/private/*` and `https://sunbird.example.com/`
 
-#### Trampoline
+### Trampoline
 
 Change the Root URL to `https://sunbird.example.com`
 Go to the Credentials tab and regenerate the Secret and Registration Access Token. Use the secret as the value for the `sunbird_trampoline_secret` configuration.
