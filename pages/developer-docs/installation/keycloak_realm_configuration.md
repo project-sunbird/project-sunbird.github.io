@@ -27,6 +27,7 @@ Assuming that you have set up sunbird on **sunbird.example.com**.
 Change it to your configured URL. 
 
 >This is an example your configured URL : https://xxxxxx.yyyyyy.com/auth/admin
+
 Where xxxxx and yyyy represent the characters of your configured URL text.
 
 **Note:** The characters "xxxx"and "yyyy" are just used as an example text herein.
