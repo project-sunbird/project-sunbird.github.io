@@ -30,30 +30,7 @@ Content types created on the content editor include: Game, Story, Worksheet, Qui
     <td>1. Click <strong>Study Material</strong> tile on your workspace. The <strong>Create Lesson</strong> page is displayed:<br>2. Enter<strong>Name</strong> and select options from the dropdown list for <strong>Curriculum, Medium, Subject, Class and Resource type</strong> <br>Note: You can fill these details later in the lesson creation page<br>3. Click <strong>Start Creating</strong> to create content</td>
     <td><img src="pages/features-documentation/images/profileimg1.png"></td>
   </tr>
+  <tr>
+    <td>1. The content editor tool window for creating contents (for Book unit, Story, Game, Worksheet and Collection) is displayed<br>2.  
   </table>
 
-{% ingredient /features-documentation/textbook_create_usingeditor %}{% endingredient %}
-
-{% ingredient /features-documentation/create_textbooks %}{% endingredient %}
-
-{% ingredient /features-documentation/textbook_add_textbook_unit %}{% endingredient %}
-
-{% ingredient /features-documentation/textbook_add_story %}{% endingredient %}
-
-{% ingredient /features-documentation/textbook_add_game %}{% endingredient %}
-
-{% ingredient /features-documentation/textbook_add_worksheet %}{% endingredient %}
-
-{% ingredient /features-documentation/textbook_add_collection %}{% endingredient %}
-
-{% ingredient /features-documentation/course_create_usingeditor %}{% endingredient %}
-
-{% ingredient /features-documentation/course_add_courseunit %}{% endingredient %}
-
-{% ingredient /features-documentation/course_add_story %}{% endingredient %}
-
-{% ingredient /features-documentation/course_add_game %}{% endingredient %}
-
-{% ingredient /features-documentation/course_add_worksheet %}{% endingredient %}
-
-{% ingredient /features-documentation/course_add_collection %}{% endingredient %}
