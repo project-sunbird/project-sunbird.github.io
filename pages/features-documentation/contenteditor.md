@@ -57,6 +57,8 @@ Content types created on the content editor include:
   
   ### Right pane
   
+  Understanding the Right Pane of the Content Editor
+  
   **Customize Tab and Default Options**
   
   <table> 
@@ -84,7 +86,7 @@ Content types created on the content editor include:
   </tr>
   </table>
   
-  **Properties Tab
+  **Properties Tab**
   
   <table> 
  <tr>
@@ -97,7 +99,9 @@ Content types created on the content editor include:
   </tr>
   </table>
   
-  ### Toolbar
+  ### Tool Bar
+  
+  Understanding the Tools of the Tool Bar
   
   **Add Slide**
   
