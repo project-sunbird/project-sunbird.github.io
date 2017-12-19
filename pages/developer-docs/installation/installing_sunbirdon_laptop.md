@@ -88,9 +88,11 @@ Once the file is updated with appropriate values, then you can begin with runnin
 ## Run the Application
 
  Run the following commands:
-    
+<pre>
     $ gulp build
     $ cd <PROJECT-FOLDER>/src/app
     $ node server.js
+
+</pre>
 
 After executing the commands,open `http://localhost:3000` in browser.
