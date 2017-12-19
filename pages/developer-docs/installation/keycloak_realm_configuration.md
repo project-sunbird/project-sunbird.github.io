@@ -23,7 +23,7 @@ This is an example of default URL :      **https://ab009.effgg.com/auth/admin**
 
 - Since you might have configured your URL address with some desired text, you need to replace the default URL address text with your   configured URL text.
 
-- After replacing the default URL TEXT with the example configured URL text.
+- After replacing the default URL text with the configured URL text.
 
 This is an example your configured URL : **https://xxxxxx.yyyyyy.com/auth/admin**
 
