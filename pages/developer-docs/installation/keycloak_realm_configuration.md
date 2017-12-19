@@ -48,7 +48,8 @@ After you can view the administration console, follow the steps provided below t
 
 ## Import Realm
 
-To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm [here](https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/developer-docs/installation/other_files/keycloak-realm.json){:target="_blank"}. 
+To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a  href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json"  download>here</a>.
+
 
 To import the realm, use the 'Add realm' button as shown in the following screens. 
 
