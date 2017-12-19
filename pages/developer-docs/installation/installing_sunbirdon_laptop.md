@@ -46,15 +46,12 @@ After checking out the code, execute the following command:
 
 Once the git clone command is over, run the following set of commands:
 
-  
+<pre>  
     $ cd <PROJECT-FOLDER>/src
-
     $ npm install
-
     $ bower cache clean
-
     $ bower install --force
-
+</pre>
 
 ## Configure Backend Service Stack
 
