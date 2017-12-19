@@ -16,24 +16,19 @@ A step by step guide to run and provision the keycloak server locally is explain
 ## Access Keycloak
 
 Once the Sunbird services are set up, lets access the keycloak by following these steps:
-
-Assuming that you have set up sunbird on **sunbird.example.com**.
-
-- You can open Keycloak administration panel simply by navigating to https://sunbird.example.com/auth/admin.
-
-- Since you might have configured your URL address with some desired text, you need to replace the default URL address text with your configured URL text to access the Keycloak.
-
-Here is what you need to do :
-
-This is an example of default URL :      https://ab009.effgg.com/auth/admin 
-
-Change it to your configured URL. 
-
-This is an example your configured URL : https://xxxxxx.yyyyyy.com/auth/admin
+- For accessing Keycloak administration panel, you need to set right the URL address by changing the default URL to configured URL address.
+- This is an example of default URL :      **https://ab009.effgg.com/auth/admin** 
+- Since you might have configured your URL address with some desired text, you need to replace the default URL address text with your   configured URL text.
+- After replacing with the example configured URL text,
+- This is an example your configured URL : **https://xxxxxx.yyyyyy.com/auth/admin**
 
 Where xxxxx and yyyy represent the characters of your configured URL text.
 
 **Note:** The characters "xxxx"and "yyyy" are just used as an example text herein.
+
+Assuming that you have set up sunbird on **sunbird.example.com**.
+
+- You can open Keycloak administration panel simply by navigating to **https://sunbird.example.com/auth/admin.**
 
 ## Setting the Admin password
 
