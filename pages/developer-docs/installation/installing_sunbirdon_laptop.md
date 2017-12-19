@@ -14,7 +14,7 @@ Installing Sunbird requires two primary software components:
 
 ## Sunbird Portal Setup
 
-To setup the Sunbird portal follow these steps sequentially:
+To setup the Sunbird portal successfully, follow these steps sequentially:
 
 1. Check for the prerequisites 
 2. Setup 
@@ -24,21 +24,23 @@ To setup the Sunbird portal follow these steps sequentially:
 
 ### Prerequisites
 
-Check the following pre-requisites before installing and running the Sunbird-player application
+Check the following pre-requisites before installing and running the Sunbird-player application:
 
 1. **Software dependencies**
 	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 6.x.x LTS series
 	* [Bower](https://bower.io/#install-bower){:target="_blank"} - latest version of bower: `npm install -g bower`
-	* [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md){:target="_blank"} - latest version of gulp: `npm install -g gulp-cli`
+	* [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md){:target="_blank"}- 
+	  latest version of gulp: `npm install -g gulp-cli`
 	* [Mongo DB](https://www.mongodb.com/){:target="_blank"} - v3.4.1 and newer
 
-2. **API Keys** - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when configuring the application.
+2. **API Keys** 
+
+This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.
 
 ### Setup 
-For setting up the application 
-[checkout the code here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}
+For setting up the application,check out the code [here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}.
 
-Execute the following command 
+After checking out the code, execute the following command:
 
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
@@ -57,7 +59,9 @@ The Sunbird portal application is powered by a set of Service APIs. These Servic
 
 ### Edit the Application Config
 
-Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in your favourite text editor. Update the file so it contains the following values:
+Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any available text editor. 
+
+Once the file is opened, update the contents of the file so that it contains exactly the following values:
 
     module.exports = {
         LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    // 1. LEARNER_URL
@@ -75,6 +79,8 @@ Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in your fa
         PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       // 6. PORTAL_ECHO_API_URL
         ...
     }
+
+Once the file is updated with appropriate values, then you can begin with running the application. 
 
 ## Run the Application
 
