@@ -22,11 +22,12 @@ Assuming that you have set up sunbird on **sunbird.example.com**.
 - You can open Keycloak administration panel simply by navigating to https://sunbird.example.com/auth/admin.
 
 - Since you might have configured URL with your desired text , you need to replace the default URL address text with your configured URL text to access the Keycloak.
->This is an example of default URL :      https://ab009.effgg.com/auth/admin 
+
+This is an example of default URL :      https://ab009.effgg.com/auth/admin 
 
 Change it to your configured URL. 
 
->This is an example your configured URL : https://xxxxxx.yyyyyy.com/auth/admin
+This is an example your configured URL : https://xxxxxx.yyyyyy.com/auth/admin
 
 Where xxxxx and yyyy represent the characters of your configured URL text.
 
@@ -81,21 +82,22 @@ Once the realm is imported ensure the realm is set as active realm before procee
 
 Navigate to Manage, then to Users and create a new user.
 
-1. Enter the username as `user-manager`, set the email to be verified and save. 
+- Enter the username as `user-manager`, set the email to be verified and save. 
 
-2. Assign a password to this user.
+- Assign a password to this user.
 
-3. Update client roles under role mappings to ensure that this user has the `manage-users`, `query-users`, `query-groups` and `view-users` permissions.
+- Update client roles under role mappings to ensure that this user has the `manage-users`, `query-users`, `query-groups` and `view-users` permissions.
 
 **Note:** Refer to the following screenshot for reference configuration.
 
 {% image src='pages/developer-docs/installation/images/keycloak-add-user-manager.png' half center alt='Keycloak use management' %}
 
-4. Use corresponding username and password values for this user as the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration.
+- Use corresponding username and password values for this user as the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration.
 
 ## Update Client & Secrets
 
 Navigate to Clients and make the following changes to each of the clients. 
+
 **Note:** Modify only the clients listed below. You do not need to modify the settings for other clients.
 
 ### Account, broker, realm-management
