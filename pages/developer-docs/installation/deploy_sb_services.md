@@ -9,9 +9,9 @@ allowSearch: true
 
 The Sunbird services are categorized into :
 
-* Sunbird Core Services
+## Sunbird Core Services
 
-* Sunbird proxy services
+## Sunbird proxy services
 
 To deploy the Sunbird core services, execute the following command:
 
