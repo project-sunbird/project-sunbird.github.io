@@ -61,7 +61,7 @@ module Jekyll
                         inner_section
                       ].map(&:to_s).join ''
 
-          sect['id'] = "#{anchor_id}"
+          sect['id'] = "#{sect.text.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}"
 
           level_html += create_level_html(anchor_id,
                                           toc_level + 1,
@@ -74,7 +74,7 @@ module Jekyll
         level_html = '<ul>' + level_html + '</ul>' if level_html.length > 0
 
         anchor_id = anchor_prefix + toc_level.to_s + '-' + toc_section.to_s
-        tag['id'] = "#{anchor_id}"
+        tag['id'] = "#{tag.text.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}"
 
         toc_html += create_level_html(anchor_id,
                                       toc_level,
@@ -115,7 +115,7 @@ module Jekyll
 
     def create_level_html(anchor_id, toc_level, toc_section, tocNumber, tocText, tocInner)
       link = '<a href="#%1"><span class="tocnumber">%2 .</span> <span class="toctext">%3</span></a>%4'
-      .gsub('%1', anchor_id.to_s)
+      .gsub('%1', tocText.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, ''))
       .gsub('%2', tocNumber.to_s)
       .gsub('%3', tocText)
       .gsub('%4', tocInner ? tocInner : '')
