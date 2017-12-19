@@ -87,7 +87,8 @@ Once the file is updated with appropriate values, then you can begin with runnin
 
 ## Run the Application
 
-* Run the following commands:
+ Run the following commands:
+    
     $ gulp build
     $ cd <PROJECT-FOLDER>/src/app
     $ node server.js
