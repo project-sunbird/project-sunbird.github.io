@@ -47,16 +47,44 @@ Course is a content provided in sequence, broken down in modules, open for enrol
     <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_metadata.png</th>
   </tr>
 </table>
-{% ingredient /faqs/createcont_course %}{% endingredient %}
 
-{% ingredient /faqs/createcont_add_cont_course %}{% endingredient %}
+## Adding Image to Course Metadata
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-031e">Click the Image icon to add an<br>image</th>
+    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/img.png</th>
+  </tr>
+  <tr>
+    <td class="tg-031e">1.You<br>can add images either by selecting an image from a list or uploading images<br>from your local machine to use immediately,<br>2.Click<br>My images to view a list of all image files that you have previously,uploaded,<br>3.Click<br>All image to view a list of image files from the repository,<br>4.Note:<br>The repository contains all image files added and uploaded by any users,<br>5.Choose<br>an appropriate image file from any list and click Select,<br>6.Click<br>Upload and use to upload and use images from your gallery</td>
+    <td class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/img.png</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">1.Choose File to browse and Click select a file from your local drive or open the explorer in a separate window and drag and drop the required file on the screen.,<br>Note: Supported file formats are: .jpeg, .jpg, .png,<br>2.Under Copyright &amp; License, select if you want to:,<br>a.Makeit available to everyone,<br>b.Not share with anyone,<br>4.Add image details in the Asset Caption area,<br>5.Click Upload and Use to upload the image</td>
+    <td class="tg-yw4l">project-sunbird.github.io/pages/features-documentation/images/img.png</td>
+  </tr>
+</table>
 
-{% ingredient /faqs/createcont_add_courseunit %}{% endingredient %}
+## Adding Content to Course
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-031e">1.Click + icon in the left navigation pane to add a Course Unit, Collection, or<br>Resource</th>
+    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_addingresource.png</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"></td>
+  </tr>
+</table>
 
-{% ingredient /faqs/createcont_add_collection %}{% endingredient %}
-
-{% ingredient /faqs/createcont_add_story %}{% endingredient %}
-
-{% ingredient /faqs/createcont_add_wrksheet %}{% endingredient %}
-
-{% ingredient /faqs/createcont_modify %}{% endingredient %}
