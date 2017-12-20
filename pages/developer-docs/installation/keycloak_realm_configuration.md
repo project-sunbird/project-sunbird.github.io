@@ -37,20 +37,7 @@ Assuming that you have set up sunbird on **sunbird.example.com**.
 
 ## Setting the Admin password
 
-- Log into the docker container running keycloak by executing the following commands:
-
-<pre>
-#Find where the container is running
-docker service ps keycloak1
-#If you are running all services on single server no need to SSH
-#If you are in a different server, SSH into node running keycloak
-ssh {node-running-keycloak-container}
-#Find the keycloak container ID
-docker ps | grep keycloak
-#Login to container
-docker exec -uroot -it {container-ID}
-</pre>
-
+- Log into the server that Keycloak is running on
 - Change to the path to keycloak root directory (most likely `/opt/jboss/keycloak`)
 - Execute the following script to set the administrator user name and password
 
