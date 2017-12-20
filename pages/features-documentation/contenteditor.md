@@ -39,7 +39,7 @@ Content types created on the content editor include:
   </tr>
   </table>
   
-  ## Content Editor Parts
+## Content Editor Parts
   
   The broad areas of the content editor are:
   
@@ -55,7 +55,7 @@ Content types created on the content editor include:
   </tr>
   </table>
   
-  ### Right pane
+### Right pane
   
   Understanding the Right Pane of the Content Editor
   
@@ -99,11 +99,11 @@ Content types created on the content editor include:
   </tr>
   </table>
   
-  ### Tool Bar
+### Tool Bar
   
   Understanding the Tools of the Tool Bar
   
-  #### Add Slide
+#### Add Slide
   
   <table>
   <tr>
@@ -118,7 +118,7 @@ page to reorder them
   </tr>
   </table>
   
-  #### Add Text
+#### Add Text
   
    <table>
   <tr>
@@ -230,7 +230,7 @@ words that already exist in the repository <br>1. To use this feature, select th
   </tr>
   </table>
   
-  #### Add Richtext 
+#### Add Richtext 
    
    <table>
   <tr>
