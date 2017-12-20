@@ -34,6 +34,19 @@ Course is a content provided in sequence, broken down in modules, open for enrol
     <td><img src=".png"></td>
   </tr>
   </table>
+  
+  ## Course Metadata
+  <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-031e">1.Click Update in the right navigation pane to edit details of the course<br>2.Enter Title of the course<br>3.Enter Description<br>4.Select the following from their respective drop-down lists<br>•Audience<br>•Language<br>•Concepts<br>6.EnterFaculty details<br>7.Enter Tutor details<br>8.Enter Keywords<br>9.Click Update to update the details</th>
+    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_metadata.png</th>
+  </tr>
+</table>
 {% ingredient /faqs/createcont_course %}{% endingredient %}
 
 {% ingredient /faqs/createcont_add_cont_course %}{% endingredient %}
