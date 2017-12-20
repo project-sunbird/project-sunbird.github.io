@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.17/";
+			baseURL.href="/releases/release.1.1.18/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
+<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.17" />
-<meta name="buildNo" content="236" />
+<meta name="buildVersion" content="release.1.1.18" />
+<meta name="buildNo" content="311" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
-<link rel="stylesheet" href="css/style.css?18122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
+<link rel="stylesheet" href="css/style.css?20122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -283,6 +283,9 @@
 							</ul>
 						</div>
 					</li>
+					<!--<li>
+						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
+					</li>-->
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -380,20 +383,20 @@ $("a[href$='developer-docs/troubleshooting/']").addClass("sidebar-link-selected"
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Database</span></a>
+              <a href="#database"><span class="tocnumber">1 .</span> <span class="toctext">Database</span></a>
             </li>
             <li class="toc_level-1 toc_section-2">
-              <a href="#link1-2"><span class="tocnumber">2 .</span> <span class="toctext">Application</span></a>
+              <a href="#application"><span class="tocnumber">2 .</span> <span class="toctext">Application</span></a>
             </li>
             <li class="toc_level-1 toc_section-3">
-              <a href="#link1-3"><span class="tocnumber">3 .</span> <span class="toctext">Telemetry</span></a>
+              <a href="#telemetry"><span class="tocnumber">3 .</span> <span class="toctext">Telemetry</span></a>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><h2 id="link1-1">Database</h2>
+</div><h2 id="database">Database</h2>
 
 <p><strong>Q:</strong> Are data initialization scripts available?</p>
 
@@ -458,7 +461,7 @@ For details, refer the files:</p>
   <li>page_section</li>
 </ul>
 
-<h2 id="link1-2">Application</h2>
+<h2 id="application">Application</h2>
 
 <p><strong>Q</strong>: How do I test if the APIs are working ?</p>
 
@@ -491,7 +494,7 @@ For details, refer the files:</p>
   <li>sunbird_sso_publickey // it will always read from System ENV</li>
 </ul>
 
-<h2 id="link1-3">Telemetry</h2>
+<h2 id="telemetry">Telemetry</h2>
 
 <p><strong>Q</strong>: Is there any controller for telemetry events in Sunbird? How can telemetry data be accessed from Sunbird?</p>
 

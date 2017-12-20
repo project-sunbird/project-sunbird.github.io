@@ -1,13 +1,41 @@
 <h2 id="getting-started">Getting Started</h2>
 
-<p>A step by step guide to run and provision the keycloak server locally is explained in detail <a href="http://www.keycloak.org/docs/latest/getting_started/index.html" target="_blank">here</a>.
-The Sunbird uses Keycloak as the identity and authentication provider.</p>
+<p>A step by step guide to run and provision the keycloak server locally is explained in detail <a href="http://www.keycloak.org/docs/latest/getting_started/index.html" target="_blank">here</a>.</p>
 
-<h3 id="access-keycloak">Access Keycloak</h3>
+<p><strong>Note:</strong> Sunbird uses Keycloak as the identity and authentication provider.</p>
 
-<p>Once the sunbird services are set up, <a href="https://sunbird.example.com/auth/admin" target="_blank">visit</a> (Assuming you’ve set up sunbird on sunbird.example.com) to access the Keycloak administration.</p>
+<h2 id="access-keycloak">Access Keycloak</h2>
 
-<h3 id="setting-the-admin-password">Setting the Admin password</h3>
+<p>Once the Sunbird services are set up, lets access the keycloak by following these steps:</p>
+
+<ul>
+  <li>For accessing Keycloak administration panel, you need to set right the URL address by changing the default URL to configured URL address.</li>
+</ul>
+
+<p>This is an example of default URL :      <strong>https://ab009.effgg.com/auth/admin</strong></p>
+
+<ul>
+  <li>
+    <p>Since you might have configured your URL address with some desired text, you need to replace the default URL address text with your   configured URL text.</p>
+  </li>
+  <li>
+    <p>After replacing the default URL text with the configured URL text.</p>
+  </li>
+</ul>
+
+<p>This is an example your configured URL : <strong>https://xxxxxx.yyyyyy.com/auth/admin</strong></p>
+
+<p>Where xxxxx and yyyy represent the characters of your configured URL text.</p>
+
+<p><strong>Note:</strong> The characters “xxxx”and “yyyy” are just used as an example text herein.</p>
+
+<p>Assuming that you have set up sunbird on <strong>sunbird.example.com</strong>.</p>
+
+<ul>
+  <li>You can open Keycloak administration panel simply by navigating to <strong>https://sunbird.example.com/auth/admin.</strong></li>
+</ul>
+
+<h2 id="setting-the-admin-password">Setting the Admin password</h2>
 
 <ul>
   <li>Log into the docker container running keycloak by executing the following commands:</li>
@@ -34,19 +62,22 @@ docker exec -uroot -it {container-ID}
 $ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
 </code></p>
 
-<p>The script will execute creating admin user and password.</p>
+<p>The script is executed creating the admin user and password.</p>
+
+<p>You can log into the administration console using these credentials.</p>
+
+<p>After you can view the administration console, follow the steps provided below to set clients and the secrets.</p>
+
+<h2 id="import-realm">Import Realm</h2>
 
 <ul>
-  <li>You can now log into the administration console using these credentials.</li>
+  <li>
+    <p>To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json" download="">here</a>.</p>
+  </li>
+  <li>
+    <p>To import the realm, use the ‘Add realm’ button as shown in the following screens.</p>
+  </li>
 </ul>
-
-<p>Once you view the administration console,clients and the secrets can be set by following steps:</p>
-
-<h3 id="import-realm">Import Realm</h3>
-
-<p>To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a href="pages/developer-docs/installation/other_files/keycloak-realm" target="_blank">here</a>.</p>
-
-<p>To import the realm, use the ‘Add realm’ button, refer to the following images to get more clarity.</p>
 
 <p><a target="_blank" href="pages/developer-docs/installation/images/keycloack-add-realm.png">
         <img src="pages/developer-docs/installation/images/keycloack-add-realm.png" alt="Keycloak realm" class="plugin center" width="50%" />
@@ -56,49 +87,68 @@ $ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
         <img src="pages/developer-docs/installation/images/keycloak-choose-json.png" alt="choose keycloak json" class="plugin center" width="50%" />
       </a></p>
 
-<p>On the import screen, choose the json file and then click ‘Create’.</p>
+<ul>
+  <li>On the import screen, choose the json file and click ‘Create’.</li>
+</ul>
 
 <p><a target="_blank" href="pages/developer-docs/installation/images/keycloak-import-realm.png">
         <img src="pages/developer-docs/installation/images/keycloak-import-realm.png" alt="Keycloak import realm" class="plugin center" width="50%" />
       </a></p>
 
-<p>Once the realm is imported ensure the realm is set as active realm before proceeding with the rest of the configuration</p>
+<p>Once the realm is imported ensure the realm is set as active realm before proceeding with the rest of the configuration.</p>
 
-<h3 id="smtp-configuration">SMTP Configuration</h3>
+<h2 id="create-user-to-access-user-management-api">Create User to Access User Management API</h2>
 
-<p>Email configuration is needed to ensure password reset and user management flows work smoothly. Navigate to <code>Realm Settings &gt; Email</code>. Fill up the SMTP credentials and use the Test Connection button to verify the SMTP connection is working.</p>
+<p>Navigate to Manage, then to Users and create a new user.</p>
 
-<h3 id="create-a-user-who-can-access-the-user-management-api">Create a user who can access the user management API</h3>
+<ul>
+  <li>
+    <p>Enter the username as <code>user-manager</code>, set the email to be verified and save.</p>
+  </li>
+  <li>
+    <p>Assign a password to this user.</p>
+  </li>
+  <li>
+    <p>Update client roles under role mappings to ensure that this user has the <code>manage-users</code>, <code>query-users</code>, <code>query-groups</code> and <code>view-users</code> permissions.</p>
+  </li>
+</ul>
 
-<p>Navigate to Manage &gt; Users and create a new user. Put the username as <code>user-manager</code>, set the email to be verified and save. After saving, assign a password to this user.</p>
-
-<p>Next update the client roles under role mappings to ensure that this user has the <code>manage-users</code>, <code>query-users</code>, <code>query-groups</code> and <code>view-users</code> roles.The screenshot below gives a view of reference configuration.</p>
+<p><strong>Note:</strong> Refer to the following screenshot for reference configuration.</p>
 
 <p><a target="_blank" href="pages/developer-docs/installation/images/keycloak-add-user-manager.png">
         <img src="pages/developer-docs/installation/images/keycloak-add-user-manager.png" alt="Keycloak use management" class="plugin center" width="50%" />
       </a></p>
 
-<p>Use corresponding username and password values for this user as the values for <code>sunbird_sso_username</code> and <code>sunbird_sso_password</code> in the configuration.</p>
+<ul>
+  <li>Use corresponding username and password values for this user as the values for <code>sunbird_sso_username</code> and <code>sunbird_sso_password</code> in the configuration.</li>
+</ul>
 
-<h3 id="update-client--secrets">Update Client &amp; Secrets</h3>
+<h2 id="update-client--secrets">Update Client &amp; Secrets</h2>
 
-<p>Navigate to <code>Clients</code> and make the changes listed below to each of the clients. Only change the clients listed below. Settings for other clients need not be changed.</p>
+<p>Navigate to Clients and make the following changes to each of the clients.</p>
 
-<h4 id="account-broker-realm-management">Account, broker, realm-management</h4>
+<p><strong>Note:</strong> Modify only the clients listed below. You do not need to modify the settings for other clients.</p>
 
-<p>Go to the <code>Credentials</code> tab and regenerate the Secret and Registration Access Token. Note both, you will need them in a later step.</p>
+<h3 id="account-broker-realm-management">Account, broker, realm-management</h3>
 
-<h4 id="android">Android</h4>
+<p>Go to the Credentials tab and regenerate the Secret and Registration Access Token. Make a note of both as they will be required at later stage.</p>
+
+<h3 id="android">Android</h3>
 
 <p>Change the Root URL to <code>https://sunbird.example.com</code>
 Add a Valid Redirect URI <code>https://sunbird.example.com/oauth2callback</code></p>
 
-<h4 id="portal">Portal</h4>
+<h3 id="portal">Portal</h3>
 
 <p>Change the Root URL to <code>https://sunbird.example.com</code>
 Add Valid Redirect URIs <code>https://sunbird.example.com/private/*</code> and <code>https://sunbird.example.com/</code></p>
 
-<h4 id="trampoline">Trampoline</h4>
+<h3 id="trampoline">Trampoline</h3>
 
 <p>Change the Root URL to <code>https://sunbird.example.com</code>
 Go to the Credentials tab and regenerate the Secret and Registration Access Token. Use the secret as the value for the <code>sunbird_trampoline_secret</code> configuration.</p>
+
+<h2 id="smtp-configuration">SMTP Configuration</h2>
+
+<p>It is necessary to configure email for smooth working of the password reset functionality and user management workflows. 
+Navigate to <code>Realm Settings &gt; Email</code>. Enter the SMTP credentials and click the Test Connection button to verify that the SMTP connection is working.</p>

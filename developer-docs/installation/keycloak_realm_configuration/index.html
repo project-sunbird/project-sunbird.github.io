@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.17/";
+			baseURL.href="/releases/release.1.1.18/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
+<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.17" />
-<meta name="buildNo" content="236" />
+<meta name="buildVersion" content="release.1.1.18" />
+<meta name="buildNo" content="311" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
-<link rel="stylesheet" href="css/style.css?18122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
+<link rel="stylesheet" href="css/style.css?20122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -283,6 +283,9 @@
 							</ul>
 						</div>
 					</li>
+					<!--<li>
+						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
+					</li>-->
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -380,43 +383,83 @@ $("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addCla
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Getting Started</span></a>
+              <a href="#getting-started"><span class="tocnumber">1 .</span> <span class="toctext">Getting Started</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#access-keycloak"><span class="tocnumber">2 .</span> <span class="toctext">Access Keycloak</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#setting-the-admin-password"><span class="tocnumber">3 .</span> <span class="toctext">Setting the Admin password</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#import-realm"><span class="tocnumber">4 .</span> <span class="toctext">Import Realm</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#create-user-to-access-user-management-api"><span class="tocnumber">5 .</span> <span class="toctext">Create User to Access User Management API</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#update-client--secrets"><span class="tocnumber">6 .</span> <span class="toctext">Update Client &amp; Secrets</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">Access Keycloak</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-3">
-                  <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Setting the Admin password</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#link1-1-3"><span class="tocnumber">1.3 .</span> <span class="toctext">Import Realm</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#link1-1-4"><span class="tocnumber">1.4 .</span> <span class="toctext">SMTP Configuration</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#link1-1-5"><span class="tocnumber">1.5 .</span> <span class="toctext">Create a user who can access the user management API</span></a>
-                </li>
                 <li class="toc_level-2 toc_section-7">
-                  <a href="#link1-1-6"><span class="tocnumber">1.6 .</span> <span class="toctext">Update Client &amp; Secrets</span></a>
+                  <a href="#account-broker-realm-management"><span class="tocnumber">6.1 .</span> <span class="toctext">Account, broker, realm-management</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#android"><span class="tocnumber">6.2 .</span> <span class="toctext">Android</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#portal"><span class="tocnumber">6.3 .</span> <span class="toctext">Portal</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#trampoline"><span class="tocnumber">6.4 .</span> <span class="toctext">Trampoline</span></a>
                 </li>
               </ul>
+            </li>
+            <li class="toc_level-1 toc_section-11">
+              <a href="#smtp-configuration"><span class="tocnumber">7 .</span> <span class="toctext">SMTP Configuration</span></a>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><h2 id="link1-1">Getting Started</h2>
+</div><h2 id="getting-started">Getting Started</h2>
 
-<p>A step by step guide to run and provision the keycloak server locally is explained in detail <a href="http://www.keycloak.org/docs/latest/getting_started/index.html" target="_blank">here</a>.
-The Sunbird uses Keycloak as the identity and authentication provider.</p>
+<p>A step by step guide to run and provision the keycloak server locally is explained in detail <a href="http://www.keycloak.org/docs/latest/getting_started/index.html" target="_blank">here</a>.</p>
 
-<h3 id="link1-1-1">Access Keycloak</h3>
+<p><strong>Note:</strong> Sunbird uses Keycloak as the identity and authentication provider.</p>
 
-<p>Once the sunbird services are set up, <a href="https://sunbird.example.com/auth/admin" target="_blank">visit</a> (Assuming you’ve set up sunbird on sunbird.example.com) to access the Keycloak administration.</p>
+<h2 id="access-keycloak">Access Keycloak</h2>
 
-<h3 id="link1-1-2">Setting the Admin password</h3>
+<p>Once the Sunbird services are set up, lets access the keycloak by following these steps:</p>
+
+<ul>
+  <li>For accessing Keycloak administration panel, you need to set right the URL address by changing the default URL to configured URL address.</li>
+</ul>
+
+<p>This is an example of default URL :      <strong>https://ab009.effgg.com/auth/admin</strong></p>
+
+<ul>
+  <li>
+    <p>Since you might have configured your URL address with some desired text, you need to replace the default URL address text with your   configured URL text.</p>
+  </li>
+  <li>
+    <p>After replacing the default URL text with the configured URL text.</p>
+  </li>
+</ul>
+
+<p>This is an example your configured URL : <strong>https://xxxxxx.yyyyyy.com/auth/admin</strong></p>
+
+<p>Where xxxxx and yyyy represent the characters of your configured URL text.</p>
+
+<p><strong>Note:</strong> The characters “xxxx”and “yyyy” are just used as an example text herein.</p>
+
+<p>Assuming that you have set up sunbird on <strong>sunbird.example.com</strong>.</p>
+
+<ul>
+  <li>You can open Keycloak administration panel simply by navigating to <strong>https://sunbird.example.com/auth/admin.</strong></li>
+</ul>
+
+<h2 id="setting-the-admin-password">Setting the Admin password</h2>
 
 <ul>
   <li>Log into the docker container running keycloak by executing the following commands:</li>
@@ -445,19 +488,22 @@ $ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
 </code>
 </p>
 
-<p>The script will execute creating admin user and password.</p>
+<p>The script is executed creating the admin user and password.</p>
+
+<p>You can log into the administration console using these credentials.</p>
+
+<p>After you can view the administration console, follow the steps provided below to set clients and the secrets.</p>
+
+<h2 id="import-realm">Import Realm</h2>
 
 <ul>
-  <li>You can now log into the administration console using these credentials.</li>
+  <li>
+    <p>To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json" download="">here</a>.</p>
+  </li>
+  <li>
+    <p>To import the realm, use the ‘Add realm’ button as shown in the following screens.</p>
+  </li>
 </ul>
-
-<p>Once you view the administration console,clients and the secrets can be set by following steps:</p>
-
-<h3 id="link1-1-3">Import Realm</h3>
-
-<p>To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a href="pages/developer-docs/installation/other_files/keycloak-realm" target="_blank">here</a>.</p>
-
-<p>To import the realm, use the ‘Add realm’ button, refer to the following images to get more clarity.</p>
 
 <p>
   <a target="_blank" href="pages/developer-docs/installation/images/keycloack-add-realm.png">
@@ -471,7 +517,9 @@ $ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
       </a>
 </p>
 
-<p>On the import screen, choose the json file and then click ‘Create’.</p>
+<ul>
+  <li>On the import screen, choose the json file and click ‘Create’.</li>
+</ul>
 
 <p>
   <a target="_blank" href="pages/developer-docs/installation/images/keycloak-import-realm.png">
@@ -479,17 +527,25 @@ $ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
       </a>
 </p>
 
-<p>Once the realm is imported ensure the realm is set as active realm before proceeding with the rest of the configuration</p>
+<p>Once the realm is imported ensure the realm is set as active realm before proceeding with the rest of the configuration.</p>
 
-<h3 id="link1-1-4">SMTP Configuration</h3>
+<h2 id="create-user-to-access-user-management-api">Create User to Access User Management API</h2>
 
-<p>Email configuration is needed to ensure password reset and user management flows work smoothly. Navigate to <code>Realm Settings &gt; Email</code>. Fill up the SMTP credentials and use the Test Connection button to verify the SMTP connection is working.</p>
+<p>Navigate to Manage, then to Users and create a new user.</p>
 
-<h3 id="link1-1-5">Create a user who can access the user management API</h3>
+<ul>
+  <li>
+    <p>Enter the username as <code>user-manager</code>, set the email to be verified and save.</p>
+  </li>
+  <li>
+    <p>Assign a password to this user.</p>
+  </li>
+  <li>
+    <p>Update client roles under role mappings to ensure that this user has the <code>manage-users</code>, <code>query-users</code>, <code>query-groups</code> and <code>view-users</code> permissions.</p>
+  </li>
+</ul>
 
-<p>Navigate to Manage &gt; Users and create a new user. Put the username as <code>user-manager</code>, set the email to be verified and save. After saving, assign a password to this user.</p>
-
-<p>Next update the client roles under role mappings to ensure that this user has the <code>manage-users</code>, <code>query-users</code>, <code>query-groups</code> and <code>view-users</code> roles.The screenshot below gives a view of reference configuration.</p>
+<p><strong>Note:</strong> Refer to the following screenshot for reference configuration.</p>
 
 <p>
   <a target="_blank" href="pages/developer-docs/installation/images/keycloak-add-user-manager.png">
@@ -497,30 +553,39 @@ $ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
       </a>
 </p>
 
-<p>Use corresponding username and password values for this user as the values for <code>sunbird_sso_username</code> and <code>sunbird_sso_password</code> in the configuration.</p>
+<ul>
+  <li>Use corresponding username and password values for this user as the values for <code>sunbird_sso_username</code> and <code>sunbird_sso_password</code> in the configuration.</li>
+</ul>
 
-<h3 id="link1-1-6">Update Client &amp; Secrets</h3>
+<h2 id="update-client--secrets">Update Client &amp; Secrets</h2>
 
-<p>Navigate to <code>Clients</code> and make the changes listed below to each of the clients. Only change the clients listed below. Settings for other clients need not be changed.</p>
+<p>Navigate to Clients and make the following changes to each of the clients.</p>
 
-<h4 id="account-broker-realm-management">Account, broker, realm-management</h4>
+<p><strong>Note:</strong> Modify only the clients listed below. You do not need to modify the settings for other clients.</p>
 
-<p>Go to the <code>Credentials</code> tab and regenerate the Secret and Registration Access Token. Note both, you will need them in a later step.</p>
+<h3 id="account-broker-realm-management">Account, broker, realm-management</h3>
 
-<h4 id="android">Android</h4>
+<p>Go to the Credentials tab and regenerate the Secret and Registration Access Token. Make a note of both as they will be required at later stage.</p>
+
+<h3 id="android">Android</h3>
 
 <p>Change the Root URL to <code>https://sunbird.example.com</code>
 Add a Valid Redirect URI <code>https://sunbird.example.com/oauth2callback</code></p>
 
-<h4 id="portal">Portal</h4>
+<h3 id="portal">Portal</h3>
 
 <p>Change the Root URL to <code>https://sunbird.example.com</code>
 Add Valid Redirect URIs <code>https://sunbird.example.com/private/*</code> and <code>https://sunbird.example.com/</code></p>
 
-<h4 id="trampoline">Trampoline</h4>
+<h3 id="trampoline">Trampoline</h3>
 
 <p>Change the Root URL to <code>https://sunbird.example.com</code>
 Go to the Credentials tab and regenerate the Secret and Registration Access Token. Use the secret as the value for the <code>sunbird_trampoline_secret</code> configuration.</p>
+
+<h2 id="smtp-configuration">SMTP Configuration</h2>
+
+<p>It is necessary to configure email for smooth working of the password reset functionality and user management workflows. 
+Navigate to <code>Realm Settings &gt; Email</code>. Enter the SMTP credentials and click the Test Connection button to verify that the SMTP connection is working.</p>
 
           
           <hr />

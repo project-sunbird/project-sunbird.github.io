@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.17/";
+			baseURL.href="/releases/release.1.1.18/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
+<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.17" />
-<meta name="buildNo" content="236" />
+<meta name="buildVersion" content="release.1.1.18" />
+<meta name="buildNo" content="311" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
-<link rel="stylesheet" href="css/style.css?18122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
+<link rel="stylesheet" href="css/style.css?20122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -283,6 +283,9 @@
 							</ul>
 						</div>
 					</li>
+					<!--<li>
+						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
+					</li>-->
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -380,26 +383,26 @@ $("a[href$='developer-docs/installation/installing_sunbirdon_laptop/']").addClas
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Sunbird Portal Setup</span></a>
+              <a href="#sunbird-portal-setup"><span class="tocnumber">1 .</span> <span class="toctext">Sunbird Portal Setup</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-2">
-                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">Prerequisites</span></a>
+                  <a href="#prerequisites"><span class="tocnumber">1.1 .</span> <span class="toctext">Prerequisites</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-3">
-                  <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Setup</span></a>
+                  <a href="#setup"><span class="tocnumber">1.2 .</span> <span class="toctext">Setup</span></a>
                 </li>
               </ul>
             </li>
             <li class="toc_level-1 toc_section-4">
-              <a href="#link1-4"><span class="tocnumber">2 .</span> <span class="toctext">Configure Backend Service Stack</span></a>
+              <a href="#configure-backend-service-stack"><span class="tocnumber">2 .</span> <span class="toctext">Configure Backend Service Stack</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-5">
-                  <a href="#link1-4-1"><span class="tocnumber">2.1 .</span> <span class="toctext">Edit the Application Config</span></a>
+                  <a href="#edit-the-application-config"><span class="tocnumber">2.1 .</span> <span class="toctext">Edit the Application Config</span></a>
                 </li>
               </ul>
             </li>
             <li class="toc_level-1 toc_section-6">
-              <a href="#link1-6"><span class="tocnumber">3 .</span> <span class="toctext">Run the Application</span></a>
+              <a href="#run-the-application"><span class="tocnumber">3 .</span> <span class="toctext">Run the Application</span></a>
             </li>
           </ul>
         </td>
@@ -413,9 +416,9 @@ $("a[href$='developer-docs/installation/installing_sunbirdon_laptop/']").addClas
   <li>Sunbird services stack or the backend API interface.</li>
 </ul>
 
-<h2 id="link1-1">Sunbird Portal Setup</h2>
+<h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
 
-<p>To setup the Sunbird portal follow these steps sequentially:</p>
+<p>To setup the Sunbird portal successfully, follow these steps sequentially:</p>
 
 <ol>
   <li>Check for the prerequisites</li>
@@ -425,49 +428,56 @@ $("a[href$='developer-docs/installation/installing_sunbirdon_laptop/']").addClas
   <li>Run the Application</li>
 </ol>
 
-<h3 id="link1-1-1">Prerequisites</h3>
+<h3 id="prerequisites">Prerequisites</h3>
 
-<p>Check the following pre-requisites before installing and running the Sunbird-player application</p>
+<p>Check the following pre-requisites before installing and running the Sunbird-player application:</p>
 
 <ol>
   <li><strong>Software dependencies</strong>
     <ul>
       <li><a href="https://nodejs.org/en/download/" target="_blank">Node</a> - install the latest release of 6.x.x LTS series</li>
       <li><a href="https://bower.io/#install-bower" target="_blank">Bower</a> - latest version of bower: <code>npm install -g bower</code></li>
-      <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank">Gulp</a> - latest version of gulp: <code>npm install -g gulp-cli</code></li>
+      <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank">Gulp</a>- 
+latest version of gulp: <code>npm install -g gulp-cli</code></li>
       <li><a href="https://www.mongodb.com/" target="_blank">Mongo DB</a> - v3.4.1 and newer</li>
     </ul>
   </li>
-  <li><strong>API Keys</strong> - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when configuring the application.</li>
+  <li><strong>API Keys</strong></li>
 </ol>
 
-<h3 id="link1-1-2">Setup</h3>
-<p>For setting up the application 
-<a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">Checkout the code here</a></p>
+<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.</p>
 
-<p>Execute the following command</p>
-<pre>
-git clone https://github.com/project-sunbird/sunbird-portal.git
-</pre>
-<p>Once the git clone command is over , Run the following set of commands:</p>
+<h3 id="setup">Setup</h3>
+<p>For setting up the application,check out the code <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">here</a>.</p>
+
+<p>After checking out the code, execute the following command:</p>
 
 <pre>
-  <code>$ cd &lt;PROJECT-FOLDER&gt;/src
-$ npm install
-$ bower cache clean
-$ bower install --force
+  <code>git clone https://github.com/project-sunbird/sunbird-portal.git
 </code>
 </pre>
 
-<h2 id="link1-4">Configure Backend Service Stack</h2>
+<p>Once the git clone command is over, run the following set of commands:</p>
 
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment, for instance when you deploy Sunbird to production, or you can run locally these service APIs locally on a single server for the sake of ease and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
+<pre>
+$ cd {PROJECT-FOLDER}/src
+$ npm install
+$ bower cache clean
+$ bower install --force
+
+</pre>
+
+<h2 id="configure-backend-service-stack">Configure Backend Service Stack</h2>
+
+<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let’s configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
 
 <p><strong><em>Note</em></strong>: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
 
-<h3 id="link1-4-1">Edit the Application Config</h3>
+<h3 id="edit-the-application-config">Edit the Application Config</h3>
 
-<p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in your favourite text editor. Update the file so it contains the following values:</p>
+<p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in any available text editor.</p>
+
+<p>Once the file is opened, update the contents of the file so that it contains exactly the following values:</p>
 
 <pre>
   <code>module.exports = {
@@ -489,19 +499,18 @@ $ bower install --force
 </code>
 </pre>
 
-<h2 id="link1-6">Run the Application</h2>
+<p>Once the file is updated with appropriate values, then you can begin with running the application.</p>
 
-<ul>
-  <li>
-    <p>Run the following commands:
-  $ gulp build
-  $ cd <project-folder>/src/app
-  $ node server.js</project-folder></p>
-  </li>
-  <li>
-    <p>Open <code>http://localhost:3000</code> in browser.</p>
-  </li>
-</ul>
+<h2 id="run-the-application">Run the Application</h2>
+
+<p>Run the following commands:</p>
+<pre>
+$ gulp build
+$ cd {PROJECT-FOLDER}/src/app
+$ node server.js
+
+</pre>
+<p>After executing the commands,open <code>http://localhost:3000</code> in browser.</p>
 
           
           <hr />

@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.17/";
+			baseURL.href="/releases/release.1.1.18/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
+<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.17" />
-<meta name="buildNo" content="236" />
+<meta name="buildVersion" content="release.1.1.18" />
+<meta name="buildNo" content="311" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
-<link rel="stylesheet" href="css/style.css?18122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
+<link rel="stylesheet" href="css/style.css?20122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -283,6 +283,9 @@
 							</ul>
 						</div>
 					</li>
+					<!--<li>
+						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
+					</li>-->
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -380,40 +383,54 @@ $("a[href$='developer-docs/installation/']").addClass("sidebar-link-selected");
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Plan, Install and Configure Sunbird</span></a>
+              <a href="#plan-install-and-configure-sunbird"><span class="tocnumber">1 .</span> <span class="toctext">Plan, Install, and Configure Sunbird</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-2">
-                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">Size and Verify Your Environment</span></a>
+                  <a href="#size-and-verify-your-environment"><span class="tocnumber">1.1 .</span> <span class="toctext">Size and Verify Your Environment</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-3">
-                  <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Choosing an Installation method</span></a>
+                  <a href="#choosing-an-installation-method"><span class="tocnumber">1.2 .</span> <span class="toctext">Choosing an Installation method</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-4">
-                  <a href="#link1-1-3"><span class="tocnumber">1.3 .</span> <span class="toctext">Pre-requisites</span></a>
+                  <a href="#pre-requisites"><span class="tocnumber">1.3 .</span> <span class="toctext">Pre-requisites</span></a>
                 </li>
               </ul>
             </li>
             <li class="toc_level-1 toc_section-5">
-              <a href="#link1-5"><span class="tocnumber">2 .</span> <span class="toctext">Installation options</span></a>
+              <a href="#installation-options"><span class="tocnumber">2 .</span> <span class="toctext">Installation options</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#try-sunbird"><span class="tocnumber">2.1 .</span> <span class="toctext">Try Sunbird</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#extend-sunbird"><span class="tocnumber">2.2 .</span> <span class="toctext">Extend Sunbird</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#deploy-sunbird-for-upto-10-thousand-users"><span class="tocnumber">2.3 .</span> <span class="toctext">Deploy Sunbird for upto 10 Thousand Users</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#deploy-sunbird-for-over-10-thousand-users"><span class="tocnumber">2.4 .</span> <span class="toctext">Deploy Sunbird for over 10 Thousand Users</span></a>
+                </li>
+              </ul>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><h2 id="link1-1">Plan, Install and Configure Sunbird</h2>
+</div><h2 id="plan-install-and-configure-sunbird">Plan, Install, and Configure Sunbird</h2>
 <p>The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, check and decide the following:</p>
 
-<h3 id="link1-1-1">Size and Verify Your Environment</h3>
+<h3 id="size-and-verify-your-environment">Size and Verify Your Environment</h3>
 
 <p>Requirements for Sunbird installation depend on the environment on which you install Sunbird and how you use Sunbird. 
 For details, check the <strong>Prerequisites</strong> section for your chosen installation method. For example; if you choose to do a medium scale deployment of Sunbird, check <a href="http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/#link1-1-1" target="_blank">here</a></p>
 
-<h3 id="link1-1-2">Choosing an Installation method</h3>
+<h3 id="choosing-an-installation-method">Choosing an Installation method</h3>
 
 <p>Based on your usage and the level of complexity which you are comfortable with, choose from among the different options available for installing and running Sunbird.</p>
 
-<h3 id="link1-1-3">Pre-requisites</h3>
+<h3 id="pre-requisites">Pre-requisites</h3>
 
 <p>If you install Sunbird on any environment or choose any method of installation, the basic minimum prerequisites are:</p>
 
@@ -428,11 +445,9 @@ For details, check the <strong>Prerequisites</strong> section for your chosen in
   </strong>
 </p>
 
-<h2 id="link1-5">Installation options</h2>
+<h2 id="installation-options">Installation options</h2>
 
-<ul>
-  <li>Try Sunbird</li>
-</ul>
+<h3 id="try-sunbird">Try Sunbird</h3>
 
 <p>If you are looking to experiment with Sunbird and test its feature set, we recommend you use the <a href="https://staging.open-sunbird.org/" target="_blank">Sunbird sandbox</a> which is running in the cloud.</p>
 
@@ -440,23 +455,17 @@ For details, check the <strong>Prerequisites</strong> section for your chosen in
   <strong>Note: Data created in the sandbox is erased after 24 hours</strong>
 </p>
 
-<ul>
-  <li>Extend Sunbird</li>
-</ul>
+<h3 id="extend-sunbird">Extend Sunbird</h3>
 
 <p>If you plan to modify and contribute code to the Sunbird project, we recommend you <a href="developer-docs/installation/installing_sunbirdon_laptop/" target="_blank">Install Sunbird on Laptop</a>. This allows you to get started quickly and help extend Sunbird.</p>
 
-<ul>
-  <li>Deploy Sunbird for 0-10k users</li>
-</ul>
+<h3 id="deploy-sunbird-for-upto-10-thousand-users">Deploy Sunbird for upto 10 Thousand Users</h3>
 
-<p>If you plan to run Sunbird for upto 10k users, we recommend you follow the <a href="developer-docs/installation/medium_scale_deploy/" target="_blank">Medium scale deployment</a> process. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.</p>
+<p>If you plan to run Sunbird for upto 10 thousand users, we recommend you follow the <a href="developer-docs/installation/medium_scale_deploy/" target="_blank">Medium scale deployment</a> process. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.</p>
 
-<ul>
-  <li>Deploy Sunbird for 10k+ users</li>
-</ul>
+<h3 id="deploy-sunbird-for-over-10-thousand-users">Deploy Sunbird for over 10 Thousand Users</h3>
 
-<p>If you plan to run Sunbird in a setting with 10k+ users, we recommend you follow the <a href="" target="_blank">Large scale deployment</a> process. 
+<p>If you plan to run Sunbird in a setting with over 10 thousand users, we recommend you follow the <a href="" target="_blank">Large scale deployment</a> process. 
 This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerised manner. The containers allow you to scale the resources Sunbird consumes based on the usage.</p>
 
 

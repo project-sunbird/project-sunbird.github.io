@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.17/";
+			baseURL.href="/releases/release.1.1.18/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
+<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.17" />
-<meta name="buildNo" content="236" />
+<meta name="buildVersion" content="release.1.1.18" />
+<meta name="buildNo" content="311" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
-<link rel="stylesheet" href="css/style.css?18122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
+<link rel="stylesheet" href="css/style.css?20122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -283,6 +283,9 @@
 							</ul>
 						</div>
 					</li>
+					<!--<li>
+						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
+					</li>-->
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -380,30 +383,30 @@ $("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-se
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Writing Guidelines</span></a>
+              <a href="#writing-guidelines"><span class="tocnumber">1 .</span> <span class="toctext">Writing Guidelines</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-2">
-                  <a href="#link1-1-1"><span class="tocnumber">1.1 .</span> <span class="toctext">How to structure a document?</span></a>
+                  <a href="#how-to-structure-a-document"><span class="tocnumber">1.1 .</span> <span class="toctext">How to structure a document?</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-3">
-                  <a href="#link1-1-2"><span class="tocnumber">1.2 .</span> <span class="toctext">Styles</span></a>
+                  <a href="#styles"><span class="tocnumber">1.2 .</span> <span class="toctext">Styles</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-4">
-                  <a href="#link1-1-3"><span class="tocnumber">1.3 .</span> <span class="toctext">Voice</span></a>
+                  <a href="#voice"><span class="tocnumber">1.3 .</span> <span class="toctext">Voice</span></a>
                 </li>
               </ul>
             </li>
             <li class="toc_level-1 toc_section-5">
-              <a href="#link1-5"><span class="tocnumber">2 .</span> <span class="toctext">Documentation contribution process flows</span></a>
+              <a href="#documentation-contribution-process-flows"><span class="tocnumber">2 .</span> <span class="toctext">Documentation contribution process flows</span></a>
             </li>
             <li class="toc_level-1 toc_section-6">
-              <a href="#link1-6"><span class="tocnumber">3 .</span> <span class="toctext">How to edit an existing documentation page?</span></a>
+              <a href="#how-to-edit-an-existing-documentation-page"><span class="tocnumber">3 .</span> <span class="toctext">How to edit an existing documentation page?</span></a>
             </li>
             <li class="toc_level-1 toc_section-7">
-              <a href="#link1-7"><span class="tocnumber">4 .</span> <span class="toctext">How to report an issue?</span></a>
+              <a href="#how-to-report-an-issue"><span class="tocnumber">4 .</span> <span class="toctext">How to report an issue?</span></a>
             </li>
             <li class="toc_level-1 toc_section-8">
-              <a href="#link1-8"><span class="tocnumber">5 .</span> <span class="toctext">How to add a page or a section?</span></a>
+              <a href="#how-to-add-a-page-or-a-section"><span class="tocnumber">5 .</span> <span class="toctext">How to add a page or a section?</span></a>
             </li>
           </ul>
         </td>
@@ -428,10 +431,10 @@ $("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-se
 
 <p>You may want to brush up on Markdown syntax. Here’s a handy <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Markdown guide</a> and <a href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf" target="_blank">cheat sheet</a>.</p>
 
-<h2 id="link1-1">Writing Guidelines</h2>
+<h2 id="writing-guidelines">Writing Guidelines</h2>
 <p>Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the <a href="contributions/contribution_guidelines/#link1-1-1">How to structure a document?</a> section and the <a href="contributions/styleguide" target="_blank">Sunbird style guide</a> which follows to ensure the pages you submit are consistent with the rest of Sunbird’s documentation.</p>
 
-<h3 id="link1-1-1">How to structure a document?</h3>
+<h3 id="how-to-structure-a-document">How to structure a document?</h3>
 
 <p>Structuring your content is nothing but chunking the information into logical units. Developing a simple framework for your writing before you start can save considerable time and will prevent the text from meandering.</p>
 
@@ -453,7 +456,7 @@ $("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-se
 
 <p>Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.</p>
 
-<h3 id="link1-1-2">Styles</h3>
+<h3 id="styles">Styles</h3>
 <p>You can use the following styles when formatting your document.</p>
 
 <h4 id="titles-and-headings">Titles and headings</h4>
@@ -546,7 +549,7 @@ $("a[href$='contributions/contribution_guidelines/']").addClass("sidebar-link-se
 
 <p>When embedding a link in a documentation page, always make sure the link text describes the destination of the link. “Click here” is not a good description, because it does not tell the user where the link will take them. If you can’t fully describe the destination of the link and still maintain good sentence flow, add a title tag. Title tags, <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text" target="_blank">used appropriately</a>, are important for making the pages accessible.</p>
 
-<h3 id="link1-1-3">Voice</h3>
+<h3 id="voice">Voice</h3>
 
 <ul>
   <li><strong>Reinforce the Sunbird brand:</strong> Anything written at Sunbird.org becomes part of the Sunbird experience and conveys the Sunbird spirit.</li>
@@ -589,7 +592,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   <li><strong>User-test your writing</strong>: Choose at least one person from your intended audience to make sure directions are clear and complete, and the tone is correct. User-testing is critical for sections like Modules and Documentation. If it is written for a new user with basic skills, you should test it on new users with basic skills. They should be able to achieve the final goal just by reading and following the directions, without asking you any questions.</li>
 </ul>
 
-<h2 id="link1-5">Documentation contribution process flows</h2>
+<h2 id="documentation-contribution-process-flows">Documentation contribution process flows</h2>
 
 <p>Click the links below to view typical workflows to collaborate for Sunbird documentation</p>
 
@@ -601,7 +604,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   <li><a href="pages/contributions/images/review_process.png" target="_blank">Review Process</a></li>
 </ul>
 
-<h2 id="link1-6">How to edit an existing documentation page?</h2>
+<h2 id="how-to-edit-an-existing-documentation-page">How to edit an existing documentation page?</h2>
 
 <p>You can edit an existing page to correct inconsistencies or add missing information</p>
 
@@ -686,7 +689,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   </tr>
  </table>
 
-<h2 id="link1-7">How to report an issue?</h2>
+<h2 id="how-to-report-an-issue">How to report an issue?</h2>
 
 <p>There could be inconsistencies in formatting, gaps in information that you notice (but cannot fix), etc. In such cases all you need to do is report the issue .</p>
 
@@ -741,7 +744,7 @@ Don’t twist sentences into knots trying to avoid this, though. Also, at times,
   </tr>
 </table>
 
-<h2 id="link1-8">How to add a page or a section?</h2>
+<h2 id="how-to-add-a-page-or-a-section">How to add a page or a section?</h2>
 
 <p>To ensure that Sunbird users benefit enhancing the knowledge base is of primary importance</p>
 

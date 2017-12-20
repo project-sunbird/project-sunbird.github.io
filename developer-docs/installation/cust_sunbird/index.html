@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.17/";
+			baseURL.href="/releases/release.1.1.18/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-18 15:32:12 +0530">
+<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.17" />
-<meta name="buildNo" content="236" />
+<meta name="buildVersion" content="release.1.1.18" />
+<meta name="buildNo" content="311" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?18122017"  />
-<link rel="stylesheet" href="css/style.css?18122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?18122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?18122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?18122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
+<link rel="stylesheet" href="css/style.css?20122017"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -283,6 +283,9 @@
 							</ul>
 						</div>
 					</li>
+					<!--<li>
+						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
+					</li>-->
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -380,10 +383,10 @@ $("a[href$='developer-docs/installation/cust_sunbird/']").addClass("sidebar-link
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#link1-1"><span class="tocnumber">1 .</span> <span class="toctext">Configuration to customize Sunbird Assets</span></a>
+              <a href="#configuration-to-customize-sunbird-assets"><span class="tocnumber">1 .</span> <span class="toctext">Configuration to customize Sunbird Assets</span></a>
             </li>
             <li class="toc_level-1 toc_section-2">
-              <a href="#link1-2"><span class="tocnumber">2 .</span> <span class="toctext">Changing Themes</span></a>
+              <a href="#changing-themes"><span class="tocnumber">2 .</span> <span class="toctext">Changing Themes</span></a>
             </li>
           </ul>
         </td>
@@ -392,20 +395,27 @@ $("a[href$='developer-docs/installation/cust_sunbird/']").addClass("sidebar-link
   </table>
 </div><p>This section will explain how to give a custom look and feel for Sunbird.</p>
 
-<h2 id="link1-1">Configuration to customize Sunbird Assets</h2>
+<h2 id="configuration-to-customize-sunbird-assets">Configuration to customize Sunbird Assets</h2>
 
 <p>Sunbird supports customization of home page, logo, and icon for the portal.</p>
 
 <p>These customizations can be loaded by mounting the volume containing the customizations into the docker container.For loading the volume containing the customizations to docker container follow these steps:</p>
 
-<p>Uncomment and set the value for the variable <code>player_tenant_dir</code> in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code>. 
-For example, <code>player_tenant_dir: /data/extensions/tenant</code>.</p>
+<pre>
+Uncomment and set the value for the 
+variable player_tenant_dir
+in {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name&gt;}. 
+For example, player_tenant_dir: /data/extensions/tenant.
+</pre>
 
 <p><strong>NOTE</strong>: If the variable <code>player_tenant_dir</code> is commented, the volume will not be mounted, and customizations will not be loaded.</p>
 
-<p>Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes. Set the permissions for the folder to <code>mode=0775</code>,<code>user=root</code> and <code>group=root</code>.</p>
+<ul>
+  <li>Create the above folder (e.g. /data/extensions/tenant) on all the docker swarm nodes.</li>
+  <li>Set the permissions for the folder to <code>mode=0775</code>,<code>user=root</code> and <code>group=root</code>.</li>
+</ul>
 
-<h2 id="link1-2">Changing Themes</h2>
+<h2 id="changing-themes">Changing Themes</h2>
 
 <p>Sample themes directory of sunbird can be  found <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts" target="_blank">here</a></p>
 

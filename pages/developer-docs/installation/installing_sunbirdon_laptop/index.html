@@ -7,7 +7,7 @@
 
 <h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
 
-<p>To setup the Sunbird portal follow these steps sequentially:</p>
+<p>To setup the Sunbird portal successfully, follow these steps sequentially:</p>
 
 <ol>
   <li>Check for the prerequisites</li>
@@ -19,45 +19,52 @@
 
 <h3 id="prerequisites">Prerequisites</h3>
 
-<p>Check the following pre-requisites before installing and running the Sunbird-player application</p>
+<p>Check the following pre-requisites before installing and running the Sunbird-player application:</p>
 
 <ol>
   <li><strong>Software dependencies</strong>
     <ul>
       <li><a href="https://nodejs.org/en/download/" target="_blank">Node</a> - install the latest release of 6.x.x LTS series</li>
       <li><a href="https://bower.io/#install-bower" target="_blank">Bower</a> - latest version of bower: <code>npm install -g bower</code></li>
-      <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank">Gulp</a> - latest version of gulp: <code>npm install -g gulp-cli</code></li>
+      <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank">Gulp</a>- 
+latest version of gulp: <code>npm install -g gulp-cli</code></li>
       <li><a href="https://www.mongodb.com/" target="_blank">Mongo DB</a> - v3.4.1 and newer</li>
     </ul>
   </li>
-  <li><strong>API Keys</strong> - This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed. Please email info@sunbird.org for an API key to use when configuring the application.</li>
+  <li><strong>API Keys</strong></li>
 </ol>
 
+<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.</p>
+
 <h3 id="setup">Setup</h3>
-<p>For setting up the application 
-<a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">Checkout the code here</a></p>
+<p>For setting up the application,check out the code <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">here</a>.</p>
 
-<p>Execute the following command</p>
+<p>After checking out the code, execute the following command:</p>
+
+<pre><code>git clone https://github.com/project-sunbird/sunbird-portal.git
+</code></pre>
+
+<p>Once the git clone command is over, run the following set of commands:</p>
+
 <pre>
-git clone https://github.com/project-sunbird/sunbird-portal.git
-</pre>
-<p>Once the git clone command is over , Run the following set of commands:</p>
-
-<pre><code>$ cd &lt;PROJECT-FOLDER&gt;/src
+$ cd {PROJECT-FOLDER}/src
 $ npm install
 $ bower cache clean
 $ bower install --force
-</code></pre>
+
+</pre>
 
 <h2 id="configure-backend-service-stack">Configure Backend Service Stack</h2>
 
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment, for instance when you deploy Sunbird to production, or you can run locally these service APIs locally on a single server for the sake of ease and debugging. For now, we will configure our Sunbird portal to use a cloud instance of the Sunbird Service APIs. These APIs are hosted by Project Sunbird and are used for testing and demonstration purposes.</p>
+<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let’s configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
 
 <p><strong><em>Note</em></strong>: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
 
 <h3 id="edit-the-application-config">Edit the Application Config</h3>
 
-<p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in your favourite text editor. Update the file so it contains the following values:</p>
+<p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in any available text editor.</p>
+
+<p>Once the file is opened, update the contents of the file so that it contains exactly the following values:</p>
 
 <pre><code>module.exports = {
     LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    // 1. LEARNER_URL
@@ -77,16 +84,15 @@ $ bower install --force
 }
 </code></pre>
 
+<p>Once the file is updated with appropriate values, then you can begin with running the application.</p>
+
 <h2 id="run-the-application">Run the Application</h2>
 
-<ul>
-  <li>
-    <p>Run the following commands:
-  $ gulp build
-  $ cd <PROJECT-FOLDER>/src/app
-  $ node server.js</PROJECT-FOLDER></p>
-  </li>
-  <li>
-    <p>Open <code>http://localhost:3000</code> in browser.</p>
-  </li>
-</ul>
+<p>Run the following commands:</p>
+<pre>
+$ gulp build
+$ cd {PROJECT-FOLDER}/src/app
+$ node server.js
+
+</pre>
+<p>After executing the commands,open <code>http://localhost:3000</code> in browser.</p>
