@@ -36,11 +36,6 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   </table>
   
   ## Course Metadata
-  <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-</style>
 <table class="tg">
   <tr>
     <th class="tg-031e">1.Click Update in the right navigation pane to edit details of the course<br>2.Enter Title of the course<br>3.Enter Description<br>4.Select the following from their respective drop-down lists<br>•Audience<br>•Language<br>•Concepts<br>6.EnterFaculty details<br>7.Enter Tutor details<br>8.Enter Keywords<br>9.Click Update to update the details</th>
@@ -49,12 +44,6 @@ Course is a content provided in sequence, broken down in modules, open for enrol
 </table>
 
 ## Adding Image to Course Metadata
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-yw4l{vertical-align:top}
-</style>
 <table class="tg">
   <tr>
     <th class="tg-031e">Click the Image icon to add an<br>image</th>
@@ -71,12 +60,6 @@ Course is a content provided in sequence, broken down in modules, open for enrol
 </table>
 
 ## Adding Content to Course
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-yw4l{vertical-align:top}
-</style>
 <table class="tg">
   <tr>
     <th class="tg-031e">1.Click + icon in the left navigation pane to add a Course Unit, Collection, or<br>Resource</th>
