@@ -29,7 +29,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
       <td><img src=".png"></td>
   </tr>
   <tr>
-    <td> After clicking on the <strong>Course</strong> tile, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type <br> <strong>Note:</strong> You may opt to fill these details later before sending the content for review<br>3. Click <strong>Start Creating</strong>to create content
+    <td> <br> 1. Enter **Name** of th course <br>2. Enter **Description** of the course <br>3. Click **Start Creating**
     </td>
     <td><img src=".png"></td>
   </tr>
