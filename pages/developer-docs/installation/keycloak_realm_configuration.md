@@ -13,14 +13,6 @@ A step by step guide to run and provision the keycloak server locally is explain
 
 **Note:** Sunbird uses Keycloak as the identity and authentication provider. 
 
-## Access Keycloak
-
-Once the Sunbird services are set up, access the keycloak administration by following these steps:
-
-For accessing Keycloak administration panel, you need to set right the URL address by changing the default URL to configured URL address.
-
-Assuming that you have set up sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to **https://sunbird.example.com/auth/admin**
-
 ## Setting the Admin password
 
 - Log into the server that Keycloak is running on
@@ -32,6 +24,9 @@ $ ./bin/add-user-keycloak.sh -u <admin> -p <yourpassword>
 ```
 
 The script is executed creating the admin user and password. You can log into the administration console using these credentials. After you can view the administration console, follow the steps provided below to set clients and the secrets.
+
+## Access Keycloak Administration
+Assuming that you have set up sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to **https://sunbird.example.com/auth/admin**
 
 ## Import Realm
 
