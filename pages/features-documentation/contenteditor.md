@@ -222,18 +222,21 @@ page to reorder them
     <th>Step</th>
     <th>Screen</th>
   </tr>
-  <tr>On clicking <strong>Add text</strong>, the <strong>Word Info</strong> feature on the customize tab provides all related information about any word added using the content editor <br><strong>Note:</stong> Word Info is available only for those
-words that already exist in
-the repository
-1. To use this feature,
-select the word and click
-Word Info
+  <tr>
+  <td>On clicking <strong>Add text</strong>, the <strong>Word Info</strong> feature on the customize tab provides all related information about any word added using the content editor <br><strong>Note:</stong> Word Info is available only for those
+words that already exist in the repository <br>1. To use this feature, select the word and click <strong>Word Info</strong> 
+    </td>
+    <td><img src=".png"></td>
+  </tr>
+  </table>
   
-    
-  
-      
-
-  
+  #### Add Richtext 
+   
+   <table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>  
   <tr>
     <td>1. To add richtext, click the dropdown arrow <br>2. Click <strong>Add Richtext</strong>, to open <strong>Richtext Editor</strong>
     </td>
