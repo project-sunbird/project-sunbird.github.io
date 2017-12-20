@@ -38,8 +38,12 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   ## Course Metadata
 <table class="tg">
   <tr>
-    <th class="tg-031e">1.Click Update in the right navigation pane to edit details of the course<br>2.Enter Title of the course<br>3.Enter Description<br>4.Select the following from their respective drop-down lists<br>•Audience<br>•Language<br>•Concepts<br>6.EnterFaculty details<br>7.Enter Tutor details<br>8.Enter Keywords<br>9.Click Update to update the details</th>
-    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_metadata.png</th>
+    <th class="tg-031e">1.Click Update in the right navigation pane to edit details of the course,<br>2.Enter Title of the course,<br>3.Enter Description,<br>4.Select the following from their respective drop-down lists,<br>•Audience,<br>•Language,<br>•Concepts,<br>6.EnterFaculty details,<br>7.Enter Tutor details,<br>8.Enter Keywords,<br>9.Click Update to update the details</th>
+    <th class="tg-031e">image</th>
+  </tr>
+  <tr>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
   </tr>
 </table>
 
