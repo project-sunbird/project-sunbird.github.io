@@ -223,7 +223,7 @@ page to reorder them
     <th>Screen</th>
   </tr>
   <tr>
-  <td>On clicking <strong>Add text</strong>, the <strong>Word Info</strong> feature on the customize tab provides all related information about any word added using the content editor <br><strong>Note:</stong> Word Info is available only for those
+  <td>On clicking <strong>Add text</strong>, the <strong>Word Info</strong> feature on the customize tab provides all related information about any word added using the content editor <br><strong>Note:</strong> Word Info is available only for those
 words that already exist in the repository <br>1. To use this feature, select the word and click <strong>Word Info</strong> 
     </td>
     <td><img src=".png"></td>
