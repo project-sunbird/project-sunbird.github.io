@@ -187,7 +187,7 @@ page to reorder them
   </tr>
   </table>
   
-  **Sync Audio Text with Audio to Read Along
+  **Sync Audio Text with Audio to Read Along**
   
   <table>
   <tr>
