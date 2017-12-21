@@ -41,8 +41,8 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   <tr>
     <td>1. Click <strong>Update</strong> in the right navigation pane to edit details of the course <br>2. Enter <strong>Title</strong> of the course <br>3. Enter <strong>Description</strong> <br>4. Select the following from their respective drop-down lists <br>                 <li>Audience</li>
       <li>Language</li>
-      <li>>Concepts</li>
-      <br>6. Enter <strong>Faculty</strong> details <br>7. Enter <strong>Tutor</strong> details <br>8. Enter <strong>Keywords</strong> <br>9. Click <strong>Update</strong> to update the details
+      <li>Concepts</li>
+      <br>5. Enter <strong>Faculty</strong> details <br>6. Enter <strong>Tutor</strong> details <br>7. Enter <strong>Keywords</strong> <br>8. Click <strong>Update</strong> to update the details
     </td>
     <td><img src=".png"></td>
   </tr>
@@ -62,16 +62,18 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   <tr>
     <td>1. You can add images either by selecting an image from:<br>
       <li>A list or uploading images</li>
-      <li>>Your local machine to use immediately</li><br>
-      2.Click <strong>My images</strong> to view a list of all image files that you have previously,uploaded <br>3. Click <strong>All image</strong> to view a list of image files from the repository <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users <br>5. Choose an appropriate image file from any list and click <strong>Select</strong><br>6. Click <strong>Upload</strong> and use to upload and use images from your gallery
+      <li>Your local machine to use immediately</li>
+      <br>2. Click <strong>My images</strong> to view a list of all image files that you have previously,uploaded <br>3. Click <strong>All image</strong> to view a list of image files from the repository 
+      <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users 
+      <br>5. Choose an appropriate image file from any list and click <strong>Select</strong><br>6. Click <strong>Upload</strong> and use to upload and use images from your gallery
     </td>
     <td><img src=".png></td>
   </tr>
   <tr>
       <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <br>
       <li>Makeit available to everyone</li>
-      <li>Not share with anyone</li><br>
-      4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
+      <li>Not share with anyone</li>
+      <br>4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
       </td>
     <td><img src=".png"></td>
   </tr>
