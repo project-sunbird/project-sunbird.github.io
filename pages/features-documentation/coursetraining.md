@@ -26,49 +26,66 @@ Course is a content provided in sequence, broken down in modules, open for enrol
       <td><img src=".png"></td>
   </tr>
   <tr>
-    <td> <br> 1. Enter **Name** of th course <br>2. Enter **Description** of the course <br>3. Click **Start Creating**
+    <td>1. Enter <strong>Name</strong> of the course <br>2. Enter <strong>Description</strong> of the course <br>3. Click <strong>Start Creating</strong>
     </td>
     <td><img src=".png"></td>
   </tr>
   </table>
   
-  ## Course Metadata
-<table class="tg">
+  ### Course Metadata
+<table>
   <tr>
-    <th class="tg-031e">1.Click Update in the right navigation pane to edit details of the course,<br>2.Enter Title of the course,<br>3.Enter Description,<br>4.Select the following from their respective drop-down lists,<br>•Audience,<br>•Language,<br>•Concepts,<br>6.EnterFaculty details,<br>7.Enter Tutor details,<br>8.Enter Keywords,<br>9.Click Update to update the details</th>
-    <th class="tg-031e">image</th>
+    <th>Step</th>
+    <th>Screen</th>
   </tr>
   <tr>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
+    <td>1. Click <strong>Update</strong> in the right navigation pane to edit details of the course <br>2. Enter <strong>Title</strong> of the course <br>3. Enter <strong>Description</strong> <br>4. Select the following from their respective drop-down lists <br>                 <li>Audience</li>
+      <li>Language</li>
+      <li>>Concepts</li>
+      <br>6. Enter <strong>Faculty</strong> details <br>7. Enter <strong>Tutor</strong> details <br>8. Enter <strong>Keywords</strong> <br>9. Click <strong>Update</strong> to update the details
+    </td>
+    <td><img src=".png"></td>
+  </tr>
+  </table>
+
+### Adding Image to Course Metadata
+
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>Click the <strong>Image</strong> icon to add an image</td>
+    <td><img src=".png"</td>
+  </tr>
+  <tr>
+    <td>1. You can add images either by selecting an image from:<br>
+      <li>A list or uploading images</li>
+      <li>>Your local machine to use immediately</li><br>
+      2.Click <strong>My images</strong> to view a list of all image files that you have previously,uploaded <br>3. Click <strong>All image</strong> to view a list of image files from the repository <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users <br>5. Choose an appropriate image file from any list and click <strong>Select</strong><br>6. Click <strong>Upload</strong> and use to upload and use images from your gallery
+    </td>
+    <td><img src=".png></td>
+  </tr>
+  <tr>
+      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <br>
+      <li>Makeit available to everyone</li>
+      <li>Not share with anyone</li><br>
+      4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
+      </td>
+    <td><img src=".png"></td>
   </tr>
 </table>
 
-## Adding Image to Course Metadata
-<table class="tg">
+### Adding Content to Course
+<table>
   <tr>
-    <th class="tg-031e">Click the Image icon to add an<br>image</th>
-    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/img.png</th>
-  </tr>
+    <th>Step</th>
+    <th>Screen</th>
+    </tr>
   <tr>
-    <td class="tg-031e">1.You<br>can add images either by selecting an image from a list or uploading images<br>from your local machine to use immediately,<br>2.Click<br>My images to view a list of all image files that you have previously,uploaded,<br>3.Click<br>All image to view a list of image files from the repository,<br>4.Note:<br>The repository contains all image files added and uploaded by any users,<br>5.Choose<br>an appropriate image file from any list and click Select,<br>6.Click<br>Upload and use to upload and use images from your gallery</td>
-    <td class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/img.png</td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">1.Choose File to browse and Click select a file from your local drive or open the explorer in a separate window and drag and drop the required file on the screen.,<br>Note: Supported file formats are: .jpeg, .jpg, .png,<br>2.Under Copyright &amp; License, select if you want to:,<br>a.Makeit available to everyone,<br>b.Not share with anyone,<br>4.Add image details in the Asset Caption area,<br>5.Click Upload and Use to upload the image</td>
-    <td class="tg-yw4l">project-sunbird.github.io/pages/features-documentation/images/img.png</td>
-  </tr>
-</table>
-
-## Adding Content to Course
-<table class="tg">
-  <tr>
-    <th class="tg-031e">1.Click + icon in the left navigation pane to add a Course Unit, Collection, or<br>Resource</th>
-    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_addingresource.png</th>
-  </tr>
-  <tr>
-    <td class="tg-yw4l"></td>
-    <td class="tg-yw4l"></td>
+    <td>1. Click <strong>(+)</strong> icon in the left navigation pane to add a <strong>Course Unit, Collection or Resource</strong>
+    <td><img src="features-documentation/images/course_addingresource.png"></td>
   </tr>
 </table>
 
