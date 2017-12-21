@@ -29,6 +29,18 @@ allowSearch: true
 
 *To sign up on Sunbird individuals have to be part of an organization. Individuals not part of any organization cannot sign up on Sunbird.*
 
+### Welcome Message 
+
+<table>
+	<tr>
+		<th>Step</th>
+		<th>Screen</th>
+	</tr>
+	<td>An auto generated <strong>Welcome</strong> message is send to the users through email. Account details along with the instructions are send.</td>
+	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
+	</tr>
+	</table>
+	
 ## Signing in 
 
 Sign in the Sunbird portal using your registered credentials. For signing in, follow the steps:
