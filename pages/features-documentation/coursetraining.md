@@ -8,14 +8,11 @@ keywords: 'teacher training, training, assessment, training instituites, teacher
 published: true
 allowSearch: true
 ---
-
-**Courses**
-
 Course is a content provided in sequence, broken down in modules, open for enrolment and completion for a duration. You can attach prerequisites for a course, and it may contain assessments.
 
-**Compiling Courses in Sunbird**
+## Compiling Courses in Sunbird
 
-## Prerequisite
+### Prerequisite
 
 <table>
   <tr>
