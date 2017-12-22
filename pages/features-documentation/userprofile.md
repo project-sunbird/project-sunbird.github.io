@@ -27,11 +27,11 @@ To create or update your profile:
     <td><img src="pages/features-documentation/images/profileimg2.png"></td>
   </tr>
   <tr>
-    <td><strong>Filters for Organization Setup</strong>: <br>1. Click <strong>Search</strong> dropdown button <br>2. Select <strong>Organizations</strong> from the dropdown list <br>3. Click <strong>Filter</strong> icon <br>4.Select <strong>Organization Type</strong> from the dropdown list <br>5. Click <strong>Apply</strong> button to tag an organization with the organization type <br>6. Click <strong>Reset</strong> button to select attributes again</td>
+    <td><strong>Organization setup option</strong>: <br>1. Click <strong>Search</strong> dropdown button <br>2. Select <strong>Organizations</strong> from the dropdown list <br>3. Click <strong>Filter</strong> icon <br>4.Select <strong>Organization Type</strong> from the dropdown list <br>5. Click <strong>Apply</strong> button to associate an organization with the organization type <br>6. Click <strong>Reset</strong> button to select attributes again</td>
     <td><img src="pages/features-documentation/images/setuporgtype.png"></td>
   </tr>
   <tr>    
-    <td><strong>Filters for Profile</strong>: <br>1. Click <strong>Search</strong> dropdown button <br>2. Select <strong>Users</strong> from the dropdown list <br>3. Click <strong>Filter</strong> icon <br>4. You can filter the profile by:<br>
+    <td><strong>Filter Profile by attributes</strong>: <br>1. Click <strong>Search</strong> dropdown button <br>2. Select <strong>Users</strong> from the dropdown list <br>3. Click <strong>Filter</strong> icon <br>4. You can filter the profile by:<br>
       <li><strong>Grades</strong></li>
       <li><strong>Medium</strong></li>
       <li><strong>Subjects</strong></li>
@@ -69,7 +69,9 @@ To create or update your profile:
     <td><img src="pages/features-documentation/images/profile_skilltag.png"></td>
   </tr>
   <tr>
-    <td><strong>Skill Endorsment</strong>: <br>1. 
+    <td><strong>Skill Endorsement</strong>: <br>1. Click <strong>View More</strong> dropdown in <strong>Skill Tags</strong> section <br>2. Click <strong>+</strong> icon to endorse for a particular skill <br>3. Click <strong>View Less</strong> to collapse the Skill Tags page</td>
+    <td><img src="pages/features-documentation/images/profile_endorsment.png"></td>
+  </tr>
   <tr>
       <td><strong>Additional Information</strong>:<br>1.  Add or edit personal information such as name, phone number, date of birth, location, languages known, etc<br>2. Add your <strong>Social Media Links</strong> such as Facebook, Twitter, LinkedIn etc<br>3. Click <strong>Save</strong> button to save the changes</td>
     <td><img src="pages/features-documentation/images/profile_additionalinfo.png"></td>
