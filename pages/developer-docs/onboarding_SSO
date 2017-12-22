@@ -1,17 +1,5 @@
 
-# Overview
 
-This document is a technical support document to enable partners to:
-
-* Define rights and permissions to registered users
-
-* Revoke permissions assigned to registered users
-
-* Update organization details
-
-* Update user details
-
-* Add users via signed token
 
 DIKSHA platform allows signed on users on integrated systems to seamlessly navigate on DIKSHA. By design, the system is loose-coupled, and achieve the seamless navigation by sharing trusted login status. This keeps the technical complexity for integrating systems simple and the systems do not need to change their own sign-on protocols. 
 
