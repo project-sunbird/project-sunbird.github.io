@@ -230,6 +230,22 @@ words that already exist in the repository <br>1. To use this feature, select th
   </tr>
   </table>
   
+  **Transliteration**
+  
+  <table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+  <td>The process of changing the written script from one language to another is known as transliteration. On clicking Add text, the Transliterate feature on the customize tab allows you to transliterate in ten Indian languages <br>1. To transliterate, select the word or sentence and click <strong>Transliterate</strong></td>
+    <td><img src="pages/features-documentation/images/contenteditor/transliteration.png"></td>
+  </tr>
+  <tr>
+    <td><strong>Language Transliteration Tool</strong> <br>
+      1. 
+  </table>
+  
 #### Add Richtext 
    
    <table>
