@@ -4,10 +4,10 @@ directory: developer-docs/installation/
 title: Overview
 page_title: Overview
 description: An overview of onboarding and single sign on process on Sunbird
+keyword: Overview, onboarding, single sign on
 allowSearch: true
 ---
-
-## Overview
+## Overview 
 
 Sunbird platform allows signed on users on integrated systems to seamlessly navigate on the portal. By design, the system is loose-coupled, and achieve the seamless navigation by sharing trusted login status. This keeps the technical complexity for integrating systems simple and the systems do not need to change their own sign-on protocols. 
 
