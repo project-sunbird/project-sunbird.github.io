@@ -9,7 +9,7 @@ allowSearch: true
 ---
 
 ## Organization APIs
-Tenants can import their organizations and users on DIKSHA using the organization and user APIs. The API has the following resources:
+Tenants can import their organizations and users on Sunbird using the organization and user APIs. The API has the following resources:
 - Create Organization
 - Update Organization
 - Create User
