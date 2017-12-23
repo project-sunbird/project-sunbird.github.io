@@ -35,7 +35,7 @@ When you are initially trying out sunbird, please request the keys from the EkSt
 - On this page click on "Request API Access", check all the options and submit.
 - Once your request is approved (you will receive an email notifying the same) click on "Create Credentials".
 - Note the key and secret that is shown on the screen. 
-- Generate JWT token by following the steps [here](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis){:target="_blank"}
+- Generate a JWT token by following the steps [here](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis){:target="_blank"}
 - This token will be needed during the installation.
 
 Once you have completed testing the sunbird setup and are ready to make it live, you can repeat the above steps on community.ekstep.in to receive production credentials.
