@@ -10,6 +10,7 @@ allowSearch: true
 
 ## Organization APIs
 Tenants can import their organizations and users on Sunbird using the organization and user APIs. The API has the following resources:
+
 - Create Organization
 - Update Organization
 - Create User
@@ -20,7 +21,9 @@ Tenants can import their organizations and users on Sunbird using the organizati
 
 ### Create Organization
 POST - <BASE_URL>/api/org/v1/create
-Creates a new organization.
+
+Creates a new organization
+
 **Request**
 Request Body - organization details
 {
@@ -39,6 +42,7 @@ Request Body - organization details
 District, Block and Cluster fields will be introduced shortly.
 
 **Response**
+
 orgId - Identifier of the created organization
 {  
    "id":"api.org.create",
@@ -58,9 +62,13 @@ orgId - Identifier of the created organization
    "responseCode":"OK"
 }
 ### Update Organization
+
 PATCH - <BASE_URL>/api/org/v1/update
+
 Updates an existing organization.
+
 **Request**
+
 Request Body - organization details
 {
   "request":{  
@@ -90,10 +98,15 @@ Request Body - organization details
 }
 
 ### User APIs
+
 **Create User**
+
 POST - <BASE_URL>/api/user/v1/create
+
 Creates a new user
+
 **Request**
+
 Request Body - user details
 {
   "request":{  
@@ -120,6 +133,7 @@ Request Body - user details
 }
 
 **Response**
+
 userId - Identifier of the created user
 {  
    "id":"api.user.create",
@@ -139,11 +153,15 @@ userId - Identifier of the created user
    "responseCode":"OK"
 }
 ** Update User**
+
 POST - <BASE_URL>/api/user/v1/update
-Updates an existing user. All optional fields mentioned in ‘Create User’ can be added in the ‘Update User’ request.
+
+Updates an existing user. All optional fields mentioned in Create User can be added in the Update User request.
 
 **Request**
+
 Request Body - user details
+
 {
   "request":{
       "userName": "unique userName for the user", //required
@@ -180,8 +198,11 @@ Request Body - user details
 
 POST - <BASE_URL>/api/org/v1/member/add
 Adds a member to the organization
+
 Request
+
 Request Body - membership details
+
 {
   "request":{  
       "externalId": "identifier of the organization in the partner system", //required
@@ -193,6 +214,7 @@ Request Body - membership details
 }
 
 **Response**
+
 {  
    "id":"api.org.member.add",
    "ver":"1.0",
@@ -209,12 +231,17 @@ Request Body - membership details
    },
    "responseCode":"OK"
 }
+
 **Remove Member**
 
 POST - <BASE_URL>/api/org/v1/member/remove
+
 Removes a member from an organization
+
 Request
+
 Request Body - membership details
+
 {
   "request":{  
       "externalId": "identifier of the organization in the partner system", //required
@@ -222,7 +249,9 @@ Request Body - membership details
       "userName": "username with which the user is created", // required
    }
 }
+
 **Response**
+
 {  
    "id":"api.org.member.remove",
    "ver":"1.0",
@@ -239,6 +268,7 @@ Request Body - membership details
    },
    "responseCode":"OK"
 }
+
 ### Single-Sign-On API
 To login a user, the client must provide a link (which makes a GET request) to the auto-login endpoint /v1/user/session/create?token=<jwt_token> with the JWT token in the query parameter of the request. Here’s an example:
 <base_url>/v1/user/session/create?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
