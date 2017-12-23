@@ -25,6 +25,7 @@ POST - <BASE_URL>/api/org/v1/create
 Creates a new organization
 
 **Request**
+
 Request Body - organization details
 {
   "request":{  
@@ -61,6 +62,7 @@ orgId - Identifier of the created organization
    },
    "responseCode":"OK"
 }
+
 ### Update Organization
 
 PATCH - <BASE_URL>/api/org/v1/update
