@@ -27,7 +27,8 @@ To install Sunbird, the servers should have the following minimum system require
 ### API Keys
 Sunbird implementors currently need to get a API key for the EkStep platform, since this is where the content is stored. In the future, Sunbird will support more content stores.
 
-When you are initially trying out sunbird, please request the keys from the EkStep QA environment. To do so, 
+When you are initially trying out sunbird, please request the keys from the EkStep QA environment. To do so,
+ 
 - Login to [qa.ekstep.in](https://qa.ekstep.in).
 - Navigate to Resources > Developers.
 - Click on "API Credentials" in the top menu.
