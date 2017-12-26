@@ -33,6 +33,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   </table>
   
   ### Course Metadata
+
 <table>
   <tr>
     <th>Step</th>
