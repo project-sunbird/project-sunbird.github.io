@@ -1,0 +1,25 @@
+---
+type: landing
+directory: developer-docs
+title: Protocol
+page_title: Protocol
+description: List of APIs required for single sign on
+published: true
+allowSearch: true
+---
+
+The authentication protocol provides: 
+
+1. A secure API endpoint to register new organisations
+
+2. A secure API endpoint to register new users
+
+3. A secure API endpoint to register users to organizations
+
+4. A secure API endpoint to de-register users from organizations
+
+5. A secure API endpoint to update user details
+
+6. A secure API endpoint to update organisation details
+
+7. A secure API endpoint to auto-login a user into SUnbird (Single-Sign-On)
