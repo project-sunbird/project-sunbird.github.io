@@ -22,4 +22,4 @@ Protocol is a set of rules and guidelines that enables communications between tw
 
 6. A secure API endpoint to update organisation details
 
-7. A secure API endpoint to auto-login a user into SUnbird (Single-Sign-On)
+7. A secure API endpoint to auto-login a user into Sunbird (Single-Sign-On)
