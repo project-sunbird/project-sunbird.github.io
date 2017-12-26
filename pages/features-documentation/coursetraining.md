@@ -67,7 +67,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
       <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users 
       <br>5. Choose an appropriate image file from any list and click <strong>Select</strong><br>6. Click <strong>Upload</strong> and use to upload and use images from your gallery
     </td>
-    <td><img src="pages/features-documentation/images/course_selectimage.png></td>
+    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
   <tr>
       <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <br>
@@ -87,7 +87,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
     </tr>
   <tr>
     <td>1. Click <strong>(+)</strong> icon in the left navigation pane to add a <strong>Course Unit, Collection or Resource</strong></td>
-    <td><img src="features-documentation/images/course_addingresource.png"></td>
+    <td><img src="pages/features-documentation/images/course_addingresource.png"></td>
   </tr>
 </table>
 
