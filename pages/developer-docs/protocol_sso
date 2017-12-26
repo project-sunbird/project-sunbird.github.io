@@ -8,7 +8,7 @@ published: true
 allowSearch: true
 ---
 
-The authentication protocol provides: 
+Protocol is a set of rules and guidelines that enables communications between two or more networks. The authentication protocol of Sunbird provides: 
 
 1. A secure API endpoint to register new organisations
 
