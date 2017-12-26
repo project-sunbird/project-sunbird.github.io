@@ -86,7 +86,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
     <th>Screen</th>
     </tr>
   <tr>
-    <td>1. Click <strong>(+)</strong> icon in the left navigation pane to add a <strong>Course Unit, Collection or Resource</strong>
+    <td>1. Click <strong>(+)</strong> icon in the left navigation pane to add a <strong>Course Unit, Collection or Resource</strong></td>
     <td><img src="features-documentation/images/course_addingresource.png"></td>
   </tr>
 </table>
