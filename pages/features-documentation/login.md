@@ -59,7 +59,7 @@ Login the Sunbird portal using your registered credentials. For login, follow th
          <li>Click <strong>Log in</strong> button</li>
 	   </ol>
     </td>
-	<td><img src="pages/features-documentation/images/login1.png"></td>
+	<td><img src="pages/features-documentation/images/logintest.png"></td>
     </tr>
     </table>
 
