@@ -6,7 +6,7 @@ page_title: test
 description: test
 keywords: test
 published: true
-allowSearch: true
+allowSearch: false
 ---
 
 <table>
