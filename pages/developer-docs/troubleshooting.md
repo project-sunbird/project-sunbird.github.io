@@ -9,12 +9,12 @@ allowSearch: true
 ---
 ## Database
 
-**Q:** Are data initialization scripts available?
+**Q:  Does Sunbird use any data initialization scripts?**
 
 **A:** Use the Cassandra.cql file to do the initial data setup. 
 Click [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} and run the file to create the initial Cassandra data base.
 
-**Q:** Does the database have initial/ default entries for 'Org', 'Role' and 'Users'?
+**Q:  Does the database have initial/ default entries for 'Org', 'Role' and 'Users'?**
 
 **A:**  'Users' do not have initial/default entries. There are default entries for 'Org' and 'Roles'. 
 For details, refer the files:
@@ -25,7 +25,7 @@ For details, refer the files:
      
 Run the two .csv files under Cassandra. It has queries to generate page data and works based on BFF(Backend for frontend) design pattern.
 
-**Q:**  Which databases are used in the application and for what purpose?
+**Q:  Which databases are used in the application and for what purpose?**
 
 **A:** The following databases are used: 
 
@@ -36,7 +36,7 @@ Elasticsearch  |  80% of the data storage for Cassandra     | The Search engine
 Postgres  |A cron scheduler job, to run in cluster mode     |
 MongoDB   |A store for session data     |The player service
  
-**Q:** Does the launch of any application initaiate seed data?
+**Q:  Does the launch of any application initaiate seed data?**
 
 **A:** When an application is launched, the following table data are cached. This data needs to be refreshed daily. 
 
@@ -45,13 +45,13 @@ MongoDB   |A store for session data     |The player service
 
 ## Application 
 
-**Q**: How do I test if the APIs are working ? 
+**Q: How do I test if the APIs are working correctly? **
 
-**A**:  Once you complete Sunbird installation, use the GET API https://hostname/health .
-    For details of more API check routes, refer to the [Routes](https://github.com/project-sunbird/sunbird-lms-service/blob/master/service/conf/routes){:target="_blank"}
-     This file has a list of URLs.
+**A**:  Once you complete Sunbird installation, use the GET API (https://hostname/health) to test if the APIs are working correctly.
+
+**Note:** For details of more API check routes, refer to the [Routes](https://github.com/project-sunbird/sunbird-lms-service/blob/master/service/conf/routes){:target="_blank"} file. This file has a list of URLs for all related APIs.
  
- **Q**: What Authorization header should be used to access these API ?
+ **Q: What authorization header should be used to access the Sunbird APIs ?**
 
 **A**:  Api requests have following headers:
    
@@ -59,10 +59,11 @@ MongoDB   |A store for session data     |The player service
    + x-authenticated-user-token : The user authentication token, if a particular API requires it
    + X-msgid : The unique message id for each request.
     
- **Q**: How do I register my own application with keycloak for development?
- **Q**: I want to create new APIs as extensions of the existing Sunbird API. Can I register to keycloak and allow communication between them securely?   
+ **Q: To develop my application, how do I register it with Keycloak?**
  
- **A**:  You need to install the keycloak. After it is successfully installed, set following details under System Env or sso.properites file to communicate with keycloak.
+ **Q: I want to create new APIs as extensions of the existing Sunbird API. Can I register to Keycloak and allow secure communication between them? **  
+ 
+ **A**:  You need to install the keycloak. After it is successfully installed, set following details under the System Env or sso.properites file to communicate with keycloak.
  
  + sso.url 
  + sso.realm
@@ -74,8 +75,8 @@ MongoDB   |A store for session data     |The player service
 
 ## Telemetry
 
-**Q**: Is there any controller for telemetry events in Sunbird? How can telemetry data be accessed from Sunbird?
+**Q: Do telemetry events in Sunbird have a controller? How is telemetry data accessed from Sunbird?**
 
-**A**: Sunbird provides dashboards for admins that provide summary views of the telemetry. For raw telemetry data, you need to pull out the data from the ekstep platform. To do so, use the [On Demand Data Exhaust API](https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api){:target="_blank"} 
+**A**: Sunbird provides administrator dashboards that provide summary views of the telemetry data. You can pull out raw telemetry data from the EkStep platform using the [On Demand Data Exhaust API](https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api){:target="_blank"} 
 
-**Note**: Sign in to the Ekstep Community portal to access the API (https://community.ekstep.in)
+**Note**: Sign in to the [EkStep Community portal](https://community.ekstep.in){:target="_blank"}, to access the API 
