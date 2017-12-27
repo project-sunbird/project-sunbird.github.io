@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 
-<table style="undefined;table-layout: fixed; width: 100%>
+<table ="table-layout: fixed; width: 100%>
 <colgroup>
 <col style="width: 35%">
 <col style="width: 65%">
