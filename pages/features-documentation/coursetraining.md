@@ -10,7 +10,7 @@ allowSearch: true
 ---
 Course is a content provided in sequence, broken down in modules, open for enrolment and completion for a duration. You can attach prerequisites for a course, and it may contain assessments.
 
-## Compiling Courses in Sunbird
+## Compiling Courses on Sunbird
 
 ### Prerequisite
 
@@ -32,7 +32,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   </tr>
   </table>
   
-  ### Course Metadata
+### Course Metadata
 
 <table>
   <tr>
