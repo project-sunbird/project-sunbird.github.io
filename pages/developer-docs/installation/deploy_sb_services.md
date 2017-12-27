@@ -7,7 +7,7 @@ description: Deploy Sunbird services
 allowSearch: true
 ---
 
-The Sunbird application consists of multiple services, each service a specific purpose. All services except keycloak are set up using Docker. The steps below take care of installing docker, pulling the required images and creating services based on those images.
+The Sunbird application consists of multiple services, each serving a specific purpose. All services except keycloak are set up using Docker. The steps below take care of installing docker, pulling the required images and creating services based on those images.
 
 ## Preparation to Setup Application
 
@@ -20,7 +20,7 @@ The Sunbird application consists of multiple services, each service a specific p
 
 
 ## API Manager services
-Run sudo `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will set up the API Manager services.
+Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will set up the API Manager services.
 
 **Note:** The 2 steps below are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
