@@ -83,6 +83,10 @@ Course is a content provided in sequence, broken down in modules, open for enrol
 ### Adding Content to Course
 <table class="tg">
   <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
     <th class="tg-031e">1.Click<br>+ icon in the left navigation pane to add a Course Unit, Collection,<br>Resource, Story or Worksheet,<br>2.Click<br>on the content type you want to add to the course</th>
     <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_addingresource.png</th>
   </tr>
@@ -92,3 +96,32 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   </tr>
 </table>
 
+#### Adding Course Units
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <th>1.On clicking Course Unit from the drop-down, the metadata appear for course unit is<br>displayed on the right,<br>2.Click update to edit the metadata,<br>3.Click update to save the edited metadata</th>
+    <th>image</th>
+  </tr>
+</table>
+
+#### Adding Collections, Resources, Stories and Worksheets
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets<strong>, the <strong>Browse Resource<strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept<strong>
+ <br>4. Click <strong>Apply<strong>. Results are loaded on the right pane  <br>4. Click <strong>Add<strong> to add the selected content
+    </td>
+    <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
+  </tr>
+      
+     
+  </table>
+      
+      
