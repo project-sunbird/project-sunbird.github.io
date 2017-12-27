@@ -75,7 +75,7 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     
 ### Testing Images
     
-    <table>
+<table>
   <tr>
     <td><strong>Step</strong></td>
     <td><strong>Screen</strong></td>
@@ -86,11 +86,11 @@ Login the Sunbird portal using your registered credentials. For login, follow th
          <li>Enter your <strong>Username</strong> or <strong>email ID</strong></li>
 	 <li>Enter your <strong>Password</strong></li>
          <li>Click <strong>Log in</strong> button</li>
-	   </ol>
+	</ol>
     </td>
-	<td><img src="pages/features-documentation/images/logintest4.png"></td>
+    <td><img src="pages/features-documentation/images/logintest4.png"></td>
     </tr>
-    </table>
+ </table>
 
 ### Recovering Password
 
