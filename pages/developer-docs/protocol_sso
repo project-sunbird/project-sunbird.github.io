@@ -14,10 +14,10 @@ Protocol is a set of rules and guidelines that enables communications between tw
 
 2. Register users to organizations
 
-4. Remove users from organizations
+3. Remove users from organizations
 
-5. Update user details
+4. Update user details
 
-6. Update organisation details
+5. Update organisation details
 
-7. Auto-login a user into Sunbird (Single-Sign-On)
+6. Auto-login a user into Sunbird (Single-Sign-On)
