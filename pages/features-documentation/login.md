@@ -77,8 +77,8 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     
 <table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <td style="width:35%;"><strong>Step</strong></td>
+    <td style="width:35%;"><strong>Screen</strong></td>
   </tr>
   <tr>
    <td>
