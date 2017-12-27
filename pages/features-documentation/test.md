@@ -9,14 +9,10 @@ published: true
 allowSearch: true
 ---
 
-<table ="table-layout: fixed; width: 100%>
-<colgroup>
-<col style="width: 35%">
-<col style="width: 65%">
-</colgroup>
+<table>
  <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
     <td>Enter your Username or email ID<br>Enter your Password<br>Click Log in button</td>
