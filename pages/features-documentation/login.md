@@ -73,7 +73,7 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     </tr>
     </table>
     
-    ### Testing Images
+### Testing Images
     
     <table>
   <tr>
@@ -90,6 +90,7 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     </td>
 	<td><img src="pages/features-documentation/images/logintest4.png"></td>
     </tr>
+    </table>
 
 ### Recovering Password
 
