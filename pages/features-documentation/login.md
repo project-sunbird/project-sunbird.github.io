@@ -61,6 +61,16 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     </td>
 	<td><img src="pages/features-documentation/images/logintest.png"></td>
     </tr>
+    <tr>
+   <td>
+       <ol>
+         <li>Enter your <strong>Username</strong> or <strong>email ID</strong></li>
+	 <li>Enter your <strong>Password</strong></li>
+         <li>Click <strong>Log in</strong> button</li>
+	   </ol>
+    </td>
+	<td><img src="pages/features-documentation/images/logintest1.png"></td>
+    </tr>
     </table>
 
 ### Recovering Password
