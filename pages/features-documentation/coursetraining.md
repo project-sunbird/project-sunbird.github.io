@@ -88,7 +88,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   </tr>
   <tr>
     <th class="tg-031e">1.Click<br>+ icon in the left navigation pane to add a Course Unit, Collection,<br>Resource, Story or Worksheet,<br>2.Click<br>on the content type you want to add to the course</th>
-    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_addingresource.png</th>
+    <th class="tg-031e">pages/features-documentation/images/course_addingresource.png</th>
   </tr>
   <tr>
     <td class="tg-031e"></td>
@@ -116,11 +116,16 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   </tr>
   <tr>
     <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets<strong>, the <strong>Browse Resource<strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept<strong>
- <br>4. Click <strong>Apply<strong>. Results are loaded on the right pane  <br>4. Click <strong>Add<strong> to add the selected content
+ <br>4. Click <strong>Apply<strong>. Results are loaded on the right pane  <br>5. Click <strong>Add<strong> to add the selected content
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
   </tr>
-      
+  </tr>
+  <tr>
+    <td>1. Click <strong>Save<strong> on the header to save the course <br>2. Click <strong>Send for review<strong> to send the created course unit for review
+    </td>
+    <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
+  </tr>    
      
   </table>
       
