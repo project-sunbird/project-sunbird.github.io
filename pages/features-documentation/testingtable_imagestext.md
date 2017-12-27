@@ -19,8 +19,8 @@ allowSearch: true
 	<td><img src="pages/features-documentation/images/logintest3.png"></td>
     </tr>
     </table>
-	
-	### Testing Images
+
+### Testing Images
     
 <table>
   <tr>
