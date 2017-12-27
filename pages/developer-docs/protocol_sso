@@ -8,18 +8,16 @@ published: true
 allowSearch: true
 ---
 
-Protocol is a set of rules and guidelines that enables communications between two or more networks. The authentication protocol of Sunbird provides: 
+Protocol is a set of rules and guidelines that enables communications between two or more networks. The authentication protocol of Sunbird provides secure API endpoint to: 
 
-1. A secure API endpoint to register new organisations
+1. Register new organisations and users
 
-2. A secure API endpoint to register new users
+2. Register users to organizations
 
-3. A secure API endpoint to register users to organizations
+4. Remove users from organizations
 
-4. A secure API endpoint to de-register users from organizations
+5. Update user details
 
-5. A secure API endpoint to update user details
+6. Update organisation details
 
-6. A secure API endpoint to update organisation details
-
-7. A secure API endpoint to auto-login a user into Sunbird (Single-Sign-On)
+7. Auto-login a user into Sunbird (Single-Sign-On)
