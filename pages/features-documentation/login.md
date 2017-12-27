@@ -8,7 +8,7 @@ keywords: Login
 published: true
 allowSearch: true
 ---
-## Signing up on the Platform
+## Login for the first time on the Platform
 
 1. Send an email to [content.ntp@centralsquarefoundation.org](content.ntp@centralsquarefoundation.org) with a request for access as the subject line of the mail.
 
@@ -23,11 +23,11 @@ allowSearch: true
      ii. Verified Email ID and mobile number of the teachers
 
 3. On providing the information requested for, the organization’s designated administrator will receive credentials such as User ID, password, Channel ID and Organization ID
-4. The organization’s administrator can use the credentials received to sign in and add organization and organization member details.
+4. The organization’s administrator can use the credentials received to login and add organization and organization member details.
 
 ***Note:***
 
-*To sign up on Sunbird individuals have to be part of an organization. Individuals not part of any organization cannot sign up on Sunbird.*
+To login on Sunbird first time, individuals have to be part of an organization. Individuals not part of any organization cannot login on Sunbird.
 
 ### Welcome Message 
 
@@ -36,14 +36,15 @@ allowSearch: true
 		<th>Step</th>
 		<th>Screen</th>
 	</tr>
-	<td>An auto generated <strong>Welcome</strong> message is send to the users through email. Account details along with the instructions are send.</td>
+	<tr>
+	<td>An auto generated <strong>Welcome</strong> message is send to the users through email. Account details along with the instructions are send</td>
 	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
 	</tr>
 	</table>
 	
-## Signing in 
+## Login 
 
-Sign in the Sunbird portal using your registered credentials. For signing in, follow the steps:
+Login the Sunbird portal using your registered credentials. For login, follow the steps:
 
 <table class="table table-img">
   <tr>
