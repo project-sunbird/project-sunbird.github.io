@@ -9,8 +9,12 @@ published: true
 allowSearch: true
 ---
 
-<table>
-  <tr>
+<table style="undefined;table-layout: fixed; width: 100%>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+ <tr>
     <th>Step</th>
     <th>Screen</th>
   </tr>
