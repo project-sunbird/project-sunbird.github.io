@@ -25,7 +25,7 @@ allowSearch: true
 3. On providing the information requested for, the organization’s designated administrator will receive credentials such as User ID, password, Channel ID and Organization ID
 4. The organization’s administrator can use the credentials received to login and add organization and organization member details.
 
-***Note:***
+**Note:**
 
 To login on Sunbird first time, individuals have to be part of an organization. Individuals not part of any organization cannot login on Sunbird.
 
@@ -46,7 +46,7 @@ To login on Sunbird first time, individuals have to be part of an organization. 
 
 Login the Sunbird portal using your registered credentials. For login, follow the steps:
 
-<table class="table table-img">
+<table>
   <tr>
     <td><strong>Step</strong></td>
     <td><strong>Screen</strong></td>
@@ -72,6 +72,24 @@ Login the Sunbird portal using your registered credentials. For login, follow th
 	<td><img src="pages/features-documentation/images/logintest3.png"></td>
     </tr>
     </table>
+    
+    ### Testing Images
+    
+    <table>
+  <tr>
+    <td><strong>Step</strong></td>
+    <td><strong>Screen</strong></td>
+  </tr>
+  <tr>
+   <td>
+       <ol>
+         <li>Enter your <strong>Username</strong> or <strong>email ID</strong></li>
+	 <li>Enter your <strong>Password</strong></li>
+         <li>Click <strong>Log in</strong> button</li>
+	   </ol>
+    </td>
+	<td><img src="pages/features-documentation/images/logintest4.png"></td>
+    </tr>
 
 ### Recovering Password
 
