@@ -27,9 +27,9 @@ Clone the sunbird-devops repo using `git clone [https://github.com/project-sunbi
 
 + Configuring environment
 
-Run `./sunbird-devops/deploy/generate-config.sh <implementation-name> <environment-name>`. 
+Run `cd ./sunbird-devops/deploy && ./generate-config.sh <implementation-name> <environment-name>`. 
 
-  E.g. `./sunbird-devops/deploy/generate-config.sh mysb production deploy`. 
+  E.g. `cd ./sunbird-devops/deploy && ./generate-config.sh mysb production deploy`. 
 
 This creates `mysb-devops` directory with *incomplete* configurations. 
 The missing configuration needs to be done afterwards.

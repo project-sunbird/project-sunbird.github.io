@@ -17,7 +17,7 @@ Review the following to determine that the environment has the necessary resourc
 
 ### System Requirements
 
-To install Sunbird, the servers should have the following minimum system requirements:
+To install Sunbird, each of the server should have the following minimum system requirements:
 
    - Operating System: Ubuntu 16.04 LTS
    - RAM: 7GB
@@ -40,9 +40,13 @@ When you are initially trying out sunbird, please request the keys from the EkSt
 
 Once you have completed testing the sunbird setup and are ready to make it live, you can repeat the above steps on community.ekstep.in to receive production credentials.
 
+Please keep the JWT handy, it will be needed during the installation.
+
 ### SSL Certificate
 
 SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. [LetsEncrypt](https://letsencrypt.org/) provides free SSL certificates. You can also use a CA of your choice. 
+
+Before beginning the installation, have the SSL certificate and the key with you.
 
 ***Note***: A self-signed certification will cause authentication to fail with an "Access Denied" error because the certificate will not be verified.
 

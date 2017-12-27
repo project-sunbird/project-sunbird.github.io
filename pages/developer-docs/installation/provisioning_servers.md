@@ -8,6 +8,12 @@ allowSearch: true
 ---
 Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.
 
+## Manual Process
+
+The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server & administration server.
+
+If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication. 
+
 ## Automation for Azure
 
 The set of scripts on the Automation for Azure page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
@@ -50,17 +56,3 @@ Run the following steps from a machine which is connected to the internet:
 [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 **Note:** The default automation process creates three servers because it separates the application and the administration server.
-
-## Manual Process
-
-The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server & administration server.
-
-If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication. 
-
-
-
-
-
-
-
-
