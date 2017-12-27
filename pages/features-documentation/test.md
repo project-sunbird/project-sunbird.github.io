@@ -9,11 +9,7 @@ published: true
 allowSearch: true
 ---
 
-<table style="undefined;table-layout: fixed; width: 866px">
-<colgroup>
-<col style="width: 303px">
-<col style="width: 563px">
-</colgroup>
+<table>
   <tr>
     <th>Step</th>
     <th>Screen</th>
