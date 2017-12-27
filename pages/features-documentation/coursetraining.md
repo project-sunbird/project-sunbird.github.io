@@ -81,14 +81,14 @@ Course is a content provided in sequence, broken down in modules, open for enrol
 </table>
 
 ### Adding Content to Course
-<table>
+<table class="tg">
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
-    </tr>
+    <th class="tg-031e">1.Click<br>+ icon in the left navigation pane to add a Course Unit, Collection,<br>Resource, Story or Worksheet,<br>2.Click<br>on the content type you want to add to the course</th>
+    <th class="tg-031e">project-sunbird.github.io/pages/features-documentation/images/course_addingresource.png</th>
+  </tr>
   <tr>
-    <td>1. Click <strong>(+)</strong> icon in the left navigation pane to add a <strong>Course Unit, Collection or Resource</strong></td>
-    <td><img src="pages/features-documentation/images/course_addingresource.png"></td>
+    <td class="tg-031e"></td>
+    <td class="tg-031e"></td>
   </tr>
 </table>
 
