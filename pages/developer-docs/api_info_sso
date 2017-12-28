@@ -295,7 +295,7 @@ Request Body - membership details
       
       "role": "member/content-creator/admin", //optional, default to member if not provided
       
-      "position": "position of the person in the organisation, e.g.: Principal, Teacher, Student" // optional
+      "position": "position of the person in the organization, e.g.: Principal, Teacher, Student" // optional
    }
 }
 
