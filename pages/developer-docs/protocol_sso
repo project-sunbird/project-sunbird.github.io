@@ -10,7 +10,7 @@ allowSearch: true
 
 Protocol is a set of rules and guidelines that enables communications between two or more networks. The authentication protocol of Sunbird provides secure API endpoint to: 
 
-1. Register new organisations and users
+1. Register new organizations and users
 
 2. Register users to organizations
 
@@ -18,6 +18,6 @@ Protocol is a set of rules and guidelines that enables communications between tw
 
 4. Update user details
 
-5. Update organisation details
+5. Update organization details
 
 6. Auto-login a user into Sunbird (Single-Sign-On)
