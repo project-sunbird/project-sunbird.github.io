@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: features-documentation
-title: Courses and Training
+title: Courses
 page_title: Courses
 description: Course Training
 keywords: 'teacher training, training, assessment, training instituites, teacher educator'
