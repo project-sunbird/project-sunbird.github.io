@@ -81,18 +81,15 @@ Course is a content provided in sequence, broken down in modules, open for enrol
 </table>
 
 ### Adding Content to Course
-<table class="tg">
+<table>
   <tr>
     <th>Step</th>
     <th>Screen</th>
   </tr>
   <tr>
-    <th class="tg-031e">1.Click<br>+ icon in the left navigation pane to add a Course Unit, Collection,<br>Resource, Story or Worksheet,<br>2.Click<br>on the content type you want to add to the course</th>
-    <th class="tg-031e">pages/features-documentation/images/course_addingresource.png</th>
+    <td>1.Click <strong>+</strong>icon in the left navigation pane to add a Course Unit, Collection, Resource, Story or Worksheet,<br>2.Click on the content type you want to add to the course</td>
+    <td><img src="pages/features-documentation/images/course_addingresource.png"></td>
   </tr>
-  <tr>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
   </tr>
 </table>
 
@@ -103,7 +100,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
     <th>Screen</th>
   </tr>
   <tr>
-    <th>1.On clicking Course Unit from the drop-down, the metadata appear for course unit is<br>displayed on the right,<br>2.Click update to edit the metadata,<br>3.Click update to save the edited metadata</th>
+    <th>1.On clicking Course Unit from the drop-down, the metadata appear for course unit is displayed on the right <br>2.Click update to edit the metadata <br>3.Click update to save the edited metadata</th>
     <th>image</th>
   </tr>
 </table>
