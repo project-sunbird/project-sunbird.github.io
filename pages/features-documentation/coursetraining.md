@@ -94,18 +94,20 @@ Course is a content provided in sequence, broken down in modules, open for enrol
 </table>
 
 #### Adding Course Units
+
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style=width:35%;><strong>Step</strong></th>
+    <th style=width:65%;><strong>Screen</strong></th>
   </tr>
   <tr>
-    <th>1.On clicking Course Unit from the drop-down, the metadata appear for course unit is displayed on the right <br>2.Click update to edit the metadata <br>3.Click update to save the edited metadata</th>
-    <th>image</th>
+    <td>1. On clicking Course Unit from the drop-down, the metadata appear for course unit is displayed on the right <br>2. Click update to edit the metadata <br>3. Click update to save the edited metadata</td>
+    <td><img src="pages/features-doc/image/.png"></td>
   </tr>
 </table>
 
 #### Adding Collections, Resources, Stories and Worksheets
+
 <table>
   <tr>
     <th>Step</th>
