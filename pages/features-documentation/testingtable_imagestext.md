@@ -121,4 +121,58 @@ allowSearch: true
 </tr>
 </table>
 
+## Testimage 3
 
+<table>
+<tr>
+   <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+</tr>
+<tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
+   </td>
+   <td><img src="pages/features-documentation/images/testimages/3-4screensize_rectangular.png"></td>
+</tr>
+</table>
+
+## Testimage 3.1
+
+<table>
+<tr>
+   <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+</tr>
+<tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
+   </td>
+   <td><img src="pages/features-documentation/images/testimages/3-4screensize_rectangular3.1.png"></td>
+</tr>
+</table>
+
+## Testimage 3.2
+
+<table>
+<tr>
+   <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+</tr>
+<tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
+   </td>
+  <td><img src="pages/features-documentation/images/testimages/3-4screensize_rectangular3.2.png"></td>
+</tr>
+</table>
+
+## Testimage 3.3
+
+<table>
+<tr>
+   <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+</tr>
+<tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
+   </td>
+   <td><img src="pages/features-documentation/images/testimages/3-4screensize_rectangular3.3.png"></td>
+</tr>
+</table>
