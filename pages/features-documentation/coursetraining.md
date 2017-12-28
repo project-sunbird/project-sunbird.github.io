@@ -123,7 +123,7 @@ Course is a content provided in sequence, broken down in modules, open for enrol
   <tr>
     <td>1. Click <strong>Save<strong> on the header to save the course <br>2. Click <strong>Send for review<strong> to send the created course unit for review
     </td>
-    <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
+    <td><img src="pages/features-documentation/images/course_sendingfreview.png"></td>
   </tr>    
      
   </table>
