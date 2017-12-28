@@ -8,7 +8,7 @@ keywords: 'Users, registration, enrollment'
 published: true
 allowSearch: true
 ---
-## Signing In
+## Login
 
 1. Sign in the Sunbird portal using your registered credentials
 
