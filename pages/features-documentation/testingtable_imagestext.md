@@ -8,53 +8,101 @@ keywords: Login
 published: true
 allowSearch: true
 ---
+## Testimage 1
 <table>
 <tr>
    <th style="width:35%;"><strong>Step</strong></th>
-   <th style="height:65%;"><strong>Screen</strong</th>
+   <th style="width:65%;"><strong>Screen</strong</th>
    </tr>
    <tr>
-   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button
-    </td>
-	<td><img src="pages/features-documentation/images/logintest3.png"></td>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_rectangular.png"></td>
+    </tr>
+    </table>
+	
+### Testimage 1.1
+<table>
+<tr>
+   <th style="width:35%;"><strong>Step</strong></th>
+   <th style="width:65%;"><strong>Screen</strong</th>
+   </tr>
+   <tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_rectangular1.1.png"></td>
     </tr>
     </table>
 
-### Testing Images
-    
+### Testimage 1.2
 <table>
-  <tr>
-    <td style="width:35%;"><strong>Step</strong></td>
-    <td style="width:65%;"><strong>Screen</strong></td>
-  </tr>
-  <tr>
-   <td>
-       <ol>
-         <li>Enter your <strong>Username</strong> or <strong>email ID</strong></li>
-	 <li>Enter your <strong>Password</strong></li>
-         <li>Click <strong>Log in</strong> button</li>
-	</ol>
-    </td>
-    <td><img src="pages/features-documentation/images/logintest4.png"></td>
+<tr>
+   <th style="width:35%;"><strong>Step</strong></th>
+   <th style="width:65%;"><strong>Screen</strong</th>
+   </tr>
+   <tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_rectangular1.2.png"></td>
     </tr>
- </table>
- 
-### Testing Images
-    
+    </table>
+
+
+### Testimage 1.3
 <table>
-  <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
-  </tr>
-  <tr>
-   <td>
-       <ol>
-         <li>Enter your <strong>Username</strong> or <strong>email ID</strong></li>
-	 <li>Enter your <strong>Password</strong></li>
-         <li>Click <strong>Log in</strong> button</li>
-	</ol>
-    </td>
-    <td><img src="pages/features-documentation/images/logintest5.png"></td>
+<tr>
+   <th style="width:35%;"><strong>Step</strong></th>
+   <th style="width:65%;"><strong>Screen</strong</th>
+   </tr>
+   <tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_rectangular1.3.png"></td>
     </tr>
- </table>
+    </table>
+	
+## Testimage 2
+<table>
+<tr>
+   <th style="width:35%;"><strong>Step</strong></th>
+   <th style="width:65%;"><strong>Screen</strong</th>
+   </tr>
+   <tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_square.png"></td>
+    </tr>
+    </table>
+	
+### Testimage 2.1
+<table>
+<tr>
+   <th style="width:35%;"><strong>Step</strong></th>
+   <th style="width:65%;"><strong>Screen</strong</th>
+   </tr>
+   <tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_square2.1.png"></td>
+    </tr>
+    </table>
+
+### Testimage 2.2
+<table>
+<tr>
+   <th style="width:35%;"><strong>Step</strong></th>
+   <th style="width:65%;"><strong>Screen</strong</th>
+   </tr>
+   <tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_square2.2.png"></td>
+    </tr>
+    </table>
+
+### Testimage 2.3
+<table>
+<tr>
+   <th style="width:35%;"><strong>Step</strong></th>
+   <th style="width:65%;"><strong>Screen</strong</th>
+   </tr>
+   <tr>
+   <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send</td>
+    <td><img src="pages/features-documentation/images/testimages/fullscreen_square2.3.png"></td>
+    </tr>
+    </table>
+
 
