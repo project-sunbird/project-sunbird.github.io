@@ -42,13 +42,13 @@ curl -H "Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hell
 
 Sunbird allows creation and configuration of multiple tenants in a single instance:
 
-* Every tenant organization has a unique channel, i.e. all the activities by users belonging to that tenant organizationare tagged by the tenant's channel id (activities include content creation, content consumption, etc)
+* Every tenant organization has a unique channel, i.e. all the activities by users belonging to that tenant organization are tagged by the tenant's channel id (activities include content creation, content consumption, etc)
 
 * Tenant organizations have the option to setup a custom home page and configure the logo to be displayed for users who belong to the tenant
 
-* Tenant organizations can create multiple sub organisations and add users to those organisations
+* Tenant organizations can create multiple sub organizations and add users to those organizations
 
-Example: Each state is a tenant on Sunbird and all schools/institutes in that state are created as sub-organisations under that tenant organization.
+Example: Each state is a tenant on Sunbird and all schools/institutes in that state are created as sub-organizations under that tenant organization.
 
 ### Custom Homepage & Logo for Tenants
 
