@@ -45,7 +45,7 @@ Request Body - organization details
 
 “preferredLanguage”: Language preferences for the organization, if any, //optional
 
-"contactDetail": [{ "email": "diksha@diksha.com",  “Phone”: “1234567890” }] //optional
+"contactDetail": [{ "email": "user@sunbird.com",  “Phone”: “1234567890” }] //optional
 
    }
 }
@@ -229,7 +229,7 @@ Request Body - user details
   
       "userName": "unique userName for the user", //required
       
-      "provider": "channel of the tenant to which the user belongs to, e.g.: ap", //required
+      "provider": "channel of the tenant organization to which the user belongs to, e.g.: ap", //required
       
       "firstName": "first name of the user", //optional
       
@@ -289,7 +289,7 @@ Request Body - membership details
   
       "externalId": "identifier of the organization in the partner system", //required
       
-      "provider": "channel of the tenant to which the organization belongs to, e.g.: ap", //required
+      "provider": "channel of the tenant organization to which the organization belongs to, e.g.: ap", //required
       
       "userName": "username with which the user is created", // required
       
