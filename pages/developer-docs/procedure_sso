@@ -38,9 +38,9 @@ The token generated should be sent in Authorization header of the request with v
 
 curl -H "Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello
 
-### Onboarding New Tenant on Sunbird
+### Onboarding New Tenant Organization on Sunbird
 
-Sunbird allows creation and configuration of multiple tenants in a single instance:
+Sunbird allows creation and configuration of multiple tenant organizations in a single instance:
 
 * Every tenant organization has a unique channel, i.e. all the activities by users belonging to that tenant organization are tagged by the tenant's channel id (activities include content creation, content consumption, etc)
 
