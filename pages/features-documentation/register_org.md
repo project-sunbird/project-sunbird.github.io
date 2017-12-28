@@ -11,13 +11,13 @@ allowSearch: true
 
 Organization administrators can use the credentials received to sign in and upload organization details. Administrators of administrating organizations can add other organization details.
 
-## Signing In
+## Login
 
-1. Sign in the Sunbird portal using your registered credentials
+1. Log in the Sunbird portal using your registered credentials
 
 ## Accessing your Workspace
 
-1. Click **Profile** tab on the header <br /> OR
+1. Click **Profile** tab on the header <br/> OR
 2. Click the **Profile Icon** and select **Profile**
 
 ## Uploading Organizations
