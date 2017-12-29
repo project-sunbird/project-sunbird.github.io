@@ -525,7 +525,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections.png"></td>
 </tr>
 </table>
 
@@ -539,7 +539,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.1.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.1.png"></td>
 </tr>
 </table>
 
@@ -553,7 +553,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.2.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.2.png"></td>
 </tr>
 </table>
 
@@ -567,7 +567,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.3.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.3.png"></td>
 </tr>
 </table>
 
@@ -581,7 +581,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.4.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.4.png"></td>
 </tr>
 </table>
 
@@ -595,7 +595,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.5.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.5.png"></td>
 </tr>
 </table>
 
@@ -1368,7 +1368,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections.png"></td>
 </tr>
 </table>
 
@@ -1382,7 +1382,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.1.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.1.png"></td>
 </tr>
 </table>
 
@@ -1396,7 +1396,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.2.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.2.png"></td>
 </tr>
 </table>
 
@@ -1410,7 +1410,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.3.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.3.png"></td>
 </tr>
 </table>
 
@@ -1424,7 +1424,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.4.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.4.png"></td>
 </tr>
 </table>
 
@@ -1438,7 +1438,7 @@ allowSearch: true
 <tr>
    <td>1.Enter your <strong>Username</strong> or <strong>email ID</strong> <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong> button <br>4. An auto generated Welcome message is send to the users through email. Account details along with the instructions are send
    </td>
-   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize_manysections8.5.png"></td>
+   <td><img src="pages/features-documentation/images/testimages/verticalscroll_doublescreensize__manysections8.5.png"></td>
 </tr>
 </table>
 
