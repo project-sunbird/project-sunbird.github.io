@@ -65,12 +65,9 @@ Typically, there are four levels of telemetry:
 
 * Full
 
-<image>
-
 The level of data collected is a discrete decision of an organization or business. Analysis of this data offers insights into product and user behaviour and usage patterns, driving business decisions and research outcomes. You can program your telemetry analytics to suit your requirements.
 
 Sunbird’s telemetry service has Full level telemetry.
-
 
 ## What is Telemetry?
 
@@ -78,7 +75,7 @@ The word ‘Telemetry’ is derived from its Greek etymological roots, tele - re
 
 In today’s connected world, Telemetry is a term used for technologies that automatically record and measure statistical data from real-world use and forward it to IT systems in a remote location for further analysis and study. Telemetry is used in a myriad of industries from tracking spacecrafts, medical monitoring, tracking wildlife, and so on.
 
-‘Events’ are broad, human-readable actions, that can be tracked as a string. Events are used to categorize telemetry data.They are the basic unit for analytics and help identify user navigation or flow.
+'Events' are broad, human-readable actions, that can be tracked as a string. Events are used to categorize telemetry data.They are the basic unit for analytics and help identify user navigation or flow.
 
 The concept of telemetry events is to identify:
 
