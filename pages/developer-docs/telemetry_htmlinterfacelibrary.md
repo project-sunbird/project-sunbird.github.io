@@ -31,7 +31,7 @@ The HTML interface provides simple methods to log telemetry, to handle the Conte
 
 The HTML interface exposes the following list of API methods:
 
-* [dispatchEvent](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps dispatch events to the ContentRenderer to handle specific functionality of ContentRenderer
+* [dispatchEvent](developer-docs/telemetry_htmlinterfacelibrary/DispatchEvent) - This method helps dispatch events to the ContentRenderer to handle specific functionality of ContentRenderer
 
 * [getcontentMetadata](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method is used to access content metadata
 
