@@ -81,7 +81,7 @@ In today’s connected world, Telemetry is a term used for technologies that aut
 
 The concept of telemetry events is to identify:
 
-**Who** did **what**, **on** **what**, and **where**, **using** **what**, **in relation** to what?"
+**Who** did **what**, **on** **what**, and **where**, **using** **what**, **in relation** to what?
 
 Every event has the following sections and corresponding fields to capture the data:
 
