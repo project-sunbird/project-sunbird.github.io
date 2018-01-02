@@ -7,7 +7,7 @@ description: telemetry specification of Sunbird
 published: true
 allowSearch: true
 --- 
-This section details standard telemetry workflows for different access channels.
+This section details **Standard Telemetry Workflows** for different access channels.
 
 ## Mobile App Standard Flow
 
