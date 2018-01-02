@@ -31,27 +31,27 @@ The HTML interface provides simple methods to log telemetry, to handle the Conte
 
 The HTML interface exposes the following list of API methods:
 
-* [dispatchEvent](#heading=h.8mpvijdun4ir) - This method helps dispatch events to the ContentRenderer to handle specific functionality of ContentRenderer
+* [dispatchEvent](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps dispatch events to the ContentRenderer to handle specific functionality of ContentRenderer
 
-* [getcontentMetadata](#heading=h.unjbn7wh2gxg) - This method is used to access content metadata
+* [getcontentMetadata](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method is used to access content metadata
 
-* [getConfig](#heading=h.7z6hh8t088oo) - This method is used to access content-renderer configuration
+* [getConfig](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method is used to access content-renderer configuration
 
-* [gotoEndPage](#heading=h.ezyw78ci2rnx) - This method helps to open the ContentRenderer end page after HTML content is completely viewed
+* [gotoEndPage](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps to open the ContentRenderer end page after HTML content is completely viewed
 
-* [exit](#heading=h.4s16ed5ur7og) - This method helps to close the ContentRenderer
+* [exit](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps to close the ContentRenderer
 
-* [telemetryService.interact](#heading=h.k5yn4tsg9w7d)- This method helps to log telemetry interact event
+* [telemetryService.interact](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1)- This method helps to log telemetry interact event
 
-* [telemetryService.impression](#heading=h.kqgsrsebgi9z) - This method helps to log the Impression event on page or state change
+* [telemetryService.impression](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps to log the Impression event on page or state change
 
-* [telemetryService.response](#heading=h.1wfvl9hq6lo) - This method helps to log telemetry response event when an option is selected during an assessment
+* [telemetryService.response](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps to log telemetry response event when an option is selected during an assessment
 
-* [telemetryService.assessmentStart](#heading=h.ebhs2851lwwh) - This method is used when an assessment begins and it returns the event object
+* [telemetryService.assessmentStart](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method is used when an assessment begins and it returns the event object
 
-* [telemetryService.assess](#heading=h.9z35wwgz8awa) - This method helps to log the Assess event when the assessment is evaluated
+* [telemetryService.assess](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps to log the Assess event when the assessment is evaluated
 
-* [telemetryService.exdata](#heading=h.7skc6puguem3) - This method helps log the telemetry ExData event
+* [telemetryService.exdata](developer-docs/telemetry_htmlinterfacelibrary/#link1-1-1) - This method helps log the telemetry ExData event
 
 ### DispatchEvent
 
