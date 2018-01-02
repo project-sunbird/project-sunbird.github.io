@@ -71,6 +71,7 @@ The level of data collected is a discrete decision of an organization or busines
 
 Sunbird’s telemetry service has Full level telemetry.
 
+
 ## What is Telemetry?
 
 The word ‘Telemetry’ is derived from its Greek etymological roots, tele - remote and metron - measure. 
