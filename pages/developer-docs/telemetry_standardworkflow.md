@@ -69,8 +69,8 @@ START (type: "session") - User logs in
         | --> AUDIT (object: Content, state: "Review", prevstate: "Draft") - Platform sends the content to review state
     | --> END (type: "editor", mode: "content") - User closes the editor and goes back to portal
     </pre>
-    
-    ## Back-end Services Standard Flow
+
+## Back-end Services Standard Flow
     
     <pre> 
     AUDIT (object: Service, state: "Ready") --> State transition to READY
@@ -79,8 +79,8 @@ START (type: "session") - User logs in
         LOG --> Log events in the context of the incoming request (by request correlation ID)
         ...
     METRICS --> Health/business metrics (e.g. number of jobs executed)
-AUDIT (object: Service, state: "Stopped") --> State transition to STOPPED
-</pre>
+    AUDIT (object: Service, state: "Stopped") --> State transition to STOPPED
+    </pre>
 
 ## Analytics Jobs Standard Flow
 
@@ -153,3 +153,10 @@ All events follow a common data structure, though the event data structure (“e
 }
 </pre>
 
+**Note:**
+
+* All events have the same structure with only difference in edata structures.
+
+* All events have unique event codes i.e., (IDs).
+
+* All events are as per platform schema
