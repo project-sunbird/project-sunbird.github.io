@@ -7,6 +7,7 @@ description: telemetry specification of Sunbird
 published: true
 allowSearch: true
 ---
+
 ## Overview 
 
 This document explains the telemetry feature within the Sunbird context. 
