@@ -2,7 +2,7 @@
 type: landing
 directory: developer-docs
 title: Telemetry 
-page_title: Telemetry Overview
+page_title: Telemetry
 description: telemetry overview and specification 
 published: true
 allowSearch: true
