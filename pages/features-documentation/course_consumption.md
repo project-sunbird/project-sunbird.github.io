@@ -22,7 +22,7 @@ User should have the link (URL) and credentials to sign in to Sunbird.
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter your <strong>Username</strong> or email ID <br>2. Enter your <strong>password</strong> <br>3. Click <strong>Log in</strong>
+    <td>1. Enter your <strong>Username</strong> or email ID <br>2. Enter your <strong>Password</strong> <br>3. Click <strong>Log in</strong>
       </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
