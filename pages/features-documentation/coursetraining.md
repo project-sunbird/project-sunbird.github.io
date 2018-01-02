@@ -97,8 +97,8 @@ Course is a content provided in sequence, broken down in modules, open for enrol
 
 <table>
   <tr>
-    <th style=width:35%;><strong>Step</strong></th>
-    <th style=width:65%;><strong>Screen</strong></th>
+    <th>Step</th>
+    <th>Screen</th>
   </tr>
   <tr>
     <td>1. On clicking Course Unit from the drop-down, the metadata appear for course unit is displayed on the right <br>2. Click update to edit the metadata <br>3. Click update to save the edited metadata</td>
