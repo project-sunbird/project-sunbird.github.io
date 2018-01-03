@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/telemetry
 title: Standalone telemetry JS library
 page_title: Standalone telemetry JS library
 description: telemetry specification of Sunbird
@@ -41,9 +41,9 @@ The following are prerequisites to use or integrate the JS library:
 
 * Device ID value
 
-**Note: **For details on how to get the device ID value, refer to [https://android-developers.googleblog.com/2011/03/identifying-app-installations.html](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html) 
+**Note:** For details on how to get the device ID value, refer to [https://android-developers.googleblog.com/2011/03/identifying-app-installations.html](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html) 
 
-## Configure the telemetry JS library
+## Configure the Telemetry JS library
 
 This JS library helps to generate telemetry events. These events sync to the server or data-pipeline in a batch as defined in the configuration. To log telemetry events, the user has to call the start method by passing the configuration along with other parameters.
 
@@ -206,39 +206,39 @@ Send this object as dispatcher in the above sample configuration ("dispatcher":c
 
 Every API method has an associated event. The following API methods log details of the associated telemetry event. 
 
-* [Start](developer-docs/telemetry_jslibrary/#start) - This method initializes capture of telemetric data associated to the start of user action 
+* [Start](developer-docs/telemetry/jslibrary/#start) - This method initializes capture of telemetric data associated to the start of user action 
 
-* [Impression](developer-docs/telemetry_jslibrary/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
+* [Impression](developer-docs/telemetry/jslibrary/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
 
-* [Interact](developer-docs/telemetry_jslibrary/#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
+* [Interact](developer-docs/telemetry/jslibrary/#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
 
-* [Assess ](#access)- This method is used to capture user assessments that happen while playing content.
+* [Assess ](developer-docs/telemetry/jslibrary/#access)- This method is used to capture user assessments that happen while playing content.
 
-* [Response](#response) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
+* [Response](developer-docs/telemetry/jslibrary/#response) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
 
-* [Interrupt](https://docs.google.com/document/d/1PzS2MFWfWI0Yfcv6ZkKLzhWMq498N9WMZUlLa1Xkajs/edit#heading=h.5i1woek3gv5c) - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.
+* [Interrupt](developer-docs/telemetry/jslibrary/#interrupt) - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.
 
-* [End](https://docs.google.com/document/d/1PzS2MFWfWI0Yfcv6ZkKLzhWMq498N9WMZUlLa1Xkajs/edit#heading=h.kh5sc3mmb4u6) - This method is used to capture closure after all the activities are completed
+* [End](developer-docs/telemetry/jslibrary/#end) - This method is used to capture closure after all the activities are completed
 
-* [Feedback](#heading=h.g8t4xgw8zwrr) - This method is used to capture user feedback
+* [Feedback](developer-docs/telemetry/jslibrary/#feedback) - This method is used to capture user feedback
 
-* [Share](#heading=h.nmwsf1opuyv4) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
+* [Share](developer-docs/telemetry/jslibrary/#share) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
 
-* [Audit](#heading=h.shm5v6c13uz7)
+* [Audit](developer-docs/telemetry//jslibrary/#audit)
 
-* [Error](#heading=h.u286xahfhjws) - This method is used to capture when users face an error
+* [Error](developer-docs/telemetry/jslibrary/#error) - This method is used to capture when users face an error
 
-* [Heartbeat](#heading=h.ois4kh7h1qhx) - 
+* [Heartbeat](developer-docs/telemetry/jslibrary/#heartbeat) - 
 
-* [Log](https://docs.google.com/document/d/1PzS2MFWfWI0Yfcv6ZkKLzhWMq498N9WMZUlLa1Xkajs/edit#heading=h.lhan8uq8i2fp) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
+* [Log](developer-docs/telemetry/jslibrary/#log) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
 
-* [Search](https://docs.google.com/document/d/1PzS2MFWfWI0Yfcv6ZkKLzhWMq498N9WMZUlLa1Xkajs/edit#heading=h.1mdm3iehwp95) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
+* [Search](developer-docs/telemetry/jslibrary/#search) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
 
-* [Metrics](#heading=h.ex8p4thpoj4d)
+* [Metrics](developer-docs/telemetry/jslibrary/#metrics)
 
-* [Summary](#heading=h.7wwv5vvuwax7)
+* [Summary](developer-docs/telemetry/jslibrary/#summary)
 
-* [Exdata](#heading=h.ehp9234dhng7) - This method is used as a generic wrapper event to capture encrypted or serialized data
+* [Exdata](developer-docs/telemetry/jslibrary/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
 ##### Start
 
@@ -353,7 +353,7 @@ QUESTION = {
 }
 </pre>
 
-**Response**
+##### Response
 
 This API is used to log telemetry of user response. For example; Responded to assessments.
 
@@ -383,7 +383,7 @@ TARGET = {
 }
 </pre>
 
-**Interrupt**
+##### Interrupt
 
 This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.
 
@@ -402,7 +402,7 @@ data - Object //Required
 }
 </pre>
 
-**End**
+##### End
 
 This API is used to log telemetry while the user is closing or exiting the content or game
 
@@ -423,7 +423,7 @@ data - Object //Required
 }
 </pre>
 
-**Feedback**
+##### Feedback
 
 This API is used to log telemetry of feedback provided by the user.
 
@@ -443,7 +443,7 @@ data - Object //Required
 }
 </pre>
 
-**Share**
+##### Share
 
 This API is used to log telemetry when a user shares any content with other users.
 
@@ -480,7 +480,7 @@ data - Object //Required
 }
 </pre>
 
-**Audit**
+##### Audit
 
 This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.
 
@@ -501,7 +501,7 @@ data - Object //Required
 }
 </pre>
 
-**Error**
+##### Error
 
 This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games. 
 
@@ -520,7 +520,7 @@ error - Object //Required
 }
 </pre>
 
-**Heartbeat**
+##### Heartbeat
 
 This API is used to log telemetry for heartbeat event to denote that the process is running.
 
@@ -539,7 +539,7 @@ data - Object //Required
 }
 </pre>
 
-**Log**
+##### Log
 
 This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.
 
@@ -559,7 +559,7 @@ data - Object //Required
 }
 </pre>
 
-**Search**
+##### Search
 
 This API is used to log telemetry when a user triggers a search for any content, item or asset 
 
@@ -582,7 +582,7 @@ data - Object - Required
 }
 </pre>
 
-**Metrics**
+##### Metrics
 
 This API is used to log telemetry for service business metrics (also accessible via health API).
 
@@ -603,7 +603,7 @@ data - Object - Required
 }
 </pre>
 
-**Summary**
+##### Summary
 
 This API is used to log telemetry summary event
 
@@ -644,7 +644,7 @@ data - Object - Required
 }
 </pre>
 
-**Exdata**
+##### Exdata
 
 This API is used to log telemetry for external data, while playing content
 
