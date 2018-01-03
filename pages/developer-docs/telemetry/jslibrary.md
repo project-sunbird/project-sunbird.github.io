@@ -671,10 +671,10 @@ data - Object - Required
 To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.
 
 <pre>
-<-- External Libraries -->
+<!-- External Libraries -->
   <script src="[relative_path]/jquery.min.js"></script>
   
-  <-- Telemetry JS library -->
+  <!-- Telemetry JS library -->
   <script src="[relative_path]/telemetry.min.js"></script>
   <script src="[relative_path]/auth-token-generator.min.js"></script>
   <script>
