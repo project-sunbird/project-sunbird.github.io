@@ -206,11 +206,11 @@ Send this object as dispatcher in the above sample configuration ("dispatcher":c
 
 Every API method has an associated event. The following API methods log details of the associated telemetry event. 
 
-* [Start](#start) - This method initializes capture of telemetric data associated to the start of user action 
+* [Start](developer-docs/telemetry_jslibrary/#start) - This method initializes capture of telemetric data associated to the start of user action 
 
 * [Impression](developer-docs/telemetry_jslibrary/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
 
-* [Interact](#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
+* [Interact](developer-docs/telemetry_jslibrary/#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
 
 * [Assess ](#access)- This method is used to capture user assessments that happen while playing content.
 
@@ -240,7 +240,7 @@ Every API method has an associated event. The following API methods log details 
 
 * [Exdata](#heading=h.ehp9234dhng7) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
-#### Start
+##### Start
 
 This API is used to log telemetry when users view content or initiate game play 
 
@@ -264,7 +264,7 @@ Request Arguments:
 }
 </pre>
 
-#### Impression
+##### Impression
 
 This API is used to log telemetry when users visit a specific page.
 
