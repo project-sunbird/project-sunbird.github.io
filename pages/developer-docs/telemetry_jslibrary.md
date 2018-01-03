@@ -206,15 +206,15 @@ Send this object as dispatcher in the above sample configuration ("dispatcher":c
 
 Every API method has an associated event. The following API methods log details of the associated telemetry event. 
 
-* [Start](#heading=h.5qn7p3afbw9i) - This method initializes capture of telemetric data associated to the start of user action 
+* [Start](#start) - This method initializes capture of telemetric data associated to the start of user action 
 
-* [Impression](https://docs.google.com/document/d/1PzS2MFWfWI0Yfcv6ZkKLzhWMq498N9WMZUlLa1Xkajs/edit#heading=h.aeeqpurmm66x) - This method is used to capture telemetry for user visits to  a specific page. 
+* [Impression](developer-docs/telemetry_jslibrary/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
 
-* [Interact](#heading=h.gdstbcq4t0jk) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
+* [Interact](#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
 
-* [Assess ](#heading=h.awyccck07x8j)- This method is used to capture user assessments that happen while playing content.
+* [Assess ](#access)- This method is used to capture user assessments that happen while playing content.
 
-* [Response](#heading=h.swumiztpsut6) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
+* [Response](#response) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
 
 * [Interrupt](https://docs.google.com/document/d/1PzS2MFWfWI0Yfcv6ZkKLzhWMq498N9WMZUlLa1Xkajs/edit#heading=h.5i1woek3gv5c) - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.
 
@@ -240,7 +240,7 @@ Every API method has an associated event. The following API methods log details 
 
 * [Exdata](#heading=h.ehp9234dhng7) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
-**Start**
+#### Start
 
 This API is used to log telemetry when users view content or initiate game play 
 
@@ -264,7 +264,7 @@ Request Arguments:
 }
 </pre>
 
-**Impression**
+#### Impression
 
 This API is used to log telemetry when users visit a specific page.
 
@@ -292,7 +292,7 @@ data - Object //Required
 }
 </pre>
 
-**Interact**
+##### Interact
 
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
 
@@ -318,7 +318,7 @@ data - Object //Required
 }
 </pre>
 
-**Assess**
+##### Assess
 
 This API is used to log telemetry of assessments that have occured when the user is viewing content
 
