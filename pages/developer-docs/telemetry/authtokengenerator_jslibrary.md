@@ -37,7 +37,8 @@ refresh: function(oldAuthToken) { }
 This section details the procedure to generate the AuthToken and secret key that is required to access any APIs and to configure the standalone telemetry JS library.
 
 ### Process
-<img src="pages/developer-docs/developer-docs/installation/images/telemetry_service2.png">
+
+<img src="pages/developer-docs/installation/images/telemetry_service2.png">
 
 ### Prerequisites
 
