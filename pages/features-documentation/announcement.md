@@ -21,7 +21,7 @@ On Sunbird,
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page <br>3. You want to view <strong>Announcement dashboard</strong> <br>4. You have clicked the <strong>Announcement dashboard</strong> 
+    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page <br>3. You want to view and analyze all sent announcements <br>4. You have clicked the <strong>Announcement dashboard</strong> 
       </td>
       <td><img src="pages/features-documentation/images/.png"></td>
   </tr>
