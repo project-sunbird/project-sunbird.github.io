@@ -8,7 +8,7 @@ keywords: 'teacher training, training, assessment, training instituites, teacher
 published: true
 allowSearch: true
 ---
-Course is a content provided in sequence, broken down in modules, open for enrolment and completion for a duration. You can attach prerequisites for a course, and it may contain assessments.
+On Sunbird, you can compile a course by adding content to it. You can create each unit of course content and then compile them or compile a course using existing content in the portal.
 
 ## Compiling Courses on Sunbird
 
