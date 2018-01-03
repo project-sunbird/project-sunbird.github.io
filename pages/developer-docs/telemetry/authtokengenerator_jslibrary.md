@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/telemetry
 title: AuthToken generator JS library
 page_title: AuthToken generator JS library
 description: AuthToken generator JS library
@@ -48,7 +48,7 @@ This section details the procedure to generate the AuthToken and secret key that
 <table>
   <tr>
     <td style="width:35%;">Step</td>
-    <td style="width:35%;">Screen</td>
+    <td style="width:65%;">Screen</td>
   </tr>
   <tr>
     <td><strong>Sign In</strong> <br>1. Sign in to  Ekstep Community portal (https://community.ekstep.in) <br>2. Go to Resources > Developers <br> <strong>Note:</strong> If you need permissions to test the portal, log in to the test site and follow the same procedure</td>
