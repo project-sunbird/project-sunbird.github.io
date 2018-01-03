@@ -48,6 +48,7 @@ On Sunbird,
     </td>
     <td><img src="pages/features-documentation/images/.png"></td>
   </tr>
+  </table>
   
   ## Creating Announcements
   
