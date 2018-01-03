@@ -114,18 +114,17 @@ Course is a content provided in sequence, broken down in modules, open for enrol
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets<strong>, the <strong>Browse Resource<strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept<strong>
- <br>4. Click <strong>Apply<strong>. Results are loaded on the right pane  <br>5. Click <strong>Add<strong> to add the selected content
+    <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets</strong>, the <strong>Browse Resource</strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept</strong>
+ <br>4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br>5. Click <strong>Add</strong> to add the selected content
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
   </tr>
   </tr>
   <tr>
-    <td>1. Click <strong>Save<strong> on the header to save the course <br>2. Click <strong>Send for review<strong> to send the created course unit for review
+    <td>1. Click <strong>Save</strong> on the header to save the course <br>2. Click <strong>Send for review</strong> to send the created course unit for review
     </td>
     <td><img src="pages/features-documentation/images/course_sendingfreview.png"></td>
   </tr>    
-     
   </table>
       
       
