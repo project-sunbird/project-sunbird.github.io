@@ -198,8 +198,8 @@ Add the following to your HTML Content:
 The file_path is the relative path (eg. assets/js) to these files within the html content.
 
 <pre>
-<!-- HTML Interface  JS library -->
-<script src="[relative_path]/htmlinterface.js"></script>
+&#x3C;!-- HTML Interface  JS library --&#x3E;
+&#x3C;script src=&#x22;[relative_path]/htmlinterface.js&#x22;&#x3E;&#x3C;/script&#x3E;
 
 //you can log telemetry interact event as shown below
 org.ekstep.contentrenderer.interface.telemetryService.interact(data) 
