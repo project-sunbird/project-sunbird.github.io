@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/telemetry
 title: Standard Telemetry Workflows
 page_title: Standard Telemetry Workflows
 description: telemetry specification of Sunbird
