@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/telemetry
 title: Telemetry HTML Interface Library
 page_title: Telemetry HTML Interface Library
 description: Telemetry HTML Interface Library
@@ -31,27 +31,27 @@ The HTML interface provides simple methods to log telemetry, to handle the Conte
 
 The HTML interface exposes the following list of API methods:
 
-* [dispatchEvent](developer-docs/telemetry_htmlinterfacelibrary/#DispatchEvent) - This method helps dispatch events to the ContentRenderer to handle specific functionality of ContentRenderer
+* [dispatchEvent](developer-docs/telemetry/htmlinterfacelibrary/#dispatchevent) - This method helps dispatch events to the ContentRenderer to handle specific functionality of ContentRenderer
 
-* [getcontentMetadata](developer-docs/telemetry_htmlinterfacelibrary/#getcontentMetadata) - This method is used to access content metadata
+* [getcontentMetadata](developer-docs/telemetry/htmlinterfacelibrary/#getcontentmetadata) - This method is used to access content metadata
 
-* [getConfig](developer-docs/telemetry_htmlinterfacelibrary/#getConfig) - This method is used to access content-renderer configuration
+* [getConfig](developer-docs/telemetry/htmlinterfacelibrary/#getconfig) - This method is used to access content-renderer configuration
 
-* [gotoEndPage](developer-docs/telemetry_htmlinterfacelibrary/#gotoEndPage) - This method helps to open the ContentRenderer end page after HTML content is completely viewed
+* [gotoEndPage](developer-docs/telemetry/htmlinterfacelibrary/#gotoendpage) - This method helps to open the ContentRenderer end page after HTML content is completely viewed
 
-* [exit](developer-docs/telemetry_htmlinterfacelibrary/#exit) - This method helps to close the ContentRenderer
+* [exit](developer-docs/telemetry/htmlinterfacelibrary/#exit) - This method helps to close the ContentRenderer
 
-* [telemetryService.interact](developer-docs/telemetry_htmlinterfacelibrary/#Telemetry-Interact)- This method helps to log telemetry interact event
+* [telemetryService.interact](developer-docs/telemetry/htmlinterfacelibrary/#telemetry-interact)- This method helps to log telemetry interact event
 
-* [telemetryService.impression](developer-docs/telemetry_htmlinterfacelibrary/#Telemetry-Impression) - This method helps to log the Impression event on page or state change
+* [telemetryService.impression](developer-docs/telemetry/htmlinterfacelibrary/#telemetry-impression) - This method helps to log the Impression event on page or state change
 
-* [telemetryService.response](developer-docs/telemetry_htmlinterfacelibrary/#Telemetry-Response) - This method helps to log telemetry response event when an option is selected during an assessment
+* [telemetryService.response](developer-docs/telemetry/htmlinterfacelibrary/#telemetry-response) - This method helps to log telemetry response event when an option is selected during an assessment
 
-* [telemetryService.assessmentStart](developer-docs/telemetry_htmlinterfacelibrary/#Telemetry-assessmentStart) - This method is used when an assessment begins and it returns the event object
+* [telemetryService.assessmentStart](developer-docs/telemetry/htmlinterfacelibrary/#telemetry-assessmentstart) - This method is used when an assessment begins and it returns the event object
 
-* [telemetryService.assess](developer-docs/telemetry_htmlinterfacelibrary/#Telemetry-Assess) - This method helps to log the Assess event when the assessment is evaluated
+* [telemetryService.assess](developer-docs/telemetry/htmlinterfacelibrary/#telemetry-assess) - This method helps to log the Assess event when the assessment is evaluated
 
-* [telemetryService.exdata](developer-docs/telemetry_htmlinterfacelibrary/#Telemetry-Exdata) - This method helps log the telemetry ExData event
+* [telemetryService.exdata](developer-docs/telemetry/htmlinterfacelibrary/#telemetry-exdata) - This method helps log the telemetry ExData event
 
 ### DispatchEvent
 
