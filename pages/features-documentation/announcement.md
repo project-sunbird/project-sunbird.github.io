@@ -7,7 +7,7 @@ description: Announcement
 published: true
 allowSearch: true
 ---
-On Sunbird, you can 
+On Sunbird,  
 
 ### Announcement Creator Role Function Matrix
 
@@ -21,7 +21,7 @@ On Sunbird, you can
     <th style=width 65%";>Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page <br>3. You want to view <strong>Announcement dashboard</strong> <br>4. You have clicked the <strong>Announcement dashboard</strong> tile
+    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page <br>3. You want to view <strong>Announcement dashboard</strong> <br>4. You have clicked the <strong>Announcement dashboard</strong> 
       </td>
       <td><img src="pages/features-documentation/images/.png"></td>
   </tr>
@@ -35,9 +35,18 @@ On Sunbird, you can
     <th style=width 65%";>Screen</th>
   </tr>
   <tr>
-    <td>You can see <strong>My Announcements</strong> on clicking the <br>2. Enter <strong>Description</strong> of the course <br>3. Click <strong>Start Creating</strong>
+    <td>
+      <li>You can view all necessary data related to Announcements</li>
+      <li><strong>My Announcements</strong> page opens, showing all sent announcement details with following attributes:<br>
+                        <li>Announcement name</li>
+                        <li>Announcement Published Date</li>
+                        <li>Number of users to whom Announcements are send</li>
+                        <li>Number of users Received Announcents</li>
+                        <li>Users Seen Announcements</li>
+                        <li>Delete or Resend actions taken by Announcement Creator and Sender</li>
+       </li>
     </td>
-    <td><img src="pages/features-documentation/images/course_metadata.png"></td>
+    <td><img src="pages/features-documentation/images/.png"></td>
   </tr>
   
   ## Creating Announcements
