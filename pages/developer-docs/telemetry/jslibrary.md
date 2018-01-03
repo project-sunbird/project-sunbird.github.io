@@ -671,13 +671,13 @@ data - Object - Required
 To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.
 
 <pre>
-<!-- External Libraries -->
-  <script src="[relative_path]/jquery.min.js"></script>
+&#x3C;!-- External Libraries --&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
   
-  <!-- Telemetry JS library -->
-  <script src="[relative_path]/telemetry.min.js"></script>
-  <script src="[relative_path]/auth-token-generator.min.js"></script>
-  <script>
+  &#x3C;!-- Telemetry JS library --&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/telemetry.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/auth-token-generator.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script&#x3E;
     function init() {
           // Generate auth token
           // Key: Partner generated key
@@ -685,8 +685,10 @@ To use the telemetry JS libraries, add the following to your HTML/application. T
           var token = AuthTokenGenerate.generate(key, secret);
           config.authToken = token;
           startEdata = {};
-          EkTelemetry.start(config, "content_id, "contetn_ver", startEdata );
+          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata );
       }
   init()
-  </script>
-  </pre>
+  &#x3C;/script&#x3E;
+</pre>
+  
+  
