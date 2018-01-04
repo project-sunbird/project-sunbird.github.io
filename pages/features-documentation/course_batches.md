@@ -31,7 +31,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Courses</strong> tab <br>2. Click <strong>Search</strong> icon or <strong>Filter</strong> icon,  to searchor filter courses. Filter courses by: <li>a. Curriculum <li>b. Medium <li>c. Subjects <li>d. Concepts <br>3.You  also search courses  in <strong>Latest Courses</strong> or <strong>Popular Courses</strong> section <br>4. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
+    <td>1. Click <strong>Courses</strong> tab <br>2. Click <strong>Search</strong> icon or <strong>Filter</strong> icon,  to search or filter courses. Filter courses by: <li>a. Curriculum <li>b. Medium <li>c. Subjects <li>d. Concepts <br>3.You  also search courses  in <strong>Latest Courses</strong> or <strong>Popular Courses</strong> section <br>4. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
          </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
@@ -91,6 +91,15 @@ On Sunbird, once a course is created, the course administrator can add users to 
   </tr>
   <tr>
     <td>1. Click <strong>Edit</strong> icon, to update the batch details 
+         </td>
+      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+  </tr>
+  <tr>
+    <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <li> About This Batch 
+<li> Start Date (mandatory field) <li>End Date <li>Mentors in the Batch <>liMembers in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
+
+****Note: 
+Once batch is created, it cannot be deleted. Although batch details can be updated****
          </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
