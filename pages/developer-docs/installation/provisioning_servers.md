@@ -41,13 +41,13 @@ Run the following steps from a machine which is connected to the internet:
 7. Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db`
 8. Run `cd sunbird-devops/deploy`
 9. Run `./provision-servers.sh`
-10. Login to Azure when CLI instructs to
+10. Login to Azure when CLI instructs
 11. Wait for deployment to complete
 12.	Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details
 13. Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
 14. If you could SSH, you have successfully created the server platform.
 
-**Note:** The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
+**Note:** The automation walk-throughs provided (PART 1), (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.
 
 ### Automation walkthrough
 
@@ -56,3 +56,10 @@ Run the following steps from a machine which is connected to the internet:
 [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 **Note:** The default automation process creates three servers because it separates the application and the administration server.
+
+## Manual Process
+
+The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server & administration server.
+
+If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication.The manual process is not recommended.
+

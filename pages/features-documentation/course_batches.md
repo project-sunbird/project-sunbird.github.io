@@ -1,0 +1,52 @@
+---
+type: landing
+directory: features-documentation
+title: Batch Creation
+page_title: Batch Creation
+description: Details on how to create a batch and assign users to enroll in a course
+keywords: 'teacher training, training, assessment, training instituites, teacher educator, course, course compiling, create course, adding resource to course, batches, assign batches, ope course'
+published: true
+allowSearch: true
+---
+
+On Sunbird, once a course is created, the course administrator can add users to a course in a batch. Multiple batches can be assigned to a single course. THe administrator can add as many users to a batch. 
+
+### Prerequisites
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br>2. You are currently in your <strong>Profile</strong> page <br>3. Click <strong>Courses</strong>
+       </td>
+      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+  </tr>
+  </table>
+  
+  ### Exploring the Courses Page
+  <table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <strong>Courses</strong> tab <br>2. Click <strong>Search</strong> icon or <strong>Filter</strong> icon,  to searchor filter courses. Filter courses by: <li>a. Curriculum <li>b. Medium <li>c. Subjects <li>d. Concepts <br>3.You  also search courses  in <strong>Latest Courses</strong> or <strong>Popular Courses</strong> section <br>4. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
+         </td>
+      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+  </tr>
+  </table>
+  
+  
+### Creating Batches
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. On selecting a course, details of the course is displayed. <br>2. Existing batches for the course is displayed on the right side under <strong>Batches</strong> <br>3. Click <strong>Create Batch</strong> to create a new batch 
+         </td>
+      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+  </tr>
+  </table>
