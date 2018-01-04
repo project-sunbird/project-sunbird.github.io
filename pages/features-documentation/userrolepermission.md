@@ -30,5 +30,5 @@ All the portal members are Users. Based on user responsibilities, rights are pro
 
 ## [User Profile](features-documentation/userprofile){:target="_blank"}
 
-## [Worksapce](features-documentation/workspace){:target="_blank"}
+## [Workspace](features-documentation/workspace){:target="_blank"}
 

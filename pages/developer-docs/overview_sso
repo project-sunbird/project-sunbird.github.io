@@ -8,13 +8,14 @@ published: true
 allowSearch: true
 ---
 
-Sunbird platform allows signed on users on integrated systems to seamlessly navigate on the portal. By design, the system is loose-coupled, and achieve the seamless navigation by sharing trusted login status. This keeps the technical complexity for integrating systems simple and the systems do not need to change their own sign-on protocols. 
+Single sign on property is an authentication service enabling users to use one set of login credentials, i.e, user name and password, to access multiple applications. Sunbird platform allows signed on users on integrated systems to effortlessly navigate through all instances of the portal simply by sharing trusted login status. 
 
-The philosophy is built around a premise of trust between Sunbird and integrated systems. When an authenticated user on integrated system navigates to Sunbird, the integrated system redirects the browser and sends the details of the user to the portal. This data is signed using a private key of the sender, to allow Sunbird to trust the incoming data and allow the user to sign in. This ensures that for integrating systems, the change is only how they redirect users to the portal, and not on their internal authentication implementation.
+This philosophy of access is built around a premise of trust between Sunbird and integrated systems. When an authenticated user on integrated system navigates to Sunbird, the integrated system redirects the browser and sends the details of the user to the portal. The sender’s private key is used to sign this data, to allow Sunbird to trust the incoming data and allow the user to sign in. This ensures that for integrating systems, the only change is in the user being re-directed to the portal ensuring that there are no interruptions on their internal authentication implementation.
+
 
 ### Prerequisites 
 
-Before beginning the tech integration, ensure the following:
+Ensure the following before technical integration:
 
 * User is registered on Sunbird
 
