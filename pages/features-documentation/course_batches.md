@@ -31,12 +31,10 @@ On Sunbird, once a course is created, the course administrator can add users to 
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Courses</strong> tab <br>2. Click <strong>Search</strong> icon or <strong>Filter</strong> icon,  to searchor filter courses. Filter courses by: <li>a. Curriculum <li>b. Medium <li>c. Subjects <li>d. Concepts
-
-You  also search courses  in Latest Courses or Popular Courses section
-Select any course 
- <br>2. You are currently in your <strong>Profile</strong> page <br>3. Click <strong>Courses</strong>
-       </td>
+    <td>1. Click <strong>Courses</strong> tab <br>2. Click <strong>Search</strong> icon or <strong>Filter</strong> icon,  to searchor filter courses. Filter courses by: <li>a. Curriculum <li>b. Medium <li>c. Subjects <li>d. Concepts <br>3.You  also search courses  in <strong>Latest Courses</strong> or <strong>Popular Courses</strong> section <br>4. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
+         </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
   </table>
+  
+  
