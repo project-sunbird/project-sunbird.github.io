@@ -8,7 +8,9 @@ allowSearch: true
 ---
 # The Sunbird Mobile app
 
-The Sunbird Mobile app.provides mobility to the feature rich learning platform.
+The Sunbird mobile learning app is a delivery format that provides learners with the flexibility to learn anywhere, anytime, even without internet connection.
+
+The Sunbird Mobile app provides mobility to the feature rich learning platform.
 
 ## Steps to build APK from git repo:
 
@@ -23,6 +25,7 @@ The Sunbird Mobile app.provides mobility to the feature rich learning platform.
 - Please find the steps to generate key and secret [here]
 (https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app)
 - If You want to `change the app name` go to sunbird-android/app/src/main/res/values/strings.xml and give the required app name.
-- For app logo changing goto sunbird-android/app/src/main/res folder, here in all mipmap folders and drawable folder replace `ic_launcher.png` image with your logo. Logo name should be `ic_launcher.png`
+- For app logo changing goto sunbird-android/app/src/main/res folder
+- In all mipmap folders and drawable folder replace `ic_launcher.png` image with your logo. Logo name should be `ic_launcher.png`
 - If you would like to show contents only for the given channelId than change the value of `FILTER_CONTENT_BY_CHANNEL_ID` to true, by default it's false in `build.gradle`
 - Give your external path value in `Constants.class EXTERNAL_PATH`
