@@ -10,7 +10,6 @@ You can either use existing databases, create them manually or run the automatio
 
    - Cassandra
    - Postgres
-   - Mongo
    - Elasticsearch
    
 ## Preparation to Setup Databases
