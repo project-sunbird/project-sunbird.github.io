@@ -38,3 +38,15 @@ On Sunbird, once a course is created, the course administrator can add users to 
   </table>
   
   
+### Creating Batches
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. On selecting a course, details of the course is displayed. <br>2. Existing batches for the course is displayed on the right side under <strong>Batches</strong> <br>3. Click <strong>Create Batch</strong> to create a new batch 
+         </td>
+      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+  </tr>
+  </table>
