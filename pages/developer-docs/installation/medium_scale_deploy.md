@@ -17,7 +17,7 @@ Review the following to determine that the environment has the necessary resourc
 
 ### System Requirements
 
-To install Sunbird, the servers should have the following minimum system requirements:
+To install Sunbird, each of the server should have the following minimum system requirements:
 
    - Operating System: Ubuntu 16.04 LTS
    - RAM: 7GB
@@ -25,13 +25,31 @@ To install Sunbird, the servers should have the following minimum system require
    - root access (should be able to sudo)
 
 ### API Keys
+Sunbird implementors currently need to get a API key for the EkStep platform, since this is where the content is stored. In the future, Sunbird will support more content stores.
 
-API keys are supposed to approve a user or a device with authorization for access.For getting the API keys , you need to send an Email to :[info@sunbird.org](mailto:info@sunbird.org). 
+When you are initially trying out sunbird, please request the keys from the EkStep QA environment. 
 
+For requesting the keys follow these steps:
+
+- Login to [qa.ekstep.in](https://qa.ekstep.in).
+- Navigate to Resources then Developers.
+- Click on "API Credentials" on the top menu
+- On this page click on "Request API Access", check all the options and click submit
+- Once your request is approved (you will receive an email notifying you about the keys) 
+- click on "Create Credentials"
+- Note down the key and secret that is previewed on your screen
+- Generate a JWT token by following the steps [here](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis){:target="_blank"}
+- Please keep the JWT handy, it will be needed during the installation process.
+
+Once you have completed the steps to get keys and secret,you are ready to deploy the Sunbird in live environment.
+
+In order to get the production credentails, repeat the steps under API Keys section.
 
 ### SSL Certificate
 
-SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. [LetsEncrypt](https://letsencrypt.org/) provides free SSL certificates. You can also use a CA of your choice. 
+SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. [LetsEncrypt](https://letsencrypt.org/){:target="_blank"} provides free SSL certificates. You can also use a CA of your choice. 
+
+Before you begin the installation, keep the SSL certificate and the key handy.
 
 ***Note***: A self-signed certification will cause authentication to fail with an "Access Denied" error because the certificate will not be verified.
 
