@@ -56,4 +56,3 @@ Run the following steps from a machine which is connected to the internet:
 [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 **Note:** The default automation process creates three servers because it separates the application and the administration server.
-
