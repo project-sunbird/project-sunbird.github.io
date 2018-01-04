@@ -18,59 +18,31 @@ This document has four sections:
 
 * A general understanding of telemetry, that details:
 
+    * overview
+    
+    * what is telemetry
+    
     * why we need telemetry
 
-    * what is telemetry
+    * what is telemetry channel
 
-    * standard telemetry workflows and event structures
+* The telemetry specifications, that explains:
 
-* The standalone telemetry JS library, that explains:
-
-    * the purpose of the telemetry JS library
+    * telemetry V3 event structure
+    
+    * telemetry V3 event details
+    
+* Sending telemetry, that explains:
 
     * prerequisites
 
-    * configuration
+    * how to use telemetry helpers  
 
-    * the API methods used, and
+* Consuming telemetry data, that explains:
 
-    * how to use of the standalone telemetry JS library 
+    * telemetry exhaust APIs
 
-* The AuthToken generator JS library that explains:
-
-    * the purpose of the AuthToken generator library
-
-    * the API methods used, and
-
-    * how to generate the API authorization credentials
-
-* The HTML interface library that explains:
-
-    * the purpose of the HTML interface library
-
-    * the API methods used, and 
-
-    * how to use the HTML interface library   
-
-## Why Telemetry?
-
-The objective of telemetry is to assist in product, application or service development, modification or security. It works as a framework. Telemetry enables automatic collection of data from real-world, real-time use.
-
-Typically, there are four levels of telemetry:
-
-* Security
-
-* Basic
-
-* Enhanced
-
-* Full
-
-<img src="pages/developer-docs/installation/images/telemetry_1.png"> 
-
-The level of data collected is a discrete decision of an organization or business. Analysis of this data offers insights into product and user behaviour and usage patterns, driving business decisions and research outcomes. You can program your telemetry analytics to suit your requirements.
-
-Sunbird’s telemetry service has Full level telemetry.
+    * understanding typical workflow from telemetry data  
 
 ## What is Telemetry?
 
@@ -135,3 +107,24 @@ pdata</td>
   </tr>
 </table>
 
+## Why we need Telemetry?
+
+The objective of telemetry is to assist in product, application or service development, modification or security. It works as a framework. Telemetry enables automatic collection of data from real-world, real-time use.
+
+Typically, there are four levels of telemetry:
+
+* Security
+
+* Basic
+
+* Enhanced
+
+* Full
+
+<img src="pages/developer-docs/installation/images/telemetry_1.png"> 
+
+The level of data collected is a discrete decision of an organization or business. Analysis of this data offers insights into product and user behaviour and usage patterns, driving business decisions and research outcomes. You can program your telemetry analytics to suit your requirements.
+
+Sunbird’s telemetry service has Full level telemetry.
+
+## What is Telemetry Channel?
