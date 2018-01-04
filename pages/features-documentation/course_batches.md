@@ -99,7 +99,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
 <li> Start Date (mandatory field) <li>End Date <li>Mentors in the Batch <>liMembers in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
 
 ****Note: 
-Once batch is created, it cannot be deleted. Although batch details can be updated****
+A batch created annot be deleted. Batch details can only be updated****
          </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
