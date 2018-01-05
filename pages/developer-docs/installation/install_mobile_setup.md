@@ -24,10 +24,9 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform.
 - Replace PRODUCER_ID, CHANNEL_ID, MOBILE_APP_KEY and MOBILE_APP_SECRET in `gradle.properties` for your dev, release and production build   variants.
 - You need to generate key and secret for `mobile_app` user using JWT token of `mobile_admin` user.
 - Please find the steps to generate key and secret [here](https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app){:target="_blank"}
-- If You want to `change the app name` go to sunbird-android/app/src/main/res/values/strings.xml and enter the required app name.
-- For changing the app logo  navigate to this loctaion in your android studio environment `sunbird-android/app/src/main/res`
+- If you want to `change the app name` go to `sunbird-android/app/src/main/res/values/strings.xml` and enter the required app name.
+- For changing the app logo navigate to this loctaion in android studio environment `sunbird-android/app/src/main/res`
     - In all mipmap folders and drawable folders you need to replace `ic_launcher.png` image with your desiredlogo.
     - Logo name should match exactly this text `ic_launcher.png`
-- If you would like to show contents only to a given channelId than change the value of `FILTER_CONTENT_BY_CHANNEL_ID` to true, by    
-  default it's false in `build.gradle`
+- If you would like to show contents only to a given channelId, you need to change the value of `FILTER_CONTENT_BY_CHANNEL_ID` to true, by default it's set false in `build.gradle`
 - Give your external path value in `Constants.class EXTERNAL_PATH`
