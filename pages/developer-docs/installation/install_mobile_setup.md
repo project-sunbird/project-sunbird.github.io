@@ -14,7 +14,7 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform.
 
 ## Steps to build APK from git repo:
 
-- Install Android Studio and configure it. You can see complete configuration process [here](https://developer.android.com/studio/intro/studio-config.html){:target="_blank"} 
+- Install Android Studio and configure it.For getting help in complete configuration process [visit](https://developer.android.com/studio/intro/studio-config.html){:target="_blank"} 
 - Clone the repsitory to android studio by executing following command in console:
   git clone  `https://github.com/project-sunbird/sunbird-android` 
 - Rename `gradle.properties.example` to `gradle.properties`
