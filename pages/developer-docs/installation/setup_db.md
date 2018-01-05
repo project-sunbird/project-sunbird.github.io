@@ -67,12 +67,12 @@ Initialize the databases after they are installed using the following the proced
 
 Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
 
-Once DB initialisation is done then load following to CSV files:
+Once DB initialisation is done then load following to .CSV files:
 
  - pageMgmt.csv
  - pageSection.csv
  
-These .csv files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
+These .CSV files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
 
 For loading the .CSV files follow these steps:
 
