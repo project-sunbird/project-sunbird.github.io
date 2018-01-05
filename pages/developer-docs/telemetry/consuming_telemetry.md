@@ -14,11 +14,11 @@ The Sunbird telemetry services are made available through a daily exhaust, suppo
 
 Steps involved in consuming Data Exhaust:
 
-1. [Automated] A User need to register using [Register User API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-register-user-api). This API returns a license key, which needs to be used when requesting telemetry data. This creates an entry for the user in ```data_exhaust_users``` table. 
+1. [Automated] A User need to register using [Register User API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-register-user-api){:target="_blank"}. This API returns a license key, which needs to be used when requesting telemetry data. This creates an entry for the user in ```data_exhaust_users``` table. 
 2. [Manual] Access needs to be granted, manually, to this user to the dataset resource that they want to consume. This access is granted by making an entry, for corresponding user and resource, in ```data_exhaust_users_resources``` table.
-3. [Automated] User can then use [Datasets API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-dataset-api) to download telemetry data. User has to pass the license key, got in Step 1, for authentication. Internally, Datasets API will invoke [Authentication API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-authenticate-api) and [Authorisation API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-authorize-api) to check if the user has is valid and has access to the requested resource, if the checks pass, dataset is returned.
+3. [Automated] User can then use [Datasets API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-dataset-api){:target="_blank"} to download telemetry data. User has to pass the license key, got in Step 1, for authentication. Internally, Datasets API will invoke [Authentication API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-authenticate-api){:target="_blank"} and [Authorisation API](https://github.com/ekstep/Common-Design/wiki/Data-Exhaust-API-Specification#data-exhaust-authorize-api){:target="_blank"} to check if the user has is valid and has access to the requested resource, if the checks pass, dataset is returned.
 
-```Note```: Database schema of Data Exhaust is described [here](https://github.com/ekstep/Common-Design/wiki/TDD-DataSets#database-schema-changes).
+```Note```: Database schema of Data Exhaust is described [here](https://github.com/ekstep/Common-Design/wiki/TDD-DataSets#database-schema-changes){:target="_blank"}.
 
 ### Using channel ID and API key to request channel telemetry
 
