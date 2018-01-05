@@ -23,8 +23,7 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform.
 - You can create your account in [fabric.io](https://get.fabric.io/) and register your app. After registering your app you will get the     API Key which you need to add in manifest file (Every application has an AndroidManifest.xml file (with precisely that name) in its root   directory.)
 - Replace PRODUCER_ID, CHANNEL_ID, MOBILE_APP_KEY and MOBILE_APP_SECRET in `gradle.properties` for your dev, release and production build   variants.
 - You need to generate key and secret for `mobile_app` user using JWT token of `mobile_admin` user.
-- Please find the steps to generate key and secret [here]
-  (https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app)
+- Please find the steps to generate key and secret [here](https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app)
 - If You want to `change the app name` go to sunbird-android/app/src/main/res/values/strings.xml and enter the required app name.
 - For changing the app logo  navigate to this loctaion in your android studio environment `sunbird-android/app/src/main/res`
     - In all mipmap folders and drawable folders you need to replace `ic_launcher.png` image with your desiredlogo.
