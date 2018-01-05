@@ -7,10 +7,6 @@ description: Telemetry HTML Interface Library
 published: true
 allowSearch: true
 ---
-The ContentRenderer handles telemetry events for ECML content. HTML content has functionality such as click, navigation, assessment, etc. These functionalities are specific to or different for individual HTML content pieces. For HTML Content, the ContentRenderer logs only the telemetry start event. It does not log telemetry for any other event. By embedding the HTML interface library within the HTML content helps log telemetry events for the actions that take place in the HTML content.
-
-This section details information about the library used to log telemetry events for HTML content.
-
 ## Need for an HTML interface library
 
 The HTML interface library eases the HTML developer’s effort to log telemetry events from HTML content. It uses simple API methods exposed by the library to log associated events. The reasons to develop the HTML interface library are:
