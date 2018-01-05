@@ -7,8 +7,6 @@ description: AuthToken generator JS library
 published: true
 allowSearch: true
 ---
-The AuthToken generator JS library is used to generate or refresh the user AuthToken. The Authtoken is mandatory for any API request. The AuthToken is passed as part of configuration to the telemetry JS library.
-
 ## AuthToken generator JS library methods
 
 The following API methods are provided by the AuthToken generator library
