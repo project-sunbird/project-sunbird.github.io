@@ -3,7 +3,7 @@ type: landing
 directory: developer-docs/installation/
 title: Setup Database
 page_title: Setup Database
-description: About setting up DB
+description: About setting up databases
 allowSearch: true
 ---
 You can either use existing databases, create them manually or run the automation scripts provided to create them. Sunbird uses the following databases:
