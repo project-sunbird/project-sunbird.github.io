@@ -9,6 +9,8 @@ allowSearch: true
 ---
 On Sunbird,  
 
+Announcement Workflow
+
 ### Announcement Creator Role Function Matrix
 
 ### Announcement Sender Role Function Matrix
@@ -51,8 +53,8 @@ On Sunbird,
   </tr>
   </table>
   
-## Creating Announcements
+## Creating a New Announcement 
   
-## Sending Announcements 
+## Sending Announcement
   
-## Deleting and Resending Announcements
+## Deleting or Resending Announcement
