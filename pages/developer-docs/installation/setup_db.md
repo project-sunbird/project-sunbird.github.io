@@ -72,6 +72,7 @@ Once DB initialisation is done then load following to CSV files.
 Command to run those files 
 
          Change the path of .csv file
+         
          a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate)   FROM '/tmp/cql/pageMgmt.csv';
 
          b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
