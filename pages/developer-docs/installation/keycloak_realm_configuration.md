@@ -34,13 +34,13 @@ Assuming that you have set up sunbird on sunbird.example.com, You can open Keycl
 
 - To import the realm, use the 'Add realm' button as shown in the following screens. 
 
-{% image src='pages/developer-docs/installation/images/keycloack-add-realm.png' half center alt='Keycloak realm' %}
+{% image src='pages/developer-docs/installation/images/keycloack-add-realm.png' half center alt='Keycloak realm' %}{:target="_blank"}
 
-{% image src='pages/developer-docs/installation/images/keycloak-choose-json.png' half center alt='choose keycloak json' %}
+{% image src='pages/developer-docs/installation/images/keycloak-choose-json.png' half center alt='choose keycloak json' %}{:target="_blank"}
 
 - On the import screen, choose the json file and click 'Create'.
 
-{% image src='pages/developer-docs/installation/images/keycloak-import-realm.png' half center alt='Keycloak import realm' %}
+{% image src='pages/developer-docs/installation/images/keycloak-import-realm.png' half center alt='Keycloak import realm' %}{:target="_blank"}
 
 Once the realm is imported ensure the realm is set as active realm before proceeding with the rest of the configuration.
 
@@ -56,7 +56,7 @@ Navigate to Manage, then to Users and create a new user.
 
 **Note:** Refer to the following screenshot for reference configuration.
 
-{% image src='pages/developer-docs/installation/images/keycloak-add-user-manager.png' half center alt='Keycloak use management' %}
+{% image src='pages/developer-docs/installation/images/keycloak-add-user-manager.png' half center alt='Keycloak use management' %}{:target="_blank"}
 
 - Use corresponding username and password values for this user as the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration.
 
