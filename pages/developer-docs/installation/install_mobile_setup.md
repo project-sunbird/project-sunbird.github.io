@@ -26,7 +26,7 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform.
 - Please find the steps to generate key and secret [here](https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app){:target="_blank"}
 - If you want to `change the app name` go to `sunbird-android/app/src/main/res/values/strings.xml` and enter the required app name.
 - For changing the app logo navigate to this loctaion in android studio environment `sunbird-android/app/src/main/res`
-    - In all mipmap folders and drawable folders you need to replace `ic_launcher.png` image with your desiredlogo.
+    - In all mipmap folders and drawable folders you need to replace `ic_launcher.png` image with your desired logo.
     - Logo name should match exactly this text `ic_launcher.png`
-- If you would like to show contents only to a given channelId, you need to change the value of `FILTER_CONTENT_BY_CHANNEL_ID` to true, by default it's set to false in `build.gradle`
+- If you would like to show contents only to a given channelId in your app, you need to change the value of `FILTER_CONTENT_BY_CHANNEL_ID` to true, by default it's set to false in `build.gradle`
 - Give your external path value in `Constants.class EXTERNAL_PATH`
