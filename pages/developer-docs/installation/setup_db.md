@@ -22,22 +22,26 @@ SSH into the `db-server`. If you have not edited the default configuration, then
 
 + Cloning the repository
 
-Clone the sunbird-devops repo using `git clone [https://github.com/project-sunbird/sunbird-devops.git`](https://github.com/project-sunbird/sunbird-devops.git){:target="_blank"} in the console.
+Clone the sunbird-devops repo using the following command:
+`git clone https://github.com/project-sunbird/sunbird-devops.git`in the console.
 
-+ Configuring environment
++ Configuring the environment
+
+For configuring the environment execute the following command:
 
 Run `cd ./sunbird-devops/deploy && ./generate-config.sh <implementation-name> <environment-name>`. 
 
-  E.g. `cd ./sunbird-devops/deploy && ./generate-config.sh mysb production deploy`. 
+E.g. `cd ./sunbird-devops/deploy && ./generate-config.sh mysb production deploy`. 
 
 This creates `mysb-devops` directory with *incomplete* configurations. 
+
 The missing configuration needs to be done afterwards.
 
 + Modifying configurations
 
 Modify all the configurations under `# DB CONFIGURATION` block in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`
 
-The estimated  run time for  preparation to Set up Databases is 15-30mins and another 30 mins to complete complete the process.
+The estimated run time for  preparation to Set up Databases is 15-30 mins and another 30 mins to complete complete the process.
 
 ### Creating Databases using automation
 
@@ -63,13 +67,14 @@ Initialize the databases after they are installed using the following the proced
 
 Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
 
-Once DB initialisation is done then load following to CSV files.
- 1. pageMgmt.csv
- 2. pageSection.csv
- 
- The .csv files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
+Once DB initialisation is done then load following to CSV files:
 
-Command to run those files 
+ - pageMgmt.csv
+ - pageSection.csv
+ 
+These .csv files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
+
+For loading the .CSV files follow these steps:
 
          Change the path of .csv file
          
