@@ -70,6 +70,7 @@ To install Sunbird on any environment or choose any method of installation, the 
 
 - Use of a Linux OS flavour (developer installation is possible on MacOS)
 - Comfort with use of a terminal as Sunbird installation is triggered from a command-line terminal
+
 *Note: The prerequisites are not necessary to try the sandbox option*
 
 ### Trial on laptop
