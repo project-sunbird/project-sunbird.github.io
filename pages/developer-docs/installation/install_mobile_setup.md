@@ -19,8 +19,8 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform.
   git clone  `https://github.com/project-sunbird/sunbird-android` 
 - Rename `gradle.properties.example` to `gradle.properties`
 - Add you keystore detail `keystore`, `keystore_password`, `key_alias` and `key_password` in `gradle.properties`
-- Replace `release_fabric_api_key` in `gradle.properties` with your fabric ApiKey. 
-- You can create your account in [fabric.io](https://get.fabric.io/) and register your app. After registering your app you will get the     API Key which you need to add in manifest file (Every application has an AndroidManifest.xml file (with precisely that name) in its root   directory.)
+- Replace `release_fabric_api_key` in `gradle.properties` with your fabric API Key. 
+- To get the API key,you need to create an account in [fabric.io](https://get.fabric.io/){:target="_blank"} and register your app. After registering your app you will get the API Key which you need to add in manifest file (Every application has an AndroidManifest.xml file (with precisely that name) in its root directory.
 - Replace PRODUCER_ID, CHANNEL_ID, MOBILE_APP_KEY and MOBILE_APP_SECRET in `gradle.properties` for your dev, release and production build   variants.
 - You need to generate key and secret for `mobile_app` user using JWT token of `mobile_admin` user.
 - Please find the steps to generate key and secret [here](https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app){:target="_blank"}
