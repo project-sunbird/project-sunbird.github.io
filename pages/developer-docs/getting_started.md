@@ -63,20 +63,28 @@ Proxy
           
 ## Installation Overview
 
-http://www.sunbird.org/developer-docs/installation/#link1-5
-Pre-requisites
-Trial on laptop
+Sunbird can be installed on different devices and can be deployed for single or multiusers. For further reading and understanding of the installation process refer [http://www.sunbird.org/developer-docs/installation/#link1-5]
+
+### Pre-requisites
+To install Sunbird on any environment or choose any method of installation, the basic minimum prerequisites are:
+
+- Use of a Linux OS flavour (developer installation is possible on MacOS)
+- Comfort with use of a terminal as Sunbird installation is triggered from a command-line terminal
+*Note: The prerequisites are not necessary to try the sandbox option*
+
+### Trial on laptop
 http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/
-Deployment for 10-1000 users
+
+### Deployment for 10-1000 users
 Hardware needed
 http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/#link1-1-1 
-Instructions
+
+### Instructions
 http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/
+### Deployment for 1000+ users
 
-
-Deployment for 1000+ users
-Mobile App Installation
-http://www.sunbird.org/developer-docs/installation/install_mobile_setup/
+## Mobile App Installation
+To create customized mobile application of Sunbird, refer [http://www.sunbird.org/developer-docs/installation/install_mobile_setup/]
 
 
 
