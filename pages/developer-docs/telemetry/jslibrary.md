@@ -7,12 +7,6 @@ description: telemetry specification of Sunbird
 published: true
 allowSearch: true
 ---
-The standalone telemetry JS library allows users to capture telemetry data without the restrictions of using any app that uses the Genie SDK, the EkStep content player or the EkStep or Sunbird portal.  Partner users can use the JS library to log and sync telemetry data. They can decide how to use the Telemetry JS library, and integrate it with their app, webpage or web service
-
-When using the standalone telemetry JS library, you can capture and sync telemetry data only when you are connected to the Internet. 
-
-There is no storage within the library. To capture offline telemetry data, users need to decide where the data will be stored and how it will sync with the servers when their app gets connected online.   
-
 ## Need for a standalone telemetry JS library
 
 The purpose of a standalone JS library for telemetry is to facilitate capture and distribution of telemetry data by users who would like to use their own apps, content players or portals.  
