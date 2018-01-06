@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/singlesignon
 title: Master Data Exchange
 page_title: Master Data Exchange
 description: Details of master data exchange during single sign on
