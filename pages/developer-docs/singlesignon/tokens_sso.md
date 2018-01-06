@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/singlesignon
 title: Tokens
 page_title: Tokens
 description: Tokens for single sign on process

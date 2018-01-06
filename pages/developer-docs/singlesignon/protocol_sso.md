@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/singlesignon
 title: Protocol
 page_title: Protocol
 description: List of APIs required for single sign on
