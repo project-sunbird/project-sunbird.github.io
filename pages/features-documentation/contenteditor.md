@@ -309,7 +309,7 @@ words that already exist in the repository <br>1. To use this feature, select th
   <tr>
     <td>1. To add images, click the <strong>Add Images</strong> icon on the toolbar </td>
     <td><img src=.png"></td>
-      </tr>
+   </tr>
       <tr>
       <td>1. The <strong>Select Image</strong> page is displayed</td>
       <td><img src=.png></td>
