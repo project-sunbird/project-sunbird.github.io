@@ -1,13 +1,13 @@
 ---
 type: landing
 directory: developer-docs/telemetry
-title: AuthToken generator JS library
+title: AuthToken Generator JS Library
 page_title: AuthToken generator JS library
 description: AuthToken generator JS library
 published: true
 allowSearch: true
 ---
-## AuthToken generator JS library methods
+## AuthToken Generator JS Library methods
 
 The following API methods are provided by the AuthToken generator library
 
