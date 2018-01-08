@@ -55,9 +55,11 @@ To effectively install, implement, adopt or extend Sunbird, it is recommended th
 - Web tools - Webserver,SSL certs, OAuth, REST API
 
 ## Sunbird Components
+The following are the core components of Sunbird:
 
- - **Sunbird Portal** 
- All details with regard to the open source code of Sunbird is available [here](https://github.com/project-sunbird)
+- **Sunbird Portal** 
+
+All details with regard to the open source code of Sunbird is available [here](https://github.com/project-sunbird)
 
 To know about the web portal of Sunbird [visit](https://github.com/project-sunbird/sunbird-portal)
 
@@ -67,10 +69,9 @@ Content Editor is an inbuilt authoring tool on Sunbird. APIs are available for a
 
 To know about the content tool, its feature and procedures on how to use the tool, [visit](http://www.sunbird.org/features-documentation/contenteditor)
 
- - **Content Editor Plugins**  
-
+- **Content Editor Plugins**  
 - **Sunbird platform services** 
-
+- **Sunbird databases**
 - **Others**
   - API manager 
   - Proxy
@@ -89,14 +90,13 @@ To install Sunbird on any environment or choose any method of installation, the 
 
 *Note:** The prerequisites are not necessary to try the sandbox option
 
-### Trial on laptop
+### Try Sunbird on laptop
 
 For a comprehensive walk through the steps to install the Sunbird on your machine, refer to [Installing Sunbird on laptop page](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/)
 
 ### Deployment for 10-10000 users
 
 To deploy the Sunbird for a userbase of 10-10000, refer to [medium scale deployment](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/)
-
 
 ## Mobile App Installation
 To create customized mobile application of Sunbird, refer [http://www.sunbird.org/developer-docs/installation/install_mobile_setup/](http://www.sunbird.org/developer-docs/installation/install_mobile_setup)
