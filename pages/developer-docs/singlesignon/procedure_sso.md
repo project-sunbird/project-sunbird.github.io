@@ -106,11 +106,19 @@ Example: Each state is a tenant on Sunbird and all schools/institutes in that st
 
 To create a new pair of public/private keys, run the following command:
 
+<pre>
+{
 $ openssl genrsa -out private.pem 2048
+}
+</pre>
 
 This private key must be kept secret. To generate a public key corresponding to the private key, execute:
 
+<pre>
+{
 $ openssl rsa -in private.pem -outform PEM -pubout -out public.pem
+}
+</pre>
 
 If you run these commands, the public key will be written in public.pem, while the private key will be written in private.pem
 
@@ -119,8 +127,6 @@ If you run these commands, the public key will be written in public.pem, while t
 The token generated should be sent in Authorization header of the request with value bearer <token>. Example curl request
 
 curl -H "Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello
-
-
 
 ### Custom Homepage & Logo for Tenants
 
