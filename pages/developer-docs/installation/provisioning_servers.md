@@ -2,10 +2,11 @@
 type: landing
 directory: developer-docs/installation/
 title: Provisioning Servers
-page_title: Server Automation via Azure and Manually
+page_title: Server Automation
 description: Provisioning server
 allowSearch: true
 ---
+
 Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.
 
 ## Manual Process
@@ -33,24 +34,23 @@ Estimated run time: 30 mins for the fresh time.
 Scripts can be re-tried and to create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
 
 ### Instructions
-Run the following steps from a machine which is connected to the internet:
+Assuming that you have an **implementation** named `mysb` and are deploying to an **environment** called `production`
 
-1. Clone the sunbird-devops repo using 
+#### Clone the sunbird-devops repo and generate a new configuration
 
     git clone https://github.com/project-sunbird/sunbird-devops.git
-
-2. Run 
-
     ./sunbird-devops/deploy/generate-config.sh mysb production cloud 
 
 This will create config files for you in
 
     ./mysb-devops/test/azure
-    
-3. Here, `mysb` is the **implementation-name** and `production` is the **environment-name**.
-4. Edit both the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
-5. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
-6. Run
+  
+#### Edit config & Provision
+
+1. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
+1. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
+
+Run
 
     export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>
     export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>
@@ -62,8 +62,11 @@ For instance, on my laptop I do
     export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/app
     export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db
     
-10. Login to Azure when CLI instructs
-11. Wait for deployment to complete
-12.	Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details
-13. Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
-14. If you could SSH, you have successfully created the server platform.
+#### Wait
+1. Login to Azure when CLI instructs
+1. Wait for deployment to complete
+
+#### Verify
+1. Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details
+1. Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
+1. If you could SSH, you have successfully created the server platform.
