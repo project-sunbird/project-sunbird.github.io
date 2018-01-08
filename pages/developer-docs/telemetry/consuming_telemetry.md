@@ -26,7 +26,7 @@ Steps involved in consuming Data Exhaust:
 
 This section details **Standard Telemetry Workflows** for different access channels.
 
-### Mobile App
+### Mobile App Workflow
 
 <pre>
 START(type: "app")
@@ -55,7 +55,7 @@ START(type: "app")
 END(type: "app")
 </pre>
 
-### Web Portal
+### Web Portal Workflow
 
 <pre>
 AUDIT (object: user) --> (Optional if a user is created for the first time)
@@ -66,7 +66,7 @@ START(type: "session") --> User session starts
     // there is no explicit logout/timeout
 </pre>
 
-### Content editor
+### Content Editor Workflow
 
 <pre>
 START (type: "session") - User logs in
@@ -87,7 +87,7 @@ START (type: "session") - User logs in
     | --> END (type: "editor", mode: "content") - User closes the editor and goes back to portal
     </pre>
     
-### Backend-services
+### Backend-services Workflow
 
 <pre> 
     AUDIT (object: Service, state: "Ready") --> State transition to READY
