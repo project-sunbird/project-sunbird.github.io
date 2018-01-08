@@ -9,6 +9,7 @@ allowSearch: true
 ---
 
 Sunbird is an open source, configurable, extendable, modular learning management platform architected for scale and designed to support multiple teaching and learning solutions supporting multiple languages and available for online and offline use.
+
 Sunbird covers the following broad feature areas:
 
 - Courses, trainings, lesson plans and assessments
@@ -20,49 +21,50 @@ Sunbird covers the following broad feature areas:
 
 ## Techstack of Sunbird
 
-Technologies used to develop Sunbird are as listed below:
+The techstack used to develop the Sunbird is as follows:
 
-- AngularJS, so to make the portal better structured for dynamic page updates
+- **AngularJS** to make the Sunbird portal simplified and structured.
 
-  For further reading on AngularJS refer [https://angularjs.org/](https://angularjs.org)
+  If you wish to know more about AngularJS [visit](https://angularjs.org/)
   
-- Java Play, to make the portal highly scalable
+- **Java Play** to optimise resource consumption (CPU, memory, threads) for highly-scalablilty.
 
-  For further reading on Jave Play refer [https://playframework.com/](https://playframework.com)
+  If you wish to know more about Java Play [visit](https://playframework.com)
   
-- Apache Cassandra, to provide uncompromising performance and scalability
+- **Apache Cassandra,** to provide scalability and high availability without compromising on performance.
 
-  For futher reading on Apache Cassandra refer [http://cassandra.apache.org/](http://cassandra.apache.org)
+  If you wish to know more about  Apache Cassandra [visit](http://cassandra.apache.org)
   
-  For details on installation refer [http://www.sunbird.org/developer-docs/installation/setup_db/](http://www.sunbird.org/developer-docs/installation/setup_db)
+  For details on installation [visit](http://www.sunbird.org/developer-docs/installation/setup_db)
   
-- ElasticSearch, to yield advanced search and analytics engine
+- **ElasticSearch,** to yield advanced search and analytics engine
 
-  For futher reading on ElasticSearch refer [http://www.elastic.co/products/elasticsearch](http://www.elastic.co/products/elasticsearch)
+  If you wish to know more about ElasticSearch [visit](http://www.elastic.co/products/elasticsearch)
   
-  For details on installation refer [http://www.sunbird.org/developer-docs/installation/setup_db/](http://www.sunbird.org/developer-docs/installation/setup_db)
+  For details on installation [visit](http://www.sunbird.org/developer-docs/installation/setup_db)
   
-- Docker, to enable complete indenpendence across applications to aid in collaboration and co-creation
+- **Docker,** to enable complete independence across applications to aid in collaboration and co-creation
 
-  For futher reading on Docker [https://www.docker.com/what-docker](https://www.docker.com/what-docker)
+  If you wish to know more about Docker [visit](https://www.docker.com/what-docker)
 
-Knowledge areas required:
-- IaaS -- Provisioning servers and resources
-- DevOps -- Docker, Ansible
-- Database administration -- Cassandra, ElasticSearch
-- Web tools -- Webserver, SSL certs, OAuth, REST API
+Its recommended to have atleast some know how of the following areas:
+
+- IaaS - Provisioning servers and resources
+- DevOps - Docker, Ansible
+- Database administration - Cassandra, ElasticSearch
+- Web tools - Webserver,SSL certs, OAuth, REST API
 
 ## Sunbird Components
 
-All details with refard to the open source code of Sunbird is available here [https://github.com/project-sunbird](https://github.com/project-sunbird)
+All details with regard to the open source code of Sunbird is available [here](https://github.com/project-sunbird)
 
-To know about the web portal of Sunbird visit [https://github.com/project-sunbird/sunbird-portal](https://github.com/project-sunbird/sunbird-portal)
+To know about the web portal of Sunbird [visit](https://github.com/project-sunbird/sunbird-portal)
 
 ## Content Editor
 
-Content Editor is an inbuilt authoring toolon Sunbird. APIs are availble for any creation, updation or customization of the tool. To know more refer [http://www.sunbird.org/apis/content/](http://www.sunbird.org/apis/content)
+Content Editor is an inbuilt authoring tool on Sunbird. APIs are available for any creation, updation or customization of the tool. To know about the  [http://www.sunbird.org/apis/content/](http://www.sunbird.org/apis/content)
 
-To know about the content tool, its feature and procedures on how to use the tool, refer [http://www.sunbird.org/features-documentation/contenteditor/](http://www.sunbird.org/features-documentation/contenteditor)
+To know about the content tool, its feature and procedures on how to use the tool, [visit](http://www.sunbird.org/features-documentation/contenteditor)
 
 ## Content Editor Plugins 
 
@@ -102,7 +104,4 @@ http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/
 
 ## Mobile App Installation
 To create customized mobile application of Sunbird, refer [http://www.sunbird.org/developer-docs/installation/install_mobile_setup/](http://www.sunbird.org/developer-docs/installation/install_mobile_setup)
-
-
-
 
