@@ -522,7 +522,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table> 
   
-**Activity Browser**
+ **Activity Browser**
 
 <table>
   <tr>
@@ -535,9 +535,9 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table> 
   
-**Adding Details**
+  **Adding Details**
 
-<table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -548,9 +548,9 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>  
   
-**Configuring Activity Details**
+  **Configuring Activity Details**
 
-<table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -584,10 +584,10 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
-**Configuring Video Details**
+ **Configuring Video Details**
 
- <table>
- <tr>
+  <table>
+  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
@@ -626,30 +626,3 @@ c) Subject <br>d) Grade <br>e) Audience <br>f) Resource Type <br>g) Concepts <br
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>   
-  
-
-
-
-
-  
-  
-
-
-
-    
-    
-    
-
-
-          
-
-
-
-
-
-       
-  
-  
-          
-         
-
