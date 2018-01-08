@@ -49,7 +49,7 @@ A new screen will display and there, the more information you give, the easier i
 
 #### When filing a new bug, it is mandatory to include:
 
-* Descriptive title - use keywords so others can find your bug (avoiding duplicates)
+* 'Descriptive title'; use keywords so others can find your bug (avoiding duplicates)
 
 * Steps to trigger the problem that are specific, and repeatable
 
