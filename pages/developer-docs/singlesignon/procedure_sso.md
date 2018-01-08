@@ -49,8 +49,9 @@ To authenticate with DIKSHA via SSO (Single Sign-on), a JWT provided to the auto
 * redirect_uri: the url of the page where the user should be directed after login
  Example Payload for Single-Sign-On
 
+<pre>
 {
-
+  {
   "jti": "261263cd-3a0e-4aee-8faf-6d9d9eb14bb1",
 
   "iss": "<replace with id provided by at registration time>",
@@ -74,8 +75,8 @@ To authenticate with DIKSHA via SSO (Single Sign-on), a JWT provided to the auto
   "phone_number_verified": true,
 
   "redirect_uri": "<base_url>/private/index#!/workspace/content/create"
-
 }
+</pre>
 
 #### Base Url
 
