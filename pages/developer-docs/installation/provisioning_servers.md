@@ -12,7 +12,9 @@ Follow either an automated or manual process to provision the servers. For setup
 
 The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server & administration server.
 
-If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication. 
+If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication.
+
+Note:The Manual process is not recommended.For provisioning servers, follow the automated process for hassle free and rich installation experience. 
 
 ## Automation for Azure
 
