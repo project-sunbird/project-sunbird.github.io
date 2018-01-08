@@ -7,7 +7,7 @@ description: telemetry V3 event details
 published: true
 allowSearch: true
 --- 
-## Telemetry V3 Event Details
+## V3 Event Details
 
 Every API method has an associated event. The following API methods log details of the associated telemetry event. 
 
