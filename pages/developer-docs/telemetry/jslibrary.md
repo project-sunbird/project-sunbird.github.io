@@ -1,13 +1,13 @@
 ---
 type: landing
 directory: developer-docs/telemetry
-title: Standalone telemetry JS library
+title: Standalone Telemetry JS Library
 page_title: Standalone telemetry JS library
 description: telemetry specification of Sunbird
 published: true
 allowSearch: true
 ---
-## Need for a standalone telemetry JS library
+## Need for a standalone Telemetry JS library
 
 The purpose of a standalone JS library for telemetry is to facilitate capture and distribution of telemetry data by users who would like to use their own apps, content players or portals.  
 
