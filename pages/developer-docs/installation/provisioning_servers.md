@@ -7,15 +7,17 @@ description: Provisioning server
 allowSearch: true
 ---
 
-Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.
+Servers can be provisioned either manually or via automation if you are deploying Sunbird to Azure.
 
 ## Manual Process
-Commission two servers. 
+To provision servers manually, commission two servers and ensure that they can communicate with either other over the network. 
 
-1. The first server, serves as the DB(Database) server, and 
+1. The first server, serves as the DB (Database) server, and 
 1. The second serves as the application server & administration server.
 
 ### Installation and configuration of Docker Swarm
+To run the application on the application server, you will need to setup and install Docker swarm.
+
 WIP
 
 ## Automation for Azure
