@@ -11,8 +11,8 @@ Follow either an automated or manual process to provision the servers. For setup
 ## Manual Process
 Commission two servers. 
 
-a. The first server, serves as the DB(Database) server, and 
-b. The second serves as the application server & administration server.
+1. The first server, serves as the DB(Database) server, and 
+1. The second serves as the application server & administration server.
 
 ### Installation and configuration of Docker Swarm
 WIP
@@ -50,7 +50,7 @@ This will create config files for you in
 3. Here, `mysb` is the **implementation-name** and `production` is the **environment-name**.
 4. Edit both the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
 5. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
-6. Run 
+6. Run
 
     export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>
     export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>
@@ -58,6 +58,7 @@ This will create config files for you in
     ./provision-servers.sh
     
 For instance, on my laptop I do
+
     export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/app
     export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db
     
