@@ -27,6 +27,7 @@ Creates a new organization
 **Request**
 
 Request Body - organization details
+<pre>
 {
   "request":{  
       "orgName": "name of the organization", //required
@@ -49,11 +50,14 @@ Request Body - organization details
 
    }
 }
+</pre>
+
 District, Block and Cluster fields will be introduced shortly.
 
 **Response**
 
 orgId - Identifier of the created organization
+<pre>
 {  
    "id":"api.org.create",
    
@@ -80,6 +84,7 @@ orgId - Identifier of the created organization
    },
    "responseCode":"OK"
 }
+</pre>
 
 ### Update Organization
 
@@ -90,6 +95,7 @@ Updates an existing organization.
 **Request**
 
 Request Body - organization details
+<pre>
 {
   "request":{  
   
@@ -102,8 +108,10 @@ Request Body - organization details
       "description": "description", //optional
    }
 }
+</pre>
 
 **Response**
+<pre>
 {  
    "id":"api.org.update",
    
@@ -129,6 +137,7 @@ Request Body - organization details
    },
    "responseCode":"OK"
 }
+</pre>
 
 ### User APIs
 
@@ -141,6 +150,8 @@ Creates a new user
 **Request**
 
 Request Body - user details
+
+<pre>
 {
   "request":{  
   
@@ -183,10 +194,13 @@ Request Body - user details
 	“subject”: Taught by the user //optional. Values - Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali   
 }
 }
+</pre>
 
 **Response**
 
 userId - Identifier of the created user
+
+<pre>
 {  
    "id":"api.user.create",
    
@@ -214,6 +228,8 @@ userId - Identifier of the created user
    },
    "responseCode":"OK"
 }
+</pre>
+
 ** Update User**
 
 POST - <BASE_URL>/api/user/v1/update
@@ -224,6 +240,7 @@ Updates an existing user. All optional fields mentioned in Create User can be ad
 
 Request Body - user details
 
+<pre>
 {
   "request":{
   
@@ -244,9 +261,11 @@ Request Body - user details
       "phoneVerified": true
    }
 }
+</pre>
 
 **Response**
 
+<pre>
 {  
    "id":"api.user.update",
    
@@ -273,6 +292,7 @@ Request Body - user details
    
    "responseCode":"OK"
 }
+</pre>
 
 **Add Member**
 
@@ -284,6 +304,7 @@ Request
 
 Request Body - membership details
 
+<pre>
 {
   "request":{  
   
@@ -298,9 +319,11 @@ Request Body - membership details
       "position": "position of the person in the organization, e.g.: Principal, Teacher, Student" // optional
    }
 }
+</pre>
 
 **Response**
 
+<pre>
 {  
    "id":"api.org.member.add",
    
@@ -326,6 +349,7 @@ Request Body - membership details
    },
    "responseCode":"OK"
 }
+</pre>
 
 **Remove Member**
 
@@ -337,6 +361,7 @@ Request
 
 Request Body - membership details
 
+<pre>
 {
   "request":{  
       "externalId": "identifier of the organization in the partner system", //required
@@ -347,9 +372,11 @@ Request Body - membership details
       "userName": "username with which the user is created", // required
    }
 }
+</pre>
 
 **Response**
 
+<pre>
 {  
    "id":"api.org.member.remove",
    
@@ -375,6 +402,7 @@ Request Body - membership details
    },
    "responseCode":"OK"
 }
+</pre>
 
 ### Single-Sign-On API
 To login a user, the client must provide a link (which makes a GET request) to the auto-login endpoint /v1/user/session/create?token=<jwt_token> with the JWT token in the query parameter of the request. Here’s an example:
