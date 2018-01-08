@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.2/";
+			baseURL.href="/releases/release.1.2.1/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
+<meta name="last-modified" content="2018-01-08 14:34:53 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.2" />
-<meta name="buildNo" content="672" />
+<meta name="buildVersion" content="release.1.2.1" />
+<meta name="buildNo" content="692" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -314,7 +314,6 @@
 						</div>
 					</li>
 					<li>
-					<!--<li>
 						<div class="">
 							<a href="developer-docs/telemetry/overview">Telemetry</a>
 							<ul class="sidebar-group">
@@ -322,15 +321,41 @@
 									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
 								</li>
 								<li>
-									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+									<div class="">
+							                     <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+							                     <ul class="sidebar-group">
+										     <li>
+											     <a href="developer-docs/telemetry/jslibrary/">Standalone Telemetry JS Library</a>
+										     </li>
+										     <li>
+											     <a href="developer-docs/telemetry/htmlinterfacelibrary/">Telemetry HTML Interface Library</a>
+										     </li>
+										     <li>
+											     <a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
+										     </li>
+										</ul>	
 								</li>
 								<li>
+									<div class="">
 									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
+											</li>
+											<li>
+								                                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#content-editor-workflow">Content Editor Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#backend-services-workflow">Backend-services Workflow</a>
+											</li>
+										</ul>						
 								</li>						
 							</ul>
 						</div>
-					</li>
-					</li>-->	
+					</li>	
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -436,19 +461,19 @@ $("a[href$='developer-docs/telemetry/consuming_telemetry/']").addClass("sidebar-
               </ul>
             </li>
             <li class="toc_level-1 toc_section-3">
-              <a href="#understanding-typical-workflows-from-telemetry-data"><span class="tocnumber">2 .</span> <span class="toctext">Understanding typical workflows from Telemetry data</span></a>
+              <a href="#standard-telemetry-workflows"><span class="tocnumber">2 .</span> <span class="toctext">Standard Telemetry Workflows</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-4">
-                  <a href="#mobile-app"><span class="tocnumber">2.1 .</span> <span class="toctext">Mobile App</span></a>
+                  <a href="#mobile-app-workflow"><span class="tocnumber">2.1 .</span> <span class="toctext">Mobile App Workflow</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-5">
-                  <a href="#web-portal"><span class="tocnumber">2.2 .</span> <span class="toctext">Web Portal</span></a>
+                  <a href="#web-portal-workflow"><span class="tocnumber">2.2 .</span> <span class="toctext">Web Portal Workflow</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-6">
-                  <a href="#content-editor"><span class="tocnumber">2.3 .</span> <span class="toctext">Content editor</span></a>
+                  <a href="#content-editor-workflow"><span class="tocnumber">2.3 .</span> <span class="toctext">Content Editor Workflow</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-7">
-                  <a href="#backend-services"><span class="tocnumber">2.4 .</span> <span class="toctext">Backend-services</span></a>
+                  <a href="#backend-services-workflow"><span class="tocnumber">2.4 .</span> <span class="toctext">Backend-services Workflow</span></a>
                 </li>
               </ul>
             </li>
@@ -473,11 +498,11 @@ $("a[href$='developer-docs/telemetry/consuming_telemetry/']").addClass("sidebar-
 
 <h3 id="using-channel-id-and-api-key-to-request-channel-telemetry">Using channel ID and API key to request channel telemetry</h3>
 
-<h2 id="understanding-typical-workflows-from-telemetry-data">Understanding typical workflows from Telemetry data</h2>
+<h2 id="standard-telemetry-workflows">Standard Telemetry Workflows</h2>
 
 <p>This section details <strong>Standard Telemetry Workflows</strong> for different access channels.</p>
 
-<h3 id="mobile-app">Mobile App</h3>
+<h3 id="mobile-app-workflow">Mobile App Workflow</h3>
 
 <pre>
 START(type: "app")
@@ -506,7 +531,7 @@ START(type: "app")
 END(type: "app")
 </pre>
 
-<h3 id="web-portal">Web Portal</h3>
+<h3 id="web-portal-workflow">Web Portal Workflow</h3>
 
 <pre>
 AUDIT (object: user) --&gt; (Optional if a user is created for the first time)
@@ -517,7 +542,7 @@ START(type: "session") --&gt; User session starts
     // there is no explicit logout/timeout
 </pre>
 
-<h3 id="content-editor">Content editor</h3>
+<h3 id="content-editor-workflow">Content Editor Workflow</h3>
 
 <pre>
 START (type: "session") - User logs in
@@ -538,7 +563,7 @@ START (type: "session") - User logs in
     | --&gt; END (type: "editor", mode: "content") - User closes the editor and goes back to portal
     </pre>
 
-<h3 id="backend-services">Backend-services</h3>
+<h3 id="backend-services-workflow">Backend-services Workflow</h3>
 
 <pre> 
     AUDIT (object: Service, state: "Ready") --&gt; State transition to READY

@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.2/";
+			baseURL.href="/releases/release.1.2.1/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
+<meta name="last-modified" content="2018-01-08 14:34:53 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.2" />
-<meta name="buildNo" content="672" />
+<meta name="buildVersion" content="release.1.2.1" />
+<meta name="buildNo" content="692" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -314,7 +314,6 @@
 						</div>
 					</li>
 					<li>
-					<!--<li>
 						<div class="">
 							<a href="developer-docs/telemetry/overview">Telemetry</a>
 							<ul class="sidebar-group">
@@ -322,15 +321,41 @@
 									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
 								</li>
 								<li>
-									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+									<div class="">
+							                     <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+							                     <ul class="sidebar-group">
+										     <li>
+											     <a href="developer-docs/telemetry/jslibrary/">Standalone Telemetry JS Library</a>
+										     </li>
+										     <li>
+											     <a href="developer-docs/telemetry/htmlinterfacelibrary/">Telemetry HTML Interface Library</a>
+										     </li>
+										     <li>
+											     <a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
+										     </li>
+										</ul>	
 								</li>
 								<li>
+									<div class="">
 									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
+											</li>
+											<li>
+								                                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#content-editor-workflow">Content Editor Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#backend-services-workflow">Backend-services Workflow</a>
+											</li>
+										</ul>						
 								</li>						
 							</ul>
 						</div>
-					</li>
-					</li>-->	
+					</li>	
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -397,7 +422,7 @@ $("a[href$='developer-docs/telemetry/jslibrary/']").addClass("sidebar-link-selec
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Standalone telemetry JS library </h1>
+        <h1>Standalone Telemetry JS Library </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -428,7 +453,7 @@ $("a[href$='developer-docs/telemetry/jslibrary/']").addClass("sidebar-link-selec
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#need-for-a-standalone-telemetry-js-library"><span class="tocnumber">1 .</span> <span class="toctext">Need for a standalone telemetry JS library</span></a>
+              <a href="#need-for-a-standalone-telemetry-js-library"><span class="tocnumber">1 .</span> <span class="toctext">Need for a standalone Telemetry JS library</span></a>
             </li>
             <li class="toc_level-1 toc_section-2">
               <a href="#prerequisites-for-the-telemetry-js-library"><span class="tocnumber">2 .</span> <span class="toctext">Prerequisites for the telemetry JS library</span></a>
@@ -447,7 +472,7 @@ $("a[href$='developer-docs/telemetry/jslibrary/']").addClass("sidebar-link-selec
       </tr>
     </tbody>
   </table>
-</div><h2 id="need-for-a-standalone-telemetry-js-library">Need for a standalone telemetry JS library</h2>
+</div><h2 id="need-for-a-standalone-telemetry-js-library">Need for a standalone Telemetry JS library</h2>
 
 <p>The purpose of a standalone JS library for telemetry is to facilitate capture and distribution of telemetry data by users who would like to use their own apps, content players or portals.</p>
 
