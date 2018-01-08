@@ -2,12 +2,11 @@
 type: landing
 directory: developer-docs/telemetry
 title: Telemetry Event Details
-page_title: Telemetry Event Details
-description: telemetry event details
+page_title: Telemetry V3 Event Details
+description: telemetry V3 event details
 published: true
 allowSearch: true
 --- 
-
 ## Telemetry V3 Event Details
 
 Every API method has an associated event. The following API methods log details of the associated telemetry event. 
