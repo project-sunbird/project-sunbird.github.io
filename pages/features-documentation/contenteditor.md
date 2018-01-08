@@ -364,7 +364,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
-  **Uploading Audio**
+**Uploading Audio**
   
   <table>
   <tr>
@@ -392,7 +392,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
       </table>
   
-  **Adding Action to the Hotspot**
+**Adding Action to the Hotspot**
   
   <table>
   <tr>
