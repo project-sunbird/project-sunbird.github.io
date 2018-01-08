@@ -32,8 +32,8 @@ Estimated run time: 30 mins for the fresh  time.
 
 Scripts can be re-tried and to create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
 
-> Prerequisites  
-docker-ce installed  
+**Prerequisites**  
+> docker-ce installed  
 add your user account to docker group  
 `sudo usermod -aG docker $(whoami)`
  
