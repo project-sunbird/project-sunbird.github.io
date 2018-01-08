@@ -387,7 +387,8 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>A Hotspot is an invisible button. Attach hotspot to any text, shape, or object to denote any action <br>1. Click the <strong>Add Hotspot</strong> icon on the toolbar</td>
+    <td>A Hotspot is an invisible button. Attach hotspot to any text, shape, or object to denote any action <br>1. Click the <strong>Add Hotspot</strong> icon on the toolbar
+    </td>
     <td><img src="pages/features-documentation/images/contenteditor.png></td>
   </tr>
   </table>
