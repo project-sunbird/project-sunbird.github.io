@@ -287,17 +287,13 @@ words that already exist in the repository <br>1. To use this feature, select th
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. To add shapes, click the Add Shapes icon on the toolbar <br>2. Click Save tab on the header to save the content</td>
-    <td><img src=.png></td>
+    <td>1. To add shapes, click the <strong>Add Shapes</strong> icon on the toolbar <br>2.  The customize tab displays
+options to add features to the shapes. You can: <br>a) Click <strong>Fill</strong> Color to add or modify the color of
+the shape <br>b) Use the <strong>Transparency</strong> slider to modify the transparency level of the shape <br>c) Use the <strong>Visible</strong> slider to make the selected shape visible or invisible <br>d) Click <strong>Border Color</strong> to modify the color of the shape outline     
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>
-  
-**Customizing Shapes**
-  
-  1. **Fill Color**: To change the color of the shape
-  2. **Transparency**: To change the transparency level of the shape
-  3. **Visible**: To make the shape visible or invisible. Select the object and enable or disable this option
-  4. **Border Color**: To change the border color of the shape
   
 #### Adding Images
   
@@ -307,34 +303,52 @@ words that already exist in the repository <br>1. To use this feature, select th
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. To add images, click the <strong>Add Images</strong> icon on the toolbar </td>
-    <td><img src=.png"></td>
-   </tr>
-      <tr>
-      <td>1. The <strong>Select Image</strong> page is displayed</td>
-      <td><img src=.png></td>
-      </tr>
-      <tr>
-      <td>There are three ways to add images in content editor: <br>1. Select an image that you have added previously. Any image added by you is available under the section titled <strong>My images</strong> <br>2. Select an image from the repository. Images added and uploaded by various users are available under the section titled <strong>All Audio</strong> <br>3. You can upload images from your gallery and use them. Click <strong>Upload and use</strong>. The Upload and use page is displayed
-      <ol>
-      <li>Choose the file or drag and drop the file. Supported file formats are: .jpeg, .jpg, .png</li>
-      <li>Under <strong>Copyright & License</strong>, you can select whether to make the image available to everyone who has access to Sunbird portal or restrict sharing the image. The options available are: <br>
-          <li>Yes, make it available to everyone. Enter the mandatory fields from the form (Asset Caption and Creator) displayed</li>
-          <li>No, don’t share with anyone</li>
-          <li>Click <strong>Upload and Use</strong> to upload the image</li>
-      </li>
-      <li>4. Click <strong>Save</strong> tab on the header to save the content</li>
-      </ol>
-      </td>
-      <td><img src=.png></td>
-      </tr>
-      </table>
+    <td>1. To add images, click the <strong>Add Images</strong> icon on the toolbar</td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+  **Selecting Images**
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+     <td>You can add images either by selecting an image from a list or uploading images from your local machine to use immediately <br>1. Click <strong>My images</strong> to view a list of all image files that you have previously uploaded <br>2. Click <strong>All image</strong> to view a list of image files from the repository <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users <br>3. Choose an appropriate image file from any list and click <strong>Select</strong> <br>4. Click <strong>Upload and use</strong> to upload and use images from your gallery
+     </td>
+     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+  **Uploading and Using Images**
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <strong>Choose File</strong> to browse and select a file from your local drive or open the explorer in a separate window and drag and drop the required file on the screen. <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright & License</strong>, select if you want to: <br>a) Make it available to everyone <br>b) Not share with anyone <br>3. Add image details in the <strong>Asset Caption</strong> area <br>4. Click <strong>Upload and Use</strong> to upload the image
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
       
-**Customizing Images**
-     
-1. **Image Browser**: To browse for images. The image display page will be displayed on clicking this option
-2. **Visible**: To make the shape visible or invisible. Select the object and enable or disable this option
-3. **Border Color**: To change the border color of the shape
+**Formatting Images**
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>After selecting and adding an image to the slide, the customize tab displays options to add features to the shapes. You can: <br>1. Click <strong>Image Browser</strong> to browse for images and select another image <br>2. Use the <strong>Visible</strong> slider to make the selected image visible or invisible <br>3. Click <strong>Border Color</strong> to modify the color of the shape outline
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
 
 #### Adding Audio
 
@@ -344,51 +358,28 @@ words that already exist in the repository <br>1. To use this feature, select th
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. To add audio, click the <strong>Add Audio</strong> icon on the toolbar </td>
-    <td><img src=.png></td>
-  </tr>
-  <tr> 
-    <td>1. The select audio page is displayed </td>
-  </tr>
-  <tr>
-  <td>There are three ways to add audio in content editor: <br>1. Select audio file that you have added previously. Any audio file added by you is available under the section titled <strong>My audio</strong> <br>2. Select an audio file from the repository. These audio files added and uploaded by various users are available under the section titled <strong>All Audio</strong> 
-<br>3. You can upload a previously recorded audio or record an audio from the content editor. Click <strong>Upload/Record</strong>. The Upload/Record page is displayed
- <ul>
-      <li>Click <strong>Upload</strong></li> 
-      <li>Choose the file or drag and drop the file. Supported file formats are: mp3, mp4, mpeg, ogg, wav, webm</li>
-      <li>Under <strong>Copyright & License</strong>, you can select whether to make the audio available to everyone who has access to Sunbird portal or restrict sharing the audio. The options available are: <br>
-          <li> Yes, make it available to everyone. Enter the mandatory fields from the form (Asset Caption and Creator) displayed</li>
-          <li>No, don’t share with anyone</li>
-      </li>
-    <li>Click <strong>Upload and Use</strong> to upload the audio</li> <br> Or <br>
-    <li>Click <strong>Record</strong>      
-  </ul>
-    <br>4. Click <strong>Save</strong> to save the changes  
-  </td>
-  <td><img src=.png></td>
-  </tr>
-  </table>
-  
-  #### Adding Hotspot
-  
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
-    <td>Hotspot is an invisible button. Attach hotspot to any text, shape, or object to denote any action <br>1. To add audio, click the <strong>Add Hotspot</strong> icon on the toolbar </td>
-    <td><img src=.png></td>
+    <td>1. To add audio, click the <strong>Add Audio</strong> icon on the toolbar <br><strong>Note:</strong> For detailed instructions to add audio, refer to section Select Audio for Read Along Text
     </td>
-  <tr>
-  <td>1. Click <strong>Action</strong> on the right pane <br>2. Select Action from the drop-down menu <br>3. Select the target object to attach the action from the drop-down menu <br>4. Click <strong>Save</strong> tab on the header to save the content 
-  </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>
   
-  #### Adding Scribblepad
+  **Uploading Audio**
   
-  Scribblepad helps the user make notes, if any, while viewing the content on the app
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr> 
+  <tr> 
+    <td>1. Click Choose File to browse and select a file from your local drive or open the explorer in a separate window and drag and drop the required file on the screen. <br><strong>Note:</strong> Supported file formats are: .mp3, .mp4 <br>2. Under <strong>Copyright &
+      License</strong>, select if you want to: <br>a) Make it available to everyone <br>b) Not share with anyone <br>3. Add audio file details in the <strong>Asset Caption</strong> area <br>4. Click <strong>Upload and Use</strong> to upload the audio file
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+#### Adding Hotspot
   
   <table>
   <tr>
@@ -396,14 +387,42 @@ words that already exist in the repository <br>1. To use this feature, select th
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. To add scribblepad, click the <strong>Add Scribblepad</strong> icon on the toolbar <br>2. Click <strong>Save</strong> tab on the header to save the content </td>
-    <td><img src=.png></td>
+    <td>A Hotspot is an invisible button. Attach hotspot to any text, shape, or object to denote any action <br>1. Click the <strong>Add Hotspot</strong> icon on the toolbar </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png></td>
+  </tr>
+      </table>
+  
+  **Adding Action to the Hotspot**
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. Click the <strong>Action</strong> tab on the right pane <br>2. Select an interaction from the drop-down menu <br>3. Select the target object to attach the action from the drop-down menu
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>
   
-  #### Adding Question Set
+#### Adding Scribblepad
   
-   <table>
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>The Scribblepad helps users take notes, if required, while viewing content <br>1. Click the <strong>Add Scribblepad</strong> icon on the toolbar <br>2. You can make modifications using the default options of the customize tab 
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+#### Adding Question Set
+  
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -413,20 +432,55 @@ words that already exist in the repository <br>1. To use this feature, select th
     <td><img src=.png></td>
   </tr>
   <tr>
-    <td>1. Type keywords on the <strong>Search Bar</strong> to search for questions. For better search results, use <strong>Advanced Filters</strong>2. To apply advance filters, select Language, Difficulty, Question Type, Grade and Concepts from their respective drop-down menus <br>3. Enable the option My Questions to search for questions you have uploaded. To search for questions available on the portal, disable this option </td>
-    <td><img src=.png></td>
-  </tr>
-  <tr>
-    <td>1. Select the question and click <strong>Next</strong>. The <strong>Configure Question Set</strong> page is displayed <br>
-      <li>Enter the <strong>Question Set Title</strong> and <strong>Total Marks</strong> for the questionnaire</li>
-      <li>Select the number of questions that should be displayed in each screen from the drop-down menu</li>
-      <li>Enable /disable the option <strong>Show Immediate Feedback</strong> to determine when the feedback for the answers should be displayed</li>
-      <li>Enable the option <strong>Shuffle Questions</strong> to shuffle questions</li>
+    <td>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <strong>Add Question Set</strong> icon on the toolbar
     </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>
   
- **Customizing Question Set**
+**Selecting Questions**
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. Type keywords on the Search Bar to search the repository for questions <br>2. For better search results, use <strong>Advanced Filters</strong> <br>3. The search results are displayed in the bottom left pane <br>4. The selected question’s preview is displayed in  the right pane <br>5. Select questions from the results displayed by marking the checkbox <br>6. Click <strong>Next</strong>
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+**Configuring the Question Set**
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. Enter the <strong>Question Set Title</strong> and <strong>Total Marks</strong> for the questionnaire <br>2. Select the number of questions that should be displayed in each screen from the <strong>Display</strong> drop-down menu <br>3. Use the <strong>Show Immediate Feedback</strong> slider to determine when the feedback for the answers should be displayed <br>4. Use the <strong>Shuffle Questions</strong> slider to enable shuffling of questions from the set <br>5. Click <strong>Add Question Set</strong> to add the selected questions
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+**Selecting Questions - Advanced Filters**
+    
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. To apply advanced filters, select: <br>a) Language <br>b) Difficulty <br>c) Question Type <br>d) Grade <br>e) Concepts <br>2. <strong>Use the My Questions</strong>slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table> 
+      
+**Customizing Question Set**
  
  <table>
   <tr>
@@ -434,17 +488,25 @@ words that already exist in the repository <br>1. To use this feature, select th
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>On selecting the question set, the customization options are displayed on the right pane <br>1. Click <strong>Assessment Browser</strong> to go back to the add question set page <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions</td>
-    <td><img src=.png></td>
-  </tr>
-  <tr>
-    <td>1. Click the dustbin icon to delete the added question set <br>2. Click the spanner icon to edit the details of the question set. The settings options are displayed on the right <br>
-      <li>Click on the upward/downward arrows to determine the marks of the question set</li> 
-      <br>3. Click the eye icon to view the preview of the question set <br>4. Click <strong>Done</strong> to save <br>5. Enter Assessment Title. The title entered during question set selection is displayed here <br>6. Enable or disable Shuffle Questions, Shuffle Options and Show Immediate Feedback options.  For details on these options, refer section Adding Question Set <br>7. Select the number of questions that should be displayed in each screen from the drop-down menu <br>8. Determine the Total Marks of the assessment <br>9. Click <strong>Save</strong> tab on the header to save the content
+    <td>After adding the question set, the customize tab displays options to modify them. You can: <br>1. Click <strong>Assessment Browser</strong> to return to the <strong>Selecting Questions</strong>screen <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions <br>3. View and modify the <strong>Assessment Title</strong>, if required <br>4. Use the sliders to enable or disable <strong>Shuffle Questions, Shuffle Options and Show Immediate Feedback</strong> <br>5. Select the number of questions to be displayed in each screen <br>6. Enter the <strong>Total Marks</strong> for the assessment
     </td>
-    <td><img src=.png></td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
-  </table>
+  </table>      
+      
+**Configuring Question Set**
+
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. Click the trash icon to delete the added question set <br>2. Click the spanner icon to edit details of the question set. The settings options are displayed on the right <br>a) Click on the upward/downward arrows to determine the marks of the question set <br>3. Click the eye icon to view the preview of the question set <br>4. Click <strong>Done</strong> to save
+   </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>   
       
 #### Adding Activity
 
@@ -454,52 +516,12 @@ words that already exist in the repository <br>1. To use this feature, select th
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-   <td>1. To add activity, click the Add Activity icon on the toolbar. The activity browser page is displayed <br>2. Select the <strong>Category</strong> and <strong>Concepts</strong> of the activity from their respective drop-down menus. Alternatively, you can search for the activity on the search bar </td>
-    <td><img src=.png></td>
+    <td>1. To add activity, click the <strong>Add Activity</strong> icon on the toolbar</td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
-  <tr>
-    <td>1. Select the activity and click <strong>ADD</strong> and the activity browser page is displayed </td>
-    <td><img src=.png></td>
-  </tr>
-  <tr>
-    <td>1. All details on the selected activity is displayed on the right <br>2. Click <strong>Add</strong> to add the activity <br>3. The activity added is displayed as an icon on the toolbar </td>
-    <td><img src=.png></td>
-  </tr>
-  <tr>
-    <td>1. Click this icon. For activities that does not have details added to them at creation, the activity configuration page is displayed <br> On the activity details configuration page: <br>2. Select <strong>Content, Numerals, Grade, Level and Sub Level </strong> from their respective drop-down menus <br>3. Determine the <strong>No. of Questions</strong> <br>4. Click <strong>Add</strong> <br>5. Click <strong>Save</strong>
-    </td>
-    <td><img src=.png></td>
-  </tr>
-  </table>
+  </table> 
   
-  #### Adding Video
-  
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
-    <td>1. To add video, click the <strong>Add Video</strong> icon on the toolbar. The add video page is displayed <br>2. Paste the video <strong>URL</strong> and Click <strong>Go</strong>. The preview will be displayed
-    </td>
-    <td><img src=.png></td>
-  </tr>
-  <tr>
-    <td>1. Click <strong>Add to Lesson</strong>. The customization options for the video is displayed on the toolbar and the right pane
-      <li>Click the copy icon to copy the video to another slide</li>
-      <li>Click the delete icon to delete the video</li>
-      <li>Click the arrange icon to determine the appearance of the video</li>
-      <li>Enable <strong>Autoplay</strong> to play the video automatically on the app</li>
-      <li>Enable or disable the option <strong>Mute Audio</strong> to mute or unmute audio</li>
-      <li>Click <strong>Save</strong></li>
-    </td>
-    <td><img src=.png></td>
-  </tr>
-  </table>
-  
-  #### Sending for Review
-  
-The created study material should be send for review before publishing. The reviewer approves the content and publishes the same. To send content for review
+**Activity Browser**
 
 <table>
   <tr>
@@ -507,11 +529,103 @@ The created study material should be send for review before publishing. The revi
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. Click <strong>Save</strong> to save the content <br>2. Click <strong>Send for review</strong>. The edit details page is displayed <br>3. Enter <strong>Name</strong> of the content created <br>4. Select Board, Medium, Subject, and, Grade from their respective drop-down lists <br>5. Enter <strong>Attributions</strong>, if any <br>6. From the Concept field, select any concept(s) from the list displayed <br>7. Enter Keywords <br>8. Select Language and Audience from their respective drop-down lists <br>9. Click <strong>Save</strong> to save the changes <br>10. Click <strong>Save</strong> tab on the header to save the content <br>11. Click <strong>Send for review</strong> to send the created content <br>12. The content will be published after review
+    <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><strong>Note:</strong> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering key words <br>3. Select the activity and click <strong>ADD</strong>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table> 
+  
+**Adding Details**
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. All details of the selected activity are displayed on the right <br>2. Click <strong>Add</strong> to add the activity       
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>  
+  
+**Configuring Activity Details**
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. If the selected activity has details added at the time of creation, the appropriate activity category icon is displayed. Click the icon to view or modify activity details <br>2. If no details have been added, you can enter the activity details in the <strong>Configuring Activity</strong> details screen
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  <tr>
+    <td>1. Select the following from their respective drop-down menus: <br>a) Content <br>b) Numerals <br>c) Grade <br>d) Level <br>e) Sub Level <br>2. Determine the No. of Questions <br>3. Click <strong>Add</strong>
     </td>
-    <td><img src=.png></td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>
+   
+#### Adding Video
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. To add video, click the <strong>Add Video</strong> icon on the toolbar</td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr> 
+  <tr>
+    <td><strong>Adding Video Details</strong> <br>Currently, the content editor supports only direct video links from publicly shared videos. To do so: <br>1. Paste the video URL <br>2. Click <strong>Go</strong> <br>3. The preview is displayed in the preview pane <br>4. Click <strong>Add to Lesson</strong>
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+**Configuring Video Details**
+
+ <table>
+ <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. Click the copy icon to copy the video to another slide <br>2. Click the delete icon to delete the video <br>3. Click the arrange icon to determine the appearance of the video <br>4. Enable Autoplay to play the video automatically on the app <br>5. Enable or disable the option <strong>Mute Audio</strong> to mute or unmute audio
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+    
+### Reviewing and Publishing Content 
+
+ <table>
+ <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>All created study material must be reviewed and approved by designated reviewers before it can be published. To send content for review: <br>1. Click Save to save the content <br>2. Click <strong>Send for review</strong>
+     </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>
+  
+**Adding Metadata**
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>You need to add metadata to the study material <br>1. Select an icon and enter a <strong>Name</strong> for the study material created <br>2. Enter a <strong>Description</strong> for the study material <br>3. Select other metadata like: <br>a) Board <br>b) Medium
+c) Subject <br>d) Grade <br>e) Audience <br>f) Resource Type <br>g) Concepts <br>4. Enter Attributions, if any <br>5. Enter Keywords <br><strong>Note:</strong> Keywords help search engines find content associated with them when you search <br>6. Click <strong>Save</strong>
+   </td>
+    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+  </tr>
+  </table>   
+  
 
 
 
