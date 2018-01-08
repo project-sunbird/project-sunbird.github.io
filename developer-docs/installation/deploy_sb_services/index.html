@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.18/";
+			baseURL.href="/releases/release.1.2/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
+<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.18" />
-<meta name="buildNo" content="311" />
+<meta name="buildVersion" content="release.1.2" />
+<meta name="buildNo" content="672" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
-<link rel="stylesheet" href="css/style.css?20122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08012018"  />
+<link rel="stylesheet" href="css/style.css?08012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -163,7 +163,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses and Training</a>
+					<a href="features-documentation/coursetraining/">Courses</a>
 				</li>
 				<li>
 					<a href="features-documentation/library/">Library</a>
@@ -174,9 +174,11 @@
 				<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
 				</li>
+				<!--<li>
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
+                                </li>-->
 				<!--<li>
 					<a href="features-documentation/consumption/">Consume Study Material</a>
 				</li>-->
@@ -202,6 +204,9 @@
 					<h4 class="sidebar-group-title">Developer Documentation</h4>
 				</a>
 				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+					</li>
 					<li>
 						<a href="developer-docs/installation/">Installation Overview</a>
 					</li>
@@ -236,6 +241,31 @@
 								<!--<li>
 									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
 								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/tokens_sso/">Tokens</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/masterexchange_sso/">Master Data Exchange</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -283,9 +313,24 @@
 							</ul>
 						</div>
 					</li>
+					<li>
 					<!--<li>
-						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
-					</li>-->
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+								</li>						
+							</ul>
+						</div>
+					</li>
+					</li>-->	
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -383,13 +428,19 @@ $("a[href$='developer-docs/installation/deploy_sb_services/']").addClass("sideba
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#sunbird-core-services"><span class="tocnumber">1 .</span> <span class="toctext">Sunbird Core Services</span></a>
+              <a href="#preparation-to-setup-application"><span class="tocnumber">1 .</span> <span class="toctext">Preparation to Setup Application</span></a>
             </li>
             <li class="toc_level-1 toc_section-2">
-              <a href="#sunbird-proxy-services"><span class="tocnumber">2 .</span> <span class="toctext">Sunbird proxy services</span></a>
+              <a href="#api-manager-services"><span class="tocnumber">2 .</span> <span class="toctext">API Manager services</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#core-services"><span class="tocnumber">3 .</span> <span class="toctext">Core services</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#proxy-services"><span class="tocnumber">4 .</span> <span class="toctext">Proxy services</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-3">
-                  <a href="#automation-walkthrough"><span class="tocnumber">2.1 .</span> <span class="toctext">Automation Walkthrough</span></a>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#automation-walkthrough"><span class="tocnumber">4.1 .</span> <span class="toctext">Automation Walkthrough</span></a>
                 </li>
               </ul>
             </li>
@@ -398,15 +449,48 @@ $("a[href$='developer-docs/installation/deploy_sb_services/']").addClass("sideba
       </tr>
     </tbody>
   </table>
-</div><p>The Sunbird services are categorized into :</p>
+</div><p>The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. The following steops will install docker, pull the required images and create services based on those images.</p>
 
-<h2 id="sunbird-core-services">Sunbird Core Services</h2>
+<h2 id="preparation-to-setup-application">Preparation to Setup Application</h2>
+
+<ul>
+  <li>SSH into the application server. If you have used automated scripts as described in the previous steps, then this server would be vm-1</li>
+  <li>Clone the sunbird-devops repo using git clone https://github.com/project-sunbird/sunbird-devops.git</li>
+  <li>Copy over the generated configuration directory from the DB server(<code>&lt;implementation-name&gt;-devops</code>) to your machine</li>
+  <li>Modify all the configurations under # APPLICATION CONFIGURATION block.</li>
+  <li>The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure you have a certificate and key for the domain that you wish to use.</li>
+  <li>Run <code>cd sunbird-devops/deploy &amp;&amp; sudo ./install-deps.sh</code> to install the dependencies.</li>
+</ul>
+
+<h2 id="api-manager-services">API Manager services</h2>
+<p>Run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will set up the API Manager services.</p>
+
+<p><strong>Note:</strong> The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.</p>
+
+<ul>
+  <li>
+    <p>deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for “JWT token for player is :”, copy the corresponding token. Example output below, token is highlighted in italics:</p>
+
+    <pre><code>changed: [localhost] =&gt; {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json .......       "JWT token for player is :                            
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-    
+pBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
+</code></pre>
+  </li>
+</ul>
+
+<p>Update sunbird_api_auth_token in your configuration with the above copied token.</p>
+
+<ul>
+  <li>Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. The steps are <a href="developer-docs/installation/medium_scale_deploy#api-keys">described here</a></li>
+</ul>
+
+<h2 id="core-services">Core services</h2>
 
 <p>To deploy the Sunbird core services, execute the following command:</p>
 
 <p>Run <code>sudo ./deploy-core.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
 
-<h2 id="sunbird-proxy-services">Sunbird proxy services</h2>
+<h2 id="proxy-services">Proxy services</h2>
 
 <p>To deploy  the Sunbird proxy services , execute the following command:</p>
 

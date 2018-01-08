@@ -1,5 +1,11 @@
 <p>Follow either an automated or manual process to provision the servers. For setup in a non-production environment, use only the manual process. Use the automated process if you are setting up Sunbird and are not sure of setting up the infrastructure correctly, or if you plan to roll out your implementation to serious users.</p>
 
+<h2 id="manual-process">Manual Process</h2>
+
+<p>The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server &amp; administration server.</p>
+
+<p>If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication.</p>
+
 <h2 id="automation-for-azure">Automation for Azure</h2>
 
 <p>The set of scripts on the Automation for Azure page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
@@ -30,14 +36,14 @@ Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory.
   <li>Run <code>export DB_DEPLOYMENT_JSON_PATH=&lt;absolute path of azuredeploy.parameters.json&gt;</code>. For instance, on my laptop it is <code>export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db</code></li>
   <li>Run <code>cd sunbird-devops/deploy</code></li>
   <li>Run <code>./provision-servers.sh</code></li>
-  <li>Login to Azure when CLI instructs to</li>
+  <li>Login to Azure when CLI instructs</li>
   <li>Wait for deployment to complete</li>
   <li>Check on Azure portal: Resource Group -&gt; Deployments -&gt; Click on deployment to see deployment details</li>
   <li>Try to SSH. If your <code>masterFQDN</code> from deployment details was <code>production-1a.centralindia.cloudapp.azure.com</code> you can ssh using <code>ssh -A ops@production-1a.centralindia.cloudapp.azure.com</code></li>
   <li>If you could SSH, you have successfully created the server platform.</li>
 </ol>
 
-<p><strong>Note:</strong> The automation walk-throughs provided (PART 1) , (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.</p>
+<p><strong>Note:</strong> The automation walk-throughs provided (PART 1), (PART2), shows you the automated process. You can use them to understand the commands to be used and assist you in the process for provisioning the servers.</p>
 
 <h3 id="automation-walkthrough">Automation walkthrough</h3>
 
@@ -46,10 +52,3 @@ Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory.
 <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif" target="_blank">Part 2</a></p>
 
 <p><strong>Note:</strong> The default automation process creates three servers because it separates the application and the administration server.</p>
-
-<h2 id="manual-process">Manual Process</h2>
-
-<p>The manual procedure commissions two servers. The first server, serves as the DB(Database) server and the second serves as the application server &amp; administration server.</p>
-
-<p>If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication.</p>
-

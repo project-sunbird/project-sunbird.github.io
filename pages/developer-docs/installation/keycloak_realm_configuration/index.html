@@ -4,56 +4,10 @@
 
 <p><strong>Note:</strong> Sunbird uses Keycloak as the identity and authentication provider.</p>
 
-<h2 id="access-keycloak">Access Keycloak</h2>
-
-<p>Once the Sunbird services are set up, lets access the keycloak by following these steps:</p>
-
-<ul>
-  <li>For accessing Keycloak administration panel, you need to set right the URL address by changing the default URL to configured URL address.</li>
-</ul>
-
-<p>This is an example of default URL :      <strong>https://ab009.effgg.com/auth/admin</strong></p>
-
-<ul>
-  <li>
-    <p>Since you might have configured your URL address with some desired text, you need to replace the default URL address text with your   configured URL text.</p>
-  </li>
-  <li>
-    <p>After replacing the default URL text with the configured URL text.</p>
-  </li>
-</ul>
-
-<p>This is an example your configured URL : <strong>https://xxxxxx.yyyyyy.com/auth/admin</strong></p>
-
-<p>Where xxxxx and yyyy represent the characters of your configured URL text.</p>
-
-<p><strong>Note:</strong> The characters “xxxx”and “yyyy” are just used as an example text herein.</p>
-
-<p>Assuming that you have set up sunbird on <strong>sunbird.example.com</strong>.</p>
-
-<ul>
-  <li>You can open Keycloak administration panel simply by navigating to <strong>https://sunbird.example.com/auth/admin.</strong></li>
-</ul>
-
 <h2 id="setting-the-admin-password">Setting the Admin password</h2>
 
 <ul>
-  <li>Log into the docker container running keycloak by executing the following commands:</li>
-</ul>
-
-<pre>
-#Find where the container is running
-docker service ps keycloak1
-#If you are running all services on single server no need to SSH
-#If you are in a different server, SSH into node running keycloak
-ssh {node-running-keycloak-container}
-#Find the keycloak container ID
-docker ps | grep keycloak
-#Login to container
-docker exec -uroot -it {container-ID}
-</pre>
-
-<ul>
+  <li>Log into the server that Keycloak is running on</li>
   <li>Change to the path to keycloak root directory (most likely <code>/opt/jboss/keycloak</code>)</li>
   <li>Execute the following script to set the administrator user name and password</li>
 </ul>
@@ -62,11 +16,10 @@ docker exec -uroot -it {container-ID}
 $ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
 </code></p>
 
-<p>The script is executed creating the admin user and password.</p>
+<p>The script is executed creating the admin user and password. You can log into the administration console using these credentials. After you can view the administration console, follow the steps provided below to set clients and the secrets.</p>
 
-<p>You can log into the administration console using these credentials.</p>
-
-<p>After you can view the administration console, follow the steps provided below to set clients and the secrets.</p>
+<h2 id="access-keycloak-administration">Access Keycloak Administration</h2>
+<p>Assuming that you have set up sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to <strong>https://sunbird.example.com/auth/admin</strong></p>
 
 <h2 id="import-realm">Import Realm</h2>
 

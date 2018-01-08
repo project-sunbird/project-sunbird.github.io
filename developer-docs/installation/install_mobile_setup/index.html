@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.18/";
+			baseURL.href="/releases/release.1.2/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
+<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.18" />
-<meta name="buildNo" content="311" />
+<meta name="buildVersion" content="release.1.2" />
+<meta name="buildNo" content="672" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
-<link rel="stylesheet" href="css/style.css?20122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08012018"  />
+<link rel="stylesheet" href="css/style.css?08012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -163,7 +163,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses and Training</a>
+					<a href="features-documentation/coursetraining/">Courses</a>
 				</li>
 				<li>
 					<a href="features-documentation/library/">Library</a>
@@ -174,9 +174,11 @@
 				<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
 				</li>
+				<!--<li>
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
+                                </li>-->
 				<!--<li>
 					<a href="features-documentation/consumption/">Consume Study Material</a>
 				</li>-->
@@ -202,6 +204,9 @@
 					<h4 class="sidebar-group-title">Developer Documentation</h4>
 				</a>
 				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+					</li>
 					<li>
 						<a href="developer-docs/installation/">Installation Overview</a>
 					</li>
@@ -236,6 +241,31 @@
 								<!--<li>
 									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
 								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/tokens_sso/">Tokens</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/masterexchange_sso/">Master Data Exchange</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -283,9 +313,24 @@
 							</ul>
 						</div>
 					</li>
+					<li>
 					<!--<li>
-						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
-					</li>-->
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+								</li>						
+							</ul>
+						</div>
+					</li>
+					</li>-->	
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -372,35 +417,53 @@ $("a[href$='developer-docs/installation/install_mobile_setup/']").addClass("side
 			  </a>
 			  </span>
 			</p>
-          <p>This section details the sequence of steps required if you plan to release your own mobile app using the Sunbird mobile app codebase.</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#the-sunbird-mobile-app"><span class="tocnumber">1 .</span> <span class="toctext">The Sunbird Mobile app</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#steps-to-build-apk-from-git-repo"><span class="tocnumber">2 .</span> <span class="toctext">Steps to build APK from Git repo:</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="the-sunbird-mobile-app">The Sunbird Mobile app</h2>
+
+<p>The Sunbird mobile learning app is a delivery format that provides learners with the flexibility to learn anywhere, anytime, even without internet connection.The Sunbird Mobile app provides mobility to the feature rich learning platform.</p>
+
+<h2 id="steps-to-build-apk-from-git-repo">Steps to build APK from Git repo:</h2>
 
 <ul>
-  <li>Run <code>sudo ./deploy-apis.sh {implementation-name}-devops/ansible/inventories/{environment-name)</code></li>
-  <li>In console output of above script, copy the JWT token printed for <code>mobile_admin</code> user</li>
-  <li>Run</li>
-</ul>
-
-<pre>
-curl -X POST 
-
-sunbird-base-url/api/api-manager/v1/consumer/mobile_app/credential/register 
-  -H 'authorization: Bearer {mobile_admin_jwt_token}' 
-  -H 'content-type: application/json' 
-  -d '{
-    "request": {
-    "key": "{implementation-name}-mobile-app-{version-number}
-  }
-}'
-</pre>
-
-<p>Result will be</p>
-
-<p><code>js
-{"result":{"key":"(implementation-name)-mobile-app-(version-number)","secret":"(secret)"}}
-</code></p>
-
-<ul>
-  <li>Use the value of “key” and “secret” from the response above for <code>MOBILE_APP_KEY</code> and <code>MOBILE_APP_SECRET</code> configuration in mobile app.</li>
+  <li>Install Android Studio and configure it. For getting help in configuration process visit <a href="https://developer.android.com/studio/intro/studio-config.html" target="_blank">here</a></li>
+  <li>Clone the repsitory to android studio by executing following command in console:
+git clone  <code>https://github.com/project-sunbird/sunbird-android</code></li>
+  <li>In Android studio, rename <code>gradle.properties.example</code> to <code>gradle.properties</code>.</li>
+  <li>Add you keystore detail <code>keystore</code>, <code>keystore_password</code>, <code>key_alias</code> and <code>key_password</code> in <code>gradle.properties</code></li>
+  <li>Replace <code>release_fabric_api_key</code> in <code>gradle.properties</code> with your fabric API Key.</li>
+  <li>To get the API key, you need to create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register your app. After registering your app you will get the API Key which you need to add in manifest file (Every application has an AndroidManifest.xml file (with precisely that name) in its root directory.</li>
+  <li>Replace PRODUCER_ID, CHANNEL_ID, MOBILE_APP_KEY and MOBILE_APP_SECRET in <code>gradle.properties</code> for your dev, release and production build variants.</li>
+  <li>You need to generate key and secret for <code>mobile_app</code> user using JWT token of <code>mobile_admin</code> user.</li>
+  <li>You can checkout the steps to generate key and secret <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app" target="_blank">here</a></li>
+  <li>If you want to <code>change the app name</code> go to <code>sunbird-android/app/src/main/res/values/strings.xml</code> and enter the required app name.</li>
+  <li>For changing the app logo navigate to this loctaion in android studio environment <code>sunbird-android/app/src/main/res</code>
+    <ul>
+      <li>In all mipmap folders and drawable folders you need to replace <code>ic_launcher.png</code> image with your desired logo.</li>
+      <li>Logo name should match exactly this text <code>ic_launcher.png</code>.</li>
+    </ul>
+  </li>
+  <li>If you would like to show contents only to a given channelId in your app, you need to change the value of <code>FILTER_CONTENT_BY_CHANNEL_ID</code> to true, by default it’s set to false in <code>build.gradle</code>.</li>
+  <li>Give your external path value in <code>Constants.class EXTERNAL_PATH</code>.</li>
 </ul>
 
           

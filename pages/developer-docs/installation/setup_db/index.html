@@ -3,7 +3,6 @@
 <ul>
   <li>Cassandra</li>
   <li>Postgres</li>
-  <li>Mongo</li>
   <li>Elasticsearch</li>
 </ul>
 
@@ -21,18 +20,22 @@
   <li>Cloning the repository</li>
 </ul>
 
-<p>Clone the sunbird-devops repo using <code>git clone [https://github.com/project-sunbird/sunbird-devops.git</code>](https://github.com/project-sunbird/sunbird-devops.git){:target=”_blank”} in the console.</p>
+<p>Clone the sunbird-devops repo using the following command:
+<code>git clone https://github.com/project-sunbird/sunbird-devops.git</code>in the console.</p>
 
 <ul>
-  <li>Configuring environment</li>
+  <li>Configuring the environment</li>
 </ul>
 
-<p>Run <code>./sunbird-devops/deploy/generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>.</p>
+<p>For configuring the environment execute the following command:</p>
 
-<p>E.g. <code>./sunbird-devops/deploy/generate-config.sh mysb production deploy</code>.</p>
+<p>Run <code>cd ./sunbird-devops/deploy &amp;&amp; ./generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>.</p>
 
-<p>This creates <code>mysb-devops</code> directory with <em>incomplete</em> configurations. 
-The missing configuration needs to be done afterwards.</p>
+<p>E.g. <code>cd ./sunbird-devops/deploy &amp;&amp; ./generate-config.sh mysb production deploy</code>.</p>
+
+<p>This creates <code>mysb-devops</code> directory with <em>incomplete</em> configurations.</p>
+
+<p>The missing configuration needs to be done afterwards.</p>
 
 <ul>
   <li>Modifying configurations</li>
@@ -40,7 +43,7 @@ The missing configuration needs to be done afterwards.</p>
 
 <p>Modify all the configurations under <code># DB CONFIGURATION</code> block in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code></p>
 
-<p>The estimated  run time for  preparation to Set up Databases is 15-30mins and another 30 mins to complete complete the process.</p>
+<p>The estimated run time for  preparation to Set up Databases is 15-30 mins and another 30 mins to complete complete the process.</p>
 
 <h3 id="creating-databases-using-automation">Creating Databases using automation</h3>
 
@@ -72,16 +75,22 @@ The missing configuration needs to be done afterwards.</p>
 
 <p>Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></p>
 
-<p>Once DB initialisation is done then load following to CSV files.
- 1. pageMgmt.csv
- 2. pageSection.csv
-  File Locations: https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources</p>
+<p>Once DB initialisation is done then load following to .CSV files:</p>
 
-<p>Command to run those files</p>
+<ul>
+  <li>pageMgmt.csv</li>
+  <li>pageSection.csv</li>
+</ul>
 
-<p>// change the path of csv file
- a. COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,organisationid ,portalmap ,updatedby ,updateddate ) FROM ‘/tmp/cql/pageMgmt.csv’;</p>
+<p>These .CSV files can be found <a href="https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources" target="_blank">here</a></p>
 
-<p>b. COPY sunbird.page_section(id, alt,createdby ,createddate ,description ,display ,imgurl ,name,searchquery , sectiondatatype ,status , updatedby ,updateddate) FROM   ‘/tmp/cql/pageSection.csv’;</p>
+<p>For loading the .CSV files follow these steps:</p>
 
-<p><strong><em>Note:</em></strong> The automation walk-through provided (PART 4), shows you the creation of databases and the initialization process.</p>
+<pre><code>     Change the path of .csv file
+     
+     a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate)   FROM '/tmp/cql/pageMgmt.csv';
+
+     b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
+</code></pre>
+
+<p><strong><em>Note:</em></strong> The automation walk-through provided <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif" target="_blank">Part 4</a>, shows you the creation of databases and the initialization process.</p>

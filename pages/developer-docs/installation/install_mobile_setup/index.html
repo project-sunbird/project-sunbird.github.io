@@ -1,30 +1,27 @@
-<p>This section details the sequence of steps required if you plan to release your own mobile app using the Sunbird mobile app codebase.</p>
+<h2 id="the-sunbird-mobile-app">The Sunbird Mobile app</h2>
+
+<p>The Sunbird mobile learning app is a delivery format that provides learners with the flexibility to learn anywhere, anytime, even without internet connection.The Sunbird Mobile app provides mobility to the feature rich learning platform.</p>
+
+<h2 id="steps-to-build-apk-from-git-repo">Steps to build APK from Git repo:</h2>
 
 <ul>
-  <li>Run <code>sudo ./deploy-apis.sh {implementation-name}-devops/ansible/inventories/{environment-name)</code></li>
-  <li>In console output of above script, copy the JWT token printed for <code>mobile_admin</code> user</li>
-  <li>Run</li>
-</ul>
-
-<pre>
-curl -X POST 
-
-sunbird-base-url/api/api-manager/v1/consumer/mobile_app/credential/register 
-  -H 'authorization: Bearer {mobile_admin_jwt_token}' 
-  -H 'content-type: application/json' 
-  -d '{
-    "request": {
-    "key": "{implementation-name}-mobile-app-{version-number}
-  }
-}'
-</pre>
-
-<p>Result will be</p>
-
-<p><code>js
-{"result":{"key":"(implementation-name)-mobile-app-(version-number)","secret":"(secret)"}}
-</code></p>
-
-<ul>
-  <li>Use the value of “key” and “secret” from the response above for <code>MOBILE_APP_KEY</code> and <code>MOBILE_APP_SECRET</code> configuration in mobile app.</li>
+  <li>Install Android Studio and configure it. For getting help in configuration process visit <a href="https://developer.android.com/studio/intro/studio-config.html" target="_blank">here</a></li>
+  <li>Clone the repsitory to android studio by executing following command in console:
+git clone  <code>https://github.com/project-sunbird/sunbird-android</code></li>
+  <li>In Android studio, rename <code>gradle.properties.example</code> to <code>gradle.properties</code>.</li>
+  <li>Add you keystore detail <code>keystore</code>, <code>keystore_password</code>, <code>key_alias</code> and <code>key_password</code> in <code>gradle.properties</code></li>
+  <li>Replace <code>release_fabric_api_key</code> in <code>gradle.properties</code> with your fabric API Key.</li>
+  <li>To get the API key, you need to create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register your app. After registering your app you will get the API Key which you need to add in manifest file (Every application has an AndroidManifest.xml file (with precisely that name) in its root directory.</li>
+  <li>Replace PRODUCER_ID, CHANNEL_ID, MOBILE_APP_KEY and MOBILE_APP_SECRET in <code>gradle.properties</code> for your dev, release and production build variants.</li>
+  <li>You need to generate key and secret for <code>mobile_app</code> user using JWT token of <code>mobile_admin</code> user.</li>
+  <li>You can checkout the steps to generate key and secret <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app" target="_blank">here</a></li>
+  <li>If you want to <code>change the app name</code> go to <code>sunbird-android/app/src/main/res/values/strings.xml</code> and enter the required app name.</li>
+  <li>For changing the app logo navigate to this loctaion in android studio environment <code>sunbird-android/app/src/main/res</code>
+    <ul>
+      <li>In all mipmap folders and drawable folders you need to replace <code>ic_launcher.png</code> image with your desired logo.</li>
+      <li>Logo name should match exactly this text <code>ic_launcher.png</code>.</li>
+    </ul>
+  </li>
+  <li>If you would like to show contents only to a given channelId in your app, you need to change the value of <code>FILTER_CONTENT_BY_CHANNEL_ID</code> to true, by default it’s set to false in <code>build.gradle</code>.</li>
+  <li>Give your external path value in <code>Constants.class EXTERNAL_PATH</code>.</li>
 </ul>

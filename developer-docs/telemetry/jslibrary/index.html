@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<base id="baseURL" href="/" />
+<script>
+	// Dynamic Base URL
+	function getBase(){
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		baseURL = document.getElementById('baseURL');
+		if (excludedSites.indexOf(window.location.host) > -1){
+			baseURL.href="/";
+		} else {
+			baseURL.href="/releases/release.1.2/";
+		}
+	}
+	getBase();
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=10, user-scalable=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+<meta name="msapplication-TileColor" content="#65d3f7">
+<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
+
+<title>Sunbird Standalone telemetry JS library</title>
+<meta name="description" content="Sunbird Site telemetry specification of Sunbird"/>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
+<meta http-equiv="Expires" content="600" />
+
+<!--Build Details-->
+<meta name="buildVersion" content="release.1.2" />
+<meta name="buildNo" content="672" />
+<!--/Build Details-->
+
+<!-- CDN's-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- /CDN's-->
+
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08012018"  />
+<link rel="stylesheet" href="css/style.css?08012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08012018"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-106552125-1');
+</script>
+
+	
+		<meta name="robots" content="index, follow">
+	
+  </head>
+  <body id="body">
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <div class="inner__sidebar">
+        <div id="">
+	
+		<div class="search-cover">
+	<form method="get" action="https://www.google.com/search" target="_blank">
+		<input type="text" value="" name="q" placeholder="Search"/ class="search-input" title="Enter keyword to search">
+		<input type="hidden" value="en" name="hl" />
+		<input type="hidden" name="sitesearch" value="http://www.sunbird.org" />
+		<input type="hidden" value="lang_en" name="lr" />
+		<button type="submit" onclick="submit()" class="search-btn" title="Search">
+			<i class="fa fa-search"></i>
+		</button>
+	</form>
+</div>
+
+	
+	<div class="sidebar-wrapper developer-docs-telemetry">
+		<div class="" >
+			<a href="architecture/">
+				<h4 class="sidebar-group-title">Architecture</h4>
+			</a>
+			<ul class="sidebar-group architecture">
+				<li>
+					<a href="architecture/overview/">Overview</a>
+				</li>
+				<li>
+					<a href="architecture/design/">Design</a>
+				</li>
+				<li>
+					<div class="">
+						<a href="architecture/views/elementryview/">Views</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="architecture/views/logical/">Logical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/physical/">Physical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/conceptual/">Conceptual View</a>
+							</li>
+							<li>
+								<a href="architecture/views/deployment/">Deployment View</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="architecture/usecase/">Use Cases</a>
+				</li>
+			</ul>
+			<a href="features-documentation/">
+				<h4 class="sidebar-group-title">Product Features</h4>
+			</a>
+			<ul class="sidebar-group features-documentation" >
+				<li>
+					<a href="features-documentation/onboarding/">Onboarding</a>
+				</li>
+				<li>
+					<a href="features-documentation/login/">Login</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_org/">Register Organizations</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_user/">Register Users</a>
+				</li>
+				<li>
+					<a href="features-documentation/userrolepermission/">User Roles and Permissions</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/user_type/">Types of Users</a>
+							</li>
+							<li>
+								<a href="features-documentation/userprofile/">User Profile</a>
+							</li>
+							<li>
+								<a href="features-documentation/workspace/">Workspace</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="features-documentation/coursetraining/">Courses</a>
+				</li>
+				<li>
+					<a href="features-documentation/library/">Library</a>
+				</li>
+				<li>
+					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
+				</li>
+				<li>
+					<a href="features-documentation/contentcreation/">Content Creation</a>
+				</li>
+				<!--<li>
+				<li>
+					<a href="features-documentation/contenteditor/">Content Editor</a>
+				</li>
+                                </li>-->
+				<!--<li>
+					<a href="features-documentation/consumption/">Consume Study Material</a>
+				</li>-->
+				</li>
+				<li>
+					<div class="">
+						<a href="features-documentation/guidelines/" >Guidelines</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/intellectualproperty/">Intellectual Property</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<!--<li>
+					<a href="features-documentation/reportinganalytics/">Reporting and Analytics</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
+				</li>
+				</ul>
+				<a href="developer-docs/">
+					<h4 class="sidebar-group-title">Developer Documentation</h4>
+				</a>
+				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+					</li>
+					<li>
+						<a href="developer-docs/installation/">Installation Overview</a>
+					</li>
+					<!--<li>
+						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+					</li>-->
+					<li>
+						<a  href="developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/check_installation/">Check Installation</a>
+								</li>
+								<!--<li>
+									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
+								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/tokens_sso/">Tokens</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/masterexchange_sso/">Master Data Exchange</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
+					</li>
+					<!--<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/extending_sunbird/">Extending Sunbird</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/customize_sunbird/">Customizing Sunbird</a>
+						</div>
+					</li>-->
+					<li>
+						<div class="">
+							<a  href="apis/">API References</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a>
+								</li>
+								<li>
+									<a href="apis/content/" target="_blank">Content APIs</a>
+								</li>
+								<li>
+									<a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a>
+								</li>
+								<li>
+									<a href="apis/datasyncapi/" target="_blank">Data Sync APIs</a>
+								</li>
+								<li>
+									<a href="apis/metricsapi/" target="_blank">Metrics APIs</a>
+								</li>
+								<li>
+									<a href="apis/notificationapi/" target="_blank">Notification APIs</a>
+								</li>
+								<li>
+									<a href="apis/orgapi/" target="_blank">Organisation Management APIs</a>
+								</li>
+								<li>
+									<a href="apis/userapi/" target="_blank">User APIs</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+					<!--<li>
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+								</li>						
+							</ul>
+						</div>
+					</li>
+					</li>-->	
+					<li>
+						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
+					</li>
+				</div>
+			</li>
+		</ul>
+		<a href="faqs/">
+			<h4 class="sidebar-group-title">Frequently asked questions</h4>
+		</a>
+		<ul class="sidebar-group faqs" >
+			<li>
+				<a href="faqs/audience/">Audience</a>
+			</li>
+			<li>
+				<a href="faqs/content_format/">Content Format</a>
+			</li>
+			<li>
+				<a href="faqs/content_repo/">Content Repositories</a>
+			</li>
+			<li>
+				<a href="faqs/contentreviews/">Content Review</a>
+			</li>
+			<li>
+				<a href="faqs/content_types/">Content Types</a>
+			</li>
+			<li>
+				<a href="faqs/content_upload/">Content Upload</a>
+			</li>
+			<li>
+				<a href="faqs/feature/">Features</a>
+			</li>
+			<li>
+				<a href="faqs/fixerrors/">Fix Errors</a>
+			</li>
+			<li>
+				<a href="faqs/helpsupport/">Help Support</a>
+			</li>
+			<li>
+				<a href="faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
+			</li>
+			<li>
+				<a href="faqs/registrationenrolment/">Registration and Enrollment</a>
+			</li>
+			<li>
+				<a href="faqs/signin/">Sign In</a>
+			</li>
+			<li>
+				<a href="faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
+			</li>
+			<li>
+				<a href="faqs/user_rightspermissions/">Users Rights and Permission</a>
+			</li>
+		</ul>
+		<a href="glossary/">
+			<h4 class="sidebar-group-title">Glossary</h4>
+		</a>
+	</div>
+</div>
+<script>
+$("a[href$='developer-docs/telemetry/jslibrary/']").addClass("sidebar-link-selected");
+</script>
+
+      </div>
+    </nav>
+    <div class="content">
+      <div class="inner__content header" id="heading">
+        <h1>Standalone telemetry JS library </h1>
+      </div>
+
+      <div id="main-content" class="inner__content">
+			<p class="edit-para text-right">
+				<span>
+			<a target="_blank" class="contribute" href="contributions/contribution_guidelines">
+				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;
+			  
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/telemetry/jslibrary.md">
+				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+			  </a> 
+			  | 
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				  Report
+			  </a>
+			  </span>
+			</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#need-for-a-standalone-telemetry-js-library"><span class="tocnumber">1 .</span> <span class="toctext">Need for a standalone telemetry JS library</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#prerequisites-for-the-telemetry-js-library"><span class="tocnumber">2 .</span> <span class="toctext">Prerequisites for the telemetry JS library</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#configure-the-telemetry-js-library"><span class="tocnumber">3 .</span> <span class="toctext">Configure the Telemetry JS library</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#telemetry-js-library-api-methods"><span class="tocnumber">4 .</span> <span class="toctext">Telemetry JS library API methods</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#how-to-use-the-telemetry-js-library"><span class="tocnumber">5 .</span> <span class="toctext">How to use the telemetry JS library</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="need-for-a-standalone-telemetry-js-library">Need for a standalone telemetry JS library</h2>
+
+<p>The purpose of a standalone JS library for telemetry is to facilitate capture and distribution of telemetry data by users who would like to use their own apps, content players or portals.</p>
+
+<p>We chose to use a JS library for the following reasons:</p>
+
+<ul>
+  <li>
+    <p>All the telemetry events that are generated and synced to the server have the same format (field data types and time zone value)</p>
+  </li>
+  <li>
+    <p>It is easy to upgrade to new versions, in case of major changes in telemetry</p>
+  </li>
+  <li>
+    <p>There is effortless backward compatibility, as changes are handled within the telemetry library. Any upgrade of the telemetry library does not require code changes in the content</p>
+  </li>
+  <li>
+    <p>There are reduced number of API calls</p>
+  </li>
+  <li>
+    <p>There are simple API methods to generate the complete telemetry event as only the required fields are passed</p>
+  </li>
+</ul>
+
+<h2 id="prerequisites-for-the-telemetry-js-library">Prerequisites for the telemetry JS library</h2>
+
+<p>The following are prerequisites to use or integrate the JS library:</p>
+
+<ul>
+  <li>
+    <p>JQuery library should be available</p>
+  </li>
+  <li>
+    <p>Valid Authtoken and Key to make API calls</p>
+  </li>
+</ul>
+
+<p><strong>Note:</strong> For details on generating and using the Authtoken and Key, refer to the section</p>
+
+<ul>
+  <li>Device ID value</li>
+</ul>
+
+<p><strong>Note:</strong> For details on how to get the device ID value, refer to <a href="https://android-developers.googleblog.com/2011/03/identifying-app-installations.html">https://android-developers.googleblog.com/2011/03/identifying-app-installations.html</a></p>
+
+<h2 id="configure-the-telemetry-js-library">Configure the Telemetry JS library</h2>
+
+<p>This JS library helps to generate telemetry events. These events sync to the server or data-pipeline in a batch as defined in the configuration. To log telemetry events, the user has to call the start method by passing the configuration along with other parameters.</p>
+
+<p><strong>Note:</strong> All telemetry events sync only to the server or data-pipeline, when connected to the Internet.</p>
+
+<p>Telemetry events are generated based on the configuration of the telemetry library.</p>
+
+<p>
+  <strong>Required Configuration (Context)</strong>
+</p>
+
+<table>
+  <tr>
+    <td>Property</td>
+    <td>Description</td>
+    <td>Required</td>
+    <td>Default Value</td>
+  </tr>
+  <tr>
+    <td>pdata</td>
+    <td>Producer data. It is an object containing id, version and pid.</td>
+    <td>true</td>
+    <td>Defaults to genie ex : {"id": "genie", "ver": "6.5.2567" pid:""}</td>
+  </tr>
+  <tr>
+    <td>channel</td>
+    <td>It is an string containing unique channel name.</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>uid</td>
+    <td>It is an string containing user id.</td>
+    <td>true</td>
+    <td>defaults to "anonymous"</td>
+  </tr>
+  <tr>
+    <td>did</td>
+    <td>It is an string containing unique device id. To generate this value refer to here . ANDROID_ID is generally used</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>authtoken</td>
+    <td>It is an string containing consumer token to access the API</td>
+    <td>true</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Property</td>
+    <td>Description</td>
+    <td>Required</td>
+    <td>Default Value</td>
+  </tr>
+  <tr>
+    <td>env</td>
+    <td>It is an string containing Unique environment where the event has occurred</td>
+    <td>true</td>
+    <td>defaults to "ContentPlayer"</td>
+  </tr>
+</table>
+
+<p>
+  <strong>Additional Configuration</strong>
+</p>
+
+<table>
+  <tr>
+    <td>Property</td>
+    <td>Description</td>
+    <td>Required</td>
+    <td>Default Value</td>
+  </tr>
+  <tr>
+    <td>sid</td>
+    <td>It is an string containing user session id.</td>
+    <td>optional</td>
+    <td>defaults to uuid</td>
+  </tr>
+  <tr>
+    <td>batchsize</td>
+    <td>It is an int containing number of events count to sync at a time. Can be configured from min value 10 to max value 1000.</td>
+    <td>optional</td>
+    <td>defaults to 20</td>
+  </tr>
+  <tr>
+    <td>mode</td>
+    <td>It is an string which defines to identify preview used by the user to play/edit/preview.</td>
+    <td>optional</td>
+    <td>defaults to "play"</td>
+  </tr>
+  <tr>
+    <td>host</td>
+    <td>It is an string containing API endpoint host.</td>
+    <td>optional</td>
+    <td>defaults to "https://api.ekstep.in"</td>
+  </tr>
+  <tr>
+    <td>endpoint</td>
+    <td>It is an string containing API endpoint. Please don't change default value. Update this only when the data is proxied</td>
+    <td>optional</td>
+    <td>Defaults to "/v3/telemetry"</td>
+  </tr>
+  <tr>
+    <td>tags</td>
+    <td>It is an array. It can be used to tag devices so that summaries/metrics can be derived via specific tags. Helpful during analysis</td>
+    <td>optional</td>
+    <td>Defaults to []</td>
+  </tr>
+  <tr>
+    <td>cdata</td>
+    <td>It is an array. Correlation data. Can be used to correlate multiple events. Generally used to track user flow</td>
+    <td>optional</td>
+    <td>Defaults to []</td>
+  </tr>
+  <tr>
+    <td>dispatcher</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<p>
+  <strong>Sample:</strong>
+</p>
+
+<pre>
+{
+  "pdata": {
+    "id": "genie",
+    "ver": "6.5.2567",
+    "pid": ""
+  },
+
+  "env": "ContentPlayer",
+  "channel": "in.ekstep",
+  "did": "20d63257084c2dca33f31a8f14d8e94c0d939de4",
+  "authtoken": "XXXX",
+  "uid": "anonymous",
+  "sid": "85e8a2c8-bb8e-4666-a21b-c29ec590d740",
+  "batchsize": 20,
+  "mode": "play",
+  "host": "https://api.ekstep.in",
+  "endpoint": "/v3/telemetry",  
+  "tags": [],
+  "cdata": []
+}
+</pre>
+
+<p>
+  <strong>Dispatcher:</strong>
+</p>
+
+<p>User can define custom dispatcher to override the default functionality of telemetry sync. By default telemetry events will send to default server/host. User can override this default functionality by defining his own “dispatcher” object to handle telemetry events.</p>
+
+<pre>
+var customDispatcher = {
+    dispatch: function(event){
+        // User defined logic to send telemetry to server or store locally etc..
+    }
+};
+</pre>
+
+<p>Send this object as dispatcher in the above sample configuration (“dispatcher”:customDispatcher).</p>
+
+<h2 id="telemetry-js-library-api-methods">Telemetry JS library API methods</h2>
+
+<p>Every API method has an associated event. The following API methods log details of the associated telemetry event.</p>
+
+<ul>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#start">Start</a> - This method initializes capture of telemetric data associated to the start of user action</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#impression">Impression</a> - This method is used to capture telemetry for user visits to  a specific page.</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#interact">Interact</a> - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#access">Assess </a>- This method is used to capture user assessments that happen while playing content.</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#response">Response</a> - This method is used to capture user responses. For example; response to a poll, calendar event or a question.</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#interrupt">Interrupt</a> - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#end">End</a> - This method is used to capture closure after all the activities are completed</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#feedback">Feedback</a> - This method is used to capture user feedback</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#share">Share</a> - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry//jslibrary/#audit">Audit</a></p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#error">Error</a> - This method is used to capture when users face an error</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#heartbeat">Heartbeat</a> -</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#log">Log</a> - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#search">Search</a> - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#metrics">Metrics</a></p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#summary">Summary</a></p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/jslibrary/#exdata">Exdata</a> - This method is used as a generic wrapper event to capture encrypted or serialized data</p>
+  </li>
+</ul>
+
+<h5 id="start">Start</h5>
+
+<p>This API is used to log telemetry when users view content or initiate game play</p>
+
+<pre>
+start: function(config, contentId, contentVer, data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+{
+  "config": Object, //Config object
+  "contentId": String, //Required. Id of the content
+  "contentVer": String, //Required. Version of the content. Defaults to "1.0"
+  "data": { // Required. event data
+
+    "type": String, //Required.  app, session, editor, player, workflow, assessment
+    "mode": "", //Required. mode of preview: preview, edit or play 
+    "stageid": "" //Required. stage id where the play has been initiated
+  }
+}
+</pre>
+
+<h5 id="impression">Impression</h5>
+
+<p>This API is used to log telemetry when users visit a specific page.</p>
+
+<pre>
+impression: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+
+{
+
+    "type": String, //Required. Impression type (list, detail, view, edit, workflow, search)
+
+    "subtype": String, //Optional. Additional subtype. "Paginate", "Scroll"
+
+    "pageid": String, //Required.  Unique page id
+
+    "itype": "", // type of interaction - SWIPE, SCRUB (fast forward using page thumbnails) or AUTO
+
+    "stageto": "" // game level, stage of page id to which the navigation was done
+
+}
+</pre>
+
+<h5 id="interact">Interact</h5>
+
+<p>This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure</p>
+
+<pre>
+interact: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "type": "", // Required. Type of interaction TOUCH,DRAG,DROP,PINCH,ZOOM,SHAKE,ROTATE,SPEAK,LISTEN,WRITE,DRAW,START,ENDCHOOSE,ACTIVATE,SHOW,HIDE,SCROLL,HEARTBEAT,OTHER
+  "subtype": "", // Optional. Additional types for a global type. For ex: for an audio the type is LISTEN and thesubtype can be one of PLAY,PAUSE,STOP,RESUME,END
+  "id": "", // Required. Resource (button, screen, page, etc) id on which the interaction happened - use systemidentifiers when reporting device events
+  "pageid": "", // Optional. Stage or page id on which the event happened
+  "extra": { // Optional. Extra attributes for an interaction
+    "pos": [{"x":,"y":,"z":}], // Array of positional attributes. For ex: Drag and Drop has two positional attributes. One where the drag has started and the drop point
+    "values": [], // Array of values, e.g. for timestamp of audio interactions
+    "tid": "", // When interaction is between multiple resources, (e.g. drag and drop) - target resource id
+    "uri": "" // Unique external resource identifier if any (for recorded voice, image, etc.)
+  }
+}
+</pre>
+
+<h5 id="assess">Assess</h5>
+
+<p>This API is used to log telemetry of assessments that have occured when the user is viewing content</p>
+
+<pre>
+assess: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "item": QUESTION, // Required. Question Data
+  "pass": "", // Required. Yes, No. This is case-sensitive. default value: No.
+  "score": , // Required. Evaluated score (Integer or decimal) on answer(between 0 to 1), default is 1 if pass=YES or 0 if pass=NO. 
+  "resvalues": [{"id":"value"}], // Required. Array of key-value pairs that represent child answer (result of this assessment)
+  "duration":  // Required. time taken (decimal number) for this assessment in seconds
+}
+
+QUESTION = {
+  "id": "", // unique assessment question id. its an required property.
+  "maxscore", // user defined score to this assessment/question.
+  "exlength": , // expected time (decimal number) in seconds that ideally child should take
+  "params": [ // Array of parameter tuples
+     {"id":"value"} // for ex: if var1 is substituted with 5 apples the parameter is {"var1":"5"}
+  ],
+  "uri": "", // Unique external resource identifier if any (for recorded voice, image, etc.)
+  "desc": "short description",
+  "title": "title",
+  "mmc": [], // User defined missing micros concepts
+  "mc": []   // micro concepts list
+}
+</pre>
+
+<h5 id="response">Response</h5>
+
+<p>This API is used to log telemetry of user response. For example; Responded to assessments.</p>
+
+<pre>
+response: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data  - Object //Required
+{
+  "target": TARGET, // Required. Target of the response
+  "qid": "", // Required. Unique assessment/question id
+  "type": "", // Required. Type of response. CHOOSE, DRAG, SELECT, MATCH, INPUT, SPEAK, WRITE
+  "values": [{"key":"value"}] // Required. Array of response tuples. For ex: if lhs option1 is matched with rhs optionN - [{"lhs":"option1"}, {"rhs":"optionN"}]
+}
+
+TARGET = {
+  "id": "", // Required. unique id for the target
+  "ver": "", // Required. version of the target
+  "type": "", // Required. Type of the target
+  "parent": {
+    "id": "", // Optional. parent id of the object
+    "type": "" // Optional. parent type of the object. Required if parentid is present.
+  }
+}
+</pre>
+
+<h5 id="interrupt">Interrupt</h5>
+
+<p>This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.</p>
+
+<pre>
+interrupt: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "type": "", // Required. Type of interuption
+  "pageid": "", // Optional. Current Stage/Page unique id on which interuption occured
+  "eventid": "" // Optional. unique event ID
+}
+</pre>
+
+<h5 id="end">End</h5>
+
+<p>This API is used to log telemetry while the user is closing or exiting the content or game</p>
+
+<pre>
+end: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "contentId": "", // Required. Id of the content
+  "type": , // Required. app, session, editor, player, workflow, assessment
+  "duration": , // Required. Total duration from start to end in seconds
+  "pageid": "", // Optional. Page/Stage id where the end has happened.
+  "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+}
+</pre>
+
+<h5 id="feedback">Feedback</h5>
+
+<p>This API is used to log telemetry of feedback provided by the user.</p>
+
+<pre>
+// To log content start/play event
+feedback: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "contentId": "", // Required. Id of the content
+  "rating": 3, // Optional. Numeric score (+1 for like, -1 for dislike, or 4.5 stars given in a rating)
+  "comments": "User entered feedback" // Optional. Text feedback (if any)
+}
+</pre>
+
+<h5 id="share">Share</h5>
+
+<p>This API is used to log telemetry when a user shares any content with other users.</p>
+
+<pre>
+// To log content start/play event
+share: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "dir": "", // In/Out
+  "type": "", // File/Link/Message
+  "items": [{ // Required. array of items shared
+    "obj": {
+      "id": "",
+      "type": "",
+      "ver": ""
+    },
+    "params": [
+      {"key": "value"}
+    ],
+    "origin": { // Origin of the share file/link/content
+      "id": "", // Origin id
+      "type": "" // Origin type
+    },
+    "to": {
+      "id": "",
+      "type": ""
+    }
+  }]
+}
+</pre>
+
+<h5 id="audit">Audit</h5>
+
+<p>This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.</p>
+
+<pre>
+audit: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "edata": {
+    "props": [""], // Updated properties
+    "state": "", // Optional. Current state
+    "prevstate": "" // Optional. Previous state
+  }
+}
+</pre>
+
+<h5 id="error">Error</h5>
+
+<p>This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games.</p>
+
+<pre>
+error: function(error) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+error - Object //Required
+{
+  "err": "", // Required. Error code
+  "errtype": "", // Required. Error type classification - "SYSTEM", "MOBILEAPP", "CONTENT"
+  "stacktrace": "", // Required. Detailed error data/stack trace
+}
+</pre>
+
+<h5 id="heartbeat">Heartbeat</h5>
+
+<p>This API is used to log telemetry for heartbeat event to denote that the process is running.</p>
+
+<pre>
+heartbeat: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  {
+  "edata": {
+  }
+}
+</pre>
+
+<h5 id="log">Log</h5>
+
+<p>This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.</p>
+
+<pre>
+log: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "type": "", // Required. Type of log (system, process, api_access, api_call, job, app_update etc)
+  "level": "", // Required. Level of the log. TRACE, DEBUG, INFO, WARN, ERROR, FATAL
+  "message": "", // Required. Log message
+  "params": [{"key":"value"}] // Optional. Additional params in the log message
+}
+</pre>
+
+<h5 id="search">Search</h5>
+
+<p>This API is used to log telemetry when a user triggers a search for any content, item or asset</p>
+
+<pre>
+search: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object - Required
+{
+  "type": "", // Required. content, assessment, asset 
+  "query": "", // Required. Search query string 
+  "filters": {}, // Optional. Additional filters
+  "sort": {}, // Optional. Additional sort parameters
+  "correlationid": "", // Optional. Server generated correlation id (for mobile app's telemetry)
+  "size": 333, // Required. Number of search results
+  "topn": [{}] // Required. top N (configurable) results with their score
+}
+</pre>
+
+<h5 id="metrics">Metrics</h5>
+
+<p>This API is used to log telemetry for service business metrics (also accessible via health API).</p>
+
+<pre>
+metrics: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object - Required
+{
+  "edata": {
+    "metric1": Int,
+    "metric2": Int
+    /// more metrics, each is a key value
+  }
+}
+</pre>
+
+<h5 id="summary">Summary</h5>
+
+<p>This API is used to log telemetry summary event</p>
+
+<pre>
+summary: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object - Required
+{
+  "edata": {
+    "type": "", // Required. Type of summary. Free text. "session", "app", "tool" etc
+    "mode": "", // Optional.
+    "starttime": Long, // Required. Epoch Timestamp of app start. Retrieved from first event.
+    "endtime": Long, // Required. Epoch Timestamp of app end. Retrieved from last event.
+    "timespent": Double, // Required. Total time spent by visitor on app in seconds excluding idle time.
+    "pageviews": Long, // Required. Total page views per session(count of CP_IMPRESSION)
+    "interactions": Long, // Required. Count of interact events
+    "envsummary": [{ // Optional
+        "env": String, // High level env within the app (content, domain, resources, community)
+        "timespent": Double, // Time spent per env
+        "visits": Long // count of times the environment has been visited
+    }],
+    "eventssummary": [{ // Optional
+        "id": String, // event id such as CE_START, CE_END, CP_INTERACT etc.
+        "count": Long // Count of events.
+    }],
+    "pagesummary": [{ // Optional
+        "id": String, // Page id
+        "type": String, // type of page - view/edit
+        "env": String, // env of page
+        "timespent": Double, // Time taken per page
+        "visits": Long // Number of times each page was visited
+    }]
+  }
+}
+</pre>
+
+<h5 id="exdata">Exdata</h5>
+
+<p>This API is used to log telemetry for external data, while playing content</p>
+
+<pre>
+exdata: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object - Required
+
+{
+
+  type - Free flowing text. For ex: partnerdata, xapi etc
+
+  .... Serialized data (can be either encrypted/encoded/stringified)
+
+}
+</pre>
+
+<h2 id="how-to-use-the-telemetry-js-library">How to use the telemetry JS library</h2>
+
+<p>To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.</p>
+
+<pre>
+&lt;!-- External Libraries --&gt;
+  &lt;script src="[relative_path]/jquery.min.js"&gt;&lt;/script&gt;
+  
+  &lt;!-- Telemetry JS library --&gt;
+  &lt;script src="[relative_path]/telemetry.min.js"&gt;&lt;/script&gt;
+  &lt;script src="[relative_path]/auth-token-generator.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    function init() {
+          // Generate auth token
+          // Key: Partner generated key
+          // secret: partner secret value 
+          var token = AuthTokenGenerate.generate(key, secret);
+          config.authToken = token;
+          startEdata = {};
+          EkTelemetry.start(config, "content_id, "contetn_ver", startEdata );
+      }
+  init()
+  &lt;/script&gt;
+</pre>
+
+
+          
+          <hr />
+          
+          <p class="edit-para text-right">
+			<!--<a target="_blank"  class="" href="">
+				  <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/telemetry/jslibrary.md" title="Fix this page">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
+		  </p>
+		  <a href="developer-docs/telemetry/jslibrary/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+          
+      </div>
+    </div>
+    <div class="page-footer">
+		<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="row">
+				
+			<div class="col-md-4 col-sm-12">
+			</div>
+			
+			<div class="col-md-2 col-sm-6 ">
+				<ul>
+					<li><a href="about/">About Sunbird</a></li>
+					<li><a href="contact/">Contact Us</a></li>
+					<li><a href="privacy-policy/">Privacy Policy</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-2 col-sm-6 sideline">
+				<ul>
+					<li><a href="docs/">Documentation</a></li>
+					<li><a href="features/">Features</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-12">
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+  </div>
+  <script type="text/javascript">
+	//TOC Toggle
+    $(function() {
+        $.toc.clickHideButton();
+    });
+    //Scroll to top
+    $(document).ready(function () {
+		$(".content").scroll(function () {
+			if ($(this).scrollTop() > 250) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+	});
+	$('#toc a').each(function(){
+		var url = this.href.replace(baseURL.href, "");
+		this.href = 'developer-docs/telemetry/jslibrary/' + url;
+    })
+  </script>
+  </body>
+</html>

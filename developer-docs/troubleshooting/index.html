@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.18/";
+			baseURL.href="/releases/release.1.2/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
+<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.18" />
-<meta name="buildNo" content="311" />
+<meta name="buildVersion" content="release.1.2" />
+<meta name="buildNo" content="672" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
-<link rel="stylesheet" href="css/style.css?20122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08012018"  />
+<link rel="stylesheet" href="css/style.css?08012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -163,7 +163,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses and Training</a>
+					<a href="features-documentation/coursetraining/">Courses</a>
 				</li>
 				<li>
 					<a href="features-documentation/library/">Library</a>
@@ -174,9 +174,11 @@
 				<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
 				</li>
+				<!--<li>
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
+                                </li>-->
 				<!--<li>
 					<a href="features-documentation/consumption/">Consume Study Material</a>
 				</li>-->
@@ -202,6 +204,9 @@
 					<h4 class="sidebar-group-title">Developer Documentation</h4>
 				</a>
 				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+					</li>
 					<li>
 						<a href="developer-docs/installation/">Installation Overview</a>
 					</li>
@@ -236,6 +241,31 @@
 								<!--<li>
 									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
 								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/tokens_sso/">Tokens</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/masterexchange_sso/">Master Data Exchange</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -283,9 +313,24 @@
 							</ul>
 						</div>
 					</li>
+					<li>
 					<!--<li>
-						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
-					</li>-->
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+								</li>						
+							</ul>
+						</div>
+					</li>
+					</li>-->	
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -398,12 +443,16 @@ $("a[href$='developer-docs/troubleshooting/']").addClass("sidebar-link-selected"
   </table>
 </div><h2 id="database">Database</h2>
 
-<p><strong>Q:</strong> Are data initialization scripts available?</p>
+<p>
+  <strong>Q:  Does Sunbird use any data initialization scripts?</strong>
+</p>
 
 <p><strong>A:</strong> Use the Cassandra.cql file to do the initial data setup. 
 Click <a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql" target="_blank">Casandra.cql</a> and run the file to create the initial Cassandra data base.</p>
 
-<p><strong>Q:</strong> Does the database have initial/ default entries for ‘Org’, ‘Role’ and ‘Users’?</p>
+<p>
+  <strong>Q:  Does the database have initial/ default entries for ‘Org’, ‘Role’ and ‘Users’?</strong>
+</p>
 
 <p><strong>A:</strong>  ‘Users’ do not have initial/default entries. There are default entries for ‘Org’ and ‘Roles’. 
 For details, refer the files:</p>
@@ -416,7 +465,9 @@ For details, refer the files:</p>
 
 <p>Run the two .csv files under Cassandra. It has queries to generate page data and works based on BFF(Backend for frontend) design pattern.</p>
 
-<p><strong>Q:</strong>  Which databases are used in the application and for what purpose?</p>
+<p>
+  <strong>Q:  Which databases are used in the application and for what purpose?</strong>
+</p>
 
 <p><strong>A:</strong> The following databases are used:</p>
 
@@ -452,7 +503,9 @@ For details, refer the files:</p>
   </tbody>
 </table>
 
-<p><strong>Q:</strong> Does the launch of any application initaiate seed data?</p>
+<p>
+  <strong>Q:  Does the launch of any application initaiate seed data?</strong>
+</p>
 
 <p><strong>A:</strong> When an application is launched, the following table data are cached. This data needs to be refreshed daily.</p>
 
@@ -463,13 +516,15 @@ For details, refer the files:</p>
 
 <h2 id="application">Application</h2>
 
-<p><strong>Q</strong>: How do I test if the APIs are working ?</p>
+<p>**Q: How do I test if the APIs are working correctly? **</p>
 
-<p><strong>A</strong>:  Once you complete Sunbird installation, use the GET API https://hostname/health .
-    For details of more API check routes, refer to the <a href="https://github.com/project-sunbird/sunbird-lms-service/blob/master/service/conf/routes" target="_blank">Routes</a>
-     This file has a list of URLs.</p>
+<p><strong>A</strong>:  Once you complete Sunbird installation, use the GET API (https://hostname/health) to test if the APIs are working correctly.</p>
 
-<p><strong>Q</strong>: What Authorization header should be used to access these API ?</p>
+<p><strong>Note:</strong> For details of more API check routes, refer to the <a href="https://github.com/project-sunbird/sunbird-lms-service/blob/master/service/conf/routes" target="_blank">Routes</a> file. This file has a list of URLs for all related APIs.</p>
+
+<p>
+  <strong>Q: What authorization header should be used to access the Sunbird APIs ?</strong>
+</p>
 
 <p><strong>A</strong>:  Api requests have following headers:</p>
 
@@ -479,10 +534,13 @@ For details, refer the files:</p>
   <li>X-msgid : The unique message id for each request.</li>
 </ul>
 
-<p><strong>Q</strong>: How do I register my own application with keycloak for development?
- <strong>Q</strong>: I want to create new APIs as extensions of the existing Sunbird API. Can I register to keycloak and allow communication between them securely?</p>
+<p>
+  <strong>Q: To develop my application, how do I register it with Keycloak?</strong>
+</p>
 
-<p><strong>A</strong>:  You need to install the keycloak. After it is successfully installed, set following details under System Env or sso.properites file to communicate with keycloak.</p>
+<p>**Q: I want to create new APIs as extensions of the existing Sunbird API. Can I register to Keycloak and allow secure communication between them? **</p>
+
+<p><strong>A</strong>:  You need to install the keycloak. After it is successfully installed, set following details under the System Env or sso.properites file to communicate with keycloak.</p>
 
 <ul>
   <li>sso.url</li>
@@ -496,11 +554,13 @@ For details, refer the files:</p>
 
 <h2 id="telemetry">Telemetry</h2>
 
-<p><strong>Q</strong>: Is there any controller for telemetry events in Sunbird? How can telemetry data be accessed from Sunbird?</p>
+<p>
+  <strong>Q: Do telemetry events in Sunbird have a controller? How is telemetry data accessed from Sunbird?</strong>
+</p>
 
-<p><strong>A</strong>: Sunbird provides dashboards for admins that provide summary views of the telemetry. For raw telemetry data, you need to pull out the data from the ekstep platform. To do so, use the <a href="https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api" target="_blank">On Demand Data Exhaust API</a></p>
+<p><strong>A</strong>: Sunbird provides administrator dashboards that provide summary views of the telemetry data. You can pull out raw telemetry data from the EkStep platform using the <a href="https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api" target="_blank">On Demand Data Exhaust API</a></p>
 
-<p><strong>Note</strong>: Sign in to the Ekstep Community portal to access the API (https://community.ekstep.in)</p>
+<p><strong>Note</strong>: Sign in to the <a href="https://community.ekstep.in" target="_blank">EkStep Community portal</a>, to access the API</p>
 
           
           <hr />

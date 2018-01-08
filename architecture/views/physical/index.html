@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.18/";
+			baseURL.href="/releases/release.1.2/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
+<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.18" />
-<meta name="buildNo" content="311" />
+<meta name="buildVersion" content="release.1.2" />
+<meta name="buildNo" content="672" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
-<link rel="stylesheet" href="css/style.css?20122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08012018"  />
+<link rel="stylesheet" href="css/style.css?08012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -163,7 +163,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses and Training</a>
+					<a href="features-documentation/coursetraining/">Courses</a>
 				</li>
 				<li>
 					<a href="features-documentation/library/">Library</a>
@@ -174,9 +174,11 @@
 				<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
 				</li>
+				<!--<li>
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
+                                </li>-->
 				<!--<li>
 					<a href="features-documentation/consumption/">Consume Study Material</a>
 				</li>-->
@@ -202,6 +204,9 @@
 					<h4 class="sidebar-group-title">Developer Documentation</h4>
 				</a>
 				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+					</li>
 					<li>
 						<a href="developer-docs/installation/">Installation Overview</a>
 					</li>
@@ -236,6 +241,31 @@
 								<!--<li>
 									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
 								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/tokens_sso/">Tokens</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/masterexchange_sso/">Master Data Exchange</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -283,9 +313,24 @@
 							</ul>
 						</div>
 					</li>
+					<li>
 					<!--<li>
-						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
-					</li>-->
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+								</li>						
+							</ul>
+						</div>
+					</li>
+					</li>-->	
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -372,35 +417,35 @@ $("a[href$='architecture/views/physical/']").addClass("sidebar-link-selected");
 			  </a>
 			  </span>
 			</p>
-          <p>The technical stack of Sunbird is evolutionary and modern in nature with easy maintainability, seamless portability, enhanced reusability, and maximizes on testability. Sunbird is built on Ekstep Infra Layer with additional RESTful APIs and related contextual data to build a rich Learning Management System for teachers/students and is implemented using the following modern technologies:</p>
+          <p>The technical stack of Sunbird is evolutionary and modern in nature. Effortless maintainability, seamless portability, enhanced reusability, and easy testability makes Sunbird easy to use and deploy. Sunbird is built on Ekstep Infra Layer with additional RESTful APIs and related contextual data to build a rich learning management system for teachers/students and is implemented using the following modern technologies:</p>
 
-<p><strong>Apache Cassandra</strong></p>
+<h3 id="apache-cassandra">Apache Cassandra</h3>
 
-<p>It’s a NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. It holds all the contextual data of Sunbird like Organization, User, Course, Community, Forums etc.</p>
+<p>It’s a NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure. It holds all the contextual data of Sunbird like organization, user, course, community, forums etc.</p>
 
-<p><strong>Elastic Search</strong></p>
+<h3 id="elastic-search">Elastic Search</h3>
 
-<p>It provides a distributed, multitenant-capable full-text search with an HTTP web interface and schema-free JSON documents. It helps indexing courses for easy look-up against teacher, region, organization, time-line etc. Also, it provides Community tracking capabilities.</p>
+<p>It provides a distributed, multi-tenant-capable full-text search with an HTTP web interface and schema-free JSON documents. It helps indexing courses for easy look-up against teacher, region, organization, time-line etc. It alos provides community tracking capabilities.</p>
 
-<p><strong>Kafka &amp; Kibana</strong></p>
+<h3 id="kafka--kibana">Kafka &amp; Kibana</h3>
 
-<p>Kafka enables Sunbird platform to stream content in real-time using data pipelines. While, using various other data tools, Sunbird admin is enabled to get better understanding of content and its usage. This amalgam of various data related tools in Sunbird provide an intuitive way to get insights about various functional entities of Sunbird. It provides the visualizations report on insights of users, content consumption, courses etc. The data related tools provide flexibility in viewing the analytics in different forms like line and scatter plots, or pie charts and maps.</p>
+<p>Kafka enables Sunbird platform to stream content in real-time using data pipelines. An amalgamation of various data related tools in Sunbird provide an intuitive way to get insights about various functional entities of Sunbird. For instance, using various other data tools the Sunbird admin can get better understanding of content and its usage. It generates reports on users, content consumption, courses etc. The data related tools provide flexibility in viewing the analytics in different forms like line and scatter plots, or pie charts and maps.</p>
 
-<p><strong>Play Framework</strong></p>
+<h3 id="play-framework">Play Framework</h3>
 
 <p>Sunbird uses play framework with Kafka to present content to its users, wherein the underlying framework provides predictable and minimal resource consumption.</p>
 
-<p><strong>Akka</strong></p>
+<h3 id="akka">Akka</h3>
 
 <p>Akka is used as base for play framework, which provides powerful reactive, concurrent, and distributed application framework.</p>
 
-<p><strong>Angular and Node.js</strong></p>
+<h3 id="angular-and-nodejs">Angular and Node.js</h3>
 
 <p>It provides an environment to Sunbird which is extraordinarily expressive, readable, and quick to develop. It is fully extensible and works well with other libraries. It maximizes scalability and provides seamless extensibility.</p>
 
-<p><strong>Android</strong></p>
+<h3 id="android">Android</h3>
 
-<p>Sunbird can be viewed on mobile using android platform. An Android Sunbird app is developed to make Sunbird mobile and enable anywhere and anytime use.</p>
+<p>Sunbird can be viewed on mobile using android platform. An Android Sunbird app can be developed to make Sunbird mobile and enable anywhere and anytime use.</p>
 
 <p><a target="_blank" href="pages/architecture/image/phy_arch.png">
         <img src="pages/architecture/image/phy_arch.png" alt="Physical View" class="plugin center" width="100%" />

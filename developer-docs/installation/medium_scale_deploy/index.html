@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.1.18/";
+			baseURL.href="/releases/release.1.2/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2017-12-20 07:54:00 +0530">
+<meta name="last-modified" content="2018-01-08 13:13:45 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.1.18" />
-<meta name="buildNo" content="311" />
+<meta name="buildVersion" content="release.1.2" />
+<meta name="buildNo" content="672" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20122017"  />
-<link rel="stylesheet" href="css/style.css?20122017"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20122017"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20122017"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20122017"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08012018"  />
+<link rel="stylesheet" href="css/style.css?08012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -163,7 +163,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses and Training</a>
+					<a href="features-documentation/coursetraining/">Courses</a>
 				</li>
 				<li>
 					<a href="features-documentation/library/">Library</a>
@@ -174,9 +174,11 @@
 				<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
 				</li>
+				<!--<li>
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
+                                </li>-->
 				<!--<li>
 					<a href="features-documentation/consumption/">Consume Study Material</a>
 				</li>-->
@@ -202,6 +204,9 @@
 					<h4 class="sidebar-group-title">Developer Documentation</h4>
 				</a>
 				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+					</li>
 					<li>
 						<a href="developer-docs/installation/">Installation Overview</a>
 					</li>
@@ -236,6 +241,31 @@
 								<!--<li>
 									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
 								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/tokens_sso/">Tokens</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/masterexchange_sso/">Master Data Exchange</a>
+								</li>
+								<li>
+									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+								</li>
 							</ul>
 						</div>
 					</li>
@@ -283,9 +313,24 @@
 							</ul>
 						</div>
 					</li>
+					<li>
 					<!--<li>
-						<a href="developer-docs/telemetry_spec/">Telemetry Specifications</a>
-					</li>-->
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+								</li>						
+							</ul>
+						</div>
+					</li>
+					</li>-->	
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -435,7 +480,7 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
 
 <h3 id="system-requirements">System Requirements</h3>
 
-<p>To install Sunbird, the servers should have the following minimum system requirements:</p>
+<p>To install Sunbird, each of the server should have the following minimum system requirements:</p>
 
 <ul>
   <li>Operating System: Ubuntu 16.04 LTS</li>
@@ -445,12 +490,34 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
 </ul>
 
 <h3 id="api-keys">API Keys</h3>
+<ul>
+  <li>Sunbird implementors currently need to get a API key for accessing EkStep platform.Since, the content is stored here. In the future, Sunbird will support more content stores.</li>
+  <li>When you are initially trying out the Sunbird, please request the keys from the EkStep QA environment.</li>
+</ul>
 
-<p>API keys are supposed to approve a user or a device with authorization for access.For getting the API keys , you need to send an Email to :<a href="mailto:info@sunbird.org">info@sunbird.org</a>.</p>
+<p>For requesting the keys follow these steps:</p>
+
+<ul>
+  <li>Login to <a href="https://qa.ekstep.in">qa.ekstep.in</a>.</li>
+  <li>Navigate to Resources then Developers.</li>
+  <li>Click on “API Credentials” on the top menu</li>
+  <li>On this page click on “Request API Access”, check all the options and click submit</li>
+  <li>Once your request is approved (you will receive an email notifying you about the keys)</li>
+  <li>click on “Create Credentials”</li>
+  <li>Note down the key and secret that is previewed on your screen</li>
+  <li>Generate a JWT token by following the steps <a href="https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis" target="_blank">here</a></li>
+  <li>Please keep the JWT handy, it will be needed during the installation process.</li>
+</ul>
+
+<p>Once you have completed the steps to get keys and secret,you are ready to deploy the Sunbird in live environment.</p>
+
+<p>In order to get the production credentails, repeat the steps under API Keys section.</p>
 
 <h3 id="ssl-certificate">SSL Certificate</h3>
 
-<p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. <a href="https://letsencrypt.org/">LetsEncrypt</a> provides free SSL certificates. You can also use a CA of your choice.</p>
+<p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. <a href="https://letsencrypt.org/" target="_blank">LetsEncrypt</a> provides free SSL certificates. You can also use a CA of your choice.</p>
+
+<p>Before you begin the installation, keep the SSL certificate and the key handy.</p>
 
 <p><strong><em>Note</em></strong>: A self-signed certification will cause authentication to fail with an “Access Denied” error because the certificate will not be verified.</p>
 

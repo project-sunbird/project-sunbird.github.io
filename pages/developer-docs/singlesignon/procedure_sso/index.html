@@ -1,0 +1,88 @@
+<h2 id="procedure-to-onboard-organizations">Procedure to Onboard Organizations</h2>
+
+<ol>
+  <li>
+    <p>Generate RSA private and public key pair</p>
+  </li>
+  <li>
+    <p>Get public key registered in production</p>
+  </li>
+  <li>
+    <p>Create tenant organization</p>
+  </li>
+  <li>
+    <p>Create organizations, and users, and register</p>
+  </li>
+  <li>
+    <p>Single-Sign-On with Sunbird</p>
+  </li>
+</ol>
+
+<h3 id="generating-rsa-private-and-public-key-pair">Generating RSA Private and Public Key Pair</h3>
+
+<p>To create a new pair of public/private keys, run the following command:</p>
+
+<p>$ openssl genrsa -out private.pem 2048</p>
+
+<p>This private key must be kept secret. To generate a public key corresponding to the private key, execute:</p>
+
+<p>$ openssl rsa -in private.pem -outform PEM -pubout -out public.pem</p>
+
+<p>If you run these commands, the public key will be written in public.pem, while the private key will be written in private.pem</p>
+
+<h3 id="accessing-the-apis-using-token">Accessing the APIs Using Token</h3>
+
+<p>The token generated should be sent in Authorization header of the request with value bearer <token>. Example curl request</token></p>
+
+<p>curl -H “Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello</token></p>
+
+<h3 id="onboarding-new-tenant-organization-on-sunbird">Onboarding New Tenant Organization on Sunbird</h3>
+
+<p>Sunbird allows creation and configuration of multiple tenant organizations in a single instance:</p>
+
+<ul>
+  <li>
+    <p>Every tenant organization has a unique channel, i.e. all the activities by users belonging to that tenant organization are tagged by the tenant’s channel id (activities include content creation, content consumption, etc)</p>
+  </li>
+  <li>
+    <p>Tenant organizations have the option to setup a custom home page and configure the logo to be displayed for users who belong to the tenant</p>
+  </li>
+  <li>
+    <p>Tenant organizations can create multiple sub organizations and add users to those organizations</p>
+  </li>
+</ul>
+
+<p>Example: Each state is a tenant on Sunbird and all schools/institutes in that state are created as sub-organizations under that tenant organization.</p>
+
+<h3 id="custom-homepage--logo-for-tenants">Custom Homepage &amp; Logo for Tenants</h3>
+
+<p>Sunbird supports over-riding of default home page and configuring a custom home page and logo for each on-boarded tenant. The tenant organization should provide package containing the following files for customising the home page and logo:</p>
+
+<ul>
+  <li>
+    <p>The home page html file should be named index.html. All the dependent files (like js, css and images) used by the home page should be within the package and referred using relative paths from the “index.html”.</p>
+  </li>
+  <li>
+    <p>Logo of the tenant which should be with the name “logo.png”</p>
+  </li>
+  <li>
+    <p>Optionally, tenants can also configure the following:</p>
+
+    <ul>
+      <li>
+        <p>an icon (to be displayed as browser favicon) which should be named as “favicon.ico”</p>
+      </li>
+      <li>
+        <p>a poster image (to be used as flash screen in the mobile app) which should be named as “poster.png”</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>All the files should be placed in a folder. The folder name should be the same as the channel value of the tenant organization.</p>
+
+<h3 id="sign-in-link-from-custom-home-page">Sign In link from Custom Home Page</h3>
+
+<p>Following link needs to be added at an appropriate place in the custom home page to invoke Sunbird portal login:
+<a href="/private/index" title="Sign In"><span>Sign In</span></a></p>
+
