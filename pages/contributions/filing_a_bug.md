@@ -1,22 +1,32 @@
-# Overview
+---
+type: landing
+directory: contributions
+title: Filing a Bug
+page_title: Filing a Bug
+description: How to file a bug
+keywords: 'Contribute, Code, Code contribution'
+published: true
+allowSearch: true
+---
+## Overview
 
 This document describes how to file an effective Sunbird bug report. 
 
-## Getting More Information
+### Getting More Information
 
 For issues, you can check troubleshooting page [here](http://www.sunbird.org/developer-docs/troubleshooting/)
 
 This may help you resolve the issue as it might have already been solved. Even if it doesn't, the following process can help you figure out and resolve your issue.
 
-# Introduction
+## Introduction
 
 To report a bug in the Sunbird bug trackers, you need to create a tracker item. Once the tracker item is created, the developers will check the validity of it and act accordingly. 
 
-# Guidelines to file a bug
+## Guidelines to file a bug
 
 The following are the steps to file a bug:
 
-## Prerequisites:
+### Prerequisites:
 
 * Register an Account at GitHub
 
@@ -29,7 +39,7 @@ A series of filters display the tracker items and can be accessed by clicking th
 
 A new screen will display and there, the more information you give, the easier it is for the developers. Fill in as much information as you can. You can enable tips for each field by switching the "View Mode" toggle on the right side of the screen from Pro to Help.
 
-## How to file a bug
+### How to file a bug
 
 - Go to the issue tracker on GitHub [here](https://github.com/project-sunbird/project-sunbird.github.io/issues)
 
@@ -37,7 +47,7 @@ A new screen will display and there, the more information you give, the easier i
 -  Make sure no one else is already working on it. If the bug has a milestone assigned or is tagged 'fix in progress', then it's already under way. Otherwise, post a comment on the bug to let others know you're starting to work on it.
 - For posting a new bug report,file a new issue and include the information listed in next section
 
-### When filing a new bug, it is mandatory to include:
+#### When filing a new bug, it is mandatory to include:
 
 * Descriptive title - use keywords so others can find your bug (avoiding duplicates)
 
@@ -52,9 +62,9 @@ Include the exact text of any error messages if applicable (or upload screenshot
 
 * Operating system version
 
-# What happens after a bug is filed?
+## What happens after a bug is filed?
 
-## Bug life cycle
+### Bug life cycle
 
 * New bug is filed; awaiting review
 
@@ -68,7 +78,7 @@ Include the exact text of any error messages if applicable (or upload screenshot
 
 * Filer agrees that it's fixed; bug is closed, and its milestone is set to the release the fix
 
-## Bug review
+### Bug review
 
 The Sunbird team reviews all new issues on a regular basis. Several things typically happen as part of review:
 
@@ -82,7 +92,7 @@ The Sunbird team reviews all new issues on a regular basis. Several things typic
 
 * Depending on priority, milestone, and other workload, a developer may or may not begin working on the bug soon.
 
-# Some bugs may be closed without fixing, here is why:
+## Some bugs may be closed without fixing, here is why:
 
 There are many reasons an issue might get closed without being fixed:
 
@@ -100,7 +110,7 @@ There are many reasons an issue might get closed without being fixed:
 
 If you disagree with a bug being closed, feel free to post a comment asking for clarification or re-evaluation. The more new/updated info you can provide, the better.
 
-# Understanding issue labels
+## Understanding issue labels
 
 We use labels/tags for many purposes:
 
@@ -178,7 +188,7 @@ We use labels/tags for many purposes:
 </table>
 
 
-# Other bug-related terminology
+## Other bug-related terminology
 
 Acronyms the team uses frequently in bug comments:
 
