@@ -336,9 +336,9 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
       
-**Formatting Images**
+  **Formatting Images**
 
-<table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -352,19 +352,19 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
 
 #### Adding Audio
 
-<table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. To add audio, click the <strong>Add Audio</strong> icon on the toolbar <br><strong>Note:</strong> For detailed instructions to add audio, refer to section Select Audio for Read Along Text
+    <td>1. To add audio, click the <strong>Add Audio</strong> icon on the toolbar <br><strong>Note:</strong> For detailed instructions  to add audio, refer to section Select Audio for Read Along Text
     </td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>
   
-**Uploading Audio**
+  **Uploading Audio**
   
   <table>
   <tr>
@@ -393,7 +393,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
-**Adding Action to the Hotspot**
+  **Adding Action to the Hotspot**
   
   <table>
   <tr>
@@ -439,7 +439,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
-**Selecting Questions**
+  **Selecting Questions**
   
   <table>
   <tr>
@@ -453,7 +453,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
-**Configuring the Question Set**
+  **Configuring the Question Set**
   
   <table>
   <tr>
@@ -467,7 +467,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
-**Selecting Questions - Advanced Filters**
+  **Selecting Questions - Advanced Filters**
     
   <table>
   <tr>
@@ -481,9 +481,9 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table> 
       
-**Customizing Question Set**
+  **Customizing Question Set**
  
- <table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -495,9 +495,9 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>      
       
-**Configuring Question Set**
+  **Configuring Question Set**
 
- <table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -511,7 +511,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
       
 #### Adding Activity
 
-<table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -522,9 +522,9 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table> 
   
- **Activity Browser**
+  **Activity Browser**
 
-<table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -584,7 +584,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
- **Configuring Video Details**
+  **Configuring Video Details**
 
   <table>
   <tr>
@@ -612,9 +612,9 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>
   </table>
   
-**Adding Metadata**
+  **Adding Metadata**
 
-<table>
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
