@@ -14,7 +14,7 @@ The manual procedure commissions two servers. The first server, serves as the DB
 
 If you wish to set up manually, the main requirement is to have Docker Swarm installed and working (multi node cluster), servers available to install the DB and ports open for communication.
 
-**Note**:Follow the automated process for hassle free and rich installation experience.The Manual process is not recommended.
+**Note**: Follow the automated process for hassle free and rich installation experience.The Manual process is not recommended.
 
 ## Automation for Azure
 
