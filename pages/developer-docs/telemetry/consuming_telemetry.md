@@ -22,7 +22,7 @@ Steps involved in consuming Data Exhaust:
 
 ### Using channel ID and API key to request channel telemetry
 
-## Understanding typical workflows from Telemetry data
+## Standard Telemetry Workflows
 
 This section details **Standard Telemetry Workflows** for different access channels.
 
