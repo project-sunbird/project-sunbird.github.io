@@ -2,8 +2,8 @@
 type: landing
 directory: developer-docs
 title: Getting Started with Sunbird
-page_title: Getting Started
-description: Brief overview of all the content available for developer documentation
+page_title: Getting Started with Sunbird
+description: For adopters and users to get started on Sunbird. It provides an overview and links to Sunbird's tech stack, components and installation procedures.
 published: true
 allowSearch: true
 ---
@@ -23,29 +23,29 @@ Sunbird covers the following broad feature areas:
 
 The techstack used to develop the Sunbird is as follows:
 
-- **AngularJS** - to simplify and structure the Sunbird portal
+- **AngularJS** - simplifies and structures the Sunbird portal
 
-  For more details on AngularJS, refer to the [AngularJS site](https://angularjs.org/)
+  *For more details on AngularJS, refer to the [AngularJS site](https://angularjs.org/)*
   
-- **Java Play** - to optimise resource consumption (CPU, memory, threads) for high scalablilty
+- **Java Play** - optimizes resource consumption (CPU, memory, threads) for high scalablilty
 
-  For more details on Java Play, refer to the [Playframework site](https://playframework.com)
+  *For more details on Java Play, refer to the [Playframework site](https://playframework.com)*
   
-- **Apache Cassandra** - for scalability and maximum availability without compromising on performance
+- **Apache Cassandra** - proven database with large active data sets, fault tolerant, decentralized, highly scalable and consistent without compromising on performance
 
-  For more details on Apache Cassandra, refer to the [Apache Cassandra site](http://cassandra.apache.org)
+  *For more details on Apache Cassandra, refer to the [Apache Cassandra site](http://cassandra.apache.org)
   
-  For details on installing the Apache Cassandra database for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)
+  For details on installing the Apache Cassandra database for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
   
-- **ElasticSearch** - to yield advanced search and analytics engine
+- **ElasticSearch** - performs and combines many types of searches — structured, unstructured, geo, metric; and lets you zoom out to explore trends and patterns in your data
 
-  For more details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch)
+  *For more details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch)
   
-  For details on installing ElasticSearch for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)
+  For details on installing ElasticSearch for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
   
-- **Docker** - enables containerization of Sunbird components, to make each component independent and hence facilitate collaboration and co-creation
+- **Docker** - enables containerization of Sunbird components, making each component independent facilitating innovation, collaboration and co-creation
 
-  For more details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)
+  *For more details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)*
 
 To effectively install, implement, adopt or extend Sunbird, it is recommended that you know atleast one or more of the following areas:
 
@@ -57,25 +57,24 @@ To effectively install, implement, adopt or extend Sunbird, it is recommended th
 ## Sunbird Components
 The following are the core components of Sunbird:
 
-- **Sunbird Portal** 
+- **Sunbird Portal**  -  The Sunbird portal is the browser-based interface for the Sunbird application stack. It provides a web interface through which all functionality of Sunbird can be accessed. The Sunbird code is available on GitHub.  
 
-All details with regard to the open source code of Sunbird is available [here](https://github.com/project-sunbird)
+*For details of the open source code of Sunbird, refer to the [Sunbird portal](https://github.com/project-sunbird/sunbird-portal) repository on GitHub*
 
-To know about the web portal of Sunbird [visit](https://github.com/project-sunbird/sunbird-portal)
+- **Content Editor** - Content Editor is an inbuilt authoring tool on Sunbird. You can customize the content editor using Sunbird's content APIs. APIs are available for any creation, updation or customization of the tool. 
 
-- **Content Editor**
+*For details, refer to the [Content APIs](http://www.sunbird.org/apis/content)
 
-Content Editor is an inbuilt authoring tool on Sunbird. APIs are available for any creation, updation or customization of the tool. To know about the  [http://www.sunbird.org/apis/content/](http://www.sunbird.org/apis/content)
+For details of the content editor, its features and instructions to use it, refer to the [Content Editor page](http://www.sunbird.org/features-documentation/contenteditor)*
 
-To know about the content tool, its feature and procedures on how to use the tool, [visit](http://www.sunbird.org/features-documentation/contenteditor)
+- **Content Editor Plugins**  - Sunbird has the capabality to extend the content editor by creating and using plugins. Plugin's are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc. 
 
-- **Content Editor Plugins**  
-- **Sunbird platform services** 
-- **Sunbird databases**
-- **Others**
+- **Sunbird Services** - Sunbird uses core and proxy services. 
+
+- **Others** - Few other key services are:
   - API manager 
   - Proxy
-          
+ *For details, refer to the [Deploying Sunbird Services page](http://www.sunbird.org/developer-docs/installation/deploy_sb_services/)         
 ## Installation Overview
 
 Sunbird can be installed on different devices and can be deployed for single or multiusers. 
@@ -85,19 +84,17 @@ For details on the installation process, refer to [Installation Overview page](h
 ### Pre-requisites
 To install Sunbird on any environment or choose any method of installation, the basic minimum prerequisites are:
 
-- Use of a Linux OS flavour (developer installation is possible on MacOS)
-- Comfort with use of a terminal as Sunbird installation is triggered from a command-line terminal
+- Use of a Linux OS flavour. Developer installation is possible on MacOS
+- Comfort using a terminal, as Sunbird installation is triggered from a command-line terminal
 
-*Note:** The prerequisites are not necessary to try the sandbox option
+**Note:** *The prerequisites are not necessary to try the sandbox option*
 
-### Try Sunbird on laptop
+### Install Sunbird on laptop
+For a comprehensive walk through to install Sunbird on your laptop, refer to the [Installing Sunbird on laptop page](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/)
 
-For a comprehensive walk through the steps to install the Sunbird on your machine, refer to [Installing Sunbird on laptop page](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/)
-
-### Deployment for 10-10000 users
-
-To deploy the Sunbird for a userbase of 10-10000, refer to [medium scale deployment](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/)
+### Medium-scale deployment
+To deploy the Sunbird for a userbase of 10-10000, refer to the [Medium Scale Deployment page](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/)
 
 ## Mobile App Installation
-To create customized mobile application of Sunbird, refer [http://www.sunbird.org/developer-docs/installation/install_mobile_setup/](http://www.sunbird.org/developer-docs/installation/install_mobile_setup)
+To create customized mobile application of Sunbird, refer to the [Mobile App Installation page](http://www.sunbird.org/developer-docs/installation/install_mobile_setup)
 
