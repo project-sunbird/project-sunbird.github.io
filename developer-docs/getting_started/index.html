@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.2.2/";
+			baseURL.href="/releases/release.1.2.3/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Getting Started</title>
-<meta name="description" content="Sunbird Site Brief overview of all the content available for developer documentation"/>
+<title>Sunbird Getting Started with Sunbird</title>
+<meta name="description" content="Sunbird Site For adopters and users to get started on Sunbird. It provides an overview and links to Sunbird's tech stack, components and installation procedures."/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-08 14:42:44 +0530">
+<meta name="last-modified" content="2018-01-08 18:33:30 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.2.2" />
-<meta name="buildNo" content="697" />
+<meta name="buildVersion" content="release.1.2.3" />
+<meta name="buildNo" content="717" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -204,9 +204,9 @@
 					<h4 class="sidebar-group-title">Developer Documentation</h4>
 				</a>
 				<ul class="sidebar-group developer-docs">
-					<!--<li>
+					<li>
 						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
-                                        </li>-->
+                                        </li>
 					<li>
 						<a href="developer-docs/installation/">Installation Overview</a>
 					</li>
@@ -319,6 +319,9 @@
 							<ul class="sidebar-group">
 								<li> 
 									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/eventdetails/">Telemetry Event Details</a>
 								</li>
 								<li>
 									<div class="">
@@ -457,41 +460,20 @@ $("a[href$='developer-docs/getting_started/']").addClass("sidebar-link-selected"
             </li>
             <li class="toc_level-1 toc_section-2">
               <a href="#sunbird-components"><span class="tocnumber">2 .</span> <span class="toctext">Sunbird Components</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-3">
-              <a href="#content-editor"><span class="tocnumber">3 .</span> <span class="toctext">Content Editor</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-4">
-              <a href="#content-editor-plugins"><span class="tocnumber">4 .</span> <span class="toctext">Content Editor Plugins</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-5">
-              <a href="#sunbird-platform-services"><span class="tocnumber">5 .</span> <span class="toctext">Sunbird platform services</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-6">
-              <a href="#others"><span class="tocnumber">6 .</span> <span class="toctext">Others</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-7">
-              <a href="#installation-overview"><span class="tocnumber">7 .</span> <span class="toctext">Installation Overview</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-8">
-                  <a href="#pre-requisites"><span class="tocnumber">7.1 .</span> <span class="toctext">Pre-requisites</span></a>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#pre-requisites"><span class="tocnumber">2.1 .</span> <span class="toctext">Pre-requisites</span></a>
                 </li>
-                <li class="toc_level-2 toc_section-9">
-                  <a href="#trial-on-laptop"><span class="tocnumber">7.2 .</span> <span class="toctext">Trial on laptop</span></a>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#install-sunbird-on-laptop"><span class="tocnumber">2.2 .</span> <span class="toctext">Install Sunbird on laptop</span></a>
                 </li>
-                <li class="toc_level-2 toc_section-10">
-                  <a href="#deployment-for-10-1000-users"><span class="tocnumber">7.3 .</span> <span class="toctext">Deployment for 10-1000 users</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-11">
-                  <a href="#instructions"><span class="tocnumber">7.4 .</span> <span class="toctext">Instructions</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-12">
-                  <a href="#deployment-for-1000-users"><span class="tocnumber">7.5 .</span> <span class="toctext">Deployment for 1000+ users</span></a>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#medium-scale-deployment"><span class="tocnumber">2.3 .</span> <span class="toctext">Medium-scale deployment</span></a>
                 </li>
               </ul>
             </li>
-            <li class="toc_level-1 toc_section-13">
-              <a href="#mobile-app-installation"><span class="tocnumber">8 .</span> <span class="toctext">Mobile App Installation</span></a>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#mobile-app-installation"><span class="tocnumber">3 .</span> <span class="toctext">Mobile App Installation</span></a>
             </li>
           </ul>
         </td>
@@ -517,37 +499,37 @@ $("a[href$='developer-docs/getting_started/']").addClass("sidebar-link-selected"
 
 <ul>
   <li>
-    <p><strong>AngularJS</strong> to make the Sunbird portal simplified and structured.</p>
+    <p><strong>AngularJS</strong> - simplifies and structures the Sunbird portal</p>
 
-    <p>If you wish to know more about AngularJS <a href="https://angularjs.org/">visit</a></p>
+    <p><em>For more details on AngularJS, refer to the <a href="https://angularjs.org/">AngularJS site</a></em></p>
   </li>
   <li>
-    <p><strong>Java Play</strong> to optimise resource consumption (CPU, memory, threads) for highly-scalablilty.</p>
+    <p><strong>Java Play</strong> - optimizes resource consumption (CPU, memory, threads) for high scalablilty</p>
 
-    <p>If you wish to know more about Java Play <a href="https://playframework.com">visit</a></p>
+    <p><em>For more details on Java Play, refer to the <a href="https://playframework.com">Playframework site</a></em></p>
   </li>
   <li>
-    <p><strong>Apache Cassandra,</strong> to provide scalability and high availability without compromising on performance.</p>
+    <p><strong>Apache Cassandra</strong> - proven database with large active data sets, fault tolerant, decentralized, highly scalable and consistent without compromising on performance</p>
 
-    <p>If you wish to know more about  Apache Cassandra <a href="http://cassandra.apache.org">visit</a></p>
+    <p>*For more details on Apache Cassandra, refer to the <a href="http://cassandra.apache.org">Apache Cassandra site</a></p>
 
-    <p>For details on installation <a href="http://www.sunbird.org/developer-docs/installation/setup_db">visit</a></p>
+    <p>For details on installing the Apache Cassandra database for Sunbird, refer to the <a href="http://www.sunbird.org/developer-docs/installation/setup_db">Setup Database page</a>*</p>
   </li>
   <li>
-    <p><strong>ElasticSearch,</strong> to yield advanced search and analytics engine</p>
+    <p><strong>ElasticSearch</strong> - performs and combines many types of searches — structured, unstructured, geo, metric; and lets you zoom out to explore trends and patterns in your data</p>
 
-    <p>If you wish to know more about ElasticSearch <a href="http://www.elastic.co/products/elasticsearch">visit</a></p>
+    <p>*For more details on ElasticSearch, refer to the <a href="http://www.elastic.co/products/elasticsearch">ElasticSearch site</a></p>
 
-    <p>For details on installation <a href="http://www.sunbird.org/developer-docs/installation/setup_db">visit</a></p>
+    <p>For details on installing ElasticSearch for Sunbird, refer to the <a href="http://www.sunbird.org/developer-docs/installation/setup_db">Setup Database page</a>*</p>
   </li>
   <li>
-    <p><strong>Docker,</strong> to enable complete independence across applications to aid in collaboration and co-creation</p>
+    <p><strong>Docker</strong> - enables containerization of Sunbird components, making each component independent facilitating innovation, collaboration and co-creation</p>
 
-    <p>If you wish to know more about Docker <a href="https://www.docker.com/what-docker">visit</a></p>
+    <p><em>For more details on Docker, refer to the <a href="https://www.docker.com/what-docker">Docker site</a></em></p>
   </li>
 </ul>
 
-<p>Its recommended to have atleast some know how of the following areas:</p>
+<p>To effectively install, implement, adopt or extend Sunbird, it is recommended that you know atleast one or more of the following areas:</p>
 
 <ul>
   <li>IaaS - Provisioning servers and resources</li>
@@ -557,59 +539,64 @@ $("a[href$='developer-docs/getting_started/']").addClass("sidebar-link-selected"
 </ul>
 
 <h2 id="sunbird-components">Sunbird Components</h2>
+<p>The following are the core components of Sunbird:</p>
 
-<p>All details with regard to the open source code of Sunbird is available <a href="https://github.com/project-sunbird">here</a></p>
+<ul>
+  <li><strong>Sunbird Portal</strong>  -  The Sunbird portal is the browser-based interface for the Sunbird application stack. It provides a web interface through which all functionality of Sunbird can be accessed. The Sunbird code is available on GitHub.</li>
+</ul>
 
-<p>To know about the web portal of Sunbird <a href="https://github.com/project-sunbird/sunbird-portal">visit</a></p>
+<p>
+  <em>For details of the open source code of Sunbird, refer to the <a href="https://github.com/project-sunbird/sunbird-portal">Sunbird portal</a> repository on GitHub</em>
+</p>
 
-<h2 id="content-editor">Content Editor</h2>
+<ul>
+  <li><strong>Content Editor</strong> - Content Editor is an inbuilt authoring tool on Sunbird. You can customize the content editor using Sunbird’s content APIs. APIs are available for any creation, updation or customization of the tool.</li>
+</ul>
 
-<p>Content Editor is an inbuilt authoring tool on Sunbird. APIs are available for any creation, updation or customization of the tool. To know about the  <a href="http://www.sunbird.org/apis/content">http://www.sunbird.org/apis/content/</a></p>
+<p>*For details, refer to the <a href="http://www.sunbird.org/apis/content">Content APIs</a></p>
 
-<p>To know about the content tool, its feature and procedures on how to use the tool, <a href="http://www.sunbird.org/features-documentation/contenteditor">visit</a></p>
+<p>For details of the content editor, its features and instructions to use it, refer to the <a href="http://www.sunbird.org/features-documentation/contenteditor">Content Editor page</a>*</p>
 
-<h2 id="content-editor-plugins">Content Editor Plugins</h2>
+<ul>
+  <li>
+    <p><strong>Content Editor Plugins</strong>  - Sunbird has the capabality to extend the content editor by creating and using plugins. Plugin’s are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc.</p>
+  </li>
+  <li>
+    <p><strong>Sunbird Services</strong> - Sunbird uses core and proxy services.</p>
+  </li>
+  <li>
+    <p><strong>Others</strong> - Few other key services are:</p>
+    <ul>
+      <li>API manager</li>
+      <li>Proxy
+ <em>For details, refer to the <a href="http://www.sunbird.org/developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services page</a></em>       <br />
+## Installation Overview</li>
+    </ul>
+  </li>
+</ul>
 
-<h2 id="sunbird-platform-services">Sunbird platform services</h2>
+<p>Sunbird can be installed on different devices and can be deployed for single or multiusers.</p>
 
-<h2 id="others">Others</h2>
-<p>API manager 
-Proxy</p>
-
-<h2 id="installation-overview">Installation Overview</h2>
-
-<p>Sunbird can be installed on different devices and can be deployed for single or multiusers. For further reading and understanding of the installation process refer <a href="http://www.sunbird.org/developer-docs/installation/#link1-5">http://www.sunbird.org/developer-docs/installation/#link1-5</a></p>
+<p>For details on the installation process, refer to <a href="http://www.sunbird.org/developer-docs/installation/">Installation Overview page</a></p>
 
 <h3 id="pre-requisites">Pre-requisites</h3>
 <p>To install Sunbird on any environment or choose any method of installation, the basic minimum prerequisites are:</p>
 
 <ul>
-  <li>Use of a Linux OS flavour (developer installation is possible on MacOS)</li>
-  <li>Comfort with use of a terminal as Sunbird installation is triggered from a command-line terminal</li>
+  <li>Use of a Linux OS flavour. Developer installation is possible on MacOS</li>
+  <li>Comfort using a terminal, as Sunbird installation is triggered from a command-line terminal</li>
 </ul>
 
-<p>
-  <em>Note: The prerequisites are not necessary to try the sandbox option</em>
-</p>
+<p><strong>Note:</strong> <em>The prerequisites are not necessary to try the sandbox option</em></p>
 
-<h3 id="trial-on-laptop">Trial on laptop</h3>
+<h3 id="install-sunbird-on-laptop">Install Sunbird on laptop</h3>
+<p>For a comprehensive walk through to install Sunbird on your laptop, refer to the <a href="http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/">Installing Sunbird on laptop page</a></p>
 
-<p>http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/</p>
-
-<h3 id="deployment-for-10-1000-users">Deployment for 10-1000 users</h3>
-
-<p>Hardware needed</p>
-
-<p>http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/#link1-1-1</p>
-
-<h3 id="instructions">Instructions</h3>
-
-<p>http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/</p>
-
-<h3 id="deployment-for-1000-users">Deployment for 1000+ users</h3>
+<h3 id="medium-scale-deployment">Medium-scale deployment</h3>
+<p>To deploy the Sunbird for a userbase of 10-10000, refer to the <a href="http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment page</a></p>
 
 <h2 id="mobile-app-installation">Mobile App Installation</h2>
-<p>To create customized mobile application of Sunbird, refer <a href="http://www.sunbird.org/developer-docs/installation/install_mobile_setup">http://www.sunbird.org/developer-docs/installation/install_mobile_setup/</a></p>
+<p>To create customized mobile application of Sunbird, refer to the <a href="http://www.sunbird.org/developer-docs/installation/install_mobile_setup">Mobile App Installation page</a></p>
 
 
           
