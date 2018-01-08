@@ -14,36 +14,6 @@ This document explains the telemetry feature within the Sunbird context.
 
 The audience of this document are adopters of the Sunbird platform, EkStep partners and developers who wish to use the telemetry component within their own environment. It provides an understanding of the purpose of the telemetry component, other related components and how each component helps to log and sync telemetry data.  
 
-This document has four sections:
-
-* A general understanding of telemetry, that details:
-
-    * overview
-    
-    * what is telemetry
-    
-    * why we need telemetry
-
-    * what is telemetry channel
-
-* The telemetry specifications, that explains:
-
-    * telemetry V3 event structure
-    
-    * telemetry V3 event details
-    
-* Sending telemetry, that explains:
-
-    * prerequisites
-
-    * how to use telemetry helpers  
-
-* Consuming telemetry data, that explains:
-
-    * telemetry exhaust APIs
-
-    * understanding typical workflow from telemetry data  
-
 ## What is Telemetry?
 
 The word ‘Telemetry’ is derived from its Greek etymological roots, tele - remote and metron - measure. 
