@@ -24,7 +24,7 @@ Technologies used to develop Sunbird are as listed below:
 
 - AngularJS, so to make the portal better structured for dynamic page updates
 
-  For further reading on AngularJS refer [https://angularjs.org/]
+  For further reading on AngularJS refer [https://angularjs.org/](https://angularjs.org)
   
 - Java Play, to make the portal highly scalable
 
