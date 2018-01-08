@@ -74,7 +74,7 @@ For details of the content editor, its features and instructions to use it, refe
 - **Others** - Few other key services are:
   - API manager 
   - Proxy
- *For details, refer to the [Deploying Sunbird Services page](http://www.sunbird.org/developer-docs/installation/deploy_sb_services/)         
+ *For details, refer to the [Deploying Sunbird Services page](http://www.sunbird.org/developer-docs/installation/deploy_sb_services/)*         
 ## Installation Overview
 
 Sunbird can be installed on different devices and can be deployed for single or multiusers. 
