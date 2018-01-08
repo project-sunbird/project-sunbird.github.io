@@ -32,6 +32,11 @@ Estimated run time: 30 mins for the fresh  time.
 
 Scripts can be re-tried and to create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
 
+> Prerequisites  
+docker-ce installed  
+add your user account to docker group  
+`sudo usermod -aG docker $(whoami)`
+ 
 Run the following steps from a machine which is connected to the internet:
 
 1. Clone the sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
@@ -43,6 +48,8 @@ Run the following steps from a machine which is connected to the internet:
 7. Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db`
 8. Run `cd sunbird-devops/deploy`
 9. Run `./provision-servers.sh`
+> If you want to troubleshoot and need debug message, you can give --debug flag  
+`./provision.sh --debug`
 10. Login to Azure when CLI instructs
 11. Wait for deployment to complete
 12.	Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details
