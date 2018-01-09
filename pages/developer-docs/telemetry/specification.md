@@ -69,59 +69,50 @@ All events follow a common data structure, though the event data structure (“e
 }
 </pre>
 
-**Note:**
+> **Note:**
+> * All events have the same structure with only difference in edata structures.
+> * All events have unique event codes i.e., (IDs).
+> * All events are as per platform schema
 
-* All events have the same structure with only difference in edata structures.
+## Events Specs
 
-* All events have unique event codes i.e., (IDs).
+* [Start](developer-docs/telemetry/eventdetails/#start) - This method initializes capture of telemetric data associated to the start of user action 
 
-* All events are as per platform schema
+* [Impression](developer-docs/telemetry/eventdetails/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
 
-## Telemetry V3 Event Details
+* [Interact](developer-docs/telemetry/eventdetails/#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
 
-Every API method has an associated event. The following API methods log details of the associated telemetry event. 
+* [Assess ](developer-docs/telemetry/eventdetails/#access)- This method is used to capture user assessments that happen while playing content.
 
-* [Start](developer-docs/telemetry/specification/#start) - This method initializes capture of telemetric data associated to the start of user action 
+* [Response](developer-docs/telemetry/eventdetails/#response) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
 
-* [Impression](developer-docs/telemetry/specification/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
+* [Interrupt](developer-docs/telemetry/eventdetails/#interrupt) - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.
 
-* [Interact](developer-docs/telemetry/specification/#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
+* [Feedback](developer-docs/telemetry/eventdetails/#feedback) - This method is used to capture user feedback
 
-* [Assess ](developer-docs/telemetry/specification/#access)- This method is used to capture user assessments that happen while playing content.
+* [Share](developer-docs/telemetry/eventdetails/#share) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
 
-* [Response](developer-docs/telemetry/specification/#response) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
+* [Audit](developer-docs/telemetry/eventdetails/#audit)
 
-* [Interrupt](developer-docs/telemetry/specification/#interrupt) - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.
+* [Error](developer-docs/telemetry/eventdetails/#error) - This method is used to capture when users face an error
 
-* [Feedback](developer-docs/telemetry/specification/#feedback) - This method is used to capture user feedback
+* [Heartbeat](developer-docs/telemetry/eventdetails/#heartbeat) - 
 
-* [Share](developer-docs/telemetry/specification/#share) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
+* [Log](developer-docs/telemetry/eventdetails/#log) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
 
-* [Audit](developer-docs/telemetry/specification/#audit)
+* [Search](developer-docs/telemetry/eventdetails/#search) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
 
-* [Error](developer-docs/telemetry/specification/#error) - This method is used to capture when users face an error
+* [Metrics](developer-docs/telemetry/eventdetails/#metrics)
 
-* [Heartbeat](developer-docs/telemetry/specification/#heartbeat) - 
+* [Summary](developer-docs/telemetry/eventdetails/#summary)
 
-* [Log](developer-docs/telemetry/specification/#log) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
+* [Exdata](developer-docs/telemetry/eventdetails/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
-* [Search](developer-docs/telemetry/specification/#search) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
-
-* [Metrics](developer-docs/telemetry/specification/#metrics)
-
-* [Summary](developer-docs/telemetry/specification/#summary)
-
-* [Exdata](developer-docs/telemetry/specification/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
-
-* [End](developer-docs/telemetry/specification/#end) - This method is used to capture closure after all the activities are completed
+* [End](developer-docs/telemetry/eventdetails/#end) - This method is used to capture closure after all the activities are completed
 
 ### Start
 
 This API is used to log telemetry when users view content or initiate game play 
-
-<pre>
-start: function(config, contentId, contentVer, data) { }
-</pre>
 
 Request Arguments:
 
@@ -142,10 +133,6 @@ Request Arguments:
 ### Impression
 
 This API is used to log telemetry when users visit a specific page.
-
-<pre>
-impression: function(data) { }
-</pre>
 
 Request Arguments:
 
@@ -171,10 +158,6 @@ data - Object //Required
 
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
 
-<pre>
-interact: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -196,10 +179,6 @@ data - Object //Required
 ### Assess
 
 This API is used to log telemetry of assessments that have occured when the user is viewing content
-
-<pre>
-assess: function(data) { }
-</pre>
 
 Request Arguments:
 
@@ -232,10 +211,6 @@ QUESTION = {
 
 This API is used to log telemetry of user response. For example; Responded to assessments.
 
-<pre>
-response: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -262,10 +237,6 @@ TARGET = {
 
 This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.
 
-<pre>
-interrupt: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -281,11 +252,6 @@ data - Object //Required
 
 This API is used to log telemetry of feedback provided by the user.
 
-<pre>
-// To log content start/play event
-feedback: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -300,11 +266,6 @@ data - Object //Required
 ### Share
 
 This API is used to log telemetry when a user shares any content with other users.
-
-<pre>
-// To log content start/play event
-share: function(data) { }
-</pre>
 
 Request Arguments:
 
@@ -338,10 +299,6 @@ data - Object //Required
 
 This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.
 
-<pre>
-audit: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -359,10 +316,6 @@ data - Object //Required
 
 This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games. 
 
-<pre>
-error: function(error) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -377,10 +330,6 @@ error - Object //Required
 ### Heartbeat
 
 This API is used to log telemetry for heartbeat event to denote that the process is running.
-
-<pre>
-heartbeat: function(data) { }
-</pre>
 
 Request Arguments:
 
@@ -397,10 +346,6 @@ data - Object //Required
 
 This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.
 
-<pre>
-log: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -416,10 +361,6 @@ data - Object //Required
 ### Search
 
 This API is used to log telemetry when a user triggers a search for any content, item or asset 
-
-<pre>
-search: function(data) { }
-</pre>
 
 Request Arguments:
 
@@ -440,10 +381,6 @@ data - Object - Required
 
 This API is used to log telemetry for service business metrics (also accessible via health API).
 
-<pre>
-metrics: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -460,10 +397,6 @@ data - Object - Required
 ### Summary
 
 This API is used to log telemetry summary event
-
-<pre>
-summary: function(data) { }
-</pre>
 
 Request Arguments:
 
@@ -502,10 +435,6 @@ data - Object - Required
 
 This API is used to log telemetry for external data, while playing content
 
-<pre>
-exdata: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -524,10 +453,6 @@ data - Object - Required
 
 This API is used to log telemetry while the user is closing or exiting the content or game
 
-<pre>
-end: function(data) { }
-</pre>
-
 Request Arguments:
 
 <pre>
@@ -540,4 +465,6 @@ data - Object //Required
   "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
 }
 </pre>
+
+
 

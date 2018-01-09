@@ -7,7 +7,7 @@ description: AuthToken generator JS library
 published: true
 allowSearch: true
 ---
-## AuthToken Generator JS Library methods
+## Methods
 
 The following API methods are provided by the AuthToken generator library
 

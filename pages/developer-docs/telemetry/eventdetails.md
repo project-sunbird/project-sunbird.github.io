@@ -1,263 +1,49 @@
 ---
 type: landing
 directory: developer-docs/telemetry
-title: Standalone Telemetry JS Library
-page_title: Standalone telemetry JS library
-description: telemetry specification of Sunbird
+title: Telemetry Event Details
+page_title: Telemetry V3 Event Details
+description: telemetry V3 event details
 published: true
 allowSearch: true
----
-## Need 
-
-The purpose of a standalone JS library for telemetry is to facilitate capture and distribution of telemetry data by users who would like to use their own apps, content players or portals.  
-
-We chose to use a JS library for the following reasons:
-
-* All the telemetry events that are generated and synced to the server have the same format (field data types and time zone value)
-
-* It is easy to upgrade to new versions, in case of major changes in telemetry
-
-* There is effortless backward compatibility, as changes are handled within the telemetry library. Any upgrade of the telemetry library does not require code changes in the content
-
-* There are reduced number of API calls
-
-* There are simple API methods to generate the complete telemetry event as only the required fields are passed
-
-## Prerequisites 
-
-The following are prerequisites to use or integrate the JS library:
-
-* JQuery library should be available 
-
-* Valid Authtoken and Key to make API calls
-
-**Note:** For details on generating and using the Authtoken and Key, refer to the section 
-
-* Device ID value
-
-**Note:** For details on how to get the device ID value, refer to [https://android-developers.googleblog.com/2011/03/identifying-app-installations.html](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html) 
-
-## Configure
-
-This JS library helps to generate telemetry events. These events sync to the server or data-pipeline in a batch as defined in the configuration. To log telemetry events, the user has to call the start method by passing the configuration along with other parameters.
-
-**Note:** All telemetry events sync only to the server or data-pipeline, when connected to the Internet.  
-
-Telemetry events are generated based on the configuration of the telemetry library.
-
-**Required Configuration (Context)**
-
-<table>
-  <tr>
-    <td>Property</td>
-    <td>Description</td>
-    <td>Required</td>
-    <td>Default Value</td>
-  </tr>
-  <tr>
-    <td>pdata</td>
-    <td>Producer data. It is an object containing id, version and pid.</td>
-    <td>true</td>
-    <td>Defaults to genie ex : {"id": "genie", "ver": "6.5.2567" pid:""}</td>
-  </tr>
-  <tr>
-    <td>channel</td>
-    <td>It is an string containing unique channel name.</td>
-    <td>true</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>uid</td>
-    <td>It is an string containing user id.</td>
-    <td>true</td>
-    <td>defaults to "anonymous"</td>
-  </tr>
-  <tr>
-    <td>did</td>
-    <td>It is an string containing unique device id. To generate this value refer to here . ANDROID_ID is generally used</td>
-    <td>true</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>authtoken</td>
-    <td>It is an string containing consumer token to access the API</td>
-    <td>true</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Property</td>
-    <td>Description</td>
-    <td>Required</td>
-    <td>Default Value</td>
-  </tr>
-  <tr>
-    <td>env</td>
-    <td>It is an string containing Unique environment where the event has occurred</td>
-    <td>true</td>
-    <td>defaults to "ContentPlayer"</td>
-  </tr>
-</table>
-
-**Additional Configuration**
-
-<table>
-  <tr>
-    <td>Property</td>
-    <td>Description</td>
-    <td>Required</td>
-    <td>Default Value</td>
-  </tr>
-  <tr>
-    <td>sid</td>
-    <td>It is an string containing user session id.</td>
-    <td>optional</td>
-    <td>defaults to uuid</td>
-  </tr>
-  <tr>
-    <td>batchsize</td>
-    <td>It is an int containing number of events count to sync at a time. Can be configured from min value 10 to max value 1000.</td>
-    <td>optional</td>
-    <td>defaults to 20</td>
-  </tr>
-  <tr>
-    <td>mode</td>
-    <td>It is an string which defines to identify preview used by the user to play/edit/preview.</td>
-    <td>optional</td>
-    <td>defaults to "play"</td>
-  </tr>
-  <tr>
-    <td>host</td>
-    <td>It is an string containing API endpoint host.</td>
-    <td>optional</td>
-    <td>defaults to "https://api.ekstep.in"</td>
-  </tr>
-  <tr>
-    <td>endpoint</td>
-    <td>It is an string containing API endpoint. Please don't change default value. Update this only when the data is proxied</td>
-    <td>optional</td>
-    <td>Defaults to "/v3/telemetry"</td>
-  </tr>
-  <tr>
-    <td>tags</td>
-    <td>It is an array. It can be used to tag devices so that summaries/metrics can be derived via specific tags. Helpful during analysis</td>
-    <td>optional</td>
-    <td>Defaults to []</td>
-  </tr>
-  <tr>
-    <td>cdata</td>
-    <td>It is an array. Correlation data. Can be used to correlate multiple events. Generally used to track user flow</td>
-    <td>optional</td>
-    <td>Defaults to []</td>
-  </tr>
-  <tr>
-    <td>dispatcher</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-
-**Sample:**
-
-<pre>
-{
-  "pdata": {
-    "id": "genie",
-    "ver": "6.5.2567",
-    "pid": ""
-  },
-
-  "env": "ContentPlayer",
-  "channel": "in.ekstep",
-  "did": "20d63257084c2dca33f31a8f14d8e94c0d939de4",
-  "authtoken": "XXXX",
-  "uid": "anonymous",
-  "sid": "85e8a2c8-bb8e-4666-a21b-c29ec590d740",
-  "batchsize": 20,
-  "mode": "play",
-  "host": "https://api.ekstep.in",
-  "endpoint": "/v3/telemetry",  
-  "tags": [],
-  "cdata": []
-}
-</pre>
-
-**Dispatcher:**
-
-User can define custom dispatcher to override the default functionality of telemetry sync. By default telemetry events will send to default server/host. User can override this default functionality by defining his own "dispatcher" object to handle telemetry events.
-
-<pre>
-var customDispatcher = {
-    dispatch: function(event){
-        // User defined logic to send telemetry to server or store locally etc..
-    }
-};
-</pre>
-
-Send this object as dispatcher in the above sample configuration ("dispatcher":customDispatcher).
-
-## How to use telemetry JS library
-
-To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.
-
-<pre>
-&#x3C;!-- External Libraries --&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  
-  &#x3C;!-- Telemetry JS library --&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/telemetry.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/auth-token-generator.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  &#x3C;script&#x3E;
-    function init() {
-          // Generate auth token
-          // Key: Partner generated key
-          // secret: partner secret value 
-          var token = AuthTokenGenerate.generate(key, secret);
-          config.authToken = token;
-          startEdata = {};
-          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata );
-      }
-  init()
-  &#x3C;/script&#x3E;
-</pre>
-
-## Telemetry API methods
+--- 
+## V3 Event Details
 
 Every API method has an associated event. The following API methods log details of the associated telemetry event. 
 
-* [Start](developer-docs/telemetry/jslibrary/#start) - This method initializes capture of telemetric data associated to the start of user action 
+* [Start](developer-docs/telemetry/eventdetails/#start) - This method initializes capture of telemetric data associated to the start of user action 
 
-* [Impression](developer-docs/telemetry/jslibrary/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
+* [Impression](developer-docs/telemetry/eventdetails/#impression) - This method is used to capture telemetry for user visits to  a specific page. 
 
-* [Interact](developer-docs/telemetry/jslibrary/#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
+* [Interact](developer-docs/telemetry/eventdetails/#interact) - This method is used to capture user interactions on a page. For example, search, click, preview, move, resize, configure
 
-* [Assess ](developer-docs/telemetry/jslibrary/#access)- This method is used to capture user assessments that happen while playing content.
+* [Assess ](developer-docs/telemetry/eventdetails/#access)- This method is used to capture user assessments that happen while playing content.
 
-* [Response](developer-docs/telemetry/jslibrary/#response) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
+* [Response](developer-docs/telemetry/eventdetails/#response) - This method is used to capture user responses. For example; response to a poll, calendar event or a question.
 
-* [Interrupt](developer-docs/telemetry/jslibrary/#interrupt) - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.
+* [Interrupt](developer-docs/telemetry/eventdetails/#interrupt) - This method is used to capture  interrupts triggered during user activity. For example;  mobile app sent to background, call on the mobile, etc.
 
-* [End](developer-docs/telemetry/jslibrary/#end) - This method is used to capture closure after all the activities are completed
+* [Feedback](developer-docs/telemetry/eventdetails/#feedback) - This method is used to capture user feedback
 
-* [Feedback](developer-docs/telemetry/jslibrary/#feedback) - This method is used to capture user feedback
+* [Share](developer-docs/telemetry/eventdetails/#share) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
 
-* [Share](developer-docs/telemetry/jslibrary/#share) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
+* [Audit](developer-docs/telemetry/eventdetails/#audit)
 
-* [Audit](developer-docs/telemetry//jslibrary/#audit)
+* [Error](developer-docs/telemetry/eventdetails/#error) - This method is used to capture when users face an error
 
-* [Error](developer-docs/telemetry/jslibrary/#error) - This method is used to capture when users face an error
+* [Heartbeat](developer-docs/telemetry/eventdetails/#heartbeat) - 
 
-* [Heartbeat](developer-docs/telemetry/jslibrary/#heartbeat) - 
+* [Log](developer-docs/telemetry/eventdetails/#log) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
 
-* [Log](developer-docs/telemetry/jslibrary/#log) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
+* [Search](developer-docs/telemetry/eventdetails/#search) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
 
-* [Search](developer-docs/telemetry/jslibrary/#search) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
+* [Metrics](developer-docs/telemetry/eventdetails/#metrics)
 
-* [Metrics](developer-docs/telemetry/jslibrary/#metrics)
+* [Summary](developer-docs/telemetry/eventdetails/#summary)
 
-* [Summary](developer-docs/telemetry/jslibrary/#summary)
+* [Exdata](developer-docs/telemetry/eventdetails/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
-* [Exdata](developer-docs/telemetry/jslibrary/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
+* [End](developer-docs/telemetry/eventdetails/#end) - This method is used to capture closure after all the activities are completed
 
 ### Start
 
@@ -684,5 +470,5 @@ data - Object //Required
   "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
 }
 </pre>
-  
-  
+
+

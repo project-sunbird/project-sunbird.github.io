@@ -1,12 +1,25 @@
 ---
 type: landing
 directory: developer-docs/singlesignon
-title: API Information
-page_title: API Information
-description: Details of API required for user onboarding and sinlge sign on
+title: Org and user creation
+page_title: Creating Organizations and Users
+description: Details of master data exchange during single sign on
 published: true
 allowSearch: true
 ---
+
+
+## Master Data Interchange
+There are some data presently residing in the external SSO systems which are required on Sunbird to provide functionality to the users who sign in to the platform. The data required are about organizations (teacher education/training Institutes) and the members of the organizations. Within Sunbird, a user is not granted permissions system wide. Instead, a user has permissions defined at the level of the organization to which they belong. This allows a user to be a part of many organizations and have different permissions for each organization.
+
+### Data Requirements
+To make this feasible, Sunbird will require three items of information from the integrating party
+
+- List of organisations, their names and any unique identifier for them in external system
+
+- List of members for each organisation containing the username, full name and verified email address
+
+- List of roles of each member in the organisation. Available roles are member, content creator and admin
 
 ## Organization APIs
 Tenants can import their organizations and users on Sunbird using the organization and user APIs. The API has the following resources:
@@ -354,7 +367,6 @@ Request Body - membership details
 **Remove Member**
 
 POST - <BASE_URL>/api/org/v1/member/remove
-
 Removes a member from an organization
 
 Request
@@ -404,9 +416,5 @@ Request Body - membership details
 }
 </pre>
 
-### Single-Sign-On API
-To login a user, the client must provide a link (which makes a GET request) to the auto-login endpoint /v1/user/session/create?token=<jwt_token> with the JWT token in the query parameter of the request. Here’s an example:
-
-<base_url>/v1/user/session/create?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
-
+*For further information on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)*
 

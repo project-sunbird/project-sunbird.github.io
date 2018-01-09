@@ -26,23 +26,13 @@ To install Sunbird, each of the server should have the following minimum system 
 
 ### API Keys
 - Sunbird implementors currently need to get a API key for accessing EkStep platform.Since, the content is stored here. In the future, Sunbird will support more content stores.
-- When you are initially trying out the Sunbird, please request the keys from the EkStep QA environment. 
+- To initially try Sunbird, request for the keys from the EkStep QA environment. 
 
-For requesting the keys follow these steps:
+*For details to request for the keys, refer to the section [How to generate authorization credentials](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) on the Auth Token Generator JS Library page*  
 
-- Login to [qa.ekstep.in](https://qa.ekstep.in).
-- Navigate to Resources then Developers.
-- Click on "API Credentials" on the top menu
-- On this page click on "Request API Access", check all the options and click submit
-- Once your request is approved (you will receive an email notifying you about the keys) 
-- click on "Create Credentials"
-- Note down the key and secret that is previewed on your screen
-- Generate a JWT token by following the steps [here](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis){:target="_blank"}
-- Please keep the JWT handy, it will be needed during the installation process.
+After getting the key and secret, you are ready to deploy Sunbird in the live environment.
 
-Once you have completed the steps to get keys and secret,you are ready to deploy the Sunbird in live environment.
-
-In order to get the production credentails, repeat the steps under API Keys section.
+To get production credentails, repeat the steps under API Keys section.
 
 ### SSL Certificate
 
