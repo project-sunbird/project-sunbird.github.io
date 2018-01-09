@@ -31,7 +31,7 @@ For configuring the environment execute the following command:
 
 Run `cd ./sunbird-devops/deploy && ./generate-config.sh <implementation-name> <environment-name> deploy`.
 
-```E.g. `cd ./sunbird-devops/deploy && ./generate-config.sh mysb production deploy`.
+```E.g. cd ./sunbird-devops/deploy && ./generate-config.sh mysb production deploy.
 
 This creates `mysb-devops` directory with *incomplete* configurations. ```
 
