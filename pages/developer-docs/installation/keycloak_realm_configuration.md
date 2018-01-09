@@ -14,11 +14,12 @@ A step by step guide to run and provision the keycloak server locally is explain
 **Note:** Sunbird uses Keycloak as the identity and authentication provider. 
 
 ## Access Keycloak Administration
-Assuming that you have set up sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to **https://sunbird.example.com/auth/admin**
+
+Assuming that you have set up Sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to **https://sunbird.example.com/auth/admin**
 
 ## Import Realm
 
-- To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a  href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json"  download>here</a>.
+- To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a  href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json">here</a>.
 
 - To import the realm, use the 'Add realm' button as shown in the following screens. 
 
