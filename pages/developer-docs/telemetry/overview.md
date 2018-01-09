@@ -7,13 +7,6 @@ description: telemetry specification of Sunbird
 published: true
 allowSearch: true
 --- 
-
-## Overview 
-
-This document explains the telemetry feature within the Sunbird context. 
-
-The audience of this document are adopters of the Sunbird platform, EkStep partners and developers who wish to use the telemetry component within their own environment. It provides an understanding of the purpose of the telemetry component, other related components and how each component helps to log and sync telemetry data.  
-
 ## What is Telemetry?
 
 The word ‘Telemetry’ is derived from its Greek etymological roots, tele - remote and metron - measure. 
