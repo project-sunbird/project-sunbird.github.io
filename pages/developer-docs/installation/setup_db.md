@@ -41,13 +41,13 @@ The missing configuration needs to be done afterwards.
 
 Modify all the configurations under `# DB CONFIGURATION` block in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`
 
-The estimated run time for  preparation to Set up Databases is 15-30 mins and another 30 mins to complete complete the process.
+The estimated run time for preparation to Set up Databases is 15-30 mins and another 30 mins to complete the process.
 
 ### Creating Databases using automation
 
 Estimated elapsed time is 10-15 mins (in an environment with fast internet).
 
-Following is a set of scripts which installs the Databases into the `db-server` and copies over the `master` data.
+Following is a set of scripts which install the Databases into the `db-server` and copies over the `master` data.
 
   - Run `cd sunbird-devops/deploy`
 
@@ -67,12 +67,12 @@ Initialize the databases after they are installed using the following the proced
 
 Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
 
-Once DB initialisation is done then load following to .CSV files:
+Once DB initialisation is done then load following to CSV files:
 
  - pageMgmt.csv
  - pageSection.csv
  
-These .CSV files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
+These CSV files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
 
 For loading the .CSV files follow these steps:
 
