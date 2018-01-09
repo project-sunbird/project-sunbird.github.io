@@ -62,6 +62,12 @@ sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 ```
 
+**Please make sure this configurations are updated** 
+
+- ENVIRONMENT CONFIGURATION
+- APPLICATION SERVER CONFIGURATIONS
+- ADVANCED CONFIGURATIONS
+
 ## Core services
 
 To deploy the Sunbird core services, execute the following command:
