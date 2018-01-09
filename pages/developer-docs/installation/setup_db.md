@@ -33,15 +33,13 @@ Run `cd ./sunbird-devops/deploy && ./generate-config.sh <implementation-name> <e
 
 E.g. `cd ./sunbird-devops/deploy && ./generate-config.sh mysb production deploy`.
 
-This creates `mysb-devops` directory with *incomplete* configurations.
-
-The missing configuration needs to be done afterwards.
+This creates `mysb-devops` directory with *incomplete* configurations. While setting up the application the rest of the configuration can be taken up.
 
 + Modifying configurations
 
 Modify all the configurations under `# DB CONFIGURATION` block in `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`
 
-The estimated run time for preparation to Set up Databases is 15-30 mins and another 30 mins to complete the process.
+The estimated run time for preparation to Set up Databases is 15-30 mins. The estimated run time to complete the process is 30 mins
 
 ### Creating Databases using automation
 
@@ -83,5 +81,3 @@ a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organi
 
 b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
 </pre>
-
-***Note:*** The automation walk-through provided [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}, shows you the creation of databases and the initialization process.
