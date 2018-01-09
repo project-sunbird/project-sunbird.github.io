@@ -259,7 +259,7 @@ Every API method has an associated event. The following API methods log details 
 
 * [Exdata](developer-docs/telemetry/jslibrary/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
-##### Start
+### Start
 
 This API is used to log telemetry when users view content or initiate game play 
 
@@ -283,7 +283,7 @@ Request Arguments:
 }
 </pre>
 
-##### Impression
+### Impression
 
 This API is used to log telemetry when users visit a specific page.
 
@@ -311,7 +311,7 @@ data - Object //Required
 }
 </pre>
 
-##### Interact
+### Interact
 
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
 
@@ -337,7 +337,7 @@ data - Object //Required
 }
 </pre>
 
-##### Assess
+### Assess
 
 This API is used to log telemetry of assessments that have occured when the user is viewing content
 
@@ -372,7 +372,7 @@ QUESTION = {
 }
 </pre>
 
-##### Response
+### Response
 
 This API is used to log telemetry of user response. For example; Responded to assessments.
 
@@ -402,7 +402,7 @@ TARGET = {
 }
 </pre>
 
-##### Interrupt
+### Interrupt
 
 This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.
 
@@ -421,7 +421,7 @@ data - Object //Required
 }
 </pre>
 
-##### Feedback
+### Feedback
 
 This API is used to log telemetry of feedback provided by the user.
 
@@ -441,7 +441,7 @@ data - Object //Required
 }
 </pre>
 
-##### Share
+### Share
 
 This API is used to log telemetry when a user shares any content with other users.
 
@@ -478,7 +478,7 @@ data - Object //Required
 }
 </pre>
 
-##### Audit
+### Audit
 
 This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.
 
@@ -499,7 +499,7 @@ data - Object //Required
 }
 </pre>
 
-##### Error
+### Error
 
 This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games. 
 
@@ -518,7 +518,7 @@ error - Object //Required
 }
 </pre>
 
-##### Heartbeat
+### Heartbeat
 
 This API is used to log telemetry for heartbeat event to denote that the process is running.
 
@@ -537,7 +537,7 @@ data - Object //Required
 }
 </pre>
 
-##### Log
+### Log
 
 This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.
 
@@ -557,7 +557,7 @@ data - Object //Required
 }
 </pre>
 
-##### Search
+### Search
 
 This API is used to log telemetry when a user triggers a search for any content, item or asset 
 
@@ -580,7 +580,7 @@ data - Object - Required
 }
 </pre>
 
-##### Metrics
+### Metrics
 
 This API is used to log telemetry for service business metrics (also accessible via health API).
 
@@ -601,7 +601,7 @@ data - Object - Required
 }
 </pre>
 
-##### Summary
+### Summary
 
 This API is used to log telemetry summary event
 
@@ -642,7 +642,7 @@ data - Object - Required
 }
 </pre>
 
-##### Exdata
+### Exdata
 
 This API is used to log telemetry for external data, while playing content
 
@@ -664,7 +664,7 @@ data - Object - Required
 }
 </pre>
 
-##### End
+### End
 
 This API is used to log telemetry while the user is closing or exiting the content or game
 
