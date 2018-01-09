@@ -426,5 +426,5 @@ Request Body - membership details
 }
 </pre>
 
-For further information on Organization Management APIs, refer [http://www.sunbird.org/apis/orgapi/]
+*For further information on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
