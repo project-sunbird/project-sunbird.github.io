@@ -13,8 +13,8 @@ Servers can be provisioned either manually or via automation if you are deployin
 
 To provision servers manually, commission two servers and ensure that they can communicate with either other over the network. 
 
-1. The first server, serves as the DB (Database) server, and 
-1. The second serves as the application server & administration server
+- The first server, serves as the DB (Database) server, and 
+- The second serves as the application server & administration server
 
 ## Automation for Azure
 
