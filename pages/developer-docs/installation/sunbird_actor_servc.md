@@ -1,13 +1,11 @@
 
 ## Requirement
 
-  System should have the ability to run the akka actor in local ,remote or mixed mode. Based on the configuration values 
- system can run akka actor either in local or remote mode in similar way background job actor can also be run any one of the mode. 
-#
+System should have the ability to run the akka actor in local ,remote or mixed mode. Based on the configuration values system can run akka actor either in local or remote mode in similar way background job actor can also be run any one of the mode. 
 
 ### Implementation : 
    
-  These configuration key will be set under **externalresource.properties** file or in environment variable.
+  These configuration keys will be set under **externalresource.properties** file or in environment variable.
      
    1.  api_actor_provider {'**remote**','**local**'} [Default value will be 'local' means normal actors will run locally]
    2.  background_actor_provider {'**remote**','**local**'} [Default value will be 'remote' means all backgroundjob actor will run remotely.]
