@@ -25,27 +25,27 @@ The techstack used to develop the Sunbird is as follows:
 
 - **AngularJS** - simplifies and structures the Sunbird portal
 
-  *For more details on AngularJS, refer to the [AngularJS site](https://angularjs.org/)*
+*For more details on AngularJS, refer to the [AngularJS site](https://angularjs.org/)*
   
 - **Java Play** - optimizes resource consumption (CPU, memory, threads) for high scalablilty
 
-  *For more details on Java Play, refer to the [Playframework site](https://playframework.com)*
+*For more details on Java Play, refer to the [Playframework site](https://playframework.com)*
   
 - **Apache Cassandra** - proven database with large active data sets, fault tolerant, decentralized, highly scalable and consistent without compromising on performance
 
-  *For more details on Apache Cassandra, refer to the [Apache Cassandra site](http://cassandra.apache.org)
-  
-  For details on installing the Apache Cassandra database for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
+*For more details on Apache Cassandra, refer to the [Apache Cassandra site](http://cassandra.apache.org)
+
+For details on installing the Apache Cassandra database for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
   
 - **ElasticSearch** - performs and combines many types of searches — structured, unstructured, geo, metric; and lets you zoom out to explore trends and patterns in your data
 
-  *For more details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch)
+*For more details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch)
   
-  For details on installing ElasticSearch for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
+For details on installing ElasticSearch for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
   
 - **Docker** - enables containerization of Sunbird components, making each component independent facilitating innovation, collaboration and co-creation
 
-  *For more details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)*
+*For more details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)*
 
 To effectively install, implement, adopt or extend Sunbird, it is recommended that you know atleast one or more of the following areas:
 
