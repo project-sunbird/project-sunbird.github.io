@@ -7,6 +7,19 @@ description: Installing Sunbird requires two primary software components, the Su
 published: true
 allowSearch: true
 ---
+Pre-requisites
+
+Before you install Sunbird on your laptop, examine your environment and gather data to ensure an optimal installation experience.
+Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.
+
+System Requirements
+
+To install Sunbird, your laptop/PC should have atleast the following minimum system requirements:
+
+- Operating System: Windows 7 and above/4.2 Mac OS X 10.0 and above/Linux  
+- RAM: >1.5GB
+- CPU: 2 cores, >2 GHz
+
 Installing Sunbird requires two primary software components:
 
 - Sunbird portal or web application
