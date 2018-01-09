@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs/telemetry
+directory: developer-docs
 title: Library References
 page_title: Library References
 description: Library References
