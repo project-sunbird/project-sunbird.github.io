@@ -7,7 +7,7 @@ description: Announcement
 published: true
 allowSearch: true
 ---
-On Sunbird,  
+Announcements are an invariable part of organizational activities. From important dates, to events, to policy changes, organization memebers have to be notified of everything. It is a formidabble task to notify each memeber of the organization in person or mail. On Sunbird, this can be handled with the user type, Announcement Sender. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
 
 Announcement Workflow
 
