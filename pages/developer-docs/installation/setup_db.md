@@ -74,12 +74,14 @@ Once DB initialisation is done then load following to CSV files:
  
 These CSV files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
 
-For loading the .CSV files follow these steps:
+For loading the CSV files follow these steps:
 
-         Change the path of .csv file
-         
-         a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate)   FROM '/tmp/cql/pageMgmt.csv';
+Change the path of .csv file
 
-         b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
+<pre>         
+a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate)   FROM '/tmp/cql/pageMgmt.csv';
+
+b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
+</pre>
 
 ***Note:*** The automation walk-through provided [Part 4](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif){:target="_blank"}, shows you the creation of databases and the initialization process.
