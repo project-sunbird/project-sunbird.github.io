@@ -21,21 +21,24 @@ If you wish to set up manually, the main requirement is to have Docker Swarm ins
 The set of scripts on the Automation for Azure page creates the network and servers needed to run Sunbird. The default configuration procedure provisions for three servers, with the minimum specifications mentioned in the System requirements section.
 Known-how of  Azure: VNet, Resource Group, etc. is beneficial but not mandatory. 
 
-The automated provisioning of servers is done via Automation for Azure. The automated provisioning setup:
+The automated provisioning of servers is done via Automation for Azure. 
+
+The automated provisioning of servers is done as follows:
 
 * Azure Virtual Network (aka VPC in AWS) 
-* Creates multiple subnets (one for swarm master, one for swarm slave machines and DB servers) 
-* Creates master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves
-* Opens up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm
+* Create multiple subnets (one for swarm master, one for swarm slave machines and DB servers) 
+* Create master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves
+* Open up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm
 
-Estimated run time: 30 mins for the fresh  time. 
+Estimated run time: 30 mins for the first time install. 
 
 Scripts can be re-tried and to create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
 
 **Prerequisites**  
-> docker-ce installed  
+- docker-ce installed  
 add your user account to docker group  
 `sudo usermod -aG docker $(whoami)`
+- Internet availability
  
 Run the following steps from a machine which is connected to the internet:
 
