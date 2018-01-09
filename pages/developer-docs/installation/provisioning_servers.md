@@ -44,8 +44,10 @@ Run the following steps from a machine which is connected to the internet:
 7. Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db`
 8. Run `cd sunbird-devops/deploy`
 9. Run `./provision-servers.sh`
-> If you want to troubleshoot and need debug message, you can give --debug flag  
+
+**Note**: If you want to troubleshoot and need debug message, you can give --debug flag  
 `./provision.sh --debug`
+
 10. Login to Azure when CLI instructs
 11. Wait for deployment to complete
 12.	Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details
