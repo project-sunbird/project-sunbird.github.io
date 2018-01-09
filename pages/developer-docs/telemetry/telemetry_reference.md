@@ -1,10 +1,10 @@
 ---
 type: landing
-directory: apis
-title: Telemetry References
-page_title: Telemetry Documentation
-description: Telemetry Documentation
-keywords: Telemetry Documentation
+directory: developer-docs/telemetry
+title: Library References
+page_title: Library References
+description: Library References
+keywords: Telemetry, Library, JS Library, HTML Library, AuthToken JS Library
 published: true
 allowSearch: true
 ---
