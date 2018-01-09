@@ -29,13 +29,11 @@
 
 <p>For configuring the environment execute the following command:</p>
 
-<p>Run <code>cd ./sunbird-devops/deploy &amp;&amp; ./generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt;</code>.</p>
+<p>Run <code>cd ./sunbird-devops/deploy &amp;&amp; ./generate-config.sh &lt;implementation-name&gt; &lt;environment-name&gt; deploy</code>.</p>
 
 <p>E.g. <code>cd ./sunbird-devops/deploy &amp;&amp; ./generate-config.sh mysb production deploy</code>.</p>
 
-<p>This creates <code>mysb-devops</code> directory with <em>incomplete</em> configurations.</p>
-
-<p>The missing configuration needs to be done afterwards.</p>
+<p>This creates <code>mysb-devops</code> directory with <em>incomplete</em> configurations. While setting up the application the rest of the configuration can be taken up.</p>
 
 <ul>
   <li>Modifying configurations</li>
@@ -43,13 +41,13 @@
 
 <p>Modify all the configurations under <code># DB CONFIGURATION</code> block in <code>&lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;/group_vars/&lt;environment-name&gt;</code></p>
 
-<p>The estimated run time for  preparation to Set up Databases is 15-30 mins and another 30 mins to complete complete the process.</p>
+<p>The estimated run time for preparation to Set up Databases is 15-30 mins. The estimated run time to complete the process is 30 mins</p>
 
 <h3 id="creating-databases-using-automation">Creating Databases using automation</h3>
 
 <p>Estimated elapsed time is 10-15 mins (in an environment with fast internet).</p>
 
-<p>Following is a set of scripts which installs the Databases into the <code>db-server</code> and copies over the <code>master</code> data.</p>
+<p>Following is a set of scripts which install the Databases into the <code>db-server</code> and copies over the <code>master</code> data.</p>
 
 <ul>
   <li>
@@ -75,22 +73,21 @@
 
 <p>Run <code>sudo ./init-dbs.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></p>
 
-<p>Once DB initialisation is done then load following to .CSV files:</p>
+<p>Once DB initialisation is done then load following to CSV files:</p>
 
 <ul>
   <li>pageMgmt.csv</li>
   <li>pageSection.csv</li>
 </ul>
 
-<p>These .CSV files can be found <a href="https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources" target="_blank">here</a></p>
+<p>These CSV files can be found <a href="https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources" target="_blank">here</a></p>
 
-<p>For loading the .CSV files follow these steps:</p>
+<p>For loading the CSV files follow these steps:</p>
 
-<pre><code>     Change the path of .csv file
-     
-     a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate)   FROM '/tmp/cql/pageMgmt.csv';
+<p>Change the path of .csv file</p>
 
-     b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
-</code></pre>
+<pre>         
+a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate)   FROM '/tmp/cql/pageMgmt.csv';
 
-<p><strong><em>Note:</em></strong> The automation walk-through provided <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-4.gif" target="_blank">Part 4</a>, shows you the creation of databases and the initialization process.</p>
+b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
+</pre>

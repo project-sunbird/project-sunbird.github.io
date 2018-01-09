@@ -1,36 +1,77 @@
-<p>The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. The following steops will install docker, pull the required images and create services based on those images.</p>
+<p>The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. The following steps will install docker, pull the required images and create services based on those images.</p>
 
 <h2 id="preparation-to-setup-application">Preparation to Setup Application</h2>
 
 <ul>
   <li>SSH into the application server. If you have used automated scripts as described in the previous steps, then this server would be vm-1</li>
-  <li>Clone the sunbird-devops repo using git clone https://github.com/project-sunbird/sunbird-devops.git</li>
+  <li>Clone the Sunbird-devops repo using git clone https://github.com/project-sunbird/sunbird-devops.git</li>
   <li>Copy over the generated configuration directory from the DB server(<code>&lt;implementation-name&gt;-devops</code>) to your machine</li>
-  <li>Modify all the configurations under # APPLICATION CONFIGURATION block.</li>
-  <li>The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure you have a certificate and key for the domain that you wish to use.</li>
+  <li>Modify all the configurations under <strong>#APPLICATION CONFIGURATION</strong> block.</li>
+  <li>The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.</li>
   <li>Run <code>cd sunbird-devops/deploy &amp;&amp; sudo ./install-deps.sh</code> to install the dependencies.</li>
 </ul>
 
 <h2 id="api-manager-services">API Manager services</h2>
-<p>Run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will set up the API Manager services.</p>
+
+<ol>
+  <li>Run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will set up the API Manager services.</li>
+</ol>
 
 <p><strong>Note:</strong> The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.</p>
 
 <ul>
+  <li>deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration.</li>
   <li>
-    <p>deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. To find the token search the script output to look for “JWT token for player is :”, copy the corresponding token. Example output below, token is highlighted in italics:</p>
+    <p>To find the token search the script output to look for “JWT token for player is :”, copy the corresponding token. Example output below, token is highlighted in italics:</p>
 
     <pre><code>changed: [localhost] =&gt; {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json .......       "JWT token for player is :                            
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-    
 pBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
 </code></pre>
   </li>
+  <li>
+    <p>Update sunbird_api_auth_token in your configuration with the above copied token.</p>
+  </li>
+  <li>Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. For details refer <a href="developer-docs/installation/medium_scale_deploy#api-keys">API keys</a></li>
 </ul>
 
-<p>Update sunbird_api_auth_token in your configuration with the above copied token.</p>
+<h2 id="keycloak-provisionig">Keycloak provisionig</h2>
+
+<ol>
+  <li>Keycloak is deployed on vm. RUN ./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> this script creates the keycloak username, groupname and servicify keycloak service on vm
+&gt; Update below variables in the config <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
+```
+keycloak_password: (which admin initial password)
+ keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
+```</environment-name></environment-name></implementation-name></environment-name></implementation-name></li>
+  <li><code>sudo ./deploy-keycloak-vm.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></li>
+  <li>
+    <p>Follow the <a href="keycloak_realm_configuration.md">instructions</a> to setup auth realm in keycloak</p>
+  </li>
+  <li>Update following configs</li>
+</ol>
+
+<p>```yml
+# Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
+sunbird_sso_client_id: # Eg: admin-cli
+sunbird_sso_username: # keycloak user name
+sunbird_sso_password: # keycloak user password</p>
+
+<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-portal-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format</h1>
+<p>keycloak_realm:  # Eg: sunbird
+sunbird_keycloak_client_id: # Eg: portal</p>
+
+<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-trampoline-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format</h1>
+<p>sunbird_trampoline_client_id:  # Eg: trampoline
+sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
+```</p>
+
+<p><strong>Make sure this configurations are updated</strong></p>
 
 <ul>
-  <li>Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. The steps are <a href="developer-docs/installation/medium_scale_deploy#api-keys">described here</a></li>
+  <li>ENVIRONMENT CONFIGURATION</li>
+  <li>APPLICATION SERVER CONFIGURATIONS</li>
+  <li>ADVANCED CONFIGURATIONS</li>
 </ul>
 
 <h2 id="core-services">Core services</h2>
@@ -41,11 +82,11 @@ pBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
 
 <h2 id="proxy-services">Proxy services</h2>
 
-<p>To deploy  the Sunbird proxy services , execute the following command:</p>
+<p>To deploy the Sunbird proxy services, execute the following command:</p>
 
 <p>Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
 
-<p><strong>Note:</strong> The automation walk-through provided (PART 5) (PART6) &amp; (PART7), shows you the process for  deployment for Sunbird services.</p>
+<p><strong>Note:</strong> The automation walk-through (PART 5) (PART6) &amp; (PART7), shows you the process for deployment for Sunbird services.</p>
 
 <h3 id="automation-walkthrough">Automation Walkthrough</h3>
 

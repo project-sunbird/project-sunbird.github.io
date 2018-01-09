@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.2.3/";
+			baseURL.href="/releases/release.1.3/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-08 18:33:30 +0530">
+<meta name="last-modified" content="2018-01-09 19:21:09 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.2.3" />
-<meta name="buildNo" content="717" />
+<meta name="buildVersion" content="release.1.3" />
+<meta name="buildNo" content="789" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08012018"  />
-<link rel="stylesheet" href="css/style.css?08012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?08012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?08012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?08012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?09012018"  />
+<link rel="stylesheet" href="css/style.css?09012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?09012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?09012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?09012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -227,10 +227,10 @@
 									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
+									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
@@ -252,16 +252,13 @@
 									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
 								</li>
 								<li>
-									<a href="developer-docs/singlesignon/tokens_sso/">Tokens</a>
-								</li>
-								<li>
 									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
-								</li>
 								<li>
+								<!--<li>
 									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
-								</li>
+								</li>-->
 								<li>
-									<a href="developer-docs/singlesignon/masterexchange_sso/">Master Data Exchange</a>
+									<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
 								</li>
 								<li>
 									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
@@ -321,23 +318,8 @@
 									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
 								</li>
 								<li>
-									<a href="developer-docs/telemetry/eventdetails/">Telemetry Event Details</a>
-								</li>
-								<li>
-									<div class="">
-							                     <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
-							                     <ul class="sidebar-group">
-										     <li>
-											     <a href="developer-docs/telemetry/jslibrary/">Standalone Telemetry JS Library</a>
-										     </li>
-										     <li>
-											     <a href="developer-docs/telemetry/htmlinterfacelibrary/">Telemetry HTML Interface Library</a>
-										     </li>
-										     <li>
-											     <a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
-										     </li>
-										</ul>	
-								</li>
+							                 <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>	
 								<li>
 									<div class="">
 									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
@@ -354,11 +336,28 @@
 											<li>
 												<a href="developer-docs/telemetry/consuming_telemetry/#backend-services-workflow">Backend-services Workflow</a>
 											</li>
-										</ul>						
-								</li>						
+										</ul>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</li>	
+					<li>
+						<div class="">
+						<a href="developer-docs/library_reference/">Library References</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/telemetry/jslibrary/">Standalone JS Library</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/htmlinterfacelibrary/">HTML Interface Library</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
+								</li>
+							</ul>
+						</div>
+					</li>
 					<li>
 						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
 					</li>
@@ -459,36 +458,33 @@ $("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addCla
               <a href="#getting-started"><span class="tocnumber">1 .</span> <span class="toctext">Getting Started</span></a>
             </li>
             <li class="toc_level-1 toc_section-2">
-              <a href="#setting-the-admin-password"><span class="tocnumber">2 .</span> <span class="toctext">Setting the Admin password</span></a>
+              <a href="#access-keycloak-administration"><span class="tocnumber">2 .</span> <span class="toctext">Access Keycloak Administration</span></a>
             </li>
             <li class="toc_level-1 toc_section-3">
-              <a href="#access-keycloak-administration"><span class="tocnumber">3 .</span> <span class="toctext">Access Keycloak Administration</span></a>
+              <a href="#import-realm"><span class="tocnumber">3 .</span> <span class="toctext">Import Realm</span></a>
             </li>
             <li class="toc_level-1 toc_section-4">
-              <a href="#import-realm"><span class="tocnumber">4 .</span> <span class="toctext">Import Realm</span></a>
+              <a href="#create-user-to-access-user-management-api"><span class="tocnumber">4 .</span> <span class="toctext">Create User to Access User Management API</span></a>
             </li>
             <li class="toc_level-1 toc_section-5">
-              <a href="#create-user-to-access-user-management-api"><span class="tocnumber">5 .</span> <span class="toctext">Create User to Access User Management API</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-6">
-              <a href="#update-client--secrets"><span class="tocnumber">6 .</span> <span class="toctext">Update Client &amp; Secrets</span></a>
+              <a href="#update-client--secrets"><span class="tocnumber">5 .</span> <span class="toctext">Update Client &amp; Secrets</span></a>
               <ul>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#account-broker-realm-management"><span class="tocnumber">5.1 .</span> <span class="toctext">Account, broker, realm-management</span></a>
+                </li>
                 <li class="toc_level-2 toc_section-7">
-                  <a href="#account-broker-realm-management"><span class="tocnumber">6.1 .</span> <span class="toctext">Account, broker, realm-management</span></a>
+                  <a href="#android"><span class="tocnumber">5.2 .</span> <span class="toctext">Android</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-8">
-                  <a href="#android"><span class="tocnumber">6.2 .</span> <span class="toctext">Android</span></a>
+                  <a href="#portal"><span class="tocnumber">5.3 .</span> <span class="toctext">Portal</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-9">
-                  <a href="#portal"><span class="tocnumber">6.3 .</span> <span class="toctext">Portal</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-10">
-                  <a href="#trampoline"><span class="tocnumber">6.4 .</span> <span class="toctext">Trampoline</span></a>
+                  <a href="#trampoline"><span class="tocnumber">5.4 .</span> <span class="toctext">Trampoline</span></a>
                 </li>
               </ul>
             </li>
-            <li class="toc_level-1 toc_section-11">
-              <a href="#smtp-configuration"><span class="tocnumber">7 .</span> <span class="toctext">SMTP Configuration</span></a>
+            <li class="toc_level-1 toc_section-10">
+              <a href="#smtp-configuration"><span class="tocnumber">6 .</span> <span class="toctext">SMTP Configuration</span></a>
             </li>
           </ul>
         </td>
@@ -501,30 +497,15 @@ $("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addCla
 
 <p><strong>Note:</strong> Sunbird uses Keycloak as the identity and authentication provider.</p>
 
-<h2 id="setting-the-admin-password">Setting the Admin password</h2>
-
-<ul>
-  <li>Log into the server that Keycloak is running on</li>
-  <li>Change to the path to keycloak root directory (most likely <code>/opt/jboss/keycloak</code>)</li>
-  <li>Execute the following script to set the administrator user name and password</li>
-</ul>
-
-<p>
-  <code>
-$ ./bin/add-user-keycloak.sh -u &lt;admin&gt; -p &lt;yourpassword&gt;
-</code>
-</p>
-
-<p>The script is executed creating the admin user and password. You can log into the administration console using these credentials. After you can view the administration console, follow the steps provided below to set clients and the secrets.</p>
-
 <h2 id="access-keycloak-administration">Access Keycloak Administration</h2>
-<p>Assuming that you have set up sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to <strong>https://sunbird.example.com/auth/admin</strong></p>
+
+<p>Assuming that you have set up Sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to <strong>https://sunbird.example.com/auth/admin</strong></p>
 
 <h2 id="import-realm">Import Realm</h2>
 
 <ul>
   <li>
-    <p>To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json" download="">here</a>.</p>
+    <p>To simplify the configuration, Sunbird provides a ready to use realm that can be readily imported and used. Download the realm <a href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json">here</a>.</p>
   </li>
   <li>
     <p>To import the realm, use the ‘Add realm’ button as shown in the following screens.</p>

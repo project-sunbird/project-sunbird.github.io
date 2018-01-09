@@ -1,4 +1,4 @@
-<h2 id="need-for-a-standalone-telemetry-js-library">Need for a standalone Telemetry JS library</h2>
+<h2 id="need">Need</h2>
 
 <p>The purpose of a standalone JS library for telemetry is to facilitate capture and distribution of telemetry data by users who would like to use their own apps, content players or portals.</p>
 
@@ -22,7 +22,7 @@
   </li>
 </ul>
 
-<h2 id="prerequisites-for-the-telemetry-js-library">Prerequisites for the telemetry JS library</h2>
+<h2 id="prerequisites">Prerequisites</h2>
 
 <p>The following are prerequisites to use or integrate the JS library:</p>
 
@@ -43,7 +43,7 @@
 
 <p><strong>Note:</strong> For details on how to get the device ID value, refer to <a href="https://android-developers.googleblog.com/2011/03/identifying-app-installations.html">https://android-developers.googleblog.com/2011/03/identifying-app-installations.html</a></p>
 
-<h2 id="configure-the-telemetry-js-library">Configure the Telemetry JS library</h2>
+<h2 id="configure">Configure</h2>
 
 <p>This JS library helps to generate telemetry events. These events sync to the server or data-pipeline in a batch as defined in the configuration. To log telemetry events, the user has to call the start method by passing the configuration along with other parameters.</p>
 
@@ -202,7 +202,32 @@ var customDispatcher = {
 
 <p>Send this object as dispatcher in the above sample configuration (“dispatcher”:customDispatcher).</p>
 
-<h2 id="telemetry-js-library-api-methods">Telemetry JS library API methods</h2>
+<h2 id="how-to-use-telemetry-js-library">How to use telemetry JS library</h2>
+
+<p>To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.</p>
+
+<pre>
+&#x3C;!-- External Libraries --&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  
+  &#x3C;!-- Telemetry JS library --&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/telemetry.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/auth-token-generator.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script&#x3E;
+    function init() {
+          // Generate auth token
+          // Key: Partner generated key
+          // secret: partner secret value 
+          var token = AuthTokenGenerate.generate(key, secret);
+          config.authToken = token;
+          startEdata = {};
+          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata );
+      }
+  init()
+  &#x3C;/script&#x3E;
+</pre>
+
+<h2 id="telemetry-api-methods">Telemetry API methods</h2>
 
 <p>Every API method has an associated event. The following API methods log details of the associated telemetry event.</p>
 
@@ -260,7 +285,7 @@ var customDispatcher = {
   </li>
 </ul>
 
-<h5 id="start">Start</h5>
+<h3 id="start">Start</h3>
 
 <p>This API is used to log telemetry when users view content or initiate game play</p>
 
@@ -284,7 +309,7 @@ start: function(config, contentId, contentVer, data) { }
 }
 </pre>
 
-<h5 id="impression">Impression</h5>
+<h3 id="impression">Impression</h3>
 
 <p>This API is used to log telemetry when users visit a specific page.</p>
 
@@ -312,7 +337,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="interact">Interact</h5>
+<h3 id="interact">Interact</h3>
 
 <p>This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure</p>
 
@@ -338,7 +363,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="assess">Assess</h5>
+<h3 id="assess">Assess</h3>
 
 <p>This API is used to log telemetry of assessments that have occured when the user is viewing content</p>
 
@@ -373,7 +398,7 @@ QUESTION = {
 }
 </pre>
 
-<h5 id="response">Response</h5>
+<h3 id="response">Response</h3>
 
 <p>This API is used to log telemetry of user response. For example; Responded to assessments.</p>
 
@@ -403,7 +428,7 @@ TARGET = {
 }
 </pre>
 
-<h5 id="interrupt">Interrupt</h5>
+<h3 id="interrupt">Interrupt</h3>
 
 <p>This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.</p>
 
@@ -422,28 +447,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="end">End</h5>
-
-<p>This API is used to log telemetry while the user is closing or exiting the content or game</p>
-
-<pre>
-end: function(data) { }
-</pre>
-
-<p>Request Arguments:</p>
-
-<pre>
-data - Object //Required
-{
-  "contentId": "", // Required. Id of the content
-  "type": , // Required. app, session, editor, player, workflow, assessment
-  "duration": , // Required. Total duration from start to end in seconds
-  "pageid": "", // Optional. Page/Stage id where the end has happened.
-  "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
-}
-</pre>
-
-<h5 id="feedback">Feedback</h5>
+<h3 id="feedback">Feedback</h3>
 
 <p>This API is used to log telemetry of feedback provided by the user.</p>
 
@@ -463,7 +467,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="share">Share</h5>
+<h3 id="share">Share</h3>
 
 <p>This API is used to log telemetry when a user shares any content with other users.</p>
 
@@ -500,7 +504,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="audit">Audit</h5>
+<h3 id="audit">Audit</h3>
 
 <p>This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.</p>
 
@@ -521,7 +525,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="error">Error</h5>
+<h3 id="error">Error</h3>
 
 <p>This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games.</p>
 
@@ -540,7 +544,7 @@ error - Object //Required
 }
 </pre>
 
-<h5 id="heartbeat">Heartbeat</h5>
+<h3 id="heartbeat">Heartbeat</h3>
 
 <p>This API is used to log telemetry for heartbeat event to denote that the process is running.</p>
 
@@ -559,7 +563,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="log">Log</h5>
+<h3 id="log">Log</h3>
 
 <p>This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.</p>
 
@@ -579,7 +583,7 @@ data - Object //Required
 }
 </pre>
 
-<h5 id="search">Search</h5>
+<h3 id="search">Search</h3>
 
 <p>This API is used to log telemetry when a user triggers a search for any content, item or asset</p>
 
@@ -602,7 +606,7 @@ data - Object - Required
 }
 </pre>
 
-<h5 id="metrics">Metrics</h5>
+<h3 id="metrics">Metrics</h3>
 
 <p>This API is used to log telemetry for service business metrics (also accessible via health API).</p>
 
@@ -623,7 +627,7 @@ data - Object - Required
 }
 </pre>
 
-<h5 id="summary">Summary</h5>
+<h3 id="summary">Summary</h3>
 
 <p>This API is used to log telemetry summary event</p>
 
@@ -664,7 +668,7 @@ data - Object - Required
 }
 </pre>
 
-<h5 id="exdata">Exdata</h5>
+<h3 id="exdata">Exdata</h3>
 
 <p>This API is used to log telemetry for external data, while playing content</p>
 
@@ -686,28 +690,24 @@ data - Object - Required
 }
 </pre>
 
-<h2 id="how-to-use-the-telemetry-js-library">How to use the telemetry JS library</h2>
+<h3 id="end">End</h3>
 
-<p>To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.</p>
+<p>This API is used to log telemetry while the user is closing or exiting the content or game</p>
 
 <pre>
-&#x3C;!-- External Libraries --&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  
-  &#x3C;!-- Telemetry JS library --&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/telemetry.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/auth-token-generator.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  &#x3C;script&#x3E;
-    function init() {
-          // Generate auth token
-          // Key: Partner generated key
-          // secret: partner secret value 
-          var token = AuthTokenGenerate.generate(key, secret);
-          config.authToken = token;
-          startEdata = {};
-          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata );
-      }
-  init()
-  &#x3C;/script&#x3E;
+end: function(data) { }
+</pre>
+
+<p>Request Arguments:</p>
+
+<pre>
+data - Object //Required
+{
+  "contentId": "", // Required. Id of the content
+  "type": , // Required. app, session, editor, player, workflow, assessment
+  "duration": , // Required. Total duration from start to end in seconds
+  "pageid": "", // Optional. Page/Stage id where the end has happened.
+  "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+}
 </pre>
 

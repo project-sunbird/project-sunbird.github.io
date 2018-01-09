@@ -1,4 +1,4 @@
-<h2 id="need-for-an-html-interface-library">Need for an HTML interface library</h2>
+<h2 id="need">Need</h2>
 
 <p>The HTML interface library eases the HTML developer’s effort to log telemetry events from HTML content. It uses simple API methods exposed by the library to log associated events. The reasons to develop the HTML interface library are:</p>
 
@@ -20,7 +20,23 @@
   </li>
 </ul>
 
-<h2 id="html-interface-api-methods">HTML Interface API methods</h2>
+<h2 id="how-to-use-html-interface-library">How to use HTML interface library</h2>
+
+<p>Add the following to your HTML Content:</p>
+
+<p>The file_path is the relative path (eg. assets/js) to these files within the html content.</p>
+
+<pre>
+&#x3C;!-- HTML Interface  JS library --&#x3E;
+&#x3C;script src=&#x22;[relative_path]/htmlinterface.js&#x22;&#x3E;&#x3C;/script&#x3E;
+
+//you can log telemetry interact event as shown below
+org.ekstep.contentrenderer.interface.telemetryService.interact(data) 
+//or 
+RI.telemetryService.interact(data)
+</pre>
+
+<h2 id="api-methods">API methods</h2>
 
 <p>The HTML interface provides simple methods to log telemetry, to handle the ContentRenderer overlay, to get content information, etc.</p>
 
@@ -200,18 +216,3 @@ exdata: function(data){
 },
 </pre>
 
-<h2 id="how-to-use-html-interface-library">How to Use HTML interface library</h2>
-
-<p>Add the following to your HTML Content:</p>
-
-<p>The file_path is the relative path (eg. assets/js) to these files within the html content.</p>
-
-<pre>
-&#x3C;!-- HTML Interface  JS library --&#x3E;
-&#x3C;script src=&#x22;[relative_path]/htmlinterface.js&#x22;&#x3E;&#x3C;/script&#x3E;
-
-//you can log telemetry interact event as shown below
-org.ekstep.contentrenderer.interface.telemetryService.interact(data) 
-//or 
-RI.telemetryService.interact(data)
-</pre>
