@@ -20,7 +20,7 @@ Steps involved in consuming Data Exhaust:
 
 ```Note```: Database schema of Data Exhaust is described [here](https://github.com/ekstep/Common-Design/wiki/TDD-DataSets#database-schema-changes){:target="_blank"}.
 
-### Using channel ID and API key to request channel telemetry
+#### Using channel ID and API key to request channel telemetry
 
 ## Standard Telemetry Workflows
 
