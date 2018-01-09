@@ -7,7 +7,7 @@ description: Telemetry HTML Interface Library
 published: true
 allowSearch: true
 ---
-## Need for an HTML interface library
+## Need 
 
 The HTML interface library eases the HTML developer’s effort to log telemetry events from HTML content. It uses simple API methods exposed by the library to log associated events. The reasons to develop the HTML interface library are:
 
@@ -21,7 +21,23 @@ The HTML interface library eases the HTML developer’s effort to log telemetry 
 
 * The library will handle logging of events from HTML content when it is playing in case portal or device/app.
 
-## HTML Interface API methods
+## How to use HTML interface library
+
+Add the following to your HTML Content:
+
+The file_path is the relative path (eg. assets/js) to these files within the html content.
+
+<pre>
+&#x3C;!-- HTML Interface  JS library --&#x3E;
+&#x3C;script src=&#x22;[relative_path]/htmlinterface.js&#x22;&#x3E;&#x3C;/script&#x3E;
+
+//you can log telemetry interact event as shown below
+org.ekstep.contentrenderer.interface.telemetryService.interact(data) 
+//or 
+RI.telemetryService.interact(data)
+</pre>
+
+## API methods
 
 The HTML interface provides simple methods to log telemetry, to handle the ContentRenderer overlay, to get content information, etc.
 
