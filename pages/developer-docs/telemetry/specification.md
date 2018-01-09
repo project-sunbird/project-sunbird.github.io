@@ -70,10 +70,10 @@ All events follow a common data structure, though the event data structure (“e
 </pre>
 
 > **Note:**
-* All events have the same structure with only difference in edata structures.
-* All events have unique event codes i.e., (IDs).
-* All events are as per platform schema
->
+> * All events have the same structure with only difference in edata structures.
+> * All events have unique event codes i.e., (IDs).
+> * All events are as per platform schema
+
 
 * [Start](developer-docs/telemetry/eventdetails/#start) - This method initializes capture of telemetric data associated to the start of user action 
 
