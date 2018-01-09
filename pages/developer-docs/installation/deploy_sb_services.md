@@ -33,7 +33,7 @@ The Sunbird application consists of multiple services, each service serves a spe
 
 - Update sunbird_api_auth_token in your configuration with the above copied token.
 
-- Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. The steps are [described here](developer-docs/installation/medium_scale_deploy#api-keys)
+- Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. For details refer [API keys](developer-docs/installation/medium_scale_deploy#api-keys)
 
 ## Keycloak provisionig
 
