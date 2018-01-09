@@ -77,7 +77,11 @@ For loading the CSV files follow these steps:
 Change the path of .csv file
 
 <pre>         
-a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate)   FROM '/tmp/cql/pageMgmt.csv';
+a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap, updatedby, updateddate) 
 
-b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
+FROM '/tmp/cql/pageMgmt.csv';
+
+b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery,
+
+sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
 </pre>
