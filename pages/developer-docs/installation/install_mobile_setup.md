@@ -12,7 +12,7 @@ The Sunbird mobile learning app is a delivery format that provides learners with
 
 ## Steps to build APK from Git repo:
 
-- Install Android Studio [here](https://developer.android.com/studio/index.html){:target="_blank"} 
+- Install the Android Studio.For any installation related help, refer to [official Android site](https://developer.android.com/studio/index.html){:target="_blank"} 
 - Clone the repsitory to android studio by executing following command in console:
   git clone  `https://github.com/project-sunbird/sunbird-android.git` 
 - In Android studio, rename `gradle.properties.example` to `gradle.properties`.
@@ -27,4 +27,4 @@ The Sunbird mobile learning app is a delivery format that provides learners with
     - In all mipmap folders and drawable folders you need to replace `ic_launcher.png` image with your desired logo.
     - Logo name should match exactly this text `ic_launcher.png`.
 - If you would like to show contents only to a given channelId in your app, you need to change the value of `FILTER_CONTENT_BY_CHANNEL_ID` to true, by default it's set to false in `build.gradle`.
-- Give your external path folder value in `Constants.class EXTERNAL_PATH` where all the app releated file will be stored. e.g Content, anncouncement attachement etc.
+- Give your external folder path value in `Constants.class EXTERNAL_PATH`, where all the app releated file are be stored. e.g Content, announcements attachements etc.
