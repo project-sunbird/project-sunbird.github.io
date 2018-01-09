@@ -18,11 +18,9 @@ To provision servers manually, commission two servers and ensure that they can c
 
 ## Automation for Azure
 
-The Azure automation script creates the network and the servers is required to run on Sunbird.  
-The default configuration procedure provisions for three servers, with the minimum specifications mentioned in  
-the System requirements section. Know-how of Azure (VNet, Resource Group, etc.) is beneficial but not mandatory.  
+The Azure automation script creates the network and the servers required.The default configuration procedure provisions for three servers, with the minimum specifications mentioned in System requirements section.Knowledge of Azure (VNet, Resource Group, etc.) is beneficial but not mandatory.  
 
-* Azure Virtual Network (aka VPC in AWS) 
+* Create Azure Virtual Network (aka VPC in AWS) 
 * Create multiple subnets (one for swarm master, one for swarm slave machines and DB servers) 
 * Create master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves
 * Open up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm
@@ -45,18 +43,17 @@ Run the following steps from a machine which is connected to the internet:
 8. Run `cd sunbird-devops/deploy`
 9. Run `./provision-servers.sh`
 
-**Note**: If you want to troubleshoot and need debug message, you can give --debug flag  
-`./provision.sh --debug`
+**Note**: If you want to troubleshoot and need a debug message, you can give `--debug flag` as `./provision.sh --debug`
 
-10. Login to Azure when CLI instructs
-11. Wait for deployment to complete
-12.	Check on Azure portal: Resource Group -> Deployments -> Click on deployment to see deployment details
+10. Login to Azure when Command Line Interface (CLI) instructs to
+11. Wait for deployment process to complete
+12.	Check on Azure portal by navigating to: Resource Group -> Deployments -> Click on deployment to see deployment details
 13. Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
-14. If you could SSH, you have successfully created the server platform.
+14. If SSH was sucessful, you have successfully created the server platform.
 
-Estimated run time: 30 mins for the fresh time. 
+Estimated elapsed time is 30 mins for a fresh install. 
 
-Scripts can be re-tried and to create a new set of servers every time. Some configurations cannot be changed, for instance, the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
+You can re-try scripts to create a new set of servers every time in case you need to. Some of the configurations are unconfigurable at this point e.g. the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
 
 ### Automation walkthrough
 
