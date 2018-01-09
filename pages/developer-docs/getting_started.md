@@ -35,13 +35,13 @@ The techstack used to develop the Sunbird is as follows:
 
 *For details on Apache Cassandra, refer to the [Apache Cassandra site](http://cassandra.apache.org)*
 
-*For details on installing the Apache Cassandra database for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
+*For details on installing the Apache Cassandra database for Sunbird, refer to [Setup Database](http://www.sunbird.org/developer-docs/installation/setup_db)*
   
 - **ElasticSearch** - performs and combines many types of searches — structured, unstructured, geo, metric; and lets you zoom out to explore trends and patterns in your data
 
 *For details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch)*
   
-*For details on installing ElasticSearch for Sunbird, refer to the [Setup Database page](http://www.sunbird.org/developer-docs/installation/setup_db)*
+*For details on installing ElasticSearch for Sunbird, refer to the [Setup Database](http://www.sunbird.org/developer-docs/installation/setup_db)*
   
 - **Docker** - enables containerization of Sunbird components, making each component independent facilitating innovation, collaboration and co-creation
 
@@ -65,7 +65,7 @@ The following are the core components of Sunbird:
 
 *For details, refer to the [Content APIs](http://www.sunbird.org/apis/content)*
 
-*For details of the content editor, its features and instructions to use it, refer to the [Content Editor page](http://www.sunbird.org/features-documentation/contenteditor)*
+*For details of the content editor, its features and instructions to use it, refer to [Content Editor](http://www.sunbird.org/features-documentation/contenteditor)*
 
 - **Content Editor Plugins**  - Sunbird has the capabality to extend the content editor by creating and using plugins. Plugin's are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc. 
 
@@ -75,13 +75,13 @@ The following are the core components of Sunbird:
   - API manager 
   - Proxy
  
- *For details, refer to the [Deploying Sunbird Services page](http://www.sunbird.org/developer-docs/installation/deploy_sb_services/)*         
+ *For details, refer to [Deploying Sunbird Services](http://www.sunbird.org/developer-docs/installation/deploy_sb_services/)*         
 
 ## Installation Overview
 
 Sunbird can be installed on different devices and can be deployed for single or multiusers. 
 
-*For details on the installation process, refer to [Installation Overview page](http://www.sunbird.org/developer-docs/installation/)*
+*For details on the installation process, refer to [Installation Overview](http://www.sunbird.org/developer-docs/installation/)*
 
 ### Pre-requisites
 To install Sunbird on any environment using any method of installation, the basic minimum prerequisites are:
