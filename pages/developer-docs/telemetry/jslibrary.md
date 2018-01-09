@@ -7,7 +7,7 @@ description: telemetry specification of Sunbird
 published: true
 allowSearch: true
 ---
-## Need for a standalone Telemetry JS library
+## Need 
 
 The purpose of a standalone JS library for telemetry is to facilitate capture and distribution of telemetry data by users who would like to use their own apps, content players or portals.  
 
@@ -23,7 +23,7 @@ We chose to use a JS library for the following reasons:
 
 * There are simple API methods to generate the complete telemetry event as only the required fields are passed
 
-## Prerequisites for the telemetry JS library
+## Prerequisites 
 
 The following are prerequisites to use or integrate the JS library:
 
@@ -37,7 +37,7 @@ The following are prerequisites to use or integrate the JS library:
 
 **Note:** For details on how to get the device ID value, refer to [https://android-developers.googleblog.com/2011/03/identifying-app-installations.html](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html) 
 
-## Configure the Telemetry JS library
+## Configure
 
 This JS library helps to generate telemetry events. These events sync to the server or data-pipeline in a batch as defined in the configuration. To log telemetry events, the user has to call the start method by passing the configuration along with other parameters.
 
@@ -196,7 +196,32 @@ var customDispatcher = {
 
 Send this object as dispatcher in the above sample configuration ("dispatcher":customDispatcher).
 
-## Telemetry JS library API methods
+## How to use telemetry JS library
+
+To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.
+
+<pre>
+&#x3C;!-- External Libraries --&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  
+  &#x3C;!-- Telemetry JS library --&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/telemetry.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;[relative_path]/auth-token-generator.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script&#x3E;
+    function init() {
+          // Generate auth token
+          // Key: Partner generated key
+          // secret: partner secret value 
+          var token = AuthTokenGenerate.generate(key, secret);
+          config.authToken = token;
+          startEdata = {};
+          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata );
+      }
+  init()
+  &#x3C;/script&#x3E;
+</pre>
+
+## Telemetry API methods
 
 Every API method has an associated event. The following API methods log details of the associated telemetry event. 
 
@@ -393,27 +418,6 @@ data - Object //Required
   "type": "", // Required. Type of interuption
   "pageid": "", // Optional. Current Stage/Page unique id on which interuption occured
   "eventid": "" // Optional. unique event ID
-}
-</pre>
-
-##### End
-
-This API is used to log telemetry while the user is closing or exiting the content or game
-
-<pre>
-end: function(data) { }
-</pre>
-
-Request Arguments:
-
-<pre>
-data - Object //Required
-{
-  "contentId": "", // Required. Id of the content
-  "type": , // Required. app, session, editor, player, workflow, assessment
-  "duration": , // Required. Total duration from start to end in seconds
-  "pageid": "", // Optional. Page/Stage id where the end has happened.
-  "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
 }
 </pre>
 
@@ -660,29 +664,25 @@ data - Object - Required
 }
 </pre>
 
-## How to use the telemetry JS library
+##### End
 
-To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.
+This API is used to log telemetry while the user is closing or exiting the content or game
 
 <pre>
-&#x3C;!-- External Libraries --&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  
-  &#x3C;!-- Telemetry JS library --&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/telemetry.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  &#x3C;script src=&#x22;[relative_path]/auth-token-generator.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
-  &#x3C;script&#x3E;
-    function init() {
-          // Generate auth token
-          // Key: Partner generated key
-          // secret: partner secret value 
-          var token = AuthTokenGenerate.generate(key, secret);
-          config.authToken = token;
-          startEdata = {};
-          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata );
-      }
-  init()
-  &#x3C;/script&#x3E;
+end: function(data) { }
+</pre>
+
+Request Arguments:
+
+<pre>
+data - Object //Required
+{
+  "contentId": "", // Required. Id of the content
+  "type": , // Required. app, session, editor, player, workflow, assessment
+  "duration": , // Required. Total duration from start to end in seconds
+  "pageid": "", // Optional. Page/Stage id where the end has happened.
+  "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+}
 </pre>
   
   
