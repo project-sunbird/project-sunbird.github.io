@@ -11,7 +11,7 @@ Announcements are an invariable part of organizational activities. From importan
 
 ## Announcement Workflow
 
-<img src="pages/features-documentation/images/announcement/announcement2.png">
+<img src="pages/features-documentation/images/announcement/announcement1.png">
 
 ### Announcement Sender Role Function Matrix
 
