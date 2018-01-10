@@ -35,36 +35,6 @@ The Sunbird application consists of multiple services, each service serves a spe
 
 - Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. For details refer [API keys](developer-docs/installation/medium_scale_deploy#api-keys)
 
-## Keycloak provisionig
-
-1. Keycloak is deployed on vm. RUN ./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> this script creates the keycloak username, groupname and servicify keycloak service on vm
-> Update below variables in the config <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
-
-```
-keycloak_password: (which admin initial password)
- keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-```
-
-2. `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
-
-3.  Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak
-
-4. Update following configs
-
-```yml
-# Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
-sunbird_sso_client_id: # Eg: admin-cli
-sunbird_sso_username: # keycloak user name
-sunbird_sso_password: # keycloak user password
-
-# Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
-keycloak_realm:  # Eg: sunbird
-sunbird_keycloak_client_id: # Eg: portal
-
-# Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
-sunbird_trampoline_client_id:  # Eg: trampoline
-sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
-```
 
 **Make sure this configurations are updated** 
 
@@ -83,6 +53,43 @@ Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<env
 To deploy the Sunbird proxy services, execute the following command:
 
 Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
+
+## Keycloak provisionig
+
+* Keycloak is deployed on vm. 
+
+1. Run the script to create the keycloak username, groupname and servicify keycloak service on vm
+<pre>
+./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> 
+</pre>
+
+2. Update below variables in the config path <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
+
+```
+keycloak_password: (which admin initial password)
+ keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
+```
+
+3. `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+
+4.  Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak
+
+**Update following configs** 
+
+```yml
+Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
+sunbird_sso_client_id: # Eg: admin-cli
+sunbird_sso_username: # keycloak user name
+sunbird_sso_password: # keycloak user password
+
+Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
+keycloak_realm:  # Eg: sunbird
+sunbird_keycloak_client_id: # Eg: portal
+
+Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
+sunbird_trampoline_client_id:  # Eg: trampoline
+sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
+```
 
 **Note:** The automation walk-through (PART 5) (PART6) & (PART7), shows you the process for deployment for Sunbird services.
 
