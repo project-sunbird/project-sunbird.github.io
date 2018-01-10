@@ -10,13 +10,13 @@ allowSearch: true
 
 ## Procedure to Onboard Organizations
 
- Step | Instruction                                   
-|------|-----------------------------------------------
-| 1.   | Create a tenant organization                  
-| 2.   | Generate the RSA private and public key pair  
-| 3.   | Get the public key registered in production   
-| 4.   | Create organizations, and users, and register 
-| 5.   | Single Sign-On with Sunbird                   
+ **Step | Instruction**                                   
+------|-----------------------------------------------
+ 1.   | Create a tenant organization                  
+ 2.   | Generate the RSA private and public key pair  
+ 3.   | Get the public key registered in production   
+ 4.   | Create organizations, and users, and register 
+ 5.   | Single Sign-On with Sunbird                   
 
 ## Tokens
 
@@ -46,10 +46,11 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
 * **redirect_url:** the url of the page where the user should be directed after login
  
+
 ### Sample Payload for Single Sign-On
 
-<pre>
-{
+<pre>{
+  {
   "jti": "261263cd-3a0e-4aee-8faf-6d9d9eb14bb1",
 
   "iss": "<replace with id provided by at registration time>",
@@ -73,8 +74,8 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
   "phone_number_verified": true,
 
   "redirect_uri": "<base_url>/private/index#!/workspace/content/create"
-}
-</pre>
+}</pre>
+
 
 ### Base URL
 
@@ -87,7 +88,7 @@ Provide the base URL for for the instances created. For example;
 
 Sign the payload described before sending it to the authentication endpoint. The JWT specification permits signing via HMAC, RSA or ECDSA algorithms. For this authentication end-point, the only permitted algorithm is RSA signing via a private key. The corresponding public key is provided during registration of the client. 
 
-For details on creating a RSA-signed JWT in Java, refer to [JWT with RSA Signature](https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-rsa-signature))
+*For details on creating a RSA-signed JWT in Java, refer to [JWT with RSA Signature](https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-rsa-signature)*
 
 ## Onboarding New Tenant Organization on Sunbird
 
