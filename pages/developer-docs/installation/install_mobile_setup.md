@@ -23,7 +23,8 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>2.</td>
-    <td>Clone the repsitory to android studio by executing following command in console: git clone<br><pre><br>https://github.com/project-sunbird/sunbird-android<br></pre></td>
+    <td>Clone the repsitory to android studio by executing following command in console:
+    <pre>git clone https://github.com/project-sunbird/sunbird-android</pre></td>
   </tr>
   <tr>
     <td>3.</td>
@@ -55,7 +56,9 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>10.</td>
-    <td>To change the app logo navigate to `sunbird-android/app/src/main/res`in the android studio environment:<br> <li>In all the mipmap and drawable folders, replace ic_launcher.png image with your desired logo</li><br><li>The logo name should exactly match the text ic_launcher.png</li></td>
+    <td>To change the app logo navigate to `sunbird-android/app/src/main/res`in the android studio environment:
+    <li>In all the mipmap and drawable folders, replace ic_launcher.png image with your desired logo</li>
+    <li>The logo name should exactly match the text ic_launcher.png</li></td>
   </tr>
   <tr>
     <td>11.</td>
