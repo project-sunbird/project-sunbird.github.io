@@ -10,14 +10,9 @@ allowSearch: true
 
 Protocol is a set of rules and guidelines that enables communications between two or more networks. The authentication protocol of Sunbird provides secure API endpoint to: 
 
-1. Register new organizations and users
-
-2. Register users to organizations
-
-3. Remove users from organizations
-
-4. Update user details
-
-5. Update organization details
-
-6. Auto-login a user into Sunbird (Single-Sign-On)
+* Register new organizations and users
+* Register users to organizations
+* Remove users from organizations
+* Update user details
+* Update organization details
+* Auto-login a user into Sunbird (Single-Sign-On)
