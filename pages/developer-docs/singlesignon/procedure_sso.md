@@ -48,7 +48,8 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
  
 **Sample Payload for Single Sign-On**
 
-<pre>
+```
+{
   {
   "jti": "261263cd-3a0e-4aee-8faf-6d9d9eb14bb1",
 
@@ -74,7 +75,8 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
   "redirect_uri": "<base_url>/private/index#!/workspace/content/create"
 }
-}</pre> 
+
+```
 
 ### Base URL
 
