@@ -10,13 +10,13 @@ allowSearch: true
 
 ## Procedure to Onboard Organizations
 
- **Step** | **Instruction**                                   
-------|-----------------------------------------------
- 1.   | Create a tenant organization                  
- 2.   | Generate the RSA private and public key pair  
- 3.   | Get the public key registered in production   
- 4.   | Create organizations, and users, and register 
- 5.   | Single Sign-On with Sunbird                   
+| Step | Instruction                                   |
+|------|-----------------------------------------------|
+| 1.   | Create a tenant organization                  |
+| 2.   | Generate the RSA private and public key pair  |
+| 3.   | Get the public key registered in production   |
+| 4.   | Create organizations, and users, and register |
+| 5.   | Single Sign-On with Sunbird                   |
 
 ## Tokens
 
@@ -74,8 +74,7 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
   "redirect_uri": "<base_url>/private/index#!/workspace/content/create"
 }
-</pre>
-
+}</pre> 
 
 ### Base URL
 
