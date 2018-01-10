@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.3/";
+			baseURL.href="/releases/release.1.3.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-09 19:21:09 +0530">
+<meta name="last-modified" content="2018-01-10 15:06:17 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.3" />
-<meta name="buildNo" content="789" />
+<meta name="buildVersion" content="release.1.3.a" />
+<meta name="buildNo" content="807" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?09012018"  />
-<link rel="stylesheet" href="css/style.css?09012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?09012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?09012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?09012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10012018"  />
+<link rel="stylesheet" href="css/style.css?10012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?10012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?10012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?10012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -463,17 +463,6 @@ $("a[href$='developer-docs/installation/deploy_sb_services/']").addClass("sideba
             <li class="toc_level-1 toc_section-3">
               <a href="#keycloak-provisionig"><span class="tocnumber">3 .</span> <span class="toctext">Keycloak provisionig</span></a>
             </li>
-            <li class="toc_level-1 toc_section-4">
-              <a href="#core-services"><span class="tocnumber">4 .</span> <span class="toctext">Core services</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-5">
-              <a href="#proxy-services"><span class="tocnumber">5 .</span> <span class="toctext">Proxy services</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#automation-walkthrough"><span class="tocnumber">5.1 .</span> <span class="toctext">Automation Walkthrough</span></a>
-                </li>
-              </ul>
-            </li>
           </ul>
         </td>
       </tr>
@@ -518,72 +507,72 @@ pBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
 
 <h2 id="keycloak-provisionig">Keycloak provisionig</h2>
 
+<ul>
+  <li>Keycloak is deployed on vm.</li>
+</ul>
+
 <ol>
-  <li>Keycloak is deployed on vm. RUN ./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> this script creates the keycloak username, groupname and servicify keycloak service on vm
-&gt; Update below variables in the config <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
+  <li>Run the script to create the keycloak username, groupname and servicify keycloak service on vm</li>
+</ol>
+<pre>
+./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> 
+&lt;/pre&gt;
+
+2. Update below variables in the config path <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
 ```
 keycloak_password: (which admin initial password)
  keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-```</environment-name></environment-name></implementation-name></environment-name></implementation-name></li>
-  <li><code>sudo ./deploy-keycloak-vm.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code></li>
-  <li>
-    <p>Follow the <a href="keycloak_realm_configuration.md">instructions</a> to setup auth realm in keycloak</p>
-  </li>
-  <li>Update following configs</li>
-</ol>
+```
+3. Deploy the script 
 
-<p>```yml
-# Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
+`sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+
+4. Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
+
+ Update following configs
+
+```yml
+Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
-sunbird_sso_password: # keycloak user password</p>
+sunbird_sso_password: # keycloak user password
 
-<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-portal-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format</h1>
-<p>keycloak_realm:  # Eg: sunbird
-sunbird_keycloak_client_id: # Eg: portal</p>
+Login to the keycloak admin console, goto the clients-&gt;portal-&gt;Installation-&gt;Select json format
+keycloak_realm:  # Eg: sunbird
+sunbird_keycloak_client_id: # Eg: portal
 
-<h1 id="login-to-the-keycloak-admin-console-goto-the-clients-trampoline-installation-select-json-format">Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format</h1>
-<p>sunbird_trampoline_client_id:  # Eg: trampoline
+Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format
+sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
-```</p>
+```
+**Make sure this configurations are updated** 
 
-<p>
-  <strong>Make sure this configurations are updated</strong>
-</p>
+- ENVIRONMENT CONFIGURATION
+- APPLICATION SERVER CONFIGURATIONS
+- ADVANCED CONFIGURATIONS
 
-<ul>
-  <li>ENVIRONMENT CONFIGURATION</li>
-  <li>APPLICATION SERVER CONFIGURATIONS</li>
-  <li>ADVANCED CONFIGURATIONS</li>
-</ul>
+## Core services
 
-<h2 id="core-services">Core services</h2>
+To deploy the Sunbird core services, execute the following command:
 
-<p>To deploy the Sunbird core services, execute the following command:</p>
+Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. 
 
-<p>Run <code>sudo ./deploy-core.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
+## Proxy services
 
-<h2 id="proxy-services">Proxy services</h2>
+To deploy the Sunbird proxy services, execute the following command:
 
-<p>To deploy the Sunbird proxy services, execute the following command:</p>
+Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
-<p>Run <code>sudo ./deploy-proxy.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>.</p>
+**Note:** The automation walk-through (PART 5) (PART6) &amp; (PART7), shows you the process for deployment for Sunbird services.
 
-<p><strong>Note:</strong> The automation walk-through (PART 5) (PART6) &amp; (PART7), shows you the process for deployment for Sunbird services.</p>
+### Automation Walkthrough
 
-<h3 id="automation-walkthrough">Automation Walkthrough</h3>
+[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
 
-<p>
-  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">Part 5</a>
-</p>
+[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
 
-<p>
-  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">Part 6</a>
-</p>
-
-<p>
-  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">Part 7</a>
-</p>
+[Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
+</environment-name></implementation-name></environment-name></implementation-name></environment-name></implementation-name></environment-name></environment-name></implementation-name></environment-name></implementation-name></pre>
 
           
           <hr />
