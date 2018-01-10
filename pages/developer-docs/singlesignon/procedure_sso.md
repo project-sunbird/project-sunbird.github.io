@@ -50,7 +50,6 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
 <pre>
 {
-  {
   "jti": "261263cd-3a0e-4aee-8faf-6d9d9eb14bb1",
 
   "iss": "<replace with id provided by at registration time>",
