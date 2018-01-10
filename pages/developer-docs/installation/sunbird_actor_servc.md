@@ -2,7 +2,7 @@
 ## Prerequisites
 
 - Ensure that the system has the ability to run the akka actor in local ,remote or mixed mode
-- Based on the configuration values, system can run akka actor either in local or remote mode in similarly background job actor can also be run by any one of the modes. 
+- Based on the configuration values, system can run akka actor either in local or remote mode, similarly background job actor can also be run by any one of the modes. 
 
 ### Implementation : 
    
