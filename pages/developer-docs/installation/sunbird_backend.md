@@ -1,25 +1,21 @@
-## Introduction
-> This wiki contains following information.
-  1. Requirement
-  2. Steps to be followed for installing sunbird backend service on local machine
-  3. Testing Sunbird backend service
+This section elaborated the steps to be followed for installing sunbird backend service on local machine and testing Sunbird backend service
 
 ## Requirement
-> Setup sunbird back-end service on developer machine to test api's work flow.
+Setup Sunbird back-end service on developer machine to test API's work flow.
 
-## installation steps
-> To setup the Sunbird back-end service successfully, follow these steps sequentially:
-   1. Check for the Prerequisites installation under Prerequisites section.
+## Procedure to install Sunbird Backend Service
+To setup the Sunbird back-end service successfully, follow these steps sequentially:
+   1. Prerequisites
    2. Setup
-   3. Configure back-end Service Stack
+   3. Configure back-end service stack
 
 ## Prerequisites
-   > Software dependencies
+Software dependencies
 
        . Apache Cassandra ver-3.10
        . Elasticsearch ver-5.4.0
        . Keycloak ver-3.2.1.Final
-       . Postgresql (required only when you want to run quartz scheduler in distributed environment, on local machine its not required)
+       . Postgresql (required only when you want to run quartz scheduler in distributed environment, on local machines its not required)
 
 ## Setup
    
@@ -29,16 +25,15 @@
      2. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to create the required keyspace, tables and indices
      3. Copy [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv) and [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) to a temp folder on cassandra machine.
         *  e.g.: /tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv.
-     4. Execute the below commands.
+     4. Execute the commands given below:
         *  cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,organisationid ,portalmap ,updatedby ,updateddate ) FROM '/tmp/cql/pageMgmt.csv'"
         
         *  cqlsh -e "COPY sunbird.page_section(id, alt,createdby ,createddate ,description ,display ,imgurl ,name,searchquery , sectiondatatype ,status , updatedby ,updateddate) FROM '/tmp/cql/pageSection.csv'"
 
-
   * **Setup Elasticsearch**
       
       1. [Install](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html) ElasticSearch and start the server
-      2. Run the below curl command.
+      2. Run the curl command given below:
           
            ```sh
               curl -X PUT \
@@ -51,23 +46,22 @@
         
   * **Setup Keycloak**
 
-     1. [Install](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) keycloak and start the server.
-     2. To start the keycloak server go to bin directory and run the standalone file.It will start the keycloak server 
-     3. Now you can access keycloak admin console on "**http://localhost:8080**" 
-     4. get public key from Realm settings tab -> keys -> public keys (for sunbird_sso_publickey in environment variable)
-     5. for sending welcome email at user registration you need to configure email server related details on Realm settings tab -> emails (Optional)
+     1. [Install](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) keycloak           and start the server
+     2. To start the keycloak server, go to Bin Directory and run the standalone file. It will start the keycloak server 
+     3. Keycloak admin console on "**http://localhost:8080**" can now be accessed
+     4. Get the public key from Realm settings tab -> Keys -> Public Keys (for sunbird_sso_publickey in environment variable)
+     5. For sending welcome email at user registration you need to configure email server related details on Realm Settings tab ->               Emails (Optional)
 
-  * **Configuration setup for Application**
+  * **Application Configuration Setup**
       
-     To run Sunbird service you need to set following environment variables.
-
+     To run Sunbird service set the following environment variables:
 
      Below are the list of environment variables to setup.
 
 | variable                              | description                                                                                                 |
 |---------------------------------------|-------------------------------------------------------------------------------------------------------------|
 | sunbird_cassandra_host                | host running the Cassandra server                                                                           |
-| sunbird_cassandra_port                | port on which cassandra server is running                                                                   |
+| sunbird_cassandra_port                | port on which Cassandra server is running                                                                   |
 | sunbird_cassandra_username (optional) | username for Cassandra database, if authentication is enabled                                               |
 | sunbird_cassandra_password (optional) | password for Cassandra database, if authentication is enabled                                               |
 | sunbird_es_host                       | host running the Elasticsearch server                                                                       |
@@ -82,7 +76,7 @@
 | sunbird_sso_client_id                 | key cloak client id  (use default as admin-cli or you can create new client in key cloak)                                                                                        |
 | sunbird_sso_client_secret             | keycloak client secret (not mandatory)                                                                      |
 | ekstep_content_search_base_url        | provide base url for EkStep content search                                                                  |
-| ekstep_authorization                  | provide Authorization for value for content search                                                          |
+| ekstep_authorization                  | provide Authorization value for content search                                                          |
 | sunbird_pg_host                       | Postgres host name or ip                                                                                   |
 | sunbird_pg_port                       | Postgres port number                                                                                        |
 | sunbird_pg_db                         | Postgres db name                                                                                            |
@@ -109,7 +103,7 @@
 
 
 **NOTE:**
-   * To Run sunbird backend service locally, you just need to set this much environment variable
+   * To Run sunbird backend service locally, set the following environment variable
        ```
           1. sunbird_cassandra_host
           2. sunbird_cassandra_port
@@ -130,10 +124,10 @@
           17. sunbird_quartz_mode : set value as "embedded" as we are not running scheduler in distributed env
           18. sunbird_sso_publickey
        ```
-   * Remaining environment variable values will be pick from [externalresource.properties](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties) file.
+   * Remaining environment variable values will be picked from [externalresource.properties](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties) file.
 
 
- ## Configure back-end Service Stack
+ ## Configure Back-End Service Stack
      
    * **Build** 
       
@@ -142,23 +136,26 @@
           2. [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
           3. [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
 
-     **NOTE:** Sunbird has two actor system 1)Normal ActorSystem and 2) Background ActorSystem And by default both are running on two different machine, for running both actor system on same single machine, we need to modify [externalresource.properties](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties) file.
+     **NOTE:** Sunbird has two actor systems
+     1) Normal ActorSystem 
+     2) Background ActorSystem 
+     By default both runs on two different machine, for running both actor system on same single machine, we need to modify [externalresource.properties](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties) file.
      
-     open **externalresource.properties** file and modify following two properties.
+     To run both the actor systems on single machine, open **externalresource.properties** file and modify the following two properties:
 
-       1. **background_actor_provider**
+      1. **background_actor_provider**
 
-       2. **api_actor_provider**
+      2. **api_actor_provider**
 
-      set value of both properties as **local**
+      3. set value of both properties as **local**
 
      * Run "mvn clean install" to make build of each module 
       
-       (first make build of "**sunbird-utils**",then  "**sunbird-lms-mw**" and lastly "**sunbird-lms-service**")
+       (first make build of "**sunbird-utils**", followed by "**sunbird-lms-mw**" and lastly "**sunbird-lms-service**")
 
-     * And to run Application **sunbird-lms-service** : run **mvn play2:run** command
+     * To run application **sunbird-lms-service** : run **mvn play2:run** command
        
 
 ## Test
-  Run any api for example create a user and then get the details of user through POSTMAN.Use below postman collection.
+  Run any api, for example create a user and then get the details of user through POSTMAN. Use the postman collection given below:
     https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f
