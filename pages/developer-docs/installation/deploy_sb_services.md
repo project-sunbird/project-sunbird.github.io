@@ -37,28 +37,38 @@ The Sunbird application consists of multiple services, each service serves a spe
 
 ## Keycloak provisionig
 
-1. Keycloak is deployed on vm. RUN ./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> this script creates the keycloak username, groupname and servicify keycloak service on vm
-> Update below variables in the config <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
+* Keycloak is deployed on vm. 
+
+1. Run the script to create the keycloak username, groupname and servicify keycloak service on vm
+<pre>
+./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> 
+</pre>
+
+2. Update below variables in the config path <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
 ```
 keycloak_password: (which admin initial password)
  keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
 ```
-2. `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
-3.  Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
 
-4. Update following configs
+3. Deploy the script 
+
+`sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+
+4. Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
+
+ Update following configs
 
 ```yml
-# Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
+Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password
 
-# Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
+Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
 keycloak_realm:  # Eg: sunbird
 sunbird_keycloak_client_id: # Eg: portal
 
-# Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
+Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 ```
