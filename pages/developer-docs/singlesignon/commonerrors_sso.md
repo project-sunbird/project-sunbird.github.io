@@ -10,9 +10,9 @@ allowSearch: true
 
 <table>
   <tr>
-    <td>Error</td>
-    <td>Cause</td>
-    <td>Solution</td>
+    <th>Error</th>
+    <th>Cause</th>
+    <th>Solution</th>
   </tr>
   <tr>
     <td>Issue while generating JWT Token</td>
