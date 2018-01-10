@@ -125,7 +125,7 @@ To access APIs using the token, the generated token should be sent in the Author
 
 curl -H "Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello
 
-## Custom Homepage & Logo for Tenants
+## Custom Homepage and Logo for Tenants
 
 Sunbird allows you to override the default home page and configure a custom home page and logo for each tenant who is onboarded. The tenant organization should provide a package containing the following files to customise the home page and logo:
 
