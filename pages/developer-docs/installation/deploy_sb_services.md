@@ -49,7 +49,6 @@ The Sunbird application consists of multiple services, each service serves a spe
 keycloak_password: (which admin initial password)
  keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
 ```
-
 3. Deploy the script 
 
 `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
@@ -72,7 +71,6 @@ Login to the keycloak admin console, goto the clients->trampoline->Installation-
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 ```
-
 **Make sure this configurations are updated** 
 
 - ENVIRONMENT CONFIGURATION
