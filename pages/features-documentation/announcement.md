@@ -25,9 +25,9 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all sent announcements <br>4. You have clicked on <b>Profile</b> icon <br>5. You have clicked the <b>Announcement Dashboard</b> from the profile drop down 
+    <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all sent announcements <br>3. You have clicked the <b>Announcement Dashboard</b> from the profile drop down 
       </td>
-      <td><img src="pages/features-documentation/images/.png"></td>
+      <td><img src="pages/features-documentation/images/announcement/prerequisite.png"></td>
   </tr>
     </table>
   
@@ -39,17 +39,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>You can view all necessary data related to Announcements <br>
-      <li><strong>My Announcements</strong> page opens, showing all sent announcement details with following attributes:
-         <ol>
-                        <li>Announcement name</li>
-                        <li>Announcement published Date</li>
-                        <li>Number of users to whom announcements were sent</li>
-                        <li>Number of users received the announcements</li>
-                        <li>Number of users seen the announcements</li>
-                        <li>Delete or resend actions taken by the announcement creator and the sender</li>
-        </ol>
-       </li>
+    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>a) Announcement name <br>b)Announcement published Date <br>c)Number of users to whom announcements were sent <br>d) Number of users received the announcements <br>e) Number of users seen the announcements <br>f) Delete or resend actions taken by the announcement creator and the sender
     </td>
     <td><img src="pages/features-documentation/images/.png"></td>
   </tr>
