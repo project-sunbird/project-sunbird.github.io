@@ -11,4 +11,4 @@ allowSearch: true
 
 |  Functionality | Create Content | Upload Content | Review Content | Reject and Publish Content | Delete Content | Update User Profile | Create Announcements | Send Announcements |
 |----------------|----------------|----------------|----------------|----------------------------|----------------|---------------------|----------------------|--------------------|
-| **Announcement Sender** |       Yes     |       No       |       No       |             No             |       No       |         No         | Yes          | Yes  
+| **Announcement Sender** |       Yes     |      Yes       |       No       |             No             |       No       |         No         | Yes          | Yes  
