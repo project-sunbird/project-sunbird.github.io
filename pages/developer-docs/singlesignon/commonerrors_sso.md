@@ -1,22 +1,18 @@
 ---
 type: landing
 directory: developer-docs/singlesignon
-title: Common errors and solutions
+title: Common Errors and Solutions
 page_title: Common Errors and Solutions
-description: Brief description of common errors during single sign on process and their respective solutions
+description: Brief description of common errors ensountered during single sign on process and their respective solutions
 published: true
 allowSearch: true
 ---
 
-
-
-## Common Errors and Solutions
-
 <table>
   <tr>
-    <td>Common Errors</td>
+    <td>Errors</td>
     <td>Cause</td>
-    <td>Solutions</td>
+    <td>Solution</td>
   </tr>
   <tr>
     <td>Issue while generating JWT Token</td>
@@ -24,9 +20,9 @@ allowSearch: true
     <td>Private Key should be generated without mentioning any algorithm</td>
   </tr>
   <tr>
-    <td>Issue while creating bulk orgs - ‘API rate limit exceeded’
+    <td>Issue while creating bulk organizations - ‘API rate limit exceeded’
 </td>
-    <td>There is a limit on number of calls (1000) that can be made within one hour by using a single API key</td>
-    <td>Development team can increase the limit when necessary</td>
+    <td>There is a limit on the number of calls that can be made within an hour by using a single API key. The current limit is 1000</td>
+    <td> The development team can increase the limit, if necessary</td>
   </tr>
 </table>
