@@ -43,7 +43,7 @@ Run the following steps from a machine which is connected to the internet:
 8. Run `cd sunbird-devops/deploy`
 9. Run `./provision-servers.sh`
 
-**Note**: If you want to troubleshoot and need a debug message, you can give `--debug flag` as `./provision.sh --debug`
+**Note**: If you want to troubleshoot and need a debug message, you can give `--debug flag` as `./provision-servers.sh --debug`
 
 10. Login to Azure when Command Line Interface (CLI) instructs to
 11. Wait for deployment process to complete
