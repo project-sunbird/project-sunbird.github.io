@@ -48,16 +48,15 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
  
 **Sample Payload for Single Sign-On**
 
-```
-{
+<pre>
   {
   "jti": "261263cd-3a0e-4aee-8faf-6d9d9eb14bb1",
 
-  "iss": "<replace with id provided by at registration time>",
+  "iss": "replace with id provided by at registration time",
 
   "sub": "someuserid",
 
-  "aud": "<base_url>",
+  "aud": "base_url",
 
   "iat": 1498556656,
 
@@ -73,10 +72,9 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
   "phone_number_verified": true,
 
-  "redirect_uri": "<base_url>/private/index#!/workspace/content/create"
+  "redirect_uri": "base_url/private/index#!/workspace/content/create"
 }
-
-```
+</pre>
 
 ### Base URL
 
