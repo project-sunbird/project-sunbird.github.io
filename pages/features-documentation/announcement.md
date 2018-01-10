@@ -41,7 +41,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
   <tr>
     <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>a) Announcement name <br>b)Announcement published Date <br>c)Number of users to whom announcements were sent <br>d) Number of users received the announcements <br>e) Number of users seen the announcements <br>f) Delete or resend actions taken by the announcement creator and the sender
     </td>
-    <td><img src="pages/features-documentation/images/.png"></td>
+    <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
   </tr>
   </table>
   
@@ -54,7 +54,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
   </tr>
   <tr>
     <td>1. Click <b>Create Announcements</b> to open the announcement page</td>
-    <td><img src="pages/features-documentation/images/.png"></td>
+    <td><img src="pages/features-documentation/images/announcement/create1.png"></td>
   </tr>
   <tr>
     <td>1. Enter a <b>Title</b> for the announcement <br>2. Select <b>Organization or Department</b> from the drop down list <br>3. Select <b>Announcement Type</b> (Order or Circular) <br>4. Enter a <b>Description</b> for the announcement <br>5a. Click <b>+</b> icon to add URL or web link <br><b>Or</b> <br>5b. Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
@@ -64,7 +64,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
       <li>Maximum file size limit is 1MB </li>
 <br>6. Click <b>Select Recipients</b> button to select all the recipients <br><b>Note:</b> <b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description 
   </td>
-  <td><img src="pages/features-documentation/images/.png"></td>
+  <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
   </tr>
   </table>
   
