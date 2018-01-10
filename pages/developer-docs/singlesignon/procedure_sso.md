@@ -10,7 +10,7 @@ allowSearch: true
 
 ## Procedure to Onboard Organizations
 
- **Step | Instruction**                                   
+ **Step** | **Instruction**                                   
 ------|-----------------------------------------------
  1.   | Create a tenant organization                  
  2.   | Generate the RSA private and public key pair  
@@ -46,10 +46,9 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
 * **redirect_url:** the url of the page where the user should be directed after login
  
+**Sample Payload for Single Sign-On**
 
-### Sample Payload for Single Sign-On
-
-<pre>{
+<pre>
   {
   "jti": "261263cd-3a0e-4aee-8faf-6d9d9eb14bb1",
 
@@ -74,7 +73,8 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
   "phone_number_verified": true,
 
   "redirect_uri": "<base_url>/private/index#!/workspace/content/create"
-}</pre>
+}
+</pre>
 
 
 ### Base URL
