@@ -12,7 +12,7 @@ The Sunbird application consists of multiple services, each service serves a spe
 ## Preparation to Setup Application
 
 - SSH into the application server. If you have used automated scripts as described in the previous steps, then this server would be vm-1
-- Clone the Sunbird-devops repo using git clone https://github.com/project-sunbird/sunbird-devops.git
+- Clone the Sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
 - Copy over the generated configuration directory from the DB server(`<implementation-name>-devops`) to your machine
 - Modify all the configurations under **#APPLICATION CONFIGURATION** block.
 - The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.
@@ -43,8 +43,10 @@ The Sunbird application consists of multiple services, each service serves a spe
 keycloak_password: (which admin initial password)
  keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
 ```
+
 2. `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
-3.  Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
+
+3.  Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak
 
 4. Update following configs
 
