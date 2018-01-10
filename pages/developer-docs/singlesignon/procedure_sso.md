@@ -10,13 +10,13 @@ allowSearch: true
 
 ## Procedure to Onboard Organizations
 
- Step | Instruction                                   |
-|------|-----------------------------------------------|
-| 1.   | Create a tenant organization                  |
-| 2.   | Generate the RSA private and public key pair  |
-| 3.   | Get the public key registered in production   |
-| 4.   | Create organizations, and users, and register |
-| 5.   | Single Sign-On with Sunbird                   |
+ Step | Instruction                                   
+|------|-----------------------------------------------
+| 1.   | Create a tenant organization                  
+| 2.   | Generate the RSA private and public key pair  
+| 3.   | Get the public key registered in production   
+| 4.   | Create organizations, and users, and register 
+| 5.   | Single Sign-On with Sunbird                   
 
 ## Tokens
 
@@ -46,7 +46,7 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
 * **redirect_url:** the url of the page where the user should be directed after login
  
- ### Sample Payload for Single Sign-On
+### Sample Payload for Single Sign-On
 
 <pre>
 {
@@ -145,6 +145,7 @@ Place all the files in a single folder, with the same name as the channel value 
 ## Sign In link from Custom Home Page
 
 Add the following link at an appropriate place in the custom home page to invoke Sunbird portal login:
-<a href="/private/index" title="Sign In"><span>Sign In</span></a>
+
+<pre>href="/private/index" title="Sign In"><span>Sign In</span></pre>
 
 
