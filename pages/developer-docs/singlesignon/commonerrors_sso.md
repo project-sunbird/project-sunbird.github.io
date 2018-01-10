@@ -10,7 +10,7 @@ allowSearch: true
 
 <table>
   <tr>
-    <td>Errors</td>
+    <td>Error</td>
     <td>Cause</td>
     <td>Solution</td>
   </tr>
