@@ -57,11 +57,11 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/create1.png"></td>
   </tr>
   <tr>
-    <td>1. Enter a <b>Title</b> for the announcement <br>2. Select <b>Organization or Department</b> from the drop down list <br>3. Select <b>Announcement Type</b> (Order or Circular) <br>4. Enter a <b>Description</b> for the announcement <br>5a. Click <b>+</b> icon to add URL or web link <br><b>Or</b> <br>5b. Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
-<b>Note:</b>
+    <td>1. Enter <b>Title</b> for the announcement <br>2. Select <b>Organization or Department</b> from the drop down list <br>3. Select <b>Announcement Type</b> (Order or Circular) <br>4. Enter a <b>Description</b> for the announcement <br>5. Click <b>+</b> icon to add URL or web link <br><b>Or</b> <br>Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
+<b>Note:
       <li>You can attach or give link for more than one file</li>
       <li>For attachements, the following file formats are supported: .pdf, .png, .jpg. </li>
-      <li>Maximum file size limit is 1MB </li>
+      <li>Maximum file size limit is 1MB </li><br>
 <br>6. Click <b>Select Recipients</b> button to select all the recipients <br><b>Note:</b> <b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description 
   </td>
   <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
