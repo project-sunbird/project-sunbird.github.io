@@ -31,7 +31,7 @@ The maximum file size supported for upload is 25MB
   <tr>
     <td>1. You are logged in <br>2. You are currently in your <strong>Profile</strong> page <br>3. Click <strong>Upload</strong>
        </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/upload_workspace.png"></td>
   </tr>
   </table>
   
@@ -44,7 +44,7 @@ The maximum file size supported for upload is 25MB
   <tr>
     <td>1. Enter <strong>URL</strong> of the video ( If the file to be uploaded is a Youtube Video) <br>2. Click <strong>Browse</strong> to select the desired file for upload. You can alternatively <strong>Drag & Drop</strong> files to upload <br>3. Click <strong>Upload</strong> to upload the selected content
        </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/upload_upldcontent.png"></td>
   </tr>
   </table>
 
@@ -57,7 +57,7 @@ The maximum file size supported for upload is 25MB
   <tr>
     <td>1.On clicking browse, a select file window is displayed <br>2. Select the file and click <strong>Open</strong> 
        </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/upload_selectimage.png"></td>
   </tr>
   </table>
   
