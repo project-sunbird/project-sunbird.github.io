@@ -55,7 +55,7 @@ keycloak_password: (which admin initial password)
 
 4. Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
 
- Update following configs
+Update following configs
 <pre>
 Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
 sunbird_sso_client_id: # Eg: admin-cli
@@ -71,7 +71,7 @@ sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
 </pre>
-**Make sure this configurations are updated** 
+**Make sure these configurations are updated** 
 
 - ENVIRONMENT CONFIGURATION
 - APPLICATION SERVER CONFIGURATIONS
