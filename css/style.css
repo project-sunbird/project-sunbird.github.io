@@ -4234,6 +4234,35 @@ img.nofloat {
   padding: 5px 10px;
   border-radius: 3px; }
 
+tbody {
+  width: 100%;
+  display: table; }
+
+.partnerpage table img {
+  width: auto !important;
+  max-width: 200px !important;
+  margin: 0 auto;
+  display: block;
+  vertical-align: middle; }
+
+.partnerpage table,
+.partnerpage tr,
+.partnerpage td {
+  border: none !important; }
+
+.solution-partners td {
+  padding: 30px 10px !important;
+  vertical-align: middle; }
+
+.partnerpage h2 {
+  margin: 20px 0 0 35px !important; }
+
+.solution-partners img {
+  max-height: 90px; }
+
+.solution-partners {
+  margin: 0 !important; }
+
 .container-height {
   overflow: hidden; }
 

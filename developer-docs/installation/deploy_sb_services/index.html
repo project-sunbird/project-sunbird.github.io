@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.3.a/";
+			baseURL.href="/releases/release.1.4/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-10 15:06:17 +0530">
+<meta name="last-modified" content="2018-01-11 19:38:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.3.a" />
-<meta name="buildNo" content="807" />
+<meta name="buildVersion" content="release.1.4" />
+<meta name="buildNo" content="904" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10012018"  />
-<link rel="stylesheet" href="css/style.css?10012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?10012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?10012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?10012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11012018"  />
+<link rel="stylesheet" href="css/style.css?11012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?11012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?11012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?11012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -529,9 +529,8 @@ keycloak_password: (which admin initial password)
 
 4. Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
 
- Update following configs
-
-```yml
+Update following configs
+<pre>
 Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
@@ -544,8 +543,9 @@ sunbird_keycloak_client_id: # Eg: portal
 Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
-```
-**Make sure this configurations are updated** 
+
+</pre>
+**Make sure these configurations are updated** 
 
 - ENVIRONMENT CONFIGURATION
 - APPLICATION SERVER CONFIGURATIONS

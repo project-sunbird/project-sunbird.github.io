@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.3.a/";
+			baseURL.href="/releases/release.1.4/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Upload</title>
-<meta name="description" content="Sunbird Site Uploading Content"/>
+<title>Sunbird Uploading Content</title>
+<meta name="description" content="Sunbird Site Procedure on Uploading Content"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-10 15:06:17 +0530">
+<meta name="last-modified" content="2018-01-11 19:38:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.3.a" />
-<meta name="buildNo" content="807" />
+<meta name="buildVersion" content="release.1.4" />
+<meta name="buildNo" content="904" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10012018"  />
-<link rel="stylesheet" href="css/style.css?10012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?10012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?10012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?10012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11012018"  />
+<link rel="stylesheet" href="css/style.css?11012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?11012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?11012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?11012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -444,165 +444,136 @@ $("a[href$='features-documentation/upload/']").addClass("sidebar-link-selected")
 			  </a>
 			  </span>
 			</p>
-          <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#uploading-files-from-your-workspace"><span class="tocnumber">1 .</span> <span class="toctext">Uploading files from your Workspace</span></a>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
+          <p>Content created or available offline can be uploaded on Sunbird. The following content formats are supported on Sunbird:</p>
+
+<ul>
+  <li>Video (.mp4, .webm)</li>
+  <li>HTML zip</li>
+  <li>ECML (created using the inbuilt content editor)</li>
+  <li>EPUB</li>
+  <li>H5P</li>
+  <li>Audio (.mp3)</li>
+  <li>Images (.jpeg, .png)</li>
+  <li>URLs for YouTube videos and other files</li>
+</ul>
+
+<p>The maximum file size supported for upload is 25MB</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br />2. You are currently in your <strong>Profile</strong> page <br />3. Click <strong>Upload</strong>
+       </td>
+      <td><img src="pages/features-documentation/images/upload_workspace.png" /></td>
+  </tr>
   </table>
-</div><h2 id="uploading-files-from-your-workspace">Uploading files from your Workspace</h2>
 
-<p>1.Click Select File to Upload. The explorer window is displayed: 
-<a href="http://abc.com">Image</a></p>
+<p>### Uploading Content</p>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Enter <strong>URL</strong> of the video ( If the file to be uploaded is a Youtube Video) <br />2. Click <strong>Browse</strong> to select the desired file for upload. You can alternatively <strong>Drag &amp; Drop</strong> files to upload <br />3. Click <strong>Upload</strong> to upload the selected content
+       </td>
+      <td><img src="pages/features-documentation/images/upload_upldcontent.png" /></td>
+  </tr>
+  </table>
 
-<p>2.Select the file that you want to upload.</p>
+<h3 id="browsing-content">Browsing Content</h3>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1.On clicking browse, a select file window is displayed <br />2. Select the file and click <strong>Open</strong> 
+       </td>
+      <td><img src="pages/features-documentation/images/upload_selectimage.png" /></td>
+  </tr>
+  </table>
 
-<p>
-  <em>Note:</em>
-</p>
+<p>### Previewing Content
+  On successful upload,the preview of the uploaded file is displayed in the content editor</p>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1.Enter topic name or keyword in the search bar to search for content within the uploaded file. For example, if the file is a textbook and you want to view a particular chapter in the book. <br />2. View settings of the uploaded file is displayed on the right <br />2. Click the <strong>profile</strong> icon to change the profile type of the child/children who will be accessing the content on Genie <br />3. Click <strong>upload</strong> icon to upload other content <br />4. Click <strong>download</strong> icon to download content
+<br />5. Click <strong>Send for Review</strong> to send content for review <br />6. Click <strong>Save</strong> to save content
+       </td>
+      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+  </tr>
+  </table>
 
-<ul>
-  <li><em>The platform supports three file types:</em>
-    <ul>
-      <li><em>Text (</em>.pdf)*</li>
-      <li><em>Video (</em>.mp4)*</li>
-      <li><em>Image (</em>.gif, <em>.jpeg, *.png)</em></li>
-    </ul>
-  </li>
-  <li><em>You can upload only one file of maximum 25 MB at a time</em></li>
-</ul>
+<h3 id="mobile-app-settings">Mobile App Settings</h3>
+<p>On clicking the <strong>Profile</strong> icon in the content editor, settings as available in the mobile application are displayed</p>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <strong>Refresh</strong> icon to replay content <br />2. Click <strong>Profile</strong> icon to change the profile of the user <br />3. Click <strong>Music</strong> icon to turn sound on/off
+        </td>
+      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+  </tr>
+  </table>
 
-<p>3.On selecting the file, the <strong>Upload Content</strong> page is displayed</p>
+<p>### Adding Metadata
+  Before the file is uploaded on the portal, metadata should be updated</p>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Enter a Name <br />2. Enter a Description <br />3. Select other metadata like: <ol> <li>a) <strong>Board</strong> <li>b) <strong>Medium</strong> <li>c) <strong>Subject</strong> <li>d) <strong>Grade</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> <br />4. Enter <strong>Attributions</strong>, if any <br />5. Enter <strong>Keywords</strong>
+***Note**: Keywords help search engines find content associated with them when you search*
+<br />5. Click <strong>Image<strong> icon to upload image <br />6. Click <strong>Save</strong>
+        &lt;/td&gt;
+      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+  &lt;/tr&gt;
+  &lt;/table&gt;
+ 
+ ### Adding Image to Metadata
+  <table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>Click the <strong>Image</strong> icon to add an image</td>
+    <td><img src="pages/features-documentation/images/course_imageicon.png" /></td>
+  </tr>
+  <tr>
+    <td>1. You can add images either by selecting an image from:<br />
+      <li>A list or uploading images</li>
+      <li>Your local machine to use immediately</li>
+      <br />2. Click <strong>My images</strong> to view a list of all image files that you have previously,uploaded <br />3. Click <strong>All image</strong> to view a list of image files from the repository 
+      <br /><strong>Note:</strong> The repository contains all image files added and uploaded by any users 
+      <br />5. Choose an appropriate image file from any list and click <strong>Select</strong><br />6. Click <strong>Upload</strong> and use to upload and use images from your gallery
+    </td>
+    <td><img src="pages/features-documentation/images/course_selectimage.png" /></td>
+  </tr>
+  <tr>
+      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br /><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br />2. Under <strong>Copyright and License</strong>, select if you want to: <br />
+      a) Makeit available to everyone
+      b) Not share with anyone
+      <br />4. Add image details in the Asset Caption area <br />5. Click <strong>Upload and Use</strong> to upload the image
+      </td>
+    <td><img src="pages/features-documentation/images/course_uploadimage.png" /></td>
+  </tr>
+</table>
 
-<p>4.Enter the <strong>Title</strong> and <strong>Description</strong> of the file</p>
-
-<p>5.Select the <strong>Lesson Type</strong> from the drop-down list.There are two lesson types:</p>
-
-<ul>
-  <li>Story</li>
-  <li>Worksheet
-<a href="http://abc.com">Image</a></li>
-</ul>
-
-<p>6.Select the MIME Type from  the drop-down list. There are three file types:</p>
-
-<ul>
-  <li>
-    <p>pdf</p>
-  </li>
-  <li>
-    <p>Video</p>
-  </li>
-  <li>
-    <p>HTML Archive</p>
-  </li>
-</ul>
-
-<p>Video</p>
-
-<p>HTML Archive
-<a href="http://abc.com">Image</a></p>
-
-<p>
-  <em>Note:</em>
-</p>
-
-<ul>
-  <li><em>Multipurpose Internet Mail Extensions (MIME), is a method to identify files on the internet, based on their format.</em></li>
-</ul>
-
-<p>7.Select the MIME type based on the file format</p>
-
-<p>8.Click Upload</p>
-
-<p>9.After the file is uploaded, a form is displayed</p>
-
-<p>
-  <em>Note:</em>
-</p>
-
-<ul>
-  <li>
-    <p><em>Data entered in the content upload page is captured here under the following fields:</em></p>
-  </li>
-  <li>
-    <p><em>Title</em></p>
-  </li>
-  <li>
-    <p>*Description *</p>
-  </li>
-  <li>
-    <p><em>Lesson Type</em></p>
-  </li>
-  <li>
-    <p><em>However, these can be modified, if required</em></p>
-  </li>
-  <li>
-    <p><em>Fields with asterisk marks are mandatory fields</em>
-<a href="http://abc.com">Image</a></p>
-  </li>
-</ul>
-
-<p>10.Select Audience from the drop-down list available. There are only two types of audiences:</p>
-
-<ul>
-  <li>
-    <p><em>Learner</em></p>
-  </li>
-  <li>
-    <p><em>Instructor</em></p>
-  </li>
-</ul>
-
-<p>11.Select <strong>Language</strong>, <strong>Subject</strong>, <strong>Grade</strong>, <strong>Age Group</strong>, and, <strong>Medium</strong> from their respective drop-down lists</p>
-
-<p>
-  <em>For example, for a math worksheet file compiled in English for Grade 1 students,  corresponding data is:</em>
-</p>
-
-<p>
-  <em>Language: English</em>
-</p>
-
-<p>
-  <em>Subject: Math</em>
-</p>
-
-<p>
-  <em>Grade: 1</em>
-</p>
-
-<p>
-  <em>Age Group: 6-7</em>
-</p>
-
-<p>
-  <em>Medium: English</em>
-</p>
-
-<p>12.Enter the name of the author in the Author field. This is an optional field</p>
-
-<p>13.Click Save to save the details
-<a href="http://abc.com">Image</a></p>
-
-<p>14.Click Preview to preview the content that is uploaded</p>
-
-<p>15.Click Submit for Review</p>
-
-<p>16.The file is available on the portal for review to the designated reviewer</p>
-
+</strong></strong></li></li></li></li></li></li></li></ol></td></tr></table>
 
           
           <hr />

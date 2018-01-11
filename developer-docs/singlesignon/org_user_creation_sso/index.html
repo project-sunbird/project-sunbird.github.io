@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.3.a/";
+			baseURL.href="/releases/release.1.4/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-10 15:06:17 +0530">
+<meta name="last-modified" content="2018-01-11 19:38:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.3.a" />
-<meta name="buildNo" content="807" />
+<meta name="buildVersion" content="release.1.4" />
+<meta name="buildNo" content="904" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10012018"  />
-<link rel="stylesheet" href="css/style.css?10012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?10012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?10012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?10012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11012018"  />
+<link rel="stylesheet" href="css/style.css?11012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?11012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?11012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?11012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -424,7 +424,7 @@ $("a[href$='developer-docs/singlesignon/org_user_creation_sso/']").addClass("sid
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Org and user creation </h1>
+        <h1>Create Organization and Users </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -464,17 +464,9 @@ $("a[href$='developer-docs/singlesignon/org_user_creation_sso/']").addClass("sid
             </li>
             <li class="toc_level-1 toc_section-3">
               <a href="#organization-apis"><span class="tocnumber">2 .</span> <span class="toctext">Organization APIs</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#create-organization"><span class="tocnumber">2.1 .</span> <span class="toctext">Create Organization</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#update-organization"><span class="tocnumber">2.2 .</span> <span class="toctext">Update Organization</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#user-apis"><span class="tocnumber">2.3 .</span> <span class="toctext">User APIs</span></a>
-                </li>
-              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#user-apis"><span class="tocnumber">3 .</span> <span class="toctext">User APIs</span></a>
             </li>
           </ul>
         </td>
@@ -482,25 +474,25 @@ $("a[href$='developer-docs/singlesignon/org_user_creation_sso/']").addClass("sid
     </tbody>
   </table>
 </div><h2 id="master-data-interchange">Master Data Interchange</h2>
-<p>There are some data presently residing in the external SSO systems which are required on Sunbird to provide functionality to the users who sign in to the platform. The data required are about organizations (teacher education/training Institutes) and the members of the organizations. Within Sunbird, a user is not granted permissions system wide. Instead, a user has permissions defined at the level of the organization to which they belong. This allows a user to be a part of many organizations and have different permissions for each organization.</p>
+<p>Sunbird requires some data that currently resides in external SSO systems to provide required functionality to the users who sign in to the platform. For example; in the case of DIKSHA, Sunbird requires data are about organization type (teacher education/training Institutes) and the members of the organizations. Within Sunbird, users are not granted permissions system-wide. User permissions are defined at the level of the organization to which they belong. This allows a user to be a part of many organizations and have different permissions for each organization.</p>
 
 <h3 id="data-requirements">Data Requirements</h3>
-<p>To make this feasible, Sunbird will require three items of information from the integrating party</p>
+<p>To make this feasible, Sunbird requires the following information from the integrating party:</p>
 
 <ul>
   <li>
-    <p>List of organisations, their names and any unique identifier for them in external system</p>
+    <p>List of organisations - their names and any unique identifier for them in external system</p>
   </li>
   <li>
-    <p>List of members for each organisation containing the username, full name and verified email address</p>
+    <p>List of members for each organisation - the username, full name and verified email address</p>
   </li>
   <li>
-    <p>List of roles of each member in the organisation. Available roles are member, content creator and admin</p>
+    <p>List of roles of each member in the organisation - Available roles are member, content creator and admin</p>
   </li>
 </ul>
 
 <h2 id="organization-apis">Organization APIs</h2>
-<p>Tenants can import their organizations and users on Sunbird using the organization and user APIs. The API has the following resources:</p>
+<p>Tenants can import their organizations on Sunbird using the organization APIs. The API has the following resources:</p>
 
 <ul>
   <li>Create Organization</li>
@@ -509,421 +501,29 @@ $("a[href$='developer-docs/singlesignon/org_user_creation_sso/']").addClass("sid
   <li>Update User</li>
   <li>Add Member to Organization</li>
   <li>Remove Member from Organization</li>
-  <li>Single-Sign-On API</li>
+  <li>Single Sign-On API</li>
 </ul>
 
-<h3 id="create-organization">Create Organization</h3>
-<p>POST - <base_url>/api/org/v1/create</base_url></p>
-
-<p>Creates a new organization</p>
-
 <p>
-  <strong>Request</strong>
+  <em>For information on Organization Management APIs, refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></em>
 </p>
 
-<p>Request Body - organization details</p>
-<pre>
-{
-  "request":{  
-      "orgName": "name of the organization", //required
-      
-      "description": "description", //optional
-      
-      "externalId": "identifier of the organization in the partner system", // required
-      
-      "provider": "channel of the tenant to which the organization belongs to, e.g.: ap",   //required
-      
-      “homeUrl”: Organization’s homepage url, //optional
-      
-“orgCode”: Unique code for the organization that is being uploaded, //optional
-
-“orgType”: Type of organization, such as, NGO, primary school, secondary school etc., //optional
-
-“preferredLanguage”: Language preferences for the organization, if any, //optional
-
-"contactDetail": [{ "email": "user@sunbird.com",  “Phone”: “1234567890” }] //optional
-
-   }
-}
-</pre>
-
-<p>District, Block and Cluster fields will be introduced shortly.</p>
+<h2 id="user-apis">User APIs</h2>
+<p>Tenants can import their users on Sunbird using the user APIs. The API has the following resources:
+- Create User
+- Search User
+- Fetch User by Login ID
+- Get User by Login ID
+- Updates User
+- Logs in User
+- Logs out User
+- Resets Forgotten Password
+- Add badges to user
+- Changes User Password
+- Adds Users Current Login Time</p>
 
 <p>
-  <strong>Response</strong>
-</p>
-
-<p>orgId - Identifier of the created organization</p>
-<pre>
-{  
-   "id":"api.org.create",
-   
-   "ver":"1.0",
-   
-   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
-   
-   "params":{ 
-   
-      "resmsgid":"",
-      
-      "msgid":"",
-      
-      "err":"0",
-      
-      "status":"SUCCESS",
-      
-      "errmsg":"Operation successful"
-   },
-   "result":{  
-        "response": "SUCCESS",
-	
-        "orgId": "0122852840502968322"
-   },
-   "responseCode":"OK"
-}
-</pre>
-
-<h3 id="update-organization">Update Organization</h3>
-
-<p>PATCH - <base_url>/api/org/v1/update</base_url></p>
-
-<p>Updates an existing organization.</p>
-
-<p>
-  <strong>Request</strong>
-</p>
-
-<p>Request Body - organization details</p>
-<pre>
-{
-  "request":{  
-  
-      "externalId": "identifier of the organization in the partner system", // required
-      
-      "provider": "channel of the tenant to which the organization belongs to, e.g.: ap", //required
-      
-      "orgName": "name of the organization", //optional
-      
-      "description": "description", //optional
-   }
-}
-</pre>
-
-<p>
-  <strong>Response</strong>
-</p>
-<pre>
-{  
-   "id":"api.org.update",
-   
-   "ver":"1.0",
-   
-   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
-   
-   "params":{  
-   
-      "resmsgid":"",
-      
-      "msgid":"",
-      
-      "err":"0",
-      
-      "status":"SUCCESS",
-      
-      "errmsg":"Operation successful"
-   },
-   "result":{  
-   
-        "response": "SUCCESS"
-   },
-   "responseCode":"OK"
-}
-</pre>
-
-<h3 id="user-apis">User APIs</h3>
-
-<p>
-  <strong>Create User</strong>
-</p>
-
-<p>POST - <base_url>/api/user/v1/create</base_url></p>
-
-<p>Creates a new user</p>
-
-<p>
-  <strong>Request</strong>
-</p>
-
-<p>Request Body - user details</p>
-
-<pre>
-{
-  "request":{  
-  
-      "firstName": "first name of the user", //required
-      
-      "lastName": "last name of the user", //optional
-      
-      "provider": "channel of the tenant to which the user belongs to, e.g.: ap", //required
-      
-      "email": "user.email@test.com", //required
-      
-      "emailVerified": true, //required
-      
-      "userName": "unique username for the user", //required
-      
-      "phone": "9900032121",
-      
-      "phoneVerified": true,
-      
-      "password": "password for the user to login into sunbird" //optional
-      
-      “roles”: “roles to be associated with user. E.g.: CONTENT_CREATOR, CONTENT_REVIEWER, COURSE_MENTOR, FLAG_REVIEWER” //optional
-      
- 	“position”: //optional
-	
-	“grade”: Classes taught by the user //optional. Values - Class 1 to Class10, Kindergarten, Other
-	
-	“location”: User’s place of location //optional
-	
-	“dob”: User’s date of birth //optional. Format - YYYY-MM-DD
-	
-	“aadhaarNo”: //optional
-	
-	“gender”: //optional. Values - Male, Female, Transgender
-	
-	“language”: User’s language preferences. //optional 
-	
-	“profileSummary”: User’s profile summary //optional
-	
-	“subject”: Taught by the user //optional. Values - Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali   
-}
-}
-</pre>
-
-<p>
-  <strong>Response</strong>
-</p>
-
-<p>userId - Identifier of the created user</p>
-
-<pre>
-{  
-   "id":"api.user.create",
-   
-   "ver":"1.0",
-   
-   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
-   
-   "params":{  
-   
-      "resmsgid":"",
-      
-      "msgid":"",
-      
-      "err":"0",
-      
-      "status":"SUCCESS",
-      
-      "errmsg":"Operation successful"
-   },
-   "result":{  
-   
-        "response": "SUCCESS",
-	
-        "userId": "0122852840502968322"
-   },
-   "responseCode":"OK"
-}
-</pre>
-
-<p>** Update User**</p>
-
-<p>POST - <base_url>/api/user/v1/update</base_url></p>
-
-<p>Updates an existing user. All optional fields mentioned in Create User can be added in the Update User request.</p>
-
-<p>
-  <strong>Request</strong>
-</p>
-
-<p>Request Body - user details</p>
-
-<pre>
-{
-  "request":{
-  
-      "userName": "unique userName for the user", //required
-      
-      "provider": "channel of the tenant organization to which the user belongs to, e.g.: ap", //required
-      
-      "firstName": "first name of the user", //optional
-      
-      "lastName": "last name of the user", //optional
-      
-      "email": "user.email@test.com", //required
-      
-      "emailVerified": true, //required
-      
-      "phone": "9900032121",
-      
-      "phoneVerified": true
-   }
-}
-</pre>
-
-<p>
-  <strong>Response</strong>
-</p>
-
-<pre>
-{  
-   "id":"api.user.update",
-   
-   "ver":"1.0",
-   
-   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
-   
-   "params":{  
-   
-      "resmsgid":"",
-      
-      "msgid":"",
-      
-      "err":"0",
-      
-      "status":"SUCCESS",
-      
-      "errmsg":"Operation successful"
-   },
-   "result":{  
-   
-        "response": "SUCCESS"
-   },
-   
-   "responseCode":"OK"
-}
-</pre>
-
-<p>
-  <strong>Add Member</strong>
-</p>
-
-<p>POST - <base_url>/api/org/v1/member/add</base_url></p>
-
-<p>Adds a member to the organization</p>
-
-<p>Request</p>
-
-<p>Request Body - membership details</p>
-
-<pre>
-{
-  "request":{  
-  
-      "externalId": "identifier of the organization in the partner system", //required
-      
-      "provider": "channel of the tenant organization to which the organization belongs to, e.g.: ap", //required
-      
-      "userName": "username with which the user is created", // required
-      
-      "role": "member/content-creator/admin", //optional, default to member if not provided
-      
-      "position": "position of the person in the organization, e.g.: Principal, Teacher, Student" // optional
-   }
-}
-</pre>
-
-<p>
-  <strong>Response</strong>
-</p>
-
-<pre>
-{  
-   "id":"api.org.member.add",
-   
-   "ver":"1.0",
-   
-   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
-   
-   "params":{  
-   
-      "resmsgid":"",
-      
-      "msgid":"",
-      
-      "err":"0",
-      
-      "status":"SUCCESS",
-      
-      "errmsg":"Operation successful"
-   },
-   "result":{  
-   
-        "response": "SUCCESS"
-   },
-   "responseCode":"OK"
-}
-</pre>
-
-<p>
-  <strong>Remove Member</strong>
-</p>
-
-<p>POST - <base_url>/api/org/v1/member/remove
-Removes a member from an organization</base_url></p>
-
-<p>Request</p>
-
-<p>Request Body - membership details</p>
-
-<pre>
-{
-  "request":{  
-      "externalId": "identifier of the organization in the partner system", //required
-      
-     
-      "provider": "channel of the tenant to which the organization belongs to, e.g.: ap", //required
-      
-      "userName": "username with which the user is created", // required
-   }
-}
-</pre>
-
-<p>
-  <strong>Response</strong>
-</p>
-
-<pre>
-{  
-   "id":"api.org.member.remove",
-   
-   "ver":"1.0",
-   
-   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
-   
-   "params":{  
-   
-      "resmsgid":"",
-      
-      "msgid":"",
-      
-      "err":"0",
-      
-      "status":"SUCCESS",
-      
-      "errmsg":"Operation successful"
-   },
-   "result":{ 
-   
-        "response": "SUCCESS"
-   },
-   "responseCode":"OK"
-}
-</pre>
-
-<p>
-  <em>For further information on Organization Management APIs, refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></em>
+  <em>For information on User APIs, refer <a href="http://www.sunbird.org/apis/userapi/">User APIs</a></em>
 </p>
 
 

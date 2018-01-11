@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.3.a/";
+			baseURL.href="/releases/release.1.4/";
 		}
 	}
 	getBase();
@@ -24,18 +24,18 @@
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
 <title>Sunbird Common Errors and Solutions</title>
-<meta name="description" content="Sunbird Site Brief description of common errors during single sign on process and their respective solutions"/>
+<meta name="description" content="Sunbird Site Brief description of common errors ensountered during single sign on process and their respective solutions"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-10 15:06:17 +0530">
+<meta name="last-modified" content="2018-01-11 19:38:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.3.a" />
-<meta name="buildNo" content="807" />
+<meta name="buildVersion" content="release.1.4" />
+<meta name="buildNo" content="904" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10012018"  />
-<link rel="stylesheet" href="css/style.css?10012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?10012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?10012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?10012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11012018"  />
+<link rel="stylesheet" href="css/style.css?11012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?11012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?11012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?11012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -424,7 +424,7 @@ $("a[href$='developer-docs/singlesignon/commonerrors_sso/']").addClass("sidebar-
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Common errors and solutions </h1>
+        <h1>Common Errors and Solutions </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -444,31 +444,11 @@ $("a[href$='developer-docs/singlesignon/commonerrors_sso/']").addClass("sidebar-
 			  </a>
 			  </span>
 			</p>
-          <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#common-errors-and-solutions"><span class="tocnumber">1 .</span> <span class="toctext">Common Errors and Solutions</span></a>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><h2 id="common-errors-and-solutions">Common Errors and Solutions</h2>
-
-<table>
+          <table>
   <tr>
-    <td>Common Errors</td>
-    <td>Cause</td>
-    <td>Solutions</td>
+    <th>Error</th>
+    <th>Cause</th>
+    <th>Solution</th>
   </tr>
   <tr>
     <td>Issue while generating JWT Token</td>
@@ -476,10 +456,10 @@ $("a[href$='developer-docs/singlesignon/commonerrors_sso/']").addClass("sidebar-
     <td>Private Key should be generated without mentioning any algorithm</td>
   </tr>
   <tr>
-    <td>Issue while creating bulk orgs - ‘API rate limit exceeded’
+    <td>Issue while creating bulk organizations - ‘API rate limit exceeded’
 </td>
-    <td>There is a limit on number of calls (1000) that can be made within one hour by using a single API key</td>
-    <td>Development team can increase the limit when necessary</td>
+    <td>There is a limit on the number of calls that can be made within an hour by using a single API key. The current limit is 1000</td>
+    <td> The development team can increase the limit, if necessary</td>
   </tr>
 </table>
 

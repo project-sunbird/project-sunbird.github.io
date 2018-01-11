@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.3.a/";
+			baseURL.href="/releases/release.1.4/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-10 15:06:17 +0530">
+<meta name="last-modified" content="2018-01-11 19:38:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.3.a" />
-<meta name="buildNo" content="807" />
+<meta name="buildVersion" content="release.1.4" />
+<meta name="buildNo" content="904" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10012018"  />
-<link rel="stylesheet" href="css/style.css?10012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?10012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?10012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?10012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11012018"  />
+<link rel="stylesheet" href="css/style.css?11012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?11012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?11012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?11012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -456,11 +456,32 @@ $("a[href$='developer-docs/singlesignon/procedure_sso/']").addClass("sidebar-lin
           <ul>
             <li class="toc_level-1 toc_section-1">
               <a href="#procedure-to-onboard-organizations"><span class="tocnumber">1 .</span> <span class="toctext">Procedure to Onboard Organizations</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#tokens"><span class="tocnumber">2 .</span> <span class="toctext">Tokens</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#tokens"><span class="tocnumber">1.1 .</span> <span class="toctext">Tokens</span></a>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#base-url"><span class="tocnumber">2.1 .</span> <span class="toctext">Base URL</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#signature"><span class="tocnumber">2.2 .</span> <span class="toctext">Signature</span></a>
                 </li>
               </ul>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#onboarding-new-tenant-organization-on-sunbird"><span class="tocnumber">3 .</span> <span class="toctext">Onboarding New Tenant Organization on Sunbird</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#generating-rsa-private-and-public-key-pair"><span class="tocnumber">4 .</span> <span class="toctext">Generating RSA Private and Public Key Pair</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#accessing-apis-using-token"><span class="tocnumber">5 .</span> <span class="toctext">Accessing APIs Using Token</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#custom-homepage-and-logo-for-tenants"><span class="tocnumber">6 .</span> <span class="toctext">Custom Homepage and Logo for Tenants</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-9">
+              <a href="#sign-in-link-from-custom-home-page"><span class="tocnumber">7 .</span> <span class="toctext">Sign In link from Custom Home Page</span></a>
             </li>
           </ul>
         </td>
@@ -469,78 +490,93 @@ $("a[href$='developer-docs/singlesignon/procedure_sso/']").addClass("sidebar-lin
   </table>
 </div><h2 id="procedure-to-onboard-organizations">Procedure to Onboard Organizations</h2>
 
-<ol>
-  <li>
-    <p>Create tenant organization</p>
-  </li>
-  <li>
-    <p>Generate RSA private and public key pair</p>
-  </li>
-  <li>
-    <p>Get public key registered in production</p>
-  </li>
-  <li>
-    <p>Create organizations, and users, and register</p>
-  </li>
-  <li>
-    <p>Single-Sign-On with Sunbird</p>
-  </li>
-</ol>
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Instruction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td>Create a tenant organization</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Generate the RSA private and public key pair</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td>Get the public key registered in production</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td>Create organizations, and users, and register</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Single Sign-On with Sunbird</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="tokens">Tokens</h3>
+<h2 id="tokens">Tokens</h2>
 
-<p>To authenticate with DIKSHA via SSO (Single Sign-on), a JWT provided to the auto-login endpoint must contain the following fields (also known as claims) in its payload.</p>
+<p>Tokens are used to authenticate users across Sunbird instances, networks or applications via SSO (Single Sign-on). The JWT provided to the auto-login endpoint must contain the following fields (also known as claims) in its payload.</p>
 
 <ul>
   <li>
-    <p>jti: a unique id of the token, can be any string generated by the sender which is unique</p>
+    <p><strong>jti:</strong> a unique ID of the token. This can be any unique string generated by the sender</p>
   </li>
   <li>
-    <p>iss: the issuer of the JWT, this must be the id of the registered client</p>
+    <p><strong>iss:</strong> the issuer of the JWT. This must be the ID of the registered client</p>
   </li>
   <li>
-    <p>sub: the subject of the token, this must be the user id of the person who will be log in on DIKSHA</p>
+    <p><strong>sub:</strong> the subject of the token. This must be the user ID of the person who is signed  in</p>
   </li>
   <li>
-    <p>aud: the consumer of the token, for now this is <a href="https://www.ntp.in">https://www.ntp.in</a></p>
+    <p><strong>aud:</strong> the consumer of the token. This is the site or instance address. For example; in case of the DIKSHA platform, currently it is <a href="https://www.ntp.in">https://www.ntp.in</a></p>
   </li>
   <li>
-    <p>nbf: not before, the earliest time when the token can be used (expressed as the number of seconds since epoch in GMT). The nbf time cannot be in the future</p>
+    <p><strong>nbf:</strong> not before. This indicates the earliest time when the token can be used. It is expressed as the number of seconds since epoch in GMT. The nbf time cannot be in the future</p>
   </li>
   <li>
-    <p>exp: expires, the timestamp at which the token expires (expressed as the number of seconds since epoch in GMT). The exp time cannot be more than 600 seconds after the nbf time</p>
+    <p><strong>exp:</strong> expires. The timestamp when the token expires. It is expressed as the number of seconds since epoch in GMT. The expiry time cannot be more than 600 seconds after the nbf time.</p>
   </li>
   <li>
-    <p>name: the name of the person whose user id is in sub</p>
+    <p><strong>name:</strong> The name of the person whose user ID is in the subject</p>
   </li>
   <li>
-    <p>email: the email of the person whose user id is in sub</p>
+    <p><strong>email:</strong> The email ID of the person whose user ID is in the subject</p>
   </li>
   <li>
-    <p>email_verified: whether the email id has been verified. Only Verified emails are accepted on DIKSHA</p>
+    <p><strong>email_verified:</strong> An indicator whether the email ID has been verified. This is important when only verified user email IDs are accepted on an instance. For example; only verified emails are accepted on DIKSHA</p>
   </li>
   <li>
-    <p>phone_number: 10-digit phone number of the person whose user id is in sub. This field is optional</p>
+    <p><strong>phone_number:</strong> The 10 digit phone number of the person whose user ID is in the subject. This is an optional field</p>
   </li>
   <li>
-    <p>phone_number_verified: whether the phone number has been verified. Only Verified emails are accepted on DIKSHA. This field is optional</p>
+    <p><strong>phone_number_verified:</strong> An indicator whether the phone number has been verified. This is important when only verified user phone numbers are accepted on an instance. For example; only verified phone numbers are accepted on DIKSHA. This field is optional</p>
   </li>
   <li>
-    <p>redirect_uri: the url of the page where the user should be directed after login
- Example Payload for Single-Sign-On</p>
+    <p><strong>redirect_url:</strong> the url of the page where the user should be directed after login</p>
   </li>
 </ul>
 
+<p>
+  <strong>Sample Payload for Single Sign-On</strong>
+</p>
+
 <pre>
-{
   {
   "jti": "261263cd-3a0e-4aee-8faf-6d9d9eb14bb1",
 
-  "iss": "<replace with="" provided="" by="" at="" registration="" time="">",
+  "iss": "replace with id provided by at registration time",
 
   "sub": "someuserid",
 
-  "aud": "<base_url>",
+  "aud": "base_url",
 
   "iat": 1498556656,
 
@@ -556,37 +592,46 @@ $("a[href$='developer-docs/singlesignon/procedure_sso/']").addClass("sidebar-lin
 
   "phone_number_verified": true,
 
-  "redirect_uri": "<base_url>/private/index#!/workspace/content/create"
+  "redirect_uri": "base_url/private/index#!/workspace/content/create"
 }
-&lt;/pre&gt;
+</pre>
 
-#### Base Url
+<h3 id="base-url">Base URL</h3>
 
-The base url for NTP staging will be https://staging.ntp.net.in
+<p>Provide the base URL for for the instances created. For example;</p>
 
-The base url for NTP production will be https://diksha.gov.in
+<ul>
+  <li>The base url for DIKSHA staging is https://staging.ntp.net.in</li>
+  <li>The base url for DIKSHA production is https://diksha.gov.in</li>
+</ul>
 
-#### Signature
+<h3 id="signature">Signature</h3>
 
-The payload described must be signed before sending it the authentication endpoint. The JWT specification permits signing via HMAC, RSA or ECDSA algorithms. For this authentication end-point, the only permitted algorithm will be RSA signing via a private key. The corresponding public key will be provided during registration of the client. 
+<p>Sign the payload described before sending it to the authentication endpoint. The JWT specification permits signing via HMAC, RSA or ECDSA algorithms. For this authentication end-point, the only permitted algorithm is RSA signing via a private key. The corresponding public key is provided during registration of the client.</p>
 
-To read further on creating a RSA-signed JWT in Java see: [https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-rsa-signature](https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-rsa-signature))
+<p>
+  <em>For details on creating a RSA-signed JWT in Java, refer to <a href="https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-rsa-signature">JWT with RSA Signature</a></em>
+</p>
 
-### Onboarding New Tenant Organization on Sunbird
+<h2 id="onboarding-new-tenant-organization-on-sunbird">Onboarding New Tenant Organization on Sunbird</h2>
 
-Sunbird allows creation and configuration of multiple tenant organizations in a single instance:
+<p>Sunbird allows creation and configuration of multiple tenant organizations within a single instance:</p>
 
-* Every tenant organization has a unique channel, i.e. all the activities by users belonging to that tenant organization are tagged by the tenant's channel id (activities include content creation, content consumption, etc)
+<ul>
+  <li>
+    <p>Every tenant organization has a unique channel; i.e. all the activities by users belonging to that tenant organization are tagged with the tenant’s channel ID. For example, on DIKSHA, activities include content creation, content consumption, etc.</p>
+  </li>
+  <li>
+    <p>Tenant organizations have the option to setup a custom home page and configure the logo to be displayed for users who belong to the tenant</p>
+  </li>
+  <li>
+    <p>Tenant organizations can create multiple sub-organizations and add users to those organizations. For example, on DIKSHA, each state is a tenant on Sunbird and all schools or institutes in that state are created as sub-organizations under that tenant organization.</p>
+  </li>
+</ul>
 
-* Tenant organizations have the option to setup a custom home page and configure the logo to be displayed for users who belong to the tenant
+<h2 id="generating-rsa-private-and-public-key-pair">Generating RSA Private and Public Key Pair</h2>
 
-* Tenant organizations can create multiple sub organizations and add users to those organizations
-
-Example: Each state is a tenant on Sunbird and all schools/institutes in that state are created as sub-organizations under that tenant organization.
-
-### Generating RSA Private and Public Key Pair
-
-To create a new pair of public/private keys, run the following command:
+<p>To create a new pair of public/private keys, run the following command:</p>
 
 <pre>
 {
@@ -594,7 +639,7 @@ $ openssl genrsa -out private.pem 2048
 }
 </pre>
 
-This private key must be kept secret. To generate a public key corresponding to the private key, execute:
+<p>This private key must be kept secret. To generate a public key corresponding to the private key, execute:</p>
 
 <pre>
 {
@@ -602,37 +647,47 @@ $ openssl rsa -in private.pem -outform PEM -pubout -out public.pem
 }
 </pre>
 
-If you run these commands, the public key will be written in public.pem, while the private key will be written in private.pem
+<p>On running these commands, the public key is written in <strong>public.pem</strong>, while the private key is written in <strong>private.pem</strong></p>
 
-### Accessing the APIs Using Token
+<h2 id="accessing-apis-using-token">Accessing APIs Using Token</h2>
 
-The token generated should be sent in Authorization header of the request with value bearer <token>. Example curl request
+<p>To access APIs using the token, the generated token should be sent in the Authorization header of the request with the value: bearer <token>. For example; curl request</token></p>
 
-curl -H "Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello
+<p>curl -H “Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello</token></p>
 
-### Custom Homepage &amp; Logo for Tenants
+<h2 id="custom-homepage-and-logo-for-tenants">Custom Homepage and Logo for Tenants</h2>
 
-Sunbird supports over-riding of default home page and configuring a custom home page and logo for each on-boarded tenant. The tenant organization should provide package containing the following files for customising the home page and logo:
+<p>Sunbird allows you to override the default home page and configure a custom home page and logo for each tenant who is onboarded. The tenant organization should provide a package containing the following files to customise the home page and logo:</p>
 
-* The home page html file should be named index.html. All the dependent files (like js, css and images) used by the home page should be within the package and referred using relative paths from the "index.html".
+<ul>
+  <li>
+    <p>The home page html file - named as <strong>index.html</strong>. All the dependent files, like js, css and images, used by the home page should be within the package and referred using relative paths from the “index.html”.</p>
+  </li>
+  <li>
+    <p>Logo of the tenant - named as <strong>logo.png</strong></p>
+  </li>
+  <li>
+    <p>Tenants also have an option to configure the following:</p>
 
-* Logo of the tenant which should be with the name "logo.png"
+    <ul>
+      <li>
+        <p>an icon - to be displayed as browser favicon, named as <strong>favicon.ico</strong></p>
+      </li>
+      <li>
+        <p>a poster image - to be used as a flash screen in the mobile app, named as <strong>poster.png</strong></p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-* Optionally, tenants can also configure the following:
+<p>Place all the files in a single folder, with the same name as the channel value of the tenant organization</p>
 
-    * an icon (to be displayed as browser favicon) which should be named as "favicon.ico"
+<h2 id="sign-in-link-from-custom-home-page">Sign In link from Custom Home Page</h2>
 
-    * a poster image (to be used as flash screen in the mobile app) which should be named as "poster.png"
+<p>Add the following link at an appropriate place in the custom home page to invoke Sunbird portal login:</p>
 
-All the files should be placed in a folder. The folder name should be the same as the channel value of the tenant organization.
+<pre>href="/private/index" title="Sign In"&gt;<span>Sign In</span></pre>
 
-### Sign In link from Custom Home Page
-
-Following link needs to be added at an appropriate place in the custom home page to invoke Sunbird portal login:
-<a href="/private/index" title="Sign In"><span>Sign In</span></a>
-
-
-</token></token></base_url></base_url></replace></pre>
 
           
           <hr />
