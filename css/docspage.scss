@@ -183,7 +183,7 @@ tbody{
 }
 .partnerpage table img{
 	width:auto !important;
-	max-width:220px !important;
+	max-width:200px !important;
 	margin:0 auto ;
 	display: block;
 	vertical-align:middle;
@@ -197,4 +197,12 @@ tbody{
 .solution-partners td{
 	padding: 30px 10px !important;
 	vertical-align:middle;
+}
+.partnerpage .h1{
+    margin: 20px 0 10px 35px;
+    font-size: 36px;
+    font-weight: lighter;
+}
+.solution-partners img{
+	max-height: 90px;
 }
