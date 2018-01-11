@@ -11,6 +11,8 @@ Announcements are an invariable part of organizational activities. From importan
 
 ## Announcement Workflow
 
+Announcement workflow will helps you in understanding all necessary sequence of tasks or processes from initiation to completion that a announcement creator does.
+
 <img src="pages/features-documentation/images/announcement/announcement1.png">
 
 ### Announcement Sender Role Function Matrix
