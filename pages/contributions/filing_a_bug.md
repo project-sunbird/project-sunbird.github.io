@@ -8,23 +8,27 @@ keywords: 'Contribute, Code, Code contribution'
 published: true
 allowSearch: true
 ---
-Overview
+## Overview
+
 This document describes how to file an effective Sunbird bug report. Before filing a bug report, check the troubleshooting page [here](http://www.sunbird.org/developer-docs/troubleshooting/) for a solution. If there exists no solution to your issue, the following process will guide you in figuring out and resolving your issue.
-Introduction
+
+## Introduction
 To report a bug in the Sunbird bug trackers, you need to create a tracker item. Add a tracker item. Once added, the Sunbird Developer team will check the validity of the issue raised and act accordingly.
-Prerequisites
-1.	An Account on GIT, since the Sunbird repository lives in GitHub.
-•	If you already have a GIT account, login with your credentials
-•	If you do not have a GIT account, register for an account at GitHub [here](https://github.com/) 
-•	The Sunbird Issue Tracker uses GitHub accounts for authentication
-2.	Use the latest version of Sunbird
-•	If you are using an out-of-date version of Sunbird, please update to the latest version.
+### Prerequisites
+
+- An Account on GIT, since the Sunbird repository lives in GitHub.
+  - If you already have a GIT account, login with your credentials
+  - If you do not have a GIT account, register for an account at GitHub [here](https://github.com/) 
+  - The Sunbird Issue Tracker uses GitHub accounts for authentication
+- Use the latest version of Sunbird
+  - If you are using an out-of-date version of Sunbird, please update to the latest version.
 
 After Prerequisites, follow these guidelines to ensure that your Bug report is clear and effective:
-Isola
-Separate out the bug
+
+### Separate out the bug
+
 The first step in in writing an effective bug report is to find exactly:
-•	What the problem is?
+**What the problem is?**
 Clearly and precisely state what exactly is wrong? 
 •	How to reproduce it?
 If you have an explicit understanding about what exactly is wrong, you can reproduce an example of the problem	
