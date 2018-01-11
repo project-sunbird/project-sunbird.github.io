@@ -184,7 +184,6 @@ tbody{
 .partnerpage table img{
 	width:auto !important;
 	max-width:200px !important;
-	    max-height: 90px;
 	margin:0 auto ;
 	display: block;
 	vertical-align:middle;
@@ -203,4 +202,7 @@ tbody{
     margin: 20px 0 10px 35px;
     font-size: 36px;
     font-weight: lighter;
+}
+.solution-partners img{
+	max-height: 90px;
 }
