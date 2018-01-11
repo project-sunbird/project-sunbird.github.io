@@ -181,10 +181,20 @@ tbody{
 	width:100%;
 	display:table;
 }
-.partners-table img{
+.partnerpage table img{
 	width:auto !important;
-	max-width:100% !important;
+	max-width:220px !important;
 	margin:0 auto ;
 	display: block;
+	vertical-align:middle;
 	
+}
+.partnerpage table,
+.partnerpage tr,
+.partnerpage td{
+	border:none !important;
+}
+.solution-partners td{
+	padding: 30px 10px !important;
+	vertical-align:middle;
 }
