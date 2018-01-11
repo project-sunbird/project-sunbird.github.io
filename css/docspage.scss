@@ -198,11 +198,12 @@ tbody{
 	padding: 30px 10px !important;
 	vertical-align:middle;
 }
-.partnerpage .h1{
-    margin: 20px 0 10px 35px;
-    font-size: 36px;
-    font-weight: lighter;
+.partnerpage h2{
+    margin: 20px 0 0 35px !important;
 }
 .solution-partners img{
 	max-height: 90px;
+}
+.solution-partners {
+	margin:0 !important;
 }
