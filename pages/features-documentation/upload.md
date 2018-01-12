@@ -98,8 +98,8 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <ol> <li>a) <strong>Curriculum</strong> <li>b) <strong>Subject</strong> <li>c) <strong>Grade</strong> <li>d) <strong>Medium</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
-***Note**: Keywords help search engines find content associated with them when you search*
+    <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <ol> <li>a) <strong>Curriculum</strong> <li>b) <strong>Subject</strong> <li>c) <strong>Grade</strong> <li>d) <strong>Medium</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> </ol> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
+*Note*: Keywords help search engines find content associated with them when you search*
 <br>5. Click <strong>Image<strong> icon to upload image <br>6. Click <strong>Save</strong>
         </td>
       <td><img src="pages/features-documentation/images/upload_metadata.png"></td>
