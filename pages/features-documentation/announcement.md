@@ -62,13 +62,13 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
   <tr>
     <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b> for organization or department that has sent the announcement <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br>&emsp;<b>Or</b>  Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
       &emsp;<b>Note:</b>
-      &emsp;<li>You can attach or give link for more than one file</li>
-      &emsp;<li>For attachements the following file formats are supported: .pdf, .png, .jpg. </li>
-      &emsp;<li>Maximum file size limit is 1MB </li>
+      <li>You can attach or give link for more than one file</li>
+      <li>For attachements the following file formats are supported: .pdf, .png, .jpg. </li>
+      <li>Maximum file size limit is 1MB </li>
 7. Click <b>Select Recipients</b> button to select all the recipients 
   <br>&emsp;<b>Note:</b> 
-      &emsp;<li>All the fields marked with <b>*</b> sign is mandatory to fill. Others are optional field</li>
-       &emsp;<li><b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description</li>
+      <li>All the fields marked with asterisk(*) is mandatory to fill. Others are optional field</li>
+      <li><b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description</li>
   </td>
   <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
   </tr>
