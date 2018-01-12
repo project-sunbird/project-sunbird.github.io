@@ -22,11 +22,11 @@ The following steps will install docker, pull the required images and create ser
 
 ## API Manager services
 
-1. Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will set up the API Manager services.
+- Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will set up the API Manager services.
 
 **Note:** The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
-- deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. 
+- `deploy-apis.sh` script will print a JWT token that needs to be updated in the application configuration. 
 - To find the token search the script output to look for "JWT token for player is :"
 - Copy the corresponding token. 
 - For reference check the example output as follows
@@ -38,38 +38,39 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQ
 L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
 </pre>
 
-- Update sunbird_api_auth_token in your configuration with the above copied token.
+- Update `sunbird_api_auth_token` in your configuration with the copied token.
 
-- Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. 
+- Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal. 
+
 For details refer [API keys](developer-docs/installation/medium_scale_deploy#api-keys)
 
 ## Proxy services
 
-To deploy the Sunbird proxy services, execute the following command:
+- To deploy the Sunbird proxy services, execute the following command:
 
-Run `sudo ./deploy-proxy.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
+  Run `sudo ./deploy-proxy.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
 ## Keycloak provisioning
 
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
-Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
+- Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
 
-<pre>
-./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
-</pre>
+  <pre>
+  ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
+  </pre>
 
-Update the following variables in the config path `{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}`  
+- Update the following variables in the config path `{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}`  
 
-<pre>
-keycloak_password: (with admin initial password)
-keycloak_theme_path: ex- path/to/the/nile/themes. 
-Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-</pre>
+  <pre>
+  keycloak_password: (with admin initial password)
+  keycloak_theme_path: ex- path/to/the/nile/themes. 
+  Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
+  </pre>
 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
-Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
+- Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
 
 
 **Update following configs** 
@@ -97,9 +98,9 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
 ## Core services
 
-To deploy the Sunbird core services, execute the following command:
+- To deploy the Sunbird core services, execute the following command:
 
-Run `sudo ./deploy-core.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
+  Run `sudo ./deploy-core.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
 
 **Note:** The automation walk-through (PART 5) (PART6) & (PART7), shows you the process for deployment for Sunbird services.
