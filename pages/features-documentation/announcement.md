@@ -11,6 +11,8 @@ Announcements are an invariable part of organizational activities. From importan
 
 ## Announcement Workflow
 
+Announcement workflow will helps you in understanding all necessary sequence of tasks or processes from initiation to completion that a announcement creator does.
+
 <img src="pages/features-documentation/images/announcement/announcement1.png">
 
 ### Announcement Sender Role Function Matrix
@@ -61,8 +63,9 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
 <b>Note:
       <li>You can attach or give link for more than one file</li>
       <li>For attachements, the following file formats are supported: .pdf, .png, .jpg. </li>
-      <li>Maximum file size limit is 1MB </li><br>
-<br>6. Click <b>Select Recipients</b> button to select all the recipients <br><b>Note:</b> <b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description 
+      <li>Maximum file size limit is 1MB </li>
+6. Click <b>Select Recipients</b> button to select all the recipients 
+  <br><b>Note:</b> <b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description 
   </td>
   <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
   </tr>
