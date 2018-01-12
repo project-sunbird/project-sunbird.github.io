@@ -143,7 +143,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for <a href="pages/features-documentation/announcement/#selecting-recipients/">Selecting Recipient</a> same as above
+    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for [Selecting Recipient](features-documentation/announcement/#selecting-recipients) same as above
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
@@ -162,11 +162,11 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/view_homepage1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens. You can view all the announcements from one page to other</td>
+    <td>The announcement page opens. You can view all the announcements from one page to other</td>
     <td><img src="pages/features-documentation/images/announcement/seeall.png"></td>
   </tr>
   <tr>
-    <td>1. Click on any announcement card to view details <br>2. Click <br><b>View</b> button to see the attached file</td>
+    <td>1. Click on any announcement card to view details <br>2. Click <b>View</b> button to see the attached file</td>
     <td><img src="pages/features-documentation/images/announcement/announcement_card.png"></td>
   </tr>
 </table>
