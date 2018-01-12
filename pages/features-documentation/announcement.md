@@ -1,3 +1,4 @@
+
 ---
 type: landing
 directory: features-documentation
@@ -11,11 +12,11 @@ Announcements are an invariable part of organizational activities. From importan
 
 ## Announcement Workflow
 
-Announcement workflow will helps you in understanding all necessary sequence of tasks or processes from initiation to completion that a announcement creator does.
+Announcement workflow will helps you in understanding all necessary sequence of tasks or processes that a announcement creator does, right from its initiation to completion.
 
-<img src="pages/features-documentation/images/announcement/announcement1.png">
+<center><img src="pages/features-documentation/images/announcement/workflow.png"></center>
 
-### Announcement Sender Role Function Matrix
+## Announcement Sender Role Function Matrix
 
 On Sunbird, Announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>
 
@@ -55,17 +56,19 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Create Announcements</b> to open the announcement page</td>
+    <td>1. Click <b>Create Announcements</b></td>
     <td><img src="pages/features-documentation/images/announcement/create1.png"></td>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> for the announcement <br>2. Select <b>Organization or Department</b> from the drop down list <br>3. Select <b>Announcement Type</b> (Order or Circular) <br>4. Enter a <b>Description</b> for the announcement <br>5. Click <b>+</b> icon to add URL or web link <br><b>Or</b> <br>Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
-<b>Note:
+    <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b> for organization or department that has sent the announcement <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br><b>Or</b>  Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
+      <b>Note:</b>
       <li>You can attach or give link for more than one file</li>
-      <li>For attachements, the following file formats are supported: .pdf, .png, .jpg. </li>
+      <li>For attachements the following file formats are supported: .pdf, .png, .jpg. </li>
       <li>Maximum file size limit is 1MB </li>
-6. Click <b>Select Recipients</b> button to select all the recipients 
-  <br><b>Note:</b> <b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description 
+7. Click <b>Select Recipients</b> button to select all the recipients 
+  <br><b>Note:</b> 
+      <li>All the fields marked with <b>*</b> sign is mandatory to fill. Others are optional field</li>
+       <li><b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description</li>
   </td>
   <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
   </tr>
@@ -79,26 +82,27 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Create Announcements</b> to open the announcement page</td>
-    <td><img src="pages/features-documentation/images/.png"></td>
-  </tr>
-  <tr>
-  <td><b>Select Recipients</b> page opens <br>1. Search <b>Groups</b> to whom you want to send the announcements <br>2. Select the group from the drop down list <br>3. Click <b>Back</b> button to move back to the previous page  <br>4. Click <b>Confirm Recipients</b> button to confirm the group selection
+    <td>1. <b>Select Announcement Recipients</b> page opens <br>2. Enter location name and search  <br>3. Select the recipients segregated based on location <br>4. Click <b>Back</b> button to move to previous page <br>5. Click <b>Confirm Recipients</b> button to confirm the selection
   </td>
-  <td><img src="pages/features-documentation/images/.png"></td>  
+  <td><img src="pages/features-documentation/images/selectrecipient1.png"></td>  
   </tr>
   <tr>
-    <td><b>Preview Announcement</b> page opens <br>1. Click <b>Back</b> button to move to previous page <br>2. Click <b>Preview Announcement</b> button, to preview announcement before sending it <br>Click <b>Send Announcement</b> button to send the announcements to the selected groups 
+    <td>1. <b>Confirm Announcement Recipients</b> page opens <br>2. Click <b>Back</b> button to move to previous page <br>3. Click <b>Preview Announcement</b> button, to preview announcement before sending it to the recipients
     </td>
-    <td><img src="pages/features-documentation/images/.png"></td>
+    <td><img src="pages/features-documentation/images/confirmrecipient2.png"></td>
   </tr>
   <tr>
-    <td>1. Confirmation page opens with <b>Announcement Sent</b> message <br>2. Click <b>GOT IT</b> button to visit Announcement Dashboard
-    <td><img src="pages/features-documentation/images/.png"></td>
+    <td>1. <br>Preview Announcement</b> page opens, where you can view your announcement before sending it to recipients <br>2. Click <b>Back</b> button, to move to previous page <br>3. Click <b>Send Announcement</b> button 
+  </td>
+  <td><img src="pages/features-documentation/images/preview3.png"></td>
+  </tr>
+  <tr>
+  <td>1. A confirmation message is displayed  message <br>2. Click <b>GOT IT</b> button or <b>Close</b> icon to exit the page
+    <td><img src="pages/features-documentation/images/sentmessage4.png"></td>
   </tr>
   </table>
   
-### Closing an announcement midway
+### Closing an Announcement midway
 
 <table>
   <tr>
@@ -106,11 +110,72 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>If announcement creator closes the creation page midway (intentionally or un-intentionally), a pop up message appears and asks to confirm their action <br>1. Click <b>Yes</b> button to 
+    <td>If you closes the creation page midway (intentionally or un-intentionally), a pop up message appears and asks to confirm your action <br>1. Click <b>Yes</b> button to stop creating your announcement <br>2. Click <b>No</b> button to return back to the creation page
     </td>
-    
-    
+    <td><img src="pages/features-documentation/images/stopmidway.png"></td>
+  </tr>
+</table>
 
-## Sending Announcement
+## Deleting an Announcement
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Go to <b>My Announcements</b> page <br>2. Click <b>Delete</b> icon for the announcement you want to delete
+    </td>
+    <td><img src="pages/features-documentation/images/delete1.png"></td>
+    </tr>
+  <tr>
+    <td>1. A confirmation message opens before deleting an announcement <br>2. Click <b>Yes</b> button to delete announcement <br>3. Click <b>No</b> button to exit the page
+     </td>
+    <td><img src="pages/features-documentation/images/delete2.png"></td>
+    </tr> 
+  </table>
   
-## Deleting or Resending Announcement
+### Resending an Announcement
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Go to <b>My Announcements</b> page <br>2. Click <b>Resend</b> icon for the announcement you want to send it again
+    </td>
+    <td><img src="pages/features-documentation/images/resend1.png"></td>
+  </tr>
+  <tr>
+    <td> The announcement page opens <br>1. Make edits for all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients <br>Further repeate all the steps for <a href="pages/features-documentation/announcement/#selecting-recipients/">Selecting Recipient</a> same as above
+    </td>
+    <td><img src="pages/features-documentation/images/resend2.png"></td>
+  </tr>
+</table>
+
+## Viewing Announcement on your Home page
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Go to <b>Home</b> page <br>2. Locate the <b>Announcements</b> section <br>3. Click <b>See All</b> 
+    </td>
+    <td><img src="pages/features-documentation/images/view_homepage1.png"></td>
+  </tr>
+  <tr>
+    <td> The announcement page opens. You can view all the announcements from one page to other
+    </td>
+    <td><img src="pages/features-documentation/images/seeall.png"></td>
+  </tr>
+  <tr>
+    <td>1. Click on any announcement card to view details <br>2. Click <br>View</b> button to see the attached file
+    </td>
+    <td><img src="pages/features-documentation/images/announcement_card.png"></td>
+  </tr>
+</table>
+
+
