@@ -73,7 +73,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 - Follow the instructions[here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
 
 
-**Update following configs** 
+  **Update following configs** 
 
 <pre>
 Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
@@ -90,7 +90,7 @@ sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 </pre>
 
-**Ensure these configurations are updated** 
+  **Ensure the following configurations are updated** 
 
 - ENVIRONMENT CONFIGURATION
 - APPLICATION SERVER CONFIGURATIONS
