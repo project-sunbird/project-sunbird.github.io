@@ -26,11 +26,14 @@ The following steps will install docker, pull the required images and create ser
 **Note:** The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
 - deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration. 
-- To find the token search the script output to look for "JWT token for player is :", copy the corresponding token. Example output as follows,
-
-      changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json .......       "JWT token for player is :                            
+- To find the token search the script output to look for "JWT token for player is :"
+- Copy the corresponding token. 
+- For reference check the example output as follows
+```
+changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json ......."JWT token for player is :                            
       eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-    
       pBVmrdWhJaZro",* "Updating rate_limit for consumer player for API cr......"]}
+```
 
 - Update sunbird_api_auth_token in your configuration with the above copied token.
 
