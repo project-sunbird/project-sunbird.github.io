@@ -42,7 +42,7 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
 
 - Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal. 
 
-For details refer [API keys](developer-docs/installation/medium_scale_deploy#api-keys)
+For API keys you can refer [here](developer-docs/installation/medium_scale_deploy#api-keys)
 
 ## Proxy services
 
