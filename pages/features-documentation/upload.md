@@ -99,9 +99,9 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
   </tr>
   <tr>
     <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <li>a) <strong>Curriculum</strong> <li>b) <strong>Subject</strong> <li>c) <strong>Grade</strong> <li>d) <strong>Medium</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
-      
-*Note: Keywords help search engines find content associated with them when you search*
-<br>5. Click <strong>Image<strong> icon to upload image <br>6. Click <strong>Save</strong>
+     
+   *Note: Keywords help search engines find content associated with them when you search*
+<br>5. Click <strong>Image</strong> icon to upload image <br>6. Click <strong>Save</strong>
         </td>
       <td><img src="pages/features-documentation/images/upload_metadata.png"></td>
   </tr>
@@ -129,11 +129,9 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
   </tr>
   <tr>
       <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <br>
-      a) Make it available to everyone
-        
-      b) Not share with anyone
-      
-      <br>4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
+              a) Make it available to everyone
+              b) Not share with anyone
+          <br>4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
   </tr>
