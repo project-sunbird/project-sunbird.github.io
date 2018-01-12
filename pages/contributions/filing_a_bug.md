@@ -63,7 +63,7 @@ The bug you have experienced might already have a fix and you can check the rela
 
 You can create a new issue as follows:
 
-- Visit the official Sunbird website [here](www.sunbird.org){:target="_blank"})
+- Visit the official Sunbird website [here](www.sunbird.org){:target="_blank"}
 
 - Navigate to [documentation](http://www.sunbird.org/docs/){:target="_blank"} section found on horizontal top menu of the website
 
