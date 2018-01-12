@@ -45,7 +45,7 @@ For details refer [API keys](developer-docs/installation/medium_scale_deploy#api
 
 To deploy the Sunbird proxy services, execute the following command:
 
-Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+Run `sudo ./deploy-proxy.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
 ## Keycloak provisioning
 
@@ -57,7 +57,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 ./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>
 </pre>
 
-2. Update the following variables in the config path `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`  
+2. Update the following variables in the config path `{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}`  
 
 <pre>
 
@@ -67,7 +67,7 @@ Sample themes directory of sunbird can be seen [here](https://github.com/project
 
 </pre>
 
-3. `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+3. `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
 4.  Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
 
@@ -100,7 +100,7 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
 To deploy the Sunbird core services, execute the following command:
 
-Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+Run `sudo ./deploy-core.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
 
 **Note:** The automation walk-through (PART 5) (PART6) & (PART7), shows you the process for deployment for Sunbird services.
