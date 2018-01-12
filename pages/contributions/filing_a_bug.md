@@ -49,7 +49,6 @@ The first step in in writing an effective bug report is to find exactly:
 The bug you have experienced might already have a fix and you can check the related documentation. If not, it is a recommended to check the Sunbird [issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
 
 - Check, If the bug report exists, you may click "subscribe" to follow any developments.
-
 - If your bug is different than any others recorded in the issue tracker, then proceed with "Create a new issue"
 
 ## Single issue for a single bug
