@@ -50,7 +50,7 @@ For details refer [API keys](developer-docs/installation/medium_scale_deploy#api
 
   Run `sudo ./deploy-proxy.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
-## Keycloak provisioning
+## Provisioning Keycloak 
 
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
@@ -92,8 +92,8 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
   **Ensure the following configurations are updated** 
 
 - ENVIRONMENT CONFIGURATION
-- APPLICATION SERVER CONFIGURATIONS
-- ADVANCED CONFIGURATIONS
+- APPLICATION SERVER CONFIGURATION
+- ADVANCED CONFIGURATION
 
 ## Core services
 
