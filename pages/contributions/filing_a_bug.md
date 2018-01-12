@@ -18,9 +18,9 @@ This document describes how to file an effective Sunbird bug report. Before fili
 
 To report a bug in the Sunbird bug trackers, you need to create a tracker item. Add a tracker item. Once added, the Sunbird Developer team will check the validity of the issue raised and act accordingly.
 
-### **Prerequisites**
+## **Prerequisites**
 
-1. An Account on GIT, since the Sunbird repository lives in GitHub.
+- An Account on GIT, since the Sunbird repository lives in GitHub.
     
     - If you already have a GIT account, login with your credentials
 
@@ -28,7 +28,7 @@ To report a bug in the Sunbird bug trackers, you need to create a tracker item. 
 
     - The Sunbird Issue Tracker uses GitHub accounts for authentication
 
-2. Use the latest version of Sunbird
+- Use the latest version of Sunbird
 
    - If you are using an out-of-date version of Sunbird, please update to the latest version.
    - 
@@ -113,7 +113,7 @@ The title should describe the problem as best as possible. Remember that the tit
 
 After submitting the issue, you can modify the title.
 
-### Issue Description
+## Issue Description
 
 **Sequence of Steps to reproduce bug**
 
