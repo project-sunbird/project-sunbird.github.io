@@ -66,13 +66,13 @@ You can create a new issue as follows:
 
 - Visit the official Sunbird website [here](www.sunbird.org)
 
-- Navigate to [documentation](http://www.sunbird.org/docs/)) section found on horizontal top menu of the website.
+- Navigate to [documentation](http://www.sunbird.org/docs/) section found on horizontal top menu of the website
 
 - Click on any of the tiles (Architecture, Developer docs etc.) on the page
 
-- Click [Report issue] (https://github.com/project-sunbird/project-sunbird.github.io/issues) (a link found on the right side of every page).
+- Click [Report issue] (https://github.com/project-sunbird/project-sunbird.github.io/issues) (a link found on the right side of every page)
 
-- Click on "[Create a new issue](https://github.com/project-sunbird/project-sunbird.github.io/issues/new) ".
+- Click on "[Create a new issue](https://github.com/project-sunbird/project-sunbird.github.io/issues/new) "
 
 Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.
 
@@ -117,29 +117,29 @@ After submitting the issue, you can modify the title.
 
 **Sequence of Steps to reproduce bug**
 
-- A bug report needs clear instructions, so that others can understand and exclusively reproduce it.
+- A bug report needs clear instructions, so that others can understand and exclusively reproduce it
 
-- Include good set of instructions i.e a numbered list that details each button press, or menu selection.
+- Include good set of instructions i.e a numbered list that details each button press, or menu selection
 
 **Actual behavior**
 
-In contrast to the expected behavior, describe what currently happens when the bug is present.
+- In contrast to the expected behavior, describe what currently happens when the bug is present.
 
 **Expected behavior**
 
-Describe what actually is correct workflow or exactly should happen if the bug was fixed.
+- Describe what actually is correct workflow or exactly should happen if the bug was fixed.
 
 **Environment in which the Issue Encountered**
 
-Name the operating system and version you are using, such as "Windows 7", or "Mac OS X 10.7.5" etc.
+- Name the operating system and version you are using, such as "Windows 7", or "Mac OS X 10.7.5" etc.
 
 **Supporting Files**
 
-If you can supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
+- If you can supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
 
 ## Submit
 
-"Click Submit button" to submit your bug report to the issue tracker.
+Click **Submit button** to submit your bug report to the issue tracker.
 
 ## Following up
 
