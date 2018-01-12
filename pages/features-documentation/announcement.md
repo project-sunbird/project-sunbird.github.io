@@ -8,7 +8,9 @@ published: true
 allowSearch: true
 ---
 
-Announcements are an invariable part of organizational activities. From important dates, to events, to policy changes, organization members have to be notified of everything. It is a formidable task to notify each member of the organization in person or through electronic communication (email). On Sunbird, the Announcement feature allows you to send a systemwide message to all your the target audience via Dashboard. This feature is helpful for quickly communicating urgent information, such as Orders or Circulars. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
+Announcements are an invariable part of organizational activities. From important dates, to events, to policy changes, organization members have to be notified of everything. It is a formidable task to notify each member of the organization in person or through electronic communication (email). 
+
+On Sunbird, the Announcement feature allows you to send a systemwide message to all your the target audience via Dashboard. This feature is helpful for quickly communicating urgent information, such as Orders or Circulars. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
 
 ## Announcement Workflow
 
@@ -143,7 +145,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for [Selecting Recipient](features-documentation/announcement/#selecting-recipients) same as above
+    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> same as above
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
