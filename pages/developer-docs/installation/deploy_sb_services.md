@@ -56,19 +56,15 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
 
 <pre>
-
 ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
-
 </pre>
 
 Update the following variables in the config path `{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}`  
 
 <pre>
-
 keycloak_password: (with admin initial password)
 keycloak_theme_path: ex- path/to/the/nile/themes. 
 Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-
 </pre>
 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
@@ -91,7 +87,6 @@ sunbird_keycloak_client_id: # Eg: portal
 Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
-
 </pre>
 
 **Ensure these configurations are updated** 
