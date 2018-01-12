@@ -50,29 +50,29 @@ The first step in in writing an effective bug report is to find exactly:
 
 ## Check whether bug already stands reported
 
-The bug you have experienced might already have a fix and you can check the related documentation. If not, it is a recommended to check the Sunbird[ issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues).
+The bug you have experienced might already have a fix and you can check the related documentation. If not, it is a recommended to check the Sunbird [issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
 
 - Check, If the bug report exists, you may click "subscribe" to follow any developments.
 
-- If your bug is different than any others recorded in the issue tracker, then proceed with "Create a new issue".
+- If your bug is different than any others recorded in the issue tracker, then proceed with "Create a new issue"
 
 ## Single issue for a single bug
 
-The Sunbird is open source, and there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively.
+- Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively
 
 ## Create a new issue
 
 You can create a new issue as follows:
 
-- Visit the official Sunbird website [here](www.sunbird.org)
+- Visit the official Sunbird website [here](www.sunbird.org{:target="_blank"})
 
-- Navigate to [documentation](http://www.sunbird.org/docs/) section found on horizontal top menu of the website
+- Navigate to [documentation](http://www.sunbird.org/docs/){:target="_blank"} section found on horizontal top menu of the website
 
 - Click on any of the tiles (Architecture, Developer docs etc.) on the page
 
-- Click [Report issue] (https://github.com/project-sunbird/project-sunbird.github.io/issues) (a link found on the right side of every page)
+- Click [Report issue](https://github.com/project-sunbird/project-sunbird.github.io/issues){:target="_blank"} (a link found on the right side of every page)
 
-- Click on "[Create a new issue](https://github.com/project-sunbird/project-sunbird.github.io/issues/new) "
+- Click on [Create a new issue](https://github.com/project-sunbird/project-sunbird.github.io/issues/new){:target="_blank"}
 
 Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.
 
