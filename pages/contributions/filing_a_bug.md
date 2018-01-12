@@ -10,15 +10,15 @@ allowSearch: true
 ---
 Submitting a bug report: A complete walkthrough
 
-# **Overview**
+## **Overview**
 
 This document describes how to file an effective Sunbird bug report. Before filing a bug report, check the troubleshooting page [here]([http://www.sunbird.org/developer-docs/troubleshooting/](http://www.sunbird.org/developer-docs/troubleshooting/)) for a solution. If there exists no solution to your issue, the following process will guide you in figuring out and resolving your issue.
 
-# **Introduction**
+## **Introduction**
 
 To report a bug in the Sunbird bug trackers, you need to create a tracker item. Add a tracker item. Once added, the Sunbird Developer team will check the validity of the issue raised and act accordingly.
 
-## **Prerequisites**
+### **Prerequisites**
 
 1. An Account on GIT, since the Sunbird repository lives in GitHub.
     
@@ -137,11 +137,11 @@ Name the operating system and version you are using, such as "Windows 7", or "Ma
 
 If you can supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
 
-### Submit
+## Submit
 
 "Click Submit button" to submit your bug report to the issue tracker.
 
-### Following up
+## Following up
 
 Once a developer marks a bug as fixed, it is a good idea to ensure that it is completely fixed. To test, download the latest build.
 
