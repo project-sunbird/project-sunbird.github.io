@@ -8,6 +8,7 @@ allowSearch: true
 ---
 
 The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. 
+
 The following steps will install docker, pull the required images and create services based on those images.
 
 ## Preparation to Setup Application
@@ -52,7 +53,7 @@ Run `sudo ./deploy-proxy.sh {implementation-name}-devops/ansible/inventories/{en
 
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
-1. Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
+Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
 
 <pre>
 
@@ -60,7 +61,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
 </pre>
 
-2. Update the following variables in the config path `{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}`  
+Update the following variables in the config path `{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}`  
 
 <pre>
 
@@ -70,9 +71,9 @@ Sample themes directory of sunbird is [here](https://github.com/project-sunbird/
 
 </pre>
 
-3. `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
+`sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
-4.  Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
+Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
 
 
 **Update following configs** 
