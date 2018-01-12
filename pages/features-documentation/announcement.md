@@ -87,7 +87,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/confirmrecipient2.png"></td>
   </tr>
   <tr>
-    <td>1. <br>Preview Announcement</b> page opens, where you can view your announcement before sending it to recipients <br>2. Click <b>Back</b> button, to move to previous page <br>3. Click <b>Send Announcement</b> button 
+    <td>1. <b>Preview Announcement</b> page opens, where you can view your announcement before sending it to recipients <br>2. Click <b>Back</b> button, to move to previous page <br>3. Click <b>Send Announcement</b> button 
   </td>
   <td><img src="pages/features-documentation/images/announcement/preview3.png"></td>
   </tr>
@@ -143,7 +143,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients <br>Further repeate all the steps for <a href="pages/features-documentation/announcement/#selecting-recipients/">Selecting Recipient</a> same as above
+    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for <a href="pages/features-documentation/announcement/#selecting-recipients/">Selecting Recipient</a> same as above
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
@@ -166,7 +166,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/seeall.png"></td>
   </tr>
   <tr>
-    <td>1. Click on any announcement card to view details <br>2. Click <br>View</b> button to see the attached file</td>
+    <td>1. Click on any announcement card to view details <br>2. Click <br><b>View</b> button to see the attached file</td>
     <td><img src="pages/features-documentation/images/announcement/announcement_card.png"></td>
   </tr>
 </table>
