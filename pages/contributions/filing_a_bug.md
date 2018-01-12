@@ -16,7 +16,10 @@ This document describes how to file an effective Sunbird bug report. Before fili
 
 ## Introduction
 
-To report a bug in the Sunbird bug trackers, you need to create a tracker item. Add a tracker item. Once added, the Sunbird Developer team will check the validity of the issue raised and act accordingly.
+To report a bug in the Sunbird bug trackers:
+
+- You need to create a new item (i.e issue)
+- Once added, the Sunbird team will check the validity of the issue raised and act accordingly.
 
 ## Prerequisites
 
