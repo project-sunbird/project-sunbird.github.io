@@ -42,7 +42,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>&emsp;a) Announcement name <br>&emsp;b)Announcement published Date <br>&emsp;c)Number of users to whom announcements were sent <br>&emsp;d) Number of users received the announcements <br>&emsp;e) Number of users seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
+    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published Date <br>&emsp;c) Number of users to whom announcements were sent <br>&emsp;d) Number of users received the announcements <br>&emsp;e) Number of users seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
     </td>
     <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
   </tr>
@@ -60,15 +60,15 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/create1.png"></td>
   </tr>
   <tr>
-    <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b> for organization or department that has sent the announcement <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br><b>Or</b>  Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
-      <b>Note:</b>
-      <li>You can attach or give link for more than one file</li>
-      <li>For attachements the following file formats are supported: .pdf, .png, .jpg. </li>
-      <li>Maximum file size limit is 1MB </li>
+    <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b> for organization or department that has sent the announcement <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br>&emsp;<b>Or</b>  Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
+      <b>&emsp;Note:</b>
+      <li>&emsp;You can attach or give link for more than one file</li>
+      <li>&emsp;For attachements the following file formats are supported: .pdf, .png, .jpg. </li>
+      <li>&emsp;Maximum file size limit is 1MB </li>
 7. Click <b>Select Recipients</b> button to select all the recipients 
-  <br><b>Note:</b> 
-      <li>All the fields marked with <b>*</b> sign is mandatory to fill. Others are optional field</li>
-       <li><b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description</li>
+  <br>&emsp;<b>Note:</b> 
+      <li>&emsp;All the fields marked with <b>*</b> sign is mandatory to fill. Others are optional field</li>
+       <li>&emsp;<b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description</li>
   </td>
   <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
   </tr>
