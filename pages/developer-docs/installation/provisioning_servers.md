@@ -57,9 +57,9 @@ You can re-try scripts to create a new set of servers every time in case you nee
 
 ### Automation walkthrough
 
-[Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
+- [Part 1](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-1.gif){:target="_blank"}
 
-[Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
+- [Part 2](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-2.gif){:target="_blank"}
 
 **Note:** The default automation process creates three servers because it separates the application and the administration server.
 
