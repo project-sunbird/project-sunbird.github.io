@@ -12,7 +12,7 @@ Submitting a bug report: A complete walkthrough
 
 ## Overview
 
-This document describes how to file an effective Sunbird bug report. Before filing a bug report, check the troubleshooting page [here]([http://www.sunbird.org/developer-docs/troubleshooting/](http://www.sunbird.org/developer-docs/troubleshooting/)) for a solution. If there exists no solution to your issue, the following process will guide you in figuring out and resolving your issue.
+This document describes how to file an effective Sunbird bug report. Before filing a bug report, check the troubleshooting page [here]([http://www.sunbird.org/developer-docs/troubleshooting/](http://www.sunbird.org/developer-docs/troubleshooting/)) for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do?.
 
 ## Introduction
 
