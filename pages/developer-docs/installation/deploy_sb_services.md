@@ -15,14 +15,14 @@ The following steps will install docker, pull the required images and create ser
 
 - SSH into the application server. If you have used automated scripts as described in the previous steps, then this server would be vm-1
 - Clone the Sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
-- Copy over the generated configuration directory from the DB server`<implementation-name>-devops` to your machine
+- Copy over the generated configuration directory from the DB server`{implementation-name}-devops` to your machine
 - Modify all the configurations under **#APPLICATION CONFIGURATION** block.
 - The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.
 - Run `cd sunbird-devops/deploy && sudo ./install-deps.sh` to install the dependencies.
 
 ## API Manager services
 
-- Run `sudo ./deploy-apis.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. This will set up the API Manager services.
+- Run `sudo ./deploy-apis.sh {implementation-name}-devops/ansible/inventories/{environment-name}`.This will set up the API Manager services.
 
 **Note:** The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
