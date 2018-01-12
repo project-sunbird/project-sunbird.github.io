@@ -103,7 +103,7 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
   Run `sudo ./deploy-core.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
 
-**Note:** The automation walk-through (PART 5) (PART6) & (PART7), shows you the process for deployment for Sunbird services.
+**Note:** The automation walk-through [PART 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"} [PART6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"} [PART7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}, shows you the process for deployment for Sunbird services.
 ### Automation Walkthrough
 
 [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
