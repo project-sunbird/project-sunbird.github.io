@@ -31,7 +31,8 @@ The following steps will install docker, pull the required images and create ser
 - For reference check the example output as follows
 
 <pre>
-changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json .......       "JWT token for player is :                            
+changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json .......       
+"JWT token for player is :                            
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-    
 pBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
 </pre>
