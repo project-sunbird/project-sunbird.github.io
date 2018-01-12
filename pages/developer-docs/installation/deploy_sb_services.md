@@ -91,9 +91,9 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
   **Ensure the following configurations are updated** 
 
-- ENVIRONMENT CONFIGURATION
-- APPLICATION SERVER CONFIGURATION
-- ADVANCED CONFIGURATION
+- Environment Configuration
+- Application Server Configuration
+- Advanced Configuration
 
 ## Core services
 
