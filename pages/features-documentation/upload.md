@@ -72,7 +72,7 @@ The maximum file size supported for upload is 25MB
     <td>1.Enter topic name or keyword in the search bar to search for content within the uploaded file. For example, if the file is a textbook and you want to view a particular chapter in the book. <br>2. View settings of the uploaded file is displayed on the right <br>2. Click the <strong>profile</strong> icon to change the profile type of the child/children who will be accessing the content on Genie <br>3. Click <strong>upload</strong> icon to upload other content <br>4. Click <strong>download</strong> icon to download content
 <br>5. Click <strong>Send for Review</strong> to send content for review <br>6. Click <strong>Save</strong> to save content
        </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/upload_contentpreview.png"></td>
   </tr>
   </table>
 
@@ -86,7 +86,7 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
   <tr>
     <td>1. Click <strong>Refresh</strong> icon to replay content <br>2. Click <strong>Profile</strong> icon to change the profile of the user <br>3. Click <strong>Music</strong> icon to turn sound on/off
         </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/upload_playerview.png"></td>
   </tr>
   </table>
   
@@ -98,11 +98,11 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <ol> <li>a) <strong>Board</strong> <li>b) <strong>Medium</strong> <li>c) <strong>Subject</strong> <li>d) <strong>Grade</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
+    <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <ol> <li>a) <strong>Curriculum</strong> <li>b) <strong>Subject</strong> <li>c) <strong>Grade</strong> <li>d) <strong>Medium</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
 ***Note**: Keywords help search engines find content associated with them when you search*
 <br>5. Click <strong>Image<strong> icon to upload image <br>6. Click <strong>Save</strong>
         </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/upload_metadata.png"></td>
   </tr>
   </table>
  
