@@ -14,11 +14,11 @@ Announcements are an invariable part of organizational activities. From importan
 
 Announcement workflow will helps you in understanding all necessary sequence of tasks or processes that a announcement creator does, right from its initiation to completion.
 
-<center><img src="pages/features-documentation/images/announcement/workflow.png">{:target="_blank"}</center>
+<center><img src="pages/features-documentation/images/announcement/workflow.png"></center>
 
 ## Announcement Sender Role Function Matrix
 
-On Sunbird, Announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>
+On Sunbird, Announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>{:target="_blank"}
 
 ## Prerequisite
 
@@ -42,7 +42,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published Date <br>&emsp;c) Number of users to whom announcements were &emsp;sent <br>&emsp;d) Number of users received the announcements <br>&emsp;e) Number of users seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
+    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published Date <br>&emsp;c) Number of users to whom announcements were sent <br>&emsp;d) Number of users received the announcements <br>&emsp;e) Number of users seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
     </td>
     <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
   </tr>
@@ -79,7 +79,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
   <tr>
     <td>1. <b>Select Announcement Recipients</b> page opens <br>2. Enter location name and search  <br>3. Select the recipients segregated based on location <br>4. Click <b>Back</b> button to move to previous page <br>5. Click <b>Confirm Recipients</b> button to confirm the selection
   </td>
-  <td><img src="pages/features-documentation/images/announcement/selectrecipient1.png></td>  
+  <td><img src="pages/features-documentation/images/announcement/selectrecipient1.png"></td>  
   </tr>
   <tr>
     <td>1. <b>Confirm Announcement Recipients</b> page opens <br>2. Click <b>Back</b> button to move to previous page <br>3. Click <b>Preview Announcement</b> button, to preview announcement before sending it to the recipients
@@ -92,7 +92,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
   <td><img src="pages/features-documentation/images/announcement/preview3.png"></td>
   </tr>
   <tr>
-  <td>1. A confirmation message is displayed  message <br>2. Click <b>GOT IT</b> button or <b>Close</b> icon to exit the page
+    <td>1. A confirmation message is displayed  message <br>2. Click <b>GOT IT</b> button or <b>Close</b> icon to exit the page</td>
     <td><img src="pages/features-documentation/images/announcement/sentmessage4.png"></td>
   </tr>
   </table>
@@ -127,8 +127,8 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td>1. A confirmation message opens before deleting an announcement <br>2. Click <b>Yes</b> button to delete announcement <br>3. Click <b>No</b> button to exit the page
      </td>
     <td><img src="pages/features-documentation/images/announcement/delete2.png"></td>
-    </tr> 
-  </table>
+  </tr> 
+</table>
   
 ### Resending an Announcement
 
@@ -143,7 +143,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Make edits for all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients <br>Further repeate all the steps for <a href="pages/features-documentation/announcement/#selecting-recipients/">Selecting Recipient</a> same as above
+    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients <br>Further repeate all the steps for <a href="pages/features-documentation/announcement/#selecting-recipients/">Selecting Recipient</a> same as above
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
@@ -162,13 +162,11 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/view_homepage1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens. You can view all the announcements from one page to other
-    </td>
+    <td> The announcement page opens. You can view all the announcements from one page to other</td>
     <td><img src="pages/features-documentation/images/announcement/seeall.png"></td>
   </tr>
   <tr>
-    <td>1. Click on any announcement card to view details <br>2. Click <br>View</b> button to see the attached file
-    </td>
+    <td>1. Click on any announcement card to view details <br>2. Click <br>View</b> button to see the attached file</td>
     <td><img src="pages/features-documentation/images/announcement/announcement_card.png"></td>
   </tr>
 </table>
