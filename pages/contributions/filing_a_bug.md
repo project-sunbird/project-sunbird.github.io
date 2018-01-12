@@ -68,11 +68,11 @@ You can create a new issue as follows:
 
 - Navigate to [documentation](http://www.sunbird.org/docs/){:target="_blank"} section found on horizontal top menu of the website
 
-- Click on any of the tiles (Architecture, Developer docs etc.) on the page
+- Click any of the tiles (Architecture, Developer docs etc.) on the page
 
 - Click [Report issue](https://github.com/project-sunbird/project-sunbird.github.io/issues){:target="_blank"} (a link found on the right side of every page)
 
-- Click on [Create a new issue](https://github.com/project-sunbird/project-sunbird.github.io/issues/new){:target="_blank"}
+- Click [Create a new issue](https://github.com/project-sunbird/project-sunbird.github.io/issues/new){:target="_blank"}
 
 Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.
 
