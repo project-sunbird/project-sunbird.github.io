@@ -101,7 +101,6 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
     <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <li>a) <strong>Curriculum</strong> <li>b) <strong>Subject</strong> <li>c) <strong>Grade</strong> <li>d) <strong>Medium</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
       
 *Note: Keywords help search engines find content associated with them when you search*
-
 <br>5. Click <strong>Image<strong> icon to upload image <br>6. Click <strong>Save</strong>
         </td>
       <td><img src="pages/features-documentation/images/upload_metadata.png"></td>
@@ -124,14 +123,16 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
       <li>Your local machine to use immediately</li>
       <br>2. Click <strong>My images</strong> to view a list of all image files that you have previously,uploaded <br>3. Click <strong>All image</strong> to view a list of image files from the repository 
       <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users 
-      <br>5. Choose an appropriate image file from any list and click <strong>Select</strong><br>6. Click <strong>Upload</strong> and use to upload and use images from your gallery
+      <br>4. Choose an appropriate image file from any list and click <strong>Select</strong> <br>5. Click <strong>Upload</strong> and use to upload and use images from your gallery
     </td>
     <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
   <tr>
       <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <br>
       a) Make it available to everyone
+        
       b) Not share with anyone
+      
       <br>4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
