@@ -72,8 +72,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
 - Follow the instructions[here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
 
-
-  **Update following configs** 
+ **Update following configs** 
 
 <pre>
 Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
@@ -104,6 +103,7 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
 
 **Note:** The following automation walk-through,shows you the process for deployment for Sunbird services.
+
 ### Automation Walkthrough
 
 [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif)
