@@ -64,24 +64,3 @@ To create the databases manually, refer to the corresponding database user guide
 Initialize the databases after they are installed using the following the procedure:
 
 Run `sudo ./init-dbs.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
-
-Once DB initialisation is done then load following to CSV files:
-
- - pageMgmt.csv
- - pageSection.csv
- 
-These CSV files can be found [here](https://github.com/project-sunbird/sunbird-lms-mw/tree/master/actors/src/main/resources){:target="_blank"}
-
-For loading the CSV files follow these steps:
-
-Change the path of .csv file
-
-<pre>         
-a. COPY sunbird.page_management(id, appmap, createdby, createddate, name, organisationid, portalmap,
-
-updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv';
-
-b. COPY sunbird.page_section(id, alt, createdby, createddate, description, display, imgurl, name, searchquery,
-
-sectiondatatype, status, updatedby, updateddate) FROM '/tmp/cql/pageSection.csv'; 
-</pre>

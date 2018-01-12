@@ -7,12 +7,13 @@ description: Deploy Sunbird services
 allowSearch: true
 ---
 
-The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. The following steps will install docker, pull the required images and create services based on those images.
+The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. 
+The following steps will install docker, pull the required images and create services based on those images.
 
 ## Preparation to Setup Application
 
 - SSH into the application server. If you have used automated scripts as described in the previous steps, then this server would be vm-1
-- Clone the Sunbird-devops repo using git clone https://github.com/project-sunbird/sunbird-devops.git
+- Clone the Sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
 - Copy over the generated configuration directory from the DB server(`<implementation-name>-devops`) to your machine
 - Modify all the configurations under **#APPLICATION CONFIGURATION** block.
 - The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.
@@ -35,27 +36,39 @@ The Sunbird application consists of multiple services, each service serves a spe
 
 - Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. For details refer [API keys](developer-docs/installation/medium_scale_deploy#api-keys)
 
-## Keycloak provisionig
+## Proxy services
 
-* Keycloak is deployed on vm. 
+To deploy the Sunbird proxy services, execute the following command:
 
-1. Run the script to create the keycloak username, groupname and servicify keycloak service on vm
+Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+
+## Keycloak provisioning
+
+* The Keycloak is deployed on a virtual machine (VM). 
+
+1. Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
+
 <pre>
-./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> 
+./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name>
 </pre>
 
-2. Update below variables in the config path <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
-```
-keycloak_password: (which admin initial password)
- keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-```
-3. Deploy the script 
+2. Update the following variables in the config path `<implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>`  
 
-`sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+<pre>
 
-4. Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
+keycloak_password: (with admin initial password)
+keycloak_theme_path: ex- path/to/the/nile/themes. 
+Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
 
-Update following configs
+</pre>
+
+3. `sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+
+4.  Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
+
+
+**Update following configs** 
+
 <pre>
 Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
 sunbird_sso_client_id: # Eg: admin-cli
@@ -71,6 +84,7 @@ sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
 </pre>
+
 **Make sure these configurations are updated** 
 
 - ENVIRONMENT CONFIGURATION
@@ -81,16 +95,10 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
 To deploy the Sunbird core services, execute the following command:
 
-Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. 
+Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
 
-## Proxy services
-
-To deploy the Sunbird proxy services, execute the following command:
-
-Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
 
 **Note:** The automation walk-through (PART 5) (PART6) & (PART7), shows you the process for deployment for Sunbird services.
-
 ### Automation Walkthrough
 
 [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
