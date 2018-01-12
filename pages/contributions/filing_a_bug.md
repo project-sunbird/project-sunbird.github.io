@@ -10,11 +10,11 @@ allowSearch: true
 ---
 Submitting a bug report: A complete walkthrough
 
-## **Overview**
+## Overview
 
 This document describes how to file an effective Sunbird bug report. Before filing a bug report, check the troubleshooting page [here]([http://www.sunbird.org/developer-docs/troubleshooting/](http://www.sunbird.org/developer-docs/troubleshooting/)) for a solution. If there exists no solution to your issue, the following process will guide you in figuring out and resolving your issue.
 
-## **Introduction**
+## Introduction
 
 To report a bug in the Sunbird bug trackers, you need to create a tracker item. Add a tracker item. Once added, the Sunbird Developer team will check the validity of the issue raised and act accordingly.
 
@@ -39,14 +39,10 @@ After Prerequisites, follow these guidelines to ensure that your Bug report is c
 The first step in in writing an effective bug report is to find exactly:
 
 - **What the problem is?**
-
-    Clearly and precisely state what exactly is wrong?
-
+    - Clearly and precisely state what exactly is wrong?
 - **How to reproduce it?**
-
-- If you have an explicit understanding about what exactly is wrong, you can reproduce an example of the problem        	
-
-- If you can answer both the questions and reliably reproduce an example of the problem, you are successful in distinctly separating out the bug.
+    - If you have an explicit understanding about what exactly is wrong, you can reproduce an example of the problem        	
+    - If you can answer both the questions and reliably reproduce an example of the problem, you are successful in distinctly separating out the bug.
 
 ## Check whether bug already stands reported
 
