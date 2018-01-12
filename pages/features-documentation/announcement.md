@@ -42,7 +42,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>a) Announcement name <br>b)Announcement published Date <br>c)Number of users to whom announcements were sent <br>d) Number of users received the announcements <br>e) Number of users seen the announcements <br>f) Delete or resend actions taken by the announcement creator and the sender
+    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>emsp;a) Announcement name <br>emsp;b)Announcement published Date <br>emsp;c)Number of users to whom announcements were sent <br>emsp;d) Number of users received the announcements <br>emsp;e) Number of users seen the announcements <br>emsp;f) Delete or resend actions taken by the announcement creator and the sender
     </td>
     <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
   </tr>
