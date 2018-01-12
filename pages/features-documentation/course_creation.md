@@ -27,6 +27,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
   </tr>
   <tr>
     <td>1. Enter <strong>Name</strong> of the course <br>2. Enter <strong>Description</strong> of the course <br>3. Click <strong>Start Creating</strong>
+      ****Note: These details can be entered later when filling the metadata of the course***
     </td>
     <td><img src="pages/features-documentation/images/course_metadata.png"></td>
   </tr>
