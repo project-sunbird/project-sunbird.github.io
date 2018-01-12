@@ -69,8 +69,8 @@ The maximum file size supported for upload is 25MB
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1.Enter topic name or keyword in the search bar to search for content within the uploaded file. For example, if the file is a textbook and you want to view a particular chapter in the book. <br>2. View settings of the uploaded file is displayed on the right <br>2. Click the <strong>profile</strong> icon to change the profile type of the child/children who will be accessing the content on Genie <br>3. Click <strong>upload</strong> icon to upload other content <br>4. Click <strong>download</strong> icon to download content
-<br>5. Click <strong>Send for Review</strong> to send content for review <br>6. Click <strong>Save</strong> to save content
+    <td>1.Enter topic name or keyword in the search bar to search for content within the uploaded file. For example, if the file is a textbook and you want to view a particular chapter in the book. <br>2. View settings of the uploaded file is displayed on the right <br>3. Click the <strong>profile</strong> icon to change the profile type of the child/children who will be accessing the content on Genie <br>4. Click <strong>upload</strong> icon to upload other content <br>5. Click <strong>download</strong> icon to download content
+<br>6. Click <strong>Send for Review</strong> to send content for review <br>7. Click <strong>Save</strong> to save content
        </td>
       <td><img src="pages/features-documentation/images/upload_contentpreview.png"></td>
   </tr>
@@ -98,8 +98,10 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <ol> <li>a) <strong>Curriculum</strong> <li>b) <strong>Subject</strong> <li>c) <strong>Grade</strong> <li>d) <strong>Medium</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> </ol> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
-*Note*: Keywords help search engines find content associated with them when you search*
+    <td>1. Enter a Name <br>2. Enter a Description <br>3. Select other metadata like: <li>a) <strong>Curriculum</strong> <li>b) <strong>Subject</strong> <li>c) <strong>Grade</strong> <li>d) <strong>Medium</strong> <li>e) <strong>Audience</strong> <li>f) <strong>Resource Type</strong> <li>g) <strong>Concepts</strong> <br>4. Enter <strong>Attributions</strong>, if any <br>5. Enter <strong>Keywords</strong>
+      
+*Note: Keywords help search engines find content associated with them when you search*
+
 <br>5. Click <strong>Image<strong> icon to upload image <br>6. Click <strong>Save</strong>
         </td>
       <td><img src="pages/features-documentation/images/upload_metadata.png"></td>
@@ -128,7 +130,7 @@ On clicking the <strong>Profile</strong> icon in the content editor, settings as
   </tr>
   <tr>
       <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <br>
-      a) Makeit available to everyone
+      a) Make it available to everyone
       b) Not share with anyone
       <br>4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
       </td>
