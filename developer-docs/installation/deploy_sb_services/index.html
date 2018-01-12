@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.4/";
+			baseURL.href="/releases/release.1.5/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-11 19:38:12 +0530">
+<meta name="last-modified" content="2018-01-12 16:01:01 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.4" />
-<meta name="buildNo" content="904" />
+<meta name="buildVersion" content="release.1.5" />
+<meta name="buildNo" content="943" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11012018"  />
-<link rel="stylesheet" href="css/style.css?11012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?11012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?11012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?11012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?12012018"  />
+<link rel="stylesheet" href="css/style.css?12012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?12012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?12012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?12012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -461,21 +461,29 @@ $("a[href$='developer-docs/installation/deploy_sb_services/']").addClass("sideba
               <a href="#api-manager-services"><span class="tocnumber">2 .</span> <span class="toctext">API Manager services</span></a>
             </li>
             <li class="toc_level-1 toc_section-3">
-              <a href="#keycloak-provisionig"><span class="tocnumber">3 .</span> <span class="toctext">Keycloak provisionig</span></a>
+              <a href="#proxy-services"><span class="tocnumber">3 .</span> <span class="toctext">Proxy services</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#keycloak-provisioning"><span class="tocnumber">4 .</span> <span class="toctext">Keycloak provisioning</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#core-services"><span class="tocnumber">5 .</span> <span class="toctext">Core services</span></a>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><p>The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. The following steps will install docker, pull the required images and create services based on those images.</p>
+</div><p>The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker.</p>
+
+<p>The following steps will install docker, pull the required images and create services based on those images.</p>
 
 <h2 id="preparation-to-setup-application">Preparation to Setup Application</h2>
 
 <ul>
   <li>SSH into the application server. If you have used automated scripts as described in the previous steps, then this server would be vm-1</li>
-  <li>Clone the Sunbird-devops repo using git clone https://github.com/project-sunbird/sunbird-devops.git</li>
-  <li>Copy over the generated configuration directory from the DB server(<code>&lt;implementation-name&gt;-devops</code>) to your machine</li>
+  <li>Clone the Sunbird-devops repo using <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
+  <li>Copy over the generated configuration directory from the DB server<code>{implementation-name}-devops</code> to your machine</li>
   <li>Modify all the configurations under <strong>#APPLICATION CONFIGURATION</strong> block.</li>
   <li>The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.</li>
   <li>Run <code>cd sunbird-devops/deploy &amp;&amp; sudo ./install-deps.sh</code> to install the dependencies.</li>
@@ -483,53 +491,82 @@ $("a[href$='developer-docs/installation/deploy_sb_services/']").addClass("sideba
 
 <h2 id="api-manager-services">API Manager services</h2>
 
-<ol>
-  <li>Run <code>sudo ./deploy-apis.sh &lt;implementation-name&gt;-devops/ansible/inventories/&lt;environment-name&gt;</code>. This will set up the API Manager services.</li>
-</ol>
+<ul>
+  <li>Run <code>sudo ./deploy-apis.sh {implementation-name}-devops/ansible/inventories/{environment-name}</code>.This will set up the API Manager services.</li>
+</ul>
 
 <p><strong>Note:</strong> The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.</p>
 
 <ul>
-  <li>deploy-apis.sh script will print a JWT token that needs to be updated in the application configuration.</li>
-  <li>
-    <p>To find the token search the script output to look for “JWT token for player is :”, copy the corresponding token. Example output below, token is highlighted in italics:</p>
-
-    <pre><code>changed: [localhost] =&gt; {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json .......       "JWT token for player is :                            
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.L1nIxwur1a6xVmoJZT7Yc0Ywzlo4v-    
-pBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
-</code></pre>
-  </li>
-  <li>
-    <p>Update sunbird_api_auth_token in your configuration with the above copied token.</p>
-  </li>
-  <li>Update sunbird_ekstep_api_key in your configuration with the API token obtained from ekstep portal. For details refer <a href="developer-docs/installation/medium_scale_deploy#api-keys">API keys</a></li>
+  <li><code>deploy-apis.sh</code> script will print a JWT token that needs to be updated in the application configuration.</li>
+  <li>To find the token search the script output to look for “JWT token for player is :”</li>
+  <li>Copy the corresponding token.</li>
+  <li>For reference check the example output as follows</li>
 </ul>
 
-<h2 id="keycloak-provisionig">Keycloak provisionig</h2>
+<pre>
+changed: [localhost] =&gt; {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json....
+"JWT token for player is :                            
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQyMTZmZDExZSJ9.
+L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
+</pre>
 
 <ul>
-  <li>Keycloak is deployed on vm.</li>
+  <li>
+    <p>Update <code>sunbird_api_auth_token</code> in your configuration with the copied token.</p>
+  </li>
+  <li>
+    <p>Update <code>sunbird_ekstep_api_key</code> in your configuration with the API token obtained from ekstep portal.</p>
+  </li>
 </ul>
 
-<ol>
-  <li>Run the script to create the keycloak username, groupname and servicify keycloak service on vm</li>
-</ol>
-<pre>
-./provision-keycloak.sh <implementation-name>-devops/ansible/inventories/<environment-name> 
-&lt;/pre&gt;
+<p>For details refer <a href="developer-docs/installation/medium_scale_deploy#api-keys">API keys</a></p>
 
-2. Update below variables in the config path <implementation-name>-devops/ansible/inventories/<environment-name>/group_vars/<environment-name>  
-```
-keycloak_password: (which admin initial password)
- keycloak_theme_path: ex- path/to/the/nile/themes. Sample themes directory of sunbird can be seen [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
-```
-3. Deploy the script 
+<h2 id="proxy-services">Proxy services</h2>
 
-`sudo ./deploy-keycloak-vm.sh <implementation-name>-devops/ansible/inventories/<environment-name>`
+<ul>
+  <li>
+    <p>To deploy the Sunbird proxy services, execute the following command:</p>
 
-4. Follow the [instructions](keycloak_realm_configuration.md) to setup auth realm in keycloak
+    <p>Run <code>sudo ./deploy-proxy.sh {implementation-name}-devops/ansible/inventories/{environment-name}</code></p>
+  </li>
+</ul>
 
-Update following configs
+<h2 id="keycloak-provisioning">Keycloak provisioning</h2>
+
+<p>The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:</p>
+
+<ul>
+  <li>
+    <p>Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM</p>
+
+    <pre>
+./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
+</pre>
+  </li>
+  <li>
+    <p>Update the following variables in the config path <code>{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}</code></p>
+
+    <pre>
+keycloak_password: (with admin initial password)
+keycloak_theme_path: ex- path/to/the/nile/themes. 
+Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
+</pre>
+  </li>
+</ul>
+
+<p>
+  <code>sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}</code>
+</p>
+
+<ul>
+  <li>
+    <p>Follow the instructions<a href="developer-docs/installation/keycloak_realm_configuration">here</a> to setup auth realm in keycloak.</p>
+
+    <p><strong>Update following configs</strong></p>
+  </li>
+</ul>
+
 <pre>
 Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
 sunbird_sso_client_id: # Eg: admin-cli
@@ -543,36 +580,42 @@ sunbird_keycloak_client_id: # Eg: portal
 Login to the keycloak admin console, goto the clients-&gt;trampoline-&gt;Installation-&gt;Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
-
 </pre>
-**Make sure these configurations are updated** 
 
-- ENVIRONMENT CONFIGURATION
-- APPLICATION SERVER CONFIGURATIONS
-- ADVANCED CONFIGURATIONS
+<p>
+  <strong>Ensure the following configurations are updated</strong>
+</p>
 
-## Core services
+<ul>
+  <li>ENVIRONMENT CONFIGURATION</li>
+  <li>APPLICATION SERVER CONFIGURATIONS</li>
+  <li>ADVANCED CONFIGURATIONS</li>
+</ul>
 
-To deploy the Sunbird core services, execute the following command:
+<h2 id="core-services">Core services</h2>
 
-Run `sudo ./deploy-core.sh <implementation-name>-devops/ansible/inventories/<environment-name>`. 
+<ul>
+  <li>
+    <p>To deploy the Sunbird core services, execute the following command:</p>
 
-## Proxy services
+    <p>Run <code>sudo ./deploy-core.sh {implementation-name}-devops/ansible/inventories/{environment-name}</code></p>
+  </li>
+</ul>
 
-To deploy the Sunbird proxy services, execute the following command:
+<p><strong>Note:</strong> The automation walk-through <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">PART 5</a> <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">PART6</a> <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">PART7</a>, shows you the process for deployment for Sunbird services.
+### Automation Walkthrough</p>
 
-Run `sudo ./deploy-proxy.sh <implementation-name>-devops/ansible/inventories/<environment-name>`.
+<p>
+  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">Part 5</a>
+</p>
 
-**Note:** The automation walk-through (PART 5) (PART6) &amp; (PART7), shows you the process for deployment for Sunbird services.
+<p>
+  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">Part 6</a>
+</p>
 
-### Automation Walkthrough
-
-[Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
-
-[Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
-
-[Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
-</environment-name></implementation-name></environment-name></implementation-name></environment-name></implementation-name></environment-name></environment-name></implementation-name></environment-name></implementation-name></pre>
+<p>
+  <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">Part 7</a>
+</p>
 
           
           <hr />
