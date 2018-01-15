@@ -4,7 +4,7 @@ directory: features-documentation
 title: Batch Creation
 page_title: Batch Creation
 description: Details on how to create a batch and assign users to enroll in a course
-keywords: 'teacher training, training, assessment, training instituites, teacher educator, course, course compiling, create course, adding resource to course, batches, assign batches, ope course'
+keywords: 'teacher training, training, assessment, training instituites, teacher educator, course, course compiling, create course, adding resource to course, batches, assign batches, open course'
 published: true
 allowSearch: true
 ---
