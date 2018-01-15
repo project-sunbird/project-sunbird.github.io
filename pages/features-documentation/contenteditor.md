@@ -4,9 +4,7 @@ directory: features-documentation
 title: Content Editor
 page_title: Content Editor
 description: Content Editor
-keywords: >-
-  content editor, create course, create content, create lesson, textbook,
-  collection, course
+keywords: content editor, create course, create content, create lesson, textbook, collection, course
 published: true
 allowSearch: true
 ---
@@ -455,31 +453,31 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   
   **Configuring the Question Set**
   
-  <table>
-  <tr>
+ <table>
+ <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
+ </tr>  
+ <tr>
     <td>1. Enter the <strong>Question Set Title</strong> and <strong>Total Marks</strong> for the questionnaire <br>2. Select the number of questions that should be displayed in each screen from the <strong>Display</strong> drop-down menu <br>3. Use the <strong>Show Immediate Feedback</strong> slider to determine when the feedback for the answers should be displayed <br>4. Use the <strong>Shuffle Questions</strong> slider to enable shuffling of questions from the set <br>5. Click <strong>Add Question Set</strong> to add the selected questions
     </td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  </table>
+ </tr>
+ </table>
   
   **Selecting Questions - Advanced Filters**
     
-  <table>
-  <tr>
+ <table>
+ <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. To apply advanced filters, select: <br>a) Language <br>b) Difficulty <br>c) Question Type <br>d) Grade <br>e) Concepts <br>2. <strong>Use the My Questions</strong>slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
+   <td>1. To apply advanced filters, select: <br>a) Language <br>b) Difficulty <br>c) Question Type <br>d) Grade <br>e) Concepts <br>2. <strong>Use the My Questions</strong>slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
     </td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  </table> 
+ </tr>
+ </table> 
       
   **Customizing Question Set**
  
@@ -497,17 +495,17 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
       
   **Configuring Question Set**
 
-  <table>
-  <tr>
+ <table>
+ <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
+ </tr>  
+ <tr>
     <td>1. Click the trash icon to delete the added question set <br>2. Click the spanner icon to edit details of the question set. The settings options are displayed on the right <br>a) Click on the upward/downward arrows to determine the marks of the question set <br>3. Click the eye icon to view the preview of the question set <br>4. Click <strong>Done</strong> to save
    </td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  </table>   
+ </tr>
+ </table>   
       
 #### Adding Activity
 
@@ -524,16 +522,16 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   
   **Activity Browser**
 
-  <table>
-  <tr>
+ <table>
+ <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
+ </tr>  
+ <tr>
     <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><strong>Note:</strong> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering key words <br>3. Select the activity and click <strong>ADD</strong>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  </table> 
+ </tr>
+ </table> 
   
   **Adding Details**
 
