@@ -18,7 +18,7 @@ allowSearch: true
   <tr>
     <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. Click on <strong>Book</strong> tile
        </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/book_workspace.png"></td>
   </tr>
   </table>
   
@@ -29,12 +29,12 @@ allowSearch: true
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Name</strong> of the book <br>2.Select the following from their respective dropdown menus: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Medium</strong></ol> <ol>c) <strong>Subject</strong></ol> <ol>d) <strong>Class</strong></ol>
+    <td>1. Enter <strong>Name</strong> of the book <br>2.Select the following from their respective dropdown menus: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Medium</strong></ol> <ol>c) <strong>Subject</strong></ol> <ol>d) <strong>Class</strong></ol> <ol>e) <strong>Year</strong></ol> <br>3. Enter <strong>Publisher</strong> details
       
 *Note: These details can be filled later when updating the book metadata* 
-<br>3. Click <strong>Start Creating</strong>
+<br>4. Click <strong>Start Creating</strong>
        </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/book_createbook.png"></td>
   </tr>
   </table>
   
@@ -48,7 +48,7 @@ allowSearch: true
   <tr>
     <td>1. Enter <strong>Title</strong> of the course <br>2. Enter <strong>Description</strong> <br>3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Subject</strong></ol><ol>c) <strong>Grade</strong></ol> <ol>d) <strong>Medium</strong></ol> <ol>e) <strong>Audience</strong></ol> <ol>f) <strong>Concepts</strong></ol> <ol>g) <strong>Language</strong></ol> <br>4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br>5. Enter <strong>Keywords</strong> <br>6. Click <strong>Update</strong> to update the details
     </td>
-    <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
+    <td><img src="pages/features-documentation/images/book_metadata2.png"></td>
   </tr>
   </table>
 
@@ -95,7 +95,7 @@ allowSearch: true
 <li><strong>Story</strong>: Structured sequence of action/events put together to form a narrative
 <li><strong>Worksheet</strong>: A set or questions or tasks put together to assess the understanding of any particular topic/unit/chapter</li>
       <br>2. Click on the content type you want to add to the book</td>
-    <td><img src="pages/features-documentation/images/course_addingresource.png"></td>
+    <td><img src="pages/features-documentation/images/book_selectingcontent.png"></td>
   </tr>
   </tr>
 </table>
@@ -109,7 +109,7 @@ allowSearch: true
   </tr>
   <tr>
     <td>1. On clicking <strong>Textbook Unit</strong> from the drop-down, the metadata for textbook unit is displayed on the right <br>2. Click <strong>Update<strong> to edit the metadata <br>3. Enter <strong>Title</strong>, <strong>Description</strong>, <strong>Concepts</strong>, <strong>Keywords</strong> and <strong>Notes to Teacher</strong>, if any <br>4. Click <strong>Update</strong> to save the edited metadata</td>
-    <td><img src="pages/features-doc/image/.png"></td>
+    <td><img src="pages/features-doc/image/book_unit_metadat.png"></td>
   </tr>
 </table>
 
@@ -123,7 +123,7 @@ allowSearch: true
     <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets</strong>, the <strong>Browse Resource</strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept</strong>
  <br>4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br>5. Select the content you want to add and click <strong>Add</strong> to add the selected content
     </td>
-    <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
+    <td><img src="pages/features-documentation/images/course_addingresource_subscreen.png"></td>
   </tr>
   </tr>
   </table>
