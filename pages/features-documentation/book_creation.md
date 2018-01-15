@@ -81,14 +81,20 @@ allowSearch: true
   </tr>
 </table>
 
-### Adding Content to Course
+### Adding Content to Book
 <table>
   <tr>
     <th>Step</th>
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1.Click <strong>+</strong>icon in the left navigation pane to add a Course Unit, Collection, Resource, Story or Worksheet,<br>2.Click on the content type you want to add to the course</td>
+    <td>1.Click <strong>+</strong>icon in the left navigation pane to add a Textbook Unit, Collection, Resource, Story or Worksheet.
+<li><strong>Textbook Unit</strong>:  a unit summarising details of all the chapters within that unit
+<li><strong>Collection</strong>: a compilation of related or unrelated content
+<li><strong>Resource</strong>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc.
+<li><strong>Story</strong>: Structured sequence of action/events put together to form a narrative
+<li><strong>Worksheet</strong>: A set or questions or tasks put together to assess the understanding of any particular topic/unit/chapter</li>
+      <br>2. Click on the content type you want to add to the book</td>
     <td><img src="pages/features-documentation/images/course_addingresource.png"></td>
   </tr>
   </tr>
@@ -102,13 +108,12 @@ allowSearch: true
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking Course Unit from the drop-down, the metadata appear for course unit is displayed on the right <br>2. Click update to edit the metadata <br>3. Click update to save the edited metadata</td>
+    <td>1. On clicking <strong>Textbook Unit</strong> from the drop-down, the metadata for textbook unit is displayed on the right <br>2. Click <strong>Update<strong> to edit the metadata <br>3. Enter <strong>Title</strong>, <strong>Description</strong>, <strong>Concepts</strong>, <strong>Keywords</strong> and <strong>Notes to Teacher</strong>, if any <br>4. Click <strong>Update</strong> to save the edited metadata</td>
     <td><img src="pages/features-doc/image/.png"></td>
   </tr>
 </table>
 
-#### Adding Collections, Resources, Stories and Worksheets
-
+### Adding Collections, Resources, Stories and Worksheets
 <table>
   <tr>
     <th>Step</th>
@@ -116,13 +121,22 @@ allowSearch: true
   </tr>
   <tr>
     <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets</strong>, the <strong>Browse Resource</strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept</strong>
- <br>4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br>5. Click <strong>Add</strong> to add the selected content
+ <br>4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br>5. Select the content you want to add and click <strong>Add</strong> to add the selected content
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
   </tr>
   </tr>
+  </table>
+  
+ ### Sending Book for Review
+Before the book is publihed, it must be reviewed. To send the book for review and publish
+<table>
   <tr>
-    <td>1. Click <strong>Save</strong> on the header to save the course <br>2. Click <strong>Send for review</strong> to send the created course unit for review
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <strong>Save</strong> on the header to save the book <br>2. Click <strong>Send for review</strong> to send the created book for review
     </td>
     <td><img src="pages/features-documentation/images/course_sendingfreview.png"></td>
   </tr>    
