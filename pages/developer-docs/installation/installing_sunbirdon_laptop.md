@@ -7,12 +7,13 @@ description: Installing Sunbird requires two primary software components, the Su
 published: true
 allowSearch: true
 ---
-Pre-requisites
+
+## Pre-requisites
 
 Before you install Sunbird on your laptop, examine your environment and gather data to ensure an optimal installation experience.
 Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.
 
-System Requirements
+### System Requirements
 
 To install Sunbird, your laptop/PC should have atleast the following minimum system requirements:
 
@@ -66,7 +67,7 @@ $ bower install --force
 
 </pre>
 
-## Configure Backend Service Stack
+### Configure Backend Service Stack
 
 The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let's configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
 
