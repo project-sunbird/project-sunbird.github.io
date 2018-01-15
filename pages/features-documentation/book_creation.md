@@ -29,7 +29,7 @@ allowSearch: true
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Name</strong> of the book <br>2.Select the following from their respective dropdown menus: <li>a) <strong>Curriculum</strong> <li>b) <strong>Medium</strong> <li>c) <strong>Subject</strong> <li>d) <strong>Class</strong>
+    <td>1. Enter <strong>Name</strong> of the book <br>2.Select the following from their respective dropdown menus: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Medium</strong></ol> <ol>c) <strong>Subject</strong></ol> <ol>d) <strong>Class</strong></ol>
       
 *Note: These details can be filled later when updating the book metadata* 
 <br>3. Click <strong>Start Creating</strong>
@@ -46,13 +46,13 @@ allowSearch: true
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Title</strong> of the course <br>2. Enter <strong>Description</strong> <br>3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong></ol><ol>b) <strong>Subject</strong></ol><ol>c) <strong>Grade</strong></ol><ol>d) <strong>Medium<strong></ol> <ol>e) <strong>Audience</strong></ol><ol>f) <strong>Concepts</strong></ol> <ol>g) <strong>Language</strong></ol> <br>4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br>5. Enter <strong>Keywords</strong> <br>6. Click <strong>Update</strong> to update the details
+    <td>1. Enter <strong>Title</strong> of the course <br>2. Enter <strong>Description</strong> <br>3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Subject</strong></ol><ol>c) <strong>Grade</strong></ol> <ol>d) <strong>Medium</strong></ol> <ol>e) <strong>Audience</strong></ol> <ol>f) <strong>Concepts</strong></ol> <ol>g) <strong>Language</strong></ol> <br>4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br>5. Enter <strong>Keywords</strong> <br>6. Click <strong>Update</strong> to update the details
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
   </tr>
   </table>
 
-### Adding Image to Course Metadata
+### Adding Image to Book Metadata
 
 <table>
   <tr>
@@ -74,10 +74,8 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
   <tr>
-      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <br>
-      a) Makeit available to everyone
-      b) Not share with anyone
-      <br>4. Add image details in the Asset Caption area <br>5. Click <strong>Upload and Use</strong> to upload the image
+      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <ol>a) Make it available to everyone</ol> <ol>b) Not share with anyone</ol>
+      <br>4. Add image details in the <strong>Asset Caption</strong> area <br>5. Click <strong>Upload and Use</strong> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
   </tr>
