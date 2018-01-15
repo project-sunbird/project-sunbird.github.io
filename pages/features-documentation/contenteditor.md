@@ -543,7 +543,8 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. All details of the selected activity are displayed on the right <br>2. Click <strong>Add</strong> to add the activity       
+    <td>1. All details of the selected activity are displayed on the right <br>2. Click <strong>Add</strong> to add the activity
+    </td>       
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>  
@@ -556,7 +557,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. If the selected activity has details added at the time of creation, the appropriate activity category icon is displayed. Click the icon to view or modify activity details <br>2. If no details have been added, you can enter the activity details in the <strong>Configuring Activity</strong> details screen
+    <td>1. If the selected activity has details added at the time of creation, the appropriate activity category icon is displayed. Click the icon to view or modify activity details <br>2. If no details have been added, you can enter the activity details in the <strong>Configuring Activity</strong> details screen</td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   <tr>
