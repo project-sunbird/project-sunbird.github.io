@@ -44,7 +44,6 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 	* [Bower](https://bower.io/#install-bower){:target="_blank"} - latest version of bower: `npm install -g bower`
 	* [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md){:target="_blank"}- 
 	  latest version of gulp: `npm install -g gulp-cli`
-	* [Mongo DB](https://www.mongodb.com/){:target="_blank"} - v3.4.1 and newer
 
 2. **API Keys** 
 
@@ -89,9 +88,9 @@ Once the file is opened, update the contents of the file so that it contains exa
         ...
         PORTAL_PORT: env.sunbird_port || 3000,
         PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            // 5. PORTAL_API_AUTH_TOKEN
-        PORTAL_MONGODB_IP: env.sunbird_mongodb_ip,
+
         ...
-        PORTAL_SSO_ENABLED: env.sunbird_sso_enabled || false,
+
         PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       // 6. PORTAL_ECHO_API_URL
         ...
     }
@@ -102,7 +101,6 @@ Once the file is updated with appropriate values, then you can begin with runnin
 
 Run the following commands:
 <pre>
-$ gulp build
 $ cd {PROJECT-FOLDER}/src/app
 $ node server.js
 
