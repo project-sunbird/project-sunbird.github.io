@@ -509,18 +509,18 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
       
 #### Adding Activity
 
-  <table>
-  <tr>
+ <table>
+ <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
+ </tr>  
+ <tr>
     <td>1. To add activity, click the <strong>Add Activity</strong> icon on the toolbar</td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  </table> 
+ </tr>
+ </table> 
   
-  **Activity Browser**
+ **Activity Browser**
 
  <table>
  <tr>
@@ -528,42 +528,40 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
-    <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><strong>Note:</strong> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering key words <br>3. Select the activity and click <strong>ADD</strong>
+    <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><strong>Note:</strong> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering key words <br>3. Select the activity and click <strong>ADD</strong></td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
  </tr>
  </table> 
   
   **Adding Details**
 
-  <table>
-  <tr>
+ <table>
+ <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
-    <td>1. All details of the selected activity are displayed on the right <br>2. Click <strong>Add</strong> to add the activity
-    </td>       
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  </table>  
+ </tr>  
+ <tr>
+    <td>1. All details of the selected activity are displayed on the right <br>2. Click <strong>Add</strong> to add the activity</td>       <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+ </tr>
+ </table>  
   
   **Configuring Activity Details**
 
-  <table>
-  <tr>
+ <table>
+ <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
+ </tr>  
+ <tr>
     <td>1. If the selected activity has details added at the time of creation, the appropriate activity category icon is displayed. Click the icon to view or modify activity details <br>2. If no details have been added, you can enter the activity details in the <strong>Configuring Activity</strong> details screen</td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  <tr>
+ </tr>
+ <tr>
     <td>1. Select the following from their respective drop-down menus: <br>a) Content <br>b) Numerals <br>c) Grade <br>d) Level <br>e) Sub Level <br>2. Determine the No. of Questions <br>3. Click <strong>Add</strong>
     </td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
-  </tr>
-  </table>
+ </tr>
+ </table>
    
 #### Adding Video
   
