@@ -604,7 +604,7 @@ the shape <br>b) Use the <strong>Transparency</strong> slider to modify the tran
   </tr>  
   <tr>
     <td>All created study material must be reviewed and approved by designated reviewers before it can be published. To send content for review: <br>1. Click Save to save the content <br>2. Click <strong>Send for review</strong>
-     </td>
+    </td>
     <td><img src="pages/features-documentation/images/contenteditor.png"></td>
   </tr>
   </table>
