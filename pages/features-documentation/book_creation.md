@@ -46,7 +46,7 @@ allowSearch: true
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Title</strong> of the course <br>2. Enter <strong>Description</strong> <br>3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong> <ol>b) <strong>Subject</strong> <ol>c) <strong>Grade</strong> <ol>d) <strong>Medium<strong> <ol>e) <strong>Audience</strong> <ol>f) <strong>Concepts</strong> <ol>g) <strong>Language</strong></ol> <br>4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br>5. Enter <strong>Keywords</strong> <br>6. Click <strong>Update</strong> to update the details
+    <td>1. Enter <strong>Title</strong> of the course <br>2. Enter <strong>Description</strong> <br>3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Subject</strong></ol> <ol>c) <strong>Grade</strong> <ol>d) <strong>Medium<strong> <ol>e) <strong>Audience</strong> <ol>f) <strong>Concepts</strong> <ol>g) <strong>Language</strong></ol> <br>4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br>5. Enter <strong>Keywords</strong> <br>6. Click <strong>Update</strong> to update the details
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
   </tr>
