@@ -39,7 +39,7 @@ allowSearch: true
   </table>
   
   ### Book Metadata
-  On clicking <strong>Start Creating</strong>, all the metadata fields related to the book is displayed:
+  On clicking <strong>Start Creating</strong>, all the metadata fields related to the book are displayed:
 <table>
   <tr>
     <th>Step</th>
@@ -138,6 +138,6 @@ Before the book is publihed, it must be reviewed. To send the book for review an
   <tr>
     <td>1. Click <strong>Save</strong> on the header to save the book <br>2. Click <strong>Send for review</strong> to send the created book for review
     </td>
-    <td><img src="pages/features-documentation/images/course_sendingfreview.png"></td>
+    <td><img src="pages/features-documentation/images/book_sendforreview.png"></td>
   </tr>    
   </table>
