@@ -10,17 +10,17 @@ allowSearch: true
 
 Announcements are an invariable part of organizational activities. From important dates, to events, to policy changes, organization members have to be notified of everything. It is a formidable task to notify each member of the organization in person or through electronic communication (email). 
 
-On Sunbird, the Announcement feature allows you to send a systemwide message to all your the target audience via Dashboard. This feature is helpful for quickly communicating urgent information, such as Orders or Circulars. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
+On Sunbird, the Announcement feature allows you to send a systemwide message to all your target audience via Dashboard. This feature is helpful for quickly communicating urgent information, such as Orders or Circulars. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
 
 ## Announcement Workflow
 
-Announcement workflow will helps you in understanding all necessary sequence of tasks or processes that a announcement creator does, right from its initiation to completion.
+The sequential set of tasks, required to be completed by the announcement sender to successfully send announcements, are explained diagramtically in the workflow:
 
 <center><img src="pages/features-documentation/images/announcement/workflow.png"></center>
 
 ## Announcement Sender Role Function Matrix
 
-On Sunbird, Announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>{:target="_blank"}
+On Sunbird, Announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know more on the various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>{:target="_blank"}
 
 ## Prerequisite
 
@@ -30,7 +30,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all sent announcements <br>3. You have clicked the <b>Announcement Dashboard</b> from the profile drop down 
+    <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all the sent announcements <br>3. You have clicked the <b>Announcement Dashboard</b> from the profile drop down 
       </td>
       <td><img src="pages/features-documentation/images/announcement/prerequisite.png"></td>
   </tr>
@@ -44,7 +44,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>You can view all necessary data related to Announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following attributes: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published Date <br>&emsp;c) Number of users to whom announcements were sent <br>&emsp;d) Number of users received the announcements <br>&emsp;e) Number of users seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
+    <td>You can view all necessary data related to announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following details: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published date <br>&emsp;c) Number of users to whom announcements were sent <br>&emsp;d) Number of users who received the announcements <br>&emsp;e) Number of users who have seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
     </td>
     <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
   </tr>
