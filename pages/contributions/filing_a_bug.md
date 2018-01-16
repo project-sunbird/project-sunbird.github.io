@@ -8,7 +8,6 @@ keywords: 'Contribute, Code, Code contribution'
 published: true
 allowSearch: true
 ---
-Submitting a bug report: A complete walkthrough
 
 ## Overview
 
