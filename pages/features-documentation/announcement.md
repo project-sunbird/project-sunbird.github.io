@@ -62,10 +62,10 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/create1.png"></td>
   </tr>
   <tr>
-    <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b> for organization or department that has sent the announcement <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br>&emsp;<b>Or</b>  <br>&emsp;Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
-&emsp;<b>Note:</b> You can attach or give link for more than one file. For attachements the following file formats are supported: .pdf, .png, .jpg. Maximum file size limit is 1MB.<br>
+    <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b>. Details of the  organization or department, who is sending the announcement, have to be entered here <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br>&emsp;<b>Or</b>  <br>&emsp;Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
+&emsp;<b>Note:</b> You can attach or give links for more than one file. For attachements, the following file formats are supported: .pdf, .png, .jpg. Maximum file size limit is 1MB.<br>
 7. Click <b>Select Recipients</b> button to select all the recipients 
-  <br>&emsp;<b>Note:</b> All the fields marked with asterisk(*) is mandatory to fill. Others are optional fields. <b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description
+  <br>&emsp;<b>Note:</b> All the fields marked with asterisk(*) are mandatory. Others are optional fields. <b>Select Recipient</b> button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description
   </td>
   <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
   </tr>
