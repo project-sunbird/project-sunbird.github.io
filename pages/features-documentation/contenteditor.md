@@ -515,7 +515,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
  </tr>  
  <tr>
     <td>1. To add activity, click the <strong>Add Activity</strong> icon on the toolbar</td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/addactivity.png"></td>
  </tr>
  </table> 
   
@@ -528,7 +528,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
  </tr>  
  <tr>
     <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><strong>Note:</strong> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering key words <br>3. Select the activity and click <strong>ADD</strong></td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/activitybrowser.png"></td>
  </tr>
  </table> 
   
@@ -540,7 +540,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
-    <td>1. All details of the selected activity are displayed on the right <br>2. Click <strong>Add</strong> to add the activity</td>       <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td>1. All details of the selected activity are displayed on the right <br>2. Click <strong>Add</strong> to add the activity</td>       <td><img src="pages/features-documentation/images/contenteditor/activitydetails.png"></td>
  </tr>
  </table>  
   
@@ -553,12 +553,12 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
  </tr>  
  <tr>
     <td>1. If the selected activity has details added at the time of creation, the appropriate activity category icon is displayed. Click the icon to view or modify activity details <br>2. If no details have been added, you can enter the activity details in the <strong>Configuring Activity</strong> details screen</td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/configureactivity.png"></td>
  </tr>
  <tr>
     <td>1. Select the following from their respective drop-down menus: <br>a) Content <br>b) Numerals <br>c) Grade <br>d) Level <br>e) Sub Level <br>2. Determine the No. of Questions <br>3. Click <strong>Add</strong>
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/configureactivity1.png"></td>
  </tr>
  </table>
    
@@ -576,7 +576,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   <tr>
     <td><strong>Adding Video Details</strong> <br>Currently, the content editor supports only direct video links from publicly shared videos. To do so: <br>1. Paste the video URL <br>2. Click <strong>Go</strong> <br>3. The preview is displayed in the preview pane <br>4. Click <strong>Add to Lesson</strong>
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/addvideo.png"></td>
   </tr>
   </table>
   
@@ -590,7 +590,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   <tr>
     <td>1. Click the copy icon to copy the video to another slide <br>2. Click the delete icon to delete the video <br>3. Click the arrange icon to determine the appearance of the video <br>4. Enable Autoplay to play the video automatically on the app <br>5. Enable or disable the option <strong>Mute Audio</strong> to mute or unmute audio
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/videodetail.png"></td>
   </tr>
   </table>
     
@@ -602,9 +602,9 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>All created study material must be reviewed and approved by designated reviewers before it can be published. To send content for review: <br>1. Click Save to save the content <br>2. Click <strong>Send for review</strong>
+    <td>All created study material must be reviewed and approved by designated reviewers before it can be published. To send content for review: <br>1. Click Save to save the content <br>2. Click <strong>Send for review</strong> <br>3. Click <b>Limited Publishing</b> option, to publish it for limited users
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/publish_review.png"></td>
   </tr>
   </table>
   
@@ -616,9 +616,9 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>You need to add metadata to the study material <br>1. Select an icon and enter a <strong>Name</strong> for the study material created <br>2. Enter a <strong>Description</strong> for the study material <br>3. Select other metadata like: <br>a) Board <br>b) Medium
+    <td>You need to add metadata to the study material <br>1. Select an icon and enter a <strong>Name</strong> for the study material created <br>2. Enter a <strong>Description</strong> for the study material <br>3. Select other metadata like: <br>a) Curriculum <br>b) Medium
 c) Subject <br>d) Grade <br>e) Audience <br>f) Resource Type <br>g) Concepts <br>4. Enter Attributions, if any <br>5. Enter Keywords <br><strong>Note:</strong> Keywords help search engines find content associated with them when you search <br>6. Click <strong>Save</strong>
    </td>
-    <td><img src="pages/features-documentation/images/contenteditor.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/addmetadata.png"></td>
   </tr>
   </table>   
