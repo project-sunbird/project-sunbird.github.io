@@ -16,8 +16,8 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
 
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">>Screen</th>
   </tr>
   <tr>
     <td>1. Login with the registered credential, to land into <strong>Home</strong> page<br>2. Click <strong>Profile</strong> tab on the header<br>Or<br>3. Click <strong>Profile</strong> icon to the right</td>
@@ -29,8 +29,8 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
 
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
     <td>Click <strong>View your Workspace</strong> to land to <strong>My Workspace</strong> page</td>
@@ -42,15 +42,23 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <td><img src="pages/features-documentation/images/workspace3.png"></td>
   </tr>
   </table>
-
-### Up For Review feature
+  
+ ### Up For Review feature
+ 
+ <pre>
+  **Note:** **Up For Review** feature is only available for the users with **Reviewer Rights**
+ </pre>
+ 
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Reviewers login with registered credential and passwaord. View <b>Up For Review</b></td> feature in your workspace
+    <td>1. Login with registered credential and password <br>2. Go to <b>My Workspace</b> <br>3. Click <b>Up For Review</b></td> button in your workspace to see all the contents available for review
     <td><img src="pages/features-documentation/images/up4review.png"></td>
   </tr>
+  <tr>
+    <td><b>Up For Review</b> page opens. View details viz, <br>1. <b>Content</b>: You can see all the contents send for review <br>2. <b>Author</b>: The author name is displayed for the content created by them <br>3. <b>Status</b>: You can see the status for all contents. Reviewer can review and publish the content</td>
+    <td><img src="pages/features-documentation/images/up4review1.png"></td>
   </table>
