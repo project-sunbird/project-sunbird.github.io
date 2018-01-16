@@ -15,9 +15,10 @@ Submitting a bug report: A complete walkthrough
 Writing a good bug report is not hard. Just follow a few effective techniques and you will be writing super bug reports in no time at all. 
 
 Please keep in mind that there are a few alternative options for support:
+
 1. Check the [sunbird troubleshooting](http://www.sunbird.org/developer-docs/troubleshooting/) page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
 1. The bug you have experienced might be faced by others also, it is recommended to check the [Sunbird issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
-- If the bug report exists, you may click "subscribe" to follow any developments.
+    - If the bug report exists, you may click "subscribe" to follow any developments.
 
 
 ## Separate out the bug
