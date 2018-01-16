@@ -10,7 +10,7 @@ allowSearch: true
 
 Announcements are an invariable part of organizational activities. From important dates, to events, to policy changes, organization members have to be notified of everything. It is a formidable task to notify each member of the organization in person or through electronic communication (email). 
 
-On Sunbird, the Announcement feature allows you to send a systemwide message to all your target audience via Dashboard. This feature is helpful for quickly communicating urgent information, such as Orders or Circulars. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
+On Sunbird, the Announcement feature allows you to send a systemwide message to all your target audience via a Dashboard. This feature is helpful for swift communication of urgent information, such as Orders or Circulars. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
 
 ## Announcement Workflow
 
