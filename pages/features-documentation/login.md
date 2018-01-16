@@ -109,5 +109,13 @@ Login the Sunbird portal using your registered credentials. For login, follow th
   </tr>  
   </table>
 
+**OTP on registered mobile number to reset forgot password**
+
+<table>
+	<tr>
+		<td>User receives one time password on the registered mobile number to reset the passord on the Sunbird portal</td>
+		<td><img src="pages/features-documentation/images/mobileotp.png"></td>
+	</tr>
+	</table>
 
 
