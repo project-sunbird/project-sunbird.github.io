@@ -16,25 +16,28 @@ Writing a good bug report is not hard. Just follow a few effective techniques an
 Please keep in mind that there are a few alternative options for support:
 
 1. Check the [sunbird troubleshooting](http://www.sunbird.org/developer-docs/troubleshooting/) page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
-1. The bug you have experienced might be faced by others also, it is recommended to check the [Sunbird issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
-    - If the bug report exists, you may click "subscribe" to follow any developments.
+2. The bug you have experienced might be faced by others also, it is recommended to check the [Sunbird issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
+3. If the bug report exists, you may click "subscribe" to follow any developments.
 
 
 ## Separate out the bug
 The first step in in writing an effective bug report is to find exactly:
 
 - **What is the problem?**
-    - Clearly and precisely state what exactly is wrong?
+  
+  Clearly and precisely state what exactly is wrong?
 
 - **How to reproduce it?**
+
     - If you have an explicit understanding about what exactly is wrong, you can reproduce an example of the problem        	
     - If you can answer both the questions and reliably reproduce an example of the problem, you are successful in distinctly separating out the bug.
 
 ## Single issue for a single bug
 
-- Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively
+Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively
 
 ## Writing an effective bug report
+
 Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.
 
 ### Issue Title
