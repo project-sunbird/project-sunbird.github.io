@@ -52,6 +52,8 @@ For API keys you can refer [here](developer-docs/installation/medium_scale_deplo
 
 ## Provisioning Keycloak 
 
+**Note:** Sunbird uses Keycloak as the identity and authentication provider. 
+
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
 - Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
