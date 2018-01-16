@@ -1,24 +1,19 @@
-Project Name:
+**Project Name:**
 
-Release Version Number:
+**Release Version Number:**
 
-Issue Catergory:
+**Issue Catergory:**
 
-Priority:
+**Priority:**
 
-Status:
+**Issue Description:**
 
-Issue Title:
+**Sequence of Steps Undertaken:** 
 
-Issue Description:
+**Expected Behaviour:**
 
-Sequence of Steps Undertaken: 
+**Actual Behaviour:**
 
-Expected Behaviour:
+**Environment In which Issue Encountered:**
 
-Actual Behaviour:
-
-Environment In which Issue Encountered:
-
-Supporting Files:
-
+**Supporting Files:**

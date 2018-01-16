@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.5/";
+			baseURL.href="/releases/release.1.6/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-12 16:01:01 +0530">
+<meta name="last-modified" content="2018-01-16 10:46:50 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.5" />
-<meta name="buildNo" content="943" />
+<meta name="buildVersion" content="release.1.6" />
+<meta name="buildNo" content="1029" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?12012018"  />
-<link rel="stylesheet" href="css/style.css?12012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?12012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?12012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?12012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?16012018"  />
+<link rel="stylesheet" href="css/style.css?16012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?16012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?16012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?16012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -166,6 +166,9 @@
 					<a href="features-documentation/coursetraining/">Courses</a>
 				</li>
 				<li>
+					<a href="features-documentation/announcement/">Announcement</a>
+				</li>
+				<li>
 					<a href="features-documentation/library/">Library</a>
 				</li>
 				<li>
@@ -174,12 +177,10 @@
 				<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
 				</li>
-				<!--<li>
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
-                                </li>-->
-				<!--<li>
+                                <!--<li>
 					<a href="features-documentation/consumption/">Consume Study Material</a>
 				</li>-->
 				</li>
@@ -227,10 +228,17 @@
 									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
+									<div class="">
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+											</li>
+										</ul>
+									
+									</div>
 								</li>
 								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
@@ -328,7 +336,7 @@
 												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
 											</li>
 											<li>
-								                                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
+								                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
 											</li>
 											<li>
 												<a href="developer-docs/telemetry/consuming_telemetry/#content-editor-workflow">Content Editor Workflow</a>
@@ -463,6 +471,9 @@ $("a[href$='features-documentation/workspace/']").addClass("sidebar-link-selecte
                 <li class="toc_level-2 toc_section-3">
                   <a href="#viewing-your-workspace"><span class="tocnumber">1.2 .</span> <span class="toctext">Viewing your Workspace</span></a>
                 </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#up-for-review-feature"><span class="tocnumber">1.3 .</span> <span class="toctext">Up For Review feature</span></a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -502,6 +513,18 @@ $("a[href$='features-documentation/workspace/']").addClass("sidebar-link-selecte
     <td>In your Workspace you can: <br />- Create Book, Course, Study material, Collection, Lesson plan <br />- View Drafts <br />- Review content submitted <br />- View published content <br />- View all uploaded content <br />- Limited publishing <br />
     </td>
     <td><img src="pages/features-documentation/images/workspace3.png" /></td>
+  </tr>
+  </table>
+
+<h3 id="up-for-review-feature">Up For Review feature</h3>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Reviewers login with registered credential and passwaord. View <b>Up For Review</b></td> feature in your workspace
+    <td><img src="pages/features-documentation/images/up4review.png" /></td>
   </tr>
   </table>
 

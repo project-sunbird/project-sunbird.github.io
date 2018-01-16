@@ -44,7 +44,7 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
   </li>
 </ul>
 
-<p>For details refer <a href="developer-docs/installation/medium_scale_deploy#api-keys">API keys</a></p>
+<p>For API keys you can refer <a href="developer-docs/installation/medium_scale_deploy#api-keys">here</a></p>
 
 <h2 id="proxy-services">Proxy services</h2>
 
@@ -56,7 +56,7 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
   </li>
 </ul>
 
-<h2 id="keycloak-provisioning">Keycloak provisioning</h2>
+<h2 id="provisioning-keycloak">Provisioning Keycloak</h2>
 
 <p>The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:</p>
 
@@ -82,12 +82,10 @@ Sample themes directory of sunbird is [here](https://github.com/project-sunbird/
 <p><code>sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}</code></p>
 
 <ul>
-  <li>
-    <p>Follow the instructions<a href="developer-docs/installation/keycloak_realm_configuration">here</a> to setup auth realm in keycloak.</p>
-
-    <p><strong>Update following configs</strong></p>
-  </li>
+  <li>Follow the instructions<a href="developer-docs/installation/keycloak_realm_configuration">here</a> to setup auth realm in keycloak.</li>
 </ul>
+
+<p><strong>Update following configs</strong></p>
 
 <pre>
 Login to the keycloak admin console, goto the clients-&gt;admin-cli-&gt;Installation-&gt;Select json format
@@ -107,9 +105,9 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 <p><strong>Ensure the following configurations are updated</strong></p>
 
 <ul>
-  <li>ENVIRONMENT CONFIGURATION</li>
-  <li>APPLICATION SERVER CONFIGURATIONS</li>
-  <li>ADVANCED CONFIGURATIONS</li>
+  <li>Environment Configuration</li>
+  <li>Application Server Configuration</li>
+  <li>Advanced Configuration</li>
 </ul>
 
 <h2 id="core-services">Core services</h2>
@@ -122,11 +120,18 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
   </li>
 </ul>
 
-<p><strong>Note:</strong> The automation walk-through <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">PART 5</a> <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">PART6</a> <a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">PART7</a>, shows you the process for deployment for Sunbird services.
-### Automation Walkthrough</p>
+<p><strong>Note:</strong> The following automation walk-through,shows you the process for deployment for Sunbird services.</p>
 
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">Part 5</a></p>
+<h3 id="automation-walkthrough">Automation Walkthrough</h3>
 
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">Part 6</a></p>
-
-<p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">Part 7</a></p>
+<ul>
+  <li>
+    <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif" target="_blank">Part 5</a></p>
+  </li>
+  <li>
+    <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif" target="_blank">Part 6</a></p>
+  </li>
+  <li>
+    <p><a href="https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif" target="_blank">Part 7</a></p>
+  </li>
+</ul>

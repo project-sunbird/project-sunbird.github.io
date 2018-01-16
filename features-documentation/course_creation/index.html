@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.5/";
+			baseURL.href="/releases/release.1.6/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-12 16:01:01 +0530">
+<meta name="last-modified" content="2018-01-16 10:46:50 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.5" />
-<meta name="buildNo" content="943" />
+<meta name="buildVersion" content="release.1.6" />
+<meta name="buildNo" content="1029" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?12012018"  />
-<link rel="stylesheet" href="css/style.css?12012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?12012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?12012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?12012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?16012018"  />
+<link rel="stylesheet" href="css/style.css?16012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?16012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?16012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?16012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -166,6 +166,9 @@
 					<a href="features-documentation/coursetraining/">Courses</a>
 				</li>
 				<li>
+					<a href="features-documentation/announcement/">Announcement</a>
+				</li>
+				<li>
 					<a href="features-documentation/library/">Library</a>
 				</li>
 				<li>
@@ -174,12 +177,10 @@
 				<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
 				</li>
-				<!--<li>
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
-                                </li>-->
-				<!--<li>
+                                <!--<li>
 					<a href="features-documentation/consumption/">Consume Study Material</a>
 				</li>-->
 				</li>
@@ -227,10 +228,17 @@
 									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
 								</li>
 								<li>
-									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
+									<div class="">
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+											</li>
+										</ul>
+									
+									</div>
 								</li>
 								<li>
 									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
@@ -328,7 +336,7 @@
 												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
 											</li>
 											<li>
-								                                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
+								                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
 											</li>
 											<li>
 												<a href="developer-docs/telemetry/consuming_telemetry/#content-editor-workflow">Content Editor Workflow</a>
@@ -495,13 +503,14 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
   </tr>
   <tr>
     <td>1. Enter <strong>Name</strong> of the course <br />2. Enter <strong>Description</strong> of the course <br />3. Click <strong>Start Creating</strong>
+      
+   ****Note: These details can be entered later when filling the metadata of the course***
     </td>
     <td><img src="pages/features-documentation/images/course_metadata.png" /></td>
   </tr>
   </table>
 
 <h3 id="course-metadata">Course Metadata</h3>
-
 <table>
   <tr>
     <th>Step</th>
@@ -539,10 +548,8 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
     <td><img src="pages/features-documentation/images/course_selectimage.png" /></td>
   </tr>
   <tr>
-      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br /><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br />2. Under <strong>Copyright and License</strong>, select if you want to: <br />
-      a) Makeit available to everyone
-      b) Not share with anyone
-      <br />4. Add image details in the Asset Caption area <br />5. Click <strong>Upload and Use</strong> to upload the image
+      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br /><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br />2. Under <strong>Copyright and License</strong>, select if you want to: <ol>a) Make it available to everyone</ol> <ol>b) Not share with anyone</ol>
+      <br />4. Add image details in the <strong>Asset Caption</strong> area <br />5. Click <strong>Upload and Use</strong> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png" /></td>
   </tr>
@@ -569,7 +576,7 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking Course Unit from the drop-down, the metadata appear for course unit is displayed on the right <br />2. Click update to edit the metadata <br />3. Click update to save the edited metadata</td>
+    <td>1. On clicking <strong>Course Unit</strong> from the drop-down, the metadata for course unit is displayed on the right <br />2. Click update to edit the metadata <br />3. Click update to save the edited metadata</td>
     <td><img src="pages/features-doc/image/.png" /></td>
   </tr>
 </table>
@@ -583,7 +590,7 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
   </tr>
   <tr>
     <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets</strong>, the <strong>Browse Resource</strong> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept</strong>
- <br />4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br />5. Click <strong>Add</strong> to add the selected content
+ <br />4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br />5. Select the content you want to add and click  <strong>Add</strong> to add the selected content
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png" /></td>
   </tr>
