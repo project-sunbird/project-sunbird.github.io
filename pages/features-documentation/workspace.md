@@ -42,3 +42,15 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <td><img src="pages/features-documentation/images/workspace3.png"></td>
   </tr>
   </table>
+
+### Up For Review feature
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Reviewers login with registered credential and passwaord. View <b>Up For Review</b></td> feature in your workspace
+    <td><img src="pages/features-documentation/images/up4review.png"></td>
+  </tr>
+  </table>
