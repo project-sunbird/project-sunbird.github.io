@@ -2,52 +2,18 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>This document describes how to file an effective Sunbird bug report. Before filing a bug report, check the troubleshooting page <a href="[http://www.sunbird.org/developer-docs/troubleshooting/](http://www.sunbird.org/developer-docs/troubleshooting/)">here</a> for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do?</p>
+<p>Writing a good bug report is not hard. Just follow a few effective techniques and you will be writing super bug reports in no time at all.</p>
 
-<h2 id="introduction">Introduction</h2>
-
-<p>To report a bug in the Sunbird bug trackers:</p>
-
-<ul>
-  <li>You need to create a new item (i.e issue)</li>
-  <li>Once added, the Sunbird team will check the validity of the issue raised and act accordingly</li>
-  <li>Check the prerequisites before you proceed in reporting the bug</li>
-</ul>
-
-<h2 id="prerequisites">Prerequisites</h2>
-
-<ul>
-  <li>
-    <p>An Account on GIT, since the Sunbird repository lives in GitHub.</p>
-
-    <ul>
-      <li>
-        <p>If you already have a GIT account, login with your credentials</p>
-      </li>
-      <li>
-        <p>If you do not have a GIT account, register for an account at GitHub <a href="https://github.com/">here</a></p>
-      </li>
-      <li>
-        <p>The Sunbird Issue Tracker uses GitHub accounts for authentication</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Use the latest version of Sunbird</p>
-
-    <ul>
-      <li>If you are using an out-of-date version of Sunbird, please update to the latest version.</li>
-      <li>After Prerequisites, follow these guidelines to ensure that your Bug report is clear and effective:</li>
-    </ul>
-  </li>
-</ul>
+<p>Please keep in mind that there are a few alternative options for support:
+1. Check the <a href="http://www.sunbird.org/developer-docs/troubleshooting/">sunbird troubleshooting</a> page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
+1. The bug you have experienced might be faced by others also, it is recommended to check the <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues">Sunbird issue tracker</a>
+- If the bug report exists, you may click “subscribe” to follow any developments.</p>
 
 <h2 id="separate-out-the-bug">Separate out the bug</h2>
-
 <p>The first step in in writing an effective bug report is to find exactly:</p>
 
 <ul>
-  <li><strong>What the problem is?</strong>
+  <li><strong>What is the problem?</strong>
     <ul>
       <li>Clearly and precisely state what exactly is wrong?</li>
     </ul>
@@ -60,60 +26,65 @@
   </li>
 </ul>
 
-<h2 id="check-whether-bug-already-stands-reported">Check whether bug already stands reported</h2>
-
-<p>The bug you have experienced might already have a fix and you can check the related documentation. If not, it is recommended to check the Sunbird <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues">issue tracker</a></p>
-
-<ul>
-  <li>Check, If the bug report exists, you may click “subscribe” to follow any developments.</li>
-  <li>If your bug is different than any others recorded in the issue tracker, then proceed with “Create a new issue”</li>
-</ul>
-
 <h2 id="single-issue-for-a-single-bug">Single issue for a single bug</h2>
 
 <ul>
   <li>Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively</li>
 </ul>
 
-<h2 id="create-a-new-issue">Create a new issue</h2>
-
-<p>You can create a new issue as follows:</p>
-
-<ul>
-  <li>
-    <p>Visit the official Sunbird website <a href="www.sunbird.org" target="_blank">here</a></p>
-  </li>
-  <li>
-    <p>Navigate to <a href="http://www.sunbird.org/docs/" target="_blank">documentation</a> section found on horizontal top menu of the website</p>
-  </li>
-  <li>
-    <p>Click any of the tiles (Architecture, Developer docs etc.) on the page</p>
-  </li>
-  <li>
-    <p>Click <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues" target="_blank">Report issue</a> (a link found on the right side of every page)</p>
-  </li>
-  <li>
-    <p>Click <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues/new" target="_blank">Create a new issue</a></p>
-  </li>
-</ul>
-
+<h2 id="writing-an-effective-bug-report">Writing an effective bug report</h2>
 <p>Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.</p>
 
-<h2 id="when-filing-a-new-bug-it-is-compulsory-to-include">When filing a new bug, it is compulsory to include:</h2>
+<h3 id="issue-title">Issue Title</h3>
+<p>The title should describe the problem as best as possible. Remember that the title read more often than any other part of the bug report.</p>
 
-<h3 id="sunbird-version">Sunbird Version</h3>
+<p>After submitting the issue, you can modify the title.</p>
 
+<h3 id="issue-description">Issue Description</h3>
+
+<h4 id="sequence-of-steps-to-reproduce-bug">Sequence of Steps to reproduce bug</h4>
+
+<ul>
+  <li>A bug report needs clear instructions, so that others can understand and exclusively reproduce it</li>
+  <li>Include good set of instructions i.e a numbered list that details each button press, or menu selection</li>
+</ul>
+
+<h4 id="actual-behavior">Actual behavior</h4>
+
+<ul>
+  <li>In contrast to the expected behavior, describe what currently happens when the bug is present.</li>
+</ul>
+
+<h4 id="expected-behavior">Expected behavior</h4>
+
+<ul>
+  <li>Describe what actually is correct workflow or exactly should happen if the bug was fixed.</li>
+</ul>
+
+<h4 id="environment-in-which-the-issue-encountered">Environment in which the Issue Encountered</h4>
+
+<ul>
+  <li>Name the operating system and version you are using, such as “Windows 7”, or “Mac OS X 10.7.5” etc.</li>
+  <li>Name the browser and version which you are using, such as “Chrome 63” or “Firefox Quantum” or “Microsoft Edge”</li>
+</ul>
+
+<h4 id="supporting-files">Supporting Files</h4>
+
+<ul>
+  <li>If you can supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.</li>
+</ul>
+
+<h4 id="sunbird-version">Sunbird Version</h4>
 <p>The version of Sunbird in which you discovered the bug (e.g., 1.3). If you can reproduce the problem in more than one version, write down the earliest.</p>
 
-<h3 id="issue-category">Issue Category</h3>
-
+<h4 id="issue-category">Issue Category</h4>
 <p>A “bug report” is usually for when Sunbird does something which is not what it is expected to. An example of a bug could be: a link to a page, instead of opening it shows an error.</p>
 
 <p>Tasks, feature requests and support requests are beyond the scope of this article.</p>
 
-<h3 id="issue-priority">Issue Priority</h3>
+<h4 id="issue-severity">Issue Severity</h4>
 
-<p>Every bug will have a different priority.</p>
+<p>Every bug will have a different severity.</p>
 
 <p><strong>Use “Critical” in case:</strong></p>
 
@@ -134,50 +105,7 @@
 
 <p><strong>Note:</strong> While a bug that you are experiencing is important to you, developers balance it with all the other known bugs.</p>
 
-<h3 id="issue-title">Issue Title</h3>
-
-<p>The title should describe the problem as best as possible. Remember that the title read more often than any other part of the bug report.</p>
-
-<p>After submitting the issue, you can modify the title.</p>
-
-<h2 id="issue-description">Issue Description</h2>
-
-<p><strong>Sequence of Steps to reproduce bug</strong></p>
-
-<ul>
-  <li>
-    <p>A bug report needs clear instructions, so that others can understand and exclusively reproduce it</p>
-  </li>
-  <li>
-    <p>Include good set of instructions i.e a numbered list that details each button press, or menu selection</p>
-  </li>
-</ul>
-
-<p><strong>Actual behavior</strong></p>
-
-<ul>
-  <li>In contrast to the expected behavior, describe what currently happens when the bug is present.</li>
-</ul>
-
-<p><strong>Expected behavior</strong></p>
-
-<ul>
-  <li>Describe what actually is correct workflow or exactly should happen if the bug was fixed.</li>
-</ul>
-
-<p><strong>Environment in which the Issue Encountered</strong></p>
-
-<ul>
-  <li>Name the operating system and version you are using, such as “Windows 7”, or “Mac OS X 10.7.5” etc.</li>
-</ul>
-
-<p><strong>Supporting Files</strong></p>
-
-<ul>
-  <li>If you can supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.</li>
-</ul>
-
-<h2 id="submit">Submit</h2>
+<h3 id="submit">Submit</h3>
 
 <p>Click <strong>Submit button</strong> to submit your bug report to the issue tracker.</p>
 
