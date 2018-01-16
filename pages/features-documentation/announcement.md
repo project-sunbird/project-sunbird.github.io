@@ -30,7 +30,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are loged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all the sent announcements <br>3. You have clicked the <b>Announcement Dashboard</b> from the profile drop down 
+    <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all the sent announcements <br>3. You have clicked the <b>Announcement Dashboard</b> from the profile drop down 
       </td>
       <td><img src="pages/features-documentation/images/announcement/prerequisite.png"></td>
   </tr>
