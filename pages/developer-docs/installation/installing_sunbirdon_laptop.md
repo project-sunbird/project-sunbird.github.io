@@ -57,6 +57,8 @@ After checking out the code, execute the following command:
 
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
+Note: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release.
+
 Once the git clone command is over, run the following set of commands:
 
 <pre>
