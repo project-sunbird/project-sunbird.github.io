@@ -8,13 +8,13 @@ published: true
 allowSearch: true
 ---
 
-Announcements are an invariable part of organizational activities. From important dates, to events, to policy changes, organization members have to be notified of everything. It is a formidable task to notify each member of the organization in person or through electronic communication (email). 
+Announcements are an invariable part of organizational activities. From important dates, to events, to policy changes, organization members must be notified of everything. It is a formidable task to notify each member of the organization in person or through electronic communication (email). 
 
 On Sunbird, the Announcement feature allows you to send a systemwide message to all your target audience via a Dashboard. This feature is helpful for swift communication of urgent information, such as Orders or Circulars. The organization administrator can assign one or more members to become announcement senders in the portal. The chief responsibility of this role is to create and send announcements.  
 
 ## Announcement Workflow
 
-The sequential set of tasks, the announcement sender has to complete to successfully send announcements, are explained diagramtically in the workflow:
+The sequential set of tasks, the announcement sender has to complete to successfully send announcements, are explained diagrammatically  in the workflow:
 
 <center><img src="pages/features-documentation/images/announcement/workflow.png"></center>
 
@@ -63,7 +63,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
   </tr>
   <tr>
     <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b>. Details of the  organization or department, who is sending the announcement, have to be entered here <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br>&emsp;<b>Or</b>  <br>&emsp;Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
-&emsp;<b>Note:</b> You can attach or give links for more than one file. For attachements, the following file formats are supported: .pdf, .png, .jpg. Maximum file size limit is 1MB.<br>
+&emsp;<b>Note:</b> You can attach or give links for more than one file. For attachments, the following file formats are supported: .pdf, .png, .jpg. Maximum file size limit is 1MB.<br>
 7. Click <b>Select Recipients</b> button to select all the recipients 
       
   *<br>&emsp;<b>Note:</b> All the fields marked with asterisk(*) *are mandatory. Others are optional fields.
@@ -147,7 +147,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> 
+    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeat all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> 
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
