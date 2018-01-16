@@ -14,13 +14,13 @@ On Sunbird, the Announcement feature allows you to send a systemwide message to 
 
 ## Announcement Workflow
 
-The sequential set of tasks, required to be completed by the announcement sender to successfully send announcements, are explained diagramtically in the workflow:
+The sequential set of tasks, the announcement sender has to complete to successfully send announcements, are explained diagramtically in the workflow:
 
 <center><img src="pages/features-documentation/images/announcement/workflow.png"></center>
 
 ## Announcement Sender Role Function Matrix
 
-On Sunbird, Announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know more on the various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>{:target="_blank"}
+On Sunbird, an announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know more on the various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>{:target="_blank"}
 
 ## Prerequisite
 
