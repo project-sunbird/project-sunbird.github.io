@@ -45,13 +45,13 @@ On Sunbird, once a course is created, the course administrator can add users to 
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. On selecting a course, details of the course is displayed. <br>2. Existing batches for the course is displayed on the right side under <strong>Batches</strong> <br>3. Click <strong>Create Batch</strong> to create a new batch. Metadata page for batches is displayed
+    <td>1. On selecting a course, details of the course are displayed. <br>2. Existing batches for the course are displayed on the right side under <strong>Batches</strong> <br>3. Click <strong>Create Batch</strong> to create a new batch. Metadata page for batches is displayed
          </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
   <tr>
-    <td>1. Enter <strong>Batch Name</strong>. This is a mandatory field <br>2. Enter short description about the batch <br>3. Select the <strong>Batch Type</strong> <br>4. Select the <strong>START DATE</strong> for the batch from the calendar. This is a mandatory field <br>5. Select <strong>END DATE</strong> for the batch from the calendar <br>6. Search and select member’s name from the drop down list  
-<br>7. Select and include mentors for the batch from the drop down list <br>8. Click <strong>Clear</strong> to clear and re-enter all the details <br>9. Click <strong>Create</strong> to create a new batch and assign them to users <br>10. Click <strong>Close</strong> icon to exit the page
+    <td>1. Enter <strong>Batch Name</strong>. This is a mandatory field <br>2. Enter description about the batch <br>3. Select the <strong>Batch Type</strong> <br>4. Select the <strong>START DATE</strong> for the batch from the calendar. This is a mandatory field <br>5. Select <strong>END DATE</strong> for the batch from the calendar <br>6. Search and select member’s name from the drop-down list  
+<br>7. Select and include mentors for the batch from the drop-down list <br>8. Click <strong>Clear</strong> to clear and re-enter all the details <br>9. Click <strong>Create</strong> to create a new batch and assign them to users <br>10. Click <strong>Close</strong> icon to exit the page
          </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
@@ -77,7 +77,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Select <strong>Ongoing</strong> or <strong>Upcoming</strong> option from the drop down list on the right pane.  Information on ongoing or upcoming batches are displayed
+    <td>1. Select <strong>Ongoing</strong> or <strong>Upcoming</strong> option from the drop-down list on the right pane.  Information on ongoing or upcoming batches are displayed
          </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
   </tr>
