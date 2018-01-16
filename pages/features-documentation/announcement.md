@@ -67,7 +67,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
 7. Click <b>Select Recipients</b> button to select all the recipients 
       
   *<br>&emsp;<b>Note:</b> All the fields marked with asterisk(*) *are mandatory. Others are optional fields.
-  *<b>Select Recipient</b>*button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description*
+  <b>Select Recipient</b> *button gets enabled only after entering all the details viz, Name, Organization, Announcement type and Description*
   </td>
   <td><img src="pages/features-documentation/images/announcement/create2.png"></td>
   </tr>
@@ -91,17 +91,17 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <td><img src="pages/features-documentation/images/announcement/confirmrecipient2.png"></td>
   </tr>
   <tr>
-    <td>1. <b>Preview Announcement</b> page opens, where you can view your announcement before sending it to recipients <br>2. Click <b>Back</b> button, to move to previous page <br>3. Click <b>Send Announcement</b> button 
+    <td>1. <b>Preview Announcement</b> page opens, you can view your announcement before sending it to recipients here <br>2. Click <b>Back</b> button, to move to previous page <br>3. Click <b>Send Announcement</b> button to send the announcement
   </td>
   <td><img src="pages/features-documentation/images/announcement/preview3.png"></td>
   </tr>
   <tr>
-    <td>1. A confirmation message is displayed  message <br>2. Click <b>GOT IT</b> button or <b>Close</b> icon to exit the page</td>
+    <td>1. A confirmation message is displayed <br>2. Click <b>GOT IT</b> button or <b>Close</b> icon to exit the page</td>
     <td><img src="pages/features-documentation/images/announcement/sentmessage4.png"></td>
   </tr>
   </table>
   
-### Closing an Announcement midway
+### Closing an Incomplete Announcement 
 
 <table>
   <tr>
@@ -109,7 +109,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>If you closes the creation page midway (intentionally or un-intentionally), a pop up message appears and asks to confirm your action. <br>1. Click <b>Yes</b> button to stop creating your announcement <br>2. Click <b>No</b> button to return back to the creation page
+    <td>If you close the creation page midway (intentionally or un-intentionally), a pop up message appears and asks to confirm your action. <br>1. Click <b>Yes</b> button to stop creating your announcement <br>2. Click <b>No</b> button to return back to the creation page
     </td>
     <td><img src="pages/features-documentation/images/announcement/stopmidway.png"></td>
  </tr>
@@ -123,7 +123,7 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Go to <b>My Announcements</b> page <br>2. Click <b>Delete</b> icon for the announcement you want to delete
+    <td>1. Go to <b>My Announcements</b> page <br>2. Click <b>Delete</b> icon on the announcement you want to delete
     </td>
     <td><img src="pages/features-documentation/images/announcement/delete1.png"></td>
     </tr>
@@ -142,12 +142,12 @@ On Sunbird, Announcement sender is a person who creates and sends announcement t
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Go to <b>My Announcements</b> page <br>2. Click <b>Resend</b> icon for the announcement you want to send it again
+    <td>1. Go to <b>My Announcements</b> page <br>2. Click <b>Resend</b> icon on the announcement you want to send again
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> same as above
+    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeate all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> 
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
