@@ -1,1 +1,1333 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Announcement API(s)
+  description: >-
+    Announcements resources on allow users to communicate with other users and post information about various related topics. Announcements are designed to allows the admins to broadcast information out to an entire group of users
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /announcement/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+ /resend/{Announcement_Id}:
+    parameters:
+      - in: path
+        name: Announcement_Id
+        type: string
+        required: true
+        description: 'Please append a valid Announcement Id to the request URL'    
+    get:
+      description: >-
+       This API is associated with fetching a previously sent announcement on the Sunbird Platform.
+          - The **_/resend/{Announcement_Id}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /resend/{Announcement_Id}
+          - Required fields cannot be left null or empty.
+      summary: Fetches a specific previously sent Announcement
+      tags:
+      - Announcement APIs
+      operationId: Resend39873400Da6a11e79964E746dd8d0631Get
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."fetch a sent announcement" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "fetch a sent announcement" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /resend/{Announcement_Id}
+            headers:
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: getResend
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /cancel:
+    delete:
+      description: >-
+       This API is associated with cancelling an announcement on the Sunbird Platform.
+          - The **_/cancel_** endpoint executes the "cancelDelete" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Cancels an Announcement
+      tags:
+      - Announcement APIs      
+      operationId: CancelDelete
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for cancelling the announcement.
+          schema:
+            $ref: '#/definitions/CancelRequest'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      responses:
+        '200':
+          description: 'OK ! Successful operation."cancel announcement" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "cancel announcement" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: DELETE
+            uri: /cancel
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"4380faf0-da73-11e7-b9e2-450490e1f739\"\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: cancel
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /resend:
+    post:
+      description: >-
+       This API is associated with resending a previously sent announcement to the users on the Sunbird Platform.
+          - The **_/resend** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Resends an Announcement
+      tags:
+      - Announcement APIs
+      operationId: ResendPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about resending an announcement.
+          schema:
+            $ref: '#/definitions/ResendRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Resend" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Resend" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /resend
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: |-
+              {
+                    "request": {
+                        "sourceId": "ORG_001",
+                        "type": "Circular",
+                        "links": ["http://yahoo.com"],
+                        "title": "Test title for announcement 90",
+                        "description": "Test description for announcement 90",
+                        "target": {"geo": {
+                                "ids": ["0123668627050987529"]
+                                }
+                            },
+                        "from": "test user",
+                        "attachments": [
+                                      {
+                                        "name":"alarm.png",
+                                        "mimetype":"image/png",
+                                        "size":"67kb",
+                                        "link":"https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png"
+                                      },
+                                      {
+                                        "name":"clock.jpg",
+                                        "mimetype":"image/jpeg",
+                                        "size":"9.4kb",
+                                        "link":"https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900700072509443.jpg"
+                                      }
+                                  ]
+                    }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: resend
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /user/outbox:
+    post:
+      description: >-
+       This API is associated with posting sent announcements in users outbox on the Sunbird Platform.
+          - The **_/user/outbox_** endpoint executes the "UserOutboxPost" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /user/outbox
+          - Required fields cannot be left null or empty.
+      summary: Posting sent announcements in users outbox 
+      tags:
+      - Announcement APIs
+      operationId: UserOutboxPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the posting sent announcements in users outbox.
+          schema:
+            $ref: '#/definitions/UserOutboxRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."UserOutboxPost" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "UserOutboxPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /user/outbox
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"limit\": 5,\n\t\t\"offset\": 0\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: userOutbox
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /received:
+    post:
+      description: >-
+       This API is associated with acknowledging the recieved reciept of a sent announcement.
+          - The **_/recieved_** endpoint executes the "recieved" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Acknowledges received reciept of an Announcement
+      tags:
+      - Announcement APIs
+      operationId: ReceivedPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about fetching the status of  announcements.
+          schema:
+            $ref: '#/definitions/ReceivedRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."RecievedPost" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "RecievedPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /received
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"e138-45e9-bed2-a0db5eb9696b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: received
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /definitions:
+    post:
+      description: >-
+       This API is associated with helping creating an announcement and other technical information, and to whom it is intended on the Sunbird Platform.
+          - The **_/definitions_** endpoint executes the "definition" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Created announcement metadata 
+      tags:
+      - Announcement APIs
+      operationId: DefinitionsPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata of information about the creation of an announcement.
+          schema:
+            $ref: '#/definitions/DefinitionsRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."DefinitionsPost" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "DefinitionsPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /definitions
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"rootorgid\":\"ORG_001\",\n\t\t\"definitions\":[\"announcementTypes\"]\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: definitions
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /read:
+    post:
+      description: >-
+        This API acknowledges the read reciept of a sent Announcement.
+          - The **_read_** endpoint executes the "read" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Acknowledges the read reciept of an Announcement
+      tags:
+      - Announcement APIs
+      operationId: ReadPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about checking the read status of a sent announcement.
+          schema:
+            $ref: '#/definitions/ReadRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."read" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "read" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /read
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"1a5a7080-c5fa-11e7-9062-e7cbc001200b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: read
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /get/{Announcement_Id}:
+    parameters:
+      - in: path
+        name: Announcement_Id
+        type: string
+        required: true
+        description: 'Please append a valid Announcement Id to the Request URL'    
+    get:
+      description: >-
+       This API is associated with fetching a specific announcement on the Sunbird Platform.
+          - The **_/get/{Announcement_Id}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /get/{Announcement_Id}
+          - Required fields cannot be left null or empty.
+      summary: Fetches an announcement by Id
+      tags:
+      - Announcement APIs
+      operationId: Get4380faf0Da7311e7B9e2450490e1f739Get
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."get announcement" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "get announcement" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /get/{Announcement_Id}
+            headers:
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: getAnnouncementById
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /user/inbox:
+    post:
+      description: >-
+       This API is associated with adding recieved announcements in users inbox on the Sunbird Platform.
+          - The **_/resend/{Announcement_Id}_** endpoint executes the "userInbox" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /user/inbox
+          - Required fields cannot be left null or empty.
+      tags:
+      - Announcement APIs
+      operationId: UserInboxPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about adding announcements in users inbox.
+          schema:
+            $ref: '#/definitions/UserInboxRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."UserInboxPost" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "UserInboxPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /user/inbox
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"limit\": 2,\n\t\t\"offset\": 0\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: userInbox
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /create:
+    post:
+      description: >-
+       This API is associated with creation of a new announcement on the Sunbird Platform.
+          - The **_/create_** endpoint executes the "create" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /resend/{Announcement_Id}
+          - Required fields cannot be left null or empty.
+      summary: create
+      tags:
+      - Announcement APIs
+      operationId: CreatePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about creation of announcements.
+          schema:
+            $ref: '#/definitions/CreateRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+             Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."create" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "create" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /create
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: |-
+              {
+                    "request": {
+                        "sourceId": "01232002070124134414",
+                        "type": "Circular",
+                        "description": "",
+                        "links": ["https://ekstep.in", "https://ekstep.in/a", "https://ekstep.in/b", "https://ekstep.in/c", "https://ekstep.in/d"],
+                        "title": "Test title for announcement 001 str case",
+                        "target": {"geo": {
+                                "ids": ["0123916990102568966", "01239169691632435212"]
+                                }
+                            },
+                        "from": "Department of Education"
+                    }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: create
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  CancelRequest:
+    title: cancelRequest
+    example:
+      request:
+        announcementId: 4380faf0-da73-11e7-b9e2-450490e1f739
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+      - request
+  Request:
+    title: Request
+    example:
+      announcementId: 4380faf0-da73-11e7-b9e2-450490e1f739
+    type: object
+    properties:
+      announcementId:
+        description: ''
+        example: 4380faf0-da73-11e7-b9e2-450490e1f739
+        type: string
+    required:
+      - announcementId
+  ResendRequest:
+    title: resendRequest
+    example:
+      request:
+        sourceId: ORG_001
+        type: Circular
+        links:
+          - 'http://yahoo.com'
+        title: Test title for announcement 90
+        description: Test description for announcement 90
+        target:
+          geo:
+            ids:
+              - 0123668627050987529
+        from: test user
+        attachments:
+          - name: alarm.png
+            mimetype: image/png
+            size: 67kb
+            link: >-
+              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
+          - name: clock.jpg
+            mimetype: image/jpeg
+            size: 9.4kb
+            link: >-
+              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900700072509443.jpg
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request3'
+    required:
+      - request
+  Request3:
+    title: Request3
+    example:
+      sourceId: ORG_001
+      type: Circular
+      links:
+        - 'http://yahoo.com'
+      title: Test title for announcement 90
+      description: Test description for announcement 90
+      target:
+        geo:
+          ids:
+            - 0123668627050987529
+      from: test user
+      attachments:
+        - name: alarm.png
+          mimetype: image/png
+          size: 67kb
+          link: >-
+            https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
+        - name: clock.jpg
+          mimetype: image/jpeg
+          size: 9.4kb
+          link: >-
+            https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900700072509443.jpg
+    type: object
+    properties:
+      sourceId:
+        description: ''
+        example: ORG_001
+        type: string
+      type:
+        description: ''
+        example: Circular
+        type: string
+      links:
+        description: ''
+        example:
+          - 'http://yahoo.com'
+        type: array
+        items:
+          type: string
+      title:
+        description: ''
+        example: Test title for announcement 90
+        type: string
+      description:
+        description: ''
+        example: Test description for announcement 90
+        type: string
+      target:
+        $ref: '#/definitions/Target'
+      from:
+        description: ''
+        example: test user
+        type: string
+      attachments:
+        description: ''
+        example:
+          - name: alarm.png
+            mimetype: image/png
+            size: 67kb
+            link: >-
+              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
+          - name: clock.jpg
+            mimetype: image/jpeg
+            size: 9.4kb
+            link: >-
+              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900700072509443.jpg
+        type: array
+        items:
+          $ref: '#/definitions/Attachment'
+    required:
+      - sourceId
+      - type
+      - links
+      - title
+      - description
+      - target
+      - from
+      - attachments
+  Target:
+    title: Target
+    example:
+      geo:
+        ids:
+          - 0123668627050987529
+    type: object
+    properties:
+      geo:
+        $ref: '#/definitions/Geo'
+    required:
+      - geo
+  Geo:
+    title: Geo
+    example:
+      ids:
+        - 0123668627050987529
+    type: object
+    properties:
+      ids:
+        description: ''
+        example:
+          - 0123668627050987529
+        type: array
+        items:
+          type: string
+    required:
+      - ids
+  Attachment:
+    title: Attachment
+    example:
+      name: alarm.png
+      mimetype: image/png
+      size: 67kb
+      link: >-
+        https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
+    type: object
+    properties:
+      name:
+        description: ''
+        example: alarm.png
+        type: string
+      mimetype:
+        description: ''
+        example: image/png
+        type: string
+      size:
+        description: ''
+        example: 67kb
+        type: string
+      link:
+        description: ''
+        example: >-
+          https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
+        type: string
+    required:
+      - name
+      - mimetype
+      - size
+      - link
+  UserOutboxRequest:
+    title: userOutboxRequest
+    example:
+      request:
+        limit: 5
+        offset: 0
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request8'
+    required:
+      - request
+  Request8:
+    title: Request8
+    example:
+      limit: 5
+      offset: 0
+    type: object
+    properties:
+      limit:
+        description: ''
+        example: 5
+        type: integer
+        format: int32
+      offset:
+        description: ''
+        example: 0
+        type: integer
+        format: int32
+    required:
+      - limit
+      - offset
+  ReceivedRequest:
+    title: receivedRequest
+    example:
+      request:
+        announcementId: e138-45e9-bed2-a0db5eb9696b
+        channel: web
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request11'
+    required:
+      - request
+  Request11:
+    title: Request11
+    example:
+      announcementId: e138-45e9-bed2-a0db5eb9696b
+      channel: web
+    type: object
+    properties:
+      announcementId:
+        description: ''
+        example: e138-45e9-bed2-a0db5eb9696b
+        type: string
+      channel:
+        description: ''
+        example: web
+        type: string
+    required:
+      - announcementId
+      - channel
+  DefinitionsRequest:
+    title: definitionsRequest
+    example:
+      request:
+        rootorgid: ORG_001
+        definitions:
+          - announcementTypes
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request12'
+    required:
+      - request
+  Request12:
+    title: Request12
+    example:
+      rootorgid: ORG_001
+      definitions:
+        - announcementTypes
+    type: object
+    properties:
+      rootorgid:
+        description: ''
+        example: ORG_001
+        type: string
+      definitions:
+        description: ''
+        example:
+          - announcementTypes
+        type: array
+        items:
+          type: string
+    required:
+      - rootorgid
+      - definitions
+  ReadRequest:
+    title: readRequest
+    example:
+      request:
+        announcementId: 1a5a7080-c5fa-11e7-9062-e7cbc001200b
+        channel: web
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request11'
+    required:
+      - request
+  UserInboxRequest:
+    title: userInboxRequest
+    example:
+      request:
+        limit: 2
+        offset: 0
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request8'
+    required:
+      - request
+  CreateRequest:
+    title: createRequest
+    example:
+      request:
+        sourceId: '01232002070124134414'
+        type: Circular
+        description: ''
+        links:
+          - 'https://ekstep.in'
+          - 'https://ekstep.in/a'
+          - 'https://ekstep.in/b'
+          - 'https://ekstep.in/c'
+          - 'https://ekstep.in/d'
+        title: Test title for announcement 001 str case
+        target:
+          geo:
+            ids:
+              - 0123916990102568966
+              - 01239169691632435212
+        from: Department of Education
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request18'
+    required:
+      - request
+  Request18:
+    title: Request18
+    example:
+      sourceId: '01232002070124134414'
+      type: Circular
+      description: ''
+      links:
+        - 'https://ekstep.in'
+        - 'https://ekstep.in/a'
+        - 'https://ekstep.in/b'
+        - 'https://ekstep.in/c'
+        - 'https://ekstep.in/d'
+      title: Test title for announcement 001 str case
+      target:
+        geo:
+          ids:
+            - 0123916990102568966
+            - 01239169691632435212
+      from: Department of Education
+    type: object
+    properties:
+      sourceId:
+        description: ''
+        example: '01232002070124134414'
+        type: string
+      type:
+        description: ''
+        example: Circular
+        type: string
+      description:
+        description: ''
+        type: string
+      links:
+        description: ''
+        example:
+          - 'https://ekstep.in'
+          - 'https://ekstep.in/a'
+          - 'https://ekstep.in/b'
+          - 'https://ekstep.in/c'
+          - 'https://ekstep.in/d'
+        type: array
+        items:
+          type: string
+      title:
+        description: ''
+        example: Test title for announcement 001 str case
+        type: string
+      target:
+        $ref: '#/definitions/Target'
+      from:
+        description: ''
+        example: Department of Education
+        type: string
+    required:
+      - sourceId
+      - type
+      - description
+      - links
+      - title
+      - target
+      - from
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  '{{host}}/v1/user/forgotpasswordrequest':
+    title: '{{host}}/v1/user/forgotpasswordRequest'
+    example:
+      id: unique API ID
+      ts: 2013/10/15 16:16:39
+      params: {}
+      request:
+        userName: amit127.kumar17
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request10'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request10:
+    title: Request10
+    type: object
+    properties:
+      userName:
+        description: ''
+        type: string
+    required:
+    - userName
 
