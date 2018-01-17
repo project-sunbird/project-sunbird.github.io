@@ -354,10 +354,10 @@ paths:
  /received:
     post:
       description: >-
-       This API is associated with updating the status whether the announcement is recieved or not by a specific user.
+       This API is associated with acknowledging the recieved reciept of a sent announcement.
           - The **_/recieved_** endpoint executes the "recieved" request based on parameters provided as metadata in the request body.
           - Required fields cannot be left null or empty.
-      summary: Fetches status of an announcement
+      summary: Acknowledges received reciept of an Announcement
       tags:
       - Announcement APIs
       operationId: ReceivedPost
@@ -510,10 +510,10 @@ paths:
  /read:
     post:
       description: >-
-       This API is associated with checking the status whether the announcement is read or not on the Sunbird Platform.
+        This API acknowledges the read reciept of a sent Announcement.
           - The **_read_** endpoint executes the "read" request based on parameters provided as metadata in the request body.
-         - Required fields cannot be left null or empty.
-      summary: read
+          - Required fields cannot be left null or empty.
+      summary: Acknowledges the read reciept of an Announcement
       tags:
       - Announcement APIs
       operationId: ReadPost

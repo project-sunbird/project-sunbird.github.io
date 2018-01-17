@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.6.a/";
+			baseURL.href="/releases/release.1.6.b/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-16 14:23:30 +0530">
+<meta name="last-modified" content="2018-01-17 16:54:28 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.6.a" />
-<meta name="buildNo" content="1045" />
+<meta name="buildVersion" content="release.1.6.b" />
+<meta name="buildNo" content="1079" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?16012018"  />
-<link rel="stylesheet" href="css/style.css?16012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?16012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?16012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?16012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?17012018"  />
+<link rel="stylesheet" href="css/style.css?17012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?17012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?17012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?17012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -496,27 +496,30 @@ $("a[href$='contributions/filing_a_bug/']").addClass("sidebar-link-selected");
       </tr>
     </tbody>
   </table>
-</div><p>Submitting a bug report: A complete walkthrough</p>
-
-<h2 id="overview">Overview</h2>
+</div><h2 id="overview">Overview</h2>
 
 <p>Writing a good bug report is not hard. Just follow a few effective techniques and you will be writing super bug reports in no time at all.</p>
 
-<p>Please keep in mind that there are a few alternative options for support:
-1. Check the <a href="http://www.sunbird.org/developer-docs/troubleshooting/">sunbird troubleshooting</a> page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
-1. The bug you have experienced might be faced by others also, it is recommended to check the <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues">Sunbird issue tracker</a>
-- If the bug report exists, you may click “subscribe” to follow any developments.</p>
+<p>Please keep in mind that there are a few alternative options for support:</p>
+
+<ol>
+  <li>Check the <a href="http://www.sunbird.org/developer-docs/troubleshooting/">Sunbird troubleshooting</a> page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.</li>
+  <li>The bug you have experienced might be faced by others also, it is recommended to check the <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues">Sunbird issue tracker</a></li>
+  <li>If the bug report exists, you may click “subscribe” to follow any developments.</li>
+</ol>
 
 <h2 id="separate-out-the-bug">Separate out the bug</h2>
 <p>The first step in in writing an effective bug report is to find exactly:</p>
 
 <ul>
-  <li><strong>What is the problem?</strong>
-    <ul>
-      <li>Clearly and precisely state what exactly is wrong?</li>
-    </ul>
+  <li>
+    <p><strong>What is the problem?</strong></p>
+
+    <p>Clearly and precisely state what exactly is wrong?</p>
   </li>
-  <li><strong>How to reproduce it?</strong>
+  <li>
+    <p><strong>How to reproduce it?</strong></p>
+
     <ul>
       <li>If you have an explicit understanding about what exactly is wrong, you can reproduce an example of the problem</li>
       <li>If you can answer both the questions and reliably reproduce an example of the problem, you are successful in distinctly separating out the bug.</li>
@@ -526,11 +529,10 @@ $("a[href$='contributions/filing_a_bug/']").addClass("sidebar-link-selected");
 
 <h2 id="single-issue-for-a-single-bug">Single issue for a single bug</h2>
 
-<ul>
-  <li>Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively</li>
-</ul>
+<p>Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively</p>
 
 <h2 id="writing-an-effective-bug-report">Writing an effective bug report</h2>
+
 <p>Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.</p>
 
 <h3 id="issue-title">Issue Title</h3>
