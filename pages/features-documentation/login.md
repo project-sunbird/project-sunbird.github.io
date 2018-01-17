@@ -67,11 +67,11 @@ Login the Sunbird portal using your registered credentials. For login, follow th
 
 <table>
   <tr>
-    <th style="width:35%;"><strong>Step</strong></th>
-    <th style="width:65%;"><strong>Screen</strong></th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Enter your user name or email or phone number <br>2. Click <strong>Forgot Password?</strong></td>
+   <td>1. Enter your user name or email or phone number <br>2. Click <b>Forgot Password?</b></td>
 	<td><img src="pages/features-documentation/images/forgotpassword.png"></td>
     </tr>
     </table>
@@ -80,19 +80,19 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     
   <table>
   <tr>
-    <th style="width:35%;"><strong>Step</strong></th>
-    <th style="width:65%;"><strong>Screen</strong></th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter your registered <strong>Email ID</strong> <br>2. Click <strong>Submit</strong></td> 
+    <td>1. Enter your registered <strong>Email ID</strong> <br>2. Click <b>Submit</b></td> 
     <td><img src="pages/features-documentation/images/forgotpassword1.png"></td>
   </tr>
   <tr>
-    <td>1. You will receive a reset password emailed to your registered email ID <br>2. Click the <b>Link</b> on the email to reset credentials</td>
+    <td>1. You will receive an email to reset your password <br>2. Click the <b>Link</b> on the email to reset credentials</td>
     <td><img src="pages/features-documentation/images/emaillink.png"></td>
   </tr>
   <tr>
-    <td>1. Login page opens <br>2. Enter <b>Email ID</b> <br>3. Enter new <b>Password</b> <br>4. Click <b>Login</b> button 
+    <td>1. Login page opens <br>2. Enter <b>Email ID</b> <br>3. Enter new <b>Password</b> of your choice <br>4. Click <b>Login</b> button</td>
     <td><img src="pages/features-documentation/images/loginemail.png"></td>
   </tr>
   </table>
@@ -101,20 +101,20 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     
   <table>
   <tr>
-    <th style="width:35%;"><strong>Step</strong></th>
-    <th style="width:65%;"><strong>Screen</strong></th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>  
     <td>1. Enter your registered <strong>Phone Number</strong> <br>2. Click <strong>Submit</strong></td> 
     <td><img src="pages/features-documentation/images/forgotpassword1.png"></td>
   </tr>
   <tr>
-	  <td>1. You will receive <b>One Time Password (OTP</b>on your registered phone number</td>
-	  <td><img src="pages/features-documentation/images/mobileotp.png"></td>
+    <td>1. You will receive <b>One Time Password (OTP</b>on your registered phone number</td>
+    <td><img src="pages/features-documentation/images/mobileotp.png"></td>
   </tr>
   <tr>
-	  <td>1. Enter the <b>OTP</b> code sent to your mobile device <br>2. Click <b>Login</b> button</td>
-	  <td><img src="pages/features-documentation/images/otpcode.png"></td>
+    <td>1. Enter the <b>OTP</b> code sent to your mobile device <br>2. Click <b>Login</b> button</td>
+    <td><img src="pages/features-documentation/images/otpcode.png"></td>
   </tr>
 </table>
 	  
