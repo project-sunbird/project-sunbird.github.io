@@ -60,7 +60,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
   </tr>
   <tr>
     <td>Click the <b>Image</b> icon to add an image</td>
-    <td><img src="pages/features-documentation/images/course_imageicon.png"></td>
+    <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
     <td>1. You can add images either by selecting an image from: <br>
@@ -134,6 +134,6 @@ Before the Lesson Plan is publihed, it must be reviewed. You can send it for rev
   <tr>
     <td>1. Click <b>Save</b> on the header to save the lesson <br>2. Click <b>Send for review</b> to send the created lesson for review <br>3. Click <b>Limited sharing</b> to publish the lesson to the limited audiences
     </td>
-    <td><img src="pages/features-documentation/images/review.png"></td>
+    <td><img src="pages/features-documentation/images/lessonplan/review.png"></td>
   </tr>    
   </table>
