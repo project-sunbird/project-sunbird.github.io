@@ -44,4 +44,8 @@ allowSearch: true
 
 **Announcement APIs**
 
-- **[Announcements APIs](apis/announcements/){:target="_blank"}** The Announcements API resources on allow users to communicate with other users and post information about various related topics. Announcements are designed to allows the admins to broadcast information out to a specific user or to an entire group of users
+- **[Announcements APIs](apis/announcements/){:target="_blank"}** The Announcements API resources on allow users to communicate with other users and post information about various related topics. Announcements are designed to allows the admins to broadcast information out to a specific user or to an entire group of users.
+
+**Framework APIs**
+
+- **[Framework APIs](apis/framework/){:target="_blank"}** The Framework API resources is basically a supporting data structure which serves as a template. It can be used in places where the structure remains the same but only the usage changes are per requirement. These resources are used to create, update, search frameworks, channels, catergories, terms.
