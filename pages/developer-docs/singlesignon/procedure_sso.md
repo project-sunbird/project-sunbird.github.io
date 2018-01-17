@@ -38,11 +38,11 @@ Tokens are used to authenticate users across Sunbird instances, networks or appl
 
 * **email:** The email ID of the person whose user ID is in the subject
 
-* **email_verified:** An indicator whether the email ID has been verified. This is important when only verified user email IDs are accepted on an instance. For example; only verified emails are accepted on Sunbird 
+* **email_verified:** An indicator whether the email ID has been verified. This is important when only verified user email IDs are accepted on an instance. For example; only verified emails are accepted on DIKSHA 
 
 * **phone_number:** The 10 digit phone number of the person whose user ID is in the subject. This is an optional field
 
-* **phone_number_verified:** An indicator whether the phone number has been verified. This is important when only verified user phone numbers are accepted on an instance. For example; only verified phone numbers are accepted on Sunbird. This field is optional
+* **phone_number_verified:** An indicator whether the phone number has been verified. This is important when only verified user phone numbers are accepted on an instance. For example; only verified phone numbers are accepted on DIKSHA. This field is optional
 
 * **redirect_url:** the url of the page where the user should be directed after login
  
