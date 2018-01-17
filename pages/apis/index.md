@@ -12,7 +12,7 @@ allowSearch: true
 
 **Bulk Upload Service APIs**
 
-- **[Bulk Upload Service APIs](apis/bulkupload/){:target="_blank"}** The Bulk Upload resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include uploads and updations.
+- **[Bulk Upload Service APIs](apis/bulkupload/){:target="_blank"}** The Bulk Upload API resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include uploads and updations.
 
 **Content APIs**
 
@@ -28,11 +28,11 @@ allowSearch: true
 
 **Metrics APIs**
 
-- **[Metrics APIs](apis/metricsapi/){:target="_blank"}** The Metrics resources analyze sunbird's overall performance and efficiency.These resources perform operations related to the metrics on the Sunbird Platform. The metrics resource performs various operations related to content consumption, content snapshot aggregation.
+- **[Metrics APIs](apis/metricsapi/){:target="_blank"}** The Metrics API resources analyze sunbird's overall performance and efficiency.These resources perform operations related to the metrics on the Sunbird Platform. The metrics resource performs various operations related to content consumption, content snapshot aggregation.
 
 **Notification APIs**
 
-- **[Notification APIs](/apis/notificationapi/){:target="_blank"}** The Email resources provides the notification mechanism for all the users on Sunbird .The Resource notifies users officially about something on Sunbird.
+- **[Notification APIs](/apis/notificationapi/){:target="_blank"}** The Email API resources provides the notification mechanism for all the users on Sunbird .The Resource notifies users officially about something on Sunbird.
 
 **Organization Management APIs**
 
@@ -41,3 +41,7 @@ allowSearch: true
 **User APIs**
 
 - **[User APIs](apis/userapi/){:target="_blank"}** The User API resources perform operations related to the Users on the Sunbird Platform. The basic operations include Creation, Updation, Reading & Searching.
+
+**Announcement APIs**
+
+- **[Announcements APIs](apis/announcements/){:target="_blank"}** The Announcements API resources on allow users to communicate with other users and post information about various related topics. Announcements are designed to allows the admins to broadcast information out to a specific user or to an entire group of users
