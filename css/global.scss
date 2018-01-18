@@ -80,6 +80,14 @@ iframe .btn.omega{background: #fb4b00;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 );
 }
 
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap:wrap;
+}
+
 @media screen and (max-width:600px){
 .col-xxs-3{width:25% !important; padding-left:15px; padding-right:15px; position:relative; float:left;}
 .col-xxs-4{width:33.33% !important; padding-left:15px; padding-right:15px; position:relative;float:left;}
