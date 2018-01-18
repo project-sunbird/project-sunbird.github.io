@@ -8,8 +8,8 @@
 	text-align:center;
 	margin-bottom:30px;
 	padding: 0 3% 10px 3%;
-  background-color: #fafafa;
-  border: 1px solid #f0f0f0;
+  /*background-color: #fafafa;
+  border: 1px solid #f0f0f0;*/
 	&.premium {
 		border-color: #38c5e5;
 		.homepage-section__title {
@@ -29,11 +29,12 @@
 		}
 	}
 	.homepage-section__title {
-		color: #444444;
-		font-size:30px;
+		/*color: #444444;
+		font-size:30px;*/
 		transition: 0.2s color ease-in;
 		-webkit-transition: 0.2s color ease-in;
 	}
+	.homepage-section__title i{line-height:30px;}
 	.homepage-section__content {
 		color: #444444;
 		font-size:14px;
