@@ -8,6 +8,10 @@ keywords: Login
 published: true
 allowSearch: true
 ---
+Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body can add their members as registered users of the platform. For example; an organization, state, NGO, certification body or study centre can add their staff and users as Sunbird users.
+
+The states and organizations make a policy decision to allow / disallow registering single individual users. Contact your organization administrator for details.
+
 ## Login for the first time on the Platform
 
 1. User can directly signup to the platform. They will receive the welcome message from the administrator and further they can reset their User ID and Password
