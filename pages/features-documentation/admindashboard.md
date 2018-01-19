@@ -1,11 +1,65 @@
 ---
 type: landing
 directory: features-documentation
-title: Announcement
-page_title: Announcement
-description: About Announcements feature 
+title: Admin Dashboard
+page_title: Admin Dashboard
+description: About Admin Dashboard feature 
 published: true
 allowSearch: true
 ---
+In Sunbird, **Admin Dashboard** is an interface that organizes and presents all the information related to content creation and consumption, in a way is it easy to read and analyze. Admin dashboard is a graphical representation with an aim to integrate information from multiple components (Example, content created, reviewed, published and consumed) into a unified display. Looking into the analytics the Admin can reflect, the value, popularity and acceptance of particular content created and used.  
 
-In information technology, a dashboard is a user interface that, somewhat resembling an automobile's dashboard, organizes and presents information in a way that is easy to read. However, a computer dashboard is more likely to be interactive than an automobile dashboard (unless it is also computer-based). To some extent, most graphical user interfaces (GUIs) resemble a dashboard. However, some product developers consciously employ this metaphor (and sometimes the term) so that the user instantly recognizes the similarity.
+## Prerequisite
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all contents which are created, ready for reviewing  and publishing  <br>3. You have clicked the <b>Admin Dashboard</b> from the profile drop down 
+      </td>
+      <td><img src="pages/features-documentation/images/announcement/prerequisite.png"></td>
+  </tr>
+</table>
+    
+### Selecting Organizations 
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1.Click <b>Select Organization</b> and select any organization from the drop down</td>
+     <td><img src="pages/features-documentation/images/announcement/selectorg.png"></td>
+  </tr>
+</table>
+    
+### Creation Analytics
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Select <b>Creation</b> from the drop down <br>2. Select duration for which you want to see the content created, reviewed or published. You can view and analyse the following quantative and qualitative data for: <br>a) Total <b>number of contents created</b> in selected duration <br>b) <b>Number of authors</b> who created content <br>c) <b>Number of reviewers</b> who reviewed content during seleted duration <br>d) Total content created <br>e) Total content sent for review <br>f) Total content published</td>
+    <td><img src="pages/features-documentation/images/announcement/creationgraph.png"></td>
+  </tr>
+</table>
+
+### Consumption Analytics
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Select <b>Consumption</b> from the drop down <br>2. Select duration for which you want to view and analyse, the number and frequency of the users visiting the portal to consume the content. The consumption graph summarizes following quantative and qualitative data: <br>a) Number of visits by users <br>b) Content consumption time <br>c) Average time spent by user per visit</td>
+    <td><img src="pages/features-documentation/images/announcement/consumptiongraph.png"></td>
+  </tr>
+</table> 
+      
+
