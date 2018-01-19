@@ -17,6 +17,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.bg-grey{background:#fafafa;padding:30px 0;}
+.title-green{color:#00917c;}
+
 .btn { font-size: 16.8px; }
 
 .btn-lg-icon {
@@ -87,6 +90,10 @@ iframe .btn.omega{background: #fb4b00;
   display:         flex;
   flex-wrap:wrap;
 }
+
+.img-thumbnail{margin-bottom:30px;box-shadow:0px 2px 4px 0px #dedede;}
+.img-thumbnail img{border-bottom: 1px solid #ddd;}
+.img-thumbnail .caption{padding: 0 3%;}
 
 @media screen and (max-width:600px){
 .col-xxs-3{width:25% !important; padding-left:15px; padding-right:15px; position:relative; float:left;}

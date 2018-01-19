@@ -5,9 +5,7 @@
 /* Main */
 .inner__content .homepage-section {
 	display:block;
-	text-align:center;
-	margin-bottom:30px;
-	padding: 0 3% 10px 3%;
+	margin-bottom:20px;
   /*background-color: #fafafa;
   border: 1px solid #f0f0f0;*/
 	&.premium {
@@ -20,13 +18,15 @@
 		}
 	}
 	&:hover {
-	  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+	  /*-webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
 	  -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
 	  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
 		text-decoration:none;
 		.homepage-section__title {
 			color: #1cadce;
-		}
+		}*/
+		font-weight:bold;
+		box-shadow: 0 0;
 	}
 	.homepage-section__title {
 		/*color: #444444;
@@ -34,7 +34,7 @@
 		transition: 0.2s color ease-in;
 		-webkit-transition: 0.2s color ease-in;
 	}
-	.homepage-section__title i{line-height:30px;}
+	.homepage-section__title i{line-height:25px;}
 	.homepage-section__content {
 		color: #444444;
 		font-size:14px;
