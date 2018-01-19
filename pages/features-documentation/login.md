@@ -10,24 +10,7 @@ allowSearch: true
 ---
 ## Login for the first time on the Platform
 
-1. Send an email to [content.ntp@centralsquarefoundation.org](content.ntp@centralsquarefoundation.org) with a request for access as the subject line of the mail.
-
-2. The team will respond with an information checklist. The checklist includes information such as:
-  
-    i. Unique and permanent:
-      
-      - Organization ID
-      - Username for teacher
-      - Teacher ID
-     
-     ii. Verified Email ID and mobile number of the teachers
-
-3. On providing the information requested for, the organization’s designated administrator will receive credentials such as User ID, password, Channel ID and Organization ID
-4. The organization’s administrator can use the credentials received to login and add organization and organization member details.
-
-**Note:**
-
-To login on Sunbird first time, individuals have to be part of an organization. Individuals not part of any organization cannot login on Sunbird.
+1. User can directly signup to the platform. They will receive the welcome message from the administrator and further they can reset their User ID and Password
 
 ### Welcome Message 
 
