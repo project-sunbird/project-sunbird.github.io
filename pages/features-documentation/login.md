@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation
-title: Login
-page_title: Login
+title: Sign Up and Login
+page_title: Sign Up and Login
 description: Login
 keywords: Login
 published: true
@@ -10,20 +10,15 @@ allowSearch: true
 ---
 Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body or individual users can sign up on the portal.
 
-## Signing Up On Sunbird
-
-Users can directly signup on the platform. On successful sign up, an auto-generated confirmation message, along with user credentials, is shared with the user. User credentials, i.e, user ID and passsword can be reset after first time sign up.
-
-
-### Welcome Message 
-
+### Signing Up On Sunbird 
+Successful sign up on the portal is notified to the user via an auto-generated email.
 <table>
 	<tr>
 		<th style="width:35%;">Step</th>
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-	<td>An auto generated <strong>Welcome</strong> message is send to the user through email. Account details along with the instructions are shared in this mail</td>
+	<td>User credentials, i.e, user ID and password are shared in this mail. The user can rest these details on consecutive logins to the protal. 
 	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
 	</tr>
 	</table>
