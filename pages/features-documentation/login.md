@@ -28,7 +28,7 @@ Users can directly signup on the platform. On successful sign up, an auto-genera
 	</tr>
 	</table>
 	
-## Login 
+## Loging In 
 
 Once the users have received their credentials, logging in on the portal is a seamless process.
 <table>
