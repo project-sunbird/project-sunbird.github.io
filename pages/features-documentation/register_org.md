@@ -9,11 +9,9 @@ published: true
 allowSearch: true
 ---
 
-Organization administrators can use the credentials received to sign in and upload organization details. Administrators of administrating organizations can add other organization details.
+Organization administrators can use their registered credentials and add other organizations onto Sunbird. To add an organization on Sunbird, the administrator must upload necessary details of the organization(s) that has to be uploaded. 
 
 ## Prerequisites
-
-## Prerequisite
 
 <table>
   <tr>
