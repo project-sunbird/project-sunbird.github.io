@@ -11,18 +11,26 @@ allowSearch: true
 
 Organization administrators can use the credentials received to sign in and upload organization details. Administrators of administrating organizations can add other organization details.
 
-## Login
+## Prerequisites
 
-1. Log in the Sunbird portal using your registered credentials
+## Prerequisite
 
-## Accessing your Workspace
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page. You want to upload organizations <br>3. You have clicked on <b>Upload Organizations</b> 
+      </td>
+      <td><img src="pages/features-documentation/images/announcement/upldorg_prereqsite.png"></td>
+  </tr>
+    </table>
 
-1. Click **Profile** tab on the header <br/> OR
-2. Click the **Profile Icon** and select **Profile**
 
 ## Uploading Organizations
 
-1. Click **Upload Organizations**. The upload organizations page is displayed
+1. The upload organizations page is displayed
 2. Download the csv file for reference
 3. You can add or upload details of up to 200 organizations at a time in one csv
 4. Descriptions and valid values for each columns are as listed below:
