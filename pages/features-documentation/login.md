@@ -8,13 +8,12 @@ keywords: Login
 published: true
 allowSearch: true
 ---
-Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body can add their members as registered users of the platform. For example; an organization, state, NGO, certification body or study centre can add their staff and users as Sunbird users.
+Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body or individual users can sign up on the portal.
 
-The states and organizations make a policy decision to allow / disallow registering single individual users. Contact your organization administrator for details.
+## Signing Up On Sunbird
 
-## Login for the first time on the Platform
+Users can directly signup on the platform. On successful sign up, an auto-generated confirmation message, along with user credentials, is shared with the user. User credentials, i.e, user ID and passsword can be reset after first time sign up.
 
-1. User can directly signup to the platform. They will receive the welcome message from the administrator and further they can reset their User ID and Password
 
 ### Welcome Message 
 
@@ -24,15 +23,14 @@ The states and organizations make a policy decision to allow / disallow register
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-	<td>An auto generated <strong>Welcome</strong> message is send to the users through email. Account details along with the instructions are send</td>
+	<td>An auto generated <strong>Welcome</strong> message is send to the user through email. Account details along with the instructions are shared in this mail</td>
 	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
 	</tr>
 	</table>
 	
 ## Login 
 
-Login the Sunbird portal using your registered credentials. For login, follow the steps:
-
+Once the users have received their credentials, logging in on the portal is a seamless process.
 <table>
   <tr>
     <th style="width:35%;"><strong>Step</strong></th>
@@ -43,7 +41,7 @@ Login the Sunbird portal using your registered credentials. For login, follow th
        <ol>
          <li>Enter your <strong>Username</strong> or <strong>Email ID</strong> or <strong>Phone number</strong></li>
 	 <li>Enter your <strong>Password</strong></li>
-         <li>Click <strong>Login</strong> button</li>
+         <li>Click <strong>Login</strong></li>
 	   </ol>
     </td>
 	<td><img src="pages/features-documentation/images/loginwithphone.png"></td>
@@ -79,7 +77,7 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     <td><img src="pages/features-documentation/images/emaillink.png"></td>
   </tr>
   <tr>
-    <td>1. Login page opens <br>2. Enter <b>Email ID</b> <br>3. Enter new <b>Password</b> of your choice <br>4. Click <b>Login</b> button</td>
+    <td>1. The Login page is displayed <br>2. Enter <b>Email ID</b> <br>3. Enter new <b>Password</b> of your choice <br>4. Click <b>Login</b></td>
     <td><img src="pages/features-documentation/images/loginemail.png"></td>
   </tr>
   </table>
@@ -96,11 +94,11 @@ Login the Sunbird portal using your registered credentials. For login, follow th
     <td><img src="pages/features-documentation/images/forgotpassword1.png"></td>
   </tr>
   <tr>
-    <td>1. You will receive <b>One Time Password (OTP</b>on your registered phone number</td>
+    <td>1. You will receive an <b>One Time Password (OTP</b>on your registered phone number</td>
     <td><img src="pages/features-documentation/images/mobileotp.png"></td>
   </tr>
   <tr>
-    <td>1. Enter the <b>OTP</b> code sent to your mobile device <br>2. Click <b>Login</b> button</td>
+    <td>1. Enter the <b>OTP</b> code sent to your mobile device <br>2. Click <b>Login</b></td>
     <td><img src="pages/features-documentation/images/otpcode.png"></td>
   </tr>
 </table>
