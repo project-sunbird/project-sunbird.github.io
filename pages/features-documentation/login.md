@@ -18,7 +18,7 @@ Successful sign up on the portal is notified to the user via an auto-generated e
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-	<td>User credentials, i.e, user ID and password are shared in this mail. The user can rest these details on consecutive logins to the protal. 
+	<td>User credentials, i.e, user ID and password are shared in this mail. The user can reset these details on consecutive logins to the protal. 
 	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
 	</tr>
 	</table>
