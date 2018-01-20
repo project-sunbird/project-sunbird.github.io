@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 
-Organization administrators can use their registered credentials and add other organizations onto Sunbird. To add an organization on Sunbird, the administrator must upload necessary details of the organization(s) that has to be uploaded. 
+Organization administrators can use their registered credentials and add other organizations onto Sunbird. To add organizations on Sunbird, the administrator must upload required details of the organizations which have to be uploaded. 
 
 ## Prerequisites
 
