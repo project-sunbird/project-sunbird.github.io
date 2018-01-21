@@ -78,3 +78,13 @@ allowSearch: true
 
 - **[User Notes APIs](apis/noteapi/){:target="_blank"}** The User Notes API resources enables users to take notes on the Sunbird Platform. The basic operations include Creation, Updation,Reading & deleting.
 
+**Object APIs**
+
+- **[Object APIs](apis/objectapi/){:target="_blank"}** The Object API resource is used to store the data into sunbird.
+      - Primarily supports announcements for data storage and other related operation.
+      - Allows you to define your own repository inside sunbird and use the same to perform operations on data.
+      - an object can be used in different contexts, it is depends on how it is implemented
+      
+**Page APIs**
+ 
+ - **[Page APIs](apis/pagesapi/){:target="_blank"}** The Page resources APIs are used to set up the current page, change settings, and configure how things will be displayed to the user.
