@@ -49,3 +49,32 @@ allowSearch: true
 **Framework APIs**
 
 - **[Framework APIs](apis/framework/){:target="_blank"}** The Framework API resources is basically a supporting data structure which serves as a template. It can be used in places where the structure remains the same but only the usage changes are per requirement. These resources are used to create, update, search frameworks, channels, catergories, terms.
+
+**Audience APIs**
+
+- **[Audience APIs](apis/audienceapi/){:target="_blank"}** Audience API resources allow to get a count of users from a particular location.
+
+**Badges APIs**
+
+- **[Badges APIs](apis/badgesapi/){:target="_blank"}** The Badge API resources are used to provide recognition for skills and achievements that are earned by a user.
+
+**D.I.A.L APIs**
+
+- **[D.I.A.L APIs](apis/dialapi/){:target="_blank"}** The D.I.A.L Code (Digital Infrastructure for Augmented Learning) API resources are used for energising the textbooks.D.I.A.L code allows textbook creators to tag various pages and topics in a flexible manner using the DIAL codes (in QR code format) and these codes can be linked with digital content, thus providing easy access for the end users and a seamless physical to digital transition.
+
+**Push Notification APIs**
+
+- **[Push Notification APIs](apis/firebasecloudmessagingapi/){:target="_blank"}**  Push notification API Resource is a cross-platform solution for sending push notifications on Android, iOS, and web applications.
+
+**Geo Location APIs**
+
+- **[Geo Location APIs](apis/geolocationapi/){:target="_blank"}** Geo-location resources API classifies the organisations on the basis of their location.
+
+**Master Key APIs**
+
+- **[Master Key APIs](apis/masterkeyapi/){:target="_blank"}** The master key resources API provides access to the API and other resources with authentication protection, without authenticating it against our authentication provider.
+
+**User Notes APIs**
+
+- **[User Notes APIs](apis/noteapi/){:target="_blank"}** The User Notes API resources enables users to take notes on the Sunbird Platform. The basic operations include Creation, Updation,Reading & deleting.
+
