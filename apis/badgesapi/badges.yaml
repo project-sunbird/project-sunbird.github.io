@@ -3,7 +3,7 @@ info:
   version: '1.0'
   title: Badge API(s)
   description: >- 
-    The Sunbird Badge system is designed to provide recognition for skills and achievements that are earned a user.
+    The Badge API resources are used to provide recognition for skills and achievements that are earned by a user.
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
