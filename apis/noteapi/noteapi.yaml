@@ -3,7 +3,7 @@ info:
   version: '1.0'
   title: User Notes API(s)
   description: >-
-    The User Notes API resources performs operations related to taking notes on the Sunbird Platform. The basic operations include Creation, Updation,Reading & deleting.
+    The User Notes API resources enables users to take notes on the Sunbird Platform. The basic operations include Creation, Updation,Reading & deleting.
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
