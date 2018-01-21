@@ -163,19 +163,12 @@ paths:
             ts: 2017-05-25 10:18:56:578+0530
           body: >-
             {
-
                 "request": {
-
                     "filters":{
-
                       "provider": ["apekx"]
-
                     },
-
                     "limit": 500
-
                 }
-
             }
         expectedResponse:
           x-allowExtraHeaders: true
@@ -1029,6 +1022,279 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+ /role/read:
+    get:
+      description:  >-
+       This API is associated with fetching the role assigned to a user on the Sunbird Platform.
+          - The **_/role/read_** endpoint executes the "read role" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is:  {{host}}/data/v1/role/read
+          - It is mandatory to provide values for parameters required fields.
+          - Mandatory fields cannot be null or empty.
+      summary: Fetches User Role Information
+      tags: 
+      - User APIs
+      operationId: V1RoleReadGet
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **fetch user information** request was sent'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."fetch user information" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "fetch user information" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/role/read
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/data/v1/role/read'
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /user/profile/visibility:
+    post:
+      description:  >-
+       This API is associated with configuring the visibility of user profiles  on the Sunbird Platform.
+          - The **_/user/profile/visibility_** endpoint executes the "user profile visibility" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is:  '{{host}}/v1/user/profile/visibility'
+          - It is mandatory to provide values for parameters required fields.
+          - Mandatory fields cannot be null or empty.
+      summary: User profile Visibility
+      tags:
+      - User APIs
+      operationId: V1UserProfileVisibilityPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for user profile visibility.
+        schema:
+          $ref: '#/definitions/{{host}}~1v1~1user~1profile~1visibilityrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **user profile visibilty** request was sent'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "user profile visibilty" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /v1/user/profile/visibility
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: "{\"request\":{\n  \"userId\":\"userid\",\n  \n  \"private\":[\"gender\",\"location\",\"address\"],\n  \"public\":[\"private field name which you want to make public\"]\n}}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/v1/user/profile/visibility'
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ /org/v1/role/assign:
+    post:
+      description:  >-
+       This API is associated with assigning roles to a user on the Sunbird Platform.
+          - The **_/org/v1/role/assign_** endpoint executes the "read role" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is:  {'{{host}}/user/v1/role/assign'
+          - It is mandatory to provide values for parameters required fields.
+          - Mandatory fields cannot be null or empty.
+      summary: Assign Role to a User
+      tags:
+      - User APIs
+      operationId: OrgV1RoleAssignPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for assigning roles to user.
+        schema:
+          $ref: '#/definitions/{{host}}~1user~1v1~1role~1assignrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **assign role** request was sent'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."assign role" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "assign role" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /org/v1/role/assign
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: '{"request":{"userId":"userId","organisationId":"orgId","roles":["CONTENT_CREATION","PUBLIC","CONTENT_CREATOR","ANNOUNCEMENT_SENDER"]}}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/user/v1/role/assign'
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
 definitions:
   CreateUserrequest:
     title: Create UserRequest
@@ -1449,14 +1715,14 @@ definitions:
         description: ''
         type: object
       request:
-        $ref: '#/definitions/Request10'
+        $ref: '#/definitions/Request100'
     required:
     - id
     - ts
     - params
     - request
-  Request10:
-    title: Request10
+  Request100:
+    title: Request100
     type: object
     properties:
       userName:
@@ -1615,3 +1881,147 @@ definitions:
         type: string
     required:
     - userId
+  '{{host}}/v1/user/profile/visibilityrequest':
+    title: '{{host}}/v1/user/profile/visibilityRequest'
+    example:
+      request:
+        userId: userid
+        private:
+        - gender
+        - location
+        - address
+        public:
+        - private field name which you want to make public
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request10'
+        example:
+          userId: userid
+          private:
+          - gender
+          - location
+          - address
+          public:
+          - private field name which you want to make public
+    required:
+    - request
+  Request10:
+    title: Request10
+    example:
+      userId: userid
+      private:
+      - gender
+      - location
+      - address
+      public:
+      - private field name which you want to make public
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: userid
+        type: string
+      private:
+        description: ''
+        example:
+        - gender
+        - location
+        - address
+        type: array
+        items:
+          type: string
+      public:
+        description: ''
+        example:
+        - private field name which you want to make public
+        type: array
+        items:
+          type: string
+    required:
+    - userId
+    - private
+    - public
+  '{{host}}/user/v1/role/assignrequest':
+    title: '{{host}}/user/v1/role/assignRequest'
+    example:
+      request:
+        userId: 3d45fbd8-b911-4cc5-b503-61215902d780
+        organisationId: 0123653943740170242
+        roles:
+        - CONTENT_CREATION
+        - PUBLIC
+        - CONTENT_CREATOR
+        - ANNOUNCEMENT_SENDER
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request4'
+        example:
+          userId: userid
+          organisationId: 0123653943740170242
+          roles:
+          - CONTENT_CREATION
+          - PUBLIC
+          - CONTENT_CREATOR
+          - ANNOUNCEMENT_SENDER
+    required:
+    - request
+  Request4:
+    title: Request4
+    example:
+      userId: userid
+      organisationId: 0123653943740170242
+      roles:
+      - CONTENT_CREATION
+      - PUBLIC
+      - CONTENT_CREATOR
+      - ANNOUNCEMENT_SENDER
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: userid
+        type: string
+      organisationId:
+        description: ''
+        example: 0123653943740170242
+        type: string
+      roles:
+        description: ''
+        example:
+        - CONTENT_CREATION
+        - PUBLIC
+        - CONTENT_CREATOR
+        - ANNOUNCEMENT_SENDER
+        type: array
+        items:
+          type: string
+    required:
+    - userId
+    - organisationId
+    - roles
+  Request6:
+    title: Request6
+    example:
+      userName: manzarul1.haque@taren.com
+      source: web
+      password: password
+    type: object
+    properties:
+      userName:
+        description: ''
+        example: manzarul1.haque@taren.com
+        type: string
+      source:
+        description: ''
+        example: web
+        type: string
+      password:
+        description: ''
+        example: password
+        type: string
+    required:
+    - userName
+    - source
+    - password
