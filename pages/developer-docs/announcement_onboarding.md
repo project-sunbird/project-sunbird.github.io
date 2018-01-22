@@ -60,11 +60,11 @@ Example of a typical request object to create announcement type is as follows:
 
         "payload" : {
 
-        	"id": "<UUID>",
+        	"id": "{UUID}",
 
-        	"rootorgid": "<Tenant ID>",
+        	"rootorgid": "{Tenant ID}",
 
-            "name": "<String>",
+            "name": "{String}",
 
             "status": "active",
 
