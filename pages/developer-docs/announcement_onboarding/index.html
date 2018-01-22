@@ -28,28 +28,34 @@
 
 <h2 id="pre-requisites">Pre-requisites</h2>
 
-<ol>
+<ul>
   <li>
     <p><strong>Users</strong> are associated with <strong>Organisations</strong></p>
   </li>
   <li>
     <p><strong>Locations</strong> as an individual identity is created. Refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
   </li>
-</ol>
+</ul>
 
 <p><strong>Note:</strong> Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.</p>
 
-<ol>
+<ul>
   <li>
     <p><strong>Organisations</strong> are associated with respective <strong>Locations</strong>. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization:</p>
 
-    <p>i) Create <strong>Location</strong> in Sunbird. To create location, refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
-
-    <p>ii) Once location is created, it will provide <strong>locationId</strong></p>
-
-    <p>iii) Use same locationId while creating or updation organization. Refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></p>
+    <ol>
+      <li>
+        <p>Create <strong>Location</strong> in Sunbird. To create location, refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
+      </li>
+      <li>
+        <p>Once location is created, it will provide <strong>locationId</strong></p>
+      </li>
+      <li>
+        <p>Use same locationId while creating or updation organization. Refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></p>
+      </li>
+    </ol>
   </li>
-</ol>
+</ul>
 
 <h3 id="creating-announcements-type">Creating Announcements type</h3>
 

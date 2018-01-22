@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.11/";
+			baseURL.href="/releases/release.1.11.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-22 15:50:40 +0530">
+<meta name="last-modified" content="2018-01-22 16:06:27 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.11" />
-<meta name="buildNo" content="1265" />
+<meta name="buildVersion" content="release.1.11.a" />
+<meta name="buildNo" content="1270" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -559,28 +559,34 @@ $("a[href$='developer-docs/announcement_onboarding/']").addClass("sidebar-link-s
 
 <h2 id="pre-requisites">Pre-requisites</h2>
 
-<ol>
+<ul>
   <li>
     <p><strong>Users</strong> are associated with <strong>Organisations</strong></p>
   </li>
   <li>
     <p><strong>Locations</strong> as an individual identity is created. Refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
   </li>
-</ol>
+</ul>
 
 <p><strong>Note:</strong> Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.</p>
 
-<ol>
+<ul>
   <li>
     <p><strong>Organisations</strong> are associated with respective <strong>Locations</strong>. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization:</p>
 
-    <p>i) Create <strong>Location</strong> in Sunbird. To create location, refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
-
-    <p>ii) Once location is created, it will provide <strong>locationId</strong></p>
-
-    <p>iii) Use same locationId while creating or updation organization. Refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></p>
+    <ol>
+      <li>
+        <p>Create <strong>Location</strong> in Sunbird. To create location, refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
+      </li>
+      <li>
+        <p>Once location is created, it will provide <strong>locationId</strong></p>
+      </li>
+      <li>
+        <p>Use same locationId while creating or updation organization. Refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></p>
+      </li>
+    </ol>
   </li>
-</ol>
+</ul>
 
 <h3 id="creating-announcements-type">Creating Announcements type</h3>
 
