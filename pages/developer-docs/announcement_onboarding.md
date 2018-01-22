@@ -30,11 +30,12 @@ Ensure you have access and authorization to the following APIs before technical 
 **Note:** Announcement  feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
 
 To establish co-relation between the organization and their respective location:
-<ol> i). Create Location on Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/) ii). Once location is created, the locationId is generated iii). Use the same locationId while creating or updating the  organization. </o>
+<ol> i). Create Location on Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/) ii). Once location is created, the locationId is generated iii). Use the same locationId while creating or updating the  organization </o>
 
 For details on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
-### Creating Announcements type
+
+## Creating Announcements type
 
 Announcements are categorised into different types viz, order, circular, holidays. At any given time, there must be at least one announcement type available in the system so as to send announcements. The announcement types can be configured as per organizational requirements.
 
