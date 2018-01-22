@@ -8,18 +8,24 @@ keywords: 'Users, registration, enrollment'
 published: true
 allowSearch: true
 ---
-## Login
+Organization administrators can use their registered credentials and add individual users onto Sunbird. To add users on Sunbird, the administrator must upload required details of the users.
+## Prerequisites
 
-1. Sign in the Sunbird portal using your registered credentials
-
-## Accessing your Workspace
-
-1. Click **Profile** tab on the header <br /> **OR**
-2. Click the **Profile Icon** and select Profile
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page. You want to upload users <br>3. You have clicked on <b>Upload Users</b> 
+      </td>
+      <td><img src="pages/features-documentation/images/upldusr_prereqsite.png"></td>
+  </tr>
+    </table>
 
 ## Uploading Users
 
-1. Click **Upload Users**. The upload users page is displayed 
+1. The upload users page is displayed 
 2. Enter Provider details. **Channel ID** of the organization administrator must be entered here
 3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here <br /> **OR**
 4. Enter **OrgID**. Unique ID of the admin organization must be entered here
@@ -52,10 +58,10 @@ allowSearch: true
    17  |profileSummary |User’s profile summary |Alphanumeric |Optional |
    18  |subject  |Taught by the user |Alphanumeric |Optional |Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali
 
-7. All other columns are optional. These columns include information about the user such as: <br /> ***Note***: 
+***Note***: 
    **UserName** and **FirstName** should not be the same.
 
-8. Click **UPLOAD USERS CSV**. The explorer window is displayed
-9. Select the csv file and click **Open**
-10. The csv file is successfully uploaded
-11. On successful file upload, a process ID will be generated, else an error message is displayed
+7. Click **UPLOAD USERS CSV**. The explorer window is displayed
+8. Select the csv file and click **Open**
+9. The csv file is uploaded
+10. On successful file upload, a process ID will be generated, else an error message is displayed
