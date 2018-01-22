@@ -9,7 +9,7 @@ allowSearch: true
 ---
 ## Overview
 
-This document helps you to enable onboarding announcements feature on Sunbird. For setting up announcement feature, prerequisites need to be fullfilled. Before, ensuring the prerequisites, there are two more steps which gives better clarity to get going with the announcements feature.
+This document helps you to enable onboarding announcements feature on Sunbird. For setting up announcement feature, prerequisites need to be fullfilled. Before, ensuring the prerequisites, there are two more steps which give better clarity to get going with the announcements feature.
 
 **Who can use:**
 
@@ -31,17 +31,17 @@ Also, a user should be comfortable requesting for required APIs using Postman or
 
 1. **Users** are associated with **Organisations**
 
-2. **Locations** as an individual identity is created. 
-
-**Note:** Refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+2. **Locations** as an individual identity is created. Refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
 
 **Note:** Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
 
 3. **Organisations** are associated with respective **Locations**. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization: 
     
-        i) Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
-        ii) Once location is created, it will provide **locationId**
-        iii) Use same locationId while creating or updation organization. Refer [Organization Management APIs] (http://www.sunbird.org/apis/orgapi/)
+    i) Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+    
+    ii) Once location is created, it will provide **locationId**
+    
+    iii) Use same locationId while creating or updation organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
 ### Creating Announcements type
 
