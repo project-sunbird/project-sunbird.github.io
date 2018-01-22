@@ -11,14 +11,16 @@ allowSearch: true
 Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body or individual users can sign up on the portal.
 
 ### Signing Up On Sunbird 
+
 Successful sign up on the portal is notified to the user via an auto-generated email.
+
 <table>
 	<tr>
 		<th style="width:35%;">Step</th>
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-	<td>User credentials, i.e, user ID and password are shared in this mail. The user can reset these details on consecutive logins to the protal. 
+	<td>User credentials, i.e, user ID and password are shared in this mail. The user can reset these details on consecutive logins to the protal</td> 
 	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
 	</tr>
 	</table>
@@ -26,6 +28,7 @@ Successful sign up on the portal is notified to the user via an auto-generated e
 ## Loging In 
 
 Once the users have received their credentials, logging in on the portal is a seamless process.
+
 <table>
   <tr>
     <th style="width:35%;"><strong>Step</strong></th>
@@ -34,10 +37,10 @@ Once the users have received their credentials, logging in on the portal is a se
   <tr>
    <td>
        <ol>
-         <li>Enter your <strong>Username</strong> or <strong>Email ID</strong> or <strong>Phone number</strong></li>
-	 <li>Enter your <strong>Password</strong></li>
-         <li>Click <strong>Login</strong></li>
-	   </ol>
+         <li>Enter your <b>Username</b> or <b>Email ID</b> or <b>Phone number</b></li>
+	 <li>Enter your <b>Password</b></li>
+         <li>Click <b>Login</b></li>
+	</ol>
     </td>
 	<td><img src="pages/features-documentation/images/loginwithphone.png"></td>
     </tr>
@@ -64,7 +67,7 @@ Once the users have received their credentials, logging in on the portal is a se
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter your registered <strong>Email ID</strong> <br>2. Click <b>Submit</b></td> 
+    <td>1. Enter your registered <b>Email ID</b> <br>2. Click <b>Submit</b></td> 
     <td><img src="pages/features-documentation/images/forgotpassword1.png"></td>
   </tr>
   <tr>
