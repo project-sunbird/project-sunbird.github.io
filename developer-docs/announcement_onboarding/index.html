@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.10/";
+			baseURL.href="/releases/release.1.11/";
 		}
 	}
 	getBase();
@@ -24,18 +24,18 @@
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
 <title>Sunbird Announcement onboarding</title>
-<meta name="description" content="Sunbird Site About Announcements In Sunbird"/>
+<meta name="description" content="Sunbird Site Enable Announcement feature in Sunbird using Onboarding Announcements document"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-22 06:04:20 +0530">
+<meta name="last-modified" content="2018-01-22 15:50:40 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.10" />
-<meta name="buildNo" content="1237" />
+<meta name="buildVersion" content="release.1.11" />
+<meta name="buildNo" content="1265" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -132,8 +132,7 @@
 				<h4 class="sidebar-group-title">Product Features</h4>
 			</a>
 			<ul class="sidebar-group features-documentation" >
-				<li>
-				<!--
+				<!--<li>
 					<a href="features-documentation/onboarding/">Onboarding</a>
 				</li>-->
 				<li>
@@ -175,9 +174,9 @@
 				<li>
 					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
 				</li>
-				<li>
+				<!--<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
-				</li>
+				</li>-->
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
@@ -254,29 +253,39 @@
 						</div>
 					</li>
 					<li>
-						<a href="developer-docs/upgrading/">Upgrading</a>
-					</li>
-					<li>
 						<div class="">
-							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<a href="developer-docs/onboarding/">Onboarding</a>
 							<ul class="sidebar-group">
-								<li> 
-									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								<li>
+									<div class="">
+										<a href="developer-docs/singlesignon/overview_sso/">Onboarding via Single Sign On</a>									<ul class="sidebar-group">
+										<ul class="sidebar-group">
+											<li> 
+												<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+											</li>
+										<!--<li>
+											<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+										</li>-->
+											<li>
+												<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+											</li>
+										</ul>
+									</div>
 								</li>
-								<li>
-									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
-								<li>
-								<!--<li>
-									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
-								</li>-->
-								<li>
-									<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
-								</li>
-								<li>
-									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
-								</li>
+							<li>
+								<a href="developer-docs/announcement_onboarding/">Announcements Onboarding</a>
+							</li>
 							</ul>
 						</div>
+					</li>
+					<li>
+						<a href="developer-docs/upgrading/">Upgrading</a>
 					</li>
 					<li>
 						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
@@ -469,7 +478,7 @@ $("a[href$='developer-docs/announcement_onboarding/']").addClass("sidebar-link-s
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Announcement Onboarding </h1>
+        <h1>Announcements Onboarding </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -489,7 +498,161 @@ $("a[href$='developer-docs/announcement_onboarding/']").addClass("sidebar-link-s
 			  </a>
 			  </span>
 			</p>
-          
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#pre-requisites"><span class="tocnumber">2 .</span> <span class="toctext">Pre-requisites</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#creating-announcements-type"><span class="tocnumber">2.1 .</span> <span class="toctext">Creating Announcements type</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#assigning-roles-to-users"><span class="tocnumber">2.2 .</span> <span class="toctext">Assigning Roles to User(s)</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+
+<p>This document helps you to enable onboarding announcements feature on Sunbird. For setting up announcement feature, prerequisites need to be fullfilled. Before, ensuring the prerequisites, there are two more steps which give better clarity to get going with the announcements feature.</p>
+
+<p>
+  <strong>Who can use:</strong>
+</p>
+
+<p>To be able to follow the process of onboarding announcements feature, a user must have:</p>
+
+<ol>
+  <li>
+    <p>Access to User APIs and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Access to Organization APIs and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Access to Locations APIs and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Access to Create Object API and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Admin access to Sunbird portal.</p>
+  </li>
+</ol>
+
+<p>Also, a user should be comfortable requesting for required APIs using Postman or similar tool.</p>
+
+<h2 id="pre-requisites">Pre-requisites</h2>
+
+<ol>
+  <li>
+    <p><strong>Users</strong> are associated with <strong>Organisations</strong></p>
+  </li>
+  <li>
+    <p><strong>Locations</strong> as an individual identity is created. Refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
+  </li>
+</ol>
+
+<p><strong>Note:</strong> Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.</p>
+
+<ol>
+  <li>
+    <p><strong>Organisations</strong> are associated with respective <strong>Locations</strong>. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization:</p>
+
+    <p>i) Create <strong>Location</strong> in Sunbird. To create location, refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
+
+    <p>ii) Once location is created, it will provide <strong>locationId</strong></p>
+
+    <p>iii) Use same locationId while creating or updation organization. Refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></p>
+  </li>
+</ol>
+
+<h3 id="creating-announcements-type">Creating Announcements type</h3>
+
+<p>Announcements are categorised into following types. As a prerequisite, there must be atleast one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per the requirement of the organization.</p>
+
+<p>To create announcement types, refer <a href="http://www.sunbird.org/apis/objectapi/">Object APIs</a></p>
+
+<p>Example of a typical request object to create announcement type is as follows:</p>
+
+<pre>
+"request":{
+
+        "entityName":"announcementtype",
+
+        "indexed":true,
+
+        "payload" : {
+
+        	"id": "{UUID}",
+
+        	"rootorgid": "{Tenant ID}",
+
+            "name": "{String}",
+
+            "status": "active",
+
+            "createddate": "{timestamp}"
+
+        }
+
+}
+</pre>
+
+<p>
+  <strong>Explanation:</strong>
+</p>
+
+<p><strong>id</strong>: Generate a standard UUID using any reliable tool. For better understanding refer, <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></p>
+
+<p><strong>rootorgid</strong>: The unique ID of the tenant for which the particular announcement type is to be created.</p>
+
+<p><strong>name</strong>: Name of the announcement type.</p>
+
+<p><strong>status</strong>: This must be “active” for the announcement type to be available for use.</p>
+
+<p><strong>createddate</strong>: This must follow the format “yyyy-MM-dd HH:mm:ss:SSSZZZZ” eg: 2017-12-08 10:54:40:573+0000</p>
+
+<h3 id="assigning-roles-to-users">Assigning Roles to User(s)</h3>
+
+<p>To send announcement users must have Announcement sender role. This role can be assigned by an admin using below steps:</p>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+      <td>1. You are logged in with registered Admin credential in the portal <br />2. You are currently on <b>Home</b> page. You have clicked the <b>Profile</b></td>
+      <td><img src="pages/features-documentation/images/announcement/assignuserrole1.png" /></td>
+  </tr>
+  <tr>
+    <td>1. You search for users, to whom you want to assign sender role <br />2. Click <b>Edit</b> to assign sender role</td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Select <b>Announcement Sender</b> role <br />2. Click <b>Update</b> to assign the sender role</td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png" /></td>
+  </tr>
+</table>
+
+<p>To known more about the steps to use the functional features of announcements, refer <a href="http://www.sunbird.org/features-documentation/announcement/">Announcement</a> section on the Sunbird website.</p>
+
 
           
           <hr />

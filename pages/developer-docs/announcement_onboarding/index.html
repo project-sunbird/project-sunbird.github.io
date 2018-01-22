@@ -1,1 +1,122 @@
+<h2 id="overview">Overview</h2>
+
+<p>This document helps you to enable onboarding announcements feature on Sunbird. For setting up announcement feature, prerequisites need to be fullfilled. Before, ensuring the prerequisites, there are two more steps which give better clarity to get going with the announcements feature.</p>
+
+<p><strong>Who can use:</strong></p>
+
+<p>To be able to follow the process of onboarding announcements feature, a user must have:</p>
+
+<ol>
+  <li>
+    <p>Access to User APIs and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Access to Organization APIs and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Access to Locations APIs and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Access to Create Object API and authorization to use it.</p>
+  </li>
+  <li>
+    <p>Admin access to Sunbird portal.</p>
+  </li>
+</ol>
+
+<p>Also, a user should be comfortable requesting for required APIs using Postman or similar tool.</p>
+
+<h2 id="pre-requisites">Pre-requisites</h2>
+
+<ol>
+  <li>
+    <p><strong>Users</strong> are associated with <strong>Organisations</strong></p>
+  </li>
+  <li>
+    <p><strong>Locations</strong> as an individual identity is created. Refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
+  </li>
+</ol>
+
+<p><strong>Note:</strong> Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.</p>
+
+<ol>
+  <li>
+    <p><strong>Organisations</strong> are associated with respective <strong>Locations</strong>. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization:</p>
+
+    <p>i) Create <strong>Location</strong> in Sunbird. To create location, refer <a href="http://www.sunbird.org/apis/geolocationapi/">Geo Location APIs</a></p>
+
+    <p>ii) Once location is created, it will provide <strong>locationId</strong></p>
+
+    <p>iii) Use same locationId while creating or updation organization. Refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></p>
+  </li>
+</ol>
+
+<h3 id="creating-announcements-type">Creating Announcements type</h3>
+
+<p>Announcements are categorised into following types. As a prerequisite, there must be atleast one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per the requirement of the organization.</p>
+
+<p>To create announcement types, refer <a href="http://www.sunbird.org/apis/objectapi/">Object APIs</a></p>
+
+<p>Example of a typical request object to create announcement type is as follows:</p>
+
+<pre>
+"request":{
+
+        "entityName":"announcementtype",
+
+        "indexed":true,
+
+        "payload" : {
+
+        	"id": "{UUID}",
+
+        	"rootorgid": "{Tenant ID}",
+
+            "name": "{String}",
+
+            "status": "active",
+
+            "createddate": "{timestamp}"
+
+        }
+
+}
+</pre>
+
+<p><strong>Explanation:</strong></p>
+
+<p><strong>id</strong>: Generate a standard UUID using any reliable tool. For better understanding refer, <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></p>
+
+<p><strong>rootorgid</strong>: The unique ID of the tenant for which the particular announcement type is to be created.</p>
+
+<p><strong>name</strong>: Name of the announcement type.</p>
+
+<p><strong>status</strong>: This must be “active” for the announcement type to be available for use.</p>
+
+<p><strong>createddate</strong>: This must follow the format “yyyy-MM-dd HH:mm:ss:SSSZZZZ” eg: 2017-12-08 10:54:40:573+0000</p>
+
+<h3 id="assigning-roles-to-users">Assigning Roles to User(s)</h3>
+
+<p>To send announcement users must have Announcement sender role. This role can be assigned by an admin using below steps:</p>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+      <td>1. You are logged in with registered Admin credential in the portal <br />2. You are currently on <b>Home</b> page. You have clicked the <b>Profile</b></td>
+      <td><img src="pages/features-documentation/images/announcement/assignuserrole1.png" /></td>
+  </tr>
+  <tr>
+    <td>1. You search for users, to whom you want to assign sender role <br />2. Click <b>Edit</b> to assign sender role</td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Select <b>Announcement Sender</b> role <br />2. Click <b>Update</b> to assign the sender role</td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png" /></td>
+  </tr>
+</table>
+
+<p>To known more about the steps to use the functional features of announcements, refer <a href="http://www.sunbird.org/features-documentation/announcement/">Announcement</a> section on the Sunbird website.</p>
 

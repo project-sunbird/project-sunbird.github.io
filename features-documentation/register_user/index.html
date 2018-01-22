@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.10/";
+			baseURL.href="/releases/release.1.11/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-22 06:04:20 +0530">
+<meta name="last-modified" content="2018-01-22 15:50:40 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.10" />
-<meta name="buildNo" content="1237" />
+<meta name="buildVersion" content="release.1.11" />
+<meta name="buildNo" content="1265" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -132,8 +132,7 @@
 				<h4 class="sidebar-group-title">Product Features</h4>
 			</a>
 			<ul class="sidebar-group features-documentation" >
-				<li>
-				<!--
+				<!--<li>
 					<a href="features-documentation/onboarding/">Onboarding</a>
 				</li>-->
 				<li>
@@ -175,9 +174,9 @@
 				<li>
 					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
 				</li>
-				<li>
+				<!--<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
-				</li>
+				</li>-->
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
@@ -254,29 +253,39 @@
 						</div>
 					</li>
 					<li>
-						<a href="developer-docs/upgrading/">Upgrading</a>
-					</li>
-					<li>
 						<div class="">
-							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<a href="developer-docs/onboarding/">Onboarding</a>
 							<ul class="sidebar-group">
-								<li> 
-									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								<li>
+									<div class="">
+										<a href="developer-docs/singlesignon/overview_sso/">Onboarding via Single Sign On</a>									<ul class="sidebar-group">
+										<ul class="sidebar-group">
+											<li> 
+												<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+											</li>
+										<!--<li>
+											<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+										</li>-->
+											<li>
+												<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+											</li>
+										</ul>
+									</div>
 								</li>
-								<li>
-									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
-								<li>
-								<!--<li>
-									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
-								</li>-->
-								<li>
-									<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
-								</li>
-								<li>
-									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
-								</li>
+							<li>
+								<a href="developer-docs/announcement_onboarding/">Announcements Onboarding</a>
+							</li>
 							</ul>
 						</div>
+					</li>
+					<li>
+						<a href="developer-docs/upgrading/">Upgrading</a>
 					</li>
 					<li>
 						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
@@ -500,36 +509,32 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#login"><span class="tocnumber">1 .</span> <span class="toctext">Login</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-2">
-              <a href="#accessing-your-workspace"><span class="tocnumber">2 .</span> <span class="toctext">Accessing your Workspace</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-3">
-              <a href="#uploading-users"><span class="tocnumber">3 .</span> <span class="toctext">Uploading Users</span></a>
+              <a href="#uploading-users"><span class="tocnumber">1 .</span> <span class="toctext">Uploading Users</span></a>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><h2 id="login">Login</h2>
+</div><p>Organization administrators can use their registered credentials and add individual users onto Sunbird. To add users on Sunbird, the administrator must upload required details of the users.
+## Prerequisites</p>
 
-<ol>
-  <li>Sign in the Sunbird portal using your registered credentials</li>
-</ol>
-
-<h2 id="accessing-your-workspace">Accessing your Workspace</h2>
-
-<ol>
-  <li>Click <strong>Profile</strong> tab on the header <br /> <strong>OR</strong></li>
-  <li>Click the <strong>Profile Icon</strong> and select Profile</li>
-</ol>
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br />2. You are currently on <strong>Profile</strong> page. You want to upload users <br />3. You have clicked on <b>Upload Users</b> 
+      </td>
+      <td><img src="pages/features-documentation/images/upldusr_prereqsite.png" /></td>
+  </tr>
+    </table>
 
 <h2 id="uploading-users">Uploading Users</h2>
 
 <ol>
-  <li>Click <strong>Upload Users</strong>. The upload users page is displayed</li>
+  <li>The upload users page is displayed</li>
   <li>Enter Provider details. <strong>Channel ID</strong> of the organization administrator must be entered here</li>
   <li>Enter <strong>External ID</strong>. Unique ID of the user that has to be uploaded must be entered here <br /> <strong>OR</strong></li>
   <li>
@@ -704,13 +709,15 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
       </tbody>
     </table>
   </li>
-  <li>
-    <p>All other columns are optional. These columns include information about the user such as: <br /> <strong><em>Note</em></strong>: 
-<strong>UserName</strong> and <strong>FirstName</strong> should not be the same.</p>
-  </li>
+</ol>
+
+<p><strong><em>Note</em></strong>: 
+   <strong>UserName</strong> and <strong>FirstName</strong> should not be the same.</p>
+
+<ol>
   <li>Click <strong>UPLOAD USERS CSV</strong>. The explorer window is displayed</li>
   <li>Select the csv file and click <strong>Open</strong></li>
-  <li>The csv file is successfully uploaded</li>
+  <li>The csv file is uploaded</li>
   <li>On successful file upload, a process ID will be generated, else an error message is displayed</li>
 </ol>
 

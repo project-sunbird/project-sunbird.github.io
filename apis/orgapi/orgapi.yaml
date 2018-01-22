@@ -992,7 +992,8 @@ definitions:
       request:
         externalId: 1206
         provider: test
-        description: Anhra State Boardsssssss
+        description: Andhra State Boards
+        locationId : locationidvalue
         address:
           country: India
           zipCode: 560035
@@ -1255,6 +1256,7 @@ definitions:
         provider: test12
         isRootOrg: true
         channel: test12
+        locationId : locationIdValue
     type: object
     properties:
       request:

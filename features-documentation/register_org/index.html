@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.10/";
+			baseURL.href="/releases/release.1.11/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-22 06:04:20 +0530">
+<meta name="last-modified" content="2018-01-22 15:50:40 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.10" />
-<meta name="buildNo" content="1237" />
+<meta name="buildVersion" content="release.1.11" />
+<meta name="buildNo" content="1265" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -132,8 +132,7 @@
 				<h4 class="sidebar-group-title">Product Features</h4>
 			</a>
 			<ul class="sidebar-group features-documentation" >
-				<li>
-				<!--
+				<!--<li>
 					<a href="features-documentation/onboarding/">Onboarding</a>
 				</li>-->
 				<li>
@@ -175,9 +174,9 @@
 				<li>
 					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
 				</li>
-				<li>
+				<!--<li>
 					<a href="features-documentation/contentcreation/">Content Creation</a>
-				</li>
+				</li>-->
 				<li>
 					<a href="features-documentation/contenteditor/">Content Editor</a>
 				</li>
@@ -254,29 +253,39 @@
 						</div>
 					</li>
 					<li>
-						<a href="developer-docs/upgrading/">Upgrading</a>
-					</li>
-					<li>
 						<div class="">
-							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
+							<a href="developer-docs/onboarding/">Onboarding</a>
 							<ul class="sidebar-group">
-								<li> 
-									<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+								<li>
+									<div class="">
+										<a href="developer-docs/singlesignon/overview_sso/">Onboarding via Single Sign On</a>									<ul class="sidebar-group">
+										<ul class="sidebar-group">
+											<li> 
+												<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+											</li>
+										<!--<li>
+											<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+										</li>-->
+											<li>
+												<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+											</li>
+										</ul>
+									</div>
 								</li>
-								<li>
-									<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
-								<li>
-								<!--<li>
-									<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
-								</li>-->
-								<li>
-									<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
-								</li>
-								<li>
-									<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
-								</li>
+							<li>
+								<a href="developer-docs/announcement_onboarding/">Announcements Onboarding</a>
+							</li>
 							</ul>
 						</div>
+					</li>
+					<li>
+						<a href="developer-docs/upgrading/">Upgrading</a>
 					</li>
 					<li>
 						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
@@ -522,7 +531,7 @@ $("a[href$='features-documentation/register_org/']").addClass("sidebar-link-sele
   <tr>
     <td>1. You are logged in <br />2. You are currently on <strong>Profile</strong> page. You want to upload organizations <br />3. You have clicked on <b>Upload Organizations</b> 
       </td>
-      <td><img src="pages/features-documentation/images/announcement/upldorg_prereqsite.png" /></td>
+      <td><img src="pages/features-documentation/images/upldorg_prereqsite.png" /></td>
   </tr>
     </table>
 
