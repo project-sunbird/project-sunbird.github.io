@@ -45,7 +45,7 @@ Also, a user should be comfortable requesting for required APIs using Postman or
 
 ### Creating Announcements type
 
-Announcements are categorised into following types. As a prerequisite, there must be atleast one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per the requirement of the organization.
+Announcements are categorised into different types viz, order, circular, holidays etc. As a prerequisite, there must be atleast one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per the requirement of the organization.
 
 To create announcement types, refer [Object APIs](http://www.sunbird.org/apis/objectapi/)
 
