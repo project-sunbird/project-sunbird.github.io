@@ -98,7 +98,7 @@ To send announcement users must have Announcement sender role. This role can be 
   </tr>
   <tr>
       <td>1. You are logged in with registered Admin credential in the portal <br>2. You are currently on <b>Home</b> page. You have clicked the <b>Profile</b></td>
-      <td><td><img src="pages/features-documentation/images/announcement/assignuserrole1.png"></td>
+      <td><img src="pages/features-documentation/images/announcement/assignuserrole1.png"></td>
   </tr>
     <td>1. You search for users, to whom you want to assign sender role <br>2. Click <b>Edit</b> to assign sender role</td>
     <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png"></td>
@@ -108,6 +108,6 @@ To send announcement users must have Announcement sender role. This role can be 
   </tr>
 </table>
 
-To known more about the steps to use the functional features of announcements, refer [Announcement](http://www.sunbird.org/features-documentation/announcement/)
+To known more about the steps to use the functional features of announcements, refer [Announcement](http://www.sunbird.org/features-documentation/announcement/) section on the Sunbird website.
      
          
