@@ -68,7 +68,7 @@ Example of a typical request object to create announcement type is as follows:
 
             "status": "active",
 
-            "createddate": "<timestamp>"
+            "createddate": "{timestamp}"
 
         }
 
