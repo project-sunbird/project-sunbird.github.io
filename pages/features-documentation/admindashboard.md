@@ -19,7 +19,7 @@ In Sunbird, **Admin Dashboard** is an interface that organizes and presents all 
   <tr>
     <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all contents which are created, ready for reviewing  and publishing  <br>3. You have clicked the <b>Admin Dashboard</b> from the profile drop down 
       </td>
-      <td><img src="pages/features-documentation/images/admindashboard/prerequisite.png"></td>
+      <td><img src="pages/features-documentation/images/admindashboard/prerequisites.png"></td>
   </tr>
 </table>
     
