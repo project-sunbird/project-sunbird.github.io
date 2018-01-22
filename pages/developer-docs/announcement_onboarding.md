@@ -25,15 +25,15 @@ Ensure you have access and authorization to the following APIs before technical 
 2. The user has administration rights on DIKSHA
 3. The user is familiar with requesting APIs using Postman or similar tools
 4. Locations as an individual identity is created. [Refer Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+5. Organisations are associated with their respective locations.
 
 **Note:** Announcement  feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
 
-5. Organisations are associated with their respective locations.
-
-To establish co-relation between the organization and their respective location: 
-    i) Create Location on DIKSHA. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
-    ii) Once location is created, the locationId is generated
-    iii) Use the same locationId while creating or updating the  organization. For details on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
+To establish co-relation between the organization and their respective location:
+i). Create Location on DIKSHA. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+ii). Once location is created, the locationId is generated
+iii). Use the same locationId while creating or updating the  organization. 
+For details on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
 ### Creating Announcements type
 
