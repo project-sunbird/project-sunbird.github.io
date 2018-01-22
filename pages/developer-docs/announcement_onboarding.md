@@ -19,7 +19,7 @@ Ensure you have access and authorization to the following APIs before technical 
 4. Create Object API 
 5. Admin access to Sunbird portal.
 
-### Prerequisites
+## Prerequisites
 
 1. The users  is part of an organization
 2. The user has administration rights on Sunbird
@@ -30,13 +30,13 @@ Ensure you have access and authorization to the following APIs before technical 
 **Note:** Announcement  feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
 
 To establish co-relation between the organization and their respective location:
-i). Create Location on Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
-ii). Once location is created, the locationId is generated 
-iii). Use the same locationId while creating or updating the  organization 
+1. Create Location on Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+2. Once location is created, the locationId is generated 
+3. Use the same locationId while creating or updating the  organization 
 
 For details on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
-### Creating Announcements type
+## Creating Announcements type
 
 Announcements are categorised into different types viz, order, circular, holidays. At any given time, there must be at least one announcement type available in the system so as to send announcements. The announcement types can be configured as per organizational requirements.
 
@@ -81,7 +81,7 @@ Example of a typical request object to create announcement type is as follows:
 
 **createddate**: This must follow the format "yyyy-MM-dd HH:mm:ss:SSSZZZZ" eg: 2017-12-08 10:54:40:573+0000
 
-### Assigning Roles to User(s)
+## Assigning Roles to User(s)
 
 To send announcements, the user must be assigned the role of an announcement sender.To assign this role:
 
