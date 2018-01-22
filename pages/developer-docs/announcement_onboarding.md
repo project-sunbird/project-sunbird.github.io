@@ -12,6 +12,7 @@ allowSearch: true
 This section helps you to enable onboarding announcements feature on Sunbird.
 
 Ensure you have access and authorization to the following APIs before technical integration:
+
 1. User APIs 
 2. Organization APIs 
 3. Locations APIs
@@ -28,9 +29,12 @@ Ensure you have access and authorization to the following APIs before technical 
 **Note:** Announcement  feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
 
 5. Organisations are associated with their respective locations.
-To establish co-relation between the organization and their respective location:    
+To establish co-relation between the organization and their respective location: 
+
     i) Create Location on DIKSHA. To create location, refer Geo Location APIs
+    
     ii) Once location is created, the locationId is generated
+    
     iii) Use the same locationId while creating or updating the  organization. For details on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
 ### Creating Announcements type
