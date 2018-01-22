@@ -21,7 +21,7 @@ Organization administrators can use their registered credentials and add other o
   <tr>
     <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page. You want to upload organizations <br>3. You have clicked on <b>Upload Organizations</b> 
       </td>
-      <td><img src="pages/features-documentation/images/announcement/upldorg_prereqsite.png"></td>
+      <td><img src="pages/features-documentation/images/upldorg_prereqsite.png"></td>
   </tr>
     </table>
 
