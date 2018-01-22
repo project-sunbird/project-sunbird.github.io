@@ -100,9 +100,11 @@ To send announcement users must have Announcement sender role. This role can be 
       <td>1. You are logged in with registered Admin credential in the portal <br>2. You are currently on <b>Home</b> page. You have clicked the <b>Profile</b></td>
       <td><img src="pages/features-documentation/images/announcement/assignuserrole1.png"></td>
   </tr>
+  <tr>
     <td>1. You search for users, to whom you want to assign sender role <br>2. Click <b>Edit</b> to assign sender role</td>
     <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png"></td>
   </tr>
+  <tr>
     <td>1. Select <b>Announcement Sender</b> role <br>2. Click <b>Update</b> to assign the sender role</td>
     <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png"></td>
   </tr>
