@@ -27,6 +27,7 @@ This section helps users to enable onboarding announcements feature on Sunbird.E
 **Note:** Announcement  feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
 
 To establish co-relation between the organization and their respective location:
+
 1. Create Location on Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
 2. Once location is created, the locationId is generated 
 3. Use the same locationId while creating or updating the  organization 
