@@ -1,0 +1,308 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Badge API(s)
+  description: >- 
+    The Badge API resources are used to provide recognition for skills and achievements that are earned by a user.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /v1/badges
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /list:
+    get:
+      description:  >-
+       This API is associated with listing the user badges on the Sunbird Platform.
+          - The **_/list_** endpoint executes the "V1BadgesListGet" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: List badges of user
+      tags:
+      - Badge APIs
+      operationId: V1BadgesListGet
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **list badges** request was sent'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."list badges" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "list badges" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /v1/badges/list
+          headers:
+            Content-Type: application/json
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            x-authenticated-user-token: '{{user-token}}'
+            Authorization: Bearer {{api-key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: provides list of badges
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badges/add:
+    post:
+      description: >-
+       This API is associated with listing the user badges on the Sunbird Platform.
+          - The **_/badges/add_** endpoint executes the "VserV1BadgesAddPost" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Add badges to user
+      tags:
+      - Badge APIs
+      operationId: UserV1BadgesAddPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for adding badges to user.
+        schema:
+          $ref: '#/definitions/AddBadgesToUserrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which add badges request was sent'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."add badges" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "add badges" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /user/v1/badges/add
+          headers:
+            Content-Type: application/json
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            x-authenticated-user-token: '{{user-token}}'
+            Authorization: Bearer {{api-key}}
+          body: "{\r\n \"params\": { },\r\n    \"request\":{                 \r\n      \"badgeTypeId\": \"0123206539020943360\",\r\n    \"receiverId\" :\"96d2f097-3f82-4d83-97de-79a58356a254\"\r\n      \r\n    }\r\n } "
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: add badges to user
+        x-testDescription: add badge to user
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  AddBadgesToUserrequest:
+    title: add badges to userRequest
+    example:
+      params: {}
+      request:
+        badgeTypeId: 0123206539020943360
+        receiverId: 96d2f097-3f82-4d83-97de-79a58356a254
+    type: object
+    properties:
+      params:
+        description: ''
+        example: {}
+        type: object
+      request:
+        $ref: '#/definitions/Request'
+        example:
+          badgeTypeId: 0123206539020943360
+          receiverId: 96d2f097-3f82-4d83-97de-79a58356a254
+    required:
+    - params
+    - request
+  Request:
+    title: Request
+    example:
+      badgeTypeId: 0123206539020943360
+      receiverId: 96d2f097-3f82-4d83-97de-79a58356a254
+    type: object
+    properties:
+      badgeTypeId:
+        description: ''
+        example: 0123206539020943360
+        type: string
+      receiverId:
+        description: ''
+        example: 96d2f097-3f82-4d83-97de-79a58356a254
+        type: string
+    required:
+    - badgeTypeId
+    - receiverId
+
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'

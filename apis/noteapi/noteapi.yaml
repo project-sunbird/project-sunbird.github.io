@@ -1,0 +1,843 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: User Notes API(s)
+  description: >-
+    The User Notes API resources enables users to take notes on the Sunbird Platform. The basic operations include Creation, Updation,Reading & deleting.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath:  /notes/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description: >-
+       This API is associated with creating user note on Sunbird platform.
+          - The **_/notes/v1/create_** endpoint executes the "create user note" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Create Note
+      tags: 
+      - Note APIs
+      operationId: NotesV1CreatePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for creating user notes.
+        schema:
+          $ref: '#/definitions/CreateNoteForUserrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which creating user notes request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."create user note" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "create user note" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /notes/v1/create
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            X-Device-ID: X-Device-ID
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: "{\n    \"request\":{\n             \"userId\" : \"userid\", \n      \"title\" : \"title 2\",\n      \"note\" : \"This is a test Note\", \n      \"courseId\" : \"alpha01crs\",  \n      \"contentId\" : \"alpha01crs\",\n      \"tags\": [\"test\",\"note1\"] \n      } \n   }"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Create Note for user
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /read/{noteid}:
+    parameters:
+    - in: path
+      name: noteId
+      type: string
+      required: true
+      description: 'Please append a valid note Id To the request URL'
+    get:
+      description:  >-
+       This API is associated with fetching a user note on Sunbird platform.
+          - The **_/notes/v1/create_** endpoint executes the "fetching user note" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Get Existing Notes
+      tags: 
+      - Note APIs
+      operationId: NotesV1Read0123349258019635200Get
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which fetching user note request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."fetch user note" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "fetch user note" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /notes/v1/read/{noteid}
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get created notes
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update/{noteId}:
+    parameters:
+    - in: path
+      name: noteId
+      type: string
+      required: true
+      description: 'Please append a valid note Id To the request URL'
+    patch:
+      description: >-
+       This API is associated with  updating user note on Sunbird platform.
+          - The **_/v1/notes/update/{noteId}_** endpoint executes the "update user note" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Update Note
+      tags: 
+      - Note APIs
+      operationId: V1NotesUpdate0123329248758743040Patch
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for updating user notes.
+        schema:
+          $ref: '#/definitions/UpdateNoterequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which updating user note request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."update user note" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "update user note" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /v1/notes/update/{noteid}
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: >-
+            {
+                "id":"unique API ID",
+                    "ts":"2013/10/15 16:16:39",
+                     "params": { },
+                  "request" : {
+                  "note" : "My notes1 update 1",
+                  "title" : "updated title",
+                  "tags": ["tag1"]
+                  }
+                }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Update Note
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /delete/{noteId}:
+    parameters:
+    - in: path
+      name: noteId
+      type: string
+      required: true
+      description: 'Please append a valid note Id To the request URL'
+    delete:
+      description: >-
+       This API is associated with deleting a user note on Sunbird platform.
+          - The **_ /notes/v1/delete/{noteId}_** endpoint executes the "delete note" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Delete Note
+      tags: 
+      - Note APIs
+      operationId: NotesV1Delete0123329248758743040Delete
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which delete note request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."delete note" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "delete note" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: DELETE
+          uri: /notes/v1/delete/{noteid}
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Delete Note
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /search:
+    post:
+      description: >-
+       This API is associated with Searching for a user note on Sunbird platform.
+          - The **_/notes/v1/create_** endpoint executes the "Searching for a user note" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Search User Note
+      tags: 
+      - Note APIs
+      operationId: NotesV1SearchPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for Searching for a user note
+        schema:
+          $ref: '#/definitions/SearchNoterequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which search user note request was sent.'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: 'The token/key used to execute the API'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."search user note request" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "search user note request" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /notes/v1/search
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: >-
+            {
+              "request" : {
+                "query" : "note",
+                "filters" : {
+                  "userId" : "userid"
+                },
+                "offset" : 0,
+                "limit" : 2,
+                "sort_by" : {"updatedDate" : "asc"}
+              }
+              }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Search Note
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  '{{host}}/v1/user/forgotpasswordrequest':
+    title: '{{host}}/v1/user/forgotpasswordRequest'
+    example:
+      id: unique API ID
+      ts: 2013/10/15 16:16:39
+      params: {}
+      request:
+        userName: amit127.kumar17
+    type: object
+    properties:
+      id:
+        description: ''
+        type: string
+      ts:
+        description: ''
+        type: string
+      params:
+        description: ''
+        type: object
+      request:
+        $ref: '#/definitions/Request100'
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request100:
+    title: Request100
+    type: object
+    properties:
+      userName:
+        description: ''
+        type: string
+    required:
+    - userName
+  UpdateNoterequest:
+    title: Update NoteRequest
+    example:
+      id: unique API ID
+      ts: 2013/10/15 16:16:39
+      params: {}
+      request:
+        note: My notes1 update 1
+        title: updated title
+        tags:
+        - tag1
+    type: object
+    properties:
+      id:
+        description: ''
+        example: unique API ID
+        type: string
+      ts:
+        description: ''
+        example: 2013/10/15 16:16:39
+        type: string
+      params:
+        description: ''
+        example: {}
+        type: object
+      request:
+        $ref: '#/definitions/Request'
+        example:
+          note: My notes1 update 1
+          title: updated title
+          tags:
+          - tag1
+    required:
+    - id
+    - ts
+    - params
+    - request
+  Request:
+    title: Request
+    example:
+      note: My notes1 update 1
+      title: updated title
+      tags:
+      - tag1
+    type: object
+    properties:
+      note:
+        description: ''
+        example: My notes1 update 1
+        type: string
+      title:
+        description: ''
+        example: updated title
+        type: string
+      tags:
+        description: ''
+        example:
+        - tag1
+        type: array
+        items:
+          type: string
+    required:
+    - note
+    - title
+    - tags
+  CreateNoteForUserrequest:
+    title: Create Note for userRequest
+    example:
+      request:
+        userId: userid
+        title: title 2
+        note: This is a test Note
+        courseId: alpha01crs
+        contentId: alpha01crs
+        tags:
+        - test
+        - note1
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request3'
+        example:
+          userId: userid
+          title: title 2
+          note: This is a test Note
+          courseId: alpha01crs
+          contentId: alpha01crs
+          tags:
+          - test
+          - note1
+    required:
+    - request
+  Request3:
+    title: Request3
+    example:
+      userId: userid
+      title: title 2
+      note: This is a test Note
+      courseId: alpha01crs
+      contentId: alpha01crs
+      tags:
+      - test
+      - note1
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: userid
+        type: string
+      title:
+        description: ''
+        example: title 2
+        type: string
+      note:
+        description: ''
+        example: This is a test Note
+        type: string
+      courseId:
+        description: ''
+        example: alpha01crs
+        type: string
+      contentId:
+        description: ''
+        example: alpha01crs
+        type: string
+      tags:
+        description: ''
+        example:
+        - test
+        - note1
+        type: array
+        items:
+          type: string
+    required:
+    - userId
+    - title
+    - note
+    - courseId
+    - contentId
+    - tags
+  SearchNoterequest:
+    title: Search NoteRequest
+    example:
+      request:
+        query: note
+        filters:
+          userId: userid
+        offset: 0
+        limit: 2
+        sort_by:
+          updatedDate: asc
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request5'
+        example:
+          query: note
+          filters:
+            userId: userid
+          offset: 0
+          limit: 2
+          sort_by:
+            updatedDate: asc
+    required:
+    - request
+  Request5:
+    title: Request5
+    example:
+      query: note
+      filters:
+        userId: userid
+      offset: 0
+      limit: 2
+      sort_by:
+        updatedDate: asc
+    type: object
+    properties:
+      query:
+        description: ''
+        example: note
+        type: string
+      filters:
+        $ref: '#/definitions/Filters'
+        example:
+          userId: userid
+      offset:
+        description: ''
+        example: 0
+        type: integer
+        format: int32
+      limit:
+        description: ''
+        example: 2
+        type: integer
+        format: int32
+      sort_by:
+        $ref: '#/definitions/SortBy'
+        example:
+          updatedDate: asc
+    required:
+    - query
+    - filters
+    - offset
+    - limit
+    - sort_by
+  Filters:
+    title: Filters
+    example:
+      userId: userid
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: userid
+        type: string
+    required:
+    - userId
+  SortBy:
+    title: SortBy
+    example:
+      updatedDate: asc
+    type: object
+    properties:
+      updatedDate:
+        description: ''
+        example: asc
+        type: string
+    required:
+    - updatedDate

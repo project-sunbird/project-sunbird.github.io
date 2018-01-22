@@ -1,0 +1,1399 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: User Notes API(s)
+  description: >-
+    The D.I.A.L Code (Digital Infrastructure for Augmented Learning) API resources are used for energising the textbooks.
+     - D.I.A.L code allows textbook creators to tag various pages and topics in a flexible manner using the DIAL codes (in QR code format) and these codes can be linked with digital content, thus providing easy access for the end users and a seamless physical to digital transition.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath:  /dialcode/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /process/status/{processId}:
+    parameters:
+    - in: path
+      name: processId
+      type: string
+      required: true
+      description: 'Please append a valid note Id To the request URL'
+    get:
+      description:  >-
+       This API is associated with fetching the process Id while generating DIAL codes or when DIAL codes are listed.
+          - The **_/process/status/{processId}_** endpoint executes the "Get process status" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Get Process Status
+      tags:
+      - DIAL APIs
+      operationId: ProcessStatusGet
+      produces:
+      - application/json
+      parameters:
+      - name: processId
+        in: path
+        required: true
+        type: string
+        description: 'The process id is unique Id which is returned while generation or listing of DIAL codes'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get Process Status" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Get Process Status" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /process/status
+          headers:
+            X-Channel-ID: sunbird
+            Content-Type: application/json
+            Authorization: Bearer {{api_key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get Process Status
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /generate:
+    post:
+      description:  >-
+       This API is associated with generating DIAL code.
+          - The **_ /generate_** endpoint executes the "Generate DIAL code" request based on parameters provided as metadata in the request body to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Generate DIAL code
+      tags:
+      - DIAL APIs
+      operationId: GeneratePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for Generating DIAL code.
+        schema:
+          $ref: '#/definitions/GenerateDialcoderequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Generate DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Generate DIAL code" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /generate
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "dialcodes": {
+                  "count": 1,
+                  "publisher": "Sunbird"
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Generate dialcode
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /publisher/create:
+    post:
+      description:  >-
+       This API is associated with creating a publisher , A publisher owns the DIAL code
+          - The **_/publisher/create_** endpoint executes the "Create Publisher" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Create Publisher
+      tags:
+      - DIAL APIs
+      operationId: PublisherCreatePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for Creating Publisher.
+        schema:
+          $ref: '#/definitions/CreatePublisherrequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Create Publisher" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Create Publisher" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /publisher/create
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "publisher": {
+                  "identifier": "Sunbird",
+                  "name": "Sunbird Portal"
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Create publisher
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /read:
+    post:
+      description:  >-
+       This API is associated with fetching/reading the DIAL code 
+          - The **_/read_** endpoint executes the "Get DIAL code" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Get DIAL Code
+      tags:
+      - DIAL APIs
+      operationId: ReadPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for fetching/reading DIAL code
+        schema:
+          $ref: '#/definitions/GetDialcoderequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Get DIAL code" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /read
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "dialcode": {
+                  "identifier": "Q13PMP"
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get dialcode
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /publisher/read/{publisherId}:
+    parameters:
+    - in: path
+      name: publisherId
+      type: string
+      required: true
+      description: 'Please append a valid note Id To the request URL'
+    get:
+      description:  >-
+       This API is associated with fetching a specific publisher owning a DIAL code.
+          - The **_/publisher/read/{publisherId}}_** endpoint executes the "Get Publisher" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Get Publisher
+      tags:
+      - DIAL APIs
+      operationId: PublisherReadSunbirdGet
+      produces:
+      - application/json
+      parameters:
+      - name: publisherId
+        in: path
+        required: true
+        type: string
+        description: 'It identifies a publisher uniquely'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get Publisher" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Get Publisher" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /publisher/read/Sunbird
+          headers:
+            X-Channel-ID: sunbird
+            Content-Type: application/json
+            Authorization: Bearer {{api_key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get publisher
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update/{dialcode}:
+    parameters:
+    - in: path
+      name: dialcode
+      type: string
+      required: true
+      description: 'Please append a valid note Id To the request URL'
+    patch:
+      description:  >-
+       This API is associated with updating the DIAL code.
+          - The **_/update/{dialcode}_** endpoint executes the "Update DIAL code" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Update DIAL code
+      tags:
+      - DIAL APIs
+      operationId: UpdateQ13PMPPatch
+      produces:
+      - application/json
+      parameters:
+      - name: dialcode
+        in: path
+        required: true
+        type: string
+        description: 'The dialcode identifier which you want to update'
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for updating DIAL code.
+        schema:
+          $ref: '#/definitions/UpdateDialcoderequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Update DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Update DIAL code" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /update/Q13PMP
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "dialcode": {
+                  "publisher": "Sunbird",
+                  "tags": ["test"]
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: update dialcode
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /publisher/update/{publisherId}:
+    parameters:
+    - in: path
+      name: publisherId
+      type: string
+      required: true
+      description: 'Please append a valid note Id To the request URL'
+    patch:
+      description:  >-
+       This API is associated with updating specific DIAL code publisher.
+          - The **_/publisher/update/{publisherId}_** endpoint executes the "Update Publisher" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Update Publisher
+      tags:
+      - DIAL APIs
+      operationId: PublisherUpdateSunbirdPatch
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for updating specific publisher.
+        schema:
+          $ref: '#/definitions/UpdatePublisherrequest'
+      - name: publisherId
+        in: path
+        required: true
+        type: string
+        description: 'The publisher identifier which require to be updated'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Update Publisher" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Update Publisher" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /publisher/update/Sunbird
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "publisher": {
+                  "name": "Anuj Kumar Gupta"
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Update publisher
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /publish:
+    post:
+      description:  >-
+       This API is associated with publishing the  DIAL code.
+          - The **_/process/status/{processId}_** endpoint executes the "Publish DIAL code" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Publish DIAL code
+      tags:
+      - DIAL APIs
+      operationId: PublishQ13PMPPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for Publishing DIAL code.
+        schema:
+          $ref: '#/definitions/PublishDialcoderequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Publish DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Publish DIAL code" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /publish/Q13PMP
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Publish dialcode
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /content/link:
+    post:
+      description:  >-
+         This API is associated with linking DIAL code to the conten
+          -  The **_/content/link_** endpoint executes the "Link DIAL code" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Link DIAL code
+      tags:
+      - DIAL APIs
+      operationId: ContentLinkPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for Linking DIAL code.
+        schema:
+          $ref: '#/definitions/LinkDialcoderequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Link DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Link DIAL code" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /content/link
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "content": {
+                  "identifier": [""],
+                  "dialcode": [""]
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Link dialcode
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /search:
+    post:
+      description:  >-
+       This API is associated with searching a DIAL code.
+          - The **_/search_** endpoint executes the "search DIAL code" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Search DIAL code
+      tags:
+      - DIAL APIs
+      operationId: SearchPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for searching DIAL code
+        schema:
+          $ref: '#/definitions/SearchDialcoderequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."search DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "search DIAL code" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /search
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "search": {
+                  "status": "Draft"
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Search dialcode
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /list:
+    post:
+      description:  >-
+       This API is associated with listing the DIAL codes 
+          - The **_/list_** endpoint executes the "List DIAL code" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: List DIAL code
+      tags:
+      - DIAL APIs
+      operationId: ListPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for updating user notes.
+        schema:
+          $ref: '#/definitions/ListDialcoderequest'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."List DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "List DIAL code" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /list
+          headers:
+            Content-Type: application/json
+            X-Channel-ID: sunbird
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "search": {
+                  "publisher": "Sunbird"
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: list dialcode
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  GenerateDialcoderequest:
+    title: Generate dialcodeRequest
+    example:
+      request:
+        dialcodes:
+          count: 1
+          publisher: Sunbird
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+    - request
+  Request:
+    title: Request
+    example:
+      dialcodes:
+        count: 1
+        publisher: Sunbird
+    type: object
+    properties:
+      dialcodes:
+        $ref: '#/definitions/Dialcodes'
+    required:
+    - dialcodes
+  Dialcodes:
+    title: Dialcodes
+    example:
+      count: 1
+      publisher: Sunbird
+    type: object
+    properties:
+      count:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      publisher:
+        description: ''
+        example: Sunbird
+        type: string
+    required:
+    - count
+    - publisher
+  CreatePublisherrequest:
+    title: Create publisherRequest
+    example:
+      request:
+        publisher:
+          identifier: Sunbird
+          name: Sunbird Portal
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request4'
+    required:
+    - request
+  Request4:
+    title: Request4
+    example:
+      publisher:
+        identifier: Sunbird
+        name: Sunbird Portal
+    type: object
+    properties:
+      publisher:
+        $ref: '#/definitions/Publisher'
+    required:
+    - publisher
+  Publisher:
+    title: Publisher
+    example:
+      identifier: Sunbird
+      name: Sunbird Portal
+    type: object
+    properties:
+      identifier:
+        description: ''
+        example: Sunbird
+        type: string
+      name:
+        description: ''
+        example: Sunbird Portal
+        type: string
+    required:
+    - identifier
+    - name
+  GetDialcoderequest:
+    title: Get dialcodeRequest
+    example:
+      request:
+        dialcode:
+          identifier: Q13PMP
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request7'
+    required:
+    - request
+  Request7:
+    title: Request7
+    example:
+      dialcode:
+        identifier: Q13PMP
+    type: object
+    properties:
+      dialcode:
+        $ref: '#/definitions/Dialcode'
+    required:
+    - dialcode
+  Dialcode:
+    title: Dialcode
+    example:
+      identifier: Q13PMP
+    type: object
+    properties:
+      identifier:
+        description: ''
+        example: Q13PMP
+        type: string
+    required:
+    - identifier
+  UpdateDialcoderequest:
+    title: update dialcodeRequest
+    example:
+      request:
+        dialcode:
+          publisher: Sunbird
+          tags:
+          - test
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request10'
+    required:
+    - request
+  Request10:
+    title: Request10
+    example:
+      dialcode:
+        publisher: Sunbird
+        tags:
+        - test
+    type: object
+    properties:
+      dialcode:
+        $ref: '#/definitions/Dialcode11'
+    required:
+    - dialcode
+  Dialcode11:
+    title: Dialcode11
+    example:
+      publisher: Sunbird
+      tags:
+      - test
+    type: object
+    properties:
+      publisher:
+        description: ''
+        example: Sunbird
+        type: string
+      tags:
+        description: ''
+        example:
+        - test
+        type: array
+        items:
+          type: string
+    required:
+    - publisher
+    - tags
+  UpdatePublisherrequest:
+    title: Update publisherRequest
+    example:
+      request:
+        publisher:
+          name: Anuj Kumar Gupta
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request13'
+    required:
+    - request
+  Request13:
+    title: Request13
+    example:
+      publisher:
+        name: Anuj Kumar Gupta
+    type: object
+    properties:
+      publisher:
+        $ref: '#/definitions/Publisher14'
+    required:
+    - publisher
+  Publisher14:
+    title: Publisher14
+    example:
+      name: Anuj Kumar Gupta
+    type: object
+    properties:
+      name:
+        description: ''
+        example: Anuj Kumar Gupta
+        type: string
+    required:
+    - name
+  PublishDialcoderequest:
+    title: Publish dialcodeRequest
+    example:
+      request: {}
+    type: object
+    properties:
+      request:
+        description: ''
+        example: {}
+        type: object
+    required:
+    - request
+  LinkDialcoderequest:
+    title: Link dialcodeRequest
+    example:
+      request:
+        content:
+          identifier:
+          - ''
+          dialcode:
+          - ''
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request17'
+    required:
+    - request
+  Request17:
+    title: Request17
+    example:
+      content:
+        identifier:
+        - ''
+        dialcode:
+        - ''
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/Content'
+    required:
+    - content
+  Content:
+    title: Content
+    example:
+      identifier:
+      - ''
+      dialcode:
+      - ''
+    type: object
+    properties:
+      identifier:
+        description: ''
+        example:
+        - ''
+        type: array
+        items:
+          type: string
+      dialcode:
+        description: ''
+        example:
+        - ''
+        type: array
+        items:
+          type: string
+    required:
+    - identifier
+    - dialcode
+  SearchDialcoderequest:
+    title: Search dialcodeRequest
+    example:
+      request:
+        search:
+          status: Draft
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request20'
+    required:
+    - request
+  Request20:
+    title: Request20
+    example:
+      search:
+        status: Draft
+    type: object
+    properties:
+      search:
+        $ref: '#/definitions/Search'
+    required:
+    - search
+  Search:
+    title: Search
+    example:
+      status: Draft
+    type: object
+    properties:
+      status:
+        description: ''
+        example: Draft
+        type: string
+    required:
+    - status
+  ListDialcoderequest:
+    title: list dialcodeRequest
+    example:
+      request:
+        search:
+          publisher: Sunbird
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request23'
+    required:
+    - request
+  Request23:
+    title: Request23
+    example:
+      search:
+        publisher: Sunbird
+    type: object
+    properties:
+      search:
+        $ref: '#/definitions/Search24'
+    required:
+    - search
+  Search24:
+    title: Search24
+    example:
+      publisher: Sunbird
+    type: object
+    properties:
+      publisher:
+        description: ''
+        example: Sunbird
+        type: string
+    required:
+    - publisher
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'

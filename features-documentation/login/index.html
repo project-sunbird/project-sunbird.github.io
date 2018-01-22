@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.9.a/";
+			baseURL.href="/releases/release.1.10/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Login</title>
+<title>Sunbird Sign Up and Login</title>
 <meta name="description" content="Sunbird Site Login"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-19 11:45:49 +0530">
+<meta name="last-modified" content="2018-01-22 06:04:20 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.9.a" />
-<meta name="buildNo" content="1150" />
+<meta name="buildVersion" content="release.1.10" />
+<meta name="buildNo" content="1237" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?19012018"  />
-<link rel="stylesheet" href="css/style.css?19012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?19012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?19012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?19012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?22012018"  />
+<link rel="stylesheet" href="css/style.css?22012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?22012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?22012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?22012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -133,8 +133,9 @@
 			</a>
 			<ul class="sidebar-group features-documentation" >
 				<li>
+				<!--
 					<a href="features-documentation/onboarding/">Onboarding</a>
-				</li>
+				</li>-->
 				<li>
 					<a href="features-documentation/login/">Login</a>
 				</li>
@@ -253,6 +254,9 @@
 						</div>
 					</li>
 					<li>
+						<a href="developer-docs/upgrading/">Upgrading</a>
+					</li>
+					<li>
 						<div class="">
 							<a href="developer-docs/singlesignon/overview_sso/">Onboarding and Single Sign On</a>
 							<ul class="sidebar-group">
@@ -320,6 +324,33 @@
 								</li>
 								<li>
 									<a href="apis/framework/" target="_blank">Framework APIs</a>
+								</li>
+								<li>
+									<a href="apis/audienceapi/" target="_blank">Audience APIs</a>
+								</li>
+								<li>
+									<a href="apis/badgesapi/" target="_blank">User Badges APIs</a>
+								</li>
+								<li>
+									<a href="apis/dialapi/" target="_blank">D.I.A.L APIs</a>
+								</li>
+								<li>
+									<a href="apis/firebasecloudmessagingapi/" target="_blank">Push Notification APIs</a>
+								</li>
+								<li>
+									<a href="apis/geolocationapi/" target="_blank">Geo Location APIs</a>
+								</li>
+								<li>
+									<a href="apis/masterkeyapi/" target="_blank">Master Key APIs</a>
+								</li>
+								<li>
+									<a href="apis/noteapi/" target="_blank">User Notes APIs</a>
+								</li>
+								<li>
+									<a href="apis/objectapi/" target="_blank">Object APIs</a>
+								</li>
+								<li>
+									<a href="apis/pagesapi/" target="_blank">Pages APIs</a>
 								</li>
 							</ul>
 						</div>
@@ -438,7 +469,7 @@ $("a[href$='features-documentation/login/']").addClass("sidebar-link-selected");
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Login </h1>
+        <h1>Sign Up and Login </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -458,60 +489,24 @@ $("a[href$='features-documentation/login/']").addClass("sidebar-link-selected");
 			  </a>
 			  </span>
 			</p>
-          <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#login-for-the-first-time-on-the-platform"><span class="tocnumber">1 .</span> <span class="toctext">Login for the first time on the Platform</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#welcome-message"><span class="tocnumber">1.1 .</span> <span class="toctext">Welcome Message</span></a>
-                </li>
-              </ul>
-            </li>
-            <li class="toc_level-1 toc_section-3">
-              <a href="#login"><span class="tocnumber">2 .</span> <span class="toctext">Login</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#recovering-password"><span class="tocnumber">2.1 .</span> <span class="toctext">Recovering Password</span></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><h2 id="login-for-the-first-time-on-the-platform">Login for the first time on the Platform</h2>
+          <p>Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body or individual users can sign up on the portal.</p>
 
-<ol>
-  <li>User can directly signup to the platform. They will receive the welcome message from the administrator and further they can reset their User ID and Password</li>
-</ol>
-
-<h3 id="welcome-message">Welcome Message</h3>
-
+<h3 id="signing-up-on-sunbird">Signing Up On Sunbird</h3>
+<p>Successful sign up on the portal is notified to the user via an auto-generated email.</p>
 <table>
 	<tr>
 		<th style="width:35%;">Step</th>
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-	<td>An auto generated <strong>Welcome</strong> message is send to the users through email. Account details along with the instructions are send</td>
+	<td>User credentials, i.e, user ID and password are shared in this mail. The user can reset these details on consecutive logins to the protal. 
 	<td><img src="pages/features-documentation/images/welcomemessage.png" /></td>
-	</tr>
-	</table>
+	&lt;/tr&gt;
+	&lt;/table&gt;
+	
+## Loging In 
 
-<h2 id="login">Login</h2>
-
-<p>Login the Sunbird portal using your registered credentials. For login, follow the steps:</p>
-
+Once the users have received their credentials, logging in on the portal is a seamless process.
 <table>
   <tr>
     <th style="width:35%;"><strong>Step</strong></th>
@@ -522,14 +517,14 @@ $("a[href$='features-documentation/login/']").addClass("sidebar-link-selected");
        <ol>
          <li>Enter your <strong>Username</strong> or <strong>Email ID</strong> or <strong>Phone number</strong></li>
 	 <li>Enter your <strong>Password</strong></li>
-         <li>Click <strong>Login</strong> button</li>
+         <li>Click <strong>Login</strong></li>
 	   </ol>
     </td>
 	<td><img src="pages/features-documentation/images/loginwithphone.png" /></td>
     </tr>
 </table>
-
-<h3 id="recovering-password">Recovering Password</h3>
+    
+### Recovering Password
 
 <table>
   <tr>
@@ -541,12 +536,10 @@ $("a[href$='features-documentation/login/']").addClass("sidebar-link-selected");
 	<td><img src="pages/features-documentation/images/forgotpassword.png" /></td>
     </tr>
     </table>
-
-<p>
-  <strong>Recovering Password using Email ID</strong>
-</p>
-
-<table>
+    
+**Recovering Password using Email ID**
+    
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -560,16 +553,14 @@ $("a[href$='features-documentation/login/']").addClass("sidebar-link-selected");
     <td><img src="pages/features-documentation/images/emaillink.png" /></td>
   </tr>
   <tr>
-    <td>1. Login page opens <br />2. Enter <b>Email ID</b> <br />3. Enter new <b>Password</b> of your choice <br />4. Click <b>Login</b> button</td>
+    <td>1. The Login page is displayed <br />2. Enter <b>Email ID</b> <br />3. Enter new <b>Password</b> of your choice <br />4. Click <b>Login</b></td>
     <td><img src="pages/features-documentation/images/loginemail.png" /></td>
   </tr>
   </table>
-
-<p>
-  <strong>Recovering Password using Phone Number</strong>
-</p>
-
-<table>
+  
+**Recovering Password using Phone Number**
+    
+  <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -579,15 +570,17 @@ $("a[href$='features-documentation/login/']").addClass("sidebar-link-selected");
     <td><img src="pages/features-documentation/images/forgotpassword1.png" /></td>
   </tr>
   <tr>
-    <td>1. You will receive <b>One Time Password (OTP</b>on your registered phone number</td>
+    <td>1. You will receive an <b>One Time Password (OTP</b>on your registered phone number</td>
     <td><img src="pages/features-documentation/images/mobileotp.png" /></td>
   </tr>
   <tr>
-    <td>1. Enter the <b>OTP</b> code sent to your mobile device <br />2. Click <b>Login</b> button</td>
+    <td>1. Enter the <b>OTP</b> code sent to your mobile device <br />2. Click <b>Login</b></td>
     <td><img src="pages/features-documentation/images/otpcode.png" /></td>
   </tr>
 </table>
-
+	  
+	
+</td></tr></table>
 
           
           <hr />
