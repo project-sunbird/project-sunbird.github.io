@@ -1,53 +1,57 @@
 ---
 type: landing
 directory: developer-docs
-title: Announcement Onboarding
+title: Announcements Onboarding
 page_title: Announcement onboarding
-description: Use this document to enable Announcement feature in Sunbird
+description: Enable Announcement feature in Sunbird using Onboarding Announcements document
 published: true
 allowSearch: true
 ---
+## Overview
 
-**Announcements onboarding**
-
-**Overview:**
-
-This document helps enable a Sunbird instance with announcements feature. Apart from ensuring the prerequisites are fulfilled, there are 2 more steps to get going with the announcements feature.
+This document helps you to enable onboarding announcements feature on Sunbird. For setting up announcement feature, prerequisites need to be fullfilled. Before, ensuring the prerequisites, there are two more steps which gives better clarity to get going with the announcements feature.
 
 **Who can use:**
 
-To be able to follow the process of onboarding announcements feature to a Sunbird instance, a user must have:
+To be able to follow the process of onboarding announcements feature, a user must have:
 
-1. Access to User APIs and right authorization to use it.
+1. Access to User APIs and authorization to use it.
 
-2. Access to Organization APIs and right authorization to use it.
+2. Access to Organization APIs and authorization to use it.
 
-3. Access to Locations APIs and right authorization to use them.
+3. Access to Locations APIs and authorization to use it.
 
-4. Access to Create Object API and right authorization to use it.
+4. Access to Create Object API and authorization to use it.
 
-5. Admin access to Sunbird portal instance.
+5. Admin access to Sunbird portal.
 
-Also, a user should be comfortable calling required APIs using Postman or similar tool.
+Also, a user should be comfortable requesting for required APIs using Postman or similar tool.
 
-**Pre-requisites:**
+## Pre-requisites
 
 1. **Users** are associated with **Organisations**
 
-2. **Locations** are created - Currently using APIs (Detailed document at <link to locations API doc>)
+2. **Locations** as an individual identity is created. 
 
-    1. Currently announcements feature do not support location hierarchy. When targeting an announcement, all locations will be available in a flat structure irrespective of location type in database.
+**Note:** Refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
 
-3. **Organisations** are associated with respective **Locations** - Currently using APIs (Detailed document at <link to organisation-location linking API doc>)
+**Note:** Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
 
-**Create Announcement types:**
+3. **Organisations** are associated with respective **Locations**. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization: 
+    
+        i) Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+        ii) Once location is created, it will provide **locationId**
+        iii) Use same locationId while creating or updation organization. Refer [Organization Management APIs] (http://www.sunbird.org/apis/orgapi/)
 
-Announcements are  categorised into following  types. As a prerequisite, there must be at least one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per r tenant requirements. 
+### Creating Announcements type
 
-To create announcement types, please use the object APIs - <Link to object APIs>
+Announcements are categorised into following types. As a prerequisite, there must be atleast one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per the requirement of the organization.
 
-A typical request object to create announcement type is shown in the following example:
+To create announcement types, refer [Object APIs](http://www.sunbird.org/apis/objectapi/)
 
+Example of a typical request object to create announcement type is as follows:
+
+<pre>
 "request":{
 
         "entityName":"announcementtype",
@@ -69,27 +73,41 @@ A typical request object to create announcement type is shown in the following e
         }
 
 }
+</pre>
 
-**id**: Please generate a standard UUID using any reliable tool. Ref: [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+**Explanation:**
 
-**rootorgid** - The unique ID of the tenant for which the particular announcement type is to be created.
+**id**: Generate a standard UUID using any reliable tool. For better understanding refer, [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
-**name** - Name of the announcement type.
+**rootorgid**: The unique ID of the tenant for which the particular announcement type is to be created.
 
-**status** - This must be "active" for the announcement type to be available for use.
+**name**: Name of the announcement type.
 
-**createddate** - This must follow the format "yyyy-MM-dd HH:mm:ss:SSSZZZZ" 
+**status**: This must be "active" for the announcement type to be available for use.
 
-eg: 2017-12-08 10:54:40:573+0000
+**createddate**: This must follow the format "yyyy-MM-dd HH:mm:ss:SSSZZZZ" eg: 2017-12-08 10:54:40:573+0000
 
-**Assign Role to User(s)**
+### Assigning Roles to User(s)
 
-To send announcement a user must have Announcement sender role. This role can be assigned by an admin using below steps:
+To send announcement users must have Announcement sender role. This role can be assigned by an admin using below steps:
 
-1. Login as a user having admin rights / enough rights to manage users.
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+      <td>1. You are logged in with registered Admin credential in the portal <br>2. You are currently on <b>Home</b> page. You have clicked the <b>Profile</b></td>
+      <td><td><img src="pages/features-documentation/images/announcement/assignuserrole1.png"></td>
+  </tr>
+    <td>1. You search for users, to whom you want to assign sender role <br>2. Click <b>Edit</b> to assign sender role</td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png"></td>
+  </tr>
+    <td>1. Select <b>Announcement Sender</b> role <br>2. Click <b>Update</b> to assign the sender role</td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png"></td>
+  </tr>
+</table>
 
-2. Visit profile page.
-
-3. Search for the user whom to assign announcement sender role.
-
-4. Edit user and assign "Announcement sender" role.
+To known more about the steps to use the functional features of announcements, refer [Announcement](http://www.sunbird.org/features-documentation/announcement/)
+     
+         
