@@ -9,10 +9,7 @@ allowSearch: true
 ---
 ## Overview
 
-This section helps you to enable onboarding announcements feature on Sunbird.
-
-Ensure you have access and authorization to the following APIs before technical integration:
-
+This section helps users to enable onboarding announcements feature on Sunbird.Ensure you have access and authorization to the following APIs before technical integration:
 1. User APIs 
 2. Organization APIs 
 3. Locations APIs
