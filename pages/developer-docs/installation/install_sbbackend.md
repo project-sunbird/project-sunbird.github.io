@@ -18,12 +18,14 @@ To setup the Sunbird Back-end services, follow the steps chronologically:
 2.	Configure back-end service stack
 ### Setup
 Before configuring the services, ensure the installation of following dependencies:
-     -	Apache Cassandra ver-3.10
-     -	Elasticsearch ver-5.4.0
-     -	Keycloak ver-3.2.1. Final
-     -	PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)
+     - Apache Cassandra ver-3.10
+     - Elasticsearch ver-5.4.0
+     - Keycloak ver-3.2.1. Final
+     - PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)
 Let us setup the environment and then proceed with deploying the services.
+
 * **Setup Cassandra** 
+ 
  1. For installation of Cassandra refer to the official website [here]  (http://cassandra.apache.org/doc/latest/getting_started/installing.html) 
  2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to  start the server and open Cassandra CLI (Command Line Interface) 
  3.  Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to create the required keyspace, tables and indices
@@ -38,7 +40,9 @@ cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,
  cqlsh -e "COPY sunbird.page_section(id, alt,createdby ,createddate ,description ,display ,imgurl ,name,searchquery , sectiondatatype ,status , updatedby ,updateddate) FROM '/tmp/cql/pageSection.csv'"
 </pre>
 Next section details about setting up the Elasticsearch on your local machine.
-  * **Setup Elasticsearch**
+
+* **Setup Elasticsearch**
+
 1. For installation of Elasticsearch refer to the official website [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to start the server and open Elasticsearch CLI (Command Line Interface)
  3. Run the following curl command
@@ -62,6 +66,7 @@ Next section details about setting up the Keycloak on your local machine.
 6. For sending welcome email when a user registers, you need to configure email server by navigating to: Realm Settings tab -> Emails (This is optional)
 
 ### Configuration setup for Application
+
 To run Sunbird services, you need to set different environment variables listed as follows.
 
 The following table mentions environment variables with their description. You need to add/edit the environment variables in appropriate locations.
@@ -133,7 +138,8 @@ The following table mentions environment variables with their description. You n
           18. sunbird_sso_publickey
 </pre>
    *  You can find the remaining environment variable values [here](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
- ## Configure Back-End Service Stack
+
+## Configure Back-End Service Stack
 **Build** 
       * Clone following repositories.
           1. [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
