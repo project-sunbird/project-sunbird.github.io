@@ -167,13 +167,15 @@ The following table mentions environment variables with their description. You n
 
 ## Configure Back-End Service Stack
 
-**Build** 
+**Build**
      
-* Clone following repositories.
-
-1. [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
-2. [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
-3. [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
+<li>Clone following repositories. <br>
+     <ol>
+          <li>[sunbird-utils](https://github.com/project-sunbird/sunbird-utils)</li>
+          <li>[sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)</li>
+          <li>[sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)</li>
+     </ol>
+ </li>
      
 Sunbird has two actor systems: 
      	
@@ -194,11 +196,11 @@ To run both the actor systems on single machine follow these steps:
 4.	Run ```mvn clean install``` command to make build of each module 
     Make the builds in following order
    
-   &nbsp i. sunbird-utils
+   i. sunbird-utils
    
-   &nbsp ii. sunbird-lms-mw
+   ii. sunbird-lms-mw
    
-   &nbsp iii. sunbird-lms-service
+   iii. sunbird-lms-service
 
 And to run Application sunbird-lms-service execute the following command 
       
