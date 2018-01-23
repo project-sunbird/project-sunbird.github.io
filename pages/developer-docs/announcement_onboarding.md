@@ -34,7 +34,7 @@ To be able to follow the process of onboarding announcements feature, a user mus
  
  1. Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}
  2. Once location is created, it will provide **locationId**
- 3. Use same locationId while creating or updating organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
+ 3. Use same locationId while creating or updating organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
 
 ## Creating Announcement types
 
@@ -70,7 +70,7 @@ Example of a typical request object to create announcement type is as follows:
 
 **Explanation:**
 
-**id**: Generate a standard UUID using any reliable tool. For better understanding on UUID refer, [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier){:target="_blank"}
+**id**: Generate a standard UUID using any reliable tool. For better understanding on UUID refer, [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
 **rootorgid**: The unique ID of the tenant (root organization) for which the particular announcement type is to be created.
 
