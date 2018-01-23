@@ -44,7 +44,7 @@ On Sunbird, **Admin Dashboard** is an interface that organizes and presents all 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Select <b>Creation</b> from the drop down <br>2. Select duration for which you want to see the content created, reviewed or published. You can view and analyse the following quantative and qualitative data for: <br>a) Total <b>number of contents created</b> in selected duration <br>b) <b>Number of authors</b> who created content <br>c) <b>Number of reviewers</b> who reviewed content during seleted duration <br>d) Total content created <br>e) Total content sent for review <br>f) Total content published</td>
+    <td>1. Select <b>Creation</b> from the drop down <br>2. Select the duration for which you want to see the content created, reviewed or published. You can view and analyse the following quantitative and qualitative data for: <br>a) Total <b>number of contents created</b> in selected duration <br>b) <b>Number of authors</b> who created content <br>c) <b>Number of reviewers</b> who reviewed content during seleted duration <br>d) Total content created <br>e) Total content sent for review <br>f) Total content published</td>
     <td><img src="pages/features-documentation/images/admindashboard/creationgraph.png"></td>
   </tr>
 </table>
