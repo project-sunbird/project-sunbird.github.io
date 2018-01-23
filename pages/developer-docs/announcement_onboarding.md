@@ -26,21 +26,21 @@ To be able to follow the process of onboarding announcements feature, a user mus
 
  + **Users** are associated with **Organisations**, to be able to receive announcements.
  
- + **Locations** as an individual entity must be created. Refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+ + **Locations** as an individual entity must be created. Refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}
  
  **Note:** Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
  
  + **Organisations** must be associated to their respective **Locations**. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization: 
  
- 1. Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+ 1. Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}
  2. Once location is created, it will provide **locationId**
- 3. Use same locationId while creating or updating organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
+ 3. Use same locationId while creating or updating organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
 
 ## Creating Announcement types
 
 Announcements are categorised into different types example, orders, circular, holidays, news etc. As a prerequisite, there must be atleast one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per the requirement of the root organization.
 
-To create announcement types, refer [Object APIs](http://www.sunbird.org/apis/objectapi/)
+To create announcement types, refer [Object APIs](http://www.sunbird.org/apis/objectapi/){:target="_blank"}
 
 Example of a typical request object to create announcement type is as follows:
 
@@ -70,7 +70,7 @@ Example of a typical request object to create announcement type is as follows:
 
 **Explanation:**
 
-**id**: Generate a standard UUID using any reliable tool. For better understanding on UUID refer, [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+**id**: Generate a standard UUID using any reliable tool. For better understanding on UUID refer, [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier){:target="_blank"}
 
 **rootorgid**: The unique ID of the tenant (root organization) for which the particular announcement type is to be created.
 
@@ -103,6 +103,6 @@ To send announcements, the user must be assigned the role of an announcement sen
   </tr>
 </table>
 
-To known more about the steps to use the functional features of announcements, refer [Announcement](http://www.sunbird.org/features-documentation/announcement/) section on the Sunbird website.
+To known more about the steps to use the functional features of announcements, refer [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section on the Sunbird website.
      
          
