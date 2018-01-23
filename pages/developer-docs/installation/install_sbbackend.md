@@ -36,21 +36,18 @@ Let us setup the environment and then proceed with deploying the services.
 
 **Setup Cassandra** 
  
-  1. For installation of Cassandra refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
-
-  2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to  start the server and open Cassandra CLI (Command Line Interface) 
-
-  3.  Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to create the required keyspace, tables and indices
-
-  4. Copy the following files to a temp folder in a Cassandra installed machine 
+1. For installation of Cassandra refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
+2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface) 
+3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to      create the required keyspace, tables and indices
+4. Copy the following files to a temp folder in a Cassandra installed machine 
     
     - [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv) 
     - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
     - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
               
-     Example: ``` /tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv ```
+ Example:  ```/tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv ```
 
-  5. Execute the following commands 
+5. Execute the following commands 
 
 <pre>
 cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,organisationid ,portalmap ,updatedby ,updateddate ) FROM '/tmp/cql/pageMgmt.csv'"
@@ -60,7 +57,7 @@ Next section details about setting up the Elasticsearch on your local machine.
 
 **Setup Elasticsearch**
 
-  1. For installation of Elasticsearch refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
+  1. For installation of Elasticsearch refer to the official [website] (https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 
   2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to  
      start the server and open Elasticsearch CLI (Command Line Interface)
@@ -144,6 +141,7 @@ The following table mentions environment variables with their description. You n
 ### Setting Environment Variables
 
 To Run sunbird backend services , set the following environment variable in their appropriate locations
+
 <pre>
           1. sunbird_cassandra_host
           2. sunbird_cassandra_port
@@ -184,7 +182,7 @@ Sunbird has two actor systems:
   1. Normal ActorSystem 
   2. Background ActorSystem 
 
-By default, both run on two different machines, for running both actor systems on a single machine, we need to modify the variables listed. For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties) 
+By default, both run on two different machines, for running both actor systems on a single machine, we need to modify the variables listed. For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)to repository.
 
 To run both the actor systems on single machine follow these steps:
 
