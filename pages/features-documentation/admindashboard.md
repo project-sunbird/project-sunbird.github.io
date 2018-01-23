@@ -31,7 +31,7 @@ On Sunbird, **Admin Dashboard** is an interface that organizes and presents all 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click <b>Select Organization</b> to select the organization for which you require the analytics, from the drop down</td>
+    <td>1.Click <b>Select Organization</b>, to select the organization for which you require the analytics, from the drop down</td>
      <td><img src="pages/features-documentation/images/admindashboard/selectorg.png"></td>
   </tr>
 </table>
