@@ -36,7 +36,7 @@ Let us setup the environment and then proceed with deploying the services.
 
 **Setup Cassandra** 
  
-  1. For installation of Cassandra refer to the official [website] (http://cassandra.apache.org/doc/latest/getting_started/installing.html) 
+  1. For installation of Cassandra refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
 
   2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to  start the server and open Cassandra CLI (Command Line Interface) 
 
