@@ -31,7 +31,7 @@ On Sunbird, **Admin Dashboard** is an interface that organizes and presents all 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click <b>Select Organization</b> and select the organization, of which you require the analytics, from the drop down</td>
+    <td>1.Click <b>Select Organization</b> to select the organization for which you require the analytics, from the drop down</td>
      <td><img src="pages/features-documentation/images/admindashboard/selectorg.png"></td>
   </tr>
 </table>
@@ -57,7 +57,7 @@ On Sunbird, **Admin Dashboard** is an interface that organizes and presents all 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Select <b>Consumption</b> from the drop down <br>2. Select duration for which you want to view and analyse, the number and frequency of the users visiting the portal to consume the content. The consumption graph summarizes the following quantative and qualitative data: <br>a) Number of visits by users <br>b) Content consumption time <br>c) Average time spent by user per visit</td>
+    <td>1. Select <b>Consumption</b> from the drop down <br>2. Select the duration for which you want to view and analyse, the number and frequency of the users visiting the portal to consume the content. The consumption graph summarizes the following quantitative and qualitative data: <br>a) Number of visits by users <br>b) Content consumption time <br>c) Average time spent by user per visit</td>
     <td><img src="pages/features-documentation/images/admindashboard/consumptiongraph.png"></td>
   </tr>
 </table> 
