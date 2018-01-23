@@ -34,15 +34,15 @@ Before configuring the services, ensure the installation of following dependenci
 
 Let us setup the environment and then proceed with deploying the services.
 
-* **Setup Cassandra** 
+**Setup Cassandra** 
  
-1. For installation of Cassandra refer to the official [website] (http://cassandra.apache.org/doc/latest/getting_started/installing.html) 
+  1. For installation of Cassandra refer to the official [website] (http://cassandra.apache.org/doc/latest/getting_started/installing.html) 
 
-2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to  start the server and open Cassandra CLI (Command Line Interface) 
+  2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to  start the server and open Cassandra CLI (Command Line Interface) 
 
-3.  Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to create the required keyspace, tables and indices
+  3.  Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to create the required keyspace, tables and indices
 
-4. Copy the following files to a temp folder in a Cassandra installed machine 
+  4. Copy the following files to a temp folder in a Cassandra installed machine 
     
     - [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv) 
     - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
@@ -50,7 +50,7 @@ Let us setup the environment and then proceed with deploying the services.
               
      Example: ```/tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv```
 
-5. Execute the following commands 
+  5. Execute the following commands 
 
 <pre>
 cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,organisationid ,portalmap ,updatedby ,updateddate ) FROM '/tmp/cql/pageMgmt.csv'"
