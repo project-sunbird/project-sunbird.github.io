@@ -41,8 +41,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Update</b> in the right navigation pane to edit details of the course <br>2. Enter <b>Title</b> of the course <br>3. Enter <b>Description</b> <br>4. Select the following from their respective drop-down lists <br> <br>&emsp;a) Audience <br>&emsp;b) Language  <br>&emsp;c) Concepts
-      <br>5. Enter <b>Faculty</b> details <br>6. Enter <b>Tutor</b> details <br>7. Enter <b>Keywords</b> <br>8. Click <b>Update</b> to update the details
+    <td>1. Click <b>Update</b> in the right navigation pane to edit details of the course <br>2. Enter <b>Title</b> of the course <br>3. Enter <b>Description</b> <br>4. Select the following from their respective drop-down lists <br> <br>&emsp;a) Audience <br>&emsp;b) Language  <br>&emsp;c) Concepts <br>5. Enter <b>Faculty</b> details <br>6. Enter <b>Tutor</b> details <br>7. Enter <b>Keywords</b> <br>8. Click <b>Update</b> to update the details
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
   </tr>
