@@ -171,9 +171,9 @@ The following table mentions environment variables with their description. You n
      
 <li>Clone following repositories. <br>
      <ol>
-          <li>[sunbird-utils](https://github.com/project-sunbird/sunbird-utils)</li>
-          <li>[sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)</li>
-          <li>[sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)</li>
+          <li><a href="https://github.com/project-sunbird/sunbird-utils">sunbird-utils</a></li>
+          <li><a href="https://github.com/project-sunbird/sunbird-lms-service">sunbird-lms-service</a></li>
+          <li><a href="https://github.com/project-sunbird/sunbird-lms-mw">sunbird-lms-mw</a></li>
      </ol>
  </li>
      
