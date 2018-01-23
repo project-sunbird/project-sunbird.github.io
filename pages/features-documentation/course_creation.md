@@ -12,7 +12,7 @@ allowSearch: true
 
 On Sunbird, you can compile a course by adding content to it. You can create each unit of course content and then compile them or compile a course using existing content in the portal.
 
-### Prerequisite
+### Prerequisites
 
 <table>
   <tr>
@@ -48,7 +48,6 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
   </table>
 
 ### Adding Image to Course Metadata
-
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -88,7 +87,6 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
 </table>
 
 #### Adding Course Units
-
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -101,7 +99,6 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
 </table>
 
 #### Adding Collections, Resources, Stories and Worksheets
-
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -120,5 +117,3 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <td><img src="pages/features-documentation/images/course_sendingfreview.png"></td>
   </tr>    
   </table>
-      
-      
