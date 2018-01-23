@@ -9,34 +9,36 @@ allowSearch: true
 ---
 ## Overview
 
-This section helps users to enable onboarding announcements feature on Sunbird.Ensure you have access and authorization to the following APIs before technical integration:
-1. User APIs 
-2. Organization APIs 
-3. Locations APIs
-4. Create Object API 
-5. Admin access to Sunbird portal.
+This document helps you to enable onboarding announcements feature on Sunbird. For setting up announcement feature, prerequisites must be fullfilled.
 
-## Prerequisites
+**Who can use:**
 
-1. The users  is part of an organization
-2. The user has administration rights on Sunbird
-3. The user is familiar with requesting APIs using Postman or similar tools
-4. Locations as an individual identity is created. [Refer Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
-5. Organisations are associated with their respective locations.
+To be able to follow the process of onboarding announcements feature, a user must have:
 
-**Note:** Announcement  feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
+* Access to Organization APIs and authorization to use it.
+* Access to Locations APIs and authorization to use it.
+* Access to Create Object API and authorization to use it.
+* Admin access to Sunbird portal.
 
-To establish co-relation between the organization and their respective location:
+**Note:** User should be comfortable requesting for required APIs using Postman or similar tool.
 
-1. Create Location on Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
-2. Once location is created, the locationId is generated 
-3. Use the same locationId while creating or updating the  organization 
+## Pre-requisites
 
-For details on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
+ + **Users** are associated with **Organisations**, to be able to receive announcements.
+ 
+ + **Locations** as an individual entity must be created. Refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+ 
+ **Note:** Anouncements feature do not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in database.
+ 
+ + **Organisations** must be associated to their respective **Locations**. To establish corelation between the organization with their respective location follow the steps below, to use location inside an organization: 
+ 
+ 1. Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/)
+ 2. Once location is created, it will provide **locationId**
+ 3. Use same locationId while creating or updating organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
-## Creating Announcements type
+## Creating Announcement types
 
-Announcements are categorised into different types viz, order, circular, holidays. At any given time, there must be at least one announcement type available in the system so as to send announcements. The announcement types can be configured as per organizational requirements.
+Announcements are categorised into different types example, orders, circular, holidays, news etc. As a prerequisite, there must be atleast one announcement type available in the system so that you can send an announcement. The announcement types can be configured as per the requirement of the root organization.
 
 To create announcement types, refer [Object APIs](http://www.sunbird.org/apis/objectapi/)
 
@@ -66,18 +68,17 @@ Example of a typical request object to create announcement type is as follows:
 }
 </pre>
 
-
 **Explanation:**
 
-**id**: Generate a standard UUID using any reliable tool. For better understanding refer, [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+**id**: Generate a standard UUID using any reliable tool. For better understanding on UUID refer, [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
-**rootorgid**: The unique ID of the tenant organization for which the particular announcement type is to be created.
+**rootorgid**: The unique ID of the tenant (root organization) for which the particular announcement type is to be created.
 
 **name**: Name of the announcement type.
 
-**status**: This must be "active" for the announcement type to be available for use.
+**status**: Status must be ```active``` for the announcement type to be available for use.
 
-**createddate**: This must follow the format "yyyy-MM-dd HH:mm:ss:SSSZZZZ" eg: 2017-12-08 10:54:40:573+0000
+**createddate**: Created Date must follow the format ```yyyy-MM-dd HH:mm:ss:SSSZZZZ``` eg: ```2017-12-08 10:54:40:573+0000```
 
 ## Assigning Roles to User(s)
 
