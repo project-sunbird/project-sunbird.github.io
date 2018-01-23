@@ -9,12 +9,12 @@ allowSearch: true
 ---
 The purpose of this section is to assist you:
 
-- With installing the Sunbird backend on your local machine 
+  - With installing the Sunbird backend on your local machine 
 
-  Also, if you are interested in Testing:
+Also, if you are interested in Testing:
 
-- Sunbird backend services
-- API workflows
+  - Sunbird backend services
+  - API workflows
 
 ## Sunbird Backend Services
 
@@ -48,7 +48,7 @@ Let us setup the environment and then proceed with deploying the services.
     - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
     - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
               
-     Example: ```/tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv```
+     Example: ``` /tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv ```
 
   5. Execute the following commands 
 
@@ -58,13 +58,14 @@ cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,
 </pre>
 Next section details about setting up the Elasticsearch on your local machine.
 
-* **Setup Elasticsearch**
+**Setup Elasticsearch**
 
-1. For installation of Elasticsearch refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
+  1. For installation of Elasticsearch refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 
-2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to start the server and open Elasticsearch CLI (Command Line Interface)
+  2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to  
+     start the server and open Elasticsearch CLI (Command Line Interface)
 
-3. Run the following curl command
+  3. Run the following curl command
 
 <pre>
               curl -X PUT \
@@ -77,9 +78,9 @@ Next section details about setting up the Elasticsearch on your local machine.
 
 Next section details about setting up the Keycloak on your local machine.
 
-* **Setup Keycloak**
+**Setup Keycloak**
 
-1. For installing Keycloak refer to the official [website](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) 
+  1. For installing Keycloak refer to the official [website]  (http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) 
 
 2. The official website guides you through the installation, and if you have done a successful install of Keycloak, now you need to start the server 
 
@@ -140,10 +141,9 @@ The following table mentions environment variables with their description. You n
 | sunbird_msg_91_auth                   | msg 91 auth  
   sunbird_msg_sender                     | message sender name        
 
+### Setting Environment Variables
 
-**NOTE:**
-   
-   * To Run sunbird backend services , set the following environment variable in their appropriate locations
+To Run sunbird backend services , set the following environment variable in their appropriate locations
 <pre>
           1. sunbird_cassandra_host
           2. sunbird_cassandra_port
@@ -165,7 +165,7 @@ The following table mentions environment variables with their description. You n
           18. sunbird_sso_publickey
 </pre>
    
-   *  You can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
+You can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
 
 ## Configure Back-End Service Stack
 
@@ -181,32 +181,34 @@ The following table mentions environment variables with their description. You n
      
 Sunbird has two actor systems: 
      	
-1. Normal ActorSystem 
-2. Background ActorSystem 
+  1. Normal ActorSystem 
+  2. Background ActorSystem 
 
 By default, both run on two different machines, for running both actor systems on a single machine, we need to modify the variables listed. For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties) 
 
 To run both the actor systems on single machine follow these steps:
 
-1.	Open externalresource.properties file 
-2.	Modify the following properties:
+  1.	Open externalresource.properties file 
+  2.	Modify the following properties:
     
-    - background_actor_provider
-    - api_actor_provider
+     - background_actor_provider
+     - api_actor_provider
 
-3.	Set value of both properties as “local”
-4.	Run ```mvn clean install``` command to make build of each module 
-    Make the builds in following order
+  3.	Set value of both properties as “local”
+  4.	Run ```mvn clean install``` command to make build of each module 
+    
+     Make the builds in following order
    
-   i. sunbird-utils
+        i. sunbird-utils
    
-   ii. sunbird-lms-mw
+      ii. sunbird-lms-mw
    
-   iii. sunbird-lms-service
+     iii. sunbird-lms-service
 
 And to run Application sunbird-lms-service execute the following command 
       
-        ``` run mvn play2:run```
+        run mvn play2:run 
+
 ## Testing the services 
   
 Run any API, e.g. create a user API and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f)
