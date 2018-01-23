@@ -9,26 +9,29 @@ allowSearch: true
 ---
 The purpose of this section is to assist you:
 
--	With installing the Sunbird backend on your local machine 
+- With installing the Sunbird backend on your local machine 
 
-     Also, if you are interested in Testing:
+  Also, if you are interested in Testing:
 
--	Sunbird backend services
--	API workflows
+- Sunbird backend services
+- API workflows
 
 ## Sunbird Backend Services
 
 To setup the Sunbird Back-end services, follow the steps chronologically:
+
 1.	Setup
 2.	Configure back-end service stack
 
 ### Setup
 
 Before configuring the services, ensure the installation of following dependencies:
-     - Apache Cassandra ver-3.10
-     - Elasticsearch ver-5.4.0
-     - Keycloak ver-3.2.1. Final
-     - PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)
+     
+  - Apache Cassandra ver-3.10
+  - Elasticsearch ver-5.4.0
+  - Keycloak ver-3.2.1. Final
+  - PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)
+
 Let us setup the environment and then proceed with deploying the services.
 
 * **Setup Cassandra** 
