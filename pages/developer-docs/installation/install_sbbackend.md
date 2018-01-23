@@ -23,16 +23,16 @@ Before configuring the services, ensure the installation of following dependenci
  -	Keycloak ver-3.2.1. Final
  -	PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)
 Let us setup the environment and then proceed with deploying the services.
-  * **Setup Cassandra** 
-1. For installation of Cassandra refer to the official website [here](http://cassandra.apache.org/doc/latest/getting_started/installing.html) 
-2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to start the server and open Cassandra CLI (Command Line Interface) 
-3.  Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to create the required keyspace, tables and indices
-4. Copy the following files to a temp folder in a Cassandra installed machine - -
-- [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv) and – 
-- [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) to a temp folder on your Cassandra installed machine. 
-- [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
+* **Setup Cassandra** 
+ 1. For installation of Cassandra refer to the official website [here]  (http://cassandra.apache.org/doc/latest/getting_started/installing.html) 
+ 2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to  start the server and open Cassandra CLI (Command Line Interface) 
+ 3.  Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to create the required keyspace, tables and indices
+ 4. Copy the following files to a temp folder in a Cassandra installed machine - -
+    - [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv) and – 
+    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) to a temp folder on your Cassandra installed machine. 
+    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
               e.g.: /tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv.
-     5. Execute the following commands 
+ 5. Execute the following commands 
 <pre>
 cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,organisationid ,portalmap ,updatedby ,updateddate ) FROM '/tmp/cql/pageMgmt.csv'"
  cqlsh -e "COPY sunbird.page_section(id, alt,createdby ,createddate ,description ,display ,imgurl ,name,searchquery , sectiondatatype ,status , updatedby ,updateddate) FROM '/tmp/cql/pageSection.csv'"
