@@ -34,7 +34,7 @@ To be able to follow the process of onboarding announcements feature, a user mus
  
  1. Create **Location** in Sunbird. To create location, refer [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}
  2. Once location is created, it will provide **locationId**
- 3. Use same locationId while creating or updating organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
+ 3. Use same locationId while creating or updating organization. Refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)
 
 ## Creating Announcement types
 
