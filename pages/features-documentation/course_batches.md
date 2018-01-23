@@ -18,10 +18,6 @@ On Sunbird, once a course is created, the course administrator can add users to 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
-  </tr>
-  <tr>
     <td>1. You are logged in <br>2. You have clicked on the <b>Courses</b> tab <br>3. You want to assign batches to a course
        </td>
       <td><img src="pages/features-documentation/images/batches_workspace.png"></td>
@@ -35,7 +31,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Search</b> icon or <b>Filter</b> icon,  to search or filter courses. Filter courses by: <li>a. Curriculum <li>b. Medium <li>c. Subjects  <br>3.You can also search for courses  in <b>Latest Courses</b> or <b>Popular Courses</b> section <br>4. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
+    <td>1. Click <b>Search</b> icon or <b>Filter</b> icon,  to search or filter courses. Filter courses by: <br>&emsp;a) Curriculum br>&emsp;b) Medium <br>&emsp;c) Subjects  <br>2.You can also search for courses  in <b>Latest Courses</b> or <b>Popular Courses</b> section <br>3. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
          </td>
       <td><img src="pages/features-documentation/images/batches_courses.png"></td>
   </tr>
@@ -99,8 +95,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
       <td><img src="pages/features-documentation/images/batches_edit.png"></td>
   </tr>
   <tr>
-    <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <li>a) About This Batch 
-<li>b) Start Date (mandatory field) <li>c) End Date <li>d)Mentors in the Batch <li>e) Members in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
+    <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <br>&emsp;a) About This Batch <br>&emsp;b) Start Date (mandatory field) <br>&emsp;c) End Date <br>&emsp;d)Mentors in the Batch <br>&emsp;e) Members in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
 
 ****Note: 
 A batch created cannot be deleted. Batch details can only be updated****
