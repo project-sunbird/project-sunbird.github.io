@@ -66,7 +66,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
   <tr>
     <td>1. Click <b>Share</b> icon from the Courses page, to share the batch link <br>2. On the share page, click <b>Copy Link</b> Share the copied link through any medium viz, email, Whatsapp, Facebook etc
          </td>
-      <td><img src="pages/features-documentation/images/course_share.png"></td>
+      <td><img src="pages/features-documentation/images/batches_share.png"></td>
   </tr>
   </table>
   
