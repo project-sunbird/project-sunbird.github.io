@@ -9,8 +9,8 @@ published: true
 allowSearch: true
 ---
 Organization administrators can use their registered credentials and add individual users onto Sunbird. To add users on Sunbird, the administrator must upload required details of the users.
-## Prerequisites
 
+## Prerequisites
 <table>
   <tr>
     <th style="width:35%;">Step</th>
