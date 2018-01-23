@@ -56,8 +56,8 @@ cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,
 Next section details about setting up the Elasticsearch on your local machine.
 
 **Setup Elasticsearch**
+  1. For step by step installation guide of Elasticsearch refer to the official[website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 
-  1. For installation of Elasticsearch refer to the official [website] (https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 
   2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to  
      start the server and open Elasticsearch CLI (Command Line Interface)
@@ -77,7 +77,7 @@ Next section details about setting up the Keycloak on your local machine.
 
 **Setup Keycloak**
 
-  1. For installing Keycloak refer to the official [website]  (http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) 
+1. For step by step installation guide of Keycloak refer to the official[website](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) 
 
 2. The official website guides you through the installation, and if you have done a successful install of Keycloak, now you need to start the server 
 
@@ -140,7 +140,7 @@ The following table mentions environment variables with their description. You n
 
 ### Setting Environment Variables
 
-To Run sunbird backend services , set the following environment variable in their appropriate locations
+To Run sunbird backend services, set the following environment variable in their appropriate locations
 
 <pre>
           1. sunbird_cassandra_host
@@ -166,8 +166,7 @@ To Run sunbird backend services , set the following environment variable in thei
 You can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
 
 ## Configure Back-End Service Stack
-
-**Build**
+ 
      
 <li>Clone following repositories. <br>
      <ol>
@@ -177,31 +176,13 @@ You can find the remaining [Environment Variable Values](https://github.com/proj
      </ol>
  </li>
      
-Sunbird has two actor systems: 
-     	
-  1. Normal ActorSystem 
-  2. Background ActorSystem 
-
-By default, both run on two different machines, for running both actor systems on a single machine, we need to modify the variables listed. For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)to repository.
-
-To run both the actor systems on single machine follow these steps:
-
-  1.	Open externalresource.properties file 
-  2.	Modify the following properties:
-    
-     - background_actor_provider
-     - api_actor_provider
-
-  3.	Set value of both properties as “local”
-  4.	Run ```mvn clean install``` command to make build of each module 
-    
-     Make the builds in following order
+Make the builds in following order:
    
-        i. sunbird-utils
+  i. sunbird-utils
    
-      ii. sunbird-lms-mw
+ ii. sunbird-lms-mw
    
-     iii. sunbird-lms-service
+iii. sunbird-lms-service
 
 And to run Application sunbird-lms-service execute the following command 
       
