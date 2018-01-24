@@ -206,10 +206,8 @@ In ordere to run both the actor systems on single machine follow these steps:
 
   1.	Open **externalresource.properties** file 
   2.	Modify the following properties:
-    
-     - background_actor_provider
-     - api_actor_provider
-
+          - background_actor_provider
+          - api_actor_provider
   3.	Set value of both properties as “local”
   4.	Run ```mvn clean install``` command to make build of each module
 
