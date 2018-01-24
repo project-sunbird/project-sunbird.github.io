@@ -20,6 +20,15 @@ It is worth noting that there are a few alternative options for support:
 
 ## Filing an effective bug report
 
+This page assumes you would like to contribute to the Sunbird project by collecting enough information to enter an effective and useful bug report in Sunbird issue tracker.
+
+To file a bug report that is effective, ensure the following: 
+- Separate out the bug
+- Single issue for a single bug
+- Writing an effective bug report
+- Submit
+- Follow up
+
 ## Separate out the bug
 The first step in in writing an effective bug report is to find exactly:
 
@@ -59,7 +68,7 @@ After submitting the issue, you can modify the title.
 
 A good bug report has a clear and concise description. This is an opportunity to explain the defect and put across all the relevant details.Describing something accurately and concisely is best way to help and fix the bug. Also,remember that the person reading your description has not seen the bug, so avoid assumptions.
 
-#### Sequence of Steps to reproduce bug
+### Sequence of Steps to reproduce bug
 
 One of the most important steps in a good bug report is providing a step-by-step account of exactly what you did to find the defect. You can use software tools that catch your key strokes, or record screenshots or video files as you test. Other times you’ll be writing from memory, so take notes as you go. Make sure that you test your own steps again before submitting the bug.
 
@@ -67,20 +76,20 @@ Ensure the following:
 - A bug report needs clear instructions, so that others can understand and exclusively reproduce it
 - Include good set of instructions i.e a numbered list that details each button press, or menu selection
 
-#### Actual behavior
+### Actual behavior
 
 - In contrast to the expected behavior, describe what currently happens when the bug is present.
 
-#### Expected behavior
+### Expected behavior
 
 - Describe what actually is correct workflow or exactly should happen if the bug was fixed.
 
-#### Environment in which the Issue Encountered
+### Environment in which the Issue Encountered
 
 - Name the operating system and version you are using, such as "Windows 7", or "Mac OS X 10.7.5" etc.
 - Name the browser and version which you are using, such as "Chrome 63" or "Firefox Quantum" or "Microsoft Edge"
 
-#### Supporting Files
+### Supporting Files
 
 Supporting material is always gratefully received by those assigned with fixing defects. Usually the files can be be screenshots, but it can include audio and video files also. Annotate your screenshots to highlight problems.
 
@@ -90,15 +99,15 @@ So, ensure to:
 
 - Supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
 
-#### Sunbird Version
+### Sunbird Version
 The version of Sunbird in which you discovered the bug (e.g., 1.3). If you can reproduce the problem in more than one version, write down the earliest.
 
-#### Issue Category
+### Issue Category
 A "bug report" is usually for when Sunbird does something which is not what it is expected to. An example of a bug could be: a link to a page, instead of opening it shows an error.
 
 Tasks, feature requests and support requests are beyond the scope of this article.
 
-#### Type and severity
+### Type and severity
 
 Every bug will have a different type and severity.These fields go hand-in-hand. A functional bug will generally be treated more seriously than a suggestion. No product ships with zero defects, so having bugs categorized correctly in terms of type and severity helps the decision-making process with regards to what gets fixed and what doesn’t. If you don’t understand these fields, ask for instruction. It also helps to review other bug entries the issue tracker.
 
@@ -119,7 +128,7 @@ You can use the following tags in your bug reports:
 
 **Note:** While a bug that you are experiencing is important to you, developers balance it with all the other known bugs.
 
-### Submit
+## Submit
 
 Click **Submit button** to submit your bug report to the issue tracker.
 
