@@ -50,8 +50,11 @@ Let us setup the environment and then proceed with deploying the services.
 5. Execute the following commands 
 
 <pre>
-cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,organisationid ,portalmap ,updatedby ,updateddate ) FROM '/tmp/cql/pageMgmt.csv'"
- cqlsh -e "COPY sunbird.page_section(id, alt,createdby ,createddate ,description ,display ,imgurl ,name,searchquery , sectiondatatype ,status , updatedby ,updateddate) FROM '/tmp/cql/pageSection.csv'"
+cqlsh -e "COPY sunbird.page_management(id, appmap,createdby, createddate, name, 
+organisationid, portalmap, updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv'"
+ cqlsh -e "COPY sunbird.page_section(id, alt, createdby, createddate, description,
+ display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) 
+ FROM '/tmp/cql/pageSection.csv'"
 </pre>
 Next section details about setting up the Elasticsearch on your local machine.
 
