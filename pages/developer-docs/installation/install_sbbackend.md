@@ -98,7 +98,6 @@ Next section details about setting up the Keycloak on your local machine.
 
 To run Sunbird services, you need to set different environment variables listed as follows:
 
-The following table mentions environment variables with their description. You need to add/edit the environment variables in appropriate locations.
 
 | variable                              | description                                                                                                 |
 |---------------------------------------|-------------------------------------------------------------------------------------------------------------|
@@ -143,9 +142,11 @@ The following table mentions environment variables with their description. You n
 | sunbird_msg_91_auth                   | msg 91 auth  
   sunbird_msg_sender                     | message sender name        
 
+The table mentions all the environment variables with description. You need to add/edit the environment variables in appropriate locations.Next section details about the environmental variables that are mandatory to run the backend services.
+
 ### Setting Environment Variables
 
-To Run sunbird backend services, set the following environment variable in their appropriate locations
+To run sunbird backend services, atleast you need to set the following environment variables. Set the environment variables at appropriate locations.
 
 <pre>
           1. sunbird_cassandra_host
