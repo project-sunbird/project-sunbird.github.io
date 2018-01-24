@@ -11,68 +11,122 @@ keywords: >-
 published: true
 allowSearch: true
 ---
+**Q. What is taxonomy? Why do you need to tag content using the taxonomy provided?**
 
+A taxonomy is a pre-determined classification that provides an unambiguous conceptual framework. The classification describes and separates mutually exclusive categories and subcategories of topics. Taxonomies help individuals and search engines find and retrieve information and content. 
 
-**What is taxonomy? Why do you need to tag content using the taxonomy provided?**
+When you tag your content appropriately with the given taxonomy, it gets correctly classified. This helps anyone find your content using either the search tool or navigating to it manually.
 
-{% ingredient /faqs/taxonomy_define %}{% endingredient %}
+**Q. What categories of tags or metadata does the platform support?**
 
-**What categories of tags or metadata does the platform support?**
+The platform supports five broad categories of tags or metadata:
 
-{% ingredient /faqs/taxonomy_tags %}{% endingredient %}
+- Metadata that describes the content 
+- File related metadata 
+- Ownership and audience metadata 
+- Metadata related to the content package
+- Additional or user-defined metadata
 
-**What metadata does the content provider enter for each piece of content?**
+**Q. What metadata does the content provider enter for each piece of content?**
 
-{% ingredient /faqs/metadata_define %}{% endingredient %}
+Metadata is a set of fields that must be entered by creators or content providers prior to submission of content for review. The metadata pronounces and gives detailed information about the content in platform.
 
-{% ingredient /faqs/metadata_collection %}{% endingredient %}
+There are metadata for different content types. Labels used for filling out metadata text boxes are self-explanatory. The fields marked with (*) are mandatory and others are optional. 
 
-{% ingredient /faqs/metadata_book %}{% endingredient %}
+**Q. How can the content provider add taxonomy and use it?**
 
-{% ingredient /faqs/metadata_lesson %}{% endingredient %}
+Currently, content providers cannot add their own taxonomy.
 
-{% ingredient /faqs/metadata_collection %}{% endingredient %}
+**Q. Is there an Organisation page for content providers?**
 
-**How can the content provider add taxonomy and use it?**
+Currently, the platform supports individual pages for organizations. For example; in the case of DIKSHA, to add an organization homepage:
 
-{% ingredient /faqs/taxonomy_contprovider_add_taxonomy %}{% endingredient %}
+1. Write an email to content.ntp@centralsquarefoundation.org, with the subject as ‘Request for custom home page
 
-**Is there an Organisation page for content providers?**
+2. The team will respond with recommendations and a checklist
 
-{% ingredient /faqs/taxonomy_orgpage %}{% endingredient %}
+3. Create your own static design in  html
 
-**What is a Framework?**
+4. Send the html page to content.ntp@centralsquarefoundation.org 
 
-{% ingredient /faqs/framework_define %}{% endingredient %}
+5. The team will create and  integrate it within the portal
 
-**How many frameworks does the platform support?**
+6. After it is integrated, the team will share the unique url with the organizatio
 
-{% ingredient /faqs/framework_sprt %}{% endingredient %}
+7. Typically, the url for the organization’s home page will be https://ntp.net.in/*contentprovider* 
 
-**Explain the framework-taxonomy matrix**
+**Note:**
+Home page serves as the entry point for any website.
 
-{% ingredient /faqs/framework_taxonomy_matrix %}{% endingredient %}
+**Q. What is a Framework?**
 
-**How does the platform use taxonomy, metadata and frameworks?**
+In the context of our platform, the framework is a string of vocabularies arranged to achieve a learning outcome. The focus of the framework is not the content within it, but the sequencing of the objectives or vocabulary such that it achieves the stated outcome. The framework helps the system recommend prerequisite, next or related content to the learner.
 
-{% ingredient /faqs/taxonomy_metadata&framework %}{% endingredient %}
+**Q. How many frameworks does the platform support?**
 
-**Can you create your own framework or tag content to other people’s framework?**
+This platfom currently supports four frameworks:
 
-{% ingredient /faqs/framework_tagcont %}{% endingredient %}
+The frameworks supported are:
+- Curriculum Tags Framework
+- Teacher Development Framework
+- Grade Framework
+- Perspectives Framework
 
-**How can you contribute to taxonomy?**
+All content will be mapped to the vocabulary in this framework. If the same or related vocabulary are also present in other frameworks the content will appear there as well.
 
-{% ingredient /faqs/taxonomy_contribute %}{% endingredient %}
+**Q. Explain the framework-taxonomy matrix**
 
-**Can you build a framework on the platform?**
+Framework-taxonomy matrix
 
-{% ingredient /faqs/framework_build %}{% endingredient %}
+| Framework name         | Taxonomy used | Level |
+| ---------------------- | ------------- | ----- |
+| Curriculum Tags        | Subject(s)    | 1     |
+| Framework              | Topic(s)      | 2     |
+|                        | Subtopic(s)   | 3     |
+| Teacher Development    | Degree        | 1     |
+| Framework              | Subject       | 2     |
+|                        | Topic         | 3     |
+|                        | Subtopic      | 4     |
+| Grade Framework        | Level         | 1     |
+|                        | Grade         | 2     |
+| Perspectives Framework | Topic         | 1     |
+|                        | Subtopic      | 2     |
 
-**How do I create a vocabulary list?**
+**Q. How does the platform use taxonomy, metadata and frameworks?**
 
-{% ingredient /faqs/taxonomy_vocab_list %}{% endingredient %}
+Taxonomy on this platform comprises of three layers viz.- 
 
-**What is the need for multiple frameworks and not a unified standard framework?**
+- Vocabulary layer
+- Content Layer and 
+- Framework Layer. 
 
-{% ingredient /faqs/framework_stndrd_ %}{% endingredient %}
+It is used by the system to arrange, suggest and search for content from its repository. Each content unit is associated with multiple tag words that are part of the platform's vocabulary. Each vocabulary word can be part of one or multiple frameworks. The platform celebrates the diversity of frameworks that caters to different needs and encourages it’s co-existence through this model. This model has been designed to make the platform more user friendly by improving the search ability and discoverability through these layers.
+
+**Q. Can you create your own framework or tag content to other people’s framework?**
+
+Yes. Organisation administrators can create their own frameworks to tag their content. They can also tag their content to other frameworks as and when applicable. The system has the intelligence to associate the tags and link content to different frameworks, based on the vocabulary used to tag the content.
+
+**Q. How can you contribute to taxonomy?**
+
+The easiest way to contribute is to ensure that all your content is tagged appropriately and is linked to the right framework and vocabulary.
+
+- If you are unable to find suitable vocabulary to tag your content, add the word in the additional fields column.
+- If you need to correct or recommend a tag for a content piece, suggest a word to help populate the vocabulary list. 
+
+Organisations are responsible for building relevant and contextualised frameworks.
+
+**Q. Can you build a framework on the platform?**
+
+To create a framework on this platform, you should have the design or layout of concepts and their purpose. In other words, you need to have a step by step layout of the vocabulary.
+
+**Q. How do I create a vocabulary list?**
+
+Listing out all the broad concepts that your content covers, helps you arrive at the vocabulary list. The vocabulary can include the concept and the tag words can cover the micro-concepts. 
+For example; 
+
+- **Vocabulary:** Addition              
+- **Tags:** Addition with carryover, 2 digit addition
+
+**Q. What is the need for multiple frameworks and not a unified standard framework?**
+
+Education caters to the beauty of diversity. Each learner has a different style, pace and purpose of learning, though the outcome is more or less aligned . Frameworks cater to these diverse needs. For example; a topic like longitude could be taught as part of Geography in one framework, but as part of Adventure in another framework.
