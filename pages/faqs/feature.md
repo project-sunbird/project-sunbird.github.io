@@ -10,12 +10,20 @@ keywords: >-
 published: true
 allowSearch: true
 ---
+**Q. Which product features are relevant for content creators and content providers?**
 
+Users with content creation rights can create content on the platform. Content providers and creators can:
 
-**Which product features are relevant for content creators and content providers?**
+- Create content for courses, textbooks, lessons and collections 
+- Use the content editor tool and plugin
+- Upload contents in supported file formats
+- Download available content from the repository
+- Edit content
+- Collaborate with other users and groups
+- Take notes 
+- Recommend content to others
+- Enroll for and resume courses
 
-{% ingredient /faqs/feature_contcreator&provider %}{% endingredient %}
+**Q. What are the languages supported on the platform?**
 
-**What are the languages supported on the platform?**
-
-{% ingredient /faqs/feature_lang_support %}{% endingredient %}
+Currently, this platform supports 10 Indian languages viz. Hindi, English, Gujarati, Bengali, Assamese, Marathi, Odia, Kannada, Tamil and Telugu, for both creating and viewing content. Later, there will be support for more Indian languages.
