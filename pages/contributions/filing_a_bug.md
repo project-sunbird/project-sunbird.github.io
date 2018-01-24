@@ -8,6 +8,7 @@ keywords: '
 published: true
 allowSearch: true
 ---
+Submitting a bug report: A complete walkthrough
 
 ## Overview
 
