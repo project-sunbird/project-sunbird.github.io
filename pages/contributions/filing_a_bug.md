@@ -1,10 +1,10 @@
 ---
 type: landing
 directory: contributions
-title: Sunbird Style Guide
-page_title: Cheatsheet
-description: Style Guide
-keywords: Sunbird, Style guide, Cheatsheet
+title: Guidelines for filing a bug
+page_title: Guidelines for filing a bug
+description: How to file an effective bug report? 
+keywords: Sunbird,bug, bugs, bug report, filing bug
 published: true
 allowSearch: true
 ---
