@@ -38,14 +38,14 @@ Let us setup the environment and then proceed with deploying the services.
 
 **Setup Cassandra** 
  
-1. For step by step installation guide of refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
+1. For step by step installation guide of refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html){:target="_blank"}
 2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface) 
-3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to      create the required keyspace, tables and indices
+3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file to      create the required keyspace, tables and indices
 4. Copy the following files to a temp folder in a Cassandra installed machine 
     
-    - [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv) 
-    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
-    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) 
+    - [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"} 
+    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) {:target="_blank"}
+    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv){:target="_blank"} 
               
  Example:  ```/tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv ```
 
@@ -62,7 +62,7 @@ Next section details about setting up the Elasticsearch on your local machine.
 
 **Setup Elasticsearch**
 
-  1. For step by step installation guide of Elasticsearch refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
+  1. For step by step installation guide of Elasticsearch refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html){:target="_blank"}
 
   2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to  
      start the server and open Elasticsearch CLI (Command Line Interface)
@@ -82,7 +82,7 @@ Next section details about setting up the Keycloak on your local machine.
 
 **Setup Keycloak**
 
-1. For step by step installation guide of Keycloak refer to the official [website](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) 
+1. For step by step installation guide of Keycloak refer to the official [website](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html){:target="_blank"} 
 
 2. The official website guides you through the installation, and if you have done a successful install of Keycloak, now you need to start the server 
 
@@ -169,7 +169,7 @@ To run sunbird backend services, atleast you need to set the following environme
           18. sunbird_sso_publickey
 </pre>
    
-Here, you can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
+Here, you can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
 
 ## Running Back-End Services Stack
 
@@ -180,9 +180,9 @@ You can configure the Backend service by following these instructions:
      
 Clone following repositories:
           
-   - [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
-   - [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
-   - [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
+   - [sunbird-utils](https://github.com/project-sunbird/sunbird-utils){:target="_blank"}
+   - [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service){:target="_blank"}
+   - [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw){:target="_blank"}
 
      
   Make the builds in following order:
@@ -197,5 +197,5 @@ Clone following repositories:
 
 ## Testing the services 
   
-Run any API, e.g. create a user API and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f)
+Run any API, e.g. create a user API and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f){:target="_blank"}
 

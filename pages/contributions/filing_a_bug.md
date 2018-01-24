@@ -14,8 +14,8 @@ Writing a good bug report is not hard. Just follow a few effective techniques an
 
 It is worth noting that there are a few alternative options for support:
 
-1. Check the [Sunbird troubleshooting](http://www.sunbird.org/developer-docs/troubleshooting/) page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
-2. The bug you have experienced might be faced by others also, it is recommended to check the [Sunbird issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
+1. Check the [Sunbird troubleshooting](http://www.sunbird.org/developer-docs/troubleshooting/){:target="_blank"} page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
+2. The bug you have experienced might be faced by others also, it is recommended to check the [Sunbird issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues){:target="_blank"}
 3. If the bug report exists, you may click "subscribe" to follow any developments.
 
 To file a bug report that is effective, ensure the following: 
@@ -47,6 +47,7 @@ Since Sunbird is open source, there is always a possibility that you encounter m
 Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.
 
 ### Issue Title
+
 Everything starts with a title. It must be clear and descriptive so that you can get an idea of what the report is about at a glance. It also has to be clearly differentiated from all other existing bug reports. A good way to think about bug titles is that your bug report should atleast answer the following questions:
 
   1. What is the problem?
@@ -96,9 +97,11 @@ So, ensure to:
 - Supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
 
 ### Sunbird Version
+
 The version of Sunbird in which you discovered the bug (e.g., 1.3). If you can reproduce the problem in more than one version, write down the earliest.
 
 ### Issue Category
+
 A "bug report" is usually for when Sunbird does something which is not what it is expected to. An example of a bug could be: a link to a page, instead of opening it shows an error.
 
 Tasks, feature requests and support requests are beyond the scope of this article.
