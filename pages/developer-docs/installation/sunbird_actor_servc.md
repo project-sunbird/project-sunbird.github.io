@@ -1,4 +1,11 @@
-
+---
+type: landing
+directory: developer-docs/installation/
+title: Sunbird AKKA Actor System
+page_title: Sunbird AKKA Actor System
+description: Sunbird AKKA Actor System enables concurrency and ensures scalibility
+allowSearch: true
+---
 ### Overview
 
 **Sunbird AKKA Actor System**
