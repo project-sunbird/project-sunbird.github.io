@@ -66,7 +66,7 @@ The following are some scenarios while running the Actor services:
  Then, run the **sunbird-lms-service** 
  ```mvn play2:run``` command to start the sunbird application, executing this will start both the actor systems on same machine.
 
-## Scenario 2
+### Scenario 2
 
 - **Running normal actor system locally and background actor system remotely**
 
@@ -81,7 +81,7 @@ The following are some scenarios while running the Actor services:
 
 Then, run the **sunbird-lms-service** by executing ```mvn play2:run```.And to start **sunbird-lms-mw** execute ```mvn exec:java``` command.
 
-## Scenario 3
+### Scenario 3
 
 - **Running both actor systems remotely**
 
