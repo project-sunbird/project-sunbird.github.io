@@ -2,7 +2,7 @@
 type: landing
 directory: features-documentation
 title: Assigning User Roles
-page_title: Assigning User Roles0
+page_title: Assigning User Roles
 description: Instructional guide on assiging user roles 
 published: true
 allowSearch: true
@@ -107,7 +107,7 @@ One of the many responsibilities of the administrator on Sunbird is to assign ro
       <td><img src="pages/features-documentation/images/announcement/admin_assignrole2.png"></td>
     </table>
     
-## BLocking Users
+## Blocking Users
 
 <table>
   <tr>
