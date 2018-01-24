@@ -16,6 +16,7 @@ This document describes how to file an effective Sunbird bug report. Before fili
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 It is worth noting that there are a few alternative options for support:
 
 1. Check the [Sunbird troubleshooting](http://www.sunbird.org/developer-docs/troubleshooting/) page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
@@ -54,16 +55,46 @@ To report a bug in the Sunbird bug trackers:
    - 
 After Prerequisites, follow these guidelines to ensure that your Bug report is clear and effective:
 >>>>>>> parent of 6b765391... Update filing_a_bug.md
+=======
+## Introduction
+
+To report a bug in the Sunbird bug trackers:
+
+- You need to create a new item (i.e issue)
+- Once added, the Sunbird team will check the validity of the issue raised and act accordingly
+- Check the prerequisites before you proceed in reporting the bug
+
+## Prerequisites
+
+- An Account on GIT, since the Sunbird repository lives in GitHub.
+    
+    - If you already have a GIT account, login with your credentials
+
+    - If you do not have a GIT account, register for an account at GitHub [here](https://github.com/)
+
+    - The Sunbird Issue Tracker uses GitHub accounts for authentication
+
+- Use the latest version of Sunbird
+
+   - If you are using an out-of-date version of Sunbird, please update to the latest version.
+   - 
+After Prerequisites, follow these guidelines to ensure that your Bug report is clear and effective:
+>>>>>>> parent of 6b765391... Update filing_a_bug.md
 
 ## Separate out the bug
 
 The first step in in writing an effective bug report is to find exactly:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **What is the problem?**
   
   Clearly and precisely state what exactly is wrong?
 
+=======
+- **What the problem is?**
+    - Clearly and precisely state what exactly is wrong?
+>>>>>>> parent of 6b765391... Update filing_a_bug.md
 =======
 - **What the problem is?**
     - Clearly and precisely state what exactly is wrong?
@@ -75,6 +106,7 @@ The first step in in writing an effective bug report is to find exactly:
 
 ## Check whether bug already stands reported
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively
 
@@ -122,6 +154,20 @@ Ensure the following:
 =======
 You can create a new issue as follows:
 >>>>>>> parent of 6b765391... Update filing_a_bug.md
+=======
+The bug you have experienced might already have a fix and you can check the related documentation. If not, it is recommended to check the Sunbird [issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
+
+- Check, If the bug report exists, you may click "subscribe" to follow any developments.
+- If your bug is different than any others recorded in the issue tracker, then proceed with "Create a new issue"
+
+## Single issue for a single bug
+
+- Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively
+
+## Create a new issue
+
+You can create a new issue as follows:
+>>>>>>> parent of 6b765391... Update filing_a_bug.md
 
 - Visit the official Sunbird website [here](www.sunbird.org){:target="_blank"}
 
@@ -138,6 +184,7 @@ Before you raise an issue, make sure to check the following questions that are u
 ## When filing a new bug, it is compulsory to include:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Supporting material is always gratefully received by those assigned with fixing defects. Usually the files can be be screenshots, but it can include audio and video files also. Annotate your screenshots to highlight problems.
 
 The visuals are always looked at first prior to reading the text you provide. If you can convey the issue in a single screenshot, you’re helping save precious time.
@@ -145,6 +192,9 @@ The visuals are always looked at first prior to reading the text you provide. If
 So, ensure to:
 
 - Supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
+=======
+### Sunbird Version
+>>>>>>> parent of 6b765391... Update filing_a_bug.md
 =======
 ### Sunbird Version
 >>>>>>> parent of 6b765391... Update filing_a_bug.md
@@ -158,11 +208,17 @@ A "bug report" is usually for when Sunbird does something which is not what it i
 Tasks, feature requests and support requests are beyond the scope of this article.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #### Type and severity
 
 Every bug will have a different type and severity. These fields go hand-in-hand. A functional bug will be treated more seriously than a suggestion. No product ships with zero defects, so having bugs categorized correctly in terms of type and severity helps the decision-making process with regards to what gets fixed and what does not. If you do not understand these fields, ask for instruction. It also helps to review other bug entries the issue tracker.
 
 You can use the following tags in your bug reports:
+=======
+### Issue Priority
+
+Every bug will have a different priority.
+>>>>>>> parent of 6b765391... Update filing_a_bug.md
 =======
 ### Issue Priority
 
