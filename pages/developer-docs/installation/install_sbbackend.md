@@ -166,7 +166,7 @@ To Run sunbird backend services, set the following environment variable in their
           18. sunbird_sso_publickey
 </pre>
    
-Here,you can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
+Here, you can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
 
 ## Running Back-End Services Stack
 
@@ -175,23 +175,22 @@ You can configure the Backend service by following these instructions:
 - Cloning the repositories
 - Making the Build 
      
-1. Clone following repositories
-          [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
-          [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
-          [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
+  Clone following repositories
+          
+     - [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
+     - [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
+     - [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
 
      
-2. Make the builds in following order:
+  Make the builds in following order:
    
-    i. sunbird-utils
-   
-   ii. sunbird-lms-mw
-   
-  iii. sunbird-lms-service
+   - sunbird-utils
+   - sunbird-lms-mw
+   - sunbird-lms-service
 
-And to run Application sunbird-lms-service execute the following command 
+  And to run Application sunbird-lms-service execute the following command 
       
-        run mvn play2:run 
+         run mvn play2:run 
 
 ## Testing the services 
   
