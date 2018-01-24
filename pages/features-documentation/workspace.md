@@ -17,7 +17,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
 <table>
   <tr>
     <th style="width:35%;">Step</th>
-    <th style="width:65%;">>Screen</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
     <td>1. Login with the registered credential, to land into <b>Home</b> page<br>2. Click <b>Profile</b> tab on the header<br>Or<br>3. Click <b>Profile</b> icon to the right</td>
