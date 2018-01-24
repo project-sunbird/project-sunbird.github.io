@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<base id="baseURL" href="/" />
+<script>
+	// Dynamic Base URL
+	function getBase(){
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		baseURL = document.getElementById('baseURL');
+		if (excludedSites.indexOf(window.location.host) > -1){
+			baseURL.href="/";
+		} else {
+			baseURL.href="/releases/release.1.12/";
+		}
+	}
+	getBase();
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=10, user-scalable=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+<meta name="msapplication-TileColor" content="#65d3f7">
+<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
+
+<title>Sunbird Installing Sunbird Backend</title>
+<meta name="description" content="Sunbird Site Installing Sunbird Backend requires the backend API interface."/>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="last-modified" content="2018-01-24 18:07:12 +0530">
+<meta http-equiv="Expires" content="600" />
+
+<!--Build Details-->
+<meta name="buildVersion" content="release.1.12" />
+<meta name="buildNo" content="1405" />
+<!--/Build Details-->
+
+<!-- CDN's-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- /CDN's-->
+
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24012018"  />
+<link rel="stylesheet" href="css/style.css?24012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?24012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?24012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?24012018"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-106552125-1');
+</script>
+
+	
+		<meta name="robots" content="index, follow">
+	
+  </head>
+  <body id="body">
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <div class="inner__sidebar">
+        <div id="">
+	
+		<div class="search-cover">
+	<form method="get" action="https://www.google.com/search" target="_blank">
+		<input type="text" value="" name="q" placeholder="Search"/ class="search-input" title="Enter keyword to search">
+		<input type="hidden" value="en" name="hl" />
+		<input type="hidden" name="sitesearch" value="http://www.sunbird.org" />
+		<input type="hidden" value="lang_en" name="lr" />
+		<button type="submit" onclick="submit()" class="search-btn" title="Search">
+			<i class="fa fa-search"></i>
+		</button>
+	</form>
+</div>
+
+	
+	<div class="sidebar-wrapper developer-docs-installation">
+		<div class="" >
+			<a href="architecture/">
+				<h4 class="sidebar-group-title">Architecture</h4>
+			</a>
+			<ul class="sidebar-group architecture">
+				<li>
+					<a href="architecture/overview/">Overview</a>
+				</li>
+				<li>
+					<a href="architecture/design/">Design</a>
+				</li>
+				<li>
+					<div class="">
+						<a href="architecture/views/elementryview/">Views</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="architecture/views/logical/">Logical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/physical/">Physical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/conceptual/">Conceptual View</a>
+							</li>
+							<li>
+								<a href="architecture/views/deployment/">Deployment View</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="architecture/usecase/">Use Cases</a>
+				</li>
+			</ul>
+			<a href="features-documentation/">
+				<h4 class="sidebar-group-title">Product Features</h4>
+			</a>
+			<ul class="sidebar-group features-documentation" >
+				<!--<li>
+					<a href="features-documentation/onboarding/">Onboarding</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/login/">Login</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_org/">Register Organizations</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_user/">Register Users</a>
+				</li>
+				<li>
+					<a href="features-documentation/userrolepermission/">User Roles and Permissions</a>
+				</li>
+				<li>
+					<div class="">
+	                                        <ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/user_type/">Types of Users</a>
+							</li>
+							<li>
+								<a href="features-documentation/userprofile/">User Profile</a>
+							</li>
+							<li>
+								<a href="features-documentation/workspace/">Workspace</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="features-documentation/course_intro/">Courses</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/course_creation/">Course Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_batches/">Batch Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_consumption/">Course Consumption</a>
+							</li>					
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="features-documentation/announcement/">Announcement</a>
+				</li>
+				<li>
+					<a href="features-documentation/library/">Library</a>
+				</li>
+				<li>
+					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
+				</li>
+				<!--<li>
+					<a href="features-documentation/contentcreation/">Content Creation</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/contenteditor/">Content Editor</a>
+				</li>
+                                <!--<li>
+					<a href="features-documentation/consumption/">Consume Study Material</a>
+				</li>-->
+				</li>
+				<li>
+					<div class="">
+						<a href="features-documentation/guidelines/" >Guidelines</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/intellectualproperty/">Intellectual Property</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<!--<li>
+					<a href="features-documentation/reportinganalytics/">Reporting and Analytics</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
+				</li>
+				</ul>
+				<a href="developer-docs/">
+					<h4 class="sidebar-group-title">Developer Documentation</h4>
+				</a>
+				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+                                        </li>
+					<li>
+						<a href="developer-docs/installation/">Installation Overview</a>
+					</li>
+					<!--<li>
+						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+					</li>-->
+					<li>
+						<a  href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
+					</li>
+					<li>
+						<div class="">
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/install_sbportal/">Installing Sunbird Portal</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
+								</li>
+							</ul>
+						</div>
+					</li>		
+					
+					
+					<li>
+						<div class="">
+							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
+								</li>
+								<li>
+									<div class="">
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+											</li>
+										</ul>
+									
+									</div>
+								</li>
+								<li>
+									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/check_installation/">Check Installation</a>
+								</li>
+								<!--<li>
+									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
+								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/onboarding/">Onboarding</a>
+							<ul class="sidebar-group">
+								<li>
+									<div class="">
+										<a href="developer-docs/singlesignon/overview_sso/">Onboarding via Single Sign On</a>									<ul class="sidebar-group">
+										<ul class="sidebar-group">
+											<li> 
+												<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+											</li>
+										<!--<li>
+											<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+										</li>-->
+											<li>
+												<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							<li>
+								<a href="developer-docs/announcement_onboarding/">Announcements Onboarding</a>
+							</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="developer-docs/upgrading/">Upgrading</a>
+					</li>
+					<li>
+						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
+					</li>
+					<!--<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/extending_sunbird/">Extending Sunbird</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/customize_sunbird/">Customizing Sunbird</a>
+						</div>
+					</li>-->
+					<li>
+						<div class="">
+							<a  href="apis/">API References</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a>
+								</li>
+								<li>
+									<a href="apis/content/" target="_blank">Content APIs</a>
+								</li>
+								<li>
+									<a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a>
+								</li>
+								<li>
+									<a href="apis/datasyncapi/" target="_blank">Data Sync APIs</a>
+								</li>
+								<li>
+									<a href="apis/metricsapi/" target="_blank">Metrics APIs</a>
+								</li>
+								<li>
+									<a href="apis/notificationapi/" target="_blank">Notification APIs</a>
+								</li>
+								<li>
+									<a href="apis/orgapi/" target="_blank">Organisation Management APIs</a>
+								</li>
+								<li>
+									<a href="apis/userapi/" target="_blank">User APIs</a>
+								</li>
+								<li>
+									<a href="apis/announcements/" target="_blank">Announcement APIs</a>
+								</li>
+								<li>
+									<a href="apis/framework/" target="_blank">Framework APIs</a>
+								</li>
+								<li>
+									<a href="apis/audienceapi/" target="_blank">Audience APIs</a>
+								</li>
+								<li>
+									<a href="apis/badgesapi/" target="_blank">User Badges APIs</a>
+								</li>
+								<li>
+									<a href="apis/dialapi/" target="_blank">D.I.A.L APIs</a>
+								</li>
+								<li>
+									<a href="apis/firebasecloudmessagingapi/" target="_blank">Push Notification APIs</a>
+								</li>
+								<li>
+									<a href="apis/geolocationapi/" target="_blank">Geo Location APIs</a>
+								</li>
+								<li>
+									<a href="apis/masterkeyapi/" target="_blank">Master Key APIs</a>
+								</li>
+								<li>
+									<a href="apis/noteapi/" target="_blank">User Notes APIs</a>
+								</li>
+								<li>
+									<a href="apis/objectapi/" target="_blank">Object APIs</a>
+								</li>
+								<li>
+									<a href="apis/pagesapi/" target="_blank">Pages APIs</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+							                 <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>	
+								<li>
+									<div class="">
+									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
+											</li>
+											<li>
+								                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#content-editor-workflow">Content Editor Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#backend-services-workflow">Backend-services Workflow</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>	
+					<li>
+						<div class="">
+						<a href="developer-docs/library_reference/">Library References</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/telemetry/jslibrary/">Standalone JS Library</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/htmlinterfacelibrary/">HTML Interface Library</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
+					</li>
+				</div>
+			</li>
+		</ul>
+		<a href="contributions/">
+			<h4 class="sidebar-group-title">Contribute to Sunbird</h4>
+		</a>
+		<ul class="sidebar-group contributions" >
+			<li>
+				<a href="contributions/filing_a_bug">Guidelines for Filing a Bug</a>
+			</li>
+			<li>
+				<a href="contributions/contribution_guidelines">Contributing to Sunbird Documentation</a>
+			</li>
+		</ul>
+		<a href="faqs/">
+			<h4 class="sidebar-group-title">Frequently asked questions</h4>
+		</a>
+		<ul class="sidebar-group faqs" >
+			<li>
+				<a href="faqs/audience/">Audience</a>
+			</li>
+			<li>
+				<a href="faqs/content_format/">Content Format</a>
+			</li>
+			<li>
+				<a href="faqs/content_repo/">Content Repositories</a>
+			</li>
+			<li>
+				<a href="faqs/contentreviews/">Content Review</a>
+			</li>
+			<li>
+				<a href="faqs/content_types/">Content Types</a>
+			</li>
+			<li>
+				<a href="faqs/content_upload/">Content Upload</a>
+			</li>
+			<li>
+				<a href="faqs/feature/">Features</a>
+			</li>
+			<li>
+				<a href="faqs/fixerrors/">Fix Errors</a>
+			</li>
+			<li>
+				<a href="faqs/helpsupport/">Help Support</a>
+			</li>
+			<li>
+				<a href="faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
+			</li>
+			<li>
+				<a href="faqs/registrationenrolment/">Registration and Enrollment</a>
+			</li>
+			<li>
+				<a href="faqs/signin/">Sign In</a>
+			</li>
+			<li>
+				<a href="faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
+			</li>
+			<li>
+				<a href="faqs/user_rightspermissions/">Users Rights and Permission</a>
+			</li>
+		</ul>
+		<a href="glossary/">
+			<h4 class="sidebar-group-title">Glossary</h4>
+		</a>
+	</div>
+</div>
+<script>
+$("a[href$='developer-docs/installation/install_sbbackend/']").addClass("sidebar-link-selected");
+</script>
+
+      </div>
+    </nav>
+    <div class="content">
+      <div class="inner__content header" id="heading">
+        <h1>Installing Sunbird Backend </h1>
+      </div>
+
+      <div id="main-content" class="inner__content">
+			<p class="edit-para text-right">
+				<span>
+			<a target="_blank" class="contribute" href="contributions/contribution_guidelines">
+				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;
+			  
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/install_sbbackend.md">
+				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+			  </a> 
+			  | 
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				  Report
+			  </a>
+			  </span>
+			</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#sunbird-backend-services"><span class="tocnumber">2 .</span> <span class="toctext">Sunbird Backend Services</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#setup"><span class="tocnumber">2.1 .</span> <span class="toctext">Setup</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#configuration-setup-for-application"><span class="tocnumber">2.2 .</span> <span class="toctext">Configuration setup for Application</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#setting-environment-variables"><span class="tocnumber">2.3 .</span> <span class="toctext">Setting Environment Variables</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#configuring-and-running-back-end-services-stack"><span class="tocnumber">3 .</span> <span class="toctext">Configuring and running Back-End Services Stack</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#configuring-the-akka-actors"><span class="tocnumber">4 .</span> <span class="toctext">Configuring the (Akka) Actors</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-8">
+              <a href="#testing-the-services"><span class="tocnumber">5 .</span> <span class="toctext">Testing the services</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+
+<p>The purpose of this section is to assist you:</p>
+
+<ul>
+  <li>With installing the Sunbird backend on your local machine</li>
+</ul>
+
+<p>Also, if you are interested in Testing:</p>
+
+<ul>
+  <li>Sunbird backend services</li>
+  <li>API workflows</li>
+</ul>
+
+<h2 id="sunbird-backend-services">Sunbird Backend Services</h2>
+
+<p>To setup the Sunbird Back-end services, follow the steps chronologically:</p>
+
+<ol>
+  <li>Setup</li>
+  <li>Configure back-end service stack</li>
+</ol>
+
+<h3 id="setup">Setup</h3>
+
+<p>Before configuring the services, ensure the installation of following dependencies:</p>
+
+<ul>
+  <li>Apache Cassandra ver-3.10</li>
+  <li>Elasticsearch ver-5.4.0</li>
+  <li>Keycloak ver-3.2.1. Final</li>
+  <li>PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)</li>
+</ul>
+
+<p>Let us setup the environment and then proceed with deploying the services.</p>
+
+<p>
+  <strong>Setup Cassandra</strong>
+</p>
+
+<ol>
+  <li>For step by step installation guide of refer to the official <a href="http://cassandra.apache.org/doc/latest/getting_started/installing.html" target="_blank">website</a></li>
+  <li>The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface)</li>
+  <li>Run <a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql" target="_blank">cassandra.cql</a> file to      create the required keyspace, tables and indices</li>
+  <li>
+    <p>Copy the following files to a temp folder in a Cassandra installed machine</p>
+
+    <ul>
+      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv" target="_blank">pageMgmt.csv</a></li>
+      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv">pageSection.csv</a> {:target=”_blank”}</li>
+      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv" target="_blank">pageSection.csv</a></li>
+    </ul>
+  </li>
+</ol>
+
+<p>Example:  <code>/tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv</code></p>
+
+<ol>
+  <li>Execute the following commands</li>
+</ol>
+
+<pre>
+cqlsh -e "COPY sunbird.page_management(id, appmap,createdby, createddate, name, 
+organisationid, portalmap, updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv'"
+ cqlsh -e "COPY sunbird.page_section(id, alt, createdby, createddate, description,
+ display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) 
+ FROM '/tmp/cql/pageSection.csv'"
+</pre>
+<p>Next section details about setting up the Elasticsearch on your local machine.</p>
+
+<p>
+  <strong>Setup Elasticsearch</strong>
+</p>
+
+<ol>
+  <li>
+    <p>For step by step installation guide of Elasticsearch refer to the official <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html" target="_blank">website</a></p>
+  </li>
+  <li>
+    <p>The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to<br />
+start the server and open Elasticsearch CLI (Command Line Interface)</p>
+  </li>
+  <li>
+    <p>Run the following curl command</p>
+  </li>
+</ol>
+
+<pre>
+              curl -X PUT \
+              http://localhost:9200/searchindex/org/ORG_001 \
+              -H 'cache-control: no-cache' \
+              -H 'content-type: application/json' \
+              -H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' \
+              -d '{}'
+</pre>
+
+<p>Next section details about setting up the Keycloak on your local machine.</p>
+
+<p>
+  <strong>Setup Keycloak</strong>
+</p>
+
+<ol>
+  <li>
+    <p>For step by step installation guide of Keycloak refer to the official <a href="http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html" target="_blank">website</a></p>
+  </li>
+  <li>
+    <p>The official website guides you through the installation, and if you have done a successful install of Keycloak, now you need to start the server</p>
+  </li>
+  <li>
+    <p>To start the Keycloak server, navigate to “Bin” Directory and run the standalone file. Performing this action will start the Keycloak server</p>
+  </li>
+  <li>
+    <p>You can access the Keycloak admin console on <code>http://localhost:8080</code></p>
+  </li>
+  <li>
+    <p>For Public key, navigate to Realm settings tab -&gt; Keys -&gt; Public Keys</p>
+  </li>
+  <li>
+    <p>For sending welcome email when a user registers, you need to configure email server by navigating to: Realm Settings tab -&gt; Emails (optional)</p>
+  </li>
+</ol>
+
+<h3 id="configuration-setup-for-application">Configuration setup for Application</h3>
+
+<p>To run Sunbird services, you need to set different environment variables listed as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>variable</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sunbird_cassandra_host</td>
+      <td>host running the Cassandra server</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_port</td>
+      <td>port on which Cassandra server is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_username (optional)</td>
+      <td>username for Cassandra database, if authentication is enabled</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_password (optional)</td>
+      <td>password for Cassandra database, if authentication is enabled</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_host</td>
+      <td>host running the Elasticsearch server</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_port</td>
+      <td>port on which Elasticsearch server is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_cluster (optional)</td>
+      <td>name of the Elasticsearch cluster</td>
+    </tr>
+    <tr>
+      <td>sunbird_learner_actor_host</td>
+      <td>host running for learner actor</td>
+    </tr>
+    <tr>
+      <td>sunbird_learner_actor_port</td>
+      <td>port on which learner actor is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_url</td>
+      <td>url for keycloak server (Example : <strong>http://localhost:8080/auth</strong> )</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_realm</td>
+      <td>keycloak realm name   (use default realm as master or you can create new realm)</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_username</td>
+      <td>keycloak user name</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_password</td>
+      <td>keycloak password</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_client_id</td>
+      <td>key cloak client id  (use default as admin-cli or you can create new client in key cloak)</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_client_secret</td>
+      <td>keycloak client secret (not mandatory)</td>
+    </tr>
+    <tr>
+      <td>ekstep_content_search_base_url</td>
+      <td>provide base url for EkStep content search</td>
+    </tr>
+    <tr>
+      <td>ekstep_authorization</td>
+      <td>provide Authorization value for content search</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_host</td>
+      <td>Postgres host name or ip</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_port</td>
+      <td>Postgres port number</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_db</td>
+      <td>Postgres db name</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_user</td>
+      <td>Postgres db user name</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_password</td>
+      <td>Postgress db password</td>
+    </tr>
+    <tr>
+      <td>sunbird_installation</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ekstep_api_base_url</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_host</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_port</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_username</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_password</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_from_email</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_account_name</td>
+      <td>account name of azure blob storage</td>
+    </tr>
+    <tr>
+      <td>sunbird_account_key</td>
+      <td>azure blob storage account key</td>
+    </tr>
+    <tr>
+      <td>sunbird_quartz_mode</td>
+      <td>put this value {“embedded” to run quartz without any data base, “any other value” to run with postgres db }</td>
+    </tr>
+    <tr>
+      <td>sunbird_encryption_key</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_encryption_mode</td>
+      <td>mode value is either local or remote</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_publickey</td>
+      <td>SSO public key</td>
+    </tr>
+    <tr>
+      <td>sunbird_env_logo_url</td>
+      <td>logo url for sending email.(http://www.paramountias.com/media/images/current-affairs/diksha-portal.jpg)</td>
+    </tr>
+    <tr>
+      <td>sunird_web_url</td>
+      <td>web page url</td>
+    </tr>
+    <tr>
+      <td>sunbird_app_url</td>
+      <td>Play store url to download the app</td>
+    </tr>
+    <tr>
+      <td>sunbird_msg_91_auth</td>
+      <td>msg 91 auth</td>
+    </tr>
+    <tr>
+      <td>sunbird_msg_sender</td>
+      <td>message sender name</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The table mentions all the environment variables with description. You need to add/edit the environment variables in appropriate locations.Next section details about the environmental variables that are mandatory to run the backend services.</p>
+
+<h3 id="setting-environment-variables">Setting Environment Variables</h3>
+
+<p>To run sunbird backend services, atleast you need to set the following environment variables. Set the environment variables at appropriate locations.</p>
+
+<pre>
+          1. sunbird_cassandra_host
+          2. sunbird_cassandra_port
+          3. sunbird_cassandra_username 
+          4. sunbird_cassandra_password 
+          5. sunbird_es_host
+          6. sunbird_es_port
+          7. sunbird_learner_actor_host
+          8. sunbird_learner_actor_port
+          9. sunbird_sso_url
+          10. sunbird_sso_realm
+          11. sunbird_sso_username
+          12. sunbird_sso_password
+          13. sunbird_sso_client_id
+          14. ekstep_content_search_base_url
+          15. ekstep_authorization
+          16. sunbird_installation : name of in which environment you running this application or instance name
+          17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
+          18. sunbird_sso_publickey
+</pre>
+
+<p>Here, you can find the remaining <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">Environment Variable Values</a></p>
+
+<h2 id="configuring-and-running-back-end-services-stack">Configuring and running Back-End Services Stack</h2>
+
+<p>You can configure the Backend service by following these instructions:</p>
+
+<ul>
+  <li>Cloning the repositories</li>
+  <li>Making the Build</li>
+</ul>
+
+<p>Clone following repositories:</p>
+
+<ul>
+  <li><a href="https://github.com/project-sunbird/sunbird-utils" target="_blank">sunbird-utils</a></li>
+  <li><a href="https://github.com/project-sunbird/sunbird-lms-service" target="_blank">sunbird-lms-service</a></li>
+  <li><a href="https://github.com/project-sunbird/sunbird-lms-mw" target="_blank">sunbird-lms-mw</a></li>
+</ul>
+
+<p>Make the builds in following order:</p>
+
+<ul>
+  <li>sunbird-utils</li>
+  <li>sunbird-lms-mw</li>
+  <li>sunbird-lms-service</li>
+</ul>
+
+<h2 id="configuring-the-akka-actors">Configuring the (Akka) Actors</h2>
+
+<p>Sunbird architecture supports two Akka actor systems:</p>
+
+<ol>
+  <li>Normal ActorSystem</li>
+  <li>Background ActorSystem</li>
+</ol>
+
+<p>And by default, both run on two different machines.
+But to run these actor systems on single machine, you need to modify the we need to modify [resource.properties file]
+For details <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">refer</a>to repository.</p>
+
+<p>In ordere to run both the actor systems on single machine follow these steps:</p>
+
+<ol>
+  <li>Open <strong>externalresource.properties</strong> file</li>
+  <li>Modify the following properties:
+    <ul>
+      <li>background_actor_provider</li>
+      <li>api_actor_provider</li>
+    </ul>
+  </li>
+  <li>Set value of both properties as “local”</li>
+  <li>Run <code>mvn clean install</code> command to make build of each module</li>
+</ol>
+
+<p>And to run Application sunbird-lms-service execute the following command</p>
+
+<pre>
+  <code>  run mvn play2:run 
+</code>
+</pre>
+
+<h2 id="testing-the-services">Testing the services</h2>
+
+<p>Run any API, e.g. create a user API and perform different actions on user using this <a href="https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f" target="_blank">Postman collection</a></p>
+
+
+          
+          <hr />
+          
+          <p class="edit-para text-right">
+			<!--<a target="_blank"  class="" href="">
+				  <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/install_sbbackend.md" title="Fix this page">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
+		  </p>
+		  <a href="developer-docs/installation/install_sbbackend/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+          
+      </div>
+    </div>
+    <div class="page-footer">
+		<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="row">
+				
+			<div class="col-md-4 col-sm-12">
+			</div>
+			
+			<div class="col-md-2 col-sm-6 ">
+				<ul>
+					<li><a href="about/">About Sunbird</a></li>
+					<li><a href="contact/">Contact Us</a></li>
+					<li><a href="privacy-policy/">Privacy Policy</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-2 col-sm-6 sideline">
+				<ul>
+					<li><a href="docs/">Documentation</a></li>
+					<li><a href="features/">Features</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-12">
+			</div>
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+  </div>
+  <script type="text/javascript">
+	//TOC Toggle
+    $(function() {
+        $.toc.clickHideButton();
+    });
+    //Scroll to top
+    $(document).ready(function () {
+		$(".content").scroll(function () {
+			if ($(this).scrollTop() > 250) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+	});
+	$('#toc a').each(function(){
+		var url = this.href.replace(baseURL.href, "");
+		this.href = 'developer-docs/installation/install_sbbackend/' + url;
+    })
+  </script>
+  </body>
+</html>

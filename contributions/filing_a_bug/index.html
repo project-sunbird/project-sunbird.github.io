@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.11.c/";
+			baseURL.href="/releases/release.1.12/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Filing a Bug</title>
-<meta name="description" content="Sunbird Site How to file a bug"/>
+<title>Sunbird Guidelines for filing a bug</title>
+<meta name="description" content="Sunbird Site How to file an effective bug report?"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-23 13:49:35 +0530">
+<meta name="last-modified" content="2018-01-24 18:07:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.11.c" />
-<meta name="buildNo" content="1299" />
+<meta name="buildVersion" content="release.1.12" />
+<meta name="buildNo" content="1405" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23012018"  />
-<link rel="stylesheet" href="css/style.css?23012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?23012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?23012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?23012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24012018"  />
+<link rel="stylesheet" href="css/style.css?24012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?24012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?24012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?24012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -149,7 +149,7 @@
 				</li>
 				<li>
 					<div class="">
-						<ul class="sidebar-group">
+	                                        <ul class="sidebar-group">
 							<li>
 								<a href="features-documentation/user_type/">Types of Users</a>
 							</li>
@@ -163,7 +163,22 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses</a>
+					<a href="features-documentation/course_intro/">Courses</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/course_creation/">Course Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_batches/">Batch Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_consumption/">Course Consumption</a>
+							</li>					
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a href="features-documentation/announcement/">Announcement</a>
@@ -215,8 +230,22 @@
 						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
 					</li>-->
 					<li>
-						<a  href="developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
+						<a  href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
 					</li>
+					<li>
+						<div class="">
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/install_sbportal/">Installing Sunbird Portal</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
+								</li>
+							</ul>
+						</div>
+					</li>		
+					
+					
 					<li>
 						<div class="">
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
@@ -418,6 +447,17 @@
 				</div>
 			</li>
 		</ul>
+		<a href="contributions/">
+			<h4 class="sidebar-group-title">Contribute to Sunbird</h4>
+		</a>
+		<ul class="sidebar-group contributions" >
+			<li>
+				<a href="contributions/filing_a_bug">Guidelines for Filing a Bug</a>
+			</li>
+			<li>
+				<a href="contributions/contribution_guidelines">Contributing to Sunbird Documentation</a>
+			</li>
+		</ul>
 		<a href="faqs/">
 			<h4 class="sidebar-group-title">Frequently asked questions</h4>
 		</a>
@@ -478,7 +518,7 @@ $("a[href$='contributions/filing_a_bug/']").addClass("sidebar-link-selected");
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Filing a Bug </h1>
+        <h1>Guidelines for filing a bug </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -524,15 +564,39 @@ $("a[href$='contributions/filing_a_bug/']").addClass("sidebar-link-selected");
                   <a href="#issue-title"><span class="tocnumber">4.1 .</span> <span class="toctext">Issue Title</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-6">
-                  <a href="#issue-description"><span class="tocnumber">4.2 .</span> <span class="toctext">Issue Description</span></a>
+                  <a href="#a-concise-issue-description"><span class="tocnumber">4.2 .</span> <span class="toctext">A concise issue description</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-7">
-                  <a href="#submit"><span class="tocnumber">4.3 .</span> <span class="toctext">Submit</span></a>
+                  <a href="#sequence-of-steps-to-reproduce-bug"><span class="tocnumber">4.3 .</span> <span class="toctext">Sequence of steps to reproduce bug</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#actual-behavior"><span class="tocnumber">4.4 .</span> <span class="toctext">Actual behavior</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#expected-behavior"><span class="tocnumber">4.5 .</span> <span class="toctext">Expected behavior</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#environment-in-which-the-issue-is-encountered"><span class="tocnumber">4.6 .</span> <span class="toctext">Environment in which the issue is encountered</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-11">
+                  <a href="#supporting-files"><span class="tocnumber">4.7 .</span> <span class="toctext">Supporting files</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#sunbird-version"><span class="tocnumber">4.8 .</span> <span class="toctext">Sunbird Version</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-13">
+                  <a href="#issue-category"><span class="tocnumber">4.9 .</span> <span class="toctext">Issue Category</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-14">
+                  <a href="#type-and-severity"><span class="tocnumber">4.10 .</span> <span class="toctext">Type and severity</span></a>
                 </li>
               </ul>
             </li>
-            <li class="toc_level-1 toc_section-8">
-              <a href="#following-up"><span class="tocnumber">5 .</span> <span class="toctext">Following up</span></a>
+            <li class="toc_level-1 toc_section-15">
+              <a href="#submit"><span class="tocnumber">5 .</span> <span class="toctext">Submit</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-16">
+              <a href="#following-up"><span class="tocnumber">6 .</span> <span class="toctext">Following up</span></a>
             </li>
           </ul>
         </td>
@@ -543,13 +607,23 @@ $("a[href$='contributions/filing_a_bug/']").addClass("sidebar-link-selected");
 
 <p>Writing a good bug report is not hard. Just follow a few effective techniques and you will be writing super bug reports in no time at all.</p>
 
-<p>Please keep in mind that there are a few alternative options for support:</p>
+<p>It is worth noting that there are a few alternative options for support:</p>
 
 <ol>
-  <li>Check the <a href="http://www.sunbird.org/developer-docs/troubleshooting/">Sunbird troubleshooting</a> page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.</li>
-  <li>The bug you have experienced might be faced by others also, it is recommended to check the <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues">Sunbird issue tracker</a></li>
+  <li>Check the <a href="http://www.sunbird.org/developer-docs/troubleshooting/" target="_blank">Sunbird troubleshooting</a> page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.</li>
+  <li>The bug you have experienced might be faced by others also, it is recommended to check the <a href="https://github.com/project-sunbird/project-sunbird.github.io/issues" target="_blank">Sunbird issue tracker</a></li>
   <li>If the bug report exists, you may click “subscribe” to follow any developments.</li>
 </ol>
+
+<p>To file a bug report that is effective, ensure the following:</p>
+
+<ul>
+  <li>Separate out the bug</li>
+  <li>Single issue for a single bug</li>
+  <li>Writing an effective bug report</li>
+  <li>Submit</li>
+  <li>Follow up</li>
+</ul>
 
 <h2 id="separate-out-the-bug">Separate out the bug</h2>
 <p>The first step in in writing an effective bug report is to find exactly:</p>
@@ -579,55 +653,79 @@ $("a[href$='contributions/filing_a_bug/']").addClass("sidebar-link-selected");
 <p>Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.</p>
 
 <h3 id="issue-title">Issue Title</h3>
-<p>The title should describe the problem as best as possible. Remember that the title read more often than any other part of the bug report.</p>
+
+<p>Everything starts with a title. It must be clear and descriptive so that you can get an idea of what the report is about at a glance. It also has to be clearly differentiated from all other existing bug reports. A good way to think about bug titles is that your bug report should atleast answer the following questions:</p>
+
+<ol>
+  <li>What is the problem?</li>
+  <li>Where does the problem occur?</li>
+  <li>What action must the user perform to trigger the problem?</li>
+</ol>
+
+<p>And keep in mind, these questions must be answered in less than 140 characters!</p>
+
+<p>The title should describe the problem as best as possible. Remember that the title is read more often than any other part of the bug report.</p>
 
 <p>After submitting the issue, you can modify the title.</p>
 
-<h3 id="issue-description">Issue Description</h3>
+<h3 id="a-concise-issue-description">A concise issue description</h3>
 
-<h4 id="sequence-of-steps-to-reproduce-bug">Sequence of Steps to reproduce bug</h4>
+<p>A good bug report has a clear and concise description. This is an opportunity to explain the defect and put across all the relevant details.Describing something accurately and concisely is best way to help and fix the bug. Also,remember that the person reading your description has not seen the bug, so avoid assumptions.</p>
 
-<ul>
-  <li>A bug report needs clear instructions, so that others can understand and exclusively reproduce it</li>
-  <li>Include good set of instructions i.e a numbered list that details each button press, or menu selection</li>
-</ul>
+<h3 id="sequence-of-steps-to-reproduce-bug">Sequence of steps to reproduce bug</h3>
 
-<h4 id="actual-behavior">Actual behavior</h4>
+<p>One of the most important steps in a good bug report is providing a step-by-step account of exactly what you did to find the defect. You can use software tools that catch your key strokes, or record screenshots or video files as you test. Other times you’ll be writing from memory, so take notes as you go. Make sure that you test your own steps again before submitting the bug.</p>
+
+<p>Ensure the following:
+- A bug report needs clear instructions, so that others can understand and exclusively reproduce it
+- Include good set of instructions i.e a numbered list that details each button press, or menu selection</p>
+
+<h3 id="actual-behavior">Actual behavior</h3>
 
 <ul>
   <li>In contrast to the expected behavior, describe what currently happens when the bug is present.</li>
 </ul>
 
-<h4 id="expected-behavior">Expected behavior</h4>
+<h3 id="expected-behavior">Expected behavior</h3>
 
 <ul>
   <li>Describe what actually is correct workflow or exactly should happen if the bug was fixed.</li>
 </ul>
 
-<h4 id="environment-in-which-the-issue-encountered">Environment in which the Issue Encountered</h4>
+<h3 id="environment-in-which-the-issue-is-encountered">Environment in which the issue is encountered</h3>
 
 <ul>
   <li>Name the operating system and version you are using, such as “Windows 7”, or “Mac OS X 10.7.5” etc.</li>
   <li>Name the browser and version which you are using, such as “Chrome 63” or “Firefox Quantum” or “Microsoft Edge”</li>
 </ul>
 
-<h4 id="supporting-files">Supporting Files</h4>
+<h3 id="supporting-files">Supporting files</h3>
+
+<p>Supporting material is always gratefully received by those assigned with fixing defects. Usually the files can be be screenshots, but it can include audio and video files also. Annotate your screenshots to highlight problems.</p>
+
+<p>The visuals are always looked at first prior to reading the text you provide. If you can convey the issue in a single screenshot, you’re helping save precious time.</p>
+
+<p>So, ensure to:</p>
 
 <ul>
-  <li>If you can supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.</li>
+  <li>Supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.</li>
 </ul>
 
-<h4 id="sunbird-version">Sunbird Version</h4>
+<h3 id="sunbird-version">Sunbird Version</h3>
+
 <p>The version of Sunbird in which you discovered the bug (e.g., 1.3). If you can reproduce the problem in more than one version, write down the earliest.</p>
 
-<h4 id="issue-category">Issue Category</h4>
+<h3 id="issue-category">Issue Category</h3>
+
 <p>A “bug report” is usually for when Sunbird does something which is not what it is expected to. An example of a bug could be: a link to a page, instead of opening it shows an error.</p>
 
 <p>Tasks, feature requests and support requests are beyond the scope of this article.</p>
 
-<h4 id="issue-severity">Issue Severity</h4>
+<h3 id="type-and-severity">Type and severity</h3>
 
-<p>Every bug will have a different severity.</p>
+<p>Every bug will have a different type and severity.These fields go hand-in-hand. A functional bug will generally be treated more seriously than a suggestion. No product ships with zero defects, so having bugs categorized correctly in terms of type and severity helps the decision-making process with regards to what gets fixed and what doesn’t. If you don’t understand these fields, ask for instruction. It also helps to review other bug entries the issue tracker.</p>
+
+<p>You can use the following tags in your bug reports:</p>
 
 <p>
   <strong>Use “Critical” in case:</strong>
@@ -652,14 +750,13 @@ $("a[href$='contributions/filing_a_bug/']").addClass("sidebar-link-selected");
 
 <p><strong>Note:</strong> While a bug that you are experiencing is important to you, developers balance it with all the other known bugs.</p>
 
-<h3 id="submit">Submit</h3>
+<h2 id="submit">Submit</h2>
 
 <p>Click <strong>Submit button</strong> to submit your bug report to the issue tracker.</p>
 
 <h2 id="following-up">Following up</h2>
 
 <p>Once a developer marks a bug as fixed, it is a good idea to ensure that it is completely fixed. To test, download the latest build.</p>
-
 
           
           <hr />

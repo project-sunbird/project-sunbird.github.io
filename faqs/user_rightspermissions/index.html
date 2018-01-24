@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.11.c/";
+			baseURL.href="/releases/release.1.12/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-23 13:49:35 +0530">
+<meta name="last-modified" content="2018-01-24 18:07:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.11.c" />
-<meta name="buildNo" content="1299" />
+<meta name="buildVersion" content="release.1.12" />
+<meta name="buildNo" content="1405" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23012018"  />
-<link rel="stylesheet" href="css/style.css?23012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?23012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?23012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?23012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24012018"  />
+<link rel="stylesheet" href="css/style.css?24012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?24012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?24012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?24012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -149,7 +149,7 @@
 				</li>
 				<li>
 					<div class="">
-						<ul class="sidebar-group">
+	                                        <ul class="sidebar-group">
 							<li>
 								<a href="features-documentation/user_type/">Types of Users</a>
 							</li>
@@ -163,7 +163,22 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses</a>
+					<a href="features-documentation/course_intro/">Courses</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/course_creation/">Course Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_batches/">Batch Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_consumption/">Course Consumption</a>
+							</li>					
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a href="features-documentation/announcement/">Announcement</a>
@@ -215,8 +230,22 @@
 						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
 					</li>-->
 					<li>
-						<a  href="developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
+						<a  href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
 					</li>
+					<li>
+						<div class="">
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/install_sbportal/">Installing Sunbird Portal</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
+								</li>
+							</ul>
+						</div>
+					</li>		
+					
+					
 					<li>
 						<div class="">
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
@@ -418,6 +447,17 @@
 				</div>
 			</li>
 		</ul>
+		<a href="contributions/">
+			<h4 class="sidebar-group-title">Contribute to Sunbird</h4>
+		</a>
+		<ul class="sidebar-group contributions" >
+			<li>
+				<a href="contributions/filing_a_bug">Guidelines for Filing a Bug</a>
+			</li>
+			<li>
+				<a href="contributions/contribution_guidelines">Contributing to Sunbird Documentation</a>
+			</li>
+		</ul>
 		<a href="faqs/">
 			<h4 class="sidebar-group-title">Frequently asked questions</h4>
 		</a>
@@ -498,41 +538,40 @@ $("a[href$='faqs/user_rightspermissions/']").addClass("sidebar-link-selected");
 			  </a>
 			  </span>
 			</p>
-          <p><strong>What user roles does the platform support?</strong></p>
+          <p><strong>Q. What user roles does the platform support?</strong></p>
 
 <p>Currently, Sunbird users are categorized as:</p>
 
 <ul>
-  <li>Organization Administrator</li>
-  <li>System Administrator</li>
-  <li>Content Creator</li>
-  <li>Content Reviewer</li>
-  <li>Flag Reviewer</li>
-  <li>Course Mentor</li>
-  <li>Registered User</li>
+  <li>Admin</li>
+  <li>Instructor</li>
+  <li>Learners</li>
 </ul>
 
 <p>The workflows for all user roles can be configured.</p>
 
-<p><strong>How do you get content creation rights on the platform?</strong></p>
+<p><strong>Q. How do you get content creation rights on the platform?</strong></p>
 
 <p>The platform has set protocols for user roles and functionalities. The user base follows a certain hierarchy, where the administrators provide rights and permissions to other users, based on need, to accomplish their tasks across the platform.</p>
 
-<p>Strategically, every state should have designated system administrators, who create and assign rights to organizational administrators, who in turn create and assign content creator, reviewer or general user permissions.</p>
+<p>Strategically, every organization should have designated system administrators, who create and assign rights to organizational administrators, who in turn create roles viz,</p>
 
-<p>Content creators use the in-built content authoring tool to create new lessons, courses, etc. on the portal.</p>
+<ul>
+  <li>Content Creator</li>
+  <li>Content Reviewer</li>
+  <li>Flag Reviewer</li>
+  <li>Course Mentor</li>
+  <li>Announcement Sender</li>
+  <li>Course creator</li>
+  <li>Course Admin</li>
+  <li>Org Moderator</li>
+</ul>
 
-<p>The process to get content creation rights is depicted in the following conceptual diagram:</p>
-
-<p><a target="_blank" href="pages/faqs/images/usr_functon.png">
-        <img src="pages/faqs/images/usr_functon.png" alt="User Functions" class="plugin center" width="100%" />
-      </a></p>
-
-<p><strong>What is the difference between the User ID of an administrator and a general user?</strong></p>
+<p><strong>Q. What is the difference between the User ID of an administrator and a general user?</strong></p>
 
 <p>User IDs of administrators are not different from any other user. However, the permissions provided to administrators differ from other users.</p>
 
-<p><strong>What data does a content provider see?</strong></p>
+<p><strong>Q. What data does a content provider see?</strong></p>
 
 <p>While creating content, content providers can see following data:</p>
 
@@ -553,7 +592,6 @@ $("a[href$='faqs/user_rightspermissions/']").addClass("sidebar-link-selected");
   <li>Total number of content pieces viewed,</li>
   <li>Average time spent per user per visit</li>
 </ul>
-
 
           
           <hr />

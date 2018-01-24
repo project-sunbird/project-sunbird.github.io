@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.11.c/";
+			baseURL.href="/releases/release.1.12/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-23 13:49:35 +0530">
+<meta name="last-modified" content="2018-01-24 18:07:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.11.c" />
-<meta name="buildNo" content="1299" />
+<meta name="buildVersion" content="release.1.12" />
+<meta name="buildNo" content="1405" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23012018"  />
-<link rel="stylesheet" href="css/style.css?23012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?23012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?23012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?23012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24012018"  />
+<link rel="stylesheet" href="css/style.css?24012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?24012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?24012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?24012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -149,7 +149,7 @@
 				</li>
 				<li>
 					<div class="">
-						<ul class="sidebar-group">
+	                                        <ul class="sidebar-group">
 							<li>
 								<a href="features-documentation/user_type/">Types of Users</a>
 							</li>
@@ -163,7 +163,22 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses</a>
+					<a href="features-documentation/course_intro/">Courses</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/course_creation/">Course Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_batches/">Batch Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_consumption/">Course Consumption</a>
+							</li>					
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a href="features-documentation/announcement/">Announcement</a>
@@ -215,8 +230,22 @@
 						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
 					</li>-->
 					<li>
-						<a  href="developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
+						<a  href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
 					</li>
+					<li>
+						<div class="">
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/install_sbportal/">Installing Sunbird Portal</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
+								</li>
+							</ul>
+						</div>
+					</li>		
+					
+					
 					<li>
 						<div class="">
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
@@ -418,6 +447,17 @@
 				</div>
 			</li>
 		</ul>
+		<a href="contributions/">
+			<h4 class="sidebar-group-title">Contribute to Sunbird</h4>
+		</a>
+		<ul class="sidebar-group contributions" >
+			<li>
+				<a href="contributions/filing_a_bug">Guidelines for Filing a Bug</a>
+			</li>
+			<li>
+				<a href="contributions/contribution_guidelines">Contributing to Sunbird Documentation</a>
+			</li>
+		</ul>
 		<a href="faqs/">
 			<h4 class="sidebar-group-title">Frequently asked questions</h4>
 		</a>
@@ -500,59 +540,60 @@ $("a[href$='features-documentation/course_consumption/']").addClass("sidebar-lin
 			</p>
           <p>Any registered user can take up a course on Sunbird. The guidelines to taking a course varies from course to course and is upto the discretion of the course creator.</p>
 
-<h3 id="prerequisite">Prerequisite</h3>
-<p>User should have the link (URL) and credentials to sign in to Sunbird.</p>
-
-<h3 id="signing-in-on-sunbird">Signing in on Sunbird</h3>
+<h3 id="prerequisites">Prerequisites</h3>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter your <strong>Username</strong> or email ID <br />2. Enter your <strong>Password</strong> <br />3. Click <strong>Log in</strong>
-      </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+    <td>1. You are logged in <br />2. You are on the <b>Home</b> page 
+       </td>
+      <td><img src="pages/features-documentation/images/consumption_home.png" /></td>
   </tr>
   </table>
 
 <h3 id="sunbird-homepage">Sunbird Homepage</h3>
+
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. The <strong>Home</strong> tab opens by default <br />2. All courses assigned to you appear in the <strong>To Do</strong> list <br />3. Click <strong>Resume</strong> button, to start the course for the first time or continue from where you stopped, if you had started the course earlier
+    <td>1. All courses assigned to you appear in the <b>To Do</b> list <br />2. Click <b>Resume</b> button, to start the course for the first time or continue from where you stopped, if you had started the course earlier
       </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+      <td><img src="pages/features-documentation/images/consumption_todo.png" /></td>
   </tr>
   </table>
 
 <p>### Exploring the Courses Page</p>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. The selected course opens in the <strong>Courses</strong> tab <br />2. See details about the course - its content, structure, your progress, etc. here <br />3. Click <strong>Adobe PDF</strong> icon, to read printable course material <br />4. Click <strong>Play</strong> icon to view a video of the course material <br />5. Click <strong>(+)</strong> icon, on the right pane, to add notes to your notebook. You can maintain separate notes for each cource that you take <br />6. Click <strong>Resume Course</strong> to continue from where you stopped earlier
+    <td>1. The selected course opens in the <b>Courses</b> tab <br />2. See details about the course - its content, structure, your progress, etc. here <br />3. Click <b>(+)</b> icon, on the right pane, to add notes to your notebook. You can maintain separate notes for each cource that you take <br />4. The progress of your course is displayed on the right side
+      
+ *Note*: Course materails can be in different content types, for example, pdf, video etc. In such cases: <br />&emsp;a) Click <b>Adobe PDF</b> icon, to read printable course material <br />&emsp;b) Click <b>Play</b> icon to view a video of the course material
      </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+      <td><img src="pages/features-documentation/images/consumption_details.png" /></td>
   </tr>
   </table>
 
-<p>### Inbuilt Content Player
-  On clicking on the course material links, the course content is diplayed in the inbuilt content player.</p>
+<p>### Inbuilt Content Player</p>
+
+<p>On clicking on the course material links, the course content is diplayed in the inbuilt content player.</p>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Menu</strong> to view the player options available <br />2. Click <strong>left scroll</strong> icon to go to previous page or slide of study material <br />3. Click <strong>right scroll</strong> icon to go to the next page or slide of study material <br />4. Click <strong>Previous</strong> button, to view study material preceding the current material in the course material list <br />5. Click <strong>Next</strong> button to view study material immediately subsequent to current material from the course material list <br />6. Click <strong>Take Note</strong> button to take a note for the current course material <br />7. Click <strong>Resume Course</strong> to continue from where you stopped earlier <br />. Click <strong>X</strong> button to exit the page
+    <td>1. Click <b>Menu</b> to view the player options available <br />2. Click <b>left scroll</b> icon to go to previous page or slide of study material <br />3. Click <b>right scroll</b> icon to go to the next page or slide of study material <br />4. Click <b>Previous</b> , to view study material preceding the current material in the course material list <br />5. Click <b>Next</b> to view study material immediately subsequent to current material from the course material list <br />6. Click <b>Take Note</b> to take a note for the current course material <br />7. Click <b>Resume Course</b> to continue from where you stopped earlier <br />. Click <b>X</b> button to exit the page
      </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+      <td><img src="pages/features-documentation/images/consumption_contentplayer.png" /></td>
   </tr>
   </table>
 
@@ -560,32 +601,28 @@ $("a[href$='features-documentation/course_consumption/']").addClass("sidebar-lin
   Click the course player menu to the content player options. The name of the course is displayed in the header</p>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. <strong>Replay</strong>: To replay the study material <br />2. <strong>Change</strong>: To add or modify your profile avatar <br />3. <strong>Sound on</strong>: To turn on or off sound for audio or video study material <br />4. <strong>Teacher’s Note</strong>: To view teacher’s notes for the current course material <br />5. <strong>Home</strong>: To navigate to the Home page 
+    <td>1. <b>Replay</b>: To replay the study material <br />2. <b>Change</b>: To add or modify your profile avatar <br />3. <b>Sound on</b>: To turn on or off sound for audio or video study material <br />4. <b>Teacher’s Note</b>: To view teacher’s notes for the current course material <br />5. <b>Home</b>: To navigate to the Home page 
      </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
+      <td><img src="pages/features-documentation/images/consumption_contentplayer2.png" /></td>
   </tr>
   </table>
 
-<p>#### Taking Notes</p>
+<p>#### Taking Notes
+  TO take notes click <b>Take a Note</b>option</p>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Take a Note</strong> button to take notes on the course material
-     </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
-  </tr>
-    <td>1. Write an appropriate title for your note, such that you can easily identify and retrieve it from your notebook
-      Write details of your observations <br />2. Click <strong>Clear</strong>, to delete and rewrite your notes. On clicking clear, the title also will be cleared <br />3. Click <strong>Save</strong> to save the changes
+    <td>1. Enter an appropriate title for your note, such that you can easily identify and retrieve the note <br />2. Enter details of the note. <br />3. The tool bar comprises of various text formatting options. <br />4. Click <b>Clear</b>, to delete and rewrite your notes. On clicking clear, the title also will be cleared <br />5. Click <b>Save</b> to save the changes
       </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
-  &lt;/tr&gt;
+      <td><img src="pages/features-documentation/images/consumption_note.png" /></td>
+  </tr>
   </table>
 
 

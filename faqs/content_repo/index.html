@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.11.c/";
+			baseURL.href="/releases/release.1.12/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-23 13:49:35 +0530">
+<meta name="last-modified" content="2018-01-24 18:07:12 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.11.c" />
-<meta name="buildNo" content="1299" />
+<meta name="buildVersion" content="release.1.12" />
+<meta name="buildNo" content="1405" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23012018"  />
-<link rel="stylesheet" href="css/style.css?23012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?23012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?23012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?23012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24012018"  />
+<link rel="stylesheet" href="css/style.css?24012018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?24012018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?24012018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?24012018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -149,7 +149,7 @@
 				</li>
 				<li>
 					<div class="">
-						<ul class="sidebar-group">
+	                                        <ul class="sidebar-group">
 							<li>
 								<a href="features-documentation/user_type/">Types of Users</a>
 							</li>
@@ -163,7 +163,22 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/coursetraining/">Courses</a>
+					<a href="features-documentation/course_intro/">Courses</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/course_creation/">Course Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_batches/">Batch Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_consumption/">Course Consumption</a>
+							</li>					
+						</ul>
+					</div>
 				</li>
 				<li>
 					<a href="features-documentation/announcement/">Announcement</a>
@@ -215,8 +230,22 @@
 						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
 					</li>-->
 					<li>
-						<a  href="developer-docs/installation/installing_sunbirdon_laptop/">Install Sunbird on Laptop</a>
+						<a  href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
 					</li>
+					<li>
+						<div class="">
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/install_sbportal/">Installing Sunbird Portal</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
+								</li>
+							</ul>
+						</div>
+					</li>		
+					
+					
 					<li>
 						<div class="">
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
@@ -418,6 +447,17 @@
 				</div>
 			</li>
 		</ul>
+		<a href="contributions/">
+			<h4 class="sidebar-group-title">Contribute to Sunbird</h4>
+		</a>
+		<ul class="sidebar-group contributions" >
+			<li>
+				<a href="contributions/filing_a_bug">Guidelines for Filing a Bug</a>
+			</li>
+			<li>
+				<a href="contributions/contribution_guidelines">Contributing to Sunbird Documentation</a>
+			</li>
+		</ul>
 		<a href="faqs/">
 			<h4 class="sidebar-group-title">Frequently asked questions</h4>
 		</a>
@@ -498,11 +538,14 @@ $("a[href$='faqs/content_repo/']").addClass("sidebar-link-selected");
 			  </a>
 			  </span>
 			</p>
-          <p><strong>After content is uploaded on the platform, do updates made to the original content in the organization’s repository reflect automatically in platform’s repository?</strong></p>
+          <p><strong>Q. After content is uploaded on the platform, do updates made to the original content in the organization’s repository reflect automatically in platform’s repository?</strong></p>
 
-<p>The platform has only one common repository for all organizations.</p>
+<p>Two scenarios imply here:</p>
 
-<p>If the organization maintains a separate repository, the content in that repository does not automatically reflect in the platform’s repository. Any updates made to content in the organization’s repository must be re-uploaded on the platform’s site. The uploaded content undergoes the review process, before it is re-published on the platform.</p>
+<ul>
+  <li>If the platform has only one common repository for all the organizations, the changes in the content automatically reflect in the common repository.</li>
+  <li>If the organization maintains a separate repository, the content in that repository does not automatically reflect in the platform’s repository. Any updates made to content in the organization’s repository must be re-uploaded on the platform’s site. The uploaded content undergoes the review process, before it is re-published on the platform.</li>
+</ul>
 
 <p>Content that is already submitted to the platform repository can be modified using platform’s in-built content editor. To make changes or modify uploaded content:</p>
 
@@ -514,11 +557,11 @@ $("a[href$='faqs/content_repo/']").addClass("sidebar-link-selected");
   <li>The artefact will be published after review</li>
 </ol>
 
-<p><strong>Does any change in the organization’s content repository affect the content repository on the platform?</strong></p>
+<p><strong>Q. Does any change in the organization’s content repository affect the content repository on the platform?</strong></p>
 
 <p>The content in the organization’s repository does not automatically reflect in the platform’s repository. Changes to the organization’s repository do not affect the platform’s content repository.</p>
 
-<p><strong>Is the content provided stored in platform’s repository?</strong></p>
+<p><strong>Q. Is the content provided stored in platform’s repository?</strong></p>
 
 <p>All content uploaded and published on the platform is stored in platform’s content repository.</p>
 
