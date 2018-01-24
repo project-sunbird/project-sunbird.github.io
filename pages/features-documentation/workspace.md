@@ -46,7 +46,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
  ### Up For Review feature
  
  ```
- **Note:** **Up For Review** feature is only available for the users with **Reviewer Rights**
+ Note: Up For Review, feature is only available for the users with Reviewer's Rights
  ```
  <table>
   <tr>
@@ -54,7 +54,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Login with registered credential and password <br>2. Go to <b>My Workspace</b> <br>3. Click <b>Up For Review</b></td> button in your workspace to see all the contents available for review</td>
+    <td>1. Login with registered credential and password <br>2. Go to <b>My Workspace</b> <br>3. Click <b>Up For Review</b> in your workspace to see all the contents available for review</td>
     <td><img src="pages/features-documentation/images/up4review.png"></td>
   </tr>
   <tr>
