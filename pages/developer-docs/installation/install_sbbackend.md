@@ -171,7 +171,7 @@ To run sunbird backend services, atleast you need to set the following environme
    
 Here, you can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
 
-## Running Back-End Services Stack
+## Configuring and running Back-End Services Stack
 
 You can configure the Backend service by following these instructions:
 
@@ -191,11 +191,35 @@ Clone following repositories:
    - sunbird-lms-mw
    - sunbird-lms-service
 
-  And to run Application sunbird-lms-service execute the following command 
+## Configuring the (Akka) Actors 
+
+Sunbird architecture supports two Akka actor systems: 
+     	
+  1. Normal ActorSystem 
+  2. Background ActorSystem 
+
+And by default, both run on two different machines.
+But to run these actor systems on single machine, you need to modify the we need to modify [resource.properties file]
+For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}to repository.
+
+In ordere to run both the actor systems on single machine follow these steps:
+
+  1.	Open **externalresource.properties** file 
+  2.	Modify the following properties:
+    
+     - background_actor_provider
+     - api_actor_provider
+
+  3.	Set value of both properties as “local”
+  4.	Run ```mvn clean install``` command to make build of each module
+
+
+And to run Application sunbird-lms-service execute the following command 
     
       run mvn play2:run 
 
 ## Testing the services 
   
 Run any API, e.g. create a user API and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f){:target="_blank"}
+
 
