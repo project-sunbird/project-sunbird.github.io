@@ -46,9 +46,11 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. The selected course opens in the <b>Courses</b> tab <br>2. See details about the course - its content, structure, your progress, etc. here <br>3. Click <b>Adobe PDF</b> icon, to read printable course material <br>4. Click <b>Play</b> icon to view a video of the course material <br>5. Click <b>(+)</b> icon, on the right pane, to add notes to your notebook. You can maintain separate notes for each cource that you take <br>6. Click <b>Resume Course</b> to continue from where you stopped earlier
+    <td>1. The selected course opens in the <b>Courses</b> tab <br>2. See details about the course - its content, structure, your progress, etc. here <br>3. Click <b>(+)</b> icon, on the right pane, to add notes to your notebook. You can maintain separate notes for each cource that you take <br>4. The progress of your course is displayed on the right side
+      
+ *Note*: Coourse materails can be in different content types, for example, pdf, video etc. In such cases: <br>&emps;a) Click <b>Adobe PDF</b> icon, to read printable course material <br>&emps;b) Click <b>Play</b> icon to view a video of the course material
      </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/consumption_details.png"></td>
   </tr>
   </table>
   
@@ -63,7 +65,7 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
   <tr>
     <td>1. Click <b>Menu</b> to view the player options available <br>2. Click <b>left scroll</b> icon to go to previous page or slide of study material <br>3. Click <b>right scroll</b> icon to go to the next page or slide of study material <br>4. Click <b>Previous</b> , to view study material preceding the current material in the course material list <br>5. Click <b>Next</b> to view study material immediately subsequent to current material from the course material list <br>6. Click <b>Take Note</b> to take a note for the current course material <br>7. Click <b>Resume Course</b> to continue from where you stopped earlier <br>. Click <b>X</b> button to exit the page
      </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/consumption_contentplayer.png"></td>
   </tr>
   </table>
   
@@ -77,25 +79,21 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
   <tr>
     <td>1. <b>Replay</b>: To replay the study material <br>2. <b>Change</b>: To add or modify your profile avatar <br>3. <b>Sound on</b>: To turn on or off sound for audio or video study material <br>4. <b>Teacher’s Note</b>: To view teacher’s notes for the current course material <br>5. <b>Home</b>: To navigate to the Home page 
      </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/consumption_contentplayer2.png"></td>
   </tr>
   </table>
   
   #### Taking Notes
+  TO take notes click <b>Take a Note</b>option
   <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Take a Note</strong> button to take notes on the course material
-     </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
-  </tr>
-    <td>1. Write an appropriate title for your note, such that you can easily identify and retrieve it from your notebook
-      Write details of your observations <br>2. Click <b>Clear</b>, to delete and rewrite your notes. On clicking clear, the title also will be cleared <br>3. Click <b>Save</b> to save the changes
+    <td>1. Enter an appropriate title for your note, such that you can easily identify and retrieve the note <br>2. Enter details of the note. <br>3. The tool bar comprises of various text formatting options. <br>4. Click <b>Clear</b>, to delete and rewrite your notes. On clicking clear, the title also will be cleared <br>5. Click <b>Save</b> to save the changes
       </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/consumption_note.png"></td>
   </tr>
   </table>
     
