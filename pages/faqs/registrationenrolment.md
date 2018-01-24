@@ -13,7 +13,7 @@ allowSearch: true
 
 **Q. How do you sign up on the platform?**
 
-Signing up on the platform is a seamless process. Any organized, recognized education or learning body can add their members as registered users of the platform. For example; an organization, state, NGO, certification body or study centre can add their staff and users as the platform users'.
+Signing up on the platform is a seamless process. Any organized, recognized education or learning body can add their members as registered users of the platform. For example; an organization, NGO, certification body or study centre can add their staff and users as the platform users'.
 
 Successful sign up on the portal is notified to the user via an auto-generated email. User's credentials viz, **User ID** and **Password** is shared through email. The user can reset these details on consecutive login to the protal
 
@@ -21,10 +21,10 @@ Successful sign up on the portal is notified to the user via an auto-generated e
 
 This platform allows to integrate the organization’s existing user's list with the platform. The platform user's registry is a consolidated list of all users within its registered organizations. 
 
-For example; in the case of DIKSHA, to set up the teacher's registry, these steps are followed:
+For example; in the case of DIKSHA, an adaptation of Sunbird, to set up the teacher's registry, these steps are followed:
 
 1. Collate a list of existing users into a database
-2. Write an email to content.ntp@centralsquarefoundation.org, with the subject as Setting up Teacher Registry
+2. Write an email to xxx@example.com, with the subject as Setting up Teacher Registry
 3. The team will respond with an information checklist.
 4. Ensure that you have all the requirements on the checklist. The checklist includes information such as:
 	- Unique and permanent:
@@ -33,12 +33,12 @@ For example; in the case of DIKSHA, to set up the teacher's registry, these step
 		- Teacher ID
 	- Verified Email ID and mobile number of the teacher
 5. Defined role of the user (Whether the user is creator, member, admin, reviewer)
-6. Reply to the team’s  email at  content.ntp@centralsquarefoundation.org  informing them  that you have met all the requirements on the checklist
+6. Reply to the team’s  email at xxx@example.com informing them  that you have met all the requirements on the checklist
 7. The team will share a document with a link to the github repository to  your organization’s registered email ID.
 8. The github repository will contain six APIs.
 9. Install the APIs and run the code from  the repository, on the organization’s server
 10. After installation, the organization’s administrator should generate a private and public key
-11. The organization’s administrator should send an email with the public key  to content.ntp@centralsquarefoundation.org  
+11. The organization’s administrator should send an email with the public key to xxx@example.com  
 12. The organization’s administrator should install the private key and run the data on the organization’s server.
 13. Simultaneously this data is integrated on the platform to complete the teacher registry 
 14. The organization’s administrator assigns rights and permissions to each registered user
