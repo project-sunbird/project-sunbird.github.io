@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: contributions
-title: Contributing to Sunbird
-page_title: Contributing to Sunbird
-description: Contributing to Sunbird
+title: Documentation contribution guidelines
+page_title: Documentation contribution guidelines
+description: Contributing to Sunbird Documentation
 keywords: 'Contribute, Code, Code contribution'
 published: true
 allowSearch: true
