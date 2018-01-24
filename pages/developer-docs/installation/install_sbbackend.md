@@ -177,11 +177,11 @@ You can configure the Backend service by following these instructions:
 - Cloning the repositories
 - Making the Build 
      
-  Clone following repositories
+Clone following repositories
           
-     - [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
-     - [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
-     - [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
+   - [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
+   - [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
+   - [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
 
      
   Make the builds in following order:
