@@ -1,10 +1,10 @@
 ---
 type: landing
 directory: contributions
-title: Guidelines fo Filing a Bug
-page_title: Guidelines fo Filing a Bug
-description: How to file a bug
-keywords: 'Contribute, Code, Code contribution, bug, fix, issues, report 
+title: Guidelines for Filing a Bug
+page_title: Guidelines for Filing a Bug
+description: Guidelines for Filing a Bug
+keywords: '
 published: true
 allowSearch: true
 ---
