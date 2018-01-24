@@ -18,11 +18,8 @@ It is worth noting that there are a few alternative options for support:
 2. The bug you have experienced might be faced by others also, it is recommended to check the [Sunbird issue tracker](https://github.com/project-sunbird/project-sunbird.github.io/issues)
 3. If the bug report exists, you may click "subscribe" to follow any developments.
 
-## Filing an effective bug report
-
-This page assumes you would like to contribute to the Sunbird project by collecting enough information to enter an effective and useful bug report in Sunbird issue tracker.
-
 To file a bug report that is effective, ensure the following: 
+
 - Separate out the bug
 - Single issue for a single bug
 - Writing an effective bug report
@@ -53,10 +50,9 @@ Before you raise an issue, make sure to check the following questions that are u
 Everything starts with a title. It must be clear and descriptive so that you can get an idea of what the report is about at a glance. It also has to be clearly differentiated from all other existing bug reports. A good way to think about bug titles is that your bug report should atleast answer the following questions:
 
   1. What is the problem?
-
-  2. What action must the user perform to trigger the problem?
-
-  3. Where does the problem occur?
+  2. Where does the problem occur?
+  3. What action must the user perform to trigger the problem?
+ 
 
 And keep in mind, these questions must be answered in less than 140 characters!
 
@@ -68,7 +64,7 @@ After submitting the issue, you can modify the title.
 
 A good bug report has a clear and concise description. This is an opportunity to explain the defect and put across all the relevant details.Describing something accurately and concisely is best way to help and fix the bug. Also,remember that the person reading your description has not seen the bug, so avoid assumptions.
 
-### Sequence of Steps to reproduce bug
+### Sequence of steps to reproduce bug
 
 One of the most important steps in a good bug report is providing a step-by-step account of exactly what you did to find the defect. You can use software tools that catch your key strokes, or record screenshots or video files as you test. Other times you’ll be writing from memory, so take notes as you go. Make sure that you test your own steps again before submitting the bug.
 
@@ -84,12 +80,12 @@ Ensure the following:
 
 - Describe what actually is correct workflow or exactly should happen if the bug was fixed.
 
-### Environment in which the Issue Encountered
+### Environment in which the issue is encountered
 
 - Name the operating system and version you are using, such as "Windows 7", or "Mac OS X 10.7.5" etc.
 - Name the browser and version which you are using, such as "Chrome 63" or "Firefox Quantum" or "Microsoft Edge"
 
-### Supporting Files
+### Supporting files
 
 Supporting material is always gratefully received by those assigned with fixing defects. Usually the files can be be screenshots, but it can include audio and video files also. Annotate your screenshots to highlight problems.
 
