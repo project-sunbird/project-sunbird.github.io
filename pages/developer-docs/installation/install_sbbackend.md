@@ -36,7 +36,7 @@ Let us setup the environment and then proceed with deploying the services.
 
 **Setup Cassandra** 
  
-1. For installation of Cassandra refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
+1. For step by step installation guide of refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
 2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface) 
 3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql) file to      create the required keyspace, tables and indices
 4. Copy the following files to a temp folder in a Cassandra installed machine 
@@ -56,8 +56,8 @@ cqlsh -e "COPY sunbird.page_management(id, appmap,createdby ,createddate ,name ,
 Next section details about setting up the Elasticsearch on your local machine.
 
 **Setup Elasticsearch**
-  1. For step by step installation guide of Elasticsearch refer to the official[website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 
+  1. For step by step installation guide of Elasticsearch refer to the official[website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 
   2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to  
      start the server and open Elasticsearch CLI (Command Line Interface)
@@ -163,26 +163,28 @@ To Run sunbird backend services, set the following environment variable in their
           18. sunbird_sso_publickey
 </pre>
    
-You can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
+Here,you can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties)
 
-## Configure Back-End Service Stack
- 
+## Running Back-End Services Stack
+
+You can configure the Backend service by following these instructions:
+
+- Cloning the repositories
+- Making the Build 
      
-<li>Clone following repositories. <br>
-     <ol>
-          <li><a href="https://github.com/project-sunbird/sunbird-utils">sunbird-utils</a></li>
-          <li><a href="https://github.com/project-sunbird/sunbird-lms-service">sunbird-lms-service</a></li>
-          <li><a href="https://github.com/project-sunbird/sunbird-lms-mw">sunbird-lms-mw</a></li>
-     </ol>
- </li>
+1. Clone following repositories
+          [sunbird-utils](https://github.com/project-sunbird/sunbird-utils)
+          [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service)
+          [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw)
+
      
-Make the builds in following order:
+2. Make the builds in following order:
    
-  i. sunbird-utils
+    i. sunbird-utils
    
- ii. sunbird-lms-mw
+   ii. sunbird-lms-mw
    
-iii. sunbird-lms-service
+  iii. sunbird-lms-service
 
 And to run Application sunbird-lms-service execute the following command 
       
