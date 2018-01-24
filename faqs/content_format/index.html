@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.12/";
+			baseURL.href="/releases/release.1.12.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-24 18:07:12 +0530">
+<meta name="last-modified" content="2018-01-24 18:26:06 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.12" />
-<meta name="buildNo" content="1405" />
+<meta name="buildVersion" content="release.1.12.a" />
+<meta name="buildNo" content="1415" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -244,8 +244,9 @@
 							</ul>
 						</div>
 					</li>		
-					
-					
+					<li>
+						<a href="developer-docs/installation/sunbird_actor_servc/">Actor System</a>
+					</li>
 					<li>
 						<div class="">
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
@@ -542,20 +543,24 @@ $("a[href$='faqs/content_format/']").addClass("sidebar-link-selected");
 
 <p>Currently, the platform supports the following formats for compiled content:</p>
 
-<p>Text (.pdf)
-Video (.mp4, .webm, YouTube URLs)
-HTML
-ECML (created using the inbuilt content editor)
-EPUB
-H5P</p>
+<ul>
+  <li>Text (.pdf)</li>
+  <li>Video (.mp4, .webm, YouTube URLs)</li>
+  <li>HTML</li>
+  <li>ECML (created using the inbuilt content editor)</li>
+  <li>EPUB</li>
+  <li>H5P</li>
+</ul>
 
 <p>It also supports the following formats for its resource library:</p>
 
-<p>Audio (.mp3)
-Images (.jpeg, .png)
-URLs for YouTube videos and other files
-Videos (.mp4)
-Later, there will be support for other file formats.</p>
+<ul>
+  <li>Audio (.mp3)</li>
+  <li>Images (.jpeg, .png)</li>
+  <li>URLs for YouTube videos and other files</li>
+  <li>Videos (.mp4)
+Later, there will be support for other file formats.</li>
+</ul>
 
 <p><strong>Q. What is the maximum file size supported on the platform?</strong></p>
 
