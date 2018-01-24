@@ -62,7 +62,7 @@ Next section details about setting up the Elasticsearch on your local machine.
 
 **Setup Elasticsearch**
 
-  1. For step by step installation guide of Elasticsearch refer to the official[website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
+  1. For step by step installation guide of Elasticsearch refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html)
 
   2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to  
      start the server and open Elasticsearch CLI (Command Line Interface)
@@ -82,7 +82,7 @@ Next section details about setting up the Keycloak on your local machine.
 
 **Setup Keycloak**
 
-1. For step by step installation guide of Keycloak refer to the official[website](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) 
+1. For step by step installation guide of Keycloak refer to the official [website](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html) 
 
 2. The official website guides you through the installation, and if you have done a successful install of Keycloak, now you need to start the server 
 
@@ -191,8 +191,8 @@ Clone following repositories:
    - sunbird-lms-service
 
   And to run Application sunbird-lms-service execute the following command 
-      
-         run mvn play2:run 
+    
+      run mvn play2:run 
 
 ## Testing the services 
   
