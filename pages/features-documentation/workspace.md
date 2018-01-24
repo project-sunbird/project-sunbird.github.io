@@ -46,7 +46,7 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
  ### Up For Review feature
  
  ```
- Note: Up For Review, feature is only available for the users with Reviewer's Rights
+ Note: Up For Review, feature is only available for the users with Reviewer Rights
  ```
  <table>
   <tr>
