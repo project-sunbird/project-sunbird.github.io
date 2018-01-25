@@ -81,7 +81,7 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
   
 #### Taking Notes
   
-  TO take notes click **Take a Note** option
+  To take notes click **Take a Note** option
   <table>
   <tr>
     <th style="width:35%;">Step</th>
