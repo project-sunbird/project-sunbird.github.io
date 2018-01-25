@@ -15,11 +15,11 @@ Sunbird supports customization of home page, logo, and icon for the portal.
 These customizations can be loaded by mounting the volume containing the customizations into the docker container.For loading the volume containing the customizations to docker container follow these steps:
 
 Uncomment and set the value for 
-
-``variable player_tenant_dir in {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name>}
+<pre>
+variable player_tenant_dir in {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name>}
 
 For example, player_tenant_dir: /data/extensions/tenant``
-
+</pre>
 
 **NOTE**: If the variable `player_tenant_dir` is commented, the volume will not be mounted, and customizations will not be loaded.
 
