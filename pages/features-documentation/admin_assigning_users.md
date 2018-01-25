@@ -82,7 +82,7 @@ One of the many responsibilities of the administrator on Sunbird is to assign ro
   <tr>
     <td>1. Select <b>Yes</b> to award a badge
     
- *Note*: <br>&emsp;a) Badge once awarded cannot be revoked <br>&emsp;b) Badges can be assigned only once*
+ *Note*: *<br>&emsp;a) Badge once awarded cannot be revoked <br>&emsp;b) Badges can be assigned only once*
       </td>
       <td><img src="pages/features-documentation/images/announcement/admin_badge2.png"></td>
     </table>
@@ -101,7 +101,8 @@ One of the many responsibilities of the administrator on Sunbird is to assign ro
   </tr>
   <tr>
     <td>1. Names of different organizations that have been uploaded are available here. Select the organization, of which users must be assigned roles, from the drop-down <b>2. To select and assign user role, click on the check box. To un-assign the role, click on the checkbox to clear it.  
-    *Note: A user can be assigned more than one role*  
+      
+   *Note: A user can be assigned more than one role* 
 <br>3. Click <b>Update</b> to save the assigned roles <br>4. Click the close icon to go back to the list of users page   
       </td>
       <td><img src="pages/features-documentation/images/announcement/admin_assignrole2.png"></td>
