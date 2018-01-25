@@ -16,7 +16,8 @@ These customizations can be loaded by mounting the volume containing the customi
 
 Uncomment and set the value for 
 <pre>
-variable player_tenant_dir in {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name>}
+variable player_tenant_dir in {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/
+{environment-name>}
 
 For example, player_tenant_dir: /data/extensions/tenant``
 </pre>
