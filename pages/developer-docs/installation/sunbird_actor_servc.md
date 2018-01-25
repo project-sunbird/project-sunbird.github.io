@@ -10,7 +10,7 @@ allowSearch: true
 
 **Sunbird AKKA Actor System**
 
-Akka can work with several containers called actor systems. An actor system manages the resources it is configured to use in order to run the actors which it contains. Actor Model on Sunbird enables the abstraction level and provides a better platform to build concurrent and scalable applications. For more details about AKKA refer to the official [website](https://doc.akka.io/docs/akka/current/general/actor-systems.html){:target="_blank"}
+Akka can work with several containers called actor systems. An actor system manages the resources it is configured to use in order to run the actors which it contains. Actor Model on Sunbird enables the abstraction level and provides a better platform to build concurrent and scalable applications. For more details about AKKA refer to the official [website](https://doc.akka.io/docs/akka/current/general/actor-systems.html){:target="_blank"}.
 
 To run the Actor systems, follow these steps:
 
@@ -32,11 +32,11 @@ In order to implement Actor system, you need to configure various values/keys in
 
 The configuration is as follows:
 
-1.api_actor_provider ```{'**remote**','**local**'}``` [Default value will be 'local' means normal actors will run locally]
+1. api_actor_provider ```{'**remote**','**local**'}``` [Default value will be 'local' means normal actors will run locally]
 
-2.background_actor_provider ```{'**remote**','**local**'}```[Default value will be 'remote' means all backgroundjob actor will run remotely.]
+2. background_actor_provider ```{'**remote**','**local**'}```[Default value will be 'remote' means all backgroundjob actor will run remotely.]
 
-3.sunbird_actor_system_name ```{'**RemoteMiddlewareActorSystem**','**BackGroundRemoteMiddlewareActorSystem**'}```
+3. sunbird_actor_system_name ```{'**RemoteMiddlewareActorSystem**','**BackGroundRemoteMiddlewareActorSystem**'}```
 
 **NOTE:** **sunbird_actor_system_name** value is the actor system name.
 
