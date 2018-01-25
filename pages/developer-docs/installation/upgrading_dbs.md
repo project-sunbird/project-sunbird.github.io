@@ -8,8 +8,11 @@ keywords: Upgrading Databases
 published: true
 allowSearch: true
 ---
+## Overview 
+This page guides you through the process of planning and executing Sunbird Database upgrades. In addition, this page provides information about various upgrade scenarios,such as initialization parameter changes, pros and cons.
+
 ## Introduction
->  Process to manage cassandra migration.
+>  The process of upgrading you cassandra installation is as follows:
   1. [Build Process](#build)
   2. [Deploy Process](#deploy)
   3. [Sunbird Users](#users)
