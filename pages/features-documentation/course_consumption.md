@@ -3,7 +3,7 @@ type: landing
 directory: features-documentation
 title: Course Consumption
 page_title: Course Consumption
-description: Procedure on how to consume a course on DIKSHA
+description: Procedure on how to consume a course on Sunbird
 keywords: >-
   content editor, create course, create content, create lesson, textbook,
   collection, course, consume course, take curse, learn a course
