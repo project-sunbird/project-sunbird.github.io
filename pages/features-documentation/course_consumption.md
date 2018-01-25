@@ -89,7 +89,7 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
   </tr>
   <tr>
     <td>1. Enter an appropriate title for your note, such that you can easily identify and retrieve the note <br>2. Enter details of the note <br>3. The tool bar comprises of various text formatting options <br>4. Click <b>Clear</b>, to delete and rewrite your notes. On clicking clear, the title also will be cleared <br>5. Click <b>Save</b> to save the changes</td>
-      <td><img src="pages/features-documentation/images/consumption_note.png"></td>
+      <td><img src="pages/features-documentation/images/consumption_notes.png"></td>
   </tr>
   </table>
     
