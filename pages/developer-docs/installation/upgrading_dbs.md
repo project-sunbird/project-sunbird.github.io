@@ -12,46 +12,65 @@ allowSearch: true
 This page guides you through the process of planning and executing Sunbird Database upgrades. In addition, this page provides information about various upgrade scenarios,such as initialization parameter changes, pros and cons.
 
 ## Introduction
->  The process of upgrading you cassandra installation is as follows:
-  1. [Build Process](#build)
-  2. [Deploy Process](#deploy)
-  3. [Sunbird Users](#users)
-  4. [Required Action](#action)
-  5. [Scripts Details](#script)
 
-## build:
+The process of upgrading you cassandra installation is as follows:
+  
+  1. Build Process
+  2. Deployment Process
+  3. Commisioning Scenarios 
+  4. Necessary instructions 
+  5. Running the Script
+
+## Build
+
 * Create a `Cassandra_Build` Jenkins job. 
-* Move to `sunbird-utils/cassandra-migration` directory  & run `mvn clean install -DskipTests` .
-* Artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar` gets created inside `sunbird-utils/cassandra-migration/target` directory.
+* Move to `sunbird-utils/cassandra-migration` directory and run `mvn clean install -DskipTests`
 
-## deploy:
-* Create a `Cassandra_Deploy` Jenkins job. Copy the artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar`  from  `Cassandra_Build` to `Cassandra_Deploy` Jenkins job.
-* Copy the above jar file to the remote cassandra machine. 
-* Set the below enivronment variables on cassandra host:
+Artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar` is created inside `sunbird-utils/cassandra-migration/target` directory.
+
+## Deployment
+
+* Create a `Cassandra_Deploy` Jenkins job. 
+* Copy the artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar`  from  `Cassandra_Build` to `Cassandra_Deploy`     
+  Jenkins job.
+* Copy the jar file to the remotethe  Cassandra machine. 
+* Set the following enivronment variables on the Cassandra host:
+
 ```
-a. sunbird_cassandra_host: (in case of multiple host provide the value comma separated) 
-b. sunbird_cassandra_port: 
-c. sunbird_cassandra_username: (Optional) 
-d. sunbird_cassandra_password: (optional) 
-e. sunbird_cassandra_keyspace: (for ex: sunbird)
+  a. sunbird_cassandra_host: (in case of multiple host provide the value comma separated) 
+  b. sunbird_cassandra_port: 
+  c. sunbird_cassandra_username: (Optional) 
+  d. sunbird_cassandra_password: (optional) 
+  e. sunbird_cassandra_keyspace: (for ex: sunbird)
 ```
 
-* Before running the command make sure, cassandra keyspace is already created.
+Before you execute the following command ensure, Cassandra keyspace is already created.
 
-* Run `java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar" com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on the remote cassandra machine.
+<pre>
 
-## users
+Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on the remote cassandra machine.
 
-## Scenario-1: For the fresh setup 
-* As cassandra migration is implemented in release-1.4 before following above steps, Run the default `cassandra.cql` file, which will create schema and tables until release-1.3. Cassandra.cql might through some errors which can ignored(should be fixed in later releases). 
+</pre>
 
-## Scenario-2: User having release less than release-1.4 (For ex: moving from release-1.2 to release-1.4)
+## Commissioning Scenarios
+
+1. For setting up Cassandra afresh 
+
+* As cassandra upgradation is implemented in release-1.4 before following above steps.
+
+Run the default `cassandra.cql` file, which will create schema and tables until release-1.3. 
+Cassandra.cql might through some errors which can ignored(will be fixed in later releases). 
+
+2. If you are running a release less than release-1.4 (For e.g.: upgrading from release-1.2 to release-1.4)
+
 * Follow the similar steps as scenorio-1, restore all cassandra data if a new cassandra is provisioned.
 
-## secnario-3 : User having release greater than equal to release-1.4 
+3. If you are running a release greater than equal to release-1.4 
+
 * Run cassandra migration only, no need to run `cassandra.cql` file. 
 
 ## action:
+
 1) Setup the cassandra migration across sunbird and ntp. 
 2) Create deploy scripts for the sunbird clients.
 3) Convert the `cassandra.cql` script idempotent.
@@ -59,6 +78,7 @@ e. sunbird_cassandra_keyspace: (for ex: sunbird)
 
 
 ## script.
+
 * Script location is : **resources/db/migration/cassandra**
 * Script file should be in this format : **V{major_version_no}.{minor_version_no}_{filename}.cql**
 
