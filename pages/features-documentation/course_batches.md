@@ -14,26 +14,26 @@ On Sunbird, once a course is created, the course administrator can add users to 
 ### Prerequisites
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently in your <strong>Profile</strong> page <br>3. Click <strong>Courses</strong>
+    <td>1. You are logged in <br>2. You have clicked on the <b>Courses</b> tab <br>3. You want to assign batches to a course
        </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_workspace.png"></td>
   </tr>
   </table>
   
   ### Exploring the Courses Page
   <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Courses</strong> tab <br>2. Click <strong>Search</strong> icon or <strong>Filter</strong> icon,  to search or filter courses. Filter courses by: <li>a. Curriculum <li>b. Medium <li>c. Subjects <li>d. Concepts <br>3.You  also search courses  in <strong>Latest Courses</strong> or <strong>Popular Courses</strong> section <br>4. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
+    <td>1. Click <b>Search</b> icon or <b>Filter</b> icon,  to search or filter courses. Filter courses by: <br>&emsp;a) Curriculum br>&emsp;b) Medium <br>&emsp;c) Subjects  <br>2.You can also search for courses  in <b>Latest Courses</b> or <b>Popular Courses</b> section <br>3. Select any course <br>5. To search more courses in Latest or Popular Courses section, click left/right arrow icon <br>6. You can also select a course based on its rating 
          </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_courses.png"></td>
   </tr>
   </table>
   
@@ -41,66 +41,65 @@ On Sunbird, once a course is created, the course administrator can add users to 
 ### Creating Batches
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On selecting a course, details of the course are displayed. <br>2. Existing batches for the course are displayed on the right side under <strong>Batches</strong> <br>3. Click <strong>Create Batch</strong> to create a new batch. Metadata page for batches is displayed
+    <td>1. On selecting a course, details of the course are displayed. Details displayed are: <br>&emsp;a) Information about the course <br>&emsp;b) Course Structure <br>&emsp;c) Information on types of content viz. video, PDF or Ecml Archives <br>&emsp;d) Information on when the course was created and updated  <br>2. Existing batches for the course are displayed on the right side under <b>Batches</b> <br>3. Click <b>Create Batch</b> to create a new batch. Metadata page for batches is displayed
          </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_create.png"></td>
   </tr>
   <tr>
-    <td>1. Enter <strong>Batch Name</strong>. This is a mandatory field <br>2. Enter description about the batch <br>3. Select the <strong>Batch Type</strong> <br>4. Select the <strong>START DATE</strong> for the batch from the calendar. This is a mandatory field <br>5. Select <strong>END DATE</strong> for the batch from the calendar <br>6. Search and select member’s name from the drop-down list  
-<br>7. Select and include mentors for the batch from the drop-down list <br>8. Click <strong>Clear</strong> to clear and re-enter all the details <br>9. Click <strong>Create</strong> to create a new batch and assign them to users <br>10. Click <strong>Close</strong> icon to exit the page
+    <td>1. Enter <b>Batch Name</b>. This is a mandatory field <br>2. Enter description about the batch <br>3. Select the <b>Batch Type</b> <br>4. Select the <b>START DATE</b> for the batch from the calendar. This is a mandatory field <br>5. Select <b>END DATE</b> for the batch from the calendar <br>6. Search and select member’s name from the drop-down list  
+<br>7. Select and include mentors for the batch from the drop-down list <br>8. Click <b>Clear</b> to clear and re-enter all the details <br>9. Click <b>Create</b> to create a new batch and assign them to users <br>10. Click <b>Close</b> icon to exit the page
          </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_create2.png"></td>
   </tr>
   </table>
 
 ### Sharing Batch Details
 <table>
 <tr>
-  <th>Step</th>
-  <th>Screen</th>
+  <th style="width:35%;">Step</th>
+  <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Share</strong> icon from the Courses page, to share the batch link <br>2. On the share page, click <strong>Copy Link</strong> Share the copied link through any medium viz, email, Whatsapp, Facebook etc
+    <td>1. Click <b>Share</b> icon from the Courses page, to share the batch link <br>2. On the share page, click <b>Copy Link</b> Share the copied link through any medium viz, email, Whatsapp, Facebook etc
          </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_share.png"></td>
   </tr>
   </table>
   
   ### Viewing Batch Status
   <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Select <strong>Ongoing</strong> or <strong>Upcoming</strong> option from the drop-down list on the right pane.  Information on ongoing or upcoming batches are displayed
+    <td>1. Select <b>Ongoing</b> or <b>Upcoming</b> option from the drop-down list on the right pane.  Information on ongoing or upcoming batches are displayed
          </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_status.png"></td>
   </tr>
   </table>
   
  ### Editing Batch Details
  <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
     <td>1. Click <strong>Edit</strong> icon, to update the batch details 
          </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_edit.png"></td>
   </tr>
   <tr>
-    <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <li>a) About This Batch 
-<li>b) Start Date (mandatory field) <li>c) End Date <li>d)Mentors in the Batch <li>e) Members in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
+    <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <br>&emsp;a) About This Batch <br>&emsp;b) Start Date (mandatory field) <br>&emsp;c) End Date <br>&emsp;d)Mentors in the Batch <br>&emsp;e) Members in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
 
 ****Note: 
 A batch created cannot be deleted. Batch details can only be updated****
          </td>
-      <td><img src="pages/features-documentation/images/course_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/batches_edit2.png"></td>
   </tr>
   </table>

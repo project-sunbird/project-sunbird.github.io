@@ -42,7 +42,7 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
 
 - Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal. 
 
-For API keys you can refer [here](developer-docs/installation/medium_scale_deploy#api-keys)
+For API keys you can refer [here](developer-docs/installation/medium_scale_deploy#api-keys){:target="_blank"}
 
 ## Proxy services
 
@@ -67,7 +67,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
   <pre>
   keycloak_password: (with admin initial password)
   keycloak_theme_path: ex- path/to/the/nile/themes. 
-  Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts)
+  Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts){:target="_blank"}
   </pre>
 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`

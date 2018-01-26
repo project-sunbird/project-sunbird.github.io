@@ -12,14 +12,10 @@ published: true
 allowSearch: true
 ---
 
-**Who is the audience for the content on the platform?**
+**Q. Who is the audience for the content on the platform?**
 
-{% ingredient /faqs/audience_who %}{% endingredient %}
+All content published on this platform has a learning objective and hence has a target audience. The audience for the content can either be admin, instructors or learners. The content is tagged appropriately.
 
-**Can content be specific to an organization?**
+**Q. How are content authors and contributors given credit?**
 
-{% ingredient /faqs/audience_user %}{% endingredient %}
-
-**How are content authors and contributors given credit?**
-
-{% ingredient /faqs/audience_credit_creator_contributor %}{% endingredient %}
+When you create or upload content, you can specify the name of the author and any other contributor as part of its metadata.

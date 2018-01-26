@@ -11,6 +11,6 @@ published: true
 allowSearch: true
 ---
 
-**How can you register and get user credentials to sign in to the platform?**
+**Q. How can you register and get user credentials to sign in to the platform?**
 
-{% ingredient /faqs/signin_reg_usercredtl %}{% endingredient %}
+The platform has the provision to register and provide user credentials (user ID and password) to organizations, such as NGO and other organized body of individuals. The organized, recognized education or learning body can make a policy decision to allow / disallow registering single individual users. Contact your organization administrator for details.
