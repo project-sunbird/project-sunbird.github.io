@@ -41,7 +41,7 @@ On Sunbird, only the system administrator has the right to add organization type
       <td><img src="pages/features-documentation/images/announcement/orgtype_setup.png"></td>
   </tr>
   <tr>
-    <td>The Org Types page is displayed <br>1. Click <>b+</b>icon on the right side of the screen. The Add Org Type page is displayed
+    <td>The Org Types page is displayed <br>1. Click <b>+</b>icon on the right side of the screen. The Add Org Type page is displayed
 <br>2. Enter the type of organization you want to create <br>3. Click <b>Add</b> to add the organization Type <br>4. Click <b>Cancel</b> to go back to the Org Types screen
       </td>
       <td><img src="pages/features-documentation/images/announcement/orgtype_setup2.png"></td>
@@ -62,7 +62,6 @@ On Sunbird, only the system administrator has the right to add organization type
   </tr>
   <tr>
     <td>1. Edit the name of the organization type <br>2. Click <b>Update</b> to save the edited changes <br>3. Click <b>Cancel</b> to go back to the Org Type page
-
       </td>
       <td><img src="pages/features-documentation/images/announcement/orgtype_update2.png"></td>
   </tr>
