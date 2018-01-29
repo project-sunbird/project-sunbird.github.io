@@ -5,6 +5,14 @@ Sunbird installation is a hefty process, at-least for starters. If you want to d
 Else, let us do all the heavy lifting, and the downside is you won't have a fine grained control over all those process, even though we tried this to be
 generalized as much as we could.
 
+Prerequisites
+
+- this script should run in the application server
+- single ssh key for both application server and db server
+- 2 servers [ app <=> db ] should able to ping each other
+- port 80, 443 accessible from internet for app_server
+
+
 sunbird installation simplified steps:
 
 - git clone https://project-sunbird/sunbird-devops
