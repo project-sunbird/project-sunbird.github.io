@@ -35,7 +35,7 @@ sunbird installation simplified steps:
 
 - ./certbot.sh (if you don't have a valid ssl certificate, and have a valid dns name)
 
-- run ./sunbird_install.sh
+- ./sunbird_install.sh
 
 **90% is done.** 
 
