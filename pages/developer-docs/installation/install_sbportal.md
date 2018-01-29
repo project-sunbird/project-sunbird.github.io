@@ -84,17 +84,21 @@ Once the file is opened, update the contents of the file so that it contains exa
     module.exports = {
     	// 1. LEARNER_URL   
     	LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
-     	// 2. CONTENT_URL
+     	
+	// 2. CONTENT_URL
 	CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
-     	// 3. CONTENT_PROXY  
+     	
+	// 3. CONTENT_PROXY  
 	CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
         PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
-     	// 4. PORTAL_AUTH_SERVER_URL
+     	
+	// 4. PORTAL_AUTH_SERVER_URL
 	PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
 	PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
         ...
         PORTAL_PORT: env.sunbird_port || 3000,
- 	 // 5. PORTAL_API_AUTH_TOKEN     
+ 	
+	// 5. PORTAL_API_AUTH_TOKEN     
 	PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            
 
         ...
