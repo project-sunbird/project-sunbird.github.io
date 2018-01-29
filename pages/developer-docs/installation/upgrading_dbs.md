@@ -73,8 +73,8 @@ This ensures that your schemas and tables fall in line with upgradtion requireme
 
 ### Running a release version greater than or equal to release-1.4 
 
-Since, the schemas and tables fall inline with the upgrade requirements. You can proceed with 
-the following upgrade process:  
+Since, the schemas and tables fall inline with the upgrade requirements. 
+You can proceed with the following upgrade process:  
 
 1) Setup the cassandra upgrade across sunbird. 
 2) Create deploy scripts for the sunbird clients.
