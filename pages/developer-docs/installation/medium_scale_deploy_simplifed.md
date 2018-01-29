@@ -7,13 +7,19 @@ generalized as much as we could.
 
 Prerequisites
 
-- this script should run in the application server
+- this script **should run in the application server**
+
+- sudo password less admin user
+
+- You should have git installed
+  `sudo apt install git` - for debian/ubuntu
+
 - single ssh key for both application server and db server
   ```
   ssh-keygen -f sunbird
   scp-copy-id -i sunbird.pub username@db_server_ip
   ```
-  > this key will be your ssh_key for entire installation setup
+  > this key(sunbird) will be your ssh_key for entire installation setup
 
 - 2 servers [ app <=> db ] should able to ping each other
 - port 80, 443 accessible from internet for app_server
@@ -21,13 +27,13 @@ Prerequisites
 
 sunbird installation simplified steps:
 
-- git clone https://project-sunbird/sunbird-devops
+- git clone https://github.com/project-sunbird/sunbird-devops
 
 - cd sunbird-devops/deploy
 
-- ./certbot.sh (if you don't have a valid ssl certificate, and have a valid dns name)
-
 - edit the config file
+
+- ./certbot.sh (if you don't have a valid ssl certificate, and have a valid dns name)
 
 - run ./sunbird_install.sh
 
