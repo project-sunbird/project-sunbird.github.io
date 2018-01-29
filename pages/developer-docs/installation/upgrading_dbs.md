@@ -82,13 +82,13 @@ You can proceed with the following upgrade process:
 
 ### Running the script
 
-The script can be found at this location in your codebase: **resources/db/migration/cassandra**
+The script can be found at this location in your codebase: `**resources/db/migration/cassandra**`
 
-- Ensure that the format of the Script file is: **V{major_version_no}.{minor_version_no}_{filename}.cql**
+- Ensure that the format of the Script file is: `**V{major_version_no}.{minor_version_no}_{filename}.cql**`
   The example of the file naming format:     
      
-     - V1.0_cassandra.cql // correct file format
-     - V1.0.1_cassandra.cql // incorrect file format 
+     - `V1.0_cassandra.cql` // correct file format
+     - `V1.0.1_cassandra.cql` // incorrect file format 
 
 - The script includes all the files with the following format:
 
