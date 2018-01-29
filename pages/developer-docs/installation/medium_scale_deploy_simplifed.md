@@ -14,6 +14,9 @@ Prerequisites
 - You should have git installed
   `sudo apt install git` - for debian/ubuntu
 
+- you should have python on both machines
+  `sudo apt install python`
+
 - single ssh key for both application server and db server
   ```
   ssh-keygen -f sunbird
@@ -22,6 +25,7 @@ Prerequisites
   > this key(sunbird) will be your ssh_key for entire installation setup
 
 - 2 servers [ app <=> db ] should able to ping each other
+
 - port 80, 443 accessible from internet for app_server
 
 
