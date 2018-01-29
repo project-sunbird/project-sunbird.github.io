@@ -57,7 +57,7 @@ After checking out the code, execute the following command:
 
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
-Note: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release.
+***Note***: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. which are available at [here](https://github.com/project-sunbird/sunbird-portal/) as Tags
 
 Once the git clone command is over, run the following set of commands:
 
@@ -74,6 +74,7 @@ $ bower install --force
 The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let's configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
 
 ***Note***: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.
+	
 
 ### Edit the Application Config
 
