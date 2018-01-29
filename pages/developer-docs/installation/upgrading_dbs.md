@@ -47,8 +47,9 @@ Artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar` is creat
 Before you execute the following command ensure, Cassandra keyspace is already created.
 
 <pre>
+ Command to create keyspace :
+ *  CREATE KEYSPACE IF NOT EXISTS sunbird WITH replication = {'class':'SimpleStrategy','replication_factor':1};
 
-Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on the remote cassandra machine.
 
 </pre>
 
