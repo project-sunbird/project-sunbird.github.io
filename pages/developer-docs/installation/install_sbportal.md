@@ -82,33 +82,30 @@ Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any ava
 Once the file is opened, update the contents of the file so that it contains exactly the following values:
 
     module.exports = {
-    	
-	// 1. LEARNER_URL   
-    	LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
-     	
-	// 2. CONTENT_URL
-	CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
-     	
-	// 3. CONTENT_PROXY  
-	CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
-        PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
-     	
-	// 4. PORTAL_AUTH_SERVER_URL
-	PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
-	PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
-        ...
-        PORTAL_PORT: env.sunbird_port || 3000,
+<pre>    	
+// 1. LEARNER_URL   
+LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
+// 2. CONTENT_URL
+CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
+// 3. CONTENT_PROXY  
+CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
+PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
+// 4. PORTAL_AUTH_SERVER_URL
+PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
+PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
+...
+PORTAL_PORT: env.sunbird_port || 3000,
  	
-	// 5. PORTAL_API_AUTH_TOKEN     
-	PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            
+// 5. PORTAL_API_AUTH_TOKEN     
+PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            
 
-        ...
+...
 
-	// 6. PORTAL_ECHO_API_URL
-        PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
-        ...
-    }
-
+// 6. PORTAL_ECHO_API_URL
+PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
+...
+}
+</pre>
 Once the file is updated with appropriate values, then you can begin with running the application. 
 
 ## Run the Application
