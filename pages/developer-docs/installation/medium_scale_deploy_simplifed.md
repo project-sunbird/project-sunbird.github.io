@@ -19,6 +19,8 @@ sunbird installation simplified steps:
 
 - cd sunbird-devops/deploy
 
+- ./certbot.sh (if you don't have a valid ssl certificate, and have a valid dns name)
+
 - edit the config file
 
 - run ./sunbird_install.sh
@@ -34,7 +36,6 @@ just copy the **jwt token for player** from your home directory (~/jwt_token.txt
 `JWT token for player is : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3TRlZmNlYzc0NY0NjBhYzQzNCJ9.VCf69`
 
 and **key, which you got from ekstep** and  update the config file.
-
 
 - ./sunbird_installation.sh -s core
 
