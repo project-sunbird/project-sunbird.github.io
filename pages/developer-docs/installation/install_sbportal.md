@@ -82,7 +82,8 @@ Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any ava
 Once the file is opened, update the contents of the file so that it contains exactly the following values:
 
     module.exports = {
-    	// 1. LEARNER_URL   
+    	
+	// 1. LEARNER_URL   
     	LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
      	
 	// 2. CONTENT_URL
