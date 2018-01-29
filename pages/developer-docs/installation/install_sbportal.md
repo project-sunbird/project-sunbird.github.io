@@ -53,6 +53,8 @@ This installation guide will use a cloud hosted Sunbird APIs for which an API ke
 ### Setup 
 For setting up the application, check out the code [here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}.
 
++***Note***: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. which are available at [here](https://github.com/project-sunbird/sunbird-portal/) as Tags
+
 After checking out the code, execute the following command:
 
     git clone https://github.com/project-sunbird/sunbird-portal.git
