@@ -9,6 +9,12 @@ Prerequisites
 
 - this script should run in the application server
 - single ssh key for both application server and db server
+  ```
+  ssh-keygen -f sunbird
+  scp-copy-id -i sunbird.pub username@db_server_ip
+  ```
+  > this key will be your ssh_key for entire installation setup
+
 - 2 servers [ app <=> db ] should able to ping each other
 - port 80, 443 accessible from internet for app_server
 
