@@ -18,8 +18,7 @@ The process of upgrading you cassandra installation is as follows:
   1. Build Process
   2. Deployment Process
   3. Upgrading your Cassandra installation  
-  4. Necessary instructions 
-  5. Running the Script
+  4. Running the Script
 
 ## Build
 
@@ -28,7 +27,7 @@ The process of upgrading you cassandra installation is as follows:
 
 Artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar` is created inside `sunbird-utils/cassandra-migration/target` directory.
 
-## Deployment
+## Deploy
 
 * Create a `Cassandra_Deploy` Jenkins job. 
 * Copy the artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar`  from  `Cassandra_Build` to `Cassandra_Deploy`     
@@ -58,7 +57,7 @@ Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.c
 
 ### Prerequisites 
 
-The upgrade option has been implemented in version 1.4. If you are running a release version less then 1.4, ensure that your schemas and tables are as per version 1.3 atleast.
+The upgrade option is implemented in version 1.4. If you are running a release version lesser then 1.4, ensure that your schemas and tables are as per version 1.3 atleast.
 
 The following scenarios will guide you further in upgrade process: 
 
@@ -83,7 +82,7 @@ You can proceed with the following upgrade process:
 
 ### Running the script
 
-The script can be found in this location in your codebase: **resources/db/migration/cassandra**
+The script can be found at this location in your codebase: **resources/db/migration/cassandra**
 
 - Ensure that the format of the Script file is: **V{major_version_no}.{minor_version_no}_{filename}.cql**
   The example of the file naming format:     
