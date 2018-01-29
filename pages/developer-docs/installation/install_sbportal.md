@@ -51,9 +51,9 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.
 
 ### Setup 
-For setting up the application, check out the code [here](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}.
+For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}.
 
-+***Note***: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. which are available at [here](https://github.com/project-sunbird/sunbird-portal/) as Tags
++***Note***: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. Its available [here](https://github.com/project-sunbird/sunbird-portal/) as Tags
 
 After checking out the code, execute the following command:
 
