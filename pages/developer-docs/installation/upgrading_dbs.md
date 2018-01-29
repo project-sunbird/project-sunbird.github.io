@@ -49,9 +49,16 @@ Ensure that the Cassandra keyspace is already created; if not, executing the fol
 
 <pre>
 
+CREATE KEYSPACE IF NOT EXISTS sunbird WITH replication = {'class':'SimpleStrategy','replication_factor':1};
+
+</pre>
+
+<pre>
+
 Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on your remote cassandra machine.
 
 </pre>
+
 
 ## Upgrading your Cassandra installation 
 
