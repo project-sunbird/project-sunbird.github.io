@@ -31,7 +31,7 @@ The Cassandra upgrade option is officially implemented in version 1.4.
 
 In case you are running a version lesser than 1.4, ensure that you execute the following command:
 
-- Run `cassandra.cql` file  |\ Creates schema and tables until release-1.3. 
+- Run `cassandra.cql` file  \\ Creates schema and tables until release-1.3. 
 
 Executing the command, ensures that your schemas and tables fall in line with upgradation requirements.
 
@@ -69,13 +69,13 @@ e. sunbird_cassandra_keyspace: (for ex: sunbird)
 
 - Ensure that the Cassandra keyspace is already created; if not, executing the following command will create Cassandra Keyspaces:
 
-``CREATE KEYSPACE IF NOT EXISTS sunbird WITH replication = {'class':'SimpleStrategy','replication_factor':1};``
+   ``CREATE KEYSPACE IF NOT EXISTS sunbird WITH replication = {'class':'SimpleStrategy','replication_factor':1};``
 
-While you ensure the keyspace availability, let us proceed further with running the following command:
+While you ensure the availability of keyspaces, let us proceed further with running the following command:
 
-`Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on your remote cassandra machine.
+``Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint`` on your remote cassandra machine.
 
-- The command includes all those files from this location of your codebase **resources/db/migration/cassandra**, which have filenames as  per the following naming convention:
+- The command includes all those files from this location of your codebase `**resources/db/migration/cassandra**`, which have filenames as  per the following naming convention:
 
 **V{major_version_no}.{minor_version_no}_{filename}.cql** 
 
