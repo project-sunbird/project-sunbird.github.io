@@ -9,7 +9,7 @@ allowSearch: true
 ---
 ## Overview
 
-Sunbird enables tenant organizations to announce events, courses, news, circulars, etc. to all or select members, in all or some of the organization's operative locations. Only members with required administrative permissions can create, publish and delete announcements. To enable effective use of the announcements feature, it is therefore necessary to set up the appropriate parameters. 
+Sunbird enables tenant organizations announce events, courses, news, circulars, etc. to all or select members, in all or some of the organization's operative locations. Only members with required administrative permissions can create, publish and delete announcements. To enable effective use of the announcements feature, it is therefore necessary to set up the appropriate parameters. 
 
 To configure the announcements feature, users must have administrator access to the Sunbird portal and access and authoriztion to use:
 
