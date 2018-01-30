@@ -37,7 +37,7 @@ The following are prerequisites to use or integrate the JS library:
 
 * Device ID value
 
-**Note:** For details on how to get the device ID value, refer to [https://android-developers.googleblog.com/2011/03/identifying-app-installations.html](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html) 
+**Note:** For details on how to get the device ID value, refer to [website](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html) 
 
 ## Configure
 
