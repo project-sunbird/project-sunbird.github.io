@@ -24,7 +24,10 @@ For upgrading your Cassandra installation, follow these steps:
 
 The Cassandra upgrade option is officially implemented in version 1.4.
 
-- If you are running a release version lesser then 1.4, you need to ensure that your schemas and tables are as per version 1.3 atleast. - Start your upgrade process with information about the version of the Sunbird you are running.
+- If you are running a release version lesser then 1.4, you need to ensure that your schemas and tables are as per version 1.3 atleast. 
+
+- Start your upgrade process with information about the version of the Sunbird you are running.
+
 - It is recommended to check the following scenarios before you proceed with running the upgrade script.  
 
 ### Running a release version lesser than 1.4
