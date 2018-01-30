@@ -31,9 +31,9 @@ The Cassandra upgrade option is officially implemented in version 1.4.
 
 In case you are running a version lesser than 1.4, ensure that you execute the following command:
 
-- Run the default `cassandra.cql` file  \\ Creates schema and tables until release-1.3. 
+- Run `cassandra.cql` file  |\ Creates schema and tables until release-1.3. 
 
-Executing the command, ensures that your schemas and tables fall in line with upgradtion requirements.
+Executing the command, ensures that your schemas and tables fall in line with upgradation requirements.
 
 **Note:** Ignore the errors, if you encounter any while executing the command, These errors are fixed in later releases.
 
@@ -71,15 +71,18 @@ e. sunbird_cassandra_keyspace: (for ex: sunbird)
 
 ``CREATE KEYSPACE IF NOT EXISTS sunbird WITH replication = {'class':'SimpleStrategy','replication_factor':1};``
 
-While you ensure the keyspace availability, let us proceed further with running the following script:
+While you ensure the keyspace availability, let us proceed further with running the following command:
 
-- The script can be found at this location in your codebase: **resources/db/migration/cassandra**
-- Ensure that the naming of the script file is: **V{major_version_no}.{minor_version_no}_{filename}.cql** 
+`Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on your remote cassandra machine.
+
+- The command includes all those files from this location of your codebase **resources/db/migration/cassandra**, which have filenames as  per the following naming convention:
+
+**V{major_version_no}.{minor_version_no}_{filename}.cql** 
 
 The example ofthe file naming convention is as follows:
    
-       - V1.0_cassandra.cql // correct file format
-       - V1.0.1_cassandra.cql // incorrect file format
+       - V1.0_cassandra.cql    // correct file format
+       - V1.0.1_cassandra.cql  // incorrect file format
 
 While execution the script includes all the files with the following naming convention from **resources/db/migration/cassandra** location.
 
@@ -103,7 +106,3 @@ success boolean,
 type text,
 version_rank int
 </pre>
-
-For finalizing the upgrade, run the following command:
-
-`Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on your remote cassandra machine.
