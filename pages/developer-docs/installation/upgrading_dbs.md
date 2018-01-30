@@ -78,7 +78,7 @@ While you ensure the availability of keyspaces, let us proceed further with runn
 
 ``Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint`` on your remote cassandra machine.
 
-- The command includes all those files from this location of your codebase `**resources/db/migration/cassandra**`, which has a filenames as per the following naming convention:
+- While the commands gets executed,it includes all files from `**resources/db/migration/cassandra**`location of your codebase. The inclusion criteria of files is based on the filename naming convention.The files should essentially follow this convention.
 
 **V{major_version_no}.{minor_version_no}_{filename}.cql** 
 
@@ -88,7 +88,7 @@ The example of the file naming convention is as follows:
        - V1.0.1_cassandra.cql  // incorrect file format
 
 - In case, if any of the files fails to get included, the script execution will break unless the issue is fixed.
-- After fixing the file ,you need to delete the corresponding false entry under cassandra_migration_version table which is auto  
+- After fixing the file ,you need to delete the corresponding wrong entry under cassandra_migration_version table which is auto  
   generated during the upgrade process.
    
 <pre>
