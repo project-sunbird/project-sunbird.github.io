@@ -23,7 +23,9 @@ For upgrading your Cassandra installation, follow these steps:
 
 ## Upgrade Scenarios
 
-The Cassandra upgrade option is officially implemented in version 1.4. If you are running a release version lesser then 1.4, you need to ensure that your schemas and tables are as per version 1.3 atleast. Start your upgrade process with information about the version of the Sunbird you are running, it is recomended to check the following scenarios to proceed.  
+The Cassandra upgrade option is officially implemented in version 1.4.
+- If you are running a release version lesser then 1.4, you need to ensure that your schemas and tables are as per version 1.3 atleast. - Start your upgrade process with information about the version of the Sunbird you are running.
+- It is recommended to check the following scenarios before you proceed with running the upgrade script.  
 
 ### Running a release version lesser than 1.4
 
@@ -73,18 +75,20 @@ While you ensure the keyspace availability, let us proceed further with running 
 
 - The script can be found at this location in your codebase: **resources/db/migration/cassandra**
 
-- Ensure that the naming of the script file is: **V{major_version_no}.{minor_version_no}_{filename}.cql** The example of the file naming   format:
+- Ensure that the naming of the script file is: **V{major_version_no}.{minor_version_no}_{filename}.cql** 
 
-    - V1.0_cassandra.cql // correct file format
-    - V1.0.1_cassandra.cql // incorrect file format
+The example of the file naming convention is as follows:
+   
+       - V1.0_cassandra.cql // correct file format
+       - V1.0.1_cassandra.cql // incorrect file format
 
-The script while execution includes all the files with the following format:
+While execution the script includes all the files with the following naming convention:
 
 **V{major_version_no}.{minor_version_no}_{filename}.cql** in **resources/db/migration/cassandra** location , 
 
-- In case, if any of the files fails to get included, then the script execution will break unless the issue is fixed.
-  After fixing the file ,you need to delete the corresponding false entry under cassandra_migration_version table which is auto  
-  generated while cassandra upgrade process.
+- In case, if any of the files fails to get included, the script execution will break unless the issue is fixed.
+- After fixing the file ,you need to delete the corresponding false entry under cassandra_migration_version table which is auto  
+  generated during the upgrade process.
    
 <pre>
 Table structure ----
