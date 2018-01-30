@@ -19,7 +19,6 @@ For upgrading your Cassandra installation, follow these steps:
 1. Upgrade Scenarios
 2. Build Process
 3. Deployment Process
-4. Running the Script
 
 ## Upgrade Scenarios
 
