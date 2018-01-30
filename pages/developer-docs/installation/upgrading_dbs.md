@@ -78,9 +78,12 @@ While you ensure the availability of keyspaces, let us proceed further with runn
 
 ``Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint`` on your remote cassandra machine.
 
-- While the commands gets executed,it includes all files from `**resources/db/migration/cassandra**`location of your codebase. The inclusion criteria of files is based on the filename naming convention.The files should essentially follow this convention.
+In case you wish to include a few more custom files you need to navigate to the following location in your codebase:
 
-**V{major_version_no}.{minor_version_no}_{filename}.cql** 
+- `**resources/db/migration/cassandra**`
+- The inclusion criteria of files is based on the filename naming convention.
+- The files should essentially follow this convention.
+- **V{major_version_no}.{minor_version_no}_{filename}.cql** 
 
 The example of the file naming convention is as follows:
    
