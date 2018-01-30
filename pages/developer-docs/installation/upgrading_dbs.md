@@ -36,7 +36,7 @@ Executing the command, ensures that your schemas and tables fall in line with up
 
 **Note:** Ignore the errors, if you encounter any while executing the command, These errors are fixed in later releases.
 
-### Running a release version greater than or equal to release-1.4
+### Running a release version greater than or equal to release 1.4
 
 If you are already running the Sunbird release 1.4 and onwards, the schemas and tables fall inline with the upgrade requirements. You can proceed with the following upgrade process:
 
