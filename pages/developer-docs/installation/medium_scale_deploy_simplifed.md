@@ -8,6 +8,8 @@ Okay, let's get started.
 
 Prerequisites
 
+** We assume you read the sunbird [infrastructure](medium_scale_deploy.md) **
+
 - this script **should run in the application server**
 
 - sudo password less admin user
