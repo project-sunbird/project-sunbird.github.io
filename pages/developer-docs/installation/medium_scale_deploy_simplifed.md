@@ -1,9 +1,10 @@
 ## Sunbird installation simplified
 
-Sunbird installation is a hefty process, at-least for starters. If you want to do all the heavy lifting by your self, just go on and skip this page.
+This page is the most simple way to install sunbird to a medium scale infra. we'll manage all the fine tuned configurations and you can just sitback and relax for 45 mins.
 
-Else, let us do all the heavy lifting, and the downside is you won't have a fine grained control over all those process, even though we tried this to be
-generalized as much as we could.
+Else, you can have all the fine grained controls, but have to skip this page and follow the detailed installation steps.
+
+Okay, let's get started.
 
 Prerequisites
 
@@ -35,9 +36,9 @@ sunbird installation simplified steps:
 
 - cd sunbird-devops/deploy
 
-- edit the config file
-
 - ./certbot.sh (if you don't have a valid ssl certificate, and have a valid dns name)
+
+- edit all the mandatory fields in  deploy/config file
 
 - ./sunbird_install.sh
 
