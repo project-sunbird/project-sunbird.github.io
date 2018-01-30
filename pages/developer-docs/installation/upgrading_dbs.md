@@ -8,109 +8,99 @@ keywords: Upgrading Databases
 published: true
 allowSearch: true
 ---
-## Overview 
-This page guides you through the process of planning and executing Sunbird Database upgrades. In addition, this page provides information about various upgrade scenarios,such as initialization parameter changes, pros and cons.
+## Overview
 
-## Introduction
+This section guides you through the process of planning and executing Sunbird Database upgrades. 
 
-The process of upgrading you cassandra installation is as follows:
-  
-  1. Build Process
-  2. Deployment Process
-  3. Commisioning Scenarios 
-  4. Necessary instructions 
-  5. Running the Script
+## Upgrading your Cassandra installation
+
+For upgrading your Cassandra installation, follow these steps:
+
+1. Upgrade Scenarios
+2. Build Process
+3. Deployment Process
+4. Running the Script
+
+## Upgrade Scenarios
+
+The Cassandra upgrade option is officially implemented in version 1.4. If you are running a release version lesser then 1.4, you need to ensure that your schemas and tables are as per version 1.3 atleast. Start your upgrade process with information about the version of the Sunbird you are running, it is recomended to check the following scenarios to proceed.  
+
+### Running a release version lesser than 1.4
+
+In case you are running a version lesser than 1.4, ensure that you execute the following command:
+
+- Run the default `cassandra.cql` file  \\ Creates schema and tables until release-1.3. 
+
+Executing the command, ensures that your schemas and tables fall in line with upgradtion requirements.
+
+**Note:** Ignore the errors, if you encounter any while executing the command, These errors are fixed in later releases.
+
+### Running a release version greater than or equal to release-1.4
+
+If you are already running the Sunbird release 1.4 and onwards, the schemas and tables fall inline with the upgrade requirements. You can proceed with the following upgrade process:
+
+- Build 
+- Deploy 
 
 ## Build
 
-* Create a `Cassandra_Build` Jenkins job. 
-* Move to `sunbird-utils/cassandra-migration` directory and run `mvn clean install -DskipTests`
+- Create a `Cassandra_Build` Jenkins job.
+- Navigate to `sunbird-utils/cassandra-migration` directory and run `mvn clean install -DskipTests`
+- Artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar` gets created inside `sunbird-utils/cassandra-migration/target`   directory.
 
-Artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar` is created inside `sunbird-utils/cassandra-migration/target` directory.
+## Deploy
 
-## Deployment
+- Create a `Cassandra_Deploy` Jenkins job.
+- Copy the artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar` from `Cassandra_Build` to `Cassandra_Deploy`
+Jenkins job.
+- Copy the .jar file to the remote Cassandra machine.
 
-* Create a `Cassandra_Deploy` Jenkins job. 
-* Copy the artifact `cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar`  from  `Cassandra_Build` to `Cassandra_Deploy`     
-  Jenkins job.
-* Copy the jar file to the remotethe  Cassandra machine. 
-* Set the following enivronment variables on the Cassandra host:
-
-```
-  a. sunbird_cassandra_host: (in case of multiple host provide the value comma separated) 
-  b. sunbird_cassandra_port: 
-  c. sunbird_cassandra_username: (Optional) 
-  d. sunbird_cassandra_password: (optional) 
-  e. sunbird_cassandra_keyspace: (for ex: sunbird)
-```
-
-Before you execute the following command ensure, Cassandra keyspace is already created.
+Set the following enivronment variables on the Cassandra host:
 
 <pre>
-
-Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on the remote cassandra machine.
-
+a. sunbird_cassandra_host: (in case of multiple host provide the value comma separated) 
+b. sunbird_cassandra_port: 
+c. sunbird_cassandra_username: (Optional) 
+d. sunbird_cassandra_password: (optional) 
+e. sunbird_cassandra_keyspace: (for ex: sunbird)
 </pre>
 
-## Commissioning Scenarios
+- Ensure that the Cassandra keyspace is already created; if not, executing the following command will create Cassandra Keyspaces:
 
-1. For setting up Cassandra afresh 
+``CREATE KEYSPACE IF NOT EXISTS sunbird WITH replication = {'class':'SimpleStrategy','replication_factor':1};``
 
-* As cassandra upgradation is implemented in release-1.4 before following above steps.
+While you ensure the keyspace availability, let us proceed further with running the following script:
 
-Run the default `cassandra.cql` file, which will create schema and tables until release-1.3. 
-Cassandra.cql might through some errors which can ignored(will be fixed in later releases). 
+- The script can be found at this location in your codebase: **resources/db/migration/cassandra**
 
-2. If you are running a release less than release-1.4 (For e.g.: upgrading from release-1.2 to release-1.4)
+- Ensure that the naming of the script file is: **V{major_version_no}.{minor_version_no}_{filename}.cql** The example of the file naming   format:
 
-* Follow the similar steps as scenorio-1, restore all cassandra data if a new cassandra is provisioned.
+    - V1.0_cassandra.cql // correct file format
+    - V1.0.1_cassandra.cql // incorrect file format
 
-3. If you are running a release greater than equal to release-1.4 
+The script while execution includes all the files with the following format:
 
-* Run cassandra migration only, no need to run `cassandra.cql` file. 
+**V{major_version_no}.{minor_version_no}_{filename}.cql** in **resources/db/migration/cassandra** location , 
 
-## action:
-
-1) Setup the cassandra migration across sunbird and ntp. 
-2) Create deploy scripts for the sunbird clients.
-3) Convert the `cassandra.cql` script idempotent.
-4) Create cassandra backup and restore scripts.
-
-
-## script.
-
-* Script location is : **resources/db/migration/cassandra**
-* Script file should be in this format : **V{major_version_no}.{minor_version_no}_{filename}.cql**
-
-**Pros:**
-
-1. it will pick all the files whose format is **V{major_version_no}.{minor_version_no}_{filename}.cql** under **resources/db/migration/cassandra**  location and run it. it's easy to manage the migration
-
-**Cons:**
-1. if any one file fail then it won't run further unless we fixed the issues manually.
-2. after fixing file ,we need to delete false entry under cassandra_migration_version table , this table will be auto generated by cassandra migration.
-
-  ```javascript 
-   Table structure ----
-    version text PRIMARY KEY,
-    checksum int,
-    description text,
-    execution_time int,
-    installed_by text,
-    installed_on timestamp,
-    installed_rank int,
-    script text,
-    success boolean,
-    type text,
-    version_rank int
-   ```
-
-3.  Following file naming convention is supported:
-    
-    V{major_version_no}.{minor_version_no}_{filename}.cql
+- In case, if any of the files fails to get included, then the script execution will break unless the issue is fixed.
+  After fixing the file ,you need to delete the corresponding false entry under cassandra_migration_version table which is auto  
+  generated while cassandra upgrade process.
    
-   For instance: 
-  
-   - V1.0_cassandra.cql   // correct file format
-   - V1.0.1_cassandra.cql // incorrect file format 
+<pre>
+Table structure ----
+version text PRIMARY KEY,
+checksum int,
+description text,
+execution_time int,
+installed_by text
+installed_on timestamp,
+installed_rank int,
+script text,
+success boolean,
+type text,
+version_rank int
+</pre>
 
+For finalizing the upgrade, run the following command:
+
+`Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint` on your remote cassandra machine.
