@@ -29,10 +29,13 @@ To configure the announcements feature, users must have administrator access to 
  
  + Associate **Organisations** with their respective **Locations**. The process to establish a corelation between the organization and its location is as follows: 
  
- 1. Create **Location** in Sunbird
-  **Note:** To create locations, refer to [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}.
- 2. On successful creation of a location, you will get a **locationId**
- 3. Use the **locationId** to create or update an organization. 
+  1. Create **Location** in Sunbird
+ 
+    **Note:** To create locations, refer to [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}.
+
+  2. On successful creation of a location, you will get a **locationId**
+  3. Use the **locationId** to create or update an organization. 
+ 
  **Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
  
 ## Creating Announcement Types
@@ -52,15 +55,15 @@ Announcements are categorised into different types, for example; orders, circula
 
         "payload" : {
 
-        	"id": "{UUID}",
+        "id": "{UUID}",
 
-        	"rootorgid": "{Tenant ID}",
+        "rootorgid": "{Tenant ID}",
 
-            "name": "{String}",
+        "name": "{String}",
 
-            "status": "active",
+        "status": "active",
 
-            "createddate": "{timestamp}"
+        "createddate": "{timestamp}"
 
         }
 
@@ -69,7 +72,9 @@ Announcements are categorised into different types, for example; orders, circula
 
 | Parameter   | Description                                                                                                                                                                                                                                                                |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id          | A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.  **Note: ** For further details on UUID, refer [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier) |
+| id          | A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.  
+
+**Note: ** For further details on UUID, refer [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier) |
 | rootorgid   | The unique ID of the tenant or root organization for which the particular announcement type is to be created.                                                                                                                                                              |
 | name        | The name of the announcement type.                                                                                                                                                                                                                                         |
 | status      | The status of the announcement type. The status must be ```active``` for the announcement type to be available for use.                                                                                                                                                    |
