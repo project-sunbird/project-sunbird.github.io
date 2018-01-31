@@ -66,7 +66,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Organization-Create** request was sent.'
+        description: 'Time Stamp at which **Create Organisation** request was sent.'
+      - name: locationId
+        in: header
+        required: false
+        type: string
+        description: 'Provides the organisation location'      
       - name: X-msgid
         in: header
         required: true
@@ -250,6 +255,11 @@ paths:
         required: true
         type: string
         description: 'Time Stamp at which **Organization-Update** request was sent.'
+      - name: locationId
+        in: header
+        required: false
+        type: string
+        description: 'Provides the organisation location'      
       - name: X-msgid
         in: header
         required: true
