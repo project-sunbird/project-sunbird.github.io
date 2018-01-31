@@ -51,7 +51,9 @@ latest version of gulp: <code>npm install -g gulp-cli</code></li>
 <p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.</p>
 
 <h3 id="setup">Setup</h3>
-<p>For setting up the application, check out the code <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">here</a>.</p>
+<p>For setting up the application, check out the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a>.</p>
+
+<p>+<strong><em>Note</em></strong>: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. Its available <a href="https://github.com/project-sunbird/sunbird-portal/">here</a> as Tags</p>
 
 <p>After checking out the code, execute the following command:</p>
 
@@ -81,23 +83,31 @@ $ bower install --force
 <p>Once the file is opened, update the contents of the file so that it contains exactly the following values:</p>
 
 <pre><code>module.exports = {
-    LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    // 1. LEARNER_URL
-    CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                    // 2. CONTENT_URL
-    CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    // 3. CONTENT_PROXY
-    PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
-    PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     // 4. PORTAL_AUTH_SERVER_URL
-    PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
-    ...
-    PORTAL_PORT: env.sunbird_port || 3000,
-    PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            // 5. PORTAL_API_AUTH_TOKEN
-
-    ...
-
-    PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       // 6. PORTAL_ECHO_API_URL
-    ...
-}
 </code></pre>
+<pre>    	
+// 1. LEARNER_URL   
+LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
+// 2. CONTENT_URL
+CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
+// 3. CONTENT_PROXY  
+CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
+PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
+// 4. PORTAL_AUTH_SERVER_URL
+PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
+PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
+...
+PORTAL_PORT: env.sunbird_port || 3000,
+ 	
+// 5. PORTAL_API_AUTH_TOKEN     
+PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            
 
+...
+
+// 6. PORTAL_ECHO_API_URL
+PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
+...
+}
+</pre>
 <p>Once the file is updated with appropriate values, then you can begin with running the application.</p>
 
 <h2 id="run-the-application">Run the Application</h2>

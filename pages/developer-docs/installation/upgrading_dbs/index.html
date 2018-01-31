@@ -1,1 +1,125 @@
+<h2 id="overview">Overview</h2>
 
+<p>This section guides you through the process of planning and executing Sunbird Database upgrades.</p>
+
+<h2 id="upgrading-your-cassandra-installation">Upgrading your Cassandra installation</h2>
+
+<p>For upgrading your Cassandra installation, follow these steps:</p>
+
+<ol>
+  <li>Upgrade Scenarios</li>
+  <li>Build Process</li>
+  <li>Deployment Process</li>
+</ol>
+
+<h2 id="upgrade-scenarios">Upgrade Scenarios</h2>
+
+<p>The Cassandra upgrade option is officially implemented in version 1.4.</p>
+
+<ul>
+  <li>
+    <p>If you are running a release version lesser then 1.4, you need to ensure that your schemas and tables are as per version 1.3 atleast.</p>
+  </li>
+  <li>
+    <p>Start your upgrade process with information about the version of the Sunbird you are running</p>
+  </li>
+  <li>
+    <p>It is recommended to check the following scenarios before you proceed with running the upgrade script</p>
+  </li>
+</ul>
+
+<h3 id="running-a-release-version-lesser-than-14">Running a release version lesser than 1.4</h3>
+
+<p>In case you are running a version lesser than 1.4, ensure that you execute the following command:</p>
+
+<ul>
+  <li>Run <code>cassandra.cql</code> file  \ Creates schema and tables until release-1.3</li>
+</ul>
+
+<p>Executing the command, ensures that your schemas and tables fall in line with upgradation requirements.</p>
+
+<p><strong>Note:</strong> Ignore the errors, if you encounter any while executing the command, These errors are fixed in later releases.</p>
+
+<h3 id="running-a-release-version-greater-than-or-equal-to-release-14">Running a release version greater than or equal to release 1.4</h3>
+
+<p>If you are already running the Sunbird release 1.4 and onwards, the schemas and tables fall inline with the upgrade requirements. You can proceed with the following upgrade process:</p>
+
+<ul>
+  <li>Build</li>
+  <li>Deploy</li>
+</ul>
+
+<h2 id="build">Build</h2>
+
+<ul>
+  <li>Create a <code>Cassandra_Build</code> Jenkins job.</li>
+  <li>Navigate to <code>sunbird-utils/cassandra-migration</code> directory and run <code>mvn clean install -DskipTests</code></li>
+  <li>Artifact <code>cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar</code> gets created inside <code>sunbird-utils/cassandra-migration/target</code>   directory.</li>
+</ul>
+
+<h2 id="deploy">Deploy</h2>
+
+<ul>
+  <li>Create a <code>Cassandra_Deploy</code> Jenkins job.</li>
+  <li>Copy the artifact <code>cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar</code> from <code>Cassandra_Build</code> to <code>Cassandra_Deploy</code>
+Jenkins job.</li>
+  <li>Copy the .jar file to the remote Cassandra machine.</li>
+</ul>
+
+<p>Set the following enivronment variables on the Cassandra host:</p>
+
+<pre>
+a. sunbird_cassandra_host: (in case of multiple host provide the value comma separated) 
+b. sunbird_cassandra_port: 
+c. sunbird_cassandra_username: (Optional) 
+d. sunbird_cassandra_password: (optional) 
+e. sunbird_cassandra_keyspace: (for ex: sunbird)
+</pre>
+
+<ul>
+  <li>
+    <p>Ensure that the Cassandra keyspace is already created; if not, executing the following command will create Cassandra Keyspaces:</p>
+
+    <p><code>CREATE KEYSPACE IF NOT EXISTS sunbird WITH replication = {'class':'SimpleStrategy','replication_factor':1};</code></p>
+  </li>
+</ul>
+
+<p>While you ensure the availability of keyspaces, let us proceed further with running the following command:</p>
+
+<p><code>Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint</code> on your remote cassandra machine.</p>
+
+<p>In case you wish to include a few more custom files you need to navigate to the following location in your codebase:</p>
+
+<ul>
+  <li><code>**resources/db/migration/cassandra**</code></li>
+  <li>The inclusion criteria of files is based on the filename naming convention.</li>
+  <li>The files should essentially follow this convention.</li>
+  <li><strong>V{major_version_no}.{minor_version_no}_{filename}.cql</strong></li>
+</ul>
+
+<p>The example of the file naming convention is as follows:</p>
+
+<pre><code>   - V1.0_cassandra.cql    // correct file format
+   - V1.0.1_cassandra.cql  // incorrect file format
+</code></pre>
+
+<ul>
+  <li>In case, if any of the files fails to get included, the script execution will break unless the issue is fixed.</li>
+  <li>After fixing the file ,you need to delete the corresponding wrong entry under cassandra_migration_version table which is auto<br />
+generated during the upgrade process.</li>
+</ul>
+
+<pre>
+Table structure
+version text PRIMARY KEY,
+checksum int,
+description text,
+execution_time int,
+installed_by text
+installed_on timestamp,
+installed_rank int,
+script text,
+success boolean,
+type text,
+version_rank int
+</pre>

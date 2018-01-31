@@ -4262,8 +4262,7 @@ img.nofloat {
   border-radius: 3px; }
 
 tbody {
-  width: 100%;
-  display: table; }
+  width: 100%; }
 
 .partnerpage table img {
   width: auto !important;
@@ -4466,7 +4465,6 @@ tbody {
       border-left: 1px solid #d8e1ed; }
       .inner__content table > thead > tr th:first-child {
         border-left: none;
-        text-align: right;
         white-space: nowrap;
         border-radius: 2px 0 0 0; }
   .inner__content div.panel {
