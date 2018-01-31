@@ -4,7 +4,7 @@ info:
   title: Object API(s)
   description: >- 
     The Object API resource is used to store the data into sunbird.
-      - Primarily supports announcements for data storage and other related operation.
+      - Primarily supports data storage and other related operation.
       - Allows you to define your own repository inside sunbird and use the same to perform operations on data.
       - an object can be used in different contexts, it is depends on how it is implemented
   license:
@@ -91,21 +91,21 @@ paths:
 
                 "request":{
 
-                    "entityName":"announcement",
+                  "entityName":"announcement",
 
                   "indexed":true,
 
-                     "payload" : {
+                  "payload" : {
 
                     "id": "8e27cbf5-e299-43b0-bca7-8347f7e5abcf",
 
-                  "userid":"8e27cbf5-e299-43b0-bca7",
+                    "userid":"8e27cbf5-e299-43b0-bca7",
 
-                  "sourceid":"sourceId",
+                    "sourceid":"sourceId",
 
-                  "details":{
+                    "details":{
 
-                      "filename":"name"
+                    "filename":"name"
 
                   },
 
