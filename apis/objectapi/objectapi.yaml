@@ -3,10 +3,12 @@ info:
   version: '1.0'
   title: Object API(s)
   description: >- 
-    The Object API resource is used to store the data into sunbird.
+    The Object API resource is used to store the data.
       - Primarily supports data storage and other related operation.
       - Allows you to define your own repository inside sunbird and use the same to perform operations on data.
-      - an object can be used in different contexts, it is depends on how it is implemented
+      - an object can be used in different contexts, it depends on how it is implemented
+      - Each object entity has its own unique payload request parameters
+      - For instance, refer to the relevant documentation on Sunbird website for getting the exact object payload parameters 
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
