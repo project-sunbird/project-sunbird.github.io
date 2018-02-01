@@ -1034,6 +1034,8 @@ definitions:
       description:
         description: ''
         type: string
+      locationId: 
+        description: ''
       address:
         $ref: '#/definitions/Address'
     required:
@@ -1293,6 +1295,9 @@ definitions:
         description: ''
         type: boolean
       channel:
+        description: ''
+        type: string
+      locationId:
         description: ''
         type: string
     required:
