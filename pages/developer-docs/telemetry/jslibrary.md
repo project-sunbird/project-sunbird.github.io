@@ -31,13 +31,13 @@ The following are prerequisites to use or integrate the JS library:
 
 * Valid Authtoken and Key to make API calls
 
-* The [telemetry.min.js](https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/developer-docs/telemetry/other_files/telemetry.min.js) file
+* The [telemetry.min.js](https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/developer-docs/telemetry/other_files/telemetry.min.js){:target="_blank"} file
 
 **Note:** For details on generating and using the Authtoken and Key, refer to the section 
 
 * Device ID value
 
-**Note:** For details on how to get the device ID value, refer to [website](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html) 
+**Note:** For details on how to get the device ID value, refer to [website](https://android-developers.googleblog.com/2011/03/identifying-app-installations.html){:target="_blank"}
 
 ## Configure
 
