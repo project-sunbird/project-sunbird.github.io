@@ -26,10 +26,10 @@ paths:
   /org/v1/location/create:
     post:
       description: >-
-       This API is associated with creating a new geolocation of an organisation on Sunbird platform.
+       This API is associated with creating a new Geo-location of an organisation.
           - The **_/org/v1/location/create_** endpoint executes the "create location" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Creates a Geo-location
+      summary: Create a Geo-location
       operationId: OrgV1LocationCreatePost
       produces:
       - application/json
@@ -56,12 +56,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which create location request was sent.'
+        description: 'Time Stamp at which **create location** request was sent.'
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'This Id Uniquely identifies the request, if the same API is executed multiple times.'
       - name: Authorization
         in: header
         required: true
@@ -147,10 +147,10 @@ paths:
         name: locationId
         type: string
         required: true
-        description: 'Please append a valid location Id To the request URL' 
+        description: 'Please append a valid location Id to the request URL' 
     patch:
       description: >-
-       This API is associated with updating a Geo-location of an organisation on Sunbird platform.
+       This API is associated with updating a Geo-location of an organisation
           - The **_/v1/location/update/{locationId}_** endpoint executes the "update location" request based on parameters provided as metadata in the request body
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
@@ -181,12 +181,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which updating Geo-location request was sent.'
+        description: 'Time Stamp at which **update Geo-location** request was sent.'
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'This Id Uniquely identifies a request, if the same API is executed multiple times.'
       - name: Authorization
         in: header
         required: true
@@ -204,11 +204,11 @@ paths:
         description: 'The unique Id provides location information'
       responses:
         '200':
-          description: 'OK ! Successful operation."updating Geo-location" operation was successfully executed.'
+          description: 'OK ! Successful operation.**Update Geo-location** operation was successfully executed.'
           schema:
             $ref: '#/definitions/ContentCreateResponse'
         '400':
-          description: 'BAD REQUEST. The "updating Geo-location" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. The "update Geo-location" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
         '500':
@@ -230,11 +230,11 @@ paths:
         description: 'Please append a valid location Id To the Request URL' 
     delete:
       description: >-
-       This API is associated with delete Geo-location of an organisation on Sunbird platform.
+       This API is associated with deleting the corresponding Geo-location of an organisation.
           - The **_ /v1/location/delete/{locationId}_** endpoint executes the "delete location" request based on parameters provided as metadata in the request body
-          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
-      summary: Deletes a Geo-location
+      summary: Delete a Geo-location
       operationId: V1LocationDelete0123667529089925122Delete
       produces:
       - application/json
@@ -253,7 +253,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which delete Geo-location request was sent.'
+        description: 'Time Stamp at which **delete Geo-location** request was sent.'
       - name: X-msgid
         in: header
         required: true
