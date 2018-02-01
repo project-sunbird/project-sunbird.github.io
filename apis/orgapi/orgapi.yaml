@@ -71,7 +71,7 @@ paths:
         in: header
         required: false
         type: string
-        description: 'Provides the organisation location'      
+        description: 'Uniquely Identifies the location of an organisation'      
       - name: X-msgid
         in: header
         required: true
@@ -259,7 +259,7 @@ paths:
         in: header
         required: false
         type: string
-        description: 'Provides the organisation location'      
+        description: 'Uniquely Identifies the location of an organisation'      
       - name: X-msgid
         in: header
         required: true
@@ -1034,6 +1034,8 @@ definitions:
       description:
         description: ''
         type: string
+      locationId: 
+        description: ''
       address:
         $ref: '#/definitions/Address'
     required:
@@ -1293,6 +1295,9 @@ definitions:
         description: ''
         type: boolean
       channel:
+        description: ''
+        type: string
+      locationId:
         description: ''
         type: string
     required:
