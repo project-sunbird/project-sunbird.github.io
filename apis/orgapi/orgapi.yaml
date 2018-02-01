@@ -66,7 +66,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Organization-Create** request was sent.'
+        description: 'Time Stamp at which **Create Organisation** request was sent.'
+      - name: locationId
+        in: header
+        required: false
+        type: string
+        description: 'Provides the organisation location'      
       - name: X-msgid
         in: header
         required: true
@@ -212,7 +217,7 @@ paths:
   /update:
     patch:
       description: >-
-          This API is associated with creation of a new Organisation on the Sunbird Platform.
+          This API is associated with updating an existing Organisation on the Sunbird Platform.
             - The **_/update/_** endpoint executes the "Organization-Update" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for parameters marked with *. 
             - Mandatory fields cannot be null or empty.
@@ -250,6 +255,11 @@ paths:
         required: true
         type: string
         description: 'Time Stamp at which **Organization-Update** request was sent.'
+      - name: locationId
+        in: header
+        required: false
+        type: string
+        description: 'Provides the organisation location'      
       - name: X-msgid
         in: header
         required: true

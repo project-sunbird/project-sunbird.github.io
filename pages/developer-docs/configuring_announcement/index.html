@@ -10,13 +10,13 @@
   <li>Create Object APIs</li>
 </ul>
 
-<p><strong>Note:</strong> To effectively work with APIs, the administrator should be familiar with JSON and relevant associated tools. To request for API access, refer to <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">How to generate authorization credentials</a>section.</p>
+<p><strong>Note:</strong> To effectively work with APIs, the administrator should be familiar with JSON structures and relevant tools to call APIs, like the Postman tool. To request for Sunbird API access, refer to <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">How to generate authorization credentials</a> section.</p>
 
 <h2 id="pre-requisites">Pre-requisites</h2>
 
 <ul>
   <li>
-    <p>Associate ** Users** with their respective <strong>Organisations</strong></p>
+    <p>Associate <strong>Users</strong> with their respective <strong>Organisations</strong></p>
   </li>
   <li>
     <p>Create <strong>Locations</strong> as individual entities</p>
@@ -30,18 +30,23 @@
 </ul>
 
 <ol>
-  <li>Create <strong>Location</strong> in Sunbird
-  <strong>Note:</strong> To create locations, refer to <a href="http://www.sunbird.org/apis/geolocationapi/" target="_blank">Geo Location APIs</a>.</li>
+  <li>
+    <p>Create <strong>Location</strong> in Sunbird</p>
+
+    <p><strong>Note:</strong> To create locations, refer to <a href="http://www.sunbird.org/apis/geolocationapi/" target="_blank">Geo Location APIs</a>.</p>
+  </li>
   <li>On successful creation of a location, you will get a <strong>locationId</strong></li>
-  <li>Use the <strong>locationId</strong> to create or update an organization. 
- <strong>Note</strong> To create organizations, refer to <a href="http://www.sunbird.org/apis/orgapi/" target="_blank">Organization Management APIs</a></li>
+  <li>Use the <strong>locationId</strong> to create or update an organization</li>
 </ol>
+
+<pre><code>**Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
+</code></pre>
 
 <h2 id="creating-announcement-types">Creating Announcement Types</h2>
 
-<p>Announcements are categorised into different types, for example; orders, circulars, holidays, news etc. There must be atleast one announcement type created for the organization to enable the administrator to send an announcement. Announcement types are created as per the requirements of the root organization.</p>
+<p>Announcements are categorised into different types, for example; orders, circulars, holidays, news etc. There must be atleast one announcement type created for the organization to enable the administrator to send an announcement. Announcement types are created as per the requirements of the tenant organization.</p>
 
-<p><strong>Note</strong> To create announcement types, refer <a href="http://www.sunbird.org/apis/objectapi/" target="_blank">Object APIs</a></p>
+<p><strong>Note</strong> To create announcement types, refer to <a href="http://www.sunbird.org/apis/objectapi/" target="_blank">Object APIs</a></p>
 
 <p><strong>Sample request object to create an announcement type</strong></p>
 
@@ -54,15 +59,15 @@
 
         "payload" : {
 
-        	"id": "{UUID}",
+        "id": "{UUID}",
 
-        	"rootorgid": "{Tenant ID}",
+        "rootorgid": "{Tenant ID}",
 
-            "name": "{String}",
+        "name": "{String}",
 
-            "status": "active",
+        "status": "active",
 
-            "createddate": "{timestamp}"
+        "createddate": "{timestamp}"
 
         }
 
@@ -79,23 +84,37 @@
   <tbody>
     <tr>
       <td>id</td>
-      <td>A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.  **Note: ** For further details on UUID, refer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></td>
+      <td>A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Note:</strong> For further details on UUID, refer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
+      <td> </td>
       <td>rootorgid</td>
       <td>The unique ID of the tenant or root organization for which the particular announcement type is to be created.</td>
     </tr>
     <tr>
+      <td> </td>
       <td>name</td>
       <td>The name of the announcement type.</td>
     </tr>
     <tr>
+      <td> </td>
       <td>status</td>
-      <td>The status of the announcement type. The status must be <code>active</code> for the announcement type to be available for use.</td>
+      <td>The status of the announcement type. The status must be <strong>*Active</strong> for the announcement type to be available for use.</td>
     </tr>
     <tr>
+      <td> </td>
       <td>createddate</td>
-      <td>The date on which the announcement type is created. The created date must be in the format <code>yyyy-MM-dd HH:mm:ss:SSSZZZZ</code> eg: <code>2017-12-08 10:54:40:573+0000</code></td>
+      <td>The date on which the announcement type is created. The created date must be in the format <strong><em>yyyy-MM-dd HH:mm:ss:SSSZZZZ** eg:</em></strong>2017-12-08 10:54:40:573+0000**</td>
     </tr>
   </tbody>
 </table>
@@ -122,6 +141,7 @@
     <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png" /></td>
   &lt;/tr&gt;
 &lt;/table&gt;
+
 
 **Note** For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section.
      

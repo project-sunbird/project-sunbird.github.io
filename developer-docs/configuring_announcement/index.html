@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.9.b/";
+			baseURL.href="/releases/release.1.20.a/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Glossary</title>
-<meta name="description" content="Sunbird Site Terms, definition and usage"/>
+<title>Sunbird Configuring for Announcements</title>
+<meta name="description" content="Sunbird Site Enable organizations and users to configure and use the Announcement feature on Sunbird"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-01-31 11:26:33 +0530">
+<meta name="last-modified" content="2018-02-01 14:59:16 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.9.b" />
-<meta name="buildNo" content="1506" />
+<meta name="buildVersion" content="release.1.20.a" />
+<meta name="buildNo" content="1543" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?31012018"  />
-<link rel="stylesheet" href="css/style.css?31012018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?31012018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?31012018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?31012018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?01022018"  />
+<link rel="stylesheet" href="css/style.css?01022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?01022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?01022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?01022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -93,7 +93,7 @@
 </div>
 
 	
-	<div class="sidebar-wrapper faqs">
+	<div class="sidebar-wrapper developer-docs">
 		<div class="" >
 			<a href="architecture/">
 				<h4 class="sidebar-group-title">Architecture</h4>
@@ -315,7 +315,7 @@
 									</div>
 								</li>
 							<li>
-								<a href="developer-docs/announcement_onboarding/">Configuring for Announcements</a>
+								<a href="developer-docs/configuring_announcement/">Configuring for Announcements</a>
 							</li>
 							</ul>
 						</div>
@@ -518,14 +518,14 @@
 	</div>
 </div>
 <script>
-$("a[href$='faqs/glossary/']").addClass("sidebar-link-selected");
+$("a[href$='developer-docs/configuring_announcement/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Glossary </h1>
+        <h1>Configuring for Announcements </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -535,7 +535,7 @@ $("a[href$='faqs/glossary/']").addClass("sidebar-link-selected");
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/faqs/glossary.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_announcement.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -545,62 +545,186 @@ $("a[href$='faqs/glossary/']").addClass("sidebar-link-selected");
 			  </a>
 			  </span>
 			</p>
-          <table>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#pre-requisites"><span class="tocnumber">2 .</span> <span class="toctext">Pre-requisites</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#creating-announcement-types"><span class="tocnumber">3 .</span> <span class="toctext">Creating Announcement Types</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#assigning-roles-to-users"><span class="tocnumber">4 .</span> <span class="toctext">Assigning Roles to User(s)</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+
+<p>Sunbird enables tenant organizations announce events, courses, news, circulars, etc. to all or select members, in all or some of the organization’s operative locations. Only members with required administrative permissions can create, publish and delete announcements. To enable effective use of the announcements feature, it is therefore necessary to set up the appropriate parameters.</p>
+
+<p>To configure the announcements feature, users must have administrator access to the Sunbird portal and access and authoriztion to use:</p>
+
+<ul>
+  <li>Organization APIs</li>
+  <li>Locations APIs</li>
+  <li>Create Object APIs</li>
+</ul>
+
+<p><strong>Note:</strong> To effectively work with APIs, the administrator should be familiar with JSON structures and relevant tools to call APIs, like the Postman tool. To request for Sunbird API access, refer to <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">How to generate authorization credentials</a> section.</p>
+
+<h2 id="pre-requisites">Pre-requisites</h2>
+
+<ul>
+  <li>
+    <p>Associate <strong>Users</strong> with their respective <strong>Organisations</strong></p>
+  </li>
+  <li>
+    <p>Create <strong>Locations</strong> as individual entities</p>
+  </li>
+</ul>
+
+<p><strong>Note:</strong> To create locations, refer to <a href="http://www.sunbird.org/apis/geolocationapi/" target="_blank">Geo Location APIs</a>. The Anouncements feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in the database.</p>
+
+<ul>
+  <li>Associate <strong>Organisations</strong> with their respective <strong>Locations</strong>. The process to establish a corelation between the organization and its location is as follows:</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Create <strong>Location</strong> in Sunbird</p>
+
+    <p><strong>Note:</strong> To create locations, refer to <a href="http://www.sunbird.org/apis/geolocationapi/" target="_blank">Geo Location APIs</a>.</p>
+  </li>
+  <li>On successful creation of a location, you will get a <strong>locationId</strong></li>
+  <li>Use the <strong>locationId</strong> to create or update an organization</li>
+</ol>
+
+<pre>
+  <code>**Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
+</code>
+</pre>
+
+<h2 id="creating-announcement-types">Creating Announcement Types</h2>
+
+<p>Announcements are categorised into different types, for example; orders, circulars, holidays, news etc. There must be atleast one announcement type created for the organization to enable the administrator to send an announcement. Announcement types are created as per the requirements of the tenant organization.</p>
+
+<p><strong>Note</strong> To create announcement types, refer to <a href="http://www.sunbird.org/apis/objectapi/" target="_blank">Object APIs</a></p>
+
+<p>
+  <strong>Sample request object to create an announcement type</strong>
+</p>
+
+<pre>
+"request":{
+
+        "entityName":"announcementtype",
+
+        "indexed":true,
+
+        "payload" : {
+
+        "id": "{UUID}",
+
+        "rootorgid": "{Tenant ID}",
+
+        "name": "{String}",
+
+        "status": "active",
+
+        "createddate": "{timestamp}"
+
+        }
+
+}
+</pre>
+
+<table>
   <thead>
     <tr>
-      <th>Term</th>
-      <th>Definition</th>
-      <th>Usage/Example</th>
+      <th>Parameter</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Domain</td>
-      <td>An area or range of knowledge, learning or information</td>
-      <td>Knowledge and learning can be classified using multiple filters - by subject, grade, competency or skill areas. On Sunbird, a Domain is associated with multiple frameworks; e.g. Elementary Education, Science, Pedagogy, B.Ed, etc.</td>
-    </tr>
-    <tr>
-      <td>Taxonomy</td>
-      <td>A pre-determined classification that provides an unambiguous conceptual framework. The classification describes and separates mutually exclusive categories and subcategories of topics. Taxonomies help individuals and search engines find and retrieve information and content.</td>
-      <td>On Sunbird, all content pieces must have metadata such as a title, description and other identifying elements that classify and aid the flow of content. Sunbird’s inbuilt taxonomy improves search results and helps users discover relevant content. It also helps the system automatically recommend content based on user profile and preference, thus enhancing user experience.</td>
-    </tr>
-    <tr>
-      <td>Metadata</td>
-      <td>Information about data (content piece) that further qualifies and describes the it. This information is not part of the content body, but is stored in the backend. It helps search engines search and discover content.</td>
-      <td>Sunbird enforces users to add metadata for each piece of content created or uploaded on the platform. Some metadata is mandatory, while some is optional. For example, each content piece, must have a Title, while the author’s name is optional.</td>
-    </tr>
-    <tr>
-      <td>Searchability</td>
-      <td>The ability of a human, system or computer to explore or examine, to find information.</td>
-      <td>When users type in keywords to search on the platform, Sunbird search engine gets the most relevant and appropriate results in the fastest time.</td>
-    </tr>
-    <tr>
-      <td>Discoverability</td>
-      <td>The ability of a human, system or computer to find out or unearth that which was previously unknown.</td>
-      <td>Sunbird has a unique search algorithm that uses its pre-defined taxonomy to show content that is associated with the keywords specified.</td>
-    </tr>
-    <tr>
-      <td>content</td>
-      <td>Expression and elucidation of a thought using speech, writing, images, or any other art.</td>
-      <td>On Sunbird, content can be standalone or a compilation of study material units. The study material can be in video, audio, text or multimedia format. It can be created or uploaded on the platform. All content must have a learning outcome.</td>
-    </tr>
-    <tr>
-      <td>Vocabulary</td>
-      <td>A list of words or phrases, used in a defined context. The vocabulary may differ when the context changes. For example; ‘The house plan submitted to the authorities did not fit in with the government’s plan to develop the area.</td>
-      <td>Sunbird has a vocabulary that covers universally known learning concepts or objectives. Every content piece on the Sunbird is tagged with one or many vocabulary words. The vocabulary words are associated with frameworks. E.g. Addition, Nouns, Plant Life, Pedagogy, Classroom Management.</td>
-    </tr>
-    <tr>
-      <td>Tags</td>
-      <td>Tags and metadata are synonyms. Any content piece can have multiple tags.</td>
-      <td>On Sunbird, tags associated with content make it easily searchable. There are five broad categories of tags mandated by the content editor and during content upload: - Content Description, - File Related, - Ownership and Audience, - Area Specific Fields, - Additional/User Defined, - Tags/Keywords</td>
-    </tr>
-    <tr>
-      <td>framework</td>
-      <td>A structure designed to define the scope of something.</td>
-      <td>In the context of Sunbird, the framework is defined through a string of vocabularies, arranged to achieve a learning outcome. There are two types of frameworks: -Teacher Competency, eg. CENTA, B.Ed, - Curriculum Framework, eg. NCF, MSCERT, ICSE, CBSE.</td>
+      <td>id</td>
+      <td>A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.</td>
     </tr>
   </tbody>
 </table>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Note:</strong> For further details on UUID, refer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>rootorgid</td>
+      <td>The unique ID of the tenant or root organization for which the particular announcement type is to be created.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>name</td>
+      <td>The name of the announcement type.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>status</td>
+      <td>The status of the announcement type. The status must be <strong>*Active</strong> for the announcement type to be available for use.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>createddate</td>
+      <td>The date on which the announcement type is created. The created date must be in the format <strong><em>yyyy-MM-dd HH:mm:ss:SSSZZZZ** eg:</em></strong>2017-12-08 10:54:40:573+0000**</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="assigning-roles-to-users">Assigning Roles to User(s)</h2>
+
+<p>To send announcements, it is essential that a user is assigned the role of an announcement sender.</p>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+      <td>1. Log in with registered Administrator credentials <br />2. On the <b>Home</b> page, click <b>Profile</b> </td>
+      <td><img src="pages/features-documentation/images/announcement/assignuserrole1.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Search for users, to whom you want to assign the role <br />2. Click <b>Edit</b> </td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png" /></td>
+  </tr>
+  <tr>
+    <td>1. In the <b>Select Role<b> screen, select <b>Announcement Sender</b> <br />2. Click <b>Update</b> to assign the role&lt;/td&gt;
+    </b></b></td><td><img src="pages/features-documentation/images/announcement/assignuserrole3.png" /></td>
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+**Note** For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section.
+     
+         
+</tr></table>
 
           
           <hr />
@@ -609,12 +733,12 @@ $("a[href$='faqs/glossary/']").addClass("sidebar-link-selected");
 			<!--<a target="_blank"  class="" href="">
 				  <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;-->
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/faqs/glossary.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_announcement.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="faqs/glossary/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="developer-docs/configuring_announcement/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -668,7 +792,7 @@ $("a[href$='faqs/glossary/']").addClass("sidebar-link-selected");
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'faqs/glossary/' + url;
+		this.href = 'developer-docs/configuring_announcement/' + url;
     })
   </script>
   </body>
