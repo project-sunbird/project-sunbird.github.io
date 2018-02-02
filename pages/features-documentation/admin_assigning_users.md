@@ -8,7 +8,7 @@ published: true
 allowSearch: true
 ---
 
-One of the many responsibilities of the administrator on Sunbird is to assign roles and responsibilities to the various users within an organization. The administrator can assign more than one role to a user.
+One of the many responsibilities of the organization administrator on Sunbird is to assign roles and responsibilities to users within an organization. The administrator can assign more than one role to a user.
 
 ## Prerequisites
 
@@ -18,13 +18,13 @@ One of the many responsibilities of the administrator on Sunbird is to assign ro
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>Profile</b> page. You want to assign roles to different users in your organization
+    <td>1. You have organization administrator permissions <br>2. You are logged in as an administrator <br>3. You are currently on <b>Profile</b> page. You want to assign roles to different users in your organization
       </td>
       <td><img src="pages/features-documentation/images/announcement/admin_homepage.png"></td>
   </tr>
     </table>
 
-## Selecting User
+## Select User
 
 <table>
   <tr>
@@ -38,7 +38,7 @@ One of the many responsibilities of the administrator on Sunbird is to assign ro
   </tr>
     </table>
 
-## User Search Results
+## View User Search Results
 
 <table>
   <tr>
@@ -46,7 +46,7 @@ One of the many responsibilities of the administrator on Sunbird is to assign ro
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. The user details are listed on clicking search <br>2. For any registered user on Sunbird, you can: <br>&emsp;a) Assign Badges
+    <td>1. Click Search to view the user details list <br>2. For any registered user on Sunbird, you can: <br>&emsp;a) Assign Badges
 <br>&emsp;b) Edit User Role <br>&emsp;c) Delete User <br>3. Click on the user name to view the profile details of the user <br>4. Click <b>Download</b> to download details of all users uploaded. The details get downloaded in an excel file <br>5. Click <b>Close</b> icon to exit the search results display
       </td>
       <td><img src="pages/features-documentation/images/announcement/admin_searchresult.png"></td>
