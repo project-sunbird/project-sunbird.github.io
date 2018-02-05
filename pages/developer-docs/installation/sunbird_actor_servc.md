@@ -22,7 +22,7 @@ To run the Actor systems, follow these steps:
 
 You must ensure that:
 
-- your machine has the ability to run the Akka actor in local,remote or mixed mode
+- your machine has the ability to run the Akka actor in local, remote or mixed mode
 
 Running Akka actor either in local or remote mode depends on setting keys in configuration file, similarly background job actor can also be executed using any of the modes.
 
