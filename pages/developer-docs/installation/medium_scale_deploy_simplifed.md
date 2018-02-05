@@ -27,7 +27,7 @@ Prerequisites
 - you should have python on both machines
   `sudo apt install python`
 
-- single ssh key for both application server and db server
+- single ssh key for both application server and db server; If you don't have that please run these commands below
   ```
   ssh-keygen -f sunbird
   scp-copy-id -i sunbird.pub username@localhost
