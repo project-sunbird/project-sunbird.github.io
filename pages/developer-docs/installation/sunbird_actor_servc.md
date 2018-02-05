@@ -10,7 +10,7 @@ allowSearch: true
 
 **Sunbird Akka Actor System**
 
-Akka can work with several containers called actor systems. An actor system manages the resources it is configured to use in order to run the actors which it contains. Actor Model on Sunbird enables the abstraction level and provides a better platform to build concurrent and scalable applications. For more details about AKKA refer to the official [website](https://doc.akka.io/docs/akka/current/general/actor-systems.html){:target="_blank"}.
+Akka can work with several containers called actor systems. An actor system manages the resources it is configured to use in order to run the actors which it contains. Actor Model on Sunbird enables the abstraction level and provides a better platform to build concurrent and scalable applications. For more details about Akka refer to the official [website](https://doc.akka.io/docs/akka/current/general/actor-systems.html){:target="_blank"}.
 
 To run the Actor systems, follow these steps:
 
