@@ -8,8 +8,9 @@ Okay, let's get started.
 
 Prerequisites
 
-** We assume you read the sunbird [infrastructure](medium_scale_deploy.md) **
-** We assume you've 2 VMs for application and db with minimum system requirements **
+**We assume you read the sunbird [infrastructure](medium_scale_deploy.md)**
+
+**We assume you've 2 VMs for application and db with minimum system requirements**
 >   Operating System: Ubuntu 16.04 LTS  
     RAM: 7GB  
     CPU: 2 cores, >2 GHz  
