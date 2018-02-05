@@ -28,7 +28,7 @@ Running Akka actor either in local or remote mode depends on setting keys in con
 
 ### Implementing Actor System
 
-In order to implement Actor system, you need to configure various values/keys in the configuration file. The configuration keys are configured in **externalresource.properties** file or in environment variables.
+In order to implement actor system, you need to configure various values/keys in the configuration file. The configuration keys are configured in **externalresource.properties** file or in environment variables.
 
 The configuration is as follows:
 
