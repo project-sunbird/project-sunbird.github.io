@@ -22,7 +22,8 @@ Sunbird manages documentation similar to how it manages code. The docs are in a 
 You may want to brush up on Markdown syntax. Here’s a handy [Markdown guide](https://guides.github.com/features/mastering-markdown/){:target="_blank"} and [cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf){:target="_blank"}.
 
 ## Writing Guidelines
-Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [How to structure a document?](contributions/contribution_guidelines/#how-to-structure-a-document) section and the [Sunbird style guide](contributions/styleguide){:target="_blank"} which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
+
+Just as the Sunbird code follows coding standards and guidelines, the documentation has some simple conventions to follow. Please see the [How to structure a document?](contributions/contribution_guidelines/#how-to-structure-a-document){:target="_blank"} section and the [Sunbird style guide](contributions/styleguide){:target="_blank"} which follows to ensure the pages you submit are consistent with the rest of Sunbird's documentation. 
 
 ### How to structure a document?
 
@@ -30,11 +31,11 @@ Structuring your content is nothing but chunking the information into logical un
 
 Unless the information is structured logically, it is not easily understood, usable or readable. Titles of the main sections as headings and subheadings within the text help readers navigate through the piece.  Even if you do not desire to have the section titles in the finished piece, they will help you as an author to structure your writing to the desired framework.
 
-There are no set rules to structuring your content. However, the following is a brief guide. Read more at: [https://www.skillsyouneed.com/write/structure.html](https://www.skillsyouneed.com/write/structure.html){:target="_blank"}
+There are no set rules to structuring your content. However, the following is a [brief guide](https://www.skillsyouneed.com/write/structure.html){:target="_blank"}
 
 #### Logical Hierarchy 
 
-Follow a logical hierarchy for your content. Most content is structured into subject, book, chapter, section, subsection, page; with subject being the largest chunk and a page the smallest. For example;
+Follow a logical hierarchy for your content. Most content is structured into subject, book, chapter, section, subsection, page; with subject being the largest chunk and a page the smallest. For example,
 
 **Sunbird > Installation > Installing Sunbird on Laptop > Prerequisites > Hardware Requirements**
 
@@ -42,9 +43,10 @@ Follow a logical hierarchy for your content. Most content is structured into sub
 
 After you have decided the logical hierarchy for your content, structure each page with a logical hierarchy to make it readable and complete. Use headings and subheadings to build the logical structure of the page. For Sunbird, you can use three levels of headings.
 
-Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts; images and notes.   
+Other than heading levels, you can structure the information on a page using paragraphs, tables, ordered (numbered) or unordered (bulleted) lists, infographics viz. diagrams, charts, images and notes.   
 
 ### Styles
+
 You can use the following styles when formatting your document.
 
 #### Titles and headings
