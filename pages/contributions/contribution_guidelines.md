@@ -31,7 +31,7 @@ Structuring your content is nothing but chunking the information into logical un
 
 Unless the information is structured logically, it is not easily understood, usable or readable. Titles of the main sections as headings and subheadings within the text help readers navigate through the piece.  Even if you do not desire to have the section titles in the finished piece, they will help you as an author to structure your writing to the desired framework.
 
-There are no set rules to structuring your content. However, the following is a [brief guide](https://www.skillsyouneed.com/write/structure.html){:target="_blank"}
+There are no set rules to structuring your content. However, the following is a [brief guide](https://www.skillsyouneed.com/write/structure.html){:target="_blank"} that may be helpful.
 
 #### Logical Hierarchy 
 
