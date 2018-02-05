@@ -23,11 +23,14 @@ Prerequisites
 - single ssh key for both application server and db server
   ```
   ssh-keygen -f sunbird
+  scp-copy-id -i sunbird.pub username@localhost
   scp-copy-id -i sunbird.pub username@db_server_ip
   ```
   > this key(sunbird) will be your ssh_key for entire installation setup
 
 - 2 servers [ app <=> db ] should able to ping each other
+> If you're in aws, you have to open some ports b/w the security groups,  
+for testing we opened all ports b/w these private sec groups
 
 - port 80, 443 accessible from internet for app_server
 
