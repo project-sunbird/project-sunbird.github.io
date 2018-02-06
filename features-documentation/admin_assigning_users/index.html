@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.20.b/";
+			baseURL.href="/releases/release.1.21.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-01 16:09:24 +0530">
+<meta name="last-modified" content="2018-02-06 18:27:49 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.20.b" />
-<meta name="buildNo" content="1550" />
+<meta name="buildVersion" content="release.1.21.a" />
+<meta name="buildNo" content="1573" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?01022018"  />
-<link rel="stylesheet" href="css/style.css?01022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?01022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?01022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?01022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?06022018"  />
+<link rel="stylesheet" href="css/style.css?06022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?06022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?06022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?06022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -377,6 +377,9 @@
 									<a href="apis/badgesapi/" target="_blank">User Badges APIs</a>
 								</li>
 								<li>
+									<a href="apis/assessmentapi/" target="_blank">Assessment APIs</a>
+								</li>
+								<li>
 									<a href="apis/dialapi/" target="_blank">D.I.A.L APIs</a>
 								</li>
 								<li>
@@ -559,10 +562,10 @@ $("a[href$='features-documentation/admin_assigning_users/']").addClass("sidebar-
               <a href="#prerequisites"><span class="tocnumber">1 .</span> <span class="toctext">Prerequisites</span></a>
             </li>
             <li class="toc_level-1 toc_section-2">
-              <a href="#selecting-user"><span class="tocnumber">2 .</span> <span class="toctext">Selecting User</span></a>
+              <a href="#select-user"><span class="tocnumber">2 .</span> <span class="toctext">Select User</span></a>
             </li>
             <li class="toc_level-1 toc_section-3">
-              <a href="#user-search-results"><span class="tocnumber">3 .</span> <span class="toctext">User Search Results</span></a>
+              <a href="#view-user-search-results"><span class="tocnumber">3 .</span> <span class="toctext">View User Search Results</span></a>
             </li>
             <li class="toc_level-1 toc_section-4">
               <a href="#user-profile"><span class="tocnumber">4 .</span> <span class="toctext">User Profile</span></a>
@@ -575,7 +578,7 @@ $("a[href$='features-documentation/admin_assigning_users/']").addClass("sidebar-
       </tr>
     </tbody>
   </table>
-</div><p>One of the many responsibilities of the administrator on Sunbird is to assign roles and responsibilities to the various users within an organization. The administrator can assign more than one role to a user.</p>
+</div><p>One of the many responsibilities of the organization administrator on Sunbird is to assign roles and responsibilities to users within an organization. The administrator can assign more than one role to a user.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -585,13 +588,13 @@ $("a[href$='features-documentation/admin_assigning_users/']").addClass("sidebar-
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br />2. You are currently on <b>Profile</b> page. You want to assign roles to different users in your organization
+    <td>1. You have organization administrator permissions <br />2. You are logged in as an administrator <br />3. You are currently on <b>Profile</b> page. You want to assign roles to different users in your organization
       </td>
       <td><img src="pages/features-documentation/images/announcement/admin_homepage.png" /></td>
   </tr>
     </table>
 
-<h2 id="selecting-user">Selecting User</h2>
+<h2 id="select-user">Select User</h2>
 
 <table>
   <tr>
@@ -605,7 +608,7 @@ $("a[href$='features-documentation/admin_assigning_users/']").addClass("sidebar-
   </tr>
     </table>
 
-<h2 id="user-search-results">User Search Results</h2>
+<h2 id="view-user-search-results">View User Search Results</h2>
 
 <table>
   <tr>
@@ -613,7 +616,7 @@ $("a[href$='features-documentation/admin_assigning_users/']").addClass("sidebar-
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. The user details are listed on clicking search <br />2. For any registered user on Sunbird, you can: <br /> a) Assign Badges
+    <td>1. Click Search to view the user details list <br />2. For any registered user on Sunbird, you can: <br /> a) Assign Badges
 <br /> b) Edit User Role <br /> c) Delete User <br />3. Click on the user name to view the profile details of the user <br />4. Click <b>Download</b> to download details of all users uploaded. The details get downloaded in an excel file <br />5. Click <b>Close</b> icon to exit the search results display
       </td>
       <td><img src="pages/features-documentation/images/announcement/admin_searchresult.png" /></td>

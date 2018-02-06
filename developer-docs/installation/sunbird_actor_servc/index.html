@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.20.b/";
+			baseURL.href="/releases/release.1.21.a/";
 		}
 	}
 	getBase();
@@ -24,18 +24,18 @@
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
 <title>Sunbird Actor System</title>
-<meta name="description" content="Sunbird Site Sunbird AKKA Actor System enables concurrency and ensures scalibility"/>
+<meta name="description" content="Sunbird Site Sunbird Akka Actor System enables concurrency, scalibility"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-01 16:09:24 +0530">
+<meta name="last-modified" content="2018-02-06 18:27:49 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.20.b" />
-<meta name="buildNo" content="1550" />
+<meta name="buildVersion" content="release.1.21.a" />
+<meta name="buildNo" content="1573" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?01022018"  />
-<link rel="stylesheet" href="css/style.css?01022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?01022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?01022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?01022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?06022018"  />
+<link rel="stylesheet" href="css/style.css?06022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?06022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?06022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?06022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -377,6 +377,9 @@
 									<a href="apis/badgesapi/" target="_blank">User Badges APIs</a>
 								</li>
 								<li>
+									<a href="apis/assessmentapi/" target="_blank">Assessment APIs</a>
+								</li>
+								<li>
 									<a href="apis/dialapi/" target="_blank">D.I.A.L APIs</a>
 								</li>
 								<li>
@@ -585,17 +588,17 @@ $("a[href$='developer-docs/installation/sunbird_actor_servc/']").addClass("sideb
 </div><h3 id="overview">Overview</h3>
 
 <p>
-  <strong>Sunbird AKKA Actor System</strong>
+  <strong>Sunbird Akka Actor System</strong>
 </p>
 
-<p>Akka can work with several containers called actor systems. An actor system manages the resources it is configured to use in order to run the actors which it contains. Actor Model on Sunbird enables the abstraction level and provides a better platform to build concurrent and scalable applications. For more details about AKKA refer to the official <a href="https://doc.akka.io/docs/akka/current/general/actor-systems.html" target="_blank">website</a>.</p>
+<p>Akka can work with several containers called actor systems. An actor system manages the resources it is configured to use in order to run the actors which it contains. Actor Model on Sunbird enables the abstraction level and provides a better platform to build concurrent and scalable applications. For more details about Akka refer to the official <a href="https://doc.akka.io/docs/akka/current/general/actor-systems.html" target="_blank">website</a>.</p>
 
 <p>To run the Actor systems, follow these steps:</p>
 
 <ul>
   <li>Check for the Pre-requisites</li>
-  <li>Implementation</li>
-  <li>Different Usecases</li>
+  <li>Implementating Actor System</li>
+  <li>Usecases</li>
 </ul>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -603,14 +606,14 @@ $("a[href$='developer-docs/installation/sunbird_actor_servc/']").addClass("sideb
 <p>You must ensure that:</p>
 
 <ul>
-  <li>your machine has the ability to run the akka actor in local,remote or mixed mode</li>
+  <li>your machine has the ability to run the Akka actor in local, remote or mixed mode</li>
 </ul>
 
-<p>Running AKKA actor either in local or remote mode depends on how you configure the keys in configuration file, similarly background job actor can also be run by using any of the modes.</p>
+<p>Running Akka actor either in local or remote mode depends on setting keys in configuration file, similarly background job actor can also be executed using any of the modes.</p>
 
 <h3 id="implementing-actor-system">Implementing Actor System</h3>
 
-<p>In order to implement Actor system, you need to configure various values/keys in the configuration file. The configuration keys are configured in <strong>externalresource.properties</strong> file or in environment variables.</p>
+<p>In order to implement actor system, you need to configure various values/keys in the configuration file. The configuration keys are configured in <strong>externalresource.properties</strong> file or in environment variables.</p>
 
 <p>The configuration is as follows:</p>
 

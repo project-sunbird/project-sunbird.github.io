@@ -169,7 +169,7 @@ paths:
  /resend:
     post:
       description: >-
-       This API is associated with resending a previously sent announcement to the users on the Sunbird Platform.
+       This API is associated with resending a previously sent announcement to the user(s) on the Sunbird Platform.
           - The **_/resend** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
           - Required fields cannot be left null or empty.
       summary: Resends an Announcement
@@ -432,7 +432,7 @@ paths:
  /definitions:
     post:
       description: >-
-       This API is associated with helping creating an announcement and other technical information, and to whom it is intended on the Sunbird Platform.
+       This API is associated with providing metadata about creating an announcement and other technical information regarding announcements, also it provides information about the destination of announcement.
           - The **_/definitions_** endpoint executes the "definition" request based on parameters provided as metadata in the request body.
           - Required fields cannot be left null or empty.
       summary: Created announcement metadata 
@@ -653,8 +653,8 @@ paths:
  /user/inbox:
     post:
       description: >-
-       This API is associated with adding recieved announcements in users inbox on the Sunbird Platform.
-          - The **_/resend/{Announcement_Id}_** endpoint executes the "userInbox" request based on parameters provided as metadata in the request body.
+       This API is associated with adding announcements to user(s) inbox on the Sunbird Platform.
+          - The **_/user/inbox_** endpoint executes the "userInbox" request based on parameters provided as metadata in the request body.
           - The format of the request URL is: /user/inbox
           - Required fields cannot be left null or empty.
       tags:

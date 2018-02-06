@@ -1,0 +1,1570 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Assessment Item API(s)
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: admin@open-sunbird.org
+  description: >-
+      - The Assessment API resources are used for managing the questions known as **Assessment items**.
+      
+      - The Assessment API resources provides the basic functionality to perform the operations like Creating, Reading,  Updating, deleting these assessment items. 
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/org/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description: >-
+          This API is associated with creating an assessment Item.
+            - The **_/create_** endpoint executes the "Create Assessment Item" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for **required** parameters. 
+            - Mandatory fields cannot be null or empty.
+      summary: Create Assessment Item
+      tags:
+      - Assessment Item API(s)
+      operationId: CreatePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the new assessment item to be created.
+        schema:
+          $ref: '#/definitions/Question  saverequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: user-id
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Create Assessment Item" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Create Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /retire/{AssessmentItem_Id}:
+    parameters:
+      - in: path
+        name: AssessmentItem_Id
+        type: string
+        required: true
+        description: 'Please append a valid Assessment Id to the Request URL' 
+    delete:
+      description: >-
+          This API is associated with deleting an assessment Item.
+            - The **_/retire/{AssessmentItem_Id}_** endpoint executes the "delete assessment item" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for **required** parameters. 
+            - Mandatory fields cannot be null or empty.
+      summary: Delete an assessment Item
+      tags:
+      - Assessment Item API(s)
+      operationId: RetireQ1SUrduDelete
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: user-id
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Delete Assessment Item" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Delete Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: DELETE
+          uri: /retire/{Assessment_Id}
+          headers:
+            Content-Type: application/json
+            user-id: ilimi
+            Authorization: Bearer {{api_key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Question - Delete
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /read/{AssessmentItem_Id}: 
+    parameters:
+      - in: path
+        name: AssessmentItem_Id
+        type: string
+        required: true
+        description: 'Please append a valid Assessment Id to the Request URL' 
+    get:
+      description: >-
+          This API is associated with  fetching a specific assessment Item.
+            - The **_/read/{AssessmentItem_Id}_** endpoint executes the "Read Assessment Item" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for **required** parameters. 
+            - Mandatory fields cannot be null or empty.
+      summary: Fetch an Assessment tem
+      tags:
+      - Assessment Item API(s)
+      operationId: ReadWingsD01Get
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: user-id
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Read Assessment Item" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Read Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /read/wings.D.01
+          headers:
+            Content-Type: application/json
+            user-id: rayuluv
+            Authorization: Bearer {{api_key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Question - Get
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /search:
+    post:
+      description:  >-
+          This API is associated with searching an assessment Item.
+            - The **_/search_** endpoint executes the "Search Assessment Item" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for **required** parameters. 
+            - Mandatory fields cannot be null or empty.
+      summary: Search an Assessment Item
+      tags:
+      - Assessment Item API(s)
+      operationId: SearchPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the new Organisation to be created.
+        schema:
+          $ref: '#/definitions/Question  searchrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: user-id
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Search Assessment Item" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Search Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /search
+          headers:
+            Content-Type: application/json
+            user-id: ilimi
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "metadata": {
+                    "filters": [
+                        {"property" : "template_id", "operator": "=", "value": "domain_3490"}
+                    ]
+                },
+                "sortOrder": [
+                    {"sortField": "code", "sortOrder": "ASC"}
+                ],
+                "startPosition": 0,
+                "resultSize": 10
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Question - Search
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update/{AssessmentItem_Id}:
+    parameters:
+      - in: path
+        name: AssessmentItem_Id
+        type: string
+        required: true
+        description: 'Please append a valid Assessment Id to the Request URL' 
+    patch:
+      description:  >-
+          This API is associated with updating an assessment Item.
+            - The **_/update/{AssessmentItem_Id}_** endpoint executes the "Update Assessment Item" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for **required** parameters. 
+            - Mandatory fields cannot be null or empty.
+      summary: Update an Assessment Item
+      tags:
+      - Assessment Item API(s)
+      operationId: UpdateEkNIbASsncBp14Patch
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: 'The Registered User ID to execute the API.'
+        schema:
+          $ref: '#/definitions/Question  updaterequest'
+      - name: user-id
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Update Assessment Item" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Update Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: PATCH
+          uri: /update/ek.n.ib.a.ssnc.bp1.4
+          headers:
+            Content-Type: application/json
+            user-id: ilimi
+            Authorization: Bearer {{api_key}}
+          body: >-
+            {
+              "request": {
+                "assessment_item": {
+                  "identifier": "ek.n.ib.a.ssnc.bp1.4",
+                  "objectType": "AssessmentItem",
+                  "metadata": {
+              "type": "mcq",
+              "lastUpdatedBy": "csv-import",
+              "used_for": "worksheet",
+              "num_answers": 1,
+              "max_score": 1,
+              "partial_scoring": false,
+              "code": "ek.n.ib.a.ssnc.bp1.4",
+              "title": "acvv",
+              "question": "7 + 0  = ?",
+              "question_image": "q24body",
+              "question_count": 15,
+              "domain": "Numeracy",
+              "language": [
+                "Hindi"
+              ],
+              "gradeLevel": [
+                "Grade 1"
+              ],
+              "qlevel": "EASY",
+              "keywords": [
+                "addition",
+                "add",
+                "sum"
+              ],
+              "media": [
+                {
+                  "id": "q24body",
+                  "type": "image",
+                  "asset_id": "do_20043488",
+                  "src": "https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png"
+                },
+                {
+                  "id": "q24body",
+                  "type": "image",
+                  "asset_id": "do_20043488",
+                  "src": "https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png"
+                }
+              ],
+              "options": [
+                {
+                  "value": {
+                    "type": "mixed",
+                    "text": "8",
+                    "asset": "8",
+                    "index": 0
+                  },
+                  "answer": false
+                },
+                {
+                  "value": {
+                    "type": "mixed",
+                    "text": "7",
+                    "image": "q2body",
+                    "asset": "7",
+                    "index": 1
+                  },
+                  "answer": true
+                },
+                {
+                  "value": {
+                    "type": "mixed",
+                    "text": "1",
+                    "asset": "1",
+                    "index": 2
+                  },
+                  "answer": false
+                },
+                {
+                  "value": {
+                    "type": "mixed",
+                    "text": "4",
+                    "asset": "4",
+                    "index": 3
+                  },
+                  "answer": false
+                }
+              ],
+              "template": "org.ekstep.mcq.t.ta",
+              "template_id": "domain_3490",
+              "model": {
+                "param1": "7",
+                "param2": "1"
+              },
+              "rownum": 5,
+              "portalOwner": "128",
+              "name": "acvv",
+              "identifier": "ek.n.ib.a.ssnc.bp1.4"
+            }
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Question - Update
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  Question  searchrequest:
+    title: Question - SearchRequest
+    example:
+      request:
+        metadata:
+          filters:
+          - property: template_id
+            operator: =
+            value: domain_3490
+        sortOrder:
+        - sortField: code
+          sortOrder: ASC
+        startPosition: 0
+        resultSize: 10
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+    - request
+  Request:
+    title: Request
+    example:
+      metadata:
+        filters:
+        - property: template_id
+          operator: =
+          value: domain_3490
+      sortOrder:
+      - sortField: code
+        sortOrder: ASC
+      startPosition: 0
+      resultSize: 10
+    type: object
+    properties:
+      metadata:
+        $ref: '#/definitions/Metadata'
+      sortOrder:
+        description: ''
+        example:
+        - sortField: code
+          sortOrder: ASC
+        type: array
+        items:
+          $ref: '#/definitions/SortOrder'
+      startPosition:
+        description: ''
+        example: 0
+        type: integer
+        format: int32
+      resultSize:
+        description: ''
+        example: 10
+        type: integer
+        format: int32
+    required:
+    - metadata
+    - sortOrder
+    - startPosition
+    - resultSize
+  Metadata:
+    title: Metadata
+    example:
+      filters:
+      - property: template_id
+        operator: =
+        value: domain_3490
+    type: object
+    properties:
+      filters:
+        description: ''
+        example:
+        - property: template_id
+          operator: =
+          value: domain_3490
+        type: array
+        items:
+          $ref: '#/definitions/Filter'
+    required:
+    - filters
+  Filter:
+    title: Filter
+    example:
+      property: template_id
+      operator: =
+      value: domain_3490
+    type: object
+    properties:
+      property:
+        description: ''
+        example: template_id
+        type: string
+      operator:
+        description: ''
+        example: =
+        type: string
+      value:
+        description: ''
+        example: domain_3490
+        type: string
+    required:
+    - property
+    - operator
+    - value
+  SortOrder:
+    title: SortOrder
+    example:
+      sortField: code
+      sortOrder: ASC
+    type: object
+    properties:
+      sortField:
+        description: ''
+        example: code
+        type: string
+      sortOrder:
+        description: ''
+        example: ASC
+        type: string
+    required:
+    - sortField
+    - sortOrder
+  Question  saverequest:
+    title: Question - SaveRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request6'
+    required:
+    - request
+  Request6:
+    title: Request6
+    type: object
+    properties:
+      assessment_item:
+        $ref: '#/definitions/AssessmentItem'
+    required:
+    - assessment_item
+  AssessmentItem:
+    title: AssessmentItem
+    type: object
+    properties:
+      identifier:
+        description: ''
+        example: test.mcq_mixsed_zaxabc
+        type: string
+      objectType:
+        description: ''
+        example: AssessmentItem
+        type: string
+      metadata:
+        $ref: '#/definitions/Metadata8'
+    required:
+    - identifier
+    - objectType
+    - metadata
+  Metadata8:
+    title: Metadata8
+    type: object
+    properties:
+      code:
+        description: ''
+        example: test.mcq_misxed_115
+        type: string
+      name:
+        description: ''
+        example: Mmcq Question 2
+        type: string
+      type:
+        description: ''
+        example: mcq
+        type: string
+      num_answers:
+        description: ''
+        example: 2
+        type: integer
+        format: int32
+      template_id:
+        description: ''
+        example: mcq_mmtemplate_2
+        type: string
+      qlevel:
+        description: ''
+        example: MEDIUM
+        type: string
+      owner:
+        description: ''
+        example: username_2
+        type: string
+      versionKey:
+        description: ''
+        example: 1478768137225
+        type: string
+      title:
+        description: ''
+        example: ಈ ಚaಿತ್ರದ ವಿಸ್xsxxxxxxxxxxxxತೀರ್ಣವನ್ನುzsaZZ ಹಾಗೂ ಸುತ್ತಳತೆಯನ್ನು ಲೆಕ್ಕ ಮಾಡಿ.  ಸೂಕ್ತ ಉತ್ತರವನ್ನು ಆರಿಸಿರಿ.
+        type: string
+      question:
+        description: ''
+        example: "ವಿಸ್ತೀರ್ಣ = ___________ ಚದರ ಸೆಂ.ಮೀ.             \nಸುತ್ತಳತೆ= __________ ಚದರ ಸೆಂ.ಮೀ."
+        type: string
+      model:
+        $ref: '#/definitions/Model'
+      options:
+        description: ''
+        type: array
+        items:
+          $ref: '#/definitions/Option'
+      tags:
+        description: ''
+        example:
+        - english
+        - hindi
+        type: array
+        items:
+          type: string
+      max_score:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      partial_scoring:
+        description: ''
+        example: false
+        type: boolean
+      feedback:
+        description: ''
+        type: string
+      responses:
+        description: ''
+        example:
+        - values:
+            12&10: true
+          score: 1
+        type: array
+        items:
+          $ref: '#/definitions/Response'
+      outRelations:
+        description: ''
+        example:
+        - endNodeId: Num:C1:SC1
+          relationType: associatedTo
+        - endNodeId: Num:C1:SC1
+          relationType: associatedTo
+        type: array
+        items:
+          $ref: '#/definitions/OutRelation'
+    required:
+    - code
+    - name
+    - type
+    - num_answers
+    - template_id
+    - qlevel
+    - owner
+    - versionKey
+    - title
+    - question
+    - model
+    - options
+    - tags
+    - max_score
+    - partial_scoring
+    - feedback
+    - responses
+    - outRelations
+  Model:
+    title: Model
+    example:
+      img:
+        type: image
+        asset: persximeter
+      img2:
+        type: image
+        asset: smallssssssSquare
+      subtext: (          = 1  ಚದರ ಸೆಂ.ಮೀ)
+    type: object
+    properties:
+      img:
+        $ref: '#/definitions/Img'
+      img2:
+        $ref: '#/definitions/Img'
+      subtext:
+        description: ''
+        example: (          = 1  ಚದರ ಸೆಂ.ಮೀ)
+        type: string
+    required:
+    - img
+    - img2
+    - subtext
+  Img:
+    title: Img
+    example:
+      type: image
+      asset: persximeter
+    type: object
+    properties:
+      type:
+        description: ''
+        example: image
+        type: string
+      asset:
+        description: ''
+        example: persximeter
+        type: string
+    required:
+    - type
+    - asset
+  Option:
+    title: Option
+    type: object
+    properties:
+      value:
+        $ref: '#/definitions/Value'
+      answer:
+        description: ''
+        example: true
+        type: boolean
+    required:
+    - value
+  Value:
+    title: Value
+    example:
+      type: text
+      asset: 12&10
+    type: object
+    properties:
+      type:
+        description: ''
+        example: text
+        type: string
+      asset:
+        description: ''
+        example: 12&10
+        type: string
+    required:
+    - type
+    - asset
+  Response:
+    title: Response
+    example:
+      values:
+        12&10: true
+      score: 1
+    type: object
+    properties:
+      values:
+        $ref: '#/definitions/Values'
+      score:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+    required:
+    - values
+    - score
+  Values:
+    title: Values
+    example:
+      12&10: true
+    type: object
+    properties:
+      12&10:
+        description: ''
+        example: true
+        type: boolean
+    required:
+    - 12&10
+  OutRelation:
+    title: OutRelation
+    example:
+      endNodeId: Num:C1:SC1
+      relationType: associatedTo
+    type: object
+    properties:
+      endNodeId:
+        description: ''
+        example: Num:C1:SC1
+        type: string
+      relationType:
+        description: ''
+        example: associatedTo
+        type: string
+    required:
+    - endNodeId
+    - relationType
+  Question  updaterequest:
+    title: Question - UpdateRequest
+    example:
+      request:
+        assessment_item:
+          identifier: ek.n.ib.a.ssnc.bp1.4
+          objectType: AssessmentItem
+          metadata:
+            type: mcq
+            lastUpdatedBy: csv-import
+            used_for: worksheet
+            num_answers: 1
+            max_score: 1
+            partial_scoring: false
+            code: ek.n.ib.a.ssnc.bp1.4
+            title: acvv
+            question: 7 + 0  = ?
+            question_image: q24body
+            question_count: 15
+            domain: Numeracy
+            language:
+            - Hindi
+            gradeLevel:
+            - Grade 1
+            qlevel: EASY
+            keywords:
+            - addition
+            - add
+            - sum
+            media:
+            - id: q24body
+              type: image
+              asset_id: do_20043488
+              src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+            - id: q24body
+              type: image
+              asset_id: do_20043488
+              src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+            options:
+            - value:
+                type: mixed
+                text: 8
+                asset: 8
+                index: 0
+              answer: false
+            - value:
+                type: mixed
+                text: 7
+                image: q2body
+                asset: 7
+                index: 1
+              answer: true
+            - value:
+                type: mixed
+                text: 1
+                asset: 1
+                index: 2
+              answer: false
+            - value:
+                type: mixed
+                text: 4
+                asset: 4
+                index: 3
+              answer: false
+            template: org.ekstep.mcq.t.ta
+            template_id: domain_3490
+            model:
+              param1: 7
+              param2: 1
+            rownum: 5
+            portalOwner: 128
+            name: acvv
+            identifier: ek.n.ib.a.ssnc.bp1.4
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request18'
+    required:
+    - request
+  Request18:
+    title: Request18
+    example:
+      assessment_item:
+        identifier: ek.n.ib.a.ssnc.bp1.4
+        objectType: AssessmentItem
+        metadata:
+          type: mcq
+          lastUpdatedBy: csv-import
+          used_for: worksheet
+          num_answers: 1
+          max_score: 1
+          partial_scoring: false
+          code: ek.n.ib.a.ssnc.bp1.4
+          title: acvv
+          question: 7 + 0  = ?
+          question_image: q24body
+          question_count: 15
+          domain: Numeracy
+          language:
+          - Hindi
+          gradeLevel:
+          - Grade 1
+          qlevel: EASY
+          keywords:
+          - addition
+          - add
+          - sum
+          media:
+          - id: q24body
+            type: image
+            asset_id: do_20043488
+            src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+          - id: q24body
+            type: image
+            asset_id: do_20043488
+            src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+          options:
+          - value:
+              type: mixed
+              text: 8
+              asset: 8
+              index: 0
+            answer: false
+          - value:
+              type: mixed
+              text: 7
+              image: q2body
+              asset: 7
+              index: 1
+            answer: true
+          - value:
+              type: mixed
+              text: 1
+              asset: 1
+              index: 2
+            answer: false
+          - value:
+              type: mixed
+              text: 4
+              asset: 4
+              index: 3
+            answer: false
+          template: org.ekstep.mcq.t.ta
+          template_id: domain_3490
+          model:
+            param1: 7
+            param2: 1
+          rownum: 5
+          portalOwner: 128
+          name: acvv
+          identifier: ek.n.ib.a.ssnc.bp1.4
+    type: object
+    properties:
+      assessment_item:
+        $ref: '#/definitions/AssessmentItem19'
+    required:
+    - assessment_item
+  AssessmentItem19:
+    title: AssessmentItem19
+    example:
+      identifier: ek.n.ib.a.ssnc.bp1.4
+      objectType: AssessmentItem
+      metadata:
+        type: mcq
+        lastUpdatedBy: csv-import
+        used_for: worksheet
+        num_answers: 1
+        max_score: 1
+        partial_scoring: false
+        code: ek.n.ib.a.ssnc.bp1.4
+        title: acvv
+        question: 7 + 0  = ?
+        question_image: q24body
+        question_count: 15
+        domain: Numeracy
+        language:
+        - Hindi
+        gradeLevel:
+        - Grade 1
+        qlevel: EASY
+        keywords:
+        - addition
+        - add
+        - sum
+        media:
+        - id: q24body
+          type: image
+          asset_id: do_20043488
+          src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+        - id: q24body
+          type: image
+          asset_id: do_20043488
+          src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+        options:
+        - value:
+            type: mixed
+            text: 8
+            asset: 8
+            index: 0
+          answer: false
+        - value:
+            type: mixed
+            text: 7
+            image: q2body
+            asset: 7
+            index: 1
+          answer: true
+        - value:
+            type: mixed
+            text: 1
+            asset: 1
+            index: 2
+          answer: false
+        - value:
+            type: mixed
+            text: 4
+            asset: 4
+            index: 3
+          answer: false
+        template: org.ekstep.mcq.t.ta
+        template_id: domain_3490
+        model:
+          param1: 7
+          param2: 1
+        rownum: 5
+        portalOwner: 128
+        name: acvv
+        identifier: ek.n.ib.a.ssnc.bp1.4
+    type: object
+    properties:
+      identifier:
+        description: ''
+        example: ek.n.ib.a.ssnc.bp1.4
+        type: string
+      objectType:
+        description: ''
+        example: AssessmentItem
+        type: string
+      metadata:
+        $ref: '#/definitions/Metadata20'
+    required:
+    - identifier
+    - objectType
+    - metadata
+  Metadata20:
+    title: Metadata20
+    example:
+      type: mcq
+      lastUpdatedBy: csv-import
+      used_for: worksheet
+      num_answers: 1
+      max_score: 1
+      partial_scoring: false
+      code: ek.n.ib.a.ssnc.bp1.4
+      title: acvv
+      question: 7 + 0  = ?
+      question_image: q24body
+      question_count: 15
+      domain: Numeracy
+      language:
+      - Hindi
+      gradeLevel:
+      - Grade 1
+      qlevel: EASY
+      keywords:
+      - addition
+      - add
+      - sum
+      media:
+      - id: q24body
+        type: image
+        asset_id: do_20043488
+        src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+      - id: q24body
+        type: image
+        asset_id: do_20043488
+        src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+      options:
+      - value:
+          type: mixed
+          text: 8
+          asset: 8
+          index: 0
+        answer: false
+      - value:
+          type: mixed
+          text: 7
+          image: q2body
+          asset: 7
+          index: 1
+        answer: true
+      - value:
+          type: mixed
+          text: 1
+          asset: 1
+          index: 2
+        answer: false
+      - value:
+          type: mixed
+          text: 4
+          asset: 4
+          index: 3
+        answer: false
+      template: org.ekstep.mcq.t.ta
+      template_id: domain_3490
+      model:
+        param1: 7
+        param2: 1
+      rownum: 5
+      portalOwner: 128
+      name: acvv
+      identifier: ek.n.ib.a.ssnc.bp1.4
+    type: object
+    properties:
+      type:
+        description: ''
+        example: mcq
+        type: string
+      lastUpdatedBy:
+        description: ''
+        example: csv-import
+        type: string
+      used_for:
+        description: ''
+        example: worksheet
+        type: string
+      num_answers:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      max_score:
+        description: ''
+        example: 1
+        type: integer
+        format: int32
+      partial_scoring:
+        description: ''
+        example: false
+        type: boolean
+      code:
+        description: ''
+        example: ek.n.ib.a.ssnc.bp1.4
+        type: string
+      title:
+        description: ''
+        example: acvv
+        type: string
+      question:
+        description: ''
+        example: 7 + 0  = ?
+        type: string
+      question_image:
+        description: ''
+        example: q24body
+        type: string
+      question_count:
+        description: ''
+        example: 15
+        type: integer
+        format: int32
+      domain:
+        description: ''
+        example: Numeracy
+        type: string
+      language:
+        description: ''
+        example:
+        - Hindi
+        type: array
+        items:
+          type: string
+      gradeLevel:
+        description: ''
+        example:
+        - Grade 1
+        type: array
+        items:
+          type: string
+      qlevel:
+        description: ''
+        example: EASY
+        type: string
+      keywords:
+        description: ''
+        example:
+        - addition
+        - add
+        - sum
+        type: array
+        items:
+          type: string
+      media:
+        description: ''
+        example:
+        - id: q24body
+          type: image
+          asset_id: do_20043488
+          src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+        - id: q24body
+          type: image
+          asset_id: do_20043488
+          src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+        type: array
+        items:
+          $ref: '#/definitions/Medium'
+      options:
+        description: ''
+        example:
+        - value:
+            type: mixed
+            text: 8
+            asset: 8
+            index: 0
+          answer: false
+        - value:
+            type: mixed
+            text: 7
+            image: q2body
+            asset: 7
+            index: 1
+          answer: true
+        - value:
+            type: mixed
+            text: 1
+            asset: 1
+            index: 2
+          answer: false
+        - value:
+            type: mixed
+            text: 4
+            asset: 4
+            index: 3
+          answer: false
+        type: array
+        items:
+          $ref: '#/definitions/Option22'
+      template:
+        description: ''
+        example: org.ekstep.mcq.t.ta
+        type: string
+      template_id:
+        description: ''
+        example: domain_3490
+        type: string
+      model:
+        $ref: '#/definitions/Model24'
+      rownum:
+        description: ''
+        example: 5
+        type: integer
+        format: int32
+      portalOwner:
+        description: ''
+        example: 128
+        type: string
+      name:
+        description: ''
+        example: acvv
+        type: string
+      identifier:
+        description: ''
+        example: ek.n.ib.a.ssnc.bp1.4
+        type: string
+    required:
+    - type
+    - lastUpdatedBy
+    - used_for
+    - num_answers
+    - max_score
+    - partial_scoring
+    - code
+    - title
+    - question
+    - question_image
+    - question_count
+    - domain
+    - language
+    - gradeLevel
+    - qlevel
+    - keywords
+    - media
+    - options
+    - template
+    - template_id
+    - model
+    - rownum
+    - portalOwner
+    - name
+    - identifier
+  Medium:
+    title: Medium
+    example:
+      id: q24body
+      type: image
+      asset_id: do_20043488
+      src: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+    type: object
+    properties:
+      id:
+        description: ''
+        example: q24body
+        type: string
+      type:
+        description: ''
+        example: image
+        type: string
+      asset_id:
+        description: ''
+        example: do_20043488
+        type: string
+      src:
+        description: ''
+        example: https://ekstep-public.s3-ap-southeast-1.amazonaws.com/content/q24body_1468995752684.png
+        type: string
+    required:
+    - id
+    - type
+    - asset_id
+    - src
+  Option22:
+    title: Option22
+    example:
+      value:
+        type: mixed
+        text: 8
+        asset: 8
+        index: 0
+      answer: false
+    type: object
+    properties:
+      value:
+        $ref: '#/definitions/Value23'
+      answer:
+        description: ''
+        example: false
+        type: boolean
+    required:
+    - value
+    - answer
+  Value23:
+    title: Value23
+    example:
+      type: mixed
+      text: 8
+      asset: 8
+      index: 0
+    type: object
+    properties:
+      type:
+        description: ''
+        example: mixed
+        type: string
+      text:
+        description: ''
+        example: 8
+        type: string
+      asset:
+        description: ''
+        example: 8
+        type: string
+      index:
+        description: ''
+        example: 0
+        type: integer
+        format: int32
+    required:
+    - type
+    - text
+    - asset
+    - index
+  Model24:
+    title: Model24
+    example:
+      param1: 7
+      param2: 1
+    type: object
+    properties:
+      param1:
+        description: ''
+        example: 7
+        type: string
+      param2:
+        description: ''
+        example: 1
+        type: string
+    required:
+    - param1
+    - param2
+  ContentCreateResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResponseHeader'
+  ResultWithNodeId:
+    title: Result Containing Node Id
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/NodeId'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: object
+        description: 'API response code '
+  NodeId:
+    title: Node Id
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  ContentCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
