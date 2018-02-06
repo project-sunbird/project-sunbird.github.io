@@ -7,6 +7,7 @@ info:
     email: admin@open-sunbird.org
   description: >-
       - The Assessment API resources are used for managing the questions known as **Assessment items**.
+      
       - The Assessment API resources provides the basic functionality to perform the operations like Creating, Reading,  Updating, deleting these assessment items. 
   license:
     name: GNU Affero General Public License v3.0
@@ -27,6 +28,68 @@ consumes:
 produces:
   - application/json
 paths:
+  /create:
+    post:
+      description: >-
+          This API is associated with creating an assessment Item.
+            - The **_/create_** endpoint executes the "Create Assessment Item" request based on parameters provided as metadata in the request body.
+            - It is mandatory to provide values for **required** parameters. 
+            - Mandatory fields cannot be null or empty.
+      summary: Create Assessment Item
+      tags:
+      - Assessment Item API(s)
+      operationId: CreatePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the new assessment item to be created.
+        schema:
+          $ref: '#/definitions/Question  saverequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: user-id
+        in: header
+        required: true
+        type: string
+        description: 'The Registered User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Create Assessment Item" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Create Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /retire/{AssessmentItem_Id}:
     parameters:
       - in: path
@@ -273,68 +336,6 @@ paths:
         x-testEnabled: true
         x-testName: Question - Search
         x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /create:
-    post:
-      description: >-
-          This API is associated with creating an assessment Item.
-            - The **_/create_** endpoint executes the "Create Assessment Item" request based on parameters provided as metadata in the request body.
-            - It is mandatory to provide values for **required** parameters. 
-            - Mandatory fields cannot be null or empty.
-      summary: Create Assessment Item
-      tags:
-      - Assessment Item API(s)
-      operationId: CreatePost
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the new assessment item to be created.
-        schema:
-          $ref: '#/definitions/Question  saverequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: user-id
-        in: header
-        required: true
-        type: string
-        description: 'The Registered User ID to execute the API.'
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."Create Assessment Item" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "Create Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-      security:
-      - auth: []
-      x-unitTests: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
