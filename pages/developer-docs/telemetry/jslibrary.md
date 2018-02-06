@@ -50,12 +50,16 @@ Telemetry events are generated based on the configuration of the telemetry libra
 **Required Configuration (Context)**
 
 <table>
+  
+  <thead>
   <tr>
-    <td>Property</td>
-    <td>Description</td>
-    <td>Required</td>
-    <td>Default Value</td>
+    <th>Property</th>
+    <th>Description</th>
+    <th>Required</th>
+    <th>Default Value</th>
   </tr>
+  </thead>
+  <tbody>
   <tr>
     <td>pdata</td>
     <td>Producer data. It is an object containing id, version and pid.</td>
@@ -98,6 +102,7 @@ Telemetry events are generated based on the configuration of the telemetry libra
     <td>true</td>
     <td>defaults to "ContentPlayer"</td>
   </tr>
+  </tbody>
 </table>
 
 **Additional Configuration**
