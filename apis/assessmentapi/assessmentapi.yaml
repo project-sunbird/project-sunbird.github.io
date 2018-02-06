@@ -6,9 +6,8 @@ info:
   contact:
     email: admin@open-sunbird.org
   description: >-
-    - The Assessment API resources are used for managing the questions  known as **Assessment items**.  
-    
-    - The Assessment API(s) provides the basic functionality to perform the operations like Creation, Reading,  Updation, Deletion of these assessment items. 
+      - The Assessment API resources are used for managing the questions known as **Assessment items**.
+      - The Assessment API resources provides the basic functionality to perform the operations like Creating, Reading,  Updating, deleting these assessment items. 
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/LICENSE'
