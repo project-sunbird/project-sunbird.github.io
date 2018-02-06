@@ -58,6 +58,10 @@ allowSearch: true
 
 - **[Badges APIs](apis/badgesapi/){:target="_blank"}** The Badge API resources are used to provide recognition for skills and achievements that are earned by a user.
 
+**Assessment APIs**
+
+- **[Assessment APIs](apis/assessmentapi/){:target="_blank"}** The Assessment API resources are used for managing the questions known as **Assessment items**.The Assessment API resources provides the basic functionality to perform the operations like Creating, Reading,  Updating, deleting these assessment items. 
+
 **D.I.A.L APIs**
 
 - **[D.I.A.L APIs](apis/dialapi/){:target="_blank"}** The D.I.A.L Code (Digital Infrastructure for Augmented Learning) API resources are used for energising the textbooks.D.I.A.L code allows textbook creators to tag various pages and topics in a flexible manner using the DIAL codes (in QR code format) and these codes can be linked with digital content, thus providing easy access for the end users and a seamless physical to digital transition.
