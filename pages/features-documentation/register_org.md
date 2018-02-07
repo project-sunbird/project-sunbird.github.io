@@ -19,7 +19,8 @@ Organization administrators can use their registered credentials and add other o
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page. You want to upload organizations <br>3. You have clicked on <b>Upload Organizations</b> 
+    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page. You want to upload organizations <br>3. You have clicked on <b>Upload Organizations</b>  
+	    **Note: Ensure that the sytem administrator of your organization has created the required organization types on the portal. For details on how to create organization types, refer **    
       </td>
       <td><img src="pages/features-documentation/images/upldorg_prereqsite.png"></td>
   </tr>
@@ -43,7 +44,7 @@ Organization administrators can use their registered credentials and add other o
 	6 |description  |Details describing  the organization |Alphanumeric |Optional |
 	7 |homeUrl  |Organization’s homepage url  |Alphanumeric |Optional |
 	8 |orgCode  |Unique code for the organization that is being uploaded  |Alphabetic |Optional |
-	9 |orgType  |Type of organization, such as, NGO, primary school, secondary school etc.  |Alphabetic |Optional
+	9 |orgType  |Type of organization predefined by the system administrator  |Alphabetic |Optional
 	10  |preferredLanguage  |Language preferences for the organization, if any  |Alphabetic |Optional |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu
 	11  |contactDetail  |Organization’s phone number, email ID and address  |Alphanumeric |Optional | 'address':'address','phone':'xxxxxxxx','fax':'xxxxx'
 
