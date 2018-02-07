@@ -106,7 +106,7 @@ One of the many responsibilities of the organization administrator on Sunbird is
   </tr>
   <tr>
     <td>1. Click on the delete icon to delete a user <br>2.Click <b>Yes</b> on the Block User dialog box to delete the user <br><b>Note</b>: To unblock a user, user details have to be uploaded again. To upload user, refer <a href="http://www.sunbird.org/features-documentation/register_user/"target="_blank">Register Users</a></td>
-      <td><img src="pages/features-documentation/images/announcement/admin_blockuser.png"></td>
+      <td><img src="pages/features-documentation/images/admin_assignroles/admin_blockuser.png"></td>
   </tr>
 </table>
         
