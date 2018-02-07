@@ -370,6 +370,92 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  /copy:
+    post:
+      description:  >-
+       This API is associated with copying a framework 
+          - The **_/create_** endpoint executes the "Copy Framework" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Copies a Framework
+      tags:
+      - Framework - Core APIs
+      operationId: NCERTPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for creating a framework.
+        schema:
+          $ref: '#/definitions/Framework  copyrequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+             Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Copy Framework" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Copy Framework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /NCERT
+          headers:
+            Content-Type: application/json
+            Authorization: Bearer {{api_key}}
+            X-Channel-Id: sunbird
+          body: >-
+            {
+              "request": {
+                "framework": {
+                  "code": "NCERTCOPY"
+                }
+              }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Framework - Copy
+        x-testDescription: Framework Copy API
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /category/update/:
     patch:
       description: >-
@@ -734,6 +820,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+
   /channel/v1/list:
     post:
       description: >-
@@ -2213,3 +2300,38 @@ definitions:
     allOf:
       - $ref: '#/definitions/EmptyResult'
       - $ref: '#/definitions/ResponseHeader'
+  Framework  copyrequest:
+    title: Framework - CopyRequest
+    example:
+      request:
+        framework:
+          code: NCERTCOPY
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request99'
+    required:
+    - request
+  Request99:
+    title: Request99
+    example:
+      framework:
+        code: NCERTCOPY
+    type: object
+    properties:
+      framework:
+        $ref: '#/definitions/Framework'
+    required:
+    - framework
+  Framework1:
+    title: Framework1
+    example:
+      code: NCERTCOPY
+    type: object
+    properties:
+      code:
+        description: ''
+        example: NCERTCOPY
+        type: string
+    required:
+    - code
