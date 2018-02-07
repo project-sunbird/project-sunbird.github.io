@@ -60,14 +60,15 @@ just go over to https://dns-name/auth
 
 and plese complete the [keycloak configs](keycloak_realm_configuration.md).
 
-just copy the **jwt token for player** from your home directory (~/jwt_token.txt) 
+- copy the **jwt token for player** from your home directory (~/jwt_token.txt) and fill it for `ekstep_auth_token`
 
-for example, you'll see something like this.
+for example:
 
 `JWT token for player is : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3TRlZmNlYzc0NY0NjBhYzQzNCJ9.VCf69`
 
-and **key, which you got from ekstep** and  update the config file.
+- **key, which you got from ekstep**, [genereate a jwt token](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis) using that, and update for `ekstep_api_key`
 
+> how to get [ekstep api keys](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
 - ./sunbird_installation.sh -s core
 
 now please go to 
