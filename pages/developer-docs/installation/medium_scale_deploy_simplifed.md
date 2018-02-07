@@ -6,13 +6,14 @@ Else, you can have all the fine grained controls, but have to skip this page and
 
 Okay, let's get started.
 
-Prerequisites
+---
+### Prerequisites
+- We assume you read the sunbird [infrastructure](medium_scale_deploy.md)
 
-**We assume you read the sunbird [infrastructure](medium_scale_deploy.md)**
+- We assume you've 2 VMs for application and db with minimum system requirements
 
-**We assume you've 2 VMs for application and db with minimum system requirements**
->   Operating System: Ubuntu 16.04 LTS  
-    RAM: 7GB  
+  > Operating System: Ubuntu 16.04 LTS   
+    RAM: 7GB   
     CPU: 2 cores, >2 GHz  
     root access (should be able to sudo)
 
@@ -36,13 +37,14 @@ Prerequisites
   > this key(sunbird) will be your ssh_key for entire installation setup
 
 - 2 servers [ app <=> db ] should able to ping each other
-> If you're in aws, you have to open some ports b/w the security groups,  
-for testing we opened all ports b/w these private sec groups
+  > If you're in aws, you have to open some ports b/w the security groups,  
+    for testing we opened all ports b/w these private sec groups
 
 - port 80, 443 accessible from internet for app_server
 
+---
 
-sunbird installation simplified steps:
+### sunbird installation simplified steps:
 
 - git clone https://github.com/project-sunbird/sunbird-devops
 
@@ -56,19 +58,20 @@ sunbird installation simplified steps:
 
 **90% is done.** 
 
-just go over to https://dns-name/auth
+  just go over to https://dns-name/auth
 
-and plese complete the [keycloak configs](keycloak_realm_configuration.md).
+  and plese complete the [keycloak configs](keycloak_realm_configuration.md).
 
-- copy the **jwt token for player** from your home directory (~/jwt_token.txt) and fill it for `ekstep_auth_token`
+- - copy the **jwt token for player** from your home directory (~/jwt_token.txt) and fill it for `ekstep_auth_token`
 
 for example:
 
 `JWT token for player is : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3TRlZmNlYzc0NY0NjBhYzQzNCJ9.VCf69`
 
-- **key, which you got from ekstep**, [genereate a jwt token](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis) using that, and update for `ekstep_api_key`
+- - **key, which you got from ekstep**, [genereate a jwt token](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis) using that, and update for `ekstep_api_key`
 
-> how to get [ekstep api keys](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
+  > how to get [ekstep api keys](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
+
 - ./sunbird_installation.sh -s core
 
 now please go to 
