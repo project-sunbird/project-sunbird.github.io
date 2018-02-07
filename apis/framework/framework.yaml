@@ -374,7 +374,7 @@ paths:
     post:
       description:  >-
        This API is associated with copying a framework 
-          - The **_/create_** endpoint executes the "Copy Framework" request based on parameters provided as metadata in the request body
+          - The **_/copy_** endpoint executes the "Copy Framework" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Copies a Framework
       tags:
