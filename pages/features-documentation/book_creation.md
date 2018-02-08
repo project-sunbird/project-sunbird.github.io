@@ -29,9 +29,7 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
    <tr>
-    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b>
-      
-*<b>Note</b>: These details can be filled later when updating the book metadata* 
+    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b> *<b>Note</b>: These details can be filled later when updating the book metadata* 
        </td>
       <td><img src="pages/features-documentation/images/book/book_createbook.png"></td>
   </tr>
