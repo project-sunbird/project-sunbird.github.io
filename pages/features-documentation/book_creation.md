@@ -95,7 +95,7 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/book/book_addchild1.png"></td>
   </tr>
   <tr>
-  <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highligted only after a child note is added. A sibling unit is created asa sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b>to add a resource to the textbook unit
+  <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highligted only after a child note is added. A sibling unit is created asa sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b> to add a resource to the textbook unit
     </td>
     <td><img src="pages/features-documentation/images/book/book_addchild2.png"></td>
   </tr>
@@ -109,7 +109,7 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking <strong>Textbook Unit</strong> from the drop-down, the metadata for textbook unit is displayed on the right <br>2. Click <strong>Update<strong> to edit the metadata <br>3. Enter <strong>Title</strong>, <strong>Description</strong>, <strong>Concepts</strong>, <strong>Keywords</strong> and <strong>Notes to Teacher</strong>, if any <br>4. Click <strong>Update</strong> to save the edited metadata</td>
+    <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the textbook unit <br>5. Click <Image icon> to add image to the textbook unit metadata. FOr details on adding image, refer 
     <td><img src="pages/features-doc/image/book_unit_metadat.png"></td>
   </tr>
 </table>
