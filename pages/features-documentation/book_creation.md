@@ -30,7 +30,7 @@ allowSearch: true
   </tr>
    <tr>
     <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b> 
-      *<br><b>Note</b>: These details can be filled later when updating the book metadata*
+      <br><b>Note</b>: These details can be filled later when updating the book metadata
        </td>
       <td><img src="pages/features-documentation/images/book/book_createbook.png"></td>
   </tr>
@@ -63,17 +63,15 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/book/book_imageicon.png"></td>
   </tr>
   <tr>
-    <td> You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>1. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>2. Click <b>All image</b> to view a list of image files from the repository 
-      
-*<b>Note</b>: The repository contains all image files added and uploaded by any users*
+    <td> You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>1. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>2. Click <b>All image</b> to view a list of image files from the repository    
+      <br><b>Note</b>: The repository contains all image files added and uploaded by any users
       <br>4. Choose an appropriate image file from any list and click <b>Select</b> <br>6. Click <b>Upload and use</b> to upload and use images from your gallery
     </td>
     <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
   <tr>
       <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
-
-*<b>Note</b>: Supported file formats are: .jpeg, .jpg, .png*     
+   <br><b>Note</b>: Supported file formats are: .jpeg, .jpg, .png*     
    <br>2. Under <b>Copyright and License</b>, select if you want to: <br>&emsp;a) Make it available to everyone <br>&emsp;b) Not share with anyone <br>3. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
@@ -104,7 +102,7 @@ allowSearch: true
   <tr>
     <td>1.Click the burger menu in the left navigation pane to add Textbook Units or Resources
 <br>&emsp;a)<b>Textbook Unit</b>: a unit summarizing details of all the chapters within that unit <br>&emsp;b)<b>Resource</b>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc. <br>2. Alternatively, click <b>New Child</b> node to add a textbook unit. Any number of textbook units can be added <br>3. Click <b>New Sibling</b> node to add a Textbook Unit within the created textbook unit
-*<br><b>Note</b>: A new sibling node can be added only after adding a child node*
+<br><b>Note</b>: A new sibling node can be added only after adding a child node
     </td>
     <td><img src="pages/features-documentation/images/book/book_addchild1.png"></td>
   </tr>
@@ -136,9 +134,8 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources 
-      
-   *<b>Note</b>: Resources can be added within a textbook or within a textbook unit. Select Resources from the respective burger menu drop-downs*
+    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
+   <br><b>Note</b>: Resources can be added within a textbook or within a textbook unit. Select Resources from the respective burger menu drop-downs
    </td>
    <td><img src="pages/features-documentation/images/book/book_addresource.png"></td>
    </tr>
