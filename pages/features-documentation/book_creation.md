@@ -45,9 +45,9 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Title</strong> of the course <br>2. Enter <strong>Description</strong> <br>3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Subject</strong></ol><ol>c) <strong>Grade</strong></ol> <ol>d) <strong>Medium</strong></ol> <ol>e) <strong>Audience</strong></ol> <ol>f) <strong>Concepts</strong></ol> <ol>g) <strong>Language</strong></ol> <br>4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br>5. Enter <strong>Keywords</strong> <br>6. Click <strong>Update</strong> to update the details
+    <td>1. Enter <b>Title</b> of the course <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>4. Enter <b>Description</b> of the book <br> Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> to save the details
     </td>
-    <td><img src="pages/features-documentation/images/book_metadata2.png"></td>
+    <td><img src="pages/features-documentation/images/book/book_metadata2.png"></td>
   </tr>
   </table>
 
@@ -59,7 +59,7 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>Click the <strong>Image</strong> icon to add an image</td>
+    <td>Click the <b>Image</b> icon to add an image</td>
     <td><img src="pages/features-documentation/images/course_imageicon.png"></td>
   </tr>
   <tr>
@@ -70,10 +70,10 @@ allowSearch: true
       <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users 
       <br>5. Choose an appropriate image file from any list and click <strong>Select</strong><br>6. Click <strong>Upload</strong> and use to upload and use images from your gallery
     </td>
-    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
+    <td><img src="pages/features-documentation/images/book/book_imageicon.png"></td>
   </tr>
   <tr>
-      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <ol>a) Make it available to everyone</ol> <ol>b) Not share with anyone</ol>
+      <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <ol>a) Make it available to everyone</ol> <ol>b) Not share with anyone</ol>
       <br>4. Add image details in the <strong>Asset Caption</strong> area <br>5. Click <strong>Upload and Use</strong> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
