@@ -9,20 +9,22 @@ Okay, let's get started.
 ---
 ### Prerequisites
 
-- We assume you've 2 VMs for application and db with minimum system requirements
+- We assume you've 2 VMs. one for application and other for db with minimum system requirements
 
   > Operating System: Ubuntu 16.04 LTS   
     RAM: 7GB   
     CPU: 2 cores, >2 GHz  
     root access (should be able to sudo)
 
-- A FQDN(Fully qualified domain name eg: test.sunbird.org). If you're testing sunbird, you don't have to buy FQDN, as all cloud providers give free dns names for their instances(for example, Azure: sunbird-test.centralindia.cloudapp.azure.com). Please check with the cloud provider for more details.
+- A FQDN(Fully qualified domain name eg: test.sunbird.org). 
+If you're testing sunbird, you don't have to buy FQDN, as all cloud providers give free domain names for their instances.  
+for example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Please check with the cloud provider for more details.
 
-- SSL certificate for your domain. We're providing a script to generate ssl using [Let's Enceypt](https://letsencrypt.org/) for most common cases. But some free domain names, provided by cloud providers are not supported (eg: aws provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, becuse of spammers ). If our script is not compatible with your cloud provider, please purchase or get a free one.
+- [SSL certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server_certificate) for your domain. We're providing a script to generate free ssl using [Let's Enceypt](https://letsencrypt.org/) for most common cases. But some free domain names, provided by cloud providers are not supported (eg: aws provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, becuse of spammers ). If our script is not compatible with your cloud provider, please purchase or get a [free one](http://dot.tk).
 
 - this installation script **should run in the application server**
 
-- You should have git installed
+- You should have git installed. 
   `sudo apt install git` - for debian/ubuntu
 
 - 2 servers [ app <=> db ] should able to ping each other
@@ -39,7 +41,7 @@ Okay, let's get started.
 
 - cd sunbird-devops/deploy
 
-- ./certbot.sh (if you don't have a valid ssl certificate, and have a valid dns name)
+- ./certbot.sh (if you don't have a valid ssl certificate, and have a valid domain name)
 
 - edit all the mandatory fields in  deploy/config file
 
@@ -47,7 +49,7 @@ Okay, let's get started.
 
 **90% is done.** 
 
-  just go over to https://dns-name/auth
+  just go over to https://domain-name/auth
 
   and plese complete the [keycloak configs](http://www.sunbird.org/developer-docs/installation/keycloak_realm_configuration).
 
@@ -66,6 +68,6 @@ for example:
 
 now please go to 
 
-https://dns-name
+https://domain-name
 
 Enjoy!!!
