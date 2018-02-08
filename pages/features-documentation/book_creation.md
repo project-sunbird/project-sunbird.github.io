@@ -22,7 +22,7 @@ allowSearch: true
   </tr>
   </table>
   
- ### Creating Book
+### Creating Book
  <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -37,8 +37,9 @@ allowSearch: true
   </tr>
   </table>
   
-  ### Book Metadata
-  On clicking <b>Start Creating</b>, the metadata fields related to the book are displayed:
+### Book Metadata
+ 
+ On clicking <b>Start Creating</b>, the metadata fields related to the book are displayed:
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -129,12 +130,12 @@ allowSearch: true
     <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the textbook unit <br>5. Click <Image icon> to add image to the textbook unit metadata. For details on adding image, refer <a href="pages/features-documentation/book_creation/#addingimagetobookmetadata">Adding Image to Book Metadata</a>
       </td>
     <td><img src="pages/features-documentation/images/book/book_unit_metadat.png"></td>
-   <tr>
-     <td>1. 
   </tr>
 </table>
 
+
 ### Adding Resources
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -154,7 +155,7 @@ allowSearch: true
   </tr>
   </table>
   
- ### Deleting Content 
+### Deleting Content 
 
 <table>
   <tr>
@@ -188,8 +189,9 @@ allowSearch: true
 </table>
 
 
- ### Sending Book for Review
- A book, before publishing, must undergo a review. To send the book for review and publish
+### Sending Book for Review
+
+A book, before publishing, must undergo a review. To send the book for review and publish
 <table>
   <tr>
     <th style="width:35%;">Step</th>
