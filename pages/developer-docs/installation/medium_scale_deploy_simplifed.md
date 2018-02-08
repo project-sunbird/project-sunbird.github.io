@@ -8,7 +8,6 @@ Okay, let's get started.
 
 ---
 ### Prerequisites
-- We assume you read the sunbird [infrastructure](medium_scale_deploy.md)
 
 - We assume you've 2 VMs for application and db with minimum system requirements
 
@@ -17,30 +16,20 @@ Okay, let's get started.
     CPU: 2 cores, >2 GHz  
     root access (should be able to sudo)
 
+- A FQDN(Fully qualified domain name eg: test.sunbird.org). If you're testing sunbird, you don't have to buy FQDN, as all cloud providers give free dns names for their instances(for example, Azure: sunbird-test.centralindia.cloudapp.azure.com). Please check with the cloud provider for more details.
 
-- this script **should run in the application server**
+- SSL certificate for your domain. We're providing a script to generate ssl using [Let's Enceypt](https://letsencrypt.org/) for most common cases. But some free domain names, provided by cloud providers are not supported (eg: aws provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, becuse of spammers ). If our script is not compatible with your cloud provider, please purchase or get a free one.
 
-- sudo password less admin user
+- this installation script **should run in the application server**
 
 - You should have git installed
   `sudo apt install git` - for debian/ubuntu
-
-- you should have python on both machines
-  `sudo apt install python`
-
-- single ssh key for both application server and db server; If you don't have that please run these commands below
-  ```
-  ssh-keygen -f sunbird
-  scp-copy-id -i sunbird.pub username@localhost
-  scp-copy-id -i sunbird.pub username@db_server_ip
-  ```
-  > this key(sunbird) will be your ssh_key for entire installation setup
 
 - 2 servers [ app <=> db ] should able to ping each other
   > If you're in aws, you have to open some ports b/w the security groups,  
     for testing we opened all ports b/w these private sec groups
 
-- port 80, 443 accessible from internet for app_server
+- port 443 accessible from internet for app_server
 
 ---
 
@@ -70,7 +59,8 @@ for example:
 
 - - **key, which you got from ekstep**, [genereate a jwt token](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis) using that, and update for `ekstep_api_key`
 
-  > how to get [ekstep api keys](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
+  > how to get [ekstep api
+  > keys](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
 
 - ./sunbird_installation.sh -s core
 
