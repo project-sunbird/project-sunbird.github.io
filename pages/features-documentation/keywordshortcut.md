@@ -26,4 +26,5 @@ Up arrow key  | Navigate up in the tree structure
 Down arrow key  | Navigate down in the tree structure
 + | Expand new siblings or child in the tree structure
 - | Collapse new siblings or child in the tree structure
- Ctrl+/(or)Cmd+/  | Access list of shortcuts
+ Ctrl+/ | Access list of shortcuts
+ Cmd+/ |  Access list of shortcuts
