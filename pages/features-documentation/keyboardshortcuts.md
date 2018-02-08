@@ -13,18 +13,18 @@ Use keyboard shortcuts to perform the actions outlined in the following table.
 
 Press | To
 ------|----
-F2  | Edit a selected item
-Ctrl+ Del | Delete a selected item
-Cmd+ Del  | Delete a selected item
-Ctrl+Alt+Shift+N | Open new sibling level
-Cmd+Alt+Shift+N | Open new sibling level
-Ctrl+Alt +N | Open new child level
-Cmd+Alt+N | Open new child level
-Ctrl+Alt+A | Open **Add Resource** page
-Cmd+Alt+A   | Open **Add Resource** page
-Up arrow key  | Navigate up in the tree structure
-Down arrow key  | Navigate down in the tree structure
-**+** | Expand siblings or child in the tree structure
-**-** | Collapse siblings or child in the tree structure
- Ctrl+/ | Access list of shortcuts
- Cmd+/ |  Access list of shortcuts
+**F2**  | Edit selected item
+**Ctrl+ Del** | Delete selected item
+**Cmd+ Del**  | Delete selected item
+**Ctrl+Alt+Shift+N** | Open new sibling node
+**Cmd+Alt+Shift+N** | Open new sibling node
+**Ctrl+Alt +N** | Open new child node
+**Cmd+Alt+N** | Open new child node
+**Ctrl+Alt+A** | Open **Add Resource** page
+**Cmd+Alt+A**   | Open **Add Resource** page
+**Up arrow key**  | Navigate up the tree heirarchy
+**Down arrow key**  | Navigate down the tree heirarchy
+**+** | Expand sibling or child nodes 
+**-** | Collapse sibling or child nodes
+**Ctrl+/** | Access list of shortcuts
+**Cmd+/** |  Access list of shortcuts
