@@ -63,7 +63,7 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/book_imageicon.png"></td>
   </tr>
   <tr>
-    <td> You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>1. Click <b>My images</b> to view a list of all image files that you have previously,uploaded <br>2. Click <b>All image</b> to view a list of image files from the repository 
+    <td> You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>1. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>2. Click <b>All image</b> to view a list of image files from the repository 
       
 *Note: The repository contains all image files added and uploaded by any users*
       <br>4. Choose an appropriate image file from any list and click <b>Select</b> <br>6. Click <b>Upload</b> and use to upload and use images from your gallery
@@ -102,15 +102,15 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click the burger menu in the left navigation pane to add Textbook Units or Resourses
-<br>&emsp;a)<b>Textbook Unit</b>: a unit summarising details of all the chapters within that unit <br>&emsp;b)<b>Resource</b>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc <br>2. Alternatively, click <b>New Child</b>node to add a textbook unit. Any number of textbook unit can be added <br>3. Click <b>New Sibling</b>node to add a Textbook Unit within the created textbook unit
+    <td>1.Click the burger menu in the left navigation pane to add Textbook Units or Resources
+<br>&emsp;a)<b>Textbook Unit</b>: a unit summarizing details of all the chapters within that unit <br>&emsp;b)<b>Resource</b>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc. <br>2. Alternatively, click <b>New Child</b> node to add a textbook unit. Any number of textbook unit can be added <br>3. Click <b>New Sibling</b> node to add a Textbook Unit within the created textbook unit
 
 *Note: A new sibling node can be added only after adding a child node*
     </td>
     <td><img src="pages/features-documentation/images/book/book_addchild1.png"></td>
   </tr>
   <tr>
-  <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highligted only after a child note is added. A sibling unit is created asa sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b> to add a resource to the textbook unit
+  <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b> to add a resource to the textbook unit
     
  *Note: You can alternatively use the keyboard shortcuts displayed*
     </td>
@@ -176,12 +176,12 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Drag and drop the content to the desired position too rearrange  the order of the content added to the textbook  
+    <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the textbook  
       </td>
     <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
   </tr>
   <tr>
-    <td>1. Click the upward arrow to collape the table of contents
+    <td>1. Click the upward arrow to collapse the table of contents. Click the same arrow to expand collapsed table of contents.
      </td>
     <td><img src="pages/features-documentation/images/book/book_toc.png"></td>
   </tr>  
@@ -189,7 +189,7 @@ allowSearch: true
 
 
  ### Sending Book for Review
-Before the book is publihed, it must be reviewed. To send the book for review and publish
+ A book, before publishing, must undergo a review. To send the book for review and publish
 <table>
   <tr>
     <th style="width:35%;">Step</th>
