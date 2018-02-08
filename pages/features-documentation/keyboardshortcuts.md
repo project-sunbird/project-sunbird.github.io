@@ -1,13 +1,13 @@
 ---
 type: landing
 directory: features-documentation
-title: Keyword Shortcuts
-page_title: Keyword Shortcuts for Collection Editor
-description: List of Keyword shortcuts supported for collection editor
+title: Keyboard Shortcuts
+page_title: Keyboard Shortcuts for Collection Editor
+description: List of Keyboard shortcuts supported for collection editor
 published: true
 allowSearch: true
 ---
-You can quickly accomplish all the tasks using the keyword shortcuts for collections at the tree structure.
+You can quickly accomplish tasks using the keyboard shortcuts for performing various actions described here. For e.g, You can edit or delete the the sibling or child from the tree structure in the collection editor using the keyboard shortcut.
 
 **Note**:  The task that you can accomplish by using a shortcut depends on which task pane or application window is active.
 
