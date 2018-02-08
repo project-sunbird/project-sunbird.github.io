@@ -12,11 +12,15 @@ allowSearch: true
 ### Prerequisites
 <table>
   <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
     <th>Step</th>
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. You want to create a book. You have clicked the <strong>Book</strong> tile
+    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. Click on <b>Book</b> tile
        </td>
       <td><img src="pages/features-documentation/images/book_workspace.png"></td>
   </tr>
@@ -25,22 +29,29 @@ allowSearch: true
  ### Creating Book
  <table>
   <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
     <th>Step</th>
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Name</strong> of the book <br>2.Select the following from their respective drop-down menus: <ol>a) <b>Curriculum</b></ol> <ol>b) <strong>Medium</strong></ol> <ol>c) <strong>Subject</strong></ol> <ol>d) <strong>Class</strong></ol> <ol>e) <strong>Year</strong></ol> <br>3. Enter <strong>Publisher</strong> details
+    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b></ol> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b>
       
 *Note: These details can be filled later when updating the book metadata* 
-<br>4. Click <strong>Start Creating</strong>
        </td>
-      <td><img src="pages/features-documentation/images/book_createbook.png"></td>
+      <td><img src="pages/features-documentation/images/book/book_createbook.png"></td>
   </tr>
   </table>
   
   ### Book Metadata
-  On clicking <strong>Start Creating</strong>, all the metadata fields related to the book are displayed:
+  On clicking <b>Start Creating</b>, the metadata fields related to the book are displayed:
 <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
   <tr>
     <th>Step</th>
     <th>Screen</th>
@@ -55,6 +66,10 @@ allowSearch: true
 ### Adding Image to Book Metadata
 
 <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
   <tr>
     <th>Step</th>
     <th>Screen</th>
@@ -104,6 +119,10 @@ allowSearch: true
 
 <table>
   <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
     <th>Step</th>
     <th>Screen</th>
   </tr>
@@ -115,6 +134,10 @@ allowSearch: true
 
 ### Adding Collections, Resources, Stories and Worksheets
 <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
   <tr>
     <th>Step</th>
     <th>Screen</th>
@@ -131,6 +154,10 @@ allowSearch: true
  ### Sending Book for Review
 Before the book is publihed, it must be reviewed. To send the book for review and publish
 <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
   <tr>
     <th>Step</th>
     <th>Screen</th>
