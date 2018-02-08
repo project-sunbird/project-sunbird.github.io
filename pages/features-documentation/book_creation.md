@@ -16,7 +16,7 @@ allowSearch: true
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. Click on <strong>Book</strong> tile
+    <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. You want to create a book. You have clicked the <strong>Book</strong> tile
        </td>
       <td><img src="pages/features-documentation/images/book_workspace.png"></td>
   </tr>
@@ -29,7 +29,7 @@ allowSearch: true
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Name</strong> of the book <br>2.Select the following from their respective dropdown menus: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Medium</strong></ol> <ol>c) <strong>Subject</strong></ol> <ol>d) <strong>Class</strong></ol> <ol>e) <strong>Year</strong></ol> <br>3. Enter <strong>Publisher</strong> details
+    <td>1. Enter <strong>Name</strong> of the book <br>2.Select the following from their respective drop-down menus: <ol>a) <b>Curriculum</b></ol> <ol>b) <strong>Medium</strong></ol> <ol>c) <strong>Subject</strong></ol> <ol>d) <strong>Class</strong></ol> <ol>e) <strong>Year</strong></ol> <br>3. Enter <strong>Publisher</strong> details
       
 *Note: These details can be filled later when updating the book metadata* 
 <br>4. Click <strong>Start Creating</strong>
