@@ -2,14 +2,14 @@
 type: landing
 directory: features-documentation
 title: Keyboard Shortcuts
-page_title: Keyboard Shortcuts for Collection Editor
+page_title: Keyboard Shortcuts
 description: List of Keyboard shortcuts supported for collection editor
 published: true
 allowSearch: true
 ---
-You can quickly accomplish tasks using the keyboard shortcuts and can perform various action described here. For e.g, You can edit or delete a selected item from the tree structure in the collection editor using the keyboard shortcut.
+Use keyboard shortcuts to perform the actions outlined in the following table. 
 
-**Note**:  The task that you can accomplish by using a shortcut depends on which task pane or application window is active.
+**Note**:  The task that you can accomplish using a shortcut, depends on the active task pane or application window.
 
 Press | To
 ------|----
