@@ -63,12 +63,10 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/course_imageicon.png"></td>
   </tr>
   <tr>
-    <td>1. You can add images either by selecting an image from:<br>
-      <li>A list or uploading images</li>
-      <li>Your local machine to use immediately</li>
-      <br>2. Click <strong>My images</strong> to view a list of all image files that you have previously,uploaded <br>3. Click <strong>All image</strong> to view a list of image files from the repository 
-      <br><strong>Note:</strong> The repository contains all image files added and uploaded by any users 
-      <br>5. Choose an appropriate image file from any list and click <strong>Select</strong><br>6. Click <strong>Upload</strong> and use to upload and use images from your gallery
+    <td>1. You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>2. Click <b>My images</b> to view a list of all image files that you have previously,uploaded <br>3. Click <b>All image</b> to view a list of image files from the repository 
+      
+*Note: The repository contains all image files added and uploaded by any users*
+      <br>4. Choose an appropriate image file from any list and click <b>Select</b> <br>6. Click <b>Upload</b> and use to upload and use images from your gallery
     </td>
     <td><img src="pages/features-documentation/images/book/book_imageicon.png"></td>
   </tr>
