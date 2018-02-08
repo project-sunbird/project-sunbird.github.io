@@ -71,8 +71,10 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/book/book_imageicon.png"></td>
   </tr>
   <tr>
-      <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <strong>Copyright and License</strong>, select if you want to: <ol>a) Make it available to everyone</ol> <ol>b) Not share with anyone</ol>
-      <br>4. Add image details in the <strong>Asset Caption</strong> area <br>5. Click <strong>Upload and Use</strong> to upload the image
+      <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
+
+*Note: Supported file formats are: .jpeg, .jpg, .png*     
+   <br>2. Under <b>Copyright and License</b>, select if you want to: <br>&emsp;a) Make it available to everyone <br>&emsp;b) Not share with anyone <br>3. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
   </tr>
@@ -85,19 +87,21 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click <strong>+</strong>icon in the left navigation pane to add a Textbook Unit, Collection, Resource, Story or Worksheet.
-<li><strong>Textbook Unit</strong>:  a unit summarising details of all the chapters within that unit
-<li><strong>Collection</strong>: a compilation of related or unrelated content
-<li><strong>Resource</strong>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc.
-<li><strong>Story</strong>: Structured sequence of action/events put together to form a narrative
-<li><strong>Worksheet</strong>: A set or questions or tasks put together to assess the understanding of any particular topic/unit/chapter</li>
-      <br>2. Click on the content type you want to add to the book</td>
-    <td><img src="pages/features-documentation/images/book_selectingcontent.png"></td>
+    <td>1.Click the burger menu in the left navigation pane to add Textbook Units or Resourses
+<br>&emsp;a)<b>Textbook Unit</b>: a unit summarising details of all the chapters within that unit <br>&emsp;b)<b>Resource</b>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc <br>2. Alternatively, click <b>New Child</b>node to add a textbook unit. Any number of textbook unit can be added <br>3. Click <b>New Sibling</b>node to add a Textbook Unit within the created textbook unit
+
+*Note: A new sibling node can be added only after adding a child node*
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addchild1.png"></td>
   </tr>
+  <tr>
+  <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highligted only after a child note is added. A sibling unit is created asa sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b>to add a resource to the textbook unit
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addchild2.png"></td>
   </tr>
 </table>
 
-#### Adding Course Units
+#### Adding Textbook Units
 
 <table>
   <tr>
