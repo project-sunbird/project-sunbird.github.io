@@ -90,4 +90,5 @@ The level of data collected is a discrete decision of an organization or busines
 
 Sunbird’s telemetry service has Full level telemetry.
 
-## What is Telemetry Channel?
+<!--## What is Telemetry Channel?
+-->
