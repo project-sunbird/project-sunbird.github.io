@@ -60,7 +60,7 @@ Okay, let's get started.
 
   just go over to https://dns-name/auth
 
-  and plese complete the [keycloak configs](keycloak_realm_configuration.md).
+  and plese complete the [keycloak configs](http://www.sunbird.org/developer-docs/installation/keycloak_realm_configuration).
 
 - - copy the **jwt token for player** from your home directory (~/jwt_token.txt) and fill it for `ekstep_auth_token`
 
