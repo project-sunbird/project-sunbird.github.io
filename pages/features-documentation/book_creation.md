@@ -29,7 +29,8 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
    <tr>
-    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b> *<b>Note</b>: These details can be filled later when updating the book metadata* 
+    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b> 
+      *<br><b>Note</b>: These details can be filled later when updating the book metadata*
        </td>
       <td><img src="pages/features-documentation/images/book/book_createbook.png"></td>
   </tr>
@@ -103,8 +104,7 @@ allowSearch: true
   <tr>
     <td>1.Click the burger menu in the left navigation pane to add Textbook Units or Resources
 <br>&emsp;a)<b>Textbook Unit</b>: a unit summarizing details of all the chapters within that unit <br>&emsp;b)<b>Resource</b>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc. <br>2. Alternatively, click <b>New Child</b> node to add a textbook unit. Any number of textbook units can be added <br>3. Click <b>New Sibling</b> node to add a Textbook Unit within the created textbook unit
-
-*<b>Note</b>: A new sibling node can be added only after adding a child node*
+*<br><b>Note</b>: A new sibling node can be added only after adding a child node*
     </td>
     <td><img src="pages/features-documentation/images/book/book_addchild1.png"></td>
   </tr>
@@ -183,6 +183,7 @@ allowSearch: true
 </table>
 
 ### Sending Book for Review
+
 A book must be reviewed before it is published. 
 <table>
   <tr>
