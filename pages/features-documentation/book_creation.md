@@ -16,10 +16,6 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
-  </tr>
-  <tr>
     <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. Click on <b>Book</b> tile
        </td>
       <td><img src="pages/features-documentation/images/book_workspace.png"></td>
@@ -32,11 +28,7 @@ allowSearch: true
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <th>Step</th>
-    <th>Screen</th>
-  </tr>
-  <tr>
+   <tr>
     <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b></ol> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b>
       
 *Note: These details can be filled later when updating the book metadata* 
@@ -53,10 +45,6 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
-  </tr>
-  <tr>
     <td>1. Enter <strong>Title</strong> of the course <br>2. Enter <strong>Description</strong> <br>3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Subject</strong></ol><ol>c) <strong>Grade</strong></ol> <ol>d) <strong>Medium</strong></ol> <ol>e) <strong>Audience</strong></ol> <ol>f) <strong>Concepts</strong></ol> <ol>g) <strong>Language</strong></ol> <br>4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br>5. Enter <strong>Keywords</strong> <br>6. Click <strong>Update</strong> to update the details
     </td>
     <td><img src="pages/features-documentation/images/book_metadata2.png"></td>
@@ -69,10 +57,6 @@ allowSearch: true
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <th>Step</th>
-    <th>Screen</th>
   </tr>
   <tr>
     <td>Click the <strong>Image</strong> icon to add an image</td>
@@ -99,8 +83,8 @@ allowSearch: true
 ### Adding Content to Book
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
     <td>1.Click <strong>+</strong>icon in the left navigation pane to add a Textbook Unit, Collection, Resource, Story or Worksheet.
@@ -123,10 +107,6 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
-  </tr>
-  <tr>
     <td>1. On clicking <strong>Textbook Unit</strong> from the drop-down, the metadata for textbook unit is displayed on the right <br>2. Click <strong>Update<strong> to edit the metadata <br>3. Enter <strong>Title</strong>, <strong>Description</strong>, <strong>Concepts</strong>, <strong>Keywords</strong> and <strong>Notes to Teacher</strong>, if any <br>4. Click <strong>Update</strong> to save the edited metadata</td>
     <td><img src="pages/features-doc/image/book_unit_metadat.png"></td>
   </tr>
@@ -137,10 +117,6 @@ allowSearch: true
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <th>Step</th>
-    <th>Screen</th>
   </tr>
   <tr>
     <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets</strong>, the <strong>Browse Resource</strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept</strong>
@@ -157,10 +133,6 @@ Before the book is publihed, it must be reviewed. To send the book for review an
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <th>Step</th>
-    <th>Screen</th>
   </tr>
   <tr>
     <td>1. Click <strong>Save</strong> on the header to save the book <br>2. Click <strong>Send for review</strong> to send the created book for review
