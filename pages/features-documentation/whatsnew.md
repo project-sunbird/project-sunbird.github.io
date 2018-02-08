@@ -7,7 +7,7 @@ description: Information and instructional guide to use What's new feature
 published: true
 allowSearch: true
 ---
-**What's New** feature informs you about all the latest and significant changes build in the content editor in order to enhance and enrich your experience.
+**What's New** feature informs you about all the latest and significant changes build in the content editor in order to enhance and enrich your user experience.
 
 <table>
   <tr>
