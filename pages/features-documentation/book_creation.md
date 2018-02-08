@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation
-title: Creation and CUration of Books
-page_title: Creationa and Curation of Books
+title: Creation and Curation of Books
+page_title: Creation and Curation of Books
 description: Details on how to create a book and add content to books
 keywords: 'books, create books, compile books, add story to book, add worksheets'
 published: true
@@ -45,7 +45,7 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> of the course <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>4. Enter <b>Description</b> of the book <br> Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> to save the details
+    <td>1. Enter <b>Title</b> of the course <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>4. Enter <b>Description</b> of the book <br> Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> on the header to save the details
     </td>
     <td><img src="pages/features-documentation/images/book/book_metadata2.png"></td>
   </tr>
@@ -60,15 +60,15 @@ allowSearch: true
   </tr>
   <tr>
     <td>Click the <b>Image</b> icon to add an image</td>
-    <td><img src="pages/features-documentation/images/course_imageicon.png"></td>
+    <td><img src="pages/features-documentation/images/book_imageicon.png"></td>
   </tr>
   <tr>
-    <td>1. You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>2. Click <b>My images</b> to view a list of all image files that you have previously,uploaded <br>3. Click <b>All image</b> to view a list of image files from the repository 
+    <td> You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>1. Click <b>My images</b> to view a list of all image files that you have previously,uploaded <br>2. Click <b>All image</b> to view a list of image files from the repository 
       
 *Note: The repository contains all image files added and uploaded by any users*
       <br>4. Choose an appropriate image file from any list and click <b>Select</b> <br>6. Click <b>Upload</b> and use to upload and use images from your gallery
     </td>
-    <td><img src="pages/features-documentation/images/book/book_imageicon.png"></td>
+    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
   <tr>
       <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
@@ -80,7 +80,22 @@ allowSearch: true
   </tr>
 </table>
 
+### Exploring What's New
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1.Click on the <b>What's New</b> icon to explore new features, keyboard shortcuts etc.
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
+  </tr>
+  </table>
+
 ### Adding Content to Book
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -96,6 +111,8 @@ allowSearch: true
   </tr>
   <tr>
   <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highligted only after a child note is added. A sibling unit is created asa sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b> to add a resource to the textbook unit
+    
+ *Note: You can alternatively use the keyboard shortcuts displayed*
     </td>
     <td><img src="pages/features-documentation/images/book/book_addchild2.png"></td>
   </tr>
@@ -117,20 +134,6 @@ allowSearch: true
   </tr>
 </table>
 
-### Deleting Textbook Units
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Click <b>Delete</b> icon beside the burger menu to delete the textbook unit <br>2. Click <b>Yes</b> 
-      </td>
-    <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
-  </tr>
-</table>
-
 ### Adding Resources
 <table>
   <tr>
@@ -140,7 +143,7 @@ allowSearch: true
   <tr>
     <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources 
       
-   *Note: Resources can be added within a textbook or a textbook unit. Select Resources from the respective burger menu drop-down menus.*
+   *Note: Resources can be added within a textbook or within a textbook unit. Select Resources from the respective burger menu drop-downs*
    </td>
    <td><img src="pages/features-documentation/images/book/book_addresource.png"></td>
    </tr>
@@ -151,6 +154,40 @@ allowSearch: true
   </tr>
   </table>
   
+ ### Deleting Content 
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
+  </tr>
+</table>
+
+### Reordering Content 
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Drag and drop the content to the desired position too rearrange  the order of the content added to the textbook  
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
+  </tr>
+  <tr>
+    <td>1. Click the upward arrow to collape the table of contents
+     </td>
+    <td><img src="pages/features-documentation/images/book/book_toc.png"></td>
+  </tr>  
+</table>
+
+
  ### Sending Book for Review
 Before the book is publihed, it must be reviewed. To send the book for review and publish
 <table>
@@ -159,7 +196,7 @@ Before the book is publihed, it must be reviewed. To send the book for review an
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Save</strong> on the header to save the book <br>2. Click <strong>Send for review</strong> to send the created book for review
+    <td>1. Click <b>Save</b> on the header to save the book <br>2. Click <b>Send for review</b> to send the created book for review
     </td>
     <td><img src="pages/features-documentation/images/book_sendforreview.png"></td>
   </tr>    
