@@ -16,7 +16,7 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. Click on <b>Book</b> tile
+    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You want to create a book, you have clicked on <b>Book</b> tile
        </td>
       <td><img src="pages/features-documentation/images/book_workspace.png"></td>
   </tr>
@@ -101,7 +101,7 @@ allowSearch: true
   </tr>
 </table>
 
-#### Adding Textbook Units
+### Adding Textbook Units
 
 <table>
   <tr>
@@ -109,24 +109,45 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the textbook unit <br>5. Click <Image icon> to add image to the textbook unit metadata. FOr details on adding image, refer <a href="features-documentation/book_creation/#adding-image-to-book-metadata">Adding Image to Book Metadata</a>
+    <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the textbook unit <br>5. Click <Image icon> to add image to the textbook unit metadata. For details on adding image, refer <a href="pages/features-documentation/book_creation/#addingimagetobookmetadata">Adding Image to Book Metadata</a>
       </td>
-    <td><img src="pages/features-doc/image/book_unit_metadat.png"></td>
+    <td><img src="pages/features-documentation/images/book/book_unit_metadat.png"></td>
+   <tr>
+     <td>1. 
   </tr>
 </table>
 
-### Adding Collections, Resources, Stories and Worksheets
+### Deleting Textbook Units
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets</strong>, the <strong>Browse Resource</strong> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept</strong>
- <br>4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br>5. Select the content you want to add and click <strong>Add</strong> to add the selected content
-    </td>
-    <td><img src="pages/features-documentation/images/course_addingresource_subscreen.png"></td>
+    <td>1. Click <b>Delete</b> icon beside the burger menu to delete the textbook unit <br>2. Click <b>Yes</b> 
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
   </tr>
+</table>
+
+### Adding Resources
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources 
+      
+   *Note: Resources can be added within a textbook or a textbook unit. Select Resources from the respective burger menu drop-down menus.*
+   </td>
+   <td><img src="pages/features-documentation/images/book/book_addresource.png"></td>
+   </tr>
+   <tr>
+   <td>1. The <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addresource2.png"></td>
   </tr>
   </table>
   
