@@ -45,7 +45,7 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> of the course <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>4. Enter <b>Description</b> of the book <br> Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> on the header to save the details
+    <td>1. Enter <b>Title</b> of the course <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Enter <b>Description</b> of the book <br>4. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> on the header to save the details
     </td>
     <td><img src="pages/features-documentation/images/book/book_metadata2.png"></td>
   </tr>
