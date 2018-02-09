@@ -39,7 +39,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   
 ### Book Metadata
  
-On clicking <b>Start Creating</b>, the metadata fields related to the book are displayed:
+On clicking <b>Start Creating</b>, the metadata fields related to the collection are displayed:
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -52,7 +52,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the book are d
   </tr>
   </table>
 
-### Adding Image to COllection Metadata
+### Adding Image to Collection Metadata
 
 <table>
   <tr>
