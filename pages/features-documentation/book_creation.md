@@ -122,6 +122,7 @@ allowSearch: true
   </tr>
   <tr>
     <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the textbook unit <br>5. Click <b>Image icon</b> to add image to the textbook unit metadata. For details on adding image, refer <a href="pages/features-documentation/book_creation/#addingimagetobookmetadata">Adding Image to Book Metadata</a>
+    </td>
     <td><img src="pages/features-documentation/images/book/book_unit_metadat.png"></td>
   </tr>
 </table>
@@ -182,6 +183,7 @@ allowSearch: true
 ### Sending Book for Review
 
 A book must be reviewed before it is published. 
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
