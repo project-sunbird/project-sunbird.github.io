@@ -10,13 +10,40 @@ allowSearch: true
 
 ## Procedure to Onboard Organizations
 
-| Step | Instruction                                   |
-|------|-----------------------------------------------|
-| 1.   | Create a tenant organization                  |
-| 2.   | Generate the RSA private and public key pair  |
-| 3.   | Get the public key registered in production   |
-| 4.   | Create organizations, and users, and register |
-| 5.   | Single Sign-On with Sunbird                   |
+<div>
+<table class="auto">
+<thead>
+<tr>
+	<th>Step</th>
+	<th>Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>1.</td>
+	<td>Create a tenant organization </td>
+</tr>
+<tr>
+	<td>2.</td>
+	<td>Generate the RSA private and public key pair </td>
+</tr>
+<tr>
+	<td>3.</td>
+	<td>Get the public key registered in production </td>
+</tr>
+<tr>
+	<td>4.</td>
+	<td>Create organizations, and users, and register</td>
+</tr>
+<tr>
+	<td>5.</td>
+	<td>Single Sign-On with Sunbird</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
 
 ## Tokens
 
