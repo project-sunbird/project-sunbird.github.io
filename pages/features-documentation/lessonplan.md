@@ -45,7 +45,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> for the lesson plan <br>3. Select the following from their respective drop-down lists: <br>a) <b>Curriculum</b> <br>b) <b>Subject</b> <br>c) <b>Grade</b> <br>d) <b>Medium</b> <br>e) <b>Language</b> <br>f) <b>Concepts</b> <br>4. Enter <b>Notes to Teacher</b>, if any <br>5. Enter <b>Duration</b> of the lesson plan <br>6. Click <b>Update</b> to update the metadata <br>7. Click <b>Lesson Plan</b> on the left navigation pane to add other units of content to the plan
+    <td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> for the lesson plan <br>3. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Subject</b> <br>&emsp;c) <b>Grade</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Language</b> <br>&emsp;f) <b>Concepts</b> <br>4. Enter <b>Notes to Teacher</b>, if any <br>5. Enter <b>Duration</b> of the lesson plan <br>6. Describe the <b>Learning Objective</b> for the lesson plan <br>7. Click <b>Lesson Plan</b> on the left navigation pane to add other units of content to the plan <br><b>Note</b>: You can edit or update the title of units in the collection from the navigation hierarchy <br>8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="pages/features-documentation/keyboardshortcuts">Keyboard Shortcuts</a> <br><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates.      
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/addmetadata.png"></td>
  </tr>
@@ -80,6 +80,25 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
   </tr>
 </table>
 
+### Exploring What's New
+
+**What's New** feature informs you about all the latest and significant changes build and made available for your better user experience.
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click on the <b>What's New</b> icon to view new functionalities and related content <br><b>Note</b>: What's new icon appears in red color, when it is viewed for the first time. It turns to grey from next view, until next version of the feature is not available.</td>
+    <td><img src="pages/features-documentation/whatsnew1.png"></td>
+  </tr>
+  <tr>
+    <td>What's new page opens, with the highlights of the latest changes</td>
+    <td><img src="pages/pages/features-documentation/whatsnew2.png"></td>
+  </tr>
+  </table>
+      
 ### Adding Content to Lesson Plan
 
 <table>
@@ -88,10 +107,83 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click the <b>+</b> icon on the left navigation pane to add: <br>a) <b>Lesson Plan Unit</b> <br>b) <b>Collection</b> <br>c) <b>Resource</b> <br>d) <b>Story</b> <br>e) <b>Worksheet</b>
+    <td>1.Click the burger menu in the left navigation pane to add content <b>Units</b> or <b>Resources</b> <br>2. Alternatively, click <b>New Child</b> node to add a lesson unit. Any number of units can be added <br>3. Click <b>New Sibling</b> node to add a another Unit within the created lesson unit <br><b>Note</b>: A new sibling node can be added only after adding a child node
     </td>
-    <td><img src="pages/features-documentation/images/lessonplan/addcontent.png"></td>
+    <td><img src="pages/features-documentation/images/book/book_addchild1.png"></td>
   </tr>
+  <tr>
+  <td>1. Click <b>Edit</b> to edit the lesson name <br>2. Click <b>Delete</b> to delete the lesson unit. This option is highlighted only after adding lesson unit/resource <br>3. Click <b>New Sibling</b> to add lesson unit. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br>4. Click <b>New Child</b> to add a lesson unit <br>5. Click <b>Add Resource</b> to add a resource to the lesson unit <br><b>Note</b>: You can alternatively use the keyboard shortcuts displayed or refer <a href="pages/features-documentation/keyboardshortcuts">Keyboard Shortcuts</a>
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addchild2.png"></td>
+  </tr>
+</table>
+
+### Adding Textbook Units
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the textbook unit <br>5. Click <b>Image icon</b> to add image to the textbook unit metadata. For details on adding image, refer <a href="features-documentation/book_creation/#adding-image-to-book-metadata">Adding Image to Book Metadata</a>
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_metadat.png"></td>
+  </tr>
+</table>
+
+### Adding Resources
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
+   <br><b>Note</b>: Resources can be added within a textbook or within a textbook unit. Select Resources from the respective burger menu drop-downs
+   </td>
+   <td><img src="pages/features-documentation/images/book/book_addresource.png"></td>
+   </tr>
+   <tr>
+   <td>1. The <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addresource2.png"></td>
+  </tr>
+  </table>
+  
+### Deleting Content 
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content
+      <br><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
+  </tr>
+</table>
+
+### Reordering Content 
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the textbook  
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
+  </tr>
+  <tr>
+    <td>1. Click the upward arrow to collapse the table of contents. Click the same arrow to expand collapsed table of contents.
+     </td>
+    <td><img src="pages/features-documentation/images/book/book_toc.png"></td>
+  </tr>  
 </table>
 
 #### Adding Lesson Plan Unit
