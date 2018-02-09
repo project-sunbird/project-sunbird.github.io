@@ -10,9 +10,11 @@ allowSearch: true
 
 
 ## Master Data Interchange
+
 Sunbird requires some data that currently resides in external SSO systems to provide required functionality to the users who sign in to the platform. For example; in the case of DIKSHA, Sunbird requires data are about organization type (teacher education/training Institutes) and the members of the organizations. Within Sunbird, users are not granted permissions system-wide. User permissions are defined at the level of the organization to which they belong. This allows a user to be a part of many organizations and have different permissions for each organization.
 
 ### Data Requirements
+
 To make this feasible, Sunbird requires the following information from the integrating party:
 
 - List of organisations - their names and any unique identifier for them in external system
@@ -35,7 +37,9 @@ Tenants can import their organizations on Sunbird using the organization APIs. T
 *For information on Organization Management APIs, refer [Organization Management APIs](http://www.sunbird.org/apis/orgapi/)*
 
 ## User APIs
+
 Tenants can import their users on Sunbird using the user APIs. The API has the following resources:
+
 - Create User
 - Search User
 - Fetch User by Login ID
