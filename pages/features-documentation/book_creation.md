@@ -159,6 +159,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
   </tr>
   <tr>
     <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content
+      <br><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
       </td>
     <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
   </tr>
