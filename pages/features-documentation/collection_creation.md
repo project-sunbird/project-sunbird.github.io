@@ -169,14 +169,14 @@ On clicking <b>Start Creating</b>, the metadata fields related to the book are d
 
 ### Sending Book for Review
 
-A book must be reviewed before it is published. 
+A collection must be reviewed before it is published. 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Save</b> on the header to save the book <br>2. Click <b>Send for review</b> to send the created book for review
+    <td>1. Click <b>Save</b> on the header to save the collection <br>2. Click <b>Send for review</b> to send the created collection for review
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_sendforreview.png"></td>
   </tr>    
