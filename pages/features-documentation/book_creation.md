@@ -110,7 +110,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <td><img src="pages/features-documentation/images/book/book_addchild1.png"></td>
   </tr>
   <tr>
-  <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b> to add a resource to the textbook unit *<b>Note</b>: You can alternatively use the keyboard shortcuts displayed*
+  <td>1. Click <b>Edit</b> to edit the textbook name <br>2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br>3. Click <b>New Sibling</b> to add textbook unit. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br>4. Click <b>New Child</b> to add a textbook unit <br>5. Click <b>Add Resource</b> to add a resource to the textbook unit <br><b>Note</b>: You can alternatively use the keyboard shortcuts displayed
     </td>
     <td><img src="pages/features-documentation/images/book/book_addchild2.png"></td>
   </tr>
