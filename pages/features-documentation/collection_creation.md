@@ -93,8 +93,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the book are d
     <td><img src="pages/features-documentation/images/collection/collection_addchild1.png"></td>
   </tr>
   <tr>
-  <td>1. Click <b>Edit</b> to edit the collection name <br>2. Click <b>Delete</b> to delete the collection. This option is highlighted only after adding a collection/resource <br>3. Click <b>New Sibling</b> to add collection. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br>4. Click <b>New Child</b> to add a collection <br>5. Click <b>Add Resource</b> to add a resource to the collection 
-    <br><b>Note</b>: You can alternatively use the keyboard shortcuts displayed
+  <td>1. Click <b>Edit</b> to edit the collection name <br>2. Click <b>Delete</b> to delete the collection. This option is highlighted only after adding a collection/resource <br>3. Click <b>New Sibling</b> to add collection. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br>4. Click <b>New Child</b> to add a collection <br>5. Click <b>Add Resource</b> to add a resource to the collection <br><b>Note</b>: You can alternatively use the keyboard shortcuts. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_addchild2.png"></td>
   </tr>
@@ -108,9 +107,9 @@ On clicking <b>Start Creating</b>, the metadata fields related to the book are d
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td> On clicking <b>New Child</b> from the burger menu, the metadata for collection is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the collection <br>5. Click <b>Image icon</b> to add image to the collection metadata. For details on adding image, refer <a href="pages/features-documentation/collection_creation/#addingimagetocollectionmetadata">Adding Image to Collection Metadata</a>
+    <td> On clicking <b>New Child</b> from the burger menu, the metadata for collection is displayed on the right <br>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> about the collection <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the collection <br>5. Click <b>Image icon</b> to add image to the collection metadata. For details on adding image, refer <a href="pages/features-documentation/collection_creation/#addingimagetocollectionmetadata">Adding Image to Collection Metadata</a>
     </td>
-    <td><img src="pages/features-documentation/images/book/book_unit_metadat.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection_child_metadata.png"></td>
   </tr>
 </table>
 
@@ -123,9 +122,9 @@ On clicking <b>Start Creating</b>, the metadata fields related to the book are d
   </tr>
   <tr>
     <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
-   <br><b>Note</b>: Resources can be added within a textbook or within a textbook unit. Select Resources from the respective burger menu drop-downs
+   <br><b>Note</b>: Resources can be added within any collection or independantly. Select Resources from the respective burger menu drop-downs
    </td>
-   <td><img src="pages/features-documentation/images/book/book_addresource.png"></td>
+   <td><img src="pages/features-documentation/images/collection/collection_addresource.png"></td>
    </tr>
    <tr>
    <td>1. The <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
@@ -159,12 +158,12 @@ On clicking <b>Start Creating</b>, the metadata fields related to the book are d
   <tr>
     <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the textbook  
       </td>
-    <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection_drag_content.png"></td>
   </tr>
   <tr>
     <td>1. Click the upward arrow to collapse the table of contents. Click the same arrow to expand collapsed table of contents.
      </td>
-    <td><img src="pages/features-documentation/images/book/book_toc.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection_toc.png"></td>
   </tr>  
 </table>
 
@@ -179,6 +178,6 @@ A book must be reviewed before it is published.
   <tr>
     <td>1. Click <b>Save</b> on the header to save the book <br>2. Click <b>Send for review</b> to send the created book for review
     </td>
-    <td><img src="pages/features-documentation/images/book_sendforreview.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection_sendforreview.png"></td>
   </tr>    
   </table>
