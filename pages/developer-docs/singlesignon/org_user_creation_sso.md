@@ -24,7 +24,9 @@ To make this feasible, Sunbird requires the following information from the integ
 - List of roles of each member in the organisation - Available roles are member, content creator and admin
 
 ## Organization APIs
-Tenants can import their organizations on Sunbird using the organization APIs. The API has the following resources:
+Tenants can import their organizations on Sunbird using the organization APIs. 
+
+The API has the following resources:
 
 - Create Organization
 - Update Organization
