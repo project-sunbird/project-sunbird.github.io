@@ -71,7 +71,7 @@ allowSearch: true
   </tr>
   <tr>
       <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
-   <br><b>Note</b>: Supported file formats are: .jpeg, .jpg, .png*     
+   <br><b>Note</b>: Supported file formats are: .jpeg, .jpg, .png    
    <br>2. Under <b>Copyright and License</b>, select if you want to: <br>&emsp;a) Make it available to everyone <br>&emsp;b) Not share with anyone <br>3. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
