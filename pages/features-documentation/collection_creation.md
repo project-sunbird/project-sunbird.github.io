@@ -17,7 +17,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You want to create a collection, you have clicked on <b>Colletion</b> tile
+    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You want to create a collection, you have clicked on <b>Collection</b> tile
        </td>
       <td><img src="pages/features-documentation/images/collection/collection_workspace.png"></td>
   </tr>
@@ -37,7 +37,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
   
-### Book Metadata
+### Collection Metadata
  
 On clicking <b>Start Creating</b>, the metadata fields related to the collection are displayed:
 <table>
@@ -46,7 +46,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> of the book <br>3. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>4. Click <b>Save</b> on the header to save the details
+    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> of the collection <br>3. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>4. Click <b>Save</b> on the header to save the details
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_metadata2.png"></td>
   </tr>
@@ -122,7 +122,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
   </tr>
   <tr>
     <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
-   <br><b>Note</b>: Resources can be added within any collection or independantly. Select Resources from the respective burger menu drop-downs
+   <br><b>Note</b>: Resources can be added within any collection or independently. Select Resources from the respective burger menu drop-downs
    </td>
    <td><img src="pages/features-documentation/images/collection/collection_addresource.png"></td>
    </tr>
@@ -156,7 +156,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the textbook  
+    <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the collection  
       </td>
     <td><img src="pages/features-documentation/images/collection/collection_drag_content.png"></td>
   </tr>
@@ -167,7 +167,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
   </tr>  
 </table>
 
-### Sending Book for Review
+### Sending Collection for Review
 
 A collection must be reviewed before it is published. 
 <table>
