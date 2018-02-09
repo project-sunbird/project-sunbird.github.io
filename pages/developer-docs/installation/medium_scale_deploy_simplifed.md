@@ -17,7 +17,7 @@ Okay, let's get started.
     root access (should be able to sudo)
 
 - A FQDN(Fully qualified domain name eg: test.sunbird.org). 
-If you're testing sunbird, you don't have to buy FQDN, as all cloud providers give free domain names for their instances.
+If you're testing sunbird, you don't have to buy FQDN, as all cloud providers give free domain names for their instances.  
 for example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Please check with the cloud provider for more details.
 
 - [SSL certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server_certificate) for your domain. We're providing a script to generate free ssl using [Let's Enceypt](https://letsencrypt.org/) for most common cases. But some free domain names, provided by cloud providers are not supported (eg: aws provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, becuse of spammers ). If our script is not compatible with your cloud provider, please purchase or get a [free one](http://dot.tk).
