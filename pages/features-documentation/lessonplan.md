@@ -63,7 +63,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
-    <td>1. You can add images either by selecting an image from: <br>
+    <td>1. You can add images either by selecting an image from: 
       <li>A list or uploading images</li>
       <li>Your local machine to use immediately</li>
       <br>2. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>3. Click <b>All image</b> to view a list of image files from the repository 
