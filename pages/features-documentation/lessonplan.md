@@ -73,7 +73,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
   <tr>
-      <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <b>Copyright and License</b>, select if you want to: <br>a) Make it available to everyone <br>b) Not share with anyone
+    <td>1. Choose <b>File</b> to browse and click <b>Select a file</b> from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <b>Copyright and License</b>, select if you want to: <br>a) Make it available to everyone <br>b) Not share with anyone
       <br>4. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
@@ -91,11 +91,11 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
   </tr>
   <tr>
     <td>1. Click on the <b>What's New</b> icon to view new functionalities and related content <br><b>Note</b>: What's new icon appears in red color, when it is viewed for the first time. It turns to grey from next view, until next version of the feature is not available.</td>
-    <td><img src="pages/features-documentation/whatsnew1.png"></td>
+    <td><img src="pages/features-documentation/images/whatsnew1.png"></td>
   </tr>
   <tr>
     <td>What's new page opens, with the highlights of the latest changes</td>
-    <td><img src="pages/pages/features-documentation/whatsnew2.png"></td>
+    <td><img src="pages/features-documentation/images/whatsnew2.png"></td>
   </tr>
   </table>
       
