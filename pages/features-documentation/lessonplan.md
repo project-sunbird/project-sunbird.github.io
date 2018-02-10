@@ -118,7 +118,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
   </tr>
 </table>
 
-### Adding Textbook Units
+### Adding Lesson Plan Units
 
 <table>
   <tr>
@@ -126,7 +126,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the textbook unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the textbook unit <br>5. Click <b>Image icon</b> to add image to the textbook unit metadata. For details on adding image, refer <a href="features-documentation/book_creation/#adding-image-to-book-metadata">Adding Image to Book Metadata</a>
+    <td> On clicking <b>New Child</b> from the burger menu, the metadata for lesson unit is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> about the lesson unit <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the lesson unit <br>5. Click <b>Image icon</b> to add image to the lessonplan unit metadata. For details on adding image, refer <a href="features-documentation/lessonplan/#adding-image-to-lesson-plan-metadata">Adding Image to Lesson Plan Metadata</a>
     </td>
     <td><img src="pages/features-documentation/images/book/book_unit_metadat.png"></td>
   </tr>
@@ -141,7 +141,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
   </tr>
   <tr>
     <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
-   <br><b>Note</b>: Resources can be added within a textbook or within a textbook unit. Select Resources from the respective burger menu drop-downs
+   <br><b>Note</b>: Resources can be added within a lesson plan or within a lesson unit. Select Resources from the respective burger menu drop-downs
    </td>
    <td><img src="pages/features-documentation/images/book/book_addresource.png"></td>
    </tr>
@@ -175,7 +175,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the textbook  
+    <td>1. Drag and drop the content to the desired position to rearrange the order of the content added to the lesson plan 
       </td>
     <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
   </tr>
@@ -186,34 +186,6 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
   </tr>  
 </table>
 
-#### Adding Lesson Plan Unit
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> for the unit <br>3. Enter <b>Notes to Teacher</b>, if any <br>4. Click the <b>Image</b> icon to add an image to the lesson plan unit <br>5. Click <b>Update</b> to save the metadata <br>6. Click <b>Save</b> to save the lesson plan unit
-    </td>
-    <td><img src="pages/features-documentation/images/lessonplan/lessonunit.png"></td>
-     </tr>
-</table>
-
-#### Adding Collections, Resources, Stories and Worksheets
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. On clicking <b>Collections, Resources, Stories or Worksheets</b> the <b>Add Resource</b> page opens <br>2. Type keywords to search for content <br>3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <b>Language, Grade, Content Type, and Concept</b> <br>4. Click <b>Apply</b>. Results are loaded on the right pane  <br>5. Select the content you want to add and click <b>Add</b> to add the selected content
-    </td>
-    <td><img src="pages/features-documentation/images/course_addingresource_subscreen.png"></td>
-  </tr>
-  </table>
-  
 ### Sending Lesson Plan for Review
 
 Before the Lesson Plan is publihed, it must be reviewed. You can send it for reviewing and publishing.
