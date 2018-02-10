@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.22.a/";
+			baseURL.href="/releases/release.1.23/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-07 18:08:08 +0530">
+<meta name="last-modified" content="2018-02-10 16:59:11 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.22.a" />
-<meta name="buildNo" content="1612" />
+<meta name="buildVersion" content="release.1.23" />
+<meta name="buildNo" content="1714" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?07022018"  />
-<link rel="stylesheet" href="css/style.css?07022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?07022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?07022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?07022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10022018"  />
+<link rel="stylesheet" href="css/style.css?10022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?10022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?10022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?10022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -167,6 +167,12 @@
 				</li>
 				<li>
 					<a href="features-documentation/lessonplan/">Lesson Plan</a>
+				</li>
+				<li>
+					<a href="features-documentation/book_creation/">Book</a>
+				</li>
+				<li>
+					<a href="features-documentation/collection_creation/">Collection</a>
 				</li>
 				<li>
 					<a href="features-documentation/course_intro/">Courses</a>
@@ -578,9 +584,11 @@ $("a[href$='developer-docs/singlesignon/org_user_creation_sso/']").addClass("sid
     </tbody>
   </table>
 </div><h2 id="master-data-interchange">Master Data Interchange</h2>
+
 <p>Sunbird requires some data that currently resides in external SSO systems to provide required functionality to the users who sign in to the platform. For example; in the case of DIKSHA, Sunbird requires data are about organization type (teacher education/training Institutes) and the members of the organizations. Within Sunbird, users are not granted permissions system-wide. User permissions are defined at the level of the organization to which they belong. This allows a user to be a part of many organizations and have different permissions for each organization.</p>
 
 <h3 id="data-requirements">Data Requirements</h3>
+
 <p>To make this feasible, Sunbird requires the following information from the integrating party:</p>
 
 <ul>
@@ -596,7 +604,10 @@ $("a[href$='developer-docs/singlesignon/org_user_creation_sso/']").addClass("sid
 </ul>
 
 <h2 id="organization-apis">Organization APIs</h2>
-<p>Tenants can import their organizations on Sunbird using the organization APIs. The API has the following resources:</p>
+
+<p>Tenants can import their organizations on Sunbird using the organization APIs.</p>
+
+<p>The API has the following resources:</p>
 
 <ul>
   <li>Create Organization</li>
@@ -613,18 +624,24 @@ $("a[href$='developer-docs/singlesignon/org_user_creation_sso/']").addClass("sid
 </p>
 
 <h2 id="user-apis">User APIs</h2>
-<p>Tenants can import their users on Sunbird using the user APIs. The API has the following resources:
-- Create User
-- Search User
-- Fetch User by Login ID
-- Get User by Login ID
-- Updates User
-- Logs in User
-- Logs out User
-- Resets Forgotten Password
-- Add badges to user
-- Changes User Password
-- Adds Users Current Login Time</p>
+
+<p>Tenants can import their users on Sunbird using the user APIs.</p>
+
+<p>The API has the following resources:</p>
+
+<ul>
+  <li>Create User</li>
+  <li>Search User</li>
+  <li>Fetch User by Login ID</li>
+  <li>Get User by Login ID</li>
+  <li>Updates User</li>
+  <li>Logs in User</li>
+  <li>Logs out User</li>
+  <li>Resets Forgotten Password</li>
+  <li>Add badges to user</li>
+  <li>Changes User Password</li>
+  <li>Adds Users Current Login Time</li>
+</ul>
 
 <p>
   <em>For information on User APIs, refer <a href="http://www.sunbird.org/apis/userapi/">User APIs</a></em>

@@ -4443,7 +4443,6 @@ tbody {
     margin: 20px 0;
     width: 100%;
     display: block;
-    width: 100%;
     overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar; }
     .inner__content table > tbody > tr > td {
@@ -4559,6 +4558,9 @@ a:hover {
 
 .inner__content table img {
   width: 100%; }
+
+.auto {
+  width: auto !important; }
 
 .breadcrumbs {
   list-style: none;

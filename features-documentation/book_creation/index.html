@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.22.a/";
+			baseURL.href="/releases/release.1.23/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Creationa and Curation of Books</title>
+<title>Sunbird Creation and Curation of Books</title>
 <meta name="description" content="Sunbird Site Details on how to create a book and add content to books"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-07 18:08:08 +0530">
+<meta name="last-modified" content="2018-02-10 16:59:11 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.22.a" />
-<meta name="buildNo" content="1612" />
+<meta name="buildVersion" content="release.1.23" />
+<meta name="buildNo" content="1714" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?07022018"  />
-<link rel="stylesheet" href="css/style.css?07022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?07022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?07022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?07022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10022018"  />
+<link rel="stylesheet" href="css/style.css?10022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?10022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?10022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?10022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -167,6 +167,12 @@
 				</li>
 				<li>
 					<a href="features-documentation/lessonplan/">Lesson Plan</a>
+				</li>
+				<li>
+					<a href="features-documentation/book_creation/">Book</a>
+				</li>
+				<li>
+					<a href="features-documentation/collection_creation/">Collection</a>
 				</li>
 				<li>
 					<a href="features-documentation/course_intro/">Courses</a>
@@ -528,7 +534,7 @@ $("a[href$='features-documentation/book_creation/']").addClass("sidebar-link-sel
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Creation and CUration of Books </h1>
+        <h1>Creation and Curation of Books </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -548,46 +554,102 @@ $("a[href$='features-documentation/book_creation/']").addClass("sidebar-link-sel
 			  </a>
 			  </span>
 			</p>
-          <h3 id="prerequisites">Prerequisites</h3>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#prerequisites"><span class="tocnumber">1.1 .</span> <span class="toctext">Prerequisites</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#creating-book"><span class="tocnumber">1.2 .</span> <span class="toctext">Creating Book</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#book-metadata"><span class="tocnumber">1.3 .</span> <span class="toctext">Book Metadata</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#adding-image-to-book-metadata"><span class="tocnumber">1.4 .</span> <span class="toctext">Adding Image to Book Metadata</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#exploring-whats-new"><span class="tocnumber">1.5 .</span> <span class="toctext">Exploring What’s New</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#adding-content-to-book"><span class="tocnumber">1.6 .</span> <span class="toctext">Adding Content to Book</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#adding-textbook-units"><span class="tocnumber">1.7 .</span> <span class="toctext">Adding Textbook Units</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#adding-resources"><span class="tocnumber">1.8 .</span> <span class="toctext">Adding Resources</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#deleting-content"><span class="tocnumber">1.9 .</span> <span class="toctext">Deleting Content</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-11">
+                  <a href="#reordering-content"><span class="tocnumber">1.10 .</span> <span class="toctext">Reordering Content</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#sending-book-for-review"><span class="tocnumber">1.11 .</span> <span class="toctext">Sending Book for Review</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+
+<p>Book is a collection of content units.	On Sunbird, books can be compiled or curated from school books or any book that conform to syllabi of state or central boards or any recognized institution or publication, in the said medium of instruction and language. Books may also be compiled separately without adhering to any syllabus, but forming a logical unit of content pieces for the given subject matter.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br />2. You are currently on <strong>My Workspace</strong> page <br />3. Click on <strong>Book</strong> tile
+    <td>1. You are logged in <br />2. You are currently on <b>My Workspace</b> page <br />3. You want to create a book, you have clicked on <b>Book</b> tile
        </td>
       <td><img src="pages/features-documentation/images/book_workspace.png" /></td>
   </tr>
   </table>
 
-<p>### Creating Book</p>
+<h3 id="creating-book">Creating Book</h3>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <td>1. Enter <strong>Name</strong> of the book <br />2.Select the following from their respective dropdown menus: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Medium</strong></ol> <ol>c) <strong>Subject</strong></ol> <ol>d) <strong>Class</strong></ol> <ol>e) <strong>Year</strong></ol> <br />3. Enter <strong>Publisher</strong> details
-      
-*Note: These details can be filled later when updating the book metadata* 
-<br />4. Click <strong>Start Creating</strong>
+   <tr>
+    <td>1. Enter <b>Name</b> of the book <br />2.Select the following from their respective dropdown menus: <br /> a) <b>Curriculum</b><br /> b) <b>Class</b> <br /> c) <b>Subject</b> <br /> d) <b>Medium</b> <br /> e) <b>Year</b> <br />3. Enter <b>Publisher</b> details <br />4. Click <b>Start Creating</b> 
+      <br /><b>Note</b>: These details can be filled later when updating the book metadata
        </td>
-      <td><img src="pages/features-documentation/images/book_createbook.png" /></td>
+      <td><img src="pages/features-documentation/images/book/book_createbook.png" /></td>
   </tr>
   </table>
 
-<p>### Book Metadata
-  On clicking <strong>Start Creating</strong>, all the metadata fields related to the book are displayed:</p>
+<h3 id="book-metadata">Book Metadata</h3>
+
+<p>On clicking <b>Start Creating</b>, the metadata fields related to the book are displayed:</p>
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <strong>Title</strong> of the course <br />2. Enter <strong>Description</strong> <br />3. Select the following from their respective drop-down lists: <ol>a) <strong>Curriculum</strong></ol> <ol>b) <strong>Subject</strong></ol><ol>c) <strong>Grade</strong></ol> <ol>d) <strong>Medium</strong></ol> <ol>e) <strong>Audience</strong></ol> <ol>f) <strong>Concepts</strong></ol> <ol>g) <strong>Language</strong></ol> <br />4. Enter <strong>Author</strong>, <strong>Publication</strong> and <strong>Edition</strong> details <br />5. Enter <strong>Keywords</strong> <br />6. Click <strong>Update</strong> to update the details
+    <td>1. Enter <b>Title</b> of the course <br />2. Select the following from their respective drop-down lists: <br /> a) <b>Curriculum</b> <br /> b) <b>Class</b> <br /> c) <b>Subject</b> <br /> d) <b>Medium</b> <br />3. Enter <b>Description</b> of the book <br />4. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br />5. Enter <b>Publisher</b> details <br />6. Select <b>Year</b> from the drop-down menu <br />7. Click <b>Save</b> on the header to save the details
     </td>
-    <td><img src="pages/features-documentation/images/book_metadata2.png" /></td>
+    <td><img src="pages/features-documentation/images/book/book_metadata2.png" /></td>
   </tr>
   </table>
 
@@ -595,92 +657,147 @@ $("a[href$='features-documentation/book_creation/']").addClass("sidebar-link-sel
 
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>Click the <strong>Image</strong> icon to add an image</td>
-    <td><img src="pages/features-documentation/images/course_imageicon.png" /></td>
+    <td>Click the <b>Image</b> icon to add an image</td>
+    <td><img src="pages/features-documentation/images/book/book_imageicon.png" /></td>
   </tr>
   <tr>
-    <td>1. You can add images either by selecting an image from:<br />
-      <li>A list or uploading images</li>
-      <li>Your local machine to use immediately</li>
-      <br />2. Click <strong>My images</strong> to view a list of all image files that you have previously,uploaded <br />3. Click <strong>All image</strong> to view a list of image files from the repository 
-      <br /><strong>Note:</strong> The repository contains all image files added and uploaded by any users 
-      <br />5. Choose an appropriate image file from any list and click <strong>Select</strong><br />6. Click <strong>Upload</strong> and use to upload and use images from your gallery
+    <td> You can add images by: <br /> a) Selecting an image from the inbuilt list <br /> b) Uploading images from your local machine <br />1. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br />2. Click <b>All image</b> to view a list of image files from the repository    
+      <br /><b>Note</b>: The repository contains all image files added and uploaded by any users
+      <br />4. Choose an appropriate image file from any list and click <b>Select</b> <br />6. Click <b>Upload and use</b> to upload and use images from your gallery
     </td>
     <td><img src="pages/features-documentation/images/course_selectimage.png" /></td>
   </tr>
   <tr>
-      <td>1. Choose <strong>File</strong> to browse and click <strong>Select a file from your local drive or open the explorer in a separate window</strong> or <strong>drag and drop</strong> the required file on the screen <br /><strong>Note:</strong> Supported file formats are: .jpeg, .jpg, .png <br />2. Under <strong>Copyright and License</strong>, select if you want to: <ol>a) Make it available to everyone</ol> <ol>b) Not share with anyone</ol>
-      <br />4. Add image details in the <strong>Asset Caption</strong> area <br />5. Click <strong>Upload and Use</strong> to upload the image
+      <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
+   <br /><b>Note</b>: Supported file formats are: .jpeg, .jpg, .png    
+   <br />2. Under <b>Copyright and License</b>, select if you want to: <br /> a) Make it available to everyone <br /> b) Not share with anyone <br />3. Add image details in the <b>Asset Caption</b> area <br />5. Click <b>Upload and Use</b> to upload the image
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png" /></td>
   </tr>
 </table>
 
-<h3 id="adding-content-to-book">Adding Content to Book</h3>
-<table>
-  <tr>
-    <th>Step</th>
-    <th>Screen</th>
-  </tr>
-  <tr>
-    <td>1.Click <strong>+</strong>icon in the left navigation pane to add a Textbook Unit, Collection, Resource, Story or Worksheet.
-<li><strong>Textbook Unit</strong>:  a unit summarising details of all the chapters within that unit
-<li><strong>Collection</strong>: a compilation of related or unrelated content
-<li><strong>Resource</strong>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc.
-<li><strong>Story</strong>: Structured sequence of action/events put together to form a narrative
-<li><strong>Worksheet</strong>: A set or questions or tasks put together to assess the understanding of any particular topic/unit/chapter</li>
-      <br />2. Click on the content type you want to add to the book&lt;/td&gt;
-    <td><img src="pages/features-documentation/images/book_selectingcontent.png" /></td>
-  &lt;/tr&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-#### Adding Course Units
+<h3 id="exploring-whats-new">Exploring What’s New</h3>
 
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking <strong>Textbook Unit</strong> from the drop-down, the metadata for textbook unit is displayed on the right <br />2. Click <strong>Update<strong> to edit the metadata <br />3. Enter <strong>Title</strong>, <strong>Description</strong>, <strong>Concepts</strong>, <strong>Keywords</strong> and <strong>Notes to Teacher</strong>, if any <br />4. Click <strong>Update</strong> to save the edited metadata&lt;/td&gt;
-    <td><img src="pages/features-doc/image/book_unit_metadat.png" /></td>
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-### Adding Collections, Resources, Stories and Worksheets
-<table>
-  <tr>
-    <th>Step</th>
-    <th>Screen</th>
-  </tr>
-  <tr>
-    <td>1. On clicking <strong>Collections, Resources, Stories or Worksheets</strong>, the <strong>Browse Resource</strong> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <strong>Language, Grade, Content Type, and, Concept</strong>
- <br />4. Click <strong>Apply</strong>. Results are loaded on the right pane  <br />5. Select the content you want to add and click <strong>Add</strong> to add the selected content
+    <td>1.Click on the <b>What's New</b> icon to view new functionalities and related content
     </td>
-    <td><img src="pages/features-documentation/images/course_addingresource_subscreen.png" /></td>
+    <td><img src="pages/features-documentation/images/book/book_whats_new1.png" /></td>
   </tr>
-  &lt;/tr&gt;
   </table>
-  
- ### Sending Book for Review
-Before the book is publihed, it must be reviewed. To send the book for review and publish
+
+<h3 id="adding-content-to-book">Adding Content to Book</h3>
+
 <table>
   <tr>
-    <th>Step</th>
-    <th>Screen</th>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <strong>Save</strong> on the header to save the book <br />2. Click <strong>Send for review</strong> to send the created book for review
+    <td>1.Click the burger menu in the left navigation pane to add Textbook Units or Resources
+<br /> a)<b>Textbook Unit</b>: a unit summarizing details of all the chapters within that unit <br /> b)<b>Resource</b>: singular pieces of content. These can be part of bigger units of content such as books, courses, assessments etc. <br />2. Alternatively, click <b>New Child</b> node to add a textbook unit. Any number of textbook units can be added <br />3. Click <b>New Sibling</b> node to add a Textbook Unit within the created textbook unit
+<br /><b>Note</b>: A new sibling node can be added only after adding a child node
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addchild1.png" /></td>
+  </tr>
+  <tr>
+  <td>1. Click <b>Edit</b> to edit the textbook name <br />2. Click <b>Delete</b> to delete the textbook unit. This option is highlighted only after adding textbook unit/resource <br />3. Click <b>New Sibling</b> to add textbook unit. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br />4. Click <b>New Child</b> to add a textbook unit <br />5. Click <b>Add Resource</b> to add a resource to the textbook unit <br /><b>Note</b>: You can alternatively use the keyboard shortcuts. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>    
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addchild2.png" /></td>
+  </tr>
+</table>
+
+<h3 id="adding-textbook-units">Adding Textbook Units</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td> On clicking <b>New Child</b> from the burger menu, the metadata for textbook unit is displayed on the right <br />1. Enter <b>Unit Title</b> <br />2. Enter <b>Description</b> about the textbook unit <br />3. Enter <b>Keywords</b> <br />4. Click <b>Save</b> to save the metadata of the textbook unit <br />5. Click <b>Image icon</b> to add image to the textbook unit metadata. For details on adding image, refer <a href="features-documentation/book_creation/#adding-image-to-book-metadata">Adding Image to Book Metadata</a>
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_metadat.png" /></td>
+  </tr>
+</table>
+
+<h3 id="adding-resources">Adding Resources</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
+   <br /><b>Note</b>: Resources can be added within a textbook or within a textbook unit. Select Resources from the respective burger menu drop-downs
+   </td>
+   <td><img src="pages/features-documentation/images/book/book_addresource.png" /></td>
+   </tr>
+   <tr>
+   <td>1. The <b>Browse Resource</b> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br /> a) <b>Category</b> <br /> b) <b>Language</b> <br /> c) <b>Class</b> <br /> d) <b>Subject</b> <br />4. Click <b>Reset</b> to edit and reset the filters <br />5. Click <b>Apply</b>. Results are loaded on the right pane  <br />6. Select the content you want to add <br />7. click <b>Add</b> to add the selected content <br />8. Click <b>Close</b> icon to go back to the main menu
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addresource2.png" /></td>
+  </tr>
+  </table>
+
+<h3 id="deleting-content">Deleting Content</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Delete</b> icon beside the burger menu <br />2. Click <b>Yes</b> to delete the added content
+      <br /><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_delete.png" /></td>
+  </tr>
+</table>
+
+<h3 id="reordering-content">Reordering Content</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the textbook  
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_drag_content.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Click the upward arrow to collapse the table of contents. Click the same arrow to expand collapsed table of contents.
+     </td>
+    <td><img src="pages/features-documentation/images/book/book_toc.png" /></td>
+  </tr>  
+</table>
+
+<h3 id="sending-book-for-review">Sending Book for Review</h3>
+
+<p>A book must be reviewed before it is published.</p>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Save</b> on the header to save the book <br />2. Click <b>Send for review</b> to send the created book for review
     </td>
     <td><img src="pages/features-documentation/images/book_sendforreview.png" /></td>
   </tr>    
   </table>
-</strong></strong></td></tr></table></li></li></li></li></td></tr></table>
 
           
           <hr />

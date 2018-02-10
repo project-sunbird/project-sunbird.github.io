@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.22.a/";
+			baseURL.href="/releases/release.1.23/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-07 18:08:08 +0530">
+<meta name="last-modified" content="2018-02-10 16:59:11 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.22.a" />
-<meta name="buildNo" content="1612" />
+<meta name="buildVersion" content="release.1.23" />
+<meta name="buildNo" content="1714" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?07022018"  />
-<link rel="stylesheet" href="css/style.css?07022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?07022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?07022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?07022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10022018"  />
+<link rel="stylesheet" href="css/style.css?10022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?10022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?10022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?10022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -167,6 +167,12 @@
 				</li>
 				<li>
 					<a href="features-documentation/lessonplan/">Lesson Plan</a>
+				</li>
+				<li>
+					<a href="features-documentation/book_creation/">Book</a>
+				</li>
+				<li>
+					<a href="features-documentation/collection_creation/">Collection</a>
 				</li>
 				<li>
 					<a href="features-documentation/course_intro/">Courses</a>
@@ -571,7 +577,22 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
                   <a href="#adding-image-to-course-metadata"><span class="tocnumber">1.3 .</span> <span class="toctext">Adding Image to Course Metadata</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-5">
-                  <a href="#adding-content-to-course"><span class="tocnumber">1.4 .</span> <span class="toctext">Adding Content to Course</span></a>
+                  <a href="#exploring-whats-new"><span class="tocnumber">1.4 .</span> <span class="toctext">Exploring What’s New</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#adding-content-to-course"><span class="tocnumber">1.5 .</span> <span class="toctext">Adding Content to Course</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#adding-resources"><span class="tocnumber">1.6 .</span> <span class="toctext">Adding Resources</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#deleting-content"><span class="tocnumber">1.7 .</span> <span class="toctext">Deleting Content</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#reordering-content"><span class="tocnumber">1.8 .</span> <span class="toctext">Reordering Content</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#sending-course-for-review"><span class="tocnumber">1.9 .</span> <span class="toctext">Sending Course for Review</span></a>
                 </li>
               </ul>
             </li>
@@ -592,15 +613,13 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br />2. You are currently on <b>My Workspace</b> page <br />3. You want to create courses
-       <br />4. You have clicked the <b>Courses</b> tile
+    <td>1. You are logged in <br />2. You are currently on <b>My Workspace</b> page <br />3. You want to create courses. You have clicked the <b>Courses</b> tile
       </td>
       <td><img src="pages/features-documentation/images/course_workspace.png" /></td>
   </tr>
   <tr>
-    <td>1. Enter <b>Name</b> of the course <br />2. Enter <b>Description</b> of the course <br />3. Click <b>Start Creating</b>
-      
-   ***Note: These details can be entered later when filling the metadata of the course***
+    <td>1. Enter <b>Name</b> of the course <br />2. Enter <b>Description</b> of the course <br />3. Click <b>Start Creating</b> <br />  
+      <b>Note</b>: These details can be entered later when filling the metadata of the course
     </td>
     <td><img src="pages/features-documentation/images/course_metadata.png" /></td>
   </tr>
@@ -613,7 +632,7 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Update</b> in the right navigation pane to edit details of the course <br />2. Enter <b>Title</b> of the course <br />3. Enter <b>Description</b> <br />4. Select the following from their respective drop-down lists <br /> <br /> a) Audience <br /> b) Language  <br /> c) Concepts <br />5. Enter <b>Faculty</b> details <br />6. Enter <b>Tutor</b> details <br />7. Enter <b>Keywords</b> <br />8. Click <b>Update</b> to update the details
+    <td>1. Enter <b>Title</b> of the course <br />2. Enter <b>Description</b> <br />3. Select the following from their respective drop-down lists <br /> a) Audience <br /> b) Language  <br /> c) Concepts <br />4. Enter <b>Faculty</b> details <br />5. Enter <b>Tutor</b> details <br />6. Enter <b>Keywords</b> <br />7. Click <b>Save</b> to save the metadata <br /><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates. <br />8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="pages/features-documentation/keyboardshortcuts">Keyboard Shortcuts</a> <br /><b>Note</b>:You can edit or update the title of units in the collection from the navigation hierarchy 
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png" /></td>
   </tr>
@@ -626,7 +645,7 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>Click the <b>Image</b> icon to add an image</td>
+    <td>1. Click the <b>Image</b> icon to add an image</td>
     <td><img src="pages/features-documentation/images/course_imageicon.png" /></td>
   </tr>
   <tr>
@@ -645,50 +664,128 @@ $("a[href$='features-documentation/course_creation/']").addClass("sidebar-link-s
   </tr>
 </table>
 
-<h3 id="adding-content-to-course">Adding Content to Course</h3>
+<h3 id="exploring-whats-new">Exploring What’s New</h3>
+
+<p><strong>What’s New</strong> feature informs you about all the latest and significant changes build and made available for your better user experience.</p>
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click <b>+</b>icon in the left navigation pane to add a Course Unit, Collection, Resource, Story or Worksheet,<br />2.Click on the content type you want to add to the course</td>
-    <td><img src="pages/features-documentation/images/course_addingresource.png" /></td>
+    <td>1. Click on the <b>What's New</b> icon to view new functionalities and related content <br /><b>Note</b>: What's new icon appears in red color, when it is viewed for the first time. It turns to grey from next view, until next version of the feature is not available.</td>
+    <td><img src="pages/features-documentation/images/whatsnew1.png" /></td>
   </tr>
-  &lt;/tr&gt;
+  <tr>
+    <td>What's new page opens, with the highlights of the latest changes</td>
+    <td><img src="pages/features-documentation/images/whatsnew2.png" /></td>
+  </tr>
+  </table>
+
+<h3 id="adding-content-to-course">Adding Content to Course</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1.Click the burger menu in the left navigation pane to add content <b>Units</b> or <b>Resources</b> <br />2. Alternatively, click <b>New Child</b> node to add a course unit. Any number of units can be added <br />3. Click <b>New Sibling</b> node to add a another Unit within the created course unit <br /><b>Note</b>: A new sibling node can be added only after adding a child node
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addchild1.png" /></td>
+  </tr>
+  <tr>
+  <td>1. Click <b>Edit</b> to edit the lesson name <br />2. Click <b>Delete</b> to delete the course unit. This option is highlighted only after adding course unit/resource <br />3. Click <b>New Sibling</b> to add course unit. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br />4. Click <b>New Child</b> to add a course unit <br />5. Click <b>Add Resource</b> to add a resource to the course unit <br /><b>Note</b>: You can alternatively use the keyboard shortcuts displayed or refer <a href="pages/features-documentation/keyboardshortcuts">Keyboard Shortcuts</a>
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_addchild2.png" /></td>
+  </tr>
 </table>
 
 <h4 id="adding-course-units">Adding Course Units</h4>
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking <b>Course Unit</b> from the drop-down, the metadata for course unit is displayed on the right <br />2. Click <b>Update</b> to edit the metadata <br />3. Click <b>Update</b> to save the edited metadata</td>
-    <td><img src="pages/features-doc/image/.png" /></td>
+    <td> On clicking <b>New Child</b> from the burger menu, the metadata for course unit is displayed on the right <br />1. Enter <b>Unit Title</b> <br />2. Enter <b>Description</b> about the course unit <br />3. Enter <b>Keywords</b> <br />4. Click <b>Save</b> to save the metadata of the course unit <br />5. Click <b>Image icon</b> to add image to the course unit metadata. For details on adding image, refer <a href="features-documentation/course_creation/#adding-image-to-course-metadata">Adding Image to Course Metadata</a>
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_metadat.png" /></td>
   </tr>
 </table>
 
-<h4 id="adding-collections-resources-stories-and-worksheets">Adding Collections, Resources, Stories and Worksheets</h4>
+<h3 id="adding-resources">Adding Resources</h3>
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking <b>Collections, Resources, Stories or Worksheets</b>, the <b>Browse Resource</b> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the lessons, you can apply filters. To apply filters, select from the drop-down lists available for <b>Language, Grade, Content Type, and, Concept</b>
- <br />4. Click <b>Apply</b>. Results are loaded on the right pane  <br />5. Select the content you want to add and click <b>Add</b> to add the selected content
+    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
+   <br /><b>Note</b>: Resources can be added within a course or within a course unit. Select Resources from the respective burger menu drop-downs
+   </td>
+   <td><img src="pages/features-documentation/images/book/book_addresource.png" /></td>
+   </tr>
+   <tr>
+   <td>1. The <b>Browse Resource</b> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br /> a) <b>Category</b> <br /> b) <b>Language</b> <br /> c) <b>Class</b> <br /> d) <b>Subject</b> <br />4. Click <b>Reset</b> to edit and reset the filters <br />5. Click <b>Apply</b>. Results are loaded on the right pane  <br />6. Select the content you want to add <br />7. click <b>Add</b> to add the selected content <br />8. Click <b>Close</b> icon to go back to the main menu
     </td>
-    <td><img src="pages/features-documentation/images/course_metadataupdate.png" /></td>
+    <td><img src="pages/features-documentation/images/book/book_addresource2.png" /></td>
   </tr>
-  &lt;/tr&gt;
+  </table>
+
+<h3 id="deleting-content">Deleting Content</h3>
+
+<table>
   <tr>
-    <td>1. Click <b>Save</b> on the header to save the course <br />2. Click <b>Send for review</b> to send the created course unit for review
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Delete</b> icon beside the burger menu <br />2. Click <b>Yes</b> to delete the added content
+      <br /><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_delete.png" /></td>
+  </tr>
+</table>
+
+<h3 id="reordering-content">Reordering Content</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Drag and drop the content to the desired position to rearrange the order of the content added to the course 
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_drag_content.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Click the upward arrow to collapse the table of contents. Click the same arrow to expand collapsed table of contents.
+     </td>
+    <td><img src="pages/features-documentation/images/book/book_toc.png" /></td>
+  </tr>  
+</table>
+
+<h3 id="sending-course-for-review">Sending Course for Review</h3>
+
+<p>Before the Course is publihed, it must be reviewed. You can send it for reviewing and publishing.</p>
+
+<table>
+  <tr>
+    <th>Step</th>
+    <th>Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Save</b> on the header to save the lesson <br />2. Click <b>Send for review</b> to send the created course for review <br />3. Click <b>Limited sharing</b> to publish the lesson to the limited audiences
     </td>
-    <td><img src="pages/features-documentation/images/course_sendingfreview.png" /></td>
+    <td><img src="pages/features-documentation/images/lessonplan/review.png" /></td>
   </tr>    
   </table>
+
 
           
           <hr />
