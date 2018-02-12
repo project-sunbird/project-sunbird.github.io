@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation
-title: Limited Publishing
-page_title: Limited Publishing
+title: Limited Sharing
+page_title: Limited Sharing
 description: Details and description on how limited publishing works
 published: true
 allowSearch: true
