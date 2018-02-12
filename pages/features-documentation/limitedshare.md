@@ -8,7 +8,7 @@ published: true
 allowSearch: true
 ---
 
-You can create, compile and share your content to others even before it get published. **Limited Sharing** feature enables you to share the link of the content that you have created to a selected audience.
+Content creation requirement varies from organization to organization. While soe organization create content and make it available to everyone, other organizations may choose to create content for only a specifed audience or only for members of a particular organization. To cater to this unique need, Sunbird offers the feature of  **Limited Sharing**. This feature enables you to share the content created via a link to selected audiences.
 
 ### Prerequisites
 - You are logged in
