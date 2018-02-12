@@ -15,14 +15,14 @@ Content creation requirements varies from organization to organization. Organiza
 - You have created the desired content from your workspace
 - You have filled the required meta data for the created content
 
-### Enabling Limited Publishing of Content
+### Selecting Limited Publishing of Content
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click the drop drop menu beside <b>Send for Review</b>icon <br>2. Click <b>Limited Sharing</b> from the drop down. You will be directed to <b>My workspace</b> </td>
+    <td>1. Click the drop drop menu beside <b>Send for Review</b> icon <br>2. Click <b>Limited Sharing</b> from the drop down. You will be directed to <b>My workspace</b> </td>
   <td><img src="pages/features-documentation/images/limitedshare.png"></td>
   </tr>
   </table>
@@ -41,7 +41,7 @@ Content creation requirements varies from organization to organization. Organiza
   
 ### Sending Content for Review
 
-Content selected for limited sharing are not reviewed. To send content (marked as limited sharing):
+Content selected for limited sharing are not reviewed. To send content (marked as limited sharing) for review:
 <table>
   <tr>
     <th style="width:35%;">Step</th>
