@@ -3,12 +3,12 @@ type: landing
 directory: features-documentation
 title: Limited Publishing
 page_title: Limited Publishing
-description: Describing how limited publishing option works 
+description: Details and description on how limited publishing works
 published: true
 allowSearch: true
 ---
 
-You can create, compile and share your content to people you want to share. The content can even be share to the others before it get published. 
+You can create, compile and share your content to others even before it get published. **Limited Publishing** feature enables you to share the link of the content that you have created to others to view and give their suggetions before it gets published. 
 
 <table>
   <tr>
