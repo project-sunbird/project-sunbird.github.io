@@ -15,7 +15,7 @@ Content creation requirements varies from organization to organization. Organiza
 - You have created the desired content from your workspace
 - You have filled the required meta data for the created content
 
-### Selecting Limited Publishing of Content
+### Selecting Limited Sharing of Content
 <table>
   <tr>
     <th style="width:35%;">Step</th>
