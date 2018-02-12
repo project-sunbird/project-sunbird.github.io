@@ -11,7 +11,7 @@ allowSearch: true
 Content creation requirements varies from organization to organization. Organizations may create content and make it available to everyone, or create content for only a specific audience or only for members of a particular organization. To cater to this unique need, Sunbird offers the feature of  **Limited Sharing**. This feature enables you to share the content created via a link to selected audiences.
 
 ### Prerequisites
-- You are logged in
+- You are loged in
 - You have created the desired content from your workspace
 - You have filled the required meta data for the created content
 
@@ -40,6 +40,7 @@ Content creation requirements varies from organization to organization. Organiza
   </table>
   
 ### Sending Content for Review
+
 Content selected for limited sharing are not reviewed. To send content (marked as limited sharing):
 <table>
   <tr>
@@ -55,7 +56,7 @@ Content selected for limited sharing are not reviewed. To send content (marked a
   <td><img src="pages/features-documentation/images/LimitPblsh_review2.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Send for Review</b> <br><b>Note</b>: Once the content is shared for review, it will not be available under <b>Limited Publishing</b>. The content after review, will be published on the portal where it will be accessible to everyone.
+    <td>1. Click <b>Send for Review</b> <br><b>Note</b>: Once the content is shared for review, it will not be available under <b>Limited Publishing</b>. The content after review, will be published on the portal where it will be accessible to everyone </td>
   <td><img src="pages/features-documentation/images/LimitPblsh_review3.png"></td>
   </tr>
   </table>
