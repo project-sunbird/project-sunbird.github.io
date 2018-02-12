@@ -22,9 +22,10 @@ Content creation requirements varies from organization to organization. Organiza
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-  <td>1. Click <b>Limited Sharing</b> on the header. You will be directed to <b>My workspace</b></td>
+  <td>1. Click <b>Limited Sharing</b> on the header. You will be directed to <b>My workspace</b> </td>
   <td><img src="pages/features-documentation/images/limitedshare.png"></td>
   </tr>
+  </table>
 
 ### Sharing Content Link
 <table>
