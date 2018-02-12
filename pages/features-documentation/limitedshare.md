@@ -54,7 +54,7 @@ Content selected for limited sharing are not reviewed. To send content (marked a
   <td><img src="pages/features-documentation/images/LimitPblsh_review2.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Send for Review</b> <br><>b>Note</b>: Once the content is shared for review, it will not be available under <b>Lmited Publishing</b>. The content after review, will be published on the portal where it will be accessible to everyone.
+    <td>1. Click <b>Send for Review</b> <br><b>Note</b>: Once the content is shared for review, it will not be available under <b>Limited Publishing</b>. The content after review, will be published on the portal where it will be accessible to everyone.
   <td><img src="pages/features-documentation/images/LimitPblsh_review3.png"></td>
   </tr>
   </table>
