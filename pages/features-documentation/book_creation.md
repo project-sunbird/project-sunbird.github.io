@@ -48,7 +48,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> of the course <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Enter <b>Description</b> of the book <br>4. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> on the header to save the details
+    <td>1. Enter <b>Title</b> of the book <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Enter <b>Description</b> of the book <br>4. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> on the header to save the details
     </td>
     <td><img src="pages/features-documentation/images/book/book_metadata2.png"></td>
   </tr>
@@ -75,7 +75,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
   <tr>
       <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
    <br><b>Note</b>: Supported file formats are: .jpeg, .jpg, .png    
-   <br>2. Under <b>Copyright and License</b>, select if you want to: <br>&emsp;a) Make it available to everyone <br>&emsp;b) Not share with anyone <br>3. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image
+   <br>2. Under <b>Copyright and License</b>, select if you want to: <br>&emsp;a) Make it available to everyone <br>&emsp;b) Not share with anyone <br>3. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image.  
       </td>
     <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
   </tr>
@@ -89,7 +89,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click on the <b>What's New</b> icon to view new functionalities and related content
+    <td>1.Click on the <b>What's New</b> icon to view new functionalities and related content. The Whats's New page is displayed. <br><b>Note</b>: The <b>What's New</b> icon appears red in color before its clicked, once clicked the icon color changes to grey. The icon appears red only when there are ne feature releases.
     </td>
     <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
   </tr>
@@ -144,7 +144,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
    <td><img src="pages/features-documentation/images/book/book_addresource.png"></td>
    </tr>
    <tr>
-   <td>1. The <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
+   <td>1. The <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
     </td>
     <td><img src="pages/features-documentation/images/book/book_addresource2.png"></td>
   </tr>
@@ -178,7 +178,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
   </tr>
   <tr>
-    <td>1. Click the upward arrow to collapse the table of contents. Click the same arrow to expand collapsed table of contents.
+    <td>1. Click the upward arrow to collapse the table of contents. Click the same arrow to expand collapsed table of contents
      </td>
     <td><img src="pages/features-documentation/images/book/book_toc.png"></td>
   </tr>  
