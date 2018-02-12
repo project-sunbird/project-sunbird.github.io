@@ -21,7 +21,7 @@ You can create, compile and share your content to people you want to share. The 
   </tr>
   <tr>
   <td>1. Click <b>Limited Publishing</b> <br><b>Note:</b> All the content selected for <b>Limited sharing</b> can be seen in <b>Limited Publishing</b> section in your workspace. <br>2. Click <b>View Link</b> <br>3. You will land  to <b>Share link</b> page <br>4. Click <b>Copy Link</b> to copy the link and share to others</td>
-  <td><img src="pages/features-documentation/images/limitedpublish.png"<</td>
+  <td><img src="pages/features-documentation/images/limitedpublish.png"></td>
   </tr>
   </table>
   
