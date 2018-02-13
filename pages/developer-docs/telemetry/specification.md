@@ -130,6 +130,41 @@ Request Arguments:
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user1",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device1",
+      "env": "Genie",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "1.0"
+      },
+      "sid": "3f2a0cc4-7bde-4044-8261-500dc13ef285"
+    },
+    "edata": {
+      "mode": "edit",
+      "pageid": "",
+      "type": "player"
+    },
+    "eid": "START",
+    "ets": 1518500741582,
+    "mid": "92a9a779-ea2c-4f4e-8d07-fc7c3e851993",
+    "tags": [],
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T05:45:48.588Z",
+    "ts": "2018-02-13T05:45:41.582+0000"
+  }
+</pre>
+
 ### Impression
 
 This API is used to log telemetry when users visit a specific page.
@@ -154,6 +189,47 @@ data - Object //Required
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user1",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device1",
+      "env": "ContentPlayer",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "1.0"
+      },
+      "rollup": {},
+      "sid": "7d6c6c9a-8323-49b2-84e0-3b46ae32eada"
+    },
+    "edata": {
+      "pageid": "home-page",
+      "type": "workflow",
+      "uri": ""
+    },
+    "eid": "IMPRESSION",
+    "ets": 1518503128479,
+    "mid": "4273778a-8f35-4945-97ae-bf5033c84425",
+    "object": {
+      "id": "test-content1",
+      "type": "Content",
+      "ver": "2.0"
+    },
+    "tags": [],
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T06:25:32.914Z",
+    "ts": "2018-02-13T06:25:28.479+0000"
+  }
+</pre>
+
 ### Interact
 
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
@@ -174,6 +250,49 @@ data - Object //Required
     "uri": "" // Unique external resource identifier if any (for recorded voice, image, etc.)
   }
 }
+</pre>
+
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user1",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device1",
+      "env": "ContentPlayer",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "1.0"
+      },
+      "rollup": {},
+      "sid": "7d6c6c9a-8323-49b2-84e0-3b46ae32eada"
+    },
+    "edata": {
+      "id": "id1",
+      "pageid": "end-page",
+      "subtype": "",
+      "type": "TOUCH"
+    },
+    "eid": "INTERACT",
+    "ets": 1518503441413,
+    "mid": "41c5632f-a47e-4910-99b3-3b351c3ca3bf",
+    "object": {
+      "id": "id1",
+      "type": "Content",
+      "ver": "1.0"
+    },
+    "tags": [],
+    "ver": "3.0",
+    "@version": "1",
+    "@timestamp": "2018-02-13T06:30:33.578Z",
+    "ts": "2018-02-13T06:30:41.413+0000"
+  }
 </pre>
 
 ### Assess
@@ -207,6 +326,61 @@ QUESTION = {
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user1",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device",
+      "env": "ContentPlayer",
+      "pdata": {
+        "id": "producer1",
+        "ver": "1.0"
+      },
+      "rollup": {},
+      "sid": "ci4gjqokrccvbdl4kss4pbhnh0"
+    },
+    "edata": {
+      "duration": 9,
+      "item": {
+        "desc": "",
+        "exlength": 0,
+        "id": "ques1",
+        "maxscore": 1,
+        "mc": [],
+        "mmc": [],
+        "params": [],
+        "uri": ""
+      },
+      "pass": "No",
+      "resvalues": [
+        {
+          "ans1": "6"
+        }
+      ],
+      "score": 0
+    },
+    "eid": "ASSESS",
+    "ets": 1518503832030,
+    "mid": "4399a98d6c50c5d70a3150f3a5ab649e",
+    "object": {
+      "id": "test-content",
+      "type": "Content",
+      "ver": "1.0"
+    },
+    "tags": [],
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T06:37:25.333Z",
+    "ts": "2018-02-13T06:37:12.030+0000"
+  }
+</pre>
+
 ### Response
 
 This API is used to log telemetry of user response. For example; Responded to assessments.
@@ -233,6 +407,55 @@ TARGET = {
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user1",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device",
+      "env": "ContentPlayer",
+      "pdata": {
+        "id": "producer1",
+        "ver": "1.0"
+      },
+      "rollup": {},
+      "sid": ""
+    },
+    "edata": {
+      "target": {
+        "id": "ques1",
+        "type": "AssessmentItem",
+        "ver": "1.0"
+      },
+      "type": "SELECT",
+      "values": [
+        {
+          "option": "A",
+          "state": "selected"
+        }
+      ]
+    },
+    "eid": "RESPONSE",
+    "ets": 1518503809778,
+    "mid": "RESPONSE:55ea33c06880c9179c92d223661172c6",
+    "object": {
+      "id": "test-content1",
+      "type": "Content",
+      "ver": "1"
+    },
+    "tags": [],
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T06:37:01.255Z",
+    "ts": "2018-02-13T06:36:49.778+0000"
+  }
+</pre>
+
 ### Interrupt
 
 This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.
@@ -248,6 +471,44 @@ data - Object //Required
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user",
+      "type": "User"
+    },
+    "eid": "INTERRUPT",
+    "edata": {
+      "type": "resume"
+    },
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T06:48:56.626Z",
+    "ets": 1518504535560,
+    "context": {
+      "channel": "test-channel",
+      "env": "Genie",
+      "sid": "a9da9668-d3f0-4edf-8c2a-e92c0b4cb24f",
+      "did": "test-device",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "1.0.25"
+      },
+      "cdata": []
+    },
+    "mid": "INTERRUPT:15704362-aa2a-4b4c-b99c-0f4296a98f52",
+    "object": {
+      "parent": {}
+    },
+    "tags": [
+      "registered-tag1"
+    ],
+    "ts": "2018-02-13T06:48:55.560+0000"
+  }
+</pre>
+
 ### Feedback
 
 This API is used to log telemetry of feedback provided by the user.
@@ -261,6 +522,46 @@ data - Object //Required
   "rating": 3, // Optional. Numeric score (+1 for like, -1 for dislike, or 4.5 stars given in a rating)
   "comments": "User entered feedback" // Optional. Text feedback (if any)
 }
+</pre>
+
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device",
+      "env": "ContentPlayer",
+      "pdata": {
+        "id": "producer",
+        "pid": "genieservice.android",
+        "ver": "1.0"
+      },
+      "rollup": {},
+      "sid": "fe6e4b5f-ef32-4a20-827f-eb094df05e8a"
+    },
+    "edata": {
+      "comments": "",
+      "rating": 2
+    },
+    "eid": "FEEDBACK",
+    "ets": 1518456436008,
+    "mid": "5a7bee12-a4ed-49b1-9ac9-e03343045d08",
+    "object": {
+      "id": "test-content1",
+      "type": "Content",
+      "ver": "1.0"
+    },
+    "tags": [],
+    "ver": "3.0",
+    "@timestamp": "2018-02-12T17:27:27.297Z",
+    "ts": "2018-02-12T17:27:16.008+0000"
+  }
 </pre>
 
 ### Share
@@ -295,6 +596,85 @@ data - Object //Required
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user1",
+      "type": "User"
+    },
+    "eid": "SHARE",
+    "edata": {
+      "dir": "In",
+      "type": "File",
+      "items": [
+        {
+          "ver": "1.0",
+          "origin": {
+            "id": "devcie1",
+            "type": "device"
+          },
+          "id": "content1",
+          "to": {
+            "id": "",
+            "type": ""
+          },
+          "type": "CONTENT",
+          "params": [
+            {
+              "transfers": 0,
+              "count": 0
+            }
+          ]
+        },
+        {
+          "ver": "2.0",
+          "origin": {
+            "id": "device1",
+            "type": "device"
+          },
+          "id": "content2",
+          "to": {
+            "id": "",
+            "type": ""
+          },
+          "type": "CONTENT",
+          "params": [
+            {
+              "transfers": 0,
+              "count": 0
+            }
+          ]
+        }
+      ]
+    },
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T07:00:59.995Z",
+    "ets": 1518505245934,
+    "context": {
+      "channel": "test-channel",
+      "env": "Genie",
+      "sid": "6aa26dab-672e-4507-a2b5-c63fe926796c",
+      "did": "test-device",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "1.0.25"
+      },
+      "cdata": []
+    },
+    "mid": "SHARE:ec607e89-7d5f-4898-ae86-c690e35432fa",
+    "object": {
+      "parent": {}
+    },
+    "tags": [
+      "tag1"
+    ],
+    "ts": "2018-02-13T07:00:45.934+0000"
+  }
+</pre>
+
 ### Audit
 
 This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.
@@ -312,6 +692,50 @@ data - Object //Required
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "",
+      "type": ""
+    },
+    "eid": "AUDIT",
+    "edata": {
+      "state": "Draft",
+      "prevstate": ""
+    },
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T07:09:04.183Z",
+    "ets": 1518505742782,
+    "context": {
+      "channel": "test-channel",
+      "env": "",
+      "sid": "",
+      "did": "",
+      "pdata": {
+        "id": "producer1",
+        "pid": "ObjectLifecycle",
+        "ver": "1.0"
+      },
+      "cdata": []
+    },
+    "mid": "AUDIT:6ef03ef3a9fa8308204ea4d8570591e0",
+    "object": {
+      "id": "test-content1",
+      "type": "Content",
+      "ver": "",
+      "subtype": "Story",
+      "parent": {
+        "id": "",
+        "type": ""
+      }
+    },
+    "tags": [],
+    "ts": "2018-02-13T07:09:02.782+0000"
+  }
+</pre>
+
 ### Error
 
 This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games. 
@@ -325,6 +749,41 @@ error - Object //Required
   "errtype": "", // Required. Error type classification - "SYSTEM", "MOBILEAPP", "CONTENT"
   "stacktrace": "", // Required. Detailed error data/stack trace
 }
+</pre>
+
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device",
+      "env": "Genie",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "6.0"
+      },
+      "sid": "a8506bb6-edc5-4b59-b935-07dbabd1e9f3"
+    },
+    "edata": {
+      "err": "ERR_TOKEN_INVALID",
+      "errtype": "UNAUTHORIZED_ACCESS",
+      "stacktrace": "{\"id\":\"api.upload.url\",\"ver\":\"1.0\",\"ts\":\"2018-02-12T17:04:21.726Z\",\"params\":{\"resmsgid\":\"id1\",\"msgid\":null,\"status\":\"failed\",\"err\":\"ERR_TOKEN_INVALID\",\"errmsg\":\"Access denied\"},\"responseCode\":\"UNAUTHORIZED_ACCESS\",\"result\":{}}"
+    },
+    "eid": "ERROR",
+    "ets": 1518505910718,
+    "mid": "58a11d49-22c8-4535-a28b-7a323005d930",
+    "tags": [],
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T07:12:10.415Z",
+    "ts": "2018-02-13T07:11:50.718+0000"
+  }
 </pre>
 
 ### Heartbeat
@@ -358,6 +817,51 @@ data - Object //Required
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user1",
+      "type": "User"
+    },
+    "eid": "LOG",
+    "edata": {
+      "level": "trace",
+      "type": "api_call",
+      "message": "successful",
+      "params": [
+        {
+          "mode": "WIFI"
+        }
+      ]
+    },
+    "ver": "3.0",
+    "@timestamp": "2018-02-12T13:00:24.918Z",
+    "ets": 1518460198146,
+    "context": {
+      "channel": "test-channel",
+      "env": "Genie",
+      "sid": "85a8b3af-362f-48a5-9454-ac050dfe5a3a",
+      "did": "test-device",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "1.0.25"
+      },
+      "cdata": []
+    },
+    "mid": "LOG:69e9ca45-c7e2-4a94-af50-50a4ff854cc9",
+    "object": {
+      "parent": {}
+    },
+    "tags": [
+      "tag1"
+    ],
+    "ts": "2018-02-12T18:29:58.146+0000"
+  }
+</pre>
+
 ### Search
 
 This API is used to log telemetry when a user triggers a search for any content, item or asset 
@@ -375,6 +879,62 @@ data - Object - Required
   "size": 333, // Required. Number of search results
   "topn": [{}] // Required. top N (configurable) results with their score
 }
+</pre>
+
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user",
+      "type": "User"
+    },
+    "context": {
+      "cdata": [],
+      "channel": "test-channel",
+      "did": "test-device",
+      "env": "Genie",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android",
+        "ver": "6.6"
+      },
+      "sid": "0ec7c32e-8058-4624-be72-623760c9c5c3"
+    },
+    "edata": {
+      "correlationid": "abcd",
+      "filters": {
+        "compatibilityLevel": {
+          "max": 3,
+          "min": 1
+        },
+        "contentType": [
+          "Story",
+          "Worksheet",
+          "Game",
+          "Collection",
+          "TextBook"
+        ],
+        "objectType": [
+          "Content"
+        ],
+        "status": [
+          "Live"
+        ]
+      },
+      "query": "hshshshhs",
+      "size": 0,
+      "topn": [],
+      "type": "Content"
+    },
+    "eid": "SEARCH",
+    "ets": 1516001242930,
+    "mid": "7cfb0376-45b6-4e05-885b-081b7097b938",
+    "tags": [],
+    "ver": "3.0",
+    "@timestamp": "2018-01-15T07:29:12.553Z",
+    "ts": "2018-01-15T07:27:22.930+0000"
+  }
 </pre>
 
 ### Metrics
@@ -449,6 +1009,42 @@ data - Object - Required
 }
 </pre>
 
+Example event data:
+
+<pre>
+{
+    "actor": {
+      "id": "test-user",
+      "type": "User"
+    },
+    "eid": "EXDATA",
+    "edata": {
+      "data": "\"dc:APA91bFi4zDhvOiymoL4uMszNfOBnPXTzPiohtVEQ5pmoKD7Hwo_1MYgZVdkk9fPne7xHP7cUu_eic6NU2RKldKiISefqilYJfpoCHe8ouidqLUNfhjKr\"",
+      "type": "partnerdata"
+    },
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T07:43:25.271Z",
+    "ets": 1518507781930,
+    "context": {
+      "channel": "test-channel",
+      "env": "Genie",
+      "sid": "8aaf8a9e-7c23-44e2-b262-dffc2935a3b7",
+      "did": "test-device",
+      "pdata": {
+        "id": "producer1",
+        "pid": "genieservice.android"
+      },
+      "cdata": []
+    },
+    "mid": "EXDATA:32b880df-a2d9-41e6-9821-9c9108fddbcc",
+    "object": {
+      "parent": {}
+    },
+    "tags": [],
+    "ts": "2018-02-13T07:43:01.930+0000"
+  }
+</pre>
+
 ### End
 
 This API is used to log telemetry while the user is closing or exiting the content or game
@@ -466,5 +1062,52 @@ data - Object //Required
 }
 </pre>
 
+Example event data:
 
+<pre>
+{
+    "actor": {
+      "id": "test-user",
+      "type": "User"
+    },
+    "eid": "END",
+    "edata": {
+      "mode": "play",
+      "duration": 21,
+      "summary": [
+        {
+          "progress": 50
+        }
+      ],
+      "type": "player",
+      "pageid": "play_video"
+    },
+    "ver": "3.0",
+    "@timestamp": "2018-02-13T08:55:16.041Z",
+    "ets": 1518512093695,
+    "context": {
+      "channel": "test-channel",
+      "env": "ContentPlayer",
+      "sid": "575d41ea-01fb-4e5e-86e0-5af15d82c7ee",
+      "did": "test-device",
+      "pdata": {
+        "id": "producer",
+        "pid": "genieservice.android",
+        "ver": "1.0"
+      },
+      "cdata": [ ]
+    },
+    "mid": "END:54b2e8ea-e376-4d91-94eb-9cd4356a934e",
+    "object": {
+      "id": "test-content",
+      "type": "Content",
+      "ver": "1.0"
+    },
+    "tags": [
+      "tag1"
+    ],
+    "ts": "2018-02-13T08:54:53.695+0000"
+  }
+  
+</pre>
 
