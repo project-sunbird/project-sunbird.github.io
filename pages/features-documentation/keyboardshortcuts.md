@@ -22,8 +22,8 @@ Press | To
 **Cmd+Alt+N** | Open new child node
 **Ctrl+Alt+A** | Open **Add Resource** page
 **Cmd+Alt+A**   | Open **Add Resource** page
-**Up arrow key**  | Navigate up the tree heirarchy
-**Down arrow key**  | Navigate down the tree heirarchy
+**Up arrow key**  | Navigate up the tree hierarchy
+**Down arrow key**  | Navigate down the tree hierarchy
 **+** | Expand sibling or child nodes 
 **-** | Collapse sibling or child nodes
 **Ctrl+/** | Access list of shortcuts
