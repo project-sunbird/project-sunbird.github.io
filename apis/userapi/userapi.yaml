@@ -46,11 +46,6 @@ paths:
               - The body contains metadata about the user to be created.
         schema:
           $ref: '#/definitions/CreateUserrequest'
-      - name: X-Authenticated-Userid
-        in: header
-        required: true
-        type: string
-        description: 'The Registered User ID to execute the API.'
       - name: Content-Type
         in: header
         required: true
@@ -127,7 +122,7 @@ paths:
         required: true
         type: string
         description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Authenticated-Userid
+      - name: x-authenticated-user-token
         in: header
         required: true
         type: string
@@ -217,7 +212,7 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-      - name: X-Authenticated-UserId
+      - name: x-authenticated-user-token
         in: header
         required: true
         type: string
@@ -253,7 +248,7 @@ paths:
           uri: /user/v1/profile/read
           headers:
             Content-Type: application/json
-            X-Authenticated-UserId: '{{user_id}}'
+            x-authenticated-user-token: '{{user_id}}'
             ts: 2017-05-25 10:18:56:578+0530
             Authorization: Bearer {{api_key}}
           body: >-
@@ -298,7 +293,7 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: X-Authenticated-Userid
+      - name: x-authenticated-user-token
         in: header
         required: true
         type: string
@@ -342,7 +337,7 @@ paths:
           method: GET
           uri: /user/v1/read/{User_Id}
           headers:
-            X-Authenticated-Userid: '{{user_id}}'
+            x-authenticated-user-token: '{{user_id}}'
             Content-Type: application/json
             ts: 2017-05-25 10:18:56:578+0530
             Authorization: Bearer {{api_key}}
@@ -384,7 +379,7 @@ paths:
               - The body contains metadata about the user to be updated.
         schema:
           $ref: '#/definitions/UpdateUserrequest'
-      - name: X-Authenticated-Userid
+      - name: x-authenticated-user-token
         in: header
         required: true
         type: string
@@ -562,11 +557,6 @@ paths:
         required: true
         type: string
         description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
-      - name: X-Authenticated-Userid
-        in: header
-        required: true
-        type: string
-        description: 'The Registered User ID to execute the API.'
       - name: Authorization
         in: header
         required: true
@@ -597,7 +587,6 @@ paths:
             ts: 2017-05-25 10:18:56:578+0530
             X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
             X-Device-ID: X-Device-ID
-            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
             Authorization: Bearer {{api-key}}
         expectedResponse:
           x-allowExtraHeaders: true
@@ -668,11 +657,6 @@ paths:
         required: true
         type: string
         description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: x-authenticated-user-token
-        in: header
-        required: true
-        type: string
-        description: 'The token/key used to execute the API.'
       responses:
         '200':
           description: 'OK ! Successful operation."forgot password" operation was successfully executed.'
@@ -699,7 +683,6 @@ paths:
             X-msgid: xyz-123-000-9888
             X-Device-ID: X-Device-ID
             Authorization: Bearer {{api-key}}
-            x-authenticated-user-token: fe109c81be7e08b5e049e57a51343dfec2fbeaa062f9ecaf7b86852aaa28eb38
           body: " {\r\n\"id\":\"unique API ID\",\r\n\"ts\":\"2013/10/15 16:16:39\",\r\n  \"params\": {\r\n      \r\n    },\r\n \"request\":{\r\n           \"userName\":\"amit127.kumar17\"       \r\n       }\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
@@ -764,7 +747,7 @@ paths:
         required: true
         type: string
         description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
-      - name: X-Authenticated-Userid
+      - name: x-authenticated-user-token
         in: header
         required: true
         type: string
@@ -797,7 +780,7 @@ paths:
             ts: 2017-05-25 10:18:56:578+0530
             X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
             X-Device-ID: X-Device-ID
-            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            x-authenticated-user-token: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
             Authorization: Bearer {{api-key}}
           body: "{\r\n \"params\": { },\r\n    \"request\":{                 \r\n      \"badgeTypeId\": \"123343444\",\r\n    \"receiverId\" :\"5de6b1af-82c3-4f1b-afef-007db7390841\"\r\n      \r\n    }\r\n } "
         expectedResponse:
@@ -864,7 +847,7 @@ paths:
         required: true
         type: string
         description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
-      - name: X-Authenticated-Userid
+      - name: x-authenticated-user-token
         in: header
         required: true
         type: string
@@ -897,7 +880,7 @@ paths:
             ts: 2017-05-25 10:18:56:578+0530
             X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
             X-Device-ID: X-Device-ID
-            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
+            x-authenticated-user-token: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
             Authorization: Bearer {{api-key}}
           body: "{\r\n\r\n  \"params\": {\r\n       \r\n    },\r\n    \"request\":{ \r\n             \"password\":\"password\",\r\n             \"newPassword\" :\"new password value\"\r\n         }\r\n}"
         expectedResponse:
@@ -964,7 +947,7 @@ paths:
         required: true
         type: string
         description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
-      - name: X-Authenticated-Userid
+      - name: x-authenticated-user-token
         in: header
         required: true
         type: string
@@ -1002,7 +985,6 @@ paths:
             ts: 2017-05-25 10:18:56:578+0530
             X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
             X-Device-ID: X-Device-ID
-            X-Authenticated-Userid: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
             Authorization: Bearer {{api-key}}
             x-authenticated-user-token: 
           body: "{\r\n \"params\": { },\r\n    \"request\":{   \r\n      \"userId\":\"9b679965-c38a-4099-a9e8-9ca89e20eab3\"\r\n    }\r\n}"
@@ -1609,10 +1591,7 @@ definitions:
         description: ''
         type: string
       dob:
-        description: ''
-        type: string
-      aadhaarNo:
-        description: ''
+        description: 'YYYY-MM-dd'
         type: string
       language:
         description: ''
@@ -1651,7 +1630,6 @@ definitions:
       - rootOrgId
       - avatar
       - dob
-      - aadhaarNo
       - language
       - subject
       - address
