@@ -34,7 +34,7 @@ The Cassandra upgrade option is officially implemented in version 1.4.
 
 In case you are running a version lesser than 1.4, ensure that you execute the following command:
 
-- Run `cassandra.cql` file  \\ Creates schema and tables until release-1.3
+- Run `cassandra.cql` file  to Creates schema and tables until release-1.3
 
 Executing the command, ensures that your schemas and tables fall in line with upgradation requirements.
 
@@ -78,7 +78,7 @@ While you ensure the availability of keyspaces, let us proceed further with runn
 
 ``Run java -cp "cassandra-migration-0.0.1-SNAPSHOT-jar-with-dependencies.jar com.contrastsecurity.cassandra.migration.utils.MigrationScriptEntryPoint`` on your remote cassandra machine.
 
-In case you wish to include a few more custom files you need to navigate to the following location in your codebase:
+ Any new database change can be added as a file to the following location in your codebase:
 
 - `**resources/db/migration/cassandra**`
 - The inclusion criteria of files is based on the filename naming convention.
@@ -90,7 +90,7 @@ The example of the file naming convention is as follows:
        - V1.0_cassandra.cql    // correct file format
        - V1.0.1_cassandra.cql  // incorrect file format
 
-- In case, if any of the files fails to get included, the script execution will break unless the issue is fixed.
+- In case, if any of the files fails to get executed due to some error, the script execution will break unless the issue is fixed.
 - After fixing the file ,you need to delete the corresponding wrong entry under cassandra_migration_version table which is auto  
   generated during the upgrade process.
    
