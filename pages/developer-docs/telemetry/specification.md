@@ -211,6 +211,20 @@ Example event data:
       "sid": "7d6c6c9a-8323-49b2-84e0-3b46ae32eada"
     },
     "edata": {
+      "visits": [
+        {
+          "objid": "course1",
+          "objtype": "Course",
+          "section": "Latest Courses",
+          "index": 0
+        },
+        {
+          "objid": "course2",
+          "objtype": "Course",
+          "section": "Latest Courses",
+          "index": 1
+        }
+      ],
       "pageid": "home-page",
       "type": "workflow",
       "uri": ""
