@@ -150,7 +150,7 @@ On running these commands, the public key is written in **public.pem**, while th
 
 To access APIs using the token, the generated token should be sent in the Authorization header of the request with the value: bearer <token>. For example; curl request
 
-curl -H "Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello
+`curl -H "Authorization: Bearer <token>" https://staging.ntp.net.in/api/echo/hello`
 
 ## Custom Homepage and Logo for Tenants
 
