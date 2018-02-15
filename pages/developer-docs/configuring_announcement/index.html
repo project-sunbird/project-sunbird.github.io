@@ -16,20 +16,20 @@
 
 <ul>
   <li>
-    <p>Associate <strong>Users</strong> with their respective <strong>Organisations</strong></p>
+    <p>Association of <strong>Users</strong> with their respective <strong>Organisations</strong></p>
   </li>
   <li>
-    <p>Create <strong>Locations</strong> as individual entities</p>
+    <p>Creation of <strong>Location</strong> as individual entities</p>
   </li>
 </ul>
-
-<p><strong>Note:</strong> To create locations, refer to <a href="http://www.sunbird.org/apis/geolocationapi/" target="_blank">Geo Location APIs</a>.</p>
 
 <p>The Anouncements feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in the database.</p>
 
 <ul>
-  <li>Associate <strong>Organisations</strong> with their respective <strong>Locations</strong>. The process to establish a corelation between the organization and its location is as follows:</li>
+  <li>Associate <strong>Organisations</strong> with their respective <strong>Locations</strong>.</li>
 </ul>
+
+<p>The process to establish a corelation between the organization and its location is as follows:</p>
 
 <ol>
   <li>Create <strong>Location</strong> in Sunbird</li>
@@ -42,8 +42,7 @@
   <li>Use the <strong>locationId</strong> to create or update an organization</li>
 </ol>
 
-<pre><code>**Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
-</code></pre>
+<p><strong>Note</strong> To create organizations, refer to <a href="http://www.sunbird.org/apis/orgapi/" target="_blank">Organization Management APIs</a></p>
 
 <h2 id="creating-announcement-types">Creating Announcement Types</h2>
 
@@ -87,35 +86,21 @@
   <tbody>
     <tr>
       <td>id</td>
-      <td>A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Note:</strong> For further details on UUID, refer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></td>
-      <td> </td>
-      <td> </td>
+      <td>A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.<br /><strong>Note:</strong>  For further details on UUID, refer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></td>
     </tr>
     <tr>
-      <td> </td>
       <td>rootorgid</td>
       <td>The unique ID of the tenant or root organization for which the particular announcement type is to be created.</td>
     </tr>
     <tr>
-      <td> </td>
       <td>name</td>
       <td>The name of the announcement type.</td>
     </tr>
     <tr>
-      <td> </td>
       <td>status</td>
       <td>The status of the announcement type. The status must be <strong>*Active</strong> for the announcement type to be available for use.</td>
     </tr>
     <tr>
-      <td> </td>
       <td>createddate</td>
       <td>The date on which the announcement type is created. The created date must be in the format <strong><em>yyyy-MM-dd HH:mm:ss:SSSZZZZ** eg:</em></strong>2017-12-08 10:54:40:573+0000**</td>
     </tr>
@@ -127,26 +112,25 @@
 <p>To send announcements, it is essential that a user is assigned the role of an announcement sender.</p>
 
 <table>
-  <tr>
+    <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
+    </tr>
+    <tr>
       <td>1. Log in with registered Administrator credentials <br />2. On the <b>Home</b> page, click <b>Profile</b> </td>
       <td><img src="pages/features-documentation/images/announcement/assignuserrole1.png" /></td>
-  </tr>
-  <tr>
-    <td>1. Search for users, to whom you want to assign the role <br />2. Click <b>Edit</b> </td>
-    <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png" /></td>
-  </tr>
-  <tr>
+    </tr>
+    <tr>
+    <td>1. Search for users, to whom you want to assign the role <br />2. Click <b>Edit</b> 
+    </td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png" />
+    </td>
+    </tr>
+    <tr>
     <td>1. In the <b>Select Role<b> screen, select <b>Announcement Sender</b> <br />2. Click <b>Update</b> to assign the role&lt;/td&gt;
-    <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png" /></td>
-  &lt;/tr&gt;
-&lt;/table&gt;
+    </b></b></td><td><img src="pages/features-documentation/images/announcement/assignuserrole3.png" />
+    </td>
+</tr>
+</table>
 
-
-**Note** For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section.
-     
-         
-</b></b></td></tr></table>
+<p><strong>Note</strong>: For details on other announcement features and their use, refer to the <a href="http://www.sunbird.org/features-documentation/announcement/" target="_blank">Announcement</a> section.</p>
