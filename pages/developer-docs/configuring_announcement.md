@@ -21,13 +21,15 @@ To configure the announcements feature, users must have administrator access to 
 
 ## Pre-requisites
 
- + Associate **Users** with their respective **Organisations**
+ + Association of **Users** with their respective **Organisations**
  
- + Create **Locations** as individual entities  
+ + Creation of **Location** as individual entities  
  
 The Anouncements feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in the database.
  
- + Associate **Organisations** with their respective **Locations**. The process to establish a corelation between the organization and its location is as follows: 
+ + Associate **Organisations** with their respective **Locations**. 
+ 
+ The process to establish a corelation between the organization and its location is as follows: 
  
   1. Create **Location** in Sunbird
  
@@ -36,7 +38,7 @@ The Anouncements feature does not support location hierarchy. While targeting an
   2. On successful creation of a location, you will get a **locationId**
   3. Use the **locationId** to create or update an organization
  
-    **Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
+ **Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
  
 ## Creating Announcement Types
 
