@@ -48,12 +48,14 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 
 2. **API Keys** 
 
-This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.
+This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
+- For getting API key you need to send and email to : info@sunbird.org.The complete process of getting an Auth.Token [refer](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials)to this section.
 
 ### Setup 
+
 For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}.
 
-+***Note***: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. Its available [here](https://github.com/project-sunbird/sunbird-portal/) as Tags
++***Note***: The sunbird portal stable versions are available in tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
 
 After checking out the code, execute the following command:
 
@@ -71,9 +73,11 @@ $ bower install --force
 
 ### Configure Backend Service Stack
 
-The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let's configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
+The Sunbird portal application is powered by a set of Service APIs. These Service API(s) run in a distributed environment.For instance, deploying the Sunbird to production; but for the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.
 
-***Note***: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.
+For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
+
+***Note***: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.
 
 ### Edit the Application Config
 
@@ -105,10 +109,7 @@ PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',
 ...
 }
 </pre>
-Once the file is updated with appropriate values, then you can begin with running the application. 
-
-
-For getting [Auth.Token](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials)refer.           
+Once the file is updated with appropriate values, then you can begin with running the application.           
  
 ## Run the Application
 
