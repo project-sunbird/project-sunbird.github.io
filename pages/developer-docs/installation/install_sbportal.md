@@ -97,8 +97,7 @@ PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
 PORTAL_PORT: env.sunbird_port || 3000,
  	
 // 5. PORTAL_API_AUTH_TOKEN     
-PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' For [Getting Auth Token] (http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials)            
-
+PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
 ...
 
 // 6. PORTAL_ECHO_API_URL
@@ -108,6 +107,9 @@ PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',
 </pre>
 Once the file is updated with appropriate values, then you can begin with running the application. 
 
+
+For getting [Auth.Token](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials)refer.           
+ 
 ## Run the Application
 
 Run the following commands:
