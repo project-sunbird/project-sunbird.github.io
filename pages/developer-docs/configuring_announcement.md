@@ -107,4 +107,4 @@ Announcements are categorised into different types, for example; orders, circula
 </tr>
 </table>
 
-**Note** For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/) {:target="_blank"} section.
+**Note** For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section.
