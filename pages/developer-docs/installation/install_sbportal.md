@@ -49,7 +49,7 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 2. **API Keys** 
 
 This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
-- For getting API key you need to send and email to : info@sunbird.org.Fo complete instructions on how to get an Auth.Token? [refer](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to this section.
+- For getting API key you need to send and email to : info@sunbird.org.Fo complete instructions on how to get an Auth.Token?, [refer](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to this section.
 
 ### Setup 
 
