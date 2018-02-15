@@ -97,7 +97,7 @@ PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
 PORTAL_PORT: env.sunbird_port || 3000,
  	
 // 5. PORTAL_API_AUTH_TOKEN     
-PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            
+PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' For [Getting Auth Token] (http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials)            
 
 ...
 
