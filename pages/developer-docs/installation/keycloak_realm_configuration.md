@@ -72,30 +72,37 @@ Navigate to Manage, then to Users and create a new user.
 
 ## Update Client & Secrets
 
-Navigate to Clients and make the following changes to each of the clients.
+- Navigate to Clients and make the following changes to each of the clients.
 
 **Note:** Modify only the clients listed below. You do not need to modify the settings for other clients.
 
 ### Account, broker, realm-management
 
-Go to the Credentials tab and regenerate the Secret and Registration Access Token. Make a note of both as they will be required at later stage.
+- Go to the Credentials tab and regenerate the Secret and Registration Access Token. Make a note of both as you will require these at a later stage.
+
+## Configurations
+
+The following steps will guide you through the configuration settings:
 
 ### Android
 
-Change the Root URL to `https://sunbird.example.com`
-Add a Valid Redirect URI `https://sunbird.example.com/oauth2callback`
+1. Change the Root URL to `https://sunbird.example.com`
+2. Add a Valid Redirect URI `https://sunbird.example.com/oauth2callback`
 
 ### Portal
 
-Change the Root URL to `https://sunbird.example.com`
-Add Valid Redirect URIs `https://sunbird.example.com/private/*` and `https://sunbird.example.com/`
+1. Change the Root URL to `https://sunbird.example.com`
+2. Add Valid Redirect URIs `https://sunbird.example.com/private/*` and `https://sunbird.example.com/`
 
 ### Trampoline
 
-Change the Root URL to `https://sunbird.example.com`
-Go to the Credentials tab and regenerate the Secret and Registration Access Token. Use the secret as the value for the `sunbird_trampoline_secret` configuration.
+1. Change the Root URL to `https://sunbird.example.com`
+2. Go to the Credentials tab and regenerate the Secret and Registration Access Token
+3. Use the secret as the value for the `sunbird_trampoline_secret` configuration
 
-## SMTP Configuration
+### SMTP
 
-It is necessary to configure email for smooth working of the password reset functionality and user management workflows. 
-Navigate to `Realm Settings > Email`. Enter the SMTP credentials and click the Test Connection button to verify that the SMTP connection is working.
+1. It is necessary to configure email for smooth working of the password reset functionality and user management workflows
+2. Navigate to `Realm Settings > Email`
+3. Enter the SMTP credentials
+4. Click the Test Connection button to verify that the SMTP connection is configured correctly
