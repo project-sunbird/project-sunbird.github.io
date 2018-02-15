@@ -79,3 +79,31 @@ Announcements are categorised into different types, for example; orders, circula
 | name| The name of the announcement type.| 
 | status| The status of the announcement type. The status must be ***Active** for the announcement type to be available for use.|
 | createddate | The date on which the announcement type is created. The created date must be in the format ***yyyy-MM-dd HH:mm:ss:SSSZZZZ** eg:***2017-12-08 10:54:40:573+0000** |
+
+## Assigning Roles to User(s)
+
+To send announcements, it is essential that a user is assigned the role of an announcement sender.
+
+<table>
+    <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+    </tr>
+    <tr>
+      <td>1. Log in with registered Administrator credentials <br>2. On the <b>Home</b> page, click <b>Profile</b> </td>
+      <td><img src="pages/features-documentation/images/announcement/assignuserrole1.png"></td>
+    </tr>
+    <tr>
+    <td>1. Search for users, to whom you want to assign the role <br>2. Click <b>Edit</b> 
+    </td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole2.png">
+    </td>
+    </tr>
+    <tr>
+    <td>1. In the <b>Select Role<b> screen, select <b>Announcement Sender</b> <br>2. Click <b>Update</b> to assign the role</td>
+    <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png">
+    </td>
+    </tr>
+</table>
+
+**Note** For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/) {:target="_blank"} section.
