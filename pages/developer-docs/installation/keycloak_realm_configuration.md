@@ -14,8 +14,8 @@ Assuming that you have set up Sunbird on sunbird.example.com, You can open Keycl
 
 ## Import Realm
 
-- To simplify the configuration, Sunbird provides a ready to use realm that can be imported and used. You can
-[Download](https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json) the realm.
+- To simplify the configuration, Sunbird provides a ready to use realm that can be imported and used. 
+- You can [Download](https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json) the realm.
 
 Follow the steps to add, import and create the keycloak realm:
 <table>
@@ -35,7 +35,7 @@ Follow the steps to add, import and create the keycloak realm:
 <tr>
         <td> On the add realm screen:<br>
         
-1. Click on <strong>select file </strong> next to the Import label on the screen.<br>Choose the appropriate .json file.<br>
+1. Click on <strong>select file</strong> next to the Import label on the screen.Choose the appropriate .json file.<br>
 
 2. Write the appropriate name <br>
         </td>
