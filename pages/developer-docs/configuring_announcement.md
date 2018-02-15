@@ -101,5 +101,3 @@ To send announcements, it is essential that a user is assigned the role of an an
     <td><img src="pages/features-documentation/images/announcement/assignuserrole3.png"></td>
     </tr>
 </table>
-
-**Note** For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section.
