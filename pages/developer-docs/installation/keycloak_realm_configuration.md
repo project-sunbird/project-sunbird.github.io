@@ -35,7 +35,7 @@ Follow the steps to add, import and create the keycloak realm:
 <tr>
         <td> On the add realm screen:<br>
         
-1. Click on <strong>select file</strong> next to the Import label on the screen, choose the appropriate .json file.<br>
+1. Click on <strong>select file</strong> next to the Import label on the screen, choose the appropriate .json file <br>
 
 2. Write the appropriate name <br>
         </td>
