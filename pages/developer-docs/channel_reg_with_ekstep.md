@@ -1,3 +1,11 @@
+---
+type: landing
+directory: developer-docs/installation/
+title: Registering Channel
+page_title: Registering Channel
+description: Registering Channel for root organization creation 
+allowSearch: true
+---
 ## Overview
 
 This section guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization. 
