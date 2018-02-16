@@ -39,7 +39,7 @@ While the server starts up:
 
 1.	As a routine, the scheduler always checks the sync status from system-settings table by checking the value of “Flag”
 2.	If sync status is set to “false,” it will invoke the process to find the missing channels
-3.	Register those channels with Ekstep by following the steps in section [Registering a channel] ()
+3.	Register the hannels with Ekstep by following the steps in section [Registering a channel] ()<!-- this link will be generated once the page goes on production-->
 4.	Update the “Flag” key in system-settings table
 
 The process for registering the channel uses the Channel API. Here is the sample payload for:
