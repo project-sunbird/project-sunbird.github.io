@@ -48,12 +48,16 @@ latest version of gulp: <code>npm install -g gulp-cli</code></li>
   <li><strong>API Keys</strong></li>
 </ol>
 
-<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.</p>
+<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
+- For getting API key you need to send and email to : info@sunbird.org. For complete instructions on “how to get an Auth.Token?”, <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials">refer</a> to this section.</p>
 
 <h3 id="setup">Setup</h3>
+
 <p>For setting up the application, check out the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a>.</p>
 
-<p>+<strong><em>Note</em></strong>: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. Its available <a href="https://github.com/project-sunbird/sunbird-portal/">here</a> as Tags</p>
+<ul>
+  <li><strong><em>Note</em></strong>: The sunbird portal stable versions are available in tags for each release, and the master branch contains latest stable release. For latest stable release <a href="https://github.com/project-sunbird/sunbird-portal/" target="_blank">refer</a></li>
+</ul>
 
 <p>After checking out the code, execute the following command:</p>
 
@@ -72,9 +76,11 @@ $ bower install --force
 
 <h3 id="configure-backend-service-stack">Configure Backend Service Stack</h3>
 
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let’s configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
+<p>The Sunbird portal application is powered by a set of Service APIs. These Service API(s) run in a distributed environment.For instance, deploying the Sunbird to production; but for the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.</p>
 
-<p><strong><em>Note</em></strong>: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
+<p>For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
+
+<p><strong><em>Note</em></strong>: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.</p>
 
 <h3 id="edit-the-application-config">Edit the Application Config</h3>
 
@@ -99,8 +105,7 @@ PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
 PORTAL_PORT: env.sunbird_port || 3000,
  	
 // 5. PORTAL_API_AUTH_TOKEN     
-PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            
-
+PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
 ...
 
 // 6. PORTAL_ECHO_API_URL

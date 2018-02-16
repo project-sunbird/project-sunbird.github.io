@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.24.a/";
+			baseURL.href="/releases/release.1.24.b/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-15 12:06:57 +0530">
+<meta name="last-modified" content="2018-02-16 17:55:45 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.24.a" />
-<meta name="buildNo" content="1787" />
+<meta name="buildVersion" content="release.1.24.b" />
+<meta name="buildNo" content="1828" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?15022018"  />
-<link rel="stylesheet" href="css/style.css?15022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?15022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?15022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?15022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?16022018"  />
+<link rel="stylesheet" href="css/style.css?16022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?16022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?16022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?16022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -256,9 +256,9 @@
 							</ul>
 						</div>
 					</li>		
-					<li>
+					<!--<li>
 						<a href="developer-docs/installation/sunbird_actor_servc/">Actor System</a>
-					</li>
+					</li>-->
 					<li>
 						<div class="">
 							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
@@ -647,12 +647,16 @@ latest version of gulp: <code>npm install -g gulp-cli</code></li>
   <li><strong>API Keys</strong></li>
 </ol>
 
-<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.For getting API key you need to send and email to : info@sunbird.org.</p>
+<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
+- For getting API key you need to send and email to : info@sunbird.org. For complete instructions on “how to get an Auth.Token?”, <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials">refer</a> to this section.</p>
 
 <h3 id="setup">Setup</h3>
+
 <p>For setting up the application, check out the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a>.</p>
 
-<p>+<strong><em>Note</em></strong>: The sunbird portal stable versions are available in tags for each release and master branch contains the latest stable release. Its available <a href="https://github.com/project-sunbird/sunbird-portal/">here</a> as Tags</p>
+<ul>
+  <li><strong><em>Note</em></strong>: The sunbird portal stable versions are available in tags for each release, and the master branch contains latest stable release. For latest stable release <a href="https://github.com/project-sunbird/sunbird-portal/" target="_blank">refer</a></li>
+</ul>
 
 <p>After checking out the code, execute the following command:</p>
 
@@ -673,9 +677,11 @@ $ bower install --force
 
 <h3 id="configure-backend-service-stack">Configure Backend Service Stack</h3>
 
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service APIs run in a distributed environment.For instance, deploying the Sunbird to production but for the sake of simplicity and ease of debugging, you can also run these service APIs locally on a single server.For now, let’s configure the Sunbird portal to use a cloud instance of the Sunbird Service APIs.These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
+<p>The Sunbird portal application is powered by a set of Service APIs. These Service API(s) run in a distributed environment.For instance, deploying the Sunbird to production; but for the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.</p>
 
-<p><strong><em>Note</em></strong>: The cloud instance of the APIs hosted by Project Sunbird are not for production usage.</p>
+<p>For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
+
+<p><strong><em>Note</em></strong>: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.</p>
 
 <h3 id="edit-the-application-config">Edit the Application Config</h3>
 
@@ -702,8 +708,7 @@ PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
 PORTAL_PORT: env.sunbird_port || 3000,
  	
 // 5. PORTAL_API_AUTH_TOKEN     
-PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'email-info@sunbird.org-for-an-api-token',            
-
+PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
 ...
 
 // 6. PORTAL_ECHO_API_URL
