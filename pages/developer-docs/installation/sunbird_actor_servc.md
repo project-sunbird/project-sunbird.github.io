@@ -70,7 +70,7 @@ The following are some scenarios while running the Actor services:
 
 - **Running normal actor system locally and background actor system remotely**
 
-  - To run the normal actor system locally with **sunbird-lms-service**, change the value of '**api_actor_provider**' properties in environment variable to **local**.
+  - To run the normal actor system locally with **sunbird-lms-service**, change the value of 'api_actor_provider' properties in environment variable to **local**
 
   - To run background actor system remotely set the value of **background_actor_provider** properties value to **remote**  in environment variable along with **sunbird_actor_system_name** properties value in environment variable as **BackGroundRemoteMiddlewareActorSystem**.
 
