@@ -1,20 +1,21 @@
 ---
 type: landing
-directory: developer-docs/installation/
+directory: developer-docs
 title: Registering Channel
 page_title: Registering Channel
 description: Registering Channel for root organization creation 
+published: true
 allowSearch: true
 ---
 ## Overview
 
-This section guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization. 
-The following sections provide detailed instructions as how you can register a channel with Ekstep?
-You must follow the steps in a sequential manner
+- This section guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization 
+- The following sections provide detailed instructions as how you can register a channel with Ekstep?
+- You must follow the steps in a sequential manner
 
 ## Purpose
 
-The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific curriculum framework. Based on the channel value, provided after registration of the channel with Ekstep. Specific set of channel specific curriculum content framework will load. 
+The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific curriculum framework. Based on the channel value, provided at the time of registering a channel with Ekstep. Specific set of curriculum content framework will load. 
 
 ## Design Principles
 
@@ -41,10 +42,17 @@ While the server starts up:
 3.	Register those channels with Ekstep by following the steps in section [Registering a channel] ()
 4.	Update the “Flag” key in system-settings table
 
+<<<<<<< HEAD
 The process for registering the channel uses the Channel API, Here is the sample payloads:
 
 1.	Channel registration
 2.	List Channels
+=======
+The process for registering the channel uses the Channel API. Here is the sample payload for:
+
+1.	Channel registration 
+2.	List Channels 
+>>>>>>> 695e2dc1f2f2b52a3f77186bc937da692975bf2a
 
 ## Channel Registration API
 
@@ -68,12 +76,15 @@ RequestBody :
     }
 }
 
+<<<<<<< HEAD
 ```
 
 The response Payload:
 
 ```
 
+=======
+>>>>>>> 695e2dc1f2f2b52a3f77186bc937da692975bf2a
 Response :
 
 {
@@ -97,8 +108,11 @@ Response :
 
 ## Get channel list API 
 
+<<<<<<< HEAD
 The request payload:
 
+=======
+>>>>>>> 695e2dc1f2f2b52a3f77186bc937da692975bf2a
 ```
 URL : /channel/v3/list
 
