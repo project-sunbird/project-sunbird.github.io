@@ -93,19 +93,19 @@ All events follow a common data structure, though the event data structure (“e
 
 * [Share](developer-docs/telemetry/eventdetails/#share) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
 
-* [Audit](developer-docs/telemetry/eventdetails/#audit)
+* [Audit](developer-docs/telemetry/eventdetails/#audit) - This method is used to log telemetry when an object is changed. This includes life-cycle changes as well
 
 * [Error](developer-docs/telemetry/eventdetails/#error) - This method is used to capture when users face an error
 
-* [Heartbeat](developer-docs/telemetry/eventdetails/#heartbeat) - 
+* [Heartbeat](developer-docs/telemetry/eventdetails/#heartbeat) - This method is used to log telemetry for heartbeat event to denote that the process is running
 
 * [Log](developer-docs/telemetry/eventdetails/#log) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
 
 * [Search](developer-docs/telemetry/eventdetails/#search) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
 
-* [Metrics](developer-docs/telemetry/eventdetails/#metrics)
+* [Metrics](developer-docs/telemetry/eventdetails/#metrics) - This method is used to log telemetry for service business metrics
 
-* [Summary](developer-docs/telemetry/eventdetails/#summary)
+* [Summary](developer-docs/telemetry/eventdetails/#summary) - This method is used to log telemetry summary event
 
 * [Exdata](developer-docs/telemetry/eventdetails/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
