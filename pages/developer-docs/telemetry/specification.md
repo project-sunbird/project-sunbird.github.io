@@ -242,7 +242,6 @@ Example event data:
 
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
 
-Request Arguments:
 The "Edata" structure of Start is as follows:
 <pre>
 data - Object //Required
@@ -795,7 +794,7 @@ data - Object //Required
 
 This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
 {
