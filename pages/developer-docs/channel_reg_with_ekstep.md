@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs/installation/
+directory: developer-docs
 title: Registering Channel
 page_title: Registering Channel
 description: Registering Channel for root organization creation 
