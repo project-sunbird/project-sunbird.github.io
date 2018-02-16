@@ -65,13 +65,6 @@ RequestBody :
     }
 }
 
-
-```
-
-The response Payload:
-
-```
-
 Response :
 
 {
@@ -94,8 +87,6 @@ Response :
 ```
 
 ## Get channel list API 
-
-The request p
 
 ```
 URL : /channel/v3/list
