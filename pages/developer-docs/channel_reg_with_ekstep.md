@@ -41,9 +41,8 @@ While the server starts up:
 3.	Register those channels with Ekstep by following the steps in section [Registering a channel] ()
 4.	Update the “Flag” key in system-settings table
 
-The process for registering the channel uses the Channel API. 
+The process for registering the channel uses the Channel API. Here is the sample payload for:
 
-Here is the sample payload for:
 1.	Channel registration 
 2.	List Channels 
 
