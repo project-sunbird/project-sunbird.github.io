@@ -112,20 +112,20 @@ All events follow a common data structure, though the event data structure (“e
 
 ### Start
 
-This API is used to log telemetry when users view content or initiate game play 
+This API is used to log telemetry when users view content or initiate game play
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
 {
-  "config": Object, //Config object
-  "contentId": String, //Required. Id of the content
-  "contentVer": String, //Required. Version of the content. Defaults to "1.0"
-  "data": { // Required. event data
-
-    "type": String, //Required.  app, session, editor, player, workflow, assessment
-    "mode": "", //Required. mode of preview: preview, edit or play 
-    "stageid": "" //Required. stage id where the play has been initiated
+  "edata": {
+    "type": "", // Required. app, session, editor, player, workflow, assessment
+    "dspec": DSPEC, // Optional. Device spec
+    "uaspec": UASPEC, // Optional. User agent spec
+    "loc": "", // Optional. Location of the device
+    "mode": "", // Optional. Mode of start. For "player" it would be "play/edit/preview". For Workflow it would be Review/Flag/Publish. For editor it could be "content", "textbook", "generic", "lessonplan" etc
+    "duration": , // Optional. Time taken to initialize/start
+    "pageid": "" // Optional. Page/Stage id where the start has happened.
   }
 }
 </pre>
@@ -169,23 +169,17 @@ Example event data:
 
 This API is used to log telemetry when users visit a specific page.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object //Required
-
 {
-
-    "type": String, //Required. Impression type (list, detail, view, edit, workflow, search)
-
-    "subtype": String, //Optional. Additional subtype. "Paginate", "Scroll"
-
-    "pageid": String, //Required.  Unique page id
-
-    "itype": "", // type of interaction - SWIPE, SCRUB (fast forward using page thumbnails) or AUTO
-
-    "stageto": "" // game level, stage of page id to which the navigation was done
-
+  "edata": {
+    "type": "", // Required. Impression type (list, detail, view, edit, workflow, search)
+    "subtype": "", // Optional. Additional subtype. "Paginate", "Scroll"
+    "pageid": "", // Required. Unique page id
+    "uri": "", // Required. Relative URL of the content
+    "visits": [VISIT] // Optional. Capture the object visits
+  }
 }
 </pre>
 
@@ -249,19 +243,21 @@ Example event data:
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
 
 Request Arguments:
-
+The "Edata" structure of Start is as follows:
 <pre>
 data - Object //Required
 {
-  "type": "", // Required. Type of interaction TOUCH,DRAG,DROP,PINCH,ZOOM,SHAKE,ROTATE,SPEAK,LISTEN,WRITE,DRAW,START,ENDCHOOSE,ACTIVATE,SHOW,HIDE,SCROLL,HEARTBEAT,OTHER
-  "subtype": "", // Optional. Additional types for a global type. For ex: for an audio the type is LISTEN and thesubtype can be one of PLAY,PAUSE,STOP,RESUME,END
-  "id": "", // Required. Resource (button, screen, page, etc) id on which the interaction happened - use systemidentifiers when reporting device events
-  "pageid": "", // Optional. Stage or page id on which the event happened
-  "extra": { // Optional. Extra attributes for an interaction
-    "pos": [{"x":,"y":,"z":}], // Array of positional attributes. For ex: Drag and Drop has two positional attributes. One where the drag has started and the drop point
-    "values": [], // Array of values, e.g. for timestamp of audio interactions
-    "tid": "", // When interaction is between multiple resources, (e.g. drag and drop) - target resource id
-    "uri": "" // Unique external resource identifier if any (for recorded voice, image, etc.)
+  "edata": {
+    "type": "", // Required. Type of interaction TOUCH,DRAG,DROP,PINCH,ZOOM,SHAKE,ROTATE,SPEAK,LISTEN,WRITE,DRAW,START,ENDCHOOSE,ACTIVATE,SHOW,HIDE,SCROLL,HEARTBEAT,OTHER
+    "subtype": "", // Optional. Additional types for a global type. For ex: for an audio the type is LISTEN and thesubtype can be one of PLAY,PAUSE,STOP,RESUME,END
+    "id": "", // Required. Resource (button, screen, page, etc) id on which the interaction happened - use systemidentifiers when reporting device events
+    "pageid": "", // Optional. Stage or page id on which the event happened
+    "target": TARGET, // Optional. Target context where the interaction has happened
+    "plugin": PLUGIN, // Optional. Plugin on which the interaction has happend
+    "extra": { // Optional. Extra attributes for an interaction
+      "pos": [{"x":,"y":,"z":}], // Array of positional attributes. For ex: Drag and Drop has two positional attributes. One where the drag has started and the drop point
+      "values": [], // Array of values, e.g. for timestamp of audio interactions
+    }
   }
 }
 </pre>
@@ -313,30 +309,18 @@ Example event data:
 
 This API is used to log telemetry of assessments that have occured when the user is viewing content
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object //Required
 {
-  "item": QUESTION, // Required. Question Data
-  "pass": "", // Required. Yes, No. This is case-sensitive. default value: No.
-  "score": , // Required. Evaluated score (Integer or decimal) on answer(between 0 to 1), default is 1 if pass=YES or 0 if pass=NO. 
-  "resvalues": [{"id":"value"}], // Required. Array of key-value pairs that represent child answer (result of this assessment)
-  "duration":  // Required. time taken (decimal number) for this assessment in seconds
-}
-
-QUESTION = {
-  "id": "", // unique assessment question id. its an required property.
-  "maxscore", // user defined score to this assessment/question.
-  "exlength": , // expected time (decimal number) in seconds that ideally child should take
-  "params": [ // Array of parameter tuples
-     {"id":"value"} // for ex: if var1 is substituted with 5 apples the parameter is {"var1":"5"}
-  ],
-  "uri": "", // Unique external resource identifier if any (for recorded voice, image, etc.)
-  "desc": "short description",
-  "title": "title",
-  "mmc": [], // User defined missing micros concepts
-  "mc": []   // micro concepts list
+  "edata": {
+    "item": QUESTION, // Required. Question Data
+    "index": , // Optional. Index of the question within a content.
+    "pass": "", // Required. Yes, No. This is case-sensitive. default value: No.
+    "score": , // Required. Evaluated score (Integer or decimal) on answer(between 0 to 1), default is 1 if pass=YES or 0 if pass=NO. 
+    "resvalues": [{"id":"value"}], // Required. Array of key-value pairs that represent child answer (result of this assessment)
+    "duration":  // Required. time taken (decimal number) for this assessment in seconds
+  }
 }
 </pre>
 
@@ -399,26 +383,16 @@ Example event data:
 
 This API is used to log telemetry of user response. For example; Responded to assessments.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data  - Object //Required
 {
-  "target": TARGET, // Required. Target of the response
-  "qid": "", // Required. Unique assessment/question id
-  "type": "", // Required. Type of response. CHOOSE, DRAG, SELECT, MATCH, INPUT, SPEAK, WRITE
-  "values": [{"key":"value"}] // Required. Array of response tuples. For ex: if lhs option1 is matched with rhs optionN - [{"lhs":"option1"}, {"rhs":"optionN"}]
-}
-
-TARGET = {
-  "id": "", // Required. unique id for the target
-  "ver": "", // Required. version of the target
-  "type": "", // Required. Type of the target
-  "parent": {
-    "id": "", // Optional. parent id of the object
-    "type": "" // Optional. parent type of the object. Required if parentid is present.
+  "edata": {
+    "target": TARGET, // Required. Target of the response
+    "type": "", // Required. Type of response. CHOOSE, DRAG, SELECT, MATCH, INPUT, SPEAK, WRITE
+    "values": [{"key":"value"}] // Required. Array of response tuples. For ex: if lhs option1 is matched with rhs optionN - [{"lhs":"option1"}, {"rhs":"optionN"}]
   }
-}
+}  
 </pre>
 
 Example event data:
@@ -474,14 +448,14 @@ Example event data:
 
 This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object //Required
 {
-  "type": "", // Required. Type of interuption
-  "pageid": "", // Optional. Current Stage/Page unique id on which interuption occured
-  "eventid": "" // Optional. unique event ID
+  "edata": {
+    "type": "", // Required. [m:background, m:resume]
+    "pageid": "" // Optional. Page id where the interrupt has happened
+  }
 }
 </pre>
 
@@ -527,14 +501,14 @@ Example event data:
 
 This API is used to log telemetry of feedback provided by the user.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object //Required
 {
-  "contentId": "", // Required. Id of the content
-  "rating": 3, // Optional. Numeric score (+1 for like, -1 for dislike, or 4.5 stars given in a rating)
-  "comments": "User entered feedback" // Optional. Text feedback (if any)
+  "edata": {
+    "rating": 3, // Optional. Numeric score (+1 for like, -1 for dislike, or 4.5 stars given in a rating)
+    "comments": "User entered feedback" // Optional. Text feedback (if any)
+  }
 }
 </pre>
 
@@ -582,32 +556,31 @@ Example event data:
 
 This API is used to log telemetry when a user shares any content with other users.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object //Required
 {
-  "dir": "", // In/Out
-  "type": "", // File/Link/Message
-  "items": [{ // Required. array of items shared
-    "obj": {
+  "edata": {
+    "dir": "", // In/Out
+    "type": "", // File/Link/Message
+    "items": [{ // Required. array of items shared
       "id": "",
       "type": "",
       "ver": ""
-    },
-    "params": [
-      {"key": "value"}
-    ],
-    "origin": { // Origin of the share file/link/content
-      "id": "", // Origin id
-      "type": "" // Origin type
-    },
-    "to": {
-      "id": "",
-      "type": ""
-    }
-  }]
-}
+      "params": [
+        {"key": "value"}
+      }],
+      "origin": { // Origin of the share file/link/content
+        "id": "", // Origin id
+        "type": "" // Origin type
+      },
+      "to": {
+        "id": "",
+        "type": ""
+      }
+    }]
+  }
+}  
 </pre>
 
 Example event data:
@@ -693,7 +666,7 @@ Example event data:
 
 This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
 data - Object //Required
@@ -754,14 +727,18 @@ Example event data:
 
 This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games. 
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-error - Object //Required
 {
-  "err": "", // Required. Error code
-  "errtype": "", // Required. Error type classification - "SYSTEM", "MOBILEAPP", "CONTENT"
-  "stacktrace": "", // Required. Detailed error data/stack trace
+  "edata": {
+    "err": "", // Required. Error code
+    "errtype": "", // Required. Error type classification - "SYSTEM", "MOBILEAPP", "CONTENT"
+    "stacktrace": "", // Required. Detailed error data/stack trace
+    "pageid": "", // Optional. Page where the error has occured
+    "object": OBJECT, // Optional. Object on which the error occured
+    "plugin": PLUGIN // Optional. Plugin in which the error occured
+  }
 }
 </pre>
 
@@ -804,12 +781,11 @@ Example event data:
 
 This API is used to log telemetry for heartbeat event to denote that the process is running.
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
 data - Object //Required
 {
-  {
   "edata": {
   }
 }
@@ -822,13 +798,15 @@ This API is used to log telemetry of generic log events. For example; API calls,
 Request Arguments:
 
 <pre>
-data - Object //Required
 {
-  "type": "", // Required. Type of log (system, process, api_access, api_call, job, app_update etc)
-  "level": "", // Required. Level of the log. TRACE, DEBUG, INFO, WARN, ERROR, FATAL
-  "message": "", // Required. Log message
-  "params": [{"key":"value"}] // Optional. Additional params in the log message
-}
+  "edata": {
+    "type": "", // Required. Type of log (system, process, api_access, api_call, job, app_update etc)
+    "level": "", // Required. Level of the log. TRACE, DEBUG, INFO, WARN, ERROR, FATAL
+    "message": "", // Required. Log message
+    "pageid": "", // Optional. Page where the log event has happened
+    "params": [{"key":"value"}] // Optional. Additional params in the log message
+  }
+}  
 </pre>
 
 Example event data:
@@ -880,18 +858,19 @@ Example event data:
 
 This API is used to log telemetry when a user triggers a search for any content, item or asset 
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object - Required
 {
-  "type": "", // Required. content, assessment, asset 
-  "query": "", // Required. Search query string 
-  "filters": {}, // Optional. Additional filters
-  "sort": {}, // Optional. Additional sort parameters
-  "correlationid": "", // Optional. Server generated correlation id (for mobile app's telemetry)
-  "size": 333, // Required. Number of search results
-  "topn": [{}] // Required. top N (configurable) results with their score
+  "edata": {
+    "type": "",
+    "query": "", // Required. Search query string 
+    "filters": {}, // Optional. Additional filters (see the API spec)
+    "sort": {}, // Optional. Additional sort parameters
+    "correlationid": "", // Optional. Server generated correlation id (for mobile app's telemetry)
+    "size": 333, // Required. Number of search results
+    "topn": [{}] // Required. top N (configurable) results with their score
+  }
 }
 </pre>
 
@@ -955,7 +934,7 @@ Example event data:
 
 This API is used to log telemetry for service business metrics (also accessible via health API).
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
 data - Object - Required
@@ -972,10 +951,9 @@ data - Object - Required
 
 This API is used to log telemetry summary event
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object - Required
 {
   "edata": {
     "type": "", // Required. Type of summary. Free text. "session", "app", "tool" etc
@@ -1009,17 +987,14 @@ data - Object - Required
 
 This API is used to log telemetry for external data, while playing content
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object - Required
-
 {
-
-  type - Free flowing text. For ex: partnerdata, xapi etc
-
-  .... Serialized data (can be either encrypted/encoded/stringified)
-
+  "edata": {
+    "type": "", // Free flowing text. For ex: partnerdata, xapi etc
+    "data": "" // Serialized data (can be either encrypted/encoded/stringified)
+  }
 }
 </pre>
 
@@ -1063,16 +1038,17 @@ Example event data:
 
 This API is used to log telemetry while the user is closing or exiting the content or game
 
-Request Arguments:
+The "Edata" structure of Start is as follows:
 
 <pre>
-data - Object //Required
 {
-  "contentId": "", // Required. Id of the content
-  "type": , // Required. app, session, editor, player, workflow, assessment
-  "duration": , // Required. Total duration from start to end in seconds
-  "pageid": "", // Optional. Page/Stage id where the end has happened.
-  "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+  "edata": {
+    "type": , // Required. app, session, editor, player, workflow, assessment
+    "mode": "", // Optional. Mode of start. For "player" it would be "play/edit/preview". For Workflow it would be Review/Flag/Publish. For editor it could be "content", "textbook", "generic", "lessonplan" etc
+    "duration": , // Optional. Total duration from start to end in seconds
+    "pageid": "", // Optional. Page/Stage id where the end has happened.
+    "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+  }
 }
 </pre>
 
@@ -1122,6 +1098,4 @@ Example event data:
     ],
     "ts": "2018-02-13T08:54:53.695+0000"
   }
-  
 </pre>
-
