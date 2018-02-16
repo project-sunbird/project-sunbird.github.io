@@ -114,7 +114,7 @@ All events follow a common data structure, though the event data structure (“e
 
 This API is used to log telemetry when users view content or initiate game play
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -169,7 +169,7 @@ Example event data:
 
 This API is used to log telemetry when users visit a specific page.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -242,7 +242,7 @@ Example event data:
 
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 <pre>
 data - Object //Required
 {
@@ -308,7 +308,7 @@ Example event data:
 
 This API is used to log telemetry of assessments that have occured when the user is viewing content
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -382,7 +382,7 @@ Example event data:
 
 This API is used to log telemetry of user response. For example; Responded to assessments.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -447,7 +447,7 @@ Example event data:
 
 This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -500,7 +500,7 @@ Example event data:
 
 This API is used to log telemetry of feedback provided by the user.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -555,7 +555,7 @@ Example event data:
 
 This API is used to log telemetry when a user shares any content with other users.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -665,7 +665,7 @@ Example event data:
 
 This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 data - Object //Required
@@ -726,7 +726,7 @@ Example event data:
 
 This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games. 
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -780,7 +780,7 @@ Example event data:
 
 This API is used to log telemetry for heartbeat event to denote that the process is running.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 data - Object //Required
@@ -794,7 +794,7 @@ data - Object //Required
 
 This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -857,7 +857,7 @@ Example event data:
 
 This API is used to log telemetry when a user triggers a search for any content, item or asset 
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -933,7 +933,7 @@ Example event data:
 
 This API is used to log telemetry for service business metrics (also accessible via health API).
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 data - Object - Required
@@ -950,7 +950,7 @@ data - Object - Required
 
 This API is used to log telemetry summary event
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -986,7 +986,7 @@ The "Edata" structure of Start is as follows:
 
 This API is used to log telemetry for external data, while playing content
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
@@ -1037,7 +1037,7 @@ Example event data:
 
 This API is used to log telemetry while the user is closing or exiting the content or game
 
-The "Edata" structure of Start is as follows:
+The "edata" structure of Start is as follows:
 
 <pre>
 {
