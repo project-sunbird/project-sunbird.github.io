@@ -16,7 +16,7 @@ You must follow the steps in a sequential manner
 
 The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific curriculum framework. Based on the channel value, provided after registration of the channel with Ekstep. Specific set of channel specific curriculum content framework will load. 
 
-## Design Principles 
+## Design Principles
 
 1.	Registering a channel with Ekstep, while creating a Root organization in Sunbird.
 2.	As a pre-requisite for creation of an organization, the channel registration process should be successful
@@ -35,23 +35,26 @@ The following is the process which details about registering a channel followed 
 ### Checking the status of Channels 
 
 While the server starts up:
+
 1.	As a routine, the scheduler always checks the sync status from system-settings table by checking the value of “Flag”
 2.	If sync status is set to “false,” it will invoke the process to find the missing channels
 3.	Register those channels with Ekstep by following the steps in section [Registering a channel] ()
 4.	Update the “Flag” key in system-settings table
 
-The process for registering the channel uses the Channel API, Here is the sample payload for 
-1.	Channel registration 
-2.	List Channels 
+The process for registering the channel uses the Channel API, Here is the sample payloads:
+
+1.	Channel registration
+2.	List Channels
 
 ## Channel Registration API
 
 The request payload:
 
 ``` 
+
 URL : /channel/v3/create
 
-Method : POST 
+Method : POST
 
 RequestBody :
 
@@ -60,11 +63,10 @@ RequestBody :
       "channel":{
         "code": "012424880506855424168",  // code is hashTagId value in sunbird
         "name": "cltindia",               // name is channel value in sunbird
-        "description": "CLT India"        //description of organisation
+        "description": "CLT India"        //description of organization
       }
     }
 }
-
 
 ```
 
@@ -95,7 +97,7 @@ Response :
 
 ## Get channel list API 
 
-The request p
+The request payload:
 
 ```
 URL : /channel/v3/list
@@ -108,7 +110,11 @@ RequestBody :
       "request": { }
     }
 
+```
 
+The Response payload:
+
+```
 Response :
 
 {
@@ -146,4 +152,3 @@ Response :
     }
 }
 ```
-
