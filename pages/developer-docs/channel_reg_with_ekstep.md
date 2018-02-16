@@ -4,6 +4,7 @@ directory: developer-docs
 title: Registering Channel
 page_title: Registering Channel
 description: Registering Channel for root organization creation 
+published: true
 allowSearch: true
 ---
 ## Overview
