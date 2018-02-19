@@ -24,7 +24,7 @@ You must ensure that:
 
 - your machine has the ability to run the Akka actor in local, remote or mixed mode
 
-Running Akka actor either in local or remote mode depends on setting keys in configuration file, similarly background job actor can also be executed using any of the modes.
+- Running Akka actor either in local or remote mode depends on setting keys in configuration file, similarly background job actor can also be executed using any of the modes.
 
 ### Implementing Actor System
 
@@ -40,8 +40,8 @@ The configuration is as follows:
 
 **NOTE:** **sunbird_actor_system_name** value is the actor system name.
 
-- To run normal actor system on a machine, set the value to **RemoteMiddlewareActorSystem**
-- To run background actors on the same  machine, set the value to **BackGroundRemoteMiddlewareActorSystem** this property is used         when you need to run an actor remotely.
+   - To run normal actor system on a machine, set the value to **RemoteMiddlewareActorSystem**
+   - To run background actors on the same  machine, set the value to **BackGroundRemoteMiddlewareActorSystem** this property is used         when you need to run an actor remotely.
 
 ## Use cases of running Actor system
 
@@ -90,6 +90,8 @@ You can run normal actor system locally and background actor system remotely by 
 
 Then, you can run the **sunbird-lms-service** by executing ```mvn play2:run```command .And to start **sunbird-lms-mw** execute ```mvn exec:java``` command.
 
+**Note:** the normal actor will now run locally and background actor will run remotely.
+
 ### Scenario #3
 
 - **Running both actor systems remotely**
@@ -108,8 +110,10 @@ You can run both the actor system remotely by following procedure:
 
 - To start the application, make the builds in following sequence:
       
-      1. **sunbird-utils** 
-      2. **sunbird-lms-mw**
-      3. **sunbird-lms-service**
+     1. **sunbird-utils** 
+     2. **sunbird-lms-mw**
+     3. **sunbird-lms-service**
 
 - Then, run  **sunbird-lms-service** by executing ```mvn play2:run``` command.And to start **sunbird-lms-mw** by executing ```mvn exec:java``` command.
+
+**Note:** Both the normal actor as well as background actor will run remotely.
