@@ -114,6 +114,6 @@ You can run both the actor system remotely by following procedure:
      2. sunbird-lms-mw
      3. sunbird-lms-service
 
-- Then, run  **sunbird-lms-service** by executing ```mvn play2:run``` command.And to start **sunbird-lms-mw** by executing ```mvn exec:java``` command.
+Then, run  **sunbird-lms-service** by executing ```mvn play2:run``` command.And to start **sunbird-lms-mw** by executing ```mvn exec:java``` command.
 
 **Note:** Both the normal actor as well as background actor will run remotely.
