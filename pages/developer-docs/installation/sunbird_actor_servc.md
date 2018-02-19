@@ -78,9 +78,9 @@ The following are some scenarios while running the Actor services:
 
 You can run normal actor system locally and background actor system remotely by following procedure:
 
-   - To run the normal actor system locally with **sunbird-lms-service**, set the value of 'api_actor_provider' properties in environment variable to **local**
+   - Run the normal actor system locally with **sunbird-lms-service**, set the value of 'api_actor_provider' properties in environment variable to **local**
 
-   - To run the background actor system remotely, set the value of **background_actor_provider** property to **remote** in environment variable along with **sunbird_actor_system_name** property value to **BackGroundRemoteMiddlewareActorSystem**
+   - Run the background actor system remotely, set the value of **background_actor_provider** property to **remote** in environment variable along with **sunbird_actor_system_name** property value to **BackGroundRemoteMiddlewareActorSystem**
 
    - To start the application, make the builds in following sequence:
   
@@ -96,17 +96,20 @@ Then, you can run the **sunbird-lms-service** by executing ```mvn play2:run```co
 
 You can run both the actor system remotely by following procedure:
 
-  - To run both actor systems remotely, i.e  running normal actor system on one machine and background actor system on another. 
-  - Also to run  **sunbird-lms-service** on different machines
+- Run normal actor system on one machine and background actor system on another remotely and also, to run  **sunbird-lms-service** on different machines
 
-  -  To run normal actor system remotely ,assume you are using machine m1
-  -  set the value of **api_actor_provider** property value to **remote**  in environment variable along with **sunbird_actor_system_name** property value as **RemoteMiddlewareActorSystem** on machine m1.
+ -  Assuming you are using machine m1 to run normal actor system remotely
+ 
+    -  set the value of **api_actor_provider** property value to **remote**  in environment variable along with **sunbird_actor_system_name** property value as **RemoteMiddlewareActorSystem** on machine m1.
 
-  - To run background actor system remotely ,assume you are using machine m2
-  - Set the value of **background_actor_provider** property to **remote**  in environment variables along with **sunbird_actor_system_name** property value to **BackGroundRemoteMiddlewareActorSystem** on machine m2.
+ - Assuming you are using machine m2 to run background actor system remotely
+  
+    - Set the value of **background_actor_provider** property to **remote**  in environment variables along with **sunbird_actor_system_name** property value to **BackGroundRemoteMiddlewareActorSystem** on machine m2.
 
 - To start the application, make the builds in following sequence:
-  **sunbird-utils** \
-  **sunbird-lms-mw**
-  **sunbird-lms-service**
-Then, run  **sunbird-lms-service** by executing ```mvn play2:run``` command.And to start **sunbird-lms-mw** by executing ```mvn exec:java``` command.
+      
+      1. **sunbird-utils** 
+      2. **sunbird-lms-mw**
+      3. **sunbird-lms-service**
+
+- Then, run  **sunbird-lms-service** by executing ```mvn play2:run``` command.And to start **sunbird-lms-mw** by executing ```mvn exec:java``` command.
