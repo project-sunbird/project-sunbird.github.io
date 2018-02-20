@@ -8,6 +8,7 @@ keywords: 'teacher training, training, assessment, training instituites, teacher
 published: true
 allowSearch: true
 ---
+## Overview
 
 On Sunbird, once a course is created, the course administrator can add users to a course in a batch. Multiple batches can be assigned to a single course. The administrator can add as many users to a batch. 
 
@@ -24,7 +25,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
   </tr>
   </table>
   
-  ### Exploring the Courses Page
+### Exploring the Courses Page
   <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -36,7 +37,6 @@ On Sunbird, once a course is created, the course administrator can add users to 
       <td><img src="pages/features-documentation/images/batches_courses.png"></td>
   </tr>
   </table>
-  
   
 ### Creating Batches
 <table>
@@ -70,7 +70,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
   </tr>
   </table>
   
-  ### Viewing Batch Status
+### Viewing Batch Status
   <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -83,7 +83,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
   </tr>
   </table>
   
- ### Editing Batch Details
+### Editing Batch Details
  <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -97,9 +97,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
   <tr>
     <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <br>&emsp;a) About This Batch <br>&emsp;b) Start Date (mandatory field) <br>&emsp;c) End Date <br>&emsp;d)Mentors in the Batch <br>&emsp;e) Members in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
 
-****Note: 
-A batch created cannot be deleted. Batch details can only be updated****
-         </td>
+<b>Note:</b><br><b>A batch created cannot be deleted. Batch details can only be updated</b></td>
       <td><img src="pages/features-documentation/images/batches_edit2.png"></td>
   </tr>
   </table>
