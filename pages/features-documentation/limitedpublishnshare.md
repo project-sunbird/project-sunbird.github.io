@@ -8,7 +8,7 @@ published: true
 allowSearch: true
 ---
 
-Every organization has its own requirements for content creation and publishing. Content can be shared with all, some or specific users within or outside the organization. Sunbird offers the features **Limited Publishing** and ** Limited Sharing** that allow you to share content after it is created via a link to select audiences. All users who get the link can view the content, even without logging in to Sunbird. This page provides you details on how you can use these features 
+Every organization has its own requirements for content creation and publishing. Content can be shared with all, some or specific users within or outside the organization. Sunbird offers the features **Limited Publishing** and **Limited Sharing** that allow you to share content after it is created via a link to select audiences. All users who get the link can view the content, even without logging in to Sunbird. This page provides you details on how you can use these features 
 
 ### Prerequisites
 - You are logged in as a Content Creator
