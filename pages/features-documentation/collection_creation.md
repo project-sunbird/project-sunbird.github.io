@@ -81,37 +81,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
 
 ### Adding Content to Collection
 
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1.Click the burger menu in the left navigation pane to add Collections or Resources. Resources are singular pieces of content. These can be part of bigger units of content such as books, courses, collections, assessments etc. <br>2. Alternatively, click <b>New Child</b> node to add a collection. Any number of collections can be added <br>3. Click <b>New Sibling</b> node to add a collection within the created collection
-<br><b>Note</b>: A new sibling node can be added only after adding a child node
-    </td>
-    <td><img src="pages/features-documentation/images/collection/collection_addchild1.png"></td>
-  </tr>
-  <tr>
-  <td>1. Click <b>Edit</b> to edit the collection name <br>2. Click <b>Delete</b> to delete the collection. This option is highlighted only after adding a collection/resource <br>3. Click <b>New Sibling</b> to add collection. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br>4. Click <b>New Child</b> to add a collection <br>5. Click <b>Add Resource</b> to add a resource to the collection <br><b>Note</b>: You can alternatively use the keyboard shortcuts. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
-    </td>
-    <td><img src="pages/features-documentation/images/collection/collection_addchild2.png"></td>
-  </tr>
-</table>
-
-### Adding Collections
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td> On clicking <b>New Child</b> from the burger menu, the metadata for collection is displayed on the right <br>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> about the collection <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata of the collection <br>5. Click <b>Image icon</b> to add image to the collection metadata. For details on adding image, refer <a href="pages/features-documentation/collection_creation/#addingimagetocollectionmetadata">Adding Image to Collection Metadata</a>
-    </td>
-    <td><img src="pages/features-documentation/images/collection/collection_child_metadata.png"></td>
-  </tr>
-</table>
+To add content to a collection, you can either: <br>&emsp;a) Click Add Resource from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b) Right-click on the node name and select Add Resource, OR <br>&emsp;c)Use the keyboard shortcut Ctrl+Alt+A
 
 ### Adding Resources
 
@@ -120,18 +90,17 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
-   <br><b>Note</b>: Resources can be added within any collection or independently. Select Resources from the respective burger menu drop-downs
-   </td>
-   <td><img src="pages/features-documentation/images/collection/collection_addresource.png"></td>
-   </tr>
    <tr>
-   <td>1. The <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
+     <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
     </td>
     <td><img src="pages/features-documentation/images/book/book_addresource2.png"></td>
   </tr>
   </table>
+
+### Using the Table of Contents Options 
+
+The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, OR <br>&emsp;c) Keyboard shortcuts
+For details on manipulating the tree and adding nodes, refer <a href="pages/features-documentation/collection_creation/#addingimagetocollectionmetadata">Adding Image to Collection Metadata</a>
   
 ### Deleting Content 
 
