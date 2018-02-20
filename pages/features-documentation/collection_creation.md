@@ -176,7 +176,7 @@ A collection must be reviewed before it is published.
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Save</b> on the header to save the collection <br>2. Click <b>Send for review</b> to send the created collection for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedshare" target="_blank">Limited Sharing</a>
+    <td>1. Click <b>Save</b> on the header to save the collection <br>2. Click <b>Send for review</b> to send the created collection for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare.md" target="_blank">Limited Sharing</a>
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_sendforreview.png"></td>
   </tr>    
