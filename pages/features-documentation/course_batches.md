@@ -95,9 +95,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
       <td><img src="pages/features-documentation/images/batches_edit.png"></td>
   </tr>
   <tr>
-    <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <br>&emsp;a) About This Batch <br>&emsp;b) Start Date (mandatory field) <br>&emsp;c) End Date <br>&emsp;d)Mentors in the Batch <br>&emsp;e) Members in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes
-
-<b>Note:</b> <i>A batch created cannot be deleted. Batch details can only be updated.</i></td>
+    <td>1. Update <strong>Batch Details</strong>  page opens. <br>2.You can edit/update the following details: <br>&emsp;a) About This Batch <br>&emsp;b) Start Date (mandatory field) <br>&emsp;c) End Date <br>&emsp;d)Mentors in the Batch <br>&emsp;e) Members in the batch <br>3. Click <strong>Clear</strong> to clear all details <br>4.Click <strong>Update</strong> to update the changes <br><b>Note:</b> <i>A batch created cannot be deleted. Batch details can only be updated.</i></td>
       <td><img src="pages/features-documentation/images/batches_edit2.png"></td>
   </tr>
   </table>
