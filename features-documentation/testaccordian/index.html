@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.24.b/";
+			baseURL.href="/releases/release.1.24.c/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Limited Sharing</title>
-<meta name="description" content="Sunbird Site Details and description on how limited publishing works"/>
+<title>Sunbird Creating accordian section</title>
+<meta name="description" content="Sunbird Site Create a sample to show the accordian section in the master page"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-16 17:55:45 +0530">
+<meta name="last-modified" content="2018-02-20 17:47:27 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.24.b" />
-<meta name="buildNo" content="1828" />
+<meta name="buildVersion" content="release.1.24.c" />
+<meta name="buildNo" content="1859" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?16022018"  />
-<link rel="stylesheet" href="css/style.css?16022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?16022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?16022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?16022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20022018"  />
+<link rel="stylesheet" href="css/style.css?20022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -163,7 +163,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/admindashboard/">Admin Dashboard</a>
+					<a href="features-documentation/admindashboard/">Administrator Dashboard</a>
 				</li>
 				<li>
 					<a href="features-documentation/lessonplan/">Lesson Plan</a>
@@ -527,14 +527,14 @@
 	</div>
 </div>
 <script>
-$("a[href$='features-documentation/limitedshare/']").addClass("sidebar-link-selected");
+$("a[href$='features-documentation/testaccordian/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Limited Sharing </h1>
+        <h1>Sample accordian iom </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -544,7 +544,7 @@ $("a[href$='features-documentation/limitedshare/']").addClass("sidebar-link-sele
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/limitedshare.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/testaccordian.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -554,60 +554,46 @@ $("a[href$='features-documentation/limitedshare/']").addClass("sidebar-link-sele
 			  </a>
 			  </span>
 			</p>
-          <p>Content creation requirements varies from organization to organization. Organizations may create content and make it available to everyone, or create content for only a specific audience or only for members of a particular organization. To cater to this unique need, Sunbird offers the feature of  <strong>Limited Sharing</strong>. This feature enables you to share the content created via a link to selected audiences.</p>
-
-<h3 id="prerequisites">Prerequisites</h3>
-<ul>
-  <li>You are loged in</li>
-  <li>You have created the desired content from your workspace</li>
-  <li>You have filled the required meta data for the created content</li>
-</ul>
-
-<h3 id="selecting-limited-sharing-of-content">Selecting Limited Sharing of Content</h3>
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Click the drop drop menu beside <b>Send for Review</b> icon <br />2. Click <b>Limited Sharing</b> from the drop down. You will be directed to <b>My workspace</b> </td>
-  <td><img src="pages/features-documentation/images/limitedshare.png" /></td>
-  </tr>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#accordion"><span class="tocnumber">1 .</span> <span class="toctext">Accordion</span></a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
   </table>
+</div><h2 id="accordion">Accordion</h2>
 
-<h3 id="sharing-content-link">Sharing Content Link</h3>
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-  <td>1. Click <b>Limited Publishing</b>. All the content selected for <b>Limited sharing</b> are available here <br />2. Click <b>View Link</b> <br />3. The <b>Share link</b> page is displayed <br />4. Click <b>Copy Link</b> to copy the link. You can share this link with desired audience <br /> <b>Note</b>: Content selected for limited sharing are not reviewed </td>
-  <td><img src="pages/features-documentation/images/limitedpublish.png" /></td>
-  </tr>
-  </table>
+<p>
+  <button class="accordion">Section 1</button>
+</p>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
-<h3 id="sending-content-for-review">Sending Content for Review</h3>
+<p>
+  <button class="accordion">Section 2</button>
+</p>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
-<p>Content selected for limited sharing are not reviewed. To send content (marked as limited sharing) for review:</p>
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-  <td>1. Click <b>Limited Publishing</b>. All the content selected for <b>Limited sharing</b> are available here <br />2. Click on the content you want to send for review. The content metadata page is displayed </td>
-  <td><img src="pages/features-documentation/images/LimitPblsh_review1.png" /></td>
-  </tr>
-   <tr>
-  <td>1. Click <b>Save</b>. You can make changes to the content. if required </td>
-  <td><img src="pages/features-documentation/images/LimitPblsh_review2.png" /></td>
-  </tr>
-  <tr>
-    <td>1. Click <b>Send for Review</b> <br /><b>Note</b>: Once the content is shared for review, it will not be available under <b>Limited Publishing</b>. The content after review, will be published on the portal where it will be accessible to everyone </td>
-  <td><img src="pages/features-documentation/images/LimitPblsh_review3.png" /></td>
-  </tr>
-  </table>
+<p>
+  <button class="accordion">Section 3</button>
+</p>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
 
           
           <hr />
@@ -616,12 +602,12 @@ $("a[href$='features-documentation/limitedshare/']").addClass("sidebar-link-sele
 			<!--<a target="_blank"  class="" href="">
 				  <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;-->
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/limitedshare.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/testaccordian.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="features-documentation/limitedshare/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="features-documentation/testaccordian/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -675,7 +661,7 @@ $("a[href$='features-documentation/limitedshare/']").addClass("sidebar-link-sele
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'features-documentation/limitedshare/' + url;
+		this.href = 'features-documentation/testaccordian/' + url;
     })
   </script>
   </body>

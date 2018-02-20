@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.24.b/";
+			baseURL.href="/releases/release.1.24.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-16 17:55:45 +0530">
+<meta name="last-modified" content="2018-02-20 17:47:27 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.24.b" />
-<meta name="buildNo" content="1828" />
+<meta name="buildVersion" content="release.1.24.c" />
+<meta name="buildNo" content="1859" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?16022018"  />
-<link rel="stylesheet" href="css/style.css?16022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?16022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?16022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?16022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20022018"  />
+<link rel="stylesheet" href="css/style.css?20022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -163,7 +163,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="features-documentation/admindashboard/">Admin Dashboard</a>
+					<a href="features-documentation/admindashboard/">Administrator Dashboard</a>
 				</li>
 				<li>
 					<a href="features-documentation/lessonplan/">Lesson Plan</a>
@@ -576,13 +576,13 @@ $("a[href$='developer-docs/installation/sunbird_actor_servc/']").addClass("sideb
               <a href="#use-cases-of-running-actor-system"><span class="tocnumber">2 .</span> <span class="toctext">Use cases of running Actor system</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-4">
-                  <a href="#scenario-1"><span class="tocnumber">2.1 .</span> <span class="toctext">Scenario 1</span></a>
+                  <a href="#scenario-1"><span class="tocnumber">2.1 .</span> <span class="toctext">Scenario #1</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-5">
-                  <a href="#scenario-2"><span class="tocnumber">2.2 .</span> <span class="toctext">Scenario 2</span></a>
+                  <a href="#scenario-2"><span class="tocnumber">2.2 .</span> <span class="toctext">Scenario #2</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-6">
-                  <a href="#scenario-3"><span class="tocnumber">2.3 .</span> <span class="toctext">Scenario 3</span></a>
+                  <a href="#scenario-3"><span class="tocnumber">2.3 .</span> <span class="toctext">Scenario #3</span></a>
                 </li>
               </ul>
             </li>
@@ -603,8 +603,8 @@ $("a[href$='developer-docs/installation/sunbird_actor_servc/']").addClass("sideb
 
 <ul>
   <li>Check for the Pre-requisites</li>
-  <li>Implementating Actor System</li>
-  <li>Usecases</li>
+  <li>Implementing Actor System</li>
+  <li>Scenarios</li>
 </ul>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -612,10 +612,13 @@ $("a[href$='developer-docs/installation/sunbird_actor_servc/']").addClass("sideb
 <p>You must ensure that:</p>
 
 <ul>
-  <li>your machine has the ability to run the Akka actor in local, remote or mixed mode</li>
+  <li>
+    <p>Your machine has the ability to run the Akka actor in local, remote or mixed mode</p>
+  </li>
+  <li>
+    <p>Running Akka actor either in local or remote mode depends on setting keys in configuration file, similarly background job actor can also be executed using any of the modes.</p>
+  </li>
 </ul>
-
-<p>Running Akka actor either in local or remote mode depends on setting keys in configuration file, similarly background job actor can also be executed using any of the modes.</p>
 
 <h3 id="implementing-actor-system">Implementing Actor System</h3>
 
@@ -647,88 +650,120 @@ $("a[href$='developer-docs/installation/sunbird_actor_servc/']").addClass("sideb
 <p>The following are some scenarios while running the Actor services:</p>
 
 <ul>
-  <li>Running both the actor systems locally</li>
-  <li>Running normal actor system locally and background actor system remotely</li>
-  <li>Running both actor systems remotely</li>
+  <li>Scenario #1
+    <ul>
+      <li>Running both the actor systems locally on single machine</li>
+    </ul>
+  </li>
+  <li>Scenario #2
+    <ul>
+      <li>Running normal actor system locally and background actor system remotely</li>
+    </ul>
+  </li>
+  <li>Scenario #3
+    <ul>
+      <li>Running both actor systems remotely</li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="scenario-1">Scenario 1</h3>
+<h3 id="scenario-1">Scenario #1</h3>
+
+<ul>
+  <li><strong>Running both the actor systems locally</strong></li>
+</ul>
+
+<p>You can run normal actor system and background actor system on same machine by following procedure:</p>
 
 <ul>
   <li>
-    <p><strong>Running both the actor systems locally</strong></p>
+    <p>To run both normal and background actor systems on a single machine with <strong>sunbird-lms-service</strong>. Set the values of ‘<strong>api_actor_provider</strong>’ and ‘<strong>background_actor_provider</strong>’ properties as <strong>local</strong> in the environment variables</p>
+  </li>
+  <li>
+    <p>To start the application, make the builds in following sequence:</p>
 
-    <ul>
-      <li>To run both actor system locally, implies that both the normal and background actor systems are running on the same machine with <strong>sunbird-lms-service</strong>.</li>
-      <li>
-        <p>Set values of ‘<strong>api_actor_provider</strong>’ and ‘<strong>background_actor_provider</strong>’ properties as <strong>local</strong> in the environment variable.</p>
-      </li>
-      <li>To start the application, make the builds in following sequence
-        <ul>
-          <li><strong>sunbird-utils</strong></li>
-          <li><strong>sunbird-lms-mw</strong></li>
-          <li><strong>sunbird-lms-service</strong></li>
-        </ul>
-      </li>
-    </ul>
+    <ol>
+      <li>sunbird-utils</li>
+      <li>sunbird-lms-mw</li>
+      <li>sunbird-lms-service</li>
+    </ol>
   </li>
 </ul>
 
-<p>Then, run the <strong>sunbird-lms-service</strong> 
- <code>mvn play2:run</code> command to start the sunbird application, executing this will start both the actor systems on same machine.</p>
+<p>Then, run the <strong>sunbird-lms-service</strong> by executing the <code>mvn play2:run</code> command. Executing this command ensures that the sunbird application is started.</p>
 
-<h3 id="scenario-2">Scenario 2</h3>
+<p><strong>Note:</strong> Both the actor systems will now run on same machine.</p>
+
+<h3 id="scenario-2">Scenario #2</h3>
+
+<ul>
+  <li><strong>Running normal actor system locally and background actor system remotely</strong></li>
+</ul>
+
+<p>You can run normal actor system locally and background actor system remotely by following procedure:</p>
 
 <ul>
   <li>
-    <p><strong>Running normal actor system locally and background actor system remotely</strong></p>
-
-    <ul>
-      <li>
-        <p>To run the normal actor system locally with <strong>sunbird-lms-service</strong>, change the value of ‘api_actor_provider’ properties in environment variable to <strong>local</strong></p>
-      </li>
-      <li>
-        <p>To run background actor system remotely set the value of <strong>background_actor_provider</strong> properties value to <strong>remote</strong>  in environment variable along with <strong>sunbird_actor_system_name</strong> properties value in environment variable as <strong>BackGroundRemoteMiddlewareActorSystem</strong>.</p>
-      </li>
-    </ul>
+    <p>To run the normal actor system locally with <strong>sunbird-lms-service</strong>, set the value of ‘api_actor_provider’ properties in environment variable to <strong>local</strong></p>
   </li>
   <li>
-    <p>To start the application, make the builds in following sequence</p>
-    <ul>
-      <li><strong>sunbird-utils</strong></li>
-      <li><strong>sunbird-lms-mw</strong></li>
-      <li><strong>sunbird-lms-service</strong></li>
-    </ul>
+    <p>To run the background actor system remotely, set the value of <strong>background_actor_provider</strong> property to <strong>remote</strong> in environment variable along with <strong>sunbird_actor_system_name</strong> property value to <strong>BackGroundRemoteMiddlewareActorSystem</strong></p>
+  </li>
+  <li>
+    <p>To start the application, make the builds in following sequence:</p>
+
+    <ol>
+      <li>sunbird-utils</li>
+      <li>sunbird-lms-mw</li>
+      <li>sunbird-lms-service</li>
+    </ol>
   </li>
 </ul>
 
-<p>Then, run the <strong>sunbird-lms-service</strong> by executing <code>mvn play2:run</code>.And to start <strong>sunbird-lms-mw</strong> execute <code>mvn exec:java</code> command.</p>
+<p>Then, you can run the <strong>sunbird-lms-service</strong> by executing <code>mvn play2:run</code>command .And to start <strong>sunbird-lms-mw</strong> execute <code>mvn exec:java</code> command.</p>
 
-<h3 id="scenario-3">Scenario 3</h3>
+<p><strong>Note:</strong> the normal actor will now run locally and background actor will run remotely.</p>
+
+<h3 id="scenario-3">Scenario #3</h3>
+
+<ul>
+  <li><strong>Running both actor systems remotely</strong></li>
+</ul>
+
+<p>You can run both the actor system remotely by following procedure:</p>
 
 <ul>
   <li>
-    <p><strong>Running both actor systems remotely</strong></p>
+    <p>To run normal actor system on one machine and background actor system on another remotely and also, to run  <strong>sunbird-lms-service</strong> on different machines</p>
+  </li>
+  <li>
+    <p>Assuming you are using machine m1 to run normal actor system remotely</p>
 
     <ul>
-      <li>
-        <p>To run both actor systems remotely, running normal actor system on one machine and background actor system on another and also to run  <strong>sunbird-lms-service</strong> on different machine.</p>
-      </li>
-      <li>Run normal actor system remotely ,suppose you are running it on machine m1</li>
-      <li>
-        <p>set the value of <strong>api_actor_provider</strong> properties value to <strong>remote</strong>  in environment variable along with <strong>sunbird_actor_system_name</strong> properties value in environment variable as <strong>RemoteMiddlewareActorSystem</strong> on machine m1.</p>
-      </li>
-      <li>To run background actor system remotely , suppose you are running  it on machine m2 ,set the value of <strong>background_actor_provider</strong> properties value to <strong>remote</strong>  in environment variable along with <strong>sunbird_actor_system_name</strong> properties value in environment variable as <strong>BackGroundRemoteMiddlewareActorSystem</strong> on machine m2.</li>
+      <li>Set the value of <strong>api_actor_provider</strong> property value to <strong>remote</strong>  in environment variable along with <strong>sunbird_actor_system_name</strong> property value as <strong>RemoteMiddlewareActorSystem</strong> on machine m1.</li>
     </ul>
   </li>
   <li>
-    <p>To start the application, make the builds in following sequence
-<strong>sunbird-utils</strong> \
-<strong>sunbird-lms-mw</strong>
-<strong>sunbird-lms-service</strong>
-Then, run  <strong>sunbird-lms-service</strong> by executing <code>mvn play2:run</code> command.And to start <strong>sunbird-lms-mw</strong> by executing <code>mvn exec:java</code> command.</p>
+    <p>Assuming you are using machine m2 to run background actor system remotely</p>
+
+    <ul>
+      <li>Set the value of <strong>background_actor_provider</strong> property to <strong>remote</strong>  in environment variables along with <strong>sunbird_actor_system_name</strong> property value to <strong>BackGroundRemoteMiddlewareActorSystem</strong> on machine m2.</li>
+    </ul>
+  </li>
+  <li>
+    <p>To start the application, make the builds in following sequence:</p>
+
+    <ol>
+      <li>sunbird-utils</li>
+      <li>sunbird-lms-mw</li>
+      <li>sunbird-lms-service</li>
+    </ol>
   </li>
 </ul>
+
+<p>Then, run  <strong>sunbird-lms-service</strong> by executing <code>mvn play2:run</code> command.And to start <strong>sunbird-lms-mw</strong> by executing <code>mvn exec:java</code> command.</p>
+
+<p><strong>Note:</strong> Both the normal actor as well as background actor will run remotely.</p>
 
           
           <hr />
