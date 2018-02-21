@@ -72,7 +72,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
     <th style="width:65%;">Screen</th>
   </tr>
    <tr>
-     <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
+     <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. Click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
     </td>
     <td><img src="pages/features-documentation/images/book/book_addresource2.png"></td>
   </tr>
