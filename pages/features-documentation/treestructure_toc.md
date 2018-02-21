@@ -54,7 +54,7 @@ On clicking <b> New Sibling</b> or <b>New Child</b>, the metadata is displayed o
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> <br>3. Enter <b>Keywords</b> <br>4. Click Save to save the metadata <br>5. Click Image icon to add image to the collection metadata. For details on the metadata, <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a>
+    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> <br>3. Enter <b>Keywords</b> <br>4. Click Save to save the metadata <br>5. Click Image icon to add image to the metadata. For details on the metadata, <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a>
     </td>
       <td><img src="pages/features-documentation/images/addchild_metadata2.png"></td>
   </tr>
