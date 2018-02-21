@@ -13,7 +13,7 @@ The tree structure of the Table of Contents in the creation module  is composed 
 
 For example, you are creating a textbook on vocabulary. The entire textbook is the parent node, the first default level in the ToC. There are ten units in this textbook. Each of these unit are sub-nodes within the parent node. Create the first unit by adding a child node.  Since units are of the same hierarchical level, add consecutive units as sibling nodes.
 
-You can add a child node within a sibling node. Each unit has tree chapters. Add the first chapter a as child nodes within each respective child nodes (i.e., units). Add the remaining chapters as sibling nodes within the child node, since the three chapters are the same hierarchy level.
+You can add a child node within a sibling node. Each unit has tree chapters. Add the first chapter as a child node within each respective child nodes (i.e., units). Add the remaining chapters as sibling nodes within the child node, since the three chapters are the same hierarchy level.
 
 You can further have activities within each of these chapters. Browse and add resources (activities) within each chapter.
 
