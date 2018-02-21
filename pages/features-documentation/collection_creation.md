@@ -46,38 +46,11 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> of the collection <br>3. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>4. Click <b>Save</b> on the header to save the details
+    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> of the collection <br>3. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>4. Click the <b>Image</b> icon to add an image to the metadata. For details on adding image, refer  <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> <br>5. Click <b>Save</b> on the header to save the details
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_metadata2.png"></td>
   </tr>
   </table>
-
-### Adding Image to Collection Metadata
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>Click the <b>Image</b> icon to add an image</td>
-    <td><img src="pages/features-documentation/images/collection/collection_imageicon.png"></td>
-  </tr>
-  <tr>
-    <td> You can add images by: <br>&emsp;a) Selecting an image from the inbuilt list <br>&emsp;b) Uploading images from your local machine <br>1. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>2. Click <b>All image</b> to view a list of image files from the repository    
-      <br><b>Note</b>: The repository contains all image files added and uploaded by any users
-      <br>4. Choose an appropriate image file from any list and click <b>Select</b> <br>6. Click <b>Upload and use</b> to upload and use images from your gallery
-    </td>
-    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
-  </tr>
-  <tr>
-      <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
-   <br><b>Note</b>: Supported file formats are: .jpeg, .jpg, .png*     
-   <br>2. Under <b>Copyright and License</b>, select if you want to: <br>&emsp;a) Make it available to everyone <br>&emsp;b) Not share with anyone <br>3. Add image details in the <b>Asset Caption</b> area <br>4. Click <b>Upload and Use</b> to upload the image
-      </td>
-    <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
-  </tr>
-</table>
 
 ### Adding Content to Collection
 
@@ -100,7 +73,7 @@ To add content to a collection, you can either: <br>&emsp;a) Click Add Resource 
 ### Using the Table of Contents Options 
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, OR <br>&emsp;c) Keyboard shortcuts
-For details on manipulating the tree and adding nodes, refer <a href="pages/features-documentation/collection_creation/#addingimagetocollectionmetadata">Adding Image to Collection Metadata</a>
+For details on manipulating the tree and adding nodes, refer <a href="features-documentation/treestructure_TOC" target="_blank">Exploring ToC Structure</a>
   
 ### Deleting Content 
 
