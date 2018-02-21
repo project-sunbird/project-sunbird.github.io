@@ -53,8 +53,16 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
   </table>
 
 ### Adding Content to Collection
-
-To add content to a collection, you can either: <br>&emsp;a) Click Add Resource from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b) Right-click on the node name and select Add Resource, OR <br>&emsp;c)Use the keyboard shortcut Ctrl+Alt+A
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>To add content to a collection, you can either: <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b>, OR <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b>
+      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
+  </tr>
+  </table>
 
 ### Adding Resources
 
