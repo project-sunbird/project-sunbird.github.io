@@ -38,8 +38,9 @@ On clicking <b>New Child</b>, the metadata for the child node is displayed on th
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Content Title</b>  <br>2. Enter <b>Description</b> about the child node <br>3. Enter <b>Keywords</b> <br>4.  Click <b>Save</b> to save the metadata of the child node <br>5. Click <b>Image icon<b> to add image to the metadata: The metadata for sibling node is same as the child node. For details on adding image, refer <a href="pages/features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a></td>
-      <td><img src="pages/features-documentation/images/addchild_metadata2.png"></td>
+    <td>1. Enter <b>Content Title</b>  <br>2. Enter <b>Description</b> about the child node <br>3. Enter <b>Keywords</b> <br>4.  Click <b>Save</b> to save the metadata of the child node <br>5. Click <b>Image icon<b> to add image to the metadata: The metadata for sibling node is same as the child node. For details on adding image, refer <a href="pages/features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a>
+  </td>
+  <td><img src="pages/features-documentation/images/addchild_metadata2.png"></td>
   </tr>
   </table>
   
