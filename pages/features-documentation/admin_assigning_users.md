@@ -3,7 +3,7 @@ type: landing
 directory: features-documentation
 title: Assigning User Roles
 page_title: Assigning User Roles
-description: Instructional guide on assiging user roles 
+description: Instructional guide on assigning the user roles 
 published: true
 allowSearch: true
 ---
