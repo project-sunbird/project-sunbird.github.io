@@ -32,7 +32,7 @@ You can further have activities within each of these chapters. Browse and add re
 
 #### Metadata for Child Node
 
-On clicking New Child from the burger menu, the metadata for the child node is displayed on the right 
+On clicking <b>New Child</b> from the burger menu, the metadata for the child node is displayed on the right 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -44,8 +44,19 @@ On clicking New Child from the burger menu, the metadata for the child node is d
   </tr>
   </table>
 
-### Adding Sibling Node: 
-To add a sibling node, you can either: <br>&emsp;a) Click <b>New Sibling</b> from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b) Right-click on the node name and select <b>New Sibling</b>, OR <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b> <br> <b>Note</b>: The metadata for sibling node is same as the child node. For details on the metadata, For details on manipulating the tree and adding nodes, refer <a href="pages/features-documentation/treestructure_TOC/#MetadataforChildNode">Metadata for Child Node</a>
+### Adding Sibling Node
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>To add a sibling node, you can either <br>a) Click <b>New sibling</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b)  Right-click on the node name and select <b>New sibling</b>, OR <br>c) Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b> <b>Note</b>: The metadata for sibling node is same as the child node. For details on the metadata, refer <a href="pages/features-documentation/treestructure_TOC/#MetadataforChildNode">Metadata for Child Node</a></td>
+      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
+  </tr>
+  </table>
+ 
 
 ### Deleting a Node
 
