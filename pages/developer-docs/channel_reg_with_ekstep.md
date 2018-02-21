@@ -57,8 +57,9 @@ Method : POST
 
 RequestBody :
 
-```
-     {
+<pre>
+
+{
    "request": {
       "channel":{
         "code": "012424880506855424168",  // code is hashTagId value in sunbird
@@ -68,12 +69,12 @@ RequestBody :
     }
 }
 
-```
+</pre>
 
 The response Payload:
 
+<pre>
 
-```
 Response :
 
 {
@@ -93,7 +94,8 @@ Response :
         "versionKey": "1518435567708"
     }
 }
-```
+
+</pre>
 
 ## Get channel list API 
 
@@ -103,18 +105,20 @@ URL : /channel/v3/list
 
 Method : POST 
 
-```
+<pre>
+
 RequestBody :
 
     {
       "request": { }
     }
 
-```
+</pre>
 
 The Response payload:
 
-```
+<pre>
+
 Response :
 
 {
@@ -152,4 +156,4 @@ Response :
     }
 }
 
-```
+</pre>
