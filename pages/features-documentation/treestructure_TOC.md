@@ -24,15 +24,31 @@ To add a child node, you can either: <br>&emsp;a) Click <b>New Child</b> from th
 #### Metadata for Child Node
 
 On clicking New Child from the burger menu, the metadata for the child node is displayed on the right 
-1. Enter Content Title 
-2. Enter Description about the child node 
-3. Enter Keywords 
-4. Click Save to save the metadata of the child node 
-5. Click Image icon to add image to the metadata. For details on adding image, refer Adding Image to Collection Metadata (This will be hyperlinked in the md page)
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Enter <b>Content Title</b>  <br>2. Enter <b>Description</b> about the child node <br>3. Enter <b>Keywords</b> <br>4.  Click <b>Save</b> to save the metadata of the child node <br>5. Click <b>Image icon<b> to add image to the metadata. For details on adding image, refer  <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> </td>
+      <td><img src="pages/features-documentation/images/addchild_metadata2.png"></td>
+  </tr>
+  </table>
 
 ### Adding Sibling Node: 
-To add a child node, you can either:
-d.	Click New Sibling from the burger menu associated with the required node in the left navigation pane, OR
-e.	Right-click on the node name and select New Sibling, OR
-f.	Use the keyboard shortcut Ctrl+Alt+Shift+N
-Note: The metadata for Sibling Node is same as the Child Node. For details on the metadata, refer Metadata for Child Note (Hyperlink)
+To add a sibling node, you can either: <br>&emsp;a) Click <b>New Sibling</b> from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b) Right-click on the node name and select <b>New Sibling</b>, OR <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b> <br> <b>Note</b>: The metadata for sibling node is same as the child node. For details on the metadata, For details on manipulating the tree and adding nodes, refer <a href="pages/features-documentation/treestructure_TOC/#MetadataforChildNode">Metadata for Child Node</a>
+
+### Deleting a Node
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the node
+      <br><b>Note</b>: You can alternatively delete nodes by clicking <b>Delete</b> in the burger menu drop-down. If the node has any child nodes or sibling nodes within in, they too will be deleted
+      </td>
+    <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
+  </tr>
+</table>
