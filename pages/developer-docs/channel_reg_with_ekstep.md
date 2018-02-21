@@ -56,6 +56,7 @@ URL : /channel/v3/create
 Method : POST
 
 RequestBody :
+
 ```
      {
    "request": {
@@ -70,6 +71,7 @@ RequestBody :
 ```
 
 The response Payload:
+
 
 ```
 Response :
@@ -149,4 +151,5 @@ Response :
         "count": 1
     }
 }
+
 ```
