@@ -72,8 +72,7 @@ To add content to a collection, you can either: <br>&emsp;a) Click Add Resource 
 
 ### Using the Table of Contents Options 
 
-The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, OR <br>&emsp;c) Keyboard shortcuts
-For details on manipulating the tree and adding nodes, refer <a href="features-documentation/treestructure_TOC" target="_blank">Exploring ToC Structure</a>
+The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, OR <br>&emsp;c) Keyboard shortcuts <br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
   
 ### Deleting Content 
 
@@ -84,7 +83,7 @@ For details on manipulating the tree and adding nodes, refer <a href="features-d
   </tr>
   <tr>
     <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content
-      <br><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
+      <br><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down. 
       </td>
     <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
   </tr>
