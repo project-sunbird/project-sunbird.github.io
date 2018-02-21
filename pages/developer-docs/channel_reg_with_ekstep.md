@@ -51,13 +51,12 @@ The process for registering the channel uses the Channel API. Here is the sample
 
 The request payload:
 
-``` 
 URL : /channel/v3/create
 
 Method : POST
 
 RequestBody :
-
+```
      {
    "request": {
       "channel":{
@@ -98,11 +97,11 @@ Response :
 
 The request payload:
 
-```
 URL : /channel/v3/list
 
 Method : POST 
 
+```
 RequestBody :
 
     {
