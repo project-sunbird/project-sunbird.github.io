@@ -48,29 +48,17 @@ Announcements are categorised into different types, for example; orders, circula
 
 **Sample request object to create an announcement type**
 
-<pre>
-"request":{
-
+    "request":{
         "entityName":"announcementtype",
-
         "indexed":true,
-
         "payload" : {
-
-        "id": "{UUID}",
-
-        "rootorgid": "{Tenant ID}",
-
-        "name": "{String}",
-
-        "status": "active",
-
-        "createddate": "{timestamp}"
-
+            "id": "{UUID}",
+            "rootorgid": "{Tenant ID}",
+            "name": "{String}",
+            "status": "active",
+            "createddate": "{timestamp}"
         }
-
-}
-</pre>
+    }
 
 | Parameter | Description|
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|

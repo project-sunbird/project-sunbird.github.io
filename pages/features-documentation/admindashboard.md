@@ -31,7 +31,7 @@ The **Administrator Dashboard** provides an organization's administrator a unifi
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click <b>Select Organization</b>from the drop down, to select the organization for which you require the analytics</td>
+    <td>1.Click <b>Select Organization</b> from the drop down, to select the organization for which you require the analytics</td>
      <td><img src="pages/features-documentation/images/admindashboard/selectorg.png"></td>
   </tr>
 </table>
