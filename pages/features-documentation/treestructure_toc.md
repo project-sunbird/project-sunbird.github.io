@@ -2,20 +2,35 @@
 type: landing
 directory: features-documentation
 title: Exploring ToC Structure
-page_title: Adding Child and Sibling Nodes
-description: Details on how to add nodes in creation module
-keywords: 'add child, add sibling, parent node, adding content, node definition, node manipulation'
+page_title: Exploring ToC Structure
+description: Details on how to add, edit and delete nodes in the TOC pane of the content editor
+keywords: 'add child, add sibling, parent node, adding content, addi resource, node definition, node manipulation'
 published: true
 allowSearch: true
 ---
 
-The tree structure of the Table of Contents in the creation module  is composed of a hierarchical system of nodes. There are three types of nodes: <br>&emsp;a) <b>Parent Node</b>: The default node in the ToC pane representing the entire compilation of nodes <br>&emsp;b) <b>Child Node</b>: Sub-node of a given node <br>&emsp;c) <b>Sibling Node</b>: Nodes on the same hierarchical level under the same parent node
+The tree structure of the Table of Contents in the Content Editor has a hierarchical system of nodes. There are three types of nodes: <br>&emsp;a) <b>Parent Node</b>: The default node in the ToC pane representing the entire compilation of nodes <br>&emsp;b)<b>Sibling Node</b>: Nodes on the same hierarchical level under the same parent node<br>&emsp;c) <b>Child Node</b>: Sub-node of a given node 
 
-For example, you are creating a textbook on vocabulary. The entire textbook is the parent node, the first default level in the ToC. There are ten units in this textbook. Each of these unit are sub-nodes within the parent node. Create the first unit by adding a child node.  Since units are of the same hierarchical level, add consecutive units as sibling nodes.
+For example, you are creating a Mathematics textbook for grade 4. The name of the entire textbook is the parent node, which is the highest or default level in the ToC. If the textbook has 10 sections or units, each unit is a sub-node of the parent node and hence its child. However, the 10 units are at the same level as each other and hence are sibling nodes of one another. To create the first unit node, place the cursor at the default node level and click **Add Child**. To create all subsequent unit nodes, place your cursor at the first unit node level and click **Add Sibling**. 
 
-You can add a child node within a sibling node. Referring to the textbook, each unit has three chapters. Add the first chapter as a child node within each respective child nodes (i.e., units). Add the remaining chapters as sibling nodes within the child node, since the three chapters are in the same level in the hierarchy.
+You can add a child node within any node. In the example of the textbook mentioned earlier, let us assume that each unit has three chapters. To add a chapter, place your cursor at the unit node level and click **Add Child**. You can either add the remaining chapters as sibling nodes of the first chapter or child nodes of the unit. In effect, a child node is one that has at least one level of hierarchy above it. 
 
-You can further have activities within each of these chapters. Browse and add resources (activities) within each chapter.
+The TOC editor also allows you to add resources at any level in the hierarchy. 
+
+### Adding Sibling Node
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>To add a sibling node, you can either <br>a) Click <b>New sibling</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b)  Right-click on the node name and select <b>New sibling</b>, OR <br>c) Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b> <b>Note</b>: The metadata for sibling and child nodes is the same. For details on the metadata, refer <a href="features-documentation/treestructure_toc/#node-metadata"> Node Metadata</a>
+    </td>
+      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
+  </tr>
+  </table>
+ 
 
 ### Adding Child Node
 
@@ -25,14 +40,14 @@ You can further have activities within each of these chapters. Browse and add re
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add a child node, you can either <br>a) Click <b>New Child</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b)  Right-click on the node name and select <b>New Child</b>, OR <br>c) Use the keyboard shortcut <b>Ctrl+Alt+N</b>
+    <td>To add a child node, you can either <br>a) Click <b>New Child</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b)  Right-click on the node name and select <b>New Child</b>, OR <br>c) Use the keyboard shortcut <b>Ctrl+Alt+N</b> <b>Note</b>: The metadata for sibling and child nodes is the same. For details on the metadata, refer <a href="features-documentation/treestructure_toc/#node-metadata"> Node Metadata</a>
     </td>
       <td><img src="pages/features-documentation/images/addingchild1.png"></td>
   </tr>
   </table>
 
-### Child Node Metadata
-On clicking <b>New Child</b>, the metadata is displayed on the right
+### Node Metadata
+On clicking <b> New Sibling</b> or <b>New Child</b>, the metadata is displayed on the right
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -45,20 +60,7 @@ On clicking <b>New Child</b>, the metadata is displayed on the right
   </tr>
   </table>
   
-### Adding Sibling Node
 
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>To add a sibling node, you can either <br>a) Click <b>New sibling</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b)  Right-click on the node name and select <b>New sibling</b>, OR <br>c) Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b> <b>Note</b>: The metadata for sibling node is same as the child node. For details on the metadata, refer For details on adding image, refer <a href="features-documentation/treestructure_toc/#child-node-metadata">Child Node Metadata</a>
-    </td>
-      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
-  </tr>
-  </table>
- 
 ### Deleting a Node
 
 <table>
@@ -67,7 +69,7 @@ On clicking <b>New Child</b>, the metadata is displayed on the right
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the node
+    <td>1. Click <b>Delete</b> icon on the burger menu associated with the node<br>2. Click <b>Yes</b> to delete the node
       <br><b>Note</b>: You can alternatively delete nodes by clicking <b>Delete</b> in the burger menu drop-down. If there are child or siblings in the node, then they too are deleted.
       </td>
     <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
