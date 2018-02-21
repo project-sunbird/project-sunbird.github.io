@@ -19,7 +19,16 @@ You can further have activities within each of these chapters. Browse and add re
 
 ### Adding Child Node
 
-To add a child node, you can either: <br>&emsp;a) Click <b>New Child</b> from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b) Right-click on the node name and select <b>New Child</b>, OR <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+N</b>
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>To add a child node, you can either <br>a) Click <b>New Child</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b)  Right-click on the node name and select <b>New Child</b>, OR <br>c) Use the keyboard shortcut <b>Ctrl+Alt+N</b> </td>
+      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
+  </tr>
+  </table>
 
 #### Metadata for Child Node
 
