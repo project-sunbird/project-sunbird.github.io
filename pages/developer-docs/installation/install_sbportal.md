@@ -37,7 +37,6 @@ To setup the Sunbird portal successfully, follow these steps sequentially:
 5. Run the Application
 
 ### Prerequisites
-
 Check the following pre-requisites before installing and running the Sunbird-player application:
 
 1. **Software dependencies**
@@ -47,29 +46,22 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 	  latest version of gulp: `npm install -g gulp-cli`
 
 2. **API Keys** 
-
 This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
-- For getting API key you need to send and email to : info@sunbird.org. For complete instructions on "how to get an Auth.Token?", [refer](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to this section.
+- For getting an API key you should send an email to: info@sunbird.org.
 
 ### Setup 
-
-For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}.
-
-- ***Note***: The sunbird portal stable versions are available in tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
-
-After checking out the code, execute the following command:
-
+For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}. The code can be checked out via the command:
+    
     git clone https://github.com/project-sunbird/sunbird-portal.git
+
+> ***Note***: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
 
 Once the git clone command is over, run the following set of commands:
 
-<pre>
-$ cd {PROJECT-FOLDER}/src
-$ npm install
-$ bower cache clean
-$ bower install --force
-
-</pre>
+    $ cd {PROJECT-FOLDER}/src
+    $ npm install
+    $ bower cache clean
+    $ bower install --force
 
 ### Configure Backend Service Stack
 
@@ -77,7 +69,7 @@ The Sunbird portal application is powered by a set of Service APIs. These Servic
 
 For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
 
-***Note***: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.
+> ***Note***: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.
 
 ### Edit the Application Config
 
@@ -86,37 +78,34 @@ Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any ava
 Once the file is opened, update the contents of the file so that it contains exactly the following values:
 
     module.exports = {
-<pre>    	
-// 1. LEARNER_URL   
-LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
-// 2. CONTENT_URL
-CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
-// 3. CONTENT_PROXY  
-CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
-PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
-// 4. PORTAL_AUTH_SERVER_URL
-PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
-PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
-...
-PORTAL_PORT: env.sunbird_port || 3000,
- 	
-// 5. PORTAL_API_AUTH_TOKEN     
-PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
-...
+        // 1. LEARNER_URL   
+        LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
+        // 2. CONTENT_URL
+        CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
+        // 3. CONTENT_PROXY  
+        CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
+        PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
+        // 4. PORTAL_AUTH_SERVER_URL
+        PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
+        PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
+        ...
+        PORTAL_PORT: env.sunbird_port || 3000,
+         	
+        // 5. PORTAL_API_AUTH_TOKEN     
+        PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
+        ...
+        
+        // 6. PORTAL_ECHO_API_URL
+        PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
+        ...
+    }
 
-// 6. PORTAL_ECHO_API_URL
-PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
-...
-}
-</pre>
 Once the file is updated with appropriate values, then you can begin with running the application.           
  
 ## Run the Application
 
 Run the following commands:
-<pre>
-$ cd {PROJECT-FOLDER}/src/app
-$ node server.js
+    $ cd {PROJECT-FOLDER}/src/app
+    $ node server.js
 
-</pre>
-After executing the commands,open `http://localhost:3000` in browser.
+After executing the commands, open `http://localhost:3000` in browser.
