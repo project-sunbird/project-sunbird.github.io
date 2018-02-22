@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 
-The tree structure of the Table of Contents in the Content Editor has a hierarchical system of nodes. There are three types of nodes: <br>&emsp;a) <b>Parent Node</b>: The default node in the ToC pane representing the entire compilation of nodes <br>&emsp;b)<b>Sibling Node</b>: Nodes on the same hierarchical level under the same parent node<br>&emsp;c) <b>Child Node</b>: Sub-node of a given node 
+The tree structure of the Table of Contents in the Content Editor has a hierarchical system of nodes. There are three types of nodes: <br>&emsp;a) <b>Parent Node</b>: The default node in the ToC pane representing the entire compilation of nodes <br>&emsp;b) <b>Sibling Node</b>: Nodes on the same hierarchical level under the same parent node<br>&emsp;c) <b>Child Node</b>: Sub-node of a given node 
 
 For example, you are creating a Mathematics textbook for grade 4. The name of the entire textbook is the parent node, which is the highest or default level in the ToC. If the textbook has 10 sections or units, each unit is a sub-node of the parent node and hence its child. However, the 10 units are at the same level as each other and hence are sibling nodes of one another. To create the first unit node, place the cursor at the default node level and click **Add Child**. To create all subsequent unit nodes, place your cursor at the first unit node level and click **Add Sibling**. 
 
