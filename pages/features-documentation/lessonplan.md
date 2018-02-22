@@ -158,7 +158,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>A sibling node is created at the same hierarchy level as a child node. Any number of sibiling nodes can be created. To add a sibiling node you can either: <br>1. Click <b>New Sibling</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>2. Right-click on the node name and select <b>New Sibling</b>, <b>OR</b> <br>3. Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b>, <b>OR</b> <br>4. Click <b>New Sibling</b> at the bottom of the navigation to add sibling node
+    <td>A sibling node is created at the same hierarchy level as a child node. Any number of sibling nodes can be created. To add a sibling node you can either: <br>1. Click <b>New Sibling</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>2. Right-click on the node name and select <b>New Sibling</b>, <b>OR</b> <br>3. Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b>, <b>OR</b> <br>4. Click <b>New Sibling</b> at the bottom of the navigation to add sibling node
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/siblingnode.png"></td>
   </tr>
