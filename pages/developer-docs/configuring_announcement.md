@@ -69,7 +69,7 @@ Announcements are categorised into different types, for example; orders, circula
 | createddate | The date on which the announcement type is created. The created date must be in the format ***yyyy-MM-dd HH:mm:ss:SSSZZZZ** eg:***2017-12-08 10:54:40:573+0000** |
 
 
-## Assigning Roles to User(s)<
+## Assigning Roles to User(s)
 
 To send announcements, it is essential that a user is assigned the role of an announcement sender.
 
