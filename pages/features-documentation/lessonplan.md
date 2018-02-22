@@ -131,9 +131,10 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
 ### Using Table of Contents Option
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
-      - The burger menu associated with a tree node 
-      - Right-click options associated with a tree node, **OR**
-      - Keyboard shortcuts
+
+ - The burger menu associated with a tree node 
+ - Right-click options associated with a tree node, **OR**
+ - Keyboard shortcuts
 
 **Adding Child Node**
 
