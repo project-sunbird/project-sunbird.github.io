@@ -163,7 +163,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>On clicking <b>New Child</b> or <b>New Sibling</b>, the metadata is displayed on the right <br>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> <br>3. Select <b>Concepts</b> <br>4. Enter <b>Keywords</b>  <br>5. Click <b>Save</b> to save the metadata <br>6. Click <b>Image icon</b> to add image to the metadata. For details on adding image refer, <a href="features-documentation/course_creation/#adding-image-to-course-metadata">Adding Image to Course Metadata</a> <br><b>Note:</b> The metadata for a child and sibling node is the same.
+    <td>On clicking <b>New Child</b> or <b>New Sibling</b>, the metadata is displayed on the right <br>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> <br>3. Select <b>Concepts</b> <br>4. Enter <b>Keywords</b>  <br>5. Click <b>Save</b> to save the metadata <br>6. Click <b>Add icon</b> to add image to the metadata. For details on adding image refer, <a href="features-documentation/course_creation/#adding-image-to-course-metadata">Adding Image to Course Metadata</a> <br><b>Note:</b> The metadata for a child and sibling node is the same.
     </td>
     <td><img src="pages/features-documentation/images/course/nodemetadata.png"></td>
   </tr>
