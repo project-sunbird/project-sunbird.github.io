@@ -10,7 +10,9 @@
   <li>Create Object APIs</li>
 </ul>
 
-<p><strong>Note:</strong> To effectively work with APIs, the administrator should be familiar with JSON structures and relevant tools to call APIs, like the Postman tool. To request for Sunbird API access, refer to <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">How to generate authorization credentials</a> section.</p>
+<blockquote>
+  <p><strong>Note:</strong> To effectively work with APIs, the administrator should be familiar with JSON structures and relevant tools to call APIs, like the Postman tool.</p>
+</blockquote>
 
 <h2 id="pre-requisites">Pre-requisites</h2>
 
@@ -35,46 +37,41 @@
   <li>Create <strong>Location</strong> in Sunbird</li>
 </ol>
 
-<p><strong>Note:</strong> To create locations, refer to <a href="http://www.sunbird.org/apis/geolocationapi/" target="_blank">Geo Location APIs</a>.</p>
+<blockquote>
+  <p><strong>Note:</strong> To create locations, refer to <a href="http://www.sunbird.org/apis/geolocationapi/" target="_blank">Geo Location APIs</a>.</p>
+</blockquote>
 
 <ol>
   <li>On successful creation of a location, you will get a <strong>locationId</strong></li>
   <li>Use the <strong>locationId</strong> to create or update an organization</li>
 </ol>
 
-<p><strong>Note</strong> To create organizations, refer to <a href="http://www.sunbird.org/apis/orgapi/" target="_blank">Organization Management APIs</a></p>
+<blockquote>
+  <p><strong>Note</strong> To create organizations, refer to <a href="http://www.sunbird.org/apis/orgapi/" target="_blank">Organization Management APIs</a></p>
+</blockquote>
 
 <h2 id="creating-announcement-types">Creating Announcement Types</h2>
 
 <p>Announcements are categorised into different types, for example; orders, circulars, holidays, news etc. There must be atleast one announcement type created for the organization to enable the administrator to send an announcement. Announcement types are created as per the requirements of the tenant organization.</p>
 
-<p><strong>Note</strong> To create announcement types, refer to <a href="http://www.sunbird.org/apis/objectapi/" target="_blank">Object APIs</a></p>
+<blockquote>
+  <p><strong>Note</strong> To create announcement types, refer to <a href="http://www.sunbird.org/apis/objectapi/" target="_blank">Object APIs</a></p>
+</blockquote>
 
-<p><strong>Sample request object to create an announcement type</strong></p>
+<h3 id="sample-request-object-to-create-an-announcement-type">Sample request object to create an announcement type</h3>
 
-<pre>
-"request":{
-
-        "entityName":"announcementtype",
-
-        "indexed":true,
-
-        "payload" : {
-
+<pre><code>"request":{
+    "entityName":"announcementtype",
+    "indexed":true,
+    "payload" : {
         "id": "{UUID}",
-
         "rootorgid": "{Tenant ID}",
-
         "name": "{String}",
-
         "status": "active",
-
         "createddate": "{timestamp}"
-
-        }
-
+    }
 }
-</pre>
+</code></pre>
 
 <table>
   <thead>
@@ -133,4 +130,6 @@
 </tr>
 </table>
 
-<p><strong>Note</strong>: For details on other announcement features and their use, refer to the <a href="http://www.sunbird.org/features-documentation/announcement/" target="_blank">Announcement</a> section.</p>
+<blockquote>
+  <p><strong>Note</strong>: For details on other announcement features and their use, refer to the <a href="http://www.sunbird.org/features-documentation/announcement/" target="_blank">Announcement</a> section.</p>
+</blockquote>

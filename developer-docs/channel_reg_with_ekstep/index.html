@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.24.c/";
+			baseURL.href="/releases/release.1.25/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-20 17:47:27 +0530">
+<meta name="last-modified" content="2018-02-22 17:56:17 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.24.c" />
-<meta name="buildNo" content="1859" />
+<meta name="buildVersion" content="release.1.25" />
+<meta name="buildNo" content="1931" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20022018"  />
-<link rel="stylesheet" href="css/style.css?20022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?22022018"  />
+<link rel="stylesheet" href="css/style.css?22022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?22022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?22022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?22022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -418,10 +418,11 @@
 								</li>
 								<li>
 							                 <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
-								</li>	
+								</li>
 								<li>
 									<div class="">
-									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+							
+										<!--<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>-->
 										<ul class="sidebar-group">
 											<li>
 												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
@@ -649,110 +650,112 @@ $("a[href$='developer-docs/channel_reg_with_ekstep/']").addClass("sidebar-link-s
 
 <p>The request payload:</p>
 
-<p>``` 
-URL : /channel/v3/create</p>
+<p>URL : /channel/v3/create</p>
 
 <p>Method : POST</p>
 
 <p>RequestBody :</p>
 
 <pre>
-  <code> {    "request": {
-  "channel":{
-    "code": "012424880506855424168",  // code is hashTagId value in sunbird
-    "name": "cltindia",               // name is channel value in sunbird
-    "description": "CLT India"        //description of organization
-  }
-} }
-</code>
-</pre>
 
-<p>```</p>
+{
+   "request": {
+      "channel":{
+        "code": "012424880506855424168",  // code is hashTagId value in sunbird
+        "name": "cltindia",               // name is channel value in sunbird
+        "description": "CLT India"        //description of organization
+      }
+    }
+}
+
+</pre>
 
 <p>The response Payload:</p>
 
-<p>```
-Response :</p>
+<pre>
 
-<p>{
-    “id”: “ekstep.learning.channel.create”,
-    “ver”: “1.0”,
-    “ts”: “2018-02-12T11:39:27ZZ”,
-    “params”: {
-        “resmsgid”: “a3449214-d429-4c25-96fb-9c1edb4b5201”,
-        “msgid”: null,
-        “err”: null,
-        “status”: “successful”,
-        “errmsg”: null
+Response :
+
+{
+    "id": "ekstep.learning.channel.create",
+    "ver": "1.0",
+    "ts": "2018-02-12T11:39:27ZZ",
+    "params": {
+        "resmsgid": "a3449214-d429-4c25-96fb-9c1edb4b5201",
+        "msgid": null,
+        "err": null,
+        "status": "successful",
+        "errmsg": null
     },
-    “responseCode”: “OK”,
-    “result”: {
-        “node_id”: “012424880506855424168”,
-        “versionKey”: “1518435567708”
+    "responseCode": "OK",
+    "result": {
+        "node_id": "012424880506855424168",
+        "versionKey": "1518435567708"
     }
 }
-```</p>
+
+</pre>
 
 <h2 id="get-channel-list-api">Get channel list API</h2>
 
 <p>The request payload:</p>
 
-<p>```
-URL : /channel/v3/list</p>
+<p>URL : /channel/v3/list</p>
 
 <p>Method : POST</p>
 
-<p>RequestBody :</p>
-
 <pre>
-  <code>{
-  "request": { }
-}
-</code>
-</pre>
 
-<p>```</p>
+RequestBody :
+
+    {
+      "request": { }
+    }
+
+</pre>
 
 <p>The Response payload:</p>
 
-<p>```
-Response :</p>
+<pre>
 
-<p>{
-    “id”: “ekstep.learning.channel.list”,
-    “ver”: “1.0”,
-    “ts”: “2018-02-13T05:54:38ZZ”,
-    “params”: {
-        “resmsgid”: “fcd5e23e-db98-4c05-b162-4b11f1449f8e”,
-        “msgid”: null,
-        “err”: null,
-        “status”: null,
-        “errmsg”: null
+Response :
+
+{
+    "id": "ekstep.learning.channel.list",
+    "ver": "1.0",
+    "ts": "2018-02-13T05:54:38ZZ",
+    "params": {
+        "resmsgid": "fcd5e23e-db98-4c05-b162-4b11f1449f8e",
+        "msgid": null,
+        "err": null,
+        "status": null,
+        "errmsg": null
     },
-    “responseCode”: “OK”,
-    “result”: {
-        “channels”: [
+    "responseCode": "OK",
+    "result": {
+        "channels": [
             {
-                “identifier”: “channel”,
-                “code”: “channel”,
-                “frameworks”: [],
-                “consumerId”: “62e15662-bb09-439f-86e2-d65bd84f3c23”,
-                “channel”: “in.ekstep”,
-                “description”: “”,
-                “createdOn”: “2017-12-20T06:20:55.096+0000”,
-                “versionKey”: “1513750855096”,
-                “appId”: “ekstep_portal”,
-                “name”: “channel”,
-                “lastUpdatedOn”: “2017-12-20T06:20:55.096+0000”,
-                “categories”: [],
-                “defaultFramework”: “NCF”,
-                “status”: “Live”
+                "identifier": "channel",
+                "code": "channel",
+                "frameworks": [],
+                "consumerId": "62e15662-bb09-439f-86e2-d65bd84f3c23",
+                "channel": "in.ekstep",
+                "description": "",
+                "createdOn": "2017-12-20T06:20:55.096+0000",
+                "versionKey": "1513750855096",
+                "appId": "ekstep_portal",
+                "name": "channel",
+                "lastUpdatedOn": "2017-12-20T06:20:55.096+0000",
+                "categories": [],
+                "defaultFramework": "NCF",
+                "status": "Live"
             }
         ],
-        “count”: 1
+        "count": 1
     }
 }
-```</p>
+
+</pre>
 
           
           <hr />

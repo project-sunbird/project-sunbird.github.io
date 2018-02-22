@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.24.c/";
+			baseURL.href="/releases/release.1.25/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-20 17:47:27 +0530">
+<meta name="last-modified" content="2018-02-22 17:56:17 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.24.c" />
-<meta name="buildNo" content="1859" />
+<meta name="buildVersion" content="release.1.25" />
+<meta name="buildNo" content="1931" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20022018"  />
-<link rel="stylesheet" href="css/style.css?20022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?22022018"  />
+<link rel="stylesheet" href="css/style.css?22022018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?22022018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?22022018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?22022018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -418,10 +418,11 @@
 								</li>
 								<li>
 							                 <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
-								</li>	
+								</li>
 								<li>
 									<div class="">
-									<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>
+							
+										<!--<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>-->
 										<ul class="sidebar-group">
 											<li>
 												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
@@ -592,72 +593,24 @@ $("a[href$='features-documentation/collection_creation/']").addClass("sidebar-li
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Content Title</b> <br />2. Enter <b>Description</b> of the collection <br />3. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br />4. Click <b>Save</b> on the header to save the details
+    <td>1. Enter <b>Content Title</b> <br />2. Enter <b>Description</b> of the collection <br />3. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br />4. Click the <b>Image</b> icon to add an image to the metadata. For details on adding image, refer  <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> <br />5. Click <b>Save</b> on the header to save the details
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_metadata2.png" /></td>
   </tr>
   </table>
 
-<h3 id="adding-image-to-collection-metadata">Adding Image to Collection Metadata</h3>
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>Click the <b>Image</b> icon to add an image</td>
-    <td><img src="pages/features-documentation/images/collection/collection_imageicon.png" /></td>
-  </tr>
-  <tr>
-    <td> You can add images by: <br />&emsp;a) Selecting an image from the inbuilt list <br />&emsp;b) Uploading images from your local machine <br />1. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br />2. Click <b>All image</b> to view a list of image files from the repository    
-      <br /><b>Note</b>: The repository contains all image files added and uploaded by any users
-      <br />4. Choose an appropriate image file from any list and click <b>Select</b> <br />6. Click <b>Upload and use</b> to upload and use images from your gallery
-    </td>
-    <td><img src="pages/features-documentation/images/course_selectimage.png" /></td>
-  </tr>
-  <tr>
-      <td>1. Choose <b>File</b> to browse and click <b>Select a file from your local drive or open the explorer in a separate window</b> or <b>drag and drop</b> the required file on the screen
-   <br /><b>Note</b>: Supported file formats are: .jpeg, .jpg, .png*     
-   <br />2. Under <b>Copyright and License</b>, select if you want to: <br />&emsp;a) Make it available to everyone <br />&emsp;b) Not share with anyone <br />3. Add image details in the <b>Asset Caption</b> area <br />4. Click <b>Upload and Use</b> to upload the image
-      </td>
-    <td><img src="pages/features-documentation/images/course_uploadimage.png" /></td>
-  </tr>
-</table>
-
 <h3 id="adding-content-to-collection">Adding Content to Collection</h3>
-
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click the burger menu in the left navigation pane to add Collections or Resources. Resources are singular pieces of content. These can be part of bigger units of content such as books, courses, collections, assessments etc. <br />2. Alternatively, click <b>New Child</b> node to add a collection. Any number of collections can be added <br />3. Click <b>New Sibling</b> node to add a collection within the created collection
-<br /><b>Note</b>: A new sibling node can be added only after adding a child node
+    <td>To add content to a collection, you can either: <br />&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR <br />&emsp;b) Right-click on the node name and select <b>Add Resource</b>, OR <br />&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b>
     </td>
-    <td><img src="pages/features-documentation/images/collection/collection_addchild1.png" /></td>
+      <td><img src="pages/features-documentation/images/addingchild1.png" /></td>
   </tr>
-  <tr>
-  <td>1. Click <b>Edit</b> to edit the collection name <br />2. Click <b>Delete</b> to delete the collection. This option is highlighted only after adding a collection/resource <br />3. Click <b>New Sibling</b> to add collection. This option is highlighted only after a child note is added. A sibling unit is created as a sub-node within a child unit <br />4. Click <b>New Child</b> to add a collection <br />5. Click <b>Add Resource</b> to add a resource to the collection <br /><b>Note</b>: You can alternatively use the keyboard shortcuts. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
-    </td>
-    <td><img src="pages/features-documentation/images/collection/collection_addchild2.png" /></td>
-  </tr>
-</table>
-
-<h3 id="adding-collections">Adding Collections</h3>
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td> On clicking <b>New Child</b> from the burger menu, the metadata for collection is displayed on the right <br />1. Enter <b>Content Title</b> <br />2. Enter <b>Description</b> about the collection <br />3. Enter <b>Keywords</b> <br />4. Click <b>Save</b> to save the metadata of the collection <br />5. Click <b>Image icon</b> to add image to the collection metadata. For details on adding image, refer <a href="pages/features-documentation/collection_creation/#addingimagetocollectionmetadata">Adding Image to Collection Metadata</a>
-    </td>
-    <td><img src="pages/features-documentation/images/collection/collection_child_metadata.png" /></td>
-  </tr>
-</table>
+  </table>
 
 <h3 id="adding-resources">Adding Resources</h3>
 
@@ -666,18 +619,16 @@ $("a[href$='features-documentation/collection_creation/']").addClass("sidebar-li
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <td>1. Click <b>Resources</b> from the burger menu drop-down to add resources   
-   <br /><b>Note</b>: Resources can be added within any collection or independently. Select Resources from the respective burger menu drop-downs
-   </td>
-   <td><img src="pages/features-documentation/images/collection/collection_addresource.png" /></td>
-   </tr>
    <tr>
-   <td>1. The <b>Browse Resource</b> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br />&emsp;a) <b>Category</b> <br />&emsp;b) <b>Language</b> <br />&emsp;c) <b>Class</b> <br />&emsp;d) <b>Subject</b> <br />4. Click <b>Reset</b> to edit and reset the filters <br />5. Click <b>Apply</b>. Results are loaded on the right pane  <br />6. Select the content you want to add <br />7. click <b>Add</b> to add the selected content <br />8. Click <b>Close</b> icon to go back to the main menu
+     <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br />&emsp;a) <b>Category</b> <br />&emsp;b) <b>Language</b> <br />&emsp;c) <b>Class</b> <br />&emsp;d) <b>Subject</b> <br />4. Click <b>Reset</b> to edit and reset the filters <br />5. Click <b>Apply</b>. Results are loaded on the right pane  <br />6. Select the content you want to add <br />7. Click <b>Add</b> to add the selected content <br />8. Click <b>Close</b> icon to go back to the main menu
     </td>
     <td><img src="pages/features-documentation/images/book/book_addresource2.png" /></td>
   </tr>
   </table>
+
+<h3 id="using-the-table-of-contents-options">Using the Table of Contents Options</h3>
+
+<p>The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br /> a) The burger menu associated with a tree node <br /> b) Right-click options associated with a tree node, OR <br /> c) Keyboard shortcuts <br />For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a></p>
 
 <h3 id="deleting-content">Deleting Content</h3>
 
@@ -688,7 +639,7 @@ $("a[href$='features-documentation/collection_creation/']").addClass("sidebar-li
   </tr>
   <tr>
     <td>1. Click <b>Delete</b> icon beside the burger menu <br />2. Click <b>Yes</b> to delete the added content
-      <br /><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
+      <br /><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down. 
       </td>
     <td><img src="pages/features-documentation/images/book/book_unit_delete.png" /></td>
   </tr>
