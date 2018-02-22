@@ -50,7 +50,7 @@ This section details the procedure to generate the AuthToken and secret key that
     <td style="width:65%;">Screen</td>
   </tr>
   <tr>
-    <td><strong>Sign In</strong> <br>1. Sign in to  Ekstep Community portal (https://community.ekstep.in) <br>2. Go to Resources > Developers <br> <strong>Note:</strong> If you need permissions to test the portal, log in to the test site and follow the same procedure</td>
+    <td><strong>Sign In</strong> <br>1. Sign in to  Ekstep QA portal (https://qa.ekstep.in) <br>2. Go to Resources > Developers <br> <strong>Note:</strong> If you have already created QA credentials and tested Sunbird, and are looking at acquiring production credentials, repeat the same steps on visit <a href="https://community.ekstep.in/api-credentials" target="_blank">https://community.ekstep.in/api-credentials</a> instead.</td>
     <td><img src="pages/developer-docs/installation/images/telemetry_service3.png"></td>
   </tr>
   <tr>
