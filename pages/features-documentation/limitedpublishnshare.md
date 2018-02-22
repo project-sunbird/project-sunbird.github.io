@@ -22,7 +22,7 @@ Every organization has its own requirements for content creation and publishing.
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click the drop drop menu beside <b>Send for Review</b> icon <br>2. Click <b>Limited Sharing</b> from the drop down. The content is saved and moved to the <b>Limited Publishing</b> section of your workspace, from where you can share the link to a select audience<br> <b>Note</b>: You can select content for limited sharing before it is sent for review</td>
+    <td>1. Click the drop drop menu beside <b>Send for Review</b> icon <br>2. Click <b>Limited Sharing</b> from the drop down. The content is saved and moved to the <b>Limited Publishing</b> section of your workspace, from where you can share the link to a selected audience<br> <b>Note</b>: You can select content for limited sharing before it is sent for review</td>
   <td><img src="pages/features-documentation/images/limitedshare.png"></td>
   </tr>
   </table>
