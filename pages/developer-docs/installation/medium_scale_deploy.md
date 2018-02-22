@@ -25,7 +25,7 @@ To install Sunbird, each of the server should have the following minimum system 
    - root access (should be able to sudo)
 
 ### API Keys
-- Sunbird implementors currently need to get a API key for accessing EkStep platform.Since, the content is stored here. In the future, Sunbird will support more content stores.
+- Sunbird implementors currently need to get a API key for accessing EkStep platform, since the content is stored there. In the future, Sunbird will support more content stores.
 - To initially try Sunbird, request for the keys from the EkStep QA environment. 
 
 *For details to request for the keys, refer to the section [How to generate authorization credentials](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) on the Auth Token Generator JS Library page*  
