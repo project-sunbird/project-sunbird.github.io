@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.26.b/";
+			baseURL.href="/releases/release.1.26.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-23 10:57:36 +0530">
+<meta name="last-modified" content="2018-02-23 15:19:11 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.26.b" />
-<meta name="buildNo" content="1948" />
+<meta name="buildVersion" content="release.1.26.c" />
+<meta name="buildNo" content="1971" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -661,10 +661,14 @@ $("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addCla
     <p>Enter the username as <code>user-manager</code>, set the email to be verified and save.</p>
   </li>
   <li>
-    <p>Assign a password to this user.</p>
+    <p>Assign a password to n user.</p>
   </li>
   <li>
-    <p>Update client roles under role mappings to ensure that this user has the <code>manage-users</code>, <code>query-users</code>, <code>query-groups</code> and <code>view-users</code> permissions.</p>
+    <p>Update client roles under role mappings to ensure that this nuser has the following permissions:
+ i.   <code>manage-users</code>
+ ii.  <code>query-users</code>
+ iii. <code>query-groups</code>
+ iv.  <code>view-users</code></p>
   </li>
 </ol>
 
@@ -677,13 +681,13 @@ $("a[href$='developer-docs/installation/keycloak_realm_configuration/']").addCla
 </p>
 
 <ul>
-  <li>Use corresponding username and password values for this user as the values for <code>sunbird_sso_username</code> and <code>sunbird_sso_password</code> in the configuration.</li>
+  <li>Use the corresponding username and password values for this newly created user and set the values for <code>sunbird_sso_username</code> and <code>sunbird_sso_password</code> in the configuration file.</li>
 </ul>
 
 <h2 id="update-client--secrets">Update Client &amp; Secrets</h2>
 
 <ul>
-  <li>Navigate to Clients and make the following changes to each of the clients.</li>
+  <li>Navigate to Clients and make the following changes to each of the clients</li>
 </ul>
 
 <p><strong>Note:</strong> Modify only the clients listed below. You do not need to modify the settings for other clients.</p>

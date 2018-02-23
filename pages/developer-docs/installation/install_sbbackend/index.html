@@ -15,7 +15,7 @@
 
 <h2 id="sunbird-backend-services">Sunbird Backend Services</h2>
 
-<p>To setup the Sunbird Back-end services, follow the steps chronologically:</p>
+<p>To set up the Sunbird Back-end services, follow the steps chronologically:</p>
 
 <ol>
   <li>Setup</li>
@@ -33,12 +33,12 @@
   <li>PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)</li>
 </ul>
 
-<p>Let us setup the environment and then proceed with deploying the services.</p>
+<p>Let us set up the environment and then proceed with deploying the services.</p>
 
 <p><strong>Setup Cassandra</strong></p>
 
 <ol>
-  <li>For step by step installation guide of refer to the official <a href="http://cassandra.apache.org/doc/latest/getting_started/installing.html" target="_blank">website</a></li>
+  <li>For step by step installation guide, refer to the official <a href="http://cassandra.apache.org/doc/latest/getting_started/installing.html" target="_blank">website</a></li>
   <li>The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface)</li>
   <li>Run <a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql" target="_blank">cassandra.cql</a> file to      create the required keyspace, tables and indices</li>
   <li>
@@ -295,7 +295,7 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
 
 <h3 id="setting-environment-variables">Setting Environment Variables</h3>
 
-<p>To run sunbird backend services, atleast you need to set the following environment variables. Set the environment variables at appropriate locations.</p>
+<p>To run sunbird backend services, at least you need to set the following environment variables. Set the environment variables at appropriate locations.</p>
 
 <pre>
           1. sunbird_cassandra_host
@@ -355,10 +355,10 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
 </ol>
 
 <p>And by default, both run on two different machines.
-But to run these actor systems on single machine, you need to modify the we need to modify [resource.properties file]
-For details <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">refer</a>to repository.</p>
+But to run these actor systems on single machine, you need to modify the [resource.properties file]
+For details <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">refer</a> to repository.</p>
 
-<p>In ordere to run both the actor systems on single machine follow these steps:</p>
+<p>In order to run both the actor systems on single machine follow these steps:</p>
 
 <ol>
   <li>Open <strong>externalresource.properties</strong> file</li>

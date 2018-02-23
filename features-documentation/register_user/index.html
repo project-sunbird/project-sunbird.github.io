@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.26.b/";
+			baseURL.href="/releases/release.1.26.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-23 10:57:36 +0530">
+<meta name="last-modified" content="2018-02-23 15:19:11 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.26.b" />
-<meta name="buildNo" content="1948" />
+<meta name="buildVersion" content="release.1.26.c" />
+<meta name="buildNo" content="1971" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -594,7 +594,7 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
 <h2 id="uploading-users">Uploading Users</h2>
 
 <ol>
-  <li>The upload users page is displayed</li>
+  <li>The <strong>Upload Users</strong> page is displayed</li>
   <li>Enter Provider details. <strong>Channel ID</strong> of the organization administrator must be entered here</li>
   <li>Enter <strong>External ID</strong>. Unique ID of the user that has to be uploaded must be entered here <br /> <strong>OR</strong></li>
   <li>
@@ -606,7 +606,8 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
     </ul>
   </li>
   <li>Download the csv file for reference</li>
-  <li>You can add or upload details of up to 200 users at a time in one csv file</li>
+  <li>You can add or upload details of up to 199 users at a time in one csv file</li>
+  <li>You can upload users of only a single organization in one csv file</li>
   <li>
     <p>Descriptions and valid values for each columns are as listed below:</p>
 
@@ -616,9 +617,8 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
           <th>Sl.No</th>
           <th>Column Name</th>
           <th>Description</th>
-          <th>Column Type</th>
+          <th>Valid Value</th>
           <th>Field Type</th>
-          <th>Valid Values</th>
         </tr>
       </thead>
       <tbody>
@@ -626,33 +626,29 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
           <td>1</td>
           <td>FirstName</td>
           <td>User’s first name</td>
-          <td>Alphabetic</td>
+          <td>Alphabetic Value</td>
           <td>Mandatory</td>
-          <td> </td>
         </tr>
         <tr>
           <td>2</td>
           <td>LastName</td>
           <td>User’s last name</td>
-          <td>Alphabetic</td>
+          <td>Alphabetic Value</td>
           <td>Optional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>3</td>
           <td>phone</td>
           <td>User’s phone number</td>
-          <td>Numeric</td>
+          <td>Ten digit mobile number</td>
           <td>Optional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>4</td>
           <td>email</td>
           <td>User’s email ID</td>
-          <td>Alphanumeric</td>
+          <td>Alphanumeric, standard email ID format</td>
           <td>Mandatory</td>
-          <td>Standard email ID format</td>
         </tr>
         <tr>
           <td>5</td>
@@ -660,111 +656,97 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
           <td>Unique name assigned to the user by the organization</td>
           <td>Alphanumeric</td>
           <td>Mandatory</td>
-          <td> </td>
         </tr>
         <tr>
           <td>6</td>
           <td>password</td>
-          <td>Unique password given by the organization</td>
+          <td>Unique/common password given by the organization</td>
           <td>Alphanumeric</td>
-          <td>Mandatory</td>
-          <td> </td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>7</td>
           <td>provider</td>
-          <td>Name/Code of administrative organization</td>
+          <td>Channel ID shared to the system administrator by Sunbird. <br /><strong>Note:</strong> Enter values in the <strong>provider</strong> column and the <strong>phoneVerified</strong> column or keep both columns blank</td>
           <td>Alphanumeric</td>
           <td>Conditional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>8</td>
           <td>phoneVerified</td>
-          <td>Whether user’s phone number is verified</td>
-          <td>Alphabetic</td>
-          <td>Mandatory</td>
-          <td>TRUE</td>
+          <td>Whether user’s phone number is verified. <br /><strong>Note:</strong> Enter values in the <strong>provider</strong> column and the <strong>phoneVerified</strong> column or keep both columns blank</td>
+          <td>TRUE, if phone number is provided</td>
+          <td>Conditional</td>
         </tr>
         <tr>
           <td>9</td>
           <td>emailVerified</td>
           <td>Whether user’s email ID is verified</td>
-          <td>Alphabetic</td>
-          <td>Mandatory</td>
-          <td>TRUE</td>
+          <td>TRUE, if email ID is provided</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>10</td>
           <td>roles</td>
           <td>User’s role on Sunbird</td>
-          <td>Alphabetic</td>
+          <td>Select one or more of the following roles: <br />CONTENT_CREATOR, CONTENT_REVIEWER, FLAG_REVIEWER, COURSE_MENTOR, ORG_ADMIN, SYSTEM_ADMINISTRATION, PUBLIC</td>
           <td>Optional</td>
-          <td>CONTENT_CREATOR, CONTENT_REVIEWER, FLAG_REVIEWER, COURSE_MENTOR, ORG_ADMIN, SYSTEM_ADMINISTRATION</td>
         </tr>
         <tr>
           <td>11</td>
-          <td>position*</td>
-          <td>User’s place in the organization hierarchy</td>
+          <td>position</td>
+          <td>User’s designation in the organization hierarchy</td>
           <td>Alphanumeric</td>
           <td>Optional</td>
-          <td>THIS FIELD IS NO LONGER IN USE</td>
         </tr>
         <tr>
           <td>12</td>
           <td>grade</td>
           <td>Classes taught by the user</td>
-          <td>Alphanumeric</td>
+          <td>Select one or more of the following grades: <br />Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Kindergarten, Other</td>
           <td>Optional</td>
-          <td>Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Kindergarten, Other</td>
         </tr>
         <tr>
           <td>13</td>
           <td>location</td>
-          <td>User’s place of location</td>
+          <td>User’s geographical location</td>
           <td>Alphanumeric</td>
           <td>Optional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>14</td>
           <td>DOB</td>
           <td>User’s date of birth</td>
-          <td>Numeric</td>
-          <td>Optional</td>
           <td>YYYY-MM-DD</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>15</td>
           <td>gender</td>
           <td>User’s gender</td>
-          <td>Alphabetic</td>
-          <td>Optional</td>
           <td>Male, Female, Transgender</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>16</td>
           <td>language</td>
           <td>User’s language preferences</td>
-          <td>Alphabetic</td>
-          <td>Optional</td>
           <td>English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>17</td>
           <td>profileSummary</td>
-          <td>User’s profile summary</td>
+          <td>User’s professional profile summary, skills, certifications etc.</td>
           <td>Alphanumeric</td>
           <td>Optional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>18</td>
           <td>subject</td>
-          <td>Taught by the user</td>
-          <td>Alphanumeric</td>
-          <td>Optional</td>
+          <td>Subjects taught by the user</td>
           <td>Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali</td>
+          <td>Optional</td>
         </tr>
       </tbody>
     </table>
@@ -772,7 +754,7 @@ $("a[href$='features-documentation/register_user/']").addClass("sidebar-link-sel
 </ol>
 
 <p><strong><em>Note</em></strong>: 
-   <strong>UserName</strong> and <strong>FirstName</strong> should not be the same.</p>
+   You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column</p>
 
 <ol>
   <li>Click <strong>UPLOAD USERS CSV</strong>. The explorer window is displayed</li>

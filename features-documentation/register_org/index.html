@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.26.b/";
+			baseURL.href="/releases/release.1.26.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-23 10:57:36 +0530">
+<meta name="last-modified" content="2018-02-23 15:19:11 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.26.b" />
-<meta name="buildNo" content="1948" />
+<meta name="buildVersion" content="release.1.26.c" />
+<meta name="buildNo" content="1971" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -597,7 +597,8 @@ $("a[href$='features-documentation/register_org/']").addClass("sidebar-link-sele
 <ol>
   <li>The upload organizations page is displayed</li>
   <li>Download the csv file for reference</li>
-  <li>You can add or upload details of up to 200 organizations at a time in one csv</li>
+  <li>You can add or upload details of up to 199 organizations at a time in one csv file</li>
+  <li>Enter each organization’s name in a separate row</li>
   <li>
     <p>Descriptions and valid values for each columns are as listed below:</p>
 
@@ -607,106 +608,90 @@ $("a[href$='features-documentation/register_org/']").addClass("sidebar-link-sele
           <th>Sl.No</th>
           <th>Column Name</th>
           <th>Description</th>
+          <th>Valid Value</th>
           <th>Column Type</th>
-          <th>Field Type</th>
-          <th>Valid Values</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>orgName</td>
+          <td>Org Name</td>
           <td>Organization name</td>
-          <td>Alphabetic</td>
+          <td>Alphanumeric</td>
           <td>Mandatory</td>
-          <td> </td>
         </tr>
         <tr>
           <td>2</td>
           <td>isRootOrg</td>
-          <td>Whether the  organization has the authority to upload other organization</td>
-          <td>Alphabetic</td>
-          <td>Conditional</td>
+          <td>Whether the  organization has the authority to upload other organizations</td>
           <td>TRUE, FALSE</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>3</td>
           <td>channel</td>
-          <td>Channel ID provided to the administrator organization by Sunbird</td>
+          <td>Unique ID provided by the administrator organization by Sunbird. <br /><strong>Note</strong>: Enter a value in the <strong>channel</strong> column, if the value for the <strong>isRootorg</strong> column is TRUE</td>
           <td>Alphanumeric</td>
           <td>Conditional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>4</td>
           <td>externalId</td>
-          <td>Unique ID associated with each organization in the administrating  organization’s repository</td>
+          <td>Unique ID associated with each organization in the administrating  organization’s repository. <br /><strong>Note</strong>: Enter values in the <strong>externalid</strong> column and the <strong>provider</strong> column or keep both columns blank</td>
           <td>Alphanumeric</td>
-          <td>Optional</td>
-          <td> </td>
+          <td>Co-mandatory</td>
         </tr>
         <tr>
           <td>5</td>
           <td>provider</td>
-          <td>Channel ID provided to the administrator organization by Sunbird</td>
+          <td>Unique ID provided to the administrator organization by Sunbird. <br /><strong>Note</strong>: Enter values in the <strong>externalid</strong> column and the <strong>provider</strong> column or keep both columns blank</td>
           <td>Alphanumeric</td>
-          <td>Optional</td>
-          <td> </td>
+          <td>Co-mandatory</td>
         </tr>
         <tr>
           <td>6</td>
           <td>description</td>
-          <td>Details describing  the organization</td>
+          <td>Details describing the organization</td>
           <td>Alphanumeric</td>
           <td>Optional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>7</td>
           <td>homeUrl</td>
           <td>Organization’s homepage url</td>
-          <td>Alphanumeric</td>
-          <td>Optional</td>
           <td> </td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>8</td>
           <td>orgCode</td>
-          <td>Unique code for the organization that is being uploaded</td>
-          <td>Alphabetic</td>
+          <td>Organization’s unique code, if any</td>
+          <td>Alphanumeric</td>
           <td>Optional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>9</td>
           <td>orgType</td>
-          <td>Type of organization predefined by the system administrator</td>
-          <td>Alphabetic</td>
+          <td>Organization Type</td>
+          <td>Org types predefined by the system administrator</td>
           <td>Optional</td>
-          <td> </td>
         </tr>
         <tr>
           <td>10</td>
           <td>preferredLanguage</td>
           <td>Language preferences for the organization, if any</td>
-          <td>Alphabetic</td>
-          <td>Optional</td>
           <td>English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu</td>
+          <td>Optional</td>
         </tr>
         <tr>
           <td>11</td>
           <td>contactDetail</td>
-          <td>Organization’s phone number, email ID and address</td>
-          <td>Alphanumeric</td>
+          <td>Organization’s contact detail</td>
+          <td>Enter details within curly brackets in double quotes. Separate each detail with a comma, and detail name and corresponding value with a colon (:). <br />For example [{“address”:”Vizianagaram”,”phone”:”8088407418”,”fax”:”abc@gmail.com”}]</td>
           <td>Optional</td>
-          <td>‘address’:’address’,’phone’:’xxxxxxxx’,’fax’:’xxxxx’</td>
         </tr>
       </tbody>
     </table>
-
-    <p><strong><em>Note</em></strong> :</p>
-
-    <p>Columns titled <strong>isRootOrg</strong> and <strong>channel</strong> have to be filled only uploading an administrator organization. In all other cases, these columns have to be left blank.</p>
   </li>
   <li><strong>Save</strong> the csv file to your computer</li>
   <li>Click <strong>UPLOAD ORGANIZATIONS CSV</strong>. The explorer window is displayed</li>
