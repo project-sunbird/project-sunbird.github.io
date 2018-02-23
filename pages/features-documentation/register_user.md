@@ -56,7 +56,7 @@ Organization administrators can use their registered credentials and add individ
    15  |gender |User’s gender  |Male, Female, Transgender |Optional
    16  |language |User’s language preferences  |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu  |Optional
    17  |profileSummary |User’s professional profile summary, skills, certifications etc. |Alphanumeric |Optional 
-   18  |subject  |Subjects taught by the user |Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali |Nepali
+   18  |subject  |Subjects taught by the user |Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali |Optional
 
 ***Note***: 
    You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column
