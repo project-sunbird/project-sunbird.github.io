@@ -60,19 +60,24 @@ Navigate to Manage, then to Users and create a new user.
 
 1. Enter the username as `user-manager`, set the email to be verified and save.
 
-2. Assign a password to this user.
+2. Assign a password to n user.
 
-3. Update client roles under role mappings to ensure that this user has the `manage-users`, `query-users`, `query-groups` and `view-users` permissions.
+3. Update client roles under role mappings to ensure that this nuser has the following permissions:
+    i.   `manage-users`
+    ii.  `query-users`
+    iii. `query-groups`
+    iv.  `view-users` 
 
 **Note:** Refer to the following screenshot for reference configuration.
 
+
 {% image src='pages/developer-docs/installation/images/keycloak-add-user-manager.png' half center alt='Keycloak use management' %}{:target="_blank"}
 
-- Use corresponding username and password values for this user as the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration.
+- Use the corresponding username and password values for this newly created user and set the values for `sunbird_sso_username` and `sunbird_sso_password` in the configuration file.
 
 ## Update Client & Secrets
 
-- Navigate to Clients and make the following changes to each of the clients.
+- Navigate to Clients and make the following changes to each of the clients
 
 **Note:** Modify only the clients listed below. You do not need to modify the settings for other clients.
 
