@@ -24,7 +24,7 @@ You must ensure that:
 
 - Your machine has the ability to run the Akka actor in local, remote or mixed mode
 
-- Running Akka actor either in local or remote mode depends on setting keys in configuration file, similarly background job actor can also be executed using any of the modes.
+- Running Akka actor either in local or remote mode depends on setting keys in configuration file. Similarly, the background job actor can also be executed using any of the modes
 
 ### Implementing Actor System
 
@@ -32,9 +32,9 @@ In order to implement actor system, you need to configure various values/keys in
 
 The configuration is as follows:
 
-1. api_actor_provider ```{'**remote**','**local**'}``` [Default value will be 'local' means normal actors will run locally]
+1. api_actor_provider ```{'**remote**','**local**'}``` Default value will be 'local' means normal actors will run locally
 
-2. background_actor_provider ```{'**remote**','**local**'}```[Default value will be 'remote' means all backgroundjob actor will run remotely.]
+2. background_actor_provider ```{'**remote**','**local**'}``` Default value will be 'remote' means all background job actor will run remotely
 
 3. sunbird_actor_system_name ```{'**RemoteMiddlewareActorSystem**','**BackGroundRemoteMiddlewareActorSystem**'}```
 
@@ -58,19 +58,19 @@ The following are some scenarios while running the Actor services:
 
 - **Running both the actor systems locally**
  
- You can run normal actor system and background actor system on same machine by following procedure:   
+ You can run normal actor system and background actor system on the same machine by the following procedure:   
     
    - To run both normal and background actor systems on a single machine with **sunbird-lms-service**. Set the values of '**api_actor_provider**' and '**background_actor_provider**' properties as **local** in the environment variables
 
-   - To start the application, make the builds in following sequence:
+   - To start the application, make the builds in the following sequence:
    
       1. sunbird-utils
       2. sunbird-lms-mw
       3. sunbird-lms-service
 
- Then, run the **sunbird-lms-service** by executing the ```mvn play2:run``` command. Executing this command ensures that the sunbird application is started.
+ Then, run the **sunbird-lms-service** by executing the ```mvn play2:run``` command. Executing this command ensures that the Sunbird application is started.
  
- **Note:** Both the actor systems will now run on same machine.
+ **Note:** Both the actor systems will now run on the same machine.
 
 ### Scenario #2
 
@@ -82,7 +82,7 @@ You can run normal actor system locally and background actor system remotely by 
 
    - To run the background actor system remotely, set the value of **background_actor_provider** property to **remote** in environment variable along with **sunbird_actor_system_name** property value to **BackGroundRemoteMiddlewareActorSystem**
 
-   - To start the application, make the builds in following sequence:
+   - To start the application, make the builds in the following sequence:
   
      1. sunbird-utils
      2. sunbird-lms-mw
