@@ -102,6 +102,4 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 - To deploy the Sunbird core services, execute the following command:
 
   Run `sudo ./deploy-core.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
-
-
-**Note:** The following automation walk-through, shows you the process  deployment for Sunbird services.
+  
