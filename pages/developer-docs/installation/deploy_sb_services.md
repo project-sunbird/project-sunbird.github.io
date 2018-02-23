@@ -105,11 +105,3 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 
 
 **Note:** The following automation walk-through, shows you the process  deployment for Sunbird services.
-
-### Automation Walkthrough
-
-- [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
-
-- [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
-
-- [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
