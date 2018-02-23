@@ -33,9 +33,10 @@ Organization administrators can use their registered credentials and add individ
      - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> **OR**
       - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
 
-4. Download the csv file for reference
-5. You can add or upload details of up to 199 users at a time in one csv file
-6. Descriptions and valid values for each columns are as listed below:
+5. Download the csv file for reference
+6. You can add or upload details of up to 199 users at a time in one csv file
+7. You can upload users of only a single organization in one csv file
+8. Descriptions and valid values for each columns are as listed below:
 
    Sl.No |Column Name  |Description  |Valid Value  |Field Type 
    ------|-------------|-------------|-------------|-----------
@@ -48,7 +49,7 @@ Organization administrators can use their registered credentials and add individ
    7 |provider |Channel ID shared to the system administrator by Sunbird. <br>**Note:** Enter values in the **provider** column and the **phoneVerified** column or keep both columns blank  |Alphanumeric  |Conditional
    8 |phoneVerified  |Whether user’s phone number is verified. <br>**Note:** Enter values in the **provider** column and the **phoneVerified** column or keep both columns blank  |TRUE, if phone number is provided  |Conditional
    9 |emailVerified  |Whether user’s email ID is verified  |TRUE, if email ID is provided |Optional
-   10  |roles  |User’s role on Sunbird |Select one or more of the followig roles: <br>CONTENT_CREATOR, CONTENT_REVIEWER, FLAG_REVIEWER, COURSE_MENTOR, ORG_ADMIN, SYSTEM_ADMINISTRATION, PUBLIC
+   10  |roles  |User’s role on Sunbird |Select one or more of the following roles: <br>CONTENT_CREATOR, CONTENT_REVIEWER, FLAG_REVIEWER, COURSE_MENTOR, ORG_ADMIN, SYSTEM_ADMINISTRATION, PUBLIC  |Optional
    11  |position  |User’s designation in the organization hierarchy |Alphanumeric |Optional 
    12  |grade  |Classes taught by the user |Select one or more of the following grades: <br>Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Kindergarten, Other  |Optional
    13  |location |User’s geographical location |Alphanumeric |Optional |
