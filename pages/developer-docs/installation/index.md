@@ -9,8 +9,8 @@ allowSearch: true
 
 ---
 
-## Plan, Install, and Configure Sunbird 
-The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, check and decide the following:
+## Plan, Install and Configure Sunbird 
+The deployment of Sunbird in a live environment requires several distributed components. Before you start tinstallation, check and decide the following:
 
 ### Size and Verify Your Environment
 
@@ -23,9 +23,9 @@ Based on your usage and the level of complexity which you are comfortable with, 
 
 ### Pre-requisites
 
-If you install Sunbird on any environment or choose any method of installation, the basic minimum prerequisites are: 
+If you install Sunbird in any environment or choose any method of installation, the basic minimum prerequisites are: 
 
-   - Use of a Linux OS flavour (developer installation is possible on MacOS)
+   - Use of a Linux OS flavor (developer installation is possible on MacOS)
    - Comfort with use of a terminal as Sunbird installation is triggered from a command-line terminal
 
 ***Note: The prerequisites are not necessary to try the sandbox option***
@@ -42,12 +42,12 @@ If you are looking to experiment with Sunbird and test its feature set, we recom
 
 If you plan to modify and contribute code to the Sunbird project, we recommend you [Install Sunbird on Laptop]( developer-docs/installation/installing_sunbirdon_laptop/){:target="_blank"}. This allows you to get started quickly and help extend Sunbird.
 
-### Deploy Sunbird for upto 10 Thousand Users
+### Deploy Sunbird for up to 10 Thousand Users
 
-If you plan to run Sunbird for upto 10 thousand users, we recommend you follow the [Medium scale deployment](developer-docs/installation/medium_scale_deploy/){:target="_blank"} process. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.
+If you plan to run Sunbird for up to 10 thousand users, we recommend you follow the [Medium scale deployment](developer-docs/installation/medium_scale_deploy/){:target="_blank"} process. This option uses less resources to run Sunbird and has some limits on how much the installed application can scale.
 
 ### Deploy Sunbird for over 10 Thousand Users 
 
 If you plan to run Sunbird in a setting with over 10 thousand users, we recommend you follow the [Large scale deployment](){:target="_blank"} process. 
-This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerised manner. The containers allow you to scale the resources Sunbird consumes based on the usage.
+This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerized manner. The containers allow you to scale the resources Sunbird consumes based on the usage.
 
