@@ -58,11 +58,12 @@ Once the realm is imported ensure that the realm is set as active before proceed
 
 Navigate to Manage, then to Users and create a new user.
 
-1. Enter the username as `user-manager`, set the email to be verified and save.
+1. Enter the username as `user-manager`, set the email to be verified and save
 
-2. Assign a password to n user.
+2. Assign a password to neser.
 
-3. Update client roles under role mappings to ensure that this nuser has the following permissions:
+3. Update client roles under role mappings to ensure that this neuser has the following permissions:
+   
     i.   `manage-users`
     ii.  `query-users`
     iii. `query-groups`
