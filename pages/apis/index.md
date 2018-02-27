@@ -32,7 +32,7 @@ allowSearch: true
 
 **Notification APIs**
 
-- **[Notification APIs](/apis/notificationapi/){:target="_blank"}** The Email API resources provides the notification mechanism for all the users on Sunbird .The Resource notifies users officially about something on Sunbird.
+- **[Notification APIs](apis/notificationapi/){:target="_blank"}** The Email API resources provides the notification mechanism for all the users on Sunbird .The Resource notifies users officially about something on Sunbird.
 
 **Organization Management APIs**
 
