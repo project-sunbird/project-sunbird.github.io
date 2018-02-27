@@ -7,7 +7,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="{{site.baseurl}}";
+			baseURL.href=window.location.origin + "/{{site.baseurl}}";
 		}
 	}
 	getBase();
