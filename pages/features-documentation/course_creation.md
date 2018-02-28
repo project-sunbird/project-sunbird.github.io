@@ -39,7 +39,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> of the course <br>2. Enter <b>Description</b> <br>3. Select the following from their respective drop-down lists <br>&emsp;a) Audience <br>&emsp;b) Language  <br>&emsp;c) Concepts <br>4. Enter <b>Faculty</b> details <br>5. Enter <b>Tutor</b> details <br>6. Enter <b>Keywords</b> <br>7. Click <b>Save</b> to save the metadata <br><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates. <br>8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><b>Note</b>:You can edit or update the title of units in the collection from the navigation hierarchy 
+    <td>1. Enter <b>Title</b> of the course <br>2. Enter <b>Description</b> <br>3. Select the following from their respective drop-down lists <br>&emsp;a) Audience <br>&emsp;b) Language  <br>&emsp;c) Concepts <br>4. Enter <b>Faculty</b> details <br>5. Enter <b>Tutor</b> details <br>6. Enter <b>Keywords</b> <br>7. Click <b>Save</b> to save the metadata <br><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates. <br>8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><b>Note</b>: You can edit or update the title of units in the collection from the navigation hierarchy 
     </td>
     <td><img src="pages/features-documentation/images/course_metadataupdate.png"></td>
   </tr>
@@ -57,7 +57,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
   </tr>
   <tr>
     <td>1. You can add images either by selecting an image from:<br>&emsp;a) A list or uploading images
-      <br>&emsp;b) Your local machine to use immediately <br>2. Click <b>My images</b> to view a list of all image files that you have previously,uploaded <br>3. Click <b>All image</b> to view a list of image files from the repository 
+      <br>&emsp;b) Your local machine to use immediately <br>2. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>3. Click <b>All image</b> to view a list of image files from the repository 
       <br><b>Note:</b> The repository contains all image files added and uploaded by any users 
       <br>5. Choose an appropriate image file from any list and click <b>Select</b><br>6. Click <b>Upload</b> and use to upload and use images from your gallery
     </td>
@@ -127,47 +127,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
  - Right-click options associated with a tree node, **OR**
  - Keyboard shortcuts
 
-**Adding Child Node**
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>A child node is created as a node within the collection. Any number of child nodes can be created. To add a child node you can either: <br>1. Click <b>New Child</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>2. Right-click on the node name and select <b>New Child</b>, <b>OR</b> <br>3. Use the keyboard shortcut <b>Ctrl+Alt+N</b>, <b>OR</b> <br>4. Click <b>New Child</b> at the bottom of the navigation to add child node 
-    </td>
-    <td><img src="pages/features-documentation/images/course/childnode.png"></td>
-  </tr>
-</table>
-      
-**Adding Sibling Node**
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>A sibling node is created at the same hierarchy level as a child node. Any number of sibling nodes can be created. To add a sibling node you can either: <br>1. Click <b>New Sibling</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>2. Right-click on the node name and select <b>New Sibling</b>, <b>OR</b> <br>3. Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b>, <b>OR</b> <br>4. Click <b>New Sibling</b> at the bottom of the navigation to add sibling node
-    </td>
-    <td><img src="pages/features-documentation/images/course/siblingnode.png"></td>
-  </tr>
-</table>
-
-**Node Metadata**
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>On clicking <b>New Child</b> or <b>New Sibling</b>, the metadata is displayed on the right <br>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> <br>3. Select <b>Concepts</b> <br>4. Enter <b>Keywords</b>  <br>5. Click <b>Save</b> to save the metadata <br>6. Click <b>Add icon</b> to add image to the metadata. For details on adding image refer, <a href="features-documentation/course_creation/#adding-image-to-course-metadata">Adding Image to Course Metadata</a> <br><b>Note:</b> The metadata for a child and sibling node is the same.
-    </td>
-    <td><img src="pages/features-documentation/images/course/nodemetadata.png"></td>
-  </tr>
-</table>
+**Note**: *For details on manipulating the tree and adding content, refer* <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
 
 ### Deleting Content 
 
@@ -205,7 +165,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
 
 ### Sending Course for Review
 
-Before the Course is publihed, it must be reviewed. You can send it for reviewing and publishing.
+Before the Course is published, it must be reviewed. You can send it for reviewing and publishing.
 
 <table>
   <tr>
