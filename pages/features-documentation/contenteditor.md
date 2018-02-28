@@ -138,13 +138,13 @@ page to reorder them
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>On clicking Add text, the customize tab displays options to add features to the text. The Text Formatting feature allows you to modify:<br>1. <strong>Font</strong>: Pick a new font for your text <br>2. <strong>Size</strong>: Change font size <br>3. <strong>Alignment</strong>: Align text to the left, right or center of the text box <br>4. <strong>Color</strong>: Change color of your text <br>5. <strong>Transparency</strong>: Change the transparency of your text in relation to the background of the text box <br>6. The <strong>Read along</strong> feature on the customize tab allows you to add audio to the text on the slide. This is a useful feature to learn pronunciation, enhance vocabulary, etc.
+    <td>On clicking Add text, the customize tab displays options to add features to the text. The Text Formatting feature allows you to modify:<br>1. <strong>Font</strong>: Pick a new font for your text <br>2. <strong>Size</strong>: Change font size <br>3. <strong>Alignment</strong>: Align text to the left, right or center of the text box <br>4. <strong>Color</strong>: Change color of your text <br>5. <strong>Transparency</strong>: Change the transparency of your text in relation to the background of the text box <br>6. The <strong>Read-along</strong> feature on the customize tab allows you to add audio to the text on the slide. This is a useful feature to learn pronunciation, enhance vocabulary, etc.
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/addtext2.png"></td>
   </tr>
   </table>
   
-  **Selecting Text for Read Along Audio**
+  **Selecting Text for Read-long Audio**
   
   <table>
   <tr>
@@ -158,7 +158,7 @@ page to reorder them
   </tr>
   </table>
   
-  **Selecting Audio for Read Along Text**
+  **Selecting Audio for Read-long Text**
   
   <table>
   <tr>
@@ -174,7 +174,7 @@ page to reorder them
   </tr>
   </table>
   
-  **Selecting Audio for Reading Along**
+  **Selecting Audio for Read-long**
   
   <table>
   <tr>
@@ -187,7 +187,7 @@ page to reorder them
   </tr>
   </table>
   
-  **Sync Audio Text with Audio to Read Along**
+  **Sync Audio Text with Audio to Read-long**
   
   <table>
   <tr>
@@ -201,7 +201,7 @@ page to reorder them
   </tr>
   </table>
   
-  **Read Along - Highlighter**
+  **Read-long - Highlighter**
   
   <table>
   <tr>
@@ -247,7 +247,7 @@ words that already exist in the repository <br>1. To use this feature, select th
   </tr>
   <tr>
     <td><strong>Language Transliteration Tool</strong> <br>
-      1. Select the language from the drop down list <br>2. Click <strong>Transliterate</strong> <br>3. The original text is displayed in the textbox on the left and the transliterated text is displayed in the textbox on the right <br>4. Click <strong>Add to Stage</strong> to add the transliterated text to the slide</td>
+      1. Select the language from the dropdown list <br>2. Click <strong>Transliterate</strong> <br>3. The original text is displayed in the textbox on the left and the transliterated text is displayed in the textbox on the right <br>4. Click <strong>Add to Stage</strong> to add the transliterated text to the slide</td>
     <td><img src="pages/features-documentation/images/contenteditor/transliteration1.png"></td>
   </tr>
   </table>
@@ -355,7 +355,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. To add audio, click the <strong>Add Audio</strong> icon on the toolbar <br><strong>Note:</strong> For detailed instructions  to add audio, refer to section Select Audio for Read Along Text
+    <td>1. To add audio, click the <strong>Add Audio</strong> icon on the toolbar <br><strong>Note:</strong> For detailed instructions  to add audio, refer to section Select Audio for Read-long Text
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/addaudio.png"></td>
   </tr>
@@ -398,7 +398,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. Click the <strong>Action</strong> tab on the right pane <br>2. Select an interaction from the drop-down menu <br>3. Select the target object to attach the action from the drop-down menu
+    <td>1. Click the <strong>Action</strong> tab in the right pane <br>2. Select an interaction from the drop-down menu <br>3. Select the target object to attach the action from the drop-down menu
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/hotspot_action.png"></td>
   </tr>
@@ -412,7 +412,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>The Scribblepad helps users take notes, if required, while viewing content <br>1. Click the <strong>Add Scribblepad</strong> icon on the toolbar <br>2. You can make modifications using the default options of the customize tab 
+    <td>The Scribblepad helps users take notes if required, while viewing content <br>1. Click the <strong>Add Scribblepad</strong> icon on the toolbar <br>2. You can make modifications using the default options of the customize tab 
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/scribblepad.png"></td>
   </tr>
@@ -430,7 +430,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td><img src=.png></td>
   </tr>
   <tr>
-    <td>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <strong>Add Question Set</strong> icon on the toolbar
+    <td>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets a one method <br>1. Click the <strong>Add Question Set</strong> icon on the toolbar
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/addquestion.png"></td>
   </tr>
@@ -458,7 +458,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
-    <td>1. Enter the <strong>Question Set Title</strong> and <strong>Total Marks</strong> for the questionnaire <br>2. Select the number of questions that should be displayed in each screen from the <strong>Display</strong> drop-down menu <br>3. Use the <strong>Show Immediate Feedback</strong> slider to determine when the feedback for the answers should be displayed <br>4. Use the <strong>Shuffle Questions</strong> slider to enable shuffling of questions from the set <br>5. Click <strong>Add Question Set</strong> to add the selected questions
+    <td>1. Enter the <strong>Question Set Title</strong> and <strong>Total Marks</strong> for the questionnaire <br>2. Select the number of questions that should be displayed on each screen from the <strong>Display</strong> drop-down menu <br>3. Use the <strong>Show Immediate Feedback</strong> slider to determine when the feedback for the answers should be displayed <br>4. Use the <strong>Shuffle Questions</strong> slider to enable shuffling of questions from the set <br>5. Click <strong>Add Question Set</strong> to add the selected questions
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/configureques.png"></td>
  </tr>
@@ -486,7 +486,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>After adding the question set, the customize tab displays options to modify them. You can: <br>1. Click <strong>Assessment Browser</strong> to return to the <strong>Selecting Questions</strong>screen <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions <br>3. View and modify the <strong>Assessment Title</strong>, if required <br>4. Use the sliders to enable or disable <strong>Shuffle Questions, Shuffle Options and Show Immediate Feedback</strong> <br>5. Select the number of questions to be displayed in each screen <br>6. Enter the <strong>Total Marks</strong> for the assessment
+    <td>After adding the question set, the customize tab displays options to modify them. You can: <br>1. Click <strong>Assessment Browser</strong> to return to the <strong>Selecting Questions</strong> screen <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions <br>3. View and modify the <strong>Assessment Title</strong>, if required <br>4. Use the sliders to enable or disable <strong>Shuffle Questions, Shuffle Options and Show Immediate Feedback</strong> <br>5. Select the number of questions to be displayed in each screen <br>6. Enter the <strong>Total Marks</strong> for the assessment
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/customizetab.png"></td>
   </tr>
@@ -527,7 +527,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
-    <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><strong>Note:</strong> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering key words <br>3. Select the activity and click <strong>ADD</strong></td>
+    <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><strong>Note:</strong> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering keywords <br>3. Select the activity and click <strong>ADD</strong></td>
     <td><img src="pages/features-documentation/images/contenteditor/activitybrowser.png"></td>
  </tr>
  </table> 
