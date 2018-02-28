@@ -19,7 +19,7 @@ Organization administrators can use their registered credentials and add other o
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page. You want to upload organizations <br>3. You have clicked on <b>Upload Organizations</b> <br><b>Note</b>: Ensure that the system administrator of your organization has created the required organization types on the portal. For details on how to create organization types, refer <a href="features-documentation/create_orgtype" target="_blank">Organization Type Creation</a>    
+    <td>1. You are logged in <br>2. You are currently on t<strong>Profile</strong> page. You want to upload organizations <br>3. You have clicked on <b>Upload Organizations</b> <br><b>Note</b>: Ensure that the system administrator of your organization has created the required organization types on the portal. For details on how to create organization types, refer <a href="features-documentation/create_orgtype" target="_blank">Organization Type Creation</a>    
       </td>
       <td><img src="pages/features-documentation/images/upldorg_prereqsite.png"></td>
   </tr>
@@ -29,10 +29,10 @@ Organization administrators can use their registered credentials and add other o
 ## Uploading Organizations
 
 1. The upload organizations page is displayed
-2. Download the csv file for reference
-3. You can add or upload details of up to 199 organizations at a time in one csv file
+2. Download the C file for reference
+3. You can add or upload details of up to 199 organizations at a time in one C file
 4. Enter each organization's name in a separate row
-5. Descriptions and valid values for each columns are as listed below:
+5. Descriptions and valid values for each column are as listed below:
 
 	Sl.No |Column Name  |Description  |Valid Value  |Column Type
 	------|-------------|-------------|-------------|-------------
@@ -48,9 +48,9 @@ Organization administrators can use their registered credentials and add other o
 	10  |preferredLanguage  |Language preferences for the organization, if any  |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu	|Optional
 	11  |contactDetail  |Organization’s contact detail  |Enter details within curly brackets in double quotes. Separate each detail with a comma, and detail name and corresponding value with a colon (:). <br>For example [{"address":"Vizianagaram","phone":"8088407418","fax":"abc@gmail.com"}]	|Optional
 
-6. **Save** the csv file to your computer
+6. **Save** the C file to your computer
 7. Click **UPLOAD ORGANIZATIONS CSV**. The explorer window is displayed
-8. Select the saved csv file and click **Open**
+8. Select the saved C file and click **Open**
 9. On successful file upload, a process ID will be generated, else an error message is displayed
 
 
