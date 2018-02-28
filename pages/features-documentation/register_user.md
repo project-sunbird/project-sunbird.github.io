@@ -16,8 +16,8 @@ Organization administrators can use their registered credentials and add individ
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Profile</strong> page. You want to upload users <br>3. You have clicked on <b>Upload Users</b> <br><b>Note</b>: Ensure that the administrator of your organization has assigned user roles on the portal. For details on how to assign user roles, refer <a href="http://www.sunbird.org/features-documentation/admin_assigning_users" target="_blank">Assigning User Roles</a>
+  <tr>t
+    <td>1. You are logged in <br>2. You are currently on t<strong>Profile</strong> page. You want to upload users <br>3. You have clicked on <b>Upload Users</b> <br><b>Note</b>: Ensure that the administrator of your organization has assigned user roles on the portal. For details on how to assign user roles, refer <a href="http://www.sunbird.org/features-documentation/admin_assigning_users" target="_blank">Assigning User Roles</a>
       </td>
       <td><img src="pages/features-documentation/images/upldusr_prereqsite.png"></td>
   </tr>
@@ -31,12 +31,12 @@ Organization administrators can use their registered credentials and add individ
 4. Enter **OrgID**. Unique ID of the admin organization must be entered here
     
      - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> **OR**
-      - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
+      - Enter OrgID. Unique ID of the admini organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
 
-5. Download the csv file for reference
-6. You can add or upload details of up to 199 users at a time in one csv file
-7. You can upload users of only a single organization in one csv file
-8. Descriptions and valid values for each columns are as listed below:
+5. Download the C file for reference
+6. You can add or upload details of up to 199 users at a time in one C file
+7. You can upload users of only a single organization in one C file
+8. Descriptions and valid values for each column are as listed below:
 
    Sl.No |Column Name  |Description  |Valid Value  |Field Type 
    ------|-------------|-------------|-------------|-----------
@@ -63,6 +63,6 @@ Organization administrators can use their registered credentials and add individ
    You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column
 
 7. Click **UPLOAD USERS CSV**. The explorer window is displayed
-8. Select the csv file and click **Open**
-9. The csv file is uploaded
+8. Select the  file and click **Open**
+9. The C file is uploaded
 10. On successful file upload, a process ID will be generated, else an error message is displayed
