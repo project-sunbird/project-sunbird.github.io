@@ -147,7 +147,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further repeat all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> 
+    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further, repeat all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> 
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
