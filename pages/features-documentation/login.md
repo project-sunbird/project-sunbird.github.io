@@ -25,7 +25,7 @@ Successful sign up on the portal is notified to the user via an auto-generated e
 	</tr>
 	</table>
 	
-## Loging In 
+## Logging In 
 
 Once the users have received their credentials, logging in on the portal is a seamless process.
 
