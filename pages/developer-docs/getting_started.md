@@ -77,6 +77,7 @@ The following are the core components of Sunbird:
 - **Sunbird Services** - Sunbird uses core and proxy services. 
 
 - **Others** - Few other key services are:
+  
   - API manager 
   - Proxy
  
