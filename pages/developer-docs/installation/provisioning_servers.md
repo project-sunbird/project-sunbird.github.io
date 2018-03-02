@@ -37,7 +37,7 @@ Run the following steps from a machine which is connected to the internet:
 2. Run `./sunbird-devops/deploy/generate-config.sh mysb production cloud` This will create config files for you in `./mysb-devops/test/azure`. 
 3. Here, `mysb` is the **implementation-name** and `production` is the **environment-name**.
 4. Edit both the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
-5. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the dab.
+5. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the 
 6. Run `export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/app`
 7. Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db`
 8. Run `cd sunbird-devops/deploy`
