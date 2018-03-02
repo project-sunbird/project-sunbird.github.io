@@ -1,4 +1,16 @@
-## Simplified Medium Scale Deployment - Sunbird Version 1.4 
+
+---
+type: landing
+directory: developer-docs/installation
+title: Simplified Medium Scale Deployment - Sunbird Version 1.4  
+page_title: Simplified Medium Scale Deployment - Sunbird Version 1.4
+description: Instructions for simplified medium scale deployment for Sunbird version 1.4 
+keywords: Installation, deployment, version 1.4
+published: true
+allowSearch: true
+---
+
+## Overview 
 
 Installing Sunbird on medium scale infrastructure is simplified from version 1.4 as all fine-tuned configurations are automatically deployed. The entire installlation process should take you approximately 45 minutes. 
 
