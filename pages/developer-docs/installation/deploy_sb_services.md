@@ -72,7 +72,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
-- Follow the instructions[here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
+- Follow the [instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
 
  **Update following configs** 
 
@@ -102,14 +102,4 @@ sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 - To deploy the Sunbird core services, execute the following command:
 
   Run `sudo ./deploy-core.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
-
-
-**Note:** The following automation walk-through,shows you the process for deployment for Sunbird services.
-
-### Automation Walkthrough
-
-- [Part 5](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-5.gif){:target="_blank"}
-
-- [Part 6](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-6.gif){:target="_blank"}
-
-- [Part 7](https://sunbirdpublic.blob.core.windows.net/installation/demo/demo-8.gif){:target="_blank"}
+  

@@ -20,7 +20,7 @@ Also, if you are interested in Testing:
 
 ## Sunbird Backend Services
 
-To setup the Sunbird Back-end services, follow the steps chronologically:
+To set up the Sunbird Back-end services, follow the steps chronologically:
 
 1.	Setup
 2.	Configure back-end service stack
@@ -34,11 +34,11 @@ Before configuring the services, ensure the installation of following dependenci
   - Keycloak ver-3.2.1. Final
   - PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)
 
-Let us setup the environment and then proceed with deploying the services.
+Let us set up the environment and then proceed with deploying the services.
 
 **Setup Cassandra** 
  
-1. For step by step installation guide of refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html){:target="_blank"}
+1. For step by step installation guide, refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html){:target="_blank"}
 2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface) 
 3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file to      create the required keyspace, tables and indices
 4. Copy the following files to a temp folder in a Cassandra installed machine 
@@ -146,7 +146,7 @@ The table mentions all the environment variables with description. You need to a
 
 ### Setting Environment Variables
 
-To run sunbird backend services, atleast you need to set the following environment variables. Set the environment variables at appropriate locations.
+To run sunbird backend services, at least you need to set the following environment variables. Set the environment variables at appropriate locations.
 
 <pre>
           1. sunbird_cassandra_host
@@ -199,10 +199,10 @@ Sunbird architecture supports two Akka actor systems:
   2. Background ActorSystem 
 
 And by default, both run on two different machines.
-But to run these actor systems on single machine, you need to modify the we need to modify [resource.properties file]
-For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}to repository.
+But to run these actor systems on single machine, you need to modify the [resource.properties file]
+For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to repository.
 
-In ordere to run both the actor systems on single machine follow these steps:
+In order to run both the actor systems on single machine follow these steps:
 
   1.	Open **externalresource.properties** file 
   2.	Modify the following properties:

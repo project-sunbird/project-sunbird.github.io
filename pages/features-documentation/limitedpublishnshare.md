@@ -8,7 +8,7 @@ published: true
 allowSearch: true
 ---
 
-Every organization has its own requirements for content creation and publishing. Content can be shared with all, some or specific users within or outside the organization. Sunbird offers the features **Limited Publishing** and **Limited Sharing** that allow you to share content after it is created via a link to select audiences. All users who get the link can view the content, even without logging in to Sunbird. This page provides you details on how you can use these features 
+Every organization has its own requirements for content creation and publishing. Content can be shared with all, some or specific users within or outside the organization. Sunbird offers the features **Limited Publishing** and **Limited Sharing** that allow you to share content after it is created via a link to select audiences. All users who get the link can view the content, even without logging into Sunbird. This page provides you details on how you can use these features 
 
 ### Prerequisites
 - You are logged in as a Content Creator
@@ -22,7 +22,7 @@ Every organization has its own requirements for content creation and publishing.
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click the drop drop menu beside <b>Send for Review</b> icon <br>2. Click <b>Limited Sharing</b> from the drop down. The content is saved and moved to the <b>Limited Publishing</b> section of your workspace, from where you can share the link to a select audience<br> <b>Note</b>: You can select content for limited sharing before it is sent for review</td>
+    <td>1. Click the drop drop menu beside <b>Send for Review</b> icon <br>2. Click <b>Limited Sharing</b> from the drop down. The content is saved and moved to the <b>Limited Publishing</b> section of your workspace, from where you can share the link to selected audience<br> <b>Note</b>: You can select content for limited sharing before it is sent for review</td>
   <td><img src="pages/features-documentation/images/limitedshare.png"></td>
   </tr>
   </table>

@@ -9,13 +9,13 @@ published: true
 allowSearch: true
 ---
 
-The tree structure of the Table of Contents in the Content Editor has a hierarchical system of nodes. There are three types of nodes: <br>&emsp;a) <b>Parent Node</b>: The default node in the ToC pane representing the entire compilation of nodes <br>&emsp;b)<b>Sibling Node</b>: Nodes on the same hierarchical level under the same parent node<br>&emsp;c) <b>Child Node</b>: Sub-node of a given node 
+The tree structure of the Table of Contents in the Content Editor has a hierarchical system of nodes. There are three types of nodes: <br>&emsp;a) <b>Parent Node</b>: The default node in the ToC pane representing the entire compilation of nodes <br>&emsp;b) <b>Sibling Node</b>: Nodes on the same hierarchical level under the same parent node<br>&emsp;c) <b>Child Node</b>: Sub-node of a given node 
 
 For example, you are creating a Mathematics textbook for grade 4. The name of the entire textbook is the parent node, which is the highest or default level in the ToC. If the textbook has 10 sections or units, each unit is a sub-node of the parent node and hence its child. However, the 10 units are at the same level as each other and hence are sibling nodes of one another. To create the first unit node, place the cursor at the default node level and click **Add Child**. To create all subsequent unit nodes, place your cursor at the first unit node level and click **Add Sibling**. 
 
 You can add a child node within any node. In the example of the textbook mentioned earlier, let us assume that each unit has three chapters. To add a chapter, place your cursor at the unit node level and click **Add Child**. You can either add the remaining chapters as sibling nodes of the first chapter or child nodes of the unit. In effect, a child node is one that has at least one level of hierarchy above it. 
 
-The TOC editor also allows you to add resources at any level in the hierarchy. 
+The TOC editor also allows you to add resources at any level in the hierarchy. The images used to explain the node structure in this section correspond to adding nodes in collection. This is used for reference purpose. Screens vary slightly for each content type, viz., book, collection, course, lesson plan.
 
 ### Adding Sibling Node
 

@@ -9,23 +9,13 @@ allowSearch: true
 ---
 ## Overview
 
-- This section guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization 
-- The following sections provide detailed instructions as how you can register a channel with Ekstep?
-- You must follow the steps in a sequential manner
+This page guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization 
+After registering a channel check the channel's registration status.    
 
 ## Purpose
 
 The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific curriculum framework. Based on the channel value, provided at the time of registering a channel with Ekstep. Specific set of curriculum content framework will load. 
 
-## Design Principles
-
-1.	Registering a channel with Ekstep, while creating a Root organization in Sunbird.
-2.	As a pre-requisite for creation of an organization, the channel registration process should be successful
-3.	Channel registration is applicable only for root org creation
-
-## Registering and Checking status of channels
-
-The following is the process which details about registering a channel followed by checking the status of the channels:
 
 ### Registering a Channel 
 
@@ -39,7 +29,7 @@ While the server starts up:
 
 1.	As a routine, the scheduler always checks the sync status from system-settings table by checking the value of “Flag”
 2.	If sync status is set to “false,” it will invoke the process to find the missing channels
-3.	Register the hannels with Ekstep by following the steps in section [Registering a channel] ()<!-- this link will be generated once the page goes on production-->
+3.	Register the channels with Ekstep by following the steps in section [Registering a channel] ()<!-- this link will be generated once the page goes on production-->
 4.	Update the “Flag” key in system-settings table
 
 The process for registering the channel uses the Channel API. Here is the sample payload for:

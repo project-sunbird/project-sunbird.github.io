@@ -568,7 +568,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /framework/v1/category/create:
+  /category/create:
     post:
       description: >-
        This API is associated with creating a category under a framework on Sunbird Platform.
@@ -661,7 +661,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /framework/v1/category/search:
+  /category/search:
     post:
       description: >-
        This API is associated with searching category on Sunbird Platform.
@@ -745,7 +745,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /framework/v1/category/read:
+  /category/read:
     get:
       description: >-
        This API is associated with fetching a category on Sunbird Platform.
@@ -820,7 +820,6 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-
   /channel/v1/list:
     post:
       description: >-
