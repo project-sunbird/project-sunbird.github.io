@@ -17,7 +17,7 @@ Sunbird covers the following broad feature areas:
 - Dashboards for progress and assessment
 - Student and practitioner profile and registry services
 - Communities of practice for collaboration and discussions
-- Announcements, notifications, and, circulars
+- Announcements, notifications, and, circulars 
 
 ## Techstack of Sunbird
 
