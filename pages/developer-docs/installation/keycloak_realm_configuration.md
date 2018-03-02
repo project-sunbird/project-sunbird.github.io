@@ -109,4 +109,4 @@ The following steps will guide you through the configuration settings:
 1. It is necessary to configure email for smooth working of the password reset functionality and user management workflows
 2. Navigate to `Realm Settings > Email`
 3. Enter the **SMTP** credentials
-4. Click the **Test Connection*bubtton to verify that the SMTP connection is configured correctly
+4. Click the **Test Connection** button to verify that the SMTP connection is configured correctly
