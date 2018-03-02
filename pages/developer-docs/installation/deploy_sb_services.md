@@ -7,7 +7,7 @@ description: Deploy Sunbird services
 allowSearch: true
 ---
 
-The Sunbird application consists of multiple services, each service serves a specific purpose. All services except keycloak are set up using Docker. 
+The Sunbird application consists of multiple services, each service serves a specific purpose. All services except eycloak are set up using Docker. 
 
 The following steps will install docker, pull the required images and create services based on those images.
 
