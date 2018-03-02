@@ -15,7 +15,7 @@ Review the following to determine that the environment has the necessary resourc
 
 ### System Requirements
 
-To install Sunbird, your laptop/PC should have atleast the following minimum system requirements:
+To install Sunbird, your laptop/PC should have at least the following minimum system requirements:
 
 - Operating System: Windows 7 and above/4.2 Mac OS X 10.0 and above/Linux  
 - RAM: >1.5GB
@@ -28,7 +28,7 @@ Installing Sunbird requires two primary software components:
 
 ## Sunbird Portal Setup
 
-To setup the Sunbird portal successfully, follow these steps sequentially:
+To set up the Sunbird portal successfully, follow these steps sequentially:
 
 1. Check for the prerequisites 
 2. Setup 
@@ -47,7 +47,8 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 
 2. **API Keys** 
 This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
-- For getting an API key you should send an email to: info@sunbird.org.
+
+- For getting an API key,send an email to: info@sunbird.org
 
 ### Setup 
 For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}. The code can be checked out via the command:
