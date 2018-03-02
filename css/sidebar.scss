@@ -214,6 +214,13 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 );
 	}
 }
+.sidebar-container .inner__sidebar .sidebar-wrapper .sidebar-group {
+	display:none;
+}
+.sidebar-container .inner__sidebar .sidebar-wrapper .section.active .sidebar-group {
+	display:block;
+}
+/* Multiversion - Remove from Here*/
 .sidebar-group.architecture,
 .sidebar-group.features-documentation,
 .sidebar-group.developer-docs,
@@ -228,3 +235,4 @@
 .sidebar-wrapper.developer-docs-telemetry .sidebar-group.developer-docs,
 .sidebar-wrapper.apis .sidebar-group.developer-docs,
 .sidebar-wrapper.faqs .sidebar-group.faqs{display:block !important;}
+/* Multiversion - Remove upto Here*/
