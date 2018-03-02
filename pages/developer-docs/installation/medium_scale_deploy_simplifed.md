@@ -1,30 +1,30 @@
-## Sunbird installation simplified
+## Simplified Medium Scale Deployment - Sunbird Version 1.4 
 
-This page is the most simple way to install sunbird to a medium scale infra. we'll manage all the fine tuned configurations and you can just sitback and relax for 45 mins.
+Installing Sunbird on medium scale infrastructure is simplified from version 1.4 as all fine-tuned configurations are automatically deployed. The entire installlation process should take you approximately 45 minutes. 
 
-Else, you can have all the fine grained controls, but have to skip this page and follow the detailed installation steps.
+You could also choose to follow the detailed installation procedures provided at[Medium Scale Deployment](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/){:target="_blank"}.
 
-Okay, let's get started.
-
----
 ### Prerequisites
 
-- We assume you've 2 VMs. one for application and other for db with minimum system requirements
+- 2 Virtual Machines (VMs) - one for the application and the other for the database with minimum system requirements
 
-  > Operating System: Ubuntu 16.04 LTS   
-    RAM: 7GB   
-    CPU: 2 cores, >2 GHz  
-    root access (should be able to sudo)
+    - **Operating System:** Ubuntu 16.04 LTS   
+    - ***RAM:** 7GB   
+    - **CPU:** 2 cores, >2 GHz  
+    - **root access** Should be able to sudo
 
-- A FQDN(Fully qualified domain name eg: test.sunbird.org). 
-If you're testing sunbird, you don't have to buy FQDN, as all cloud providers give free domain names for their instances.  
-for example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Please check with the cloud provider for more details.
+- A Fully Qualified Domain Name (FQDN) For example: test.sunbird.org). 
 
-- [SSL certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server_certificate) for your domain. We're providing a script to generate free ssl using [Let's Enceypt](https://letsencrypt.org/) for most common cases. But some free domain names, provided by cloud providers are not supported (eg: aws provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, becuse of spammers ). If our script is not compatible with your cloud provider, please purchase or get a [free one](http://dot.tk).
+**Note:** If you're testing Sunbird, you don't have to buy an FQDN. All cloud providers give free domain names for their instances.  
+For example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Check with the cloud provider for details.
 
-- this installation script **should run in the application server**
+- [SSL certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server_certificate){:target="_blank"} for your domain. 
 
-- You should have git installed. 
+**Note:** To generate free SSL, use [Let's Encrypt](https://letsencrypt.org/) for most common cases. The script does not support some free domain names, provided by cloud providers. For example, the AWS provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, is not supported because of spammers. If our script is not compatible with your cloud provider, purchase a certificate or get a [free one](http://dot.tk).
+
+- Run the installation script in the application server
+
+- Install Git using the command: 
   `sudo apt install git` - for debian/ubuntu
 
 - 2 servers [ app <=> db ] should able to ping each other
