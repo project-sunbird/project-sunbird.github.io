@@ -17,7 +17,7 @@ The following steps will install docker, pull the required images and create ser
 - Clone the Sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
 - Copy over the generated configuration directory from the DB server`{implementation-name}-devops` to your machine
 - Modify all the configurations under **#APPLICATION CONFIGURATION** block.
-- The automated setup also creates a proxy server and like all proxy servers, it requires a SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.
+- The automated setup also creates a proxy server and like all proxy servers, it requires an SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.
 - Run `cd sunbird-devops/deploy && sudo ./install-deps.sh` to install the dependencies.
 
 ## API Manager services
@@ -27,7 +27,7 @@ The following steps will install docker, pull the required images and create ser
 **Note:** The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
 - `deploy-apis.sh` script will print a JWT token that needs to be updated in the application configuration. 
-- To find the token search the script output to look for "JWT token for player is :"
+- To find the token search the script output to look for JWT token for player is :
 - Copy the corresponding token. 
 - For reference check the example output as follows
 
@@ -40,7 +40,7 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
 
 - Update `sunbird_api_auth_token` in your configuration with the copied token.
 
-- Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from ekstep portal. 
+- Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from Ekstep portal. 
 
 For API keys you can refer [here](developer-docs/installation/medium_scale_deploy#api-keys){:target="_blank"}
 
@@ -56,7 +56,7 @@ For API keys you can refer [here](developer-docs/installation/medium_scale_deplo
 
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
-- Run the following script to create the keycloak username, groupname and also to servicify keycloak services on VM
+- Run the following script to create the keycloak username, group name and also to cr keycloak services on VM
 
   <pre>
   ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
@@ -72,7 +72,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
-- Follow the [instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
+- Follow the [instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
 
  **Update following configs** 
 
