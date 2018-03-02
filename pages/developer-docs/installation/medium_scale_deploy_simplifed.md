@@ -18,34 +18,32 @@ You could also choose to follow the detailed installation procedures provided at
 
 ### Prerequisites
 
-- 2 Virtual Machines (VMs) - one for the application and the other for the database with minimum system requirements
+- Availability of 2 Virtual Machines (VMs) - one for the application and the other for the database with the following minimum system requirements
 
     - **Operating System:** Ubuntu 16.04 LTS   
     - ***RAM:** 7GB   
-    - **CPU:** 2 cores, >2 GHz  
+    - **CPU:** 2 cores, > 2 GHz  
     - **root access** Should be able to sudo
 
-- A Fully Qualified Domain Name (FQDN) For example: test.sunbird.org). 
+- Access to a Fully Qualified Domain Name (FQDN) For example: test.sunbird.org). 
 
 **Note:** If you're testing Sunbird, you don't have to buy an FQDN. All cloud providers give free domain names for their instances.  
 For example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Check with the cloud provider for details.
 
-- [SSL certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server_certificate){:target="_blank"} for your domain. 
+- A valid [SSL certificate](https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server_certificate){:target="_blank"} for your domain. 
 
-**Note:** To generate free SSL, use [Let's Encrypt](https://letsencrypt.org/) for most common cases. The script does not support some free domain names, provided by cloud providers. For example, the AWS provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, is not supported because of spammers. If our script is not compatible with your cloud provider, purchase a certificate or get a [free one](http://dot.tk).
+**Note:** To generate free SSL, use [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} for most common cases. The script does not support some free domain names, provided by cloud providers. For example, the AWS provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, is not supported because of spammers. If the script is not compatible with your cloud provider, purchase a certificate or get a [free one](http://dot.tk){:target="_blank"}.
 
-- Run the installation script in the application server
+- Ability to run the installation script in the application server
 
-- Install Git using the command: 
-  `sudo apt install git` - for debian/ubuntu
+- An instance of Git for debian/ubuntu. Install Git using the command: 
+  `sudo apt install git` 
 
-- 2 servers [ app <=> db ] should able to ping each other
-  > If you're in aws, you have to open some ports b/w the security groups,  
-    for testing we opened all ports b/w these private sec groups
+- Ensure that the two servers - application and DB - are able to ping each other
 
-- port 443 accessible from internet for app_server
+**Note** If you are in AWS, you have to open few ports between security groups. To test, we opened all ports between these private security groups.
 
----
+- Ensure that port 443 is accessible from the internet for app_server
 
 ### sunbird installation simplified steps:
 
