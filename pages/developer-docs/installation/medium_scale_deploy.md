@@ -36,11 +36,11 @@ To get production credentails, repeat the steps under API Keys section.
 
 ### SSL Certificate
 
-SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA. [LetsEncrypt](https://letsencrypt.org/){:target="_blank"} provides free SSL certificates. You can also use a CA of your choice. 
+SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA.[LetsEncrypt](https://letsencrypt.org/){:target="_blank"}provides free SSL certificates. You can also use a CA of your choice. 
 
 Before you begin the installation, keep the SSL certificate and the key handy.
 
-***Note***: A self-signed certification will cause authentication to fail with an "Access Denied" error because the certificate will not be verified.
+***Note***: A self-signed certificate will cause authentication to fail with an "Access Denied" error because the certificate will not be verified.
 
 ### Relevant Variables
 
