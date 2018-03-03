@@ -50,7 +50,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
       <td><img src="pages/features-documentation/images/batches_create.png"></td>
   </tr>
   <tr>
-    <td>1. Enter <b>Batch Name</b>. This is a mandatory field <br>2. Enter description about the batch <br>3. Select the <b>Batch Type</b> <br>4. Select the <b>START DATE</b> for the batch from the calendar. This is a mandatory field <br>5. Select <b>END DATE</b> for the batch from the calendar <br>6. Search and select member’s name from the drop-down list  
+    <td>1. Enter <b>Batch Name</b>. This is a mandatory field <br>2. Enter <b>description< about the batch <br>3. Select the <b>Batch Type</b> <br>4. Select the <b>START DATE</b> for the batch from the calendar. This is a mandatory field <br>5. Select <b>END DATE</b> for the batch from the calendar <br>6. Search and select member’s name from the drop-down list  
 <br>7. Select and include mentors for the batch from the drop-down list <br>8. Click <b>Clear</b> to clear and re-enter all the details <br>9. Click <b>Create</b> to create a new batch and assign them to users <br>10. Click <b>Close</b> icon to exit the page
          </td>
       <td><img src="pages/features-documentation/images/batches_create2.png"></td>
@@ -77,7 +77,7 @@ On Sunbird, once a course is created, the course administrator can add users to 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Select <b>Ongoing</b> or <b>Upcoming</b> option from the drop-down list on the right pane.  Information on ongoing or upcoming batches are displayed
+    <td>1. Select <b>Ongoing</b> or <b>Upcoming</b> option from the dropdown list in the right pane.  Information on ongoing or upcoming batches are displayed
          </td>
       <td><img src="pages/features-documentation/images/batches_status.png"></td>
   </tr>
