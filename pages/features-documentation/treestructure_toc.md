@@ -27,7 +27,7 @@ The TOC editor also allows you to add resources at any level in the hierarchy.
   <tr>
     <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You have clicked on any one of the following: <br>&emsp;a) Book <br>&emsp;b) Course <br>&emsp;c) Collection <br>&emsp;d) Lesson Plan <br> <b>Note</b>: The images used to explain the node structure in this section correspond to adding nodes in collection. This is used for reference purpose. Screens vary slightly for each content type, viz., book, collection, course, lesson plan
     </td>
-      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
+      <td><img src="pages/features-documentation/images/toc_workspce.png"></td>
   </tr>
   </table>
 
