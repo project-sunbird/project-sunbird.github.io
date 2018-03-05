@@ -9,141 +9,44 @@ allowSearch: true
 ---
 ## Overview
 
-This page guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization 
-After registering a channel check the channel's registration status.    
+This page guides you with the necessary steps for registering a channel with Ekstep. As, registering a channel is the immediate requirement to setup Sunbird functionally.
+The following procedure ensures that the Sunbird is successfully set up functionally:
 
-## Purpose
+-	Register a channel with Ekstep
+-	Set up a Root organization
+-	Set up the users
 
-The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific curriculum framework. Based on the channel value, provided at the time of registering a channel with Ekstep. Specific set of curriculum content framework will load. 
+But before you are registering the channel, you need to have a clear understanding of: 
+
+1. What is a channel in the Sunbird?
+2. Why is there a need to register a channel with Ekstep?
+
+A channel in Sunbird identifies the source of information. The channel also functions to transfer the tenant specific data (mostly content) from the tenant system to the Ekstep server.
+
+There is the need to register a channel as numerous services of Sunbird use Ekstep Infra. So, to identify the services accessed by a specific tenant of sunbird, registering that tenant channel with EkStep is must. 
+Simplifying this, all the access to Estep Infra and other related activities from a specific sunbird tenant must be tagged with a specific channel and that channel must be registered with Ekstep
+The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific content. Based on the channel value, provided at the time of registering a channel with Ekstep. Specific set of curriculum content will load. 
+
 
 
 ### Registering a Channel 
 
-1.	A scheduler job will run to find all the missing channels not registered with Ekstep
-2.	Once a few missing unregistered channels are found, the registering channel job is invoked to start registering these channels
-3.	Successful registration of a channel sets a flag to “true” in system-settings table
+To register a channel, follow these steps: 
 
+1.	Enable a scheduler to find all the missing channels not registered with Ekstep
+2.	If scheduler finds any unregistered channel, it invokes the register channel job
+3.	Upon successful registration of a channel, the flag is set to “true” in system-settings table
 ### Checking the status of Channels 
 
-While the server starts up:
+While your server initializes:
 
-1.	As a routine, the scheduler always checks the sync status from system-settings table by checking the value of “Flag”
-2.	If sync status is set to “false,” it will invoke the process to find the missing channels
-3.	Register the channels with Ekstep by following the steps in section [Registering a channel] ()<!-- this link will be generated once the page goes on production-->
-4.	Update the “Flag” key in system-settings table
 
-The process for registering the channel uses the Channel API. Here is the sample payload for:
+1. As a routine, the scheduler always checks the sync status of system-settings table by checking  the value of “Flag”
+2. If sync status flag is “false,” it will invoke the process to find the missing channels 
+3. The register a channel process will run 
 
-1.	Channel registration 
-2.	List Channels 
+In the mentioned processes, you will have to use the following set of APIs(s)
 
-## Channel Registration API
-
-The request payload:
-
-URL : /channel/v3/create
-
-Method : POST
-
-RequestBody :
-
-<pre>
-
-{
-   "request": {
-      "channel":{
-        "code": "012424880506855424168",  // code is hashTagId value in sunbird
-        "name": "cltindia",               // name is channel value in sunbird
-        "description": "CLT India"        //description of organization
-      }
-    }
-}
-
-</pre>
-
-The response Payload:
-
-<pre>
-
-Response :
-
-{
-    "id": "ekstep.learning.channel.create",
-    "ver": "1.0",
-    "ts": "2018-02-12T11:39:27ZZ",
-    "params": {
-        "resmsgid": "a3449214-d429-4c25-96fb-9c1edb4b5201",
-        "msgid": null,
-        "err": null,
-        "status": "successful",
-        "errmsg": null
-    },
-    "responseCode": "OK",
-    "result": {
-        "node_id": "012424880506855424168",
-        "versionKey": "1518435567708"
-    }
-}
-
-</pre>
-
-## Get channel list API 
-
-The request payload:
-
-URL : /channel/v3/list
-
-Method : POST 
-
-<pre>
-
-RequestBody :
-
-    {
-      "request": { }
-    }
-
-</pre>
-
-The Response payload:
-
-<pre>
-
-Response :
-
-{
-    "id": "ekstep.learning.channel.list",
-    "ver": "1.0",
-    "ts": "2018-02-13T05:54:38ZZ",
-    "params": {
-        "resmsgid": "fcd5e23e-db98-4c05-b162-4b11f1449f8e",
-        "msgid": null,
-        "err": null,
-        "status": null,
-        "errmsg": null
-    },
-    "responseCode": "OK",
-    "result": {
-        "channels": [
-            {
-                "identifier": "channel",
-                "code": "channel",
-                "frameworks": [],
-                "consumerId": "62e15662-bb09-439f-86e2-d65bd84f3c23",
-                "channel": "in.ekstep",
-                "description": "",
-                "createdOn": "2017-12-20T06:20:55.096+0000",
-                "versionKey": "1513750855096",
-                "appId": "ekstep_portal",
-                "name": "channel",
-                "lastUpdatedOn": "2017-12-20T06:20:55.096+0000",
-                "categories": [],
-                "defaultFramework": "NCF",
-                "status": "Live"
-            }
-        ],
-        "count": 1
-    }
-}
-
-</pre>
+1.	[Channel registration](http://www.sunbird.org/apis/framework/#operation/ChannelV1CreatePost)  
+Checking the status of channels 
+2.	[List Channels](http://www.sunbird.org/apis/framework/#operation/ChannelV1ListPost) 
