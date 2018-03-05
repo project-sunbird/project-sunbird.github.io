@@ -7,7 +7,7 @@ description: Deploy Sunbird services
 allowSearch: true
 ---
 
-The Sunbird application consists of multiple services, each service serves a specific purpose. All services except eycloak are set up using Docker. 
+The Sunbird application consists of multiple services, each service serves a specific purpose. All services except Keycloak are set up using Docker. 
 
 The following steps will install docker, pull the required images and create services based on those images.
 
@@ -27,9 +27,9 @@ The following steps will install docker, pull the required images and create ser
 **Note:** The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
 - `deploy-apis.sh` script will print a JWT token that needs to be updated in the application configuration. 
-- To find the token search the script output to look for JWT token for player is :
+- To find the token search the script output to look for JWT token for player.
 - Copy the corresponding token. 
-- For reference check the example output as follows
+- For reference check the example output as follows:
 
 <pre>
 changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json....
@@ -56,7 +56,7 @@ For API keys you can refer [here](developer-docs/installation/medium_scale_deplo
 
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
-- Run the following script to create the keycloak username, group name and also to cr keycloak services on VM
+- Run the following script to create the Keycloak username, group name and also to create Keycloak services on VM
 
   <pre>
   ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
@@ -74,19 +74,19 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
 - Follow the [instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
 
- **Update following configs** 
+ **Update following configurations** 
 
 <pre>
-Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
+Login to the Keycloak admin console, go to the clients->admin-cli->Installation->Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password
 
-Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
-keycloak_realm:  # Eg: sunbird
+Login to the Keycloak admin console, go to the clients->portal->Installation->Select json format
+keycloak_realm:  # Eg: Sunbird
 sunbird_keycloak_client_id: # Eg: portal
 
-Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
+Login to the Keycloak admin console, go to the clients->trampoline->Installation->Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 </pre>
