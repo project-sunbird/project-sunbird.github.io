@@ -72,26 +72,26 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
-- Follow the [instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
+- Follow the instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
 
- **Update following configurations** 
+ **Update following configuration** 
 
 <pre>
-- Login to the **Keycloak admin** console
-- Navigate to the clients->admin-cli->Installation
+- Log in to the **Keycloak admin** console
+- Navigate to the clients(admin-cli) Installation
 - Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password
 
-- Login to the Keycloak admin console
-- Navigate to the clients->portal->Installation
+- Log in to the **Keycloak admin** console
+- Navigate to the clients (portal) Installation
 - Select json format
 keycloak_realm:  # Eg: Sunbird
 sunbird_keycloak_client_id: # Eg: portal
 
-- Login to the Keycloak admin console
-- Navigate to the clients->trampoline->Installation
+- Log in to the **Keycloak admin** console
+- Navigate to the clients (trampoline) Installation
 - Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
