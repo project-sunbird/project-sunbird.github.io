@@ -56,7 +56,7 @@ For API keys you can refer [here](developer-docs/installation/medium_scale_deplo
 
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
-- Run the following script to create the Keycloak username, group name and also to create Keycloak services on VM
+- Run the following script to create the Keycloak username, group name and also to service Keycloak services on VM
 
   <pre>
   ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
