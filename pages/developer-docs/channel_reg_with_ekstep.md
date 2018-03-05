@@ -38,5 +38,5 @@ While the server initializes:
 In the mentioned processes, the following set of APIs(s) are used:
 
 1.	[Channel registration](http://www.sunbird.org/apis/framework/#operation/ChannelV1CreatePost)  
-Checking the status of channels 
+
 2.	[List Channels](http://www.sunbird.org/apis/framework/#operation/ChannelV1ListPost) 
