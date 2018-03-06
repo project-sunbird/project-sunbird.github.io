@@ -44,7 +44,6 @@ jobs:
             echo $file
             if [[ "$file" == pages/* ]] && [[ "$file" == *.md ]]
             then
-            echo $file
             filedocs=${file//\.md/}
             filedocs=${filedocs//index/}
             filedocs=${filedocs//.html/}
@@ -55,7 +54,6 @@ jobs:
             fi
             if [[ "$file" == apis/* ]]
             then
-            echo $file
             fileapi=${file//index.html/}
             fileapi=${fileapi//\/[a-zA-Z]*.yaml/}
             url='- http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$fileapi' <br /> '
