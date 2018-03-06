@@ -65,6 +65,7 @@ jobs:
             if [[ "$file" == _includes/* ]]
             then
             sections=${file//.html/}
+            sections=${file//_includes\//}
             url='-'$sections' <br /> '
             updatedsectionslist=$updatedsectionslist$url
             fi
