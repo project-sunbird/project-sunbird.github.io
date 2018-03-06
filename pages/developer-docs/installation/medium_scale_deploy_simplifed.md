@@ -80,4 +80,3 @@ now please go to
 
 https://domain-name
 
-Enjoy!!!
