@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.26.c/";
+			baseURL.href="/releases/release.1.27.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-23 15:19:11 +0530">
+<meta name="last-modified" content="2018-03-06 12:15:40 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.26.c" />
-<meta name="buildNo" content="1971" />
+<meta name="buildVersion" content="release.1.27.a" />
+<meta name="buildNo" content="2078" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23022018"  />
-<link rel="stylesheet" href="css/style.css?23022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?23022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?23022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?23022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?06032018"  />
+<link rel="stylesheet" href="css/style.css?06032018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?06032018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?06032018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?06032018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -628,9 +628,17 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
 </ul>
 
 <h3 id="api-keys">API Keys</h3>
+
 <ul>
-  <li>Sunbird implementors currently need to get an API key for accessing EkStep platform. Since the content is stored here. In the future, Sunbird will support more content stores.</li>
-  <li>To initially try Sunbird, request for the keys from the EkStep QA environment.</li>
+  <li>
+    <p>Sunbird implementors currently need to get a API key for accessing EkStep platform, since the content is stored there. In the future, Sunbird will support more content stores.</p>
+  </li>
+  <li>
+    <p>Sunbird implementors currently need to get an API key for accessing EkStep platform. Since the content is stored here. In the future, Sunbird will support more content stores.</p>
+  </li>
+  <li>
+    <p>To initially try Sunbird, request for the keys from the EkStep QA environment.</p>
+  </li>
 </ul>
 
 <p>
@@ -643,11 +651,13 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
 
 <h3 id="ssl-certificate">SSL Certificate</h3>
 
+<p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA.<a href="https://letsencrypt.org/" target="_blank">LetsEncrypt</a>provides free SSL certificates. You can also use a CA of your choice.</p>
+
 <p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognized CA. <a href="https://letsencrypt.org/" target="_blank">LetsEncrypt</a> provides free SSL certificates. You can also use a CA of your choice.</p>
 
 <p>Before you begin the installation, keep the SSL certificate and the key handy.</p>
 
-<p><strong><em>Note</em></strong>: A self-signed certification will cause authentication to fail with an “Access Denied” error because the certificate will not be verified.</p>
+<p><strong><em>Note</em></strong>: A self-signed certificate will cause authentication to fail with an “Access Denied” error because the certificate will not be verified.</p>
 
 <h3 id="relevant-variables">Relevant Variables</h3>
 

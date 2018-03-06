@@ -3829,6 +3829,13 @@ body > header {
     background: linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 ); } }
 
+.sidebar-container .inner__sidebar .sidebar-wrapper .sidebar-group {
+  display: none; }
+
+.sidebar-container .inner__sidebar .sidebar-wrapper .section.active .sidebar-group {
+  display: block; }
+
+/* Multiversion - Remove from Here*/
 .sidebar-group.architecture,
 .sidebar-group.features-documentation,
 .sidebar-group.developer-docs,
@@ -3846,6 +3853,7 @@ body > header {
 .sidebar-wrapper.faqs .sidebar-group.faqs {
   display: block !important; }
 
+/* Multiversion - Remove upto Here*/
 .inner__content blockquote {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);

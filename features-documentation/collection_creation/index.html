@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.26.c/";
+			baseURL.href="/releases/release.1.27.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-02-23 15:19:11 +0530">
+<meta name="last-modified" content="2018-03-06 12:15:40 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.26.c" />
-<meta name="buildNo" content="1971" />
+<meta name="buildVersion" content="release.1.27.a" />
+<meta name="buildNo" content="2078" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -45,11 +45,11 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23022018"  />
-<link rel="stylesheet" href="css/style.css?23022018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?23022018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?23022018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?23022018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?06032018"  />
+<link rel="stylesheet" href="css/style.css?06032018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?06032018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?06032018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?06032018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -555,7 +555,56 @@ $("a[href$='features-documentation/collection_creation/']").addClass("sidebar-li
 			  </a>
 			  </span>
 			</p>
-          <p>Collection is a compilation of content.	A collection can be compiled on Sunbird using the various learning resources available on the portal or by creating content on the inbuilt content editor and later collating them as a collection. Related or unrelated content can be compiled together.</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#prerequisites"><span class="tocnumber">1.1 .</span> <span class="toctext">Prerequisites</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#creating-collection"><span class="tocnumber">1.2 .</span> <span class="toctext">Creating Collection</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#collection-metadata"><span class="tocnumber">1.3 .</span> <span class="toctext">Collection Metadata</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#adding-content-to-collection"><span class="tocnumber">1.4 .</span> <span class="toctext">Adding Content to Collection</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#adding-resources"><span class="tocnumber">1.5 .</span> <span class="toctext">Adding Resources</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#using-the-table-of-contents-options"><span class="tocnumber">1.6 .</span> <span class="toctext">Using the Table of Contents Options</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#deleting-content"><span class="tocnumber">1.7 .</span> <span class="toctext">Deleting Content</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#reordering-content"><span class="tocnumber">1.8 .</span> <span class="toctext">Reordering Content</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#sending-collection-for-review"><span class="tocnumber">1.9 .</span> <span class="toctext">Sending Collection for Review</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+
+<p>Collection is a compilation of content.	A collection can be compiled on Sunbird using the various learning resources available on the portal or by creating content on the inbuilt content editor and later collating them as a collection. Related or unrelated content can be compiled together.</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
 <table>
@@ -606,7 +655,7 @@ $("a[href$='features-documentation/collection_creation/']").addClass("sidebar-li
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to a collection, you can either: <br />&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR <br />&emsp;b) Right-click on the node name and select <b>Add Resource</b>, OR <br />&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br /> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
+    <td>To add content to a collection, you can either: <br /> a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR <br /> b) Right-click on the node name and select <b>Add Resource</b>, OR <br /> c) Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br /> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
       <td><img src="pages/features-documentation/images/addingchild1.png" /></td>
   </tr>
@@ -620,7 +669,7 @@ $("a[href$='features-documentation/collection_creation/']").addClass("sidebar-li
     <th style="width:65%;">Screen</th>
   </tr>
    <tr>
-     <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br />&emsp;a) <b>Category</b> <br />&emsp;b) <b>Language</b> <br />&emsp;c) <b>Class</b> <br />&emsp;d) <b>Subject</b> <br />4. Click <b>Reset</b> to edit and reset the filters <br />5. Click <b>Apply</b>. Results are loaded on the right pane  <br />6. Select the content you want to add <br />7. Click <b>Add</b> to add the selected content <br />8. Click <b>Close</b> icon to go back to the main menu
+     <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br />2. Type keywords to search for content <br />3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br /> a) <b>Category</b> <br /> b) <b>Language</b> <br /> c) <b>Class</b> <br /> d) <b>Subject</b> <br />4. Click <b>Reset</b> to edit and reset the filters <br />5. Click <b>Apply</b>. Results are loaded on the right pane  <br />6. Select the content you want to add <br />7. Click <b>Add</b> to add the selected content <br />8. Click <b>Close</b> icon to go back to the main menu
     </td>
     <td><img src="pages/features-documentation/images/book/book_addresource2.png" /></td>
   </tr>
