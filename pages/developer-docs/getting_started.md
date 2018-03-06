@@ -19,17 +19,17 @@ Sunbird covers the following broad feature areas:
 - Communities of practice for collaboration and discussions
 - Announcements, notifications and circulars
 
-## Techstack of Sunbird
+## Sunbird Tech Stack
 
-The techstack used to develop the Sunbird is as follows:
+The tech stack used to develop the Sunbird is as follows:
 
 - **AngularJS** - simplifies and structures the Sunbird portal
 
   - *For details on AngularJS, refer to the [AngularJS site](https://angularjs.org/)*
   
-- **Java Play** - optimizes resource consumption (CPU, memory, threads) for high scalablilty
+- **Java Play** - optimizes resource consumption (CPU, memory, threads) for high scalability
 
-  - *For details on Java Play, refer to the [Playframework site](https://playframework.com)*
+  - *For details on Java Play, refer to the [Play framework site](https://playframework.com)*
   
 - **Apache Cassandra** - proven database with large active data sets, fault tolerant, decentralized, highly scalable and consistent without compromising on performance
 
@@ -50,12 +50,12 @@ The techstack used to develop the Sunbird is as follows:
 
   - *For details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)*
 
-To effectively install, implement, adopt or extend Sunbird, it is recommended that you know atleast one or more of the following areas:
+To effectively install, implement, adopt or extend Sunbird, it is recommended that you know at least one or more of the following areas:
 
 - IaaS - Provisioning servers and resources
 - DevOps - Docker, Ansible
 - Database administration - Cassandra, ElasticSearch
-- Web tools - Webserver,SSL certs, OAuth, REST API
+- Web tools - Webserver,SSL certificates, OAuth, REST API
 
 ## Sunbird Components
 
@@ -72,11 +72,12 @@ The following are the core components of Sunbird:
 
   - *For details of the content editor, its features and instructions to use it, refer to [Content Editor](http://www.sunbird.org/features-documentation/contenteditor)*
 
-- **Content Editor Plugins**  - Sunbird has the capabality to extend the content editor by creating and using plugins. Plugin's are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc. 
+- **Content Editor Plugins**  - Sunbird has the capability to extend the content editor by creating and using plugins. Plugin's are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc. 
 
 - **Sunbird Services** - Sunbird uses core and proxy services. 
 
 - **Others** - Few other key services are:
+  
   - API manager 
   - Proxy
  
@@ -90,23 +91,23 @@ Sunbird can be installed on different devices and can be deployed for single or 
 
 ### Pre-requisites
 
-To install Sunbird on any environment using any method of installation, the basic minimum prerequisites are:
+To install Sunbird on any environment using the following methods of installation, the basic minimum prerequisites are:
 
-  - Use of a Linux OS flavour. 
+  - Use of a Linux OS flavor. 
 
-**Note:** *Developer installation is possible on MacOS*
+**Note:** *Developer installation is possible on MacOS also*
 
   - Comfort using a terminal, as Sunbird installation is triggered from a command-line terminal
 
 **Note:** *The prerequisites are not necessary to try the sandbox option*
 
-### Install Sunbird on laptop
+### Install Sunbird on your machine
 
-  - *For a comprehensive walk through to install Sunbird on your laptop, refer to [Installing Sunbird on laptop](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/)*
+  - *For a comprehensive walk through on how to install Sunbird on your Machine?, refer to [Installing Sunbird on your Machine](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/)*
 
-### Medium-scale deployment
+### Medium-scale Deployment
 
-To deploy Sunbird for a userbase of 10-10000, refer to [Medium Scale Deployment](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/)
+To deploy Sunbird for a user base of 10-10000, refer to [Medium Scale Deployment](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/)
 
 ## Mobile App Installation
 

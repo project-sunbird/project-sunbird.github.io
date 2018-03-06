@@ -19,4 +19,3 @@ To fix errors to content that is already published:
 
 ***Note:***
 *When you click on Edit to modify the content, the status of the artefact changes to Draft. Until the draft copy is approved and republished, the existing content will continue to be displayed on the site*
-
