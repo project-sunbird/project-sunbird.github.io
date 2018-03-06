@@ -7,7 +7,7 @@ description: Deploy Sunbird services
 allowSearch: true
 ---
 
-The Sunbird application consists of multiple services, each service serves a specific purpose. All services except eycloak are set up using Docker. 
+The Sunbird application consists of multiple services, each service serves a specific purpose. All services except Keycloak are set up using Docker. 
 
 The following steps will install docker, pull the required images and create services based on those images.
 
@@ -15,8 +15,8 @@ The following steps will install docker, pull the required images and create ser
 
 - SSH into the application server. If you have used automated scripts as described in the previous steps, then this server would be vm-1
 - Clone the Sunbird-devops repo using `git clone https://github.com/project-sunbird/sunbird-devops.git`
-- Copy over the generated configuration directory from the DB server`{implementation-name}-devops` to your machine
-- Modify all the configurations under **#APPLICATION CONFIGURATION** block.
+- Copy over the generated configuration directory from the database server`{implementation-name}-devops` to your machine
+- Modify all the configurations under **APPLICATION CONFIGURATION** block.
 - The automated setup also creates a proxy server and like all proxy servers, it requires an SSL certificate. Ensure that you have a certificate and the key for the domain that you wish to use.
 - Run `cd sunbird-devops/deploy && sudo ./install-deps.sh` to install the dependencies.
 
@@ -27,9 +27,9 @@ The following steps will install docker, pull the required images and create ser
 **Note:** The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
 - `deploy-apis.sh` script will print a JWT token that needs to be updated in the application configuration. 
-- To find the token search the script output to look for JWT token for player is :
+- To find the token search the script output to look for JWT token for player.
 - Copy the corresponding token. 
-- For reference check the example output as follows
+- For reference check the example output as follows:
 
 <pre>
 changed: [localhost] => {"changed": true, "cmd": "python /tmp/kong-api-scripts/kong_consumers.py /tmp/kong_consumers.json....
@@ -56,7 +56,7 @@ For API keys you can refer [here](developer-docs/installation/medium_scale_deplo
 
 The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
 
-- Run the following script to create the keycloak username, group name and also to cr keycloak services on VM
+- Run the following script to create the Keycloak username, group name and also to service Keycloak services on VM
 
   <pre>
   ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
@@ -73,22 +73,28 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
 
-- Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
+- Follow the instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
 
 
- **Update following configs** 
+ **Update following configuration** 
 
 <pre>
-Login to the keycloak admin console, goto the clients->admin-cli->Installation->Select json format
+- Log in to the **Keycloak admin** console
+- Navigate to the clients(admin-cli) Installation
+- Select json format
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password
 
-Login to the keycloak admin console, goto the clients->portal->Installation->Select json format
-keycloak_realm:  # Eg: sunbird
+- Log in to the **Keycloak admin** console
+- Navigate to the clients (portal) Installation
+- Select json format
+keycloak_realm:  # Eg: Sunbird
 sunbird_keycloak_client_id: # Eg: portal
 
-Login to the keycloak admin console, goto the clients->trampoline->Installation->Select json format
+- Log in to the **Keycloak admin** console
+- Navigate to the clients (trampoline) Installation
+- Select json format
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 </pre>

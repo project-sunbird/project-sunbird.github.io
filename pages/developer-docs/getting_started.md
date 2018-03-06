@@ -84,7 +84,7 @@ The following are the core components of Sunbird:
 
 ## Installation Overview
 
-Sunbird can be installed on different devices and can be deployed for single or multi users. 
+Sunbird can be installed on different devices and can be deployed for single or multiple users. 
 
 *For details on the installation process, refer to [Installation Overview](http://www.sunbird.org/developer-docs/installation/)*
 

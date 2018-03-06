@@ -10,11 +10,11 @@ allowSearch: true
 ---
 
 ## Plan, Install and Configure Sunbird 
-The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, check and decide the following:
+The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, check for the following components:
 
-### Size and Verify Your Environment
+### Size and Verify your Environment
 
-Requirements for Sunbird installation depend on the environment on which you install Sunbird and how you use Sunbird. 
+Requirements for Sunbird installation depends on the environment on which you install and use Sunbird. 
 For details, check the **Prerequisites** section for your chosen installation method. For example; if you choose to do a medium-scale deployment of Sunbird, check [here](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/#pre-requisites){:target="_blank"} 
 
 ### Choosing an Installation method
@@ -44,10 +44,9 @@ If you plan to modify and contribute code to the Sunbird project, we recommend y
 
 ### Deploy Sunbird for up to 10 Thousand Users
 
-If you plan to run Sunbird for up to 10 thousand users, we recommend you follow the [Medium scale deployment](developer-docs/installation/medium_scale_deploy/){:target="_blank"} process. This option uses f resources to run Sunbird and has some limits on how much the installed application can scale.
+If you plan to run Sunbird for up to 10 thousand users, we recommend you follow the [Medium scale deployment](developer-docs/installation/medium_scale_deploy/){:target="_blank"} process. This option uses fewer resources to run Sunbird and has some limits on how much the installed application can scale.
 
 ### Deploy Sunbird for over 10 Thousand Users 
 
-If you plan to run Sunbird in a setting with over 10 thousand users, we recommend you follow the [Large scale deployment](){:target="_blank"} process. 
-This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerized manner. The containers allow you to scale the resources Sunbird consumes based on the usage.
+You can plan to run Sunbird in a setting with over 10 thousand users. This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerized manner. The containers allow you to scale the resources Sunbird consumes based on the usage.
 
