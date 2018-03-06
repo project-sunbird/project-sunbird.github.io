@@ -42,7 +42,7 @@ jobs:
             }
             file=$(_jq '.filename')
             echo $file
-            if [[ "$file" == *"pages/"* ]] && [[ "$file" == *".md"* ]]
+            if [[ "$file" == pages/* ]] && [[ "$file" == *.md ]]
             then
             echo $file
             filedocs=${file//\.md/}
@@ -53,7 +53,7 @@ jobs:
             updatedfileslist=$updatedfileslist$url
             echo $url
             fi
-            if [[ "$file" == *"apis/"* ]]
+            if [[ "$file" == apis/"* ]]
             then
             echo $file
             fileapi=${file//index/}
