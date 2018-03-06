@@ -34,6 +34,7 @@ jobs:
            contributor=${username//\"/}
            updatedfiles=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/project-sunbird/project-sunbird.github.io/pulls/$CIRCLE_PR_NUMBER/files)
            updatedfileslist=''
+           updatedsectionslist=''
            for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64')
            do  
             _jq() 
@@ -61,11 +62,23 @@ jobs:
             updatedfileslist=$updatedfileslist$url
             echo $url
             fi
+            if ![[ updatedfileslist ]]
+             updatedfileslist = "None"
+            fi
+            if [[ "$file" == _includes/* ]]
+            then
+            sections=${file//.html/}
+            url='-'$sections' <br /> '
+            updatedsectionslist=$updatedsectionslist$url
+            fi
+            if ![[ updatedsectionslist ]]
+             updatedsectionslist = "None"
+            fi
            done 
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
-              -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'.<br/> Modified pages are - <br />'"$updatedfileslist"' "}' \
+              -d '{"body": "Hello @'"$contributor"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'.<br/> Modified pages are - <br />'"$updatedfileslist"' <br/> Sections modifies are - <br />'"$updatedsectionslist"' "}' \
               https://api.github.com/repos/project-sunbird/project-sunbird.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
            aws s3 sync --delete . s3://sunbird-docs-qa/review/
