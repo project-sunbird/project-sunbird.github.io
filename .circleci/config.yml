@@ -31,11 +31,49 @@ jobs:
            aws s3 sync --delete . s3://sunbird-docs-qa/pr/$CIRCLE_PR_NUMBER
            prdata=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/project-sunbird/project-sunbird.github.io/issues/$CIRCLE_PR_NUMBER) 
            username=$(echo "${prdata}" | jq '.user.login')
-           username=${username//\"/}
+           contributor=${username//\"/}
+           updatedfiles=$(curl -X GET -u $guser:x-oauth-basic https://api.github.com/repos/project-sunbird/project-sunbird.github.io/pulls/$CIRCLE_PR_NUMBER/files)
+           updatedfileslist=''
+           updatedsectionslist=''
+           for row in $(echo "${updatedfiles}" | jq -r '.[] | @base64')
+           do  
+            _jq() 
+            {
+             echo ${row} | base64 --decode | jq -r ${1}
+            }
+            file=$(_jq '.filename')
+            echo $file
+            if [[ "$file" == pages/* ]] && [[ "$file" == *.md ]]
+            then
+            filedocs=${file//\.md/}
+            filedocs=${filedocs//index/}
+            filedocs=${filedocs//.html/}
+            filedocs=${filedocs//pages\//}
+            url='- http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$filedocs' <br /> '
+            updatedfileslist=$updatedfileslist$url
+            echo $url
+            fi
+            if [[ "$file" == apis/* ]]
+            then
+            fileremove=${file##*/}
+            echo $fileremove
+            fileapi=${file//$fileremove/}
+            url='- http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$fileapi' <br /> '
+            updatedfileslist=$updatedfileslist$url
+            echo $url
+            fi
+            if [[ "$file" == _includes/* ]]
+            then
+            sections=${file//.html/}
+            sections=${sections//_includes\//}
+            url='- '$sections' <br /> '
+            updatedsectionslist=$updatedsectionslist$url
+            fi
+           done 
            curl \
               -X POST \
               -u $guser:x-oauth-basic \
-              -d '{"body": "Hello @'"$username"',<br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'."}' \
+              -d '{"body": "Hello @'"$contributor"',<br/><br/> _This is a auto-generated response._ <br/> Click the URL for review pull request - http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'"$CIRCLE_PR_NUMBER"'. <br/><br/> **Modified pages are -** <br />'"$updatedfileslist"' <br/> **Modified sections are -** <br />'"$updatedsectionslist"' "}' \
               https://api.github.com/repos/project-sunbird/project-sunbird.github.io/issues/$CIRCLE_PR_NUMBER/comments
            else
            aws s3 sync --delete . s3://sunbird-docs-qa/review/
