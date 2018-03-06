@@ -34,14 +34,17 @@ Before configuring the services, ensure the installation of following dependenci
   - Keycloak ver-3.2.1. Final
   - PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)
 
-Let us set up the environment and then proceed with deploying the services.
+Now, set up the environment and proceed with deploying the services.
 
 **Setup Cassandra** 
  
 1. For step by step installation guide, refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html){:target="_blank"}
-2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface) 
-3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file to      create the required keyspace, tables and indices
-4. Copy the following files to a temp folder in a Cassandra installed machine 
+
+2. The official website guides you through the installation, and if you have done a successful install of Cassandra, you need to        start the server and open Cassandra CLI (Command Line Interface) 
+
+3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file to create the required keyspace, tables and indices
+
+4. Copy the following files to the temp folder in a Cassandra installed machine 
     
     - [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"} 
     - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) {:target="_blank"}
@@ -58,7 +61,6 @@ organisationid, portalmap, updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv'"
  display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) 
  FROM '/tmp/cql/pageSection.csv'"
 </pre>
-Next section details about setting up the Elasticsearch on your local machine.
 
 **Setup Elasticsearch**
 
@@ -86,7 +88,7 @@ Next section details about setting up the Keycloak on your local machine.
 
 2. The official website guides you through the installation, and if you have done a successful install of Keycloak, now you need to start the server 
 
-3. To start the Keycloak server, navigate to “Bin” Directory and run the standalone file. Performing this action will start the Keycloak server 
+3. To start the Keycloak server, navigate to **Bin** Directory and run the standalone file. Performing this action will start the Keycloak server 
 
 4. You can access the Keycloak admin console on ```http://localhost:8080``` 
 
@@ -198,21 +200,22 @@ Sunbird architecture supports two Akka actor systems:
   1. Normal ActorSystem 
   2. Background ActorSystem 
 
-And by default, both run on two different machines.
-But to run these actor systems on single machine, you need to modify the [resource.properties file]
-For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to repository.
+By default, both run on two different machines, to run these actor systems on single machine, you need to modify the [resource.properties file] For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to this repository.
 
-In order to run both the actor systems on single machine follow these steps:
+In order to run both the actor systems on a single machine follow these steps:
 
   1.	Open **externalresource.properties** file 
+  
   2.	Modify the following properties:
-          - background_actor_provider
-          - api_actor_provider
+          
+        - background_actor_provider
+        - api_actor_provider
+  
   3.	Set value of both properties as “local”
+  
   4.	Run ```mvn clean install``` command to make build of each module
 
-
-And to run Application sunbird-lms-service execute the following command 
+To run application **sunbird-lms-service** execute the following command: 
     
       run mvn play2:run 
 
