@@ -53,7 +53,7 @@ jobs:
             updatedfileslist=$updatedfileslist$url
             echo $url
             fi
-            if [[ "$file" == apis/"* ]]
+            if [[ "$file" == apis/* ]]
             then
             echo $file
             fileapi=${file//index.html/}
