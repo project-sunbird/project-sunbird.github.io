@@ -62,17 +62,11 @@ jobs:
             updatedfileslist=$updatedfileslist$url
             echo $url
             fi
-            if ![[ updatedfileslist ]]
-            updatedfileslist='None'
-            fi
             if [[ "$file" == _includes/* ]]
             then
             sections=${file//.html/}
             url='-'$sections' <br /> '
             updatedsectionslist=$updatedsectionslist$url
-            fi
-            if ![[ updatedsectionslist ]]
-            updatedsectionslist='None'
             fi
            done 
            curl \
