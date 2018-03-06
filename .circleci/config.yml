@@ -63,7 +63,7 @@ jobs:
             echo $url
             fi
             if ![[ updatedfileslist ]]
-             updatedfileslist = "None"
+            updatedfileslist = "None"
             fi
             if [[ "$file" == _includes/* ]]
             then
@@ -72,7 +72,7 @@ jobs:
             updatedsectionslist=$updatedsectionslist$url
             fi
             if ![[ updatedsectionslist ]]
-             updatedsectionslist = "None"
+            updatedsectionslist = "None"
             fi
            done 
            curl \
