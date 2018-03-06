@@ -68,4 +68,8 @@ The Sunbird mobile learning app is a delivery format that provides learners with
     <td>12.</td>
     <td>Give your external path value in Constants.class EXTERNAL_PATH</td>
   </tr>
+  <tr>
+    <td>13.</td>
+    <td>Setup FCM to support anncouncement feature in mobile app, refer <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase">here</a></td>
+  </tr>
 </table>

@@ -15,7 +15,22 @@ For example, you are creating a Mathematics textbook for grade 4. The name of th
 
 You can add a child node within any node. In the example of the textbook mentioned earlier, let us assume that each unit has three chapters. To add a chapter, place your cursor at the unit node level and click **Add Child**. You can either add the remaining chapters as sibling nodes of the first chapter or child nodes of the unit. In effect, a child node is one that has at least one level of hierarchy above it. 
 
-The TOC editor also allows you to add resources at any level in the hierarchy. The images used to explain the node structure in this section correspond to adding nodes in collection. This is used for reference purpose. Screens vary slightly for each content type, viz., book, collection, course, lesson plan.
+The TOC editor also allows you to add resources at any level in the hierarchy. 
+
+### Prerequisites
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You have clicked on any one of the following: <br>&emsp;a) Book <br>&emsp;b) Course <br>&emsp;c) Collection <br>&emsp;d) Lesson Plan <br> <b>Note</b>: The images used to explain the node structure in this section correspond to adding nodes in collection. This is used for reference purpose. Screens vary slightly for each content type, viz., book, collection, course, lesson plan
+    </td>
+      <td><img src="pages/features-documentation/images/toc_workspce.png"></td>
+  </tr>
+  </table>
+
 
 ### Adding Sibling Node
 
