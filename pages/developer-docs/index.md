@@ -9,8 +9,11 @@ published: true
 allowSearch: true
 ---
 
+The Developer Documentation provides a way through, that not only helps you get started, but it is laid out in such a way that it helps you in getting familiarized with the bare necessities, giving you a quick and clean approach for getting up and running.It is essentially laid out in sections as per the sequence of the overall workflow.
 
-The Developer Documentation provides a way through, that will not only help you get started as a Sunbird Contributor, but also useful to them who are experienced contributors. The Sunbird community prides itself on being an open, accessible and friendly for new participants. 
+- If you wish to get Sunbird up and running , head to the installation Section. 
+- If you are looking for ways to customize your workflows, or just enjoy breaking things down to build them back up, head to the API reference section to dig into the mechanics of our API(s).
+- The Developer Documentation also helps you in getting started as a Sunbird Contributor. The Sunbird community prides itself on being an open, accessible and friendly. 
 
 There are lots of ways to contribute to the Sunbird project: 
 
@@ -18,5 +21,3 @@ There are lots of ways to contribute to the Sunbird project:
 - Testing
 - Improving the build process and tools
 - Contributing to the documentation
-
-We know that before you can even start contributing, getting set up to work on Sunbird and finding a bug that's a good fit for your skills can be a challenge. We are always looking for ways to improve that process and make Sunbird more open, accessible and easier to participate. The Developer documentation provides all that is needed  from "installing Sunbird" to "contributing. It also provides the information related to Sunbird APIs, SDKs, and other developer resources.
