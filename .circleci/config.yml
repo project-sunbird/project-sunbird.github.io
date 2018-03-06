@@ -54,8 +54,8 @@ jobs:
             fi
             if [[ "$file" == apis/* ]]
             then
-            fileapi=${file//index.html/}
-            fileapi=${fileapi//\/([a-zA-Z]*).yaml/}
+            fileapi=${file##*/}
+            echo $fileapi
             url='- http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/'$CIRCLE_PR_NUMBER'/'$fileapi' <br /> '
             updatedfileslist=$updatedfileslist$url
             echo $url
