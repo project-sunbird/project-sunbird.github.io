@@ -10,7 +10,7 @@ allowSearch: true
 ---
 Signing up on Sunbird is a seamless process. Any organized, recognized education or learning body or individual users can sign up on the portal.
 
-### Signing Up On Sunbird 
+### Signing Up on Sunbird 
 
 Successful sign up on the portal is notified to the user via an auto-generated email.
 
@@ -20,14 +20,14 @@ Successful sign up on the portal is notified to the user via an auto-generated e
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-	<td>User credentials, i.e, user ID and password are shared in this mail. The user can reset these details on consecutive login to the protal</td> 
+	<td>User credentials, i.e, user ID and password are shared in this mail. The user can reset these details on consecutive login to the portal</td> 
 	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
 	</tr>
 	</table>
 	
 ## Logging In 
 
-Once the users have received their credentials, logging in on the portal is a seamless process.
+Once the users have received their credentials, logging in to the portal is a seamless process.
 
 <table>
   <tr>
@@ -54,7 +54,7 @@ Once the users have received their credentials, logging in on the portal is a se
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Enter your user name or email or phone number <br>2. Click <b>Forgot Password?</b></td>
+   <td>1. Enter your username or email or phone number <br>2. Click <b>Forgot Password?</b></td>
 	<td><img src="pages/features-documentation/images/forgotpassword.png"></td>
     </tr>
     </table>
@@ -71,7 +71,7 @@ Once the users have received their credentials, logging in on the portal is a se
     <td><img src="pages/features-documentation/images/forgotpassword1.png"></td>
   </tr>
   <tr>
-    <td>1. You will receive an email to reset your password <br>2. Click the <b>Link</b> on the email to reset credentials</td>
+    <td>1. You will receive an email to reset your password <br>2. Click the <b>Link</b> in the email to reset credentials</td>
     <td><img src="pages/features-documentation/images/emaillink.png"></td>
   </tr>
   <tr>
@@ -92,7 +92,7 @@ Once the users have received their credentials, logging in on the portal is a se
     <td><img src="pages/features-documentation/images/forgotpassword1.png"></td>
   </tr>
   <tr>
-    <td>1. You will receive an <b>One Time Password (OTP</b>on your registered phone number</td>
+    <td>1. You will receive a <b>One Time Password (OTP</b> on your registered phone number</td>
     <td><img src="pages/features-documentation/images/mobileotp.png"></td>
   </tr>
   <tr>

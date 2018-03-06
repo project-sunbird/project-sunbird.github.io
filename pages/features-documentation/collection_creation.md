@@ -8,6 +8,8 @@ keywords: 'collection, create collection, compile collection, add story to colle
 published: true
 allowSearch: true
 ---
+## Overview
+
 Collection is a compilation of content.	A collection can be compiled on Sunbird using the various learning resources available on the portal or by creating content on the inbuilt content editor and later collating them as a collection. Related or unrelated content can be compiled together. 
 
 ### Prerequisites

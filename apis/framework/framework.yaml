@@ -573,7 +573,7 @@ paths:
       description: >-
        This API is associated with creating a category under a framework on Sunbird Platform.
           - The **_/framework/v1/category/create_** endpoint executes the "FrameworkV1CategoryCreatePost" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
+          - Required fields cannot be left null or empty 
       summary: Creates a Category 
       tags:
       - Framework - Category APIs
