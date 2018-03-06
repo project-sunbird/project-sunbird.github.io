@@ -91,4 +91,4 @@ allowSearch: true
       
 **Page APIs**
  
- - **[Page APIs](apis/pagesapi/){:target="_blank"}** The Page resources APIs are used to set up the current page, change settings, and configure how things will be displayed to the user.
+ - **[Page APIs](apis/pagesapi/){:target="_blank"}** The Page resources APIs are used to set up the current page, change settings, and configure how things will be displayed to the user. 

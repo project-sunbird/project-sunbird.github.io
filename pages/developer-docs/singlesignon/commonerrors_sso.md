@@ -26,3 +26,4 @@ allowSearch: true
     <td> The development team can increase the limit, if necessary</td>
   </tr>
 </table>
+ 
