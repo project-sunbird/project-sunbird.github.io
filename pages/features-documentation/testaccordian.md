@@ -28,6 +28,8 @@ allowSearch: true
 
 ## Login to Sunbird
 
+<video src="pages/features-documentation/images/testvideo.mp4"></video>
+
 <table>
 	<tr>
 		<th style="width:35%;">Step</th>
