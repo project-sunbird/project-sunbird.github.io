@@ -1,4 +1,3 @@
-
 ---
 type: landing
 directory: developer-docs/installation
