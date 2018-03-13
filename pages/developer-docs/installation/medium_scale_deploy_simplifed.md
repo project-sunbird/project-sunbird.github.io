@@ -45,37 +45,46 @@ For example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Check with the
 
 - Ensure that port 443 is accessible from the internet for app_server
 
+- Get the [ekstep api keys](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
+
 ### sunbird installation simplified steps:
 
-- git clone https://github.com/project-sunbird/sunbird-devops
+1. Login to your application server using ssh 
 
-- cd sunbird-devops/deploy
+2. clone the sunbird repo
 
-- ./certbot.sh (if you don't have a valid ssl certificate, and have a valid domain name)
+    `git clone https://github.com/project-sunbird/sunbird-devops`
 
-- edit all the mandatory fields in  deploy/config file
+3. Go to deploy directory 
 
-- ./sunbird_install.sh
+  `cd sunbird-devops/deploy`
 
-**90% is done.** 
+4. If you don't have a valid ssl certificate, and have a valid domain name
+    
+    execute `./certbot.sh`
 
-  just go over to https://domain-name/auth
+5. Edit all the mandatory fields in  deploy/config file
 
-  and plese complete the [keycloak configs](http://www.sunbird.org/developer-docs/installation/keycloak_realm_configuration).
+6. Install sunbird 
 
-- - copy the **jwt token for player** from your home directory (~/jwt_token.txt) and fill it for `ekstep_auth_token`
+    `./sunbird_install.sh`
+
+7. Open https://[ domain-name ]/auth and complete the [keycloak configs](http://www.sunbird.org/developer-docs/installation/keycloak_realm_configuration).
+
+8. copy the value of `jwt token for player` from **~/jwt_token.txt** file in your home directory.
+
+9. paste the value in deploy/config file for **ekstep_auth_token** parameter.
 
 for example:
 
 `JWT token for player is : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3TRlZmNlYzc0NY0NjBhYzQzNCJ9.VCf69`
 
-- - **key, which you got from ekstep**, [genereate a jwt token](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis) using that, and update for `ekstep_api_key`
+10. [genereate a jwt token](https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis) using the keys got from ekstep, and update the **ekstep_api_key** parameter in deploy/config file.
 
-  > how to get [ekstep api keys](https://github.com/project-sunbird/sunbird-commons/wiki/Obtaining-API-token-for-accessing-ekstep-APIs)
+11. Install the core Sunbird services
 
-- ./sunbird_installation.sh -s core
+    `./sunbird_installation.sh -s core`
 
-now please go to 
+12. Open https://[domain-name] and verify.
 
-https://domain-name
 
