@@ -1,4 +1,4 @@
----
+Issue : update---
 type: landing
 directory: developer-docs/installation
 title: Simplified Medium Scale Deployment - Sunbird Version 1.4  
@@ -33,10 +33,9 @@ For example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Check with the
 
 **Note:** To generate free SSL, use [Let's Encrypt](https://letsencrypt.org/){:target="_blank"} for most common cases. The script does not support some free domain names, provided by cloud providers. For example, the AWS provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, is not supported because of spammers. If the script is not compatible with your cloud provider, purchase a certificate or get a [free one](http://dot.tk){:target="_blank"}.
 
-- Ability to run the installation script in the application server
+- You must have git installed. For Debian/Ubuntu
 
-- An instance of Git for debian/ubuntu. Install Git using the command: 
-  `sudo apt install git` 
+  `apt install git -y`
 
 - Ensure that the two servers - application and DB - are able to ping each other
 
@@ -60,7 +59,7 @@ For example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Check with the
 
 4. If you don't have a valid ssl certificate, and have a valid domain name
     
-    execute `./certbot.sh`
+    execute `./certbot.sh`, to get a valid ssl cert from Let's Encrypt.
 
 5. Edit all the mandatory fields in  deploy/config file
 
@@ -85,5 +84,4 @@ for example:
     `./sunbird_installation.sh -s core`
 
 12. Open https://[domain-name] and verify.
-
 
