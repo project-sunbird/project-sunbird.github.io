@@ -719,27 +719,16 @@ paths:
               ts: '2017-05-25 10:18:56:578+0530'
             body: |-
               {
-
                   "request": {
-
                       "filters":{
-
                           "channel": "505c7c48ac6dc1edc9b08f21db5a571d",
-
                           "objectType": ["Content"],
-
                           "contentType": ["Story", "Worksheet", "Textbook", "Course", "Collection"],
-
                     "status":["Live"]
-
                       },
-
                       "sort_by": {"createdOn": "asc"},
-
                       "fields": ["name", "contentType", "createdFor", "createdBy", "createdOn", "status", "mimeType", "channel", "lastUpdatedOn"]
-
                   }
-
               }
           expectedResponse:
             x-allowExtraHeaders: true
@@ -1209,7 +1198,7 @@ paths:
             OK ! Successful operation."Read content" operation was
             successfully executed.
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/ContentGetResponse'
         '400':
           description: >-
             BAD REQUEST,**Content Read** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
@@ -1589,43 +1578,225 @@ definitions:
     allOf:
       - $ref: '#/definitions/ResultWithNodeId'
       - $ref: '#/definitions/ResponseHeader'
+  ContentGetResponse:
+    description: Get Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithContent'
+      - $ref: '#/definitions/ResponseHeader'
+  ResultWithContent:
+    title: Result Containing Content Object
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ContentObject'
+  ContentObject:
+    title: Result Containing Content Object
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/ContentProperties'
+  ContentProperties:
+    title: Node Id
+    type: object
+    properties:
+      identifier:
+        type: string
+        description: It represents the Node 
+      name:
+        type: string
+        description: It is the name given to a node
+      code:
+        type: string
+        description: It is the Node that is associated with a specific node
+      keywords:
+        type: array
+        items:
+          type: string
+        description: It represents the Keywords associated with a node
+      downloadUrl:
+        type: string
+        description: It is the Ecar S3 link, which can be used for dowmnloading the Ecar
+      channel:
+        type: string
+        description: Represents the channel with which the content is associated
+      description:
+        type: string
+        description: It denotes the description of content
+      language:
+        type: string
+        description: Represents the language of the content
+      variants:
+        type: array
+        items:
+          type: object
+        description: represents the content variants based on medium of language 
+      mimeType:
+        type: string
+        description: Represents the mimetype of the content
+      idealScreenSize:
+        type: string
+        description: Represents the ideal screen size of content
+      createdOn:
+        type: string
+        description: Represents the content creation date 
+      collections:
+        type: array
+        items:
+          type: object
+        description: Represents the collections that are associated with content
+      children:
+        type: array
+        items:
+          type: object
+        description: Represents the children (node) associated with the content
+      appId:
+        type: string
+        description: Represents the associated application Id
+      contentDisposition:
+        type: string
+        description: Represents how the content is placed or arranged, especially in relation to other content
+      contentEncoding:
+        type: string
+        description: Represents the format of content encoding
+      lastUpdatedOn:
+        type: string
+        description: Represents the date on which content was last updated
+      mimeTypesCount:
+        type: string
+        description: Represents the count of  mimetypes in associated contents
+      contentType:
+        type: string
+        description: Represents the type of content
+      lastUpdatedBy:
+        type: string
+        description: Represents the user who updated the content previously
+      audience:
+        type: array
+        items:
+          type: string
+        description: Represents the audience of the content
+      toc_url:
+        type: string
+        description: Represents the S3 url of table of contents of a content file
+      visibility:
+        type: string
+        description: Represents the visibility mode of the content
+      os:
+        type: string
+        description: Represents the type of Operating system
+      contentTypesCount:
+        type: string
+        description: Gives the count of different content types within the associated content
+      childNodes:
+        type: array
+        items:
+          type: string
+        description: Lists the child nodes asociated with content
+      consumerId:
+        type: string
+        description: It is the unique Id for consumers
+      mediaType:
+        type: string
+        description: Represents the MediaType of the content
+      osId:
+        type: string
+        description: Represents the Operating system Identifier
+      lastPublishedBy:
+        type: string
+        description: Represents the date on which content was last published
+      pkgVersion:
+        type: string
+        description: Represents the version of content package usually the last built package 
+      versionKey:
+        type: string
+        description: Represents the version number that was generated after last update
+      tags:
+        type: array
+        items:
+          type: string
+        description: Denotes the tags that are associated with the content
+      prevState:
+        type: string
+        description: Represents the previous state of the content
+      idealScreenDensity:
+        type: string
+        description: Represents the Ideal Screen density
+      s3Key:
+        type: string
+        description: Represents the S3 relative path of Ecar file
+      framework:
+        type: string
+        description: Represents which framework was used to create the content
+      size:
+        type: integer
+        description: Represents the size of content
+      lastPublishedOn:
+        type: string
+        description: Represents the date on which the content was last published
+      leafNodesCount:
+        type: integer
+        description: Represents the total number of leaf nodes against the collection content
+      compatibilityLevel:
+        type: integer
+        description: Represents the compatibility Level 
+      publisher:
+        type: string
+        description: Represents who is the publisher of the content
+      usedByContent:
+        type: array
+        items:
+          type: string
+        description: Represents the user whi used the content last time 
+      resourceType:
+        type: string
+        description: Represents the type of the content
+      status:
+        type: string
+        description: Represents the status of the content
+      license:
+        type: string
+        description: Represents the youtube licence value 
+      previewUrl:
+        type: string
+        description: Represents the preview Url link
   ResponseHeader:
     title: ResponseHeader
     type: object
     properties:
       id:
         type: string
-        description: API Identifier
+        description: Represents the unique API Identifier
       ver:
         type: string
-        description: API version information
+        description: Represents the API version information
       ts:
         type: string
-        description: API execution timespan
+        description: Represents the API execution span
       params:
         $ref: '#/definitions/ResponseParams'
       responseCode:
         type: object
-        description: 'API response code '
+        description: 'Represents the API response code '
   ResponseParams:
     title: Response Parameter
     type: object
     properties:
       resmsgid:
         type: string
-        description: Response Message Id
+        description: Represents the Id of the response
       msgid:
         type: string
-        description: Message Id
+        description: Represents the unique Id of the response message
       err:
         type: string
-        description: Error Code
+        description: Represents the Error Code if the execution fails
       status:
         type: string
-        description: Response Status
+        description: Represents the Response status when an API is called
       errmsg:
         type: string
-        description: Error Message
+        description: Represents the text that comes as a part of response status
   EmptyResult:
     title: Empty Result
     type: object

@@ -43,9 +43,8 @@ Let us set up the environment and then proceed with deploying the services.
 3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file to      create the required keyspace, tables and indices
 4. Copy the following files to a temp folder in a Cassandra installed machine 
     
-    - [pageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"} 
-    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv) {:target="_blank"}
-    - [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv){:target="_blank"} 
+    - [PageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"} 
+    - [PageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv){:target="_blank"} 
               
  Example:  ```/tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv ```
 
@@ -58,14 +57,13 @@ organisationid, portalmap, updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv'"
  display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) 
  FROM '/tmp/cql/pageSection.csv'"
 </pre>
-Next section details about setting up the Elasticsearch on your local machine.
+Next section details about setting up the Elastic search on your local machine.
 
-**Setup Elasticsearch**
+**Setup Elastic search**
 
-  1. For step by step installation guide of Elasticsearch refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html){:target="_blank"}
+  1. For step by step installation guide of Elastic search refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html){:target="_blank"}
 
-  2. The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to  
-     start the server and open Elasticsearch CLI (Command Line Interface)
+  2. The official website guides you through the installation, and if you have done a successful install of Elastic search, you need to start the server and open Elastic search CLI (Command Line Interface)
 
   3. Run the following curl command
 
@@ -105,18 +103,18 @@ To run Sunbird services, you need to set different environment variables listed 
 | sunbird_cassandra_port                | port on which Cassandra server is running                                                                   |
 | sunbird_cassandra_username (optional) | username for Cassandra database, if authentication is enabled                                               |
 | sunbird_cassandra_password (optional) | password for Cassandra database, if authentication is enabled                                               |
-| sunbird_es_host                       | host running the Elasticsearch server                                                                       |
-| sunbird_es_port                       | port on which Elasticsearch server is running                                                               |
-| sunbird_es_cluster (optional)         | name of the Elasticsearch cluster                                                                           |
+| sunbird_es_host                       | host running the Elastic search server                                                                       |
+| sunbird_es_port                       | port on which Elastic search server is running                                                               |
+| sunbird_es_cluster (optional)         | name of the Elastic search cluster                                                                           |
 | sunbird_learner_actor_host            | host running for learner actor                                                                              |
 | sunbird_learner_actor_port            | port on which learner actor is running                                                                      |
-| sunbird_sso_url                       | url for keycloak server (Example : **http://localhost:8080/auth** )                                                                                    |
-| sunbird_sso_realm                     | keycloak realm name   (use default realm as master or you can create new realm)                                                                                      |
-| sunbird_sso_username                  | keycloak user name                                                                                          |
-| sunbird_sso_password                  | keycloak password                                                                                           |
+| sunbird_sso_url                       | URL for Keycloak server (Example : **http://localhost:8080/auth** )                                                                                    |
+| sunbird_sso_realm                     | Keycloak realm name   (use default realm as master or you can create new realm)                                                                                      |
+| sunbird_sso_username                  | Keycloak user name                                                                                          |
+| sunbird_sso_password                  | Keycloak password                                                                                           |
 | sunbird_sso_client_id                 | key cloak client id  (use default as admin-cli or you can create new client in key cloak)                                                                                        |
-| sunbird_sso_client_secret             | keycloak client secret (not mandatory)                                                                      |
-| ekstep_content_search_base_url        | provide base url for EkStep content search                                                                  |
+| sunbird_sso_client_secret             | Keycloak client secret (not mandatory)                                                                      |
+| ekstep_content_search_base_url        | provide base URL for EkStep content searching                                                                 |
 | ekstep_authorization                  | provide Authorization value for content search                                                          |
 | sunbird_pg_host                       | Postgres host name or ip                                                                                   |
 | sunbird_pg_port                       | Postgres port number                                                                                        |
@@ -136,13 +134,15 @@ To run Sunbird services, you need to set different environment variables listed 
 | sunbird_encryption_key                |                                                                                                             |
 | sunbird_encryption_mode               | mode value is either local or remote                                                                        |
 | sunbird_sso_publickey                 | SSO public key                                                                                              |
-| sunbird_env_logo_url                  | logo url for sending email.(http://www.paramountias.com/media/images/current-affairs/diksha-portal.jpg)     |
-| sunird_web_url                        | web page url                                                                                                |
-| sunbird_app_url                       | Play store url to download the app                                                                          |
+| sunbird_env_logo_url                  | logo URL for sending email.(http://www.paramountias.com/media/images/current-affairs/sunbird-portal.jpg)     |
+| sunird_web_url                        | web page URL                                                                                               |
+| sunbird_app_url                       | Play store URL to download the app                                                                          |
 | sunbird_msg_91_auth                   | msg 91 auth  
   sunbird_msg_sender                     | message sender name        
 
-The table mentions all the environment variables with description. You need to add/edit the environment variables in appropriate locations.Next section details about the environmental variables that are mandatory to run the backend services.
+The table mentions all the environment variables with description. You need to add/edit the environment variables in appropriate locations.
+
+**Note:** The following environmental variables are mandatory to run the backend services.
 
 ### Setting Environment Variables
 
@@ -169,55 +169,57 @@ To run sunbird backend services, at least you need to set the following environm
           18. sunbird_sso_publickey
 </pre>
    
-Here, you can find the remaining [Environment Variable Values](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
+For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
 
 ## Configuring and running Back-End Services Stack
 
 You can configure the Backend service by following these instructions:
 
 - Cloning the repositories
-- Making the Build 
+- Making the Build
      
-Clone following repositories:
+### Clone following repositories:
           
    - [sunbird-utils](https://github.com/project-sunbird/sunbird-utils){:target="_blank"}
    - [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service){:target="_blank"}
    - [sunbird-lms-mw](https://github.com/project-sunbird/sunbird-lms-mw){:target="_blank"}
 
      
-  Make the builds in following order:
-   
+### Making the build
+
+Make the builds in following order:
+
    - sunbird-utils
    - sunbird-lms-mw
    - sunbird-lms-service
 
-## Configuring the (Akka) Actors 
+## Configuring the (Akka) Actors
 
 Sunbird architecture supports two Akka actor systems: 
      	
   1. Normal ActorSystem 
   2. Background ActorSystem 
 
-And by default, both run on two different machines.
-But to run these actor systems on single machine, you need to modify the [resource.properties file]
-For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to repository.
+By default, both run on two different machines. In order to run these actor systems on a single machine, you need to modify the [resource.properties file]
+For more details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to this repository.
 
-In order to run both the actor systems on single machine follow these steps:
+To run both the actor systems on a single machine follow these steps:
 
-  1.	Open **externalresource.properties** file 
+  1.	Open **externalresource.properties** file
   2.	Modify the following properties:
+         
           - background_actor_provider
           - api_actor_provider
+  
   3.	Set value of both properties as “local”
   4.	Run ```mvn clean install``` command to make build of each module
 
-
-And to run Application sunbird-lms-service execute the following command 
+To run the **sunbird-lms-service** execute the following command
     
-      run mvn play2:run 
+      ```mvn play2:run```
 
 ## Testing the services 
   
-Run any API, e.g. create a user API and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f){:target="_blank"}
+Test any API using postman, e.g. download **user API** and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f){:target="_blank"}
 
 

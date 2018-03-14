@@ -26,7 +26,7 @@ All the portal members are Users. Based on user responsibilities, rights are pro
 
 - [Course Mentor Role Function Matrix](features-documentation/coursementorrole_matrix){:target="_blank"}
 
-- [Announcement Sender Role Function Matrix](features-documentation/announcement_senderrrole_matrix){:target="_blank"}
+- [Announcement Sender Role Function Matrix](features-documentation/announcementsender_rolematrix){:target="_blank"}
 
 ## [User Profile](features-documentation/userprofile){:target="_blank"}
 
