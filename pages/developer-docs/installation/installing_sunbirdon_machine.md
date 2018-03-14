@@ -59,7 +59,7 @@ The code can be checked out using the command:
     
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
-> ***Note***: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
+***Note***: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
 
 Once the **git clone** command is over, run the following set of commands:
 
@@ -74,7 +74,7 @@ The Sunbird portal application is powered by a set of Service APIs. These Servic
 
 For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
 
-> ***Note***: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.
+***Note***: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.
 
 ### Edit the Application Configuration file
 
@@ -114,3 +114,4 @@ Run the following commands:
     $ node server.js
 
 After executing the commands, open `http://localhost:3000` in browser.
+ 

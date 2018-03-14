@@ -133,4 +133,4 @@ Click **Submit button** to submit your bug report to the issue tracker.
 
 ## Following up
 
-Once a developer marks a bug as fixed, it is a good idea to ensure that it is completely fixed. To test, download the latest build.
+Once a developer marks a bug as fixed, it is a good idea to ensure that it is completely fixed. To test, download the latest build. 

@@ -25,7 +25,11 @@ To install Sunbird, each of the servers should have the following minimum system
    - root access (should be able to sudo)
 
 ### API Keys
+
+- Sunbird implementors currently need to get a API key for accessing EkStep platform, since the content is stored there. In the future, Sunbird will support more content stores.
+
 - Sunbird implementors currently need to get an API key for accessing EkStep platform. Since the content is stored here. In the future, Sunbird will support more content stores.
+
 - To initially try Sunbird, request for the keys from the EkStep QA environment. 
 
 *For details to request for the keys, refer to the section [How to generate authorization credentials](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) on the Auth Token Generator JS Library page*  
@@ -36,11 +40,15 @@ To get production credentials, repeat the steps under API Keys section.
 
 ### SSL Certificate
 
+
+SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA.[LetsEncrypt](https://letsencrypt.org/){:target="_blank"}provides free SSL certificates. You can also use a CA of your choice. 
+
 SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognized CA. [LetsEncrypt](https://letsencrypt.org/){:target="_blank"} provides free SSL certificates. You can also use a CA of your choice. 
+
 
 Before you begin the installation, keep the SSL certificate and the key handy.
 
-***Note***: A self-signed certification will cause authentication to fail with an "Access Denied" error because the certificate will not be verified.
+***Note***: A self-signed certificate will cause authentication to fail with an "Access Denied" error because the certificate will not be verified.
 
 ### Relevant Variables
 

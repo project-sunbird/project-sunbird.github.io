@@ -72,7 +72,7 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
 `sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
 
-- Follow the [instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
+- Follow the [instructions](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in keycloak.
 
  **Update following configs** 
 
