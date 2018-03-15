@@ -181,7 +181,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /getuser:
+ /read:
     post:
       description: >-
         This API is associated with fetching User profile on the Sunbird Platform.
