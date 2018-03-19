@@ -9,6 +9,10 @@ published: true
 allowSearch: false
 ---
 
+
+{% animation path="json/data1.json" id="preview1" %}
+{% animation path="json/data2.json" id="preview2" %} 
+
 <table>
  <tr>
     <th style="width:35%;">Step</th>
