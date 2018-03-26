@@ -143,7 +143,7 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
      patch:
       description: >-
         This API is associated with updating content on the Sunbird Platform .
@@ -466,14 +466,14 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
     post:
       description: >-
        >-
        This API is associated with Submission of content for Review  on the Sunbird Platform .
           - The**_/review/{content Id}_** endpoint executes "Submit for Review" request based on parameters provided as metadata in the request body.
           - {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - You need to provide a valid content ID value in {Content Id} field of API URL.
           - It is mandatory to provide values for parameters marked with *. 
       summary: Submit for Review
       tags:
@@ -568,13 +568,13 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
     post:
       description:  >-
        This API is associated with uploading content on the Sunbird Platform .
           - The**_/upload/{content Id}_** endpoint executes "Create Content" request based on parameters provided as metadata in the request body.
           - {...}refers to a section of upload endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - You need to provide a valid content ID value in {Content Id} field of API URL.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Upload Content
@@ -752,7 +752,7 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
     post:
       description: >-
         This API is associated with setting Accept Flag for content under review process on the Sunbird Platform .
@@ -849,7 +849,7 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
     post:
       description: >-
         This API is associated with setting Reject Flag for content under review process on the Sunbird Platform .
@@ -946,14 +946,14 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
     post:
       description: >-
         This API is associated with Rejecting rejecting content
         under review after "Reject content flag" has been set on the Sunbird Platform .
           - The **_/reject/{contentId}_** endpoint executes request for rejecting content which is under review. 
           - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - You need to provide a valid content ID value in {Content Id} field of API URL.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Reject Content Review
@@ -1045,13 +1045,13 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
     post:
       description: >-
         This API is associated with setting Flag for content under review on the Sunbird Platform .
           - The **_/flag/{content Id}_** endpoint executes a request to set flagging status for content ,flag can either be set to "Accepted" or "Rejected".
           - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - You need to provide a valid content ID value in {Content Id} field of API URL.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Flag Content
@@ -1152,13 +1152,13 @@ paths:
         name: Content_Id
         type: string
         required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+        description: 'Please append a valid Content ID To the Request URL'   
     get:
       description: >-
         This API is associated with viewing and reading out the content on the Sunbird Platform .
           - The **_/read/{contentId}_** endpoint executes request for fetching the contents to be viewed and read.
           - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content Id value in {Content Id} field of API URL.
+          - You need to provide a valid content ID value in {Content Id} field of API URL.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Read Content
