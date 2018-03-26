@@ -48,7 +48,7 @@ A Library typically refers to a place or a space, housing a large collection of 
 				<li>All: To search for all content available in the portal</li>
 				<li>Courses: To search for all the courses available in the portal</li>
 				<li>Library: To search for content available in the library</li>
-				<li>Organizations: To search for organizations uploaded in the portal</li>
+				<li>Organizations: To search for organizations uploaded t the portal</li>
 				<li>Users: To search for users uploaded in the portal</li>
 			</ul>
          </li>
@@ -64,7 +64,7 @@ A Library typically refers to a place or a space, housing a large collection of 
   </tr>
   </table>
    
-## Advance Filter
+## Advancee Filter
 
 <table class="table table-img">
   <tr>
@@ -134,8 +134,8 @@ Popular stories are listed here. The different story types displayed are:
   <tr>
    <td>
        <ol>
-	       <li>Click on any of the story to view</li>
-	       <li>Click right or left <strong>Scroll bar</strong> to scroll</li>
+	       <li>Click on any of the stori to view</li>
+	       <li>Click right or left <strong>Scrollbar</strong> to scroll</li>
 	   </ol>
    </td>
   <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
@@ -152,14 +152,14 @@ Popular stories are listed here. The different story types displayed are:
   <tr>
    <td>
 	   <ul>
-		   <li>Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story are provided below the player</li>
+		   <li>Click on the story you wish to consume. The story is displayed in the in-built content player. Description and content information of the story are provided below the player</li>
 	   </ul>
 	</td>
 	<td><img src="pages/features-documentation/images/library_desc_cont_inf.png"></td>
 	</tr>
 	</table>
 
-**Sharing Stroies**
+**Sharing Stories**
 
 <table class="table table-img">
   <tr>
