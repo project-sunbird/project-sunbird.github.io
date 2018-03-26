@@ -6,11 +6,11 @@ It’s a NoSQL database management system designed to handle large amounts of da
 
 ### Elastic Search
 
-It provides a distributed, multi-tenant-capable full-text search with an HTTP web interface and schema-free JSON documents. It helps indexing courses for easy look-up against teacher, region, organization, time-line etc. It alos provides community tracking capabilities.  
+It provides a distributed, multi-tenant-capable full-text search with an HTTP web interface and schema-free JSON documents. It helps indexing courses for easy look-up against ateacher, region, organization, timeline etc. It also provides community tracking capabilities.  
 
 ### Kafka & Kibana
 
-Kafka enables Sunbird platform to stream content in real-time using data pipelines. An amalgamation of various data related tools in Sunbird provide an intuitive way to get insights about various functional entities of Sunbird. For instance, using various other data tools the Sunbird admin can get better understanding of content and its usage. It generates reports on users, content consumption, courses etc. The data related tools provide flexibility in viewing the analytics in different forms like line and scatter plots, or pie charts and maps.
+Kafka enables Sunbird platform to stream content in real-time using data pipelines. An amalgamation of various data related tools in Sunbird provide an intuitive way to get insights about various functional entities of Sunbird. For instance, using various other data tools the Sunbird admin can get abetter understanding of content and its usage. It generates reports on users, content consumption, courses etc. The data related tools provide flexibility in viewing the analytics in different forms like line and scatter plots, or pie charts and maps.
  
 ### Play Framework
 
@@ -18,7 +18,7 @@ Sunbird uses play framework with Kafka to present content to its users, wherein 
 
 ### Akka
 
-Akka is used as base for play framework, which provides powerful reactive, concurrent, and distributed application framework.
+Akka is used as abase for play framework, which provides powerful reactive, concurrent, and distributed application framework.
 
 ### Angular and Node.js
 
