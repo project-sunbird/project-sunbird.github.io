@@ -7,14 +7,14 @@ description: Registering Channel for root organization creation
 published: true
 allowSearch: true
 ---
-## Overview
+
 
 This page guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization 
 After registering a channel check the channel's registration status.    
 
-## Purpose
 
-The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific curriculum framework. Based on the channel value, provided at the time of registering a channel with Ekstep. Specific set of curriculum content framework will load. 
+
+The fundamental purpose of performing this activity is to enable each channel (Root Orgs) to outline and define channel specific curriculum framework. Based on the channel value, provided at the time of registering a channel with Ekstep. Specific set of curriculum content framework will load
 
 
 ### Registering a Channel 
