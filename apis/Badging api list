@@ -1,0 +1,945 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Badging Service api
+  description: Badging api list
+host: www.dev.open-sunbird.org
+basePath: /v1/issuer
+securityDefinitions:
+  auth:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: 'https://dev.open-sunbird.org/api/Badging'
+    scopes: {}
+    x-skip-client-authentication: false
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      summary: Create Issuer
+      operationId: CreatePost
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: name
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: description
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: url
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: email
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: image
+          in: formData
+          required: true
+          type: file
+          format: file
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/list:
+    post:
+      summary: List Badge Classes
+      operationId: BadgeListPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/ListBadgeClassesrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /badge/list
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+            body: >-
+              {"request":{"issuerList":[],"context":{"rootOrgId":"rootOrgIdvalue","type":"user","subtype":"award"}}}
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: List Badge Classes
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /list:
+    get:
+      summary: List Issuers
+      operationId: ListGet
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /list
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: List Issuers
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /read/swarn-3:
+    get:
+      summary: Get Issuer by ID
+      operationId: ReadSwarn3Get
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /read/swarn-3
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+              Authorization: 'Bearer {{api-key}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get Issuer by ID
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/read:
+    post:
+      summary: Get Badge Class by ID
+      operationId: BadgeReadPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/GetBadgeClassByIdrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /badge/read
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+              Authorization: 'Bearer {{api-key}}'
+            body: '{"request":{"issuerId":"swarn","badgeId":"badgeId"}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get Badge Class by ID
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/search:
+    post:
+      description: List of assertions
+      summary: List Badge Assertions
+      operationId: BadgeAssertionSearchPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/ListBadgeAssertionsrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /badge/assertion/search
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+            body: >-
+              {"request":{"filters":{"assertions":["5000f030-8626-4bc5-8f5e-0b86966efea8"]}}}
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: List Badge Assertions
+          x-testDescription: List of assertions
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/create:
+    post:
+      summary: Create Badge Assertion
+      operationId: BadgeAssertionCreatePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/CreateBadgeAssertionrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /badge/assertion/create
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+              Authorization: 'Bearer {{api-key}}'
+            body: >-
+              {"request":{"recipientEmail":"manzarul.haque@tarento.com","recipientId":"12334-4499-8999-3033","recipientType":"user","evidence":"https://sunbirddev.blob.core.windows.net/user/uploads/badges/bfd203a3c494170dd7de199a97e05486.png","issuerId":"swarn","badgeId":"something"}}
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Create Badge Assertion
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /delete/swarn:
+    delete:
+      summary: Delete Issuer by ID
+      operationId: DeleteSwarnDelete
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: DELETE
+            uri: /delete/swarn
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Delete Issuer by ID
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/delete:
+    delete:
+      description: Revoke badges
+      summary: Revoke Badge Assertion by ID
+      operationId: BadgeAssertionRevokeDelete
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/RevokeBadgeAssertionByIdrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: DELETE
+            uri: /badge/assertion/delete
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{access_token}}'
+            body: >-
+              {"request":{"assertionId":"97d8cc2a-b0ff-4fa5-81cf-6ab25985f008","recipientId":"userIdor
+              content id","recipientType":"user
+              orcontent","revocationReason":"some reason"}}
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Revoke Badge Assertion by ID
+          x-testDescription: Revoke badges
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/delete:
+    delete:
+      summary: Delete Badge Class
+      operationId: BadgeDeleteDelete
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/DeleteBadgeClassrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: DELETE
+            uri: /badge/delete
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{access_token}}'
+            body: '{"request":{"issuerId":"oracle-university","badgeId":"badgeId"}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Delete Badge Class
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/create:
+    post:
+      summary: Create Badge Class
+      operationId: BadgeCreatePost
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: issuerId
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: name
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: description
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: criteria
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: rootOrgId
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: type
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: subtype
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: roles
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: image
+          in: formData
+          required: true
+          type: file
+          format: file
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/read/5000f030-8626-4bc5-8f5e-0b86966efea8:
+    get:
+      description: |-
+        Generated from a curl request: 
+        curl -X POST \
+          http://localhost:9000/v1/issuer/badge/assertion/read \
+          -H 'authorization: Bearer {{api-key}}' \
+          -H 'cache-control: no-cache' \
+          -H 'content-type: application/json' \
+          -H 'postman-token: 6721c4d2-6d49-5d49-ccc1-5f78eb4d70c4' \
+          -H 'ts: 2017-05-25 10:18:56:578+0530' \
+          -H 'x-authenticated-user-token: {user-token}' \
+          -H 'x-consumer-id: X-Consumer-ID' \
+          -H 'x-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf' \
+          -d '  {
+          \"request\": {
+             \"assertionId\":\"779d42c0-0dbd-4e8c-850d-537538093d95\",
+             \"issuerId\":\"haque\",
+             \"badgeId\":\"db-design-expert\"
+           }
+          } 
+        '
+      summary: Get Badge Assertion by ID
+      operationId: BadgeAssertionRead5000f03086264bc58f5e0b86966efea8Get
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /badge/assertion/read/5000f030-8626-4bc5-8f5e-0b86966efea8
+            headers:
+              Content-Type: application/json
+              x-authenticated-user-token: '{{user-token}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Get Badge Assertion by ID
+          x-testDescription: |-
+            Generated from a curl request: 
+            curl -X POST \
+              http://localhost:9000/v1/issuer/badge/assertion/read \
+              -H 'authorization: Bearer {{api-key}}' \
+              -H 'cache-control: no-cache' \
+              -H 'content-type: application/json' \
+              -H 'postman-token: 6721c4d2-6d49-5d49-ccc1-5f78eb4d70c4' \
+              -H 'ts: 2017-05-25 10:18:56:578+0530' \
+              -H 'x-authenticated-user-token: {user-token}' \
+              -d '  {
+              \"request\": {
+                 \"assertionId\":\"779d42c0-0dbd-4e8c-850d-537538093d95\",
+                 \"issuerId\":\"haque\",
+                 \"badgeId\":\"db-design-expert\"
+               }
+              } 
+            '
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  ListBadgeClassesrequest:
+    title: List Badge ClassesRequest
+    example:
+      request:
+        issuerList: []
+        context:
+          rootOrgId: something
+          type: user
+          subtype: award
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+      - request
+  Request:
+    title: Request
+    example:
+      issuerList: []
+      context:
+        rootOrgId: something
+        type: user
+        subtype: award
+    type: object
+    properties:
+      issuerList:
+        description: ''
+        example: []
+        type: array
+        items:
+          type: string
+      context:
+        $ref: '#/definitions/Context'
+    required:
+      - issuerList
+      - context
+  Context:
+    title: Context
+    example:
+      rootOrgId: something
+      type: user
+      subtype: award
+    type: object
+    properties:
+      rootOrgId:
+        description: ''
+        example: something
+        type: string
+      type:
+        description: ''
+        example: user
+        type: string
+      subtype:
+        description: ''
+        example: award
+        type: string
+    required:
+      - rootOrgId
+      - type
+      - subtype
+  GetBadgeClassByIdrequest:
+    title: Get Badge Class by IDRequest
+    example:
+      request:
+        issuerId: swarn
+        badgeId: something
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request4'
+    required:
+      - request
+  Request4:
+    title: Request4
+    example:
+      issuerId: swarn
+      badgeId: something
+    type: object
+    properties:
+      issuerId:
+        description: ''
+        example: swarn
+        type: string
+      badgeId:
+        description: ''
+        example: something
+        type: string
+    required:
+      - issuerId
+      - badgeId
+  ListBadgeAssertionsrequest:
+    title: List Badge AssertionsRequest
+    example:
+      request:
+        filters:
+          assertions:
+            - 5000f030-8626-4bc5-8f5e-0b86966efea8
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request6'
+    required:
+      - request
+  Request6:
+    title: Request6
+    example:
+      filters:
+        assertions:
+          - 5000f030-8626-4bc5-8f5e-0b86966efea8
+    type: object
+    properties:
+      filters:
+        $ref: '#/definitions/Filters'
+    required:
+      - filters
+  Filters:
+    title: Filters
+    example:
+      assertions:
+        - 5000f030-8626-4bc5-8f5e-0b86966efea8
+    type: object
+    properties:
+      assertions:
+        description: ''
+        example:
+          - 5000f030-8626-4bc5-8f5e-0b86966efea8
+        type: array
+        items:
+          type: string
+    required:
+      - assertions
+  CreateBadgeAssertionrequest:
+    title: Create Badge AssertionRequest
+    example:
+      request:
+        recipientEmail: manzarul.haque@tarento.com
+        recipientId: 12334-4499-8999-3033
+        recipientType: user
+        evidence: >-
+          https://sunbirddev.blob.core.windows.net/user/uploads/badges/bfd203a3c494170dd7de199a97e05486.png
+        issuerId: swarn
+        badgeId: something
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request9'
+    required:
+      - request
+  Request9:
+    title: Request9
+    example:
+      recipientEmail: manzarul.haque@tarento.com
+      recipientId: 12334-4499-8999-3033
+      recipientType: user
+      evidence: >-
+        https://sunbirddev.blob.core.windows.net/user/uploads/badges/bfd203a3c494170dd7de199a97e05486.png
+      issuerId: swarn
+      badgeId: something
+    type: object
+    properties:
+      recipientEmail:
+        description: ''
+        example: manzarul.haque@tarento.com
+        type: string
+      recipientId:
+        description: ''
+        example: 12334-4499-8999-3033
+        type: string
+      recipientType:
+        description: ''
+        example: user
+        type: string
+      evidence:
+        description: ''
+        example: >-
+          https://sunbirddev.blob.core.windows.net/user/uploads/badges/bfd203a3c494170dd7de199a97e05486.png
+        type: string
+      issuerId:
+        description: ''
+        example: swarn
+        type: string
+      badgeId:
+        description: ''
+        example: something
+        type: string
+    required:
+      - recipientEmail
+      - recipientId
+      - recipientType
+      - evidence
+      - issuerId
+      - badgeId
+  RevokeBadgeAssertionByIdrequest:
+    title: Revoke Badge Assertion by IDRequest
+    example:
+      request:
+        assertionId: 97d8cc2a-b0ff-4fa5-81cf-6ab25985f008
+        issuerId: swarn
+        badgeId: something-34
+        revocationReason: some reason
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request11'
+    required:
+      - request
+  Request11:
+    title: Request11
+    example:
+      assertionId: 97d8cc2a-b0ff-4fa5-81cf-6ab25985f008
+      issuerId: swarn
+      badgeId: something-34
+      revocationReason: some reason
+    type: object
+    properties:
+      assertionId:
+        description: ''
+        example: 97d8cc2a-b0ff-4fa5-81cf-6ab25985f008
+        type: string
+      issuerId:
+        description: ''
+        example: swarn
+        type: string
+      badgeId:
+        description: ''
+        example: something-34
+        type: string
+      revocationReason:
+        description: ''
+        example: some reason
+        type: string
+    required:
+      - assertionId
+      - issuerId
+      - badgeId
+      - revocationReason
+  DeleteBadgeClassrequest:
+    title: Delete Badge ClassRequest
+    example:
+      request:
+        issuerId: oracle-university
+        badgeId: something
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request4'
+    required:
+      - request
