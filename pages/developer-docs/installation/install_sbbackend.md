@@ -110,13 +110,16 @@ To run Sunbird services, you need to set different environment variables listed 
 | sunbird_es_cluster (optional)         | name of the Elasticsearch cluster                                                                           |
 | sunbird_learner_actor_host            | host running for learner actor                                                                              |
 | sunbird_learner_actor_port            | port on which learner actor is running                                                                      |
-| sunbird_sso_url                       | url for keycloak server (Example: **http://localhost:8080/auth**)                                                                                    |
+                                                                                 |
+=======
+| sunbird_sso_url                       | URL for keycloak server (Example : **http://localhost:8080/auth** )                                                                                    |
+
 | sunbird_sso_realm                     | keycloak realm name   (use default realm as master or you can create new realm)                                                                                      |
 | sunbird_sso_username                  | keycloak user name                                                                                          |
 | sunbird_sso_password                  | keycloak password                                                                                           |
 | sunbird_sso_client_id                 | keycloak client id  (use default as admin-cli or you can create new client in keycloak)                                                                                        |
 | sunbird_sso_client_secret             | keycloak client secret (not mandatory)                                                                      |
-| ekstep_content_search_base_url        | provide base url for EkStep content search                                                                  |
+| ekstep_content_search_base_url        | provide base URL for EkStep content search                                                                  |
 | ekstep_authorization                  | provide Authorization value for content search                                                          |
 | sunbird_pg_host                       | Postgres host name or ip                                                                                   |
 | sunbird_pg_port                       | Postgres port number                                                                                        |
@@ -131,14 +134,14 @@ To run Sunbird services, you need to set different environment variables listed 
 | sunbird_mail_server_password          |                                                                                                             |
 | sunbird_mail_server_from_email        |                                                                                                             |
 | sunbird_account_name                  | account name of azure blob storage                                                                          |
-| sunbird_account_key                   | azure blob storage account key                                                                              |
-| sunbird_quartz_mode                   | put this value {"embedded" to run quartz without any data base, "any other value" to run with postgres db } |
+| sunbird_account_key                   | Azure blob storage account key                                                                              |
+| sunbird_quartz_mode                   | put this value {"embedded" to run quartz without any database, "any other value" to run with postgres db } |
 | sunbird_encryption_key                |                                                                                                             |
 | sunbird_encryption_mode               | mode value is either local or remote                                                                        |
 | sunbird_sso_publickey                 | SSO public key                                                                                              |
-| sunbird_env_logo_url                  | logo url for sending email.(http://www.paramountias.com/media/images/current-affairs/diksha-portal.jpg)     |
-| sunird_web_url                        | web page url                                                                                                |
-| sunbird_app_url                       | Play store url to download the app                                                                          |
+| sunbird_env_logo_url                  | logo URL for sending email.(http://www.paramountias.com/media/images/current-affairs/diksha-portal.jpg)     |
+| sunird_web_url                        | web page URL                                                                                                |
+| sunbird_app_url                       | Play store URL to download the app                                                                          |
 | sunbird_msg_91_auth                   | msg 91 auth  
   sunbird_msg_sender                     | message sender name        
 
@@ -199,8 +202,10 @@ Sunbird architecture supports two Akka actor systems:
   2. Background ActorSystem 
 
 And by default, both run on two different machines.
-But to run these actor systems on tsingle machine, you need to modify the [resource.properties file]
-For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to trepository.
+
+=======
+But to run these actor systems on the single machine, you need to modify the [resource.properties file]
+For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to the repository.
 
 In order to run both the actor systems on single machine follow these steps:
 
