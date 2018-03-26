@@ -17,9 +17,9 @@ Sunbird covers the following broad feature areas:
 - Dashboards for progress and assessment
 - Student and practitioner profile and registry services
 - Communities of practice for collaboration and discussions
-- Announcements, notifications and circulars
+- Announcements, notifications, and circulars
 
-## Techstack of Sunbird
+## Tech s tack of Sunbird
 
 The techstack used to develop the Sunbird is as follows:
 
@@ -27,7 +27,7 @@ The techstack used to develop the Sunbird is as follows:
 
   - *For details on AngularJS, refer to the [AngularJS site](https://angularjs.org/)*
   
-- **Java Play** - optimizes resource consumption (CPU, memory, threads) for high scalablilty
+- **Java Play** - optimizes resource consumption (CPU, memory, threads) for high scalabililty
 
   - *For details on Java Play, refer to the [Playframework site](https://playframework.com)*
   
@@ -50,12 +50,12 @@ The techstack used to develop the Sunbird is as follows:
 
   - *For details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)*
 
-To effectively install, implement, adopt or extend Sunbird, it is recommended that you know atleast one or more of the following areas:
+To effectively install, implement, adopt or extend Sunbird, it is recommended that you know at least one or more of the following areas:
 
 - IaaS - Provisioning servers and resources
 - DevOps - Docker, Ansible
 - Database administration - Cassandra, ElasticSearch
-- Web tools - Webserver,SSL certs, OAuth, REST API
+- Web tools - Webserver, SSL certs, OAuth, REST API
 
 ## Sunbird Components
 
@@ -72,7 +72,7 @@ The following are the core components of Sunbird:
 
   - *For details of the content editor, its features and instructions to use it, refer to [Content Editor](http://www.sunbird.org/features-documentation/contenteditor)*
 
-- **Content Editor Plugins**  - Sunbird has the capabality to extend the content editor by creating and using plugins. Plugin's are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc. 
+- **Content Editor Plugins**  - Sunbird has the capability to extend the content editor by creating and using plugins. Plugins are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc. 
 
 - **Sunbird Services** - Sunbird uses core and proxy services. 
 
@@ -100,10 +100,10 @@ To install Sunbird on any environment using any method of installation, the basi
 
 **Note:** *The prerequisites are not necessary to try the sandbox option*
 
-### Install Sunbird on laptop
+### Install Sunbird on 
 
-  - *For a comprehensive walk through to install Sunbird on your laptop, refer to [Installing Sunbird on laptop](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_laptop/)*
-
+  - *For a comprehensive walk through to install Sunbird on your (laptop), refer to [Installing Sunbird on y](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/)
+  
 ### Medium-scale deployment
 
 To deploy Sunbird for a userbase of 10-10000, refer to [Medium Scale Deployment](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/)
