@@ -62,7 +62,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Click on the <b>What's New</b> icon to view new functionalities and related content. The Whats's New page is displayed. <br><b>Note</b>: The <b>What's New</b> icon appears red in color before its clicked, once clicked the icon color changes to grey. The icon appears red only when there are ne feature releases.
+    <td>1.Click on the <b>What's New</b> icon to view new functionalities and related content. The Whats's New page is displayed. <br><b>Note</b>: The <b>What's New</b> icon appears red in color before its clicked, once clicked the icon color changes to grey. The icon appears red only when there are new feature releases.
     </td>
     <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
   </tr>
@@ -144,7 +144,7 @@ A book must be reviewed before it is published.
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Save</b> on the header to save the book <br>2. Click <b>Send for review</b> to send the created book for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
+    <td>1. Click <b>Save</b> on the header to save the book <br>2. Click <b>Send for review</b> to send the created book for review. Before sending for review, you can share the content with a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
     </td>
     <td><img src="pages/features-documentation/images/book_sendforreview.png"></td>
   </tr>    
