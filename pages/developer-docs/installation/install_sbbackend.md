@@ -110,11 +110,14 @@ To run Sunbird services, you need to set different environment variables listed 
 | sunbird_es_cluster (optional)         | name of the Elasticsearch cluster                                                                           |
 | sunbird_learner_actor_host            | host running for learner actor                                                                              |
 | sunbird_learner_actor_port            | port on which learner actor is running                                                                      |
+                                                                                 |
+=======
 | sunbird_sso_url                       | URL for keycloak server (Example : **http://localhost:8080/auth** )                                                                                    |
+
 | sunbird_sso_realm                     | keycloak realm name   (use default realm as master or you can create new realm)                                                                                      |
 | sunbird_sso_username                  | keycloak user name                                                                                          |
 | sunbird_sso_password                  | keycloak password                                                                                           |
-| sunbird_sso_client_id                 | key cloak client id  (use default as admin-cli or you can create new client in key cloak)                                                                                        |
+| sunbird_sso_client_id                 | keycloak client id  (use default as admin-cli or you can create new client in keycloak)                                                                                        |
 | sunbird_sso_client_secret             | keycloak client secret (not mandatory)                                                                      |
 | ekstep_content_search_base_url        | provide base URL for EkStep content search                                                                  |
 | ekstep_authorization                  | provide Authorization value for content search                                                          |
@@ -199,6 +202,8 @@ Sunbird architecture supports two Akka actor systems:
   2. Background ActorSystem 
 
 And by default, both run on two different machines.
+
+=======
 But to run these actor systems on the single machine, you need to modify the [resource.properties file]
 For details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to the repository.
 

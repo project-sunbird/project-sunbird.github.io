@@ -70,7 +70,7 @@ Before you start the installation process make sure you have successfully
 
 ## Provisioning servers
 
-Server provisioning is a set of actions to prepare a server with appropriate systems, data, software, and make it ready for network operation. [Provisioning Servers](developer-docs/installation/provisioning_servers){:target="_blank"} section will help you to see Automated and Manual process to provision the servers.   
+Server provisioning is a set of actions to prepare a server with appropriate systems, data, software, and make it ready for network operation. [Provisioning Servers](developer-docs/installation/provisioning_servers){:target="_blank"} section will help you to see tAutomated and Manual process to provision the servers.   
 
 ## Setup Databases
 

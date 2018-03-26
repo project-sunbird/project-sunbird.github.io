@@ -17,7 +17,7 @@ Assuming that you have set up Sunbird on sunbird.example.com, You can open Keycl
 - To simplify the configuration, Sunbird provides a ready to use realm that can be imported and used. 
 - You can [Download](https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json) the realm.
 
-Follow the steps to add, import and create the keycloak realm:
+Follow the steps to add, import and create the Keycloak realm:
 <table>
     <tr>
          <th style="width:35%;">Step</th>
@@ -26,7 +26,7 @@ Follow the steps to add, import and create the keycloak realm:
  <tr>
         <td> 
         In order to  import the realm:<br> 
-        1. Click on Add realm Button
+        1. Click on **Add realm**Button
         </td>
             <td>
             <img src="pages/developer-docs/installation/images/keycloack-add-realm.png">
@@ -35,7 +35,7 @@ Follow the steps to add, import and create the keycloak realm:
 <tr>
         <td> On the add realm screen:<br>
         
-1. Click on <strong>select file</strong> next to the Import label on the screen, choose the appropriate .json file <br>
+1. Click on <strong>Select file</strong> next to the Import label on the screen, choose the appropriate .json file <br>
 
 2. Write the appropriate name <br>
         </td>
@@ -44,7 +44,7 @@ Follow the steps to add, import and create the keycloak realm:
             </td>
 </tr>
 <tr>
-        <td> 1. Click on Create button
+        <td> 1. Click on <
         </td>
             <td>
             <img src="pages/developer-docs/installation/images/keycloak-import-realm-create.png">
@@ -60,16 +60,15 @@ Navigate to Manage, then to Users and create a new user.
 
 1. Enter the username as `user-manager`, set the email to be verified and save.
 
-2. Assign a password to n user.
+2. Assign a password to ne user.
 
-3. Update client roles under role mappings to ensure that this nuser has the following permissions:
+3. Update client roles under role mappings to ensure that this user has the following permissions:
     i.   `manage-users`
     ii.  `query-users`
     iii. `query-groups`
     iv.  `view-users` 
 
 **Note:** Refer to the following screenshot for reference configuration.
-
 
 {% image src='pages/developer-docs/installation/images/keycloak-add-user-manager.png' half center alt='Keycloak use management' %}{:target="_blank"}
 
@@ -91,8 +90,8 @@ The following steps will guide you through the configuration settings:
 
 ### Android
 
-1. Change the Root URL to `https://sunbird.example.com`
-2. Add a Valid Redirect URI `https://sunbird.example.com/oauth2callback`
+1. Change the Root URL `https://sunbird.example.com`
+2. Add a Valid Redirect URL `https://sunbird.example.com/oauth2callback`
 
 ### Portal
 
@@ -109,5 +108,5 @@ The following steps will guide you through the configuration settings:
 
 1. It is necessary to configure email for smooth working of the password reset functionality and user management workflows
 2. Navigate to `Realm Settings > Email`
-3. Enter the SMTP credentials
-4. Click the Test Connection button to verify that the SMTP connection is configured correctly
+3. Enter the **SMTP** credentials
+4. Click the **Test Connection** button to verify that the SMTP connection is configured correctly
