@@ -45,7 +45,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> for the lesson plan <br>3. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Subject</b> <br>&emsp;c) <b>Grade</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Language</b> <br>&emsp;f) <b>Concepts</b> <br>4. Enter <b>Notes to Teacher</b>, if any <br>5. Enter <b>Duration</b> of the lesson plan <br>6. Describe the <b>Learning Objective</b> for the lesson plan <br>7. Click <b>Lesson Plan</b> on the left navigation pane to add other units of content to the plan <br><b>Note</b>: You can edit or update the title of units in the collection from the navigation hierarchy <br>8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates.      
+    <td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> of the lesson plan <br>3. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Subject</b> <br>&emsp;c) <b>Grade</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Language</b> <br>&emsp;f) <b>Concepts</b> <br>4. Enter <b>Notes to Teacher</b>, if any <br>5. Enter <b>Duration</b> of the lesson plan <br>6. Describe the <b>Learning Objective</b> for the lesson plan <br>7. Click <b>Lesson Plan</b> on the left navigation pane to add other units of content to the plan <br><b>Note</b>: You can edit or update the title of units in the collection from the navigation hierarchy <br>8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates.      
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/addmetadata.png"></td>
  </tr>
@@ -107,7 +107,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to the lesson plan, you can either <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b>
+    <td>To add content to the lesson plan, you can either <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/addcontent.png"></td>
   </tr>
@@ -135,49 +135,9 @@ The Table of Contents tree seen in the left pane is used to navigate content com
  - The burger menu associated with a tree node 
  - Right-click options associated with a tree node, **OR**
  - Keyboard shortcuts
+ 
+ **Note**: For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
 
-**Adding Child Node**
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>A child node is created as a node within the collection. Any number of child nodes can be created. To add a child node you can either: <br>1. Click <b>New Child</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>2. Right-click on the node name and select <b>New Child</b>, <b>OR</b> <br>3. Use the keyboard shortcut <b>Ctrl+Alt+N</b>, <b>OR</b> <br>4. Click <b>New Child</b> at the bottom of the navigation to add child node 
-    </td>
-    <td><img src="pages/features-documentation/images/lessonplan/childnode.png"></td>
-  </tr>
-</table>
-      
-**Adding Sibling Node**
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>A sibling node is created at the same hierarchy level as a child node. Any number of sibling nodes can be created. To add a sibling node you can either: <br>1. Click <b>New Sibling</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>2. Right-click on the node name and select <b>New Sibling</b>, <b>OR</b> <br>3. Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b>, <b>OR</b> <br>4. Click <b>New Sibling</b> at the bottom of the navigation to add sibling node
-    </td>
-    <td><img src="pages/features-documentation/images/lessonplan/siblingnode.png"></td>
-  </tr>
-</table>
-
-**Node Metadata**
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>On clicking <b>New Child</b> or <b>New Sibling</b>, the metadata is displayed on the right <br>1. Enter <b>Unit Title</b> <br>2. Enter <b>Description</b> <br>3. Add <b>Notes to Teacher</b> <br>4. Click <b>Save</b> to save the metadata <br>5. Click <b>Add icon</b> to add image to the metadata. For details on adding image refer, <a href="features-documentation/lessonplan/#adding-image-to-lesson-plan-metadata">Adding Image to Lesson Plan Metadata</a> <br><b>Note:</b> The metadata for a child and sibling node is the same.
-    </td>
-    <td><img src="pages/features-documentation/images/lessonplan/nodemetadata.png"></td>
-  </tr>
-</table>
-        
 ### Deleting Content 
 
 <table>
@@ -214,7 +174,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
 
 ### Sending Lesson Plan for Review
 
-Before the Lesson Plan is publihed, it must be reviewed. You can send it for reviewing and publishing.
+Before the Lesson Plan is published, it must be reviewed. You can send it for reviewing and publishing.
 
 <table>
   <tr>
