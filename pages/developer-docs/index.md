@@ -9,14 +9,21 @@ published: true
 allowSearch: true
 ---
 
+Sunbird's developer documentation is meant for its adopters, developers and contributors.   
 
-The Developer Documentation provides a way through, that will not only help you get started as a Sunbird Contributor, but also useful to them who are experienced contributors. The Sunbird community prides itself on being an open, accessible and friendly for new participants. 
+It not only helps you get started, but it is also useful if you want to customize, contribute or extend Sunbird. The Sunbird community prides itself on being open, accessible, and friendly to all its users.
 
-There are lots of ways to contribute to the Sunbird project: 
+Since Sunbird is based on an open platform, you are free to use any programming language to extend or customize it. If you want to try the Sunbird APIs, a basic understanding of REST APIs and a knowledge of object-oriented design principles is a plus, though not necessary.
 
-- Coding
-- Testing
-- Improving the build process and tools
-- Contributing to the documentation
+The developer documentation helps you to get familiar with the bare necessities, giving you a quick and clean approach to get up and running. If you are looking for ways to customize the workflow, or just breaking things down to build them back up, head to the reference section to dig into the mechanics of Sunbird APIs.
 
-We know that before you can even start contributing, getting set up to work on Sunbird and finding a bug that's a good fit for your skills can be a challenge. We are always looking for ways to improve that process and make Sunbird more open, accessible and easier to participate. The Developer documentation provides all that is needed for "installing Sunbird" to "contributing. It also provides the information related to Sunbird APIs, SDKs, and other developer resources.
+
+The Developer documentation provides you with a complete set of guidelines which you need to:
+
+    - Install Sunbird
+    - Configure Sunbird
+    - Customize Sunbird
+    - Extend Sunbird
+    - Contribute to Sunbird
+
+Go to the [Getting Started]() page to get your instance of Sunbird up and running.
