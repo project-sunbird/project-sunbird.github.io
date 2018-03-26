@@ -22,7 +22,7 @@ The Azure automation script creates the network and the servers required.The def
 
 * Create Azure Virtual Network (aka VPC in AWS) 
 * Create multiple subnets (one for swarm master, one for swarm slave machines and DB servers) 
-* Create master servers, a replication set of slaves (so that you can add or subtract slave nodes easily),load balancers for master and slaves
+* Create master servers, a replication set of slaves (so that you can add or subtract slave nodes easily), load balancers for master and slaves
 * Open up ports for communication between servers, creates a DB server, sets up FQDNs and runs the Docker Swarm
 
 **Prerequisites**  
@@ -37,7 +37,7 @@ Run the following steps from a machine which is connected to the internet:
 2. Run `./sunbird-devops/deploy/generate-config.sh mysb production cloud` This will create config files for you in `./mysb-devops/test/azure`. 
 3. Here, `mysb` is the **implementation-name** and `production` is the **environment-name**.
 4. Edit both the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the app.
-5. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the db.
+5. Edit the new config files `azuredeploy.parameters.json` and `env.sh` as per your requirements for the 
 6. Run `export APP_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/app`
 7. Run `export DB_DEPLOYMENT_JSON_PATH=<absolute path of azuredeploy.parameters.json>`. For instance, on my laptop it is `export DEPLOYMENT_JSON_PATH=/Users/shashankt/code2/sunbird/mysb-devops/production/azure/db`
 8. Run `cd sunbird-devops/deploy`
@@ -49,11 +49,11 @@ Run the following steps from a machine which is connected to the internet:
 11. Wait for deployment process to complete
 12.	Check on Azure portal by navigating to: Resource Group -> Deployments -> Click on deployment to see deployment details
 13. Try to SSH. If your `masterFQDN` from deployment details was `production-1a.centralindia.cloudapp.azure.com` you can ssh using `ssh -A ops@production-1a.centralindia.cloudapp.azure.com`
-14. If SSH was sucessful, you have successfully created the server platform.
+14. If SSH was successful, you have successfully created the server platform.
 
 Estimated elapsed time is 30 mins for a fresh install. 
 
-You can re-try scripts to create a new set of servers every time in case you need to. Some of the configurations are unconfigurable at this point e.g. the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan for scaling up or down.
+You can re-try scripts to create a new set of servers every time in case you need to. Some of the configurations are unconfigurable at this point e.g. the server type. However, it’s possible to add or reduce the number of servers and re-run the automation process, if you plan o scaling up or down.
 
 ### Automation walkthrough
 

@@ -26,7 +26,9 @@ Follow the steps to add, import and create the Keycloak realm:
  <tr>
         <td> 
         In order to  import the realm:<br> 
-            1. Click on Add realm Button
+
+        1. Click on **Add realm**Button
+
         </td>
             <td>
             <img src="pages/developer-docs/installation/images/keycloack-add-realm.png">
@@ -35,7 +37,8 @@ Follow the steps to add, import and create the Keycloak realm:
 <tr>
         <td> On the add realm screen<br>
         
-            1. Click on <strong>select file</strong> next to the Import label on the screen, choose the appropriate .json file <br>
+
+1. Click on <strong>Select file</strong> next to the Import label on the screen, choose the appropriate .json file <br>
 
 2. Type the appropriate name <br>
         </td>
@@ -44,7 +47,7 @@ Follow the steps to add, import and create the Keycloak realm:
             </td>
 </tr>
 <tr>
-        <td> 1. Click on Create button
+        <td> 1. Click on <
         </td>
             <td>
             <img src="pages/developer-docs/installation/images/keycloak-import-realm-create.png">
@@ -58,6 +61,7 @@ Follow the steps to add, import and create the Keycloak realm:
 
 Navigate to Manage tab, then to Users and create a new user.
 
+
 1. Enter the username as **user-manager**
 2. Set the email to be verified
 3. Click save
@@ -70,6 +74,7 @@ Navigate to Manage tab, then to Users and create a new user.
     - view-users
 
 **Note:** Refer to the following image for reference configuration.
+
 
 {% image src='pages/developer-docs/installation/images/keycloak-add-user-manager.png' half center alt='Keycloak use management' %}{:target="_blank"}
 
@@ -91,8 +96,8 @@ The following steps will guide you through the configuration settings:
 
 ### Android
 
-1. Change the Root URL to `https://sunbird.example.com`
-2. Add a Valid Redirect URI `https://sunbird.example.com/oauth2callback`
+1. Change the Root URL `https://sunbird.example.com`
+2. Add a Valid Redirect URL `https://sunbird.example.com/oauth2callback`
 
 ### Portal
 
@@ -110,4 +115,5 @@ The following steps will guide you through the configuration settings:
 1. It is necessary to configure email for smooth working of the password reset functionality and user management workflows
 2. Navigate to **Realm Settings** and then to **Email**
 3. Enter the **SMTP credentials**
+
 4. Click the **Test Connection** button to verify that the SMTP connection is configured correctly

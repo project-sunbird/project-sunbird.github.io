@@ -17,6 +17,7 @@ Since Sunbird is based on an open platform, you are free to use any programming 
 
 The developer documentation helps you to get familiar with the bare necessities, giving you a quick and clean approach to get up and running. If you are looking for ways to customize the workflow, or just breaking things down to build them back up, head to the reference section to dig into the mechanics of Sunbird APIs.
 
+
 The Developer documentation provides you with a complete set of guidelines which you need to:
 
     - Install Sunbird

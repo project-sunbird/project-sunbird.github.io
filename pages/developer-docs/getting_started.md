@@ -12,12 +12,12 @@ Sunbird is an open source, configurable, extendable, modular learning management
 
 Sunbird covers the following broad feature areas:
 
-- Courses, trainings, lesson plans and assessments
+- Courses, training, lesson plans and assessments
 - Resources for use by practitioners and professionals
 - Dashboards for progress and assessment
 - Student and practitioner profile and registry services
 - Communities of practice for collaboration and discussions
-- Announcements, notifications and circulars
+- Announcements, notifications, and, circulars 
 
 ## Tech stack of Sunbird
 
@@ -50,7 +50,9 @@ To effectively install, implement, adopt or extend Sunbird, it is recommended th
 - IaaS - Provisioning servers and resources
 - DevOps - Docker, Ansible
 - Database administration - Cassandra, ElasticSearch
+
 - Web tools - Webserver,SSL Certificates, OAuth, REST API
+
 
 ## Sunbird Components
 
@@ -66,7 +68,9 @@ The following are the core components of Sunbird:
 
   - For details of the content editor, its features and instructions to use it, refer to [Content Editor](http://www.sunbird.org/features-documentation/contenteditor)
 
-- **Content Editor Plugins**  - Sunbird has the capability to extend the content editor by creating and using plugins. Plugin's are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc.
+
+- **Content Editor Plugins**  - Sunbird has the capability to extend the content editor by creating and using plugins. Plugins are available for rendering, capturing telemetry, creating and registering a new repository instance, previewing created content, etc. 
+
 
 - **Sunbird Services** - Sunbird uses core and proxy services.
 
@@ -78,15 +82,21 @@ The following are the core components of Sunbird:
   For details, refer to [Deploying Sunbird Services](http://www.sunbird.org/developer-docs/installation/deploy_sb_services/)
 ## Installation Overview
 
-Sunbird can be installed on different devices and can be deployed for single or multiusers.
+
+Sunbird can be installed on different devices and can be deployed for a single or multiple users. 
 
   - For details on the installation process, refer to [Installation Overview](http://www.sunbird.org/developer-docs/installation/)
 
 ### Pre-requisites
 
-To install Sunbird on any environment using any method of installation, the basic minimum prerequisites are:
+To install Sunbird in any environment using any method of installation, the basic minimum prerequisites are:
 
-  - Use of a Linux OS flavor.
+
+  - Use of a Linux OS flavor 
+
+**Note:** *Developer installation is possible on MacOS*
+
+
   - Comfort using a terminal, as Sunbird installation is triggered from a command-line terminal
 
 **Note:**
@@ -94,9 +104,11 @@ To install Sunbird on any environment using any method of installation, the basi
   - Developer installation is possible on MacOS
   - The prerequisites are not necessary to try the sandbox option
 
+
 ### Install Sunbird on your Machine
 
   - *For a comprehensive walk through to install Sunbird on your laptop, refer to [Installing Sunbird on your Machine](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/)*
+
 
 ### Medium-scale deployment
 
