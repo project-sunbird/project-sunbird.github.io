@@ -1,4 +1,4 @@
-# sunbird-commons
+# Sunbird Documentation Repository
 
 ## What is Sunbird?
 Sunbird is a next-generation scalable open-source learning solution for teachers and tutors. Built for the 21st century with state-of-the-art technology, Sunbird runs natively in cloud/mobile environments. The open-source governance of Sunbird allows a massive community of nation-builders to co-create and extend the solution in novel ways.

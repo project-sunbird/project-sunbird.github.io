@@ -214,12 +214,18 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d9474', endColorstr='#2a6fa8',GradientType=1 );
 	}
 }
+/*
+Uncomment this in multiversion
 .sidebar-container .inner__sidebar .sidebar-wrapper .sidebar-group {
 	display:none;
-}
+}*/
 .sidebar-container .inner__sidebar .sidebar-wrapper .section.active .sidebar-group {
 	display:block;
 }
+.section-developer-docs.path-apis .sidebar-group{
+	display:block !important;
+}
+
 /* Multiversion - Remove from Here*/
 .sidebar-group.architecture,
 .sidebar-group.features-documentation,

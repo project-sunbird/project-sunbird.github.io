@@ -57,3 +57,4 @@ While viewing content, content providers can see following data:
 - Total time for content views,
 - Total number of content pieces viewed,
 - Average time spent per user per visit
+ 

@@ -52,3 +52,4 @@ The Sunbird platform is architected to scale horizontally to millions of users a
 **Data Security and Privacy by Design**
 
 Managing security and privacy of data is a critical part of the design of Sunbird. Data is digitally signed to ensure privacy and all data access is through API calls to ensure centralised management of security controls. Direct access is prohibited for internal data access (access between various modules) and use of APIs is highly encouraged. Encapsulating access controls, auditing, confidentiality (via encryption), and integrity (via signatures) is enabled via common APIs. No application can access data directly from the data storage. This ensures privacy and data integrity and will disseminate data to be authenticated and authorised users only (both internal and external).
+

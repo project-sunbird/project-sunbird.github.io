@@ -46,6 +46,7 @@ Check the following pre-requisites before installing and running the Sunbird-pla
 	  latest version of gulp: `npm install -g gulp-cli`
 
 2. **API Keys** 
+
 This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
 
 - For getting an API key,send an email to: info@sunbird.org
