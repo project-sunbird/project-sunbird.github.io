@@ -92,9 +92,9 @@ Next section details about setting up the Keycloak on your local machine.
 
 6. For sending welcome email when a user registers, you need to configure email server by navigating to: Realm Settings tab -> Emails (optional)
 
-### Configuration setup for Application
+### Configuring the Application
 
-To run Sunbird services, you need to set different environment variables listed as follows:
+To run Sunbird services, you need to set the following environment variables:
 
 
 | variable                              | description                                                                                                 |
@@ -140,9 +140,9 @@ To run Sunbird services, you need to set different environment variables listed 
 | sunbird_msg_91_auth                   | msg 91 auth  
   sunbird_msg_sender                     | message sender name        
 
-The table mentions all the environment variables with description. You need to add/edit the environment variables in appropriate locations.
+The table mentions all the environment variables with description. Add or edit the environment variables in their appropriate locations.
 
-**Note:** The following environmental variables are mandatory to run the backend services.
+**Note:** The following environment variables are mandatory to run the backend services.
 
 ### Setting Environment Variables
 
@@ -178,7 +178,7 @@ You can configure the Backend service by following these instructions:
 - Cloning the repositories
 - Making the Build
      
-### Clone following repositories:
+### Clone the Repositories
           
    - [sunbird-utils](https://github.com/project-sunbird/sunbird-utils){:target="_blank"}
    - [sunbird-lms-service](https://github.com/project-sunbird/sunbird-lms-service){:target="_blank"}
