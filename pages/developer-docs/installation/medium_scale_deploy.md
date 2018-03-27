@@ -26,8 +26,6 @@ To install Sunbird, each of the servers should have the following minimum system
 
 ### API Keys
 
-- Sunbird implementors currently need to get a API key for accessing EkStep platform, since the content is stored there. In the future, Sunbird will support more content stores.
-
 - Sunbird implementors currently need to get an API key for accessing EkStep platform. Since the content is stored here. In the future, Sunbird will support more content stores.
 
 - To initially try Sunbird, request for the keys from the EkStep QA environment. 
@@ -40,11 +38,7 @@ To get production credentials, repeat the steps under API Keys section.
 
 ### SSL Certificate
 
-
 SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA.[LetsEncrypt](https://letsencrypt.org/){:target="_blank"}provides free SSL certificates. You can also use a CA of your choice. 
-
-SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognized CA. [LetsEncrypt](https://letsencrypt.org/){:target="_blank"} provides free SSL certificates. You can also use a CA of your choice. 
-
 
 Before you begin the installation, keep the SSL certificate and the key handy.
 
