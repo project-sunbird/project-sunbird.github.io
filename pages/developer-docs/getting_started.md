@@ -76,21 +76,21 @@ The following are the core components of Sunbird:
   - Proxy (Nginx)
   - Oauth 2 (Keycloak)
  
-  For details, refer to [Deploying Sunbird Services](http://www.sunbird.org/developer-docs/installation/deploy_sb_services/)
+## Trying Sunbird
 
-## Installation Overview
+If you are looking to explore Sunbird and test its feature set, we recommend you use the [Sunbird sandbox](https://staging.open-sunbird.org/) which is hosted by us. You can also try the developer installation if you want to setup Sunbird on your workstation for testing, understanding or contributing back.
 
-The sunbird components can be deployed on your local workstation or on Cloud VMs.
+**Note: Data created in the sandbox is erased after 24 hours**
 
-### Dev Installation
+### Developer Installation
 
-For a comprehensive walk through to install Sunbird on your laptop, refer to [Installing Sunbird on your Machine](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/)
+For a comprehensive walk through to install Sunbird on your workstation, refer to [Developer Installation](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/)
 
 
-### Server Installation
+## Server Installation
 
-Sunbird can be installed in various server toplogies and can scale for thousands of users. Please refer to [Server Installation Overview](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/)
+Please refer to the [Server Installation Steps](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/) if you want to host sunbird on your servers. Sunbird supports various deployment toplogies and it can scale for thousands of users. 
 
 ## Mobile App Installation
 
-To create a customized mobile application of Sunbird, refer to [Mobile App Installation](http://www.sunbird.org/developer-docs/installation/install_mobile_setup)
+To create a customized Sunbird mobile application for your hosted Sunbird, refer to [Mobile App Setup](http://www.sunbird.org/developer-docs/installation/install_mobile_setup).
