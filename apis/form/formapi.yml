@@ -1,0 +1,380 @@
+swagger: "2.0"
+info:
+  version: '1.0'
+  title: Form API(s)
+  description: The Form API supports developers to create & update metadata form fields based on type, subtype, and action. The field configurations required for the specific forms can be setup using these APIs.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /data/v1/form
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /read:
+    post:
+      description: This API is used to read form data
+      summary: Form Read
+      operationId: ReadPost2
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/formReadRequest'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Read Form data" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/readResponse'
+        '400':
+          description: 'BAD REQUEST. "Form Read" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security:
+      - auth: []
+      
+  /create:
+    post:
+      description: This API is used to read form data
+      summary: Form Create
+      operationId: CreatePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/formcreateRequest'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Create Form data" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/crateResponse'
+        '400':
+          description: 'BAD REQUEST. "Form Create" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security:
+      - auth: []
+  
+  /update:
+    post:
+      description: This API is used to update form data
+      summary: Form Update
+      operationId: UpdatePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: ''
+        schema:
+          $ref: '#/definitions/formcreateRequest'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Update Form data" operation was successfully executed.'
+          schema:
+              $ref: '#/definitions/crateResponse'
+        '400':
+          description: 'BAD REQUEST. "Form Update" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security:
+      - auth: []
+
+definitions:
+  readRequest:
+    title: Form read API request object
+    type: object
+    properties:
+      request:
+        required:
+        - type
+        - subType
+        - action
+        - framework
+        - rootOrgId
+        properties:
+          type: 
+            type: string
+            description: 
+          subType:
+            type: string
+            description: 
+          action:
+            type: string
+            description: 
+          framework:
+            type: string
+            description: 
+          rootOrgId:
+            type: string
+            description:
+  formReadRequest:
+    title: Form read API request body
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: "#/definitions/readRequest"
+  formcreateRequest:
+    title: Form create & update API request body
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: "#/definitions/crateRequest"
+  crateRequest: 
+    title: Form create & update API request object
+    type: object
+    properties:
+      request:
+        required:
+        - type
+        - subType
+        - action
+        - framework
+        - rootOrgId
+        - data
+        properties:
+          type: 
+            type: string
+            description: 
+          subType:
+            type: string
+            description: 
+          action:
+            type: string
+            description: 
+          framework:
+            type: string
+            description: 
+          rootOrgId:
+            type: string
+            description:
+          data:
+            schema:
+            $ref: '#/definitions/dataFields'          
+  readResponse:
+    title: Form read API response Object
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: "#/definitions/readResult"
+  crateResponse:
+    title: Form create & update API response Object
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: "#/definitions/createResult"
+  readResult:
+    title: Form read API response result Object
+    type: object
+    properties:
+      result:
+        properties:
+          form:
+            type: object
+            properties:
+              type: 
+                type: string
+                description: 
+              subType:
+                type: string
+                description: 
+              action:
+                type: string
+                description: 
+              framework:
+                type: string
+                description: 
+              rootOrgId:
+                type: string
+                description:
+              data:
+                schema:
+                $ref: '#/definitions/dataFields'
+  createResult:
+    title: Form create & update API's response result Object
+    type: object
+    properties:
+      result:
+        properties:
+          response:
+            type: object
+            properties:
+              rootOrgId:
+                type: string
+              key:
+                type: string
+              status:
+                type: string
+  FailedResponseHeader:
+    title: Failure Response
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/FailedResponseParams'
+      responseCode:
+        type: string
+        description: responseCode
+      result:
+        properties:
+          result:
+            type: string
+            description: result
+  FailedResponseParams:
+    title: Failed Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  dataFields:
+    type: object
+    properties:
+      templateName:
+        type: string
+        description: 
+      action: 
+        type: string
+        description: 
+      fields: 
+        type: array
+        items:
+          type: object
+          required:
+          - code
+          - dataType
+          - editable
+          - inputType
+          - label
+          - required
+          - visible
+          - index
+          - placeholder
+          properties:  
+            code:
+              type: string
+              description: 
+            dataType:
+              type: string
+              description: 
+            description:
+              type: string
+              description: 
+            editable:
+              type: boolean
+              description: 
+            inputType:
+              type: string
+              description: 
+            label:
+              type: string
+              description: 
+            name:
+              type: string
+              description: 
+            index:
+              type: integer
+              description: 
+            placeholder:
+              type: string
+              description:  
+            required:
+              type: boolean
+              description: 
+            visible:
+              type: boolean
+              description:
+            renderingHints:
+              type: object
+              description:
+
+               
