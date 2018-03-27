@@ -84,7 +84,7 @@ The sunbird components can be deployed on your local workstation or on Cloud VMs
 
 ### Dev Installation
 
-  - *For a comprehensive walk through to install Sunbird on your laptop, refer to [Installing Sunbird on your Machine](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/)*
+For a comprehensive walk through to install Sunbird on your laptop, refer to [Installing Sunbird on your Machine](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/)
 
 
 ### Server Installation
