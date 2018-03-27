@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: '1.0'
-  title: Org. API(s)
+  title: Org API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
     email: admin@open-sunbird.org
@@ -30,13 +30,13 @@ paths:
     post:
       description: >-
           This API is associated with creation of a new Organisation on the Sunbird Platform.
-            - The **_/create/_** endpoint executes the "Organization-Create" request based on parameters provided as metadata in the request body.
+            - The **_/create/_** endpoint executes the "Organisation-Create" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for parameters marked with *. 
             - Mandatory fields cannot be null or empty.
-      summary: Creates a new Organization
+      summary: Creates a new Organisation
       tags:
-      - Org. APIs
-      operationId: Organization-Create
+      - Org APIs
+      operationId: Organisation-Create
       produces:
       - application/json
       parameters:
@@ -47,7 +47,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the new Organisation to be created.
         schema:
-          $ref: '#/definitions/OrganizationCreaterequest'
+          $ref: '#/definitions/OrganisationCreaterequest'
       - name: Accept
         in: header
         required: true
@@ -94,11 +94,11 @@ paths:
         description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."Organization-Create" operation was successfully executed.'
+          description: 'OK ! Successful operation."Organisation-Create" operation was successfully executed.'
           schema:
             $ref: '#/definitions/ContentCreateResponse'
         '400':
-          description: 'BAD REQUEST. The "Organization-Create" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. The "Organisation-Create" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
         '500':
@@ -130,7 +130,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: Organization-Create
+        x-testName: Organisation-Create
         x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
@@ -141,13 +141,13 @@ paths:
     patch:
       description: >-
           This API is associated with updating an existing Organisation on the Sunbird Platform.
-            - The **_/update/_** endpoint executes the "Organization-Update" request based on parameters provided as metadata in the request body.
+            - The **_/update/_** endpoint executes the "Organisation-Update" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for parameters marked with *. 
             - Mandatory fields cannot be null or empty.
-      summary: Updates Organization
+      summary: Updates Organisation
       tags:
-      - Org. APIs
-      operationId: Organization-Update
+      - Org APIs
+      operationId: Organisation-Update
       produces:
       - application/json
       parameters:
@@ -156,9 +156,9 @@ paths:
         required: true
         description:  >-
             The body refers to the format of the request.
-              - The body contains metadata about the request to update an organization.
+              - The body contains metadata about the request to update an Organisation.
         schema:
-          $ref: '#/definitions/OrganizationUpdaterequest'
+          $ref: '#/definitions/OrganisationUpdaterequest'
       - name: Accept
         in: header
         required: true
@@ -177,7 +177,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Organization-Update** request was sent.'
+        description: 'Time Stamp at which **Organisation-Update** request was sent.'
       - name: locationId
         in: header
         required: false
@@ -205,11 +205,11 @@ paths:
         description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."Organization Update " operation was successfully executed.'
+          description: 'OK ! Successful operation."Organisation Update " operation was successfully executed.'
           schema:
             $ref: '#/definitions/ContentCreateResponse'
         '400':
-          description: 'BAD REQUEST. The "Organization Update" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. The "Organisation Update" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
         '500':
@@ -239,7 +239,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: Organization-Update
+        x-testName: Organisation-Update
         x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
@@ -249,13 +249,13 @@ paths:
   /member/remove:
     post:
       description: >-
-          This API is associated with removal of member from an organization on the Sunbird Platform.
-            - The **_/member/remove/_** endpoint executes the "Organization-Update" request based on parameters provided as metadata in the request body.
+          This API is associated with removal of member from an Organisation on the Sunbird Platform.
+            - The **_/member/remove/_** endpoint executes the "Organisation-Update" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for parameters marked with *. 
             - Mandatory fields cannot be null or empty.
-      summary: Remove Member from Org.
+      summary: Remove Member from Org
       tags:
-      - Org. APIs
+      - Org APIs
       operationId: Remove Member from Org
       produces:
       - application/json
@@ -265,7 +265,7 @@ paths:
         required: true
         description:   >-
             The body refers to the format of the request.
-              - The body contains metadata about the removal of a member from an organization.
+              - The body contains metadata about the removal of a member from an Organisation.
         schema:
           $ref: '#/definitions/RemoveMemberFromOrgrequest'
       - name: Accept
@@ -354,7 +354,7 @@ paths:
             - Mandatory fields cannot be null or empty.
       summary: Add Member To Org
       tags:
-      - Org. APIs
+      - Org APIs
       operationId: Add Member To Org
       produces:
       - application/json
@@ -364,7 +364,7 @@ paths:
         required: true
         description:   >-
             The body refers to the format of the request.
-              - The body contains metadata about adding a new member to an existing organization.
+              - The body contains metadata about adding a new member to an existing Organisation.
         schema:
           $ref: '#/definitions/AddMemberToOrgrequest'
       - name: Content-Type
@@ -448,13 +448,13 @@ paths:
   /read :
     post:
       description: >-
-          This API is associated with fetching a specific Organization , It fetches and displays the appropriate org based on the Id provided on the Sunbird Platform.
-            - The **_/read/_** endpoint executes the "Get Organization" request based on parameters provided as metadata in the request body.
+          This API is associated with fetching a specific Organisation , It fetches and displays the appropriate org based on the Id provided on the Sunbird Platform.
+            - The **_/read/_** endpoint executes the "Get Organisation" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for parameters marked with *. 
             - Mandatory fields cannot be null or empty.
-      summary: Fetch a particular Organization 
+      summary: Fetch a particular Organisation 
       tags:
-      - Org. APIs
+      - Org APIs
       operationId: Organisation -Get
       produces:
       - application/json
@@ -485,7 +485,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Get Organization** request was sent.'
+        description: 'Time Stamp at which **Get Organisation** request was sent.'
       - name: X-msgid
         in: header
         required: true
@@ -508,11 +508,11 @@ paths:
         description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."Get Organization" operation was successfully executed.'
+          description: 'OK ! Successful operation."Get Organisation" operation was successfully executed.'
           schema:
             $ref: '#/definitions/ContentCreateResponse'
         '400':
-          description: 'BAD REQUEST. The "Get Organization" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. The "Get Organisation" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
         '500':
@@ -558,10 +558,10 @@ paths:
             - The **_/update/status_** endpoint executes the "fetch update status of an organisation" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for parameters marked with *. 
             - Mandatory fields cannot be null or empty.
-      summary: Organization update status
+      summary: Organisation update status
       tags:
-      - Org. APIs
-      operationId: Organization-Update status
+      - Org APIs
+      operationId: Organisation-Update status
       produces:
       - application/json
       parameters:
@@ -572,7 +572,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the new Organisation to be created.
         schema:
-          $ref: '#/definitions/OrganizationUpdate statusrequest'
+          $ref: '#/definitions/OrganisationUpdate statusrequest'
       - name: Accept
         in: header
         required: true
@@ -591,7 +591,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Organization-Create** request was sent.'
+        description: 'Time Stamp at which **Organisation-Create** request was sent.'
       - name: X-msgid
         in: header
         required: true
@@ -650,7 +650,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: Organization-Update status
+        x-testName: Organisation-Update status
         x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
@@ -658,8 +658,8 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 definitions:
-  OrganizationUpdaterequest:
-    title: Organization-UpdateRequest
+  OrganisationUpdaterequest:
+    title: Organisation-UpdateRequest
     example:
       params: {}
       request:
@@ -884,8 +884,8 @@ definitions:
         type: string
     required:
     - organisationId
-  OrganizationCreaterequest:
-    title: Organization-CreateRequest
+  OrganisationCreaterequest:
+    title: Organisation-CreateRequest
     example:
       request:
         orgName: Ekstep_12
@@ -956,8 +956,8 @@ definitions:
     - source
     - externalId
     - roles
-  OrganizationUpdate statusrequest:
-    title: Organization-Update statusRequest
+  OrganisationUpdate statusrequest:
+    title: Organisation-Update statusRequest
     example:
       params: {}
       request:
