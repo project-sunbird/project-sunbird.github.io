@@ -45,7 +45,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the content to be created, i.e an array of parameters which describes the content.
           schema:
-            $ref: "../testschema/schema1.yaml"
+            $ref: "../testschema/schema1.yaml#definitions"
         - name: Content-Type
           in: header
           required: true
