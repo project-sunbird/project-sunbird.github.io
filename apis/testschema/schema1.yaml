@@ -1,0 +1,49 @@
+OrganizationCreaterequest:
+    title: Organization-CreateRequest
+    example:
+      request:
+        orgName: Ekstep_12
+        description: description
+        externalId: 1206
+        provider: test12
+        isRootOrg: true
+        channel: test12
+        locationId : locationIdValue
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request14'
+    required:
+    - request
+  Request14:
+    title: Request14
+    type: object
+    properties:
+      orgName:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      externalId:
+        description: ''
+        type: string
+      provider:
+        description: ''
+        type: string
+      isRootOrg:
+        description: ''
+        type: boolean
+      channel:
+        description: ''
+        type: string
+      locationId:
+        description: ''
+        type: string
+    required:
+    - orgName
+    - description
+    - externalId
+    - provider
+    - isRootOrg
+    - channel
