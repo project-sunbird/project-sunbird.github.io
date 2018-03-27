@@ -79,8 +79,10 @@ Choose any one of the docker swarm manager vm for the administration server. Run
 |7|logger|ELK stack will be deployed and logs can be views in kibana|
 |8|monitor|Monitor all the services,health checks, API's,system checks etc..|
 
-**NOTE**:  
+**NOTE**:
+  
 * If we what to re-run any particular stage, just run `./sunbird_install.sh -s <stagename>`
+
 * If we are planning to setup logger or monitoring . Please run the `./sunbird_install.sh -s <stagename>` command with  `stagename` as logger/monitor.
 
 To know more about the script `sunbird_install.sh` please click here.
