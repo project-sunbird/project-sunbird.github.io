@@ -72,7 +72,7 @@ paths:
           description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."Organization Update " operation was successfully executed.'
+          description: 'OK ! Successful operation.
           schema:
             $ref: "../definitions/envelope.yaml#/ApiResponse"
       security:
