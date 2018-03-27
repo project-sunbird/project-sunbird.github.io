@@ -10,7 +10,12 @@ allowSearch: true
 ---
 ## Overview
 
-## What is a Plugin
+* Architecture
 
+## What is a Plugin?
 
-## What is ECML
+* Plugin information
+
+## What is ECML?
+
+* ECML structure
