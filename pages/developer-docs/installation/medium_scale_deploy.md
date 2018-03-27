@@ -36,13 +36,14 @@ allowSearch: true
 
 * Both servers must have the following minimum system requirements:
 
-Operating System: Ubuntu 16.04 LTS
+        Operating System: Ubuntu 16.04 LTS
 
-RAM: 7GB
+        RAM: 7GB
 
-CPU: 2 cores, > 2 GHz
+        CPU: 2 cores, > 2 GHz
 
-Root access should be able to `sudo`
+        Root access should be able to `sudo`
+
 
 If  number of `Docker swarm agent nodes > 2` we need to configure Load balancer. 
 
