@@ -45,7 +45,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the content to be created, i.e an array of parameters which describes the content.
           schema:
-            $ref: "https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/apis/testschema/schema1.yaml"
+            $ref: "../testschema/schema1.yaml"
         - name: Content-Type
           in: header
           required: true
@@ -74,7 +74,7 @@ paths:
         '200':
           description: 'OK ! Successful operation."Organization Update " operation was successfully executed.'
           schema:
-            $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+            $ref: "../definitions/envelope.yaml#/ApiResponse"
       security:
         - auth: []
       x-unitTests:
