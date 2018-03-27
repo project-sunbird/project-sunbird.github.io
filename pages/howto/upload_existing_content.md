@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: howtopages
+directory: howto
 title: How do I upload existing content  
 page_title: How do I Upload Existing Content
 description: Describes how to upload / seed Sunbird instance with existing content 

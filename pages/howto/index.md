@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: howtopages
+directory: howto
 title: How-To Guides 
 page_title: How-To Guides
 description: How-To Guides for Sunbird scenarios
