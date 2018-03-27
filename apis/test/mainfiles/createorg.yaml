@@ -137,3 +137,5 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+ definitions:
+  $ref: '../apis/test/allschema/schemaforcreate.yaml'
