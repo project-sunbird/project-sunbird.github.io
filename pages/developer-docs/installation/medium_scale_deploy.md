@@ -16,13 +16,15 @@ allowSearch: true
 * A valid SSL certificate for your domain. To generate free SSL,  you can use Let's Encrypt for most common cases. But using Let's Encrypt is not mandatory.
 * Get the Ekstep API keys. Follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. 
 * No of servers for sunbird setup can be scaled from 2 to n servers as per requirement.  
+* Root access should be able to `sudo` in all the servers.
+* A common user (ex: testuser) should be created across all the servers to make the deployment process simple. Assosiate an public key for that `user` and use the private key for ansible deployment.  
+* To know more about sunbird deployment architecture look [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#sunbird-deployment-architecture) 
 * Refer the below table for choosing list of servers.
-* Root access should be able to `sudo`
 
     |Server Name |Suggested Servers per environment|Basic Requirement| Max Servers |
     |:-----      |:--------|:--------------------------------|:---------  |
     |Docker swarm manager<sup>1</sup> | Staging - 1 <br> Prod - 3 | CPU: 1core & RAM: 2GB |Any  |
-    |Docker swarm  agent nodes<sup>1</sup>   | Any |Staging - 1 <br> Prod - 3 |CPU: 2core & RAM: 6GB|
+    |Docker swarm  agent nodes<sup>1</sup>   | Staging - 1 <br> Prod - 3 |CPU: 2core & RAM: 6GB| Any |
     |Elasticsearch<sup>2</sup>        |Staging - 1 <br> Prod- 3 |CPU: 1core & RAM: 3GB| Any |
     |Postgres master<sup>2</sup>      | Staging&Prod - 1 |CPU: 1core & RAM: 3GB|1 |
     |Postgres slave<sup>2</sup>       | Staging&Prod - 1 |CPU: 1core & RAM: 3GB|1 |
@@ -30,12 +32,13 @@ allowSearch: true
     |Keycloak<sup>1</sup> | Staging&Prod - 1|CPU: 1core & RAM: 4GB|Any |
     |log-es<sup>1</sup> |  Staging&Prod - 1|CPU: 1core & RAM: 3.5GB|1 |
 
-* You can always choose to run the servers with same power (for ex: servername<sup>2</sup> in above table) on same instance.
+* Suffix given to all the server names is called groupnumber.
  
+* You can always choose to run the servers with same groupnumber (for ex: servername<sup>2</sup> in above table) on same instance.
+ 
+**NOTE:** For Quick setup of sunbird or staging setup, we suggest you to go with 2 servers(not mandatory). Ensure that they can communicate with either other over the network. One serves as application server (servers with groupname as `1`) and other server serves as database server (servers with groupname `2`)
 
-**NOTE:** For Quick setup of sunbird or staging setup, we suggest you to go with 2 servers(not mandatory). Ensure that they can communicate with either other over the network. One serves as application server (services with all the server names with power `1`) and other server serves as database server (services with all the server names with power `2`)
-
-* Ensure that all the ports mentioned [here]() are open 
+* Ensure that all the ports mentioned [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#ports-mapping) are open 
 
 **If  number of `Docker swarm agent nodes > 2` we need to configure Load balancer.**
 
@@ -57,7 +60,7 @@ allowSearch: true
 
 **3.** `cd sunbird-devops/deploy`
 
-**4.** Update the `config` and `advanced` configuration files. For more details how to update those files please click here.
+**4.** Update the `config` and `advanced` configuration files. For more details how to update those files please click [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#config-details).
 
 **5.** Run `./sunbird_install.sh`. This script will do infra setup from  stage1 to stage5 in a sequence shown in below table. Verify all the mandatory varaibles( ex:  sunbird_auth_token, ekstep_api_key) of sunbird core services are updated, then run the  `./sunbird_install.sh -s core` for deploying core services.
 
@@ -79,7 +82,108 @@ allowSearch: true
 
 * If we are planning to setup logger or monitoring . Please run the `./sunbird_install.sh -s <stagename>` command with  `stagename` as logger/monitor.
 
-To know more about the script `sunbird_install.sh` please click here.
+To know more about the script `sunbird_install.sh` please click [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
 
 **6.** Open https://[domain-name] and verify the installation. 
   
+## Ports mapping
+* List of ports which is to be open listed below
+
+|From server |To server|port| protocal|
+|:-----      |:-------|:--------|:------|
+|Administration server|All servers|22|TCP|
+|ELB|0.0.0.0|80,433|TCP|
+|swarm managers subnet|swarm nodes subnet|All|TCP & UDP|
+|swarm nodes|cassandra servers|9042|TCP|
+|swarm nodes|cassandra servers|9042|TCP|
+|swarm nodes|elasticsearch servers| 9200 |TCP|
+|swarm nodes|postgres servers| 5432|TCP|
+|swarm nodes|keycloak| 8080|TCP|
+
+
+
+## Sunbird install script 
+
+Sunbird installation script `./sunbird_install.sh` is wrapper which invokes other shell scripts internally like:
+
+`install-deps.sh` - Installs ansible v2.4.1.0 on adminstration server to provision/deploy on other servers. Setup up the docker swarm.
+
+`generate_config.sh` - Create the required configuration structure from the default template. 
+
+`generate_hosts.sh` - Creates the hosts file dynamically to run the ansible scripts.   
+
+`install-dbs.sh` - It will install cassandra, elasticsearch and postgres databases
+
+`init-dbs.sh` - It creates schema required schema for cassandra, elasticsearch and postgres databases
+
+`deploy-apis.sh` - API manager kong and Admin utils are deployed as docker service using ansible. 
+
+`onboard-apis.sh`  - Onboard API's and Consumer's are deployed using ansible. 
+
+`deploy-proxy.sh` - Nginx docker service is deployed using ansible.
+
+`provision-keycloak.sh` - Setup keycloak on ansible.
+
+`deploy-keycloak-vm.sh` - Deploy the keycloak using ansible.
+
+`bootstrap-keycloak.sh` - Import releam and does the required keycloak configuration.
+
+`deploy-core.sh` - Deploy core services player, content, actor & learner service as docker services.
+
+`deploy-logger.sh` -  Deploy ELK stack for logs.
+
+`deploy-monitor.sh` - Deploy the monitor stack to send mail alerts when some service/API's/health/system checks etc.. are not stable 
+ 
+
+## Config details
+To run sunbird services, you need to set the following environment variables in config and advanced files in `sunbird-devops/deploy` folder. 
+
+
+| variable | description   | mandatory|                                                                             
+|:----------------------|:-----------------|:---------|
+| `env`                |  Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc..                |yes|
+| `implementation_name` | Name of your sunbird implementation.|yes|                |
+| `ssh_ansible_user`  |ssh user for accessing all servers, who must be a sudo user                  |yes|
+| `sudo_passwd`       |If user have sudo password, else please skip it                 |no|
+| `ansible_private_key_path` | path to the private key file to allow ansible to deploy        |yes|
+| `proxy_prometheus` | But default it will be false .Please set this variable to true if you want to use monitoring              |no|
+| `cert_path`        | Path to .cert file for nginx              |yes|
+|`key_path`           | Path to .key file for nginx           |yes|
+|`dns_name`           | Public DNS url of the app the server             |yes|
+|`ekstep_base_url`           | https://qa.ekstep.in/api & prod: https://api.ekstep.in             |yes|
+|`sunbird_auth_token`           | JWT token generated by ansible, you can get it from ~/jwt.txt.             |yes|
+|`ekstep_api_key`           |Jwt token generated by the key,secret produced from the ekstep               |yes|
+|`sso_username`           | get the username from keycloak realm import doc eg. user-manager             |yes|
+|`sso_password`           |  password for keycloak sso_username            |yes|
+|`keycloak_admin_password`           |keycloak admin console password               |yes|
+|`app_address_space`           | Application server address space (e.g. 10.3.0.0/24)              |yes|
+|`database_host`           | db server private ip              |no|
+|`database_password`           |  common password for all the databases
+             |no|
+|`ekstep_api_base_url`           | Ekstep api base url              |yes|
+|`ekstep_proxy_base_url`           |  https://qa.ekstep.in  & prod: https://community.ekstep.in               |yes|
+|`sunbird_sso_publickey`           | sso public key for sunbird realm               |yes|
+|`trampoline_secret`           |trampoline secret from the keycloak realm import doc.              |yes|
+|`sunbird_env`           |  ekstep env which we connecting             |yes|
+|`elasticsearch_host`           |list of elasticsearch database IP's with "," seperated.               |no|
+|`cassandra_host`           |Cassandra database IP              |no|
+|`postgres_master_host`           | Postgres master database IP             |no|
+|`postgres_slave_host`           | Postgres slave database IP or if you want need slave node just keep the same IP of master.            |no|
+|`swarm_manager_host`           |list of swarm managers IP's with "," seperated.              |no|
+|`swarm_node_host`           | list of swarm node IP's with "," seperated.             |no|
+|`keycloak_host`           | list of keycloak IP's with ","             |no|
+|`log_es_host`           |  Logger elasticsearch IP            |no|
+|`backup_storage_name`           | elasticsearch snapchat upload strorage name.              |no|
+|`backup_storage_key`           |  elasticsearch snapchat upload strorage key.             |no|
+
+
+
+
+## Sunbird deployment architecture
+* Docker swarm is the orchestration engine chosen for running containers. Docker swarm is simpler and easier to learn. 
+
+* All the stateless services are run as docker containers inside swarm
+
+* All stateful services like databases are run on VMs directly.
+
+* Keycloak is an exception, due to challenges faced in dockerizing keycloak
