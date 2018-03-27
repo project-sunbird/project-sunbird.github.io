@@ -44,20 +44,19 @@ allowSearch: true
 
         Root access should be able to `sudo`
 
-
-If  number of `Docker swarm agent nodes > 2` we need to configure Load balancer. 
+###### If  number of `Docker swarm agent nodes > 2` we need to configure Load balancer.
 
  **Loadbalancer setup:**
  
 - Create a load balancer and attach all the Docker swarm agent nodes to it.
  
-- Update the health check urls.
+- Update the health check URL's.
 
-- Open the Inbound security group ports 80,443.
+- Open the inbound security group ports 80,443.
 
-- Enable logs for Load balanacer troubleshooting(not mandatory).
+- Enable logs for Load balanacer for troubleshooting(not mandatory).
 
-Choose any one of the docker swarm manager vm for the administration server. Run the following steps from a that machine:
+###### Choose any one of the docker swarm manager vm for the administration server. Run the following steps from a that machine:
 
 **1.** Install git `apt-get update -y && apt-get install git -y `
 
@@ -82,10 +81,21 @@ Choose any one of the docker swarm manager vm for the administration server. Run
 |8|monitor|Monitor all the services,health checks, API's,system checks etc..|
 
 **NOTE**:  
-
 * If we what to re-run any particular stage, just run `./sunbird_install.sh -s <stagename>`
- 
 * If we are planning to setup logger or monitoring . Please run the `./sunbird_install.sh -s <stagename>` command with  `stagename` as logger/monitor.
 
-To know more about the script `sunbird_install.sh` please click here.
+###### To know more about the script `sunbird_install.sh` please click here.
+
+**6.** Open https://[domain-name] and verify the installation. 
+  
+
+
+
+
+
+
+
+
+
+
 
