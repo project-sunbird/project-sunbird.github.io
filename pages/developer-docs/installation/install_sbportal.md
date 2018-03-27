@@ -60,6 +60,7 @@ For setting up the application, check out the [code](https://github.com/project-
 
 Once the git clone command is over, run the following set of commands:
 
+   
     $ cd {PROJECT-FOLDER}/src
     $ npm install
     $ bower cache clean
