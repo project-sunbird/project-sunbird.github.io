@@ -19,6 +19,6 @@ Sunbird is an opensource platform which is robust, scalable, extensible, flexibl
 
 * Extensive resource library
 
-* Facilitates collaboration, discussion, and partnership
+* Facilitates collaboration and partnership
 
-* Building communities
+* Create communities for discussions
