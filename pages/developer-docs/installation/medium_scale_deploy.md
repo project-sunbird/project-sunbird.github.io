@@ -33,11 +33,11 @@ allowSearch: true
 * You can always choose to run the servers with same power (for ex: servername<sup>2</sup> in above table) on same instance.
  
 
-NOTE: For Quick setup of sunbird or staging setup, we suggest you to go with 2 servers(not mandatory). Ensure that they can communicate with either other over the network. One acts as application server (with all the server names with power `1`) and other server serves as database server (with all the server names with power `2`)
+**NOTE:** For Quick setup of sunbird or staging setup, we suggest you to go with 2 servers(not mandatory). Ensure that they can communicate with either other over the network. One serves as application server (services with all the server names with power `1`) and other server serves as database server (services with all the server names with power `2`)
 
 * Ensure that all the ports mentioned [here]() are open 
 
-#### If  number of `Docker swarm agent nodes > 2` we need to configure Load balancer.
+**If  number of `Docker swarm agent nodes > 2` we need to configure Load balancer.**
 
  **Loadbalancer setup:**
  
@@ -49,7 +49,7 @@ NOTE: For Quick setup of sunbird or staging setup, we suggest you to go with 2 s
 
 - Enable logs for Load balanacer for troubleshooting(not mandatory).
 
-#### Choose any one of the docker swarm manager vm for the administration server. Run the following steps from a that machine:
+**Choose any one of the docker swarm manager vm for the administration server. Run the following steps from a that machine:**
 
 **1.** Install git `apt-get update -y && apt-get install git -y `
 
@@ -79,7 +79,7 @@ NOTE: For Quick setup of sunbird or staging setup, we suggest you to go with 2 s
 
 * If we are planning to setup logger or monitoring . Please run the `./sunbird_install.sh -s <stagename>` command with  `stagename` as logger/monitor.
 
-#### To know more about the script `sunbird_install.sh` please click here.
+To know more about the script `sunbird_install.sh` please click here.
 
 **6.** Open https://[domain-name] and verify the installation. 
   
