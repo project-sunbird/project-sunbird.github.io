@@ -138,4 +138,4 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
  definitions:
-  $ref: '../apis/test/allschema/schemaforcreate.yaml'
+  $ref: '../apis/testschema/schema1.yaml'
