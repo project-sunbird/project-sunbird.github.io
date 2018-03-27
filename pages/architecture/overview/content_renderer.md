@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: overview
+directory: architecture/overview
 title: Content renderer  
 page_title: Content Renderer
 description: Describes the architecture of the content renderer 
