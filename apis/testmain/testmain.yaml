@@ -126,4 +126,4 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 definitions:
-  $ref: 'https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/apis/testschema/schema1.yaml'
+  $ref: "https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/apis/testschema/schema1.yaml"
