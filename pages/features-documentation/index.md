@@ -4,7 +4,7 @@ directory: features-documentation
 title: Product Features
 page_title: Product Features
 description: Sunbird offers extensive functionality and features 
-keywords: 'Features, highlights, sunbird features, functionalities'
+keywords: 'Features, highlights, sunbird features, functionalities, sunbird funtionality'
 published: true
 allowSearch: true
 --- 
