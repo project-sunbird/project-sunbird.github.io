@@ -125,5 +125,5 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- definitions:
+definitions:
   $ref: '../apis/testschema/schema1.yaml'
