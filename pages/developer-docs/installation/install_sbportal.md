@@ -36,7 +36,7 @@ To set up the Sunbird portal successfully, follow these steps sequentially:
 4. Edit the Application Config
 5. Run the Application
 
-### Prerequisites
+### Pre-requisites
 Check the following pre-requisites before installing and running the Sunbird-player application:
 
 1. **Software dependencies**
@@ -60,6 +60,7 @@ For setting up the application, check out the [code](https://github.com/project-
 
 Once the git clone command is over, run the following set of commands:
 
+   
     $ cd {PROJECT-FOLDER}/src
     $ npm install
     $ bower cache clean
@@ -77,7 +78,7 @@ For now, let us configure the Sunbird portal to use a cloud instance of the Sunb
 
 Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any available text editor. 
 
-Once the file is opened, update the contents of the file so that it contains exactly the following values:
+Once the file opens, update the contents of the file so that it contains exactly the following values:
 
     module.exports = {
         // 1. LEARNER_URL   
@@ -102,11 +103,11 @@ Once the file is opened, update the contents of the file so that it contains exa
         ...
     }
 
-Once the file is updated with appropriate values, then you can begin with running the application.           
+Once the file is updated with appropriate values, then you can proceed with running the application.           
  
 ## Run the Application
 
-Run the following commands:
+Run the following commands in your console (CLI):
     $ cd {PROJECT-FOLDER}/src/app
     $ node server.js
 

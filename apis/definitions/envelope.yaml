@@ -1,0 +1,75 @@
+ApiRequest:
+  type: object
+  properties:
+    id:
+      description: a unique API ID
+      type: string
+    ver:
+      description: version of the API which was used
+      type: string
+    ets:
+      description: epoch UTC timestamp in milliseconds since epoch
+      type: integer
+      format: int64
+    params:
+      type: object
+      properties:
+        msgid:
+            description: A unique id of the message being sent
+            type: string
+        did:
+            description: The device UUID from which API is called
+            type: string
+
+ApiResponse:
+  type: object
+  properties:
+    id:
+      description: id of the request which was made
+      type: string
+    ver:
+      description: version of the API which was used
+      type: string
+    ets:
+      description: epoch UTC timestamp in milliseconds since epoch
+      type: integer
+      format: int64
+    params:
+      type: object
+      properties:
+        msgid:
+          description: The id of the message sent
+          type: string
+        resmsgid:
+          description: The ide of the reply message
+          type: string
+        err:
+          type:
+            - string
+            - 'null'
+        err_msg:
+          type:
+            - string
+            - 'null'
+        err_detail:
+          type:
+            - string
+            - object
+            - 'null'
+        status:
+          type: string
+          enum:
+            - success
+            - error
+      required:
+        - msgid
+        - resmsgid
+        - status
+    responseCode:
+      type: string
+  required:
+    - id
+    - ver
+    - ets
+    - params
+    - result
