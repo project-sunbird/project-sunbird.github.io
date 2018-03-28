@@ -45,7 +45,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the user to be created.
         schema:
-          $ref: '#/definitions/CreateUserrequest'
+           $ref: '#/definitions/CreateUserrequest'
       - name: Content-Type
         in: header
         required: true
@@ -639,7 +639,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /user/profile/visibility:
+ /profile/visibility:
     post:
       description:  >-
        This API is associated with configuring the visibility of user profiles  on the Sunbird Platform.
@@ -740,7 +740,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
   
- /user/v1/block:
+ /block:
     post:
       description:  >-
        This api will do soft delete of user from sunbir.
@@ -839,7 +839,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
  
- /user/v1/unblock:
+ /unblock:
     post:
       description:  >-
        This api will make deleted user back to system.
@@ -1082,7 +1082,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /user/v1/skill/add:
+ /skill/add:
     post:
       description: >-
        This API is associated with adding skills to a user on the Sunbird Platform.
@@ -1187,6 +1187,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+        
  /data/v1/skills:
     get:
       description: >-
@@ -1276,23 +1277,20 @@ paths:
         
 
 definitions:
-
   CreateUserrequest:
     description: User object
     type: object
     allOf:
-      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-      - $ref: '#/definitions/CreateUserSingleResp'
+       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+       - $ref: '#/definitions/CreateUserSingleResp'
 
   CreateUserSingleResp:
    description: this will hold single userObject
    type: object
    properties:
-      result:
+      request:
        type: object
-       allOf:
-         - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-         - $ref: '#/definitions/User'
+       $ref: '#/definitions/User'
  
   RolesResponse:
    description: this will hold roles api response
@@ -1357,7 +1355,7 @@ definitions:
     
     
   User:
-    title: Request
+    title: user object
     type: object
     properties:
           id:
@@ -1540,6 +1538,7 @@ definitions:
       - role
       - joiningDate
       - orgName
+      
   GetUserByLoginIdrequest:
     title: Get User by Login IdRequest
 
@@ -1547,7 +1546,7 @@ definitions:
     properties:
       request:
        allOf:
-        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
         - $ref: '#/definitions/Request50'
     required:
       - request
@@ -1556,17 +1555,18 @@ definitions:
     type: object
     properties:
       loginId:
-        description: ''
+        description: 'user login id . value will be username@provider if user is created by providing username and provider both then login id would be username@provider , if user is created without provider then loginId would be username itself.'
         type: string
     required:
       - loginId
+      
   SearchUserrequest:
     title: Search UserRequest
     example:
       request:
         filters:
           userAttribute:
-          - name of channel
+          - value of user attribute
         limit: 500
     type: object
     properties:
@@ -1588,25 +1588,26 @@ definitions:
         format: int32
     required:
     - filters
-    - limit
+
   Filters:
     title: Filters
     type: object
     properties:
       userAttribute:
-        description: ''
+        description: 'userAttribute can be any attribute of user. for single attribute pass string only , if user want to get response based on same key multiple value then pass values as an array. inside filter user can pass multiple attribute with multiple values'
         type: array
         items:
           type: string
     required:
     - userAttribute
+    
   UpdateUserrequest:
     title: Update UserRequest
     type: object
     properties:
       request:
        allOf:
-        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
         - $ref: '#/definitions/Request74'
     required:
     - request
@@ -1615,7 +1616,7 @@ definitions:
     type: object
     properties:
       userId:
-        description: ''
+        description: 'id of the user'
         type: string
       firstName:
         description: ''
@@ -1642,6 +1643,8 @@ definitions:
         type: array
         items:
           type: string
+    required:
+    - userId    
   ResultStatus:
     description: node id description
     type: object
@@ -1679,25 +1682,6 @@ definitions:
       - $ref: '#/definitions/ResultWithEmptyBody'
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
 
-  ResponseParams:
-    title: Response Parameter
-    type: object
-    properties:
-      resmsgid:
-        type: string
-        description: Response Message Id
-      msgid:
-        type: string
-        description: Message Id
-      err:
-        type: string
-        description: Error Code
-      status:
-        type: string
-        description: Response Status
-      errmsg:
-        type: string
-        description: Error Message
   EmptyResult:
     title: Empty Result
     type: object
@@ -1713,72 +1697,6 @@ definitions:
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
       - $ref: '#/definitions/EmptyResult'
       
-  /user/v1/searchrequest':
-    title: '{{host}}/user/v1/searchRequest'
-    example:
-      id: unique API ID
-      ts: 2013/10/15 16:16:39
-      params: {}
-      request:
-        query: ntp
-        filters: {}
-        offset: 0
-        limit: 300
-        sort_by:
-          createdDate: desc
-    type: object
-    properties:
-      id:
-        description: ''
-        type: string
-      ts:
-        description: ''
-        type: string
-      params:
-        description: ''
-        type: object
-      request:
-        $ref: '#/definitions/Request16'
-    required:
-    - id
-    - ts
-    - params
-    - request
-  Request16:
-    title: Request16
-    type: object
-    properties:
-      query:
-        description: ''
-        type: string
-      filters:
-        description: ''
-        type: object
-      offset:
-        description: ''
-        type: integer
-        format: int32
-      limit:
-        description: ''
-        type: integer
-        format: int32
-      sort_by:
-        $ref: '#/definitions/SortBy'
-    required:
-    - query
-    - filters
-    - offset
-    - limit
-    - sort_by
-  SortBy:
-    title: SortBy
-    type: object
-    properties:
-      createdDate:
-        description: ''
-        type: string
-    required:
-    - createdDat
   '{{host}}/v1/user/updateloginrequest':
     title: '{{host}}/v1/user/updateloginRequest'
     example:
