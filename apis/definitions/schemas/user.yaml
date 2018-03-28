@@ -24,7 +24,7 @@ definitions:
         type: array
         item:
           type: string
-	  description: All languages known by the user
+      description: All languages known by the user
       gender:
         type: string
       phone:
