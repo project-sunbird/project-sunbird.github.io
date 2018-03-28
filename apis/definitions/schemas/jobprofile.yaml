@@ -47,5 +47,4 @@ definitions:
           type: string
           format: "yyyy-MM-dd HH:mm:ss:SSSZZZZ"
     isRejected:
-          type: boolean
-	
+          type: boolean	
