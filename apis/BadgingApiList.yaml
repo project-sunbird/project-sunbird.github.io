@@ -3,15 +3,11 @@ info:
   version: '1.0'
   title: Badging Framework API(s)
   description: >-
-    The Badging Framework API resources are used for giving 
-      - recognition to user skills and accomplishments using badges
-      - rating the content for its quality and effectiveness using badges
+      A Badge is a virtual representation of an Award, Certificate, Endorsement or Authorization. The Badging Framework API resources are used to accord badges to: 
+      - recognize user skills and accomplishments
+      - rate or authorize content for its quality and effectiveness
     
-    A Badge is the virtual representation of
-      - Award
-      - Certificate
-      - Endorsement
-      - Authorization
+    
 host: staging.open-sunbird.org
 basePath: /api/badging/v1/issuer
 securityDefinitions:
@@ -31,10 +27,11 @@ paths:
   /create:
     post:
       description: >-
-       This API is associated with creating a badge issuer entity,In badging first Issuer need to be created , then badgeClass and then assertions.
-          - **_/create/_** endpoint executes the "Create Issuer" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters 
-          - Mandatory fields cannot be null or empty.
+       This API is used to create a badge issuer entity. To accord badges, creating the Issuer entity is the first step after which you create the badgeClass entity and lastly the assertion.
+       
+          - the **_/create/_** endpoint executes the "Create Issuer" request based on parameters provided as metadata in the request body.
+          - It is a must to provide values for all mandatory parameters 
+          
       summary: Create Issuer
       tags:
         - Badging Framework API(s)
@@ -53,17 +50,17 @@ paths:
           in: formData
           required: true
           type: string
-          description: ' A short description of the badge issuing entity or organization'
+          description: 'A short description of the badge issuing entity or organization'
         - name: url
           in: formData
           required: true
           type: string
-          description: 'The valid homepage URL of the badge issuing entity or Organisation (whether individual or institutional)'
+          description: 'The valid homepage URL of the badge issuing entity or organisation'
         - name: email
           in: formData
           required: true
           type: string
-          description: 'The valid contact E-mail address of the issuing entity(individual or organisation)'
+          description: 'The valid contact E-mail address of the issuing entity or organisation'
         - name: image
           in: formData
           required: false
@@ -74,16 +71,16 @@ paths:
           in: header
           required: false
           type: string
-          description: 'The token for executing the API'
+          description: 'The user token recieved for executing the API'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Create Badge Issuer** operation was successfully executed.
+            'SUCCESS. The **Create Badge Issuer** operation was successful!'
           schema:
             allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -157,9 +154,8 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Search Badge Issuing Entities or Organizations** operation was successfully executed.
-          schema:
-             allOf:
+            'SUCCESS. The **Search Badge Issuing Entities or Organizations** operation was successful!'
+           allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgeClassListResp'
         '400':
@@ -231,8 +227,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**List Issuers** operation was
-            successfully executed.
+            'SUCCESS. The **List Issuers** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -317,7 +312,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Get Issuer by ID** operation was successfully executed.
+            'SUCCESS. The **Get Issuer ID** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -403,7 +398,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Get Badge Class by ID** operation was successfully executed.
+            'SUCCESS. The **Get Badge Class by ID** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -488,8 +483,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**List Badge Assertions** operation was
-            successfully executed.
+            'SUCCESS. The **List Badge Assertions** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -581,7 +575,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Create Badge Assertion** operation was successfully executed.
+            'SUCCESS. The **Create Badge Assertions** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -654,8 +648,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Delete Issuer by ID** operation was
-            successfully executed.
+            'SUCCESS. The **Delete Issuer by ID** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -736,7 +729,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation."Revoke Badge Assertion by ID" operation was successfully executed.
+            'SUCCESS. The **Revoke Badge Assertion by ID** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -810,8 +803,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Delete Badge Class** operation was
-            successfully executed.
+            'SUCCESS. The **Delete Badge Class** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -923,8 +915,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation."Create Badge Class" operation was
-            successfully executed.
+            'SUCCESS. The **Create Badge Class** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -987,8 +978,7 @@ paths:
       responses:
         '200':
           description: >-
-            OK ! Successful operation.**Get Badge Assertion by ID** operation was
-            successfully executed.
+            'SUCCESS. The **Get Badge Assertion by ID** operation was successful!'
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
