@@ -19,7 +19,7 @@ definitions:
         type: boolean
       createdDate:
         type: string
-	 format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+	format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
       courseName:
         type: string
       duration:
