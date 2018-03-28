@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 definitions:
   UserResponse:
-    description: Response of Sunbird API containing a user
+    description: The response received from the Sunbird API containing user information.
     type: object
     properties:
       id:
@@ -25,7 +24,7 @@ definitions:
         type: array
         item:
           type: string
-		      description: any know language by user
+		  description: any know language by user
       gender:
         type: string
       phone:
@@ -34,7 +33,7 @@ definitions:
         type: integer
         format: int32
 		    description: user status ini
-	    loginId:
+	  loginId:
         type: string
       subject:
         type: array
@@ -47,7 +46,7 @@ definitions:
       lastUpdatedDate:
        type: string
        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
-	    provider:
+	  provider:
        type: string
       countryCode:
        type: stirng
@@ -63,7 +62,7 @@ definitions:
        type: boolean
       lastLoginTime:
        type: string
-	     format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+	   format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
       createdDate:   
        type: string
        format : yyyy-MM-dd HH:mm:ss:SSSZZZZ
@@ -112,36 +111,4 @@ definitions:
            type: string
          url:
            type: string   
-                
-=======
-UserResponse:
-  description: Response of Sunbird API containing a user
-  type: object
-  properties:
-    uid:
-      type: string
-    email:
-      type: string
-    first_name:
-      type: string
-    last_name:
-      type: string
-    password:
-      type: string
-    avatar:
-      type: object
-      properties:
-        thumbnail_url:
-          type: string
-        large_url:
-          type: string
-    language:
-      type: string
-    gender:
-      type: string
-    phone:
-      type: string
-    userStatus:
-      type: integer
-      format: int32
->>>>>>> e677471d59e7b6ee6fa661ed67ec0d3a5da5af63
+
