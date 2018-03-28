@@ -9,26 +9,26 @@ definitions:
         type: string
       addedAt:
         type: string
-		    format: yyyy-MM-dd
+	format: yyyy-MM-dd
       endorsersList:
         type: Object
-		    ref: #/SkillEndorse
+	ref: #/SkillEndorse
       addedBy:
         type: string
-	    endorsementcount:
+      endorsementcount:
         type: integer	
       skillNameToLowercase:
         type: string
-	    country:
+      country:
         type: string
       updatedBy:
         type: string
       updatedDate:
          type: string
          format: "yyyy-MM-dd HH:mm:ss:SSSZZZZn"
-	    createdDate:
-  	      type: string
-		      format: "yyyy-MM-dd HH:mm:ss:SSSZZZZ"
+      createdDate:
+  	 type: string
+	 format: "yyyy-MM-dd HH:mm:ss:SSSZZZZ"
       isDeleted:
           type: boolean
       createdBy:
@@ -37,11 +37,11 @@ definitions:
           type: string	  
 
   SkillEndorse:
-	  description: Response of endose skill.
-	  type: object
+      description: Describes the user who endorsed the skill and the date on which the skill is endorsed.
+      type: object
       properties:
       endorseDate:
-         type: string
-		     format: yyyy-MM-dd
-	    userId:
-          type: string
+        type: string
+	format: yyyy-MM-dd
+      userId:
+        type: string
