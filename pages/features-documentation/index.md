@@ -4,23 +4,21 @@ directory: features-documentation
 title: Product Features
 page_title: Product Features
 description: Sunbird offers extensive functionality and features 
-keywords: 'Features, highlights, sunbird features, functionalities'
+keywords: 'Features, highlights, sunbird features, functionalities, sunbird funtionality'
 published: true
 allowSearch: true
 --- 
 
-Sunbird offers extensive functionality and features. Technically, this opensource project is robust, scalable, extensible, flexible and easily configurable. It's easy to use and offers its users the following features:
+Sunbird is an opensource platform which is robust, scalable, extensible, flexible and easily configurable. The ease to use Sunbird platform offers extensive functions and features to its users:
 
-* Easy onboarding
-
-* Simple sign in
+* Easy onboarding and sign in
 
 * Secure user management
 
-* Smooth content creation,review, publishing and consumption
+* Smoothens content creation, review procedures, publishing content, and consumption
 
-* Large library of resources
+* Extensive resource library
 
-* Ability to collaborate, discuss and partner
+* Facilitates collaboration and partnership
 
-* Form communities
+* Create communities for discussions

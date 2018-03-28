@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 definitions:
   UserResponse:
     description: Response of Sunbird API containing a user
@@ -112,3 +113,35 @@ definitions:
          url:
            type: string   
                 
+=======
+UserResponse:
+  description: Response of Sunbird API containing a user
+  type: object
+  properties:
+    uid:
+      type: string
+    email:
+      type: string
+    first_name:
+      type: string
+    last_name:
+      type: string
+    password:
+      type: string
+    avatar:
+      type: object
+      properties:
+        thumbnail_url:
+          type: string
+        large_url:
+          type: string
+    language:
+      type: string
+    gender:
+      type: string
+    phone:
+      type: string
+    userStatus:
+      type: integer
+      format: int32
+>>>>>>> e677471d59e7b6ee6fa661ed67ec0d3a5da5af63
