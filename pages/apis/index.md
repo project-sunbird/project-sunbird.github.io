@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: apis
-title: APIs References
+title: API References
 page_title: APIs Documentation
 description: APIs Documentation
 keywords: APIs Documentation
