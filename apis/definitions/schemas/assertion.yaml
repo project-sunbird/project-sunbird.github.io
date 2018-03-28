@@ -1,0 +1,59 @@
+definitions:
+  Assertion:
+    description: Data model for assertion object.
+    type: object
+    properties:
+      assertionDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      assertionImageUrl:
+        type: string
+        description: public access url of assertion image
+      assertionIdUrl:
+        type: string
+        description : public access url of assertion 
+      revoked:
+        type: boolean
+      issuerId:
+        type: string
+        description: ID of an issuer
+      assertionId:
+        type: string
+        description: id of the assertions
+      recipient:
+        type: object
+        properties:
+         type:
+          type: string
+          description: this will indicate recipient identity type.
+         salt:
+          type: string
+         hashed:
+          type: boolean
+         identity:
+          type: string
+          description: contains salt value
+      verify:
+       type: object
+       properties:
+        url:
+          type: string
+          description: public url of assertion by which it can be verifiable
+        type:
+          type: string
+          description: it will be badge is hosted or sign
+      revocationReason:
+       type: string
+       description: reason to revoke the badge class
+      recipientEmail:
+        type: string
+        description: email of badge reciver
+      createdDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      issuerIdUrl:
+        type: string
+        description: issuer url with ID
+      badgeIdUrl:        
+        type: string
+        description: url of the badge class
