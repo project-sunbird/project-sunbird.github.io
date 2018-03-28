@@ -2,9 +2,9 @@
 type: landing
 directory: apis
 title: API References
-page_title: APIs Documentation
-description: APIs Documentation
-keywords: APIs Documentation
+page_title: API Documentation
+description: API Documentation
+keywords: API Documentation
 published: true
 allowSearch: true
 ---
