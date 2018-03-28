@@ -13,18 +13,18 @@ definitions:
         type: string
       city:
         type: string
-	state:
+      state:
         type: string	
       zipcode:
         type: string
-	country:
+      country:
         type: string
       updatedBy:
         type: string
       updatedDate:
          type: string
          format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
-	 createdDate:
+      createdDate:
   	 type: string
 	 format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
       isDeleted:
