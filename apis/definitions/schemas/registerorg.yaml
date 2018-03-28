@@ -1,6 +1,6 @@
 definitions:
   RegisterOrgResponse:
-    description: Response of Sunbird API containing a registerOrg
+    description: The response of Sunbird API containing a registered organisation
     type: object
     properties:
       id:
@@ -13,20 +13,20 @@ definitions:
         type: string
       city:
         type: string
-	  state:
+      state:
         type: string	
       zipcode:
         type: string
-	  country:
+      country:
         type: string
       updatedBy:
         type: string
       updatedDate:
          type: int
          format: "YYYY-MM-DD HH:mm:ss:nn"
-	  createdDate:
-  	      type: int
-		  format: "YYYY-MM-DD HH:mm:ss:nn"
+      createdDate:
+  	 type: int
+	 format: "YYYY-MM-DD HH:mm:ss:nn"
       isDeleted:
           type: boolean
       createdBy:
