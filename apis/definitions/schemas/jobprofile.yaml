@@ -22,7 +22,7 @@ definitions:
         type: string
     joiningDate:
         type: string
-	format: "YYYY-MM-DD"
+        format: "YYYY-MM-DD"
     updatedDate:
          type: string
          format: "yyyy-MM-dd HH:mm:ss:SSSZZZZ"
