@@ -36,5 +36,4 @@ definitions:
       yearOfPassing:
           type: integer
       updatedBy:
-          type: string
-	  
+          type: string 
