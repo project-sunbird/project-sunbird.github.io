@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   version: '1.0'
   title: Form API(s)
-  description: The Form API supports developers to create & update metadata form fields based on type, subtype, and action. The field configurations required for the specific forms can be setup using these APIs.
+  description: The Form APIs allow you to create and update metadata form fields based on type, subtype and action. Use the APIs to configure form fields as required for the specific form.
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
@@ -23,21 +23,26 @@ paths:
   /read:
     post:
       description: This API is used to read form data
+        - The **_/read_** endpoint executes the "FormRead" request based on parameters provided as metadata in the request body
+        - Required fields cannot be left null or empty
       summary: Form Read
-      operationId: ReadPost2
+      operationId: FormRead
       produces:
       - application/json
       parameters:
       - name: Body
         in: body
         required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for reading a form.
         schema:
           $ref: '#/definitions/formReadRequest'
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: Content-Type
         in: header
         required: true
@@ -50,39 +55,42 @@ paths:
               - Application/x-www-form-urlencoded
       responses:
         '200':
-          description: 'OK ! Successful operation."Read Form data" operation was successfully executed.'
+          description: 'SUCCESS. The "Read Form data" operation was successful!'
           schema:
             $ref: '#/definitions/readResponse'
         '400':
-          description: 'BAD REQUEST. "Form Read" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. "Read Form data" operation failed. You may have missed input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
       - auth: []
-      
   /create:
     post:
       description: This API is used to read form data
+        - The **_/create** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
+        - Required fields cannot be left null or empty
       summary: Form Create
-      operationId: CreatePost
+      operationId: FormCreate
       produces:
       - application/json
       parameters:
       - name: Body
         in: body
         required: true
-        description: ''
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for creating a form.
         schema:
           $ref: '#/definitions/formcreateRequest'
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: Content-Type
         in: header
         required: true
@@ -95,55 +103,63 @@ paths:
               - Application/x-www-form-urlencoded
       responses:
         '200':
-          description: 'OK ! Successful operation."Create Form data" operation was successfully executed.'
+          description: 'SUCCESS. The "Create Form data" operation was successful!'
           schema:
-            $ref: '#/definitions/crateResponse'
+            $ref: '#/definitions/createResponse'
         '400':
-          description: 'BAD REQUEST. "Form Create" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. "Create Form data" operation failed. You may have missed input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
       - auth: []
-  
   /update:
     post:
       description: This API is used to update form data
+        - The **_/update** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
+        - Required fields cannot be left null or empty
       summary: Form Update
-      operationId: UpdatePost
+      operationId: FormUpdate
       produces:
       - application/json
       parameters:
       - name: Body
         in: body
         required: true
-        description: ''
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for updating a form.
         schema:
           $ref: '#/definitions/formcreateRequest'
       - name: Authorization
         in: header
         required: true
         type: string
-        description: ''
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: Content-Type
         in: header
         required: true
         type: string
-        description: ''
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
       responses:
         '200':
-          description: 'OK ! Successful operation."Update Form data" operation was successfully executed.'
+          description: 'SUCCESS. The "Update Form data" operation was successful!'
           schema:
-              $ref: '#/definitions/crateResponse'
+              $ref: '#/definitions/createResponse'
         '400':
-          description: 'BAD REQUEST. "Form Update" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. "Update Form data" operation failed. You may have missed input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
@@ -164,19 +180,14 @@ definitions:
         properties:
           type: 
             type: string
-            description: 
           subType:
             type: string
-            description: 
           action:
             type: string
-            description: 
           framework:
             type: string
-            description: 
           rootOrgId:
             type: string
-            description:
   formReadRequest:
     title: Form read API request body
     type: object
@@ -184,13 +195,13 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
       - $ref: "#/definitions/readRequest"
   formcreateRequest:
-    title: Form create & update API request body
+    title: Form create and update API request body
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
-      - $ref: "#/definitions/crateRequest"
-  crateRequest: 
-    title: Form create & update API request object
+      - $ref: "#/definitions/createRequest"
+  createRequest: 
+    title: Form create and update API request object
     type: object
     properties:
       request:
@@ -203,31 +214,25 @@ definitions:
         - data
         properties:
           type: 
-            type: string
-            description: 
+            type: string 
           subType:
-            type: string
-            description: 
+            type: string 
           action:
-            type: string
-            description: 
+            type: string 
           framework:
-            type: string
-            description: 
+            type: string 
           rootOrgId:
             type: string
-            description:
           data:
-            schema:
-            $ref: '#/definitions/dataFields'          
+            $ref: '#/definitions/dataFields'         
   readResponse:
     title: Form read API response Object
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: "#/definitions/readResult"
-  crateResponse:
-    title: Form create & update API response Object
+  createResponse:
+    title: Form create and update API response Object
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
@@ -242,25 +247,19 @@ definitions:
             type: object
             properties:
               type: 
-                type: string
-                description: 
+                type: string 
               subType:
-                type: string
-                description: 
+                type: string 
               action:
-                type: string
-                description: 
+                type: string 
               framework:
-                type: string
-                description: 
+                type: string 
               rootOrgId:
                 type: string
-                description:
               data:
-                schema:
                 $ref: '#/definitions/dataFields'
   createResult:
-    title: Form create & update API's response result Object
+    title: Form create and update API's response result Object
     type: object
     properties:
       result:
@@ -320,11 +319,9 @@ definitions:
     type: object
     properties:
       templateName:
-        type: string
-        description: 
+        type: string 
       action: 
-        type: string
-        description: 
+        type: string 
       fields: 
         type: array
         items:
@@ -342,39 +339,37 @@ definitions:
           properties:  
             code:
               type: string
-              description: 
+              description: Unique code to identify field
             dataType:
               type: string
-              description: 
+              description: DataType of field
             description:
               type: string
-              description: 
+              description: Description about field
             editable:
               type: boolean
-              description: 
+              description: Based on this value form will be rederer in editable mode
             inputType:
               type: string
-              description: 
+              description: Type of field text, select etc.
             label:
               type: string
-              description: 
+              description: Lable of the field
             name:
               type: string
-              description: 
+              description: Name of the field
             index:
               type: integer
-              description: 
+              description: The position of the field decided by this value
             placeholder:
               type: string
-              description:  
+              description: Short hint of the form field
             required:
               type: boolean
-              description: 
+              description: It specifies that the form field must be filled out or not
             visible:
               type: boolean
-              description:
+              description: The visibility property sets whether an form field should be visible or not
             renderingHints:
               type: object
-              description:
-
-               
+              description: From field renderingHints
