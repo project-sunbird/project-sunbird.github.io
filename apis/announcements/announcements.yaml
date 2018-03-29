@@ -1788,9 +1788,8 @@ definitions:
                 - createdDate
                 - status
                 - rootOrgId
-          required:
-            - announcementTypes
-
+        required:
+          - announcementTypes
   AnnouncementTypeUpdateResponse:
     type: object
     allOf:
