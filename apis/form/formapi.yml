@@ -354,7 +354,7 @@ definitions:
               description: Type of field text, select etc.
             label:
               type: string
-              description: Lable of the field
+              description: The field label
             name:
               type: string
               description: Name of the field
