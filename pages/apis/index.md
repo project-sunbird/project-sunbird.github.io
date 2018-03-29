@@ -8,9 +8,6 @@ keywords: API Documentation, API refeence, API,
 published: true
 allowSearch: true
 ---
-
-## Overview
-
 Welcome to Sunbird API reference documentation!
 
 Sunbird APIs are:
