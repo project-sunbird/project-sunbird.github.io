@@ -24,7 +24,7 @@ definitions:
         type: array
         item:
           type: string
-		  description: any know language by user
+	  description: All languages known by the user
       gender:
         type: string
       phone:
@@ -32,8 +32,8 @@ definitions:
       status:
         type: integer
         format: int32
-		    description: user status ini
-	  loginId:
+	description: user status ini
+      loginId:
         type: string
       subject:
         type: array
@@ -46,7 +46,7 @@ definitions:
       lastUpdatedDate:
        type: string
        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
-	  provider:
+      provider:
        type: string
       countryCode:
        type: stirng
@@ -87,13 +87,13 @@ definitions:
          ref: ./organisation.yaml
       profileVisibility:
         type: object
-     	  description: it will be a map , having key as any user attribute and value can be public or private. 
+     	  description: It will be a map, having key as any user attribute and value can be public or private. 
       address: 
        type: array
        item:
        type: object
        ref: ./address.yaml
-       description: it will contains list of address object.
+       description: It contains a list of address objects.
       jobProfile:
        type: array
        item: 
