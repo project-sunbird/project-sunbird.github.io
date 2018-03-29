@@ -9,8 +9,6 @@ published: true
 allowSearch: true
 ---
 
-## Sunbird API Resources
-
 ### Overview
 
 The Sunbird API resources have the following characteristics:
