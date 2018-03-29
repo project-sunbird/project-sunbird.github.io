@@ -20,9 +20,9 @@ All APIs have the following characteristics:
 - Versioned
 - Tested purely via automation
 
-The Sunbird API resources are organized by resource types. Each resource type has one or more data representations and one or more asssociated methods.
-
 All APIs have the following URL structure: https://{host:port}/{module}/{version}/{api_name}
+
+The Sunbird API resources are organized by resource types. Each resource type has one or more data representations and asssociated methods.
 
 Based on the usage of each API resource, the Sunbird API(s) are categorized as:
 
