@@ -23,7 +23,7 @@ The Sunbird API resources are organized by resource types. Each resource type ha
 
 <div class="row row-eq-height">
     <div class="col-sm-4">
-        <h2>Feature API(s)</h2>
+        <h3>Feature API(s)</h3>
         <ul>
             <li><a href="apis/announcements/">Announcement APIs</a></li>
             <li><a href="apis/assessmentapi/">Assessment APIs</a></li>
@@ -39,7 +39,7 @@ The Sunbird API resources are organized by resource types. Each resource type ha
         </ul>
     </div>
     <div class="col-sm-4">
-        <h2>Admin API(s)</h2>
+        <h3>Admin API(s)</h3>
         <ul>
             <li><a href="apis/notificationapi/">Notification APIs</a></li>
             <li><a href="apis/firebasecloudmessagingapi/">Push Notification APIs</a></li>
@@ -48,14 +48,14 @@ The Sunbird API resources are organized by resource types. Each resource type ha
         </ul>
     </div>
     <div class="col-sm-4">
-        <h2>Data API(s)</h2>
+        <h3>Data API(s)</h3>
         <ul>
             <li><a href="apis/datasyncapi/">Data Sync APIs</a></li>
             <li><a href="apis/metricsapi/">Metrics APIs</a></li> 
         </ul>
     </div>
     <div class="col-sm-4">
-        <h2>Setup API(s)</h2>
+        <h3>Setup API(s)</h3>
         <ul>
             <li><a href="apis/bulkupload/">Bulk Upload Service APIs</a></li>
             <li><a href="apis/masterkeyapi/">Master Key APIs</a></li>
