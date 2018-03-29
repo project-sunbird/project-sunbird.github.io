@@ -1,69 +1,62 @@
 ---
 type: landing
 directory: apis
-title: API References
-page_title: API Documentation
-description: API Documentation
-keywords: API Documentation
+title: API Reference Documentation
+page_title: API reference documentation
+description: API reference documentation
+keywords: API Documentation, API refeence, API,  
 published: true
 allowSearch: true
 ---
+Welcome to Sunbird API reference documentation!
 
-## Sunbird API Resources
+Sunbird APIs are:
 
-### Overview
+- REST based (JSON over HTTPS)
+- Stateless
+- Versioned
 
-All of the Sunbird APIs are organized around REST. The Sunbird API(s) use standard HTTP features, like HTTP verbs, universally accepted with almost all HTTP clients. JSON is be returned as a response from the Sunbird API(s), including the error response. The APIs are designed to have predictable, straightforward URLs. Basic HTTP response codes are used to indicate API errors. The Sunbird API resources are organized by resource types. Each resource type has one or more data representations and one or more asssociated methods.
+The API endpoints follow a common URL structure, viz; https://{host:port}/{module}/{version}/{api_name}.
 
-The following are the API Resource Types:
+They are categorized by resource type. Each resource type has one or more data representations and asssociated methods.
 
-- **Feature API(s)** - Resource type associated with enhancement of the Sunbird.
-- **Admin API(s)** - Resource types associated with managing the Sunbird.
-- **Setup API(s)** - Resource type associated with setting up your instance of Sunbird
-- **Data API(s)** - Resource type associated with machine learning, data analytics so as to improve upon usability of the Sunbird.
-
-
-Based on the usage of each API resource, the Sunbird API(s) are categorized as:
-
-<div class="row row-eq-height">
+<div class="row">
     <div class="col-sm-4">
-        <h2>Feature API(s)</h2>
+        <h3>Feature API(s)</h3>
         <ul>
-            <li><a href="apis/announcements/">Announcement APIs</a></li>
-            <li><a href="apis/assessmentapi/">Assessment APIs</a></li>
-            <li><a href="apis/audienceapi/">Audience APIs</a></li>
-            <li><a href="apis/content/">Content APIs</a></li>
-            <li><a href="apis/coursebatchmanapi/">Course Batch Management APIs</a></li>
-            <li><a href="apis/dialapi/">D.I.A.L APIs</a></li>
-            <li><a href="apis/framework/">Framework APIs</a></li>
-            <li><a href="apis/orgapi/">Organisation Management APIs</a></li>
-            <li><a href="apis/userapi/">User APIs</a></li>
-            <li><a href="apis/badgesapi/">User Badges APIs</a></li>
-            <li><a href="apis/noteapi/">User Notes APIs</a></li>          
+            <li><a href="apis/announcements/">Announcement</a></li>
+            <li><a href="apis/assessmentapi/">Assessment</a></li>
+            <li><a href="apis/audienceapi/">Audience</a></li>
+            <li><a href="apis/content/">Content</a></li>
+            <li><a href="apis/coursebatchmanapi/">Course Batch Management</a></li>
+            <li><a href="apis/dialapi/">D.I.A.L </a></li>
+            <li><a href="apis/framework/">Framework </a></li>
+            <li><a href="apis/orgapi/">Organisation Management </a></li>
+            <li><a href="apis/userapi/">User </a></li>
+            <li><a href="apis/badgesapi/">User Badges </a></li>
+            <li><a href="apis/noteapi/">User Notes </a></li>
+            <li><a href="apis/badgingframeworkapi/">Badging Framework </a></li>
         </ul>
     </div>
     <div class="col-sm-4">
-        <h2>Admin API(s)</h2>
+        <h3>Administration API(s)</h3>
         <ul>
-            <li><a href="apis/notificationapi/">Notification APIs</a></li>
-            <li><a href="apis/firebasecloudmessagingapi/">Push Notification APIs</a></li>
-            <li><a href="apis/geolocationapi/">Geo Location APIs</a></li>
-            <li><a href="apis/objectapi/">Object APIs</a></li>      
+            <li><a href="apis/notificationapi/">Notification </a></li>
+            <li><a href="apis/firebasecloudmessagingapi/">Push Notification </a></li>
+            <li><a href="apis/geolocationapi/">Geo Location </a></li>
+            <li><a href="apis/form/">Form </a></li>      
         </ul>
-    </div>
+        <h3>Setup API(s)</h3>
+        <ul>
+            <li><a href="apis/bulkupload/">Bulk Upload Service </a></li>
+            <li><a href="apis/masterkeyapi/">Master Key </a></li>
+            <li><a href="apis/pagesapi/">Pages </a></li>     
+        </ul>
+        </div>
     <div class="col-sm-4">
-        <h2>Data API(s)</h2>
+        <h3>Data API(s)</h3>
         <ul>
-            <li><a href="apis/datasyncapi/">Data Sync APIs</a></li>
-            <li><a href="apis/metricsapi/">Metrics APIs</a></li> 
+            <li><a href="apis/datasyncapi/">Data Sync </a></li>
+            <li><a href="apis/metricsapi/">Metrics </a></li> 
         </ul>
     </div>
-    <div class="col-sm-4">
-        <h2>Setup API(s)</h2>
-        <ul>
-            <li><a href="apis/bulkupload/">Bulk Upload Service APIs</a></li>
-            <li><a href="apis/masterkeyapi/">Master Key APIs</a></li>
-            <li><a href="apis/pagesapi/">Pages APIs</a></li>     
-        </ul>
-    </div>
-</div>

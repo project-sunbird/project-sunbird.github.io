@@ -23,26 +23,38 @@ consumes:
 produces:
   - application/json
 paths:
- /resend/{Announcement_Id}:
-    parameters:
-      - in: path
-        name: Announcement_Id
-        type: string
-        required: true
-        description: 'Please append a valid Announcement Id to the request URL'    
-    get:
+  /create:
+    post:
       description: >-
-       This API is associated with fetching a previously sent announcement on the Sunbird Platform.
-          - The **_/resend/{Announcement_Id}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is: /resend/{Announcement_Id}
+       This API is associated with creation of a new announcement on the Sunbird Platform.
+          - The **_/create_** endpoint executes the "create" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /resend/{announcementId}
           - Required fields cannot be left null or empty.
-      summary: Fetches a specific previously sent Announcement
+      summary: Create an announcement
       tags:
       - Announcement APIs
-      operationId: Resend39873400Da6a11e79964E746dd8d0631Get
+      operationId: CreatePost
       produces:
         - application/json
       parameters:
+        - name: request
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about creation of announcements.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/CreateAnnouncementRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+             Possible media types can be:- 
+              - Application/json
         - name: Authorization
           in: header
           required: true
@@ -55,20 +67,138 @@ paths:
           description: 'The token/key used to execute the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."fetch a sent announcement" operation was successfully executed.'
+          description: 'OK! Successful operation. "create" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/CreateAnnouncementResponse'
         '400':
-          description: 'BAD REQUEST. The "fetch a sent announcement" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: >-
+            BAD REQUEST, **Create Announcement** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **Create Announcement** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /create
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: |-
+              {
+                    "request": {
+                        "sourceId": "01232002070124134414",
+                        "type": "Circular",
+                        "description": "",
+                        "links": ["https://ekstep.in", "https://ekstep.in/a", "https://ekstep.in/b", "https://ekstep.in/c", "https://ekstep.in/d"],
+                        "title": "Test title for announcement 001 str case",
+                        "target": {"geo": {
+                                "ids": ["0123916990102568966", "01239169691632435212"]
+                                }
+                            },
+                        "from": "Department of Education"
+                    }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: create
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+
+  /get/{announcementId}:
+    get:
+      description: >-
+       This API is associated with fetching a specific announcement on the Sunbird Platform.
+          - The **_/get/{announcementId}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /get/{announcementId}
+          - Required fields cannot be left null or empty.
+      summary: Fetches an announcement by Id
+      tags:
+      - Announcement APIs
+      operationId: GetAnnouncementById
+      produces:
+        - application/json
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'        
+        - in: path
+          name: announcementId
+          type: string
+          required: true
+          description: 'Please append a valid Announcement Id to the Request URL'    
+
+      responses:
+        '200':
+          description: 'Successful operation. "Get Announcement" operation was successfully executed.'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/GetAnnouncementResponse'
+        '400':
+          description: >-
+            BAD REQUEST, **Get Announcement** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **Get Announcement** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
       security: []
       x-unitTests:
         - request:
             method: GET
-            uri: /resend/{Announcement_Id}
+            uri: /get/{announcementId}
             headers:
               Authorization: '{{auth}}'
               x-authenticated-user-token: '{{user_token}}'
@@ -81,14 +211,401 @@ paths:
             headers: {}
           x-testShouldPass: true
           x-testEnabled: true
-          x-testName: getResend
+          x-testName: getAnnouncementById
           x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /cancel:
+
+  /user/outbox:
+    post:
+      description: >-
+       This API is associated with posting sent announcements in users outbox on the Sunbird Platform.
+          - The **_/user/outbox_** endpoint executes the "UserOutboxPost" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /user/outbox
+          - Required fields cannot be left null or empty.
+      summary: Posting sent announcements in users outbox 
+      tags:
+      - Announcement APIs
+      operationId: UserOutboxPost
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the posting sent announcements in users outbox.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/UserOutboxRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get User Outbox" operation was successfully executed.'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/UserOutboxResponse'
+        '400':
+          description: >-
+            BAD REQUEST, **Get User Outbox** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: >-
+            Resource not found, **Get User Outbox** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /user/outbox
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"limit\": 5,\n\t\t\"offset\": 0\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: userOutbox
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+
+  /user/inbox:
+    post:
+      description: >-
+       This API is associated with adding announcements to user(s) inbox on the Sunbird Platform.
+          - The **_/user/inbox_** endpoint executes the "userInbox" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /user/inbox
+          - Required fields cannot be left null or empty.
+      summary: To get the list of announcement which are targetted to the particular user. 
+      tags:
+      - Announcement APIs
+      operationId: UserInboxPost
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about adding announcements in users inbox.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/UserInboxRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get User Inbox" operation was successfully executed.'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/UserInboxResponse'
+        '400':
+          description: >-
+            BAD REQUEST, **Get User Inbox** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: >-
+            Resource not found, **Get User Inbox** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /user/inbox
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"limit\": 2,\n\t\t\"offset\": 0\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: userInbox
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+
+  /received:
+    post:
+      description: >-
+       This API is associated with acknowledging the recieved reciept of a sent announcement.
+          - The **_/recieved_** endpoint executes the "recieved" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Acknowledges received reciept of an Announcement
+      tags:
+      - Announcement APIs
+      operationId: ReceivedPost
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about fetching the status of  announcements.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/ReceivedRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '201':
+          description: 'OK! Successful operation. "Mark as Received" operation was successfully executed.'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ReceivedResponse'
+        '400':
+          description: >-
+            BAD REQUEST, **Mark as Received** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: >-
+            Resource not found, **Mark as Received** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /received
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"e138-45e9-bed2-a0db5eb9696b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: received
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+
+  /read:
+    post:
+      description: >-
+        This API acknowledges the read reciept of a sent Announcement.
+          - The **_read_** endpoint executes the "read" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Acknowledges the read reciept of an Announcement
+      tags:
+      - Announcement APIs
+      operationId: ReadPost
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about checking the read status of a sent announcement.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/ReadRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '201':
+          description: 'OK! Successful operation. "Mark as Read" operation was successfully executed.'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ReadResponse'
+        '400':
+          description: >-
+            BAD REQUEST, **Mark as Read** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: >-
+            Resource not found, **Mark as Read** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /read
+            headers:
+              Content-Type: application/json
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+            body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"1a5a7080-c5fa-11e7-9062-e7cbc001200b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: read
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+
+  /cancel:
     delete:
       description: >-
        This API is associated with cancelling an announcement on the Sunbird Platform.
@@ -108,7 +625,9 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the request for cancelling the announcement.
           schema:
-            $ref: '#/definitions/CancelRequest'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/CancelRequest'
         - name: Authorization
           in: header
           required: true
@@ -127,19 +646,34 @@ paths:
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
               - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
       responses:
         '200':
-          description: 'OK ! Successful operation."cancel announcement" operation was successfully executed.'
+          description: 'OK! Successful operation. "Mark as Read" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/CancelResponse'
         '400':
-          description: 'BAD REQUEST. The "cancel announcement" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: >-
+            BAD REQUEST, **Mark as Read** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '404':
+          description: >-
+            Resource not found, **Mark as Read** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
       security: []
       x-unitTests:
         - request:
@@ -166,37 +700,26 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /resend:
-    post:
+        
+  /resend/{announcementId}:
+    get:
       description: >-
-       This API is associated with resending a previously sent announcement to the user(s) on the Sunbird Platform.
-          - The **_/resend** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
+       This API is associated with fetching a previously sent announcement on the Sunbird Platform.
+          - The **_/resend/{announcementId}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
+          - The format of the request URL is: /resend/{announcementId}
           - Required fields cannot be left null or empty.
-      summary: Resends an Announcement
+      summary: Fetches a specific previously sent Announcement
       tags:
       - Announcement APIs
-      operationId: ResendPost
+      operationId: ResendGet
       produces:
         - application/json
       parameters:
-        - name: Body
-          in: body
-          required: true
-          description:  >-
-            The body refers to the format of the request.
-              - The body contains metadata about resending an announcement.
-          schema:
-            $ref: '#/definitions/ResendRequest'
-        - name: Content-Type
-          in: header
-          required: true
+        - in: path
+          name: announcementId
           type: string
-          description: >-
-            The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+          required: true
+          description: 'Please append a valid Announcement Id to the request URL' 
         - name: Authorization
           in: header
           required: true
@@ -209,15 +732,128 @@ paths:
           description: 'The token/key used to execute the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."Resend" operation was successfully executed.'
+          description: 'Successful operation. "Get Announcement for Resend" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/GetResendResponse'
         '400':
-          description: 'BAD REQUEST. The "Resend" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: >-
+            BAD REQUEST, **Get Announcement for Resend** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **Get Announcement for Resend** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+      security: []
+      x-unitTests:
+        - request:
+            method: GET
+            uri: /resend/{Announcement_Id}
+            headers:
+              Authorization: '{{auth}}'
+              x-authenticated-user-token: '{{user_token}}'
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: getResend
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ 
+  /resend:
+    post:
+      description: >-
+       This API is associated with resending a previously sent announcement to the user(s) on the Sunbird Platform.
+          - The **_/resend** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
+          - Required fields cannot be left null or empty.
+      summary: Resends an Announcement
+      tags:
+      - Announcement APIs
+      operationId: ResendPost
+      produces:
+        - application/json
+      parameters:
+        - name: request
+          in: body
+          required: true
+          description:  >-
+            The body refers to the format of the request.
+              - The body contains metadata about resending an announcement.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/CreateAnnouncementRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The token/key used to execute the API.'
+      responses:
+        '200':
+          description: 'OK! Successful operation. "resend" operation was successfully executed.'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/CreateAnnouncementResponse'
+        '400':
+          description: >-
+            BAD REQUEST, **Resend Announcement** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **Resend Announcement** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
       security: []
       x-unitTests:
         - request:
@@ -272,164 +908,8 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /user/outbox:
-    post:
-      description: >-
-       This API is associated with posting sent announcements in users outbox on the Sunbird Platform.
-          - The **_/user/outbox_** endpoint executes the "UserOutboxPost" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is: /user/outbox
-          - Required fields cannot be left null or empty.
-      summary: Posting sent announcements in users outbox 
-      tags:
-      - Announcement APIs
-      operationId: UserOutboxPost
-      produces:
-        - application/json
-      parameters:
-        - name: Body
-          in: body
-          required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the posting sent announcements in users outbox.
-          schema:
-            $ref: '#/definitions/UserOutboxRequest'
-        - name: Content-Type
-          in: header
-          required: true
-          type: string
-          description: >-
-            The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-        - name: Authorization
-          in: header
-          required: true
-          type: string
-          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-        - name: x-authenticated-user-token
-          in: header
-          required: true
-          type: string
-          description: 'The token/key used to execute the API.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."UserOutboxPost" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "UserOutboxPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security: []
-      x-unitTests:
-        - request:
-            method: POST
-            uri: /user/outbox
-            headers:
-              Content-Type: application/json
-              Authorization: '{{auth}}'
-              x-authenticated-user-token: '{{user_token}}'
-            body: "{\n\t\"request\": {\n\t\t\"limit\": 5,\n\t\t\"offset\": 0\n\t}\n}"
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: userOutbox
-          x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
- /received:
-    post:
-      description: >-
-       This API is associated with acknowledging the recieved reciept of a sent announcement.
-          - The **_/recieved_** endpoint executes the "recieved" request based on parameters provided as metadata in the request body.
-          - Required fields cannot be left null or empty.
-      summary: Acknowledges received reciept of an Announcement
-      tags:
-      - Announcement APIs
-      operationId: ReceivedPost
-      produces:
-        - application/json
-      parameters:
-        - name: Body
-          in: body
-          required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about fetching the status of  announcements.
-          schema:
-            $ref: '#/definitions/ReceivedRequest'
-        - name: Content-Type
-          in: header
-          required: true
-          type: string
-          description: >-
-            The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-        - name: Authorization
-          in: header
-          required: true
-          type: string
-          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-        - name: x-authenticated-user-token
-          in: header
-          required: true
-          type: string
-          description: 'The token/key used to execute the API.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."RecievedPost" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "RecievedPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security: []
-      x-unitTests:
-        - request:
-            method: POST
-            uri: /received
-            headers:
-              Content-Type: application/json
-              Authorization: '{{auth}}'
-              x-authenticated-user-token: '{{user_token}}'
-            body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"e138-45e9-bed2-a0db5eb9696b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: received
-          x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
- /definitions:
+
+  /definitions:
     post:
       description: >-
        This API is associated with providing metadata about creating an announcement and other technical information regarding announcements, also it provides information about the destination of announcement.
@@ -437,19 +917,21 @@ paths:
           - Required fields cannot be left null or empty.
       summary: Created announcement metadata 
       tags:
-      - Announcement APIs
+        - Announcement APIs
       operationId: DefinitionsPost
       produces:
         - application/json
       parameters:
-        - name: Body
+        - name: request
           in: body
           required: true
           description: >-
             The body refers to the format of the request.
               - The body contains metadata of information about the creation of an announcement.
           schema:
-            $ref: '#/definitions/DefinitionsRequest'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/DefinitionsRequest'
         - name: Content-Type
           in: header
           required: true
@@ -458,8 +940,6 @@ paths:
             The Content Type entity is the media type of the resource.
             Possible media types can be:- 
               - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
         - name: Authorization
           in: header
           required: true
@@ -472,15 +952,33 @@ paths:
           description: 'The token/key used to execute the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."DefinitionsPost" operation was successfully executed.'
+          description: 'OK! Successful operation. "Get Definitions" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/DefinitionsResponse'
         '400':
-          description: 'BAD REQUEST. The "DefinitionsPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: >-
+            BAD REQUEST, **Get Definitions** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **Get Definitions** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
       security: []
       x-unitTests:
         - request:
@@ -507,27 +1005,25 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /read:
+
+  /manage/announcement-type/create:
     post:
-      description: >-
-        This API acknowledges the read reciept of a sent Announcement.
-          - The **_read_** endpoint executes the "read" request based on parameters provided as metadata in the request body.
-          - Required fields cannot be left null or empty.
-      summary: Acknowledges the read reciept of an Announcement
+      description: 'This API is to be used for creating new Announcement types'
+      summary: Create Announcement Type
       tags:
-      - Announcement APIs
-      operationId: ReadPost
+        - Manage Announcement Type APIs
+      operationId: CreateAnnouncementTypePost
       produces:
-        - application/json
+      - application/json
       parameters:
-        - name: Body
+        - name: request
           in: body
           required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about checking the read status of a sent announcement.
+          description: ''
           schema:
-            $ref: '#/definitions/ReadRequest'
+            allOf:
+                - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+                - $ref: '#/definitions/AnnouncementTypeCreateRequest'
         - name: Content-Type
           in: header
           required: true
@@ -536,8 +1032,6 @@ paths:
             The Content Type entity is the media type of the resource.
             Possible media types can be:- 
               - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
         - name: Authorization
           in: header
           required: true
@@ -550,127 +1044,78 @@ paths:
           description: 'The token/key used to execute the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."read" operation was successfully executed.'
+          description: 'OK! Successful operation. "Create Announcement Type" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/AnnouncementTypeCreateResponse'
         '400':
-          description: 'BAD REQUEST. The "read" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: >-
+            BAD REQUEST, **Create Announcement Type** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **Create Announcement Type** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
       security: []
       x-unitTests:
-        - request:
-            method: POST
-            uri: /read
-            headers:
-              Content-Type: application/json
-              Authorization: '{{auth}}'
-              x-authenticated-user-token: '{{user_token}}'
-            body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"1a5a7080-c5fa-11e7-9062-e7cbc001200b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: read
-          x-testDescription: ''
+      - request:
+          method: POST
+          uri: /create
+          headers:
+            Content-Type: application/json
+            Authorization: ''
+            x-authenticated-user-token: ''
+          body: '{"request":{"rootOrgId":"Root Org ID","name":"Announcement type name","status":"active"}}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: createAnnouncementType
+        x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /get/{Announcement_Id}:
-    parameters:
-      - in: path
-        name: Announcement_Id
-        type: string
-        required: true
-        description: 'Please append a valid Announcement Id to the Request URL'    
-    get:
-      description: >-
-       This API is associated with fetching a specific announcement on the Sunbird Platform.
-          - The **_/get/{Announcement_Id}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is: /get/{Announcement_Id}
-          - Required fields cannot be left null or empty.
-      summary: Fetches an announcement by Id
-      tags:
-      - Announcement APIs
-      operationId: Get4380faf0Da7311e7B9e2450490e1f739Get
-      produces:
-        - application/json
-      parameters:
-        - name: Authorization
-          in: header
-          required: true
-          type: string
-          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-        - name: x-authenticated-user-token
-          in: header
-          required: true
-          type: string
-          description: 'The token/key used to execute the API.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."get announcement" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "get announcement" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security: []
-      x-unitTests:
-        - request:
-            method: GET
-            uri: /get/{Announcement_Id}
-            headers:
-              Authorization: '{{auth}}'
-              x-authenticated-user-token: '{{user_token}}'
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: getAnnouncementById
-          x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
- /user/inbox:
+
+  /manage/announcement-type/list:
     post:
-      description: >-
-       This API is associated with adding announcements to user(s) inbox on the Sunbird Platform.
-          - The **_/user/inbox_** endpoint executes the "userInbox" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is: /user/inbox
-          - Required fields cannot be left null or empty.
+      description: 'This API lists all the announcement types of the given tenant irrespective of the status of announcement types'
+      summary: List Announcement Type
       tags:
-      - Announcement APIs
-      operationId: UserInboxPost
+        - Manage Announcement Type APIs
+      operationId: ListAnnouncementTypePost
       produces:
         - application/json
       parameters:
-        - name: Body
+        - name: request
           in: body
           required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about adding announcements in users inbox.
+          description: ''
           schema:
-            $ref: '#/definitions/UserInboxRequest'
+            allOf:
+                - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+                - $ref: '#/definitions/AnnouncementTypeListRequest'
         - name: Content-Type
           in: header
           required: true
@@ -679,8 +1124,6 @@ paths:
             The Content Type entity is the media type of the resource.
             Possible media types can be:- 
               - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
         - name: Authorization
           in: header
           required: true
@@ -693,73 +1136,86 @@ paths:
           description: 'The token/key used to execute the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."UserInboxPost" operation was successfully executed.'
+          description: 'OK! Successful operation. "List Announcement Type" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/AnnouncementTypeListResponse'
         '400':
-          description: 'BAD REQUEST. The "UserInboxPost" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: >-
+            BAD REQUEST, **List Announcement Type** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **List Announcement Type** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
       security: []
       x-unitTests:
-        - request:
-            method: POST
-            uri: /user/inbox
-            headers:
-              Content-Type: application/json
-              Authorization: '{{auth}}'
-              x-authenticated-user-token: '{{user_token}}'
-            body: "{\n\t\"request\": {\n\t\t\"limit\": 2,\n\t\t\"offset\": 0\n\t}\n}"
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: userInbox
-          x-testDescription: ''
+      - request:
+          method: POST
+          uri: /list
+          headers:
+            Content-Type: application/json
+            Authorization: ''
+            x-authenticated-user-token: ''
+          body: '{"request":{"rootOrgId":"Root Org ID"}}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: listAnnouncementType
+        x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /create:
+
+  /manage/announcement-type/update:
     post:
-      description: >-
-       This API is associated with creation of a new announcement on the Sunbird Platform.
-          - The **_/create_** endpoint executes the "create" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is: /resend/{Announcement_Id}
-          - Required fields cannot be left null or empty.
-      summary: create
+      description: 'This API is to be used to update the name or status of the announcement type'
+      summary: Update Announcement Type
       tags:
-      - Announcement APIs
-      operationId: CreatePost
+        - Manage Announcement Type APIs
+      operationId: UpdateAnnouncementTypePost
       produces:
         - application/json
       parameters:
-        - name: Body
+        - name: request
           in: body
           required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about creation of announcements.
+          description: ''
           schema:
-            $ref: '#/definitions/CreateRequest'
+            allOf:
+                - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+                - $ref: '#/definitions/AnnouncementTypeUpdateRequest'
         - name: Content-Type
           in: header
           required: true
           type: string
           description: >-
             The Content Type entity is the media type of the resource.
-             Possible media types can be:- 
+            Possible media types can be:- 
               - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
         - name: Authorization
           in: header
           required: true
@@ -772,563 +1228,580 @@ paths:
           description: 'The token/key used to execute the API.'
       responses:
         '200':
-          description: 'OK ! Successful operation."create" operation was successfully executed.'
+          description: 'OK! Successful operation. "Update Announcement Type" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/AnnouncementTypeUpdateResponse'
         '400':
-          description: 'BAD REQUEST. The "create" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: >-
+            BAD REQUEST, **Update Announcement Type** operation failed! The possible reason for failure is that you may have missed providing input for a mandatory parameter.
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found, **Update Announcement Type** operation failed! The possible reason for failure is that the requested resource could not be found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            INTERNAL SERVER ERROR! Looks like something went wrong! These errors are tracked automatically. If the problem persists, please feel free to contact us. In the meantime, you may try again.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/ErrorResponse'
       security: []
       x-unitTests:
-        - request:
-            method: POST
-            uri: /create
-            headers:
-              Content-Type: application/json
-              Authorization: '{{auth}}'
-              x-authenticated-user-token: '{{user_token}}'
-            body: |-
-              {
-                    "request": {
-                        "sourceId": "01232002070124134414",
-                        "type": "Circular",
-                        "description": "",
-                        "links": ["https://ekstep.in", "https://ekstep.in/a", "https://ekstep.in/b", "https://ekstep.in/c", "https://ekstep.in/d"],
-                        "title": "Test title for announcement 001 str case",
-                        "target": {"geo": {
-                                "ids": ["0123916990102568966", "01239169691632435212"]
-                                }
-                            },
-                        "from": "Department of Education"
-                    }
-              }
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: create
-          x-testDescription: ''
+      - request:
+          method: POST
+          uri: /update
+          headers:
+            Content-Type: application/json
+            Authorization: ''
+            x-authenticated-user-token: ''
+          body: '{"request":{"id":"9b20d566-c5db-11e7-abc4-cec278b6b50a","status":"active"}}'
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: updateAnnouncementType
+        x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+
 definitions:
-  CancelRequest:
-    title: cancelRequest
-    example:
-      request:
-        announcementId: 4380faf0-da73-11e7-b9e2-450490e1f739
+  Announcement:
+    description: Announcement model
     type: object
     properties:
-      request:
-        $ref: '#/definitions/Request'
-    required:
-      - request
-  Request:
-    title: Request
-    example:
-      announcementId: 4380faf0-da73-11e7-b9e2-450490e1f739
-    type: object
-    properties:
-      announcementId:
-        description: ''
-        example: 4380faf0-da73-11e7-b9e2-450490e1f739
+      id:
         type: string
-    required:
-      - announcementId
-  ResendRequest:
-    title: resendRequest
-    example:
-      request:
-        sourceId: ORG_001
-        type: Circular
-        links:
-          - 'http://yahoo.com'
-        title: Test title for announcement 90
-        description: Test description for announcement 90
-        target:
-          geo:
-            ids:
-              - 0123668627050987529
-        from: test user
-        attachments:
-          - name: alarm.png
-            mimetype: image/png
-            size: 67kb
-            link: >-
-              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
-          - name: clock.jpg
-            mimetype: image/jpeg
-            size: 9.4kb
-            link: >-
-              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900700072509443.jpg
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request3'
-    required:
-      - request
-  Request3:
-    title: Request3
-    example:
-      sourceId: ORG_001
-      type: Circular
-      links:
-        - 'http://yahoo.com'
-      title: Test title for announcement 90
-      description: Test description for announcement 90
-      target:
-        geo:
-          ids:
-            - 0123668627050987529
-      from: test user
-      attachments:
-        - name: alarm.png
-          mimetype: image/png
-          size: 67kb
-          link: >-
-            https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
-        - name: clock.jpg
-          mimetype: image/jpeg
-          size: 9.4kb
-          link: >-
-            https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900700072509443.jpg
-    type: object
-    properties:
-      sourceId:
-        description: ''
-        example: ORG_001
+        description: unique identifier of the announcement object
+      from:
         type: string
       type:
-        description: ''
-        example: Circular
+        type: string
+      title:
+        type: string
+      description:
         type: string
       links:
-        description: ''
-        example:
-          - 'http://yahoo.com'
         type: array
         items:
           type: string
-      title:
-        description: ''
-        example: Test title for announcement 90
-        type: string
-      description:
-        description: ''
-        example: Test description for announcement 90
-        type: string
-      target:
-        $ref: '#/definitions/Target'
-      from:
-        description: ''
-        example: test user
-        type: string
       attachments:
-        description: ''
-        example:
-          - name: alarm.png
-            mimetype: image/png
-            size: 67kb
-            link: >-
-              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
-          - name: clock.jpg
-            mimetype: image/jpeg
-            size: 9.4kb
-            link: >-
-              https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900700072509443.jpg
-        type: array
-        items:
-          $ref: '#/definitions/Attachment'
+        type: object
+        properties:
+          name:
+            type: string
+          mimetype:
+            type: string
+          size:
+            type: string
+          link:
+            type: string
+      createdDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      status:
+        type: string
     required:
-      - sourceId
-      - type
-      - links
-      - title
-      - description
-      - target
+      - id
       - from
-      - attachments
+      - type
+      - title
+      - createdDate
+      - status
+
   Target:
-    title: Target
-    example:
-      geo:
-        ids:
-          - 0123668627050987529
     type: object
     properties:
-      geo:
-        $ref: '#/definitions/Geo'
-    required:
-      - geo
+      target:
+        type: object
+        properties:
+          geo:
+            $ref: '#/definitions/Geo'
+        required:
+          - geo
+      
   Geo:
-    title: Geo
-    example:
-      ids:
-        - 0123668627050987529
     type: object
     properties:
       ids:
-        description: ''
-        example:
-          - 0123668627050987529
+        description: 'Location IDs to be targeted. Users belonging to the organisations with these location IDs will receive the announcement'
         type: array
         items:
           type: string
     required:
       - ids
+
+  Attachments:
+    type: object
+    properties:
+      attachments:
+        description: Details of the files which are attached with the announcement
+        type: array
+        items:
+          type: object
+          allOf:
+            - $ref: '#/definitions/Attachment'
+          
   Attachment:
-    title: Attachment
-    example:
-      name: alarm.png
-      mimetype: image/png
-      size: 67kb
-      link: >-
-        https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
     type: object
     properties:
       name:
         description: ''
-        example: alarm.png
         type: string
       mimetype:
         description: ''
-        example: image/png
         type: string
       size:
         description: ''
-        example: 67kb
         type: string
       link:
         description: ''
-        example: >-
-          https://sunbirddev.blob.core.windows.net/attachments/announcement/File-0123900729938247680.png
         type: string
     required:
       - name
       - mimetype
       - size
-      - link
+      - link      
+
+  Metrics:
+    type: object
+    properties:
+      metrics:
+        type: object
+        properties:
+          sent:
+            type: integer
+            format: int32
+          read:
+            type: integer
+            format: int32
+          received:
+            type: integer
+            format: int32
+        required:
+          - sent
+          - read
+          - received
+
+  AnnouncementStatus:
+    type: object
+    properties:
+      received:
+        type: boolean
+        description: This boolean flag confirms whether the particular announcement was already received by the user.
+      read:
+        type: boolean
+        description: This boolean flag confirms whether the particular announcement was already read by the user.
+    required:
+      - received
+      - read
+
+  CreateAnnouncementRequest:
+    description: Create an announcement for the target audience. At least one description, links, attachments must be present.
+    type: object
+    properties:
+      request:
+        type: object
+        properties:
+          sourceId:
+            description: 'Tenant ID'
+            type: string
+          type:
+            description: 'Type of the announcement. Depends on the tenant confiuration. Can be Order, Circular, Notice etc.'
+            type: string
+          description:
+            description: 'The message body to be sent'
+            type: string
+          links:
+            description: 'The web links to be sent'
+            type: array
+            items:
+              type: string
+          title:
+            description: 'Subject of the announcement'
+            type: string
+          from:
+            description: 'The sender of the announcement'
+            type: string
+        required:
+          - sourceId
+          - type
+          - title
+          - target
+        allOf:
+          - $ref: '#/definitions/Target'
+          - $ref: '#/definitions/Attachments'
+    required:
+      - request
+    
   UserOutboxRequest:
-    title: userOutboxRequest
-    example:
-      request:
-        limit: 5
-        offset: 0
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request8'
+        type: object
+        properties:
+          limit:
+            type: integer
+            format: int32
+          offset:
+            type: integer
+            format: int32
     required:
       - request
-  Request8:
-    title: Request8
-    example:
-      limit: 5
-      offset: 0
-    type: object
-    properties:
-      limit:
-        description: ''
-        example: 5
-        type: integer
-        format: int32
-      offset:
-        description: ''
-        example: 0
-        type: integer
-        format: int32
-    required:
-      - limit
-      - offset
-  ReceivedRequest:
-    title: receivedRequest
-    example:
-      request:
-        announcementId: e138-45e9-bed2-a0db5eb9696b
-        channel: web
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request11'
-    required:
-      - request
-  Request11:
-    title: Request11
-    example:
-      announcementId: e138-45e9-bed2-a0db5eb9696b
-      channel: web
-    type: object
-    properties:
-      announcementId:
-        description: ''
-        example: e138-45e9-bed2-a0db5eb9696b
-        type: string
-      channel:
-        description: ''
-        example: web
-        type: string
-    required:
-      - announcementId
-      - channel
-  DefinitionsRequest:
-    title: definitionsRequest
-    example:
-      request:
-        rootorgid: ORG_001
-        definitions:
-          - announcementTypes
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request12'
-    required:
-      - request
-  Request12:
-    title: Request12
-    example:
-      rootorgid: ORG_001
-      definitions:
-        - announcementTypes
-    type: object
-    properties:
-      rootorgid:
-        description: ''
-        example: ORG_001
-        type: string
-      definitions:
-        description: ''
-        example:
-          - announcementTypes
-        type: array
-        items:
-          type: string
-    required:
-      - rootorgid
-      - definitions
-  ReadRequest:
-    title: readRequest
-    example:
-      request:
-        announcementId: 1a5a7080-c5fa-11e7-9062-e7cbc001200b
-        channel: web
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request11'
-    required:
-      - request
+
   UserInboxRequest:
-    title: userInboxRequest
-    example:
-      request:
-        limit: 2
-        offset: 0
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request8'
+        type: object
+        properties:
+          limit:
+            type: integer
+            format: int32
+          offset:
+            type: integer
+            format: int32
     required:
       - request
-  CreateRequest:
-    title: createRequest
-    example:
-      request:
-        sourceId: '01232002070124134414'
-        type: Circular
-        description: ''
-        links:
-          - 'https://ekstep.in'
-          - 'https://ekstep.in/a'
-          - 'https://ekstep.in/b'
-          - 'https://ekstep.in/c'
-          - 'https://ekstep.in/d'
-        title: Test title for announcement 001 str case
-        target:
-          geo:
-            ids:
-              - 0123916990102568966
-              - 01239169691632435212
-        from: Department of Education
+
+  ReceivedRequest:
+    description: To acknowledge the receipt of the announcement by the particular user 
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request18'
+        type: object
+        properties:
+          announcementId:
+            type: string
+          channel:
+            type: string
+            description: 'The channel on which the user received this announcement. Possible values can be web, mobile.'
+        required:
+          - announcementId
+          - channel
+    required:
+      - request   
+
+  ReadRequest:
+    description: To acknowledge the read of the announcement by the particular user
+    type: object
+    properties:
+      request:
+        type: object
+        properties:
+          announcementId:
+            type: string
+          channel:
+            type: string
+            description: 'The channel on which the user read this announcement. Possible values can be web, mobile.'
+        required:
+          - announcementId
+          - channel
+    required:
+      - request    
+
+  CancelRequest:
+    type: object
+    properties:
+      request:
+        type: object
+        properties:
+          announcementId:
+            type: string
+        required:
+          - announcementId
     required:
       - request
-  Request18:
-    title: Request18
-    example:
-      sourceId: '01232002070124134414'
-      type: Circular
-      description: ''
-      links:
-        - 'https://ekstep.in'
-        - 'https://ekstep.in/a'
-        - 'https://ekstep.in/b'
-        - 'https://ekstep.in/c'
-        - 'https://ekstep.in/d'
-      title: Test title for announcement 001 str case
-      target:
-        geo:
-          ids:
-            - 0123916990102568966
-            - 01239169691632435212
-      from: Department of Education
+
+  DefinitionsRequest:
     type: object
     properties:
-      sourceId:
-        description: ''
-        example: '01232002070124134414'
-        type: string
-      type:
-        description: ''
-        example: Circular
-        type: string
-      description:
-        description: ''
-        type: string
-      links:
-        description: ''
-        example:
-          - 'https://ekstep.in'
-          - 'https://ekstep.in/a'
-          - 'https://ekstep.in/b'
-          - 'https://ekstep.in/c'
-          - 'https://ekstep.in/d'
-        type: array
-        items:
-          type: string
-      title:
-        description: ''
-        example: Test title for announcement 001 str case
-        type: string
-      target:
-        $ref: '#/definitions/Target'
-      from:
-        description: ''
-        example: Department of Education
-        type: string
+      request:
+        type: object
+        properties:
+          rootOrgId:
+            type: string
+            description: Tenant ID
+          definitions:
+            description: List of definitions to retrieve. Currently supported definitions are listed in the enum field below.
+            type: array
+            items:
+              type: string
+              enum:
+                - announcementTypes
+        required:
+          - rootOrgId
+          - definitions
     required:
-      - sourceId
-      - type
-      - description
-      - links
-      - title
-      - target
-      - from
-  ResultWithNodeId:
-    title: Result Containing Node Id
+      - request
+      
+  AnnouncementTypeCreateRequest:
     type: object
     properties:
-      result:
-        $ref: '#/definitions/NodeId'
-  ContentCreateResponse:
+      request:
+        type: object
+        properties:
+          rootOrgId:
+            type: string
+            description: Tenand ID
+          name:
+            type: string
+          status:
+            type: string
+            enum:
+              - active
+              - inactive
+        required:
+          - rootOrgId
+          - name
+          - status
+    required:
+      - request
+
+  AnnouncementTypeListRequest:
+    type: object
+    properties:
+      request:
+        type: object
+        properties:
+          rootOrgId:
+            type: string
+            description: Tenand ID
+        required:
+          - rootOrgId
+    required:
+      - request
+
+  AnnouncementTypeUpdateRequest:
+    description: At least one of 'name', 'status' must be passed
+    type: object
+    properties:
+      request:
+        type: object
+        properties:
+          id:
+            type: string
+          name:
+            type: string
+          status:
+            type: string
+            enum:
+              - active
+              - inactive
+        required:
+          - id
+    required:
+      - request
+
+  CreateAnnouncementResponse:
     description: Create Content Response
     type: object
-    allOf:
-      - $ref: '#/definitions/ResultWithNodeId'
-      - $ref: '#/definitions/ResponseHeader'
-  ResponseHeader:
-    title: ResponseHeader
-    type: object
     properties:
-      id:
-        type: string
-        description: API Identifier
-      ver:
-        type: string
-        description: API version information
-      ts:
-        type: string
-        description: API execution timespan
-      params:
-        $ref: '#/definitions/ResponseParams'
-      responseCode:
+      result:
         type: object
-        description: 'API response code '
-  ResponseParams:
-    title: Response Parameter
-    type: object
-    properties:
-      resmsgid:
-        type: string
-        description: Response Message Id
-      msgid:
-        type: string
-        description: Message Id
-      err:
-        type: string
-        description: Error Code
-      status:
-        type: string
-        description: Response Status
-      errmsg:
-        type: string
-        description: Error Message
-  EmptyResult:
-    title: Empty Result
+        properties:
+          announcement:
+            type: object
+            properties:
+              id:
+                type: string
+            required:
+              - id
+        required:
+          - announcement
+
+  GetAnnouncementResponse:
+    description: Response of Sunbird API containing an announcement
     type: object
     properties:
       result:
         type: object
-        description: Empty Result
-  NodeId:
-    title: Node Id
+        properties:
+          announcement:
+            $ref: '#/definitions/Announcement'
+
+  UserOutboxResponse:
     type: object
     properties:
-      node_id:
-        type: string
-        description: Node Identifier
-  ContentCreateErrorResponse:
-    title: Create Content Error Response
+      result:
+        type: object
+        properties:
+          count:
+            type: integer
+            format: int32
+          announcements:
+            type: array
+            items:
+              type: object
+              allOf:    
+                - $ref: '#/definitions/Announcement'
+                - $ref: '#/definitions/Target'
+                - $ref: '#/definitions/Metrics'
+        required:
+          - count
+          - announcements
+
+  UserInboxResponse:
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          count:
+            type: integer
+            format: int32
+          announcements:
+            type: array
+            items:
+              type: object
+              allOf:    
+                - $ref: '#/definitions/Announcement'
+                - $ref: '#/definitions/AnnouncementStatus'
+        required:
+          - count
+          - announcements
+
+  ReceivedResponse:
+    description: This response is received when an announcement is marked as received for the particular user.
+    type: object
+    properties:
+      received:
+        type: object
+        properties:
+          id:
+            type: string
+        required:
+          - id
+    required:
+      - received
+
+  ReadResponse:
+    description: This response is received when an announcement is marked as read for the particular user.
+    type: object
+    properties:
+      read:
+        type: object
+        properties:
+          id:
+            type: string
+        required:
+          - id
+    required:
+      - read
+
+  CancelResponse:
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          status:
+            type: string
+        required:
+          - status
+
+  GetResendResponse:
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          announcement:
+            type: object
+            allOf:
+              - $ref: '#/definitions/Announcement'
+              - $ref: '#/definitions/Target'
+
+  DefinitionsResponse:
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          announcementTypes:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+
+  AnnouncementTypeCreateResponse:
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          announcementType:
+            type: object
+            properties:
+              id:
+                type: string
+            required:
+              - id
+        required:
+          - announcementType
+
+  AnnouncementTypeListResponse:
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          announcementTypes:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                name:
+                  type: string
+                createdDate:
+                  type: string
+                status:
+                  type: string
+                rootOrgId:
+                  type: string
+              required:
+                - id
+                - name
+                - createdDate
+                - status
+                - rootOrgId
+        required:
+          - announcementTypes
+  AnnouncementTypeUpdateResponse:
     type: object
     allOf:
       - $ref: '#/definitions/EmptyResult'
-      - $ref: '#/definitions/ResponseHeader'
-  '{{host}}/v1/user/forgotpasswordrequest':
-    title: '{{host}}/v1/user/forgotpasswordRequest'
-    example:
-      id: unique API ID
-      ts: 2013/10/15 16:16:39
-      params: {}
-      request:
-        userName: amit127.kumar17
-    type: object
-    properties:
-      id:
-        description: ''
-        type: string
-      ts:
-        description: ''
-        type: string
-      params:
-        description: ''
-        type: object
-      request:
-        $ref: '#/definitions/Request10'
-    required:
-    - id
-    - ts
-    - params
-    - request
-  Request10:
-    title: Request10
-    type: object
-    properties:
-      userName:
-        description: ''
-        type: string
-    required:
-    - userName
 
- 
+  ErrorResponse:
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+
+  EmptyResult:
+    type: object
+    properties:
+      result:
+        type: object
