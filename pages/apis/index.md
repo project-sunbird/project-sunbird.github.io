@@ -22,7 +22,7 @@ Sunbird APIs are:
 The API endpoints follow a common URL structure, viz; https://{host:port}/{module}/{version}/{api_name}
 They are categorized by resource type. Each resource type has one or more data representations and asssociated methods.
 
-<div class="row row-eq-height">
+<div class="">
     <div class="col-sm-4">
         <h3>Feature API(s)</h3>
         <ul>
