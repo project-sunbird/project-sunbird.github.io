@@ -19,7 +19,8 @@ Sunbird APIs are:
 - Stateless
 - Versioned
 
-The API endpoints follow a common URL structure, viz; https://{host:port}/{module}/{version}/{api_name}
+The API endpoints follow a common URL structure, viz; https://{host:port}/{module}/{version}/{api_name}.
+
 They are categorized by resource type. Each resource type has one or more data representations and asssociated methods.
 
 <div class="">
