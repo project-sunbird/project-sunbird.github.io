@@ -23,7 +23,7 @@ The API endpoints follow a common URL structure, viz; https://{host:port}/{modul
 
 They are categorized by resource type. Each resource type has one or more data representations and asssociated methods.
 
-<div class="">
+<div class="row">
     <div class="col-sm-4">
         <h3>Feature API(s)</h3>
         <ul>
