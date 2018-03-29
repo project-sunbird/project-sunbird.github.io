@@ -1,0 +1,127 @@
+swagger: "2.0"
+info:
+  version: '1.0'
+  title: Sunbird Content API(s)
+  description: >-
+    The Content API resources perform operations related to 
+    _Content_ on the Sunbird Platform. The operations include the basic CRUD (Create, Update,Read and Delete) operations and other operations such as upload, publish.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/content/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description: >-
+       This API is associated with creating content on the Sunbird Platform .
+          - **_/create/_** endpoint executes the "Create Content" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for parameters marked with *. 
+          - Mandatory fields cannot be null or empty.
+      summary: Create Content
+      tags:
+        - Content APIs
+      operationId: Create Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be created, i.e an array of parameters which describes the content.
+          schema:
+            $ref: "../definitions/envelope.yaml#/ApiRequest"
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User ID to execute the API.' 
+        - name: X-Channel-id
+          in: header
+          required: true
+          type: string
+          description: 'The unique ID provided to the State to which the user belongs.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: "OK ! Successful operation."
+          schema:
+            $ref: "../definitions/envelope.yaml#/ApiResponse"
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/create
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: "{{user_id}}"
+              X-Channel-id: channel
+              Authorization: "Bearer {{api_key}}"
+            body: |-
+              {
+                "request": {
+                  "content": {
+                    "visibility": "Default",
+                    "status": "Draft",
+                    "contentType": "Story",
+                    "code": "test_cwp_3",
+                    "osId": "org.ekstep.quiz.app",
+                    "languageCode": "hi",
+                    "name": "Test Content",
+                    "description": "Test Content",
+                    "language": [
+                      "Hindi"
+                    ],
+                    "createdFor": [
+                      "012297427021119488540"
+                    ],
+                    "createdBy": "89cf1a7e-dfd3-46c9-a428-d37e9a2bc001",
+                    "mimeType": "application/vnd.ekstep.ecml-archive"
+                  }
+                }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Create Content
+          x-testDescription: ""
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false

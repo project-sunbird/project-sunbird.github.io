@@ -1,0 +1,50 @@
+definitions:
+  SkillsResponse:
+    description: Response of Sunbird API containing a user job profile
+    type: object
+    properties:
+    id:
+        type: string
+    jobName:
+        type: string
+    orgName:
+        type: string
+    role:
+        type: string
+    updatedBy:
+        type: string
+    endDate:
+        type: string
+        format: "YYYY-MM-DD"		
+    isVerified:
+        type: boolean
+    subject:
+        type: string
+    joiningDate:
+        type: string
+        format: "YYYY-MM-DD"
+    updatedDate:
+         type: string
+         format: "yyyy-MM-dd HH:mm:ss:SSSZZZZ"
+    isCurrentJob:
+  	   type: boolean
+    verifiedBy:
+          type: string
+    boardName:
+          type: string	
+    orgId:
+          type: string
+    addressId:
+          type: string
+    createdDate:
+          type: string
+          format: "yyyy-MM-dd HH:mm:ss:SSSZZZZ"
+    isDeleted:
+          type: boolean
+    createdBy:
+           type: string
+    verifiedDate:
+          type: string
+          format: "yyyy-MM-dd HH:mm:ss:SSSZZZZ"
+    isRejected:
+          type: boolean	
