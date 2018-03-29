@@ -1,0 +1,375 @@
+swagger: "2.0"
+info:
+  version: '1.0'
+  title: Form API(s)
+  description: The Form APIs allow you to create and update metadata form fields based on type, subtype and action. Use the APIs to configure form fields as required for the specific form.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /data/v1/form
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /read:
+    post:
+      description: This API is used to read form data
+        - The **_/read_** endpoint executes the "FormRead" request based on parameters provided as metadata in the request body
+        - Required fields cannot be left null or empty
+      summary: Form Read
+      operationId: FormRead
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for reading a form.
+        schema:
+          $ref: '#/definitions/formReadRequest'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      responses:
+        '200':
+          description: 'SUCCESS. The "Read Form data" operation was successful!'
+          schema:
+            $ref: '#/definitions/readResponse'
+        '400':
+          description: 'BAD REQUEST. "Read Form data" operation failed. You may have missed input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security:
+      - auth: []
+  /create:
+    post:
+      description: This API is used to read form data
+        - The **_/create** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
+        - Required fields cannot be left null or empty
+      summary: Form Create
+      operationId: FormCreate
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for creating a form.
+        schema:
+          $ref: '#/definitions/formcreateRequest'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      responses:
+        '200':
+          description: 'SUCCESS. The "Create Form data" operation was successful!'
+          schema:
+            $ref: '#/definitions/createResponse'
+        '400':
+          description: 'BAD REQUEST. "Create Form data" operation failed. You may have missed input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security:
+      - auth: []
+  /update:
+    post:
+      description: This API is used to update form data
+        - The **_/update** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
+        - Required fields cannot be left null or empty
+      summary: Form Update
+      operationId: FormUpdate
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for updating a form.
+        schema:
+          $ref: '#/definitions/formcreateRequest'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      responses:
+        '200':
+          description: 'SUCCESS. The "Update Form data" operation was successful!'
+          schema:
+              $ref: '#/definitions/createResponse'
+        '400':
+          description: 'BAD REQUEST. "Update Form data" operation failed. You may have missed input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/FailedResponseHeader'
+      security:
+      - auth: []
+
+definitions:
+  readRequest:
+    title: Form read API request object
+    type: object
+    properties:
+      request:
+        required:
+        - type
+        - subType
+        - action
+        - framework
+        - rootOrgId
+        properties:
+          type: 
+            type: string
+          subType:
+            type: string
+          action:
+            type: string
+          framework:
+            type: string
+          rootOrgId:
+            type: string
+  formReadRequest:
+    title: Form read API request body
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: "#/definitions/readRequest"
+  formcreateRequest:
+    title: Form create and update API request body
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: "#/definitions/createRequest"
+  createRequest: 
+    title: Form create and update API request object
+    type: object
+    properties:
+      request:
+        required:
+        - type
+        - subType
+        - action
+        - framework
+        - rootOrgId
+        - data
+        properties:
+          type: 
+            type: string 
+          subType:
+            type: string 
+          action:
+            type: string 
+          framework:
+            type: string 
+          rootOrgId:
+            type: string
+          data:
+            $ref: '#/definitions/dataFields'         
+  readResponse:
+    title: Form read API response Object
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: "#/definitions/readResult"
+  createResponse:
+    title: Form create and update API response Object
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: "#/definitions/createResult"
+  readResult:
+    title: Form read API response result Object
+    type: object
+    properties:
+      result:
+        properties:
+          form:
+            type: object
+            properties:
+              type: 
+                type: string 
+              subType:
+                type: string 
+              action:
+                type: string 
+              framework:
+                type: string 
+              rootOrgId:
+                type: string
+              data:
+                $ref: '#/definitions/dataFields'
+  createResult:
+    title: Form create and update API's response result Object
+    type: object
+    properties:
+      result:
+        properties:
+          response:
+            type: object
+            properties:
+              rootOrgId:
+                type: string
+              key:
+                type: string
+              status:
+                type: string
+  FailedResponseHeader:
+    title: Failure Response
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/FailedResponseParams'
+      responseCode:
+        type: string
+        description: responseCode
+      result:
+        properties:
+          result:
+            type: string
+            description: result
+  FailedResponseParams:
+    title: Failed Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  dataFields:
+    type: object
+    properties:
+      templateName:
+        type: string 
+      action: 
+        type: string 
+      fields: 
+        type: array
+        items:
+          type: object
+          required:
+          - code
+          - dataType
+          - editable
+          - inputType
+          - label
+          - required
+          - visible
+          - index
+          - placeholder
+          properties:  
+            code:
+              type: string
+              description: Unique code to identify field
+            dataType:
+              type: string
+              description: DataType of field
+            description:
+              type: string
+              description: Description about field
+            editable:
+              type: boolean
+              description: Based on this value form will be rederer in editable mode
+            inputType:
+              type: string
+              description: Type of field text, select etc.
+            label:
+              type: string
+              description: The field label
+            name:
+              type: string
+              description: Name of the field
+            index:
+              type: integer
+              description: The position of the field decided by this value
+            placeholder:
+              type: string
+              description: Short hint of the form field
+            required:
+              type: boolean
+              description: It specifies that the form field must be filled out or not
+            visible:
+              type: boolean
+              description: The visibility property sets whether an form field should be visible or not
+            renderingHints:
+              type: object
+              description: From field renderingHints

@@ -1,0 +1,10 @@
+---
+type: landing
+directory: conceptmodels
+title: User  
+page_title: User 
+description: Describes the concept of a user within the Sunbird context 
+keywords: 'User, Concept, conceptual model, key concepts'
+published: true
+allowSearch: true
+---
