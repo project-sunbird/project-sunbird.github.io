@@ -37,7 +37,8 @@ They are categorized by resource type. Each resource type has one or more data r
             <li><a href="apis/orgapi/">Organisation Management APIs</a></li>
             <li><a href="apis/userapi/">User APIs</a></li>
             <li><a href="apis/badgesapi/">User Badges APIs</a></li>
-            <li><a href="apis/noteapi/">User Notes APIs</a></li>          
+            <li><a href="apis/noteapi/">User Notes APIs</a></li>
+            <li><a href="apis/badgingframeworkapi/">Badging Framework APIs</a></li>
         </ul>
     </div>
     <div class="col-sm-4">
@@ -46,7 +47,7 @@ They are categorized by resource type. Each resource type has one or more data r
             <li><a href="apis/notificationapi/">Notification APIs</a></li>
             <li><a href="apis/firebasecloudmessagingapi/">Push Notification APIs</a></li>
             <li><a href="apis/geolocationapi/">Geo Location APIs</a></li>
-            <li><a href="apis/objectapi/">Object APIs</a></li>      
+            <li><a href="apis/form/">Form APIs</a></li>      
         </ul>
         <h3>Setup API(s)</h3>
         <ul>
