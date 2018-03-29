@@ -3,7 +3,7 @@ info:
   version: '1.0'
   title: Geo-location API(s)
   description: >- 
-     Geo-location resources API classifies the organisations on the basis of their location. 
+    Geo-location resources API classifies the organisation on the basis of their location. 
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
@@ -23,7 +23,7 @@ paths:
   /create:
     post:
       description: >-
-       This API is associated with creating a new Geo-location of an organisation.
+       This API is used for creating a new Geo-location of an organisation.
           - The **_/create_** endpoint executes the "create location" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Create a Geo-location
@@ -38,7 +38,7 @@ paths:
           required: true
           description: >-
               The body refers to the format of the request.
-                - The body contains metadata about the request for creating geo location.
+                - The body contains metadata about the request for creating Geo-location.
           schema:
             allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -55,7 +55,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'All User APIs requires authorization for use. Specify the authorization key received from the administrator when placing the request to use the API.'
         - name: x-authenticated-user-token
           in: header
           required: true
@@ -152,7 +152,7 @@ paths:
   /update/{locationId}:
     patch:
       description: >-
-       This API is associated with updating a Geo-location of an organisation
+       This API is used for updating a Geo-location of an organisation
           - The **_/update/{locationId}_** endpoint executes the "update location" request based on parameters provided as metadata in the request body
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
@@ -190,7 +190,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: x-authenticated-user-token
           in: header
           required: true
@@ -237,7 +237,7 @@ paths:
   /delete/{locationId}:
     delete:
       description: >-
-       This API is associated with deleting the corresponding Geo-location of an organisation.
+       This API is used for deleting the corresponding Geo-location of an organisation.
           - The **_/delete/{locationId}_** endpoint executes the "delete location" request based on parameters provided as metadata in the request body
           - {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
@@ -252,7 +252,7 @@ paths:
           name: locationId
           type: string
           required: true
-          description: 'Please append a valid location Id To the Request URL' 
+          description: 'Please append a valid location Id to the Request URL' 
         - name: Content-Type
           in: header
           required: true
@@ -265,7 +265,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: x-authenticated-user-token
           in: header
           required: true
@@ -332,7 +332,7 @@ paths:
   /read/{id}:
     get:
       description:  >-
-       This API is associated with fetching a Geo-location of an organisation on Sunbird platform.
+       This API is used for fetching a Geo-location of an organisation on Sunbird platform.
           - The **_/read/{locationId}_** endpoint executes the "fetch Geo-location" request based on parameters provided as metadata in the request body
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
@@ -353,7 +353,7 @@ paths:
           required: true
           type: string
           description: >-
-            The type can be either of the two, depending on if Tenant ID or Location ID was appended in request path
+            The type can be either be Tenant ID or Location ID, depending on which one is appended in request path
               - organisation
               - location
         - name: Content-Type
@@ -368,7 +368,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+          description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: x-authenticated-user-token
           in: header
           required: true
@@ -463,7 +463,7 @@ definitions:
                   description: Name of the Geolocation to be create
                 type:
                   type: string
-                  description: Type of Geolocation, depending on how the Tenant want to categorise their Geolocations. Possible values for an administrative tenant may be 'district', 'block' etc 
+                  description: Type of Geolocation depends on how the Tenant wants to categorize their Geo-locations. Possible values for an administrative tenant may be 'district', 'block' etc 
               required:
                 - location
                 - type
