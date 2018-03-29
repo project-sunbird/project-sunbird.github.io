@@ -48,19 +48,17 @@ They are categorized by resource type. Each resource type has one or more data r
             <li><a href="apis/geolocationapi/">Geo Location APIs</a></li>
             <li><a href="apis/objectapi/">Object APIs</a></li>      
         </ul>
+        <h3>Setup API(s)</h3>
+        <ul>
+            <li><a href="apis/bulkupload/">Bulk Upload Service APIs</a></li>
+            <li><a href="apis/masterkeyapi/">Master Key APIs</a></li>
+            <li><a href="apis/pagesapi/">Pages APIs</a></li>     
+        </ul>
         </div>
     <div class="col-sm-4">
         <h3>Data API(s)</h3>
         <ul>
             <li><a href="apis/datasyncapi/">Data Sync APIs</a></li>
             <li><a href="apis/metricsapi/">Metrics APIs</a></li> 
-        </ul>
-    </div>
-    <div class="col-sm-4">
-        <h3>Setup API(s)</h3>
-        <ul>
-            <li><a href="apis/bulkupload/">Bulk Upload Service APIs</a></li>
-            <li><a href="apis/masterkeyapi/">Master Key APIs</a></li>
-            <li><a href="apis/pagesapi/">Pages APIs</a></li>     
         </ul>
     </div>
