@@ -155,7 +155,8 @@ paths:
         '200':
           description: >-
             'SUCCESS. The **Search Badge Issuing Entities or Organizations** operation was successful!'
-           allOf:
+          schema:
+            allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgeClassListResp'
         '400':
@@ -1495,5 +1496,4 @@ definitions:
         description: issuer url with ID
       badgeIdUrl:        
         type: string
-        description: url of the badge class    
-
+        description: url of the badge class
