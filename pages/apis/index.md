@@ -13,15 +13,16 @@ allowSearch: true
 
 ### Overview
 
-All of the Sunbird APIs are organized around REST. The Sunbird API(s) use standard HTTP features, like HTTP verbs, universally accepted with almost all HTTP clients. JSON is be returned as a response from the Sunbird API(s), including the error response. The APIs are designed to have predictable, straightforward URLs. Basic HTTP response codes are used to indicate API errors. The Sunbird API resources are organized by resource types. Each resource type has one or more data representations and one or more asssociated methods.
+All APIs have the following characteristics:
 
-The following are the API Resource Types:
+- REST based (JSON over HTTPS)
+- Stateless
+- Versioned
+- Tested purely via automation
 
-- **Feature API(s)** - Resource type associated with enhancement of the Sunbird.
-- **Admin API(s)** - Resource types associated with managing the Sunbird.
-- **Setup API(s)** - Resource type associated with setting up your instance of Sunbird
-- **Data API(s)** - Resource type associated with machine learning, data analytics so as to improve upon usability of the Sunbird.
+The Sunbird API resources are organized by resource types. Each resource type has one or more data representations and one or more asssociated methods.
 
+All APIs have the following URL structure: https://<host:port>/<module>/<version>/<api_name>
 
 Based on the usage of each API resource, the Sunbird API(s) are categorized as:
 
