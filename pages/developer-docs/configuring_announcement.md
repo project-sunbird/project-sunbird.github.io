@@ -44,30 +44,7 @@ The Anouncements feature does not support location hierarchy. While targeting an
 
 Announcements are categorised into different types, for example; orders, circulars, holidays, news etc. There must be atleast one announcement type created for the organization to enable the administrator to send an announcement. Announcement types are created as per the requirements of the tenant organization.
 
-> **Note** To create announcement types, refer to [Object APIs](http://www.sunbird.org/apis/objectapi/){:target="_blank"}
-
-### Sample request object to create an announcement type
-
-    "request":{
-        "entityName":"announcementtype",
-        "indexed":true,
-        "payload" : {
-            "id": "{UUID}",
-            "rootorgid": "{Tenant ID}",
-            "name": "{String}",
-            "status": "active",
-            "createddate": "{timestamp}"
-        }
-    }
-
-| Parameter | Description|
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id        | A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.<br>**Note:**  For further details on UUID, refer [https://en.wikipedia.org/wiki/Universally_unique_identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier)|
-| rootorgid | The unique ID of the tenant or root organization for which the particular announcement type is to be created.| 
-| name| The name of the announcement type.| 
-| status| The status of the announcement type. The status must be ***Active** for the announcement type to be available for use.|
-| createddate | The date on which the announcement type is created. The created date must be in the format ***yyyy-MM-dd HH:mm:ss:SSSZZZZ** eg:***2017-12-08 10:54:40:573+0000** |
-
+> **Note** To create announcement types, refer to [Manage Announcement Type APIs](http://www.sunbird.org/apis/announcements/#tag/Manage-Announcement-Type-APIs){:target="_blank"}
 
 ## Assigning Roles to User(s)
 
