@@ -41,7 +41,7 @@ They are categorized by resource type. Each resource type has one or more data r
         </ul>
     </div>
     <div class="col-sm-4">
-        <h3>Administrator API(s)</h3>
+        <h3>Administering API(s)</h3>
         <ul>
             <li><a href="apis/notificationapi/">Notification APIs</a></li>
             <li><a href="apis/firebasecloudmessagingapi/">Push Notification APIs</a></li>
