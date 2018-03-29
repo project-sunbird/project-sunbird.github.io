@@ -23,7 +23,7 @@ consumes:
 produces:
   - application/json
 paths:
- /create:
+  /create:
     post:
       description: >-
        This API is associated with creation of a new announcement on the Sunbird Platform.
@@ -135,7 +135,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /get/{announcementId}:
+  /get/{announcementId}:
     get:
       description: >-
        This API is associated with fetching a specific announcement on the Sunbird Platform.
@@ -219,7 +219,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /user/outbox:
+  /user/outbox:
     post:
       description: >-
        This API is associated with posting sent announcements in users outbox on the Sunbird Platform.
@@ -316,7 +316,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /user/inbox:
+  /user/inbox:
     post:
       description: >-
        This API is associated with adding announcements to user(s) inbox on the Sunbird Platform.
@@ -413,7 +413,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /received:
+  /received:
     post:
       description: >-
        This API is associated with acknowledging the recieved reciept of a sent announcement.
@@ -509,7 +509,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /read:
+  /read:
     post:
       description: >-
         This API acknowledges the read reciept of a sent Announcement.
@@ -605,7 +605,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /cancel:
+  /cancel:
     delete:
       description: >-
        This API is associated with cancelling an announcement on the Sunbird Platform.
@@ -701,7 +701,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
         
- /resend/{announcementId}:
+  /resend/{announcementId}:
     get:
       description: >-
        This API is associated with fetching a previously sent announcement on the Sunbird Platform.
@@ -784,7 +784,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
  
- /resend:
+  /resend:
     post:
       description: >-
        This API is associated with resending a previously sent announcement to the user(s) on the Sunbird Platform.
@@ -909,7 +909,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /definitions:
+  /definitions:
     post:
       description: >-
        This API is associated with providing metadata about creating an announcement and other technical information regarding announcements, also it provides information about the destination of announcement.
@@ -1006,7 +1006,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /manage/announcement-type/create:
+  /manage/announcement-type/create:
     post:
       description: 'This API is to be used for creating new Announcement types'
       summary: Create Announcement Type
@@ -1098,7 +1098,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /manage/announcement-type/list:
+  /manage/announcement-type/list:
     post:
       description: 'This API lists all the announcement types of the given tenant irrespective of the status of announcement types'
       summary: List Announcement Type
@@ -1190,7 +1190,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
- /manage/announcement-type/update:
+  /manage/announcement-type/update:
     post:
       description: 'This API is to be used to update the name or status of the announcement type'
       summary: Update Announcement Type
@@ -1281,8 +1281,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-# *************************** Definitions *****************
-# *************************** Models *****************
+
 definitions:
   Announcement:
     description: Announcement model
@@ -1414,8 +1413,6 @@ definitions:
       - received
       - read
 
-# *************************** API Specific Request *****************
-
   CreateAnnouncementRequest:
     description: Create an announcement for the target audience. At least one description, links, attachments must be present.
     type: object
@@ -1454,7 +1451,6 @@ definitions:
     required:
       - request
     
-  
   UserOutboxRequest:
     type: object
     properties:
@@ -1613,9 +1609,6 @@ definitions:
           - id
     required:
       - request
-
-
-# *************************** API Specific Response *****************
 
   CreateAnnouncementResponse:
     description: Create Content Response
