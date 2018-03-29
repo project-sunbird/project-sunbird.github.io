@@ -11,15 +11,16 @@ allowSearch: true
 
 ### Overview
 
-The Sunbird API resources have the following characteristics:
+Welcome to Sunbird API reference documentation!
+
+Sunbird APIs are:
 
 - REST based (JSON over HTTPS)
 - Stateless
 - Versioned
 
-All the API endpoints follow the common URL structure: https://{host:port}/{module}/{version}/{api_name}
-
-The Sunbird API resources are organized by resource types. Each resource type has one or more data representations and asssociated methods.Based on the usage, the Sunbird API(s) are categorized as:
+The API endpoints follow a common URL structure, viz; https://{host:port}/{module}/{version}/{api_name}
+They are categorized by resource type. Each resource type has one or more data representations and asssociated methods.
 
 <div class="row row-eq-height">
     <div class="col-sm-4">
