@@ -61,20 +61,14 @@ The Keycloak is deployed on a virtual machine (VM), and you can deploy the Keycl
   <pre>
   ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
   </pre>
-
 2. Update the following variables in the configuration path 
-
   <pre>
-  
   {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name} // path 
- 
   keycloak_password: (with admin initial password)  //variable to set
   keycloak_theme_path: ex- path/to/the/nile/themes  //variable to set
-  
   sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name} //command to execute
   </pre>
-  
-**Note:** The sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts){:target="_blank"}
+ **Note:** The sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts){:target="_blank"}
 
 3. Follow the instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak
 
