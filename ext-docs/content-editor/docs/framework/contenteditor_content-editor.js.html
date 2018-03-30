@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: contenteditor/content-editor.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: contenteditor/content-editor.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @author Santhosh Vasabhaktula &lt;santhosh@ilimi.in>
+ */
+
+org.ekstep.contenteditor.init = function(context, config, $scope, $document, callback) {
+    org.ekstep.contenteditor._mergeConfig(config);
+    org.ekstep.contenteditor._initServices();
+    org.ekstep.contenteditor.globalContext = context;
+    org.ekstep.contenteditor.toolbarManager.setScope($scope);
+    org.ekstep.contenteditor._loadDefaultPlugins(context, callback);
+    //org.ekstep.contenteditor._backwardCompatibility();
+}
+
+org.ekstep.contenteditor._backwardCompatibility = function() {
+    /* Deprecated variables */
+    EkstepEditorAPI.apislug = org.ekstep.contenteditor.config.apislug;
+    EkstepEditorAPI.baseURL = org.ekstep.contenteditor.config.baseURL;
+    EkstepEditorAPI.absURL = org.ekstep.contenteditor.config.absURL;
+    EkstepEditorAPI.globalContext = org.ekstep.contenteditor.globalContext;
+}
+
+org.ekstep.contenteditor._initServices = function() {
+    org.ekstep.services.config = {
+        baseURL: org.ekstep.contenteditor.config.baseURL,
+        apislug: org.ekstep.contenteditor.config.apislug,
+        searchCriteria: org.ekstep.contenteditor.config.searchCriteria || {} 
+    }
+    org.ekstep.pluginframework.initialize({
+        env: 'editor',
+        jQuery: org.ekstep.contenteditor.jQuery,
+        pluginRepo: org.ekstep.contenteditor.config.pluginRepo,
+        build_number: org.ekstep.contenteditor.config.build_number
+    });
+}
+
+org.ekstep.contenteditor._mergeConfig = function(config) {
+    config = config || {};
+    // Override default config
+    org.ekstep.contenteditor.config = _.assign(org.ekstep.contenteditor.config, config);
+    // Set non overridable config
+    org.ekstep.contenteditor.config = _.assign(org.ekstep.contenteditor.config, org.ekstep.contenteditor.extendedConfig);
+}
+
+org.ekstep.contenteditor._loadDefaultPlugins = function(context, callback) {    
+    if (org.ekstep.contenteditor.config.corePluginsPackaged === true) org.ekstep.contenteditor.jQuery("body").append($("&lt;script type='text/javascript' src='scripts/coreplugins.js?" + org.ekstep.contenteditor.config.build_number + "'>"));
+    org.ekstep.pluginframework.eventManager.enableEvents = false;
+    org.ekstep.pluginframework.pluginManager.loadAllPlugins(org.ekstep.contenteditor.config.plugins, undefined, function() {        
+        org.ekstep.pluginframework.eventManager.enableEvents = true;
+        callback();        
+    });
+}
+
+// Prepare context and config data from url/parentwindow/window
+// org.ekstep.contenteditor.window_context = {}
+// org.ekstep.contenteditor.window_config = {}
+// getWindowContext();
+// getWindowConfig();
+// 
+org.ekstep.contenteditor.getWindowContext = function() {
+    return org.ekstep.contenteditor.getParameterByName('context') || (window.parent ? window.parent.context : undefined) || window.context || {};
+}
+
+org.ekstep.contenteditor.getWindowConfig = function() {
+    return org.ekstep.contenteditor.getParameterByName('config') || (window.parent ? window.parent.config : undefined) || window.config || {};
+}
+
+org.ekstep.contenteditor.getParameterByName = function(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&amp;");
+    var regex = new RegExp("[?&amp;]" + name + "(=([^&amp;#]*)|&amp;|#|$)"),
+        results = regex.exec(url);
+    if (!results) return undefined;
+    if (!results[2]) return undefined;
+    var value = decodeURIComponent(results[2].replace(/\+/g, " "));
+    return JSON.parse(value);
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="org.ekstep.contenteditor.api.html">api</a></li><li><a href="org.ekstep.contenteditor.basePlugin.html">basePlugin</a></li><li><a href="org.ekstep.contenteditor.basePlugin.init.html">init</a></li><li><a href="org.ekstep.services.assessmentService.html">assessmentService</a></li><li><a href="org.ekstep.services.assetService.html">assetService</a></li><li><a href="org.ekstep.services.contentService.html">contentService</a></li><li><a href="org.ekstep.services.dialcodeService.html">dialcodeService</a></li><li><a href="org.ekstep.services.languageService.html">languageService</a></li><li><a href="org.ekstep.services.metaService.html">metaService</a></li><li><a href="org.ekstep.services.popupService.html">popupService</a></li><li><a href="org.ekstep.services.searchService.html">searchService</a></li><li><a href="org.ekstep.services.telemetryService.html">telemetryService</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getSyllables">getSyllables</a></li><li><a href="global.html#getTranslation">getTranslation</a></li><li><a href="global.html#getTransliteration">getTransliteration</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:10:55 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

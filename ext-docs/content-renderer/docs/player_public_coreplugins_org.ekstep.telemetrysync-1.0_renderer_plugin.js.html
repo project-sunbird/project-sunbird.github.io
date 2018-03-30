@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: player/public/coreplugins/org.ekstep.telemetrysync-1.0/renderer/plugin.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: player/public/coreplugins/org.ekstep.telemetrysync-1.0/renderer/plugin.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Plugin to create different shapes on canvas using createJS graphics object.
+ * @class TelemetryPlugin
+ * @extends EkstepRenderer.Plugin
+ * @author Krushanu Mohapatra V S &lt;Krushanu.Mohapatra@tarento.com>
+ */
+Plugin.extend({
+
+     /**
+     * This explains the type of the plugin.
+     * @member {String} _type.
+     * @memberof TelemetryPlugin
+     */
+    _type: 'telemetry',
+
+    /**
+     * This explains plugin is container OR not.
+     * @member {boolean} _isContainer
+     * @memberof TelemetryPlugin
+     */
+    _isContainer: false,
+
+    /**
+     * This explains plugin should render on canvas OR not.
+     * @member {boolean} _render
+     * @memberof TelemetryPlugin
+     */
+    _render: true,
+
+    /**
+     * This is the telemetry data for the perticular stage.
+     * @member {object} _teleData
+     * @memberof TelemetryPlugin
+     */
+    _teleData: [],
+
+    /**
+     * A Constant for max telemetry data to send in one api call
+     * @member {number} _maxTeleInstance
+     * @memberof TelemetryPlugin
+     **/
+     _maxTeleInstance : 10,
+
+     /*
+      * Holds addition required fileds for telemtry event
+      */
+     _requiredFields: {},
+
+     /**
+     *   Invoked by framework when plugin instance created/renderered on stage.
+     *   Use this plugin to create different shapes like Square, Circle, Rectangle, Polygon, Star etc..
+     *   @param data {object} data is input object for the shape plugin.
+     *   @memberof TelemetryPlugin
+     *   @override
+     */
+    initPlugin: function(data) {
+        console.log("Telemetry plugin init done !!!");
+    },
+    /*
+     * generating global scope of the plugin. Called by plugin-fraemwork as the plugin loads.
+     * this plugin instance will we available globally
+     */
+    initialize: function(){
+        EkstepRendererAPI.addEventListener('telemetryPlugin:intialize', this.initializeTelemetryPlugin, this);
+    },
+    initializeTelemetryPlugin: function() {
+        if ("undefined" == typeof cordova) {
+            this.listenTelementryEvent();
+            var did = detectClient();
+            this._requiredFields = {};
+            var extConfig = EkstepRendererAPI.getGlobalConfig();
+            this._requiredFields.uid = extConfig.context.uid || extConfig.uid;
+            this._requiredFields.sid = extConfig.context.sid || CryptoJS.MD5(Math.random().toString()).toString();
+            this._requiredFields.did = extConfig.context.did || CryptoJS.MD5(JSON.stringify(did)).toString();
+        }
+    },
+    listenTelementryEvent: function() {
+        var instance = this;
+        EventBus.addEventListener("telemetryEvent", function(data) {
+            data = JSON.parse(data.target);
+            if(parseInt(data.ver) >= 3){
+                data = instance.appendRequiredFields(data);
+                instance.addToQueue(data);
+            }
+        });
+    },
+    appendRequiredFields: function(data){
+        data.actor.id = data.actor.id || this._requiredFields.uid; 
+        data.context.did = data.context.did || this._requiredFields.did;   
+        data.context.sid = data.context.sid || this._requiredFields.sid;
+        return data;
+    },
+    sendTelemetry: function(telemetryData) {
+        var currentTimeStamp = new Date().getTime();
+        var telemetryObj = {
+            "id": "ekstep.telemetry",
+            "ver": TelemetryService._version,
+            "ets": currentTimeStamp,
+            "events": telemetryData
+        };
+        var configuration = EkstepRendererAPI.getGlobalConfig();
+        var headers = {};
+        if (!_.isUndefined(configuration.context.authToken)) {
+            headers["Authorization"] = 'Bearer ' + configuration.context.authToken;
+        }
+        org.ekstep.service.renderer.sendTelemetry(telemetryObj, headers).then(function(data) {
+           console.log("Telemetry API success", data);
+        });
+    },
+    addToQueue: function(data) {
+        this._teleData.push(data);
+        if((data.eid.toUpperCase() == "END") || (this._teleData.length >= this._maxTeleInstance)) {
+            var telemetryData = _.clone(this._teleData);
+            this._teleData = [];
+            this.sendTelemetry(telemetryData);
+        }
+    }
+
+})
+//# sourceURL=TelemetrySyncPlugin.js</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AudioPlugin.html">AudioPlugin</a></li><li><a href="ecmlRenderer.html">ecmlRenderer</a></li><li><a href="EkstepRendererAPI.html">EkstepRendererAPI</a></li><li><a href="EkstepRendererEvents.html">EkstepRendererEvents</a></li><li><a href="EmbedPlugin.html">EmbedPlugin</a></li><li><a href="epubRenderer.html">epubRenderer</a></li><li><a href="ImagePlugin.html">ImagePlugin</a></li><li><a href="MCQPlugin.html">MCQPlugin</a></li><li><a href="MTFPlugin.html">MTFPlugin</a></li><li><a href="OptionPlugin.html">OptionPlugin</a></li><li><a href="org.ekstep.contentrenderer.baseEndepage.html">baseEndepage</a></li><li><a href="org.ekstep.contentrenderer.baseLauncher..html">baseLauncher.</a></li><li><a href="ShapePlugin.html">ShapePlugin</a></li><li><a href="TelemetryPlugin.html">TelemetryPlugin</a></li><li><a href="TextPlugin.html">TextPlugin</a></li><li><a href="ThemePlugin.html">ThemePlugin</a></li><li><a href="VideoPlugin.html">VideoPlugin</a></li></ul><h3>Events</h3><ul><li><a href="-_org.ekstep.launcher_.html#.event:'renderer.player.init'">'renderer.player.init'</a></li><li><a href="-_org.ekstep.launcher_.html#.event:'renderer:content:replay'">'renderer:content:replay'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:content:end'">'renderer:content:end'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:launcher:load'">'renderer:launcher:load'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:player:init'">'renderer:player:init'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:player:show'">'renderer:player:show'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:repo:create'">'renderer:repo:create'</a></li><li><a href="EkstepRendererEvents.html#.event:'telemetryPlugin:intialize'">'telemetryPlugin:intialize'</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:endpage:hide">renderer:endpage:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:endpage:show">renderer:endpage:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:toast:show">renderer:toast:show</a></li><li><a href="global.html#event:plugin:errorwhihcisbeingdispatchingfromthepluginframework">plugin:error whihc is being dispatching from the plugin framework</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addInstance">addInstance</a></li><li><a href="global.html#addToGameArea">addToGameArea</a></li><li><a href="global.html#content_renderer">content_renderer</a></li><li><a href="global.html#createInstance">createInstance</a></li><li><a href="global.html#endTelemetry">endTelemetry</a></li><li><a href="global.html#getGameArea">getGameArea</a></li><li><a href="global.html#getLauncherDom">getLauncherDom</a></li><li><a href="global.html#heartBeatEvent">heartBeatEvent</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#isAvailable">isAvailable</a></li><li><a href="global.html#progres">progres</a></li><li><a href="global.html#resetDomElement">resetDomElement</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#startTelemetry">startTelemetry</a></li><li><a href="global.html#throwError">throwError</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Mar 27 2018 10:58:45 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
