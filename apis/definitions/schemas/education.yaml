@@ -1,0 +1,39 @@
+definitions:
+  EducationResponse:
+    description: Response of Sunbird API containing education object details.
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      percentage:
+        type: float
+      grade:
+        type: string
+      boardOrUniversity:
+        type: string
+      createdBy:
+        type: string	
+      isDeleted:
+        type: boolean
+      createdDate:
+        type: string
+	format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      courseName:
+        type: string
+      duration:
+         type: integer
+      addressId:
+  	 type: string
+      userId:
+          type: string
+      updatedDate:
+          type: string
+          format: yyyy-MM-dd HH:mm:ss:SSSZZZZ		  
+      degree:
+          type: string
+      yearOfPassing:
+          type: integer
+      updatedBy:
+          type: string 

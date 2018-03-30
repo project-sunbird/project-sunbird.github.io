@@ -55,54 +55,8 @@
 <p>Announcements are categorised into different types, for example; orders, circulars, holidays, news etc. There must be atleast one announcement type created for the organization to enable the administrator to send an announcement. Announcement types are created as per the requirements of the tenant organization.</p>
 
 <blockquote>
-  <p><strong>Note</strong> To create announcement types, refer to <a href="http://www.sunbird.org/apis/objectapi/" target="_blank">Object APIs</a></p>
+  <p><strong>Note</strong> To create announcement types, refer to <a href="http://www.sunbird.org/apis/announcements/#tag/Manage-Announcement-Type-APIs" target="_blank">Manage Announcement Type APIs</a></p>
 </blockquote>
-
-<h3 id="sample-request-object-to-create-an-announcement-type">Sample request object to create an announcement type</h3>
-
-<pre><code>"request":{
-    "entityName":"announcementtype",
-    "indexed":true,
-    "payload" : {
-        "id": "{UUID}",
-        "rootorgid": "{Tenant ID}",
-        "name": "{String}",
-        "status": "active",
-        "createddate": "{timestamp}"
-    }
-}
-</code></pre>
-
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>A unique identifier for the announcement type. Generate a standard UUID using any reliable tool.<br /><strong>Note:</strong>  For further details on UUID, refer <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">https://en.wikipedia.org/wiki/Universally_unique_identifier</a></td>
-    </tr>
-    <tr>
-      <td>rootorgid</td>
-      <td>The unique ID of the tenant or root organization for which the particular announcement type is to be created.</td>
-    </tr>
-    <tr>
-      <td>name</td>
-      <td>The name of the announcement type.</td>
-    </tr>
-    <tr>
-      <td>status</td>
-      <td>The status of the announcement type. The status must be <strong>*Active</strong> for the announcement type to be available for use.</td>
-    </tr>
-    <tr>
-      <td>createddate</td>
-      <td>The date on which the announcement type is created. The created date must be in the format <strong><em>yyyy-MM-dd HH:mm:ss:SSSZZZZ** eg:</em></strong>2017-12-08 10:54:40:573+0000**</td>
-    </tr>
-  </tbody>
-</table>
 
 <h2 id="assigning-roles-to-users">Assigning Roles to User(s)</h2>
 

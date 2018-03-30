@@ -1,122 +1,55 @@
-<p><strong>Bulk Upload Service APIs</strong></p>
+<p>Welcome to Sunbird API reference documentation!</p>
+
+<p>Sunbird APIs are:</p>
 
 <ul>
-  <li><strong><a href="apis/bulkupload/" target="_blank">Bulk Upload Service APIs</a></strong> The Bulk Upload API resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include uploads and updations.</li>
+  <li>REST based (JSON over HTTPS)</li>
+  <li>Stateless</li>
+  <li>Versioned</li>
 </ul>
 
-<p><strong>Content APIs</strong></p>
+<p>The API endpoints follow a common URL structure, viz; https://{host:port}/{module}/{version}/{api_name}.</p>
 
-<ul>
-  <li><strong><a href="apis/content/" target="_blank">Content APIs</a></strong> The Content API resources perform operations related to Content on the Sunbird Platform. The operations include the basic CRUD (Create, Read, Update and Delete) operations and other operations such as upload, publish.</li>
-</ul>
+<p>They are categorized by resource type. Each resource type has one or more data representations and asssociated methods.</p>
 
-<p><strong>Course Batch Management APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management APIs</a></strong> The Course Batch Management API resources perform operations related to management of batches for courses on the Sunbird Platform. The basic operations include creation, updation, joining, listing.</li>
-</ul>
-
-<p><strong>Data Sync APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/datasyncapi/" target="_blank">Data Sync APIs</a></strong> The Data synchronization API resources perform operations related to data on the Sunbird Platform. Data synchronization API(s) are responsible for establishing consistency among data from a source to a target data storage and vice versa with continuous harmonization of the data over time.</li>
-</ul>
-
-<p><strong>Metrics APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/metricsapi/" target="_blank">Metrics APIs</a></strong> The Metrics API resources analyze sunbird’s overall performance and efficiency.These resources perform operations related to the metrics on the Sunbird Platform. The metrics resource performs various operations related to content consumption, content snapshot aggregation.</li>
-</ul>
-
-<p><strong>Notification APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/notificationapi/" target="_blank">Notification APIs</a></strong> The Email API resources provides the notification mechanism for all the users on Sunbird .The Resource notifies users officially about something on Sunbird.</li>
-</ul>
-
-<p><strong>Organization Management APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/orgapi/" target="_blank">Organisation Management APIs</a></strong> The Organisation Management API resources perform operations related to management of Organisation on the Sunbird Platform. The basic operations include creation, updation, joining, approving.</li>
-</ul>
-
-<p><strong>User APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/userapi/" target="_blank">User APIs</a></strong> The User API resources perform operations related to the Users on the Sunbird Platform. The basic operations include Creation, Updation, Reading &amp; Searching.</li>
-</ul>
-
-<p><strong>Announcement APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/announcements/" target="_blank">Announcements APIs</a></strong> The Announcements API resources on allow users to communicate with other users and post information about various related topics. Announcements are designed to allows the admins to broadcast information out to a specific user or to an entire group of users.</li>
-</ul>
-
-<p><strong>Framework APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/framework/" target="_blank">Framework APIs</a></strong> The Framework API resources is basically a supporting data structure which serves as a template. It can be used in places where the structure remains the same but only the usage changes are per requirement. These resources are used to create, update, search frameworks, channels, catergories, terms.</li>
-</ul>
-
-<p><strong>Audience APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/audienceapi/" target="_blank">Audience APIs</a></strong> Audience API resources allow to get a count of users from a particular location.</li>
-</ul>
-
-<p><strong>Badges APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/badgesapi/" target="_blank">Badges APIs</a></strong> The Badge API resources are used to provide recognition for skills and achievements that are earned by a user.</li>
-</ul>
-
-<p><strong>Assessment APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/assessmentapi/" target="_blank">Assessment APIs</a></strong> The Assessment API resources are used for managing the questions known as <strong>Assessment items</strong>.The Assessment API resources provides the basic functionality to perform the operations like Creating, Reading,  Updating, deleting these assessment items.</li>
-</ul>
-
-<p><strong>D.I.A.L APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/dialapi/" target="_blank">D.I.A.L APIs</a></strong> The D.I.A.L Code (Digital Infrastructure for Augmented Learning) API resources are used for energising the textbooks.D.I.A.L code allows textbook creators to tag various pages and topics in a flexible manner using the DIAL codes (in QR code format) and these codes can be linked with digital content, thus providing easy access for the end users and a seamless physical to digital transition.</li>
-</ul>
-
-<p><strong>Push Notification APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/firebasecloudmessagingapi/" target="_blank">Push Notification APIs</a></strong>  Push notification API Resource is a cross-platform solution for sending push notifications on Android, iOS, and web applications.</li>
-</ul>
-
-<p><strong>Geo Location APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/geolocationapi/" target="_blank">Geo Location APIs</a></strong> Geo-location resources API classifies the organisations on the basis of their location.</li>
-</ul>
-
-<p><strong>Master Key APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/masterkeyapi/" target="_blank">Master Key APIs</a></strong> The master key resources API provides access to the API and other resources with authentication protection, without authenticating it against our authentication provider.</li>
-</ul>
-
-<p><strong>User Notes APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/noteapi/" target="_blank">User Notes APIs</a></strong> The User Notes API resources enables users to take notes on the Sunbird Platform. The basic operations include Creation, Updation,Reading &amp; deleting.</li>
-</ul>
-
-<p><strong>Object APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/objectapi/" target="_blank">Object APIs</a></strong> The Object API resource is used to store the data into sunbird.
-    - Primarily supports announcements for data storage and other related operation.
-    - Allows you to define your own repository inside sunbird and use the same to perform operations on data.
-    - an object can be used in different contexts, it is depends on how it is implemented</li>
-</ul>
-
-<p><strong>Page APIs</strong></p>
-
-<ul>
-  <li><strong><a href="apis/pagesapi/" target="_blank">Page APIs</a></strong> The Page resources APIs are used to set up the current page, change settings, and configure how things will be displayed to the user.</li>
-</ul>
+<div class="row">
+    <div class="col-sm-4">
+        <h3>Feature API(s)</h3>
+        <ul>
+            <li><a href="apis/announcements/">Announcement</a></li>
+            <li><a href="apis/assessmentapi/">Assessment</a></li>
+            <li><a href="apis/audienceapi/">Audience</a></li>
+            <li><a href="apis/content/">Content</a></li>
+            <li><a href="apis/coursebatchmanapi/">Course Batch Management</a></li>
+            <li><a href="apis/dialapi/">D.I.A.L </a></li>
+            <li><a href="apis/framework/">Framework </a></li>
+            <li><a href="apis/orgapi/">Organisation Management </a></li>
+            <li><a href="apis/userapi/">User </a></li>
+            <li><a href="apis/badgesapi/">User Badges </a></li>
+            <li><a href="apis/noteapi/">User Notes </a></li>
+            <li><a href="apis/badgingframeworkapi/">Badging Framework </a></li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <h3>Administration API(s)</h3>
+        <ul>
+            <li><a href="apis/notificationapi/">Notification </a></li>
+            <li><a href="apis/firebasecloudmessagingapi/">Push Notification </a></li>
+            <li><a href="apis/geolocationapi/">Geo Location </a></li>
+            <li><a href="apis/form/">Form </a></li>      
+        </ul>
+        <h3>Setup API(s)</h3>
+        <ul>
+            <li><a href="apis/bulkupload/">Bulk Upload Service </a></li>
+            <li><a href="apis/masterkeyapi/">Master Key </a></li>
+            <li><a href="apis/pagesapi/">Pages </a></li>     
+        </ul>
+        </div>
+    <div class="col-sm-4">
+        <h3>Data API(s)</h3>
+        <ul>
+            <li><a href="apis/datasyncapi/">Data Sync </a></li>
+            <li><a href="apis/metricsapi/">Metrics </a></li> 
+        </ul>
+    </div>
+</div>

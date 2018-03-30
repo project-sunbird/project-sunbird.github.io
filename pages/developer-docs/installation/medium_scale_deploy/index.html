@@ -21,9 +21,6 @@
 
 <ul>
   <li>
-    <p>Sunbird implementors currently need to get a API key for accessing EkStep platform, since the content is stored there. In the future, Sunbird will support more content stores.</p>
-  </li>
-  <li>
     <p>Sunbird implementors currently need to get an API key for accessing EkStep platform. Since the content is stored here. In the future, Sunbird will support more content stores.</p>
   </li>
   <li>
@@ -40,8 +37,6 @@
 <h3 id="ssl-certificate">SSL Certificate</h3>
 
 <p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA.<a href="https://letsencrypt.org/" target="_blank">LetsEncrypt</a>provides free SSL certificates. You can also use a CA of your choice.</p>
-
-<p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognized CA. <a href="https://letsencrypt.org/" target="_blank">LetsEncrypt</a> provides free SSL certificates. You can also use a CA of your choice.</p>
 
 <p>Before you begin the installation, keep the SSL certificate and the key handy.</p>
 
@@ -61,8 +56,8 @@
 <p>Before you start the installation process make sure you have successfully</p>
 
 <ul>
-  <li>Review and check whether the system requirements are met.</li>
-  <li>Check whether or not you  have the API keys.</li>
+  <li>Review and check whether the system requirements are met</li>
+  <li>Check whether or not you  have the API keys</li>
   <li>Decide the installation owner and the installation directory</li>
   <li>Gather information about the database, if you are installing the database server while installing Sunbird</li>
   <li>Set up or verify the product licensing requirements for the live environment</li>
@@ -71,7 +66,7 @@
 
 <h2 id="provisioning-servers">Provisioning servers</h2>
 
-<p>Server provisioning is a set of actions to prepare a server with appropriate systems, data, software, and make it ready for network operation. <a href="developer-docs/installation/provisioning_servers" target="_blank">Provisioning Servers</a> section will help you to see Automated and Manual process to provision the servers.</p>
+<p>Server provisioning is a set of actions to prepare a server with appropriate systems, data, software, and make it ready for network operation. <a href="developer-docs/installation/provisioning_servers" target="_blank">Provisioning Servers</a> section will help you to see tAutomated and Manual process to provision the servers.</p>
 
 <h2 id="setup-databases">Setup Databases</h2>
 
@@ -92,3 +87,164 @@
 <h2 id="making-your-own-mobile-app">Making your own Mobile App</h2>
 
 <p>If you plan to release your own mobile app using the Sunbird mobile app codebase refer <a href="developer-docs/installation/install_mobile_setup" target="_blank">Generate key and install mobile app</a></p>
+
+<h2 id="sunbird-installation-guide">Sunbird Installation Guide</h2>
+
+<h3 id="prerequisites">Prerequisites:</h3>
+<ul>
+  <li>Servers should be provisioned manually. Currently all our scripts support only Ubuntu 16.04 LTS servers.</li>
+  <li>Access to a Fully Qualified Domain Name (FQDN) (For example: test.example.org).</li>
+  <li>A valid SSL certificate for your domain. To generate free SSL,  you can use Let’s Encrypt for most common cases. But using Let’s Encrypt is not mandatory.</li>
+  <li>Get the Ekstep API keys. Follow the steps <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials">here</a> to get the keys.</li>
+  <li>
+    <p>Refer the below table for choosing list of servers.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">Server Name</th>
+          <th style="text-align: left">Max Servers</th>
+          <th style="text-align: left">Suggested Servers per environment</th>
+          <th style="text-align: left">Basic Requirement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left">Docker swarm manager</td>
+          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Staging - 1 <br /> Prod - 3</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 2GB</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Docker swarm  agent nodes</td>
+          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Staging - 1 <br /> Prod - 3</td>
+          <td style="text-align: left">CPU: 2core &amp; RAM: 6GB</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Elasticsearch</td>
+          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Staging - 1 <br /> Prod- 3</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Postgres master</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Postgres slave</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Cassandra</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Keycloak</td>
+          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 4GB</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Ensure that all the ports are open between all the servers internally.</li>
+</ul>
+
+<p><strong>NOTE:</strong> For Quick setup of sunbird, commission two servers and ensure that they can communicate with either other over the network.
+* The first server serves as the DB (Database) server.
+* The second server serves as the application server &amp; administration server.
+* Both servers must have the following minimum system requirements:
+   - Operating System: Ubuntu 16.04 LTS
+   - RAM: 7GB
+   - CPU: 2 cores, &gt; 2 GHz
+   - Root access should be able to <code>sudo</code></p>
+
+<p>If  number of <code>Docker swarm agent nodes &gt; 2</code>, you need to configure Load balancer.</p>
+
+<p>Loadbalancer setup:</p>
+
+<ul>
+  <li>Create a load balancer and attach all the Docker swarm agent nodes to it</li>
+  <li>Update the health check urls</li>
+  <li>Open the Inbound security group ports 80,443</li>
+  <li>Enable logs for Load balancer troubleshooting(not mandatory)</li>
+</ul>
+
+<p>Choose any one of the docker swarm manager vm for the administration server.</p>
+
+<p>Run the following steps from a that machine:</p>
+
+<ol>
+  <li>Install git <code>apt-get update -y &amp;&amp; apt-get install git -y </code></li>
+  <li>Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
+  <li><code>cd sunbird-devops/deploy</code></li>
+  <li>Update the <code>config</code> and <code>advanced</code> configuration files. For more details how to update those files please click <a href="">here</a>.</li>
+  <li>Run <code>./sunbird_install.sh</code>. This script will do infra setup from  stage1 to stage5 in a sequence shown in below table. Verify all the mandatory varaibles( ex:  sunbird_auth_token, ekstep_api_key) of sunbird core services are updated, then run the  <code>./sunbird_install.sh -s core</code> for deploying core services.</li>
+</ol>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">stage no.</th>
+      <th style="text-align: left">stage name</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">1</td>
+      <td style="text-align: left">config</td>
+      <td style="text-align: left">Generates configuration file and hosts file</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">2</td>
+      <td style="text-align: left">dbs</td>
+      <td style="text-align: left">Install all databases and creates schema</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">3</td>
+      <td style="text-align: left">apis</td>
+      <td style="text-align: left">Setup API manager kong &amp;  Onboard API’s and consumer’s</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">4</td>
+      <td style="text-align: left">proxy</td>
+      <td style="text-align: left">Deploy nginx and configure</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">5</td>
+      <td style="text-align: left">keycloak</td>
+      <td style="text-align: left">Provision, deploy and bootstrap keycloak</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">6</td>
+      <td style="text-align: left">core</td>
+      <td style="text-align: left">Deploy all core services</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">7</td>
+      <td style="text-align: left">logger</td>
+      <td style="text-align: left">ELK stack will be deployed and logs can be views in kibana</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">8</td>
+      <td style="text-align: left">monitor</td>
+      <td style="text-align: left">Monitor all the services,health checks, API’s,system checks etc..</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>NOTE</strong>:<br />
+* If you want to re-run any particular stage, just run <code>./sunbird_install.sh -s &lt;stagename&gt;</code>
+* If you are planning to setup logger or monitoring . Please run the <code>./sunbird_install.sh -s &lt;stagename&gt;</code> command with  <code>stagename</code> as logger/monitor</p>
+
+<p>To know more about the script <code>sunbird_install.sh</code> please click <a href="">here</a>.
+6. Open https://[domain-name] and verify the installation.</p>
+

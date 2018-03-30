@@ -45,9 +45,8 @@
     <p>Copy the following files to a temp folder in a Cassandra installed machine</p>
 
     <ul>
-      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv" target="_blank">pageMgmt.csv</a></li>
-      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv">pageSection.csv</a> {:target=”_blank”}</li>
-      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv" target="_blank">pageSection.csv</a></li>
+      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv" target="_blank">PageMgmt.csv</a></li>
+      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv" target="_blank">PageSection.csv</a></li>
     </ul>
   </li>
 </ol>
@@ -65,17 +64,16 @@ organisationid, portalmap, updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv'"
  display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) 
  FROM '/tmp/cql/pageSection.csv'"
 </pre>
-<p>Next section details about setting up the Elasticsearch on your local machine.</p>
+<p>Next section details about setting up the Elastic search on your local machine.</p>
 
-<p><strong>Setup Elasticsearch</strong></p>
+<p><strong>Setup Elastic search</strong></p>
 
 <ol>
   <li>
-    <p>For step by step installation guide of Elasticsearch refer to the official <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html" target="_blank">website</a></p>
+    <p>For step by step installation guide of Elastic search refer to the official <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html" target="_blank">website</a></p>
   </li>
   <li>
-    <p>The official website guides you through the installation, and if you have done a successful install of Elasticsearch, you need to<br />
-start the server and open Elasticsearch CLI (Command Line Interface)</p>
+    <p>The official website guides you through the installation, and if you have done a successful install of Elastic search, you need to start the server and open Elastic search CLI (Command Line Interface)</p>
   </li>
   <li>
     <p>Run the following curl command</p>
@@ -116,9 +114,9 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
   </li>
 </ol>
 
-<h3 id="configuration-setup-for-application">Configuration setup for Application</h3>
+<h3 id="configuring-the-application">Configuring the Application</h3>
 
-<p>To run Sunbird services, you need to set different environment variables listed as follows:</p>
+<p>To run Sunbird services, you need to set the following environment variables:</p>
 
 <table>
   <thead>
@@ -146,15 +144,15 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
     </tr>
     <tr>
       <td>sunbird_es_host</td>
-      <td>host running the Elasticsearch server</td>
+      <td>host running the Elastic search server</td>
     </tr>
     <tr>
       <td>sunbird_es_port</td>
-      <td>port on which Elasticsearch server is running</td>
+      <td>port on which Elastic search server is running</td>
     </tr>
     <tr>
       <td>sunbird_es_cluster (optional)</td>
-      <td>name of the Elasticsearch cluster</td>
+      <td>name of the Elastic search cluster</td>
     </tr>
     <tr>
       <td>sunbird_learner_actor_host</td>
@@ -166,7 +164,7 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
     </tr>
     <tr>
       <td>sunbird_sso_url</td>
-      <td>url for keycloak server (Example : <strong>http://localhost:8080/auth</strong> )</td>
+      <td>URL for keycloak server (Example : <strong>http://localhost:8080/auth</strong> )</td>
     </tr>
     <tr>
       <td>sunbird_sso_realm</td>
@@ -182,7 +180,7 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
     </tr>
     <tr>
       <td>sunbird_sso_client_id</td>
-      <td>key cloak client id  (use default as admin-cli or you can create new client in key cloak)</td>
+      <td>keycloak client id  (use default as admin-cli or you can create new client in keycloak)</td>
     </tr>
     <tr>
       <td>sunbird_sso_client_secret</td>
@@ -190,7 +188,7 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
     </tr>
     <tr>
       <td>ekstep_content_search_base_url</td>
-      <td>provide base url for EkStep content search</td>
+      <td>provide base URL for EkStep content search</td>
     </tr>
     <tr>
       <td>ekstep_authorization</td>
@@ -250,11 +248,11 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
     </tr>
     <tr>
       <td>sunbird_account_key</td>
-      <td>azure blob storage account key</td>
+      <td>Azure blob storage account key</td>
     </tr>
     <tr>
       <td>sunbird_quartz_mode</td>
-      <td>put this value {“embedded” to run quartz without any data base, “any other value” to run with postgres db }</td>
+      <td>put this value {“embedded” to run quartz without any database, “any other value” to run with postgres db }</td>
     </tr>
     <tr>
       <td>sunbird_encryption_key</td>
@@ -270,15 +268,15 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
     </tr>
     <tr>
       <td>sunbird_env_logo_url</td>
-      <td>logo url for sending email.(http://www.paramountias.com/media/images/current-affairs/diksha-portal.jpg)</td>
+      <td>logo URL for sending email.(http://www.paramountias.com/media/images/current-affairs/sunbird-portal.jpg)</td>
     </tr>
     <tr>
       <td>sunird_web_url</td>
-      <td>web page url</td>
+      <td>web page URL</td>
     </tr>
     <tr>
       <td>sunbird_app_url</td>
-      <td>Play store url to download the app</td>
+      <td>Play store URL to download the app</td>
     </tr>
     <tr>
       <td>sunbird_msg_91_auth</td>
@@ -291,7 +289,9 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
   </tbody>
 </table>
 
-<p>The table mentions all the environment variables with description. You need to add/edit the environment variables in appropriate locations.Next section details about the environmental variables that are mandatory to run the backend services.</p>
+<p>The table mentions all the environment variables with description. Add or edit the environment variables in their appropriate locations.</p>
+
+<p><strong>Note:</strong> The following environment variables are mandatory to run the backend services.</p>
 
 <h3 id="setting-environment-variables">Setting Environment Variables</h3>
 
@@ -318,7 +318,7 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
           18. sunbird_sso_publickey
 </pre>
 
-<p>Here, you can find the remaining <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">Environment Variable Values</a></p>
+<p>For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target=”_blank”}</p>
 
 <h2 id="configuring-and-running-back-end-services-stack">Configuring and running Back-End Services Stack</h2>
 
@@ -329,13 +329,15 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
   <li>Making the Build</li>
 </ul>
 
-<p>Clone following repositories:</p>
+<h3 id="clone-the-repositories">Clone the Repositories</h3>
 
 <ul>
   <li><a href="https://github.com/project-sunbird/sunbird-utils" target="_blank">sunbird-utils</a></li>
   <li><a href="https://github.com/project-sunbird/sunbird-lms-service" target="_blank">sunbird-lms-service</a></li>
   <li><a href="https://github.com/project-sunbird/sunbird-lms-mw" target="_blank">sunbird-lms-mw</a></li>
 </ul>
+
+<h3 id="making-the-build">Making the build</h3>
 
 <p>Make the builds in following order:</p>
 
@@ -354,15 +356,16 @@ start the server and open Elasticsearch CLI (Command Line Interface)</p>
   <li>Background ActorSystem</li>
 </ol>
 
-<p>And by default, both run on two different machines.
-But to run these actor systems on single machine, you need to modify the [resource.properties file]
-For details <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">refer</a> to repository.</p>
+<p>By default, both run on different machines. In order to run these actor systems on a single machine, you need to modify the [resource.properties file]
+For more details <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">refer</a> to this repository.</p>
 
-<p>In order to run both the actor systems on single machine follow these steps:</p>
+<p>To run both the actor systems on a single machine follow these steps:</p>
 
 <ol>
   <li>Open <strong>externalresource.properties</strong> file</li>
-  <li>Modify the following properties:
+  <li>
+    <p>Modify the following properties:</p>
+
     <ul>
       <li>background_actor_provider</li>
       <li>api_actor_provider</li>
@@ -372,12 +375,12 @@ For details <a href="https://github.com/project-sunbird/sunbird-utils/blob/maste
   <li>Run <code>mvn clean install</code> command to make build of each module</li>
 </ol>
 
-<p>And to run Application sunbird-lms-service execute the following command</p>
+<p>To run the <strong>sunbird-lms-service</strong> execute the following command</p>
 
-<pre><code>  run mvn play2:run 
+<pre><code>  ```mvn play2:run```
 </code></pre>
 
 <h2 id="testing-the-services">Testing the services</h2>
 
-<p>Run any API, e.g. create a user API and perform different actions on user using this <a href="https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f" target="_blank">Postman collection</a></p>
+<p>Test any API using postman, e.g. download <strong>user API</strong> and perform different actions on user using this <a href="https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f" target="_blank">Postman collection</a></p>
 

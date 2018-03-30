@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: contenteditor/service/telemetry-service.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: contenteditor/service/telemetry-service.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * Telemetry service helps to log telemetry events. Telemetry service generates below listed events
+ * and logs to registered dispatchers.
+ * &lt;ol>
+ *  &lt;li> V2 =>  V3
+ *  &lt;li>CE_START => START
+ *  &lt;li>CE_API_CALL => LOG
+ *  &lt;li>CE_INTERACT => INTERACT
+ *  &lt;li>CE_PLUGIN_LIFECYCLE => INTERACT
+ *  &lt;li>CE_ERROR => ERROR
+ *  &lt;li>CE_END => END
+ * &lt;/ol>
+ *
+ * @class org.ekstep.services.telemetryService
+ * @author Santhosh Vasabhaktula &lt;santhosh@ilimi.in>
+ */
+org.ekstep.services.telemetryService = new(org.ekstep.services.iService.extend({
+    context: {},
+    dispatchers: [],
+    initialized: true,
+    start_event: undefined,
+    startEventData: undefined,
+    contentLoadTime: 0,
+    /**
+     * Deperecated: V3 telemetry implementation
+     * Initialize the service with context and dispatcher.     
+     * @param context {object} context object can have uid, sid, context_id. 
+     * context should have content id, otherwise telemetry service cannot be initialized.
+     * @param dispatcher {string} There are 3 types of dispatcher available, anyone of dispatcher 
+     * is allowed and same dispatcher is used throughout the editor session. 
+     * &lt;ol>
+     *   &lt;li>Local dispatcher - dev environment only, logs to file (telemetry.log) - value: "local"
+     *   &lt;li>piwik dispatcher - logs to piwik endpoint - value: "piwik"
+     *   &lt;li>console dispatcher - logs to client console, default dispatcher - value: undefined
+     * &lt;/ol>
+     * 
+     * @memberof org.ekstep.services.telemetryService
+     */
+    initialize: function(context, dispatcher) {
+        var instance = this;
+        this.context = context;
+        /* istanbul ignore else */
+        if (this.context.cdata == undefined) {
+            this.context.cdata = [];
+        }
+        if ((this.context.uid == undefined) || (this.context.sid == undefined) || (this.context.content_id == undefined)) {
+            console.error('Unable to instantiate telemetry service');
+            this.initialized = false;
+        }
+        this.addDispatcher(dispatcher);
+
+        window.addEventListener('unload', /* istanbul ignore next */ function() {
+            instance.end();
+        });
+        this.startEventData = { defaultPlugins: Object.keys(org.ekstep.pluginframework.pluginManager.plugins), loadtimes: {}, client: {} };
+    },
+    /**
+     *
+     * to populate data for start event (CE_START)  
+     * @param autoplublish {boolean} if "true" logs the events through dispatcher. 
+     * @returns {object} returns method chain. 
+     * &lt;ol>
+     *   &lt;li> &lt;pre>getData()&lt;/pre>: return start event data
+     *   &lt;li> &lt;pre>append(param, dataObj)&lt;/pre>: appends only "loadtimes" param of CE_START with dataObj(type: object). 
+     * &lt;ol> 
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    startEvent: function(autopublish) {
+        var instance = this;
+        return {
+            duration: function(time){
+                instance.contentLoadTime += parseInt(time);
+                if (autopublish) instance.start();
+            }
+        }
+    },
+    /**
+     *
+     * returns dispatcher instance
+     * @param dispatcherId {string}     
+     * &lt;ol>
+     *   &lt;li>Local dispatcher: value: "local"
+     *   &lt;li>piwik dispatcher: value: "piwik"
+     *   &lt;li>(default) console dispatcher: value: undefined 
+     * &lt;/ol>
+     * @returns dispatcher {object}
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    getDispatcher: function(dispatcherId) {
+        switch (dispatcherId) {
+            case "local":
+                return org.ekstep.contenteditor.localDispatcher;
+            case "piwik":
+                return org.ekstep.contenteditor.piwikDispatcher;
+            default:
+                return org.ekstep.contenteditor.consoleDispatcher;
+        }
+    },
+    /**
+     * 
+     * To add a dispatcher to the dispatcher registry
+     * @param dispatcherId {string}
+     * &lt;ol>
+     *   &lt;li>Local dispatcher: value: "local"
+     *   &lt;li>piwik dispatcher: value: "piwik"
+     *   &lt;li>(default) console dispatcher: value: undefined 
+     * &lt;/ol>
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    addDispatcher: function(dispatcherId) {
+        var dispatcher = this.getDispatcher(dispatcherId);
+        var dispatcherExist = this.dispatchers.find(function(obj) {
+            return obj.type === dispatcher.type;
+        });
+        if (!dispatcherExist) this.dispatchers.push(dispatcher);
+    },
+    /**
+     *
+     * dispatch event to all registered dipatchers
+     * @private
+     * @param message {event} structured event
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    _dispatch: function(message) {
+        if (this.initialized) {
+            message.mid = 'CE:' + CryptoJS.MD5(JSON.stringify(message)).toString();
+            _.forEach(this.dispatchers, function(dispatcher) {
+                dispatcher.dispatch(message);
+            });
+        }
+    },
+    /**
+     * Deperecated: V3 telemetry implementation
+     * returns structured telemetry event for the given data
+     * @param eventId {string} 
+     * &lt;ol>
+     *  &lt;li>CE_START
+     *  &lt;li>CE_API_CALL
+     *  &lt;li>CE_INTERACT
+     *  &lt;li>CE_PLUGIN_LIFECYCLE
+     *  &lt;li>CE_ERROR
+     *  &lt;li>CE_END
+     * &lt;/ol>
+     * @param data {object} telemetry data object specified for each telemetry event.
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    getEvent: function(eventId, data) {
+        return {
+            "eid": eventId,
+            "mid": "",
+            "ets": (new Date()).getTime(),
+            "channel": this.context.channel,
+            "ver": "2.1",
+            "pdata": this.context.pdata,
+            "cdata": this.context.cdata, //TODO: No correlation data as of now. Needs to be sent by portal in context
+            "uid": this.context.uid, // uuid of the requester
+            "context": { "sid": this.context.sid, "content_id": this.context.content_id },
+            "rid": "", // Leave blank.
+            "edata": { "eks": data },
+            "etags": this.context.etags
+
+        }
+    },
+    /**
+     *
+     * validates telemetry data with mandatory fields
+     * @param data {object} telemetry data
+     * @param mandatoryFields {array} required fields for the specific telemetry to validate
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    hasRequiredData: function(data, mandatoryFields) {
+        var isValid = true;
+        mandatoryFields.forEach(function(key) {
+            if (!data.hasOwnProperty(key)) isValid = false;
+        });
+        return isValid;
+    },
+    interactRequiredFields: ["type", "subtype", "target", "pluginid", "pluginver", "objectid", "stage"],
+    lifecycleRequiredFields: ["type", "pluginid", "pluginver", "objectid", "stage"],
+    errorRequiredFields: ["env", "stage", "action", "err", "type", "data", "severity", "objectid", "objecttype"],
+    apiCallRequiredFields: ["path", "method", "request", "response", "responseTime", "status", "uip"],
+    /**
+     *
+     * dispatches interact event (CE_INTERACT)
+     * @param data {object} interact event data
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    interact: function(data) {
+        if(!(data.hasOwnProperty('type') &amp;&amp; (data.hasOwnProperty('objectid') || data.hasOwnProperty('id')))){
+            console.error('Invalid interact data');
+            return;
+        }
+        var eventData = {
+            "type": data.type,
+            "id": data.id || data.objectid
+        };
+        // for V3 implementation
+        if(data.extra)
+            eventData.extra = data.extra;
+        if(data.subtype)
+            eventData.subtype = data.subtype;
+        if(data.pageid || data.stage)
+            eventData.pageid = data.pageid || data.stage;
+        // converting plugin, tareget for v3 from v2 data 
+        eventData.plugin = data.plugin ? data.plugin : { "id": data.pluginid, "ver": data.pluginver }
+        if(data.target &amp;&amp; _.isObject(data.target)){
+            eventData.target = data.target;
+        }else{
+            // converting target for v3 from v2 data
+            eventData.target = {
+                "id": data.target,
+                "ver": "",
+                "type": ""
+            }
+        }
+        EkTelemetry.interact(eventData);
+    },
+    /**
+     *
+     * dispatches impression event (CE_IMPRESSION)
+     * @param data {object} impression event data
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    impression: function(data) {
+        if(!(data.hasOwnProperty('type') &amp;&amp; data.hasOwnProperty('pageid') &amp;&amp; data.hasOwnProperty('uri'))) {
+            console.error('Invalid impression data');
+            return;
+        }
+        var eventData = {
+            "type": data.type,
+            "pageid": data.pageid,
+            "uri": data.uri
+        };
+        if(data.subtype)
+            eventData.subtype = data.subtype;
+        if(data.visits)
+            eventData.visits = data.visits;
+        EkTelemetry.impression(eventData);
+    },
+    /**
+     *
+     * dispatches end event (CE_END)
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    end: function() {
+        EkTelemetry.end({
+            "type": "editor",
+            "mode": ecEditor.getConfig('editorType') || "content"
+        });
+    },
+    /**
+     *
+     * dispatches plugin lifecycle event (CE_PLUGIN_LIFECYCLE)
+     * @param data {object} plugin lifecycle event data
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    pluginLifeCycle: function(data) {
+        if(!(data.hasOwnProperty('type') &amp;&amp; (data.hasOwnProperty('objectid') || data.hasOwnProperty('id')))){
+            console.error('Invalid plugin lifecycle event data');
+            return;
+        }
+        this.interact(data);
+    },
+    /**
+     *
+     * dispatches error event (CE_ERROR)
+     * @param data {object} error event data
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    error: function(data) {
+        if(!(data.hasOwnProperty('err') &amp;&amp; (data.hasOwnProperty('type') || data.hasOwnProperty('errtype')) &amp;&amp; (data.hasOwnProperty('data') || data.hasOwnProperty('stacktrace')))){
+            console.error('Invalid error data');
+            return;
+        }
+        var eventData = {
+            "err": data.err,
+            "errtype": data.type || data.errtype,
+            "stacktrace": data.data || data.stacktrace
+        }
+        // for V3 implementation
+        if(data.pageid || data.stage)
+            eventData.pageid = data.stage || data.pageid;
+        if(data.plugin)
+            eventData.plugin = data.plugin;
+        eventData.object = data.object ? data.object : { "id": data.objectid, "type": data.objecttype };
+        EkTelemetry.error(eventData);
+    },
+    /**
+     *
+     * dispatches start event (CE_START)
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    start: function(durartion) {
+        var instance = this;
+        var fp = new Fingerprint2();
+        var pdata = ecEditor.getContext('pdata') ? ecEditor.getContext('pdata') : {id: "in.ekstep", ver: "1.0"};
+        var env = ecEditor.getContext('env') || 'contenteditor';
+        if (env) {
+            switch (env) {
+                case 'genericeditor':
+                case 'contenteditor':
+                    env = env;
+                    break;
+                default:
+                    env = 'collectioneditor';
+                    break;
+            }
+        }
+        pdata.pid = pdata.pid ? pdata.pid + '.' + env : env;
+        ecEditor.setContext('pdata', pdata);
+        var config = {
+            uid: ecEditor.getContext('uid'),
+            sid: ecEditor.getContext('sid'),
+            channel: ecEditor.getContext('channel') || "in.ekstep",
+            pdata: pdata,
+            env: ecEditor.getContext('env') || "contenteditor",
+            dispatcer: org.ekstep.contenteditor.config.dispatcher,
+            object: {
+                id: ecEditor.getContext('contentId'),
+                type: "Content",
+                ver: ""
+            },
+            dispatcher: instance.getDispatcher(org.ekstep.contenteditor.config.dispatcher),
+            rollup: ecEditor.getContext('rollup') || {}
+        };
+        if(!_.isArray(ecEditor.getContext('etags'))){
+            config.tags = [JSON.stringify(ecEditor.getContext('etags'))];
+        }else{
+            config.tags = ecEditor.getContext('etags') || ecEditor.getContext('tags');
+        }
+        if(ecEditor.getContext('did')){
+            config.did = ecEditor.getContext('did');
+            instance.logStartAndImpression(config, durartion);
+        }else{
+            fp.get(function(result) {
+                config.did = result.toString();
+                instance.logStartAndImpression(config, durartion);
+            });
+        }
+        window.addEventListener('unload', /* istanbul ignore next */ function() {
+            instance.end();
+        });
+    },
+    logStartAndImpression: function(config, durartion){
+        var instance = this;
+        EkTelemetry.start(config, org.ekstep.contenteditor.api.getContext('contentId'), "", { 
+            "uaspec": instance.detectClient(),
+            "type": "editor",
+            "mode": ecEditor.getConfig('editorType') || "content",
+            "duration": durartion
+        });
+
+        EkTelemetry.impression({
+            type: "edit",
+            pageid: "contenteditor",
+            uri: encodeURIComponent(location.href)
+        });
+    },
+    /**
+     *
+     * dispatches api call event (CE_API_CALL)
+     * @param data {object} api call event data
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    apiCall: function(data) {
+        if (!this.hasRequiredData(data, this.apiCallRequiredFields)) {
+            console.error('Invalid api call data');
+            return;
+        }
+        var eventData = {
+            "type": "api_call",
+            "level": "INFO",
+            "message": "",
+            "params": [data]
+        }
+        console.log('eventData ', eventData)
+        EkTelemetry.log(eventData);
+    },
+    /**
+     *
+     * dispatches log event
+     * @param data {object} log event data
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    log: function(data){
+        if (!this.hasRequiredData(data, ["type", "level", "message"])) {
+            console.error('Invalid log data');
+            return;
+        }
+        var eventData = {
+            "type": data.type,
+            "level": data.level,
+            "message": data.message
+        }
+        // for V3 implementation
+        if(data.pageid || data.stage)
+            eventData.pageid = data.stage || data.pageid;
+        if(data.params)
+            eventData.params = data.params;
+        EkTelemetry.log(eventData);
+    },
+    /**
+     *
+     * returns client machine info such as OS, browser, browser version
+     * @memberof org.ekstep.services.telemetryService
+     *
+     */
+    detectClient: function() {
+
+        var nAgt = navigator.userAgent;
+        var browserName = navigator.appName;
+        var fullVersion = '' + parseFloat(navigator.appVersion);
+        var nameOffset, verOffset, ix;
+
+        // In Opera
+        /* istanbul ignore next. Cannot test this as the test cases runs in phatomjs browser */
+        if ((verOffset = nAgt.indexOf("Opera")) != -1) {
+            browserName = "opera";
+            fullVersion = nAgt.substring(verOffset + 6);
+            if ((verOffset = nAgt.indexOf("Version")) != -1)
+                fullVersion = nAgt.substring(verOffset + 8);
+        }
+        // In MSIE
+        else if ((verOffset = nAgt.indexOf("MSIE")) != -1) {
+            browserName = "IE";
+            fullVersion = nAgt.substring(verOffset + 5);
+        }
+        // In Chrome
+        else if ((verOffset = nAgt.indexOf("Chrome")) != -1) {
+            browserName = "chrome";
+            fullVersion = nAgt.substring(verOffset + 7);
+        }
+        // In Safari
+        else if ((verOffset = nAgt.indexOf("Safari")) != -1) {
+            browserName = "safari";
+            fullVersion = nAgt.substring(verOffset + 7);
+            if ((verOffset = nAgt.indexOf("Version")) != -1)
+                fullVersion = nAgt.substring(verOffset + 8);
+        }
+        // In Firefox
+        else if ((verOffset = nAgt.indexOf("Firefox")) != -1) {
+            browserName = "firefox";
+            fullVersion = nAgt.substring(verOffset + 8);
+        }
+
+        // trim the fullVersion string at semicolon/space if present
+        /* istanbul ignore next. Cannot test this as the test cases runs in phatomjs browser */
+        if ((ix = fullVersion.indexOf(";")) != -1)
+            fullVersion = fullVersion.substring(0, ix);
+        /* istanbul ignore next. Cannot test this as the test cases runs in phatomjs browser */
+        if ((ix = fullVersion.indexOf(" ")) != -1)
+            fullVersion = fullVersion.substring(0, ix);
+        
+        return { agent: browserName, ver: fullVersion, system: navigator.platform, platform: "", raw:  navigator.userAgent};
+    }
+}));
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="org.ekstep.contenteditor.api.html">api</a></li><li><a href="org.ekstep.contenteditor.basePlugin.html">basePlugin</a></li><li><a href="org.ekstep.contenteditor.basePlugin.init.html">init</a></li><li><a href="org.ekstep.services.assessmentService.html">assessmentService</a></li><li><a href="org.ekstep.services.assetService.html">assetService</a></li><li><a href="org.ekstep.services.contentService.html">contentService</a></li><li><a href="org.ekstep.services.dialcodeService.html">dialcodeService</a></li><li><a href="org.ekstep.services.languageService.html">languageService</a></li><li><a href="org.ekstep.services.metaService.html">metaService</a></li><li><a href="org.ekstep.services.popupService.html">popupService</a></li><li><a href="org.ekstep.services.searchService.html">searchService</a></li><li><a href="org.ekstep.services.telemetryService.html">telemetryService</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getSyllables">getSyllables</a></li><li><a href="global.html#getTranslation">getTranslation</a></li><li><a href="global.html#getTransliteration">getTransliteration</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:10:55 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

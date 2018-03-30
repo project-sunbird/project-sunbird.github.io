@@ -1,0 +1,46 @@
+definitions:
+  BadgeClass:
+    description: this contains response for badgeClass object
+    type: object
+    properties:
+      issuerId:
+        type: string
+        description: ID of an issuer
+      image:
+       type: string
+       description: Image of a badge class
+      criteria:
+        type: string
+        description: criteria in a sample language that will explain the badge achivement
+      roles:
+       type: array
+       items:
+        type: string
+        description: which roles can access this badge class
+      description:
+       type: string
+       description: short description about badge class
+      type:
+       type: string
+       description: on which Object this badge class can be used,possible values {user or content}
+      subtype:
+       type: string
+       description: possible values award,certificate,endorsement,authorization
+      rootOrgId:
+       type: string
+       description: contains creator rootOrg, so that later we can show all the badges for a root Org.
+      createdDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      recipientCount:
+        type: integer
+        description: how many user or content got this badge class
+      issuerIdUrl:
+        type: string
+        description: issuer url with ID
+      name:
+        type: string
+        description: Name of the badge class
+      badgeIdUrl:        
+        type: string
+        description: url of the badge class

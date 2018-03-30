@@ -1,0 +1,114 @@
+definitions:
+  UserResponse:
+    description: The response received from the Sunbird API containing user information.
+    type: object
+    properties:
+      id:
+        type: string
+      email:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+      password:
+        type: string
+      avatar:
+        type: object
+        properties:
+          thumbnail_url:
+            type: string
+          large_url:
+            type: string
+      language:
+        type: array
+        item:
+          type: string
+	  description: All languages known by the user
+      gender:
+        type: string
+      phone:
+        type: string
+      status:
+        type: integer
+        format: int32
+	description: user status ini
+      loginId:
+        type: string
+      subject:
+        type: array
+        item:
+        type: string
+      roles:
+       type: array
+       item:
+       type: string
+      lastUpdatedDate:
+       type: string
+       format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      provider:
+       type: string
+      countryCode:
+       type: stirng
+      updatedBy:
+       type: string
+      profileSummary:
+       type: stirng
+      userName:
+       type: string
+      rootOrgId:
+       type: string
+      emailVerified:
+       type: boolean
+      lastLoginTime:
+       type: string
+	   format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      createdDate:   
+       type: string
+       format : yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      dob:
+       type: string
+       format: yyyy-MM-dd	
+      grade:
+        type: array
+        item:
+         type: string
+      location:
+        type: string
+      education:
+         type: array
+         item:
+          type: object 
+          ref: ./education.yaml
+      organisations:
+         type: array
+         item: 
+         type: object
+         ref: ./organisation.yaml
+      profileVisibility:
+        type: object
+     	  description: It will be a map, having key as any user attribute and value can be public or private. 
+      address: 
+       type: array
+       item:
+       type: object
+       ref: ./address.yaml
+       description: It contains a list of address objects.
+      jobProfile:
+       type: array
+       item: 
+       type: object
+       ref: ./jobprofile.yaml
+      registeredOrg:
+       type: object
+       ref: ./organisation.yaml
+      webPages:
+       type: array
+       item:
+        type: object
+       property:
+         type:
+           type: string
+         url:
+           type: string   
+

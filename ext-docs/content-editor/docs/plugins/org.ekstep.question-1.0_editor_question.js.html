@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: org.ekstep.question-1.0/editor/question.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: org.ekstep.question-1.0/editor/question.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Plugin to create question
+ * @class org.ekstep.question:createquestionController
+ * Jagadish Pujari&lt;jagadish.pujari@tarento.com>
+ */
+ angular.module('org.ekstep.question', [])
+ .controller('QuestionCreationFormController', ['$scope', 'instance', 'questionData', function($scope, instance, questionData) {
+  var ctrl = this;
+  ctrl.screens = {
+    'template': "S1",
+    'form': "S2",
+    'metadata': "S3"
+  };
+  ctrl.screenName = ctrl.screens.template;
+  ctrl.templatesScreen = true;
+  ctrl.createQuestionScreen = false;
+  ctrl.metadaFormScreen = false;
+  ctrl.Totalconcepts = 0;
+  ctrl.category = '';
+  ctrl.questionUnitTemplateURL = '';
+  ctrl.menuItems = {};
+  ctrl.showPreview = true;
+  ctrl.defaultActiveMenu = 'mcq';
+  ctrl.selectedTemplatePluginData = {};
+  ctrl.questionCreationFormData = {};
+  ctrl.TotalconceptsData = [];
+  ctrl.selectedConceptsData = [];
+  ctrl.questionUnitValidated = false
+  ctrl.level = ['Easy', 'Medium', 'Difficult'];
+  ctrl.selected = 0;
+  ctrl.conceptsCheck = false;
+  ctrl.questionData = {};
+  ctrl.plugins = { 'concepts': 'org.ekstep.conceptselector:init' };
+  ctrl.previewCheck = false;
+  ctrl.allMenuItems = [];
+  ctrl.menuItems['mcq'] = {
+    'category': 'mcq',
+    'data': { 'name': 'Multiple Choice', 'icon': 'list icon' },
+    'templatesData': []
+  };
+  ctrl.menuItems['ftb'] = {
+    'category': 'ftb',
+    'data': { 'name': 'Fill in the Blanks', 'icon': 'minus square outline icon' },
+    'templatesData': []
+  };
+  ctrl.menuItems['mtf'] = {
+    'category': 'mtf',
+    'data': { 'name': 'Match the following', 'icon': 'block layout icon' },
+    'templatesData': []
+  };
+  ctrl.menuItems['other'] = {
+    'category': 'other',
+    'data': { 'name': 'Other', 'icon': 'ellipsis horizontal icon' },
+    'templatesData': []
+  };
+
+    $('.ui.dropdown')
+      .dropdown({
+        useLabels: false
+      });
+    setTimeout(function() {
+      $('.ui.dropdown')
+        .dropdown({
+          useLabels: false
+        });
+    }, 300);
+    /**
+     * OnLoad of the controller
+     * @return {[type]} [description]
+     */
+    ctrl.init = function() {
+
+      if (!ecEditor._.isEmpty(questionData)) {
+        var questionData1 = typeof questionData.body == "string" ? JSON.parse(questionData.body) : questionData.body;
+        ctrl.assessmentId = questionData.identifier;
+        ctrl.questionData = questionData1;
+        ctrl.questionData.qcLanguage = questionData1.data.config.metadata.language;
+        ctrl.questionData.questionTitle = questionData1.data.config.metadata.title;
+        ctrl.questionData.qcLevel = questionData1.data.config.metadata.qlevel;
+        ctrl.questionData.qcGrade = questionData1.data.config.metadata.gradeLevel;
+        ctrl.category = questionData1.data.config.metadata.category;
+        ctrl.Totalconcepts = questionData1.data.config.metadata.concepts.length; //_.isUndefined(questionData.config.metadata.concepts) ? questionData.config.metadata.concepts.length : 0;
+        ctrl.TotalconceptsData = questionData1.data.config.metadata.concepts;
+        ctrl.questionData.questionDesc = questionData1.data.config.metadata.description;
+        ctrl.questionData.questionMaxScore = questionData1.data.config.metadata.max_score;
+        ctrl.conceptsCheck = true;
+        $scope.$safeApply();
+        $scope.questionEditData = questionData1.data; //Using this variable in question unit plugin for editing question
+        ctrl.templatesScreen = false;
+        ctrl.createQuestionScreen = true;
+        ctrl.metadaFormScreen = false;
+        var pluginID = questionData1.data.plugin.id;
+        var pluginVer = questionData1.data.plugin.version;
+        var pluginTemplateId = questionData1.data.plugin.templateId;
+        var editCreateQuestionFormInstance = org.ekstep.pluginframework.pluginManager.getPluginManifest(questionData1.data.plugin.id);
+        _.each(editCreateQuestionFormInstance.templates, function(value, key) {
+          if (value.editor.template == questionData1.data.plugin.templateId) {
+            var controllerPathEdit = ecEditor.resolvePluginResource(pluginID, pluginVer, value.editor.controllerURL);
+            var templatePathEdit = ecEditor.resolvePluginResource(pluginID, pluginVer, value.editor.templateURL);
+            ctrl.questionUnitTemplateURL = templatePathEdit;
+            $scope.$safeApply();
+          }
+        });
+
+        ctrl.selectedTemplatePluginData.plugin = { // Question Unit Plugin Information  
+          "id": pluginID, // Id of plugin
+          "version": pluginVer, // Version of plugin
+          "templateId": pluginTemplateId // Template Id of the question unit
+        };
+      }
+      /**
+       * Invoke conceptselector plugin to get concepts
+       * @param  {[type]}   data) {                           ctrl.Totalconcepts [description]
+       * @return {Function}       [description]
+       */
+      ecEditor.dispatchEvent(ctrl.plugins.concepts, {
+        element: 'conceptsTextBoxMeta',
+        selectedConcepts: ctrl.TotalconceptsData, // All composite keys except mediaType
+        callback: function(data) {
+          ctrl.Totalconcepts = data.length;
+          if (data.length > 0)
+            ctrl.conceptsCheck = true;
+          _.each(data, function(val, key) {
+            ctrl.selectedConceptsData[key] = val.id;
+          });
+          $scope.$safeApply();
+        }
+      });
+      ecEditor.getService('meta').getConfigOrdinals(function(err, res) {
+        if (!err) {
+          ctrl.grades = res.data.result.ordinals.gradeLevel;
+          ctrl.languages = res.data.result.ordinals.language;
+        }
+      });
+
+      var questionplugininstance = org.ekstep.pluginframework.pluginManager.getPluginManifest(instance.manifest.id);
+      _.each(questionplugininstance.editor.dependencies, function(val, key) {
+        if (val.type == 'plugin') {
+          var instance = org.ekstep.pluginframework.pluginManager.getPluginManifest(val.plugin);
+          var pluginID = val.plugin;
+          var ver = val.ver;
+          if (!_.isUndefined(instance.templates))
+            _.each(instance.templates, function(v, k) {
+              v.pluginID = pluginID;
+              v.ver = ver;
+              var thumbnail = ecEditor.resolvePluginResource(pluginID, ver, v.thumbnail); //Get image source and update in template object
+              v.thumbnail1 = thumbnail;
+              ctrl.allMenuItems.push(v);
+              if (ctrl.menuItems.hasOwnProperty(v.category)) {
+                ctrl.menuItems[v.category].templatesData.push(v);
+              } else {
+                ctrl.menuItems['other'].templatesData = v;
+              }
+            });
+        }
+      });
+      ctrl.select = function(parentIndex, index) {
+        ctrl.selected = parentIndex + '.' + index;
+      };
+
+
+      /**
+       * By default always mcq is selected
+       * @type {[type]}
+       */
+      ctrl.selectedMenuItemData = ctrl.menuItems[ctrl.defaultActiveMenu].templatesData;
+
+      $scope.$on('question:form:valid', ctrl.formValid);
+      $scope.$on('question:form:inValid', ctrl.formInValid);
+    }
+
+    /**
+     * To create questionset or question content body
+     * @return {object} actual content/theme object which can be used to preview the question/question-set
+     */
+     ctrl.setPreviewData = function() {
+      var confData = {};
+      var qObj = {
+        "config": "{'metadata':{'title':'question title','description':'question description','language':'English'},'max_time':0,'max_score':1,'partial_scoring':false}",
+        "data": JSON.stringify(ctrl.questionCreationFormData),
+        "id": "c943d0a907274471a0572e593eab49c2",
+        "pluginId": ctrl.selectedTemplatePluginData.plugin.id,
+        "pluginVer": ctrl.selectedTemplatePluginData.plugin.version,
+        "templateId": ctrl.selectedTemplatePluginData.plugin.templateId,
+        "type": "unit"
+      }
+      var questions = [];
+      var data = {
+        "org.ekstep.questionset": {}
+      }
+
+      questions.push(qObj);
+      data["org.ekstep.questionset"]['org.ekstep.question'] = questions;
+      confData={"contentBody":{}, "parentElement":true, "element":"#iframeArea"};
+      document.getElementById("iframeArea").contentDocument.location.reload(true);
+      var questionSetInstance = ecEditor.instantiatePlugin('org.ekstep.questionset.preview');
+      confData.contentBody = questionSetInstance.getQuestionPreviwContent(data['org.ekstep.questionset']);
+      ecEditor.dispatchEvent("atpreview:show", confData);
+    }
+
+    /**
+     * [cancel description]
+     * @return {[type]} [Close the modal window]
+     */
+    ctrl.cancel = function() {
+      $scope.closeThisDialog();
+    }
+    /**
+     * [back description]
+     * @return {[type]} [description]
+     */
+    ctrl.back = function() {
+      if (ctrl.createQuestionScreen) {
+        ctrl.templatesScreen = true;
+        ctrl.createQuestionScreen = false;
+        ctrl.metadaFormScreen = false;
+      } else if (ctrl.metadaFormScreen) {
+        ctrl.templatesScreen = false;
+        ctrl.createQuestionScreen = true;
+        ctrl.metadaFormScreen = false;
+      }
+    }
+    /**
+     * [switchTab description]
+     * @param  {[type]} id  [description]
+     * @param  {[type]} res [description]
+     * @return {[type]}     [description]
+     */
+    ctrl.switchTab = function(id, res) {
+      ctrl.selectedMenuItemData = ctrl.menuItems[res.category].templatesData;
+    }
+    /**
+     * [addCreateQuestionForm description]
+     * @param {[type]} obj [description]
+     */
+    ctrl.addCreateQuestionForm = function(obj) {
+      ctrl.category = obj.category;
+      ctrl.templatesScreen = false;
+      ctrl.createQuestionScreen = true;
+      ctrl.metadaFormScreen = false;
+      ctrl.templateName = obj.title;
+      ctrl.selectedTemplatePluginData.plugin = { // Question Unit Plugin Information  
+        "id": obj.pluginID, // Id of plugin
+        "version": obj.ver, // Version of plugin
+        "templateId": obj.editor.template // Template Id of the question unit
+      };
+      ctrl.unitPlugin = obj.pluginID;
+      ctrl.pluginVer = obj.ver;
+      ctrl.templateId = obj.editor.template;
+      var controllerPath = ecEditor.resolvePluginResource(obj.pluginID, obj.ver, obj.editor.controllerURL);
+      var templatePath = ecEditor.resolvePluginResource(obj.pluginID, obj.ver, obj.editor.templateURL);
+      ctrl.questionUnitTemplateURL = templatePath + '?BUILDNUMBER';
+    }
+    /**
+     * Dynamically created form validation
+     * @return {[boolean]} based on form validation it will return true/false
+     */
+     ctrl.validateQuestionCreationForm = function(event) {
+      // ecEditor.dispatchEvent(ctrl.selectedTemplatePluginData.plugin.id + ':val', ctrl.validateQuestionForm, ctrl);
+      if(event.target.id=="preview-icon") ctrl.previewCheck = true;
+      else ctrl.previewCheck = false;
+      $scope.$broadcast('question:form:val');
+    }
+
+    ctrl.formValid = function(event, data) {
+      ctrl.questionCreationFormData = data;
+      if(!ctrl.previewCheck){
+        ctrl.formIsValid();
+      }
+      else{
+        ctrl.setPreviewData();
+        ctrl.previewCheck = false;
+      }
+    }
+
+    ctrl.formInValid = function(event, data) {
+
+    }
+
+    ctrl.formIsValid = function() {
+      ctrl.templatesScreen = false;
+      ctrl.createQuestionScreen = false;
+      ctrl.metadaFormScreen = true;
+    }
+    ctrl.saveQuestion = function(assessmentId, data){
+      //If identifier present update the question data
+      ecEditor.getService('assessment').saveQuestionV3(assessmentId, data, function(err, resp) {
+            if (!err) {
+              //ctrl.qFormData.request.assessment_item.metadata.identifier = resp.data.result.node_id;
+              var qMetadata = ctrl.qFormData.request.assessment_item.metadata;
+              qMetadata.identifier = resp.data.result.node_id;
+              debugger;
+              console.log("Response---",resp);
+              ecEditor.dispatchEvent('org.ekstep.questionbank:saveQuestion', qMetadata);
+              $scope.closeThisDialog();
+            } else {
+              //Alert with message
+              return;
+            }
+          });
+    }
+    /**
+     * Collect data from 3 screens
+     * @return {[type]} [description]
+     */
+    ctrl.sendData = function(isValid) {
+      var metadata = {};
+      if (isValid &amp;&amp; ctrl.Totalconcepts > 0) {
+        var questionFormData = {};
+        
+        var data = {};  // TODO: You have to get this from Q.Unit plugin(getData())
+        data.plugin = ctrl.selectedTemplatePluginData.plugin;
+        data.data = ctrl.questionCreationFormData; //{"question":ctrl.questionCreationFormData.question.text,"options":ctrl.questionCreationFormData.options};   
+        var metadataObj = {category: ctrl.category, title: ctrl.questionData.questionTitle, language: ctrl.questionData.qcLanguage, qlevel: ctrl.questionData.qcLevel, gradeLevel:ctrl.questionData.qcGrade, concepts:ctrl.selectedConceptsData, description:ctrl.questionData.questionDesc, max_score: ctrl.questionData.questionMaxScore};
+        data.config = {"metadata":metadataObj, "max_time": 0, "max_score": ctrl.questionData.questionMaxScore, "partial_scoring": false};
+        data.media = ctrl.questionCreationFormData.media;
+        questionFormData.data = data;
+        var bodyData = '';
+
+        var metadata = {
+          "code": "NA",
+          "name": ctrl.questionData.questionTitle,
+          "qlevel": ctrl.questionData.qcLevel,
+          "title": ctrl.questionData.questionTitle,
+          "question": ctrl.questionCreationFormData.question.text,
+          "max_score": ctrl.questionData.questionMaxScore,
+          "body": JSON.stringify(questionFormData),
+          "itemType": "unit",
+          "version": 2,
+          "category": ctrl.category,
+          "description": ctrl.questionData.questionDesc,
+          "createdBy": window.context.user.id,
+          "channel": "in.ekstep",    //default value
+          "type": ctrl.category,  // backward compatibility
+          "template": "NA",       // backward compatibility
+          "template_id": "NA",    // backward compatibility
+          "options": [{           // backward compatibility
+            "answer": true,
+            "value": {
+              "type": "text",
+              "asset": "1"
+            }
+          }],
+        }
+
+        ctrl.qFormData = {
+          "request": {
+            "assessment_item": {
+              "objectType": "AssessmentItem",
+              "metadata" : metadata
+            }
+          }
+        };
+
+        /*Save data and get response and dispatch event with response to questionbank plugin*/
+        ctrl.saveQuestion(ctrl.assessmentId, ctrl.qFormData);
+      } else {
+        ctrl.qcconcepterr = true;
+      }
+
+    }
+
+    ctrl.generateTelemetry = function(data, event) {
+      if (data) ecEditor.getService('telemetry').interact({
+        "type": data.type,
+        "subtype": data.subtype,
+        "id": data.id,
+        "pageId": ecEditor.getCurrentStage().id,
+        "target": {
+          "id": event.target.id,
+          "ver": "1.0",
+          "type": data.type
+        },
+        "plugin": {
+          "id": instance.manifest.id,
+          "ver": instance.manifest.ver
+        }
+      })
+    }
+    ctrl.init();
+  }]);
+
+//# sourceURL=question.js</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="reviewContent.html">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:watch">ftb:watch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Jan 17 2018 06:12:26 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

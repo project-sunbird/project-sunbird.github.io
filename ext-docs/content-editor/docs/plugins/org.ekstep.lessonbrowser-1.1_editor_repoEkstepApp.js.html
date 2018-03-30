@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: org.ekstep.lessonbrowser-1.1/editor/repoEkstepApp.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: org.ekstep.lessonbrowser-1.1/editor/repoEkstepApp.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>angular.module('org.ekstep.contentprovider', [])
+.controller('contentproviderekstepController', ['$scope', function($scope) {
+    var ctrl = this;
+
+
+    ctrl.err = null;
+    ctrl.meta = {"languages":{}, "grades":{}, "lessonTypes":{}, "domains":{}};
+    ctrl.res = {count:0, content:[]};
+
+    // Selected filters
+    $scope.filterSelection = {"lang": [], "grade": [], "lessonType": [], "domain": [], "concept": []};
+
+    // Selected lessons
+    $scope.lessonSelection = [];
+    // QUICK FIX - Return selected lesson from repo. Service should be implemented
+    $scope.selectedLessons.list = $scope.lessonSelection;
+
+    // Regulate Load more button
+    $scope.loadmoreEnabledFlag = true;
+    $scope.loadmoreVisibleFlag = true;
+    var loadedLessonCount = 0;
+
+    // Select all - Sidebar filters
+    $scope.isAllSelected = {"lang": false, "grade": false, "lessonType": false, "domain": false};
+
+    // Fetch lessons related params
+    var limit = 10;
+    var offset = 0;
+    var searchBody = {"request": {
+                        "filters":{
+                           "objectType": ["Content"],
+                           "status": ["Live"]
+                        }
+                    }};
+
+    // Get accordions functioning
+    setTimeout(function(){
+        $('#applyAccordion').accordion();
+        $('.ui.multiple.selection.dropdown').dropdown({
+            forceSelection: false,
+            onChange: function() {
+                $scope.getFiltersValue();
+            }
+        });
+    }, 500);
+
+    //Telemetry
+    var collectionService = org.ekstep.collectioneditor.api.getService('collection');
+    ctrl.generateTelemetry = function(data) {
+        if (data) ecEditor.getService('telemetry').interact({
+            "type": data.type,
+            "subtype": data.subtype,
+            "target": data.target,
+            "targetid":data.targetid,
+            "pluginid": $scope.telemetry.pluginid,
+            "pluginver": $scope.telemetry.pluginver,
+            "objectid": '',
+            "stage": collectionService.getActiveNode().id
+        })
+    };
+
+    // Search API Integration
+    var searchService = org.ekstep.contenteditor.api.getService(ServiceConstants.SEARCH_SERVICE);
+    ctrl.searchLessons = function(loadmore = false){
+        if (!loadmore) {
+            offset = 0;
+        }
+        searchBody.request.limit = limit;
+        searchBody.request.offset = offset;
+
+        searchService.search(searchBody, function(err, res){
+            if (err) {
+                ctrl.err = "Oops! Something went wrong. Please try again later.";
+            } else {
+                ctrl.res.count = res.data.result.count;
+
+                if (loadmore) {
+                    if (res.data.result.content) {
+                        loadedLessonCount += res.data.result.content.length;
+                    }
+
+                    angular.forEach(res.data.result.content, function(lessonContent){
+                        ctrl.res.content.push(lessonContent);
+                    });
+                } else {
+                    if (res.data.result.content) {
+                        loadedLessonCount = res.data.result.content.length;
+                    }
+
+                    ctrl.res.content = [];
+                    angular.forEach(res.data.result.content, function(lessonContent){
+                        ctrl.res.content.push(lessonContent);
+                    });
+
+                }
+                $scope.loadmoreVisibleFlag = true;
+                $scope.loadmoreEnabledFlag = true;
+
+                if (loadedLessonCount >= ctrl.res.count) {
+                    $scope.loadmoreEnabledFlag = false;
+                }
+
+                if (!res.data.result.content) {
+                    $scope.loadmoreEnabledFlag = false;
+                }
+
+                if (!ctrl.res.count) {
+                    $scope.loadmoreVisibleFlag = false;
+                }
+            }
+            $scope.$safeApply();
+        });
+        
+    };
+
+    // Meta APIs integration
+    var metaService = org.ekstep.contenteditor.api.getService(ServiceConstants.META_SERVICE);
+    ctrl.learningConfig = function() {
+        metaService.getLearningConfig(function(err, res){
+            if (err) {
+                ctrl.langErr = "Oops! Something went wrong with learning config. Please try again later.";
+            } else {
+                ctrl.meta.languages = res.data.result.medium.values;
+                ctrl.meta.grades = res.data.result.gradeLevel.values;
+                ctrl.meta.lessonTypes = ["Story", "Collection", "Worksheet", "Resource"]
+            }
+            $scope.$safeApply();
+        });
+    };
+    // ctrl.configOrdinals = function() {
+    //     metaService.getConfigOrdinals(function(err, res){
+    //         if (err) {
+    //             ctrl.langErr = "Oops! Something went wrong with config ordinals. Please try again later.";
+    //         } else {
+    //             //ctrl.meta.lessonTypes = res.data.result.ordinals.contentType;
+    //             ctrl.meta.lessonTypes = ["Story", "Collection", "Worksheet", "Resource"]
+    //             ctrl.meta.domains = res.data.result.ordinals.domain;
+    //         }
+    //         $scope.$safeApply();
+    //     });
+    // };
+
+    // Title filter
+    $scope.searchByKeyword = function(){
+        ctrl.generateTelemetry({type: 'click', subtype: 'submit', target: 'search',targetid: 'button-search'});
+        searchBody.request.query = this.searchKeyword;
+        ctrl.searchLessons();
+    };
+
+    // Title filter - search on enter
+    $scope.searchOnKeypress = function() {
+        if (event.keyCode === 13) {
+            ctrl.generateTelemetry({type: 'keypress', subtype: 'submit', target: 'search',targetid: 'keypress-search'});
+            this.searchByKeyword();
+        }
+    }
+
+    // Title filter - Reset
+    $scope.resetSearchByKeyword = function(){
+        ctrl.generateTelemetry({type: 'click', subtype: 'reset', target: 'search',targetid: 'button-reset'});
+        this.searchKeyword = '';
+        delete searchBody.request.filters.name;
+        ctrl.searchLessons();
+    };
+
+    $scope.getFiltersValue = function(){
+        /** Get value from dropdown**/
+        $scope.filterSelection.lang = $('#lessonBrowser_language').dropdown('get value');
+        $scope.filterSelection.grade = $('#lessonBrowser_grade').dropdown('get value');
+        $scope.filterSelection.lessonType = $('#lessonBrowser_lessonType').dropdown('get value');
+        
+        if ($scope.filterSelection.lang.length) {
+            $scope.filterSelection.lang = $scope.filterSelection.lang.split(",");
+            searchBody.request.filters.language = $scope.filterSelection.lang;
+        } else {
+            delete searchBody.request.filters.language;
+        }
+
+        if ($scope.filterSelection.grade &amp;&amp; $scope.filterSelection.grade.length) {
+            $scope.filterSelection.grade = $scope.filterSelection.grade.split(",");
+            searchBody.request.filters.gradeLevel = $scope.filterSelection.grade;
+        } else {
+            delete searchBody.request.filters.gradeLevel;
+        }
+
+        if ($scope.filterSelection.lessonType &amp;&amp; $scope.filterSelection.lessonType.length) {
+            $scope.filterSelection.lessonType = $scope.filterSelection.lessonType.split(",");
+            searchBody.request.filters.contentType = $scope.filterSelection.lessonType;
+        } else {
+            delete searchBody.request.filters.contentType;
+        }
+
+        if ($scope.filterSelection.domain &amp;&amp; $scope.filterSelection.domain.length) {
+            searchBody.request.filters.domain = $scope.filterSelection.domain;
+        } else {
+            delete searchBody.request.filters.domain;
+        }
+
+        if ($scope.filterSelection.concept &amp;&amp; $scope.filterSelection.concept.length) {
+            searchBody.request.filters.concepts = $scope.filterSelection.concept;
+        } else {
+            delete searchBody.request.filters.concepts;
+        }
+
+        $scope.$safeApply();
+    }
+
+
+    // Sidebar - filters
+    $scope.applyFilters = function(){
+        ctrl.generateTelemetry({type: 'click', subtype: 'submit', target: 'filter',targetid: 'button-filter-apply'});
+        
+        /**Get filters values**/
+        $scope.getFiltersValue();
+
+        ctrl.searchLessons();
+    };
+
+    // Sidebar filters - Reset
+    $scope.resetFilters = function() {
+        ctrl.generateTelemetry({type: 'click', subtype: 'reset', target: 'filter',targetid: 'button-filter-reset'});
+        $('#lessonBrowser_language').dropdown('clear');
+        $('#lessonBrowser_grade').dropdown('clear');
+        $('#lessonBrowser_lessonType').dropdown('clear');
+        $scope.filterSelection.domain.splice(0, $scope.filterSelection.domain.length);
+        $scope.filterSelection.concept.splice(0, $scope.filterSelection.concept.length);
+
+        $scope.applyFilters();
+    };
+
+    // Load more results
+    $scope.loadmore = function() {
+        $scope.loadmoreEnabledFlag = false;
+        ctrl.generateTelemetry({type: 'click', subtype: 'submit', target: 'loadmore',targetid: 'button-load-more'});
+        offset = limit + offset;
+        ctrl.searchLessons(true);
+    }
+
+    // Toggle selection for filters - called on click of individual checkbox items
+    $scope.toggleSelectionFilter = function(selectionKey, val, metaKey, valueKey) {
+
+        var idx = $scope.filterSelection[selectionKey].indexOf(val);
+
+        if (idx > -1) {
+            ctrl.generateTelemetry({type: 'click', subtype: 'uncheck', target: 'filter', targetid: 'checkbox-filter'});
+            // is currently selected, remove from selection list
+            $scope.filterSelection[selectionKey].splice(idx, 1);
+
+            // Un-check select all box
+            $scope.isAllSelected[selectionKey] = false;
+        } else {
+            ctrl.generateTelemetry({type: 'click', subtype: 'check', target: 'filter',targetid: 'checkbox-filter'});
+            // is newly selected, add to the selection list
+            $scope.filterSelection[selectionKey].push(val);
+
+            // Check select all box, if all options selected
+            var optionsStatus = true;
+            angular.forEach(ctrl.meta[metaKey], function(itm){
+                if (valueKey) {
+                    var itmAvailable = $scope.filterSelection[selectionKey].indexOf(itm[valueKey]) > -1;
+                } else {
+                    var itmAvailable = $scope.filterSelection[selectionKey].indexOf(itm) > -1;
+                }
+
+                optionsStatus = itmAvailable &amp;&amp; optionsStatus;
+            });
+            $scope.isAllSelected[selectionKey] = optionsStatus;
+        }
+    };
+
+    // Toggle select all
+    $scope.toggleAllFilter = function(selectionKey, metaKey, valueKey){
+        var toggleStatus = !$scope.isAllSelected[selectionKey];
+        $scope.filterSelection[selectionKey].splice(0, 15);
+
+        if (toggleStatus) {
+            ctrl.generateTelemetry({type: 'click', subtype: 'check-all', target: 'filter',targetid: 'checkbox-filter'});
+            if (valueKey) {
+                angular.forEach(ctrl.meta[metaKey], function(itm){ $scope.filterSelection[selectionKey].push(itm[valueKey]); });
+            } else {
+                angular.forEach(ctrl.meta[metaKey], function(itm){ $scope.filterSelection[selectionKey].push(itm); });
+            }
+        } else {
+            ctrl.generateTelemetry({type: 'click', subtype: 'uncheck-all', target: 'filter',targetid: 'checkbox-filter'});
+        }
+
+        $scope.isAllSelected[selectionKey] = toggleStatus;
+    };
+
+    // Toggle selection for lessons
+    $scope.toggleSelectionLesson = function(lesson) {
+        var idx = $scope.lessonSelection.indexOf(lesson);
+
+        if (idx > -1) {
+            ctrl.generateTelemetry({type: 'click', subtype: 'uncheck', target: 'lesson',targetid: lesson.identifier});
+            // is currently selected, remove from selection list
+            $scope.lessonSelection.splice(idx, 1);
+        } else {
+            ctrl.generateTelemetry({type: 'click', subtype: 'check', target: 'lesson',targetid: lesson.identifier});
+            // is newly selected, add to the selection list
+            $scope.lessonSelection.push(lesson);
+        }
+    };
+
+    $scope.telemetryConceptSelector = function() {
+        ctrl.generateTelemetry({type: 'click', subtype: 'init', target: 'concept-selector',targetid: 'button-concept-selector'});
+    }
+
+    // Initiate concept selector
+    ecEditor.dispatchEvent('org.ekstep.conceptselector:init', {
+        element: 'lessonBrowserConceptSelector',
+        selectedConcepts: [], // All composite keys except mediaType
+        callback: function(concepts) {
+            angular.forEach(concepts, function(concept){
+                $scope.filterSelection.concept.push(concept.id);
+            });
+            if(!concepts.length) {
+                $scope.filterSelection.concept = [];
+            }
+            $scope.$safeApply();
+        }
+    });
+
+    // Fetch sidebar filters through APIs
+    ctrl.learningConfig();
+    //ctrl.configOrdinals();
+
+    // Fetch and apply initial filters for first load
+    var repoId = 'ekstep';
+    var filter = $scope.$parent.browserApi.filters(repoId) || {};
+
+    $scope.filterSelection.lang = filter.language;
+    $scope.filterSelection.grade = filter.grade;
+    $scope.filterSelection.lessonType = filter.lessonType;
+    $scope.filterSelection.domain = filter.domain;
+
+    setTimeout(function(){
+        $('#lessonBrowser_language').dropdown('set selected', $scope.filterSelection.lang);
+        $('#lessonBrowser_grade').dropdown('set selected', $scope.filterSelection.grade);
+        $('#lessonBrowser_lessonType').dropdown('set selected', $scope.filterSelection.lessonType);
+        $scope.applyFilters();
+    }, 500);
+
+}]).filter('removeHTMLTags', function() {
+    return function(text) {
+        return  text ? String(text).replace(/&lt;[^>]+>/gm, '') : '';
+    };
+}).filter('cut', function () {
+    return function (value, wordwise, max, tail) {
+        if (!value) return '';
+
+        max = parseInt(max, 10);
+        if (!max) return value;
+        if (value.length &lt;= max) return value;
+
+        value = value.substr(0, max);
+        if (wordwise) {
+            var lastspace = value.lastIndexOf(' ');
+            if (lastspace !== -1) {
+              //Also remove . and , so its gives a cleaner result.
+              if (value.charAt(lastspace-1) === '.' || value.charAt(lastspace-1) === ',') {
+                lastspace = lastspace - 1;
+              }
+              value = value.substr(0, lastspace);
+            }
+        }
+
+        return value + (tail || ' …');
+    };
+});
+//# sourceURL=resourceBrowser.js</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module--%2520_org.ekstep.metadataform_.html">- 'org.ekstep.metadataform'</a></li></ul><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="breadcrumb.html">breadcrumb</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.iterator.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.navigation.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="global.html#reviewContent">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="EkstepRendererEvents.html#.event:actionNavigateNext">actionNavigateNext</a></li><li><a href="EkstepRendererEvents.html#.event:actionNavigatePrevious">actionNavigatePrevious</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="global.html#event:%2522renderer:load:html%2522">"renderer:load:html"</a></li><li><a href="global.html#event:%2522renderer:load:js%2522">"renderer:load:js"</a></li><li><a href="global.html#event:'org.ekstep.editcontentmeta:showpopup'">'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:cancel'">- 'editor:form:cancel'</a></li><li><a href="global.html#event:-'org.ekstep.editcontentmeta:showpopup'">- 'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:success'">-'editor:form:success'</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#config">config</a></li><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#convertToDataType">convertToDataType</a></li><li><a href="global.html#DEFAULT_TEMPLATE_NAME">DEFAULT_TEMPLATE_NAME</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#eventMap">eventMap</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#form">form</a></li><li><a href="global.html#formApp">formApp</a></li><li><a href="global.html#framework">framework</a></li><li><a href="global.html#getArrayOfKeywords">getArrayOfKeywords</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#getConfigurations">getConfigurations</a></li><li><a href="global.html#getFields">getFields</a></li><li><a href="global.html#getFormFields">getFormFields</a></li><li><a href="global.html#getMappedResponse">getMappedResponse</a></li><li><a href="global.html#getTemplate">getTemplate</a></li><li><a href="global.html#getUpdateDataType">getUpdateDataType</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#invoke">invoke</a></li><li><a href="global.html#isConfigurationsExists">isConfigurationsExists</a></li><li><a href="global.html#IteratorPlugin">IteratorPlugin</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#logTelemetry">logTelemetry</a></li><li><a href="global.html#mapObject">mapObject</a></li><li><a href="global.html#mappedResponse">mappedResponse</a></li><li><a href="global.html#mapResponse">mapResponse</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#onConfigChange">onConfigChange</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#renderForm">renderForm</a></li><li><a href="global.html#resetFields">resetFields</a></li><li><a href="global.html#resourceBundle">resourceBundle</a></li><li><a href="global.html#saveContent">saveContent</a></li><li><a href="global.html#saveMeta">saveMeta</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li><li><a href="global.html#updateState">updateState</a></li><li><a href="global.html#validate">validate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:11:17 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

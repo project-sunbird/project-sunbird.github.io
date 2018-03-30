@@ -1,0 +1,42 @@
+Announcement:
+    description: Announcement model
+    type: object
+    properties:
+      id:
+        type: string
+        description: unique identifier of the announcement object
+      from:
+        type: string
+      type:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+      links:
+        type: array
+        items:
+          type: string
+      attachments:
+        type: object
+        properties:
+          name:
+            type: string
+          mimetype:
+            type: string
+          size:
+            type: string
+          link:
+            type: string
+      createdDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      status:
+        type: string
+    required:
+      - id
+      - from
+      - type
+      - title
+      - createdDate
+      - status

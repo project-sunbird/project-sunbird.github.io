@@ -1,0 +1,391 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Learner Course-Content APIs
+  description: 'Content read and update api'
+host: dev.open-sunbird.org
+basePath: /v1/user/content
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /state:
+    post:
+      description: getcontentstate
+      summary: get content state
+      operationId: StatePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/GetContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: X-Authenticated-Userid
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /state
+            headers:
+              Content-Type: application/json
+              Accept: application/json
+              X-Consumer-ID: X-Consumer-ID
+              ts: '2017-05-25 10:18:56:578+0530'
+              X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+              x-authenticated-user-token:
+                '[object Object]': null
+            body: >-
+              {"id":"unique API ID","ts":"2013/10/15
+              16:16:39","params":{},"request":{"userId":"123","courseIds":["do_212282810437918720179"],"contentIds":["do_2122528233578250241233","do_212282811101773824183"]}}
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: get content state
+          x-testDescription: getcontentstate
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update:
+    patch:
+      description: updatecontentstate
+      summary: update content state
+      operationId: UpdatePatch
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            $ref: '#/definitions/UpdateContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+      security: []
+      x-unitTests:
+        - request:
+            method: PATCH
+            uri: /update
+            headers:
+              Content-Type: application/json
+              Accept: application/json
+              X-Consumer-ID: X-Consumer-ID
+              ts: '2017-05-25 10:18:56:578+0530'
+              X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+              X-Authenticated-Userid:
+                '[object Object]': null
+            body: >-
+              {"id":"unique API ID","ts":"response timestamp
+              YYYY-MM-DDThh:mm:ss+/-nn:nn (timezone defaulted to
+              +5.30)","params":{},"request":{"userId":"0f451be5-2c83-4688-9089-fc329ce3bc18","contents":[{"contentId":"do_2122528233578250241233","batchId":"115","status":2,"lastAccessTime":"2017-05-15
+              10:58:07:509+0530","courseId":"do_212282810437918720179","result":"pass","score":"10","grade":"B"},{"contentId":"do_2122528233578250241233","batchId":"115","status":2,"lastAccessTime":"2017-05-15
+              10:58:07:509+0530","courseId":"do_212282810437918720179","result":"pass","score":"10","grade":"B"}]}}
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: update content state
+          x-testDescription: updatecontentstate
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  GetContentStaterequest:
+    title: get content stateRequest
+    example:
+      id: unique API ID
+      ts: '2013/10/15 16:16:39'
+      params: {}
+      request:
+        userId: 123
+        courseIds:
+          - do_212282810437918720179
+        contentIds:
+          - do_2122528233578250241233
+          - do_212282811101773824183
+    type: object
+    properties:
+      id:
+        description: ''
+        example: unique API ID
+        type: string
+      ts:
+        description: ''
+        example: '2013/10/15 16:16:39'
+        type: string
+      params:
+        description: ''
+        example: {}
+        type: object
+      request:
+        $ref: '#/definitions/Request'
+    required:
+      - id
+      - ts
+      - params
+      - request
+  Request:
+    title: Request
+    example:
+      userId: 123
+      courseIds:
+        - do_212282810437918720179
+      contentIds:
+        - do_2122528233578250241233
+        - do_212282811101773824183
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: 123
+        type: string
+      courseIds:
+        description: ''
+        example:
+          - do_212282810437918720179
+        type: array
+        items:
+          type: string
+      contentIds:
+        description: ''
+        example:
+          - do_2122528233578250241233
+          - do_212282811101773824183
+        type: array
+        items:
+          type: string
+    required:
+      - userId
+      - courseIds
+      - contentIds
+  UpdateContentStaterequest:
+    title: update content stateRequest
+    example:
+      id: unique API ID
+      ts: >-
+        response timestamp YYYY-MM-DDThh:mm:ss+/-nn:nn (timezone defaulted to
+        +5.30)
+      params: {}
+      request:
+        userId: 0f451be5-2c83-4688-9089-fc329ce3bc18
+        contents:
+          - contentId: do_2122528233578250241233
+            batchId: 115
+            status: 2
+            lastAccessTime: '2017-05-15 10:58:07:509+0530'
+            courseId: do_212282810437918720179
+            result: pass
+            score: 10
+            grade: B
+          - contentId: do_2122528233578250241233
+            batchId: 115
+            status: 2
+            lastAccessTime: '2017-05-15 10:58:07:509+0530'
+            courseId: do_212282810437918720179
+            result: pass
+            score: 10
+            grade: B
+    type: object
+    properties:
+      id:
+        description: ''
+        example: unique API ID
+        type: string
+      ts:
+        description: ''
+        example: >-
+          response timestamp YYYY-MM-DDThh:mm:ss+/-nn:nn (timezone defaulted to
+          +5.30)
+        type: string
+      params:
+        description: ''
+        example: {}
+        type: object
+      request:
+        $ref: '#/definitions/Request3'
+    required:
+      - id
+      - ts
+      - params
+      - request
+  Request3:
+    title: Request3
+    example:
+      userId: 0f451be5-2c83-4688-9089-fc329ce3bc18
+      contents:
+        - contentId: do_2122528233578250241233
+          batchId: 115
+          status: 2
+          lastAccessTime: '2017-05-15 10:58:07:509+0530'
+          courseId: do_212282810437918720179
+          result: pass
+          score: 10
+          grade: B
+        - contentId: do_2122528233578250241233
+          batchId: 115
+          status: 2
+          lastAccessTime: '2017-05-15 10:58:07:509+0530'
+          courseId: do_212282810437918720179
+          result: pass
+          score: 10
+          grade: B
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: 0f451be5-2c83-4688-9089-fc329ce3bc18
+        type: string
+      contents:
+        description: ''
+        example:
+          - contentId: do_2122528233578250241233
+            batchId: 115
+            status: 2
+            lastAccessTime: '2017-05-15 10:58:07:509+0530'
+            courseId: do_212282810437918720179
+            result: pass
+            score: 10
+            grade: B
+          - contentId: do_2122528233578250241233
+            batchId: 115
+            status: 2
+            lastAccessTime: '2017-05-15 10:58:07:509+0530'
+            courseId: do_212282810437918720179
+            result: pass
+            score: 10
+            grade: B
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+    required:
+      - userId
+      - contents
+  Content:
+    title: Content
+    example:
+      contentId: do_2122528233578250241233
+      batchId: 115
+      status: 2
+      lastAccessTime: '2017-05-15 10:58:07:509+0530'
+      courseId: do_212282810437918720179
+      result: pass
+      score: 10
+      grade: B
+    type: object
+    properties:
+      contentId:
+        description: ''
+        example: do_2122528233578250241233
+        type: string
+      batchId:
+        description: ''
+        example: 115
+        type: string
+      status:
+        description: ''
+        example: 2
+        type: integer
+        format: int32
+      lastAccessTime:
+        description: ''
+        example: '2017-05-15 10:58:07:509+0530'
+        type: string
+      courseId:
+        description: ''
+        example: do_212282810437918720179
+        type: string
+      result:
+        description: ''
+        example: pass
+        type: string
+      score:
+        description: ''
+        example: 10
+        type: string
+      grade:
+        description: ''
+        example: B
+        type: string
+    required:
+      - contentId
+      - batchId
+      - status
+      - lastAccessTime
+      - courseId
+      - result
+      - score
+      - grade
