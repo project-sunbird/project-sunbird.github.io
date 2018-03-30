@@ -110,6 +110,7 @@ Once you open the file, ensure you enter the following values:
 ## Run the Application
 
 Run the following commands:
+   
     $ cd {PROJECT-FOLDER}/src/app
     $ node server.js
 
