@@ -68,12 +68,12 @@ Next section details about setting up the Elastic search on your local machine.
   3. Run the following curl command
 
 <pre>
-              curl -X PUT \
-              http://localhost:9200/searchindex/org/ORG_001 \
-              -H 'cache-control: no-cache' \
-              -H 'content-type: application/json' \
-              -H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' \
-              -d '{}'
+curl -X PUT \
+http://localhost:9200/searchindex/org/ORG_001 \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+-H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' \
+-d '{}'
 </pre>     
 
 Next section details about setting up the Keycloak on your local machine.
@@ -146,27 +146,27 @@ The table mentions all the environment variables with description. Add or edit t
 
 ### Setting Environment Variables
 
-To run sunbird backend services, at least you need to set the following environment variables. Set the environment variables at appropriate locations.
+To run sunbird backend services, at least you need to set the following environment variables. Ensure that you set the environment variables at appropriate locations.
 
 <pre>
-          1. sunbird_cassandra_host
-          2. sunbird_cassandra_port
-          3. sunbird_cassandra_username 
-          4. sunbird_cassandra_password 
-          5. sunbird_es_host
-          6. sunbird_es_port
-          7. sunbird_learner_actor_host
-          8. sunbird_learner_actor_port
-          9. sunbird_sso_url
-          10. sunbird_sso_realm
-          11. sunbird_sso_username
-          12. sunbird_sso_password
-          13. sunbird_sso_client_id
-          14. ekstep_content_search_base_url
-          15. ekstep_authorization
-          16. sunbird_installation : name of in which environment you running this application or instance name
-          17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
-          18. sunbird_sso_publickey
+1. sunbird_cassandra_host
+2. sunbird_cassandra_port
+3. sunbird_cassandra_username 
+4. sunbird_cassandra_password 
+5. sunbird_es_host
+6. sunbird_es_port
+7. sunbird_learner_actor_host
+8. sunbird_learner_actor_port
+9. sunbird_sso_url
+10. sunbird_sso_realm
+11. sunbird_sso_username
+12. sunbird_sso_password
+13. sunbird_sso_client_id
+14. ekstep_content_search_base_url
+15. ekstep_authorization
+16. sunbird_installation : name of in which environment you running this application or instance name
+17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
+18. sunbird_sso_publickey
 </pre>
    
 For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
