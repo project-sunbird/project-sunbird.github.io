@@ -120,13 +120,13 @@ To run Sunbird services, you need to set the following environment variables:
 | sunbird_pg_db                         | Postgres db name                                                                                            |
 | sunbird_pg_user                       | Postgres db user name                                                                                       |
 | sunbird_pg_password                   | Postgress db password                                                                                       |
-| sunbird_installation                  |                                                                                                             |
-| ekstep_api_base_url                   |                                                                                                             |
+| sunbird_installation                  | sunbird                                                                                                            |
+| ekstep_api_base_url                   | https://dev.ekstep.in/api                                                                                                             |
 | sunbird_mail_server_host              |                                                                                                             |
 | sunbird_mail_server_port              |                                                                                                             |
 | sunbird_mail_server_username          |                                                                                                             |
 | sunbird_mail_server_password          |                                                                                                             |
-| sunbird_mail_server_from_email        |                                                                                                             |
+| sunbird_mail_server_from_email        | support@open-sunbird.org                                                                                                            |
 | sunbird_account_name                  | account name of azure blob storage                                                                          |
 | sunbird_account_key                   | Azure blob storage account key                                                                              |
 | sunbird_quartz_mode                   | put this value {"embedded" to run quartz without any database, "any other value" to run with postgres db } |
