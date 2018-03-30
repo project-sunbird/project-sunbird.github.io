@@ -6,7 +6,7 @@ info:
   contact:
     email: admin@open-sunbird.org
   description: >-
-        The Course Batch Management API resources perform operations related to management of batches for courses on the Sunbird Platform. The basic operations include Creation, Updation,joining ,listing and updating course sttaus
+        The Course Batch Management API resources perform operations related to course batch management on the Sunbird Platform. The basic operations include Creation, Updation,Joining ,Listing and Updating the course sttaus
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
@@ -30,10 +30,10 @@ paths:
     post:
       description: >-
         This API is associated with creating a batch on the Sunbird Platform.
-          - The Format of the resource URL is '{{host}}/v1/course/batch/create' 
+          - The format of the resource URL is '{{host}}/v1/course/batch/create' 
           - The **_/batch/create_** endpoint executes "create batch" request to create a new batch.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for mandatory parameters that are marked with *. 
+          
       summary: Creates a Batch
       tags:
       - Course Batch APIs
@@ -64,17 +64,17 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **create batch** request was sent. '
+        description: 'The time stamp when the **create batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'This unique ID that identifies a request, if the same API is executed multiple times.'
       - name: x-authenticated-user-token
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: 'The registered user ID to execute the API.'
       - name: Authorization
         in: header
         required: true
@@ -88,13 +88,13 @@ paths:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
              - $ref: '#/definitions/CreateBatchResponse'
         '400':
-          description: 'BAD REQUEST,"create batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. "create batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
              - $ref: '#/definitions/BatchCreateErrorResponse'
         '404':
-          description: 'Resource not found" operation failed ! The possible reason for failure is that couserId is invalid.'
+          description: 'Resource not found' operation failed! The possible reason for failure is that the course ID is invalid.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -112,14 +112,14 @@ paths:
         name: Batch_Id
         type: string
         required: true
-        description: 'Please append a valid Batch Id To the Request URL'   
+        description: 'Append a valid Batch ID To the Request URL'   
     get:
       description: >-
-        This API is associated with fetching a particular batch on the Sunbird Platform.
-          - {...}refers to a section of read/{Batch_Id} endpoint URL path that needs to be replaced by appropriate Id.
+        This API is used to fetch a particular batch on the Sunbird Platform.
+          - {...}refers to a section of the read/{Batch_Id} endpoint URL path that needs to be replaced with the appropriate ID.
           - The **_/batch/read/{Batch_Id}_** endpoint executes "Fetch a batch" request to fetch a particular batch.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for mandatory parameters that are marked with *. 
+          
       summary: Fetches a particular Batch
       tags:
       - Course Batch APIs
@@ -140,17 +140,17 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Fetch a batch** request was sent. '
+        description: 'The time stamp when the **Fetch a batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'This unique ID that identifies a request, if the same API is executed multiple times.'
       - name:  x-authenticated-user-token
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: 'The registered User ID to execute the API.'
       - name: Authorization
         in: header
         required: true
@@ -165,13 +165,13 @@ paths:
              - $ref: '#/definitions/SingleBatchResponseWrapper'
             
         '400':
-          description: 'BAD REQUEST,"create batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST,"Fetch a batch" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
              - $ref: '#/definitions/BatchCreateErrorResponse'
         '404':
-          description: 'Resource not found" operation failed ! The possible reason for failure is that BatchId is invalid.'
+          description: 'Resource not found" operation failed ! The possible reason for failure is that Batch ID is invalid.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -189,14 +189,14 @@ paths:
         name: Batch_Id
         type: string
         required: true
-        description: 'Please append a valid Batch Id To the Request URL'   
+        description: 'Append a valid Batch ID To the Request URL'   
     post:
       description: >-
         This API is associated with addding a user  to a particular batch on the Sunbird Platform.
           - The format of the resource URL is '{{host}}/course/v1/batch/user/add/{Batch_Id}'
           - The **_/batch/user/add/{Batch_Id}_** endpoint executes "Add user to a batch" request to add a registered user to a specific batch.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for mandatory parameters that are marked with *. 
+          
       summary: Add User to a specific batch
       tags:
       - Course Batch APIs
@@ -227,17 +227,17 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Fetch a batch** request was sent. '
+        description: 'The time stamp when the **Add user to batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'This unique ID that identifies a request, if the same API is executed multiple times.'
       - name:  x-authenticated-user-token
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: 'The registered User ID to execute the API.'
       - name: Authorization
         in: header
         required: true
@@ -265,11 +265,11 @@ paths:
   /batch/list:
     post:
       description: >-
-        This API is associated with search of batch based on different batch stored attribute.
+        This API is used to search course batches on the basis of different stored batch attributes.
           - The format of the resource URL is '{{host}}/course/v1/batch/search'
-          - The **_/batch/read_** endpoint executes "Lists the existing batches" request to fetch the existing batches.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - The **_/batch/read_** endpoint executes "Lists the existing batches" request to fetch existing batches.
+          - It is a must to provide values for mandatory parameters that are marked with *. 
+          
       summary: Lists the existing batches
       tags:
       - Course Batch APIs 
@@ -282,7 +282,7 @@ paths:
         required: true
         description: >-
             The body refers to the format of the request.
-              - The body contains metadata about the user to be added to a batch.
+              - The body contains metadata about the batch.
         schema:
          allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -301,17 +301,17 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Fetch a batch** request was sent. '
+        description: 'The time stamp when the **Search batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'This unique ID that identifies a request, if the same API is executed multiple times.'
       - name:  x-authenticated-user-token
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: 'The registered User ID to execute the API.'
       - name: Authorization
         in: header
         required: true
@@ -340,10 +340,10 @@ paths:
   /batch/update:
     patch:
       description: >-
-        This API is associated with updating a batch on the Sunbird Platform.
+        This API is used to update batch details on the Sunbird Platform.
           - The **_/batch/update_** endpoint executes "Update a batch" request to update an existing batch.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for mandatory parameters that are marked with *. 
+          
       summary: Course Batch Update
       tags:
       - Course Batch APIs
@@ -365,7 +365,7 @@ paths:
         in: header
         required: true
         type: string
-        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+        description: '**Accept** relates to content type such as **"MIME"**. It is used in the response body to execute multipurpose operations. Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
       - name: Content-Type
         in: header
         required: true
