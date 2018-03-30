@@ -78,28 +78,35 @@ The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak 
 
  **Update following configuration** 
 
-<pre>
 - Log in to the **Keycloak admin** console
 - Navigate to the clients(admin-cli) Installation
 - Select json format
+
+<pre>
 sunbird_sso_client_id: # Eg: admin-cli
 sunbird_sso_username: # keycloak user name
 sunbird_sso_password: # keycloak user password
+</pre>
 
 - Log in to the **Keycloak admin** console
 - Navigate to the clients (portal) Installation
 - Select json format
+
+<pre>
 keycloak_realm:  # Eg: Sunbird
 sunbird_keycloak_client_id: # Eg: portal
+</pre>
 
 - Log in to the **Keycloak admin** console
 - Navigate to the clients (trampoline) Installation
 - Select json format
+
+<pre>
 sunbird_trampoline_client_id:  # Eg: trampoline
 sunbird_trampoline_secret:     # Eg: HJKDHJEHbdggh23737
 </pre>
 
-  **Ensure the following configurations are updated** 
+Ensure updating the the following configurations:  
 
 - Environment Configuration
 - Application Server Configuration
