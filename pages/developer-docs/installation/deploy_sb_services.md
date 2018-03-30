@@ -26,9 +26,9 @@ The following steps will install docker, pull the required images and create ser
 
 **Note:** The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.
 
-- `deploy-apis.sh` script will print a JWT token that needs to be updated in the application configuration. 
-- To find the token search the script output to look for JWT token for player.
-- Copy the corresponding token. 
+- `deploy-apis.sh` script will print a JWT token that should be updated in the application configuration 
+- To find the token search the script output and look for JWT token for player
+- Copy the corresponding token
 - For reference check the example output as follows:
 
 <pre>
@@ -38,9 +38,9 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlMzU3YWZlOTRmMjA0YjQxODZjNzNmYzQ
 L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer player for API cr......"]}
 </pre>
 
-- Update `sunbird_api_auth_token` in your configuration with the copied token.
+- Update `sunbird_api_auth_token` in your configuration with the copied token
 
-- Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from Ekstep portal. 
+- Update `sunbird_ekstep_api_key` in your configuration with the API token obtained from Ekstep portal 
 
 For API keys you can refer [here](developer-docs/installation/medium_scale_deploy#api-keys){:target="_blank"}
 
