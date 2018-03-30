@@ -164,7 +164,7 @@ To run sunbird backend services, at least you need to set the following environm
 13. sunbird_sso_client_id
 14. ekstep_content_search_base_url
 15. ekstep_authorization
-16. sunbird_installation : name of in which environment you running this application or instance name
+16. sunbird_installation : name of environment in which you are running the application or instance name
 17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
 18. sunbird_sso_publickey
 </pre>
