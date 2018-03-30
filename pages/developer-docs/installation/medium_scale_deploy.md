@@ -56,8 +56,8 @@ To make the deployment scenario simple and clear, we use the following variables
 
 Before you start the installation process make sure you have successfully 
 
-- Review and check whether the system requirements are met. 
-- Check whether or not you  have the API keys.
+- Review and check whether the system requirements are met
+- Check whether or not you  have the API keys
 - Decide the installation owner and the installation directory  
 - Gather information about the database, if you are installing the database server while installing Sunbird
 - Set up or verify the product licensing requirements for the live environment
