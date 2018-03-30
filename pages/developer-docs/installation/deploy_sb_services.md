@@ -54,29 +54,29 @@ For API keys you can refer [here](developer-docs/installation/medium_scale_deplo
 
 **Note:** Sunbird uses Keycloak as the identity and authentication provider. 
 
-The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:
+The Keycloak is deployed on a virtual machine (VM), and you can deploy the Keycloak by following steps:
 
-- Run the following script to create the Keycloak username, group name and also to service Keycloak services on VM
+1. Run the following script to create the Keycloak username, group name and also to enable Keycloak services on VM
 
   <pre>
   ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
   </pre>
 
-- Update the following variables in the config path `{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}`  
+2. Update the following variables in the configuration path 
 
   <pre>
+  {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}
+ 
   keycloak_password: (with admin initial password)
-  keycloak_theme_path: ex- path/to/the/nile/themes. 
-  Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts){:target="_blank"}
+  keycloak_theme_path: ex- path/to/the/nile/themes
+  sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}
   </pre>
+  
+**Note:** Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts){:target="_blank"}
 
-`sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}`
+3. Follow the instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
 
-
-- Follow the instructions [here](developer-docs/installation/keycloak_realm_configuration) to setup auth realm in Keycloak.
-
-
- **Update following configuration** 
+**Update following configuration** 
 
 - Log in to the **Keycloak admin** console
 - Navigate to the clients(admin-cli) Installation
