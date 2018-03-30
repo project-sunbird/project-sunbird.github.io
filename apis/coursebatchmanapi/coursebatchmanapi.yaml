@@ -168,7 +168,7 @@ paths:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
              - $ref: '#/definitions/BatchCreateErrorResponse'
         '404':
-          description: 'Resource not found" operation failed ! The possible reason for failure is that BatchId is invalid.'
+          description: 'RESOURCE NOT FOUND" operation failed ! The possible reason for failure is that BatchId is invalid.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -204,7 +204,7 @@ paths:
         required: true
         description: >-
             The body refers to the format of the request.
-              - The body contains metadata about the user to be added to a batch.
+              - The body contains metadata about the user to be added to a specific batch
         schema:
           allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -276,7 +276,7 @@ paths:
         required: true
         description: >-
             The body refers to the format of the request.
-              - The body contains metadata about the batches to be listed.
+              - The body contains metadata about the batches to be listed
         schema:
          allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -357,7 +357,8 @@ paths:
         in: header
         required: true
         type: string
-        description: '**Accept** relates to content-Type such as **"MIME"**, Its used in response body for executing different multi purpose operations.Therefore, its important that the server is correctly set up, so that the MIME types transmitted are recognised and correct to determine what action to do when a resource is fetched.'
+        description: Represents the media type(s) specified in the request body that are acceptable in the response body
+        
       - name: Content-Type
         in: header
         required: true
