@@ -129,11 +129,11 @@ Choose any one of the docker swarm manager vm for the administration server.
 
 Run the following steps from a that machine:
 
-**1.** Install git `apt-get update -y && apt-get install git -y `
-**2.** Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
-**3.** `cd sunbird-devops/deploy`
-**4.** Update the `config` and `advanced` configuration files. For more details how to update those files please click [here]().
-**5.** Run `./sunbird_install.sh`. This script will do infra setup from  stage1 to stage5 in a sequence shown in below table. Verify all the mandatory varaibles( ex:  sunbird_auth_token, ekstep_api_key) of sunbird core services are updated, then run the  `./sunbird_install.sh -s core` for deploying core services.
+1. Install git `apt-get update -y && apt-get install git -y `
+2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
+3. `cd sunbird-devops/deploy`
+4. Update the `config` and `advanced` configuration files. For more details how to update those files please click [here]().
+5. Run `./sunbird_install.sh`. This script will do infra setup from  stage1 to stage5 in a sequence shown in below table. Verify all the mandatory varaibles( ex:  sunbird_auth_token, ekstep_api_key) of sunbird core services are updated, then run the  `./sunbird_install.sh -s core` for deploying core services.
 
 |stage no. |stage name|Description| 
 |:-----      |:-------|:--------|
