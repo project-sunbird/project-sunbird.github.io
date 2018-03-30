@@ -42,7 +42,7 @@ If you are looking to experiment with Sunbird and test its feature set, we recom
 
 ### Extend Sunbird
 
-If you plan to modify and contribute code to the Sunbird project, we recommend you [Install Sunbird on Laptop]( developer-docs/installation/installing_sunbirdon_laptop/){:target="_blank"}. This allows you to get started quickly and help extend Sunbird.
+If you plan to modify and contribute code to the Sunbird project, we recommend you [Install Sunbird on your machine](developer-docs/installation/installing_sunbirdon_machine/){:target="_blank"}. This allows you to get started quickly and help extend Sunbird.
 
 ### Deploy Sunbird for up to 10 Thousand Users
 
