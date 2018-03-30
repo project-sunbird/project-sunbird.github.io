@@ -147,9 +147,9 @@ Run the following steps from a that machine:
 |8|monitor|Monitor all the services,health checks, API's,system checks etc..|
 
 **NOTE**:  
-* If we what to re-run any particular stage, just run `./sunbird_install.sh -s <stagename>`
-* If we are planning to setup logger or monitoring . Please run the `./sunbird_install.sh -s <stagename>` command with  `stagename` as logger/monitor.
+* If you want to re-run any particular stage, just run `./sunbird_install.sh -s <stagename>`
+* If you are planning to setup logger or monitoring . Please run the `./sunbird_install.sh -s <stagename>` command with  `stagename` as logger/monitor
 
 To know more about the script `sunbird_install.sh` please click [here]().
-**6.** Open https://[domain-name] and verify the installation. 
+6. Open https://[domain-name] and verify the installation. 
 
