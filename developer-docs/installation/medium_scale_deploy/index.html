@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.29/";
+			baseURL.href="/releases/release.1.30/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-03-31 01:51:15 +0530">
+<meta name="last-modified" content="2018-03-31 02:17:37 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.29" />
-<meta name="buildNo" content="2383" />
+<meta name="buildVersion" content="release.1.30" />
+<meta name="buildNo" content="2394" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -804,12 +804,18 @@ $("a[href$='developer-docs/installation/medium_scale_deploy/']").addClass("sideb
   </tbody>
 </table>
 
-<p><strong>NOTE</strong>:<br />
-* If you want to re-run any particular stage, just run <code>./sunbird_install.sh -s &lt;stagename&gt;</code>
-* If you are planning to setup logger or monitoring . Please run the <code>./sunbird_install.sh -s &lt;stagename&gt;</code> command with  <code>stagename</code> as logger/monitor</p>
+<p><strong>NOTE</strong>:</p>
 
-<p>To know more about the script <code>sunbird_install.sh</code> please click <a href="">here</a>.
-6. Open https://[domain-name] and verify the installation.</p>
+<ul>
+  <li>If you want to re-run any particular stage, just run <code>./sunbird_install.sh -s &lt;stagename&gt;</code></li>
+  <li>If you are planning to setup logger or monitoring . Please run the <code>./sunbird_install.sh -s &lt;stagename&gt;</code> command with  <code>stagename</code> as logger/monitor</li>
+</ul>
+
+<p>To know more about the script <code>sunbird_install.sh</code> please click <a href="">here</a>.</p>
+
+<ol>
+  <li>Open https://[domain-name] and verify the installation.</li>
+</ol>
 
 
           

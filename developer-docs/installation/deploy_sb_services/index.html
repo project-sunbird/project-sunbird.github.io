@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.29/";
+			baseURL.href="/releases/release.1.30/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-03-31 01:51:15 +0530">
+<meta name="last-modified" content="2018-03-31 02:17:37 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.29" />
-<meta name="buildNo" content="2383" />
+<meta name="buildVersion" content="release.1.30" />
+<meta name="buildNo" content="2394" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -552,9 +552,9 @@ $("a[href$='developer-docs/installation/deploy_sb_services/']").addClass("sideba
 <p><strong>Note:</strong> The following steps are necessary only when the application is being deployed for the first time and should be skipped for subsequent deploys.</p>
 
 <ul>
-  <li><code>deploy-apis.sh</code> script will print a JWT token that needs to be updated in the application configuration.</li>
-  <li>To find the token search the script output to look for JWT token for player.</li>
-  <li>Copy the corresponding token.</li>
+  <li><code>deploy-apis.sh</code> script will print a JWT token that should be updated in the application configuration</li>
+  <li>To find the token search the script output and look for JWT token for player</li>
+  <li>Copy the corresponding token</li>
   <li>For reference check the example output as follows:</li>
 </ul>
 
@@ -567,10 +567,10 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
 
 <ul>
   <li>
-    <p>Update <code>sunbird_api_auth_token</code> in your configuration with the copied token.</p>
+    <p>Update <code>sunbird_api_auth_token</code> in your configuration with the copied token</p>
   </li>
   <li>
-    <p>Update <code>sunbird_ekstep_api_key</code> in your configuration with the API token obtained from Ekstep portal.</p>
+    <p>Update <code>sunbird_ekstep_api_key</code> in your configuration with the API token obtained from Ekstep portal</p>
   </li>
 </ul>
 
@@ -590,34 +590,35 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
 
 <p><strong>Note:</strong> Sunbird uses Keycloak as the identity and authentication provider.</p>
 
-<p>The Keycloak is deployed on a virtual machine (VM). You can deploy the Keycloak by following steps:</p>
+<p>The Keycloak is deployed on a virtual machine (VM), and you can deploy the Keycloak by following steps:</p>
 
-<ul>
-  <li>
-    <p>Run the following script to create the Keycloak username, group name and also to service Keycloak services on VM</p>
+<ol>
+  <li>Run the following script to create the Keycloak username, group name and also to enable Keycloak services on VM</li>
+</ol>
 
-    <pre>
-./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
-</pre>
-  </li>
-  <li>
-    <p>Update the following variables in the config path <code>{implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name}</code></p>
+<pre>
+  ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
+  </pre>
 
-    <pre>
-keycloak_password: (with admin initial password)
-keycloak_theme_path: ex- path/to/the/nile/themes. 
-Sample themes directory of sunbird is [here](https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts){:target="_blank"}
-</pre>
-  </li>
-</ul>
+<ol>
+  <li>Update the following variables in the configuration path</li>
+</ol>
 
-<p>
-  <code>sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name}</code>
-</p>
+<pre>
+  
+  {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name} // path 
+ 
+  keycloak_password: (with admin initial password)  //variable to set
+  keycloak_theme_path: ex- path/to/the/nile/themes  //variable to set
+  
+  sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name} //command to execute
+  </pre>
 
-<ul>
-  <li>Follow the instructions <a href="developer-docs/installation/keycloak_realm_configuration">here</a> to setup auth realm in Keycloak.</li>
-</ul>
+<p><strong>Note:</strong> The sample themes directory of sunbird is <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts" target="_blank">here</a></p>
+
+<ol>
+  <li>Follow the instructions <a href="developer-docs/installation/keycloak_realm_configuration">here</a> to setup auth realm in Keycloak</li>
+</ol>
 
 <p>
   <strong>Update following configuration</strong>
