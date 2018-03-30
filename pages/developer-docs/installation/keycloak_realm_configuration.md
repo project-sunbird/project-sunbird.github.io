@@ -27,7 +27,7 @@ Follow the steps to add, import and create the Keycloak realm:
         <td> 
         In order to  import the realm:<br> 
 
-        1. Click on **Add realm**Button
+        1. Click on <b>Add realm</b> button
 
         </td>
             <td>
