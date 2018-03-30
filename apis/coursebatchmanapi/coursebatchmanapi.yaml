@@ -32,8 +32,7 @@ paths:
         This API is associated with creation of a batch 
           - The Format of the resource URL is '{{host}}/v1/course/batch/create' 
           - The **_/batch/create_** endpoint executes "create batch" request to create a new batch
-          - It is mandatory to provide values for parameters for required fields
-          - Mandatory fields cannot be null or empty
+          - It is a must to provide values for required parameters  
       summary: Creates a Batch
       tags:
       - Course Batch APIs
@@ -64,12 +63,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **create batch** request was sent. '
+        description: 'The Time Stamp at which the **create batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -111,14 +110,13 @@ paths:
         name: Batch_Id
         type: string
         required: true
-        description: 'Please append a valid Batch Id To the Request URL'   
+        description: 'Append a valid Batch Id To the Request URL'   
     get:
       description: >-
         This API is associated with fetching a particular batch on the Sunbird Platform.
           - {...}refers to a section of read/{Batch_Id} endpoint URL path that needs to be replaced by appropriate Id
           - The **_/batch/read/{Batch_Id}_** endpoint executes "Fetch a batch" request to fetch a particular batch.
-          - It is mandatory to provide values for required parameters 
-          - Mandatory fields cannot be null or empty
+          - It is a must to provide values for required parameters 
       summary: Fetch a particular Batch
       tags:
       - Course Batch APIs
@@ -139,12 +137,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Fetch a batch** request was sent. '
+        description: 'The Time Stamp at which the **Fetch a batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
       - name:  x-authenticated-user-token
         in: header
         required: true
@@ -187,14 +185,13 @@ paths:
         name: Batch_Id
         type: string
         required: true
-        description: 'Please append a valid Batch Id To the Request URL'   
+        description: 'Append a valid Batch Id To the Request URL'   
     post:
       description: >-
         This API is associated with addding a user  to a particular batch on the Sunbird Platform.
           - The format of the resource URL is '{{host}}/course/v1/batch/user/add/{Batch_Id}'
           - The **_/batch/user/add/{Batch_Id}_** endpoint executes "Add user to a batch" request to add a registered user to a specific batch.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for required parameters 
       summary: Add User to a specific batch
       tags:
       - Course Batch APIs
@@ -225,12 +222,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Adding a user to a specific batch** request was sent. '
+        description: 'The Time Stamp at which the **Add a user to a specific batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
       - name:  x-authenticated-user-token
         in: header
         required: true
@@ -266,8 +263,7 @@ paths:
         This API is associated with fetching and listing existing batches
           - The format of the resource URL is '{{host}}/course/v1/batch/search'
           - The **_/batch/list_** endpoint executes "Lists the existing batches" request to fetch the existing batches.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for required parameters 
       summary: Lists the existing batches
       tags:
       - Course Batch APIs 
@@ -299,12 +295,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Lists the existing batches** request was sent. '
+        description: 'The Time Stamp at which the **List the existing batches** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
       - name:  x-authenticated-user-token
         in: header
         required: true
@@ -339,8 +335,7 @@ paths:
       description: >-
         This API is associated with updating a batch on the Sunbird Platform.
           - The **_/batch/update_** endpoint executes "Update a batch" request to update an existing batch.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for required parameters 
       summary: Course Batch Update
       tags:
       - Course Batch APIs
@@ -376,12 +371,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **update a batch** request was sent. '
+        description: 'The Time Stamp at which the **update a batch** request was sent. '
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
       - name:  x-authenticated-user-token
         in: header
         required: true
