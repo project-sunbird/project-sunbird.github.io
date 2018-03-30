@@ -40,7 +40,7 @@ The tech stack used to develop the Sunbird is as follows:
   - For details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch)
 
 - **Docker** - enables containerization of Sunbird components, making each component independent facilitating innovation, collaboration and co-creation
-  - For details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)*
+  - For details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)
 
 While the installation is automated, it is recommended that you have exposure to the following areas for managing a production grade setup:
 
