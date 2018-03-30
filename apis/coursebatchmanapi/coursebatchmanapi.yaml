@@ -78,7 +78,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'All APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
           description: 'SUCCESS. The **create batch** operation was successful!'
@@ -237,7 +237,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'All APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
           description: 'SUCCESS. The **Add user to a specific batch** operation was successful!'
@@ -310,7 +310,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'All APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
           description: 'SUCCESS. The **Lists the existing batches** operation was successful!'
@@ -386,7 +386,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'All APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
       responses:
         '200':
           description: 'SUCCESS. The **Update a batch** operation was successful!'
