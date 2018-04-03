@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: features-documentation
+directory: features-documentation/mobileapp
 title: Sunbird Mobile App
 page_title: Sunbird Mobile App
 description: About functions and features of Sunbird Mobile App. 
