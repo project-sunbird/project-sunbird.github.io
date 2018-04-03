@@ -31,13 +31,15 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
   <tr>
     <th style="width:35%;">Prerequisites</th>
     <th style="width:35%;">Screen</th>
+    <th style="width:35%;">Screen</th>
   </tr>
   <tr>
     <td> <li>You are registered in Sunbird as a user</li>
       <li>You have Android OS 5.0 and above on your device</li>
       <li>You have downloaded <b>Beta by Crashlytics</b> from the APK received</li>
     </td>
-      <td><img src="pages/features-documentation/images/mobileapp/betacrashlytics.png"></td>
+    <td><img src="pages/features-documentation/images/mobileapp/betacrashlytics.png"></td>
+    <td><img src="pages/features-documentation/images/mobileapp/betacrashlytics.png"></td>
   </tr>
     </table>
  
