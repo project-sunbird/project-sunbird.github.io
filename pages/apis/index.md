@@ -57,6 +57,7 @@ They are categorized by resource type. Each resource type has one or more data r
         <h3>Data API(s)</h3>
         <ul>
             <li><a href="apis/datasyncapi/">Data Sync </a></li>
-            <li><a href="apis/metricsapi/">Metrics </a></li> 
+            <li><a href="apis/metricsapi/">Metrics </a></li>
+            li><a href="apis/dataexhaustapi/">Data Exhaust</a></li>
         </ul>
     </div>
