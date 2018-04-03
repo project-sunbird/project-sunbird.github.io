@@ -3,7 +3,7 @@ type: landing
 directory: features-documentation
 title: Sunbird Mobile App
 page_title: Sunbird Mobile App
-description: Functional features of Mobile App. How users can consume differents resources using Sunbird Mobile App
+description: About functions and features of Sunbird Mobile App. 
 published: true
 allowSearch: true
 ---
