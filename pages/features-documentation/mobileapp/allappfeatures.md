@@ -29,16 +29,35 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
 
 **Prerequisites**
 
-* You are registered in Sunbird as a user
+* You are a registered user of Sunbird
 * You have Android OS 5.0 and above on your device
 * You have downloaded <b>Beta by Crashlytics</b> from the APK received
+
+**Downloading Beta by Crashlytics**
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+   <tr>
+    <td>APK is sent to you over email. Before, installing the latest version of the Sunbird Mobile App, you can download <b>Beta by Crashlytics</b> from the apk. Follow the steps to download <b>Beta by Crashlytics</b> <br>1. Tap on <b>Download</b> to download <b>Beta by Crashlytics</b>. You will be directed to another screen <br>2. Click <b>Open</b> to open Beta Crashlytics. On tapping this you will be redirected to Sunbird App installation screen </td>
+    <td><img src="pages/features-documentation/images/mobileapp/betacrashlytics.png"></td>
+  </tr>
+ </table>
  
+ **Installing Sunbird Mobile App**
  
-
-#### Installing Sunbird Mobile App from Beta Crashlytics
-
-
-
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>1. Click <b>Install</b> to install the Sunbird Mobile App <br>2. You will be redirected to another screen. Click <b>Allow</b> to allow Sunbird Mobile App to access required data from your mobile device <br><b>Note:</b><li>You can either <b>Allow</b> or <b>Deny</b> permission to Sunbird app to access follwing data: <li>Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li>
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/installapp.png"></td>
+  </table>
 
 ### Login 
 
