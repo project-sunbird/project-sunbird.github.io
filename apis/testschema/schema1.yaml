@@ -1,0 +1,91 @@
+definitions:
+  CreateContentrequest:
+    title: Create ContentRequest
+    example:
+      request:
+        content:
+          visibility: Default
+          status: Draft
+          contentType: Story
+          code: test_cwp_3
+          osId: org.ekstep.quiz.app
+          languageCode: hi
+          name: Test Content
+          description: Test Content
+          language:
+            - Hindi
+          createdFor:
+            - 12297427021119488000
+          createdBy: 89cf1a7e-dfd3-46c9-a428-d37e9a2bc001
+          mimeType: application/vnd.ekstep.ecml-archive
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request26'
+    required:
+      - request
+  Request26:
+    title: Request26
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/Content27'
+    required:
+      - content
+  Content27:
+    title: Content27
+    type: object
+    properties:
+      visibility:
+        description: ''
+        type: string
+      status:
+        description: ''
+        type: string
+      contentType:
+        description: ''
+        type: string
+      code:
+        description: ''
+        type: string
+      osId:
+        description: ''
+        type: string
+      languageCode:
+        description: ''
+        type: string
+      name:
+        description: ''
+        type: string
+      description:
+        description: ''
+        type: string
+      language:
+        description: ''
+        type: array
+        items:
+          type: string
+      createdFor:
+        description: ''
+        type: array
+        items:
+          type: string
+      createdBy:
+        description: ''
+        type: string
+      mimeType:
+        description: ''
+        type: string
+    required:
+      - visibility
+      - status
+      - contentType
+      - code
+      - osId
+      - languageCode
+      - name
+      - description
+      - language
+      - createdFor
+      - createdBy
+      - mimeType

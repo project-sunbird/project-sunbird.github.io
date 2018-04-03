@@ -38,14 +38,14 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
+      - name: request
         in: body
         required: true
         description: >-
             The body refers to the format of the request.
               - The body contains metadata about the user to be created.
         schema:
-          $ref: '#/definitions/CreateUserrequest'
+           $ref: '#/definitions/CreateUserrequest'
       - name: Content-Type
         in: header
         required: true
@@ -69,15 +69,19 @@ paths:
         '200':
           description: 'OK ! Successful operation."Create User" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/UserCreateResponse'
         '400':
           description: 'BAD REQUEST. The "Create User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found. The "Create User" operation failed ! The possible reason for failure is the requested resource is not available.' 
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
       security:
       - auth: []
       x-unitTests: []
@@ -100,11 +104,11 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
+      - name: request
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
+           Search the user based on different user attributes, particular attribute need to be passed insdie filters
               - The body contains metadata about the user to be fetched.
         schema:
           $ref: '#/definitions/SearchUserrequest'
@@ -136,15 +140,19 @@ paths:
         '200':
           description: 'OK ! Successful operation."Search User" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/SearchUserResponse'
         '400':
           description: 'BAD REQUEST. The "Search User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found. requested resource not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
       security:
       - auth: []
       x-unitTests:
@@ -160,7 +168,7 @@ paths:
             {
                 "request": {
                     "filters":{
-                      "provider": ["apekx"]
+                      "userAttribute": ["channel value"]
                     },
                     "limit": 500
                 }
@@ -195,11 +203,11 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
+      - name: request
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
+           login id value will be username@provider, while creating user if you haven't provide provider then your login id would be same as username
               - The body contains metadata about the user profile to be fetched using Login Id.
         schema:
           $ref: '#/definitions/GetUserByLoginIdrequest'
@@ -231,15 +239,19 @@ paths:
         '200':
           description: 'OK ! Successful operation."Fetching User profile" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/CreateUserSingleResp'
         '400':
           description: 'BAD REQUEST,"Fetching User profile" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found,requested resource not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'   
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
       security:
       - auth: []
       x-unitTests:
@@ -279,7 +291,7 @@ paths:
         name: User_Id
         type: string
         required: true
-        description: 'Please append a valid User Id To the Request URL'   
+        description: 'Please append a valid User Id To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic'   
     get:
       description: >-
         This API is associated with searching user on the Sunbird Platform.
@@ -321,15 +333,19 @@ paths:
         '200':
           description: 'OK ! Successful operation."Get User by Id" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/CreateUserSingleResp'
         '400':
           description: 'BAD REQUEST,"Get User by Id" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'   
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
       security:
       - auth: []
       x-unitTests:
@@ -407,15 +423,19 @@ paths:
         '200':
           description: 'OK ! Successful operation."Update User" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/UserCreateResponse'
         '400':
           description: 'BAD REQUEST. The "Update User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found. The "Update User" operation failed ! The possible reason for failure is that requested resource not found. here resource is user.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
       security:
       - auth: []
       x-unitTests: []
@@ -424,117 +444,19 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /badges/add:
-    post:
-      description: >-
-       This API is associated with adding badges to a user on the Sunbird Platform.
-          - The **_/badges/add_** endpoint executes the "add badges to user" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters marked with *.
-          - Mandatory fields cannot be null or empty.
-      summary: Add badges to user
-      tags:
-      - User APIs
-      operationId: add badges to user
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: >-
-          The body refers to the format of the request.
-            - The body contains metadata about badges to be added to a user. 
-        schema:
-          $ref: '#/definitions/AddBadgesToUserrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-          The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: ts
-        in: header
-        required: true
-        type: string
-        description: 'Time Stamp at which **Add badges to user** request was sent.'
-      - name: X-msgid
-        in: header
-        required: true
-        type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
-      - name: X-Device-ID
-        in: header
-        required: true
-        type: string
-        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
-      - name: x-authenticated-user-token
-        in: header
-        required: true
-        type: string
-        description: 'The Registered User ID to execute the API.'
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."Add badges to user" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "Add badges to user" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /v1/user/badges/add
-          headers:
-            Content-Type: application/json
-            X-Consumer-ID: X-Consumer-ID
-            ts: 2017-05-25 10:18:56:578+0530
-            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
-            X-Device-ID: X-Device-ID
-            x-authenticated-user-token: e9280b815c0e41972bf754e9409b66d778b8e11bb91844892869a1e828d7d2f2a
-            Authorization: Bearer {{api-key}}
-          body: "{\r\n \"params\": { },\r\n    \"request\":{                 \r\n      \"badgeTypeId\": \"123343444\",\r\n    \"receiverId\" :\"5de6b1af-82c3-4f1b-afef-007db7390841\"\r\n      \r\n    }\r\n } "
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: add badges to user
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
+
  /update/logintime:
     patch:
       description: >-
-       This API is associated with resetting a forgotten password on the Sunbird Platform.
-          - The **_/forgotpassword_** endpoint executes the "forgot password" request based on parameters provided as metadata in the request body.
+         this api will update user login time to sunbird env. this api need to be call
+         after successful login from portal or app. User login is handle by SSO(KeyCloak) , so Sunbir won't know any thing about user login time, that's why user need to make this api call after success login 
           - The format of the request URL is:  {{host}}/v1/user/updatelogin
           - It is mandatory to provide values for parameters marked with *.
           - Mandatory fields cannot be null or empty.
       summary: Adds Users Current  Login Time
       tags:
       - User APIs
-      operationId: '{{host}}/v1/user/updatelogin'
+      operationId: '{{host}}/user/v1/updatelogin'
       produces:
       - application/json
       parameters:
@@ -566,11 +488,7 @@ paths:
         required: true
         type: string
         description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
-      - name: X-Device-ID
-        in: header
-        required: true
-        type: string
-        description: 'This Id Uniquely identifies the type of device (Mobile)(desktop) used to access Sunbird.'
+
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -585,13 +503,20 @@ paths:
         '200':
           description: 'OK ! Successful operation."Login Time" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/UserCreateResponse'
         '400':
           description: 'BAD REQUEST. The "Login Time" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'   
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+            
       security:
       - auth: []
       x-unitTests:
@@ -606,7 +531,7 @@ paths:
             X-Device-ID: X-Device-ID
             Authorization: Bearer {{api-key}}
             x-authenticated-user-token: 
-          body: "{\r\n \"params\": { },\r\n    \"request\":{   \r\n      \"userId\":\"9b679965-c38a-4099-a9e8-9ca89e20eab3\"\r\n    }\r\n}"
+          body: "{\r\n \"params\": { },\r\n    \"request\":{   \r\n      \"userId\":\"{userid}\"\r\n    }\r\n}"
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -616,7 +541,6 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: '{{host}}/v1/user/updatelogin'
         x-testDescription: Add user current login time
       x-operation-settings:
         CollectParameters: false
@@ -626,7 +550,7 @@ paths:
  /role/read:
     get:
       description:  >-
-       This API is associated with fetching the role assigned to a user on the Sunbird Platform.
+       This API will provide list of available roles inside sunbird.
           - The **_/role/read_** endpoint executes the "read role" request based on parameters provided as metadata in the request body.
           - The format of the request URL is:  {{host}}/data/v1/role/read
           - It is mandatory to provide values for parameters required fields.
@@ -672,13 +596,20 @@ paths:
         '200':
           description: 'OK ! Successful operation."fetch user information" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/RolesResponse'
         '400':
           description: 'BAD REQUEST. The "fetch user information" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+            
       security:
       - auth: []
       x-unitTests:
@@ -708,7 +639,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /user/profile/visibility:
+ /profile/visibility:
     post:
       description:  >-
        This API is associated with configuring the visibility of user profiles  on the Sunbird Platform.
@@ -723,7 +654,7 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
+      - name: request
         in: body
         required: true
         description: >-
@@ -765,19 +696,25 @@ paths:
         '200':
           description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/UserCreateResponse'
         '400':
           description: 'BAD REQUEST. The "user profile visibilty" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found, "user profile visibilty" operation failed ! The possible reason for failure is requested user id not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'  
       security:
       - auth: []
       x-unitTests:
       - request:
           method: POST
-          uri: /v1/user/profile/visibility
+          uri: /user/v1/profile/visibility
           headers:
             Content-Type: application/json
             X-Consumer-ID: X-Consumer-ID
@@ -795,19 +732,219 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: '{{host}}/v1/user/profile/visibility'
+        x-testName: '{{host}}/user/v1/profile/visibility'
         x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  
+ /block:
+    post:
+      description:  >-
+       This api will do soft delete of user from sunbir.
+          - The format of the request URL is:  '{{host}}/user/v1/block'
+          - It is mandatory to provide values for parameters required fields.
+          - Mandatory fields cannot be null or empty.
+      summary: Block user
+      tags:
+      - User APIs
+      operationId: userBlock
+      produces:
+      - application/json
+      parameters:
+      - name: request
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for user.
+        schema:
+          $ref: '#/definitions/blockUserReq'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **user profile visibilty** request was sent'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/UserCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "user profile visibilty" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found, "user profile visibilty" operation failed ! The possible reason for failure is requested user id not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'  
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /user/v1/block
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: "{\"request\":{\n  \"userId\":\"userid\"}}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ 
+ /unblock:
+    post:
+      description:  >-
+       This api will make deleted user back to system.
+          - The format of the request URL is:  '{{host}}/user/v1/unblock'
+          - It is mandatory to provide values for parameters required fields.
+          - Mandatory fields cannot be null or empty.
+      summary: unblock user
+      tags:
+      - User APIs
+      operationId: make deleted user active
+      produces:
+      - application/json
+      parameters:
+      - name: request
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the request for user.
+        schema:
+          $ref: '#/definitions/blockUserReq'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: 'Time Stamp at which **user profile visibilty** request was sent'
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        '200':
+          description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/UserCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "user profile visibilty" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found, "user profile visibilty" operation failed ! The possible reason for failure is requested user id not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'  
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /user/v1/unblock
+          headers:
+            Content-Type: application/json
+            X-Consumer-ID: X-Consumer-ID
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: "{\"request\":{\n  \"userId\":\"userid\"}}"
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false  
+         
  /org/v1/role/assign:
     post:
       description:  >-
        This API is associated with assigning roles to a user on the Sunbird Platform.
+       if user pass the userId and roles then role will be assign insdie user profile directly. in case user passess userId, organisationId and roles then roles will be assign org for that user.
           - The **_/org/v1/role/assign_** endpoint executes the "read role" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is:  {'{{host}}/user/v1/role/assign'
+          - The format of the request URL is:  {'{{host}}/org/v1/role/assign'
           - It is mandatory to provide values for parameters required fields.
           - Mandatory fields cannot be null or empty.
       summary: Assign Role to a User
@@ -817,11 +954,11 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: Body
+      - name: request
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
+             Assign roles is accepting userId, orgId and roles. if user pass only userId and roels then role will be directly assign under user profile, if user is passing all three values then roles will be assign under org.
               - The body contains metadata about the request for assigning roles to user.
         schema:
           $ref: '#/definitions/{{host}}~1user~1v1~1role~1assignrequest'
@@ -859,38 +996,21 @@ paths:
         '200':
           description: 'OK ! Successful operation."assign role" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/UserCreateResponse'
         '400':
           description: 'BAD REQUEST. The "assign role" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'Resource not found'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'   
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'   
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /org/v1/role/assign
-          headers:
-            Content-Type: application/json
-            X-Consumer-ID: X-Consumer-ID
-            ts: 2017-05-25 10:18:56:578+0530
-            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
-            Authorization: Bearer {{api-key}}
-            x-authenticated-user-token: '{{user-token}}'
-          body: '{"request":{"userId":"userId","organisationId":"orgId","roles":["CONTENT_CREATION","PUBLIC","CONTENT_CREATOR","ANNOUNCEMENT_SENDER"]}}'
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: '{{host}}/user/v1/role/assign'
-        x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -945,36 +1065,18 @@ paths:
         '200':
           description: 'OK ! Successful operation."Encrypt User Information" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/UserCreateResponse'
         '400':
           description: 'BAD REQUEST. The "Encrypt User Information" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+            
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /encrypt
-          headers:
-            Content-Type: application/json
-            ts: 2017-05-25 10:18:56:578+0530
-            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
-            x-authenticated-user-token: '{{user-token}}'
-            Authorization: Bearer {{api-key}}
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: '{{host}}data/v1/user/encrypt'
-        x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -1036,13 +1138,15 @@ paths:
         '200':
           description: 'OK ! Successful operation."add user skills" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/UserCreateResponse'
         '400':
           description: 'BAD REQUEST. The "add user skills" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
       security:
       - auth: []
       x-unitTests:
@@ -1062,7 +1166,7 @@ paths:
 
                   "endorsedUserId":"userId",
 
-                  "skillName":"ElasticSearch"
+                  "skillName":["ElasticSearch"]
 
             }
 
@@ -1083,6 +1187,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+        
  /data/v1/skills:
     get:
       description: >-
@@ -1131,13 +1236,16 @@ paths:
         '200':
           description: 'OK ! Successful operation."list user skills" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/skillsResp'
         '400':
           description: 'BAD REQUEST. The "list user skills" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/UserErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+            
       security:
       - auth: []
       x-unitTests:
@@ -1166,94 +1274,177 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+        
+
 definitions:
   CreateUserrequest:
-    title: Create UserRequest
+    description: User object
     type: object
-    properties:
+    allOf:
+       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+       - $ref: '#/definitions/CreateUserSingleResp'
+
+  CreateUserSingleResp:
+   description: this will hold single userObject
+   type: object
+   properties:
       request:
-        $ref: '#/definitions/Request'
-    required:
-      - request
-  Request:
-    title: Request
+       type: object
+       $ref: '#/definitions/User'
+ 
+  RolesResponse:
+   description: this will hold roles api response
+   type: array
+   items:
     type: object
     properties:
-      firstName:
-        description: ''
-        type: string
-      lastName:
-        description: ''
-        type: string
-      password:
-        description: ''
-        type: string
-      provider:
-        description: ''
-        type: string
-      email:
-        description: ''
-        type: string
-      userName:
-        description: ''
-        type: string
-      phone:
-        description: ''
-        type: string
-      gender:
-        description: ''
-        type: string
-      rootOrgId:
-        description: ''
-        type: string
-      avatar:
-        description: ''
-        type: string
-      dob:
-        description: 'YYYY-MM-dd'
-        type: string
-      language:
-        description: ''
-        type: array
-        items:
+     roles:
+       type: object
+       $ref: '#/definitions/Role'
+  
+  Role:
+    description: this will contains one role object
+    type: array
+    items:
+     type: object
+     properties:
+      actionGroups:
+        type: object
+        properties:
+         name:
           type: string
-      subject:
-        description: ''
-        type: array
-        items:
+         id:
           type: string
-      address:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/Address'
-      education:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/Education'
-      jobProfile:
-        description: ''
-        type: array
-        items:
-          $ref: '#/definitions/JobProfile'
+         actions:
+          type: array
+          items:
+           type: object
+           properties:
+            urls:
+             type: array
+             items:
+              type: string
+  
+  blockUserReq:
+    description: request body for block user
+    type: object
+    properties:
+     request:
+      type: object
+      properties:
+       userId:
+        type: string  
+        description: userId 
+    
+  
+  skillsResp:
+   description: contains list of skills
+   type: object
+   properties:
+     skills:
+      type: object
+      $ref: '#/definitions/Skills' 
+     
+     
+  Skills:
+    description: contains skills details
+    type: array
+    items:
+      type: string
+       
+    
+    
+  User:
+    title: user object
+    type: object
+    properties:
+          id:
+            type: string
+          email:
+            type: string
+            description: 'in create user either email or phone is mandatory'
+          firstName:
+            type: string
+          lastName:
+            type: string
+          password:
+            type: string
+          avatar:
+            type: string
+          language:
+            type: array
+            items:
+             type: string
+             description: any know language by user
+          gender:
+            type: string
+          phone:
+            type: string
+          phoneVerified:
+            type: boolean
+            description: 'this key is required with value as true , if user is pass phone value and provider both. in create user either email or phone is required.'
+          status:
+            type: integer
+            format: int32
+            description: user status 
+          loginId:
+                type: string
+                description: loginid will be generated by system based on your username and provider value. if user is passing only username then login id will be same as username , if user is passing username and provider both then login id would be username@provider. it will make same user to work with different provider based on loginId
+          subject:
+            type: array
+            items:
+             type: string
+          roles:
+            type: array
+            items: 
+             type: string
+             description: user roles independent to any org. api won't access roles param. even if user pass the roles api(create or update ) will ignore it.  
+          provider:
+            type: string
+            description: 'value of channel, that you can get while creating rootOrg'
+          profileSummary:
+            type: string
+          userName:
+            type: string
+          rootOrgId:
+            type: string
+            description: 'id of the rootorg'
+          dob:
+            type: string
+            format: yyyy-MM-dd  
+          grade:
+            type: string
+          location:
+            type: string
+            description: 'current location of user'
+          education:
+            type: object
+            $ref: "#/definitions/Education"
+          profileVisibility:
+            type: object
+            description: it will be a map having key as any user attribute and value can be public or private. 
+          address: 
+            type: object
+            $ref: "#/definitions/Address"
+            description: it will contains list of address object.
+          jobProfile:
+            type: object
+            $ref: "#/definitions/JobProfile"
+          webPages:
+            type: object
+            properties:
+              type:
+                type: string
+              url:
+                type: string
     required:
       - firstName
       - lastName
       - password
-      - provider
       - email
       - userName
       - phone
-      - gender
-      - rootOrgId
-      - avatar
-      - dob
-      - language
-      - subject
-      - address
-      - education
-      - jobProfile
+
   Address:
     title: Address
     type: object
@@ -1279,82 +1470,55 @@ definitions:
     required:
       - addType
       - addressLine1
-      - addressLine2
       - city
       - state
-      - zipCode
+
   Education:
     title: Education
     type: object
     properties:
       degree:
-        description: ''
+        description: 'name of degree'
         type: string
       yearOfPassing:
-        description: ''
+        description: 'year of passing 2007'
         type: integer
         format: int32
-      name:
-        description: ''
+      courseName:
+        description: 'name of the course'
         type: string
       boardOrUniversity:
-        description: ''
+        description: 'name of board or university'
         type: string
       address:
-        $ref: '#/definitions/Address4'
+        $ref: '#/definitions/Address'
       percentage:
         description: ''
         type: number
         format: double
       grade:
-        description: ''
+        description: 'grade name'
         type: string
     required:
       - degree
-      - yearOfPassing
       - name
       - boardOrUniversity
-      - address
-  Address4:
-    title: Address4
-    type: object
-    properties:
-      addressLine1:
-        description: ''
-        type: string
-      addressLine2:
-        description: ''
-        type: string
-      city:
-        description: ''
-        type: string
-      state:
-        description: ''
-        type: string
-      zipCode:
-        description: ''
-        type: string
-    required:
-      - addressLine1
-      - addressLine2
-      - city
-      - state
-      - zipCode
+
   JobProfile:
     title: JobProfile
     type: object
     properties:
       jobName:
-        description: ''
+        description: 'name of the job'
         type: string
       role:
-        description: ''
+        description: 'on whcih position inside the org'
         type: string
       joiningDate:
-        description: ''
+        description: 'job joining date yyyy-MM-dd'
         type: string
       endDate:
-        description: ''
+        description: 'end date of the job yyyy-MM-dd'
         type: string
       orgId:
         description: ''
@@ -1368,25 +1532,22 @@ definitions:
         items:
           type: string
       address:
-        $ref: '#/definitions/Address4'
+        $ref: '#/definitions/Address'
     required:
       - jobName
       - role
       - joiningDate
-      - endDate
-      - orgId
       - orgName
-      - subject
-      - address
+      
   GetUserByLoginIdrequest:
     title: Get User by Login IdRequest
-    example:
-      request:
-        loginId: test_apis_2@sunbird-integrator-test.org
+
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request50'
+       allOf:
+        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+        - $ref: '#/definitions/Request50'
     required:
       - request
   Request50:
@@ -1394,22 +1555,25 @@ definitions:
     type: object
     properties:
       loginId:
-        description: ''
+        description: 'user login id . value will be username@provider if user is created by providing username and provider both then login id would be username@provider , if user is created without provider then loginId would be username itself.'
         type: string
     required:
       - loginId
+      
   SearchUserrequest:
     title: Search UserRequest
     example:
       request:
         filters:
-          provider:
-          - apekx
+          userAttribute:
+          - value of user attribute
         limit: 500
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request18'
+       allOf:
+        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+        - $ref: '#/definitions/Request18'
     required:
     - request
   Request18:
@@ -1424,24 +1588,27 @@ definitions:
         format: int32
     required:
     - filters
-    - limit
+
   Filters:
     title: Filters
     type: object
     properties:
-      provider:
-        description: ''
+      userAttribute:
+        description: 'userAttribute can be any attribute of user. for single attribute pass string only , if user want to get response based on same key multiple value then pass values as an array. inside filter user can pass multiple attribute with multiple values'
         type: array
         items:
           type: string
     required:
-    - provider
+    - userAttribute
+    
   UpdateUserrequest:
     title: Update UserRequest
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request74'
+       allOf:
+        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+        - $ref: '#/definitions/Request74'
     required:
     - request
   Request74:
@@ -1449,7 +1616,7 @@ definitions:
     type: object
     properties:
       userId:
-        description: ''
+        description: 'id of the user'
         type: string
       firstName:
         description: ''
@@ -1460,16 +1627,10 @@ definitions:
       gender:
         description: ''
         type: string
-      rootOrgId:
-        description: ''
-        type: string
       avatar:
         description: ''
         type: string
       dob:
-        description: ''
-        type: string
-      aadhaarNo:
         description: ''
         type: string
       language:
@@ -1483,65 +1644,44 @@ definitions:
         items:
           type: string
     required:
-    - userId
-    - firstName
-    - lastName
-    - gender
-    - rootOrgId
-    - avatar
-    - dob
-    - aadhaarNo
-    - language
-    - subject
-  ResultWithNodeId:
-    title: Result Containing Node Id
+    - userId    
+  ResultStatus:
+    description: node id description
+    type: object
+    properties:
+      status:
+       type: string
+       description: success or failure
+          
+  ResultWithEmptyBody:
+    title: Result Containing empty body
     type: object
     properties:
       result:
-        $ref: '#/definitions/NodeId'
-  ContentCreateResponse:
+        $ref: '#/definitions/ResultStatus'
+  
+  SearchUserResponse:
+     description: search user response
+     type: object
+     properties:
+       response:
+        type: object
+        properties:
+         count:
+          type: integer
+         content:  
+           type: array
+           items:
+            type: object
+            $ref: '#/definitions/User'
+        
+  UserCreateResponse:
     description: Create Content Response
     type: object
     allOf:
-      - $ref: '#/definitions/ResultWithNodeId'
-      - $ref: '#/definitions/ResponseHeader'
-  ResponseHeader:
-    title: ResponseHeader
-    type: object
-    properties:
-      id:
-        type: string
-        description: API Identifier
-      ver:
-        type: string
-        description: API version information
-      ts:
-        type: string
-        description: API execution timespan
-      params:
-        $ref: '#/definitions/ResponseParams'
-      responseCode:
-        type: object
-        description: 'API response code '
-  ResponseParams:
-    title: Response Parameter
-    type: object
-    properties:
-      resmsgid:
-        type: string
-        description: Response Message Id
-      msgid:
-        type: string
-        description: Message Id
-      err:
-        type: string
-        description: Error Code
-      status:
-        type: string
-        description: Response Status
-      errmsg:
-        type: string
-        description: Error Message
+      - $ref: '#/definitions/ResultWithEmptyBody'
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+
   EmptyResult:
     title: Empty Result
     type: object
@@ -1549,115 +1689,14 @@ definitions:
       result:
         type: object
         description: Empty Result
-  NodeId:
-    title: Node Id
-    type: object
-    properties:
-      node_id:
-        type: string
-        description: Node Identifier
-  ContentCreateErrorResponse:
+        
+  UserErrorResponse:
     title: Create Content Error Response
     type: object
     allOf:
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
       - $ref: '#/definitions/EmptyResult'
-      - $ref: '#/definitions/ResponseHeader'
-  AddBadgesToUserrequest:
-    title: add badges to userRequest
-    example:
-      params: {}
-      request:
-        badgeTypeId: 123343444
-        receiverId: 5de6b1af-82c3-4f1b-afef-007db7390841
-    type: object
-    properties:
-      params:
-        description: ''
-        type: object
-      request:
-        $ref: '#/definitions/Request14'
-    required:
-    - params
-    - request
-  Request14:
-    title: Request14
-    type: object
-    properties:
-      badgeTypeId:
-        description: ''
-        type: string
-      receiverId:
-        description: ''
-        type: string
-    required:
-    - badgeTypeId
-    - receiverId
-  '{{host}}/user/v1/searchrequest':
-    title: '{{host}}/user/v1/searchRequest'
-    example:
-      id: unique API ID
-      ts: 2013/10/15 16:16:39
-      params: {}
-      request:
-        query: ntp
-        filters: {}
-        offset: 0
-        limit: 300
-        sort_by:
-          createdDate: desc
-    type: object
-    properties:
-      id:
-        description: ''
-        type: string
-      ts:
-        description: ''
-        type: string
-      params:
-        description: ''
-        type: object
-      request:
-        $ref: '#/definitions/Request16'
-    required:
-    - id
-    - ts
-    - params
-    - request
-  Request16:
-    title: Request16
-    type: object
-    properties:
-      query:
-        description: ''
-        type: string
-      filters:
-        description: ''
-        type: object
-      offset:
-        description: ''
-        type: integer
-        format: int32
-      limit:
-        description: ''
-        type: integer
-        format: int32
-      sort_by:
-        $ref: '#/definitions/SortBy'
-    required:
-    - query
-    - filters
-    - offset
-    - limit
-    - sort_by
-  SortBy:
-    title: SortBy
-    type: object
-    properties:
-      createdDate:
-        description: ''
-        type: string
-    required:
-    - createdDat
+      
   '{{host}}/v1/user/updateloginrequest':
     title: '{{host}}/v1/user/updateloginRequest'
     example:
@@ -1744,6 +1783,7 @@ definitions:
     - userId
     - private
     - public
+ 
   '{{host}}/user/v1/role/assignrequest':
     title: '{{host}}/user/v1/role/assignRequest'
     example:
@@ -1758,19 +1798,11 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request4'
-        example:
-          userId: userid
-          organisationId: 0123653943740170242
-          roles:
-          - CONTENT_CREATION
-          - PUBLIC
-          - CONTENT_CREATOR
-          - ANNOUNCEMENT_SENDER
+        $ref: '#/definitions/assignRoleExp'
     required:
     - request
-  Request4:
-    title: Request4
+  assignRoleExp:
+    title: assignRoleExp
     example:
       userId: userid
       organisationId: 0123653943740170242
@@ -1803,60 +1835,19 @@ definitions:
     - userId
     - organisationId
     - roles
-  Request6:
-    title: Request6
-    example:
-      userName: manzarul1.haque@taren.com
-      source: web
-      password: password
-    type: object
-    properties:
-      userName:
-        description: ''
-        example: manzarul1.haque@taren.com
-        type: string
-      source:
-        description: ''
-        example: web
-        type: string
-      password:
-        description: ''
-        example: password
-        type: string
-    required:
-    - userName
-    - source
-    - password
+    
   AddSkillToUserrequest:
     title: add skill to userRequest
-    example:
-      request:
-        endorsedUserId: userId
-        skillName: ElasticSearch
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request'
-        example:
-          endorsedUserId: userId
-          skillName: ElasticSearch
+       type: object
+       properties:
+         endorsedUserId:
+          type: string
+         skillName:
+          type: array
+          items:
+           type: string
     required:
     - request
-  Request101:
-    title: Request101
-    example:
-      endorsedUserId: userId
-      skillName: ElasticSearch
-    type: object
-    properties:
-      endorsedUserId:
-        description: ''
-        example: userId
-        type: string
-      skillName:
-        description: ''
-        example: ElasticSearch
-        type: string
-    required:
-    - endorsedUserId
-    - skillName

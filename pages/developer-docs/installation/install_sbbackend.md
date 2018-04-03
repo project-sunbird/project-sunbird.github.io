@@ -68,12 +68,12 @@ Next section details about setting up the Elastic search on your local machine.
   3. Run the following curl command
 
 <pre>
-              curl -X PUT \
-              http://localhost:9200/searchindex/org/ORG_001 \
-              -H 'cache-control: no-cache' \
-              -H 'content-type: application/json' \
-              -H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' \
-              -d '{}'
+curl -X PUT \
+http://localhost:9200/searchindex/org/ORG_001 \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/json' \
+-H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' \
+-d '{}'
 </pre>     
 
 Next section details about setting up the Keycloak on your local machine.
@@ -96,22 +96,18 @@ Next section details about setting up the Keycloak on your local machine.
 
 To run Sunbird services, you need to set the following environment variables:
 
-
-| variable                              | description                                                                                                 |
-|---------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| sunbird_cassandra_host                | host running the Cassandra server                                                                           |
-| sunbird_cassandra_port                | port on which Cassandra server is running                                                                   |
-| sunbird_cassandra_username (optional) | username for Cassandra database, if authentication is enabled                                               |
-| sunbird_cassandra_password (optional) | password for Cassandra database, if authentication is enabled                                               |
-| sunbird_es_host                       | host running the Elastic search server                                                                       |
-| sunbird_es_port                       | port on which Elastic search server is running                                                               |
-| sunbird_es_cluster (optional)         | name of the Elastic search cluster                                                                           |
-| sunbird_learner_actor_host            | host running for learner actor                                                                              |
-| sunbird_learner_actor_port            | port on which learner actor is running                                                                      |
-                                                                                 |
-=======
-| sunbird_sso_url                       | URL for keycloak server (Example : **http://localhost:8080/auth** )                                                                                    |
-
+| variable                              | description                                                         |
+|---------------------------------------|---------------------------------------------------------------------|
+| sunbird_cassandra_host                | host running the Cassandra server                                   |
+| sunbird_cassandra_port                | port on which Cassandra server is running                           |
+| sunbird_cassandra_username (optional) | username for Cassandra database, if authentication is enabled       |
+| sunbird_cassandra_password (optional) | password for Cassandra database, if authentication is enabled       |
+| sunbird_es_host                       | host running the Elastic search server                              |
+| sunbird_es_port                       | port on which Elastic search server is running                      |
+| sunbird_es_cluster (optional)         | name of the Elastic search cluster                                  |
+| sunbird_learner_actor_host            | host running for learner actor                                      |
+| sunbird_learner_actor_port            | port on which learner actor is running                              |
+| sunbird_sso_url                       | URL for keycloak server (Example : **http://localhost:8080/auth** ) |
 | sunbird_sso_realm                     | keycloak realm name   (use default realm as master or you can create new realm)                                                                                      |
 | sunbird_sso_username                  | keycloak user name                                                                                          |
 | sunbird_sso_password                  | keycloak password                                                                                           |
@@ -124,26 +120,25 @@ To run Sunbird services, you need to set the following environment variables:
 | sunbird_pg_db                         | Postgres db name                                                                                            |
 | sunbird_pg_user                       | Postgres db user name                                                                                       |
 | sunbird_pg_password                   | Postgress db password                                                                                       |
-| sunbird_installation                  |                                                                                                             |
-| ekstep_api_base_url                   |                                                                                                             |
+| sunbird_installation                  | sunbird                                                                                                            |
+| ekstep_api_base_url                   | https://dev.ekstep.in/api                                                                                                             |
 | sunbird_mail_server_host              |                                                                                                             |
 | sunbird_mail_server_port              |                                                                                                             |
 | sunbird_mail_server_username          |                                                                                                             |
 | sunbird_mail_server_password          |                                                                                                             |
-| sunbird_mail_server_from_email        |                                                                                                             |
+| sunbird_mail_server_from_email        | support@open-sunbird.org                                                                                                            |
 | sunbird_account_name                  | account name of azure blob storage                                                                          |
 | sunbird_account_key                   | Azure blob storage account key                                                                              |
 | sunbird_quartz_mode                   | put this value {"embedded" to run quartz without any database, "any other value" to run with postgres db } |
 | sunbird_encryption_key                |                                                                                                             |
 | sunbird_encryption_mode               | mode value is either local or remote                                                                        |
-| sunbird_sso_publickey                 | SSO public key                                                                                              |
-
+| sunbird_sso_publickey                 | SSO public key                                                                                             |
 | sunbird_env_logo_url                  | logo URL for sending email.(http://www.paramountias.com/media/images/current-affairs/sunbird-portal.jpg)     |
-| sunird_web_url                        | web page URL                                                                                               |
-
-| sunbird_app_url                       | Play store URL to download the app                                                                          |
+| sunird_web_url                        | web page URL                                                                                              |
+| sunbird_app_url                       | Play store URL to download the app                                                                        |
 | sunbird_msg_91_auth                   | msg 91 auth  
-  sunbird_msg_sender                     | message sender name        
+  sunbird_msg_sender                     | message sender name  
+      
 
 The table mentions all the environment variables with description. Add or edit the environment variables in their appropriate locations.
 
@@ -151,27 +146,27 @@ The table mentions all the environment variables with description. Add or edit t
 
 ### Setting Environment Variables
 
-To run sunbird backend services, at least you need to set the following environment variables. Set the environment variables at appropriate locations.
+To run sunbird backend services, at least you need to set the following environment variables. Ensure that you set the environment variables at appropriate locations.
 
 <pre>
-          1. sunbird_cassandra_host
-          2. sunbird_cassandra_port
-          3. sunbird_cassandra_username 
-          4. sunbird_cassandra_password 
-          5. sunbird_es_host
-          6. sunbird_es_port
-          7. sunbird_learner_actor_host
-          8. sunbird_learner_actor_port
-          9. sunbird_sso_url
-          10. sunbird_sso_realm
-          11. sunbird_sso_username
-          12. sunbird_sso_password
-          13. sunbird_sso_client_id
-          14. ekstep_content_search_base_url
-          15. ekstep_authorization
-          16. sunbird_installation : name of in which environment you running this application or instance name
-          17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
-          18. sunbird_sso_publickey
+1. sunbird_cassandra_host
+2. sunbird_cassandra_port
+3. sunbird_cassandra_username 
+4. sunbird_cassandra_password 
+5. sunbird_es_host
+6. sunbird_es_port
+7. sunbird_learner_actor_host
+8. sunbird_learner_actor_port
+9. sunbird_sso_url
+10. sunbird_sso_realm
+11. sunbird_sso_username
+12. sunbird_sso_password
+13. sunbird_sso_client_id
+14. ekstep_content_search_base_url
+15. ekstep_authorization
+16. sunbird_installation : name of environment in which you are running the application or instance name
+17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
+18. sunbird_sso_publickey
 </pre>
    
 For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
