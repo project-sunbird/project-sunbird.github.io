@@ -114,7 +114,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
 The Find & Select Activities page is displayed. 
 <br>2. Search the resource using search bar. 
 <br>3. Select the resource you want to add, from the list of available resources.
-<br>4. Click Proceed to add resources to the section. The resource(s) are added to the Resource section of the page.
+      <br>4. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the page.
       
  </td>
     <td><img src="pages/features-documentation/images/lessonplan/addcontent.png"></td>
