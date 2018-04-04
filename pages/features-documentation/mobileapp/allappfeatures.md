@@ -38,7 +38,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases"> URL</a> <br>1. Click <b>staging.apk</b> link to install latest mobile built <br>2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br>3. Click <b>Install</b> to install the mobile application</td>
+  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br>1. Click <b>staging.apk</b> link to install latest mobile built <br>2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br>3. Click <b>Install</b> to install the mobile application</td>
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ mobile keypad to search for content
    <td><img src="pages/features-documentation/images/mobileapp/course1.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Resume</b> to take a course <br>2. You will be re-directed to next screen. Click <b>Start</b> to resume your course <br>3. To download the course click <b>Download all</b></td>
+    <td>1. Click <b>Resume</b> to take a course <br>2. You will be re-directed to next screen. Click <b>Start</b> to resume your course <br>3. To download the course click <b>Download all</b> <br><b>Note:</b> After the content is downloaded, you can view the content offline</td>
     <td><img src="pages/features-documentation/images/mobileapp/course2.png"></td>
   </tr>
   <tr>
@@ -105,13 +105,37 @@ mobile keypad to search for content
     <td><img src="pages/features-documentation/images/mobileapp/course3.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> course </td>
+    <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr>     
   </table>
   
 ### Library
 
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr> 
+ <tr>
+  <td>1. Tap <b>Library</b> icon to view all the resources that you have saved on your device or popular artifacts from the portal library <br>2. Tap <b>Search</b> or <b>Filter</b> icon and enter keywords to search for relevant content resources <br>3. You can filter the library content by: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Click <b>Apply</b> to apply the filter <br>5. Click <b>Cancel</b> to exit the screen</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library1.png"></td> 
+ </tr>
+ <tr>
+  <td>1. Swipe the associated content category to browse the relevant resources in that category. Content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br>2. Click <b>Open</b> to view the content <br>3. To play or download content, click the <b>Play</b> or <b>Download</b> button</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library2.png"></td> 
+ </tr>
+ <tr>
+  <td>1. Click <b>Play</b> to view the content <br>2. Tap on <b>Stars</b> icon to rate the content. You can even write your feedback about the content <br>3. Click <b>Submit</b> to submit your rating</td>
+ </tr>
+ <tr>
+  <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+   <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
+  </tr> 
+ <tr>
+  <td>1. Tap on <b>Download</b> to download the content
+  </table>
+   
 ### Profile
 
 ### Scanning QR Codes or DIAL Codes
