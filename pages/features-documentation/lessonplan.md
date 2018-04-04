@@ -121,9 +121,8 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed: 
-   <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane <br>6. Select the content you want to add <br>7. Click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
-   </td>
+    <td>1. Click <b>Add Resource</b>, the <b>Find & Select Activities</b> page is displayed: 
+   <br>2. Search  the resource using search bar. <br>3. Select the resource you want to add, from the list of available resources.<br>4. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the <b>Resource</b> section of the page.</td
    <td><img src="pages/features-documentation/images/lessonplan/addresource.png"></td>
    </tr>
  </table>
