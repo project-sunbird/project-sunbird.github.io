@@ -110,25 +110,24 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <br>1.  Click <b>Add Resource</b> from
     <br>a) the left bottom of the page 
     <br>b) right click on the node name <b>OR</b>
-    <br>c) use keyboard shortcut <b>Ctrl+Alt+A</b>
+      <br>c) use keyboard shortcut <b>Ctrl+Alt+A</b></td>
   <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png"></td>
   </tr>
  <tr>
 <td>The Find & Select Activities page is displayed. 
 <br>2. Search the resource using search bar. 
 <br>3. Select the relevant cards you want to add, from the available lists.
-<br>4. Hover over the card to view the basic details about the resource. 
-   <tr> <td><img src="pages/features-documentation/images/lessonplan/AddResource2.png"></td>     
- </td>
+  <br>4. Hover over the card to view the basic details about the resource.</td> 
+  <td><img src="pages/features-documentation/images/lessonplan/AddResource2.png"></td>     
   </tr>
+<tr>
+  <td>
 <br>5. Click <b>View Details</b> to read illustrated information about the card in a new window. 
       <br>a. Select <b>Add</b> to imbibe the resoure.
       <br>b. Select <b>Remove</b> to remove the resource.
-<br>6. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the page.
+<br>6. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the page.</td>
  <td><img src="pages/features-documentation/images/lessonplan/AddResource3.png"></td>     
- </td>
-    
-  </tr>
+</tr>
 </table>
 
 ### Using Table of Contents Option
