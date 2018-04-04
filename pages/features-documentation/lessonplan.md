@@ -108,9 +108,9 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
   <tr>
     <td>To add content to the lesson plan
     <br>1.  Click <b>Add Resource</b> from
-<br>a) the left bottom of the page 
-<br>b) on the node name <b>OR</b>
-<br>c) use keyboard shortcut <b>Ctrl+Alt+A</b>
+    <br>a) the left bottom of the page 
+    <br>b) right click on the node name <b>OR</b>
+    <br>c) use keyboard shortcut <b>Ctrl+Alt+A</b>
 The Find & Select Activities page is displayed. 
 <br>2. Search the resource using search bar. 
 <br>3. Select the resource you want to add, from the list of available resources.
