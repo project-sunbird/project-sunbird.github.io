@@ -98,35 +98,29 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <td><img src="pages/features-documentation/images/whatsnew2.png"></td>
   </tr>
   </table>
-      
-### Adding Content to Lesson Plan
 
+### Adding Content or Resources to Lesson Plan
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to the lesson plan, you can either <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b>
-    </td>
+    <td>To add content to the lesson plan
+    <br>1.  Click <b>Add Resource</b> from
+<br>a) the left bottom of the page 
+<br>b) on the node name <b>OR</b>
+<br>c) use keyboard shortcut <b>Ctrl+Alt+A</b>
+The Find & Select Activities page is displayed. 
+<br>2. Search the resource using search bar. 
+<br>3. Select the resource you want to add, from the list of available resources.
+<br>4. Click Proceed to add resources to the section. The resource(s) are added to the Resource section of the page.
+      
+ </td>
     <td><img src="pages/features-documentation/images/lessonplan/addcontent.png"></td>
   </tr>
 </table>
 
-### Adding Resources
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Click <b>Add Resource</b>, the <b>Find & Select Activities</b> page is displayed: 
-   <br>2. Search  the resource using search bar. <br>3. Select the resource you want to add, from the list of available resources.<br>4. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the <b>Resource</b> section of the page.</td>
-   <td><img src="pages/features-documentation/images/lessonplan/addresource.png"></td>
-   </tr>
- </table>
- 
 ### Using Table of Contents Option
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
