@@ -80,7 +80,7 @@ paths:
             Invalid property <name>.
             Channel is mandatory for root organisation.
             Either "organisationId" or "provider" and "externalId" values are required for the operation.
-            Channel value already used by another organization. Provide different value for channel.'
+            Channel value already used by another organisation. Provide different value for channel.'
           schema:
             $ref: '#/definitions/OrgErrorResponse'
         '500':
@@ -568,10 +568,10 @@ paths:
         '400':
           description: >-
             'CLIENT_ERROR. The requested operation failed due to bad request from client. Possible reasons for failure:
-            Organization Id or Provider with External Id values are required for the operation
+            Organisation Id or Provider with External Id values are required for the operation
             Role of the user is required
             Please provide valid userId or userName and provider
-            Given Organization Data doesn't exist in our records. Please provide a valid one
+            Given Organisation Data doesn't exist in our records. Please provide a valid one
             Given User Data doesn't exist in our records. Please provide a valid one'
           schema:
             $ref: '#/definitions/OrgErrorResponse'
@@ -634,9 +634,9 @@ paths:
         '400':
           description: >-
             'CLIENT_ERROR. The requested operation failed due to bad request from client. Possible reasons for failure:
-            Organization Id or Provider with External Id values are required for the operation
+            Organisation Id or Provider with External Id values are required for the operation
             Please provide valid userId or userName and provider
-            Given Organization Data doesn't exist in our records. Please provide a valid one
+            Given Organisation Data doesn't exist in our records. Please provide a valid one
             Given User Data doesn't exist in our records. Please provide a valid one'
           schema:
             $ref: '#/definitions/OrgErrorResponse'
