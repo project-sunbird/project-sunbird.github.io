@@ -42,7 +42,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> 2. Select your preferred language <br>3. Click <b>Continue</b> to start navigating through the app <b>Note:</b> Denying these permissions diables users from downloading content for offline use 
+    <td>1. Click <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> 2. Select your preferred language <br>3. Click <b>Continue</b> to start navigating through the app <br><b>Note:</b> Denying these permissions diables users from downloading content for offline use 
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/permission.png"></td>
   </tr>
