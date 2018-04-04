@@ -42,7 +42,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> <br>2. Select your preferred language <br>3. Click <b>Continue</b> to start navigating through the app <b>Note:Denying these permissions diables users from downloading content for offline use 
+    <td>1. Click <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> 2. Select your preferred language <br>3. Click <b>Continue</b> to start navigating through the app <b>Note:</b> Denying these permissions diables users from downloading content for offline use 
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/permission.png"></td>
   </tr>
@@ -56,7 +56,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap the <b>Sign In</b> to log in into Sunbird Mobile App. You will be redirected to <b>Login</b> screen <br>2. You can <b>Log In</b> to Sunbird Mobile App using either of the three options: registered <b>Username</b> or <b>Email ID</b> or <b>Phone number</b> <br>3. Enter your <b>Password</b> <br>4. Tap <b>Login</b> button <br>**Note**: You can also sign in to the application without using your credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  <td>1. Tap the <b>Sign In</b> to log in into Sunbird Mobile App. You will be redirected to <b>Login</b> screen <br>2. You can <b>Log In</b> to Sunbird Mobile App using either of the three options: registered <b>Username</b> or <b>Email ID</b> or <b>Phone number</b> <br>3. Enter your <b>Password</b> <br>4. Tap <b>Login</b> button <br><b>Note:</b> You can also sign in to the application without using your credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/login.png"></td>
   </tr>
