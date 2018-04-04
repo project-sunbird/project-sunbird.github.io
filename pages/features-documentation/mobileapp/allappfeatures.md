@@ -105,7 +105,7 @@ mobile keypad to search for content
     <td><img src="pages/features-documentation/images/mobileapp/course3.png"></td>
   </tr>
   <tr>
-    <td>Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> course </td>
+    <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> course </td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr>     
   </table>
