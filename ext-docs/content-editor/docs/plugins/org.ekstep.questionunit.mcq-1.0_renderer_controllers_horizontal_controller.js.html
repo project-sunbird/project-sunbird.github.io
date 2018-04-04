@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: org.ekstep.questionunit.mcq-1.0/renderer/controllers/horizontal_controller.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: org.ekstep.questionunit.mcq-1.0/renderer/controllers/horizontal_controller.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// TODO: Controller for horizontalTemplate.html
+'use strict';
+angular.module('genie-canvas').controllerProvider.register("MCQRendererController", function($scope, $rootScope, $sce) {
+    //var ctrl = this;
+    $scope.pluginInstance;
+    $scope.showTemplate = true;
+    $scope.question;
+    $scope.qData;
+    $scope.qConfig;
+    $scope.selectedAns;
+    $scope.events = { "show": "", "hide": "", "eval": "" };
+    $scope.currentAudio;
+    $scope.lastAudio;
+    $scope.isShuffleOptions;
+    $scope.bigImage = false;
+    $scope.expandQ = true;
+    $scope.collapseQ = true;
+    $scope.audioImage;
+    $scope.init = function() {
+        $scope.pluginInstance = EkstepRendererAPI.getPluginObjs("org.ekstep.questionunit.mcq");
+        $scope.pluginInstance.initPlugin($scope.pluginInstance);
+
+        $scope.events.eval = $scope.pluginInstance._manifest.id + ":evaluate";
+        $scope.events.show = $scope.pluginInstance._manifest.id + ":show";
+        $scope.events.hide = $scope.pluginInstance._manifest.id + ":hide";
+        $scope.addAudioIcon();
+        $scope.removeEvents();
+        $scope.registerEvents();
+        if (!$rootScope.isMCQRendererd) {
+            $rootScope.isMCQRendererd = true;
+        }
+        if (EventBus.hasEventListener($scope.events.eval)) {
+            if (EventBus.listeners[$scope.events.eval].length > 1)
+                EventBus.removeEventListener($scope.events.eval, $scope.evalListener)
+        }
+    }
+    // $scope.trustSrcurl = function(data) {
+    //     if (isbrowserpreview) {
+    //         return $sce.trustAsResourceUrl(data);
+    //     } else {
+    //         return 'file:///' + EkstepRendererAPI.getBaseURL() + data;
+    //     }
+    // }
+
+    $scope.registerEvents = function() {
+        /**
+         * renderer:questionunit.ftb:dispatch an event in question set with question data.
+         * @event renderer:questionunit.ftb:dispatch
+         * @memberof org.ekstep.questionunit.ftb
+         */
+        EkstepRendererAPI.addEventListener($scope.events.show, $scope.showEventListener);
+        /**
+         * renderer:questionunit.ftb:hide template on question set navigation.
+         * @event renderer:questionunit.ftb:dispatch
+         * @memberof org.ekstep.questionunit.ftb
+         */
+        EkstepRendererAPI.addEventListener($scope.events.hide, $scope.hideEventListener);
+        /**
+         * renderer:questionunit.ftb:question set call evalution using plugin instance.
+         * @event renderer:questionunit.ftb:click
+         * @memberof org.ekstep.questionunit.ftb
+         */
+        EkstepRendererAPI.addEventListener($scope.events.eval, $scope.evalListener);
+    }
+    $scope.addAudioIcon=function(){
+         if(isbrowserpreview){
+         $scope.audioImage = org.ekstep.pluginframework.pluginManager.resolvePluginResource("org.ekstep.questionunit.mcq", "1.0", "renderer/assets/audio.png");
+         }else{
+         $scope.audioImage='file:///' + EkstepRendererAPI.getBaseURL() + "/content-plugins/org.ekstep.questionunit.mcq-1.0/renderer/assets/audio.png";
+    }
+    }
+    $scope.removeEvents = function() {
+        EkstepRendererAPI.removeEventListener($scope.events.hide, $scope.hideEventListener, undefined);
+        EkstepRendererAPI.removeEventListener($scope.events.show, $scope.showEventListener, undefined);
+        EkstepRendererAPI.removeEventListener($scope.events.eval, $scope.evalListener, undefined);
+    }
+    $scope.loadAudio = function() {
+        $("#preview-mcq-horizontal audio").on("play", function() {
+            $("audio").not(this).each(function(index, audio) {
+                audio.pause();
+            });
+        });
+    }
+    $scope.showImageModel = function(imgUrl) {
+        $scope.bigImage = true;
+        $scope.imageUrl = imgUrl;
+    }
+
+    $scope.hideImagePopup = function() {
+        $scope.bigImage = false;
+    }
+    $scope.expandQuestion = function(event){
+        if($scope.collapseQ){
+            $scope.expandQ = true;
+            $scope.collapseQ = false;
+            $(event.target.parentElement.parentElement).css('height','50vh');
+        }else{
+            $(event.target.parentElement.parentElement).css('height','17vh');
+            $scope.expandQ = false;
+            $scope.collapseQ = true;
+        }
+        console.log(event.target.parentElement.parentElement);
+    }
+    $scope.checkBaseUrl = function(url) {
+        if (isbrowserpreview) {
+            return url;
+        } else {
+            return 'file:///' + EkstepRendererAPI.getBaseURL() + url;
+        }
+
+    }
+
+    $scope.showEventListener = function(event) {
+        var ctrlScope = angular.element('#preview-mcq-horizontal').scope();
+        ctrlScope.question = event.target;
+        var qData = ctrlScope.question._currentQuestion.data.__cdata || ctrlScope.question._currentQuestion.data;
+        $scope.qData = JSON.parse(qData);
+        
+        var qConfig = ctrlScope.question._currentQuestion.config.__cdata || ctrlScope.question._currentQuestion.config;
+        $scope.qConfig = JSON.parse(qConfig);
+
+        var questionData = $scope.qData;
+        if (isbrowserpreview) {
+            _.map(questionData.media, function(url) {
+                url.src = 'file:///' + EkstepRendererAPI.getBaseURL() + url.src;
+            })
+        }
+
+        $scope.isShuffleOptions = $scope.qConfig.isShuffleOption;
+        if ($scope.isShuffleOptions) {
+            questionData.options = _.shuffle(questionData.options);
+        }
+
+        var qState = ctrlScope.question._currentQuestionState;
+        if (qState &amp;&amp; qState.val) {
+            ctrlScope.selectedIndex = qState.val;
+        }
+        if (qState &amp;&amp; qState.options) {
+            questionData.options = qState.options;
+        }
+        ctrlScope.questionObj = questionData;
+        ctrlScope.questionObj.topOptions = [];
+        ctrlScope.questionObj.bottomOptions = [];
+        ctrlScope.questionObj.options.forEach(function(option, key) {
+            if (ctrlScope.questionObj.options.length &lt;= 4 || ctrlScope.questionObj.options.length > 6) {
+                if (key &lt; 4) ctrlScope.questionObj.topOptions.push({ 'option': option, 'key': key });
+                else ctrlScope.questionObj.bottomOptions.push({ 'option': option, 'key': key });
+            } else if (ctrlScope.questionObj.options.length == 5 || ctrlScope.questionObj.options.length == 6) {
+                if (key &lt; 3) ctrlScope.questionObj.topOptions.push({ 'option': option, 'key': key });
+                else ctrlScope.questionObj.bottomOptions.push({ 'option': option, 'key': key });
+            }
+        })
+        ctrlScope.showTemplate = true;
+        QSTelemetryLogger.logEvent(QSTelemetryLogger.EVENT_TYPES.ASSESS);
+        ctrlScope.questionObj.questionConfig = JSON.parse(qConfig);
+        var state = {
+            val: ctrlScope.selectedIndex,
+            options: questionData.options
+        }
+        EkstepRendererAPI.dispatchEvent('org.ekstep.questionset:saveQuestionState', state);
+
+        ctrlScope.safeApply();
+    }
+
+    $scope.hideEventListener = function(event) {
+        // var ctrlScope = angular.element('#preview-mcq-horizontal').scope();
+        // ctrlScope.showTemplate = false;
+        // ctrlScope.safeApply();
+        //code commented beause on click reply scope object not find
+        $scope.showTemplate = false;
+        $scope.safeApply();
+
+    }
+
+    $scope.evalListener = function(event) {
+        var ctrlScope = angular.element('#preview-mcq-horizontal').scope();
+
+        var callback = event.target;
+        ctrlScope.evaluate(callback);
+        ctrlScope.safeApply();
+    }
+
+    $scope.selectedvalue = function(val, index) {
+        $scope.selectedIndex = index;
+        $scope.selectedAns = val.isCorrect;
+        var state = {
+            val: $scope.selectedIndex,
+            options: $scope.questionObj.options,
+            score: $scope.qConfig.max_score
+        }
+
+        var telValues = {};
+        telValues['option'+index] = val.image.length > 0 ? val.image : val.text;
+        QSTelemetryLogger.logEvent(QSTelemetryLogger.EVENT_TYPES.RESPONSE, {"type": "MCQ", "values": [telValues]});
+        EkstepRendererAPI.dispatchEvent('org.ekstep.questionset:saveQuestionState', state);
+    }
+
+    $scope.evaluate = function(callback) {
+        var correctAnswer;
+        var telValues = {};
+        var ctrlScope = angular.element('#preview-mcq-horizontal').scope();
+        var selectedAnsData = ctrlScope.questionObj.options[ctrlScope.selectedIndex - 1];
+        var selectedAns = _.isUndefined(selectedAnsData) ? false : selectedAnsData.isCorrect;
+        ctrlScope.questionObj.options.forEach(function(option) {
+            if (option.isCorrect === selectedAns) {
+                correctAnswer = option.isCorrect;
+            }
+        });
+
+        if(!_.isUndefined(ctrlScope.selectedIndex))
+            telValues['option'+ctrlScope.selectedIndex] = selectedAnsData.image.length > 0 ? selectedAnsData.image : selectedAnsData.text;
+        
+        var result = {
+            eval: correctAnswer,
+            state: {
+                val: ctrlScope.selectedIndex,
+                options: ctrlScope.questionObj.options
+            },
+            score: correctAnswer ? $scope.qConfig.metadata.max_score : 0,
+            values: [telValues]
+        }
+        if (_.isFunction(callback)) {
+            callback(result);
+        }       
+        QSTelemetryLogger.logEvent(QSTelemetryLogger.EVENT_TYPES.ASSESSEND, result);
+    }
+
+    $scope.logTelemetryInteract = function(event) {
+        if (event != undefined) QSTelemetryLogger.logEvent(QSTelemetryLogger.EVENT_TYPES.TOUCH, { type: QSTelemetryLogger.EVENT_TYPES.TOUCH, id: event.target.id });
+    }
+
+    $scope.playAudio = function(audio) {
+            audio=$scope.checkBaseUrl(audio);
+        if ($scope.lastAudio &amp;&amp; ($scope.lastAudio != audio)) {
+            $scope.currentAudio.pause();
+        }
+
+        if (!$scope.currentAudio || $scope.currentAudio.paused) {
+            $scope.currentAudio = new Audio(audio);
+            $scope.currentAudio.play();
+            $scope.lastAudio = audio;
+        } else {
+            $scope.currentAudio.pause();
+            $scope.currentAudio.currentTime = 0
+        }
+    }
+});
+//# sourceURL=questionunitmcqcontroller.js</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module--%2520_org.ekstep.metadataform_.html">- 'org.ekstep.metadataform'</a></li></ul><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="breadcrumb.html">breadcrumb</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.iterator.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.navigation.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="global.html#reviewContent">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="EkstepRendererEvents.html#.event:actionNavigateNext">actionNavigateNext</a></li><li><a href="EkstepRendererEvents.html#.event:actionNavigatePrevious">actionNavigatePrevious</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="global.html#event:%2522renderer:load:html%2522">"renderer:load:html"</a></li><li><a href="global.html#event:%2522renderer:load:js%2522">"renderer:load:js"</a></li><li><a href="global.html#event:'org.ekstep.editcontentmeta:showpopup'">'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:cancel'">- 'editor:form:cancel'</a></li><li><a href="global.html#event:-'org.ekstep.editcontentmeta:showpopup'">- 'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:success'">-'editor:form:success'</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#config">config</a></li><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#convertToDataType">convertToDataType</a></li><li><a href="global.html#DEFAULT_TEMPLATE_NAME">DEFAULT_TEMPLATE_NAME</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#eventMap">eventMap</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#form">form</a></li><li><a href="global.html#formApp">formApp</a></li><li><a href="global.html#framework">framework</a></li><li><a href="global.html#getArrayOfKeywords">getArrayOfKeywords</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#getConfigurations">getConfigurations</a></li><li><a href="global.html#getFields">getFields</a></li><li><a href="global.html#getFormFields">getFormFields</a></li><li><a href="global.html#getMappedResponse">getMappedResponse</a></li><li><a href="global.html#getTemplate">getTemplate</a></li><li><a href="global.html#getUpdateDataType">getUpdateDataType</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#invoke">invoke</a></li><li><a href="global.html#isConfigurationsExists">isConfigurationsExists</a></li><li><a href="global.html#IteratorPlugin">IteratorPlugin</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#logTelemetry">logTelemetry</a></li><li><a href="global.html#mapObject">mapObject</a></li><li><a href="global.html#mappedResponse">mappedResponse</a></li><li><a href="global.html#mapResponse">mapResponse</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#onConfigChange">onConfigChange</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#renderForm">renderForm</a></li><li><a href="global.html#resetFields">resetFields</a></li><li><a href="global.html#resourceBundle">resourceBundle</a></li><li><a href="global.html#saveContent">saveContent</a></li><li><a href="global.html#saveMeta">saveMeta</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li><li><a href="global.html#updateState">updateState</a></li><li><a href="global.html#validate">validate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:11:17 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

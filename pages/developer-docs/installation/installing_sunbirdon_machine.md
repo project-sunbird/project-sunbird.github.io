@@ -55,18 +55,20 @@ This installation guide will use a cloud hosted Sunbird APIs for which an API ke
 
 For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}. 
 
-The code can be checked out using the command:
+The code can be cloned to your repository using the command:
     
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
 ***Note***: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
 
-Once the **git clone** command is over, run the following set of commands:
+Once the **git clone** command executes, proceed with running the following set of commands in the console:
 
-    $ cd {PROJECT-FOLDER}/src
-    $ npm install
-    $ bower cache clean
-    $ bower install --force
+<pre>
+   $ cd {PROJECT-FOLDER}/src
+   $ npm install
+   $ bower cache clean
+   $ bower install --force
+</pre>
 
 ### Configure Backend Service Stack
 
@@ -80,7 +82,7 @@ For now, let us configure the Sunbird portal to use a cloud instance of the Sunb
 
 Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any available text editor. 
 
-Once the file is opened, update the contents of the file so that it contains exactly the following values:
+Once you open the file, ensure you enter the following values:
 
     module.exports = {
         // 1. LEARNER_URL   
@@ -104,14 +106,13 @@ Once the file is opened, update the contents of the file so that it contains exa
         PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
         ...
     }
-
-Once the file is updated with appropriate values, then you can begin with running the application.           
- 
+   
 ## Run the Application
 
 Run the following commands:
+   
     $ cd {PROJECT-FOLDER}/src/app
     $ node server.js
 
-After executing the commands, open `http://localhost:3000` in browser.
+After the commands get executed, open `http://localhost:3000` in the browser.
  

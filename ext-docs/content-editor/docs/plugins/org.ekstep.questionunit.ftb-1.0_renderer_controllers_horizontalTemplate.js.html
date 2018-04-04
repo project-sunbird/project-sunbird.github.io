@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: org.ekstep.questionunit.ftb-1.0/renderer/controllers/horizontalTemplate.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: org.ekstep.questionunit.ftb-1.0/renderer/controllers/horizontalTemplate.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+angular.module('FTBRendererApp', []).controller("FTBRendererController", function($scope) {
+  $scope.showTemplate = true;
+  $scope.question;
+  $scope.ftbAnswer;
+  $scope.qcquestion = true;
+  $scope.qcblank = true;
+  $scope.cssPath = org.ekstep.pluginframework.pluginManager.resolvePluginResource("org.ekstep.questionunit.ftb", "1.0", "renderer/styles/horizontalTemplate.css");
+  $scope.init = function() {
+    $scope.pluginInstance = EkstepRendererAPI.getPluginObjs("org.ekstep.questionunit.ftb");
+    // To show template/plugin  
+        /**
+     * renderer:questionunit.ftb:dispatch an event in question set with question data.
+     * @event renderer:questionunit.ftb:dispatch
+     * @memberof org.ekstep.questionunit.ftb
+     */
+    EkstepRendererAPI.addEventListener($scope.pluginInstance._manifest.id + ":show", function(event, question) {
+      $scope.question = event.target;
+      $scope.ftbAnswer="";
+     var qData=$scope.question._currentQuestion.data.__cdata||$scope.question._currentQuestion.data;
+      var questionData = JSON.parse(qData);
+      $scope.questionObj = questionData;
+      $scope.showTemplate = true;
+      $scope.safeApply();
+    });
+    /**
+     * renderer:questionunit.ftb:hide template on question set navigation.
+     * @event renderer:questionunit.ftb:dispatch
+     * @memberof org.ekstep.questionunit.ftb
+     */
+    EkstepRendererAPI.addEventListener($scope.pluginInstance._manifest.id + ":hide", function(event) {
+      $scope.showTemplate = false;
+      $scope.safeApply();
+    });
+    /**
+     * renderer:questionunit.ftb:question set call evalution using plugin instance.
+     * @event renderer:questionunit.ftb:click
+     * @memberof org.ekstep.questionunit.ftb
+     */
+    EkstepRendererAPI.addEventListener($scope.pluginInstance._manifest.id + ":evaluate", function(event) {
+      var callback = event.target;
+      $scope.evaluate(callback);
+      $scope.safeApply();
+    });
+
+  }
+  $scope.init();
+  /**
+     * renderer:questionunit.ftb:show keyboard in device.
+     * @event renderer:questionunit.ftb:click
+     * @memberof org.ekstep.questionunit.ftb
+     */
+  window.addEventListener('native.keyboardshow', function(e) {
+    $scope.qcquestion = false;
+    $scope.qcmiddlealign=true;
+    $scope.safeApply();
+  });
+   /**
+     * renderer:questionunit.ftb:hide keyboard in device.
+     * @event renderer:questionunit.ftb:click
+     * @memberof org.ekstep.questionunit.ftb
+     */
+  window.addEventListener('native.keyboardhide', function() {
+    $scope.qcquestion = true;
+    $scope.qcblank = true;
+    $scope.qcmiddlealign=false;
+    $scope.safeApply();
+  });
+   /**
+     * renderer:questionunit.ftb:max length 25 because max length not working in andirod.
+     * @event renderer:questionunit.ftb:watch
+     * @memberof org.ekstep.questionunit.ftb
+     */
+  $scope.$watch("ftbAnswer", function(newValue, oldValue){
+        if (typeof newValue!="undefined" &amp;&amp;newValue.length > 25){
+            $scope.ftbAnswer = oldValue;
+        }
+    });
+  $scope.evaluate = function(callback) {
+    var correctAnswer = false;
+    if ($scope.questionObj.answer[0].text.toLowerCase().replace(/ /g, '') === $scope.ftbAnswer.toLowerCase().replace(/ /g, '')) {
+      correctAnswer = true;
+    }
+    var result = {
+        eval: correctAnswer,
+        state: {
+            val: $scope.ftbAnswer
+        }
+    }
+    if(_.isFunction(callback)) callback(result);
+  }
+});
+//# sourceURL=questionunitFtbRenderereTmpPlugin.js</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="reviewContent.html">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:watch">ftb:watch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Jan 22 2018 14:06:11 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: org.ekstep.text-1.1/editor/multilineTransliterator.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: org.ekstep.text-1.1/editor/multilineTransliterator.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>org.ekstep.text = {};
+/**
+ * @class  org.ekstep.plugins.text.MultilineTransliterator
+ */
+org.ekstep.text.MultilineTransliterator = Class.extend({
+    error:"error",
+    init: function($q, transliterateService) {
+        this.$q = $q;
+        this.transliterateService = transliterateService;
+    },
+    /**
+     * This method Takes an English string and a language code and returns a
+     * transliterated text in the given language.
+     * @param {string} text -  Orignial text in english. Can have line breaks.
+     * @param {string} languageCode - language code
+     * @param {function} callback - callback function to be called when API call returns
+     * @returns {void}
+     */
+    transliterate: function(text, languageCode, callback) {
+        var instance = this;
+        var $q = this.$q;
+        var texts = _.map(text.split('\n'), encodeURI);
+
+        var promisify = function(method, data) {
+            var deferer = $q.defer();
+            method(data, function(err, data) {
+                if (err) {
+                    deferer.reject(err)
+                } else {
+                    deferer.resolve(data);
+                }
+            });
+            return deferer.promise;
+        }
+
+        var promises = _.map(texts, function(text) {
+            var data = {};
+            data.text = text;
+            data.languages = [languageCode];
+
+            if (text == "") {
+                data.text = " ";
+            }
+
+            return promisify(instance.transliterateService.getTransliteration.bind(instance.transliterateService), data);
+        });
+
+        var mapValues = function(obj, callback) {
+            if (angular.isArray(obj))
+                return obj.map(callback)
+
+            var ret = {}
+            Object.keys(obj).forEach(function(key, val) {
+                ret[key] = callback(obj[key], key)
+            })
+            return ret
+        };
+
+        var allSettled = function(promises) {
+            return $q.all(mapValues(promises, function(promiseOrValue) {
+                if (!promiseOrValue.then)
+                    return { state: 'fulfilled', value: promiseOrValue }
+
+                return promiseOrValue.then(function(value) {
+                    return { state: 'fulfilled', value: value }
+                }, function(reason) {
+                    return { state: 'rejected', reason: reason }
+                })
+            }))
+        };
+
+        allSettled(promises).then(function(result) {
+
+           instance.error = "";
+            var transliteratedText = _.map(result, function(item, index) {
+                if (item.state == 'fulfilled' &amp;&amp; item.value.data.result.transliterations[languageCode] != undefined) {
+                    var val = item['value']['data']['result']['transliterations'][languageCode]['output'];
+                    if (val){
+                        return decodeURIComponent(val);
+                    }
+                    else{
+                        instance.error = "Transliteration unavailable at the moment";
+                        return decodeURIComponent(texts[index]);
+                    }
+                } else {
+                    instance.error = "Transliteration unavailable at the moment";
+                    return decodeURIComponent(texts[index]);
+                }
+            }).join('\n');
+            callback(instance.error, transliteratedText);
+        })
+
+
+    }
+
+})
+
+org.ekstep.text.MultilineTransliterator.create = function($q, transliterateService) {
+    return new org.ekstep.text.MultilineTransliterator($q, transliterateService)
+}
+
+/**
+ * @class  org.ekstep.plugins.text.WordExtractor
+ */
+org.ekstep.text.WordExtractor = Class.extend({
+    /**
+     * Get the currently selected object on the stage. If its a text plugin,
+     * retuns the text else returns undefined.
+     * @returns {string} plugin.editorObj.text - text being displayed by the text plugin
+     */
+    extractText: function() {
+        var plugin = org.ekstep.contenteditor.api.getCurrentObject();
+        if (plugin &amp;&amp; plugin.manifest.id == "org.ekstep.text") {
+            return plugin.editorObj.text;
+        }
+        return undefined;
+    }
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module--%2520_org.ekstep.metadataform_.html">- 'org.ekstep.metadataform'</a></li></ul><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="breadcrumb.html">breadcrumb</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.iterator.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.navigation.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="global.html#reviewContent">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="EkstepRendererEvents.html#.event:actionNavigateNext">actionNavigateNext</a></li><li><a href="EkstepRendererEvents.html#.event:actionNavigatePrevious">actionNavigatePrevious</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="global.html#event:%2522renderer:load:html%2522">"renderer:load:html"</a></li><li><a href="global.html#event:%2522renderer:load:js%2522">"renderer:load:js"</a></li><li><a href="global.html#event:'org.ekstep.editcontentmeta:showpopup'">'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:cancel'">- 'editor:form:cancel'</a></li><li><a href="global.html#event:-'org.ekstep.editcontentmeta:showpopup'">- 'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:success'">-'editor:form:success'</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#config">config</a></li><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#convertToDataType">convertToDataType</a></li><li><a href="global.html#DEFAULT_TEMPLATE_NAME">DEFAULT_TEMPLATE_NAME</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#eventMap">eventMap</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#form">form</a></li><li><a href="global.html#formApp">formApp</a></li><li><a href="global.html#framework">framework</a></li><li><a href="global.html#getArrayOfKeywords">getArrayOfKeywords</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#getConfigurations">getConfigurations</a></li><li><a href="global.html#getFields">getFields</a></li><li><a href="global.html#getFormFields">getFormFields</a></li><li><a href="global.html#getMappedResponse">getMappedResponse</a></li><li><a href="global.html#getTemplate">getTemplate</a></li><li><a href="global.html#getUpdateDataType">getUpdateDataType</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#invoke">invoke</a></li><li><a href="global.html#isConfigurationsExists">isConfigurationsExists</a></li><li><a href="global.html#IteratorPlugin">IteratorPlugin</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#logTelemetry">logTelemetry</a></li><li><a href="global.html#mapObject">mapObject</a></li><li><a href="global.html#mappedResponse">mappedResponse</a></li><li><a href="global.html#mapResponse">mapResponse</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#onConfigChange">onConfigChange</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#renderForm">renderForm</a></li><li><a href="global.html#resetFields">resetFields</a></li><li><a href="global.html#resourceBundle">resourceBundle</a></li><li><a href="global.html#saveContent">saveContent</a></li><li><a href="global.html#saveMeta">saveMeta</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li><li><a href="global.html#updateState">updateState</a></li><li><a href="global.html#validate">validate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:11:17 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

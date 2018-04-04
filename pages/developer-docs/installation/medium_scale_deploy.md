@@ -154,4 +154,3 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 |swarm nodes|elasticsearch servers| 9200 |TCP|
 |swarm nodes|postgres servers| 5432|TCP|
 |swarm nodes|keycloak| 8080|TCP|
-
