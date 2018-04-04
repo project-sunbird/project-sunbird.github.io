@@ -828,8 +828,8 @@ definitions:
               description: 'Used to create URL for a root organisation'
               type: string
           status:
-              description: 'Organisation status (active, inactive, blocked, retired)'
-              type: string
+              description: 'Organisation status (0: inactive, 1: active, 2: blocked, 3: retired)'
+              type: integer
           thumbnail:
               description: 'Organisation thumbnail URL'
               type: string
@@ -929,8 +929,8 @@ definitions:
                   description: 'ID of organisation whose details are required to be updated'
                   type: string
                 status:
-                  description: 'Organisation status (active, inactive, blocked, retired)'
-                  type: object
+                  description: 'Organisation status (0: inactive, 1: active, 2: blocked, 3: retired)'
+                  type: integer
 
   OrgStatusUpdateResponse:
       title: Organisation Status Update API response format
