@@ -116,6 +116,6 @@ mobile keypad to search for content
 
 ### Scanning QR Codes or DIAL Codes
 
-## Guest User Mode Sign-up
+## Browse as Guest
 
 ## Technical Support
