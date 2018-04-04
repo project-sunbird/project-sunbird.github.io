@@ -1,14 +1,14 @@
 ---
 type: landing
 directory: features-documentation
-title: Sign Up and Login
-page_title: Sign Up and Login
-description: Login
-keywords: Login
+title: Recovering Password
+page_title: Recovering Password
+description: Recovering Password
+keywords: Recovering Password
 published: true
 allowSearch: true
 ---
-## Recovering Password
+You can recover your password using **Forgot Password** option
 
 <table>
   <tr>
