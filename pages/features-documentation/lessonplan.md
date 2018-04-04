@@ -98,36 +98,38 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <td><img src="pages/features-documentation/images/whatsnew2.png"></td>
   </tr>
   </table>
-      
-### Adding Content to Lesson Plan
 
+### Adding Content or Resources to Lesson Plan
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to the lesson plan, you can either <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b>
-    </td>
-    <td><img src="pages/features-documentation/images/lessonplan/addcontent.png"></td>
+    <td>To add content to the lesson plan
+    <br>1.  Click <b>Add Resource</b> from
+    <br>a) the left bottom of the page 
+    <br>b) right click on the node name <b>OR</b>
+      <br>c) use keyboard shortcut <b>Ctrl+Alt+A</b></td>
+  <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png"></td>
   </tr>
+ <tr>
+<td>The Find & Select Activities page is displayed. 
+<br>2. Search the resource using search bar. 
+<br>3. Select the relevant cards you want to add, from the available lists.
+  <br>4. Hover over the card to view the basic details about the resource.</td> 
+  <td><img src="pages/features-documentation/images/lessonplan/AddResource2.png"></td>     
+  </tr>
+<tr>
+  <td>
+<br>5. Click <b>View Details</b> to read illustrated information about the card in a new window. 
+      <br>a. Select <b>Add</b> to imbibe the resoure.
+      <br>b. Select <b>Remove</b> to remove the resource.
+<br>6. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the page.</td>
+ <td><img src="pages/features-documentation/images/lessonplan/AddResource3.png"></td>     
+</tr>
 </table>
 
-### Adding Resources
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed: 
-   <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane <br>6. Select the content you want to add <br>7. Click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
-   </td>
-   <td><img src="pages/features-documentation/images/lessonplan/addresource.png"></td>
-   </tr>
- </table>
- 
 ### Using Table of Contents Option
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 

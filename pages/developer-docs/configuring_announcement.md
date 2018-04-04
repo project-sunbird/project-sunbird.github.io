@@ -17,7 +17,7 @@ To configure the announcements feature, users must have administrator access to 
 * Locations APIs 
 * Create Object APIs 
 
-> **Note:** To effectively work with APIs, the administrator should be familiar with JSON structures and relevant tools to call APIs, like the Postman tool.
+**Note:** To effectively work with APIs, the administrator should be familiar with JSON structures and relevant tools to call APIs, like the Postman tool.
 
 ## Pre-requisites
 
@@ -25,7 +25,7 @@ To configure the announcements feature, users must have administrator access to 
  
  + Creation of **Location** as individual entities  
  
-The Anouncements feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in the database.
+The Announcements feature does not support location hierarchy. While targeting an announcement, all locations are available in a flat structure irrespective of location type in the database.
  
  + Associate **Organisations** with their respective **Locations**. 
  
@@ -33,18 +33,18 @@ The Anouncements feature does not support location hierarchy. While targeting an
  
   1. Create **Location** in Sunbird
  
-> **Note:** To create locations, refer to [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}.
+**Note:** To create locations, refer to [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}.
 
   2. On successful creation of a location, you will get a **locationId**
   3. Use the **locationId** to create or update an organization
  
-> **Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
+**Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
  
 ## Creating Announcement Types
 
 Announcements are categorised into different types, for example; orders, circulars, holidays, news etc. There must be atleast one announcement type created for the organization to enable the administrator to send an announcement. Announcement types are created as per the requirements of the tenant organization.
 
-> **Note** To create announcement types, refer to [Manage Announcement Type APIs](http://www.sunbird.org/apis/announcements/#tag/Manage-Announcement-Type-APIs){:target="_blank"}
+**Note** To create announcement types, refer to [Manage Announcement Type APIs](http://www.sunbird.org/apis/announcements/#tag/Manage-Announcement-Type-APIs){:target="_blank"}
 
 ## Assigning Roles to User(s)
 
@@ -72,4 +72,4 @@ To send announcements, it is essential that a user is assigned the role of an an
 </tr>
 </table>
 
-> **Note**: For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section.
+**Note**: For details on other announcement features and their use, refer to the [Announcement](http://www.sunbird.org/features-documentation/announcement/){:target="_blank"} section.
