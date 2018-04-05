@@ -38,7 +38,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br>1. Click <b>staging.apk</b> link to install latest mobile built <br>2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br>3. Click <b>Install</b> to install the mobile application</td>
+  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br>1. Click <b>sunbird staging.apk</b> link to install latest mobile build <br>2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br>3. Click <b>Install</b> to install the mobile application</td>
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
