@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.30/";
+			baseURL.href="/releases/release.1.31.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-03-31 02:17:37 +0530">
+<meta name="last-modified" content="2018-04-05 12:04:09 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.30" />
-<meta name="buildNo" content="2394" />
+<meta name="buildVersion" content="release.1.31.a" />
+<meta name="buildNo" content="2469" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,11 +46,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?31032018"  />
-<link rel="stylesheet" href="css/style.css?31032018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?31032018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?31032018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?31032018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?05042018"  />
+<link rel="stylesheet" href="css/style.css?05042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?05042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?05042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?05042018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -521,22 +521,19 @@ $("a[href$='features-documentation/lessonplan/']").addClass("sidebar-link-select
                   <a href="#exploring-whats-new"><span class="tocnumber">2.2 .</span> <span class="toctext">Exploring What’s New</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-5">
-                  <a href="#adding-content-to-lesson-plan"><span class="tocnumber">2.3 .</span> <span class="toctext">Adding Content to Lesson Plan</span></a>
+                  <a href="#adding-content-or-resources-to-lesson-plan"><span class="tocnumber">2.3 .</span> <span class="toctext">Adding Content or Resources to Lesson Plan</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-6">
-                  <a href="#adding-resources"><span class="tocnumber">2.4 .</span> <span class="toctext">Adding Resources</span></a>
+                  <a href="#using-table-of-contents-option"><span class="tocnumber">2.4 .</span> <span class="toctext">Using Table of Contents Option</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-7">
-                  <a href="#using-table-of-contents-option"><span class="tocnumber">2.5 .</span> <span class="toctext">Using Table of Contents Option</span></a>
+                  <a href="#deleting-content"><span class="tocnumber">2.5 .</span> <span class="toctext">Deleting Content</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-8">
-                  <a href="#deleting-content"><span class="tocnumber">2.6 .</span> <span class="toctext">Deleting Content</span></a>
+                  <a href="#reordering-content"><span class="tocnumber">2.6 .</span> <span class="toctext">Reordering Content</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-9">
-                  <a href="#reordering-content"><span class="tocnumber">2.7 .</span> <span class="toctext">Reordering Content</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-10">
-                  <a href="#sending-lesson-plan-for-review"><span class="tocnumber">2.8 .</span> <span class="toctext">Sending Lesson Plan for Review</span></a>
+                  <a href="#sending-lesson-plan-for-review"><span class="tocnumber">2.7 .</span> <span class="toctext">Sending Lesson Plan for Review</span></a>
                 </li>
               </ul>
             </li>
@@ -637,34 +634,36 @@ $("a[href$='features-documentation/lessonplan/']").addClass("sidebar-link-select
   </tr>
   </table>
 
-<h3 id="adding-content-to-lesson-plan">Adding Content to Lesson Plan</h3>
-
+<h3 id="adding-content-or-resources-to-lesson-plan">Adding Content or Resources to Lesson Plan</h3>
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to the lesson plan, you can either <br /> a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br /> b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br /> c) Use the keyboard shortcut <b>Ctrl+Alt+A</b>
-    </td>
-    <td><img src="pages/features-documentation/images/lessonplan/addcontent.png" /></td>
+    <td>To add content to the lesson plan
+    <br />1.  Click <b>Add Resource</b> from
+    <br />a) the left bottom of the page 
+    <br />b) right click on the node name <b>OR</b>
+      <br />c) use keyboard shortcut <b>Ctrl+Alt+A</b></td>
+  <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png" /></td>
   </tr>
+ <tr>
+<td>The Find &amp; Select Activities page is displayed. 
+<br />2. Search the resource using search bar. 
+<br />3. Select the relevant cards you want to add, from the available lists.
+  <br />4. Hover over the card to view the basic details about the resource.</td> 
+  <td><img src="pages/features-documentation/images/lessonplan/AddResource2.png" /></td>     
+  </tr>
+<tr>
+  <td>
+<br />5. Click <b>View Details</b> to read illustrated information about the card in a new window. 
+      <br />a. Select <b>Add</b> to imbibe the resoure.
+      <br />b. Select <b>Remove</b> to remove the resource.
+<br />6. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the page.</td>
+ <td><img src="pages/features-documentation/images/lessonplan/AddResource3.png" /></td>     
+</tr>
 </table>
-
-<h3 id="adding-resources">Adding Resources</h3>
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed: 
-   <br />2. Type keywords to search for content <br />3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br /> a) <b>Category</b> <br /> b) <b>Language</b> <br /> c) <b>Class</b> <br /> d) <b>Subject</b> <br />4. Click <b>Reset</b> to edit and reset the filters <br />5. Click <b>Apply</b>. Results are loaded on the right pane <br />6. Select the content you want to add <br />7. Click <b>Add</b> to add the selected content <br />8. Click <b>Close</b> icon to go back to the main menu
-   </td>
-   <td><img src="pages/features-documentation/images/lessonplan/addresource.png" /></td>
-   </tr>
- </table>
 
 <h3 id="using-table-of-contents-option">Using Table of Contents Option</h3>
 

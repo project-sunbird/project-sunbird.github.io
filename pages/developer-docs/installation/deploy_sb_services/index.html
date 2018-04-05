@@ -69,21 +69,15 @@ L1nIxwur1a6xVmoJZT7Yc0Ywzlo4vpBVmrdWhJaZro", "Updating rate_limit for consumer p
 <pre>
   ./provision-keycloak.sh {implementation-name}-devops/ansible/inventories/{environment-name}
   </pre>
-
 <ol>
   <li>Update the following variables in the configuration path</li>
 </ol>
-
 <pre>
-  
   {implementation-name}-devops/ansible/inventories/{environment-name}/group_vars/{environment-name} // path 
- 
   keycloak_password: (with admin initial password)  //variable to set
   keycloak_theme_path: ex- path/to/the/nile/themes  //variable to set
-  
   sudo ./deploy-keycloak-vm.sh {implementation-name}-devops/ansible/inventories/{environment-name} //command to execute
   </pre>
-
 <p><strong>Note:</strong> The sample themes directory of sunbird is <a href="https://github.com/project-sunbird/sunbird-devops/tree/master/ansible/artifacts" target="_blank">here</a></p>
 
 <ol>

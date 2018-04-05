@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<base id="baseURL" href="/" />
+<script>
+	// Dynamic Base URL
+	function getBase(){
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		baseURL = document.getElementById('baseURL');
+		if (excludedSites.indexOf(window.location.host) > -1){
+			baseURL.href="/";
+		} else {
+			baseURL.href="/releases/release.1.31.a/";
+		}
+	}
+	getBase();
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=10, user-scalable=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+<meta name="msapplication-TileColor" content="#65d3f7">
+<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
+
+<title>Sunbird Sunbird Mobile App</title>
+<meta name="description" content="Sunbird Site About functions and features of Sunbird Mobile App and its consumption."/>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="last-modified" content="2018-04-05 12:04:09 +0530">
+<meta http-equiv="Expires" content="600" />
+
+<!--Build Details-->
+<meta name="buildVersion" content="release.1.31.a" />
+<meta name="buildNo" content="2469" />
+<!--/Build Details-->
+
+<!-- CDN's-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
+<!-- /CDN's-->
+
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?05042018"  />
+<link rel="stylesheet" href="css/style.css?05042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?05042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?05042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?05042018"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-106552125-1');
+</script>
+
+	
+		<meta name="robots" content="index, follow">
+	
+  </head>
+  <body id="body">
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <div class="inner__sidebar">
+        <div id="">
+	
+		<div class="search-cover">
+	<form method="get" action="https://www.google.com/search" target="_blank">
+		<input type="text" value="" name="q" placeholder="Search"/ class="search-input" title="Enter keyword to search">
+		<input type="hidden" value="en" name="hl" />
+		<input type="hidden" name="sitesearch" value="http://www.sunbird.org" />
+		<input type="hidden" value="lang_en" name="lr" />
+		<button type="submit" onclick="submit()" class="search-btn" title="Search">
+			<i class="fa fa-search"></i>
+		</button>
+	</form>
+</div>
+
+	
+	<div class="sidebar-wrapper features-documentation-mobileapp">
+		<div class="" >
+			<a href="architecture/">
+				<h4 class="sidebar-group-title">Architecture</h4>
+			</a>
+			<ul class="sidebar-group architecture">
+				<li>
+					<a href="architecture/overview/">Overview</a>
+				</li>
+				<li>
+					<a href="architecture/design/">Design</a>
+				</li>
+				<li>
+					<div class="">
+						<a href="architecture/views/elementryview/">Views</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="architecture/views/logical/">Logical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/physical/">Physical View</a>
+							</li>
+							<li>
+								<a href="architecture/views/conceptual/">Conceptual View</a>
+							</li>
+							<li>
+								<a href="architecture/views/deployment/">Deployment View</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="architecture/usecase/">Use Cases</a>
+				</li>
+			</ul>
+			<a href="features-documentation/">
+				<h4 class="sidebar-group-title">Product Features</h4>
+			</a>
+			<ul class="sidebar-group features-documentation" >
+				<!--<li>
+					<a href="features-documentation/onboarding/">Onboarding</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/login/">Login</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_org/">Register Organizations</a>
+				</li>
+				<li>
+					<a href="features-documentation/register_user/">Register Users</a>
+				</li>
+				<li>
+					<a href="features-documentation/userrolepermission/">User Roles and Permissions</a>
+				</li>
+				<li>
+					<div class="">
+	                                        <ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/user_type/">Types of Users</a>
+							</li>
+							<li>
+								<a href="features-documentation/userprofile/">User Profile</a>
+							</li>
+							<li>
+								<a href="features-documentation/workspace/">Workspace</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="features-documentation/admindashboard/">Administrator Dashboard</a>
+				</li>
+				<li>
+					<a href="features-documentation/lessonplan/">Lesson Plan</a>
+				</li>
+				<li>
+					<a href="features-documentation/book_creation/">Book</a>
+				</li>
+				<li>
+					<a href="features-documentation/collection_creation/">Collection</a>
+				</li>
+				<li>
+					<a href="features-documentation/course_intro/">Courses</a>
+				</li>
+				<li>
+					<div class="">
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/course_creation/">Course Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_batches/">Batch Creation</a>
+							</li>
+							<li>
+								<a href="features-documentation/course_consumption/">Course Consumption</a>
+							</li>					
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="features-documentation/announcement/">Announcement</a>
+				</li>
+				<li>
+					<a href="features-documentation/library/">Library</a>
+				</li>
+				<li>
+					<a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
+				</li>
+				<!--<li>
+					<a href="features-documentation/contentcreation/">Content Creation</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/contenteditor/">Content Editor</a>
+				</li>
+                                <!--<li>
+					<a href="features-documentation/consumption/">Consume Study Material</a>
+				</li>-->
+				</li>
+				<li>
+					<div class="">
+						<a href="features-documentation/guidelines/" >Guidelines</a>
+						<ul class="sidebar-group">
+							<li>
+								<a href="features-documentation/intellectualproperty/">Intellectual Property</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<!--<li>
+					<a href="features-documentation/reportinganalytics/">Reporting and Analytics</a>
+				</li>-->
+				<li>
+					<a href="features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
+				</li>
+				</ul>
+				<a href="developer-docs/">
+					<h4 class="sidebar-group-title">Developer Documentation</h4>
+				</a>
+				<ul class="sidebar-group developer-docs">
+					<li>
+						<a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+                                        </li>
+					<li>
+						<a href="developer-docs/installation/">Installation Overview</a>
+					</li>
+					<!--<li>
+						<a href="developer-docs/hosting_sunbird/">Hosting Sunbird</a>
+					</li>-->
+					<li>
+						<a  href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
+					</li>
+					<!--<li>
+						<a href="developer-docs/installation/sunbird_actor_servc/">Actor System</a>
+					</li>-->
+					<li>
+						<div class="">
+							<a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/setup_db/">Setup Databases</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
+								</li>
+								<li>
+									<div class="">
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
+								</li>
+								<li>
+									<a href="developer-docs/installation/check_installation/">Check Installation</a>
+								</li>
+								<!--<li>
+									<a href="developer-docs/installation/keycloak_sms_authenticator/">Authentication</a>
+								</li>-->
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/onboarding/">Onboarding</a>
+							<ul class="sidebar-group">
+								<li>
+									<div class="">
+										<a href="developer-docs/singlesignon/overview_sso/">Onboarding via Single Sign On</a>									<ul class="sidebar-group">
+										<ul class="sidebar-group">
+											<li> 
+												<a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
+											</li>
+										<!--<li>
+											<a href="developer-docs/singlesignon/api_info_sso/">API Information</a>
+										</li>-->
+											<li>
+												<a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
+											</li>
+											<li>
+												<a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							<li>
+								<a href="developer-docs/configuring_announcement/">Configuring for Announcements</a>
+							</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="developer-docs/upgrading/">Upgrading</a>
+					</li>
+					<li>
+						<a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
+					</li>
+					<!--<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/extending_sunbird/">Extending Sunbird</a>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a class="sidebar-group-title" href="developer-docs/customize_sunbird/">Customizing Sunbird</a>
+						</div>
+					</li>-->
+					<li>
+						<div class="">
+							<a  href="apis/">API Reference Documentation</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="apis/#feature" target="_blank">Feature</a>
+								</li>
+								<li>
+									<a href="apis/#admin-apis" target="_blank">Administration</a>
+								</li>
+								<li>
+									<a href="apis/#setup-apis" target="_blank">Setup</a>
+								</li>
+								<li>
+									<a href="apis/#data-apis" target="_blank">Data</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="">
+							<a href="developer-docs/telemetry/overview">Telemetry</a>
+							<ul class="sidebar-group">
+								<li> 
+									<a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+								</li>
+								<li>
+							                 <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+								</li>
+								<li>
+									<div class="">
+							
+										<!--<a href="developer-docs/telemetry/consuming_telemetry/">Consuming Telemetry Data</a>-->
+										<ul class="sidebar-group">
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
+											</li>
+											<li>
+								                <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#content-editor-workflow">Content Editor Workflow</a>
+											</li>
+											<li>
+												<a href="developer-docs/telemetry/consuming_telemetry/#backend-services-workflow">Backend-services Workflow</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>	
+					<li>
+						<div class="">
+						<a href="developer-docs/library_reference/">Library References</a>
+							<ul class="sidebar-group">
+								<li>
+									<a href="developer-docs/telemetry/jslibrary/">Standalone JS Library</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/htmlinterfacelibrary/">HTML Interface Library</a>
+								</li>
+								<li>
+									<a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="developer-docs/troubleshooting/">Troubleshooting</a>
+					</li>
+				</div>
+			</li>
+		</ul>
+		<a href="contributions/">
+			<h4 class="sidebar-group-title">Contribute to Sunbird</h4>
+		</a>
+		<ul class="sidebar-group contributions" >
+			<li>
+				<a href="contributions/filing_a_bug">Guidelines for Filing a Bug</a>
+			</li>
+			<li>
+				<a href="contributions/contribution_guidelines">Contributing to Sunbird Documentation</a>
+			</li>
+		</ul>
+		<a href="faqs/">
+			<h4 class="sidebar-group-title">Frequently asked questions</h4>
+		</a>
+		<ul class="sidebar-group faqs" >
+			<li>
+				<a href="faqs/audience/">Audience</a>
+			</li>
+			<li>
+				<a href="faqs/content_format/">Content Format</a>
+			</li>
+			<li>
+				<a href="faqs/content_repo/">Content Repositories</a>
+			</li>
+			<li>
+				<a href="faqs/contentreviews/">Content Review</a>
+			</li>
+			<li>
+				<a href="faqs/content_types/">Content Types</a>
+			</li>
+			<li>
+				<a href="faqs/content_upload/">Content Upload</a>
+			</li>
+			<li>
+				<a href="faqs/feature/">Features</a>
+			</li>
+			<li>
+				<a href="faqs/fixerrors/">Fix Errors</a>
+			</li>
+			<li>
+				<a href="faqs/helpsupport/">Help Support</a>
+			</li>
+			<li>
+				<a href="faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
+			</li>
+			<li>
+				<a href="faqs/registrationenrolment/">Registration and Enrollment</a>
+			</li>
+			<li>
+				<a href="faqs/signin/">Sign In</a>
+			</li>
+			<li>
+				<a href="faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
+			</li>
+			<li>
+				<a href="faqs/user_rightspermissions/">Users Rights and Permission</a>
+			</li>
+		</ul>
+		<a href="glossary/">
+			<h4 class="sidebar-group-title">Glossary</h4>
+		</a>
+	</div>
+</div>
+<script>
+$("a[href$='features-documentation/mobileapp/allappfeatures/']").addClass("sidebar-link-selected");
+</script> 
+
+      </div>
+    </nav>
+    <div class="content">
+      <div class="inner__content header" id="heading">
+        <h1>Sunbird Mobile App </h1>
+      </div>
+
+      <div id="main-content" class="inner__content">
+			<p class="edit-para text-right">
+				<span>
+			<a target="_blank" class="contribute" href="contributions/contribution_guidelines">
+				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;
+			  
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/mobileapp/allappfeatures.md">
+				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+			  </a> 
+			  | 
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				  Report
+			  </a>
+			  </span>
+			</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#downloading-and-installing-sunbird-mobile-app"><span class="tocnumber">2 .</span> <span class="toctext">Downloading and Installing Sunbird Mobile APP</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#signing-in"><span class="tocnumber">3 .</span> <span class="toctext">Signing In</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#exploring-sunbird-features"><span class="tocnumber">4 .</span> <span class="toctext">Exploring Sunbird Features</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-5">
+                  <a href="#home"><span class="tocnumber">4.1 .</span> <span class="toctext">Home</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#courses"><span class="tocnumber">4.2 .</span> <span class="toctext">Courses</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#library"><span class="tocnumber">4.3 .</span> <span class="toctext">Library</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+
+<p>Sunbird Mobile App offers extensive functions and features, which allows users to perform various actions:</p>
+
+<ul>
+  <li>Sign in with registered credentials</li>
+  <li>Consume the app using Guest account</li>
+  <li>View content, Online as well as Offline</li>
+  <li>Search content from the Sunbird portal online</li>
+  <li>Search downloaded content from the mobile device when offline</li>
+  <li>Scan QR code or Dial code in textbooks and access related content</li>
+  <li>Download content, when connected to the Internet</li>
+  <li>Enrol for available courses</li>
+  <li>Take up assigned courses</li>
+  <li>Browse and view resources from the content library</li>
+  <li>Create and update user profile</li>
+  <li>Share content with other users</li>
+  <li>View and rate the content</li>
+</ul>
+
+<h2 id="downloading-and-installing-sunbird-mobile-app">Downloading and Installing Sunbird Mobile APP</h2>
+
+<p>
+  <strong>Prerequisites</strong>
+</p>
+
+<ul>
+  <li>You have Android OS 5.0 and above on your device</li>
+  <li>You have Github URL for installing Sunbird Mobile App</li>
+</ul>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br />1. Click <b>staging.apk</b> link to install latest mobile built <br />2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br />3. Click <b>Install</b> to install the mobile application</td>
+   <td><img src="pages/features-documentation/images/mobileapp/download.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Click <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> 2. Select your preferred language <br />3. Click <b>Continue</b> to start navigating through the app <br /><b>Note:</b> Denying these permissions diables users from downloading content for offline use 
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/permission.png" /></td>
+  </tr>
+  </table>
+
+<h2 id="signing-in">Signing In</h2>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>1. Tap the <b>Sign In</b> to log in into Sunbird Mobile App. You will be redirected to <b>Login</b> screen <br />2. You can <b>Log In</b> to Sunbird Mobile App using either of the three options: registered <b>Username</b> or <b>Email ID</b> or <b>Phone number</b> <br />3. Enter your <b>Password</b> <br />4. Tap <b>Login</b> button <br /><b>Note:</b> You can also sign in to the application without using your credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/login.png" /></td>
+  </tr>
+  </table>
+
+<p>
+  <strong>Recovering Password</strong>
+</p>
+
+<p>For details on recovering password refer <a href="pages/features-documentation/forgotpassword" target="_blank">Recovering Password</a></p>
+
+<h2 id="exploring-sunbird-features">Exploring Sunbird Features</h2>
+
+<p>Sign in to Sunbird Mobile App with your registered credential. You will land to <b>Home</b> screen. Sunbird Mobile app allows you to navigate to the different features. Tap associated icons to navigate to the relevant screen of the app.</p>
+
+<h3 id="home">Home</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>1. Swipe to view all the courses that you are enrolled in <b>To Do</b> or click <b>View all</b> <br />2. Click <b>Resume</b> to take up the a course <br />3. Click <b>View all</b> to view <b>Announcements</b> <br />3. Tap the <b>QR Code</b> icon to scan QR codes or Dial codes in physical textbooks <br />4. Tap <b>Search</b> icon. You will be redirected to next screen <br />5. <b>Type</b> keywords using your 
+mobile keypad to search for content
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/home.png" /></td>
+  </tr>
+  </table>
+
+<h3 id="courses">Courses</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+   <td>The <b>Courses</b> page lists your current courses and their progress, latest course offerings and popular courses <br />1. Swipe the associated course category to browse the relevant courses in that category. Courses are categorized as: <br />a) Courses In Progress <br />b) Latest Courses <br />c) Popular Courses <br />2. Tap <b>Search</b> or <b>Filter</b> icon and enter keywords to search for relevant courses <br />3. You can filter the courses by: <b>Board</b>, <b>Subject</b> and <b>Medium</b> <br />4. Click <b>Apply</b> to apply the filter <br />5. Click <b>Cancel</b> to exit the screen</td>
+   <td><img src="pages/features-documentation/images/mobileapp/course1.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Click <b>Resume</b> to take a course <br />2. You will be re-directed to next screen. Click <b>Start</b> to resume your course <br />3. To download the course click <b>Download all</b> <br /><b>Note:</b> After the content is downloaded, you can view the content offline</td>
+    <td><img src="pages/features-documentation/images/mobileapp/course2.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Click <b>Open</b> to view available course <br />2. Click <b>Enroll in Course</b> to get enrolled for the course having a batch</td>
+    <td><img src="pages/features-documentation/images/mobileapp/course3.png" /></td>
+  </tr>
+  <tr>
+    <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br />2. Click on menu icon to <b>Delete</b> or <b>Report</b> course <br /><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+   <td><img src="pages/features-documentation/images/mobileapp/course4.png" /></td> 
+  </tr>     
+  </table>
+
+<h3 id="library">Library</h3>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr> 
+ <tr>
+  <td>1. Tap <b>Library</b> icon to view all the resources that you have saved on your device or popular artifacts from the portal library <br />2. Tap <b>Search</b> or <b>Filter</b> icon and enter keywords to search for relevant content resources <br />3. You can filter the library content by: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br />4. Click <b>Apply</b> to apply the filter <br />5. Click <b>Cancel</b> to exit the screen</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library1.png" /></td> 
+ </tr>
+ <tr>
+  <td>1. Swipe the associated content category to browse the relevant resources in that category. Content is categorized as: <br />a) Saved Resources <br />b) Popular Story <br />2. Click <b>Open</b> to view the content <br />3. To play or download content, click the <b>Play</b> or <b>Download</b> button</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library2.png" /></td> 
+ </tr>
+ <tr>
+  <td>1. Click <b>Play</b> to view the content <br />2. Tap on <b>Stars</b> icon to rate the content. You can even write your feedback about the content <br />3. Click <b>Submit</b> to submit your rating</td>
+ </tr>
+ <tr>
+  <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br />2. Click on menu icon to <b>Delete</b> or <b>Report</b> course <br /><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+   <td><img src="pages/features-documentation/images/mobileapp/course4.png" /></td> 
+  </tr> 
+ <tr>
+  <td>1. Tap on <b>Download</b> to download the content
+  &lt;/table&gt;
+   
+### Profile
+
+### Scanning QR Codes or DIAL Codes
+
+## Browse as Guest
+
+## Technical Support
+</td></tr></table>
+
+          
+          <hr />
+          
+          <p class="edit-para text-right">
+			<!--<a target="_blank"  class="" href="">
+				  <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;-->
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/features-documentation/mobileapp/allappfeatures.md" title="Fix this page">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
+		  </p>
+		  <a href="features-documentation/mobileapp/allappfeatures/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+          
+      </div>
+    </div>
+    <div class="page-footer">
+		<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="row">
+				
+			<div class="col-md-4 col-sm-12">
+			</div>
+			
+			<div class="col-md-2 col-sm-6 ">
+				<ul>
+					<li><a href="about/">About Sunbird</a></li>
+					<li><a href="contact/">Contact Us</a></li>
+					<li><a href="privacy-policy/">Privacy Policy</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-2 col-sm-6 sideline">
+				<ul>
+					<li><a href="docs/">Documentation</a></li>
+					<li><a href="features/">Features</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-12">
+			</div>
+			
+		</div>
+	</div>
+</footer>
+ 
+
+	</div>
+  </div>
+  <script type="text/javascript">
+	//TOC Toggle
+    $(function() {
+        $.toc.clickHideButton();
+    });
+    //Scroll to top
+    $(document).ready(function () {
+		$(".content").scroll(function () {
+			if ($(this).scrollTop() > 250) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+	});
+	$('#toc a').each(function(){
+		var url = this.href.replace(baseURL.href, "");
+		this.href = 'features-documentation/mobileapp/allappfeatures/' + url;
+    })
+  </script>
+  </body>
+</html>
