@@ -32,7 +32,7 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>4.</td>
-    <td>Add your keystore detail `keystore`, `keystore_password`, `key_alias` and `key_password` in `gradle.properties`. For more details about generating a key and keystore <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank">refer</a></td>to the official Android website.
+    <td>Add your keystore detail `keystore`, `keystore_password`, `key_alias` and `key_password` in `gradle.properties`. For more details about generating a key and keystore <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank">refer</a>to the official Android website.</td>
   </tr>
   <tr>
     <td>5.</td>
