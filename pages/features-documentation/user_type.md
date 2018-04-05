@@ -8,13 +8,13 @@ keywords: 'Admin, System Admin, Org Admin, Instructor, Student, Roles, Permissio
 published: true
 allowSearch: true
 ---
-On Sunbird, each user type has an associated user role. Permissions and responsibilities vary for each user role.  
+On Sunbird, each user type is associated with a user role. The permissions and responsibilities vary for each user role.  
 Before users are assigned with appropriate roles, it is important to understand the: <br>1. Responsibilities of a each user role <br>2. Features accessible to each user role
 
 On Sunbird there are ten user types:
 
 ## Course Mentor
-A Course Mentor guides and instructs learners on how to undertake a course. On Sunbird, a course mentor creates batches of users to enrol for and take a course. Mentors also ensure completion of a course within a stipulated time.
+A Course Mentor guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course. Mentors also ensure completion of a course within a stipulated time.
 
 <b>User Role Matrix for a Course Mentor</b>
 
@@ -23,7 +23,7 @@ A Course Mentor guides and instructs learners on how to undertake a course. On S
 | **Course Mentor** |       No       |       No       |       No       |             No             |       No       |      Yes     | Yes               |
 
 ## Content Reviewer
-A Content Reviewer assesses created courses or content within prescribed guidelines. Sunbird has defined review guidelines. Reviewers assess content based on these guidelines. Reviewers have the right to reject or publish content based on these guidelines.
+A Content Reviewer accesses the created courses or content within prescribed guidelines. Sunbird has defined review guidelines. Reviewers assess content based on these guidelines. Reviewers have the right to reject or publish content based on these guidelines.
 
 <b>User Role Matrix for a Content Reviewer</b>
   
@@ -31,19 +31,19 @@ A Content Reviewer assesses created courses or content within prescribed guideli
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
 | **Content Reviewer** |       No       |       Yes      |       Yes      |       Yes      |           No           |       Yes      |         Yes         |
 
-<b>Note:</b> Reviewers can also have creation rights. However, reviewers cannot review courses or content created by themselves. They can only review courses or content created by others.
+<b>Note:</b> Reviewers can also have creation rights, but they cannot review courses or content created by themselves. Reviewers can only review courses or content created by others.
 
 ## Teacher Badge Issuer
-A Teacher Badge Issuer is responsible for assigning badges to teachers.On Sunbird, a teacher badge issuer assigns badges to teachers based on the discretion of the concerned organization
+A Teacher Badge Issuer is responsible for assigning badges to teachers based on the discretion of the concerned organization.
 
 <b>User Role Matrix for a Teacher Badge Issuer</b>
 
 |  Functionality       | Create Content | Upload Content | Review Content | Reject and Publish Content | Assign Badges | Delete Content | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Teacher Badge Issuer** |       No       |       No      |       No      |       No      |           No           |       Yes      |         Yes         |
+| **Teacher Badge Issuer** |       No       |       No      |       No      |       No      |           Yes           |       No      |         Yes         |
 
 ## Book Creator
-A Book Creator is an individual who creates books. On Sunbird, registered users become book creators when book creation rights are assigned to them 
+A Book Creator is an individual who curate and compiles books. The registered users become book creators when book creation rights are assigned to them.
 
 <b>User Role Matrix for a Book Creator</b>
 
@@ -52,7 +52,7 @@ A Book Creator is an individual who creates books. On Sunbird, registered users 
 | **Book Creator** |       Yes       |       Yes      |       No      |       No      |           No           |       No      |         Yes         |
 
 ## Book Reviewer
-A Book Reviewer assesses books within prescribed guidelines. On Sunbird, there are defined review guidelines. The book reviewer assesses the content based on these guidelines. A book reviewer has the right to reject or publish the content based on these guidelines       
+A Book Reviewer assesses books within defined and prescribed guidelines. A book reviewer has the right to reject or publish the content based on these guidelines.       
 
 <b>User Role Matrix for a Book Reviewer</b>
 
@@ -61,13 +61,13 @@ A Book Reviewer assesses books within prescribed guidelines. On Sunbird, there a
 | **Book Reviewer** |       No       |       No      |       Yes      |       Yes      |           No           |       No      |         Yes         |
 
 ## Official Textbook Badge Issuer  
-An Official Textbook Badge Issuer issues badges to books. On Sunbird, badges can be assigned to books by individuals who are given badge issuer rights. Currently, there is only one badge titled Offical and hence the individual is assigned the right to assign only this badge 
+An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, there is only one badge that can be assigned which is titled as Offical. 
 
 <b>User Role Matrix for an Official Textbook Badge Issuer</b>
 
 |  Functionality       | Create Book | Upload Book | Review Book | Reject and Publish Book | Assign Badge | Delete Content | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Official Textbook Badge Issuer** |       No       |       No      |       no      |       Yes      |           No           |       No      |         Yes         |
+| **Official Textbook Badge Issuer** |       No       |       No      |       No      |       Yes      |           No           |       No      |         Yes         |
 
 
 ## Public      
@@ -77,18 +77,18 @@ A user having registered credentials on Sunbird. A registered user can be a lear
 
 |  Functionality       | Create Book | Upload Book | Review Book | Reject and Publish Book | View Content | Delete Content | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Public** |       No       |       No      |       no      |       No      |           Yes           |       No      |         Yes         |
+| **Public** |       No       |       No      |       No      |       No      |           Yes           |       No      |         Yes         |
 
 ## Announcement Sender          
-A person who send announcements to various registered users on the portal. On Sunbird, every organization can have one or more announcement sender who are responsible for sending important dates, announcements etc. to all the registered users of that organization  
+A person who send a formal declaration to various registered users on the portal. On Sunbird, every organization can have one or more announcement sender who are responsible for informing important dates, announcements and other information to all the registered users of that organization.  
 <b>User Role Matrix for an Announcement Sender</b>
 
 Functionality|Create Content|Upload Content|Review Content|Reject Content and Publish Content|Delete Content|Update User Profile|Create Announcements|Send Announcements
 -------------|--------------|--------------|--------------|----------------------------------|--------------|-------------------|--------------------|--------------------
-**Announcement Sender**|Yes| Yes| No| No| No| No| Yes| Yes
+**Announcement Sender**|Yes| Yes| No| No| No| No| Yes| Yes|
 
 ## Content Creator 
-A content creator can create content such as Collection, Lesson Plan and Study Material. On Sunbird, registered users become content creators when content creation rights are assigned to them
+A content creator can curate content such as Collection, Lesson Plan and Study Material. On Sunbird, registered users become content creators when content creation rights are assigned to them.
 
 <b>User Role Matrix for a Content Creator</b>
 
@@ -97,7 +97,7 @@ A content creator can create content such as Collection, Lesson Plan and Study M
 | **Content Creator** |       Yes      |       Yes      |       No       |       No       |        No       |       Yes      |         Yes         |
 
 ## Flag Reviewer                          
-A flag reviewer assesses flagged content. On Sunbird, any user can flag a content, if the content is inappropriate. The flag reviewer reviews the content and rejects if the content is inappropriate according to Sunbird review guidelines. The flag is removed if the content fits the guidelines
+A flag reviewer assesses the content that is marked as inappropriate by any user. The flag reviewer reviews and rejects the inappropriatethe content. The flag is removed if the content abides by the guidelines.
 
 <b>User Role Matrix for a Flag Reviewer</b>
 
