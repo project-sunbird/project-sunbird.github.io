@@ -10,6 +10,7 @@ allowSearch: true
 ---
 On Sunbird, each user type has an associated user role. Permissions and responsibilities vary for each user role.  
 Before users are assigned with appropriate roles, it is important to understand the: <br>1. Responsibilities of a each user role <br>2. Features accessible to each user role
+
 On Sunbird there are ten user types:
 
 ## Course Mentor
@@ -104,5 +105,5 @@ A flag reviewer assesses flagged content. On Sunbird, any user can flag a conten
 |-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
 | **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |           Yes          |       Yes      | Yes                 |
   
-<b>Note</b>: Orhanization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle. 
+<b>Note</b>: Organization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle. 
 
