@@ -61,7 +61,7 @@ A Book Reviewer assesses books within defined and prescribed guidelines. A book 
 | **Book Reviewer** |       No       |       No      |       Yes      |       Yes      |           No           |       No      |         Yes         |
 
 ## Official Textbook Badge Issuer  
-An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, there is only one badge that can be assigned which is titled as Offical. 
+An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official
 
 <b>User Role Matrix for an Official Textbook Badge Issuer</b>
 
