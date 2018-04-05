@@ -67,7 +67,7 @@ An Official Textbook Badge Issuer is an individual who  assigns badges to books.
 
 |  Functionality       | Create Book | Upload Book | Review Book | Reject and Publish Book | Assign Badge | Delete Content | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Official Textbook Badge Issuer** |       No       |       No      |       No      |       Yes      |           No           |       No      |         Yes         |
+| **Official Textbook Badge Issuer** |       No       |       No      |       No      |       No      |          Yes           |       No      |         Yes         |
 
 
 ## Public      
