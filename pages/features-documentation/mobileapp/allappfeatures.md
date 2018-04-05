@@ -153,7 +153,7 @@ mobile keypad to search for content
    <td><img src="pages/features-documentation/images/mobileapp/scan1.png"></td>
  </tr>
  <tr>
-  <td>1. On successfull scan, content linked to the QR code or Dial code is listed <br>2. Tap on the <b>Download</b> to download the content <br>3. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+  <td>1. On successfull scan, content linked to the QR code or Dial code is listed <br>2. Tap on the <b>Download</b> to download the content <br>3. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li> 4. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> </td>
   <td><img src="pages/features-documentation/images/mobileapp/scan2.png"></td>
  </tr>
  </table>
@@ -174,20 +174,20 @@ You can browse the Subird Mobile App without sining in. Use **Browse as Guest** 
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
-  <td>1. You will be re-directed to <b>Home</b> screen <br>2. Click <b>Select Board</b> to search and filter your content by selecting a particular board <br>3. Select a <b>Board</b> <br>4. Click <b>Save</b> to save your seection <br>5. Click <b>Cancel</b> to exit the screen</td>
+  <td>1. You will be re-directed to <b>Home</b> screen <br>2. Click <b>Select Board</b> to search and filter your content by selecting a particular board <br>3. You will be re-directed to next screen. Select a <b>Board</b> <br>4. Click <b>Save</b> to save your seection <br>5. Click <b>Cancel</b> to exit the screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
  </tr>
  </table>
  
  **Note:** 
  
- 1. Following features are not available for users accessing the application on Guest mode:
+1. Following features are not available for users accessing the application on Guest mode:
  
  - Enrolling to a Course
  - Limited access to edit or update **Profile**. Users can edit or update **Name**, **Grade**, **Subjects** and **Medium of Instruction**
  - Uploading of Profile Image
  
- 2. Users, on Guest mode, can access [Course](pages/features-documentation/mobileapp/allappfeatures/#courses) and [Library](pages/features-documentation/mobileapp/allappfeatures/#library) same as registered user
+2. Users, on Guest mode, can access [Course](pages/features-documentation/mobileapp/allappfeatures/#courses) and [Library](pages/features-documentation/mobileapp/allappfeatures/#library) same as registered user
   
   
 
