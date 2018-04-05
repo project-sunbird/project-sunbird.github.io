@@ -122,24 +122,65 @@ mobile keypad to search for content
   <td><img src="pages/features-documentation/images/mobileapp/library1.png"></td> 
  </tr>
  <tr>
-  <td>1. Swipe the associated content category to browse the relevant resources in that category. Content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br>2. Click <b>Open</b> to view the content <br>3. To play or download content, click the <b>Play</b> or <b>Download</b> button</td>
+  <td>1. Swipe the associated content category to browse the relevant resources in that category. Content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br>2. Click <b>View all</b> to view all the content in the list <br>3. Click <b>Open</b> to open and view a selected content <br>4. To play or download content, click the <b>Play</b> or <b>Download</b> button</td>
   <td><img src="pages/features-documentation/images/mobileapp/library2.png"></td> 
  </tr>
  <tr>
-  <td>1. Click <b>Play</b> to view the content <br>2. Tap on <b>Stars</b> icon to rate the content. You can even write your feedback about the content <br>3. Click <b>Submit</b> to submit your rating</td>
+  <td>1. Click <b>Play</b> to play the content <br>2. Tap on the <b>Stars</b> icon to rate the content after you finish viewing. You can even provide your feedback about the content <br>3. Click <b>Submit</b> to submit your rating</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library3.png"></td>
  </tr>
  <tr>
-  <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+  <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr> 
  <tr>
-  <td>1. Tap on <b>Download</b> to download the content
+  <td>1. Tap on <b>Download</b> to download the content. The license, attribution and credit information is displayed while downloading the content <br>2. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>3. Tap <b>Cancel</b> to cancel the download. You can even <b>Play</b> the downloaded content <br><b>Note:</b> You can only download the content when you are connected to internet, though you can view the downloaded content being offline</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library4.png"></td> 
+ </tr>
   </table>
-   
+ 
 ### Profile
 
 ### Scanning QR Codes or DIAL Codes
 
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr> 
+ <tr>
+  <td>
+
 ## Browse as Guest
 
-## Technical Support
+You can browse the Subird Mobile App without sining in. Use **Browse as Guest** feature to navigate through the app.
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr> 
+ <tr>
+  <td>1. Tap on <b>Browse as Guest</b> <br>2. Select your guest mode as <b>Teacher</b> or <b>Student</b> <br>3. Click <b>Continue</b> to enter into the app</td>
+  <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
+ </tr>
+ <tr>
+  <td>1. You will be re-directed to <b>Home</b> screen <br>2. Click <b>Select Board</b> to search and filter your content by selecting a particular board <br>3. Select a <b>Board</b> <br>4. Click <b>Save</b> to save your seection <br>5. Click <b>Cancel</b> to exit the screen</td>
+  <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
+ </tr>
+ </table>
+ 
+ **Note:** 
+ 
+ 1. Following features are not available for users accessing the application on Guest mode:
+ 
+ - Enrolling to a Course
+ - Limited access to edit or update **Profile**. Users can edit or update **Name**, **Grade**, **Subjects** and **Medium of Instruction**
+ - Uploading of Profile Image
+ 
+ 2. Users, on Guest mode, can access [Course](pages/features-documentation/mobileapp/allappfeatures/#courses) and [Library](pages/features-documentation/mobileapp/allappfeatures/#library) same as registered user
+  
+  
+
+
+
