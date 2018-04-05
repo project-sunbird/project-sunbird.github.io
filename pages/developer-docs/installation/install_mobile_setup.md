@@ -40,7 +40,7 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>6.</td>
-    <td>To get the API key, create an account at <a href="https://get.fabric.io/">fabric.io</a> and register your app. After registering your app, you will get the API Key. Add the key in the manifest file<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> and the file is generally locted in the root directory</td>
+    <td>To get the API key, create an account at <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register your app. After registering your app, you will get the API Key. Add the key in the manifest file<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> and the file is generally locted in the root directory</td>
   </tr>
   <tr>
     <td>7.</td>
@@ -48,7 +48,7 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>8.</td>
-    <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user.<br><i>To generate key and secret, refer <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app">here</a></i></td> for more details.
+    <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user.<br><i>To generate key and secret, refer <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app" target="_blank">here</a></i></td> for more details.
   </tr>
   <tr>
     <td>9.</td>
@@ -70,6 +70,6 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>13.</td>
-    <td>Setup FCM to support anncouncement feature in mobile app, <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase">refer</a> to the official website.</td>
+    <td>Setup FCM to support anncouncement feature in mobile app, <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase" target="_blank">refer</a> to the official website.</td>
   </tr>
 </table>
