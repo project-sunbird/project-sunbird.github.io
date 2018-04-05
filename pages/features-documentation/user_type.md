@@ -9,9 +9,7 @@ published: true
 allowSearch: true
 ---
 On Sunbird, each user type has an associated user role. Permissions and responsibilities vary for each user role.  
-Before users are assigned with appropriate roles, it is important to understand the: 
-Responsibilities of a each user role
-Features accessible to each user role
+Before users are assigned with appropriate roles, it is important to understand the: <br>1. Responsibilities of a each user role <br>2. Features accessible to each user role
 On Sunbird there are ten user types:
 
 ## Course Mentor
@@ -91,6 +89,20 @@ Functionality|Create Content|Upload Content|Review Content|Reject Content and Pu
 ## Content Creator 
 A content creator can create content such as Collection, Lesson Plan and Study Material. On Sunbird, registered users become content creators when content creation rights are assigned to them
 
+<b>User Role Matrix for a Content Creator</b>
 
-| 10.    | Flag Reviewer                          | A person who assesses flagged content                                                                                             | On Sunbird, any user can flag a content, if the content is inappropriate. The flag reviewer reviews the content and rejects if the content is inappropriate according to Sunbird review guidelines. The flag is removed if the content fits the guidelines. |
-                                                                                                              
+|  Functionality      | Create Content | Upload Content | Review Content | Reject Content | Publish Content | Delete Content | Update User Profile |
+|---------------------|----------------|----------------|----------------|----------------|-----------------|----------------|---------------------|
+| **Content Creator** |       Yes      |       Yes      |       No       |       No       |        No       |       Yes      |         Yes         |
+
+## Flag Reviewer                          
+A flag reviewer assesses flagged content. On Sunbird, any user can flag a content, if the content is inappropriate. The flag reviewer reviews the content and rejects if the content is inappropriate according to Sunbird review guidelines. The flag is removed if the content fits the guidelines
+
+<b>User Role Matrix for a Flag Reviewer</b>
+
+|  Functionality    | Create Content | Upload Content | Review Content | Reject and Publish Content | Review Flagged Content | Delete Content | Update User Profile |
+|-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
+| **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |           Yes          |       Yes      | Yes                 |
+  
+<b>Note</b>: Orhanization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle. 
+
