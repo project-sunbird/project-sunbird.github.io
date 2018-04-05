@@ -48,7 +48,7 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>8.</td>
-    <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user.<br><i>To generate key and secret, <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app" target="_blank">refer</a></i></td> to the page for more details.
+    <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user.<br><i>To generate key and secret, <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app" target="_blank">refer</a></i>to the page for more details.</td> 
   </tr>
   <tr>
     <td>9.</td>
