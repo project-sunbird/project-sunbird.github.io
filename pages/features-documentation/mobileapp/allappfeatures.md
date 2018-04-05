@@ -105,7 +105,7 @@ mobile keypad to search for content
     <td><img src="pages/features-documentation/images/mobileapp/course3.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+    <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr>     
   </table>
@@ -130,7 +130,7 @@ mobile keypad to search for content
   <td><img src="pages/features-documentation/images/mobileapp/library3.png"></td>
  </tr>
  <tr>
-  <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on menu icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+  <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr> 
  <tr>
@@ -149,7 +149,16 @@ mobile keypad to search for content
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>
+  <td>1. Tap on <b>QR Code Scanner</b> icon to scan <b>QR Codes</b> or <b>Dial Codes</b> <br>2. To scan QR Codes or Dial Codes, place your device's camera and focus on the QR/Dial Codes </td>
+   <td><img src="pages/features-documentation/images/mobileapp/scan1.png"></td>
+ </tr>
+ <tr>
+  <td>1. On successfull scan, content linked to the QR code or Dial code is listed <br>2. Tap on the <b>Download</b> to download the content <br>3. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+  <td><img src="pages/features-documentation/images/mobileapp/scan2.png"></td>
+ </tr>
+ </table>
+
+**Note:** You can scan QR/Dial Codes from any screen (except from the Profile screen) as a registered or guest user. 
 
 ## Browse as Guest
 
