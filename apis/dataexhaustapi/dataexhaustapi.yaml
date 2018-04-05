@@ -1,4 +1,4 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
   description: >-
     Data exhaust API resource refers to the data generated as trails or information byproducts resulting from all user activities.
