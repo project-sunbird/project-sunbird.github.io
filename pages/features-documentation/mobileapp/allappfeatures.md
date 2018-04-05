@@ -64,7 +64,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
   
 **Recovering Password**
 
-For details on recovering password refer [Recovering Password](pages/features-documentation/forgotpassword){:target="_blank"}
+For details on recovering password refer [Recovering Password](features-documentation/forgotpassword){:target="_blank"}
 
 ## Exploring Sunbird Features
 
