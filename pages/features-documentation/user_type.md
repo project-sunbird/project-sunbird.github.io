@@ -81,7 +81,16 @@ A user having registered credentials on Sunbird. A registered user can be a lear
 | **Public** |       No       |       No      |       no      |       No      |           Yes           |       No      |         Yes         |
 
 ## Announcement Sender          
-A person who send announcements to various registered users on the portal. On Sunbird, every organization can have one or more announcement sender who are responsible for sending important dates, announcements etc. to all the registered users of that organization  |                                                             
-| 9.    | Content Creator   | An individual who can create any kind of content.                                                                                 | On Sunbird, registered users become content creators when content creation rights are assigned to them. |                                        
+A person who send announcements to various registered users on the portal. On Sunbird, every organization can have one or more announcement sender who are responsible for sending important dates, announcements etc. to all the registered users of that organization  
+<b>User Role Matrix for an Announcement Sender</b>
+
+Functionality|Create Content|Upload Content|Review Content|Reject Content and Publish Content|Delete Content|Update User Profile|Create Announcements|Send Announcements
+-------------|--------------|--------------|--------------|----------------------------------|--------------|-------------------|--------------------|--------------------
+**Announcement Sender**|Yes| Yes| No| No| No| No| Yes| Yes
+
+## Content Creator 
+A content creator can create content such as Collection, Lesson Plan and Study Material. On Sunbird, registered users become content creators when content creation rights are assigned to them
+
+
 | 10.    | Flag Reviewer                          | A person who assesses flagged content                                                                                             | On Sunbird, any user can flag a content, if the content is inappropriate. The flag reviewer reviews the content and rejects if the content is inappropriate according to Sunbird review guidelines. The flag is removed if the content fits the guidelines. |
                                                                                                               
