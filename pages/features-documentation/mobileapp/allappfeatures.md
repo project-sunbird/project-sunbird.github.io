@@ -180,7 +180,7 @@ You can browse the Subird Mobile App without sining in. Use **Browse as Guest** 
  </table>
  
  <table>
- <td> **Note:** <ol> <li>Following features are not available for users accessing the application on Guest mode: <ul><li>Enrolling to a Course</li> <li>Limited access to edit or update <b>Profile</b>. Users can edit or update <b>Name</b>, <b>Grade</b>, <b>Subjects</b> and <b>Medium of Instruction</b></li> <li>Uploading of Profile Image</li></ul></li>
+ <td> <b>Note:</b> <ol> <li>Following features are not available for users accessing the application on Guest mode: <ul><li>Enrolling to a Course</li> <li>Limited access to edit or update <b>Profile</b>. Users can edit or update <b>Name</b>, <b>Grade</b>, <b>Subjects</b> and <b>Medium of Instruction</b></li> <li>Uploading of Profile Image</li></ul></li>
  
 <li>Users, on Guest mode, can access <a href="features-documentation/mobileapp/allappfeatures/#course"> Course</a> and <a href="features-documentation/mobileapp/allappfeatures/#library"> Library</a> same as registered user</li></ol>
 </td>
