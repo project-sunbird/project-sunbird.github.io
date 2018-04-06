@@ -20,7 +20,7 @@ paths:
     post:
       description: >-
        This API is used for posting the status of the course (content) consumed by a user i.e, the user can view and check the progress for a specific course or course(s)consumed.
-          - **_/state/_** endpoint executes the "Get Content State" request based on parameters provided as metadata in the request body.     
+          - **_/state/_** endpoint executes the "Get Course State" request based on parameters provided as metadata in the request body.     
           - It is mandatory to give values for the required fields and these fields cannot be null or empty.
       summary: Post Course Status
       tags:
@@ -71,7 +71,7 @@ paths:
           description: 'The Registered User token/key to authenticate user and execute the API.'
       responses:
         '200':
-          description: 'SUCCESS. The "post content status" operation was successful!'
+          description: 'SUCCESS. The "post course status" operation was successful!'
           schema:
             $ref: '#/definitions/GetContentResponse'
         '500':
@@ -82,7 +82,7 @@ paths:
     patch:
       description: >-
        This API is used to update the Course(content) status consumed by a user
-          - **_/update/_** endpoint executes the "Update Content State" request based on parameters provided as metadata in the request body.     
+          - **_/update/_** endpoint executes the "Update Course State" request based on parameters provided as metadata in the request body.     
           - It is mandatory to give values for the required fields and these  fields cannot be null or empty.
       summary: Update Course Status
       tags:
@@ -119,7 +119,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'Time Stamp at which **Get content status** request was sent.'
+          description: 'Time Stamp at which **Get course status** request was sent.'
         - name: X-msgid
           in: header
           required: true
