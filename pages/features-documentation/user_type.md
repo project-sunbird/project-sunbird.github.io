@@ -61,7 +61,7 @@ A Book Reviewer assesses books within defined and prescribed guidelines. A book 
 | **Book Reviewer** |       No       |       No      |       Yes      |       Yes      |           No           |       No      |         Yes         |
 
 ## Official Textbook Badge Issuer  
-An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official
+An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official.
 
 <b>User Role Matrix for an Official Textbook Badge Issuer</b>
 
@@ -71,7 +71,7 @@ An Official Textbook Badge Issuer is an individual who  assigns badges to books.
 
 
 ## Public      
-A user having registered credentials on Sunbird. A registered user can be a learner or an instructor. To consume any content on Sunbird, the user must be registered on the portal by their respective org admins 
+A user having registered credentials on Sunbird. A registered user can be a learner or an instructor. To consume any content on Sunbird, the user must be registered on the portal by their respective organisation admins. 
 
 <b>User Role Matrix for a Public User</b>
 
