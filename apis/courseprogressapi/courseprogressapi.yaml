@@ -285,7 +285,7 @@ definitions:
           description: 'The grade obtained by the user on completing the course assessment'
          progress: 
           type: string
-          description: 'The user's progress while doing the course'
+          description: 'The users progress while doing the course'
          contentVersion: 
           type: string
           description: 'The version of the course content'
@@ -297,7 +297,7 @@ definitions:
           description: 'The last time the user completed the course'
          status: 
           type: string
-          description: 'The user's course compeletion status'
+          description: 'The users course compeletion status'
          completedCount: 
           type: string
           description: 'The number of times the user completed the course'
