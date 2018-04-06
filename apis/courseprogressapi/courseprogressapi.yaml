@@ -9,6 +9,13 @@ info:
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /v1/user/content
+securityDefinitions:
+ auth:
+   type: oauth2
+   flow: implicit
+   authorizationUrl: 'https://staging.open-sunbird.org/api/v1/user/content'
+   scopes: {}
+   x-skip-client-authentication: false
 schemes:
   - https
 consumes:
@@ -64,11 +71,16 @@ paths:
           required: true
           type: string
           description: 'This ID uniquely identifies a request incase the same API is executed multiple times'
-        - name: x-authenticated-user-token
+        - name: X-Authenticated-User-Token
           in: header
           required: true
           type: string
           description: 'The registered user token/key to authenticate user and execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'SUCCESS. The "post course status" operation was successful!'
@@ -97,6 +109,8 @@ paths:
           description: >-
             The body refers to the format of the request.
               - The body contains metadata about the course (Content) status to be updated. 
+              - The request body includes the user id and list of contents info .
+              - Content info contains the courseId, batchId, contentId, user content status (whether completed or in progress), lastAccessTime of content by user.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -125,11 +139,16 @@ paths:
           required: true
           type: string
           description: 'This ID uniquely identifies a request incase the same API is executed multiple times'
-        - name: x-authenticated-user-token
+        - name: X-Authenticated-User-Token
           in: header
           required: true
           type: string
           description: 'The registered user token/key to authenticate user and execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'SUCCESS. The "Update course status" operation was successful!'
@@ -210,7 +229,7 @@ definitions:
         example: 115
         type: string
       status:
-        description: 'Status of course'
+        description: 'User content consumption status. Example 0 - not started, 1- in progress, 2- completed'
         example: 2
         type: integer
         format: int32
@@ -241,7 +260,7 @@ definitions:
       - courseId
 
   GetContentResponse:
-    description: Create Content Response
+    description: Get Content Response
     type: object
     allOf:
       - $ref: '#/definitions/ResultWithEmptyBody'
@@ -254,7 +273,6 @@ definitions:
         $ref: '#/definitions/ResultStatus'
   
   ResultStatus:
-    description: node id description
     type: object
     properties:
       contentList:
@@ -296,16 +314,16 @@ definitions:
           type: string
           description: 'The last time the user completed the course'
          status: 
-          type: string
-          description: 'The users course compeletion status'
+          type: integer
+          description: 'User content consumption status. Example 0 - not started, 1- in progress, 2- completed'
          completedCount: 
           type: string
           description: 'The number of times the user completed the course'
          id: 
           type: string
-          description: 'The ID of content'
+          description: 'Identifier to recognize the content belongs to particular user and particular course'
   UpdateContentResponse:
-    description: Create Content Response
+    description: Update Content Response
     type: object
     allOf:
       - $ref: '#/definitions/ResultWithEmptyBody1'
@@ -317,7 +335,6 @@ definitions:
       result:
         $ref: '#/definitions/ResultStatus1'
   ResultStatus1:
-    description: node id description
     type: object
     properties:
       contentId:
@@ -335,4 +352,3 @@ definitions:
     properties:
       result:
         type: object
-        description: Empty Result
