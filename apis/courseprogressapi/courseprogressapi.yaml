@@ -26,8 +26,8 @@ paths:
   /state:
     post:
       description: >-
-       This API is used to post the status of the course (content) as consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
-          - **_/state/_** endpoint executes the "Get Course State" request based on parameters provided as metadata in the request body.     
+       This API is used for the stating the progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
+          - **_/state/_** endpoint executes the "post course state" request based on parameters provided as metadata in the request body.     
           - It is a must to provide values for all mandatory fields.
       summary: Post Course Status
       tags:
@@ -40,9 +40,7 @@ paths:
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the status to be posted. 
-              - The request body includes the list of course IDs for a user,  the content for all the course IDs that the user has consumed and the list of all content IDs associated with that course.
+            Represents the body and formdata parameters of the course progress state API
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -65,7 +63,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The time stamp at which the **Get content status** request was sent.'
+          description: 'The time stamp at which the **post content status** request was sent.'
         - name: X-msgid
           in: header
           required: true
@@ -106,11 +104,7 @@ paths:
         - name: Body
           in: body
           required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the course (Content) status to be updated. 
-              - The request body includes the user id and list of contents info .
-              - Content info contains the courseId, batchId, contentId, user content status (whether completed or in progress), lastAccessTime of content by user.
+          description: Represents the body and formdata parameters of the course progress state API
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -133,7 +127,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The time stamp at which the **Update course status** request was sent.'
+          description: 'The time stamp at which the **update course status** request was sent.'
         - name: X-msgid
           in: header
           required: true
@@ -176,14 +170,14 @@ definitions:
         example: 123
         type: string
       courseIds:
-        description: 'List of course IDs'
+        description: 'The list of course IDs'
         example:
           - some course id
         type: array
         items:
           type: string
       contentIds:
-        description: 'List of conent IDs'
+        description: 'The list of cotent IDs'
         type: array
         items:
           type: string
@@ -209,7 +203,7 @@ definitions:
         example: userId
         type: string
       contents:
-        description: 'List of conent IDs'
+        description: 'The array of the content IDs'
         type: array
         items:
           $ref: '#/definitions/Content'
