@@ -123,8 +123,6 @@ The User Interface (UI) differs for each Sunbird user role. Based on the role’
 |-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
 
 | **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |           Yes          |       Yes      | Yes                 |
-|-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
-
 |------------------- |Profile|Workspace|To Do (Home Page)|Courses |Library|Dashboard|	--------------------|
 |Content Creator, Content Reviewer, Flag Reviewer & Course Mentor |Yes|Yes|Yes|Yes |Yes|No|
 |Book Creator & Book Reviewer |Yes|Yes|Yes|Yes |Yes|No|
