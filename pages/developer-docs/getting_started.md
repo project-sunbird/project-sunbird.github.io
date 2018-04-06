@@ -82,7 +82,7 @@ If you are looking to explore Sunbird and test its feature set, we recommend you
 
 **Note: Data created in the sandbox is erased after 24 hours**
 
-### Developer Installation
+## Developer Installation
 
 For a comprehensive walk through to install Sunbird on your workstation, refer to [Developer Installation](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/){:target="_blank"}
 
