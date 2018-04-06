@@ -118,12 +118,9 @@ The User Interface (UI) differs for each Sunbird user role. Based on the role’
 
 <b>User Role And User Interface Matrix</b>
 
-|  User Role	     | UI Element   |    |||||
-| Create Content | Upload Content | Review Content | Reject and Publish Content | Review Flagged Content | Delete Content | Update User Profile |
-|-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
 
-| **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |           Yes          |       Yes      | Yes                 |
-|------------------- |Profile|Workspace|To Do (Home Page)|Courses |Library|Dashboard|	--------------------|
+|User Role |Profile|Workspace|To Do (Home Page)|Courses |Library|Dashboard|	|
+|-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
 |Content Creator, Content Reviewer, Flag Reviewer & Course Mentor |Yes|Yes|Yes|Yes |Yes|No|
 |Book Creator & Book Reviewer |Yes|Yes|Yes|Yes |Yes|No|
 |Teacher Badge Issuer & Official Textbook Badge Issuer |Yes|No|Yes|Yes |Yes|No|
