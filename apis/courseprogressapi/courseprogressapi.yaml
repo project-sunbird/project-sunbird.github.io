@@ -26,7 +26,7 @@ paths:
   /state:
     post:
       description: >-
-       This API is used for the stating the progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
+       This API is used for publishing the progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
           - **_/state/_** endpoint executes the "post course state" request based on parameters provided as metadata in the request body.     
           - It is a must to provide values for all mandatory fields.
       summary: Post Course Status
@@ -190,12 +190,11 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request3'
+        $ref: '#/definitions/UpdateContentRequestBody'
     required:
       - request
-  Request3:
-    title: Request3
-
+  UpdateContentRequestBody:
+    title: UpdateContentRequestBody
     type: object
     properties:
       userId:
@@ -203,7 +202,7 @@ definitions:
         example: userId
         type: string
       contents:
-        description: 'The array of the content IDs'
+        description: 'The array of the contents'
         type: array
         items:
           $ref: '#/definitions/Content'
@@ -252,7 +251,6 @@ definitions:
       - batchId
       - status
       - courseId
-
   GetContentResponse:
     description: Get Content Response
     type: object
@@ -327,8 +325,8 @@ definitions:
     type: object
     properties:
       result:
-        $ref: '#/definitions/ResultStatus1'
-  ResultStatus1:
+        $ref: '#/definitions/UpdateContentResultStatus'
+  UpdateContentResultStatus:
     type: object
     properties:
       contentId:
