@@ -8,7 +8,7 @@ allowSearch: true
 ---
 ## Introduction
 
-The Sunbird mobile learning app is a delivery format that provides learners with the flexibility to learn anywhere, anytime, even without internet connection.The Sunbird Mobile app provides mobility to the feature rich learning platform.
+The Sunbird Mobile app provides mobility to the feature rich learning platform. It provides learners with the flexibility to learn anywhere, anytime and even without an Internet connection. 
 
 ## Build APK from Git Repository
 
@@ -40,7 +40,9 @@ The Sunbird mobile learning app is a delivery format that provides learners with
   </tr>
   <tr>
     <td>6.</td>
-    <td>To get the API key, create an account at <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register your app. After registering your app, you will get the API Key. Add the key in the manifest file<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> and the file is generally locted in the root directory</td>
+
+    <td>To get the API key, create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register the app. After registering your app, you will get the API Key. For details, <a href="https://docs.fabric.io/android/fabric/settings/api-keys.html" target="_blank">refer</a>. Add the key in the manifest file.<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> file in its root directory</td>
+
   </tr>
   <tr>
     <td>7.</td>
