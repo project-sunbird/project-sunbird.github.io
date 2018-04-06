@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.32.b/";
+			baseURL.href="/releases/release.1.33.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-04-05 20:05:53 +0530">
+<meta name="last-modified" content="2018-04-06 14:28:11 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.32.b" />
-<meta name="buildNo" content="2505" />
+<meta name="buildVersion" content="release.1.33.a" />
+<meta name="buildNo" content="2522" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,11 +46,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?05042018"  />
-<link rel="stylesheet" href="css/style.css?05042018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?05042018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?05042018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?05042018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?06042018"  />
+<link rel="stylesheet" href="css/style.css?06042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?06042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?06042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?06042018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -519,13 +519,13 @@ Before users are assigned with appropriate roles, it is important to understand 
   <thead>
     <tr>
       <th>Functionality</th>
-      <th>Create Content</th>
-      <th>Upload Content</th>
-      <th>Review Content</th>
-      <th>Reject and Publish Content</th>
-      <th>Delete Content</th>
-      <th>Create Batch</th>
-      <th>Add Other Mentors</th>
+      <th>Create Course</th>
+      <th>Upload Course</th>
+      <th>Review &amp; Publish Course</th>
+      <th>Create &amp; Assign Batch</th>
+      <th>Add Course Mentor</th>
+      <th>Delete Course</th>
+      <th>Update User Profile</th>
     </tr>
   </thead>
   <tbody>
@@ -535,7 +535,7 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>No</td>
       <td>No</td>
       <td>No</td>
-      <td>No</td>
+      <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
     </tr>
@@ -556,7 +556,7 @@ Before users are assigned with appropriate roles, it is important to understand 
       <th>Create Content</th>
       <th>Upload Content</th>
       <th>Review Content</th>
-      <th>Reject and Publish Content</th>
+      <th>Reject &amp; Publish Content</th>
       <th>Review Flagged Content</th>
       <th>Delete Content</th>
       <th>Update User Profile</th>
@@ -569,7 +569,7 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>No</td>
+      <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
     </tr>
@@ -681,7 +681,7 @@ Before users are assigned with appropriate roles, it is important to understand 
 </table>
 
 <h2 id="official-textbook-badge-issuer">Official Textbook Badge Issuer</h2>
-<p>An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official</p>
+<p>An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official.</p>
 
 <p>
   <b>User Role Matrix for an Official Textbook Badge Issuer</b>
@@ -715,7 +715,7 @@ Before users are assigned with appropriate roles, it is important to understand 
 </table>
 
 <h2 id="public">Public</h2>
-<p>A user having registered credentials on Sunbird. A registered user can be a learner or an instructor. To consume any content on Sunbird, the user must be registered on the portal by their respective org admins</p>
+<p>A Public User is any user who is registered with their credentials on Sunbird. They have permissions to view and use content, and manage their own profile on the Sunbird platform. For example: a learner or an instructor.</p>
 
 <p>
   <b>User Role Matrix for a Public User</b>
