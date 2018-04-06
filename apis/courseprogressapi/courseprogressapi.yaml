@@ -84,7 +84,7 @@ paths:
        This API is used to update the Course(content) status consumed by a user
           - **_/update/_** endpoint executes the "Update Content State" request based on parameters provided as metadata in the request body.     
           - It is mandatory to give values for the required fields and these  fields cannot be null or empty.
-      summary: Update Content State
+      summary: Update Content Status
       tags:
         - Content Progress API(s)
       operationId: UpdatePatch
