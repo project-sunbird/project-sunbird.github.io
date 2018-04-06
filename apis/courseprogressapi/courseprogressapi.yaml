@@ -1,0 +1,338 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title:  Course Progress API(s)
+  description: >-
+    The Content progress API resource is used to retrieve the status of the course(content) consumed by a user. The operations include the basic state and update).
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: dev.open-sunbird.org
+basePath: /v1/user/content
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /state:
+    post:
+      description: >-
+       This API is used for posting the status of the course (content) consumed by a user i.e, the user can view and check the progress for a specific course or course(s)consumed.
+          - **_/state/_** endpoint executes the "Get Content State" request based on parameters provided as metadata in the request body.     
+          - It is mandatory to give values for the required fields and these fields cannot be null or empty.
+      summary: Post Content Status
+      tags:
+        - Content Progress API(s)
+      operationId: StatePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the status to be posted. 
+              - The request body includes **list of course ids** for a user,  **collect all content for all course ids** which the user has consumed and **list of all content ids** associated with that course.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+             - $ref: '#/definitions/GetContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: 'Represents the media types which are acceptable for the response'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **Get content status** request was sent.'
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: 'This Id Uniquely identifies a request incase the same API is executed multiple times'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User token/key to authenticate user and execute the API.'
+      responses:
+        '200':
+          description: 'SUCCESS. The "Get content status" operation was successful!'
+          schema:
+            $ref: '#/definitions/GetContentResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/ContentErrorResponse'
+  /update:
+    patch:
+      description: >-
+       This API is used to update the Course(content) status consumed by a user
+          - **_/update/_** endpoint executes the "Update Content State" request based on parameters provided as metadata in the request body.     
+          - It is mandatory to give values for the required fields and these  fields cannot be null or empty.
+      summary: update content state
+      tags:
+        - Content Progress API(s)
+      operationId: UpdatePatch
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the course (Content) status to be updated. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/UpdateContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: 'Represents the media types which are acceptable for the response'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'Time Stamp at which **Get content status** request was sent.'
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: 'This Id Uniquely identifies a request incase the same API is executed multiple times'
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User token/key to authenticate user and execute the API.'
+      responses:
+        '200':
+          description: 'SUCCESS. The "Update content status" operation was successful!'
+          schema:
+            $ref: '#/definitions/UpdateContentResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentErrorResponse'
+definitions:
+  GetContentStaterequest:
+    title: get content stateRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+      - request
+  Request:
+    title: Request
+    type: object
+    properties:
+      userId:
+        description: 'Uniquely Identifies the user'
+        example: 123
+        type: string
+      courseIds:
+        description: 'List of course ids'
+        example:
+          - some course id
+        type: array
+        items:
+          type: string
+      contentIds:
+        description: 'List of conent ids'
+        type: array
+        items:
+          type: string
+    required:
+      - userId
+      - courseIds
+      - contentIds
+  UpdateContentStaterequest:
+    title: update content stateRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request3'
+    required:
+      - request
+  Request3:
+    title: Request3
+
+    type: object
+    properties:
+      userId:
+        description: 'Uniquely Identifies the user'
+        example: userId
+        type: string
+      contents:
+        description: 'List of conent ids'
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+    required:
+      - userId
+      - contents
+  Content:
+    title: Content
+    type: object
+    properties:
+      contentId:
+        description: 'Uniquely identifies the content'
+        example: contentId
+        type: string
+      batchId:
+        description: 'Uniquely identifies the batch'
+        example: 115
+        type: string
+      status:
+        description: 'Status of content'
+        example: 2
+        type: integer
+        format: int32
+      lastAccessTime:
+        description: 'Last access time of content'
+        example: '2017-05-15 10:58:07:509+0530'
+        type: string
+      courseId:
+        description: 'Uniquely identifies the course'
+        example: courseId
+        type: string
+      result:
+        description: 'Result of content assessment'
+        example: pass
+        type: string
+      score:
+        description: 'Score of the content assessment'
+        example: 10
+        type: string
+      grade:
+        description: 'Grade of the content assessment'
+        example: B
+        type: string
+    required:
+      - contentId
+      - batchId
+      - status
+      - courseId
+
+  GetContentResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithEmptyBody'
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+  ResultWithEmptyBody:
+    title: Result Containing empty body
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ResultStatus'
+  
+  ResultStatus:
+    description: node id description
+    type: object
+    properties:
+      contentList:
+       type: array
+       items: 
+        type: object
+        properties: 
+         contentId: 
+          type: string
+          description: 'Content id'
+         lastAccessTime: 
+          type: string
+          description: 'User last content access time'
+         batchId: 
+          type: string
+          description: 'Batch id to which content belongs'
+         result: 
+          type: string
+          description: 'Result of user for the content'
+         viewCount: 
+          type: string
+          description: 'Total number of views of the content by user'
+         score: 
+          type: string
+          description: 'User result score for content'
+         grade: 
+          type: string
+          description: 'Result grade'
+         progress: 
+          type: string
+          description: 'Completeness of content'
+         contentVersion: 
+          type: string
+          description: 'Version of content'
+         courseId: 
+          type: string
+          description: 'Course id to which content belongs'
+         lastCompletedTime: 
+          type: string
+          description: 'Last completed time of content by user'
+         status: 
+          type: string
+          description: 'Compeleteness status'
+         completedCount: 
+          type: string
+          description: 'How many times user completed content'
+         id: 
+          type: string
+          description: 'id of content'
+  UpdateContentResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithEmptyBody1'
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+  ResultWithEmptyBody1:
+    title: Result Containing empty body
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ResultStatus1'
+  ResultStatus1:
+    description: node id description
+    type: object
+    properties:
+      contentId:
+        description: 'Response will contain the content ids along with status like SUCCESS or FAILURE in case content updation success or fail respectively .'
+        type: string
+  ContentErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+      - $ref: '#/definitions/EmptyResult'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
