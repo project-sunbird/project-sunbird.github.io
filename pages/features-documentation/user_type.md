@@ -80,7 +80,10 @@ A Public User is any user who is registered with their credentials on Sunbird. T
 | **Public** |       No       |       No      |       No      |       No      |           Yes           |       No      |         Yes         |
 
 ## Announcement Sender          
-A person who send a formal declaration to various registered users on the portal. On Sunbird, every organization can have one or more announcement sender who are responsible for informing important dates, announcements and other information to all the registered users of that organization.  
+The Announcement feature allows you to send system wide messages to a target audience. This feature helps in swift communication of urgent information, such as Orders or Circulars. 
+
+An Announcement Sender creates and sends announcements. The organization administrator can assign the role to one or more members.
+
 <b>User Role Matrix for an Announcement Sender</b>
 
 Functionality|Create Content|Upload Content|Review Content|Reject Content and Publish Content|Delete Content|Update User Profile|Create Announcements|Send Announcements
@@ -88,7 +91,7 @@ Functionality|Create Content|Upload Content|Review Content|Reject Content and Pu
 **Announcement Sender**|Yes| Yes| No| No| No| No| Yes| Yes|
 
 ## Content Creator 
-A content creator can curate content such as Collection, Lesson Plan and Study Material. On Sunbird, registered users become content creators when content creation rights are assigned to them.
+A Content Creator is a registered user with permission to create content on DIKSHA. They can curate content such as Collection, Lesson Plan, Course, and Study Material. A content creator cannot delete content created by others.
 
 <b>User Role Matrix for a Content Creator</b>
 
@@ -97,7 +100,9 @@ A content creator can curate content such as Collection, Lesson Plan and Study M
 | **Content Creator** |       Yes      |       Yes      |       No       |       No       |        No       |       Yes      |         Yes         |
 
 ## Flag Reviewer                          
-A flag reviewer assesses the content that is marked as inappropriate by any user. The flag reviewer reviews and rejects the inappropriatethe content. The flag is removed if the content abides by the guidelines.
+On Sunbird any user can flag content for inappropriateness, copyright or privacy violations, and others. A Flag Reviewer assesses flagged content within prescribed guidelines to either reject or accept. 
+
+The content accepted as inappropriate is pulled back for relevant modifications. The flag is removed if the content abides by the guidelines.
 
 <b>User Role Matrix for a Flag Reviewer</b>
 
@@ -106,4 +111,29 @@ A flag reviewer assesses the content that is marked as inappropriate by any user
 | **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |           Yes          |       Yes      | Yes                 |
   
 <b>Note</b>: Organization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle. 
+
+## User Interface for Different User Roles
+
+The User Interface (UI) differs for each Sunbird user role. Based on the role’s rights and permissions elements of the portal may not be available.
+
+<b>User Role And User Interface Matrix</b>
+
++-------------------------------------------------------+------------------+-------------------------------+
+| User Role |  | | UI Element   |    |||
++-------------------------------------------------------+------------------+-------------------------------+
+|                      |  Profile             |   Workspace   |To Do  (Homepage)|Courses |Library| Dashboard|
++-------------------------------------------------------+------------------+-------------------------------+
+| Content Creator, Content Reviewer, Flag Reviewer & Course Mentor             |Yes  |Yes |Yes|Yes| Yes| No |
++-------------------------------------------------------+------------------+-------------------------------+
+| Book Creator & Book Reviewer  |                  |                               |   |    |      |       |
++-------------------------------------------------------+------------------+-------------------------------+
+| Teacher Badge Issuer & Official Textbook Badge Issuer |                  |       |       |   |    |      |
++-------------------------------------------------------+------------------+-------------------------------+
+| Announcement Sender              |                |          |           |          |          |         |
++-------------------------------------------------------+------------------+-------------------------------+
+| Public          |     |    |           |             |                  |                                |
++-------------------------------------------------------+------------------+-------------------------------+
+
+
+
 
