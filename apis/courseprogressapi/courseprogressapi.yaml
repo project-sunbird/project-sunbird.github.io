@@ -3,7 +3,7 @@ info:
   version: '1.0'
   title:  Course Progress API(s)
   description: >-
-    The Course progress API resource is used to publish and update the status of the course consumed by a user. The operations include the basic state and update.
+    The Course progress API resource is used to publish and update the status of the course consumed by a user. The operations include the **state** and **update**
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
