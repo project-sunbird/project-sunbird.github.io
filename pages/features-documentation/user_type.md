@@ -131,3 +131,4 @@ The User Interface (UI) differs for each Sunbird user role. Based on the role’
 |Teacher Badge Issuer & Official Textbook Badge Issuer |Yes|No|Yes|Yes |Yes|No|
 |Announcement Sender|Yes|No|No|No |No|Yes|
 |Public |Yes|No|Yes|Yes |Yes|No|
+|-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
