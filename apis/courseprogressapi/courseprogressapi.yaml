@@ -7,7 +7,7 @@ info:
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
-host: dev.open-sunbird.org
+host: staging.open-sunbird.org
 basePath: /v1/user/content
 schemes:
   - https
