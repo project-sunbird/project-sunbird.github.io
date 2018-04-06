@@ -111,7 +111,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <br>a) The left bottom of the page 
     <br>b) Right click on the node name
       <br>c) Use keyboard shortcut <b>Ctrl+Alt+A</b>
-    The Find & Select Activities page is displayed.</td>
+    <br>The Find & Select Activities page is displayed.</td>
   <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png"></td>
   </tr>
  <tr>
