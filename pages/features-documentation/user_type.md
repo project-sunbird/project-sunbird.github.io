@@ -18,18 +18,18 @@ A Course Mentor guides and instructs learners on how to undertake a course. They
 
 <b>User Role Matrix for a Course Mentor</b>
 
-|  Functionality    | Create Content | Upload Content | Review Content | Reject and Publish Content | Delete Content | Create Batch | Add Other Mentors |
+|  Functionality    | Create Course | Upload Course | Review & Publish Course | Create & Assign Batch | Add Course Mentor | Delete Course | Update User Profile |
 |-------------------|----------------|----------------|----------------|----------------------------|----------------|--------------|-------------------|
-| **Course Mentor** |       No       |       No       |       No       |             No             |       No       |      Yes     | Yes               |
+| **Course Mentor** |       No       |       No       |       No       |             No             |      Yes       |      Yes     | Yes               |
 
 ## Content Reviewer
 A Content Reviewer accesses the created courses or content within prescribed guidelines. Sunbird has defined review guidelines. Reviewers assess content based on these guidelines. Reviewers have the right to reject or publish content based on these guidelines.
 
 <b>User Role Matrix for a Content Reviewer</b>
   
-|  Functionality       | Create Content | Upload Content | Review Content | Reject and Publish Content | Review Flagged Content | Delete Content | Update User Profile |
+|  Functionality       | Create Content | Upload Content | Review Content | Reject & Publish Content | Review Flagged Content | Delete Content | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Content Reviewer** |       No       |       Yes      |       Yes      |       Yes      |           No           |       Yes      |         Yes         |
+| **Content Reviewer** |       No       |       Yes      |       Yes      |       Yes      |           Yes           |       Yes      |         Yes         |
 
 <b>Note:</b> Reviewers can also have creation rights, but they cannot review courses or content created by themselves. Reviewers can only review courses or content created by others.
 
@@ -71,7 +71,7 @@ An Official Textbook Badge Issuer is an individual who  assigns badges to books.
 
 
 ## Public      
-A user having registered credentials on Sunbird. A registered user can be a learner or an instructor. To consume any content on Sunbird, the user must be registered on the portal by their respective organisation admins. 
+A Public User is any user who is registered with their credentials on Sunbird. They have permissions to view and use content, and manage their own profile on the Sunbird platform. For example: a learner or an instructor. 
 
 <b>User Role Matrix for a Public User</b>
 
