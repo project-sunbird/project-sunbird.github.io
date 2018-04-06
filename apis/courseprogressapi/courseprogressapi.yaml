@@ -3,12 +3,19 @@ info:
   version: '1.0'
   title:  Course Progress API(s)
   description: >-
-    The Content progress API resource is used to retrieve the status of the course(content) consumed by a user. The operations include the basic state and update).
+    The Course Progress API resource is used to publish and update the status of the course as consumed by a user. The operations include the basic course status and the updated status. 
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /v1/user/content
+securityDefinitions:
+ auth:
+   type: oauth2
+   flow: implicit
+   authorizationUrl: 'https://staging.open-sunbird.org/api/v1/user/content'
+   scopes: {}
+   x-skip-client-authentication: false
 schemes:
   - https
 consumes:
@@ -19,12 +26,12 @@ paths:
   /state:
     post:
       description: >-
-       This API is used for posting the status of the course (content) consumed by a user i.e, the user can view and check the progress for a specific course or course(s)consumed.
-          - **_/state/_** endpoint executes the "Get Content State" request based on parameters provided as metadata in the request body.     
-          - It is mandatory to give values for the required fields and these fields cannot be null or empty.
-      summary: Post Content Status
+       This API is used for publishing the progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
+          - **_/state/_** endpoint executes the "post course state" request based on parameters provided as metadata in the request body.     
+          - It is a must to provide values for all mandatory fields.
+      summary: Post Course Status
       tags:
-        - Content Progress API(s)
+        - Course Progress API(s)
       operationId: StatePost
       produces:
         - application/json
@@ -33,9 +40,7 @@ paths:
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the status to be posted. 
-              - The request body includes **list of course ids** for a user,  **collect all content for all course ids** which the user has consumed and **list of all content ids** associated with that course.'
+            Represents the body and formdata parameters of the course progress state API
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -44,13 +49,13 @@ paths:
           in: header
           required: true
           type: string
-          description: 'Represents the media types which are acceptable for the response'
+          description: 'Represents the media types that are acceptable for the response'
         - name: Content-Type
           in: header
           required: true
           type: string
           description:  >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
+            The Content Type entity is the media type of the resource. Possible media types are:- 
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
@@ -58,20 +63,25 @@ paths:
           in: header
           required: true
           type: string
-          description: 'Time Stamp at which **Get content status** request was sent.'
+          description: 'The time stamp at which the **post content status** request was sent.'
         - name: X-msgid
           in: header
           required: true
           type: string
-          description: 'This Id Uniquely identifies a request incase the same API is executed multiple times'
-        - name: x-authenticated-user-token
+          description: 'This ID uniquely identifies a request incase the same API is executed multiple times'
+        - name: X-Authenticated-User-Token
           in: header
           required: true
           type: string
-          description: 'The Registered User token/key to authenticate user and execute the API.'
+          description: 'The registered user token/key to authenticate user and execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
-          description: 'SUCCESS. The "Get content status" operation was successful!'
+          description: 'SUCCESS. The "post course status" operation was successful!'
           schema:
             $ref: '#/definitions/GetContentResponse'
         '500':
@@ -81,12 +91,12 @@ paths:
   /update:
     patch:
       description: >-
-       This API is used to update the Course(content) status consumed by a user
-          - **_/update/_** endpoint executes the "Update Content State" request based on parameters provided as metadata in the request body.     
-          - It is mandatory to give values for the required fields and these  fields cannot be null or empty.
-      summary: Update Content State
+       This API is used to update the Course(content) status as consumed by a user. For example, when the user resumes a course or courses after the point at which it was stopped, the status of the course is updated. 
+          - **_/update/_** endpoint executes the "Update Course State" request based on parameters provided as metadata in the request body.     
+          - It is a must to give values for all mandatory fields.
+      summary: Update Course Status
       tags:
-        - Content Progress API(s)
+        - Course Progress API(s)
       operationId: UpdatePatch
       produces:
         - application/json
@@ -94,9 +104,7 @@ paths:
         - name: Body
           in: body
           required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the course (Content) status to be updated. 
+          description: Represents the body and formdata parameters of the course progress state API 
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -119,20 +127,25 @@ paths:
           in: header
           required: true
           type: string
-          description: 'Time Stamp at which **Get content status** request was sent.'
+          description: 'The time stamp at which the **update course status** request was sent.'
         - name: X-msgid
           in: header
           required: true
           type: string
-          description: 'This Id Uniquely identifies a request incase the same API is executed multiple times'
-        - name: x-authenticated-user-token
+          description: 'This ID uniquely identifies a request incase the same API is executed multiple times'
+        - name: X-Authenticated-User-Token
           in: header
           required: true
           type: string
-          description: 'The Registered User token/key to authenticate user and execute the API.'
+          description: 'The registered user token/key to authenticate user and execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
-          description: 'SUCCESS. The "Update content status" operation was successful!'
+          description: 'SUCCESS. The "Update course status" operation was successful!'
           schema:
             $ref: '#/definitions/UpdateContentResponse'
         '500':
@@ -153,18 +166,18 @@ definitions:
     type: object
     properties:
       userId:
-        description: 'Uniquely Identifies the user'
+        description: 'Uniquely identifies the user'
         example: 123
         type: string
       courseIds:
-        description: 'List of course ids'
+        description: 'The list of course IDs'
         example:
           - some course id
         type: array
         items:
           type: string
       contentIds:
-        description: 'List of conent ids'
+        description: 'The list of cotent IDs'
         type: array
         items:
           type: string
@@ -177,20 +190,19 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request3'
+        $ref: '#/definitions/UpdateContentRequestBody'
     required:
       - request
-  Request3:
-    title: Request3
-
+  UpdateContentRequestBody:
+    title: UpdateContentRequestBody
     type: object
     properties:
       userId:
-        description: 'Uniquely Identifies the user'
+        description: 'Uniquely identifies the user'
         example: userId
         type: string
       contents:
-        description: 'List of conent ids'
+        description: 'The array of the contents'
         type: array
         items:
           $ref: '#/definitions/Content'
@@ -210,12 +222,12 @@ definitions:
         example: 115
         type: string
       status:
-        description: 'Status of content'
+        description: 'User content consumption status. Example 0 - not started, 1- in progress, 2- completed'
         example: 2
         type: integer
         format: int32
       lastAccessTime:
-        description: 'Last access time of content'
+        description: 'The last time course content was accessed'
         example: '2017-05-15 10:58:07:509+0530'
         type: string
       courseId:
@@ -223,15 +235,15 @@ definitions:
         example: courseId
         type: string
       result:
-        description: 'Result of content assessment'
+        description: 'The outcome for the user on completing the course assessment'
         example: pass
         type: string
       score:
-        description: 'Score of the content assessment'
+        description: 'The score received by the user on completeing the course assessment'
         example: 10
         type: string
       grade:
-        description: 'Grade of the content assessment'
+        description: 'The grade obtained by the user on completing the course assessment'
         example: B
         type: string
     required:
@@ -239,9 +251,8 @@ definitions:
       - batchId
       - status
       - courseId
-
   GetContentResponse:
-    description: Create Content Response
+    description: Get Content Response
     type: object
     allOf:
       - $ref: '#/definitions/ResultWithEmptyBody'
@@ -254,7 +265,6 @@ definitions:
         $ref: '#/definitions/ResultStatus'
   
   ResultStatus:
-    description: node id description
     type: object
     properties:
       contentList:
@@ -264,48 +274,48 @@ definitions:
         properties: 
          contentId: 
           type: string
-          description: 'Content id'
+          description: 'The content ID'
          lastAccessTime: 
           type: string
-          description: 'User last content access time'
+          description: 'The last time when the user accessed content'
          batchId: 
           type: string
-          description: 'Batch id to which content belongs'
+          description: 'The batch ID to which content belongs'
          result: 
           type: string
-          description: 'Result of user for the content'
+          description: 'The outcome for the user on completing the course assessment'
          viewCount: 
           type: string
-          description: 'Total number of views of the content by user'
+          description: 'Total number of views of the content by the user'
          score: 
           type: string
-          description: 'User result score for content'
+          description: 'The score received by the user on completeing the course assessment'
          grade: 
           type: string
-          description: 'Result grade'
+          description: 'The grade obtained by the user on completing the course assessment'
          progress: 
           type: string
-          description: 'Completeness of content'
+          description: 'The users progress while doing the course'
          contentVersion: 
           type: string
-          description: 'Version of content'
+          description: 'The version of the course content'
          courseId: 
           type: string
-          description: 'Course id to which content belongs'
+          description: 'The Course ID to which the content belongs'
          lastCompletedTime: 
           type: string
-          description: 'Last completed time of content by user'
+          description: 'The last time the user completed the course'
          status: 
-          type: string
-          description: 'Compeleteness status'
+          type: integer
+          description: 'User content consumption status. Example 0 - not started, 1- in progress, 2- completed'
          completedCount: 
           type: string
-          description: 'How many times user completed content'
+          description: 'The number of times the user completed the course'
          id: 
           type: string
-          description: 'id of content'
+          description: 'Identifier to recognize the content belongs to particular user and particular course'
   UpdateContentResponse:
-    description: Create Content Response
+    description: Update Content Response
     type: object
     allOf:
       - $ref: '#/definitions/ResultWithEmptyBody1'
@@ -315,9 +325,8 @@ definitions:
     type: object
     properties:
       result:
-        $ref: '#/definitions/ResultStatus1'
-  ResultStatus1:
-    description: node id description
+        $ref: '#/definitions/UpdateContentResultStatus'
+  UpdateContentResultStatus:
     type: object
     properties:
       contentId:
@@ -335,4 +344,3 @@ definitions:
     properties:
       result:
         type: object
-        description: Empty Result

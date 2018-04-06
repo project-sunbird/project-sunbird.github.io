@@ -113,9 +113,9 @@ Before users are assigned with appropriate roles, it is important to understand 
       <th>Create Book</th>
       <th>Upload Book</th>
       <th>Review Book</th>
-      <th>Reject and Publish Book</th>
-      <th>Review Flagged Content</th>
-      <th>Delete Content</th>
+      <th>Reject Book</th>
+      <th>Publish Book</th>
+      <th>Delete Book</th>
       <th>Update User Profile</th>
     </tr>
   </thead>
@@ -145,9 +145,9 @@ Before users are assigned with appropriate roles, it is important to understand 
       <th>Create Book</th>
       <th>Upload Book</th>
       <th>Review Book</th>
-      <th>Reject and Publish Book</th>
-      <th>Review Flagged Content</th>
-      <th>Delete Content</th>
+      <th>Reject Book</th>
+      <th>Publish Book</th>
+      <th>Delete Book</th>
       <th>Update User Profile</th>
     </tr>
   </thead>
@@ -158,7 +158,7 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>No</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>No</td>
+      <td>Yes</td>
       <td>No</td>
       <td>Yes</td>
     </tr>
@@ -174,12 +174,12 @@ Before users are assigned with appropriate roles, it is important to understand 
   <thead>
     <tr>
       <th>Functionality</th>
-      <th>Create Book</th>
-      <th>Upload Book</th>
-      <th>Review Book</th>
-      <th>Reject and Publish Book</th>
-      <th>Assign Badge</th>
-      <th>Delete Content</th>
+      <th>Create Content</th>
+      <th>Upload Content</th>
+      <th>Review &amp; Publish Content</th>
+      <th>Create  Badges</th>
+      <th>Assign Badges</th>
+      <th>Delete Badges</th>
       <th>Update User Profile</th>
     </tr>
   </thead>
@@ -206,32 +206,33 @@ Before users are assigned with appropriate roles, it is important to understand 
   <thead>
     <tr>
       <th>Functionality</th>
-      <th>Create Book</th>
-      <th>Upload Book</th>
-      <th>Review Book</th>
-      <th>Reject and Publish Book</th>
-      <th>View Content</th>
-      <th>Delete Content</th>
+      <th>To Do Notification</th>
+      <th>Assigned Badges</th>
+      <th>Latest &amp; Popular Courses</th>
+      <th>Library &amp; My Courses</th>
       <th>Update User Profile</th>
+      <th>Content Creation and Management</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Public</strong></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
       <td>Yes</td>
       <td>No</td>
-      <td>Yes</td>
     </tr>
   </tbody>
 </table>
 
 <h2 id="announcement-sender">Announcement Sender</h2>
-<p>A person who send a formal declaration to various registered users on the portal. On Sunbird, every organization can have one or more announcement sender who are responsible for informing important dates, announcements and other information to all the registered users of that organization.<br />
-<b>User Role Matrix for an Announcement Sender</b></p>
+<p>The Announcement feature allows you to send system wide messages to a target audience. This feature helps in swift communication of urgent information, such as Orders or Circulars.</p>
+
+<p>An Announcement Sender creates and sends announcements. The organization administrator can assign the role to one or more members.</p>
+
+<p><b>User Role Matrix for an Announcement Sender</b></p>
 
 <table>
   <thead>
@@ -263,7 +264,7 @@ Before users are assigned with appropriate roles, it is important to understand 
 </table>
 
 <h2 id="content-creator">Content Creator</h2>
-<p>A content creator can curate content such as Collection, Lesson Plan and Study Material. On Sunbird, registered users become content creators when content creation rights are assigned to them.</p>
+<p>A Content Creator is a registered user with permission to create content on DIKSHA. They can curate content such as Collection, Lesson Plan, Course, and Study Material. A content creator cannot delete content created by others.</p>
 
 <p><b>User Role Matrix for a Content Creator</b></p>
 
@@ -295,7 +296,9 @@ Before users are assigned with appropriate roles, it is important to understand 
 </table>
 
 <h2 id="flag-reviewer">Flag Reviewer</h2>
-<p>A flag reviewer assesses the content that is marked as inappropriate by any user. The flag reviewer reviews and rejects the inappropriatethe content. The flag is removed if the content abides by the guidelines.</p>
+<p>On Sunbird any user can flag content for inappropriateness, copyright or privacy violations, and others. A Flag Reviewer assesses flagged content within prescribed guidelines to either reject or accept.</p>
+
+<p>The content accepted as inappropriate is pulled back for relevant modifications. The flag is removed if the content abides by the guidelines.</p>
 
 <p><b>User Role Matrix for a Flag Reviewer</b></p>
 
@@ -328,3 +331,69 @@ Before users are assigned with appropriate roles, it is important to understand 
 
 <p><b>Note</b>: Organization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle.</p>
 
+<h2 id="user-interface-for-different-user-roles">User Interface for Different User Roles</h2>
+
+<p>The User Interface (UI) differs for each Sunbird user role. Based on the role’s rights and permissions elements of the portal may not be available.</p>
+
+<p><b>User Role And User Interface Matrix</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Role</th>
+      <th>Profile</th>
+      <th>Workspace</th>
+      <th>To Do (Home Page)</th>
+      <th>Courses</th>
+      <th>Library</th>
+      <th>Dashboard</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content Creator, Content Reviewer, Flag Reviewer &amp; Course Mentor</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Book Creator &amp; Book Reviewer</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Teacher Badge Issuer &amp; Official Textbook Badge Issuer</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Announcement Sender</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Public</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+  </tbody>
+</table>
