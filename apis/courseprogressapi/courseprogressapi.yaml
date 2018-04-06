@@ -20,7 +20,7 @@ paths:
     post:
       description: >-
        This API is used for posting the status of the course (content) consumed by a user i.e, the user can view and check the progress for a specific course or course(s)consumed.
-          - **_/state/_** endpoint executes the "Get Course State" request based on parameters provided as metadata in the request body.     
+          - **_/state/_** endpoint executes the " Post Course State" request based on parameters provided as metadata in the request body.     
           - It is mandatory to give values for the required fields and these fields cannot be null or empty.
       summary: Post Course Status
       tags:
@@ -35,7 +35,7 @@ paths:
           description: >-
             The body refers to the format of the request.
               - The body contains metadata about the status to be posted. 
-              - The request body includes **list of course ids** for a user,  **content for all the course ids** which the user has consumed and **list of all content ids** associated with that course.'
+              - The request body includes list of course ids for a user, content for all the course ids which the user has consumed and the list of all content ids associated with that course.
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -82,7 +82,7 @@ paths:
     patch:
       description: >-
        This API is used to update the Course(content) status consumed by a user
-          - **_/update/_** endpoint executes the "Update Course State" request based on parameters provided as metadata in the request body.     
+          - **_/update/_** endpoint executes the Update Course State" request based on parameters provided as metadata in the request body.     
           - It is mandatory to give values for the required fields and these  fields cannot be null or empty.
       summary: Update Course Status
       tags:
