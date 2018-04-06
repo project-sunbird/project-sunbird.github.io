@@ -40,7 +40,7 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
   </tr>
   <tr>
     <td>6.</td>
-    <td>To get the API key, create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register the app. After registering your app, you will get the API Key. <a href="https://docs.fabric.io/android/fabric/settings/api-keys.html" target="_blank">refer</a>. Add the key in the manifest file.<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> file in its root directory</td>
+    <td>To get the API key, create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register the app. After registering your app, you will get the API Key. For details, <a href="https://docs.fabric.io/android/fabric/settings/api-keys.html" target="_blank">refer</a>. Add the key in the manifest file.<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> file in its root directory</td>
   </tr>
   <tr>
     <td>7.</td>
