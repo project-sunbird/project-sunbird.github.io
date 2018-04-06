@@ -47,7 +47,7 @@ A Book Creator is an individual who curate and compiles books. The registered us
 
 <b>User Role Matrix for a Book Creator</b>
 
-|  Functionality       | Create Book | Upload Book | Review Book | Reject and Publish Book | Review Flagged Content | Delete Content | Update User Profile |
+|  Functionality       | Create Book | Upload Book | Review Book | Reject Book | Publish Book | Delete Book | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
 | **Book Creator** |       Yes       |       Yes      |       No      |       No      |           No           |       No      |         Yes         |
 
@@ -56,16 +56,16 @@ A Book Reviewer assesses books within defined and prescribed guidelines. A book 
 
 <b>User Role Matrix for a Book Reviewer</b>
 
-|  Functionality       | Create Book | Upload Book | Review Book | Reject and Publish Book | Review Flagged Content | Delete Content | Update User Profile |
+|  Functionality       | Create Book | Upload Book | Review Book | Reject Book | Publish Book | Delete Book | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Book Reviewer** |       No       |       No      |       Yes      |       Yes      |           No           |       No      |         Yes         |
+| **Book Reviewer** |       No       |       No      |       Yes      |       Yes      |           Yes          |       No      |         Yes         |
 
 ## Official Textbook Badge Issuer  
 An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official.
 
 <b>User Role Matrix for an Official Textbook Badge Issuer</b>
 
-|  Functionality       | Create Book | Upload Book | Review Book | Reject and Publish Book | Assign Badge | Delete Content | Update User Profile |
+|  Functionality       | Create Content | Upload Content | Review & Publish Content | Create  Badges | Assign Badges | Delete Badges | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
 | **Official Textbook Badge Issuer** |       No       |       No      |       No      |       No      |          Yes           |       No      |         Yes         |
 
@@ -75,9 +75,9 @@ A Public User is any user who is registered with their credentials on Sunbird. T
 
 <b>User Role Matrix for a Public User</b>
 
-|  Functionality       | Create Book | Upload Book | Review Book | Reject and Publish Book | View Content | Delete Content | Update User Profile |
-|----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Public** |       No       |       No      |       No      |       No      |           Yes           |       No      |         Yes         |
+|  Functionality       | To Do Notification | Assigned Badges | Latest & Popular Courses | Library & My Courses | Update User Profile | Content Creation and Management | 
+|----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|
+| **Public** |       Yes      |       Yes      |       Yes      |       Yes           |      Yes       |         No         |
 
 ## Announcement Sender          
 The Announcement feature allows you to send system wide messages to a target audience. This feature helps in swift communication of urgent information, such as Orders or Circulars. 

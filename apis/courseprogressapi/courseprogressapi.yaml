@@ -104,7 +104,7 @@ paths:
         - name: Body
           in: body
           required: true
-          description: Represents the body and formdata parameters of the course progress state API 
+          description: Represents the body and formdata parameters of the course progress state API
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
