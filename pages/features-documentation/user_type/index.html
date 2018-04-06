@@ -1,96 +1,330 @@
-<p>On Sunbird, there are ten types of users:</p>
+<p>On Sunbird, each user type is associated with a user role. The permissions and responsibilities vary for each user role.<br />
+Before users are assigned with appropriate roles, it is important to understand the: <br />1. Responsibilities of a each user role <br />2. Features accessible to each user role</p>
+
+<p>On Sunbird there are ten user types:</p>
+
+<h2 id="course-mentor">Course Mentor</h2>
+<p>A Course Mentor guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course. Mentors also ensure completion of a course within a stipulated time.</p>
+
+<p><b>User Role Matrix for a Course Mentor</b></p>
 
 <table>
   <thead>
     <tr>
-      <th>S. No</th>
-      <th>User</th>
-      <th>Definition</th>
-      <th>Sunbird Context</th>
+      <th>Functionality</th>
+      <th>Create Content</th>
+      <th>Upload Content</th>
+      <th>Review Content</th>
+      <th>Reject and Publish Content</th>
+      <th>Delete Content</th>
+      <th>Create Batch</th>
+      <th>Add Other Mentors</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1.</td>
-      <td>Course Mentor</td>
-      <td>An individual who guides and instructs learners on how to undertake a course</td>
-      <td>On Sunbird, a course mentor creates batches of users to to enrol for and take a course. Mentors also ensure completion of a course within a stipulated time</td>
-    </tr>
-    <tr>
-      <td>2.</td>
-      <td>Content Reviewer</td>
-      <td>An individual who assesses content  within prescribed guidelines</td>
-      <td>Sunbird has defined</td>
-    </tr>
-    <tr>
-      <td>review guidelines. Reviewers assess content based on these guidelines. Reviewers have the right to reject or publish content based on these guidelines</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td><strong>Course Mentor</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
 
+<h2 id="content-reviewer">Content Reviewer</h2>
+<p>A Content Reviewer accesses the created courses or content within prescribed guidelines. Sunbird has defined review guidelines. Reviewers assess content based on these guidelines. Reviewers have the right to reject or publish content based on these guidelines.</p>
+
+<p><b>User Role Matrix for a Content Reviewer</b></p>
+
 <table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Content</th>
+      <th>Upload Content</th>
+      <th>Review Content</th>
+      <th>Reject and Publish Content</th>
+      <th>Review Flagged Content</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td>3.</td>
-      <td>Teacher Badge Issuer</td>
-      <td>An individual responsible for assigning badges to teachers</td>
-      <td>On Sunbird, a teacher badge issuer assigns badges to teachers based on the discretion of the concerned organization</td>
+      <td><strong>Content Reviewer</strong></td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
 
+<p><b>Note:</b> Reviewers can also have creation rights, but they cannot review courses or content created by themselves. Reviewers can only review courses or content created by others.</p>
+
+<h2 id="teacher-badge-issuer">Teacher Badge Issuer</h2>
+<p>A Teacher Badge Issuer is responsible for assigning badges to teachers based on the discretion of the concerned organization.</p>
+
+<p><b>User Role Matrix for a Teacher Badge Issuer</b></p>
+
 <table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Content</th>
+      <th>Upload Content</th>
+      <th>Review Content</th>
+      <th>Reject and Publish Content</th>
+      <th>Assign Badges</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td>4.</td>
-      <td>Book Creator</td>
-      <td>An individual who creates books.</td>
-      <td>On Sunbird, registered users become book creators when book creation rights are assigned to them</td>
-    </tr>
-    <tr>
-      <td>5.</td>
-      <td>Book Reviewer</td>
-      <td>An individual who assesses books within prescribed guidelines.</td>
-      <td>On Sunbird, there are defined review guidelines. The book reviewer assesses the content based on these guidelines. A book reviewer has the right to reject or publish the content based on these guidelines.</td>
-    </tr>
-    <tr>
-      <td>6.</td>
-      <td>Official Textbook Badge Issuer</td>
-      <td>An individual who issues badges to books.</td>
-      <td>On Sunbird, badges can be assigned to books by individuals who are given badge issuer rights. Currently, there is only one badge titled Offical and hence the individual is assigned the right to assign only this badge</td>
-    </tr>
-    <tr>
-      <td>7.</td>
-      <td>Public</td>
-      <td>A user with registered credentials</td>
-      <td>On Sunbird, ad registered user can be a learner or an instructor. To consume any content on Sunbird, the user must be registered on the portal by their respective org admins</td>
+      <td><strong>Teacher Badge Issuer</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
 
+<h2 id="book-creator">Book Creator</h2>
+<p>A Book Creator is an individual who curate and compiles books. The registered users become book creators when book creation rights are assigned to them.</p>
+
+<p><b>User Role Matrix for a Book Creator</b></p>
+
 <table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Book</th>
+      <th>Upload Book</th>
+      <th>Review Book</th>
+      <th>Reject and Publish Book</th>
+      <th>Review Flagged Content</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
-      <td>8.</td>
-      <td>Announcement Sender</td>
-      <td>A person who send announcements to various registered users on the portal</td>
-      <td>On Sunbird, every organization can have one or more announcement sender who are responsible for sending important dates, announcements etc. to all the registered users of that organization</td>
-    </tr>
-    <tr>
-      <td>9.</td>
-      <td>Content Creator</td>
-      <td>An individual who can create any kind of content.</td>
-      <td>On Sunbird, registered users become content creators when content creation rights are assigned to them.</td>
-    </tr>
-    <tr>
-      <td>10.</td>
-      <td>Flag Reviewer</td>
-      <td>A person who assesses flagged content</td>
-      <td>On Sunbird, any user can flag a content, if the content is inappropriate. The flag reviewer reviews the content and rejects if the content is inappropriate according to Sunbird review guidelines. The flag is removed if the content fits the guidelines.</td>
+      <td><strong>Book Creator</strong></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
     </tr>
   </tbody>
 </table>
+
+<h2 id="book-reviewer">Book Reviewer</h2>
+<p>A Book Reviewer assesses books within defined and prescribed guidelines. A book reviewer has the right to reject or publish the content based on these guidelines.</p>
+
+<p><b>User Role Matrix for a Book Reviewer</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Book</th>
+      <th>Upload Book</th>
+      <th>Review Book</th>
+      <th>Reject and Publish Book</th>
+      <th>Review Flagged Content</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Book Reviewer</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="official-textbook-badge-issuer">Official Textbook Badge Issuer</h2>
+<p>An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official</p>
+
+<p><b>User Role Matrix for an Official Textbook Badge Issuer</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Book</th>
+      <th>Upload Book</th>
+      <th>Review Book</th>
+      <th>Reject and Publish Book</th>
+      <th>Assign Badge</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Official Textbook Badge Issuer</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="public">Public</h2>
+<p>A user having registered credentials on Sunbird. A registered user can be a learner or an instructor. To consume any content on Sunbird, the user must be registered on the portal by their respective org admins</p>
+
+<p><b>User Role Matrix for a Public User</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Book</th>
+      <th>Upload Book</th>
+      <th>Review Book</th>
+      <th>Reject and Publish Book</th>
+      <th>View Content</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Public</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="announcement-sender">Announcement Sender</h2>
+<p>A person who send a formal declaration to various registered users on the portal. On Sunbird, every organization can have one or more announcement sender who are responsible for informing important dates, announcements and other information to all the registered users of that organization.<br />
+<b>User Role Matrix for an Announcement Sender</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Content</th>
+      <th>Upload Content</th>
+      <th>Review Content</th>
+      <th>Reject Content and Publish Content</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+      <th>Create Announcements</th>
+      <th>Send Announcements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Announcement Sender</strong></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="content-creator">Content Creator</h2>
+<p>A content creator can curate content such as Collection, Lesson Plan and Study Material. On Sunbird, registered users become content creators when content creation rights are assigned to them.</p>
+
+<p><b>User Role Matrix for a Content Creator</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Content</th>
+      <th>Upload Content</th>
+      <th>Review Content</th>
+      <th>Reject Content</th>
+      <th>Publish Content</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Content Creator</strong></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="flag-reviewer">Flag Reviewer</h2>
+<p>A flag reviewer assesses the content that is marked as inappropriate by any user. The flag reviewer reviews and rejects the inappropriatethe content. The flag is removed if the content abides by the guidelines.</p>
+
+<p><b>User Role Matrix for a Flag Reviewer</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Functionality</th>
+      <th>Create Content</th>
+      <th>Upload Content</th>
+      <th>Review Content</th>
+      <th>Reject and Publish Content</th>
+      <th>Review Flagged Content</th>
+      <th>Delete Content</th>
+      <th>Update User Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Flag Reviewer</strong></td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><b>Note</b>: Organization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle.</p>
 
