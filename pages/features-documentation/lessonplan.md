@@ -17,7 +17,10 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You want to create a lesson plan <br>4. You have clicked the <b>Lesson Plan</b> tile
+    <td>1. You are logged in 
+     <br>2. You are currently on <b>My Workspace</b> page 
+     <br>3. You want to create a lesson plan 
+     <br>4. You have clicked the <b>Lesson Plan</b> tile
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/prerequisite.png"></td>
    </tr>
@@ -45,11 +48,12 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   </tr>
   <tr>
     <td>To add content to the lesson plan
-      <br>1. Click <b>New Child</b> to start adding new lesson
-      <br>2. You can add another lesson at same level using <b>New Sibling</b>or at a level below using <b>New Child</b>
+      <br>1. Click <b>New Child</b> to start adding a node to the new lesson
+      <br>2. You can add another node at same level using <b>New Sibling</b>. Click <u>here<a=href:""</a></u> to know more about adding New Sibling node.
+     <br>3. You can add a node level below using <b>New Child</b>. Click <u>here<a=href:""</a></u> to know more about adding New Child node.  
       <br> The <b>Untitled LessonPlan Unit</b> page appears      
     <br>3.  Click <b>Add Resource</b> from:
-    <br>a) The left bottom of the page 
+    <br>a) The right bottom corner of the page 
     <br>b) Right click on the node name
     <br>c) Use keyboard shortcut <b>Ctrl+Alt+A</b>
     <br>The Find & Select Activities page is displayed.</td>
@@ -65,34 +69,29 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
       <br>b. Select <b>Remove</b> to remove the resource
 <br>5. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the <b>LessonPlan</b> page. 
    <br>6. Click <u>here<a>### Preview Resource</a></u> to know more about previewing the resource. 
-   <br>7. Click <b>Save</b> to save he changes. 
+   <br>7. Click <b>Save</b> to save the changes. 
    <br>8. Click Send for Review icon to sent the lesson plan. Click <u>here<a>### Sending Lesson Plan for Review</a></u> to know more about Sending for Review. <td>
    <img src="pages/features-documentation/images/lessonplan/AddResource2.png">
  </td>     
 </tr>
 </table>
 
-### Preview Resource
+### Preview and Upload the Resource
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <td>
-     <br>1. You can preview a resource using preview icon. It displays the Name, Description, Keywords related to the resource.   
-     <br>2. Click on the play icon to load the added resource with the lesson plan   
+  <tr> 
+    <td>To preview the resource
+     <br>1. Click the preview icon. It displays the Name, Description, Keywords related to the resource.   
+     <br>2. Click the play icon to load the added resource with the lesson plan   
      <br>3. You can delete the resource using delete icon   
      <br>4. Click the link in the breadcrumb to visit the corresponding lesson plan
     </td>
 <td><img src="pages/features-documentation/images/lessonplan/AddResource3.png"></td>     
 </tr>
 </table>
-
-
- You can preview the added resource using preview icon
-
- 
 
 ### Adding Metadata
 
@@ -108,7 +107,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
  </tr>
  </table>
 
-### Adding Image to Lesson Plan metadata
+### Adding Image to Lesson Plan Metadata
 
 <table>
   <tr>
@@ -116,7 +115,9 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>Click the <b>Image</b> icon to add an image</td>
+    <td>The image can be added in the Lesson Plan title. 
+      <br>1. Click the <b>Edit Details</b> link on the top left corner of the page.
+      <br>2. Click the <b>Image</b> icon to add an image</td>. The <b>Select Image</b> page appears 
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
