@@ -10,7 +10,8 @@ info:
 host: staging.open-sunbird.org
 basePath: /course/v1/user/content/state/
 securityDefinitions:
-  - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/authorization.yaml#/auth'
+  auth:
+    - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/authorization.yaml#/auth'
 schemes:
   - https
 consumes:
