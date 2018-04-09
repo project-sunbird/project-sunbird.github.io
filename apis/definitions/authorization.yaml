@@ -1,4 +1,4 @@
-auth:
+authorization:
   type: string
   name: Authorization
   in: header
