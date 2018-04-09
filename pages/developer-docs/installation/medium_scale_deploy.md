@@ -38,7 +38,7 @@ allowSearch: true
 
 * All the services with the common superscript (e.g. servername<sup>2</sup>) in the Server Name are run on the same server when you install Sunbird on 2 servers. The server running services with superscript <sup>1</sup> is referred as the app server and the server running services with superscript <sup>2</sup> is referred as the db server.
  
-**If you setup more than one swarm agent node, you will need to configure a Load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm will be able to route the request to the right service. **
+**If you setup more than one swarm agent node, you will need to configure a Load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm will be able to route the request to the right service.**
 
 ### Installation:
 
@@ -183,20 +183,20 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 **3.** SSH to the swarm node where badger is running.
 
-**4.** RUN `docker ps | grep badger` . Take the container id and pass it below.
+**4.** Run `docker ps | grep badger` . Take the container id and pass it below.
 
-**5.** RUN `docker exec -it -u root <container_id>` . It will ssh to the badger container.
+**5.** Run `docker exec -it -u root <container_id>` . It will ssh to the badger container.
 
 **6.** Move to the directory `cd /code`
 
-**7.** RUN `./manage.py createsuperuser` . Provide valid username,email and password.
+**7.** Run `./manage.py createsuperuser` . Provide valid username,email and password.
 
 **8** Run the curl command below to get the sunbird badger authorization  variable.
     
     `curl -X POST 'http://localhost:8004/api-auth/token' -d "username=<emailid>&password=<password>"`
 
 
-**9** set the output of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
+**9** Set the output of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
 
 
 
