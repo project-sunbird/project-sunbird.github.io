@@ -18,7 +18,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
 * Search downloaded content from the mobile device when offline
 * Scan QR code or Dial code in textbooks and access related content
 * Download content, when connected to the Internet
-* Enrol for available courses
+* Enroll for available courses
 * Take up assigned courses
 * Browse and view resources from the content library
 * Create and update user profile
@@ -26,6 +26,8 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
 * View and rate the content 
 
 ## Downloading and Installing Sunbird Mobile App
+
+The Sunbird Mobile App is available in its beta version, for users to test, experiment and understand the various features and functionalities of the application. To get the beta version of the app you can use this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a>: 
 
 **Prerequisites**
 
@@ -56,7 +58,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap the <b>Sign In</b> to log in into Sunbird Mobile App. You will be redirected to <b>Login</b> screen <br>2. You can <b>Log In</b> to Sunbird Mobile App using either of the three options: registered <b>Username</b> or <b>Email ID</b> or <b>Phone number</b> <br>3. Enter your <b>Password</b> <br>4. Tap <b>Login</b> button <br><b>Note:</b> You can also sign in to the application without using your credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  <td>1. Tap the <b>Sign In</b> to log in into the mobile application. You will be redirected to <b>Login</b> screen <br>2. You can <b>Log In</b> to Sunbird Mobile App using either of the three options: registered <b>Username</b> or <b>Email ID</b> or <b>Phone number</b> <br>3. Enter your <b>Password</b> <br>4. Tap <b>Login</b> button <br><b>Note:</b> You can also sign in to the application without using your credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/login.png"></td>
   </tr>
@@ -68,7 +70,7 @@ For details on recovering password refer [Recovering Password](features-document
 
 ## Exploring Sunbird Features
 
-Sign in to Sunbird Mobile App with your registered credential. You will land to <b>Home</b> screen. Sunbird Mobile app allows you to navigate to the different features. Tap associated icons to navigate to the relevant screen of the app. 
+Sign in to Sunbird Mobile App with your registered credential. You will land to <b>Home</b> screen. It allows you to navigate to the different features. Tap associated icons to navigate to the relevant screen of the app. 
 
 ### Home 
 
@@ -174,7 +176,7 @@ You can browse the Subird Mobile App without sining in. Use **Browse as Guest** 
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
-  <td>1. You will be re-directed to <b>Home</b> screen <br>2. Click <b>Select Board</b> to search and filter your content by selecting a particular board <br>3. You will be re-directed to next screen. Select a <b>Board</b> <br>4. Click <b>Save</b> to save your seection <br>5. Click <b>Cancel</b> to exit the screen</td>
+  <td>1. You will be re-directed to <b>Home</b> screen <br>2. Click <b>Select Board</b> to search and filter your content by selecting a board <br>3. You will be re-directed to next screen. Select a <b>Board</b> <br>4. Click <b>Save</b> to save your selection <br>5. Click <b>Cancel</b> to exit the screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
  </tr>
  </table>
