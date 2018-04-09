@@ -113,7 +113,7 @@ The User Interface (UI) differs for each Sunbird user role. Based on the role’
 |-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|
 |Content Creator, Content Reviewer, Flag Reviewer & Course Mentor |Yes|Yes|Yes|Yes |Yes|
 |Book Creator & Book Reviewer |Yes|Yes|Yes|Yes |Yes|
-|Teacher Badge Issuer & Official Textbook Badge Issuer |Yes|No|Yes|Yes |Yes|
+|Teacher Badge Issuer |Yes|No|Yes|Yes |Yes|
 |Announcement Sender|Yes|No|No|No |No|
 |Public |Yes|No|Yes|Yes |Yes|
 
