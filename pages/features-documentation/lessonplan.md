@@ -34,7 +34,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-  <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>a) Board <br>b) Grade <br>c) Subject <br>d) Medium <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created
+  <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>a) Board <br>b) Grade <br>c) Subject <br>d) Medium <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
   </td>
   <td><img src="pages/features-documentation/images/lessonplan/create.png"></td>
  </tr>
@@ -48,10 +48,10 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   </tr>
   <tr>
     <td>To add content to the lesson plan
-      <br>1. Click <b>New Child</b> to start adding a node to the new lesson
-      <br>2. You can add another node at same level using <b>New Sibling</b>. Click <u>here<a=href:""</a></u> to know more about adding New Sibling node.
-     <br>3. You can add a node level below using <b>New Child</b>. Click <u>here<a=href:""</a></u> to know more about adding New Child node.  
-      <br> The <b>Untitled LessonPlan Unit</b> page appears      
+      <br>1. Click <b>New Child</b> to start adding a node to the newly created lesson
+      <br>2. You can add another node at same level using <b>New Sibling</b>. Click <a href="Adding Sibling Node">here</a> to know more about adding New Sibling node.
+     <br>3. You can add a node level below using <b>New Child</b>. Click <a href="Adding Child Node">here</a> to know more about adding New Child node.  
+      <br> The <b>LessonPlan Unit</b> page appears      
     <br>3.  Click <b>Add Resource</b> from:
     <br>a) The right bottom corner of the page 
     <br>b) Right click on the node name
@@ -60,17 +60,17 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png"></td>
   </tr>
  <tr>
- <td> To add Resource
+   <td> <b>To Add Resource</b>
   <br>1. Search the resource using search bar
-  <br>2. Select the relevant cards you want to add from the available lists
+  <br>2. Select the relevant resource cards from the available lists
   <br>3. Hover over the card to view the basic details about that resource 
   <br>4. Click <b>View Details</b> to read illustrated information about the card in a new window. 
       <br>a. Select <b>Add</b> to imbibe the resoure
       <br>b. Select <b>Remove</b> to remove the resource
   <br>5. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the <b>LessonPlan</b> page. 
-  <br>6. Click <u>here<a>### Preview Resource</a></u> to know more about previewing the resource. 
+  <br>6. Click <a href="### Preview Resource">here</a> to know more about previewing the resource. 
   <br>7. Click <b>Save</b> to save the changes. 
-  <br>8. Click Send for Review icon to sent the lesson plan. Click <u>here<a>### Sending Lesson Plan for Review</a></u> to know more about Sending for Review.</td> 
+  <br>8. Click Send for Review icon to sent the lesson plan. Click <a href="### Sending Lesson Plan">here</a> to know more about Sending for Review.</td> 
    <td>
    <img src="pages/features-documentation/images/lessonplan/AddResource2.png">
  </td>     
@@ -84,11 +84,10 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr> 
-    <td>To preview the resource
-     <br>1. Click the preview icon. It displays the Name, Description, Keywords related to the resource.   
-     <br>2. Click the play icon to load the added resource with the lesson plan   
-     <br>3. You can delete the resource using delete icon   
-     <br>4. Click the link in the breadcrumb to visit the corresponding lesson plan
+    <td>To preview resource page displays the Name, Description, Keywords related to the resource. 
+     <br>1. Click the play icon to load the added resource in the lesson plan   
+     <br>2. You can delete the resource using delete icon   
+     <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
     </td>
 <td><img src="pages/features-documentation/images/lessonplan/AddResource3.png"></td>     
 </tr>
