@@ -64,7 +64,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <tr>
     <td>The image can be added in the Lesson Plan title. 
       <br>1. Click the <b>Edit Details</b> link on the top left corner of the page.
-      <br>2. Click the <b>Image</b> icon to add an image</td>. The <b>Select Image</b> page appears 
+      <br>2. Click the <b>Image</b> icon to add an image. The <b>Select Image</b> page appears </td>
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
