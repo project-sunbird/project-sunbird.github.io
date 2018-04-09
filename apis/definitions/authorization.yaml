@@ -1,7 +1,4 @@
- auth:
-   type: oauth2
-   flow: implicit
-   authorizationUrl: 'https://staging.open-sunbird.org/{}'
-   scopes: {}
-   x-skip-client-authentication: false
-   
+  auth:
+    type: apiKey
+    name: Authorization
+    in: header
