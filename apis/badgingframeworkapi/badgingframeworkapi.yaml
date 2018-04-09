@@ -87,8 +87,7 @@ paths:
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-              - $ref: '#/definitions/BadgingErrorResponse'
-        
+              - $ref: '#/definitions/BadgingErrorResponse'     
         '404':
           description: >-
             Resource not found,**Create Badge Issuer** operation failed !The possible reason for failure is that requested resource not found.
