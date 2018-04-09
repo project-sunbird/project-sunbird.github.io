@@ -102,15 +102,6 @@ The content accepted as inappropriate is pulled back for relevant modifications.
   
 <b>Note</b>: Organization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle. 
 
-## Official Textbook Badge Issuer  
-An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official.
-
-<b>User Role Matrix for an Official Textbook Badge Issuer</b>
-
-|  Functionality       | Create Content | Upload Content | Review & Publish Content | Create  Badges | Assign Badges | Delete Badges | Update User Profile |
-|----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Official Textbook Badge Issuer** |       No       |       No      |       No      |       No      |          Yes           |       No      |         Yes         |
-
 ## User Interface for Different User Roles
 
 The User Interface (UI) differs for each Sunbird user role. Based on the role’s rights and permissions elements of the portal may not be available.
@@ -118,10 +109,14 @@ The User Interface (UI) differs for each Sunbird user role. Based on the role’
 <b>User Role And User Interface Matrix</b>
 
 
-|User Role |Profile|Workspace|To Do (Home Page)|Courses |Library|Dashboard|
+|User Role |Profile|Workspace|To Do (Home Page)|Courses |Library|
 |-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|
-|Content Creator, Content Reviewer, Flag Reviewer & Course Mentor |Yes|Yes|Yes|Yes |Yes|No|
-|Book Creator & Book Reviewer |Yes|Yes|Yes|Yes |Yes|No|
-|Teacher Badge Issuer & Official Textbook Badge Issuer |Yes|No|Yes|Yes |Yes|No|
-|Announcement Sender|Yes|No|No|No |No|Yes|
-|Public |Yes|No|Yes|Yes |Yes|No|
+|Content Creator, Content Reviewer, Flag Reviewer & Course Mentor |Yes|Yes|Yes|Yes |Yes|
+|Book Creator & Book Reviewer |Yes|Yes|Yes|Yes |Yes|
+|Teacher Badge Issuer & Official Textbook Badge Issuer |Yes|No|Yes|Yes |Yes|
+|Announcement Sender|Yes|No|No|No |No|
+|Public |Yes|No|Yes|Yes |Yes|
+
+**Note:** Announcement senders also have the access to **Announcements Dashboard**
+
+
