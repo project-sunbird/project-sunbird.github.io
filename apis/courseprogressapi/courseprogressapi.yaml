@@ -11,11 +11,11 @@ host: staging.open-sunbird.org
 basePath: /course/v1/user/content/state/
 securityDefinitions:
     auth:
-    type: string
-    name: Authorization
-    in: header
-    required: true
-    template: Bearer {apiKey}
+      type: string
+      name: Authorization
+      in: header
+      required: true
+      template: Bearer {apiKey}
 schemes:
   - https
 consumes:
