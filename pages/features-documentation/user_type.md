@@ -11,7 +11,7 @@ allowSearch: true
 On Sunbird, each user type is associated with a user role. The permissions and responsibilities vary for each user role.  
 Before users are assigned with appropriate roles, it is important to understand the: <br>1. Responsibilities of a each user role <br>2. Features accessible to each user role
 
-On Sunbird there are ten user types:
+Given below are the various user types and their assocated responsibilites on Sunbird:
 
 ## Course Mentor
 A Course Mentor guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course. Mentors also ensure completion of a course within a stipulated time.
