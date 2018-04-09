@@ -112,12 +112,12 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <br>4. Click <b>View Details</b> to read illustrated information about the card in a new window. 
       <br>a. Select <b>Add</b> to imbibe the resoure
       <br>b. Select <b>Remove</b> to remove the resource
-  <br>5. Click <b>Proceed</b> to add resources to the section. The resource(s) are added to the Resource section of the <b>LessonPlan</b> page. 
-  <br>6. Click <a href="### Preview Resource">here</a> to know more about previewing the resource. 
+  <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource section of the <b>LessonPlan</b> page. 
+  <br>6. Click <a href="pages/features-documentation/lessonplan/# preview-and-upload-resource">Preview and Upload the Resources</a> to know more.
   <br>7. Click <b>Save</b> to save the changes. 
-  <br>8. Click Send for Review icon to sent the lesson plan. Click <a href="### Sending Lesson Plan">here</a> to know more about Sending for Review.</td> 
+  <br>8. Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan">Send for Review</a> to know more.</td>
    <td>
-   <img src="pages/features-documentation/images/lessonplan/AddResource2.png">
+   <img src="pages/features-documentation/images/lessonplan/add_resource2.png">
  </td>     
 </tr>
 </table>
