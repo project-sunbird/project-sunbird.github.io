@@ -8,9 +8,10 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: course/v1/user/content/state
+basePath: /course/v1/user/content/state/
 securityDefinitions:
- - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/authorization.yaml#/auth'
+schema: 
+  - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/authorization.yaml#/auth'
 schemes:
   - https
 consumes:
@@ -258,7 +259,6 @@ definitions:
     properties:
       result:
         $ref: '#/definitions/ResultStatus'
-  
   ResultStatus:
     type: object
     properties:
