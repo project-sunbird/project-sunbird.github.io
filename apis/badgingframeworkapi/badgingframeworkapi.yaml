@@ -12,11 +12,9 @@ host: staging.open-sunbird.org
 basePath: /api/badging/v1/issuer
 securityDefinitions:
   auth:
-    type: oauth2
-    flow: implicit
-    authorizationUrl: 'https://staging.open-sunbird.org/api/v1/issuer'
-    scopes: {}
-    x-skip-client-authentication: false
+    type: apiKey
+    name: Authorization
+    in: header
 schemes:
   - https
 consumes:
