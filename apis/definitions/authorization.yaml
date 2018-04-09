@@ -1,7 +1,9 @@
 authorization:
-  type: string
-  name: Authorization
-  in: header
-  required: true
-  template: "Bearer {apiKey}"
+ type: object
+  properties:
+    type: string
+    name: Authorization
+    in: header
+    required: true
+    template: "Bearer {apiKey}"
     
