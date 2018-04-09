@@ -8,12 +8,12 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /v1/user/content
+basePath: course/v1/user/content/state
 securityDefinitions:
  auth:
    type: oauth2
    flow: implicit
-   authorizationUrl: 'https://staging.open-sunbird.org/api/v1/user/content'
+   authorizationUrl: 'https://staging.open-sunbird.org/api/course/v1/user/content/state'
    scopes: {}
    x-skip-client-authentication: false
 schemes:
@@ -23,7 +23,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /state:
+  /read:
     post:
       description: >-
        This API is used for publishing the progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
