@@ -29,7 +29,7 @@ A Content Reviewer accesses the created courses or content within prescribed gui
   
 |  Functionality       | Create Content | Upload Content | Review Content | Reject & Publish Content | Review Flagged Content | Delete Content | Update User Profile |
 |----------------------|----------------|----------------|----------------|----------------|------------------------|----------------|---------------------|
-| **Content Reviewer** |       No       |       Yes      |       Yes      |       Yes      |           Yes           |       No     |         Yes         |
+| **Content Reviewer** |       No       |       Yes      |       Yes      |       Yes      |           No          |       No     |         Yes         |
 
 <b>Note:</b> Reviewers can also have creation rights, but they cannot review courses or content created by themselves. Reviewers can only review courses or content created by others.
 
@@ -96,9 +96,9 @@ The content accepted as inappropriate is pulled back for relevant modifications.
 
 <b>User Role Matrix for a Flag Reviewer</b>
 
-|  Functionality    | Create Content | Upload Content | Review Content | Reject and Publish Content | Review Flagged Content | Delete Content | Update User Profile |
+|  Functionality    | Create Content | Upload Content | Review Content | Accept and Reject Flag | Review Flagged Content | Delete Content | Update User Profile |
 |-------------------|----------------|----------------|----------------|----------------------------|------------------------|----------------|---------------------|
-| **Flag Reviewer** |       No       |       Yes      |       Yes      |             Yes            |           Yes          |       Yes      | Yes                 |
+| **Flag Reviewer** |       No       |       No      |       No      |             Yes            |           No          |       No      | Yes                 |
   
 <b>Note</b>: Organization administrators can assign multiple roles to individual users. For example; a user can be a course mentor, course creator and announcement sender. The organization decides how many roles one individual should handle. 
 
@@ -117,6 +117,6 @@ The User Interface (UI) differs for each Sunbird user role. Based on the role’
 |Announcement Sender|Yes|No|No|No |No|
 |Public |Yes|No|Yes|Yes |Yes|
 
-**Note:** Announcement senders also have the access to **Announcements Dashboard**
+
 
 
