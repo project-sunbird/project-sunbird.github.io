@@ -1,6 +1,8 @@
-  auth:
-    type: API Key
-    name: Authorization
-    in: header
-    template: "Bearer {apiKey}"
+auth:
+  title: API Key 
+  type: string
+  name: Authorization
+  in: header
+  required: true
+  template: "Bearer {apiKey}"
     
