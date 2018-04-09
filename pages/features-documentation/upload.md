@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation
-title: Uploading Contents
-page_title: Uploading Contents
+title: Upload Contents
+page_title: Upload Contents
 description: Procedure on Uploading Content
 keywords: >-
   Uploading content, upload image, upload pdf, upload HTML Archive, upload video, MIME type
