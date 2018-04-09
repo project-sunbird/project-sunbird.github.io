@@ -1,5 +1,4 @@
 auth:
-  title: API Key 
   type: string
   name: Authorization
   in: header
