@@ -14,8 +14,8 @@ host: staging.open-sunbird.org
 basePath: /api/course/v1
 securityDefinitions:
   auth:
-    type: apiKey
-    name: api_key
+    type: string
+    name: Authorization
     in: header
 schemes:
   - https
