@@ -1,562 +1,630 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  description: >-
-    Data exhaust API resource refers to the data generated as trails or information byproducts resulting from all user activities.
-      - These resources are used to improve online processes based on
-      the behaviors of users 
-      - Also these resources are used to minimize required actions and find areas to optimize, improve or change outright 
-      - Data exhaust also helps in data mining analytics
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
-  title: Data Exhaust API(s)
+  version: '1.0'
+  title: Course Batch Management API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
     email: info@sunbird.org
-  version: "1.0"
+  description: >-
+        The Course Batch Management API resources perform operations related to management of batches for courses on the Sunbird Platform. A Batch is used to arrange (courses) in specific sets or groups.The basic operations include Creation, Updation,joining ,listing.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /data/v1/dataset/request/
+basePath: /api/course/v1
+securityDefinitions:
+  auth:
+    type: apiKey
+    name: api_key
+    in: header
 schemes:
   - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
 paths:
-   /submit:
+  /batch/create:
     post:
       description: >-
-        This API is used to submit the data request to get the exhaust data 
-          - The response of the request initiates with the creation of a data file
-          - This data file can be downloaded and used for analytics etc.
-      operationId: Submit Data Request
-      produces:
-        - application/json
+        This API is associated with creation of a batch 
+          - The Format of the resource URL is '{{host}}/v1/course/batch/create' 
+          - The **_/batch/create_** endpoint executes "create batch" request to create a new batch
+          - It is a must to provide values for required parameters  
+      summary: Creates a Batch
       tags:
-        - Data Exhaust API(s)
-      parameters:
-        - name: Authorization
-          in: header
-          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-          required: true
-          type: string
-        - name: Body
-          in: body
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the data request to be sent
-          required: true
-          x-is-map: false
-          schema:
-            $ref: '#/definitions/dataRequestBody'
-      responses:
-        '200':
-          description: 'SUCCESS. The **Submit Data Request** operation was successful!'
-          schema:
-            $ref: '#/definitions/dataExhaustResponse'
-        '400':
-          description:  'BAD REQUEST,**Submit Data Request** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
-          schema:  
-            allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
-      security: []
-   /list/{channel_ID}:
-    get:
-      description: >-
-        This API is used to list the status messages and other data  related activities that are specific to a channel
-          - the format of the url is  **/request/list/{your channel ID}**
-          - {...} represents a variable value which is your channel ID, append a valid channel ID to the request URL 
-      operationId: List Requests
+      - Course Batch APIs
+      operationId: '{{host}}/course/v1/batch/create'
       produces:
-        - application/json
-      tags:
-        - Data Exhaust API(s)
+      - application/json
       parameters:
-        - in: path
-          name: channel_ID
-          description: 'This ID uniquely represents the the parent organisation to which the user belongs.'
-          required: true
-          type: string
-        - in: query
-          name: limit
-          description: 'Represents the limit of result entries, default limit is set to 100' 
-          required: false
-          type: string
-      responses:
-        '200':
-          description: 'SUCCESS. The **list status** operation was successful!'
-          schema:
-            $ref: '#/definitions/JobListResponse'
-        '400':
-          description:  'BAD REQUEST,**list status** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
-          schema:  
-            allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
-      security: []
-   /read/{channel_ID}/{request_ID}:
-    get:
-      description: >-
-        This API is used to fetch and view the current status of the data that gets generated by user interaction and activities. - the format of the url is  **/read/{channel_ID}/{requestId}**
-          - {...} represents a variable value which is your channel ID and the request ID, append a valid channel ID, Request ID to the request URL 
-      operationId: Get Request Details
-      produces:
-        - application/json
-      tags:
-        - Data Exhaust API(s)
-      parameters:
-        - in: path
-          name: channel_ID
-          description: 'It uniquely represents the the parent organisation to which the user belongs.'
-          required: true
-          type: string
-        - in: path
-          name: request_ID
-          description: >-
-            Request ID provided in the response when the job execution request is made.
-          required: true
-          type: string
-      responses:
-        '200':
-          description: 'SUCCESS. The **fetch the current status** operation was successful!'
-          schema:
-            $ref: '#/definitions/JobInfoResponse'
-        '400':
-          description:  'BAD REQUEST,**fetch the current status** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
-          schema:  
-            allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
-      security: []
-   /{channel_ID}:
-    get:
-      description: >-
-        This API is used to fetch exhaust data sets based on the criteria. 
-          - The criteria in the request body takes values **from data** to **to date**
-          - the format of the url is  **/request/{channel_ID}**
-          - {...} represents a variable value which is your channel ID, append a valid channel ID
-      produces:
-        - application/json
-      tags:
-        - Data Exhaust API(s)
-      parameters:
-        - in: path
-          name: channel_ID
-          description: 'This ID uniquely represents the the parent organisation to which the user belongs.'
-          required: true
-          type: string
-        - in: query
-          type: string
-          name: from
-          description: >-
-            The date format that should be used is yyyy-mm-dd.
-          required: true  
-        - in: query
-          name: to
-          description: >-
-            The date format that should be used is yyyy-mm-dd.    
-          required: true
-          type: string
-      responses:
-        '200':
-          description: 'SUCCESS. The **fetch exhaust data sets** operation was successful!'
-          schema:
-            $ref: '#/definitions/JobInfoResponse'
-        '400':
-          description:  'BAD REQUEST,**list status** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
-          schema:  
-            allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
-          schema:
-            allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-      security: []      
-definitions:
-  dataRequestBody:
-    title: DataExhaust - Data Request
-    type: object
-    properties:
-      id:
-        x-go-name: ID
-        type: string
-        description: unique API ID=data_exhaust_dataset_service
-      ver:
-        x-go-name: Ver
-        type: string
-        description: API version=1.0
-      ts:
-        x-go-name: Ts
-        type: string
-        description: 'request timestamp in format: YYYY-MM-DDThh:mm:ss+/-nn:nn'
-      params:
-        $ref: '#/definitions/RequestParams'
-      request:
-        $ref: '#/definitions/DataExhaustRequest'
-    required:
-      - id
-      - ver
-      - ts
-      - params
-      - request
-  DataExhaustJobStats:
-    title: JobState
-    type: object
-    properties:
-      dt_job_submitted:
-        type: integer
-        description: DateTime when the job is submitted
-      dt_job_processing:
-        type: integer
-        description: DateTime when the job is picked up for processing
-      dt_job_completed:
-        type: integer
-        description: DateTime when the job is complete
-      input_events:
-        type: integer
-        description: Total input events processed
-      output_events:
-        type: integer
-        description: Total output events produced
-      latency:
-        type: integer
+      - name: Body
+        in: body
+        required: true
         description: >-
-          Latency in seconds from the time the job is submitted before picked up
-          for processing
-      execution_time:
-        type: integer
-        description: Total time taken for processing excluding latency
-  dataExhaustResponse:
-    type: object
-    properties:
-      id:
+            The body refers to the format of the request.
+              - The body contains metadata about the new batch to be created.
+        schema:
+          allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+             -  $ref: '#/definitions/SingleCreatebatchReq'
+      - name: Content-Type
+        in: header
+        required: true
         type: string
-      ver:
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
         type: string
-      ts:
+        description: 'The Time Stamp at which the **create batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
         type: string
-      params:
-        $ref: '#/definitions/ResponseParams'
-      responseCode:
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
         type: string
-      result:
-        $ref: '#/definitions/dataExhaustResult'
-  RequestParams:
-    title: Params
-    type: object
-    properties:
-      msgid:
+        description: 'The alphanumeric string for accessing the API'
+      - name: Authorization
+        in: header
+        required: true
         type: string
-        x-go-name: MsgID
-        description: 'unique request message id, UUID, for handling API idempotency'
-      client_key:
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The **create batch** operation was successful!'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/CreateBatchResponse'
+        '400':
+          description:  'BAD REQUEST,**create batch** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
+          schema:  
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+        '404':
+          description: 'RESOURCE NOT FOUND ! **Create Batch**operation failed ! The possible reason for failure is that the provided course Id is invalid.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'     
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+  /batch/read/{Batch_Id}:
+    parameters:
+      - in: path
+        name: Batch_Id
         type: string
-        x-go-name: Client_Key
-        description: uniqueID of the requestor. In partner case the partner id
-    required:
-      - client_key
-  DataExhaustRequest:
-    title: Request
-    type: object
-    properties:
-      dataset_id:
-        x-go-name: dataset_id
-        type: string
-        description: To identify the dataset to fetch the data
-      filter:
-        $ref: '#/definitions/DataExhaustFilter'
-      output_format:
-        type: string
-        description: Output format should be either json or csv. Default value is json
-    required:
-      - filter
-      - dataset_id
-  DataExhaustFilter:
-    title: Filter
-    type: object
-    properties:
-      start_date:
-        type: string
-        description: Start date of the data exhaust
-      end_date:
-        type: string
-        description: End date of the data exhaust
-      app_id:
-        type: string
-        description: Filter by app_id. (Optional)
-      channel:
-        type: string
-        description: Filter by channel_id.(Optional)
-      events:
-        type: array
-        items:
-          type: string
-          description: List of events to filter and return.(Optional)
+        required: true
+        description: 'Append a valid Batch Id To the Request URL'   
+    get:
+      description: >-
+        This API is associated with fetching a particular batch on the Sunbird Platform.
+          - {...}refers to a section of read/{Batch_Id} endpoint URL path that needs to be replaced by appropriate Id
+          - The **_/batch/read/{Batch_Id}_** endpoint executes "Fetch a batch" request to fetch a particular batch.
+          - It is a must to provide values for required parameters 
+      summary: Fetch a particular Batch
       tags:
-        type: array
-        items:
-          type: string
-          description: Filter by tag. (Optional)
-    required:
-      - start_date
-      - end_date
-  JobListResponse:
-    type: object
-    properties:
-      id:
+      - Course Batch APIs
+      operationId: getBatch
+      produces:
+      - application/json
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
         type: string
-      ver:
+        description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
         type: string
-      ts:
+        description: 'The Time Stamp at which the **Fetch a batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
         type: string
-      params:
-        $ref: '#/definitions/ResponseParams'
-      responseCode:
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
+      - name:  x-authenticated-user-token
+        in: header
+        required: true
         type: string
-      result:
-        $ref: '#/definitions/JobListResult'
-  JobInfoResponse:
-    type: object
-    properties:
-      id:
+        description: 'The alphanumeric string for accessing the API'
+      - name: Authorization
+        in: header
+        required: true
         type: string
-      ver:
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The **Fetch a batch** operation was successful!'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/SingleBatchResponseWrapper'
+            
+        '400':
+          description:  'BAD REQUEST,**Fetch a batch** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+        '404':
+          description: 'RESOURCE NOT FOUND" operation failed ! The possible reason for failure is that BatchId is invalid.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'     
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+  /batch/user/add/{Batch_Id}:  
+    parameters:
+      - in: path
+        name: Batch_Id
         type: string
-      ts:
+        required: true
+        description: 'Append a valid Batch Id To the Request URL'   
+    post:
+      description: >-
+        This API is associated with addding a user  to a particular batch on the Sunbird Platform.
+          - The format of the resource URL is '{{host}}/course/v1/batch/user/add/{Batch_Id}'
+          - The **_/batch/user/add/{Batch_Id}_** endpoint executes "Add user to a batch" request to add a registered user to a specific batch.
+          - It is a must to provide values for required parameters 
+      summary: Add User to a specific batch
+      tags:
+      - Course Batch APIs
+      operationId: '{{host}}/course/v1/batch/user/add/{Batch_Id)'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the user to be added to a specific batch
+        schema:
+          allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/AddUserToBatchReq'
+      - name: Content-Type
+        in: header
+        required: true
         type: string
-      params:
-        $ref: '#/definitions/ResponseParams'
-      responseCode:
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
         type: string
-      result:
-        $ref: '#/definitions/JobResult'
-  ResponseParams:
-    title: Params
-    type: object
-    properties:
-      resmsgid:
+        description: 'The Time Stamp at which the **Add a user to a specific batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
         type: string
-      status:
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
+      - name:  x-authenticated-user-token
+        in: header
+        required: true
         type: string
-  dataExhaustResult:
-    type: object
-    properties:
-      job_stats:
-        $ref: '#/definitions/DataExhaustJobStats'
-      last_updated:
-        type: integer
-      status:
+        description: 'The alphanumeric string for accessing the API'
+      - name: Authorization
+        in: header
+        required: true
         type: string
-      request_id:
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The **Add user to a specific batch** operation was successful!'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/AddUserToBatchResp'
+        '400':
+          description:  'BAD REQUEST,**dd user to a specific batch** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+  /batch/list:
+    post:
+      description: >-
+        This API is associated with fetching and listing existing batches
+          - The format of the resource URL is '{{host}}/course/v1/batch/search'
+          - The **_/batch/list_** endpoint executes "Lists the existing batches" request to fetch the existing batches.
+          - It is a must to provide values for required parameters 
+      summary: Lists the existing batches
+      tags:
+      - Course Batch APIs 
+      operationId: '{{host}}/course/v1/batch/search'
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the batches to be listed
+        schema:
+         allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/CourseBatchSearchReq'
+      
+      - name: Content-Type
+        in: header
+        required: true
         type: string
-      output:
-        $ref: '#/definitions/DataExhaustOutputResult'
-      request_data:
-        $ref: '#/definitions/DataExhaustRequest'
-  associateResponse:
-    type: object
-    description: The response when license key is successfully associated with a resource
-    properties:
-      id:
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
         type: string
-        description: unique API ID=ekstep.data_exhaust_resource_associate
-      ts:
+        description: 'The Time Stamp at which the **List the existing batches** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
         type: string
-        description: 'response timestamp YYYY-MM-DDThh:mm:ss+/-nn:nn'
-      ver:
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
+      - name:  x-authenticated-user-token
+        in: header
+        required: true
         type: string
-        description: API version=1.0
-      params:
-        $ref: '#/definitions/responseParams'
-  responseParams:
-    type: object
-    properties:
-      resmsgid:
-        description: unique response message id (UUID)
+        description: 'The alphanumeric string for accessing the API'
+      - name: Authorization
+        in: header
+        required: true
         type: string
-        x-go-name: ResMsgId
-      msgid:
-        description: message id of the request
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The **Lists the existing batches** operation was successful!'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/SearchBatchResponse'
+        '400':
+          description: 'BAD REQUEST,**Lists the existing batches** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+  /batch/update:
+    patch:
+      description: >-
+        This API is associated with updating a batch on the Sunbird Platform.
+          - The **_/batch/update_** endpoint executes "Update a batch" request to update an existing batch.
+          - It is a must to provide values for required parameters 
+      summary: Course Batch Update
+      tags:
+      - Course Batch APIs
+      operationId: Course Batch Update
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the batch to be updated.
+        schema:
+          allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/CourseBatchUpdaterequest'
+      - name: Accept
+        in: header
+        required: true
         type: string
-        x-go-name: MsgId
-      status:
-        description: 'status of request e.g: successful, failed etc'
+        description: Represents the media type(s) specified in the request body that are acceptable in the response body
+        
+      - name: Content-Type
+        in: header
+        required: true
         type: string
-        x-go-name: Status
-      err:
-        description: error code if any
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
         type: string
-        x-go-name: ErrorCode
-      errmsg:
-        description: default English error message
+        description: 'The Time Stamp at which the **update a batch** request was sent. '
+      - name: X-msgid
+        in: header
+        required: true
         type: string
-        x-go-name: ErrorMessage
-    x-go-package: ecosystem-platform-api/api
-  registerErrorResponse:
-    type: object
-    properties:
-      resmsgid:
-        description: unique response message id (UUID)
+        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
+      - name:  x-authenticated-user-token
+        in: header
+        required: true
         type: string
-        x-go-name: ResMsgId
-      msgid:
-        description: message id of the request
+        description: 'The alphanumeric string for accessing the API'
+      - name: Authorization
+        in: header
+        required: true
         type: string
-        x-go-name: MsgId
-      status:
-        description: failed
-        type: string
-        x-go-name: Key
-      err:
-        description: one of the following error codes
-        type: string
-        x-go-name: ErrorCode
-        enum:
-          - INVALID_DATA_ERROR - Request JSON is not parsable
-          - INTERNAL_ERROR - Technical error in the API
-      errmsg:
-        description: default English error message
-        type: string
-        x-go-name: ErrorMessage
-  authenticateErrorResponse:
-    type: object
-    properties:
-      resmsgid:
-        description: unique response message id (UUID)
-        type: string
-        x-go-name: ResMsgId
-      msgid:
-        description: message id of the request
-        type: string
-        x-go-name: MsgId
-      status:
-        description: failed
-        type: string
-        x-go-name: Key
-      err:
-        description: one of the following error codes
-        type: string
-        x-go-name: ErrorCode
-        enum:
-          - INVALID_DATA_ERROR - Request JSON is not parsable
-          - LOGIN_FAILED - License key is invalid
-          - INTERNAL_ERROR - Technical error in the API
-      errmsg:
-        description: default English error message
-        type: string
-        x-go-name: ErrorMessage
-  DataExhaustOutputResult:
-    title: Output
-    type: object
-    properties:
-      dt_file_created:
-        type: string
-      dt_first_event:
-        type: integer
-      dt_last_event:
-        type: integer
-  authorizeErrorResponse:
-    type: object
-    properties:
-      resmsgid:
-        description: unique response message id (UUID)
-        type: string
-        x-go-name: ResMsgId
-      msgid:
-        description: message id of the request
-        type: string
-        x-go-name: MsgId
-      status:
-        description: failed
-        type: string
-        x-go-name: Key
-      err:
-        description: one of the following error codes
-        type: string
-        x-go-name: ErrorCode
-        enum:
-          - INVALID_DATA_ERROR - Request JSON is not parsable
-          - >-
-            AUTHORIZATION_FAILED - User does not have access to the given
-            dataset or resource
-          - LOGIN_FAILED - License key is invalid
-          - INTERNAL_ERROR - Technical error in the API
-      errmsg:
-        description: default English error message
-        type: string
-        x-go-name: ErrorMessage
-  JobResult:
-    type: array
-    items:
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The **Update a batch** operation was successful!'
+          schema:
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/CreateEmptyResponse'
+        '400':
+          description: 'BAD REQUEST,**Update a batch** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: '#/definitions/BatchCreateErrorResponse'
+definitions:
+  AddUserToBatchResp:
+   description: ''
+   type: object
+   properties:
+    result:
+     type: object
+  AddUserToBatchReq:
+   description: 'request structure for add user to batch'
+   type: object
+   properties:
+    request:
       type: object
       properties:
-        request_id:
+       userIds:
+        type: array
+        items:
           type: string
-        status:
-          type: string
-        last_updated:
-          type: integer
-        request_data:
-          $ref: '#/definitions/DataExhaustRequest'
-        output:
-          type: array
-          items:
-            $ref: '#/definitions/DataExhaustOutputResult'
-        job_stats:
-          $ref: '#/definitions/DataExhaustJobStats'
-  JobListResult:
+          description: 'contains user ids.'
+  SearchBatchResponse:
+   description: ''
+   type: object
+   properties:
+    result:
+     type: array
+     items: 
+      $ref: '#/definitions/GetBatchResponse'
+  SingleCreatebatchReq:
+    description: this will hold request data for single batch 
     type: object
     properties:
-      count:
+      request:
+        $ref: '#/definitions/CreateBatchRequest'
+  CreateBatchRequest:
+    description: request body for creating a batch from a course.
+    type: object
+    properties:
+      courseId:
+        type: string
+        description: 'content id for which user want to create a course'
+      name:
+        type: string
+        description: 'name of the course'
+      description:
+        type: string
+        description: 'about courses'
+      enrollmentType:
+        type: string
+        description: 'possible values are {invite-only and open}'
+      startDate: 
+        type: string
+        description: 'start data of the batch valid format is yyyy-MM-dd'
+      endDate:
+        type: string
+        description: 'end data of batch valid format is yyyy-MM-dd'
+      createdFor:
+        type: array
+        items:
+          type: string
+          description: 'this will hold list of organisations id.this is mandatory in case of invite-only badge'
+      mentors:
+        type: array
+        items:
+          type: string
+          description: 'list of user id who will take care of course'
+    required:
+    - courseId
+    - name
+    - description
+    - enrollmentType
+    - startDate
+  CreateEmptyResponse:
+    description: 'contains response for created batch'
+    type: object
+    properties:
+      result:
+       type: object
+       properties:
+        response: 
+          type: string
+  CreateBatchResponse:
+    description: 'contains response for created batch'
+    type: object
+    properties:
+      result:
+       type: object
+       properties:
+        response: 
+          type: string
+        batchId:
+          type: string
+  SingleBatchResponseWrapper:
+   description: ''
+   type: object
+   properties:
+    result:
+     type: object
+     properties:
+      response:
+        type: object
+        $ref: '#/definitions/GetBatchResponse'
+  GetBatchResponse:
+    description: 'contains response for single batch object'
+    type: object
+    properties:
+      identifier:
+        type: string
+      createdFor:
+        type: array
+        items:
+          type: string
+      courseAdditionalInfo:
+        type: object
+      endDate:
+        type: string
+        description: 'date format is yyyy-MM-dd'
+      countIncrementDate:
+        type: string
+      description:
+        type: string
+      countDecrementDate:
+        type: string
+      updatedDate:
+        type: string
+      participant:
+        type: object
+      countIncrementStatus:
+        type: boolean
+      createdDate:
+        type: string
+        description : 'date format is 2017-08-07 12:41:16:151+0530'
+      createdBy:
+        type: string
+        description : 'By whom the batch is created'
+      courseCreator:
+       type: string
+      mentors:
+       type: array
+       items:
+        type: string
+      countDecrementStatus:
+       type: boolean
+      name:
+       type: string
+      id:
+       type: string
+      enrollmentType:
+        type: string
+      courseId:
+       type: string
+      startDate:
+        type: string
+        description : 'format is yyyy-MM-dd'
+      status: 
         type: integer
-      jobs:
-        $ref: '#/definitions/JobResult'
-  associateErrorResponse:
+        description : 'staus of the batch 0- not started, 1- started, 2- ended'
+  CourseBatchSearchReq:
+   description: 'this will contains request structure for batch search'
+   type: object
+   properties:
+     request:
+      type: object
+      properties:
+        query:
+          type: string
+          description: 'any text, it will do free text search'
+        filters:
+          type: object
+          description: 'here you can pass the attribute and values'
+          properties:
+            objectType: 
+             type: string
+             description: 'which object you need to search'
+  CourseBatchUpdaterequest:
+    title: Course Batch UpdateRequest
     type: object
     properties:
-      resmsgid:
-        description: unique response message id (UUID)
+      request:
+        $ref: '#/definitions/Request7'
+    required:
+    - request
+  Request7:
+    title: Request7
+    type: object
+    properties:
+      createdFor:
+        description: 'org id can be added'
+        type: array
+        items:
+          type: string
+      endDate:
+        description: 'batch end date can be updated if end date hasnt expired'
         type: string
-        x-go-name: ResMsgId
-      msgid:
-        description: message id of the request
+      description:
+        description: ''
         type: string
-        x-go-name: MsgId
-      status:
-        description: failed
+      name:
+        description: ''
         type: string
-        x-go-name: Key
-      err:
-        description: one of the following error codes
+      id:
+        description: ''
         type: string
-        x-go-name: ErrorCode
-        enum:
-          - INVALID_DATA_ERROR - Request JSON is not parsable
-          - LOGIN_FAILED - License key is invalid
-          - INTERNAL_ERROR - Technical error in the API
-      errmsg:
-        description: default English error message
-        type: string
-        x-go-name: ErrorMessage
-responses:
-  AssociateResponse:
-    description: Success response associating resource with license key
-    schema:
-      $ref: '#/definitions/associateResponse'
-  RegisterErrorResponse:
-    description: Error responses when data exhaust apis fail
-    schema:
-      $ref: '#/definitions/registerErrorResponse'
-  AuthenticateErrorResponse:
-    description: Error responses when data exhaust apis fail
-    schema:
-      $ref: '#/definitions/authenticateErrorResponse'
-  AuthorizeErrorResponse:
-    description: Error responses when data exhaust apis fail
-    schema:
-      $ref: '#/definitions/authorizeErrorResponse'
-  AssociateErrorResponse:
-    description: Error responses when data exhaust apis fail
-    schema:
-      $ref: '#/definitions/associateErrorResponse'
+    required:
+    - createdFor
+    - endDate
+    - description
+    - name
+    - id
+    - enrollmentType
+  BatchCreateErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
