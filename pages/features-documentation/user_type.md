@@ -78,7 +78,7 @@ An Announcement Sender creates and sends announcements. The organization adminis
 
 Functionality|Create Content|Upload Content|Review Content|Reject Content and Publish Content|Delete Content|Update User Profile|Create Announcements|Send Announcements
 -------------|--------------|--------------|--------------|----------------------------------|--------------|-------------------|--------------------|--------------------
-**Announcement Sender**|Yes| Yes| No| No| No| No| Yes| Yes|
+**Announcement Sender**|No| No| No| No| No| Yes| Yes| Yes|
 
 ## Content Creator 
 A Content Creator is a registered user with permission to create content on DIKSHA. They can curate content such as Collection, Lesson Plan, Course, and Study Material. A content creator cannot delete content created by others.
