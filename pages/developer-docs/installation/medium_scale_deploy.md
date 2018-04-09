@@ -50,7 +50,7 @@ allowSearch: true
 
 **3.** `cd sunbird-devops/deploy`
 
-**4.** Update the `config` and `advanced` configuration files. The configuration parameters are explained in the following table. 
+**4.** Update the `config` configuration files. The configuration parameters are explained in the following table. 
 
 | variable | description   | mandatory|                                                                             
 |:----------------------|:-----------------|:---------|
@@ -86,8 +86,25 @@ allowSearch: true
 |`keycloak_host`           | List of keycloak IP's with ","             |no|
 |`log_es_host`           |  Logger elasticsearch IP            |no|
 | `proxy_prometheus` | But default it will be false .Please set this variable to true if you want to use monitoring  |no|
+|`sunbird_dataservice_url` |api url of sunbird ex: https://demo.opensunbird.o    |no|
+|`sunbird_azure_storage_account`  | Azure storage account for badger service     |no|
+|`sunbird_azure_storage_key`  | Azure storage key for badger service    |no|
+|`sunbird_azure_storage_account`  | Azure storage account for badger service     |no|
+|`sunbird_azure_storage_key`  | Azure storage key for badger service    |no|
+|`sunbird_image_storage_url`| Azure image url for badger service |no|
+|`sunbird_installation_email`| sunbird installation email |no|
+|`sunbird_content_service_producer_id`| Sunbird content service provider id |no|
+|`sunbird_telemetry_pdata_id`| Sunbird telemetry pdata id |no|
 
-**5.** Run `./sunbird_install.sh`. This script will do infra setup from  stage1 to stage5 in a sequence shown in below table. Verify all the mandatory varaibles( ex:  sunbird_auth_token, ekstep_api_key) of sunbird core services are updated, then run the  `./sunbird_install.sh -s core` for deploying core services.
+
+
+**5.** Run `./sunbird_install.sh`. This script will do infra setup from  stage1 to stage6 in a sequence shown in below table.
+
+**6.** Badger service requires an manual setup . Follow the steps [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#badger-setup).
+
+**NOTE**: Badger service will not work without azure storage account name and key. 
+
+**7.** Verify all the mandatory varaibles( ex:  sunbird_auth_token, ekstep_api_key) of sunbird core services are updated, then run the  `./sunbird_install.sh -s core` for deploying core services.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
@@ -96,9 +113,10 @@ allowSearch: true
 |3 |apis|Setup API manager kong &  Onboard API's and consumer's  |
 |4|proxy|Deploy nginx and configure|
 |5|keycloak|Provision, deploy and bootstrap keycloak |
-|6|core|Deploy all core services|
-|7|logger|ELK stack will be deployed and logs can be views in kibana|
-|8|monitor|Monitor all the services,health checks, API's,system checks etc..|
+|6|badger|Deploy the badger|
+|7|core|Deploy all core services|
+|8|logger|ELK stack will be deployed and logs can be views in kibana|
+|9|monitor|Monitor all the services,health checks, API's,system checks etc..|
 
 **NOTE**:
 
@@ -134,7 +152,9 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 `bootstrap-keycloak.sh` - Import the auth realm and configures Keycloak.
 
-`deploy-core.sh` - Deploy the core services player, content, actor & learner service as docker services. The content, actor & learner service together form the LMS backend.
+`deploy-badger.sh` - Deploy the badger service as docker service.
+
+`deploy-core.sh` - Deploy the core services player, content, actor & learner service as docker services. The content, actor & learner service together form the LMS backend. 
 
 `deploy-logger.sh` -  Deploy ELK stack for logs. **This is an optional step**
 
@@ -154,3 +174,33 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 |swarm nodes|elasticsearch servers| 9200 |TCP|
 |swarm nodes|postgres servers| 5432|TCP|
 |swarm nodes|keycloak| 8080|TCP|
+
+## Badger Setup
+
+**1.** SSH to docker swarm manager.
+
+**2.** Run `docker service ps badger-service`
+
+**3.** SSH to the swarm node where badger is running.
+
+**4.** RUN `docker ps | grep badger` . Take the container id and pass it below.
+
+**5.** RUN `docker exec -it -u root <container_id>` . It will ssh to the badger container.
+
+**6.** Move to the directory `cd /code`
+
+**7.** RUN `./manage.py createsuperuser` . Provide valid username,email and password.
+
+**8** Run the curl command below to get the sunbird badger authorization  variable.
+    
+    `curl -X POST 'http://localhost:8004/api-auth/token' -d "username=<emailid>&password=<password>"`
+
+
+**9** set the output of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
+
+
+
+
+
+
+
