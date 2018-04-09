@@ -12,7 +12,7 @@ allowSearch: true
 Sunbird Mobile App offers extensive functions and features, which allows users to perform various actions: 
 
 * Sign in with registered credentials
-* Consume the app using Guest account
+* Consume the application as Guest user
 * View content, Online as well as Offline
 * Search content from the Sunbird portal online
 * Search downloaded content from the mobile device when offline
@@ -25,7 +25,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
 * Share content with other users
 * View and rate the content 
 
-## Downloading and Installing Sunbird Mobile APP
+## Downloading and Installing Sunbird Mobile App
 
 **Prerequisites**
 
@@ -38,7 +38,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br>1. Click <b>sunbird staging.apk</b> link to install latest mobile build <br>2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br>3. Click <b>Install</b> to install the mobile application</td>
+  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br>1. Click <b>sunbird staging.apk</b> link to install latest mobile build. <br>2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br>3. Click <b>Install</b> to install the mobile application.</td>
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
