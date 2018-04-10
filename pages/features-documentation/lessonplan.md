@@ -36,7 +36,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <tr>
   <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>a) Board <br>b) Grade <br>c) Subject <br>d) Medium <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
   </td>
-  <td><img src="pages/features-documentation/images/lessonplan/create.png"></td>
+  <td><img src="pages/features-documentation/images/lessonplan/create_lesson_plan.png"></td>
  </tr>
  </table>
   
