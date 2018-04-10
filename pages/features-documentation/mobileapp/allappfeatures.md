@@ -12,20 +12,22 @@ allowSearch: true
 Sunbird Mobile App offers extensive functions and features, which allows users to perform various actions: 
 
 * Sign in with registered credentials
-* Consume the app using Guest account
+* Consume the application as Guest user
 * View content, Online as well as Offline
 * Search content from the Sunbird portal online
 * Search downloaded content from the mobile device when offline
 * Scan QR code or Dial code in textbooks and access related content
 * Download content, when connected to the Internet
-* Enrol for available courses
+* Enroll for available courses
 * Take up assigned courses
 * Browse and view resources from the content library
 * Create and update user profile
 * Share content with other users
 * View and rate the content 
 
-## Downloading and Installing Sunbird Mobile APP
+## Downloading and Installing Sunbird Mobile App
+
+The Sunbird Mobile App is available in its beta version, for users to test, experiment and understand the various features and functions of the application. To get the beta version of the app you can use this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a>.
 
 **Prerequisites**
 
@@ -38,7 +40,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br>1. Click <b>sunbird staging.apk</b> link to install latest mobile build <br>2. Click <b>Download</b> to download the app. You will be redirected installation screen. <br>3. Click <b>Install</b> to install the mobile application</td>
+  <td>You can directly install Sunbird Mobile app using this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL</a> <br>1. Click <b>sunbird staging.apk</b> link to install latest mobile build. <br>2. Click <b>Download</b> to download the app. You will be redirected to installation screen. <br>3. Click <b>Install</b> to install the app</td>
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
@@ -56,7 +58,7 @@ Sunbird Mobile App offers extensive functions and features, which allows users t
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap the <b>Sign In</b> to log in into Sunbird Mobile App. You will be redirected to <b>Login</b> screen <br>2. You can <b>Log In</b> to Sunbird Mobile App using either of the three options: registered <b>Username</b> or <b>Email ID</b> or <b>Phone number</b> <br>3. Enter your <b>Password</b> <br>4. Tap <b>Login</b> button <br><b>Note:</b> You can also sign in to the application without using your credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  <td>1. Tap <b>Sign In</b> on the landing screen. You will be redirected to <b>Login</b> screen <br>2. You can login into the app using either of the three options: registered <b>Username</b> or <b>Email ID</b> or <b>Phone number</b> <br>3. Enter your <b>Password</b> <br>4. Tap <b>Login</b> button <br><b>Note:</b> You can also sign in to the application without using your credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/login.png"></td>
   </tr>
@@ -68,7 +70,7 @@ For details on recovering password refer [Recovering Password](features-document
 
 ## Exploring Sunbird Features
 
-Sign in to Sunbird Mobile App with your registered credential. You will land to <b>Home</b> screen. Sunbird Mobile app allows you to navigate to the different features. Tap associated icons to navigate to the relevant screen of the app. 
+Sign in to Sunbird Mobile App with your registered credential. You will be re diected to <b>Home</b> screen. It allows you to navigate to the different features. Tap associated icons to navigate to the relevant screen of the app. 
 
 ### Home 
 
@@ -97,7 +99,7 @@ mobile keypad to search for content
    <td><img src="pages/features-documentation/images/mobileapp/course1.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Resume</b> to take a course <br>2. You will be re-directed to next screen. Click <b>Start</b> to resume your course <br>3. To download the course click <b>Download all</b> <br><b>Note:</b> After the content is downloaded, you can view the content offline</td>
+   <td><b>Taking a Course</b><br>1. Click <b>Resume</b> to take a course <br>2. You will be re-directed to next screen. Click <b>Start</b> to resume your course <br>3. To download the course click <b>Download all</b> <br><b>Note:</b> After the content is downloaded, you can view the content offline</td>
     <td><img src="pages/features-documentation/images/mobileapp/course2.png"></td>
   </tr>
   <tr>
@@ -105,7 +107,7 @@ mobile keypad to search for content
     <td><img src="pages/features-documentation/images/mobileapp/course3.png"></td>
   </tr>
   <tr>
-    <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+   <td><b>Sharing, Reporting or Deleting course content</b><br>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr>     
   </table>
@@ -118,7 +120,7 @@ mobile keypad to search for content
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap <b>Library</b> icon to view all the resources that you have saved on your device or popular artifacts from the portal library <br>2. Tap <b>Search</b> or <b>Filter</b> icon and enter keywords to search for relevant content resources <br>3. You can filter the library content by: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Click <b>Apply</b> to apply the filter <br>5. Click <b>Cancel</b> to exit the screen</td>
+  <td>1. Tap the <b>Library</b> to view all the resources that you have saved on your device or popular artifacts from the portal library <br>2. Tap <b>Search</b> or <b>Filter</b> icon and enter keywords to search for relevant content resources <br>3. You can filter the library content by: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Click <b>Apply</b> to apply the filter <br>5. Click <b>Cancel</b> to exit the screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/library1.png"></td> 
  </tr>
  <tr>
@@ -126,15 +128,15 @@ mobile keypad to search for content
   <td><img src="pages/features-documentation/images/mobileapp/library2.png"></td> 
  </tr>
  <tr>
-  <td>1. Click <b>Play</b> to play the content <br>2. Tap on the <b>Stars</b> icon to rate the content after you finish viewing. You can even provide your feedback about the content <br>3. Click <b>Submit</b> to submit your rating</td>
+  <td><b>Playing and rating content</b><br>1. Click <b>Play</b> to play the content <br>2. Tap on the <b>Stars</b> icon to rate the content after you finish viewing. You can provide your feedback about the content <br>3. Click <b>Submit</b> to submit your rating</td>
   <td><img src="pages/features-documentation/images/mobileapp/library3.png"></td>
  </tr>
  <tr>
-  <td>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+  <td><b>Sharing, Reporting or Deleting course content</b><br>1. Click <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Click on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr> 
  <tr>
-  <td>1. Tap on <b>Download</b> to download the content. The license, attribution and credit information is displayed while downloading the content <br>2. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>3. Tap <b>Cancel</b> to cancel the download. You can even <b>Play</b> the downloaded content <br><b>Note:</b> You can only download the content when you are connected to internet, though you can view the downloaded content being offline</td>
+  <td><b>Downloading content</b><br>1. Tap on <b>Download</b> to download the content. The license, attribution and credit information is displayed while downloading the content <br>2. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>3. Tap <b>Cancel</b> to cancel the download. Click <b>Play</b> to play the downloaded content <br><b>Note:</b> You can only download the content when you are connected to internet, though you can view the downloaded content being offline</td>
   <td><img src="pages/features-documentation/images/mobileapp/library4.png"></td> 
  </tr>
   </table>
@@ -174,17 +176,16 @@ You can browse the Subird Mobile App without sining in. Use **Browse as Guest** 
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
-  <td>1. You will be re-directed to <b>Home</b> screen <br>2. Click <b>Select Board</b> to search and filter your content by selecting a particular board <br>3. You will be re-directed to next screen. Select a <b>Board</b> <br>4. Click <b>Save</b> to save your seection <br>5. Click <b>Cancel</b> to exit the screen</td>
+  <td>1. You will land to <b>Library</b> screen <br>2. Click <b>Select Board</b> to search and filter your content by board <br>3. A pop up screen opens up. Select one or more <b>Board</b> <br>4. Click <b>Save</b> to save your selection <br>5. Click <b>Cancel</b> to exit the screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
  </tr>
  </table>
  
- <table>
- <td> <b>Note:</b> <ol> <li>Following features are not available for users accessing the application on Guest mode: <ul><li>Enrolling to a Course</li> <li>Limited access to edit or update <b>Profile</b>. Users can edit or update <b>Name</b>, <b>Grade</b>, <b>Subjects</b> and <b>Medium of Instruction</b></li> <li>Uploading of Profile Image</li></ul></li>
+<td> <b>Note:</b> <ol> <li>Following features are not available for users accessing the application on Guest mode: <ul><li>Enrolling to a Course</li> <li>Limited access to edit or update <b>Profile</b>. Users can edit or update <b>Name</b>, <b>Grade</b>, <b>Subjects</b> and <b>Medium of Instruction</b></li> <li>Uploading of Profile Image</li></ul></li>
  
 <li>Users, on Guest mode, can access <a href="features-documentation/mobileapp/allappfeatures/#courses"> Courses</a> and <a href="features-documentation/mobileapp/allappfeatures/#library"> Library</a> same as registered user</li></ol>
 </td>
-</table>
+
   
   
 

@@ -1,12 +1,11 @@
 ---
 type: landing
 directory: features-documentation
-title: Upload
-page_title: Uploading Content
+title: Upload Contents
+page_title: Upload Contents
 description: Procedure on Uploading Content
 keywords: >-
-  Uploading content, upload offline content, upload image, upload pdf, upload
-  HTML Archive,upload video, MIME type
+  Uploading content, upload image, upload pdf, upload HTML Archive, upload video, MIME type
 published: true
 ---
 Content created or available offline can be uploaded on Sunbird. The following content formats are supported on Sunbird:
@@ -21,6 +20,8 @@ Content created or available offline can be uploaded on Sunbird. The following c
 - URLs for YouTube videos and other files
 
 The maximum file size supported for upload is 25MB
+
+**Note:** For any Youtube video that is uploaded, Sunbird validates the Standard Youtube Licenses. Users have the permission of using, copying or distributing Youtube contents with the regulations in accordance with its license policy.
 
 ### Prerequisites
 <table>
