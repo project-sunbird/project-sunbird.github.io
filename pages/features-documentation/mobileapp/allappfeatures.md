@@ -45,7 +45,7 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
   </tr>
   <tr>
     <td>1. Tap <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> 2. Select your preferred language <br>3. Tap <b>Continue</b><br>
-   <b>Note:</b> Denying these permissions diables users from downloading content for offline use 
+   <b>Note:</b> Denying these permissions disables users from downloading content for offline use 
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/permission.png"></td>
   </tr>
