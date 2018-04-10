@@ -82,7 +82,7 @@ After signing in as a registered or guest user, the <b>Home</b> page is displaye
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. All courses that you are enrolled for or that are assigned to you are shown in the <b>To Do<b> section. Swipe to view them or tap <b>View all</b> <br>2. Tap <b>Resume</b> to take up the a course <br>3. Tap <b>View all</b> in the <b>Announcements</b> section to view your announcements<br>4. Tap the <b>QR Code</b> icon to scan QR codes printed in physical textbooks <br>5. Tap <b>Search</b> icon. You will be redirected to next screen <br>6. <b>Type</b> keywords or DIAL codes using your mobile keypad to search for content
+  <td>1. All courses that you are enrolled for or that are assigned to you are shown in the <b>To Do<b>section. Swipe to view them or tap <b>View all</b> <br>2. Tap <b>Resume</b> to take up the a course <br>3. Tap <b>View all</b> in the <b>Announcements</b> section to view your announcements<br>4. Tap the <b>QR Code</b> icon to scan QR codes printed in physical textbooks <br>5. Tap <b>Search</b> icon. You will be redirected to next screen <br>6. <b>Type</b> keywords or DIAL codes using your mobile keypad to search for content
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/home.png"></td>
   </tr>
