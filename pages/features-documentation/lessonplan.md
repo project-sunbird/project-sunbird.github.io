@@ -48,7 +48,18 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> for the lesson plan <br>3. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Subject</b> <br>&emsp;c) <b>Grade</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Language</b> <br>&emsp;f) <b>Concepts</b> <br>4. Enter <b>Notes to Teacher</b>, if any <br>5. Enter <b>Duration</b> of the lesson plan <br>6. Describe the <b>Learning Objective</b> for the lesson plan <br>7. Click <b>Lesson Plan</b> on the left navigation pane to add other units of content to the plan <br><b>Note</b>: You can edit or update the title of units in the collection from the navigation hierarchy <br>8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates.      
+    <td>1. Click the <b>Edit Details</b> link on the top left corner of the page. 
+      <br>2. Enter <b>Title</b> 
+      <br>2. Enter <b>Description</b> for the lesson plan 
+      <br>3. Enter Keywords 
+      <br>4. Select the following from their respective drop-down lists: 
+      <br>&emsp;a) <b>Curriculum</b> 
+      <br>&emsp;b) <b>Subject</b> 
+      <br>&emsp;c) <b>Attributions</b> 
+      <br>&emsp;d) <b>Medium</b> 
+      <br>&emsp;e) <b>Audience</b> 
+      <br>&emsp;f) <b>Class</b> 
+      <br>5. Click <b>Save</b> to collectively save all updates.      
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/addmetadata.png"></td>
  </tr>
@@ -68,20 +79,23 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
-    <td>1. You can add images either by selecting an image from: 
-      <li>A list or uploading images</li>
-      <li>Your local machine to use immediately</li>
-      <br>2. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>3. Click <b>All image</b> to view a list of image files from the repository 
-      <br><b>Note:</b> The repository contains all image files added and uploaded by any users 
-      <br>5. Choose an appropriate image file from any list and click <b>Select</b> <br>6. Click <b>Upload</b> and use to upload and use images from your gallery
-    </td>
-    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
+   <td>1.Click <b>My images</b> to view a list of all image files that you have previously, uploaded 
+     <br>2. Click <b>All image</b> to view a list of image files from the repository
+     <br><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from any list.
+    <br>3. You can add images by uploading an image from your local machine using <b>Upload and use</b>. A new Upload and use window appears. </td>
+   <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
-  <tr>
-    <td>1. Choose <b>File</b> to browse and click <b>Select a file</b> from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <b>Copyright and License</b>, select if you want to: <br>a) Make it available to everyone <br>b) Not share with anyone
-      <br>4. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image
-      </td>
-    <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
+   <tr> <td>To upload an image perform the following:
+     <br>a. Select a file using<b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen 
+     <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png
+     <br>b. Under <b>Copyright and License</b>, select if you want to: 
+     <br>a) Make it available to everyone 
+     <br>b) Not share with anyone
+    <br>c. Click Upload and use images 
+     <br>4. Click <b>Select</b> to confirm the image
+     <br> 5. Click <b>Cancel</b> to discard the changes
+     </td>
+   <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
   </tr>
 </table>
 
@@ -95,7 +109,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <td>To add content to the lesson plan
       <br>1. Click <b>New Child</b> to start adding a node to the newly created lesson
       <br>2. You can add another node at same level using <b>New Sibling</b>. Click <a href="Adding Sibling Node">here</a> to know more about adding New Sibling node.
-     <br>3. You can add a node level below using <b>New Child</b>. Click <a href="Adding Child Node">here</a> to know more about adding New Child node.  
+     <br>3. You can add a node to the next level using <b>New Child</b>. Click <a href="Adding Child Node">here</a> to know more about adding New Child node.  
       <br> The <b>LessonPlan Unit</b> page appears      
     <br>3.  Click <b>Add Resource</b> from:
     <br>a) The right bottom corner of the page 
@@ -129,12 +143,12 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr> 
-    <td>To preview resource page displays the Name, Description, Keywords related to the resource. 
+    <td>The Preview Resource page displays the Name, Description, Keywords related to the resource. 
      <br>1. Click the play icon to load the added resource in the lesson plan   
      <br>2. You can delete the resource using delete icon   
      <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
     </td>
-<td><img src="pages/features-documentation/images/lessonplan/AddResource3.png"></td>     
+<td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
 </tr>
 </table>
 
