@@ -5,14 +5,18 @@ info:
   description: >-
       A Badge is a virtual representation of an Award, Certificate, Endorsement or Authorization. The Badging Framework API resources are used to accord badges to: 
       - recognize user skills and accomplishments
-      - rate or authorize content for its quality and effectiveness 
+      - rate or authorize content for its quality and effectiveness
+    
+    
 host: staging.open-sunbird.org
 basePath: /api/badging/v1/issuer
 securityDefinitions:
   auth:
-    type: apiKey
-    name: Authorization
-    in: header
+    type: oauth2
+    flow: implicit
+    authorizationUrl: 'https://staging.open-sunbird.org/api/v1/issuer'
+    scopes: {}
+    x-skip-client-authentication: false
 schemes:
   - https
 consumes:
@@ -63,11 +67,6 @@ paths:
           type: file
           format: file
           description: 'An image/logo representing the badge issuer'
-        - name: x-authenticated-user-token
-          in: header
-          required: false
-          type: string
-          description: 'The user token recieved for executing the API'
         - name: Authorization
           in: header
           required: true
@@ -87,7 +86,8 @@ paths:
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-              - $ref: '#/definitions/BadgingErrorResponse'     
+              - $ref: '#/definitions/BadgingErrorResponse'
+        
         '404':
           description: >-
             Resource not found,**Create Badge Issuer** operation failed !The possible reason for failure is that requested resource not found.
@@ -104,7 +104,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -141,11 +140,11 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
       responses:
         '200':
           description: >-
@@ -170,25 +169,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: POST
-            uri: /badge/search
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-            body: >-
-              {"request":{"filters":{"issuerList":[],"rootOrgId":"rootOrgId","type":"user","subtype":"award","roles":["validroles"]}}}
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: List Badge Classes
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -215,11 +195,11 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
       responses:
         '200':
           description: >-
@@ -244,23 +224,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: GET
-            uri: /list
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: List Issuers
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -295,11 +258,6 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
-          in: header
-          required: false
-          type: string
-          description: 'The token for executing the API'
         - name: Authorization
           in: header
           required: true
@@ -329,24 +287,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: GET
-            uri: /read/
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-              Authorization: 'Bearer {{api-key}}'
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Get Issuer by ID
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -381,11 +321,6 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
-          in: header
-          required: false
-          type: string
-          description: 'The token for executing the API'
         - name: Authorization
           in: header
           required: true
@@ -415,24 +350,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: GET
-            uri: /badge/read/
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-              Authorization: 'Bearer {{api-key}}'
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Get Badge Class by ID
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -471,11 +388,11 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
       responses:
         '200':
           description: >-
@@ -500,26 +417,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: POST
-            uri: /badge/assertion/search
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-            body: >-
-              {"request":{"filters":{"assertions":["5000f030-8626-4bc5-8f5e-0b86966efea8"]}}}
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: List Badge Assertions
-          x-testDescription: List of assertions
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -558,11 +455,6 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
-          in: header
-          required: false
-          type: string
-          description: 'The token for executing the API'
         - name: Authorization
           in: header
           required: true
@@ -592,26 +484,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: POST
-            uri: /badge/assertion/create
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-              Authorization: 'Bearer {{api-key}}'
-            body: >-
-              {"request":{"recipientId":"6fbd1dd5-418c-4cc5-834b-7e7413192f10","recipientType":"user","evidence":"https://sunbirddev.blob.core.windows.net/user/uploads/badges/bfd203a3c494170dd7de199a97e05486.png","issuerId":"swarn","badgeId":"something"}}
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Create Badge Assertion
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -636,11 +508,11 @@ paths:
           required: true
           type: string
           description: 'Please append a valid Issuer ID To the Request URL'  
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
       responses:
         '200':
           description: >-
@@ -665,22 +537,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: DELETE
-            uri: /delete/
-            headers:
-              x-authenticated-user-token: '{{user-token}}'
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Delete Issuer by ID
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -717,11 +573,11 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
       responses:
         '200':
           description: >-
@@ -746,27 +602,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: DELETE
-            uri: /badge/assertion/delete
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-            body: >-
-              {"request":{"assertionId":"5000f030-8626-4bc5-8f5e-0b86966efea8","recipientId":"6502112a-6dc9-446a-82bb-58a89d91b2953","recipientType":"user","revocationReason":"some
-              reason"}}
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Revoke Badge Assertion by ID
-          x-testDescription: Revoke badges
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -791,11 +626,11 @@ paths:
           required: true
           type: string
           description: 'An ID which uniquely identifies a Badge'
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
       responses:
         '200':
           description: >-
@@ -820,22 +655,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: DELETE
-            uri: /badge/delete/
-            headers:
-              x-authenticated-user-token: '{{access_token}}'
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Delete Badge Class
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -881,7 +700,7 @@ paths:
           in: formData
           required: true
           type: string
-          description: 'An ID which uniquly identifies the Root Organisation the user belongs to'
+          description: 'An ID which uniquly identifies the Root Organisation'
         - name: type
           in: formData
           required: true
@@ -891,23 +710,23 @@ paths:
           in: formData
           required: false
           type: string
-          description: 'It represents the Badge Subtype (e.g. award, certification etc)'
+          description: 'It represents the Badge Subtype (possible values: award,certificate,endorsement,authorization)'
         - name: roles
           in: formData
           required: true
           type: string
-          description: 'Represents Single or multiple roles, possibly a JSON array of roles (e.g. "roleId1" or [ "roleId1", "roleId2" ])'
+          description: 'Represents Single or multiple roles, possibly a JSON array of roles (e.g. "roleId1" or [ "roleId1", "roleId2" ], any valid role inside system)'
         - name: image
           in: formData
           required: true
           type: file
           format: file
           description: 'It is a graphic which represents the Badge'
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
       responses:
         '200':
           description: >-
@@ -932,7 +751,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -966,11 +784,12 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-        - name: x-authenticated-user-token
+        - name: Authorization
           in: header
-          required: false
+          required: true
           type: string
-          description: 'The token for executing the API'
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        
       responses:
         '200':
           description: >-
@@ -995,43 +814,6 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
         - auth: []
-      x-unitTests:
-        - request:
-            method: GET
-            uri: /badge/assertion/read/
-            headers:
-              Content-Type: application/json
-              x-authenticated-user-token: '{{user-token}}'
-          expectedResponse:
-            x-allowExtraHeaders: true
-            x-bodyMatchMode: NONE
-            x-arrayOrderedMatching: false
-            x-arrayCheckCount: false
-            x-matchResponseSchema: true
-            headers: {}
-          x-testShouldPass: true
-          x-testEnabled: true
-          x-testName: Get Badge Assertion by ID
-          x-testDescription: |-
-            Generated from a curl request: 
-            curl -X POST \
-              {{baseURL}}}/v1/issuer/badge/assertion/read \
-              -H 'authorization: Bearer {{api-key}}' \
-              -H 'cache-control: no-cache' \
-              -H 'content-type: application/json' \
-              -H 'postman-token: {TOKEN}' \
-              -H 'ts: 2017-05-25 10:18:56:578+0530' \
-              -H 'x-authenticated-user-token: {{user_token}}' \
-              -H 'x-consumer-id: X-Consumer-ID' \
-              -H 'x-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf' \
-              -d '  {
-              \"request\": {
-                 \"assertionId\":\"779d42c0-0dbd-4e8c-850d-537538093d95\",
-                 \"issuerId\":\"haque\",
-                 \"badgeId\":\"db-design-expert\"
-               }
-              } 
-            '
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
