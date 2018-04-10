@@ -86,7 +86,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
    <tr> <td>To upload an image perform the following:
-     <br>a. Select a file using<b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen 
+     <br>a. Select a file using <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen 
      <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png
      <br>b. Under <b>Copyright and License</b>, select if you want to: 
      <br>a) Make it available to everyone 
