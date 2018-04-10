@@ -124,7 +124,7 @@ A content must be reviewed once it is uploaded.
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-   <td>1. Click <b>Save</b> on the header to save the content <br>2. Click <b>Send for review</b> to send the uploaded content for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
+   <td>1. Click <b>Save</b> on the header to save the content <br>2. Click <b>Send for review</b> to send the uploaded content for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a></td>
    <td><img src="pages/features-documentation/images/upload_send4review.png"></td>
   </tr>
   </table>
