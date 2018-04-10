@@ -17,6 +17,7 @@ Content created or available offline can be uploaded on Sunbird. The following c
 - H5P
 - Audio (.mp3)
 - Images (.jpeg, .png)
+- Document format (.pdf)
 - URLs for YouTube videos and other files
 
 The maximum file size supported for upload is 25MB
@@ -55,7 +56,7 @@ The maximum file size supported for upload is 25MB
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-    <td>1. On clicking browse, a file window is displayed <br>2. Select the file and click <strong>Open</strong> 
+    <td>1. On clicking browse, file window is displayed <br>2. Select the file and click <strong>Open</strong> 
        </td>
       <td><img src="pages/features-documentation/images/upload_selectimage.png"></td>
   </tr>
@@ -70,8 +71,7 @@ The maximum file size supported for upload is 25MB
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-    <td>1. Enter topic name or keyword in the search bar to search for content within the uploaded file. For example, if the file is a textbook and you want to view a particular chapter in the book. <br>2. View settings of the uploaded file is displayed on the right <br>3. Click the <strong>profile</strong> icon to change the profile type of the child/children who will be accessing the content on Genie <br>4. Click <strong>upload</strong> icon to upload other content <br>5. Click <strong>download</strong> icon to download content
-<br>6. Click <strong>Send for Review</strong> to send content for review <br>7. Click <strong>Save</strong> to save content
+    <td>1. Enter topic name or keyword in the search bar to search for content within the uploaded file. For example, if the file is a textbook and you want to view a particular chapter in the book. <br>2. View settings of the uploaded file is displayed on the right <br>3. Click the <strong>profile</strong> icon to change the profile type of the child/children who will be accessing the content on Sunbird <br>4. Click <strong>upload</strong> icon to upload other content <br>5. Click <strong>download</strong> icon to download content <br>6. Click <strong>Send for Review</strong> to send content for review <br>7. Click <strong>Save</strong> to save content
        </td>
       <td><img src="pages/features-documentation/images/upload_contentpreview.png"></td>
   </tr>
@@ -79,14 +79,13 @@ The maximum file size supported for upload is 25MB
 
 ### Playing Content on Mobile App Settings
 
-On clicking the **Profile** icon in the content editor, settings as available in the mobile application are displayed
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-    <td>1. Click <strong>Refresh</strong> icon to replay content <br>2. Click <strong>Profile</strong> icon to change the profile of the user <br>3. Click <strong>Music</strong> icon to turn sound on/off
+    <td>On clicking the **Profile** icon in the content editor, settings as available in the mobile application are displayed<br> 1. Click <strong>Refresh</strong> icon to replay content <br>2. Click <strong>Profile</strong> icon to change the profile of the user <br>3. Click <strong>Music</strong> icon to turn sound on/off
         </td>
       <td><img src="pages/features-documentation/images/upload_playerview.png"></td>
   </tr>
@@ -117,7 +116,7 @@ Before the file is uploaded on the portal, metadata should be updated.
   
 ### Sending Upload content for Review
 
-A content must be reviewed once it is uploaded. 
+A content must be sent for review after it is uploaded. 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
