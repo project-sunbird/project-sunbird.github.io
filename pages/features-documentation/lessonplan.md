@@ -108,8 +108,8 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <tr>
     <td>To add content to the lesson plan
       <br>1. Click <b>New Child</b> to start adding a node to the newly created lesson
-      <br>2. You can add another node at same level using <b>New Sibling</b>. Click <a href="Adding Sibling Node">here</a> to know more about adding New Sibling node.
-     <br>3. You can add a node to the next level using <b>New Child</b>. Click <a href="Adding Child Node">here</a> to know more about adding New Child node.  
+      <br>2. You can add another node at same level using <b>New Sibling</b>. Refer <a href="adding-sibling-node">Adding Sibling Node</a> to know more about adding New Sibling node.
+     <br>3. You can add a node to the next level using <b>New Child</b>. Refer <a href="adding-child-node">"Adding Child Node</a> to know more about adding New Child node.  
       <br> The <b>LessonPlan Unit</b> page appears      
     <br>3.  Click <b>Add Resource</b> from:
     <br>a) The right bottom corner of the page 
