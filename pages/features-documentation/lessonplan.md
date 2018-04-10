@@ -85,14 +85,14 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <br>3. You can add images by uploading an image from your local machine using <b>Upload and use</b>. A new Upload and use window appears. </td>
    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
-   <tr> <td>To upload an image perform the following:
+   <tr> <td>To upload an image:
      <br>a. Select a file using <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen 
      <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png
      <br>b. Under <b>Copyright and License</b>, select if you want to: 
-     <br>a) Make it available to everyone 
-     <br>b) Not share with anyone
+     <br># Make it available to everyone 
+     <br># Not share with anyone
     <br>c. Click Upload and use images 
-     <br>4. Click <b>Select</b> to confirm the image
+   <br>4. Click <b>Select</b> to confirm the image
      <br> 5. Click <b>Cancel</b> to discard the changes
      </td>
    <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
@@ -112,9 +112,9 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
      <br>3. You can add a node to the next level using <b>New Child</b>. Refer <a href="adding-child-node">"Adding Child Node</a> to know more about adding New Child node.  
       <br> The <b>LessonPlan Unit</b> page appears      
     <br>3.  Click <b>Add Resource</b> from:
-    <br>a) The right bottom corner of the page 
-    <br>b) Right click on the node name
-    <br>c) Use keyboard shortcut <b>Ctrl+Alt+A</b>
+    <br>- The right bottom corner of the page 
+    <br>- Right click on the node name
+    <br>- Use keyboard shortcut <b>Ctrl+Alt+A</b>
     <br>The Find & Select Activities page is displayed.</td>
   <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png"></td>
   </tr>
