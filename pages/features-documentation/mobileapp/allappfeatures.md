@@ -60,7 +60,7 @@ The Sign In feature allows authorized users to access content using the app. Usi
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to the <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><b>Note:</b> You can also use the app without providing any credentials. For details, refer to <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to the <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><br><b>Note:</b> You can also use the app without providing any credentials. For details, refer to <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/login.png"></td>
   </tr>
