@@ -182,14 +182,14 @@ You can use the **Browse as Guest** feature to browse the Subird Mobile App with
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
-  <td> <b> Getting Relevant Content</b> <br><br><b>Note:</b> The user can choose to ignore this section <br><br> 1. To get relevant content, tap the categories mentioned in the top section of the screen for example; <b>Select Board</b> <br>3. Select the appropriate option from the list displayed for the category <br>4. Tap <b>Save</b> to save your selection <br>5. Tap <b>Cancel</b> to exit screen <br>6. The next category is displayed. Repeat the process for all categories</td> 
+  <td> <b> Getting Relevant Content</b> <br><br><b>Note:</b> The user can choose to ignore this section and continue to browse content <br><br> 1. To get relevant content, tap the categories mentioned in the top section of the screen for example; <b>Select Board</b> <br>3. Select the appropriate option from the list displayed for the category <br>4. Tap <b>Save</b> to save your selection <br>5. Tap <b>Cancel</b> to exit screen <br>6. The next category is displayed. Repeat the process for all categories <br>7. You can edit the category selection at any time</td> 
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
  </tr>
  </table>
  
-<td> <b>Note:</b> <ol> <li>Following features are not available for users accessing the application on Guest mode: <ul><li>Enrolling to a Course</li> <li>Limited access to edit or update <b>Profile</b>. Users can edit or update <b>Name</b>, <b>Grade</b>, <b>Subjects</b> and <b>Medium of Instruction</b></li> <li>Uploading of Profile Image</li></ul></li>
+<td> <b>Note:</b> <ol> <li> Guest users cannot: <ul><li>Enroll for a Course</li> <li> Edit or update parts of their <b>Profile</b></li> <li>Upload Profile image</li></ul></li>
  
-<li>Users, on Guest mode, can access <a href="features-documentation/mobileapp/allappfeatures/#courses"> Courses</a> and <a href="features-documentation/mobileapp/allappfeatures/#library"> Library</a> same as registered user</li></ol>
+<li> Guest users can access the same features of <a href="features-documentation/mobileapp/allappfeatures/#courses"> Courses</a> and the <a href="features-documentation/mobileapp/allappfeatures/#library"> Library</a> as registered users</li></ol>
 </td>
 
   
