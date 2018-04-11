@@ -60,7 +60,7 @@ The Sign In feature allows authorized users to access content using the app. Usi
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><b>Note:</b> You can also use the app without providing any credentials. For more details refer <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><b>Note:</b> You can also use the app without providing any credentials. For details, refer to <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/login.png"></td>
   </tr>
@@ -72,9 +72,11 @@ For details on recovering password refer [Recovering Password](features-document
 
 ## Exploring Sunbird Mobile App Features
 
-After signing in as a registered or guest user, the <b>Home</b> page is displayed. Tap the required icon to navigate to the relevant feature and its associated screens. 
+After signing in as a registered or guest user, the <b>Home</b> page is displayed. The task bar at the bottom of the screen is available at all times. It contains icons for all the app features. Tap the required icon to navigate to the relevant feature and its associated pages. 
 
 ### Home 
+
+The Home page of the mobile app is the user landing page. 
 
 <table>
   <tr>
@@ -82,25 +84,26 @@ After signing in as a registered or guest user, the <b>Home</b> page is displaye
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. All courses that you are enrolled for or that are assigned to you are shown in the <b>To Do<b>section. Swipe to view them or tap <b>View all</b> <br>2. Tap <b>Resume</b> to take up the a course <br>3. Tap <b>View all</b> in the <b>Announcements</b> section to view your announcements<br>4. Tap the <b>QR Code</b> icon to scan QR codes printed in physical textbooks <br>5. Tap <b>Search</b> icon. You will be redirected to next screen <br>6. <b>Type</b> keywords or DIAL codes using your mobile keypad to search for content
-  </td>
+  <td>1. All courses that you are enrolled for or that are assigned to you are shown in the <b>To Do</b> section. Swipe to view them or tap <b>View all</b> <br>2.Tap <b>Resume</b> to take up the a course <br>3. Tap <b>View all</b> in the <b>Announcements</b> section to view your announcements <br>4. Tap the <b>QR Code</b> icon to scan QR codes printed in physical textbooks <br>5. Tap <b>Search</b> icon. You are redirected to the next screen <br>6. Type keywords or DIAL codes using your mobile keypad to search content <br>7. Tap <b>Home</b> to return to the home page from any other page</td>
   <td><img src="pages/features-documentation/images/mobileapp/home.png"></td>
   </tr>
   </table>
 
 ### Courses
 
+The <b>Courses</b> page lists current courses, courses in progress, latest course offerings and popular courses
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-   <td>The <b>Courses</b> page lists your current courses and their progress, latest course offerings and popular courses <br>1. Swipe the associated course category to browse the relevant courses in that category. Courses are categorized as: <br>a) Courses In Progress <br>b) Latest Courses <br>c) Popular Courses <br>2. Tap <b>Search</b> or <b>Filter</b> icon and enter keywords to search for relevant courses <br>3. You can filter the courses by: <b>Board</b>, <b>Subject</b> and <b>Medium</b> <br>4. Tap <b>Apply</b> to apply the filter <br>5. Tap <b>Cancel</b> to exit the screen</td>
+   <td> <br>1. Tap the <b> Courses</b> icon on the task bar <br>2. Swipe the associated course category to browse courses in that category. Courses are categorized as: <br>a) Courses In Progress <br>b) Latest Courses <br>c) Popular Courses <br>3. Tap the <b>Search</b> icon and enter keywords to search for relevant courses <br>4. Tap the <b>Filter</b> icon to filter courses by: <b>Board</b>, <b>Subject</b> and <b>Medium</b> <br>5. Tap <b>Apply</b> to apply the filter <br>6. Tap <b>Cancel</b> to exit the screen</td>
    <td><img src="pages/features-documentation/images/mobileapp/course1.png"></td>
   </tr>
   <tr>
-   <td><b>Taking a Course</b><br>1. Tap <b>Resume</b> to take a course <br>2. You will be re-directed to next screen. Tap <b>Start</b> to resume your course <br>3. To download the course click <b>Download all</b> <br><b>Note:</b> After the content is downloaded, you can view the content offline</td>
+   <td><b>Taking a Course</b><br><br>1. Tap <b>Resume</b> to take a course <br>2. You are redirected to the next screen. Tap <b>Start</b> to resume your course <br>3. To download the course, tap <b>Download all</b> <br><br><b>Note:</b> You can view all downloaded content Offline</td>
     <td><img src="pages/features-documentation/images/mobileapp/course2.png"></td>
   </tr>
   <tr>
@@ -177,7 +180,7 @@ You can browse the Subird Mobile App without sining in. Use **Browse as Guest** 
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
-  <td>1. You will land to <b>Library</b> screen <br>2. Tap <b>Select Board</b> to search and filter your content by board <br>3. A pop up screen opens up. Select one or more <b>Board</b> <br>4. Tap <b>Save</b> to save your selection <br>5. Tap <b>Cancel</b> to exit the screen</td>
+  <td>1. You land on the <b>Library</b> page <br>2. Tap <b>Select Board</b> to search and filter your content by board <br>3. A pop up screen opens up. Select one or more <b>Board</b> <br>4. Tap <b>Save</b> to save your selection <br>5. Tap <b>Cancel</b> to exit the screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
  </tr>
  </table>
