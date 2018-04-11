@@ -4,7 +4,7 @@ info:
   title: Notification (Email) API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
-    email: admin@open-sunbird.org
+    email: info@sunbird.org
   description: >-
     The Email resources provides the notification mechanism for all the users on Sunbird .The Resource notifies users officially about something on Sunbird.
   license:
@@ -13,10 +13,10 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:
-  auth:
-    type: apiKey
-    name: api_key
-    in: header
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The security scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
