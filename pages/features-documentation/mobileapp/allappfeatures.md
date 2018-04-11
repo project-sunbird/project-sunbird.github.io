@@ -130,7 +130,7 @@ All content resources that you have saved on your device or popular artifacts fr
   <td><img src="pages/features-documentation/images/mobileapp/library1.png"></td> 
  </tr>
  <tr>
-  <td>1. Swipe the associated content category to browse relevant resources in that category. In the sample app, content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br>2. Tap <b>View all</b> to view all the content in the category <br>3. Tap <b>Open</b> to open and view content details<br>4. Tap <b>Play</b> to play the content <br>5. Tap <b>Download</b> to download the content</td>
+  <td>1. Swipe the associated content category to browse relevant resources in that category. In the sample app, content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br><br>2. Tap <b>View all</b> to view all the content in the category <br>3. Tap <b>Open</b> to open and view content details<br>4. Tap <b>Play</b> to play the content <br>5. Tap <b>Download</b> to download the content</td>
   <td><img src="pages/features-documentation/images/mobileapp/library2.png"></td> 
  </tr>
  <tr>
