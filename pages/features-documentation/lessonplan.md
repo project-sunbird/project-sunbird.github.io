@@ -151,20 +151,21 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   </tr>
   <tr> 
     <td>
-      The Preview Resource page displays the Name, Description, Keywords related to the resource. 
-     <br>1. Click the play icon to load the added resource in the lesson plan   
-     <br>2. You can delete the resource using delete icon   
-     <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
+      The resource is added in the <b>Resource</b> section of the page that displays Name, Description, Keywords related to the resource. 
+     <br>1. Click Preview image to preview the resource. The content preview page appears  
+     <br>2. You can delete the resource using delete icon.   
+     <br>3. Click Save to save the changes
+     <br>4. Click send for review icon. click Send for Review to know more
     </td>
 <td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
 </tr>
   <tr> 
     <td>
-      The Preview Resource page displays the Name, Description, Keywords related to the resource. 
-<br>1. Click the play icon to load the added resource in the lesson plan 
-<br>2. You can delete the resource using delete icon 
-<br>3. Click Save to save the changes. 
-<br>4. Click send for review icon. click Send for Review to know more.
+      The Resource page displays the Name, Description, Keywords related to the resource. 
+<br>1. Click the play icon to load the added resource 
+      <br>2. You can delete the resource using <b>Remove</b> icon 
+     <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
+      <br>3. Click <b>Save</b> to save the changes 
  </td>
 <td><img src="pages/features-documentation/images/lessonplan/preview_page.png"></td>     
 </tr>
