@@ -3,25 +3,23 @@ type: landing
 directory: developer-docs/installation/
 title: Server Installation
 page_title: Server Installationn
-description: About how Sunbird can be setup on a server
+description: Setting up Sunbird on a server
 allowSearch: true
 ---
 
-##  Sunbird Installation Guide
+## Overview
+* Sunbird software is containerized. It uses the Docker swarm orchestration engine to run the Sunbird docker images. Docker swarm consists of manager and agent nodes. The containers are run on the agent nodes and the manager manages the container lifecycle
 
-### Introduction
-* Sunbird software is containerized and Docker swarm is the orchestration engine chosen to run Sunbird docker images. Docker swarm consists of manager and agent nodes. The containers are run on the agent nodes and the manager will manage the container lifecycle.
+* All the stateless services - Portal, LMS Backend, API Gateway and Proxies - in Sunbird are run as docker containers inside the swarm
 
-* All the stateless services (Portal, LMS Backend, API Gateway, Proxies) in Sunbird are run as docker containers inside the swarm
+* All stateful services like databases - Cassandra, PostgreSql  and Elastic search, and the O Auth service - KeyCloak, are run on Virtual Machines (VMs) directly
 
-* All stateful services like databases (Cassandra, PostgreSql & Elastic search) and the Oauth service (KeyCloak) are run on VMs directly.
+* The installation is automated using shell scripts and Ansible.
 
-* The installation is automated using shell scripts and ansible.
-
-### Prerequisites:
-* The sunbird installation requires a minimum of 2 servers with 7 GB of RAM running Ubuntu server 16.04 LTS. You can scale the infra by adding more servers and Sunbird is designed to scale well horizontally. The servers should be able to connect with each other over tcp on the following [ports](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#ports-mapping). 
-* A domain name and valid SSL certificate for your domain are desired. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name and want to get an SSL certificate, you can use [Let's Encrypt](https://letsencrypt.org/) for generating a free certificate with 90 day validity.
-* Sunbird requires Ekstep API keys to access the Ekstep content repo. Please follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. Please get the QA API keys if you are creating a test environment.
+## Prerequisites:
+* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding more servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#ports-mapping). 
+* A domain name and valid SSL certificate for the domain are desired. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name and want to get an SSL certificate, use [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate that is valid for 90 days.
+* Sunbird requires Ekstep API keys to access the Ekstep content repository. Follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. Get the QA API keys if you are creating a test environment.
 * A common user (e.g. deployer) should be created on all the servers and this user should be configured to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Please use an empty passphrase while generating the ssh key to avoid password prompts during installation. The installation script uses this key (user) for deploying Sunbird and so this user should have sudo access on the servers.
 * The below table lists out the services that we setup and run as part of the installation. The below table also lists the optimal server count for a typical staging/production with thousands of users.
 
