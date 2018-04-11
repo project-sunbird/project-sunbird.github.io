@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.34.a/";
+			baseURL.href="/releases/release.1.34.b/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-04-06 21:04:12 +0530">
+<meta name="last-modified" content="2018-04-11 10:41:44 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.34.a" />
-<meta name="buildNo" content="2565" />
+<meta name="buildVersion" content="release.1.34.b" />
+<meta name="buildNo" content="2648" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,11 +46,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?06042018"  />
-<link rel="stylesheet" href="css/style.css?06042018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?06042018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?06042018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?06042018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11042018"  />
+<link rel="stylesheet" href="css/style.css?11042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?11042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?11042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?11042018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -484,22 +484,19 @@
               <a href="#book-reviewer"><span class="tocnumber">5 .</span> <span class="toctext">Book Reviewer</span></a>
             </li>
             <li class="toc_level-1 toc_section-6">
-              <a href="#official-textbook-badge-issuer"><span class="tocnumber">6 .</span> <span class="toctext">Official Textbook Badge Issuer</span></a>
+              <a href="#public"><span class="tocnumber">6 .</span> <span class="toctext">Public</span></a>
             </li>
             <li class="toc_level-1 toc_section-7">
-              <a href="#public"><span class="tocnumber">7 .</span> <span class="toctext">Public</span></a>
+              <a href="#announcement-sender"><span class="tocnumber">7 .</span> <span class="toctext">Announcement Sender</span></a>
             </li>
             <li class="toc_level-1 toc_section-8">
-              <a href="#announcement-sender"><span class="tocnumber">8 .</span> <span class="toctext">Announcement Sender</span></a>
+              <a href="#content-creator"><span class="tocnumber">8 .</span> <span class="toctext">Content Creator</span></a>
             </li>
             <li class="toc_level-1 toc_section-9">
-              <a href="#content-creator"><span class="tocnumber">9 .</span> <span class="toctext">Content Creator</span></a>
+              <a href="#flag-reviewer"><span class="tocnumber">9 .</span> <span class="toctext">Flag Reviewer</span></a>
             </li>
             <li class="toc_level-1 toc_section-10">
-              <a href="#flag-reviewer"><span class="tocnumber">10 .</span> <span class="toctext">Flag Reviewer</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-11">
-              <a href="#user-interface-for-different-user-roles"><span class="tocnumber">11 .</span> <span class="toctext">User Interface for Different User Roles</span></a>
+              <a href="#user-interface-for-different-user-roles"><span class="tocnumber">10 .</span> <span class="toctext">User Interface for Different User Roles</span></a>
             </li>
           </ul>
         </td>
@@ -509,7 +506,7 @@
 </div><p>On Sunbird, each user type is associated with a user role. The permissions and responsibilities vary for each user role.<br />
 Before users are assigned with appropriate roles, it is important to understand the: <br />1. Responsibilities of a each user role <br />2. Features accessible to each user role</p>
 
-<p>On Sunbird there are ten user types:</p>
+<p>Given below are the various user types and their assocated responsibilites on Sunbird:</p>
 
 <h2 id="course-mentor">Course Mentor</h2>
 <p>A Course Mentor guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course. Mentors also ensure completion of a course within a stipulated time.</p>
@@ -522,22 +519,20 @@ Before users are assigned with appropriate roles, it is important to understand 
   <thead>
     <tr>
       <th>Functionality</th>
-      <th>Create Course</th>
-      <th>Upload Course</th>
-      <th>Review &amp; Publish Course</th>
-      <th>Create &amp; Assign Batch</th>
-      <th>Add Course Mentor</th>
-      <th>Delete Course</th>
-      <th>Update User Profile</th>
+      <th>Create &amp; Edit Batch</th>
+      <th>Add &amp; Assign Mentor</th>
+      <th>Remove &amp; delete Mentor</th>
+      <th>Add participants</th>
+      <th>Remove participants</th>
+      <th>View Batch Progress</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><strong>Course Mentor</strong></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
@@ -572,8 +567,8 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
       <td>Yes</td>
     </tr>
   </tbody>
@@ -639,11 +634,11 @@ Before users are assigned with appropriate roles, it is important to understand 
     <tr>
       <td><strong>Book Creator</strong></td>
       <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
       <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
       <td>Yes</td>
     </tr>
   </tbody>
@@ -676,40 +671,6 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>No</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="official-textbook-badge-issuer">Official Textbook Badge Issuer</h2>
-<p>An Official Textbook Badge Issuer is an individual who  assigns badges to books. Currently, only one badge can be assigned on Sunbird titled as Official.</p>
-
-<p>
-  <b>User Role Matrix for an Official Textbook Badge Issuer</b>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Functionality</th>
-      <th>Create Content</th>
-      <th>Upload Content</th>
-      <th>Review &amp; Publish Content</th>
-      <th>Create  Badges</th>
-      <th>Assign Badges</th>
-      <th>Delete Badges</th>
-      <th>Update User Profile</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Official Textbook Badge Issuer</strong></td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
       <td>Yes</td>
       <td>No</td>
       <td>Yes</td>
@@ -775,12 +736,12 @@ Before users are assigned with appropriate roles, it is important to understand 
   <tbody>
     <tr>
       <td><strong>Announcement Sender</strong></td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
+      <td>No</td>
       <td>Yes</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
-      <td>No</td>
       <td>Yes</td>
       <td>Yes</td>
     </tr>
@@ -837,7 +798,7 @@ Before users are assigned with appropriate roles, it is important to understand 
       <th>Create Content</th>
       <th>Upload Content</th>
       <th>Review Content</th>
-      <th>Reject and Publish Content</th>
+      <th>Accept and Reject Flag</th>
       <th>Review Flagged Content</th>
       <th>Delete Content</th>
       <th>Update User Profile</th>
@@ -847,11 +808,11 @@ Before users are assigned with appropriate roles, it is important to understand 
     <tr>
       <td><strong>Flag Reviewer</strong></td>
       <td>No</td>
+      <td>No</td>
+      <td>No</td>
       <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
+      <td>No</td>
+      <td>No</td>
       <td>Yes</td>
     </tr>
   </tbody>
@@ -876,7 +837,6 @@ Before users are assigned with appropriate roles, it is important to understand 
       <th>To Do (Home Page)</th>
       <th>Courses</th>
       <th>Library</th>
-      <th>Dashboard</th>
     </tr>
   </thead>
   <tbody>
@@ -887,7 +847,6 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>No</td>
     </tr>
     <tr>
       <td>Book Creator &amp; Book Reviewer</td>
@@ -896,16 +855,14 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>No</td>
     </tr>
     <tr>
-      <td>Teacher Badge Issuer &amp; Official Textbook Badge Issuer</td>
+      <td>Teacher Badge Issuer</td>
       <td>Yes</td>
       <td>No</td>
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>No</td>
     </tr>
     <tr>
       <td>Announcement Sender</td>
@@ -914,7 +871,6 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>No</td>
       <td>No</td>
       <td>No</td>
-      <td>Yes</td>
     </tr>
     <tr>
       <td>Public</td>
@@ -923,10 +879,10 @@ Before users are assigned with appropriate roles, it is important to understand 
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
-      <td>No</td>
     </tr>
   </tbody>
 </table>
+
 
           
           <hr />
