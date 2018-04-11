@@ -50,16 +50,16 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <tr>
     <td>1. Click the <b>Edit Details</b> link on the top left corner of the page. 
       <br>2. Enter <b>Title</b> 
-      <br>2. Enter <b>Description</b> for the lesson plan 
-      <br>3. Enter Keywords 
-      <br>4. Select the following from their respective drop-down lists: 
+      <br>3. Enter <b>Description</b> for the lesson plan 
+      <br>4. Enter Keywords 
+      <br>5. Select the following from their respective drop-down lists: 
       <br>&emsp;a) <b>Curriculum</b> 
       <br>&emsp;b) <b>Subject</b> 
       <br>&emsp;c) <b>Attributions</b> 
       <br>&emsp;d) <b>Medium</b> 
       <br>&emsp;e) <b>Audience</b> 
       <br>&emsp;f) <b>Class</b> 
-      <br>5. Click <b>Save</b> to collectively save all updates.      
+      <br>6. Click <b>Save</b> to collectively save all updates.      
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/addmetadata.png"></td>
  </tr>
@@ -79,7 +79,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
-   <td>1.Click <b>My images</b> to view a list of all image files that you have previously, uploaded 
+   <td>1. Click <b>My images</b> to view a list of all image files that you have previously, uploaded 
      <br>2. Click <b>All image</b> to view a list of image files from the repository
      <br><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from any list.
     <br>3. You can add images by uploading an image from your local machine using <b>Upload and use</b>. A new Upload and use window appears. </td>
