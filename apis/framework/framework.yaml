@@ -202,7 +202,7 @@ paths:
        This API is associated with listing the existing channels 
           - The **_/channel/v1/list_** endpoint executes the "List channels" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Lists Channels
+      summary: List Channels
       tags:
       - Channel APIs
       operationId: ChannelV1ListPost
@@ -780,7 +780,7 @@ paths:
        This API is associated with searching a category 
           - The **_/category/search_** endpoint executes the "Search category" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Search for Categories
+      summary: Search Categories
       tags:
       - Framework - Category APIs
       operationId: FrameworkV1CategorySearchPost
@@ -903,7 +903,7 @@ paths:
        This API is associated with fetching the available terms under a specific category and a framework on Sunbird Platform.
           - The **_/framework/v1/term/read/{code}_** endpoint executes the "Fetch a term" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty 
-      summary: Fetche Term 
+      summary: Fetch Term 
       tags:
       - Framework - Term APIs
       operationId: FrameworkV1TermReadClass2Get
@@ -965,7 +965,7 @@ paths:
        This API is associated with updating a term under a category in a framework on Sunbird Platform.
           - The **_/framework/v1/term/update/{code}_** endpoint executes the "FrameworkV1TermUpdateClass2Patch" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty API to get list of channels in platform.API to get a channel by identifier.
-      summary: Updates a Term
+      summary: Update Term
       tags:
       - Framework - Term APIs
       operationId: FrameworkV1TermUpdateClass2Patch
