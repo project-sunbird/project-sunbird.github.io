@@ -9,10 +9,10 @@ info:
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 basePath: /org/v1/location
 securityDefinitions:
-  auth:
-    type: apiKey
-    name: api_key
-    in: header
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The security scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
