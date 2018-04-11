@@ -29,7 +29,7 @@ You can download the sample version of the Sunbird Mobile App to explore its out
 
 The sample Sunbird Mobile App is available for users to test, experiment and understand the various features and functions of the application. To download the app go to the <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> Sunbird Android Release</a>.
 
-**Prerequisites**
+### Prerequisites
 
 * A mobile device with Android OS 5.0 and above 
 * Access to the Github URL to download and install the Sunbird Mobile App
@@ -40,19 +40,19 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>Using the browser on your mobile device, tap this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> URL or type https://github.com/project-sunbird/sunbird-android/releases </a> <br>1. Tap on <b>sunbird staging.apk</b> link to get the latest mobile build. <br>2. Tap <b>Download</b> to download the app. You are redirected to the installation screen. <br>3. Tap <b>Install</b> to install the app</td>
+  <td>Using the browser on your mobile device, tap this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank">URL</a> or type https://github.com/project-sunbird/sunbird-android/releases  <br><br>1. Tap on <b>sunbird staging.apk</b> link to get the latest mobile build. <br>2. Tap <b>Download</b> to download the app. You are redirected to the installation screen. <br>3. Tap <b>Install</b> to install the app</td>
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
     <td>1. Tap <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> 2. Select your preferred language <br>3. Tap <b>Continue</b><br>
-   <b>Note:</b> Denying these permissions disables users from downloading content for offline use 
+   <br><b>Note:</b> Denying these permissions disables users from downloading content for offline use 
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/permission.png"></td>
   </tr>
   </table>
 
 ## Signing In 
-The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate between content made available for different user types. For example, annonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library.   
+The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate  content for different user types. For example, annonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library.   
 
 <table>
   <tr>
@@ -60,23 +60,23 @@ The Sign In feature allows authorized users to access content using the app. Usi
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><b>Note:</b> You can also use the app without providing any credentials. For details, refer to <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to the <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><b>Note:</b> You can also use the app without providing any credentials. For details, refer to <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/login.png"></td>
   </tr>
   </table>
   
-**Recovering Password**
+### Recovering Password
 
 For details on recovering password refer [Recovering Password](features-documentation/forgotpassword){:target="_blank"}
 
 ## Exploring Sunbird Mobile App Features
 
-After signing in as a registered or guest user, the <b>Home</b> page is displayed. The task bar at the bottom of the screen is available at all times. It contains icons for all the app features. Tap the required icon to navigate to the relevant feature and its associated pages. 
+After signing in as a registered or guest user, the <b>Home</b> screen is displayed. The task bar at the bottom of the screen is available at all times. It contains icons for all the app features. Tap the required icon to navigate to the relevant feature and its associated screens. 
 
 ### Home 
 
-The Home page of the mobile app is the user landing page. 
+The Home screen of the mobile app is the user's landing page. It can be customized as per requirements. In the sample app, the home screen of the registered user shows a list of **To Do** items and **Announcements**, while the guest user is directed automatically to the **Library** screen. 
 
 <table>
   <tr>
@@ -84,14 +84,14 @@ The Home page of the mobile app is the user landing page.
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. All courses that you are enrolled for or that are assigned to you are shown in the <b>To Do</b> section. Swipe to view them or tap <b>View all</b> <br>2.Tap <b>Resume</b> to take up the a course <br>3. Tap <b>View all</b> in the <b>Announcements</b> section to view your announcements <br>4. Tap the <b>QR Code</b> icon to scan QR codes printed in physical textbooks <br>5. Tap <b>Search</b> icon. You are redirected to the next screen <br>6. Type keywords or DIAL codes using your mobile keypad to search content <br>7. Tap <b>Home</b> to return to the home page from any other page</td>
+  <td>1. All courses that you are enrolled for or that are assigned to you are shown in the <b>To Do</b> section. Swipe to view them or tap <b>View all</b> <br>2.Tap <b>Resume</b> to take up the a course <br>3. Tap <b>View all</b> in the <b>Announcements</b> section to view your announcements <br>4. Tap the <b>QR Code</b> icon to scan QR codes printed in physical textbooks <br>5. Tap <b>Search</b> icon. You are redirected to the next screen <br>6. Type keywords or DIAL codes using your mobile keypad to search content <br>7. Tap <b>Home</b> to return to the home screen from any other screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/home.png"></td>
   </tr>
   </table>
 
 ### Courses
 
-The <b>Courses</b> page lists current courses, courses in progress, latest course offerings and popular courses
+The <b>Courses</b> screen lists current courses, courses in progress, latest course offerings and popular courses
 
 <table>
   <tr>
@@ -178,7 +178,7 @@ You can use the **Browse as Guest** feature to browse the Subird Mobile App with
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap <b>Browse as Guest</b> <br>2. Select your guest mode as <b>Teacher</b> or <b>Student</b> <br>3. Tap <b>Continue</b> You are redirected to the <b>Library</b> page <br></td>
+  <td>1. Tap <b>Browse as Guest</b> <br>2. Select your guest mode as <b>Teacher</b> or <b>Student</b> <br>3. Tap <b>Continue</b> You are redirected to the <b>Library</b> screen <br></td>
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
