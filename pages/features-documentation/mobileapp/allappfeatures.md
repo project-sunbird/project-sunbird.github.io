@@ -99,7 +99,7 @@ The <b>Courses</b> page lists current courses, courses in progress, latest cours
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-   <td> <br>1. Tap the <b> Courses</b> icon on the task bar <br>2. Swipe the associated course category to browse courses in that category. Courses are categorized as: <br>a) Courses In Progress <br>b) Latest Courses <br>c) Popular Courses <br>3. Tap the <b>Search</b> icon and enter keywords to search for relevant courses <br>4. Tap the <b>Filter</b> icon to filter courses by: <b>Board</b>, <b>Subject</b> and <b>Medium</b> <br>5. Tap <b>Apply</b> to apply the filter <br>6. Tap <b>Cancel</b> to exit the screen</td>
+   <td> <br>1. Tap the <b> Courses</b> icon on the task bar <br>2. Swipe the associated course category to browse courses in that category. Courses are categorized as: <br>a) Courses In Progress <br>b) Latest Courses <br>c) Popular Courses <br><br>3. Tap the <b>Search</b> icon and enter keywords to search for relevant courses <br>4. Tap the <b>Filter</b> icon to filter courses by: <b>Board</b>, <b>Subject</b> and <b>Medium</b> <br>5. Tap <b>Apply</b> to apply the filter <br>6. Tap <b>Cancel</b> to exit the screen</td>
    <td><img src="pages/features-documentation/images/mobileapp/course1.png"></td>
   </tr>
   <tr>
@@ -107,11 +107,11 @@ The <b>Courses</b> page lists current courses, courses in progress, latest cours
     <td><img src="pages/features-documentation/images/mobileapp/course2.png"></td>
   </tr>
   <tr>
-    <td>1. Tap <b>Open</b> to view available course <br>2. Tap <b>Enroll in Course</b> to get enrolled for the course having a batch</td>
+    <td>1. Tap <b>Open</b> to view available course details<br>2. Tap <b>Enroll in Course</b> to enroll for the course <br><br><b>Note:</b> You can only enroll for those courses that are assigned to a batch </td>
     <td><img src="pages/features-documentation/images/mobileapp/course3.png"></td>
   </tr>
   <tr>
-   <td><b>Sharing, Reporting or Deleting course content</b><br>1. Tap <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Tap on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course <br><b>Note:</b> You can select reasons for reporting content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+   <td><b>Sharing, Reporting or Deleting course content</b><br><br>1. Tap <b>Share</b> icon to share the course content <b>As Link</b>  or <b>As File</b> through different channels<br>2. Tap on the <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course content <br><br><b>Note:</b> You can select reasons to report content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr>     
   </table>
