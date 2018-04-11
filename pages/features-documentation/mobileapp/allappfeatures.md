@@ -12,7 +12,7 @@ allowSearch: true
 You can download the sample version of the Sunbird Mobile App to explore its out-of-box functionality and features. The app is used to consume content maintained by an organization using a mobile device. In case of Sunbird's sample mobile app, the content available is maintained in the Sunbird repository. The app has the following features: 
 
 * Sign in with registered credentials
-* Use the app as a Guest or annoymous user
+* Use the app as a Guest or anonymous user
 * Consume content in Online or Offline mode
 * Search content from the content repository, when Online
 * Search content downloaded on mobile device, when offline
