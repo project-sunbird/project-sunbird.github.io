@@ -12,7 +12,7 @@ basePath: /announcement/v1
 securityDefinitions:
   auth:
     type: apiKey
-    name: api_key
+    name: Authorization
     in: header
 schemes:
   - https
@@ -28,8 +28,7 @@ paths:
       description: >-
        This API is associated with creation of a new announcement on the Sunbird Platform.
           - The **_/create_** endpoint executes the "create" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is: /resend/{announcementId}
-          - Required fields cannot be left null or empty.
+          - Required fields cannot be left null or empty
       summary: Create an announcement
       tags:
       - Announcement APIs
@@ -41,7 +40,7 @@ paths:
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
+            The body usually contains the representation of the resource object 
               - The body contains metadata about creation of announcements.
           schema:
             allOf:
@@ -158,7 +157,7 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The token/key used to execute the API.'        
+          description: 'Its the alphanumeric string usually known as a token/key that is used to authenticate a user to execute the API.'        
         - in: path
           name: announcementId
           type: string

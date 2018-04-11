@@ -10,10 +10,10 @@ info:
 host: staging.open-sunbird.org
 basePath: /v1/notification
 securityDefinitions:
-  auth:
-    type: apiKey
-    name: api_key
-    in: header
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
