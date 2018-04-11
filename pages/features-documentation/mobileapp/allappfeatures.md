@@ -182,7 +182,7 @@ You can use the **Browse as Guest** feature to browse the Subird Mobile App with
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
-  <td> <b> Getting Relevant Content</b> <br><br><b>Note:</b> The user can choose to ignore this section and continue to browse content <br><br> 1. To get relevant content, tap the categories mentioned in the top section of the screen for example; <b>Select Board</b> <br>3. Select the appropriate option from the list displayed for the category <br>4. Tap <b>Save</b> to save your selection <br>5. Tap <b>Cancel</b> to exit screen <br>6. The next category is displayed. Repeat the process for all categories <br>7. You can edit the category selection at any time</td> 
+  <td> <b> Getting Relevant Content</b> <br><br><b>Note:</b> The user can choose to ignore this section and continue to browse content <br><br> 1. To get relevant content, tap the categories mentioned in the top section of the screen for example; <b>Select Board</b> <br>2. Select the appropriate option from the list displayed for the category <br>3. Tap <b>Save</b> to save your selection <br>4. Tap <b>Cancel</b> to exit screen <br>5. The next category is displayed. Repeat the process for all categories <br>6. You can edit the category selection at any time</td> 
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
  </tr>
  </table>
