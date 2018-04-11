@@ -93,8 +93,8 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
      <br>1. Click <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window and drag and drop the required file on the screen.
      <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png
      <br>2. Under <b>Copyright and License</b>, select if you want to: 
-     <br>a. Make it available to everyone 
-     <br>b. Not share with anyone
+     <br>&emsp;a. Make it available to everyone 
+     <br>&emsp;b. Not share with anyone
      <br>3. Enter image details in the <b>Asset Caption</b>
      <br>4. Enter <b>Tags</b> associated with the image
      <br>5. Select the language
@@ -131,8 +131,8 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <br>2. Select the relevant resource cards from the available lists
   <br>3. Hover over the card to view the basic details about that resource 
   <br>4. Click <b>View Details</b> to read illustrated information about the card in a new window. 
-      <br>a. Select <b>Add</b> to imbibe the resoure
-      <br>b. Select <b>Remove</b> to remove the resource
+      <br>&emsp;a. Select <b>Add</b> to imbibe the resoure
+      <br>&emsp;b. Select <b>Remove</b> to remove the resource
   <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource section of the <b>LessonPlan</b> page. 
   <br>6. Click <a href="pages/features-documentation/lessonplan/# preview-and-upload-resource">Preview and Upload the Resources</a> to know more.
   <br>7. Click <b>Save</b> to save the changes. 
@@ -162,9 +162,9 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <tr> 
     <td>
       The Resource page displays the Name, Description, Keywords related to the resource. 
-<br>1. Click the play icon to load the added resource 
+      <br>1. Click the play icon to load the added resource 
       <br>2. You can delete the resource using <b>Remove</b> icon 
-     <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
+      <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
       <br>3. Click <b>Save</b> to save the changes 
  </td>
 <td><img src="pages/features-documentation/images/lessonplan/preview_page.png"></td>     
