@@ -3,16 +3,18 @@ info:
   version: '1.0'
   title: Badging Framework API(s)
   description: >-
-      A Badge is a virtual representation of an Award, Certificate, Endorsement or Authorization. The Badging Framework API resources are used to accord badges to: 
-      - recognize user skills and accomplishments
-      - rate or authorize content for its quality and effectiveness 
+      A Badge is a virtual representation of: 
+      
+      - Award, Certificate, Endorsement or Authorization. The Badging Framework API resources are used to accord badges to: 
+        - recognize user skills and accomplishments
+        - rate or authorize content for its quality and effectiveness
 host: staging.open-sunbird.org
 basePath: /api/badging/v1/issuer
-securityDefinitions:
-  auth:
-    type: apiKey
-    name: Authorization
-    in: header
+securityDefinitions: 
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -23,7 +25,10 @@ paths:
   /create:
     post:
       description: >-
-       This API is used to create a badge issuer entity. To accord badges, creating the Issuer entity is the first step after which you create the badgeClass entity and lastly the assertion.
+       This API is used to create a badge issuer entity. 
+          - To accord badges
+          - Step 1:
+             - creating the Issuer entity is the first step after which need to create the Badge Class entity and lastly the assertion.
        
           - the **_/create/_** endpoint executes the "Create Issuer" request based on parameters provided as metadata in the request body.
           - It is a must to provide values for all mandatory parameters 
