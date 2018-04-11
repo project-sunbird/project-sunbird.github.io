@@ -1,9 +1,9 @@
 ---
 type: landing
-directory: user-taskflow
-title: Creation and Curation of Books
-page_title: Limited Sharing
-description: flow ofLimited Sharing
+directory: usertaskflow
+title: User Taskflow for Limited Sharing
+page_title:  User Taskflow for Limited Sharing
+description: Flow of Limited Sharing
 keywords: 'limited sharing, publishing, content creation'
 published: true
 allowSearch: true
