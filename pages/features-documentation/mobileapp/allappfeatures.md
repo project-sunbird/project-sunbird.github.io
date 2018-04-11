@@ -44,7 +44,7 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
-    <td>1. Tap <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> 2. Select your preferred language <br>3. Tap <b>Continue</b><br>
+    <td>1. Tap <b>Allow</b> to provide access to the following data: <li>Access Photo, Media and files</li> <li>Take picture and record videos</li> <li>Access device's location</li> <li>Make and manage phone calls</li> <br>2. Select your preferred language <br>3. Tap <b>Continue</b><br>
    <br><b>Note:</b> Denying these permissions disables users from downloading content for offline use 
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/permission.png"></td>
@@ -111,7 +111,7 @@ The <b>Courses</b> screen lists current courses, courses in progress, latest cou
     <td><img src="pages/features-documentation/images/mobileapp/course3.png"></td>
   </tr>
   <tr>
-   <td><b>Sharing, Reporting or Deleting Course Content</b><br><br>1. Tap <b>Share</b> icon to share the course content <b>As Link</b>  or <b>As File</b> through different channels<br>2. Tap on the <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course content <br><br><b>Note:</b> You can select reasons to report content viz., <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li><br><br><b>Note:</b> The share, report and delete features are common to all content types, viz.Courses, Library resources and content linked to QR and DIAL codes</td>
+   <td><b>Sharing, Reporting or Deleting Course Content</b><br><br>1. Tap <b>Share</b> icon to share the course content <b>As Link</b>  or <b>As File</b> through different channels<br>2. Tap on the <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course content <br><br><b>Note:</b> You can select reasons to report content viz., <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li><br><b>Note:</b> The share, report and delete features are common to all content types, viz.Courses, Library resources and content linked to QR and DIAL codes</td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr>     
   </table>
