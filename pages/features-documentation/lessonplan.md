@@ -115,8 +115,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <tr>
     <td>To add content to the lesson plan
       <br>1. Click <b>New Child</b> to start adding a node to the newly created lesson
-      <br>2. You can add another node at same level using <b>New Sibling</b>. Refer <a href="adding-sibling-node">Adding Sibling Node</a> to know more about adding New Sibling node.
-     <br>3. You can add a node to the next level using <b>New Child</b>. Refer <a href="adding-child-node">"Adding Child Node</a> to know more about adding New Child node. The <b>LessonPlan Unit</b> page appears      
+      <br>2. You can add another node at same level using <b>New Sibling</b> add a node to the next level using <b>New Child</b>. Refer <a href="adding-sibling-node">Adding Sibling Node</a> and <a href="adding-child-node">"Adding Child Node</a> to know more. The <b>LessonPlan Unit</b> page appears      
     <br>4. Click <b>Add Resource</b> from:
     <br>&emsp;- The right bottom corner of the page 
     <br>&emsp;- Right click on the node name
@@ -133,10 +132,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
       <br>&emsp;a. Select <b>Add</b> to imbibe the resoure
       <br>&emsp;b. Select <b>Remove</b> to remove the resource
   <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource section of the <b>LessonPlan</b> page. 
-  <br>6. Click <a href="pages/features-documentation/lessonplan/# preview-and-upload-resource">Preview and Upload the Resources</a> to know more.
-  <br>7. Click <b>Save</b> to save the changes. 
-  <br>8. Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan">Send for Review</a> to know more.</td>
-   <td>
+    <td>
    <img src="pages/features-documentation/images/lessonplan/add_resource2.png">
  </td>     
 </tr>
@@ -155,6 +151,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
      <br>2. You can delete the resource using delete icon.   
      <br>3. Click Save to save the changes
      <br>4. Click send for review icon. click Send for Review to know more
+     <br>Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan-for-review">Send for Review</a> to know more.</td>
     </td>
 <td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
 </tr>
