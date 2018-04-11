@@ -68,7 +68,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
  </tr>
  </table>
 
-### Adding Image to Lesson Plan Metadata
+### Adding Image to Lesson Plan
 
 <table>
   <tr>
@@ -82,26 +82,30 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
-   <td>1.Click <b>My images</b> to view a list of all image files that you have previously, uploaded 
+   <td>1.Click <b>My images</b> to view a list of all image files that you have previously uploaded 
      <br>2. Click <b>All image</b> to view a list of image files from the repository
      <br><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from the list.
-     <br>3. Choose an appropriate image file from any list and click Select </td>
-    <br>4. You can add images by uploading an image from your local machine using <b>Upload and use</b>. A new Upload and use window appears.
+     <br>3. Click <b>Select</b> </td>
+    <br>4. Click <B>Upload and Use</b> to upload an image from your local machine. A new Upload and use window appears.
    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
   </tr>
-   <tr> <td>To upload an image:
-     <br>a. Select a file using <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen 
+   <tr> 
+     <td>To upload an image:
+     <br>1. Click <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window and drag and drop the required file on the screen.
      <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png
-     <br>b. Under <b>Copyright and License</b>, select if you want to: 
-     <br># Make it available to everyone 
-     <br># Not share with anyone
-    <br>c. Click Upload and use images 
-   <br>4. Click <b>Select</b> to confirm the image
-     <br> 5. Click <b>Cancel</b> to discard the changes
+     <br>2. Under <b>Copyright and License</b>, select if you want to: 
+     <br>a. Make it available to everyone 
+     <br>b. Not share with anyone
+     <br>3. Enter image details in the <b>Asset Caption</b>
+     <br>4. Enter <b>Tags</b> associated with the image
+     <br>5. Select the language
+     <br>6. Enter the name of creator
+     <br>7. Click <b>Upload and use image</b> to confirm the image
+     <br>8. Click <b>Cancel</b> to discard the changes
      </td>
    <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
-  </tr>
-</table>
+  </tr> 
+ </table>
 
 ### Adding Content or Resources
 <table>
@@ -115,15 +119,15 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
       <br>2. You can add another node at same level using <b>New Sibling</b>. Refer <a href="adding-sibling-node">Adding Sibling Node</a> to know more about adding New Sibling node.
      <br>3. You can add a node to the next level using <b>New Child</b>. Refer <a href="adding-child-node">"Adding Child Node</a> to know more about adding New Child node.  
       <br> The <b>LessonPlan Unit</b> page appears      
-    <br>3.  Click <b>Add Resource</b> from:
+    <br>3. Click <b>Add Resource</b> from:
     <br>- The right bottom corner of the page 
     <br>- Right click on the node name
     <br>- Use keyboard shortcut <b>Ctrl+Alt+A</b>
     <br>The Find & Select Activities page is displayed.</td>
-  <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png"></td>
+  <td><img src="pages/features-documentation/images/lessonplan/add_resource1.png"></td>
   </tr>
  <tr>
-   <td> <b>To Add Resource</b>
+   <td>To add resource
   <br>1. Search the resource using search bar
   <br>2. Select the relevant resource cards from the available lists
   <br>3. Hover over the card to view the basic details about that resource 
