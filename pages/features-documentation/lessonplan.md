@@ -19,8 +19,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <tr>
     <td>1. You are logged in 
      <br>2. You are currently on <b>My Workspace</b> page 
-     <br>3. You want to create a lesson plan 
-     <br>4. You have clicked the <b>Lesson Plan</b> tile
+     <br>3. You have clicked the <b>Lesson Plan</b> tile
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/prerequisite.png"></td>
    </tr>
@@ -34,7 +33,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-  <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>a) Board <br>b) Grade <br>c) Subject <br>d) Medium <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
+  <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>&emsp;a) <b>Board</b> <br>&emsp;b) <b>Grade</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
   </td>
   <td><img src="pages/features-documentation/images/lessonplan/create_lesson_plan.png"></td>
  </tr>
@@ -64,7 +63,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
       <br>5. Click <b>Save</b> to collectively save all updates.  
       <br>You can edit or update the title of the units in the collection from the navigation hierarchy
     </td>
-    <td><img src="pages/features-documentation/images/lessonplan/addmetadata.png"></td>
+    <td><img src="pages/features-documentation/images/lessonplan/edit_details.png"></td>
  </tr>
  </table>
 
@@ -83,8 +82,8 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   </tr>
   <tr>
    <td>1.Click <b>My images</b> to view a list of all image files that you have previously uploaded 
-     <br>2. Click <b>All image</b> to view a list of image files from the repository
-     <br><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from the list.
+<br>2. Click <b>All image</b> to view a list of image files from the repository
+<br><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from the list.
      <br>3. Click <b>Select</b>
     <br>4. Click <B>Upload and Use</b> to upload an image from your local machine. A new Upload and use window appears.</td>
    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
@@ -151,13 +150,25 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr> 
-    <td>The Preview Resource page displays the Name, Description, Keywords related to the resource. 
+    <td>
+      The Preview Resource page displays the Name, Description, Keywords related to the resource. 
      <br>1. Click the play icon to load the added resource in the lesson plan   
      <br>2. You can delete the resource using delete icon   
      <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
     </td>
 <td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
 </tr>
+  <tr> 
+    <td>
+      The Preview Resource page displays the Name, Description, Keywords related to the resource. 
+<br>1. Click the play icon to load the added resource in the lesson plan 
+<br>2. You can delete the resource using delete icon 
+<br>3. Click Save to save the changes. 
+<br>4. Click send for review icon. click Send for Review to know more.
+ </td>
+<td><img src="pages/features-documentation/images/lessonplan/preview_page.png"></td>     
+</tr>
+
 </table>
 
 
