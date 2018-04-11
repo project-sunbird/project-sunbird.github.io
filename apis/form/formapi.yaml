@@ -11,7 +11,7 @@ basePath: /data/v1/form
 securityDefinitions:
     auth:
       type: apiKey  # arbitrary name for the security scheme
-      in: header # The secrity scheme parameter is in "header"
+      in: header # The security scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
 schemes:
 - http
