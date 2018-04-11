@@ -99,7 +99,7 @@ The <b>Courses</b> page lists current courses, courses in progress, latest cours
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-   <td> <br>1. Tap the <b> Courses</b> icon on the task bar <br>2. Swipe the associated course category to browse courses in that category. Courses are categorized as: <br>a) Courses In Progress <br>b) Latest Courses <br>c) Popular Courses <br><br>3. Tap the <b>Search</b> icon and enter keywords to search for relevant courses <br>4. Tap the <b>Filter</b> icon to filter courses by: <b>Board</b>, <b>Subject</b> and <b>Medium</b> <br>5. Tap <b>Apply</b> to apply the filter <br>6. Tap <b>Cancel</b> to exit the screen</td>
+   <td> <br>1. Tap the <b> Courses</b> icon on the task bar <br>2. Swipe the associated course category to browse courses in that category. Courses are categorized as: <br>a) Courses In Progress <br>b) Latest Courses <br>c) Popular Courses <br><br>3. Tap the <b>Search</b> icon and enter keywords to search for relevant courses <br>4. Tap the <b>Filter</b> icon to apply filters on your library content. The sample app has the following filters: <b>Board</b>, <b>Subject</b> and <b>Medium</b> <br>5. Tap <b>Apply</b> to apply the filter <br>6. Tap <b>Cancel</b> to exit the screen</td>
    <td><img src="pages/features-documentation/images/mobileapp/course1.png"></td>
   </tr>
   <tr>
@@ -111,43 +111,45 @@ The <b>Courses</b> page lists current courses, courses in progress, latest cours
     <td><img src="pages/features-documentation/images/mobileapp/course3.png"></td>
   </tr>
   <tr>
-   <td><b>Sharing, Reporting or Deleting course content</b><br><br>1. Tap <b>Share</b> icon to share the course content <b>As Link</b>  or <b>As File</b> through different channels<br>2. Tap on the <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course content <br><br><b>Note:</b> You can select reasons to report content viz, <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
+   <td><b>Sharing, Reporting or Deleting Course Content</b><br><br>1. Tap <b>Share</b> icon to share the course content <b>As Link</b>  or <b>As File</b> through different channels<br>2. Tap on the <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course content <br><br><b>Note:</b> You can select reasons to report content viz., <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li><br><br><b>Note:</b> The share, report and delete features are common to all content types, viz.Courses, Library resources and content linked to QR and DIAL codes</td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
   </tr>     
   </table>
   
 ### Library
 
+All content resources that you have saved on your device or popular artifacts from the portal are maintained in a library.  
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap the <b>Library</b> to view all the resources that you have saved on your device or popular artifacts from the portal library <br>2. Tap <b>Search</b> or <b>Filter</b> icon and enter keywords to search for relevant content resources <br>3. You can filter the library content by: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Tap <b>Apply</b> to apply the filter <br>5. Tap <b>Cancel</b> to exit the screen</td>
+  <td>1. Tap the <b>Library</b> icon to view all the resources in your library <br>2. Tap the <b>Search</b> icon and enter keywords to search for relevant content resources <br>3. Tap the <b>Filter</b> icon to apply filters on your library content. The sample app has the following filters: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Tap <b>Apply</b> to apply the filter <br>5. Tap <b>Cancel</b> to exit the screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/library1.png"></td> 
  </tr>
  <tr>
-  <td>1. Swipe the associated content category to browse the relevant resources in that category. Content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br>2. Tap <b>View all</b> to view all the content in the list <br>3. Tap <b>Open</b> to open and view a selected content <br>4. To play or download content, click the <b>Play</b> or <b>Download</b> button</td>
+  <td>1. Swipe the associated content category to browse relevant resources in that category. In the sample app, content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br>2. Tap <b>View all</b> to view all the content in the category <br>3. Tap <b>Open</b> to open and view content details<br>4. Tap <b>Play</b> to play the content <br>5. Tap <b>Download</b> to download the content</td>
   <td><img src="pages/features-documentation/images/mobileapp/library2.png"></td> 
  </tr>
  <tr>
-  <td><b>Playing and rating content</b><br>1. Tap <b>Play</b> to play the content <br>2. Tap on the <b>Stars</b> icon to rate the content after you finish viewing. You can provide your feedback about the content <br>3. Tap <b>Submit</b> to submit your rating</td>
+  <td><b>Playing and rating content</b><br><br>1. Tap <b>Play</b> to play the content <br>2. After you view the content, Tap the <b>Star</b> icons to rate it. Adding comments as feedback is optional <br>3. Tap <b>Submit</b> to submit your rating and feedback</td>
   <td><img src="pages/features-documentation/images/mobileapp/library3.png"></td>
  </tr>
  <tr>
-  <td><b>Sharing, Reporting or Deleting course content</b><br>1. Tap <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> <br>2. Tap on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li></td>
-   <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
-  </tr> 
- <tr>
-  <td><b>Downloading content</b><br>1. Tap on <b>Download</b> to download the content. The license, attribution and credit information is displayed while downloading the content <br>2. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>3. Tap <b>Cancel</b> to cancel the download. Tap <b>Play</b> to play the downloaded content <br><b>Note:</b> You can only download the content when you are connected to internet, though you can view the downloaded content being offline</td>
+   <td><b>Downloading content</b><br><br>1. Tap <b>Download</b> to download the content. <br>2. Tap the <b> View Credits and Licensing Info</b> to view the license, attribution and credit information associated with the content <br>3. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>4. Tap <b>Cancel</b> to cancel the download. <br><br><b>Note:</b> You can download content only when you are connected to the Internet. However, you can view the downloaded content Offline</td>
   <td><img src="pages/features-documentation/images/mobileapp/library4.png"></td> 
  </tr>
   </table>
  
 ### Profile
 
-### Scanning QR Codes or DIAL Codes
+You can update your profile using the app
+
+### Scanning QR Codes 
+
+The app allows you to scan printed QR codes 
 
 <table>
   <tr>
@@ -155,20 +157,20 @@ The <b>Courses</b> page lists current courses, courses in progress, latest cours
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap on <b>QR Code Scanner</b> icon to scan <b>QR Codes</b> or <b>Dial Codes</b> <br>2. To scan QR Codes or Dial Codes, place your device's camera and focus on the QR/Dial Codes </td>
+  <td>1. Tap on the <b>QR Code Scanner</b> icon <br>2. Focus on the printed QR Code to view the linked content list</td>
    <td><img src="pages/features-documentation/images/mobileapp/scan1.png"></td>
  </tr>
  <tr>
-  <td>1. On successfull scan, content linked to the QR code or Dial code is listed <br>2. Tap on the <b>Download</b> to download the content <br>3. Tap on <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> <br><b>Note:</b> You can select reasons for reporting content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li> 4. Tap <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> </td>
+  <td>1. View the content linked to the QR code <br>2. You can <b>Download</b> content <br>3. Use the <b>Menu</b> to <b>Delete</b> or <b>Report</b> content <br><br><b>Note:</b> You can select reasons to report content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li> 4. Use the <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> </td>
   <td><img src="pages/features-documentation/images/mobileapp/scan2.png"></td>
  </tr>
  </table>
 
-**Note:** You can scan QR/Dial Codes from any screen (except from the Profile screen) as a registered or guest user. 
+**Note:** You can scan QR Codes from any screen (except from the Profile screen) as a registered or guest user. 
 
 ## Browse as Guest
 
-You can browse the Subird Mobile App without sining in. Use **Browse as Guest** feature to navigate through the app.
+You can use the **Browse as Guest** feature to browse the Subird Mobile App without signing in. 
 
 <table>
   <tr>
@@ -176,11 +178,11 @@ You can browse the Subird Mobile App without sining in. Use **Browse as Guest** 
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap on <b>Browse as Guest</b> <br>2. Select your guest mode as <b>Teacher</b> or <b>Student</b> <br>3. Tap <b>Continue</b> to enter into the app</td>
+  <td>1. Tap <b>Browse as Guest</b> <br>2. Select your guest mode as <b>Teacher</b> or <b>Student</b> <br>3. Tap <b>Continue</b> You are redirected to the <b>Library</b> page <br></td>
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
  </tr>
  <tr>
-  <td>1. You land on the <b>Library</b> page <br>2. Tap <b>Select Board</b> to search and filter your content by board <br>3. A pop up screen opens up. Select one or more <b>Board</b> <br>4. Tap <b>Save</b> to save your selection <br>5. Tap <b>Cancel</b> to exit the screen</td>
+  <td> <b> Getting Relevant Content</b> <br><br><b>Note:</b> The user can choose to ignore this section <br><br> 1. To get relevant content, tap the categories mentioned in the top section of the screen for example; <b>Select Board</b> <br>3. Select the appropriate option from the list displayed for the category <br>4. Tap <b>Save</b> to save your selection <br>5. Tap <b>Cancel</b> to exit screen <br>6. The next category is displayed. Repeat the process for all categories</td> 
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
  </tr>
  </table>
