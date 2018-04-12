@@ -7,50 +7,49 @@ description: Upgradation of services, dataset etc in Sunbird
 published: true
 allowSearch: true
 ---
-This page is coming soon...
+## Overview
+Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.  
 
-
-### Upgrading sunbird:
+## Upgrading Sunbird
 
 1. Pull the latest code of `project-sunbird/sunbird-devops`from the master branch 
 
-2. Take the backup of all the databases. Follow steps here for taking backup. 
+2. Take a backup of all the databases. Follow steps here provided in the following section to take a backup. 
 
 3. Run the script `./sunbird_upgrade.sh`  in `sunbird-devops/deploy`
 
-**NOTE:** All the core services latest images versions are already updated in th master branch . If sunbird release any hotfix with a new image, goto to `sunbird-devops/deploy/deploy-core.sh`  & update. 
+**Note:** All the core services latest images versions are already updated in the master branch . To get the hotfix of any Sunbird with a new image, go to `sunbird-devops/deploy/deploy-core.sh`  and update it 
 
 4. Re-run the `sunbird-devops/deploy/deploy-core.sh`  
 
 
+## Taking a Back Up of Database Servers
 
-# Steps to take backup 
+1. ssh to database server on which you want to take backup.
 
-* ssh to database server on which you want to take backup.
+2. git clone https://github.com/project-sunbird/sunbird-devops
 
-* git clone https://github.com/project-sunbird/sunbird-devops
+3. cd sunbird-devops/deploy/
 
-* cd sunbird-devops/deploy/
-
-### Cassandra :
+### Cassandra
 
 **Backup:** 
 	
-   Take snapshot of cassandara db 
+   Take a snapshot of Cassandara database using 
 	
 	`nodetool snapshot -t my_backup`
    
-  Copying the snapshot to your backup directory
+  Copy the snapshot to your backup directory using
 
 	./cassandra_backup.py --datadir /var/lib/cassandra/data --snapshotname my_backup --targetdir /backup/folder/$(date +%Y-%m-%d)
 
 **Restore:**
 
-Restore cassandra database
+Restore Cassandra database using
 	           
 	./cassandra_restore.py --cassandra_host ip_address --snapshotdir /backups/cassandra/$(date +%Y-%m-%d)
 
-### Postgres :
+### Postgres
 
 **Backup:** 
 
@@ -66,11 +65,11 @@ Run
 
 	psql -f <backup_file> postgres
 
-## Elasticsearch :
+### Elasticsearch 
 
 **Backup:**
 
-Run script 
+Run the script 
 
 	./backup_elasticsearch.sh
 
@@ -82,7 +81,7 @@ Run
 	
 	./restore_elasticsearch.sh <path/to/the/restore_file>	
 	
-NOTE: If you are using our scripts to backup or restore cassandra, python should be installed on cassandra machine.
+**Note:** Install Python on the Cassandra machine, if you use our scripts to backup or restore the Cassandra database.
 
 
 
