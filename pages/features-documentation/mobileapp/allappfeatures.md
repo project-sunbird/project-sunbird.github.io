@@ -147,7 +147,7 @@ All content resources that you have saved on your device or popular artifacts fr
 
 You can update your profile using the app
 
-### Scanning QR Codes 
+### Scanning QR Code
 
 The app allows you to scan printed QR codes 
 

@@ -18,9 +18,9 @@ A Course Mentor guides and instructs learners on how to undertake a course. They
 
 <b>User Role Matrix for a Course Mentor</b>
 
-|  Functionality    | Create & Edit Batch | Add & Assign Mentor | Remove & delete Mentor | Add participants | Remove participants | View Batch Progress | 
+|  Functionality    | Create & Edit Batch | Delete Batch | Add Mentor | Add participants | Remove participants | View Batch Progress | 
 |-------------------|---------------------|---------------------|-------------------------|-----------------|---------------------|--------------|
-| **Course Mentor** |       Yes       |       Yes       |       Yes       |         Yes        |      Yes       |      Yes    | 
+| **Course Mentor** |       Yes       |       Yes       |       Yes       |         Yes        |      No       |      Yes    | 
 
 ## Content Reviewer
 A Content Reviewer accesses the created courses or content within prescribed guidelines. Sunbird has defined review guidelines. Reviewers assess content based on these guidelines. Reviewers have the right to reject or publish content based on these guidelines.
