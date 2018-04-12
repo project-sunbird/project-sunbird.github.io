@@ -95,23 +95,23 @@ allowSearch: true
 
 5. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage1 to stage6 in a sequence shown in following table.
 
-6. The badger service is set up manually. To do so, follow the steps given [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#badger-setup).
-
-**Note**: The badger service does not work without an Azure storage account name and key. 
-
-7. Verify that all the mandatory variables, for example; sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script `./sunbird_install.sh -s core` to deploying the core services.
-
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
 |1 |config |Generates configuration file and hosts file |
 |2|dbs|Installs all databases and creates schema  |
 |3 |apis|Sets up API manager kong and Onboard API's and consumer's  |
-|4|proxy|Deploys nginx and configure|
-|5|keycloak|Provision, deploy and bootstrap keycloak |
+|4|proxy|Deploys and configures Nginx|
+|5|keycloak| Deploys and configures Keycloak |
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
 |8|logger|Deploys the ELK stack and the logs can be viewed in Kibana|
 |9|monitor|Monitors all the services, health checks, API's,system checks etc..|
+
+6. The badger service is set up manually. To do so, follow the steps given [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#badger-setup).
+
+**Note**: The badger service does not work without an Azure storage account name and key. 
+
+7. Verify that all the mandatory variables, for example; sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script `./sunbird_install.sh -s core` to deploying the core services.
 
 **Note**: If you what to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`
 
@@ -121,7 +121,7 @@ To know more about the script `sunbird_install.sh`, click [here](http://sunbird-
   
 ## Sunbird Install Script 
 
-The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repo. 
+The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository. 
 
 `install-deps.sh` - Installs Ansible v2.4.1.0 on the installation server to provision and deploy Sunbird. This script also sets up the docker swarm.
 
@@ -137,11 +137,11 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 `onboard-apis.sh`  - Onboards the Sunbird APIs and consumers to the API gateway using Ansible. 
 
-`deploy-proxy.sh` - Deploys the proxy (nginx) as a docker service.
+`deploy-proxy.sh` - Deploys the proxy (Nginx) as a docker service.
 
 `provision-keycloak.sh` - Installs Keycloak.
 
-`deploy-keycloak-vm.sh` - Deploys the O-auth service (Keycloak) on the VM. The Keycloak service runs outside the swarm.
+`deploy-keycloak-vm.sh` - Deploys the OAuth service (Keycloak) on the VM. The Keycloak service runs outside the swarm.
 
 `bootstrap-keycloak.sh` - Imports the auth realm and configures Keycloak.
 
@@ -177,13 +177,13 @@ The following is a list of ports that must be open:
 
 3. SSH to the swarm node where badger is running
 
-4. Run `docker ps | grep badger`. Take the container ID and pass it below.
+4. Run `docker ps | grep badger`. Take the container ID and pass it to the container ID in the following step.
 
 5. Run `docker exec -it -u root <container_id>` . It will ssh to the badger container.
 
 6. Move to the directory `cd /code`
 
-7. Run `./manage.py createsuperuser` . Provide valid username, email ID and password.
+7. Run `./manage.py createsuperuser`. Provide a valid username, email ID and password.
 
 8. Run the following curl command to get the sunbird badger authorization variable.
     
