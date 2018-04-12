@@ -1,0 +1,312 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Learner Course-Content APIs
+  description: 'Content read and update api'
+host: dev.open-sunbird.org
+basePath: /v1/user/content
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /state:
+    post:
+      description: 'this this provide user content consumption state based on provided inputs. in request body user can pass list of course id the collect all content for that course or courseid and list of content id associated with that course.'
+      summary: get content state
+      operationId: StatePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+             - $ref: '#/definitions/GetContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: 'Ok, list of contents'
+          schema:
+            $ref: '#/definitions/GetContentResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentErrorResponse'
+  /update:
+    patch:
+      description: 'this api is used to update the content state inside sunbird. when ever user read any contnet of a course they need to call this api to update the details inside sunbird'
+      summary: update content state
+      operationId: UpdatePatch
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: ''
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/UpdateContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: 'Ok, list of contents'
+          schema:
+            $ref: '#/definitions/UpdateContentResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentErrorResponse'
+     
+definitions:
+  GetContentStaterequest:
+    title: get content stateRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+      - request
+  Request:
+    title: Request
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: 123
+        type: string
+      courseIds:
+        description: ''
+        example:
+          - some course id
+        type: array
+        items:
+          type: string
+      contentIds:
+        description: ''
+        type: array
+        items:
+          type: string
+    required:
+      - userId
+      - courseIds
+      - contentIds
+  UpdateContentStaterequest:
+    title: update content stateRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request3'
+    required:
+      - request
+  Request3:
+    title: Request3
+
+    type: object
+    properties:
+      userId:
+        description: ''
+        example: userId
+        type: string
+      contents:
+        description: ''
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+    required:
+      - userId
+      - contents
+  Content:
+    title: Content
+    type: object
+    properties:
+      contentId:
+        description: ''
+        example: contentId
+        type: string
+      batchId:
+        description: ''
+        example: 115
+        type: string
+      status:
+        description: ''
+        example: 2
+        type: integer
+        format: int32
+      lastAccessTime:
+        description: ''
+        example: '2017-05-15 10:58:07:509+0530'
+        type: string
+      courseId:
+        description: ''
+        example: courseId
+        type: string
+      result:
+        description: ''
+        example: pass
+        type: string
+      score:
+        description: ''
+        example: 10
+        type: string
+      grade:
+        description: ''
+        example: B
+        type: string
+    required:
+      - contentId
+      - batchId
+      - status
+      - courseId
+
+  GetContentResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithEmptyBody'
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+  ResultWithEmptyBody:
+    title: Result Containing empty body
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ResultStatus'
+  
+  ResultStatus:
+    description: node id description
+    type: object
+    properties:
+      contentList:
+       type: array
+       items: 
+        type: object
+        properties: 
+         contentId: 
+          type: string
+          description: 'Content id'
+         lastAccessTime: 
+          type: string
+          description: 'User last content access time'
+         batchId: 
+          type: string
+          description: 'Batch id to which content belongs'
+         result: 
+          type: string
+          description: 'Result of user for the content'
+         viewCount: 
+          type: string
+          description: 'Total number of views of the content by user'
+         score: 
+          type: string
+          description: 'User result score for content'
+         grade: 
+          type: string
+          description: 'Result grade'
+         progress: 
+          type: string
+          description: 'Completeness of content'
+         contentVersion: 
+          type: string
+          description: 'Version of content'
+         courseId: 
+          type: string
+          description: 'Course id to which content belongs'
+         lastCompletedTime: 
+          type: string
+          description: 'Last completed time of content by user'
+         status: 
+          type: string
+          description: 'Compeleteness status'
+         completedCount: 
+          type: string
+          description: 'How many times user completed content'
+         id: 
+          type: string
+          description: 'id of content'
+  UpdateContentResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithEmptyBody1'
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+  ResultWithEmptyBody1:
+    title: Result Containing empty body
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ResultStatus1'
+  ResultStatus1:
+    description: node id description
+    type: object
+    properties:
+      contentId:
+        description: 'Response will contain the content ids along with status like SUCCESS or FAILURE in case content updation success or fail respectively .'
+        type: string
+  ContentErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+      - $ref: '#/definitions/EmptyResult'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
