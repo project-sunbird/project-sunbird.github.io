@@ -426,11 +426,8 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>To add question set, click the <strong>Add Question Set</strong> icon on the toolbar. The question set browser page is displayed</td>
-    <td><img src=.png></td>
-  </tr>
-  <tr>
-    <td>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <strong>Add Question Set</strong> icon on the toolbar
+    <td>To add question set, click the <strong>Add Question Set</strong> icon on the toolbar. The question set browser page is displayed.
+<br>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <strong>Add Question Set</strong> icon on the toolbar
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/addquestion.png"></td>
   </tr>
@@ -445,15 +442,15 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>  
   <tr>
     <td>1. Type keywords on the Search Bar to search the repository for questions. The search results are displayed in the bottom left pane
-<br>2. Select Advanced Filters for better search reusult 
+<br>2. Select Advanced Filters for better search result 
       <br>a) <b>Language</b>
 <br>b) <b>Difficulty </b>
 <br>c) <b>Question Type </b>
 <br>d) <b>Grade </b>
 <br>e) <b>Concepts </b>
-<br>3. Use the <b>My Questions</b> slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
-<br>4. The search results are displaed in the left pane 
-<br>5. The selected question can be previewed in the right pane 
+<br>3. Use the <b>My Questions</b> slider to search for questions that you have uploaded. To search for questions available on the portal, disable this option
+<br>4. The search result is displayed on the left pane 
+<br>5. The selected question can be previewed on the right pane 
 <br>6. Select questions from the results displayed by marking the checkbox 
 <br>7. Click <b>Create Question</b> to create your own question. Click <b>Create Question</b> to know more.
 <br>8. Click Next
