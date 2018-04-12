@@ -446,12 +446,12 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   <tr>
     <td>1. Type keywords on the Search Bar to search the repository for questions. The search results are displayed in the bottom left pane
 <br>2. Select Advanced Filters for better search reusult 
-<br>a) <b>Language 
-<br>b) <b>Difficulty 
-<br>c) <b>Question Type 
-<br>d) <b>Grade 
-<br>e) <b>Concepts 
-<br>3. Use the My Questions slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
+      <br>a) <b>Language</b>
+<br>b) <b>Difficulty </b>
+<br>c) <b>Question Type </b>
+<br>d) <b>Grade </b>
+<br>e) <b>Concepts </b>
+<br>3. Use the <b>My Questions</b> slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
 <br>4. The search results are displayed in the bottom left pane 
 <br>5. The selected question can be previewed in the right pane 
 <br>6. Select questions from the results displayed by marking the checkbox 
@@ -462,21 +462,21 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
 </tr>
 </table>
   
- **Creating Questions**
+### **Creating Questions**
    <table>
  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>To create a question set
-  <td>Select the typeof question you want to create from the following options:
+  <td>Select the type of question you want to create from the following options:
 <br>1. Multiple choice question
 <br>2. Fill in the blanks
 <br>3. Match the following </td> 
     <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
   </tr> 
   
-  ***Creating Multiple Choice Questions Set**
+### **Customizing Questions Set**
   
  <table>
  <tr>
@@ -484,17 +484,39 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
-    <td>Multiple Choice Questions
-<br>1. Enter the title of the question set in <br>Question Set Title</b>
-<br>2. The maximum score for the question is displayed in <b>Max Score</b>
-<br>3. Select the question amongst the selected questions to be displayed in the right pane
-<br>4. Select <b>Show Immediate Feedback</b> to display the result of the attempted questions immediately
-<br>5. You can choose to shuffle the questions in the set using <b>Shuffle Question</b> 
+ <td>
+<br>1. Enter <b>Question Set Title</b> for the questionaire 
+<br>2. The <b>Max Score</b> displays the maximum score for the question 
+<br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
+<br>4. Select <b>Show Immediate Feedback</b> to determine when the feedback for the answers should be displayed
+<br>5. Select <b>Shuffle Question</b> to enable shuffling of questions from the set
 <br>6. The list of selected questions appears in the left pane
 <br>7. Enter the score for each question using <b>Configure Score</b> 
   <br>8. Click <b>Add More Questions</b> to increase the questions in the question set
-  <br>9. Click <b>Add</b> to append the questions in Question Set. The Question Set is added on the slide. 
-1. Enter the <strong>Question Set Title</strong> and <strong>Total Marks</strong> for the questionnaire <br>2. Select the number of questions that should be displayed in each screen from the <strong>Display</strong> drop-down menu <br>3. Use the <strong>Show Immediate Feedback</strong> slider to determine when the feedback for the answers should be displayed <br>4. Use the <strong>Shuffle Questions</strong> slider to enable shuffling of questions from the set <br>5. Click <strong>Add Question Set</strong> to add the selected questions
+  <br>9. Click <b>Add</b> to append the selected questions in Question Set. The Question Set is added on the slide.   
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
+ </tr>
+ </table>
+
+ ### **Creating Multiple Choice Questions Set**
+  
+ <table>
+ <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>  
+ <tr>
+ <td>Multiple Choice Questions
+<br>1. Enter <b>Question Set Title</b> for the questionaire 
+<br>2. The <b>Max Score</b> displays the maximum score for the question 
+<br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
+<br>4. Select <b>Show Immediate Feedback</b> to determine when the feedback for the answers should be displayed
+<br>5. Select <b>Shuffle Question</b> to enable shuffling of questions from the set
+<br>6. The list of selected questions appears in the left pane
+<br>7. Enter the score for each question using <b>Configure Score</b> 
+  <br>8. Click <b>Add More Questions</b> to increase the questions in the question set
+  <br>9. Click <b>Add</b> to append the selected questions in Question Set. The Question Set is added on the slide.   
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
  </tr>
