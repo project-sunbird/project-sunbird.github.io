@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs
-title: Upgrading
-page_title: Upgrading
+title: Upgrading Sunbird Services and Database Servers
+page_title: Upgrading Sunbird Services and Database Servers
 description: Upgradation of services, dataset etc in Sunbird
 published: true
 allowSearch: true
@@ -10,26 +10,26 @@ allowSearch: true
 ## Overview
 Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.  
 
-## Upgrading Sunbird
+## Upgrading Sunbird Services
 
-1. Pull the latest code of `project-sunbird/sunbird-devops`from the master branch 
+1.Pull the latest code of `project-sunbird/sunbird-devops`from the master branch 
 
-2. Take a backup of all the databases. Follow steps here provided in the following section to take a backup. 
+2.Take a backup of all the databases. Follow steps here provided in the following section to take a backup. 
 
-3. Run the script `./sunbird_upgrade.sh`  in `sunbird-devops/deploy`
+3.Run the script `./sunbird_upgrade.sh`  in `sunbird-devops/deploy`
 
 **Note:** All the core services latest images versions are already updated in the master branch . To get the hotfix of any Sunbird with a new image, go to `sunbird-devops/deploy/deploy-core.sh`  and update it 
 
-4. Re-run the `sunbird-devops/deploy/deploy-core.sh`  
+4.Re-run the `sunbird-devops/deploy/deploy-core.sh`  
 
 
 ## Taking a Back Up of Database Servers
 
-1. ssh to database server on which you want to take backup.
+1.ssh to database server on which you want to take backup.
 
-2. git clone https://github.com/project-sunbird/sunbird-devops
+2.git clone https://github.com/project-sunbird/sunbird-devops
 
-3. cd sunbird-devops/deploy/
+3.cd sunbird-devops/deploy/
 
 ### Cassandra
 
