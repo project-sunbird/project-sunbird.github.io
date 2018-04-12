@@ -452,7 +452,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
 <br>d) <b>Grade </b>
 <br>e) <b>Concepts </b>
 <br>3. Use the <b>My Questions</b> slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
-<br>4. The search results are displayed in the bottom left pane 
+<br>4. The search results are displaed in the left pane 
 <br>5. The selected question can be previewed in the right pane 
 <br>6. Select questions from the results displayed by marking the checkbox 
 <br>7. Click <b>Create Question</b> to create your own question. Click <b>Create Question</b> to know more.
@@ -462,21 +462,44 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
 </tr>
 </table>
   
-### **Creating Questions**
+### Creating Questions
    <table>
  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>To create a question set
-  <td>Select the type of question you want to create from the following options:
-<br>1. Multiple choice question
-<br>2. Fill in the blanks
-<br>3. Match the following </td> 
+  <td><br>1.Select the type of question you want to create.
+    <br>2. Click <b>Select</b> 
+    </td>
+    <td>image</td>
+  </tr>
+    <tr>
+      <td>
+        <br>3. Enter the questions in <b>Question Configuration</b> page. 
+    <br>&emsp;a. If you have selected Multiple choice question, refer <b>Creating Multiple Choice Question Set</b>
+    <br>&emsp;b. If you have selected Fill in the blanks questions, refer <b>Creating Fill in the blanks Question Set</b> 
+    <br>&emsp;c. If you have selected Match the following questions, refer <b>Creating Match the Following Question Set</b> 
+    </td>
+    <td>image</td>
+  </tr>
+   <tr>
+      <td>
+    <br>4. Click <b>Back</b> to go to the previous screen
+    <br>5. Click <b>Next</b>
+    <br>6. Enter the <b>Question Details</b>
+    <br>&emsp;a. The <b>Title</b> displays the title
+    <br>&emsp;b. Select <b>Language</b>
+    <br>&emsp;c. Select <b>Level</b>
+    <br>&emsp;d. Select <b>Grade Level</b>
+    <br>&emsp;e. Select <b>Max Score</b>
+    <br>&emsp;f. Select <b>Concept</b>
+    <br>&emsp;g. Enter <b>Description</b>
+    </td> 
     <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
   </tr> 
   
-### **Customizing Questions Set**
+### **Creating Multiple Choice Question Set**
   
  <table>
  <tr>
@@ -484,7 +507,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
- <td>
+ <td>Multiple Choice Questions
 <br>1. Enter <b>Question Set Title</b> for the questionaire 
 <br>2. The <b>Max Score</b> displays the maximum score for the question 
 <br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
@@ -498,8 +521,8 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
  </tr>
  </table>
-
- ### **Creating Multiple Choice Questions Set**
+ 
+**Creating Fill in the Blanks Question Set **
   
  <table>
  <tr>
@@ -507,7 +530,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
- <td>Multiple Choice Questions
+ <td>
 <br>1. Enter <b>Question Set Title</b> for the questionaire 
 <br>2. The <b>Max Score</b> displays the maximum score for the question 
 <br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
