@@ -28,7 +28,7 @@ The organizations take a policy decision to allow or disallow registering single
 
 3.For the term `groups` in the above example, use the list of whitelisted groups from the following table to decide API consumer access:
 
-| Mobile Administrator Group | Mobile App_Group | Mobile Device Group   | Integration Partner Groups | Implementation User Groups |
+| Mobile Administrator Group | Mobile App Group | Mobile Device Group   | Integration Partner Groups | Implementation User Groups |
 |----------------------------|------------------|-----------------------|----------------------------|----------------------------|
 | Mobile Administrator       | Mobile App       | Content User          | Echo User                  | Content Administrator      |
 |                            |                  | Course User           | Org Administrator          | Content User               |
