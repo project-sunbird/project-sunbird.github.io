@@ -1,51 +1,66 @@
 ---
 type: landing
 directory: developer-docs
-title: Onboarding
-page_title: Onboarding
-description: Onboarding
-keywords: Onboarding process and features on Sunbird
+title: Onboarding Users
+page_title: Onboarding Users
+description: Onboarding Users
+keywords: Onboarding process, Onboarding users, Onboarding
 published: true
 allowSearch: true
 ---
 Sunbird has the provision to register and provide user credentials (user ID and password) to organizations, such as states, NGO, corporates and other institutes or organizations.
 
-The states and organizations make a policy decision to allow / disallow registering single individual users. Contact your organization administrator for details.
+The organizations take a policy decision to allow or disallow registering single individual users. Contact your organization administrator for details.
 
 
-## Steps for onboarding new consumer
+## Onboarding New User
 
-* Open `sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml`
+1. Open `sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml`
 
-* Add a new object in kong_consumers variable. 
+2. Add a new object in kong_consumers variable. 
 
 ```
 Example
--  username: api-management-test #change this according to consumer
-   groups: "{{ kong_all_consumer_groups }}"  # or array of groups needed for consumer
+-  username: api-management-test #change this according to user
+   groups: "{{ kong_all_consumer_groups }}"  # or array of groups needed for user
    state: present
 ```
 
-* Term `groups` in above example, you can find the list of whitelist group you want to give the access to consumer. 
+3. For the term `groups` in the above example, use the list of whitelisted groups from the following table to decide user access:
 
-* Refer the document to know more about groups it’s access: https://docs.google.com/spreadsheets/d/15fQRG1D8D214XhbLh-RKv078SJ2Au1_nXDMbsbUnpLc/edit#gid=1610309049
-  	
-* Run `sudo ./sunbird-install.sh -s apis` Note: 
+| Mobile Administrator Group | Mobile App_Group | Mobile Device Group   | Integration Partner Groups | Implementation User Groups |
+|----------------------------|------------------|-----------------------|----------------------------|----------------------------|
+| Mobile Administrator       | Mobile App       | Content User          | Echo User                  | Content Administrator      |
+|                            |                  | Course User           | Org Administrator          | Content User               |
+|                            |                  | App Administrator     | Org User                   | User Adminidtrator         |
+|                            |                  | Config User           | User Administrator         | Public User                |
+|                            |                  | Public User           | Public User                | Org Administrator          |
+|                            |                  | User Administrator    | Data Admin                 | Org User                   |
+|                            |                  | Content Administrator | Domain User                |                            |
+|                            |                  |                       | DIAL Code Administrator    |                            |
+|                            |                  |                       | App Administrator          |                            |
+
+
+4. Run `sudo ./sunbird-install.sh -s apis`  
   
-**NOTE:** We can find the jwt_token.txt in the location home directory of admintration server. This file will contain all jwt token for all the services. 
+**Note:** The **jwt_token.txt** file is in the location home directory of the administration server. This file contains the jwt tokens for all the services. 
 
 
-## JWT Token Recreation: 
+## Recreating JWT Tokens 
 
-If you lost the JWT token then you can get it from jwt_token.txt file. This file you can find on home directory of admintration server. 
+If you forget or lose the JWT token, you can retrieve it from the **jwt_token.txt** file that is in the home directory of the adminstration server. 
 
 
-## Steps for removing consumer
-Open sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml
-Search for consumer to remove in kong_consumers array
-Change the state to absent. Example
+## Removing User from Sunbird
+
+1. Open sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml
+2. Search for the user in the kong_consumers array
+3. Change the state to absent. 
+```
+Example
  - username: <consumer-to-be-removed>
     	   state: absent
-Run `sudo ./sunbird-install.sh -s apis` 
+ ```
+4. Run `sudo ./sunbird-install.sh -s apis` 
 
 
