@@ -22,7 +22,8 @@ produces:
 paths:
   /read:
     post:
-      description: This API is used to read the form data and other fields 
+      description:>- This API is used to read the form data and other fields 
+      
         - The **_/read_** endpoint executes the "FormRead" request based on parameters provided as metadata in the request body
         - Required fields cannot be left null or empty
       summary: Form Read
@@ -70,8 +71,9 @@ paths:
       - auth: []
   /create:
     post:
-      description: This API is used to read form data
-        - The **_/create** endpoint executes the "Create Form" request based on parameters provided as metadata in the request body
+      description:>- This API is used to create a form
+       
+        - The **_/create_** endpoint executes the "Create Form" request based on parameters provided as metadata in the request body
         - Required fields cannot be left null or empty
       summary: Form Create
       operationId: FormCreate
@@ -118,8 +120,9 @@ paths:
       - auth: []
   /update:
     post:
-      description: This API is used to update form data
-        - The **_/update** endpoint executes the "Update Form" request based on parameters provided as metadata in the request body
+      description: >- This API is used to update form data
+        
+        - The **_/update_** endpoint executes the "Update Form" request based on parameters provided as metadata in the request body
         - Required fields cannot be left null or empty
       summary: Form Update
       operationId: FormUpdate
