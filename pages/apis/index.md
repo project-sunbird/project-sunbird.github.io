@@ -34,7 +34,7 @@ They are categorized by resource type. Each resource type has one or more data r
             <li><a href="apis/framework/" target="_blank">Framework </a></li>
             <li><a href="apis/orgapi/" target="_blank">Organisation Management </a></li>
             <li><a href="apis/userapi/" target="_blank">User </a></li>
-            <li><a href="apis/badgesapi/" target="_blank">User Badges </a></li>
+            <!--<li><a href="apis/badgesapi/" target="_blank">User Badges </a></li>-->
             <li><a href="apis/noteapi/" target="_blank">User Notes </a></li>
             <li><a href="apis/badgingframeworkapi/" target="_blank">Badging Framework </a></li>
         </ul>
