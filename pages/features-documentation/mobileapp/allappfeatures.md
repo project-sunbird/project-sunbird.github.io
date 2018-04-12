@@ -52,7 +52,7 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
   </table>
 
 ## Signing In 
-The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate  content for different user types. For example, annonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library.   
+The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate  content for different user types. For example, anonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library.   
 
 <table>
   <tr>
