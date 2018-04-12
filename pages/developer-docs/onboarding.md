@@ -53,14 +53,14 @@ If you forget or lose the JWT token, you can retrieve it from the **jwt_token.tx
 
 ### Removing API Consumer from Sunbird
 
-1. Open sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml
-2. Search for the user in the kong_consumers array
-3. Change the state to absent. 
-```
-Example
+1.Open sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml
+2.Search for the user in the kong_consumers array
+3.Change the state to absent. 
+
+**Example**
  - username: <consumer-to-be-removed>
     	   state: absent
- ```
-4. Run `sudo ./sunbird-install.sh -s apis` 
+
+4.Run `sudo ./sunbird-install.sh -s apis` 
 
 
