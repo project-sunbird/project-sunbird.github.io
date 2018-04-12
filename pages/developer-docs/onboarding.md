@@ -1,19 +1,21 @@
 ---
 type: landing
 directory: developer-docs
-title: Onboarding Users
-page_title: Onboarding Users
-description: Onboarding Users
-keywords: Onboarding process, Onboarding users, Onboarding
+title: Onboarding API Consumers
+page_title: Onboarding API Consumers
+description: Onboarding API Consumers
+keywords: Onboarding process, Onboarding API Consumers, Onboarding
 published: true
 allowSearch: true
 ---
+## Overview
+
 Sunbird has the provision to register and provide user credentials (user ID and password) to organizations, such as states, NGO, corporates and other institutes or organizations.
 
 The organizations take a policy decision to allow or disallow registering single individual users. Contact your organization administrator for details.
 
 
-## Onboarding New API Consumer
+### Onboarding New API Consumer
 
 1. Open `sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml`
 
@@ -46,12 +48,12 @@ Example
 **Note:** The **jwt_token.txt** file is in the location home directory of the administration server. This file contains the jwt tokens for all the services. 
 
 
-## Recreating JWT Tokens 
+### Recreating JWT Tokens 
 
 If you forget or lose the JWT token, you can retrieve it from the **jwt_token.txt** file that is in the home directory of the adminstration server. 
 
 
-## Removing API Consumer from Sunbird
+### Removing API Consumer from Sunbird
 
 1. Open sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml
 2. Search for the user in the kong_consumers array
