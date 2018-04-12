@@ -13,7 +13,7 @@ Sunbird has the provision to register and provide user credentials (user ID and 
 The organizations take a policy decision to allow or disallow registering single individual users. Contact your organization administrator for details.
 
 
-## Onboarding New User
+## Onboarding New API Consumer
 
 1. Open `sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml`
 
@@ -21,12 +21,12 @@ The organizations take a policy decision to allow or disallow registering single
 
 ```
 Example
--  username: api-management-test #change this according to user
-   groups: "{{ kong_all_consumer_groups }}"  # or array of groups needed for user
+-  username: api-management-test #change this according to API consumer
+   groups: "{{ kong_all_consumer_groups }}"  # or array of groups needed for API consumer
    state: present
 ```
 
-3. For the term `groups` in the above example, use the list of whitelisted groups from the following table to decide user access:
+3. For the term `groups` in the above example, use the list of whitelisted groups from the following table to decide API consumer access:
 
 | Mobile Administrator Group | Mobile App_Group | Mobile Device Group   | Integration Partner Groups | Implementation User Groups |
 |----------------------------|------------------|-----------------------|----------------------------|----------------------------|
@@ -51,7 +51,7 @@ Example
 If you forget or lose the JWT token, you can retrieve it from the **jwt_token.txt** file that is in the home directory of the adminstration server. 
 
 
-## Removing User from Sunbird
+## Removing API Consumer from Sunbird
 
 1. Open sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml
 2. Search for the user in the kong_consumers array
