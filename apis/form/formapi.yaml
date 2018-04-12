@@ -22,7 +22,7 @@ produces:
 paths:
   /read:
     post:
-      description: This API is used to read form data
+      description: This API is used to read the form data and other fields 
         - The **_/read_** endpoint executes the "FormRead" request based on parameters provided as metadata in the request body
         - Required fields cannot be left null or empty
       summary: Form Read
@@ -71,7 +71,7 @@ paths:
   /create:
     post:
       description: This API is used to read form data
-        - The **_/create** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
+        - The **_/create** endpoint executes the "Create Form" request based on parameters provided as metadata in the request body
         - Required fields cannot be left null or empty
       summary: Form Create
       operationId: FormCreate
@@ -119,7 +119,7 @@ paths:
   /update:
     post:
       description: This API is used to update form data
-        - The **_/update** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
+        - The **_/update** endpoint executes the "Update Form" request based on parameters provided as metadata in the request body
         - Required fields cannot be left null or empty
       summary: Form Update
       operationId: FormUpdate
@@ -151,11 +151,11 @@ paths:
               - Application/x-www-form-urlencoded
       responses:
         '200':
-          description: 'SUCCESS. The "Update Form data" operation was successful!'
+          description: 'SUCCESS. The "Update Form" operation was successful!'
           schema:
               $ref: '#/definitions/createResponse'
         '400':
-          description: 'BAD REQUEST. "Update Form data" operation failed. You may have missed input for a mandatory parameter.'
+          description: 'BAD REQUEST. "Update Form" operation failed. You may have missed input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
         '500':
