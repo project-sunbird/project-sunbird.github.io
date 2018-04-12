@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.34.b/";
+			baseURL.href="/releases/release.1.34.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-04-11 10:41:44 +0530">
+<meta name="last-modified" content="2018-04-12 10:55:20 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.34.b" />
-<meta name="buildNo" content="2648" />
+<meta name="buildVersion" content="release.1.34.c" />
+<meta name="buildNo" content="2740" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,11 +46,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?11042018"  />
-<link rel="stylesheet" href="css/style.css?11042018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?11042018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?11042018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?11042018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?12042018"  />
+<link rel="stylesheet" href="css/style.css?12042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?12042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?12042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?12042018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -478,28 +478,10 @@
                   <a href="#adding-metadata"><span class="tocnumber">2.1 .</span> <span class="toctext">Adding Metadata</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-4">
-                  <a href="#adding-image-to-lesson-plan-metadata"><span class="tocnumber">2.2 .</span> <span class="toctext">Adding Image to Lesson Plan Metadata</span></a>
+                  <a href="#adding-image-to-lesson-plan"><span class="tocnumber">2.2 .</span> <span class="toctext">Adding Image to Lesson Plan</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-5">
                   <a href="#adding-content-or-resources"><span class="tocnumber">2.3 .</span> <span class="toctext">Adding Content or Resources</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#preview-and-upload-the-resource"><span class="tocnumber">2.4 .</span> <span class="toctext">Preview and Upload the Resource</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-7">
-                  <a href="#exploring-whats-new"><span class="tocnumber">2.5 .</span> <span class="toctext">Exploring What’s New</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-8">
-                  <a href="#using-table-of-contents-option"><span class="tocnumber">2.6 .</span> <span class="toctext">Using Table of Contents Option</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-9">
-                  <a href="#deleting-content"><span class="tocnumber">2.7 .</span> <span class="toctext">Deleting Content</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-10">
-                  <a href="#reordering-content"><span class="tocnumber">2.8 .</span> <span class="toctext">Reordering Content</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-11">
-                  <a href="#sending-lesson-plan-for-review"><span class="tocnumber">2.9 .</span> <span class="toctext">Sending Lesson Plan for Review</span></a>
                 </li>
               </ul>
             </li>
@@ -520,8 +502,7 @@
   <tr>
     <td>1. You are logged in 
      <br />2. You are currently on <b>My Workspace</b> page 
-     <br />3. You want to create a lesson plan 
-     <br />4. You have clicked the <b>Lesson Plan</b> tile
+     <br />3. You have clicked the <b>Lesson Plan</b> tile
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/prerequisite.png" /></td>
    </tr>
@@ -535,7 +516,7 @@
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-  <td>1. Enter a <b>Name</b> for the lesson plan <br />2. Select other metadata from their respective dropdowns: <br />a) Board <br />b) Grade <br />c) Subject <br />d) Medium <br />3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
+  <td>1. Enter a <b>Name</b> for the lesson plan <br />2. Select other metadata from their respective dropdowns: <br /> a) <b>Board</b> <br /> b) <b>Grade</b> <br /> c) <b>Subject</b> <br /> d) <b>Medium</b> <br />3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
   </td>
   <td><img src="pages/features-documentation/images/lessonplan/create_lesson_plan.png" /></td>
  </tr>
@@ -555,18 +536,21 @@
       <br />3. Enter Keywords 
       <br />4. Select the following from their respective drop-down lists: 
       <br /> a) <b>Curriculum</b> 
-      <br /> b) <b>Subject</b> 
-      <br /> c) <b>Attributions</b> 
+      <br /> b) <b>Class</b> 
+      <br /> c) <b>Subject</b> 
       <br /> d) <b>Medium</b> 
-      <br /> e) <b>Audience</b> 
-      <br /> f) <b>Class</b> 
-      <br />5. Click <b>Save</b> to collectively save all updates.      
+      <br /> e) <b>Notes to Teacher</b> 
+      <br /> f) <b>Learning Objective</b> 
+      <br /> g) <b>Concepts</b>
+      <br /> h) <b>Duration</b>
+      <br />5. Click <b>Save</b> to collectively save all updates.  
+      <br />You can edit or update the title of the units in the collection from the navigation hierarchy
     </td>
-    <td><img src="pages/features-documentation/images/lessonplan/addmetadata.png" /></td>
+    <td><img src="pages/features-documentation/images/lessonplan/edit_details.png" /></td>
  </tr>
  </table>
 
-<h3 id="adding-image-to-lesson-plan-metadata">Adding Image to Lesson Plan Metadata</h3>
+<h3 id="adding-image-to-lesson-plan">Adding Image to Lesson Plan</h3>
 
 <table>
   <tr>
@@ -580,25 +564,30 @@
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png" /></td>
   </tr>
   <tr>
-   <td>1.Click <b>My images</b> to view a list of all image files that you have previously, uploaded 
-     <br />2. Click <b>All image</b> to view a list of image files from the repository
-     <br /><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from any list.
-    <br />3. You can add images by uploading an image from your local machine using <b>Upload and use</b>. A new Upload and use window appears. </td>
+   <td>1.Click <b>My images</b> to view a list of all image files that you have previously uploaded 
+<br />2. Click <b>All image</b> to view a list of image files from the repository
+<br /><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from the list.
+     <br />3. Click <b>Select</b>
+    <br />4. Click <b>Upload and Use</b> to upload an image from your local machine. A new Upload and use window appears.</td>
    <td><img src="pages/features-documentation/images/course_selectimage.png" /></td>
   </tr>
-   <tr> <td>To upload an image:
-     <br />a. Select a file using <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen 
+   <tr> 
+     <td>To upload an image:
+     <br />1. Click <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window and drag and drop the required file on the screen.
      <br /><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png
-     <br />b. Under <b>Copyright and License</b>, select if you want to: 
-     <br /># Make it available to everyone 
-     <br /># Not share with anyone
-    <br />c. Click Upload and use images 
-   <br />4. Click <b>Select</b> to confirm the image
-     <br /> 5. Click <b>Cancel</b> to discard the changes
+     <br />2. Under <b>Copyright and License</b>, select if you want to: 
+     <br /> a. Make it available to everyone 
+     <br /> b. Not share with anyone
+     <br />3. Enter image details in the <b>Asset Caption</b>
+     <br />4. Enter <b>Tags</b> associated with the image
+     <br />5. Select the language
+     <br />6. Enter the name of creator
+     <br />7. Click <b>Upload and use image</b> to confirm the image
+     <br />8. Click <b>Cancel</b> to discard the changes
      </td>
    <td><img src="pages/features-documentation/images/course_uploadimage.png" /></td>
-  </tr>
-</table>
+  </tr> 
+ </table>
 
 <h3 id="adding-content-or-resources">Adding Content or Resources</h3>
 <table>
@@ -609,53 +598,63 @@
   <tr>
     <td>To add content to the lesson plan
       <br />1. Click <b>New Child</b> to start adding a node to the newly created lesson
-      <br />2. You can add another node at same level using <b>New Sibling</b>. Refer <a href="adding-sibling-node">Adding Sibling Node</a> to know more about adding New Sibling node.
-     <br />3. You can add a node to the next level using <b>New Child</b>. Refer <a href="adding-child-node">"Adding Child Node</a> to know more about adding New Child node.  
-      <br /> The <b>LessonPlan Unit</b> page appears      
-    <br />3.  Click <b>Add Resource</b> from:
-    <br />- The right bottom corner of the page 
-    <br />- Right click on the node name
-    <br />- Use keyboard shortcut <b>Ctrl+Alt+A</b>
+      <br />2. You can add another node at same level using <b>New Sibling</b> add a node to the next level using <b>New Child</b>. Refer <a href="adding-sibling-node">Adding Sibling Node</a> and <a href="adding-child-node">"Adding Child Node</a> to know more. The <b>LessonPlan Unit</b> page appears      
+    <br />4. Click <b>Add Resource</b> from:
+    <br /> - The right bottom corner of the page 
+    <br /> - Right click on the node name
+    <br /> - Use keyboard shortcut <b>Ctrl+Alt+A</b>
     <br />The Find &amp; Select Activities page is displayed.</td>
-  <td><img src="pages/features-documentation/images/lessonplan/AddResource1.png" /></td>
+  <td><img src="pages/features-documentation/images/lessonplan/add_resource1.png" /></td>
   </tr>
  <tr>
-   <td> <b>To Add Resource</b>
+   <td>To add resource
   <br />1. Search the resource using search bar
   <br />2. Select the relevant resource cards from the available lists
   <br />3. Hover over the card to view the basic details about that resource 
   <br />4. Click <b>View Details</b> to read illustrated information about the card in a new window. 
-      <br />a. Select <b>Add</b> to imbibe the resoure
-      <br />b. Select <b>Remove</b> to remove the resource
+      <br /> a. Select <b>Add</b> to imbibe the resoure
+      <br /> b. Select <b>Remove</b> to remove the resource
   <br />5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource section of the <b>LessonPlan</b> page. 
-  <br />6. Click <a href="pages/features-documentation/lessonplan/# preview-and-upload-resource">Preview and Upload the Resources</a> to know more.
-  <br />7. Click <b>Save</b> to save the changes. 
-  <br />8. Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan">Send for Review</a> to know more.</td>
-   <td>
+    </td><td>
    <img src="pages/features-documentation/images/lessonplan/add_resource2.png" />
  </td>     
-</tr>
-</table>
+&lt;/tr&gt;
+&lt;/table&gt;
 
-<h3 id="preview-and-upload-the-resource">Preview and Upload the Resource</h3>
+### Preview and Upload the Resource
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr> 
-    <td>The Preview Resource page displays the Name, Description, Keywords related to the resource. 
-     <br />1. Click the play icon to load the added resource in the lesson plan   
-     <br />2. You can delete the resource using delete icon   
-     <br />3. Click the link in the breadcrumb to visit the corresponding lesson plan
-    </td>
+    <td>
+      The resource is added in the <b>Resource</b> section of the page that displays Name, Description, Keywords related to the resource. 
+     <br />1. Click Preview image to preview the resource. The content preview page appears  
+     <br />2. You can delete the resource using delete icon.   
+     <br />3. Click Save to save the changes
+     <br />4. Click send for review icon. click Send for Review to know more
+     <br />Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan-for-review">Send for Review</a> to know more.</td>
+    &lt;/td&gt;
 <td><img src="pages/features-documentation/images/lessonplan/preview.png" /></td>     
 </tr>
+  <tr> 
+    <td>
+      The Resource page displays the Name, Description, Keywords related to the resource. 
+      <br />1. Click the play icon to load the added resource 
+      <br />2. You can delete the resource using <b>Remove</b> icon 
+      <br />3. Click the link in the breadcrumb to visit the corresponding lesson plan
+      <br />3. Click <b>Save</b> to save the changes 
+ </td>
+<td><img src="pages/features-documentation/images/lessonplan/preview_page.png" /></td>     
+</tr>
+
 </table>
 
-<h3 id="exploring-whats-new">Exploring What’s New</h3>
 
-<p><strong>What’s New</strong> feature informs you about all the latest and significant changes build and made available for your better user experience.</p>
+### Exploring What's New
+
+**What's New** feature informs you about all the latest and significant changes build and made available for your better user experience.
 
 <table>
   <tr>
@@ -672,19 +671,15 @@
   </tr>
   </table>
 
-<h3 id="using-table-of-contents-option">Using Table of Contents Option</h3>
+### Using Table of Contents Option
 
-<p>The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either:</p>
+The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
 
-<ul>
-  <li>The burger menu associated with a tree node</li>
-  <li>Right-click options associated with a tree node, <strong>OR</strong></li>
-  <li>Keyboard shortcuts</li>
-</ul>
+ - The burger menu associated with a tree node 
+ - Right-click options associated with a tree node, **OR**
+ - Keyboard shortcuts
 
-<p>
-  <strong>Adding Child Node</strong>
-</p>
+**Adding Child Node**
 
 <table>
   <tr>
@@ -697,10 +692,8 @@
     <td><img src="pages/features-documentation/images/lessonplan/childnode.png" /></td>
   </tr>
 </table>
-
-<p>
-  <strong>Adding Sibling Node</strong>
-</p>
+      
+**Adding Sibling Node**
 
 <table>
   <tr>
@@ -714,9 +707,7 @@
   </tr>
 </table>
 
-<p>
-  <strong>Node Metadata</strong>
-</p>
+**Node Metadata**
 
 <table>
   <tr>
@@ -729,8 +720,8 @@
     <td><img src="pages/features-documentation/images/lessonplan/nodemetadata.png" /></td>
   </tr>
 </table>
-
-<h3 id="deleting-content">Deleting Content</h3>
+        
+### Deleting Content 
 
 <table>
   <tr>
@@ -745,7 +736,7 @@
   </tr>
 </table>
 
-<h3 id="reordering-content">Reordering Content</h3>
+### Reordering Content 
 
 <table>
   <tr>
@@ -764,9 +755,9 @@
   </tr>  
 </table>
 
-<h3 id="sending-lesson-plan-for-review">Sending Lesson Plan for Review</h3>
+### Sending Lesson Plan for Review
 
-<p>Before the Lesson Plan is publihed, it must be reviewed. You can send it for reviewing and publishing.</p>
+Before the Lesson Plan is publihed, it must be reviewed. You can send it for reviewing and publishing.
 
 <table>
   <tr>
@@ -779,6 +770,7 @@
     <td><img src="pages/features-documentation/images/lessonplan/review.png" /></td>
   </tr>    
   </table>
+</tr></table>
 
           
           <hr />

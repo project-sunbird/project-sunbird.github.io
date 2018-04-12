@@ -17,7 +17,7 @@ basePath: /api/org/v1
 securityDefinitions:
   auth:
     type: apiKey
-    name: api_key
+    name: Authorization
     in: header
 schemes:
   - https
