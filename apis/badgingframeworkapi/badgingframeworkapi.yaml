@@ -5,7 +5,7 @@ info:
   description: >-
       A Badge is a virtual representation of: 
       
-      - Award, Certificate, Endorsement or Authorization. The Badging Framework API resources are used to accord badges to: 
+        - Award, Certificate, Endorsement or Authorization. The Badging Framework API resources are used to accord badges to: 
         - recognize user skills and accomplishments
         - rate or authorize content for its quality and effectiveness
 host: staging.open-sunbird.org
