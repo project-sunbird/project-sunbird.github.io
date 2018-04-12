@@ -1,7 +1,0 @@
- auth:
-   type: oauth2
-   flow: implicit
-   authorizationUrl: 'https://staging.open-sunbird.org/{}'
-   scopes: {}
-   x-skip-client-authentication: false
-   
