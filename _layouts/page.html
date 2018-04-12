@@ -87,6 +87,31 @@
 		var url = this.href.replace(baseURL.href, "");
 		this.href = '{{page.url | remove_first: "/" }}' + url;
     })
+    
+	$(".zoom").click(function(){
+		
+		if (!$(this).hasClass('enabled')){
+			$(this).addClass('enabled');
+			$(this).elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+	    }else{
+            $(this).removeClass('enabled');
+            $('.zoomContainer').hide();
+        }
+	});
   </script>
+  <style>
+  .zoom:hover{
+	cursor:url(img/zoom.png),crosshair;
+  }
+  .zoomWindowContainer:hover div{
+	cursor:url(img/scroll.png),crosshair !important;
+	height:15px;
+	width:15px;
+  }
+  </style>
   </body>
 </html>

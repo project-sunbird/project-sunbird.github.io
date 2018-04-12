@@ -1,12 +1,13 @@
 =begin
-image tag takes three properties
+image tag takes five properties
 - src
 - position [ nofloat | right | left | center ] (default: nofloat)
 - width [ full | 3-quarters | 2-thirds | half | third | quarter | actual ] (default: full)
 - alt
+- zoom ( default: no)
 
-{% image src="/img/ingredients/configuring_the_dashboard/web_url.png" half center alt="Web Url" %}
-{% image src="http://cdn.sunbird.io/components/image.png" left quarter alt="Some Image: check it out!" %}
+{% image src="/img/ingredients/configuring_the_dashboard/web_url.png" half center zoom alt="Web Url" %}
+{% image src="http://sunbird.org/components/image.png" left quarter alt="Some Image: check it out!" %}
 =end
 
 module Jekyll
@@ -28,6 +29,7 @@ module Jekyll
       super
       @position = /\s(nofloat|right|left|center)\s/.match(text).to_s.strip!
       @width = /\s(full|3-quarters|2-thirds|half|third|quarter|actual)\s/.match(text).to_s.strip!
+      @zoom = /\s(zoom)\s/.match(text).to_s.strip!
       @src = /src=['"]\S*['"]/.match(text).to_s
       @alt = /alt=['"].*['"]/.match(text).to_s
     end
@@ -45,11 +47,17 @@ module Jekyll
 
       src = replace(context, @src)
       position = @position ? @position : 'nofloat'
+      zoom = @zoom ? @zoom : ''
       image_width = @WIDTH_MAP[@width] || '100%'
-
+      
+      if zoom == 'zoom'
+		'<figure><img '+src+' '+@alt+' class="plugin '+position+' '+zoom+'" '+'width="'+image_width+'"/>
+		<figcaption><strong>Note:</strong> Click and move cursor to zoom in image. Use mouse scroll to futher zoom in and zoom out.</figcaption></figure>'
+	  else
       '<a target="_blank" '+src.gsub('src', 'href')+'>
-        <img '+src+' '+@alt+' class="plugin '+position+'" '+'width="'+image_width+'"/>
+        <img '+src+' '+@alt+' class="plugin '+position+' '+zoom+'" '+'width="'+image_width+'"/>
       </a>'
+      end
     end
   end
 end

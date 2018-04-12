@@ -8,4 +8,4 @@ keywords: 'adding, metadata, enter details'
 published: true
 allowSearch: true
 ---
-{% image src='pages/usertaskflow/images/adding%20_metadata.svg' full center alt='How do I add metadata' zoom %} 
+{% image src='pages/usertaskflow/images/adding%20_metadata.svg' full center  alt='How do I add metadata '  zoom%} 
