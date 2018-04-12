@@ -17,18 +17,16 @@ The organizations take a policy decision to allow or disallow registering single
 
 ### Onboarding New API Consumer
 
-1. Open `sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml`
+1.Open `sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml`
 
-2. Add a new object in kong_consumers variable. 
+2.Add a new object in kong_consumers variable. 
 
-```
-Example
+**Example**
 -  username: api-management-test #change this according to API consumer
    groups: "{{ kong_all_consumer_groups }}"  # or array of groups needed for API consumer
    state: present
-```
 
-3. For the term `groups` in the above example, use the list of whitelisted groups from the following table to decide API consumer access:
+3.For the term `groups` in the above example, use the list of whitelisted groups from the following table to decide API consumer access:
 
 | Mobile Administrator Group | Mobile App_Group | Mobile Device Group   | Integration Partner Groups | Implementation User Groups |
 |----------------------------|------------------|-----------------------|----------------------------|----------------------------|
