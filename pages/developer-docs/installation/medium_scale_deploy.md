@@ -9,19 +9,19 @@ allowSearch: true
 
 ## Overview
 
-Sunbird software is containerized. It uses the Docker swarm orchestration engine to run the Sunbird docker images. The Docker swarm consists of the manager and agent nodes. The containers are run on the agent nodes and the manager manages the container lifecycle.
+Sunbird software is containerized. The installation script uses the Docker swarm orchestration engine to run the Sunbird docker images. The Docker swarm consists of manager and agent nodes. The containers are run on the agent nodes and the manager nodes manage the container lifecycle.
 
-All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Proxies - are run as docker containers inside the swarm. All stateful services for the databases - Cassandra, PostgreSql and Elasticsearch, and the OAuth service on KeyCloak, are run on Virtual Machines (VMs) directly. The installation is automated using shell scripts and Ansible.
+All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Proxies - are run as docker containers inside the swarm. All stateful services consisting of Cassandra, PostgreSql, Elasticsearch and the OAuth service(Keycloak) are run on Virtual Machines (VMs) directly. The installation is automated using shell scripts and Ansible.
 
 ## Prerequisites
 
-* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#mapping-ports). 
+* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](#mapping-ports). 
 
 * Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name, and want to get an SSL certificate, use [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate that is valid for 90 days.
 
 * Sunbird requires Ekstep API keys to access the Ekstep content repository. Follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. If you are creating a test environment, get the QA API keys.
 
-* Create a common user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have sudo access on the servers.
+* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have sudo access on the servers.
 
 * The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.
 
@@ -36,9 +36,9 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
     |Keycloak<sup>1</sup> | Staging&Prod - 1|CPU: 1core & RAM: 4GB|Any |
     |log-es<sup>1</sup> |  Staging&Prod - 1|CPU: 1core & RAM: 3.5GB|1 |
 
-* Run all services on the same server with the common superscript in the Server Name (e.g. servername<sup>2</sup>), when you install Sunbird on 2 servers. The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup>. 
+* When you install Sunbird on 2 servers, all the services with the common superscript (e.g. servername<sup>2</sup>) in the Server Name are run on the same server. The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup>. 
  
-**Note:** If you setup more than one swarm agent node, you need to configure a load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm route the request to the right service.
+**Note:** If you setup more than one swarm agent node, you will need to configure a load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm route the request to the right service.
 
 ## Installation Procedure
 
@@ -50,7 +50,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 3.`cd sunbird-devops/deploy`
 
-4.Update the configuration files using `config`. The configuration parameters are explained in the following table: 
+4.Update the configuration parameters in the `config` file. The configuration parameters are explained in the following table: 
 
 | variable | description   | mandatory|                                                                             
 |:----------------------|:-----------------|:---------|
@@ -58,10 +58,10 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 | `implementation_name` | Name of your sunbird implementation.|yes|                |
 | `ssh_ansible_user`  |SSH user with sudo access for accessing all servers.                  |yes|
 | `ansible_private_key_path` | Path to the private SSH key file for the ssh_ansible_user. Ansible uses this file to SSH to the servers.        |yes|
-| `ip_only`        |  True, if you do not want to use a domain name. Leave it blank or False if you are using a domain name.             |no|
-| `cert_path`        | Path to .cert file (SSL certificate) for nginx. This variable need not be set if ip_only is True.              |no|
-|`key_path`           | Path to .key file (SSL certificate) for nginx. This variable need not be set if ip_only is True           |no|
-|`dns_name`           | Domain name for your installation. Use the IP address if ip_only is True              |yes|
+| `dns_name`           | Domain name for your installation. Use the IP address if want to access Sunbird over an IP address              |yes|
+| `proto`           | http/https. Use http if your dns_name is an IP address or if you have a domain but do not want ssl for trials.              |yes|
+| `cert_path`        | Path to .cert file (SSL certificate) for nginx. This variable need not be set if the proto is set to http.              |no|
+|`key_path`           | Path to .key file (SSL certificate) for nginx. This variable need not be set if the proto is set to http           |no|
 |`ekstep_base_url`           | https://qa.ekstep.in/api & prod: https://api.ekstep.in        |yes|
 |`sunbird_auth_token`           | JWT token generated by Ansible, you can get it from ~/jwt.txt.|yes|
 |`ekstep_api_key`           |Jwt token generated by the key,secret produced from Ekstep |yes|
@@ -109,7 +109,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |8|logger|Deploys the ELK stack and the logs can be viewed in Kibana|
 |9|monitor|Monitors all the services, health checks, API's,system checks etc..|
 
-6.The badger service is set up manually. To do so, follow the steps given [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#badger-setup).
+6.The badger service is set up manually. To do so, follow the steps given [here](#badger-setup).
 
 **Note**: The badger service does not work without an Azure storage account name and key. 
 
@@ -117,7 +117,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 **Note**: If you what to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`
 
-To know more about the script `sunbird_install.sh`, click [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
+To know more about the script `sunbird_install.sh`, click [here](#sunbird-install-script).
 
 8.Open https://[domain-name] and verify the installation. 
   
