@@ -8,20 +8,22 @@ allowSearch: true
 ---
 
 ## Overview
-* Sunbird software is containerized. It uses the Docker swarm orchestration engine to run the Sunbird docker images. Docker swarm consists of the manager and agent nodes. The containers are run on the agent nodes and the manager manages the container lifecycle
 
-* All the stateless services - Portal, LMS Backend, API Gateway and Proxies - in Sunbird are run as docker containers inside the swarm
+Sunbird software is containerized. It uses the Docker swarm orchestration engine to run the Sunbird docker images. The Docker swarm consists of the manager and agent nodes. The containers are run on the agent nodes and the manager manages the container lifecycle.
 
-* All stateful services like databases - Cassandra, PostgreSql  and Elastic search, and the O Auth service - KeyCloak, are run on Virtual Machines (VMs) directly
+All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Proxies - are run as docker containers inside the swarm. All stateful services for the databases - Cassandra, PostgreSql and Elasticsearch, and the OAuth service on KeyCloak, are run on Virtual Machines (VMs) directly. The installation is automated using shell scripts and Ansible.
 
-* The installation is automated using shell scripts and Ansible.
+## Prerequisites
 
-## Prerequisites:
-* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#ports-mapping). 
-* Recommended to have a domain name and valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name, and want to get an SSL certificate, use [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate that is valid for 90 days.
+* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#mapping-ports). 
+
+* Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name, and want to get an SSL certificate, use [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate that is valid for 90 days.
+
 * Sunbird requires Ekstep API keys to access the Ekstep content repository. Follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. If you are creating a test environment, get the QA API keys.
+
 * Create a common user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have sudo access on the servers.
-* The following table lists the services that are setup and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.
+
+* The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.
 
     |Server Name |Suggested Servers per environment|Basic Requirement| Max Servers |
     |:-----      |:--------|:--------------------------------|:---------  |
@@ -42,13 +44,13 @@ allowSearch: true
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1. Install git using `apt-get update -y && apt-get install git -y `
+1.Install git using `apt-get update -y && apt-get install git -y `
 
-2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
+2.Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
 
-3. `cd sunbird-devops/deploy`
+3.`cd sunbird-devops/deploy`
 
-4. Update the configuration files using `config`. The configuration parameters are explained in the following table: 
+4.Update the configuration files using `config`. The configuration parameters are explained in the following table: 
 
 | variable | description   | mandatory|                                                                             
 |:----------------------|:-----------------|:---------|
@@ -93,7 +95,7 @@ allowSearch: true
 |`sunbird_telemetry_pdata_id`| The Sunbird telemetry pdata ID |no|
 
 
-5. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage1 to stage6 in a sequence shown in following table.
+5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
@@ -107,52 +109,52 @@ allowSearch: true
 |8|logger|Deploys the ELK stack and the logs can be viewed in Kibana|
 |9|monitor|Monitors all the services, health checks, API's,system checks etc..|
 
-6. The badger service is set up manually. To do so, follow the steps given [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#badger-setup).
+6.The badger service is set up manually. To do so, follow the steps given [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#badger-setup).
 
 **Note**: The badger service does not work without an Azure storage account name and key. 
 
-7. Verify that all the mandatory variables, for example; sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script `./sunbird_install.sh -s core` to deploying the core services.
+7.Verify that all the mandatory variables, for example; sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script `./sunbird_install.sh -s core` to deploying the core services.
 
 **Note**: If you what to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`
 
 To know more about the script `sunbird_install.sh`, click [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
 
-8. Open https://[domain-name] and verify the installation. 
+8.Open https://[domain-name] and verify the installation. 
   
 ## Sunbird Install Script 
 
 The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository. 
 
-`install-deps.sh` - Installs Ansible v2.4.1.0 on the installation server to provision and deploy Sunbird. This script also sets up the docker swarm.
+* `install-deps.sh` - Installs Ansible v2.4.1.0 on the installation server to provision and deploy Sunbird. This script also sets up the docker swarm.
 
-`generate_config.sh` - Creates a workspace for the installation and sets up necessary config files. 
+* `generate_config.sh` - Creates a workspace for the installation and sets up necessary config files. 
 
-`generate_hosts.sh` - Creates a hosts file (Ansible file format) dynamically to run the Ansible scripts.   
+* `generate_hosts.sh` - Creates a hosts file (Ansible file format) dynamically to run the Ansible scripts.   
 
-`install-dbs.sh` - Installs Cassandra, Elasticsearch and Postgres databases
+* `install-dbs.sh` - Installs Cassandra, Elasticsearch and Postgres databases
 
-`init-dbs.sh` - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases
+* `init-dbs.sh` - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases
 
-`deploy-apis.sh` - Deploys the api gateway (Kong) as a docker service using Ansible. 
+* `deploy-apis.sh` - Deploys the api gateway (Kong) as a docker service using Ansible. 
 
-`onboard-apis.sh`  - Onboards the Sunbird APIs and consumers to the API gateway using Ansible. 
+* `onboard-apis.sh`  - Onboards the Sunbird APIs and consumers to the API gateway using Ansible. 
 
-`deploy-proxy.sh` - Deploys the proxy (Nginx) as a docker service.
+* `deploy-proxy.sh` - Deploys the proxy (Nginx) as a docker service.
 
-`provision-keycloak.sh` - Installs Keycloak.
+* `provision-keycloak.sh` - Installs Keycloak.
 
-`deploy-keycloak-vm.sh` - Deploys the OAuth service (Keycloak) on the VM. The Keycloak service runs outside the swarm.
+* `deploy-keycloak-vm.sh` - Deploys the OAuth service (Keycloak) on the VM. The Keycloak service runs outside the swarm.
 
-`bootstrap-keycloak.sh` - Imports the auth realm and configures Keycloak.
+* `bootstrap-keycloak.sh` - Imports the auth realm and configures Keycloak.
 
-`deploy-badger.sh` - Deploys the badger service as docker service.
+* `deploy-badger.sh` - Deploys the badger service as docker service.
 
-`deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
+* `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
 
-`deploy-logger.sh` -  Deploy ELK stack for logs. 
+* `deploy-logger.sh` -  Deploy ELK stack for logs. 
 **Note:** This step is optional.
 
-`deploy-monitor.sh` - Deploys the monitoring stack (Prometheus) to send mail alerts when the infrastructure or services are not stable. **Note:** This step is optional. 
+* `deploy-monitor.sh` - Deploys the monitoring stack (Prometheus) to send mail alerts when the infrastructure or services are not stable. **Note:** This step is optional. 
  
 
 ## Mapping Ports 
@@ -171,26 +173,25 @@ The following is a list of ports that must be open:
 
 ## Badger Setup
 
-1. SSH to docker swarm manager
+1.SSH to docker swarm manager
 
-2. Run `docker service ps badger-service`
+2.Run `docker service ps badger-service`
 
-3. SSH to the swarm node where badger is running
+3.SSH to the swarm node where badger is running
 
-4. Run `docker ps | grep badger`. Take the container ID and pass it to the container ID in the following step.
+4.Run `docker ps | grep badger`. Take the container ID and pass it to the container ID in the following step.
 
-5. Run `docker exec -it -u root <container_id>` . It will ssh to the badger container.
+5.Run `docker exec -it -u root <container_id>` . It will ssh to the badger container.
 
-6. Move to the directory `cd /code`
+6.Move to the directory `cd /code`
 
-7. Run `./manage.py createsuperuser`. Provide a valid username, email ID and password.
+7.Run `./manage.py createsuperuser`. Provide a valid username, email ID and password.
 
-8. Run the following curl command to get the sunbird badger authorization variable.
+8.Run the following curl command to get the sunbird badger authorization variable.
     
     `curl -X POST 'http://localhost:8004/api-auth/token' -d "username=<emailid>&password=<password>"`
 
-
-9. Set the output of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
+9.Set the output of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
 
 
 

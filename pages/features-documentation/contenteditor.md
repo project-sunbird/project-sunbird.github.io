@@ -33,7 +33,7 @@ Content types created on the content editor include:
   <tr>
     <td> After clicking on the <strong>Study Material</strong> slide, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type 
       <br> <strong>Note:</strong> You may opt to fill these details later before sending the content for review
-      <br>3. Click <strong>Start Creating</strong> to create content
+      <br>3. Click <b>Start Creating</b> to create content
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/create_studymaterial.png"></td>
   </tr>
@@ -49,7 +49,7 @@ Content types created on the content editor include:
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. <strong>Tool Bar</strong>: A collection of several tools available to create content resources <br> 2. <strong>Preview</strong>: A viewer that allows you see how content will display when published <br> 3. <strong>Right Pane</strong>: A collection of tabs that allow you to customize defaults for tools from the tool bar, add animation or interactive controls and view information about the slide <br> 4. <strong>Working Area</strong>: The slide that is currently being worked upon <br>5. <strong>Slide Sorter</strong>: Use this area to order your slides
+    <td>1. <b>Tool Bar</b>: A collection of several tools available to create content resources <br> 2. <strong>Preview</strong>: A viewer that allows you see how content will display when published <br> 3. <strong>Right Pane</strong>: A collection of tabs that allow you to customize defaults for tools from the tool bar, add animation or interactive controls and view information about the slide <br> 4. <strong>Working Area</strong>: The slide that is currently being worked upon <br>5. <strong>Slide Sorter</strong>: Use this area to order your slides
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
   </tr>
@@ -426,13 +426,10 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>To add question set, click the <strong>Add Question Set</strong> icon on the toolbar. The question set browser page is displayed</td>
-    <td><img src=.png></td>
-  </tr>
-  <tr>
-    <td>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <strong>Add Question Set</strong> icon on the toolbar
+    <td>To add question set, click the <strong>Add Question Set</strong> icon on the toolbar. The question set browser page is displayed.
+<br>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <b>Add Question Set</b> icon on the toolbar
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor/addquestion.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/addquestionset.png"></td>
   </tr>
   </table>
   
@@ -445,15 +442,15 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>  
   <tr>
     <td>1. Type keywords on the Search Bar to search the repository for questions. The search results are displayed in the bottom left pane
-<br>2. Select Advanced Filters for better search reusult 
+<br>2. Select Advanced Filters for better search result 
       <br>a) <b>Language</b>
 <br>b) <b>Difficulty </b>
 <br>c) <b>Question Type </b>
 <br>d) <b>Grade </b>
 <br>e) <b>Concepts </b>
-<br>3. Use the <b>My Questions</b> slider to enable you to search for questions you have uploaded. To search for questions available on the portal, disable this option
-<br>4. The search results are displayed in the bottom left pane 
-<br>5. The selected question can be previewed in the right pane 
+<br>3. Use the <b>My Questions</b> slider to search for questions that you have uploaded. To search for questions available on the portal, disable this option
+<br>4. The search result is displayed on the left pane 
+<br>5. The selected question can be previewed on the right pane 
 <br>6. Select questions from the results displayed by marking the checkbox 
 <br>7. Click <b>Create Question</b> to create your own question. Click <b>Create Question</b> to know more.
 <br>8. Click Next
@@ -462,21 +459,44 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
 </tr>
 </table>
   
-### **Creating Questions**
+### Creating Questions
    <table>
  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>To create a question set
-  <td>Select the type of question you want to create from the following options:
-<br>1. Multiple choice question
-<br>2. Fill in the blanks
-<br>3. Match the following </td> 
+  <td><br>1.Select the type of question you want to create.
+    <br>2. Click <b>Select</b> 
+    </td>
+    <td>image</td>
+  </tr>
+    <tr>
+      <td>
+        <br>3. Enter the questions in <b>Question Configuration</b> page. 
+    <br>&emsp;a. If you have selected Multiple choice question, refer <b>Creating Multiple Choice Question Set</b>
+    <br>&emsp;b. If you have selected Fill in the blanks questions, refer <b>Creating Fill in the blanks Question Set</b> 
+    <br>&emsp;c. If you have selected Match the following questions, refer <b>Creating Match the Following Question Set</b> 
+    </td>
+    <td>image</td>
+  </tr>
+   <tr>
+      <td>
+    <br>4. Click <b>Back</b> to go to the previous screen
+    <br>5. Click <b>Next</b>
+    <br>6. Enter the <b>Question Details</b>
+    <br>&emsp;a. The <b>Title</b> displays the title
+    <br>&emsp;b. Select <b>Language</b>
+    <br>&emsp;c. Select <b>Level</b>
+    <br>&emsp;d. Select <b>Grade Level</b>
+    <br>&emsp;e. Select <b>Max Score</b>
+    <br>&emsp;f. Select <b>Concept</b>
+    <br>&emsp;g. Enter <b>Description</b>
+    </td> 
     <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
   </tr> 
   
-### **Customizing Questions Set**
+### **Creating Multiple Choice Question Set**
   
  <table>
  <tr>
@@ -484,7 +504,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
- <td>
+ <td>Multiple Choice Questions
 <br>1. Enter <b>Question Set Title</b> for the questionaire 
 <br>2. The <b>Max Score</b> displays the maximum score for the question 
 <br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
@@ -495,11 +515,11 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   <br>8. Click <b>Add More Questions</b> to increase the questions in the question set
   <br>9. Click <b>Add</b> to append the selected questions in Question Set. The Question Set is added on the slide.   
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/configureques.png"></td>
  </tr>
  </table>
-
- ### **Creating Multiple Choice Questions Set**
+ 
+**Creating Fill in the Blanks Question Set **
   
  <table>
  <tr>
@@ -507,7 +527,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
- <td>Multiple Choice Questions
+ <td>
 <br>1. Enter <b>Question Set Title</b> for the questionaire 
 <br>2. The <b>Max Score</b> displays the maximum score for the question 
 <br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane

@@ -22,10 +22,13 @@ produces:
 paths:
   /read:
     post:
-      description: This API is used to read form data
+      description: >-
+        This API is used to read the form data and other fields 
+        
         - The **_/read_** endpoint executes the "FormRead" request based on parameters provided as metadata in the request body
+       
         - Required fields cannot be left null or empty
-      summary: Form Read
+      summary: Read Form
       operationId: FormRead
       produces:
       - application/json
@@ -70,10 +73,13 @@ paths:
       - auth: []
   /create:
     post:
-      description: This API is used to read form data
-        - The **_/create** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
-        - Required fields cannot be left null or empty
-      summary: Form Create
+      description: >- 
+        This API is used to create a form
+              
+          - The **_/create_** endpoint executes the "Create Form" request based on parameters provided as metadata in the request body
+          
+          - Required fields cannot be left null or empty
+      summary: Create Form
       operationId: FormCreate
       produces:
       - application/json
@@ -118,10 +124,13 @@ paths:
       - auth: []
   /update:
     post:
-      description: This API is used to update form data
-        - The **_/update** endpoint executes the "FormCreate" request based on parameters provided as metadata in the request body
+      description: >-
+        This API is used to update form data
+        
+        - The **_/update_** endpoint executes the "Update Form" request based on parameters provided as metadata in the request body
+        
         - Required fields cannot be left null or empty
-      summary: Form Update
+      summary: Update Form
       operationId: FormUpdate
       produces:
       - application/json
@@ -151,11 +160,11 @@ paths:
               - Application/x-www-form-urlencoded
       responses:
         '200':
-          description: 'SUCCESS. The "Update Form data" operation was successful!'
+          description: 'SUCCESS. The "Update Form" operation was successful!'
           schema:
               $ref: '#/definitions/createResponse'
         '400':
-          description: 'BAD REQUEST. "Update Form data" operation failed. You may have missed input for a mandatory parameter.'
+          description: 'BAD REQUEST. "Update Form" operation failed. You may have missed input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/FailedResponseHeader'
         '500':
@@ -279,13 +288,13 @@ definitions:
     properties:
       id:
         type: string
-        description: API Identifier
+        description: The unique identifier for the API 
       ver:
         type: string
-        description: API version information
+        description: The API version information
       ts:
         type: string
-        description: API execution timespan
+        description: ETA for API execution
       params:
         $ref: '#/definitions/FailedResponseParams'
       responseCode:
@@ -302,19 +311,19 @@ definitions:
     properties:
       resmsgid:
         type: string
-        description: Response Message Id
+        description: ID which represents the Response uniquely
       msgid:
         type: string
-        description: Message Id
+        description: ID which represents a response message uniquely
       err:
         type: string
-        description: Error Code
+        description: represents the error code if the request fails 
       status:
         type: string
-        description: Response Status
+        description: Represents the response Status
       errmsg:
         type: string
-        description: Error Message
+        description: Represents the error message
   dataFields:
     type: object
     properties:
@@ -339,16 +348,16 @@ definitions:
           properties:  
             code:
               type: string
-              description: Unique code to identify field
+              description: Unique code to identify a form field
             dataType:
               type: string
-              description: DataType of field
+              description: DataType of the form field
             description:
               type: string
-              description: Description about field
+              description: Description about the form field
             editable:
               type: boolean
-              description: Based on this value form will be rederer in editable mode
+              description: Based on this value form will be render in editable mode
             inputType:
               type: string
               description: Type of field text, select etc.
@@ -357,19 +366,19 @@ definitions:
               description: The field label
             name:
               type: string
-              description: Name of the field
+              description: Name of the form field
             index:
               type: integer
-              description: The position of the field decided by this value
+              description: The position of the field depends on this value
             placeholder:
               type: string
-              description: Short hint of the form field
+              description: Its a hint about the form field
             required:
               type: boolean
-              description: It specifies that the form field must be filled out or not
+              description: It specifies that the form field is mandatory
             visible:
               type: boolean
-              description: The visibility property sets whether an form field should be visible or not
+              description: The visibility property is used to set whether a field should be visible or not
             renderingHints:
               type: object
-              description: From field renderingHints
+              description: Form field rendering hints
