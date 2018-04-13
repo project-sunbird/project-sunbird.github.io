@@ -88,7 +88,7 @@
 		this.href = '{{page.url | remove_first: "/" }}' + url;
     })
     
-	$(".zoom").click(function(){
+	/*$(".zoom").click(function(){
 		
 		if (!$(this).hasClass('enabled')){
 			$(this).addClass('enabled');
@@ -101,6 +101,20 @@
             $(this).removeClass('enabled');
             $('.zoomContainer').hide();
         }
+	});*/
+	$(".zoomcover").click(function(){
+		if (!$(this).hasClass('fullscreen')){
+			$(this).addClass('fullscreen');
+			$(this).find('.zoom').addClass('enabled').elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+		} else {
+			$(this).removeClass('fullscreen');
+			$(this).find('.zoom').removeClass('enabled');
+			$('.zoomContainer').hide();
+		}
 	});
   </script>
   <style>

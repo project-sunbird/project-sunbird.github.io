@@ -51,8 +51,11 @@ module Jekyll
       image_width = @WIDTH_MAP[@width] || '100%'
       
       if zoom == 'zoom'
-		'<figure><img '+src+' '+@alt+' class="plugin '+position+' '+zoom+'" '+'width="'+image_width+'"/>
-		<figcaption><strong>Note:</strong> Click and move cursor to zoom in image. Use mouse scroll to futher zoom in and zoom out.</figcaption></figure>'
+		'<figure class="zoomcover">
+		<span class="zoomclose">X</span>
+		<img '+src+' '+@alt+' class="plugin '+position+' '+zoom+'" '+'width="'+image_width+'"/>
+		<figcaption><strong>Note:</strong> Click and move cursor to zoom in image. Use mouse scroll to futher zoom in and zoom out.</figcaption>
+		</figure>'
 	  else
       '<a target="_blank" '+src.gsub('src', 'href')+'>
         <img '+src+' '+@alt+' class="plugin '+position+' '+zoom+'" '+'width="'+image_width+'"/>

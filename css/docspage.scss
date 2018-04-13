@@ -217,3 +217,27 @@ figcaption{
 	text-align:center;
 	margin-top:10px;
 }
+.fullscreen{
+	position:fixed;
+	top:0;
+	left:0;
+	right: 0;
+    bottom: 0;
+	background:rgba(0,0,0,0.7);
+    overflow: hidden;
+    box-sizing: content-box;
+    padding: 10px 20px;	
+}
+.zoomclose{
+	display:none;
+}
+.fullscreen .zoomclose {
+	display:block;
+	color:#fff;
+	font-weight:600;
+	font-size:25px;
+	text-align:right;
+	cursor:pointer;
+}
+.fullscreen img{
+}
