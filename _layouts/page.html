@@ -8,7 +8,7 @@
 		<meta name="robots" content="noindex, nofollow">
 	{% endif %}
   </head>
-  <body id="body">
+  <body id="body" class="doc-layout">
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
@@ -87,6 +87,45 @@
 		var url = this.href.replace(baseURL.href, "");
 		this.href = '{{page.url | remove_first: "/" }}' + url;
     })
+    
+	/*$(".zoom").click(function(){
+		
+		if (!$(this).hasClass('enabled')){
+			$(this).addClass('enabled');
+			$(this).elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+	    }else{
+            $(this).removeClass('enabled');
+            $('.zoomContainer').hide();
+        }
+	});*/
+	$(".zoomcover").click(function(){
+		if (!$(this).hasClass('fullscreen')){
+			$(this).addClass('fullscreen');
+			$(this).find('.zoom').addClass('enabled').elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+		} else {
+			$(this).removeClass('fullscreen');
+			$(this).find('.zoom').removeClass('enabled');
+			$('.zoomContainer').hide();
+		}
+	});
   </script>
+  <style>
+  .zoom:hover{
+	cursor:url(img/zoom.png),crosshair;
+  }
+  .zoomWindowContainer:hover div{
+	cursor:url(img/scroll.png),crosshair !important;
+	height:15px;
+	width:15px;
+  }
+  </style>
   </body>
 </html>

@@ -5,7 +5,7 @@ title: Sample accordian testing and video format
 page_title: Creating accordian section 
 description: Create a sample to show the accordian section in the master page 
 published: true
-allowSearch: true
+allowSearch: false
 ---
 <h2>Accordion</h2>
 
