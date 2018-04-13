@@ -33,7 +33,7 @@ Content types created on the content editor include:
   <tr>
     <td> After clicking on the <strong>Study Material</strong> slide, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type 
       <br> <strong>Note:</strong> You may opt to fill these details later before sending the content for review
-      <br>3. Click <strong>Start Creating</strong> to create content
+      <br>3. Click <b>Start Creating</b> to create content
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/create_studymaterial.png"></td>
   </tr>
@@ -49,7 +49,7 @@ Content types created on the content editor include:
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. <strong>Tool Bar</strong>: A collection of several tools available to create content resources <br> 2. <strong>Preview</strong>: A viewer that allows you see how content will display when published <br> 3. <strong>Right Pane</strong>: A collection of tabs that allow you to customize defaults for tools from the tool bar, add animation or interactive controls and view information about the slide <br> 4. <strong>Working Area</strong>: The slide that is currently being worked upon <br>5. <strong>Slide Sorter</strong>: Use this area to order your slides
+    <td>1. <b>Tool Bar</b>: A collection of several tools available to create content resources <br> 2. <strong>Preview</strong>: A viewer that allows you see how content will display when published <br> 3. <strong>Right Pane</strong>: A collection of tabs that allow you to customize defaults for tools from the tool bar, add animation or interactive controls and view information about the slide <br> 4. <strong>Working Area</strong>: The slide that is currently being worked upon <br>5. <strong>Slide Sorter</strong>: Use this area to order your slides
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
   </tr>
