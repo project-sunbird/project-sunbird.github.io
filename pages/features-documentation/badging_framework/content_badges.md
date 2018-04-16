@@ -15,6 +15,18 @@ organizing, searching and recommending suitable content. It enables increased co
 
 In this documentation, for the pupose of explaining the process of issuing badges to content we have used the example of a badge, titled, Official.
 
+### Prerequisites 
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in as the Badge Issuer <br>2. You have clicked on <b>Library</b>
+    </td>
+      <td><img src="pages/features-documentation/images/badging_images/library.png"></td>
+  </tr>
+
 ### Searching for Content
 Currently, on Sunbird, badges can be assigned only to books. 
 <table>
@@ -43,12 +55,6 @@ suggestions, OR <br>3. Click the search icon after you type the name of the book
   
   ### Issuing Badges
   <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
