@@ -170,7 +170,8 @@ The following is a list of ports that must be open:
 ## Badger Setup
 
 
-1. Run `ssh -i <key path (which you gave in config file)> $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')` to login to node where badger container is running. Example `ssh -i ~/ssh_key.pem $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')`
+1. Run `ssh -i <key path (which you gave in config file)> $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')` to login to node where badger container is running.  
+ Example: `ssh -i ~/ssh_key.pem $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')`
 
 2. Run `docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}')` to login  to the badger container.
 
