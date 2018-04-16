@@ -11,10 +11,8 @@ allowSearch: true
 
 ## Overview
 
-Badging is a mechanism commonly used to recognize people with a set of skills and accomplishments. Badges can represent an award, a certificate, an endorsement or an authorization. On Sunbird, the feature of badging is useful for different users such as teachers, students, course creators, mentors, content authors etc. Badging also plays a critical role in the curation of content and courses.
-Badging content is primarily useful in organizing, searching and recommending suitable content. It enables increased content usage. It also enables better content creation on the platform resulting in increased
-content effectiveness. On Sunbird, there are two types of badges:
-<br>1. Badges for Content <br>2. Badges for People
+Badging is a mechanism commonly used to recognize people with a set of skills and accomplishments. Badges represent an award, a certificate, an endorsement or an authorization. On Sunbird, the feature of badging is useful for different users such as teachers, students, course creators, mentors, content authors etc. Badging also plays a critical role in the curation of content and courses.
+Badging content is primarily useful in organizing, searching and recommending suitable content. It enables increased content usage. It also enables better content creation on the platform resulting in increased content effectiveness. On Sunbird, there are two types of badges: <br>1. Badges for Content <br>2. Badges for People
 
 ### Badges for People
 
