@@ -26,6 +26,7 @@ In this documentation, for the pupose of explaining the process of issuing badge
     </td>
       <td><img src="pages/features-documentation/images/badging_images/library.png"></td>
   </tr>
+  </table>
 
 ### Searching for Content
 Currently, on Sunbird, badges can be assigned only to books. 
