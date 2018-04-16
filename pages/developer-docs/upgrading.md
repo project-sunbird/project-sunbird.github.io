@@ -90,7 +90,7 @@ allowSearch: true
 
 * Run the below command for restore
 		
-		./backup_postgres.sh
+		./restore_postgres.sh
 	
 
 ### Elasticsearch 
