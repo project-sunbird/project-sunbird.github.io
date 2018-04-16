@@ -181,9 +181,9 @@ The following is a list of ports that must be open:
 
 4.Run `docker ps | grep badger`. Take the container ID and pass it to the container ID in the following step.
 
-5.Run `docker exec -it -u root <container_id>` . It will ssh to the badger container.
+5.Run `docker exec -it <container_id> /bin/bash` . It will ssh to the badger container.
 
-6.Move to the directory `cd /code`
+6.Move to the directory `cd code`
 
 7.Run `./manage.py createsuperuser`. Provide a valid username, email ID and password.
 
