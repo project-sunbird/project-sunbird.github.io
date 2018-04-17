@@ -71,7 +71,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: <br>a) Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane, <b>OR</b> <br>b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>c) Click <b>Add Resources</b> button in the action pane, <b>OR</b> <br>d) Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><b>Note</b>:You can edit or update the title of units in the collection from the navigation hierarchy
+    <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: <br>a) Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane, <b>OR</b> <br>b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>c) Click <b>Add Resources</b> button in the action pane, <b>OR</b> <br>d) Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><br><b>Note</b>:You can edit or update the title of units in the collection from the navigation hierarchy
     </td>
     <td><img src="pages/features-documentation/images/add_resource1.png"></td>
   </tr>
