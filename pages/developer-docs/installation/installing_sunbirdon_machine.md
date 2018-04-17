@@ -105,6 +105,10 @@ Once you open the file, ensure you enter the following values:
         // 6. PORTAL_ECHO_API_URL
         PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
         ...
+	
+	// 7. ANDROID_APP_URL
+        ANDROID_APP_URL: env.sunbird_android_app_url || 'http://www.sunbird.org'                                              
+        ...
     }
    
 ## Run the Application
