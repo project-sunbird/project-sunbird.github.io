@@ -17,21 +17,21 @@ allowSearch: true
  
 
 
-## Steps for upgrading sunbird services 
+## Upgrading Sunbird Services 
 
 1. Pull the latest code of `project-sunbird/sunbird-devops` from the master branch.
  
 
-2. It is good pratice to take full backup of all the databases before updating the new schema. Follow steps [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers) to take backup. 
+2. It is good practice to take a full backup of all the databases before updating the new schema. Follow steps [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers) to take backup. 
 
 3. Run `./sunbird-install.sh`. This will deploy the latest version of sunbird services and also update the latest schema on databases.
 
-**Note:** Latest images versions  of all the services are  updated in the master branch. To get the particular hotfix image of any Sunbird service, update the minor version in the `sunbird-devops/deploy/deploy-core.sh` file. Re-run the `sunbird-devops/deploy/deploy-core.sh`
+**Note:** Latest images versions of all the services are updated in the master branch. To get the particular hotfix image of any Sunbird service, update the minor version in the `sunbird-devops/deploy/deploy-core.sh` file. Re-run the `sunbird-devops/deploy/deploy-core.sh`
 
 
-## Backup and restore of sunbird databases
+## Backup and Restore of Sunbird Databases
 
-1. ssh to database server on which you want to take backup.
+1. ssh to the database server on which you want to take backup.
 
 2. Run `git clone https://github.com/project-sunbird/sunbird-devops`
 
@@ -41,7 +41,7 @@ allowSearch: true
 
 **Backup:** 
 	
-   * Take a snapshot of Cassandara database using 
+   * Take a snapshot of Cassandara database using  
 	
 		nodetool snapshot -t my_backup
    
@@ -59,7 +59,7 @@ allowSearch: true
 
 **Restore:**
 
-* Copy the cassandra backup snapshot to the instance where you want to run restore.
+* Copy the Cassandra backup snapshot to the instance where you want to run restore.
 
 * Restore Cassandra database using command
 	           
@@ -70,7 +70,7 @@ allowSearch: true
 
 **Backup:** 
 
-* Run the script below to take the full backup of postgres databse.
+* Run the script below to take a full backup of the Postgres database.
 		
 		./backup_postgres.sh
 		
@@ -80,7 +80,7 @@ allowSearch: true
        
         api_manager -	Used by kong
         badger	    -	Used by badger services
-        keycloak    -	Used by keycloak
+        Keycloak    -	Used by Keycloak
         quartz      -	Used by sunbird backend services
 	
 
