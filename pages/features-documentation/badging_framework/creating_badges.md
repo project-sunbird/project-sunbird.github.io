@@ -32,6 +32,7 @@ Enter the following details in the request body of Create Issuer Endpoint:
 | **URL** |  A fully-qualified URL of the Issuer's website or homepage  Mandatory |
 | **Email** | A contact email of the Issuer | Mandatory |
 | **Image** | An image file that represents the Issuer, such as a logo of the issuing organization, or image of the person | Optional |
+
 On successful execution of the creation API, an issuer ID is issued
 
 ### Defining Badge Class
@@ -41,12 +42,12 @@ To create a badge class:
 |  Field Name                 | Description | Field Type | 
 |--------------------------------|---------------------|--------------|
 | IssuerID   | Id of Issuer who issues the badge      |      Mandatory     |     
-| Root OrgID |      Root organisation ID (on DIKSHA) to which the badge belongs         |      Mandatory     |  
+| Root OrgID |      Root organisation ID (on Sunbird) to which the badge belongs         |      Mandatory     |  
 | Title |  Title of the badge |  Mandatory |
 | Description | A short description about the badge | Mandatory |
 | Image| An image file that represents the badge | Optional |
 | Type | Specify if the badge is for a user or content. Valid values are User/Content | Mandatory |
-| Subtype | Specify what the badge is related to. It is predefined list of values such as Official,Certificate, Award etc. |Optional |
+| Subtype | Specify what the badge is related to. It is predefined list of values such as Official,Certificate, Award etc. | Optional |
 | Criteria | A text string or a URL that describes criteria in achieving the badge | Mandatory|
 | Roles | List of user roles on Sunbird who can issue the badge | Mandatory |
 
