@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: features-documentation
+directory: features-documentation/badging_framework
 title: Issuing Badges to Users
 page_title: Issuing Badges to Users
 description: Details on the procedure of issuing badges to users on Sunbird
