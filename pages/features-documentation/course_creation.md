@@ -142,7 +142,7 @@ Before the Course is publihed, it must be reviewed. You can send it for reviewin
     <th>Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Save</b> on the header to save the course <br>2. Click <b>Limited sharing</b> to publish the lesson to the limited audiences <br><b>Note</b>: Refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a> to view and share all the contents created and ready for sharing. <br>3. Click <b>Send for review</b> to send the created course for review <br><br><b>Note:</b>Enter all course details before sending the it for review
+    <td>1. Click <b>Save</b> on the header to save the course <br>2. Click <b>Limited sharing</b> to publish the lesson to the limited audiences <br><b>Note</b>: Refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a> to view and share all the contents created and ready for sharing. <br><br>3. Click <b>Send for review</b> to send the created course for review <br><br><b>Note:</b>Enter all course details before sending the it for review
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/review.png"></td>
   </tr>    
