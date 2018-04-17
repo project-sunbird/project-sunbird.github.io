@@ -8,4 +8,4 @@ keywords: 'adding,Text, textbox, text editor, rich text'
 published: true
 allowSearch: true
 ---
-{% image src='' full center  alt='How do I add text'  zoom %} 
+{% image src='pages/usertaskflow/images/adding_text.svg' full center  alt='How do I add text' zoom %} 

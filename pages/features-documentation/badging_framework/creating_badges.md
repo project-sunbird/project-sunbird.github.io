@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: features-documentation
+directory: features-documentation/badging_framework
 title: Creating Badges on Sunbird
 page_title: Creating Badges on Sunbird
 description: Details on the procedure of creating badges using APIs on Sunbird

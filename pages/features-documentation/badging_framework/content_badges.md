@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: features-documentation
+directory: features-documentation/badging_framework
 title: Issuing Badges to Content
 page_title: Issuing Badges to Content
 description: Details on the procedure of issuing badges to content on Sunbird

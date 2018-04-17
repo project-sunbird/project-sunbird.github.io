@@ -4,7 +4,7 @@ directory: usertaskflow
 title: How Do I Upload Content
 page_title:  How Do I Upload Content
 description: How Do I Upload Content
-keywords: 'adding, metadata, enter details'
+keywords: 'adding, upload'
 published: true
 allowSearch: true
 ---

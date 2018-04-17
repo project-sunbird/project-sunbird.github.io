@@ -8,4 +8,5 @@ keywords: 'adding, image'
 published: true
 allowSearch: true
 ---
-{% image src='' full center  alt='How do I add image '  zoom %} 
+{% image src='pages/usertaskflow/images/adding_image.svg' full center alt='How do i add image' zoom %}
+
