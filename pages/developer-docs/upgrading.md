@@ -9,6 +9,7 @@ allowSearch: true
 ---
 
 ## Overview
+
 * Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.  
 
 * From release-1.5, all the services are maintained with same image gold  version. 
@@ -21,7 +22,6 @@ allowSearch: true
 
 1. Pull the latest code of `project-sunbird/sunbird-devops` from the master branch.
  
-
 2. It is good practice to take a full backup of all the databases before updating the new schema. Follow steps [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers) to take backup. 
 
 3. Run `./sunbird-install.sh`. This will deploy the latest version of sunbird services and also update the latest schema on databases.
@@ -115,7 +115,7 @@ Copy the backup file from the `/tmp/elasticsearch-backup/<backup_file>` to the i
 
 Run
 	
-	./restore_elasticsearch.sh <path/to/the/restore_file>	
+	./restore_elasticsearch.sh <path/to/the/restore_file	
 	
 **Note:** Install Python on the Cassandra machine, if you use our scripts to backup or restore the Cassandra database.
 
