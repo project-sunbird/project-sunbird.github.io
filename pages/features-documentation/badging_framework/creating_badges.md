@@ -39,6 +39,7 @@ On successful execution of the creation API, an issuer ID is issued
 To create a badge class:
 1. Execute the badging framework API for creating a badge class
 2. Enter the following details in the request body of Create Badge Endpoint:
+
 |  Field Name                 | Description | Field Type | 
 |--------------------------------|---------------------|--------------|
 | IssuerID   | Id of Issuer who issues the badge      |      Mandatory     |     
