@@ -8,4 +8,4 @@ keywords: 'adding,resource, enter details'
 published: true
 allowSearch: true
 ---
-{% image src='pages/usertaskflow/images/add_resources.svg' full center  alt='How Do I Add resource'  zoom %} 
+{% image src='pages/usertaskflow/images/add_resources.svg' full center  alt='How Do I Add resource' zoom %} 
