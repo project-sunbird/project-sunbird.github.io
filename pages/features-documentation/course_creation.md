@@ -47,17 +47,18 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Edit Details</b> to enter the course details <br>2. Click the camera icon to add an image <br><b>Note:</b> For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images to Metadata</a><br><br>3. Enter <b>Title</b> of the course <br>4. Enter <b>Description</b> <br>5. Enter <b>Keywords</b> <br>6. Select the following from their respective drop-down lists: <br>a) Board <br>b) <br>c)Class <br>d)Subject <br>e)Medium<br><br>7. Select <b>Audience</b> <br>5. Enter <b>Attributions</b> <br>6. Click <b>Save</b> to save the metadata <br>7. Click <b>Cancel</b> to exit the page
+    <td>1. Click <b>Edit Details</b> to enter the course details <br>2. Click the camera icon to add an image <br><b>Note:</b> For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images to Metadata</a> <br><br>3. Enter <b>Title</b> of the course <br>4. Enter <b>Description</b> <br>5. Enter <b>Keywords</b> <br>6. Select the following from their respective drop-down lists: <br>a) Board <br>b) <br>c)Class <br>d)Subject <br>e)Medium <br><br>7. Select <b>Audience</b> <br>5. Enter <b>Attributions</b> <br>6. Click <b>Save</b> to save the metadata <br>7. Click <b>Cancel</b> to exit the page
     </td>
     <td><img src="pages/features-documentation/images/add_details.png"></td>
   </tr>
     <tr>
-      <td><b>Adding Content to course</b><br><br>1. To add headings to course, click <b>New Child</b> node on the left navigation pane<br>2. On clicking child node, a heading is added to the <b>Table of Contents</b> pane
+      <td><b>Adding Content to course</b><br><br>1. To add headings to course, click <b>New Child</b> node on the left navigation pane <br>2. On clicking child node, a heading is added to the <b>Table of Contents</b> pane
       </td>
       <td><img src="pages/features-documentation/images/add_content0.png"></td>
   </tr>
   <tr>
   <td><b>Heading Details</b> <br><br>Enter details for the heading: <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the course <br>2. Enter <b>Description</b> <br>3. Select the <b>Concepts</b> associated with the heading <br>4. Enter <b>Keywords</b>
+    </td>
     <td><img src="pages/features-documentation/images/add_content1.png"></td>
   </tr>
   </table> 
