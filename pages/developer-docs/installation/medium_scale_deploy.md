@@ -6,7 +6,7 @@ page_title: Server Installationn
 description: Setting up Sunbird on a server
 allowSearch: true
 ---
-
+ 
 ## Overview
 
 Sunbird software is containerized. The installation script uses the Docker swarm orchestration engine to run the Sunbird docker images. The Docker swarm consists of manager and agent nodes. The containers are run on the agent nodes and the manager nodes manage the container lifecycle.
