@@ -122,7 +122,7 @@ For details on manipulating the tree and adding content, refer <a href="features
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Drag and drop the content to the desired position to rearrange the order of the content added to the course 
+    <td>1. Drag and drop the content to the desired position to rearrange the order of the content added to the course
       </td>
     <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
   </tr>
