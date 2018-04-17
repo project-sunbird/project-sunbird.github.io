@@ -4,8 +4,8 @@ directory: usertaskflow
 title: How Do I Add Hotspot
 page_title:  How Do I Add Hotspot
 description: How Do I Add Hotspot
-keywords: 'adding, metadata, enter details'
+keywords: 'adding, hotspot, enter details'
 published: true
 allowSearch: true
 ---
-{% image src='' full center  alt='How do I add hotspot '  zoom %} 
+{% image src='pages/usertaskflow/images/adding_hotspot.svg' full center  alt='How do I add hotspot '  zoom %} 
