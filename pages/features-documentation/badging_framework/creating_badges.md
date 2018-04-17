@@ -17,7 +17,7 @@ Organization administrators can create and customize badges to suit their organi
 - Defining created badges in the platform
 
 ### Prerequisites
-To create badges on DIKSHA, ensure you have : <br>1. Sunbird API keys <br>2. Badging Framework APIs <br>3. Any standard rest API client, for instance, Postman <br>4. Subtypes configured in your local system. The existing subtypes are: <br>&emsp;a) Awards <br>&emsp;b) Certificates <br>&emsp;c) Authorizations <br>&emsp;d) Endorsements
+To create badges on Sunbird, ensure you have : <br>1. Sunbird API keys <br>2. Badging Framework APIs <br>3. Any standard rest API client, for instance, Postman <br>4. Subtypes configured in your local system. The existing subtypes are: <br>&emsp;a) Awards <br>&emsp;b) Certificates <br>&emsp;c) Authorizations <br>&emsp;d) Endorsements
 
 ### Defining Badge Issuers
 Every badge created on DIKSHA must have an issuer to issue the badge. Organizations can have individual issuers for each created badge or one issuer for all the badges created. To create a badge issuer: <br>1. Open your rest API client <br>2. Load the badging framework APIs in the client <br>3. Set the Sunbird API authorization token to execute the badging framework APIs for creating a badge issuer
