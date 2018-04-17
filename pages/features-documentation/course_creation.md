@@ -158,7 +158,7 @@ Before the Course is publihed, it must be reviewed. You can send it for reviewin
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click on the <b>What's New</b> icon to view new functionalities and related content <br><b>Note</b>: What's new icon appears in red color, when it is viewed for the first time. It turns to grey from next view, until next version of the feature is not available.</td>
+    <td>1. Click on the <b>What's New</b> icon to view new functionalities and related content <br><br><b>Note</b>: What's new icon appears in red color, when it is viewed for the first time. It turns to grey from next view, until next version of the feature is not available.</td>
     <td><img src="pages/features-documentation/images/whatsnew1.png"></td>
   </tr>
   <tr>
