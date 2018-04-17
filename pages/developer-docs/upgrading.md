@@ -7,79 +7,115 @@ description: Upgradation of services, dataset etc in Sunbird
 published: true
 allowSearch: true
 ---
+
 ## Overview
-Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.  
 
-## Upgrading Sunbird Services
+* Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.  
 
-1.Pull the latest code of `project-sunbird/sunbird-devops`from the master branch 
+* From release-1.5, all the services are maintained with same image gold  version. 
 
-2.Take a backup of all the databases. Follow steps here provided in the following section to take a backup. 
-
-3.Run the script `./sunbird_upgrade.sh`  in `sunbird-devops/deploy`
-
-**Note:** All the core services latest images versions are already updated in the master branch . To get the hotfix of any Sunbird with a new image, go to `sunbird-devops/deploy/deploy-core.sh`  and update it 
-
-4.Re-run the `sunbird-devops/deploy/deploy-core.sh`  
+* From release-1.5, cassandra migration is introduced to update  cassandra database schema.
+ 
 
 
-## Taking a Back Up of Database Servers
+## Upgrading Sunbird Services 
 
-1.ssh to database server on which you want to take backup.
+1. Pull the latest code of `project-sunbird/sunbird-devops` from the master branch.
+ 
+2. It is good practice to take a full backup of all the databases before updating the new schema. Follow steps [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers) to take backup. 
 
-2.git clone https://github.com/project-sunbird/sunbird-devops
+3. Run `./sunbird-install.sh`. This will deploy the latest version of sunbird services and also update the latest schema on databases.
 
-3.cd sunbird-devops/deploy/
+**Note:** Latest images versions of all the services are updated in the master branch. To get the particular hotfix image of any Sunbird service, update the minor version in the `sunbird-devops/deploy/deploy-core.sh` file. Re-run the `sunbird-devops/deploy/deploy-core.sh`
+
+
+## Backup and Restore of Sunbird Databases
+
+1. ssh to the database server on which you want to take backup.
+
+2. Run `git clone https://github.com/project-sunbird/sunbird-devops`
+
+3. cd `sunbird-devops/deploy/`
 
 ### Cassandra
 
 **Backup:** 
 	
-   Take a snapshot of Cassandara database using 
+   * Take a snapshot of Cassandara database using  
 	
-	`nodetool snapshot -t my_backup`
+		nodetool snapshot -t my_backup
    
-  Copy the snapshot to your backup directory using
-
-	./cassandra_backup.py --datadir /var/lib/cassandra/data --snapshotname my_backup --targetdir /backup/folder/$(date +%Y-%m-%d)
+  * Copy the snapshot to your backup directory. 
+	
+		./cassandra_backup.py --datadir /var/lib/cassandra/data --snapshotname my_backup --targetdir <path-to-backup-directory>/$(date +%Y-%m-%d)
+		
+ * Above command creates the snapshot of all the keyspaces mentioned below. 
+		
+		portal         -  Stores the session data
+		dialcodes      -  Stores the energized text book details
+		sunbirdplugin  -  Stores the custom or plugin data(used by announcment team as an object api internally)
+		sunbird	       -  Stores the org,user,course,batch,badgr etc..
+		
 
 **Restore:**
 
-Restore Cassandra database using
+* Copy the Cassandra backup snapshot to the instance where you want to run restore.
+
+* Restore Cassandra database using command
 	           
-	./cassandra_restore.py --cassandra_host ip_address --snapshotdir /backups/cassandra/$(date +%Y-%m-%d)
+	    ./cassandra_restore.py --cassandra_host ip_address --snapshotdir <path-to-the-restore>/$(date +%Y-%m-%d)
+
 
 ### Postgres
 
 **Backup:** 
 
-Run the script
+* Run the script below to take a full backup of the Postgres database.
+		
+		./backup_postgres.sh
+		
+* Above command creates the backup file in the location `/tmp/postgresql-backup`. 
+
+* Backup of Postgres is done for below databases
+       
+        api_manager -	Used by kong
+        badger	    -	Used by badger services
+        Keycloak    -	Used by Keycloak
+        quartz      -	Used by sunbird backend services
 	
-	./backup_postgres.sh
 
 **Restore:**
 
-Copy the backup file from the `/tmp/postgresql-backup/<backup_file>`
+* Copy the backup file from the `/tmp/postgresql-backup/<backup_file>`
 
-Run
-
-	psql -f <backup_file> postgres
+* Run the below command for restore
+		
+		./restore_postgres.sh
+	
 
 ### Elasticsearch 
 
 **Backup:**
 
-Run the script 
+* Run the below script for backup 
+	
+		./backup_elasticsearch.sh
 
-	./backup_elasticsearch.sh
+* Above command creates the backup file in the location `/etc/elasticsearch/backup`. 
+
+* Backup of Elasticsearch is done for below databases
+		
+		searchindex      - Stores the user, org , course, batch data
+		sunbirdplugin    - Stores the plugin related data (object API)
+		sunbirddataaudit - Stores the user & org audit history data.
 
 **Restore:**
 
-Copy the backup file from the `/tmp/elasticsearch-backup/<backup_file>`
+Copy the backup file from the `/tmp/elasticsearch-backup/<backup_file>` to the instance where you want to run restore.
 
 Run
 	
-	./restore_elasticsearch.sh <path/to/the/restore_file>	
+	./restore_elasticsearch.sh <path/to/the/restore_file	
 	
 **Note:** Install Python on the Cassandra machine, if you use our scripts to backup or restore the Cassandra database.
 
