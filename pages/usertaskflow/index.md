@@ -36,7 +36,7 @@ For each user flow, the questions that we have addressed here:
             <li><a href="usertaskflow/how_do_i_add_scribblepad/" target="_blank">How Do I Add Scribblepad</a></li>
             <li><a href="usertaskflow/how_do_i_add_shape/" target="_blank">How Do I Add Shape</a></li>
             <li><a href="usertaskflow/how_do_i_add_text/" target="_blank">How Do I Add Text</a></li>
-            <li><a href="usertaskflow/how_do_i_add_video/" target="_blank"></a>How Do I Add Video</li>
+            <li><a href="usertaskflow/how_do_i_add_video/" target="_blank">How Do I Add Video</a></li>
             <li><a href="usertaskflow/how_do_i_add_audio/" target="_blank">How Do I Add Audio</a></li>    
         </ul>
     </div>
