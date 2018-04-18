@@ -34,9 +34,9 @@ For each user flow, the questions that we have addressed here:
         </ul>
     </div>
     <div class="col-sm-4">
-        <h3>Administration API(s)</h3>
+        <h3>Reviewer(s)</h3>
         <ul>
-            <li><a href="apis/notificationapi/" target="_blank">Notification </a></li>
+            <li><a href="pages/usertaskflow/how_do_i_create_content/" target="_blank">Notification </a></li>
             <li><a href="apis/firebasecloudmessagingapi/" target="_blank">Push Notification </a></li>
             <li><a href="apis/geolocationapi/" target="_blank">Geo Location </a></li>
             <li><a href="apis/form/" target="_blank">Form </a></li>      
