@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: developer-docs
-title: Upgrading Sunbird Services and Database Servers
+title: Upgrading Sunbird 
 page_title: Upgrading Sunbird Services and Database Servers
 description: Upgradation of services, dataset etc in Sunbird
 published: true
