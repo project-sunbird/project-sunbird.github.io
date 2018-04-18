@@ -53,10 +53,10 @@ This page describes how to configure the metadata forms.Ensure that the followin
 
 1. You can configure the following forms:
 
- * Start create
- * Edit details (save)
- * Submit content for review
- * Question details
+   * Start create
+   * Edit details (save)
+   * Submit content for review
+   * Question details
 
 2. For each form  you can decide:
 
