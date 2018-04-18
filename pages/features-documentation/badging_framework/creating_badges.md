@@ -22,7 +22,7 @@ To create badges on Sunbird, ensure you have: <br>1. Sunbird API keys <br>2. Acc
 ### Defining Badge Issuers
 Every badge must be issued by a designated badge issuer. Organizations can have individual issuers for each created badge or one issuer for all the badges created. To create a badge issuer: <br>1. Open your rest API client <br>2. Load the badging framework APIs in the client <br>3. Set the Sunbird API authorization token to execute the badging framework APIs for creating a badge issuer
 
-**Note** For API details, refer [Badging Framework](http://www.sunbird.org/apis/badgingframeworkapi/){:target="_blank"}
+**Note:** For API details, refer [Badging Framework](http://www.sunbird.org/apis/badgingframeworkapi/){:target="_blank"}
 
 ### Badge Issuer Details
 Enter the following details in the request body of the Create Issuer Endpoint:
@@ -39,7 +39,7 @@ On successful execution of the creation API, you will get the Issuer ID
 
 ### Defining Badge Class
 To create a badge class:
-1. Execute the [Badging Framework API] (http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeCreatePost){target="_blank"} 
+1. Execute the [Badging Framework API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeCreatePost){:target="_blank"} 
 2. Enter the following details in the request body of Create Badge Class Endpoint:
 
 |  Field Name                 | Description | Field Type | 
@@ -54,5 +54,5 @@ To create a badge class:
 | Criteria | A text string or a URL that describes criteria in achieving the badge | Mandatory|
 | Roles | List of user roles on Sunbird who can issue the badge | Mandatory |
 
-After successfully creating the badge issuer and the badge class on the API client, execute the [Badge Assertion API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeAssertionSearchPost){target="_blank"} to update the created badge issuer and badge class on the portal
+After successfully creating the badge issuer and the badge class on the API client, execute the [Badge Assertion API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeAssertionSearchPost){:target="_blank"} to update the created badge issuer and badge class on the portal
 
