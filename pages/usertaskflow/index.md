@@ -29,7 +29,7 @@ The User flows guide you to complete a task easily and efficiently.
             <li><a href="usertaskflow/limited_sharing/" target="_blank">How Do I Do Limited Sharing</a></li>
             <li><a href="usertaskflow/how_do_i_delete_content/" target="_blank">How Do I Delete Content</a></li> 
             <li><a href="usertaskflow/how_do_i_add_metadata/" target="_blank">How Do I Add Metadata</a></li>
-            <li><a href="usertaskflow/how_do_i_add_resource/" target="_blank">How Do I Add Resurce</a></li>
+            <li><a href="usertaskflow/how_do_i_add_resource/" target="_blank">How Do I Add Resource</a></li>
             <li><a href="usertaskflow/how_do_i_add_activity/" target="_blank">How Do I Add Activity</a></li>
             <li><a href="usertaskflow/how_do_i_add_hotspot/" target="_blank">How Do I Add Hotspot</a></li>
             <li><a href="usertaskflow/how_do_i_add_image/" target="_blank">How Do I Add Image</a></li>
