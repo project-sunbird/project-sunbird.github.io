@@ -19,22 +19,30 @@ For each user flow, the questions that we have addressed here:
     <div class="col-sm-4">
         <h3>Content Creator(s)</h3>
         <ul>
-            <li><a href="apis/coursebatchmanapi/" target="_blank">nawab</a></li>
-            <li><a href="usertaskflow/how_do_i_add_metadata/" target="_blank">Meta data</a></li>
-            <li><a href="apis/framework/" target="_blank">yyyyy</a></li>
-            <li><a href="apis/orgapi/" target="_blank">Organisation Management </a></li>
-            <li><a href="apis/userapi/" target="_blank">User </a></li>
-            <!--<li><a href="apis/badgesapi/" target="_blank">User Badges </a></li>-->
-            <li><a href="apis/noteapi/" target="_blank">User Notes </a></li>
-            <li><a href="apis/badgingframeworkapi/" target="_blank">Badging Framework </a></li>
+            <li><a href="usertaskflow/how_do_i_create_book/" target="_blank">How Do I Create Book</a></li>
+            <li><a href="usertaskflow/how_do_i_create_book_with_dial_code/" target="_blank">How Do I Create Book with Dial Code</a></li>
+            <li><a href="usertaskflow/how_do_i_create_collection/" target="_blank">How Do I Create Collection</a></li>
+            <li><a href="/usertaskflow/how_do_i_create_content/" target="_blank">How Do I Create Content</a></li>
+            <li><a href="usertaskflow/how_do_i_create_course/" target="_blank">How Do I Create Course</a></li>
+            <li><a href="usertaskflow/how_do_i_create_lessonplan/" target="_blank">How Do I Create Lessonplan</a></li>
+            <li><a href="usertaskflow/how_do_i_uploadcontent/" target="_blank">How Do I Upload Content</a></li>
+            <li><a href="usertaskflow/limited_sharing/" target="_blank">Limited Sharing</a></li>
+            <li><a href="usertaskflow/how_do_i_delete_content/" target="_blank">How Do I Delete Content</a></li> 
+            <li><a href="usertaskflow/how_do_i_add_metadata/" target="_blank">How Do I Add Meta data</a></li>
+            <li><a href="usertaskflow/how_do_i_add_resource/" target="_blank">How Do I Add Resurce</a></li>
+            <li><a href="usertaskflow/how_do_i_add_activity/" target="_blank">How Do I Add Activity</a></li>
+            <li><a href="usertaskflow/how_do_i_add_hotspot/" target="_blank">How Do I Add Hotspot</a></li>
+            <li><a href="usertaskflow/how_do_i_add_image/" target="_blank">How Do I Add Image</a></li>
+            <li><a href="usertaskflow/how_do_i_add_scribblepad/" target="_blank">How Do I Add Scribblepad</a></li>
+            <li><a href="usertaskflow/how_do_i_add_shape/" target="_blank">How Do I Add Shape</a></li>
+            <li><a href="usertaskflow/how_do_i_add_text/" target="_blank">How Do I Add Text</a></li>
+            <li><a href="usertaskflow/how_do_i_add_video/" target="_blank"></a>How Do I Add Video</li>
+            <li><a href="usertaskflow/how_do_i_add_audio/" target="_blank">How Do I Add Audio</a></li>    
         </ul>
     </div>
     <div class="col-sm-4">
         <h3>Reviewer(s)</h3>
         <ul>
-            <li><a href="pages/usertaskflow/how do icreatecontent/" target="_blank">Notification </a></li>
-            <li><a href="apis/firebasecloudmessagingapi/" target="_blank">Push Notification </a></li>
-            <li><a href="apis/geolocationapi/" target="_blank">Geo Location </a></li>
-            <li><a href="apis/form/" target="_blank">Form </a></li>      
+            <li><a href="usertaskflow/reviewer_taskflow" target="_blank">Reviewer Taskflow</a></li>    
         </ul>
     </div>
