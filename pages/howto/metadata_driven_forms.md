@@ -13,19 +13,19 @@ allowSearch: true
 
 Metadata is absolutely essential in the digital environment. It is the fulcrum for content discoverability.
 
-Whenever you create and submit content on DIKSHA, you have to enter a form with details about the submitted content, like its title, description, etc. The details entered are the metadata of the submitted content.
+Whenever you create and submit content on Sunbird, you have to enter a form with details about the submitted content, like its title, description, etc. The details entered is the metadata of the submitted content.
 
 In order to take customization and flexibility to a different level, the framework offers metadata driven forms. The form fields such as labels, text, number, value, etc. are defined as metadata in a database rather than being hard-coded. As a result, DIKSHA administrators can:
 
-* customize form templates
+* Customize form templates
 
-* rearrange fields in the form
+* Rearrange fields in the form
 
-* modify values and attributes of each form field
+* Modify values and attributes of each form field
 
-Currently, DIKSHA administrators configure forms. However, it is possible to provide these privileges to any trusted user of the organization. The form metadata configuration and rendering is done for a specific channel using form API resources. 
+Currently,the administrators configure forms. However, it is possible to provide these privileges to any trusted user of the organization. The form metadata configuration and rendering is done for a specific channel using form API resources. 
 
-This document tells you how to configure the form metadata.
+This page describes how to configure the metadata forms.Ensure that the following prerequisites are met:
 
 ### Prerequisites
 
