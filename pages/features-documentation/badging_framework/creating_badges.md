@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation/badging_framework
-title: Creating Badges on Sunbird
-page_title: Creating Badges on Sunbird
+title: Creating Badges
+page_title: Creating Badges 
 description: Details on the procedure of creating badges using APIs on Sunbird
 keywords: 'badges, assign badges, create badges, issue badges, mark as recommneded, mark as popular, mark as official'
 published: true
