@@ -78,9 +78,9 @@ This page describes how to configure the metadata forms.Ensure that the followin
 
     * Display name (Name of the field)
 
-### Create/Update/Read Metadata driven Forms
+### Operations on Metadata driven Forms
 
-To Create or update a metadata driven form:
+To Create or update or read metadata driven form:
 
 1. Check the prerequisites
 
