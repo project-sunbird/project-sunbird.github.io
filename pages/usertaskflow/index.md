@@ -18,16 +18,16 @@ The User flows guide you to complete a task easily and efficiently.
 <div class="row">
     <div class="col-sm-4">
         <h3>Content Creator(s)</h3>
-        <ul>
+        <ul> 
             <li><a href="/usertaskflow/how_do_i_create_content/" target="_blank">How Do I Create Content</a></li>
-            <ul>
+          <ul class="group">
             <li><a href="usertaskflow/how_do_i_create_book/" target="_blank">How Do I Create Book</a></li>
-            </ul>
             <li><a href="usertaskflow/how_do_i_create_book_with_dial_code/" target="_blank">How Do I Create Book with Dial Code</a></li>
             <li><a href="usertaskflow/how_do_i_create_collection/" target="_blank">How Do I Create Collection</a></li>
             <li><a href="usertaskflow/how_do_i_create_course/" target="_blank">How Do I Create Course</a></li>
             <li><a href="usertaskflow/how_do_i_create_lessonplan/" target="_blank">How Do I Create Lessonplan</a></li>
             <li><a href="usertaskflow/how_do_i_uploadcontent/" target="_blank">How Do I Upload Content</a></li>
+           </ul>
             <li><a href="usertaskflow/limited_sharing/" target="_blank">How Do I Do Share Content with Limited Audience</a></li>
             <li><a href="usertaskflow/how_do_i_delete_content/" target="_blank">How Do I Delete Content</a></li> 
             <li><a href="usertaskflow/how_do_i_add_metadata/" target="_blank">How Do I Add Metadata</a></li>
@@ -40,7 +40,7 @@ The User flows guide you to complete a task easily and efficiently.
             <li><a href="usertaskflow/how_do_i_add_text/" target="_blank">How Do I Add Text</a></li>
             <li><a href="usertaskflow/how_do_i_add_video/" target="_blank">How Do I Add Video</a></li>
             <li><a href="usertaskflow/how_do_i_add_audio/" target="_blank">How Do I Add Audio</a></li>    
-        </ul>
+         </ul>
     </div>
     <div class="col-sm-4">
         <h3>Reviewer(s)</h3>
