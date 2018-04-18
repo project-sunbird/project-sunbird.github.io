@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation/badging_framework
-title: Issuing Badges to Content
-page_title: Issuing Badges to Content
+title: Issuing Badges for Content
+page_title: Issuing Badges for Content
 description: Details on the procedure of issuing badges to content on Sunbird
 keywords: 'badges, assign badges, create badges, issue badges, mark as recommneded, mark as popular, mark as official'
 published: true
@@ -51,10 +51,10 @@ suggestions, OR <br>3. Click the search icon after you type the name of the book
    <td>1. Select the book for which you want to assign the badge
        </td>
       <td><img src="pages/features-documentation/images/badging_images/search_results.png"></td>
-  </tr>
-  </table>
+    </table>
   
   ### Issuing Badges
+  
   <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -69,7 +69,7 @@ to the previous screen
     <td>1. Once the badge is successfully assigned, the badge appears on the book as shown in the image
        </td>
       <td><img src="pages/features-documentation/images/badging_images/book_with_badge.png"></td>
-  </tr>
+  
   </table>
  
   
