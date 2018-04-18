@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/installation
-title: Install Sunbird on your Machine
-page_title: Install Sunbird on your Machine
+title: Developer Installation
+page_title: Developer Installation
 description: Installing  the Sunbird portal or web application, 
 published: true
 allowSearch: true
