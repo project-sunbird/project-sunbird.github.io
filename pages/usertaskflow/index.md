@@ -17,9 +17,9 @@ For each user flow, the questions that we have addressed here:
 
 <div class="row">
     <div class="col-sm-4">
-        <h3>Feature API(s)</h3>
+        <h3>Content Creator(s)</h3>
         <ul>
-            <li><a href="apis/announcements/" target="_blank">Announcement</a></li>
+            <li><a href="pages/usertaskflow/how_do_i_create_content</a></li>
             <li><a href="apis/assessmentapi/" target="_blank">Assessment</a></li>
             <li><a href="apis/audienceapi/" target="_blank">Audience</a></li>
             <li><a href="apis/content/" target="_blank">Content</a></li>
