@@ -11,19 +11,21 @@ allowSearch: true
 
 ## Overview
 
-Organization administrators can create and customize badges to suit their organization needs. This documentation helps technical team of an organization understand the procedures on:
-- Creating Badges
-- Creating Badge Issuers
-- Defining created badges in the platform
+Organization administrators can create and customize badges to suit their organization needs. This page provides you information on the procedures to:
+- Create badges
+- Create badge Issuers
+- Define created badges in the platform
 
 ### Prerequisites
-To create badges on Sunbird, ensure you have : <br>1. Sunbird API keys <br>2. Badging Framework APIs <br>3. Any standard rest API client, for instance, Postman <br>4. Subtypes configured in your local system. The existing subtypes are: <br>&emsp;a) Awards <br>&emsp;b) Certificates <br>&emsp;c) Authorizations <br>&emsp;d) Endorsements
+To create badges on Sunbird, ensure you have: <br>1. Sunbird API keys <br>2. Access to Badging Framework APIs <br>3. Any standard rest API client, for instance, Postman <br>4. Subtypes configured in your local system. The existing subtypes are: <br>&emsp;a) Awards <br>&emsp;b) Certificates <br>&emsp;c) Authorizations <br>&emsp;d) Endorsements
 
 ### Defining Badge Issuers
-Every badge created on DIKSHA must have an issuer to issue the badge. Organizations can have individual issuers for each created badge or one issuer for all the badges created. To create a badge issuer: <br>1. Open your rest API client <br>2. Load the badging framework APIs in the client <br>3. Set the Sunbird API authorization token to execute the badging framework APIs for creating a badge issuer
+Every badge must be issued by a designated badge issuer. Organizations can have individual issuers for each created badge or one issuer for all the badges created. To create a badge issuer: <br>1. Open your rest API client <br>2. Load the badging framework APIs in the client <br>3. Set the Sunbird API authorization token to execute the badging framework APIs for creating a badge issuer
+
+**Note** For API details, refer [Badging Framework](http://www.sunbird.org/apis/badgingframeworkapi/){:target="_blank"}
 
 ### Badge Issuer Details
-Enter the following details in the request body of Create Issuer Endpoint:
+Enter the following details in the request body of the Create Issuer Endpoint:
 
 |  Field Name                 | Description | Field Type | 
 |--------------------------------|---------------------|--------------|
@@ -33,12 +35,12 @@ Enter the following details in the request body of Create Issuer Endpoint:
 | **Email** | A contact email of the Issuer | Mandatory |
 | **Image** | An image file that represents the Issuer, such as a logo of the issuing organization, or image of the person | Optional |
 
-On successful execution of the creation API, an issuer ID is issued
+On successful execution of the creation API, you will get the Issuer ID
 
 ### Defining Badge Class
 To create a badge class:
-1. Execute the badging framework API for creating a badge class
-2. Enter the following details in the request body of Create Badge Endpoint:
+1. Execute the [Badging Framework API] (http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeCreatePost){target="_blank"} 
+2. Enter the following details in the request body of Create Badge Class Endpoint:
 
 |  Field Name                 | Description | Field Type | 
 |--------------------------------|---------------------|--------------|
@@ -52,5 +54,5 @@ To create a badge class:
 | Criteria | A text string or a URL that describes criteria in achieving the badge | Mandatory|
 | Roles | List of user roles on Sunbird who can issue the badge | Mandatory |
 
-After successfully creating the badge issuer and the badge class on the API client, execute the Badge Assertion API to update the created badge issuer and badge class on the portal
+After successfully creating the badge issuer and the badge class on the API client, execute the [Badge Assertion API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeAssertionSearchPost){target="_blank"} to update the created badge issuer and badge class on the portal
 
