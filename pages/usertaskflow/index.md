@@ -39,18 +39,4 @@ For each user flow, the questions that we have addressed here:
             <li><a href="apis/geolocationapi/" target="_blank">Geo Location </a></li>
             <li><a href="apis/form/" target="_blank">Form </a></li>      
         </ul>
-        <h3>Setup API(s)</h3>
-        <ul>
-            <li><a href="apis/bulkupload/" target="_blank">Bulk Upload Service </a></li>
-            <li><a href="apis/masterkeyapi/" target="_blank">Master Key </a></li>
-            <li><a href="apis/pagesapi/" target="_blank">Pages </a></li>     
-        </ul>
-        </div>
-    <div class="col-sm-4">
-        <h3>Data API(s)</h3>
-        <ul>
-            <li><a href="apis/datasyncapi/" target="_blank">Data Sync </a></li>
-            <li><a href="apis/metricsapi/" target="_blank">Metrics </a></li>
-            <li><a href="apis/dataexhaustapi/" target="_blank">Data Exhaust</a></li>
-        </ul>
     </div>
