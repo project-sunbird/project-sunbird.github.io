@@ -20,7 +20,9 @@ The User flows guide you to complete a task easily and efficiently.
         <h3>Content Creator(s)</h3>
         <ul>
             <li><a href="/usertaskflow/how_do_i_create_content/" target="_blank">How Do I Create Content</a></li>
+            <ul>
             <li><a href="usertaskflow/how_do_i_create_book/" target="_blank">How Do I Create Book</a></li>
+            </ul>
             <li><a href="usertaskflow/how_do_i_create_book_with_dial_code/" target="_blank">How Do I Create Book with Dial Code</a></li>
             <li><a href="usertaskflow/how_do_i_create_collection/" target="_blank">How Do I Create Collection</a></li>
             <li><a href="usertaskflow/how_do_i_create_course/" target="_blank">How Do I Create Course</a></li>
