@@ -21,7 +21,7 @@ For each user flow, the questions that we have addressed here:
         <ul>
             <li><a href="pages/usertaskflow/how_do_i_create_content" target="_blank"</a></li>
             <li><a href="pages/usertaskflow/how_do_i_create_content" target="_blank">Audience</a></li>
-            <li><a href="apis/content/" target="_blank">Content</a></li>
+            <li><a href="usertaskflow/how_do_i_create_content/" target="_blank">Content</a></li>
             <li><a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management</a></li>
             <li><a href="apis/courseprogressapi/" target="_blank">Course Progress</a></li>
             <li><a href="apis/dialapi/" target="_blank">D.I.A.L </a></li>
@@ -36,7 +36,7 @@ For each user flow, the questions that we have addressed here:
     <div class="col-sm-4">
         <h3>Reviewer(s)</h3>
         <ul>
-            <li><a href="pages/usertaskflow/how_do_i_create_content/" target="_blank">Notification </a></li>
+            <li><a href="pages/usertaskflow/how do icreatecontent/" target="_blank">Notification </a></li>
             <li><a href="apis/firebasecloudmessagingapi/" target="_blank">Push Notification </a></li>
             <li><a href="apis/geolocationapi/" target="_blank">Geo Location </a></li>
             <li><a href="apis/form/" target="_blank">Form </a></li>      
