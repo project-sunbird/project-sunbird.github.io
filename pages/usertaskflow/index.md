@@ -19,9 +19,9 @@ For each user flow, the questions that we have addressed here:
     <div class="col-sm-4">
         <h3>Content Creator(s)</h3>
         <ul>
-            <li><a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management</a></li>
-            <li><a href="usertaskflow/how_do_i_add_metadata/" target="_blank">Meta data </a></li>
-            <li><a href="apis/framework/" target="_blank">Framework </a></li>
+            <li><a href="apis/coursebatchmanapi/" target="_blank">nawab</a></li>
+            <li><a href="usertaskflow/how_do_i_add_metadata/" target="_blank">Meta data</a></li>
+            <li><a href="apis/framework/" target="_blank">yyyyy</a></li>
             <li><a href="apis/orgapi/" target="_blank">Organisation Management </a></li>
             <li><a href="apis/userapi/" target="_blank">User </a></li>
             <!--<li><a href="apis/badgesapi/" target="_blank">User Badges </a></li>-->
