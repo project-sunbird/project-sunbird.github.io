@@ -19,9 +19,8 @@ For each user flow, the questions that we have addressed here:
     <div class="col-sm-4">
         <h3>Content Creator(s)</h3>
         <ul>
-            <li><a href="pages/usertaskflow/how_do_i_create_content_target="_blank"</a></li>
-            <li><a href="apis/assessmentapi/" target="_blank">Assessment</a></li>
-            <li><a href="apis/audienceapi/" target="_blank">Audience</a></li>
+            <li><a href="pages/usertaskflow/how_do_i_create_content" target="_blank"</a></li>
+            <li><a href="pages/usertaskflow/how_do_i_create_content" target="_blank">Audience</a></li>
             <li><a href="apis/content/" target="_blank">Content</a></li>
             <li><a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management</a></li>
             <li><a href="apis/courseprogressapi/" target="_blank">Course Progress</a></li>
