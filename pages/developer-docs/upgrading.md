@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: developer-docs
-title: Upgrading Sunbird Services and Database Servers
+title: Upgrading Sunbird 
 page_title: Upgrading Sunbird Services and Database Servers
 description: Upgradation of services, dataset etc in Sunbird
 published: true
@@ -10,14 +10,12 @@ allowSearch: true
 
 ## Overview
 
-* Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.  
+Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.  
 
-* From release-1.5, all the services are maintained with same image gold  version. 
-
-* From release-1.5, cassandra migration is introduced to update  cassandra database schema.
+* From release-1.5:
+	- All the services are maintained with same image gold  version 
+	- Cassandra migration is introduced to update  cassandra database schema.
  
-
-
 ## Upgrading Sunbird Services 
 
 1. Pull the latest code of `project-sunbird/sunbird-devops` from the master branch.
