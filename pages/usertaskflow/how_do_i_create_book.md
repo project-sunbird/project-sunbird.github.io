@@ -8,5 +8,5 @@ keywords: 'adding, book, create'
 published: true
 allowSearch: true
 ---
-{% image src='/pages/usertaskflow/images/create_book.svg' full center alt='How Do I Create book' zoom %} 
+{% image src='pages/usertaskflow/images/create_book.svg' full center alt='How Do I Create book' zoom %} 
 
