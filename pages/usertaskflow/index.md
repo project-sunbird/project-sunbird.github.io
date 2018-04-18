@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 The User flows guide you to complete a task easily and efficiently.
-<br>For each user flow, the questions that we have addressed here:
+For each user flow, the questions that we have addressed here:
 
  * What is the user trying to achieve?
  * What is important points that the user should keep in mind while performing a task?
@@ -19,9 +19,8 @@ The User flows guide you to complete a task easily and efficiently.
     <div class="col-sm-4">
         <h3>Content Creator(s)</h3>
         <ul>
-            <li><a href="pages/usertaskflow/how_do_i_create_content/" target="_blank">Content</a></li>
             <li><a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management</a></li>
-            <li><a href="apis/courseprogressapi/" target="_blank">Course Progress</a></li>
+            <li><a href="blob/dev/pages/usertaskflow/how_do_i_add_metadata" target="_blank">Course Progress</a></li>
             <li><a href="apis/dialapi/" target="_blank">D.I.A.L </a></li>
             <li><a href="apis/framework/" target="_blank">Framework </a></li>
             <li><a href="apis/orgapi/" target="_blank">Organisation Management </a></li>
