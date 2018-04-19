@@ -1,15 +1,15 @@
 ---
 type: landing
 directory: features-documentation
-title: Content Editor
-page_title: Content Editor
-description: Content Editor
+title: Study Material
+page_title: Study Material
+description: Study Material
 keywords: content editor, create course, create content, create lesson, textbook, collection, course
 published: true
 allowSearch: true
 ---
-Sunbird has an inbuilt content editor with various features that aid in creating engaging and interesting content. 
-Content types created on the content editor include: 
+Sunbird has an inbuilt content editor with various features that aid in creating engaging and interesting study materials. 
+Studay materials of differnt types can be created on the content editor include: 
 
 - Game
 - Story
