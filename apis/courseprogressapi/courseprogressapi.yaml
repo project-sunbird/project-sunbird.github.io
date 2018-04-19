@@ -328,10 +328,10 @@ definitions:
     type: object
     properties:
       contentId:
-        description: 'This represents that the response will contain the content ID along with status message like SUCCESS or FAILURE in case content updation is successful or viceversa.
+        description: 'Response will contain the content ids along with status like SUCCESS or FAILURE in case content updation success or fail respectively .'
         type: string
   ContentErrorResponse:
-    title: Create Content Error Response
+    title: This is the response body of when Content creation error is encountered  
     type: object
     allOf:
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
