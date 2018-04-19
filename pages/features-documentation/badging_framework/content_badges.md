@@ -16,6 +16,7 @@ organizing, searching and recommending suitable content. It enables increased co
 In this documentation, for the pupose of explaining the process of issuing badges to content we have used the example of a badge, titled, Official.
 
 ### Prerequisites 
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -29,6 +30,7 @@ In this documentation, for the pupose of explaining the process of issuing badge
   </table>
 
 ### Searching for Content
+
 Currently, on Sunbird, badges can be assigned only to books. 
 <table>
   <tr>
@@ -52,8 +54,7 @@ suggestions, OR <br>3. Click the search icon after you type the name of the book
        </td>
       <td><img src="pages/features-documentation/images/badging_images/search_results.png"></td>
     </table>
-  
-  ### Issuing Badges
+<H3>Issuing Badges</H3>
   
   <table>
   <tr>
