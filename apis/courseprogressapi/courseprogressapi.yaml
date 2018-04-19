@@ -254,8 +254,8 @@ definitions:
     description: Get Content Response
     type: object
     allOf:
-      - $ref: '#/definitions/ResultWithEmptyBody'
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+      - $ref: '#/definitions/ResultWithEmptyBody'
   ResultWithEmptyBody:
     title: This is the result Containing empty body
     type: object
@@ -316,8 +316,8 @@ definitions:
     description: Update Content Response
     type: object
     allOf:
-      - $ref: '#/definitions/ResultWithEmptyBody1'
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+      - $ref: '#/definitions/ResultWithEmptyBody1'  
   ResultWithEmptyBody1:
     title: Result Containing empty body
     type: object
