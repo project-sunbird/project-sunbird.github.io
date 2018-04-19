@@ -4,7 +4,7 @@ directory: usertaskflow
 title: How Do I Create Content
 page_title:  How Do I Create Content
 description: How Do I Create Content
-keywords: ' Creeate content, contegnt editor'
+keywords: ' create content, contegnt editor'
 published: true
 allowSearch: true
 ---
