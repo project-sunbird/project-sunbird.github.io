@@ -44,25 +44,8 @@ The User flows guide you to complete a task easily and efficiently.
                </ul>
             </ul>
         </div>
-    <div class="col-sm-4">
-        <h3>Teacher Learning Material</h3>
-                <ul class="group">
-                    <li><a href="usertaskflow/how_do_i_create_course/" target="_blank">How Do I Create Course</a></li>
-                    <li><a href="usertaskflow/how_do_i_create_book/" target="_blank">How Do I Create Book</a></li>
-                    <ul class="group">
-                    <li><a href="usertaskflow/how_do_i_create_book_with_dial_code/" target="_blank">How Do I Create Book with Dial Code</a></li>
-                    </ul>
-                    <li><a href="usertaskflow/how_do_i_create_lessonplan/" target="_blank">How Do I Create Lessonplan</a></li>
-                    <li><a href="usertaskflow/how_do_i_create_collection/" target="_blank">How Do I Create Collection</a></li>
-                    <li><a href="usertaskflow/how_do_i_uploadcontent/" target="_blank">How Do I Upload Content</a></li>
-                    <li><a href="usertaskflow/how_do_i_delete_content/" target="_blank">How Do I Upload Content</a></li>
-                    <li><a href="usertaskflow/how_do_i_add_metadata/" target="_blank">How Do I Add Metadata</a></li>
-                    <li><a href="usertaskflow/how_do_i_add_resource/" target="_blank">How Do I Add Resource</a></li>
-                    <li><a href="usertaskflow/limited_sharing/" target="_blank">How Do I Do Share Content with Limited Audience</a></li>
-                </ul>
-        </div>
         <div class="col-sm-4">
-            <h3>Reviewer(s)</h3>
+            <h3>Reviewer</h3>
             <ul>
                 <li><a href="usertaskflow/reviewer_taskflow" target="_blank">Reviewer Taskflow</a></li>    
             </ul>
