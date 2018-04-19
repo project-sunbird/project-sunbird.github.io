@@ -8,4 +8,4 @@ keywords: 'adding,activity'
 published: true
 allowSearch: true
 ---
-{% image src='pages/usertaskflow/images/adding_activity.svg' full center alt='How Do I Add Activity' zoom %} 
+{% image src='pages/usertaskflow/images/create_book_dialcode.svg' full center alt='How Do I Add Activity' zoom %} 

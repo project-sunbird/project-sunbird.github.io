@@ -4,7 +4,7 @@ directory: usertaskflow
 title: How Do I Add Video
 page_title:  How Do I Add Video
 description: How Do I Add Video
-keywords: 'adding, metadata, enter details'
+keywords: 'adding, video'
 published: true
 allowSearch: true
 ---

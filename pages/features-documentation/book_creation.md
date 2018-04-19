@@ -32,41 +32,28 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
    <tr>
-    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Curriculum</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b> 
-      <br><b>Note</b>: These details can be filled later when updating the book metadata
+    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Board</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b> 
+      <br><b>Note</b>: These details can be filled later when updating the book details
        </td>
       <td><img src="pages/features-documentation/images/book/book_createbook.png"></td>
   </tr>
   </table>
   
-### Book Metadata
+### Book Details
  
- On clicking <b>Start Creating</b>, the metadata fields related to the book are displayed:
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> of the book <br>2. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Enter <b>Description</b> of the book <br>4. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>5. Enter <b>Publisher</b> details <br>6. Select <b>Year</b> from the drop-down menu <br>7. Click <b>Save</b> on the header to save the details <br>8. Click the <b>Image</b> icon to add an image to the metadata. For details on adding image, refer  <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
+    <td>1. Click <b>Edit Details</b> to enter the book details <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> <br>3. Enter <b>Title</b> of the book <br>4. Enter <b>Description</b> of the book <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>6. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Board</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>7. Enter <b>Publisher</b> details <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> on the header to save the details <br>10. Click <b>Cancel</b> to go back to the previous screen
     </td>
-    <td><img src="pages/features-documentation/images/book/book_metadata2.png"></td>
+    <td><img src="pages/features-documentation/images/book/book_metadata1.png"></td>
   </tr>
   </table>
 
-### Exploring What's New
 
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1.Click on the <b>What's New</b> icon to view new functionalities and related content. The Whats's New page is displayed. <br><b>Note</b>: The <b>What's New</b> icon appears red in color before its clicked, once clicked the icon color changes to grey. The icon appears red only when there are ne feature releases.
-    </td>
-    <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
-  </tr>
-  </table>
 
 ### Adding Content to Book
 
@@ -76,13 +63,46 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to a book, you can either: <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b>, OR <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
+    <td>1. To add headings to a book, click <b>New Child</b> node on the left navigation pane <br>2. On clicking child node, a heading is added to the Table of Contents pane
     </td>
-      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
+      <td><img src="pages/features-documentation/images/adding_child.png"></td>
+  </tr>
+  </table>
+  
+### Heading Details
+On clicking child node, the details are displyed on the action pane
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook <br>2. Enter <b>Description</b> <br>3. Select the <b>Concepts</b> associated with the heading <br>4. Enter <b>Keywords</b> <br>5. Enter the <b>DIAL code</b>. Using DIAL code link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator  
+    </td>
+      <td><img src="pages/features-documentation/images/heading_details.png"></td>
+  </tr>
+  </table>
+  
+### DIAL Code Details
+Enter the code from the list of DIAL codes that correspond to the book being created
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
+    </td>
+      <td><img src="pages/features-documentation/images/DIAL_code1.png"></td>
+  </tr>
+  <tr>
+    <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code <br>3. Click <b>Edit</b> to enter the right DIAL code
+    </td>
+      <td><img src="pages/features-documentation/images/DIAL_code2.png"></td>
   </tr>
   </table>
 
-### Adding Resources
+### Adding Resources 
 
 <table> 
   <tr>
@@ -90,9 +110,14 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane  <br>6. Select the content you want to add <br>7. click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
+   <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: <br>a. Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b. Right-click on the node name and select <b>Add Resource</b>, OR <br>c. Click <b>Add Resources</b> button in the action pane, OR <br>d. Click <b>Add</b> on the resource card on the left pane, OR <br>e. Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
-    <td><img src="pages/features-documentation/images/book/book_addresource2.png"></td>
+    <td><img src="pages/features-documentation/images/book/selecting_resource.png"></td>
+  </tr>
+  <tr>
+    <td>Hover over the resource card to view concise content details <br>1. Click <b>View Details</b> on the resource card to view all the details, OR <br>2. Click <b>View</b> to view all the details
+    </td>
+    <td><img src="pages/features-documentation/images/book/selecting_resource2.png"></td>
   </tr>
   </table>
 
@@ -148,4 +173,18 @@ A book must be reviewed before it is published.
     </td>
     <td><img src="pages/features-documentation/images/book_sendforreview.png"></td>
   </tr>    
+  </table>
+  
+  ### Exploring What's New
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1.The What’s New feature informs you of the product features added or enhanced since the last product release <br>1. Click on the <b>What's New</b> icon to view concise information about new product functionality <br><b>Note</b>: The What's New icon is red before you view it for the first time. The icon turns grey after you view the information, until the next product version
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
+  </tr>
   </table>

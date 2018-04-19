@@ -25,7 +25,7 @@ They are categorized by resource type. Each resource type has one or more data r
         <h3>Feature API(s)</h3>
         <ul>
             <li><a href="apis/announcements/" target="_blank">Announcement</a></li>
-            <li><a href="apis/assessmentapi/" target="_blank">Assessment</a></li>
+            <li><a href="pages/usertaskflow/how_do_i_create_content" target="_blank">Assessment</a></li>
             <li><a href="apis/audienceapi/" target="_blank">Audience</a></li>
             <li><a href="apis/content/" target="_blank">Content</a></li>
             <li><a href="apis/coursebatchmanapi/" target="_blank">Course Batch Management</a></li>

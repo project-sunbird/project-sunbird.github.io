@@ -50,7 +50,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
   <tr>
     <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> of the collection <br>3. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>4. Click <b>Save</b> on the header to save the details
     </td>
-    <td><img src="pages/features-documentation/images/collection/collection_metadata2.png"></td>
+    <td><img src="pages/features-documentation/images/collection%20metadata%201.png"></td>
   </tr>
   </table>
 
@@ -61,9 +61,9 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to a collection, you can do one of the following actions: <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b> <br>&emsp;c) Click <b>Add Resource<b> on the left bottom of the page <br>&emsp;d) Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
+    <td>To add content to a collection, you can do one of the following actions: <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> <br>&emsp;b) Click <b>Add Resource<b> on the left bottom of the page <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
-      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
+      <td><img src="pages/features-documentation/images/add%20%20ressource%201.png"></td>
   </tr>
   </table>
 
@@ -77,7 +77,7 @@ On clicking <b>Start Creating</b>, the metadata fields related to the collection
    <tr>
      <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane <br>6.You can sort your search alphabetically or based on  published date of the content by clicking the <b>Sort By<b> and <b>Published on<b> tab. <br>7. Select the content you want to add <br>7. Click <b>Proceede</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
     </td>
-    <td><img src="pages/features-documentation/images/book/book_addresource2.png"></td>
+    <td><img src="pages/features-documentation/images/add%20resource%202.png"></td>
   </tr>
   </table>
 

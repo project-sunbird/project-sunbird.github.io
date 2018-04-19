@@ -1,10 +1,10 @@
 ---
 type: landing
 directory: usertaskflow
-title: Reviewer Taskflow
-page_title: Reviewer Taskflow
-description: Reviewer Taskflow
-keywords: 'reviewer, Review, enter details'
+title: How Do I Review Content
+page_title: How Do I Review Content
+description: How Do I Review Content
+keywords: 'reviewer, review, enter details'
 published: true
 allowSearch: true
 ---
