@@ -15,7 +15,7 @@ Metadata is absolutely essential in the digital environment. It is the fulcrum f
 
 Whenever you create and submit content on Sunbird, you have to enter a form with details about the submitted content, like its title, description, etc. The details entered is the metadata of the submitted content.
 
-In order to take customization and flexibility to a different level, the framework offers metadata driven forms. The form fields such as labels, text, number, value, etc. are defined as metadata in a database rather than being hard-coded. As a result, DIKSHA administrators can:
+In order to take customization and flexibility to a different level, the framework offers metadata driven forms. The form fields such as labels, text, number, value, etc. are defined as metadata in a database rather than being hard-coded. As a result, administrators can:
 
 * Customize form templates
 
