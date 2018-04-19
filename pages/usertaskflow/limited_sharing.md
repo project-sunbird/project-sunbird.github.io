@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: usertaskflow
-title: User Taskflow for Limited Sharing
-page_title:  User Taskflow for Limited Sharing
-description: Flow of Limited Sharing
+title: How Do I share Content To a Limited Group
+page_title:  How Do I share Content To a Limited Group 
+description: How Do I share Content To a Limited Group
 keywords: 'limited sharing, publishing, content creation'
 published: true
 allowSearch: true
