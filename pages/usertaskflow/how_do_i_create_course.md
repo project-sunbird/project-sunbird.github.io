@@ -4,7 +4,7 @@ directory: usertaskflow
 title: How Do I Create Course
 page_title:  How Do I Create Course
 description: How Do I Create Course
-keywords: 'adding, metadata, enter details'
+keywords: 'course'
 published: true
 allowSearch: true
 ---
