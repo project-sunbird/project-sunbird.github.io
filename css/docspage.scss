@@ -227,6 +227,9 @@ figcaption{
     overflow: hidden;
     box-sizing: content-box;	
 }
+.fullscreen figcaption{
+	display:none;
+}
 .zoomclose{
 	display:none;
 }
