@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.34.c/";
+			baseURL.href="/releases/release.1.35.a/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Medium Scale Deployment</title>
-<meta name="description" content="Sunbird Site About how developer can deploy"/>
+<title>Sunbird Server Installationn</title>
+<meta name="description" content="Sunbird Site Setting up Sunbird on a server"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-04-12 10:55:20 +0530">
+<meta name="last-modified" content="2018-04-19 11:05:09 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.34.c" />
-<meta name="buildNo" content="2740" />
+<meta name="buildVersion" content="release.1.35.a" />
+<meta name="buildNo" content="2950" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,11 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?12042018"  />
-<link rel="stylesheet" href="css/style.css?12042018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?12042018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?12042018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?12042018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?19042018"  />
+<link rel="stylesheet" href="css/style.css?19042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?19042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?19042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?19042018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?19042018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -65,7 +66,7 @@
 		<meta name="robots" content="index, follow">
 	
   </head>
-  <body id="body">
+  <body id="body" class="doc-layout">
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
@@ -187,6 +188,22 @@
                             </li>
                         </ul>
                     </div>
+				</li>
+				<li>
+                    <div class="">
+                        <a href="features-documentation/badging_framework/badging_overview/">Badging Framework</a>
+                        <ul class="sidebar-group">
+                            <li>	
+                                <a href="features-documentation/badging_framework/creating_badges/">Creating Badges</a>
+							</li>
+							<li>	
+                                <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
+							</li>
+							<li>	
+                                <a href="features-documentation/badging_framework/content_badges">Issuing Badges for Content</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <a href="features-documentation/announcement/">Announcement</a>
@@ -212,7 +229,77 @@
                 </li>
                 <li>
                     <a href="features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
-                </li>
+				</li>
+                <li>
+                    <div class="">
+					    <a href="usertaskflow/">User Task Flows</a>
+					    <ul class="sidebar-group">
+						    <li>
+							<a href="usertaskflow/how_do_i_create_content/">How do I Create Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_video/">How do I Add a Video</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_text/">How do I Add Text</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_audio/">How do I Add Audio</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_hotspot/">How do I Add a Hotspot</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_image/">How do I Add an Image</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_shape/">How do I Add Shapes</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_scribblepad/">How do I Add the Scribblepad</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_activity/">How do I Add an Activity</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_course/">How do I Create a Course</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_book/">How do I Create a Book</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_book_with_dial_code/">How do I Add DIAL Codes to a Book</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_lessonplan/">How do I Create a Lesson Plan</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_collection/">How do I Create a Collection</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/reviewer_taskflow/">How do I Review Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_uploadcontent/">How do I Upload Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_delete_content/">How do I Delete Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_metadata/">How do I Add Metadata</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_resource/">How do I Add Resource</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/limited_sharing/">How do I Share Content to a Limited Group</a>
+						    </li>
+					    </ul>
+				    </div>
+				<li>
+					<a href="features-documentation/mobileapp/allappfeatures/">Mobile App Features</a>
+				</li>
+			</li>
             </ul>
             <a href="developer-docs/">
                 <h4 class="sidebar-group-title">Developer Documentation</h4>
@@ -220,48 +307,30 @@
             <ul class="sidebar-group developer-docs">
                 <li>
                     <a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
-                </li>
-                <li>
-                    <a href="developer-docs/installation/">Installation Overview</a>
-                </li>
-                <li>
-                    <a href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
-                </li>
-                <li>
-                    <div class="">
-                        <a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
-                        <ul class="sidebar-group">
-                            <li>
-                                <a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/setup_db/">Setup Databases</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
-                            </li>
-                            <li>
-                                <div class="">
-                                    <ul class="sidebar-group">
-                                        <li>
-                                            <a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/check_installation/">Check Installation</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
+                </li>           
+                    <li>
+                        <div class="">
+                            <a href="developer-docs/installation/">Installation</a>
+                            <ul class="sidebar-group">
+                                <li>
+                                    <a href="developer-docs/installation/installing_sunbirdon_machine/">Developer Installation</a>
+                                </li>
+                                <li>
+                                    <a href="developer-docs/installation/medium_scale_deploy/">Server Installation</a>
+                                </li>
+                                <li>
+                                    <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
+                                </li>
+                                <li>
+                                    <a href="developer-docs/upgrading/">Upgrading Sunbird</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                
+                    <li>
+                        <a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+                    </li>    <li>
                     <div class="">
                         <a href="developer-docs/onboarding/">Onboarding</a>
                         <ul class="sidebar-group">
@@ -290,12 +359,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <a href="developer-docs/upgrading/">Upgrading</a>
-                </li>
-                <li>
-                    <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
-                </li>
+                
+                
                 <li>
                     <div class="">
                         <a href="apis/">API Reference Documentation</a>
@@ -438,7 +503,7 @@
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Medium Scale Deployment </h1>
+        <h1>Server Installation </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -469,253 +534,363 @@
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#pre-requisites"><span class="tocnumber">1 .</span> <span class="toctext">Pre-requisites</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#system-requirements"><span class="tocnumber">1.1 .</span> <span class="toctext">System Requirements</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-3">
-                  <a href="#api-keys"><span class="tocnumber">1.2 .</span> <span class="toctext">API Keys</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#ssl-certificate"><span class="tocnumber">1.3 .</span> <span class="toctext">SSL Certificate</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#relevant-variables"><span class="tocnumber">1.4 .</span> <span class="toctext">Relevant Variables</span></a>
-                </li>
-              </ul>
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#prerequisites"><span class="tocnumber">2 .</span> <span class="toctext">Prerequisites</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#installation-procedure"><span class="tocnumber">3 .</span> <span class="toctext">Installation Procedure</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#sunbird-install-script"><span class="tocnumber">4 .</span> <span class="toctext">Sunbird Install Script</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#mapping-ports"><span class="tocnumber">5 .</span> <span class="toctext">Mapping Ports</span></a>
             </li>
             <li class="toc_level-1 toc_section-6">
-              <a href="#installation-checklist"><span class="tocnumber">2 .</span> <span class="toctext">Installation Checklist</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-7">
-              <a href="#provisioning-servers"><span class="tocnumber">3 .</span> <span class="toctext">Provisioning servers</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-8">
-              <a href="#setup-databases"><span class="tocnumber">4 .</span> <span class="toctext">Setup Databases</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-9">
-              <a href="#deploying-sunbird-services"><span class="tocnumber">5 .</span> <span class="toctext">Deploying Sunbird Services</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-10">
-              <a href="#customizing-assets"><span class="tocnumber">6 .</span> <span class="toctext">Customizing Assets</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-11">
-              <a href="#check-installation"><span class="tocnumber">7 .</span> <span class="toctext">Check Installation</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-12">
-              <a href="#making-your-own-mobile-app"><span class="tocnumber">8 .</span> <span class="toctext">Making your own Mobile App</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-13">
-              <a href="#sunbird-installation-guide"><span class="tocnumber">9 .</span> <span class="toctext">Sunbird Installation Guide</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-14">
-                  <a href="#prerequisites"><span class="tocnumber">9.1 .</span> <span class="toctext">Prerequisites:</span></a>
-                </li>
-              </ul>
+              <a href="#badger-setup"><span class="tocnumber">6 .</span> <span class="toctext">Badger Setup</span></a>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><p>This page provides a summarized listing of the essential steps for planning, installing, and configuring your Sunbird deployment in a live environment. </p>
+</div><h2 id="overview">Overview</h2>
 
-<h2 id="pre-requisites">Pre-requisites</h2>
+<p>Sunbird software is containerized. The installation script uses the Docker swarm orchestration engine to run the Sunbird docker images. The Docker swarm consists of manager and agent nodes. The containers are run on the agent nodes and the manager nodes manage the container lifecycle.</p>
 
-<p>Before you install Sunbird into the production environment, examine your  environment and gather data to ensure an optimal installation experience.</p>
+<p>All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Proxies - are run as docker containers inside the swarm. All stateful services consisting of Cassandra, PostgreSql, Elasticsearch and the OAuth service(Keycloak) are run on Virtual Machines (VMs) directly. The installation is automated using shell scripts and Ansible.</p>
 
-<p>Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.</p>
-
-<h3 id="system-requirements">System Requirements</h3>
-
-<p>To install Sunbird, each of the servers should have the following minimum system requirements:</p>
-
-<ul>
-  <li>Operating System: Ubuntu 16.04 LTS</li>
-  <li>RAM: 7GB</li>
-  <li>CPU: 2 cores, &gt;2 GHz</li>
-  <li>root access (should be able to sudo)</li>
-</ul>
-
-<h3 id="api-keys">API Keys</h3>
+<h2 id="prerequisites">Prerequisites</h2>
 
 <ul>
   <li>
-    <p>Sunbird implementors currently need to get an API key for accessing EkStep platform. Since the content is stored here. In the future, Sunbird will support more content stores.</p>
+    <p>Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following <a href="#mapping-ports">ports</a>.</p>
   </li>
   <li>
-    <p>To initially try Sunbird, request for the keys from the EkStep QA environment.</p>
+    <p>Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name, and want to get an SSL certificate, use <a href="https://letsencrypt.org/">Let’s Encrypt</a> to generate a free certificate that is valid for 90 days.</p>
   </li>
-</ul>
-
-<p>
-  <em>For details to request for the keys, refer to the section <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials">How to generate authorization credentials</a> on the Auth Token Generator JS Library page</em>
-</p>
-
-<p>After getting the key and secret, you are ready to deploy Sunbird in the live environment.</p>
-
-<p>To get production credentials, repeat the steps under API Keys section.</p>
-
-<h3 id="ssl-certificate">SSL Certificate</h3>
-
-<p>SSL Certificates are used to encrypt communication between a browser and the server. You will need an SSL certificate from a recognised CA.<a href="https://letsencrypt.org/" target="_blank">LetsEncrypt</a>provides free SSL certificates. You can also use a CA of your choice.</p>
-
-<p>Before you begin the installation, keep the SSL certificate and the key handy.</p>
-
-<p><strong><em>Note</em></strong>: A self-signed certificate will cause authentication to fail with an “Access Denied” error because the certificate will not be verified.</p>
-
-<h3 id="relevant-variables">Relevant Variables</h3>
-
-<p>To make the deployment scenario simple and clear, we use the following variables:</p>
-
-<ul>
-  <li><strong>implementation-name</strong> : This variable refers to the name of Sunbird implementation. For example; Sunbird-Demo</li>
-  <li><strong>environment-name</strong> : This variable refers to the name of the environment where you deploy Sunbird. For example; Development, Test, Staging, Production, etc.</li>
-</ul>
-
-<h2 id="installation-checklist">Installation Checklist</h2>
-
-<p>Before you start the installation process make sure you have successfully</p>
-
-<ul>
-  <li>Review and check whether the system requirements are met</li>
-  <li>Check whether or not you  have the API keys</li>
-  <li>Decide the installation owner and the installation directory</li>
-  <li>Gather information about the database, if you are installing the database server while installing Sunbird</li>
-  <li>Set up or verify the product licensing requirements for the live environment</li>
-  <li>Verify the required network requirements and that ports are available for Sunbird components to communicate</li>
-</ul>
-
-<h2 id="provisioning-servers">Provisioning servers</h2>
-
-<p>Server provisioning is a set of actions to prepare a server with appropriate systems, data, software, and make it ready for network operation. <a href="developer-docs/installation/provisioning_servers" target="_blank">Provisioning Servers</a> section will help you to see tAutomated and Manual process to provision the servers.</p>
-
-<h2 id="setup-databases">Setup Databases</h2>
-
-<p>Sunbird helps you to setup your database. This section <a href="developer-docs/installation/setup_db" target="_blank">Setup Databases</a> contains more detail.</p>
-
-<h2 id="deploying-sunbird-services">Deploying Sunbird Services</h2>
-
-<p>This section <a href="developer-docs/installation/deploy_sb_services" target="_blank">Deploying Sunbird Services</a> explains how to deploy Sunbird services.</p>
-
-<h2 id="customizing-assets">Customizing Assets</h2>
-
-<p>This section <a href="developer-docs/installation/cust_sunbird" target="_blank">Customizing Assets</a> explains how to customize look and feel of Sunbird.</p>
-
-<h2 id="check-installation">Check Installation</h2>
-
-<p>To check if Sunbird is properly installed, refer to the link <a href="developer-docs/installation/check_installation" target="_blank">Check Installation</a></p>
-
-<h2 id="making-your-own-mobile-app">Making your own Mobile App</h2>
-
-<p>If you plan to release your own mobile app using the Sunbird mobile app codebase refer <a href="developer-docs/installation/install_mobile_setup" target="_blank">Generate key and install mobile app</a></p>
-
-<h2 id="sunbird-installation-guide">Sunbird Installation Guide</h2>
-
-<h3 id="prerequisites">Prerequisites:</h3>
-<ul>
-  <li>Servers should be provisioned manually. Currently all our scripts support only Ubuntu 16.04 LTS servers.</li>
-  <li>Access to a Fully Qualified Domain Name (FQDN) (For example: test.example.org).</li>
-  <li>A valid SSL certificate for your domain. To generate free SSL,  you can use Let’s Encrypt for most common cases. But using Let’s Encrypt is not mandatory.</li>
-  <li>Get the Ekstep API keys. Follow the steps <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials">here</a> to get the keys.</li>
   <li>
-    <p>Refer the below table for choosing list of servers.</p>
+    <p>Sunbird requires Ekstep API keys to access the Ekstep content repository. Follow the steps <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials">here</a> to get the keys. If you are creating a test environment, get the QA API keys.</p>
+  </li>
+  <li>
+    <p>Create a common linux user (e.g. deployer) on all the servers. Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">key based ssh</a>. Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have sudo access on the servers.</p>
+  </li>
+  <li>
+    <p>The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.</p>
 
     <table>
       <thead>
         <tr>
           <th style="text-align: left">Server Name</th>
-          <th style="text-align: left">Max Servers</th>
           <th style="text-align: left">Suggested Servers per environment</th>
           <th style="text-align: left">Basic Requirement</th>
+          <th style="text-align: left">Max Servers</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td style="text-align: left">Docker swarm manager</td>
-          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Docker swarm manager<sup>1</sup></td>
           <td style="text-align: left">Staging - 1 <br /> Prod - 3</td>
           <td style="text-align: left">CPU: 1core &amp; RAM: 2GB</td>
+          <td style="text-align: left">Any</td>
         </tr>
         <tr>
-          <td style="text-align: left">Docker swarm  agent nodes</td>
-          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Docker swarm  agent nodes<sup>1</sup></td>
           <td style="text-align: left">Staging - 1 <br /> Prod - 3</td>
           <td style="text-align: left">CPU: 2core &amp; RAM: 6GB</td>
+          <td style="text-align: left">Any</td>
         </tr>
         <tr>
-          <td style="text-align: left">Elasticsearch</td>
-          <td style="text-align: left">Any</td>
+          <td style="text-align: left">Elasticsearch<sup>2</sup></td>
           <td style="text-align: left">Staging - 1 <br /> Prod- 3</td>
           <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
-        </tr>
-        <tr>
-          <td style="text-align: left">Postgres master</td>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">Staging&amp;Prod - 1</td>
-          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
-        </tr>
-        <tr>
-          <td style="text-align: left">Postgres slave</td>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">Staging&amp;Prod - 1</td>
-          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
-        </tr>
-        <tr>
-          <td style="text-align: left">Cassandra</td>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">Staging&amp;Prod - 1</td>
-          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
-        </tr>
-        <tr>
-          <td style="text-align: left">Keycloak</td>
           <td style="text-align: left">Any</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Postgres master<sup>2</sup></td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
+          <td style="text-align: left">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Postgres slave<sup>2</sup></td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
+          <td style="text-align: left">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Cassandra<sup>2</sup></td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3GB</td>
+          <td style="text-align: left">1</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Keycloak<sup>1</sup></td>
           <td style="text-align: left">Staging&amp;Prod - 1</td>
           <td style="text-align: left">CPU: 1core &amp; RAM: 4GB</td>
+          <td style="text-align: left">Any</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">log-es<sup>1</sup></td>
+          <td style="text-align: left">Staging&amp;Prod - 1</td>
+          <td style="text-align: left">CPU: 1core &amp; RAM: 3.5GB</td>
+          <td style="text-align: left">1</td>
         </tr>
       </tbody>
     </table>
   </li>
-  <li>Ensure that all the ports are open between all the servers internally.</li>
+  <li>
+    <p>When you install Sunbird on 2 servers, all the services with the common superscript (e.g. servername<sup>2</sup>) in the Server Name are run on the same server. The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup>.</p>
+  </li>
 </ul>
 
-<p><strong>NOTE:</strong> For Quick setup of sunbird, commission two servers and ensure that they can communicate with either other over the network.
-* The first server serves as the DB (Database) server.
-* The second server serves as the application server &amp; administration server.
-* Both servers must have the following minimum system requirements:
-   - Operating System: Ubuntu 16.04 LTS
-   - RAM: 7GB
-   - CPU: 2 cores, &gt; 2 GHz
-   - Root access should be able to <code>sudo</code></p>
+<p><strong>Note:</strong> If you setup more than one swarm agent node, you will need to configure a load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm route the request to the right service.</p>
 
-<p>If  number of <code>Docker swarm agent nodes &gt; 2</code>, you need to configure Load balancer.</p>
+<h2 id="installation-procedure">Installation Procedure</h2>
 
-<p>Loadbalancer setup:</p>
+<p><strong>Note:</strong> Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server.</p>
 
-<ul>
-  <li>Create a load balancer and attach all the Docker swarm agent nodes to it</li>
-  <li>Update the health check urls</li>
-  <li>Open the Inbound security group ports 80,443</li>
-  <li>Enable logs for Load balancer troubleshooting(not mandatory)</li>
-</ul>
+<p>1.Install git using <code>apt-get update -y &amp;&amp; apt-get install git -y </code></p>
 
-<p>Choose any one of the docker swarm manager vm for the administration server.</p>
+<p>2.Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></p>
 
-<p>Run the following steps from a that machine:</p>
+<p>3.<code>cd sunbird-devops/deploy</code></p>
+
+<p>4.Update the configuration parameters in the <code>config</code> file. The configuration parameters are explained in the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">variable</th>
+      <th style="text-align: left">description</th>
+      <th style="text-align: left">mandatory</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>env</code></td>
+      <td style="text-align: left">Name of the environment you are deploying. Typically, it is one of development, test, staging, production, etc..</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>implementation_name</code></td>
+      <td style="text-align: left">Name of your sunbird implementation.</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>ssh_ansible_user</code></td>
+      <td style="text-align: left">SSH user with sudo access for accessing all servers.</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>ansible_private_key_path</code></td>
+      <td style="text-align: left">Path to the private SSH key file for the ssh_ansible_user. Ansible uses this file to SSH to the servers.</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>dns_name</code></td>
+      <td style="text-align: left">Domain name for your installation. Use the IP address if want to access Sunbird over an IP address</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>proto</code></td>
+      <td style="text-align: left">http/https. Use http if your dns_name is an IP address or if you have a domain but do not want ssl for trials.</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>cert_path</code></td>
+      <td style="text-align: left">Path to .cert file (SSL certificate) for nginx. This variable need not be set if the proto is set to http.</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>key_path</code></td>
+      <td style="text-align: left">Path to .key file (SSL certificate) for nginx. This variable need not be set if the proto is set to http</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>ekstep_base_url</code></td>
+      <td style="text-align: left">https://qa.ekstep.in/api &amp; prod: https://api.ekstep.in</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sunbird_auth_token</code></td>
+      <td style="text-align: left">JWT token generated by Ansible, you can get it from ~/jwt_token_player.txt after you have executed the ./sunbird_install.sh script.</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>ekstep_api_key</code></td>
+      <td style="text-align: left">Jwt token generated by the key,secret produced from Ekstep</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sso_password</code></td>
+      <td style="text-align: left">Password for keycloak sso user (default user is user-manager, can change it it keycloak gui)</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>keycloak_admin_password</code></td>
+      <td style="text-align: left">Keycloak admin console password (default admin username is admin, can change it in keycloak gui)</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>trampoline_secret</code></td>
+      <td style="text-align: left">Trampoline secret for keycloak, atleast 8 chars</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>app_address_space</code></td>
+      <td style="text-align: left">Application server address space (e.g. 10.3.0.0/24)</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>ekstep_api_base_url</code></td>
+      <td style="text-align: left">https://qa.ekstep.in/api &amp; prod: https://api.ekstep.in</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>ekstep_proxy_base_url</code></td>
+      <td style="text-align: left">https://qa.ekstep.in  &amp; prod: https://community.ekstep.in</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sudo_passwd</code></td>
+      <td style="text-align: left">The sudo password, if the user has it else skip the parameter</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>database_host</code></td>
+      <td style="text-align: left">The private IP address of the DB server</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>database_password</code></td>
+      <td style="text-align: left">The common password for all the databases</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>elasticsearch_host</code></td>
+      <td style="text-align: left">A comma-separated (,) list of Elasticsearch database IP addresses.</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>cassandra_host</code></td>
+      <td style="text-align: left">The IP address of the Cassandra database.</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>postgres_master_host</code></td>
+      <td style="text-align: left">The IP address of the Postgres master database</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>postgres_slave_host</code></td>
+      <td style="text-align: left">The IP address of the Postgres slave database. If you do not need a slave node enter the same IP address as that of the master.</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>swarm_manager_host</code></td>
+      <td style="text-align: left">A comma-separated (,) list of IP addresses of the swarm managers.</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>swarm_node_host</code></td>
+      <td style="text-align: left">A comma-separated (,) list of swarm node IP addresses .</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>keycloak_host</code></td>
+      <td style="text-align: left">A comma-separated (,) list of keycloak IP addresses.</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>log_es_host</code></td>
+      <td style="text-align: left">The IP address of the Logger Elasticsearch</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>proxy_prometheus</code></td>
+      <td style="text-align: left">By default this parameter is marked as ‘false’. Modify it to ‘true’, if you want to use monitoring</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sunbird_dataservice_url</code></td>
+      <td style="text-align: left">The API url of sunbird, for example; https://demo.opensunbird.o</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sunbird_azure_storage_account</code></td>
+      <td style="text-align: left">The Azure storage account for the badger service</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sunbird_azure_storage_key</code></td>
+      <td style="text-align: left">The Azure storage key for the badger service</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sunbird_image_storage_url</code></td>
+      <td style="text-align: left">The Azure image url for the badger service</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sunbird_installation_email</code></td>
+      <td style="text-align: left">The Sunbird installation email ID</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>sunbird_telemetry_pdata_id</code></td>
+      <td style="text-align: left">The Sunbird telemetry pdata ID, for example <br /> {env}.{implimentation_name}.learning.service</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
 <ol>
-  <li>Install git <code>apt-get update -y &amp;&amp; apt-get install git -y </code></li>
-  <li>Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></li>
-  <li><code>cd sunbird-devops/deploy</code></li>
-  <li>Update the <code>config</code> and <code>advanced</code> configuration files. For more details how to update those files please click <a href="">here</a>.</li>
-  <li>Run <code>./sunbird_install.sh</code>. This script will do infra setup from  stage1 to stage5 in a sequence shown in below table. Verify all the mandatory varaibles( ex:  sunbird_auth_token, ekstep_api_key) of sunbird core services are updated, then run the  <code>./sunbird_install.sh -s core</code> for deploying core services.</li>
+  <li>Run the script <code>./sunbird_install.sh</code>. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.</li>
 </ol>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: left">stage no.</th>
+      <th style="text-align: left">stage no</th>
       <th style="text-align: left">stage name</th>
       <th style="text-align: left">Description</th>
     </tr>
@@ -729,52 +904,199 @@
     <tr>
       <td style="text-align: left">2</td>
       <td style="text-align: left">dbs</td>
-      <td style="text-align: left">Install all databases and creates schema</td>
+      <td style="text-align: left">Installs all databases and creates schema</td>
     </tr>
     <tr>
       <td style="text-align: left">3</td>
       <td style="text-align: left">apis</td>
-      <td style="text-align: left">Setup API manager kong &amp;  Onboard API’s and consumer’s</td>
+      <td style="text-align: left">Sets up API manager kong and Onboard API’s and consumer’s</td>
     </tr>
     <tr>
       <td style="text-align: left">4</td>
       <td style="text-align: left">proxy</td>
-      <td style="text-align: left">Deploy nginx and configure</td>
+      <td style="text-align: left">Deploys and configures Nginx</td>
     </tr>
     <tr>
       <td style="text-align: left">5</td>
       <td style="text-align: left">keycloak</td>
-      <td style="text-align: left">Provision, deploy and bootstrap keycloak</td>
+      <td style="text-align: left">Deploys and configures Keycloak</td>
     </tr>
     <tr>
       <td style="text-align: left">6</td>
-      <td style="text-align: left">core</td>
-      <td style="text-align: left">Deploy all core services</td>
+      <td style="text-align: left">badger</td>
+      <td style="text-align: left">Deploys the badger service</td>
     </tr>
     <tr>
       <td style="text-align: left">7</td>
-      <td style="text-align: left">logger</td>
-      <td style="text-align: left">ELK stack will be deployed and logs can be views in kibana</td>
+      <td style="text-align: left">core</td>
+      <td style="text-align: left">Deploys all core services</td>
     </tr>
     <tr>
       <td style="text-align: left">8</td>
+      <td style="text-align: left">logger</td>
+      <td style="text-align: left">Deploys the ELK stack and the logs can be viewed in Kibana</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">9</td>
       <td style="text-align: left">monitor</td>
-      <td style="text-align: left">Monitor all the services,health checks, API’s,system checks etc..</td>
+      <td style="text-align: left">Monitors all the services, health checks, API’s,system checks etc..</td>
     </tr>
   </tbody>
 </table>
 
-<p><strong>NOTE</strong>:</p>
+<p>6.The badger service is set up manually. To do so, follow the steps given <a href="#badger-setup">here</a>.</p>
+
+<p><strong>Note</strong>: The badger service does not work without an Azure storage account name and key.</p>
+
+<p>7.Verify that all the mandatory variables, for example; sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script <code>./sunbird_install.sh -s core</code> to deploying the core services.</p>
+
+<p><strong>Note</strong>: If you want to re-run any particular stage in the installation, just run <code>./sunbird_install.sh -s &lt;stagename&gt;</code></p>
+
+<p>To know more about the script <code>sunbird_install.sh</code>, click <a href="#sunbird-install-script">here</a>.</p>
+
+<p>8.Open https://[domain-name] and verify the installation.</p>
+
+<h2 id="sunbird-install-script">Sunbird Install Script</h2>
+
+<p>The Sunbird installation script <code>./sunbird_install.sh</code> is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository.</p>
 
 <ul>
-  <li>If you want to re-run any particular stage, just run <code>./sunbird_install.sh -s &lt;stagename&gt;</code></li>
-  <li>If you are planning to setup logger or monitoring . Please run the <code>./sunbird_install.sh -s &lt;stagename&gt;</code> command with  <code>stagename</code> as logger/monitor</li>
+  <li>
+    <p><code>install-deps.sh</code> - Installs Ansible v2.4.1.0 on the installation server to provision and deploy Sunbird. This script also sets up the docker swarm.</p>
+  </li>
+  <li>
+    <p><code>generate_config.sh</code> - Creates a workspace for the installation and sets up necessary config files.</p>
+  </li>
+  <li>
+    <p><code>generate_hosts.sh</code> - Creates a hosts file (Ansible file format) dynamically to run the Ansible scripts.</p>
+  </li>
+  <li>
+    <p><code>install-dbs.sh</code> - Installs Cassandra, Elasticsearch and Postgres databases</p>
+  </li>
+  <li>
+    <p><code>init-dbs.sh</code> - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases</p>
+  </li>
+  <li>
+    <p><code>deploy-apis.sh</code> - Deploys the api gateway (Kong) as a docker service using Ansible.</p>
+  </li>
+  <li>
+    <p><code>onboard-apis.sh</code>  - Onboards the Sunbird APIs and consumers to the API gateway using Ansible.</p>
+  </li>
+  <li>
+    <p><code>deploy-proxy.sh</code> - Deploys the proxy (Nginx) as a docker service.</p>
+  </li>
+  <li>
+    <p><code>provision-keycloak.sh</code> - Installs Keycloak.</p>
+  </li>
+  <li>
+    <p><code>deploy-keycloak-vm.sh</code> - Deploys the OAuth service (Keycloak) on the VM. The Keycloak service runs outside the swarm.</p>
+  </li>
+  <li>
+    <p><code>bootstrap-keycloak.sh</code> - Imports the auth realm and configures Keycloak.</p>
+  </li>
+  <li>
+    <p><code>deploy-badger.sh</code> - Deploys the badger service as docker service.</p>
+  </li>
+  <li>
+    <p><code>deploy-core.sh</code> - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend.</p>
+  </li>
+  <li>
+    <p><code>deploy-logger.sh</code> -  Deploy ELK stack for logs. 
+<strong>Note:</strong> This step is optional.</p>
+  </li>
+  <li>
+    <p><code>deploy-monitor.sh</code> - Deploys the monitoring stack (Prometheus) to send mail alerts when the infrastructure or services are not stable. <strong>Note:</strong> This step is optional.</p>
+  </li>
 </ul>
 
-<p>To know more about the script <code>sunbird_install.sh</code> please click <a href="">here</a>.</p>
+<h2 id="mapping-ports">Mapping Ports</h2>
+<p>The following is a list of ports that must be open:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">From server</th>
+      <th style="text-align: left">To server</th>
+      <th style="text-align: left">port</th>
+      <th style="text-align: left">protocal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Administration server</td>
+      <td style="text-align: left">All servers</td>
+      <td style="text-align: left">22</td>
+      <td style="text-align: left">TCP</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ELB</td>
+      <td style="text-align: left">0.0.0.0</td>
+      <td style="text-align: left">80,433</td>
+      <td style="text-align: left">TCP</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">swarm managers subnet</td>
+      <td style="text-align: left">swarm nodes subnet</td>
+      <td style="text-align: left">All</td>
+      <td style="text-align: left">TCP &amp; UDP</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">swarm nodes</td>
+      <td style="text-align: left">Cassandra servers</td>
+      <td style="text-align: left">9042</td>
+      <td style="text-align: left">TCP</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">swarm nodes</td>
+      <td style="text-align: left">Cassandra servers</td>
+      <td style="text-align: left">9042</td>
+      <td style="text-align: left">TCP</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">swarm nodes</td>
+      <td style="text-align: left">Elasticsearch servers</td>
+      <td style="text-align: left">9200</td>
+      <td style="text-align: left">TCP</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">swarm nodes</td>
+      <td style="text-align: left">Postgres servers</td>
+      <td style="text-align: left">5432</td>
+      <td style="text-align: left">TCP</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">swarm nodes</td>
+      <td style="text-align: left">Keycloak</td>
+      <td style="text-align: left">8080</td>
+      <td style="text-align: left">TCP</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="badger-setup">Badger Setup</h2>
 
 <ol>
-  <li>Open https://[domain-name] and verify the installation.</li>
+  <li>
+    <p>Run <code>ssh -i &lt;key path (which you gave in config file)&gt; $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')</code> to login to node where badger container is running.<br />
+ Example: <code>ssh -i ~/ssh_key.pem $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')</code></p>
+  </li>
+  <li>
+    <p>Run <code>docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}')</code> to login  to the badger container.</p>
+  </li>
+  <li>
+    <p>Move to the directory <code>cd /badger/code</code></p>
+  </li>
+  <li>
+    <p>Run <code>./manage.py createsuperuser</code>. Provide a valid username, email ID and password.</p>
+  </li>
+  <li>
+    <p>Run the following curl command to get the sunbird badger authorization variable.</p>
+
+    <p><code>curl -X POST 'http://localhost:8004/api-auth/token' -d "username=&lt;emailid&gt;&amp;password=&lt;password&gt;"</code></p>
+  </li>
+  <li>
+    <p>Set the output token of above command as the value for the <code>vault_sunbird_badger_authorization</code> in config file.</p>
+  </li>
 </ol>
 
 
@@ -847,6 +1169,45 @@
 		var url = this.href.replace(baseURL.href, "");
 		this.href = 'developer-docs/installation/medium_scale_deploy/' + url;
     })
+    
+	/*$(".zoom").click(function(){
+		
+		if (!$(this).hasClass('enabled')){
+			$(this).addClass('enabled');
+			$(this).elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+	    }else{
+            $(this).removeClass('enabled');
+            $('.zoomContainer').hide();
+        }
+	});*/
+	$(".zoomcover").click(function(){
+		if (!$(this).hasClass('fullscreen')){
+			$(this).addClass('fullscreen');
+			$(this).find('.zoom').addClass('enabled').elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+		} else {
+			$(this).removeClass('fullscreen');
+			$(this).find('.zoom').removeClass('enabled');
+			$('.zoomContainer').hide();
+		}
+	});
   </script>
+  <style>
+  .zoom:hover{
+	cursor:url(img/zoom.png),crosshair;
+  }
+  .zoomWindowContainer:hover div{
+	cursor:url(img/scroll.png),crosshair !important;
+	height:15px;
+	width:15px;
+  }
+  </style>
   </body>
 </html>

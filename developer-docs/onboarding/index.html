@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.34.c/";
+			baseURL.href="/releases/release.1.35.a/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Onboarding</title>
-<meta name="description" content="Sunbird Site Onboarding"/>
+<title>Sunbird Onboarding API Consumers</title>
+<meta name="description" content="Sunbird Site Onboarding API Consumers"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-04-12 10:55:20 +0530">
+<meta name="last-modified" content="2018-04-19 11:05:09 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.34.c" />
-<meta name="buildNo" content="2740" />
+<meta name="buildVersion" content="release.1.35.a" />
+<meta name="buildNo" content="2950" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,11 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?12042018"  />
-<link rel="stylesheet" href="css/style.css?12042018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?12042018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?12042018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?12042018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?19042018"  />
+<link rel="stylesheet" href="css/style.css?19042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?19042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?19042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?19042018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?19042018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -65,7 +66,7 @@
 		<meta name="robots" content="index, follow">
 	
   </head>
-  <body id="body">
+  <body id="body" class="doc-layout">
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
@@ -187,6 +188,22 @@
                             </li>
                         </ul>
                     </div>
+				</li>
+				<li>
+                    <div class="">
+                        <a href="features-documentation/badging_framework/badging_overview/">Badging Framework</a>
+                        <ul class="sidebar-group">
+                            <li>	
+                                <a href="features-documentation/badging_framework/creating_badges/">Creating Badges</a>
+							</li>
+							<li>	
+                                <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
+							</li>
+							<li>	
+                                <a href="features-documentation/badging_framework/content_badges">Issuing Badges for Content</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <a href="features-documentation/announcement/">Announcement</a>
@@ -212,7 +229,77 @@
                 </li>
                 <li>
                     <a href="features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
-                </li>
+				</li>
+                <li>
+                    <div class="">
+					    <a href="usertaskflow/">User Task Flows</a>
+					    <ul class="sidebar-group">
+						    <li>
+							<a href="usertaskflow/how_do_i_create_content/">How do I Create Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_video/">How do I Add a Video</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_text/">How do I Add Text</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_audio/">How do I Add Audio</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_hotspot/">How do I Add a Hotspot</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_image/">How do I Add an Image</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_shape/">How do I Add Shapes</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_scribblepad/">How do I Add the Scribblepad</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_activity/">How do I Add an Activity</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_course/">How do I Create a Course</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_book/">How do I Create a Book</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_book_with_dial_code/">How do I Add DIAL Codes to a Book</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_lessonplan/">How do I Create a Lesson Plan</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_create_collection/">How do I Create a Collection</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/reviewer_taskflow/">How do I Review Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_uploadcontent/">How do I Upload Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_delete_content/">How do I Delete Content</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_metadata/">How do I Add Metadata</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/how_do_i_add_resource/">How do I Add Resource</a>
+						    </li>
+						    <li>
+							<a href="usertaskflow/limited_sharing/">How do I Share Content to a Limited Group</a>
+						    </li>
+					    </ul>
+				    </div>
+				<li>
+					<a href="features-documentation/mobileapp/allappfeatures/">Mobile App Features</a>
+				</li>
+			</li>
             </ul>
             <a href="developer-docs/">
                 <h4 class="sidebar-group-title">Developer Documentation</h4>
@@ -220,48 +307,30 @@
             <ul class="sidebar-group developer-docs">
                 <li>
                     <a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
-                </li>
-                <li>
-                    <a href="developer-docs/installation/">Installation Overview</a>
-                </li>
-                <li>
-                    <a href="developer-docs/installation/installing_sunbirdon_machine/">Install Sunbird on your Machine</a>
-                </li>
-                <li>
-                    <div class="">
-                        <a href="developer-docs/installation/medium_scale_deploy/">Medium Scale Deployment</a>
-                        <ul class="sidebar-group">
-                            <li>
-                                <a href="developer-docs/installation/provisioning_servers/">Provisioning Servers</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/setup_db/">Setup Databases</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/deploy_sb_services/">Deploying Sunbird Services</a>
-                            </li>
-                            <li>
-                                <div class="">
-                                    <ul class="sidebar-group">
-                                        <li>
-                                            <a href="developer-docs/installation/keycloak_realm_configuration/">Configure Keycloak</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/install_sbbackend/">Installing Sunbird Backend</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/cust_sunbird/">Customizing Assets</a>
-                            </li>
-                            <li>
-                                <a href="developer-docs/installation/check_installation/">Check Installation</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
+                </li>           
+                    <li>
+                        <div class="">
+                            <a href="developer-docs/installation/">Installation</a>
+                            <ul class="sidebar-group">
+                                <li>
+                                    <a href="developer-docs/installation/installing_sunbirdon_machine/">Developer Installation</a>
+                                </li>
+                                <li>
+                                    <a href="developer-docs/installation/medium_scale_deploy/">Server Installation</a>
+                                </li>
+                                <li>
+                                    <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
+                                </li>
+                                <li>
+                                    <a href="developer-docs/upgrading/">Upgrading Sunbird</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                
+                    <li>
+                        <a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
+                    </li>    <li>
                     <div class="">
                         <a href="developer-docs/onboarding/">Onboarding</a>
                         <ul class="sidebar-group">
@@ -290,12 +359,8 @@
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <a href="developer-docs/upgrading/">Upgrading</a>
-                </li>
-                <li>
-                    <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
-                </li>
+                
+                
                 <li>
                     <div class="">
                         <a href="apis/">API Reference Documentation</a>
@@ -438,7 +503,7 @@
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Onboarding </h1>
+        <h1>Onboarding API Consumers </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -458,9 +523,150 @@
 			  </a>
 			  </span>
 			</p>
-          <p>Sunbird has the provision to register and provide user credentials (user ID and password) to organizations, such as states, NGO, corporates and other institutes or organizations.</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#onboarding-new-api-consumer"><span class="tocnumber">1.1 .</span> <span class="toctext">Onboarding New API Consumer</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#recreating-jwt-tokens"><span class="tocnumber">1.2 .</span> <span class="toctext">Recreating JWT Tokens</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#removing-api-consumer-from-sunbird"><span class="tocnumber">1.3 .</span> <span class="toctext">Removing API Consumer from Sunbird</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
 
-<p>The states and organizations make a policy decision to allow / disallow registering single individual users. Contact your organization administrator for details.</p>
+<p>Sunbird has the provision to register and provide user credentials (user ID and password) to organizations, such as states, NGO, corporates and other institutes or organizations.</p>
+
+<p>The organizations take a policy decision to allow or disallow registering single individual users. Contact your organization administrator for details.</p>
+
+<h3 id="onboarding-new-api-consumer">Onboarding New API Consumer</h3>
+
+<p>1.Open <code>sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml</code></p>
+
+<p>2.Add a new object in kong_consumers variable.</p>
+
+<p><strong>Example</strong>
+-  username: api-management-test #change this according to API consumer
+   groups: “”  # or array of groups needed for API consumer
+   state: present</p>
+
+<p>3.For the term <code>groups</code> in the above example, use the list of whitelisted groups from the following table to decide API consumer access:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mobile Administrator Group</th>
+      <th>Mobile App Group</th>
+      <th>Mobile Device Group</th>
+      <th>Integration Partner Groups</th>
+      <th>Implementation User Groups</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mobile Administrator</td>
+      <td>Mobile App</td>
+      <td>Content User</td>
+      <td>Echo User</td>
+      <td>Content Administrator</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Course User</td>
+      <td>Org Administrator</td>
+      <td>Content User</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>App Administrator</td>
+      <td>Org User</td>
+      <td>User Adminidtrator</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Config User</td>
+      <td>User Administrator</td>
+      <td>Public User</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Public User</td>
+      <td>Public User</td>
+      <td>Org Administrator</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>User Administrator</td>
+      <td>Data Admin</td>
+      <td>Org User</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Content Administrator</td>
+      <td>Domain User</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>DIAL Code Administrator</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>App Administrator</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>4.Run <code>sudo ./sunbird-install.sh -s apis</code></p>
+
+<p><strong>Note:</strong> The <strong>jwt_token.txt</strong> file is in the location home directory of the administration server. This file contains the jwt tokens for all the services.</p>
+
+<h3 id="recreating-jwt-tokens">Recreating JWT Tokens</h3>
+
+<p>If you forget or lose the JWT token, you can retrieve it from the <strong>jwt_token.txt</strong> file that is in the home directory of the adminstration server.</p>
+
+<h3 id="removing-api-consumer-from-sunbird">Removing API Consumer from Sunbird</h3>
+
+<p>1.Open sunbird-devops/ansible/roles/kong-consumer/defaults/main.yml
+2.Search for the user in the kong_consumers array
+3.Change the state to absent.</p>
+
+<p><strong>Example</strong>
+ - username: <consumer-to-be-removed>
+    	   state: absent</consumer-to-be-removed></p>
+
+<p>4.Run <code>sudo ./sunbird-install.sh -s apis</code></p>
 
 
           
@@ -532,6 +738,45 @@
 		var url = this.href.replace(baseURL.href, "");
 		this.href = 'developer-docs/onboarding/' + url;
     })
+    
+	/*$(".zoom").click(function(){
+		
+		if (!$(this).hasClass('enabled')){
+			$(this).addClass('enabled');
+			$(this).elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+	    }else{
+            $(this).removeClass('enabled');
+            $('.zoomContainer').hide();
+        }
+	});*/
+	$(".zoomcover").click(function(){
+		if (!$(this).hasClass('fullscreen')){
+			$(this).addClass('fullscreen');
+			$(this).find('.zoom').addClass('enabled').elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+		} else {
+			$(this).removeClass('fullscreen');
+			$(this).find('.zoom').removeClass('enabled');
+			$('.zoomContainer').hide();
+		}
+	});
   </script>
+  <style>
+  .zoom:hover{
+	cursor:url(img/zoom.png),crosshair;
+  }
+  .zoomWindowContainer:hover div{
+	cursor:url(img/scroll.png),crosshair !important;
+	height:15px;
+	width:15px;
+  }
+  </style>
   </body>
 </html>

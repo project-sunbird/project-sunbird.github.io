@@ -11,7 +11,7 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /api/v1
+basePath: /api
 securityDefinitions:
     auth:
       type: apiKey  # arbitrary name for the security scheme
@@ -26,18 +26,18 @@ consumes:
 produces:
   - application/json
 paths:
-  '/email ':
+  '/user/v1/notification/email ':
     post:
       description: >-
        This API is associated with notifying a user on the Sunbird Platform.
-          - {{host}}/v1/notification/email , This is the format of the API URL for sending notifications. 
+          - {{host}}/user/v1/notification/email , This is the format of the API URL for sending notifications. 
           - The **_/email/_** endpoint executes the notification request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: ' Notifiying Users'
       tags:
       - Notification APIs
-      operationId: '{{host}}/v1/notification/email '
+      operationId: '{{host}}/user/v1/notification/email '
       produces:
       - application/json
       parameters:
@@ -58,6 +58,11 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Notifying User" operation was successfully executed.'
@@ -86,7 +91,7 @@ paths:
           headers: {}
         x-testShouldPass: true
         x-testEnabled: true
-        x-testName: '{{host}}/v1/notification/email '
+        x-testName: '{{host}}/user/v1/notification/email '
         x-testDescription: ''
       x-operation-settings:
         CollectParameters: false
@@ -95,7 +100,7 @@ paths:
         IsMultiContentStreaming: false
 definitions:
   '{{host}}/v1/notification/emailRequest':
-    title: '{{host}}/v1/notification/email Request'
+    title: '{{host}}/user/v1/notification/email Request'
     example:
       request:
         name: Amit
@@ -118,24 +123,24 @@ definitions:
     type: object
     properties:
       name:
-        description: ''
+        description: 'Recipient name to whom mail is sending'
         type: string
       subject:
-        description: ''
+        description: 'Subject of mail'
         type: string
       body:
-        description: ''
+        description: 'Contents of mail body'
         type: string
       downloadUrl:
-        description: ''
+        description: 'Download link of content'
         type: string
       recipientEmails:
-        description: ''
+        description: 'List of recipient mail ids'
         type: array
         items:
           type: string
       recipientUserIds:
-        description: ''
+        description: 'List of recipient user ids . With help of user id fetch the user mail id and send mail to that user.'
         type: array
         items:
           type: string
@@ -153,11 +158,11 @@ definitions:
       - $ref: '#/definitions/ResultWithNodeId'
       - $ref: '#/definitions/ResponseHeader'
   ResultWithNodeId:
-    title: Result Containing Node Id
+    title: Result Body
     type: object
     properties:
       result:
-        $ref: '#/definitions/NodeId'
+        $ref: '#/definitions/SendNotificationMailResult'
   ResponseHeader:
     title: ResponseHeader
     type: object
@@ -176,13 +181,13 @@ definitions:
       responseCode:
         type: object
         description: 'API response code '
-  NodeId:
-    title: Node Id
+  SendNotificationMailResult:
+    title: Send Notification Result
     type: object
     properties:
-      node_id:
+      response:
         type: string
-        description: Node Identifier
+        description: 'SUCCESS in case mail send successfully otherwise user id with reason of mailsending fail .'
   ResponseParams:
     title: Response Parameter
     type: object
