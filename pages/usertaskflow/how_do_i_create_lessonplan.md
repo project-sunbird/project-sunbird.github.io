@@ -4,7 +4,7 @@ directory: usertaskflow
 title: How Do I Create Lesson Plan
 page_title:  How Do I Create Lesson Plan
 description: How Do I Create Lesson Plan
-keywords: 'adding, lessonplan, enter details'
+keywords: 'creating, lessonplan, enter details'
 published: true
 allowSearch: true
 ---
