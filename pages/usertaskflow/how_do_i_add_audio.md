@@ -4,7 +4,7 @@ directory: usertaskflow
 title: How Do I Add Audio
 page_title:  How Do I Add Audio
 description: How Do I Add Audio
-keywords: 'adding, metadata, enter details'
+keywords: 'adding, audio, enter details'
 published: true
 allowSearch: true
 ---
