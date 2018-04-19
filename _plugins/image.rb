@@ -53,8 +53,8 @@ module Jekyll
       if zoom == 'zoom'
 		'<figure class="zoomcover">
 		<span class="zoomclose">X</span>
+		<figcaption><strong>Note:</strong> Click on the image. It expands in a pop-up window. Place your cursor on the expanded image and move or scroll your mouse to zoom-in further. To return to the normal view, click on the image again, or click anywhere outside the pop-up window, or press the Esc key.</figcaption>
 		<img '+src+' '+@alt+' class="plugin '+position+' '+zoom+'" '+'width="'+image_width+'"/>
-		<figcaption><strong>Note:</strong> Click and move cursor to zoom in image. Use mouse scroll to futher zoom in and zoom out.</figcaption>
 		</figure>'
 	  else
       '<a target="_blank" '+src.gsub('src', 'href')+'>
