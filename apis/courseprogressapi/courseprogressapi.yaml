@@ -24,10 +24,10 @@ paths:
   /read:
     post:
       description: >-
-       This API is used for publishing the progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
+       This API is used for reading the current progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
           - **_/read/_** endpoint executes the "post course state" request based on parameters provided as metadata in the request body.     
           - It is a must to provide values for all mandatory fields.
-      summary: Post Course Status
+      summary: Read Course State
       tags:
         - Course Progress API(s)
       operationId: StatePost
@@ -89,10 +89,10 @@ paths:
   /update:
     patch:
       description: >-
-       This API is used to update the Course(content) status as consumed by a user. For example, when the user resumes a course or courses after the point at which it was stopped, the status of the course is updated. 
+       This API is used to update the Course(content) state as consumed by a user. For example, when the user resumes a course or courses after the point at which it was stopped, the status of the course is updated. 
           - **_/update/_** endpoint executes the "Update Course State" request based on parameters provided as metadata in the request body.     
-          - It is a must to give values for all mandatory fields.
-      summary: Update Course Status
+          - It is a must to give values for all mandatory fields
+      summary: Update Course State
       tags:
         - Course Progress API(s)
       operationId: UpdatePatch
