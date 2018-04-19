@@ -116,6 +116,13 @@
 			$('.zoomContainer').hide();
 		}
 	});
+	$(document).keyup(function(e) {
+     if (e.keyCode == 27) { 
+		$(".zoomcover").removeClass('fullscreen');
+		$(".zoomcover").find('.zoom').removeClass('enabled');
+		$('.zoomContainer').hide();
+    }
+});
   </script>
   <style>
   .zoom:hover{
