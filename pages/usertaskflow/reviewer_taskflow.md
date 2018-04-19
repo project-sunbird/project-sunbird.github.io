@@ -4,7 +4,7 @@ directory: usertaskflow
 title: How Do I Review Content
 page_title: How Do I Review Content
 description: How Do I Review Content
-keywords: 'reviewer, Review, enter details'
+keywords: 'reviewer, review, enter details'
 published: true
 allowSearch: true
 ---
