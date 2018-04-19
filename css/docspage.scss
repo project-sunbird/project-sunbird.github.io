@@ -246,9 +246,10 @@ figcaption{
 	max-width:100%;
 }
 .inner__content .fullscreen img{
-	max-width:100vw ;
-	max-height:100vh;
+	max-width:calc(100vw - 10px) ;
+	max-height:calc(100vh - 10px);
 	border:0;
 	width:auto;
 	height:auto;
+	margin:5px auto;
 }
