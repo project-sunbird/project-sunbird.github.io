@@ -94,7 +94,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 
 
-5. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
+5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
