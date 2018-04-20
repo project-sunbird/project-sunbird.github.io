@@ -183,3 +183,13 @@ The following is a list of ports that must be open:
 
 7. Set the output token of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
 
+## Keycloak Setup
+
+Keycloak is the auth server for sunbird.
+
+In order to make keycloak work with android application, please follow the below steps
+
+1. Open keycloak web ui `https://dns-name/auth`
+2. Log in to the admin console using credentials (default uesername : admin and passwod: <keycloak_admin_password given in config>)
+3. Navigate to Clients -> Android and delete both redirection urls and update with `https://<dns-name>/oauth2callback`
+<img src="pages/developer-docs/installation/images/keycloak-android-redirect.png">
