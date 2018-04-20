@@ -86,6 +86,12 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`sunbird_image_storage_url`| The Azure image url for the badger service |no|
 |`sunbird_installation_email`| The Sunbird installation email ID |no|
 |`sunbird_telemetry_pdata_id`| The Sunbird telemetry pdata ID, for example <br> {env}.{implimentation_name}.learning.service |no|
+|`backup_storage_name`| elasticsearch backupstorage name |yes|
+|`backup_storage_key`| elasticsearch backupstorage key |yes|
+|`es_etc_cluster_name`| elasticsearch backupstorage cluster name |yes|
+|`sunbird_environment`| The Sunbird installation environment |yes|
+|`sunbird_instance`| The Sunbird installation name |yes|
+
 
 
 5. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
