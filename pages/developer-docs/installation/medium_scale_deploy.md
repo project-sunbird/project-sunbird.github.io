@@ -162,15 +162,18 @@ The following is a list of ports that must be open:
 1. Run `ssh -i <key path (which you gave in config file)> $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')` to login to node where badger container is running.  
  Example: `ssh -i ~/ssh_key.pem $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')`
 
-2. Run `docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}')` to login  to the badger container.
+2. Run `docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}') /bin/sh` to login  to the badger container.
 
 3. Move to the directory `cd /badger/code`
 
 4. Run `./manage.py createsuperuser`. Provide a valid username, email ID and password.
 
-5. Run the following curl command to get the sunbird badger authorization variable.
+5. Install curl.
+     `apt-get install curl -y`
+     
+6. Run the following curl command to get the sunbird badger authorization variable.
      
      `curl -X POST 'http://localhost:8004/api-auth/token' -d "username=<emailid>&password=<password>"`
 
-6. Set the output token of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
+7. Set the output token of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
 
