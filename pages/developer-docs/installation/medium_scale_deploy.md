@@ -34,7 +34,6 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
     |Postgres slave<sup>2</sup>       | Staging&Prod - 1 |CPU: 1core & RAM: 3GB|1 |
     |Cassandra<sup>2</sup>            |Staging&Prod - 1 |CPU: 1core & RAM: 3GB| 1 |
     |Keycloak<sup>1</sup> | Staging&Prod - 1|CPU: 1core & RAM: 4GB|Any |
-    |log-es<sup>1</sup> |  Staging&Prod - 1|CPU: 1core & RAM: 3.5GB|1 |
 
 * When you install Sunbird on 2 servers, all the services with the common superscript (e.g. servername<sup>2</sup>) in the Server Name are run on the same server. The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup>. 
  
@@ -81,8 +80,6 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`swarm_manager_host`           |A comma-separated (,) list of IP addresses of the swarm managers.                |no|
 |`swarm_node_host`           | A comma-separated (,) list of swarm node IP addresses .             |no|
 |`keycloak_host`           | A comma-separated (,) list of keycloak IP addresses.              |no|
-|`log_es_host`           |  The IP address of the Logger Elasticsearch            |no|
-| `proxy_prometheus` | By default this parameter is marked as 'false'. Modify it to 'true', if you want to use monitoring  |no|
 |`sunbird_dataservice_url` |The API url of sunbird, for example; https://demo.opensunbird.o    |no|
 |`sunbird_azure_storage_account`  | The Azure storage account for the badger service     |no|
 |`sunbird_azure_storage_key`  | The Azure storage key for the badger service    |no|
@@ -102,8 +99,6 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |5|keycloak| Deploys and configures Keycloak |
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
-|8|logger|Deploys the ELK stack and the logs can be viewed in Kibana|
-|9|monitor|Monitors all the services, health checks, API's,system checks etc..|
 
 6.The badger service is set up manually. To do so, follow the steps given [here](#badger-setup).
 
@@ -147,11 +142,6 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
 
-* `deploy-logger.sh` -  Deploy ELK stack for logs. 
-**Note:** This step is optional.
-
-* `deploy-monitor.sh` - Deploys the monitoring stack (Prometheus) to send mail alerts when the infrastructure or services are not stable. **Note:** This step is optional. 
- 
 
 ## Mapping Ports 
 The following is a list of ports that must be open:
