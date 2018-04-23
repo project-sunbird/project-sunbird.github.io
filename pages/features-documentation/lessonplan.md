@@ -131,7 +131,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   <br>4. Click <b>View Details</b> to read illustrated information about the card in a new window. 
       <br>&emsp;a. Select <b>Add</b> to imbibe the resoure
       <br>&emsp;b. Select <b>Remove</b> to remove the resource
-  <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource section of the <b>LessonPlan</b> page. 
+  <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource section of the <b>LessonPlan</b> page. </td>
     <td>
    <img src="pages/features-documentation/images/lessonplan/add_resource2.png">
  </td>     
@@ -152,8 +152,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
      <br>3. Click Save to save the changes
      <br>4. Click send for review icon. click Send for Review to know more
      <br>Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan-for-review">Send for Review</a> to know more.</td>
-    </td>
-<td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
+   <td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
 </tr>
   <tr> 
     <td>
@@ -165,7 +164,6 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
  </td>
 <td><img src="pages/features-documentation/images/lessonplan/preview_page.png"></td>     
 </tr>
-
 </table>
 
 
