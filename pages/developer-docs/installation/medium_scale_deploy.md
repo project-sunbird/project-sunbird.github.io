@@ -15,7 +15,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 ## Prerequisites
 
-* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](#mapping-ports). 
+* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](#mapping-ports). The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.
 
 * Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name, and want to get an SSL certificate, use [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate that is valid for 90 days.
 
@@ -34,7 +34,6 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
     |Postgres slave<sup>2</sup>       | Staging&Prod - 1 |CPU: 1core & RAM: 3GB|1 |
     |Cassandra<sup>2</sup>            |Staging&Prod - 1 |CPU: 1core & RAM: 3GB| 1 |
     |Keycloak<sup>1</sup> | Staging&Prod - 1|CPU: 1core & RAM: 4GB|Any |
-    |log-es<sup>1</sup> |  Staging&Prod - 1|CPU: 1core & RAM: 3.5GB|1 |
 
 * When you install Sunbird on 2 servers, all the services with the common superscript (e.g. servername<sup>2</sup>) in the Server Name are run on the same server. The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup>. 
  
@@ -81,17 +80,21 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`swarm_manager_host`           |A comma-separated (,) list of IP addresses of the swarm managers.                |no|
 |`swarm_node_host`           | A comma-separated (,) list of swarm node IP addresses .             |no|
 |`keycloak_host`           | A comma-separated (,) list of keycloak IP addresses.              |no|
-|`log_es_host`           |  The IP address of the Logger Elasticsearch            |no|
-| `proxy_prometheus` | By default this parameter is marked as 'false'. Modify it to 'true', if you want to use monitoring  |no|
 |`sunbird_dataservice_url` |The API url of sunbird, for example; https://demo.opensunbird.o    |no|
 |`sunbird_azure_storage_account`  | The Azure storage account for the badger service     |no|
 |`sunbird_azure_storage_key`  | The Azure storage key for the badger service    |no|
 |`sunbird_image_storage_url`| The Azure image url for the badger service |no|
 |`sunbird_installation_email`| The Sunbird installation email ID |no|
 |`sunbird_telemetry_pdata_id`| The Sunbird telemetry pdata ID, for example <br> {env}.{implimentation_name}.learning.service |no|
+|`backup_storage_name`| elasticsearch backupstorage name |yes|
+|`backup_storage_key`| elasticsearch backupstorage key |yes|
+|`es_etc_cluster_name`| elasticsearch backupstorage cluster name |yes|
+|`sunbird_environment`| The Sunbird installation environment |yes|
+|`sunbird_instance`| The Sunbird installation name |yes|
 
 
-5. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
+
+5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
@@ -102,8 +105,6 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |5|keycloak| Deploys and configures Keycloak |
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
-|8|logger|Deploys the ELK stack and the logs can be viewed in Kibana|
-|9|monitor|Monitors all the services, health checks, API's,system checks etc..|
 
 6.The badger service is set up manually. To do so, follow the steps given [here](#badger-setup).
 
@@ -147,11 +148,6 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
 
-* `deploy-logger.sh` -  Deploy ELK stack for logs. 
-**Note:** This step is optional.
-
-* `deploy-monitor.sh` - Deploys the monitoring stack (Prometheus) to send mail alerts when the infrastructure or services are not stable. **Note:** This step is optional. 
- 
 
 ## Mapping Ports 
 The following is a list of ports that must be open:
@@ -172,15 +168,28 @@ The following is a list of ports that must be open:
 1. Run `ssh -i <key path (which you gave in config file)> $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')` to login to node where badger container is running.  
  Example: `ssh -i ~/ssh_key.pem $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')`
 
-2. Run `docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}')` to login  to the badger container.
+2. Run `docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}') /bin/sh` to login  to the badger container.
 
 3. Move to the directory `cd /badger/code`
 
 4. Run `./manage.py createsuperuser`. Provide a valid username, email ID and password.
 
-5. Run the following curl command to get the sunbird badger authorization variable.
+5. Install curl.
+     `apt-get install curl -y`
+     
+6. Run the following curl command to get the sunbird badger authorization variable.
      
      `curl -X POST 'http://localhost:8004/api-auth/token' -d "username=<emailid>&password=<password>"`
 
-6. Set the output token of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
+7. Set the output token of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
 
+## Keycloak Setup
+
+Keycloak is the auth server for sunbird.
+
+In order to make keycloak work with android application, please follow the below steps
+
+1. Open keycloak web ui `https://dns-name/auth`
+2. Log in to the admin console using credentials (default uesername : admin and passwod: <keycloak_admin_password given in config>)
+3. Navigate to Clients -> Android and delete both redirection urls and update with `https://<dns-name>/oauth2callback`
+<img src="pages/developer-docs/installation/images/keycloak-android-redirect.png">
