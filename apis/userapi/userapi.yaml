@@ -130,7 +130,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user'
       - name: ts
         in: header
         required: true
