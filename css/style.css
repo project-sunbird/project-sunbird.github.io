@@ -3850,6 +3850,9 @@ Uncomment this in multiversion
 .sidebar-wrapper.architecture .sidebar-group.architecture,
 .sidebar-wrapper.architecture-views .sidebar-group.architecture,
 .sidebar-wrapper.features-documentation .sidebar-group.features-documentation,
+.sidebar-wrapper.features-documentation-badging-framework .sidebar-group.features-documentation,
+.sidebar-wrapper.usertaskflow .sidebar-group.features-documentation,
+.sidebar-wrapper.features-documentation-mobileapp .sidebar-group.features-documentation,
 .sidebar-wrapper.developer-docs .sidebar-group.developer-docs,
 .sidebar-wrapper.developer-docs-installation .sidebar-group.developer-docs,
 .sidebar-wrapper.developer-docs-singlesignon .sidebar-group.developer-docs,
@@ -4308,8 +4311,8 @@ tbody {
   border-radius: 4px; }
 
 figcaption {
-  text-align: center;
-  margin-top: 10px; }
+  margin-bottom: 10px;
+  font-size: 14px; }
 
 .fullscreen {
   position: fixed;
@@ -4320,6 +4323,9 @@ figcaption {
   background: rgba(0, 0, 0, 0.7);
   overflow: hidden;
   box-sizing: content-box; }
+
+.fullscreen figcaption {
+  display: none; }
 
 .zoomclose {
   display: none; }
@@ -4340,11 +4346,12 @@ figcaption {
   max-width: 100%; }
 
 .inner__content .fullscreen img {
-  max-width: 100vw;
-  max-height: 100vh;
+  max-width: calc(100vw - 10px);
+  max-height: calc(100vh - 10px);
   border: 0;
   width: auto;
-  height: auto; }
+  height: auto;
+  margin: 5px auto; }
 
 .container-height {
   overflow: hidden; }
@@ -4917,9 +4924,9 @@ redoc pre {
 body {
   font-family: "Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif; }
 
-.doc-layout {
-  overflow: hidden; }
-
+@media screen and (min-width: 992px) {
+  .doc-layout {
+    overflow: hidden; } }
 .btn-inactive {
   border-color: white; }
 

@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.35.b/";
+			baseURL.href="/releases/release.1.35.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-04-19 12:32:02 +0530">
+<meta name="last-modified" content="2018-04-23 09:03:32 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.35.b" />
-<meta name="buildNo" content="2969" />
+<meta name="buildVersion" content="release.1.35.c" />
+<meta name="buildNo" content="3001" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?19042018"  />
-<link rel="stylesheet" href="css/style.css?19042018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?19042018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?19042018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?19042018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?19042018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23042018"  />
+<link rel="stylesheet" href="css/style.css?23042018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?23042018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?23042018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?23042018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?23042018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -200,7 +200,7 @@
                                 <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
 							</li>
 							<li>	
-                                <a href="features-documentation/badging_framework/content_badges">Issuing Badges for Content</a>
+                                <a href="features-documentation/badging_framework/content_badges/">Issuing Badges for Content</a>
                             </li>
                         </ul>
                     </div>
@@ -328,9 +328,10 @@
                         </div>
                     </li>
                 
-                    <li>
+                    <!--<li>
                         <a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
-                    </li>    <li>
+                    </li>-->
+		    <li>
                     <div class="">
                         <a href="developer-docs/onboarding/">Onboarding</a>
                         <ul class="sidebar-group">
@@ -347,9 +348,9 @@
                                         <li>
                                             <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
                                         </li>
-                                        <li>
+                                        <!--<li>
                                             <a href="developer-docs/singlesignon/commonerrors_sso/">Common errors and solutions</a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div>
                             </li>
@@ -366,23 +367,23 @@
                         <a href="apis/">API Reference Documentation</a>
                         <ul class="sidebar-group">
                             <li>
-                                <a href="apis/#feature" target="_blank">Feature</a>
+                                <a href="apis/#feature" >Feature</a>
                             </li>
                             <li>
-                                <a href="apis/#admin-apis" target="_blank">Administration</a>
+                                <a href="apis/#admin-apis" >Administration</a>
                             </li>
                             <li>
-                                <a href="apis/#setup-apis" target="_blank">Setup</a>
+                                <a href="apis/#setup-apis" >Setup</a>
                             </li>
                             <li>
-                                <a href="apis/#data-apis" target="_blank">Data</a>
+                                <a href="apis/#data-apis" >Data</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <div class="">
-                        <a href="developer-docs/telemetry/overview">Telemetry</a>
+                        <a href="developer-docs/telemetry/overview/">Telemetry</a>
                         <ul class="sidebar-group">
                             <li>
                                 <a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
@@ -436,10 +437,10 @@
             </a>
             <ul class="sidebar-group contributions">
                 <li>
-                    <a href="contributions/filing_a_bug">Guidelines for Filing a Bug</a>
+                    <a href="contributions/filing_a_bug/">Guidelines for Filing a Bug</a>
                 </li>
                 <li>
-                    <a href="contributions/contribution_guidelines">Contributing to Sunbird Documentation</a>
+                    <a href="contributions/contribution_guidelines/">Contributing to Sunbird Documentation</a>
                 </li>
             </ul>
             <a href="faqs/">
@@ -594,35 +595,27 @@
 		var url = this.href.replace(baseURL.href, "");
 		this.href = 'conceptmodels/user/' + url;
     })
-    
-	/*$(".zoom").click(function(){
-		
-		if (!$(this).hasClass('enabled')){
-			$(this).addClass('enabled');
-			$(this).elevateZoom({
-				zoomType: "inner",
-				cursor  : "crosshair",
-				scrollZoom: "true"
-			});
-	    }else{
-            $(this).removeClass('enabled');
-            $('.zoomContainer').hide();
-        }
-	});*/
 	$(".zoomcover").click(function(){
-		if (!$(this).hasClass('fullscreen')){
-			$(this).addClass('fullscreen');
-			$(this).find('.zoom').addClass('enabled').elevateZoom({
+		if (!$(this).hasClass("fullscreen")){
+			$(this).addClass("fullscreen");
+			$(this).find(".zoom").addClass("enabled").elevateZoom({
 				zoomType: "inner",
 				cursor  : "crosshair",
 				scrollZoom: "true"
 			});
 		} else {
-			$(this).removeClass('fullscreen');
-			$(this).find('.zoom').removeClass('enabled');
-			$('.zoomContainer').hide();
+			$(this).removeClass("fullscreen");
+			$(this).find(".zoom").removeClass("enabled");
+			$(".zoomContainer").hide();
 		}
 	});
+	$(document).keyup(function(e) {
+     if (e.keyCode == 27) { 
+		$(".zoomcover").removeClass("fullscreen");
+		$(".zoomcover").find(".zoom").removeClass("enabled");
+		$(".zoomContainer").hide();
+    }
+});
   </script>
   <style>
   .zoom:hover{

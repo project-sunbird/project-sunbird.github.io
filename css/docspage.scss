@@ -214,8 +214,8 @@ tbody{
 }
 
 figcaption{
-	text-align:center;
-	margin-top:10px;
+	margin-bottom:10px;
+	font-size:14px;
 }
 .fullscreen{
 	position:fixed;
@@ -226,6 +226,9 @@ figcaption{
 	background:rgba(0,0,0,0.7);
     overflow: hidden;
     box-sizing: content-box;	
+}
+.fullscreen figcaption{
+	display:none;
 }
 .zoomclose{
 	display:none;
@@ -246,9 +249,10 @@ figcaption{
 	max-width:100%;
 }
 .inner__content .fullscreen img{
-	max-width:100vw ;
-	max-height:100vh;
+	max-width:calc(100vw - 10px) ;
+	max-height:calc(100vh - 10px);
 	border:0;
 	width:auto;
 	height:auto;
+	margin:5px auto;
 }
