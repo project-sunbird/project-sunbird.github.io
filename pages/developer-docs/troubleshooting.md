@@ -80,3 +80,26 @@ MongoDB   |A store for session data     |The player service
 **A**: Sunbird provides administrator dashboards that provide summary views of the telemetry data. You can pull out raw telemetry data from the EkStep platform using the [On Demand Data Exhaust API](https://community.ekstep.in/developer-apis/on-demand-data-exhaust-api){:target="_blank"} 
 
 **Note**: Sign in to the [EkStep Community portal](https://community.ekstep.in){:target="_blank"}, to access the API 
+
+## Other Common Errors 
+
+<table>
+  <tr>
+    <th>Error</th>
+    <th>Cause</th>
+    <th>Solution</th>
+  </tr>
+  <tr>
+    <td>Issue while generating JWT Token</td>
+    <td>Private Key was generated with des3 algorithm</td>
+    <td>Private Key should be generated without mentioning any algorithm</td>
+  </tr>
+  <tr>
+    <td>Issue while creating bulk organizations - ‘API rate limit exceeded’
+</td>
+    <td>There is a limit on the number of calls that can be made within an hour by using a single API key. The current limit is 1000</td>
+    <td> The development team can increase the limit, if necessary</td>
+  </tr>
+</table>
+ 
+
