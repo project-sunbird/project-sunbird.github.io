@@ -10,7 +10,6 @@ allowSearch: true
 ---
 Sunbird is a next-generation, societal learning platform built for cloud/mobile native environments and meant to address teaching and learning use cases.
 It is an opensource platform which is robust, scalable, extensible, flexible and easily configurable.
-
 <br>The User flows guide you to complete a task easily and efficiently.
 <br>For each user flow, the questions that we have addressed here:
 
