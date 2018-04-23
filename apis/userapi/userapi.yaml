@@ -3,8 +3,7 @@ info:
   version: '1.0'
   title: User Management  API(s)
   description: >-
-    The User API resources perform operations related to 
-    the _Users_ on the Sunbird Platform. The basic operations include Creation, Updation,Reading & searching.
+    The User Management API resources provide programmatic access to the users and other user related tasks.You can use the API in scripts or programs to allow authorized administrators to create, update,delete,read user and retrieve information. 
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
@@ -95,7 +94,7 @@ paths:
       description: >-
        This API is associated for searching a particular user on the Sunbird Platform.
           - **_/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters marked with *. 
+          - It is mandatory to provide values for parameters marked with *
           - Mandatory fields cannot be null or empty.
       summary: Search User
       tags:
@@ -131,7 +130,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user'
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: ts
         in: header
         required: true
@@ -309,7 +308,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: Content-Type
         in: header
         required: true
@@ -398,7 +398,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: Content-Type
         in: header
         required: true
@@ -491,7 +492,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user'
       - name: Authorization
         in: header
         required: true
@@ -578,7 +580,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: Authorization
         in: header
         required: true
@@ -677,7 +680,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: Authorization
         in: header
         required: true
@@ -776,7 +780,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: Authorization
         in: header
         required: true
@@ -884,7 +889,8 @@ paths:
         in: header
         required: true
         type: string
-        description: ''
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
@@ -984,7 +990,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The token/key used to execute the API'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."assign role" operation was successfully executed.'
@@ -1028,7 +1035,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - Application/json
               - Multipart/form-data
@@ -1042,7 +1049,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: 'This ID Uniquely identifies a request if the same API is executed multiple times'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -1114,7 +1121,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: 'This ID Uniquely identifies a request if the same API is executed multiple times'
       - name: Authorization
         in: header
         required: true
@@ -1124,7 +1131,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The token/key used to execute the API.'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."add user skills" operation was successfully executed.'
@@ -1216,7 +1224,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The token/key used to execute the API.'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: Authorization
         in: header
         required: true
@@ -1370,14 +1379,14 @@ definitions:
             type: string
           phoneVerified:
             type: boolean
-            description: 'this key is required with value as true , if user is pass phone value and provider both. in create user either email or phone is required.'
+            description: 'this key is required with value as true, if user is pass phone value and provider both. in create user either email or phone is required.'
           status:
             type: integer
             format: int32
             description: user status 
           loginId:
                 type: string
-                description: loginid will be generated by system based on your username and provider value. if user is passing only username then login id will be same as username , if user is passing username and provider both then login id would be username@provider. it will make same user to work with different provider based on loginId
+                description: loginID will be generated by system based on your username and provider value. if user is passing only username then login id will be same as username , if user is passing username and provider both then login id would be username@provider. it will make same user to work with different provider based on loginId
           subject:
             type: array
             items:
@@ -1396,7 +1405,7 @@ definitions:
             type: string
           rootOrgId:
             type: string
-            description: 'id of the rootorg'
+            description: 'ID of the rootorg'
           dob:
             type: string
             format: yyyy-MM-dd  
@@ -1543,11 +1552,10 @@ definitions:
     type: object
     properties:
       loginId:
-        description: 'user login id . value will be username@provider if user is created by providing username and provider both then login id would be username@provider , if user is created without provider then loginId would be username itself.'
+        description: 'user login ID . value will be username@provider if user is created by providing username and provider both then login id would be username@provider , if user is created without provider then loginId would be username itself.'
         type: string
     required:
       - loginId
-      
   SearchUserrequest:
     title: Search UserRequest
     example:
@@ -1604,52 +1612,50 @@ definitions:
     type: object
     properties:
       userId:
-        description: 'id of the user'
+        description: 'ID of the authenticated User'
         type: string
       firstName:
-        description: ''
+        description: 'Ist name of the user'
         type: string
       lastName:
-        description: ''
+        description: 'Last name of the user'
         type: string
       gender:
-        description: ''
+        description: 'Gender can Male|Female'
         type: string
       avatar:
-        description: ''
+        description: 'The profile picture of the user'
         type: string
       dob:
-        description: ''
+        description: 'Data of Birth of the user'
         type: string
       language:
-        description: ''
+        description: 'The language of the user'
         type: array
         items:
           type: string
       subject:
-        description: ''
+        description: 'An array of the parameters'
         type: array
         items:
           type: string
     required:
     - userId    
   ResultStatus:
-    description: node id description
+    description: Node id description
     type: object
     properties:
       status:
        type: string
-       description: success or failure
-          
+       description: Success or Failure
   ResultWithEmptyBody:
-    title: Result Containing empty body
+    title: The result Containing empty body
     type: object
     properties:
       result:
         $ref: '#/definitions/ResultStatus'
-  
   SearchUserResponse:
-     description: search user response
+     description: The response body of search user
      type: object
      properties:
        response:
@@ -1662,14 +1668,12 @@ definitions:
            items:
             type: object
             $ref: '#/definitions/User'
-        
   UserCreateResponse:
-    description: Create Content Response
+    description: The response body of Create Content
     type: object
     allOf:
       - $ref: '#/definitions/ResultWithEmptyBody'
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-
   EmptyResult:
     title: Empty Result
     type: object
@@ -1677,9 +1681,8 @@ definitions:
       result:
         type: object
         description: Empty Result
-        
   UserErrorResponse:
-    title: Create Content Error Response
+    title: This is response body of Create Content Error 
     type: object
     allOf:
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -1706,7 +1709,7 @@ definitions:
     type: object
     properties:
       userId:
-        description: ''
+        description: 'The unique ID of the user' 
         type: string
     required:
     - userId
@@ -1748,7 +1751,7 @@ definitions:
     type: object
     properties:
       userId:
-        description: ''
+        description: 'The unique ID of the user'
         example: userid
         type: string
       private:
@@ -1793,7 +1796,7 @@ definitions:
     title: assignRoleExp
     example:
       userId: userid
-      organisationId: 0123653943740170242
+      organisationId: 
       roles:
       - CONTENT_CREATION
       - PUBLIC
@@ -1802,15 +1805,15 @@ definitions:
     type: object
     properties:
       userId:
-        description: ''
+        description: 'The unique ID of the user'
         example: userid
         type: string
       organisationId:
-        description: ''
-        example: 0123653943740170242
+        description: 'The unique ID of the organization'
+        example: 012365
         type: string
       roles:
-        description: ''
+        description: 'The role assigned to a user'
         example:
         - CONTENT_CREATION
         - PUBLIC
