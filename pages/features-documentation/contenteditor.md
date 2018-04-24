@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: features-documentation
-title: Study Material
-page_title: Study Material
-description: Study Material
+title: Content Editor
+page_title: Content Editor
+description: Features and functionality of the content editor
 keywords: content editor, create course, create content, create lesson, textbook, collection, course
 published: true
 allowSearch: true
