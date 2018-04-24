@@ -8,16 +8,18 @@ keywords: content editor, create course, create content, create lesson, textbook
 published: true
 allowSearch: true
 ---
-Sunbird has an inbuilt content editor with various features that aid in creating engaging and interesting study materials. 
-Studay materials of differnt types can be created on the content editor include: 
+Sunbird has an inbuilt content editor with various features that is used to create engaging and interesting study material. 
+Study material can be of different types like: 
 
-- Game
+- Games
 - Story
 - Worksheet
 - Quiz
 - Assessment
 
-## Prerequisite
+This page expalins the features of and how to use the content editor to create any type of Study Material. 
+
+## Prerequisites
 
 <table>
   <tr>
