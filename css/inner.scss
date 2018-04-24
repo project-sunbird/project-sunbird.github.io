@@ -20,7 +20,7 @@
 		overflow-y: scroll;
 		overflow-x: hidden;
 		height: 100%;
-		left: 275px;
+		left: 290px;
 	}
 	@media (max-width: $screen-sm-max) {
 		margin-top: 60px;
@@ -71,7 +71,7 @@
 
 		&.link {
       .material-icons {
-  			color: #1cadce;
+  		color: #1cadce;
   	    opacity: 0;
   	    width: 16px;
   	    display: inline-block;

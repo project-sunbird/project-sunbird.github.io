@@ -3712,7 +3712,7 @@ body > header {
   .sidebar-container .inner__searchbar {
     position: fixed;
     top: 70px;
-    width: 275px; } }
+    width: 290px; } }
 .sidebar-container .inner__searchbar .search .search-icon {
   position: absolute;
   right: 20px;
@@ -3724,7 +3724,7 @@ body > header {
   top: 114px;
   bottom: 0;
   left: 0;
-  width: 275px;
+  width: 290px;
   transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in; }
   @media (max-width: 991px) {
@@ -3740,7 +3740,7 @@ body > header {
       position: fixed;
       bottom: 0px;
       top: 60px;
-      width: 275px; }
+      width: 290px; }
       .sidebar-container .inner__sidebar::-webkit-scrollbar {
         width: 10px; }
       .sidebar-container .inner__sidebar::-webkit-scrollbar-track {
@@ -3821,7 +3821,7 @@ body > header {
 
 @media (min-width: 991px) {
   .sidebar-container {
-    width: 275px;
+    width: 290px;
     height: 100vh;
     background: #0d9474;
     background: -moz-linear-gradient(45deg, #0d9474 0%, #2a6fa8 100%);
@@ -3844,6 +3844,9 @@ Uncomment this in multiversion
 .sidebar-group.architecture,
 .sidebar-group.features-documentation,
 .sidebar-group.developer-docs,
+.sidebar-group.usertaskflow,
+.sidebar-group.contributions,
+.sidebar-group.apis,
 .sidebar-group.faqs {
   display: none !important; }
 
@@ -3851,13 +3854,14 @@ Uncomment this in multiversion
 .sidebar-wrapper.architecture-views .sidebar-group.architecture,
 .sidebar-wrapper.features-documentation .sidebar-group.features-documentation,
 .sidebar-wrapper.features-documentation-badging-framework .sidebar-group.features-documentation,
-.sidebar-wrapper.usertaskflow .sidebar-group.features-documentation,
+.sidebar-wrapper.usertaskflow .sidebar-group.usertaskflow,
 .sidebar-wrapper.features-documentation-mobileapp .sidebar-group.features-documentation,
 .sidebar-wrapper.developer-docs .sidebar-group.developer-docs,
+.sidebar-wrapper.contributions .sidebar-group.contributions,
 .sidebar-wrapper.developer-docs-installation .sidebar-group.developer-docs,
 .sidebar-wrapper.developer-docs-singlesignon .sidebar-group.developer-docs,
 .sidebar-wrapper.developer-docs-telemetry .sidebar-group.developer-docs,
-.sidebar-wrapper.apis .sidebar-group.developer-docs,
+.sidebar-wrapper.apis .sidebar-group.apis,
 .sidebar-wrapper.faqs .sidebar-group.faqs {
   display: block !important; }
 
@@ -4373,7 +4377,7 @@ figcaption {
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100%;
-    left: 275px; } }
+    left: 290px; } }
 @media (max-width: 991px) {
   .content {
     margin-top: 60px;
