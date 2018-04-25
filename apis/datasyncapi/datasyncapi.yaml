@@ -35,6 +35,8 @@ paths:
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Syncs data
+      tags:
+      - Data Sync API(s)
       operationId: '{{host}}/data/v1/index/sync'
       produces:
       - application/json
