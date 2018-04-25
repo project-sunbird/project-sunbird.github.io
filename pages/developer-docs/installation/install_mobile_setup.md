@@ -45,7 +45,7 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
   </tr>
   <tr>
     <td>5.</td>
-    <td>Replace the producer id <code>PRODUCER_ID</code>in respective environments in gradle.properties in following format
+    <td>Replace the producer id <code>PRODUCER_ID</code> for respective environments in gradle.properties as mentioned below
 
 ```sh
 <env>.<implementation-name>.app
