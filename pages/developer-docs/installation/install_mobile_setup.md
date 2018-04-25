@@ -32,6 +32,28 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
   </tr>
   <tr>
     <td>4.</td>
+    <td>Replace redirect base url <code>REDIRECT_BASE_URL</code> and all other base urls with your respective domain name in build.gradle<br>
+  <br>
+  Example:
+
+```sh
+buildConfigField 'String', 'REDIRECT_BASE_URL', '"<http or https://domain-name>"'
+buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>/api/data/v1"'
+```
+
+  </td>
+  </tr>
+  <tr>
+    <td>5.</td>
+    <td>Replace the producer id <code>PRODUCER_ID</code>in respective environments in gradle.properties in following format
+
+```sh
+<env>.<implementation-name>.app
+```
+</td>
+  </tr>
+  <tr>
+    <td>4.</td>
     <td>Add your keystore detail `keystore`, `keystore_password`, `key_alias` and `key_password` in `gradle.properties`. For more details about generating a key and keystore <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank"> refer</a>to the official Android website.</td>
   </tr>
   <tr>
@@ -41,7 +63,7 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
   <tr>
     <td>6.</td>
 
-    <td>To get the API key, create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register the app. After registering your app, you will get the API Key. For details, <a href="https://docs.fabric.io/android/fabric/settings/api-keys.html" target="_blank">refer</a>. Add the key in the manifest file.<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> file in its root directory</td>
+<td>To get the API key, create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register the app. After registering your app, you will get the API Key. For details, <a href="https://docs.fabric.io/android/fabric/settings/api-keys.html" target="_blank">refer</a>. Add the key in the manifest file.<br><strong>Note:</strong>Every application has an <strong>AndroidManifest.xml</strong> file in its root directory</td>
 
   </tr>
   <tr>
@@ -50,7 +72,35 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
   </tr>
   <tr>
     <td>8.</td>
-    <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user.<br><i>To generate key and secret, <a href="https://github.com/project-sunbird/sunbird-devops/blob/master/Installation.md#step-6-generate-key-and-secrets-for-mobile-app" target="_blank">refer</a></i>to the page for more details.</td> 
+    <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user.<br><br>To generate key and secret, do the following:<br>
+ 
+  Check sunbird-devops/deploy/logs/apis.log file for JWT token printed for mobile_admin user.
+ 
+```sh
+ curl -X POST \
+   <sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
+   -H 'authorization: Bearer <mobile_admin_jwt_token>' \
+   -H 'content-type: application/json' \
+   -d '{
+   "request": {
+     "key": "<implementation-name>-mobile-app-<version-number>"
+   }
+ }'
+```
+ Result will be
+ 
+```json
+ {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
+```
+ Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file.
+ <br>
+ Example:<br> 
+ ```
+ dev_mobile_app_key = "<implementation-name>-mobile-app-<version-number>"
+ dev_mobile_app_secret = "<secret>"
+ ```
+
+</td> 
   </tr>
   <tr>
     <td>9.</td>
