@@ -30,8 +30,7 @@ Activity in Chapter 1 |Child Node |Fun Task
 2nd Chapter Name  |Sibling Node | More Nouns
 Activity in Chapter 2 | Child Node  | My Fun Corner
 
-### Prerequisites
-
+## Prerequisites
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -44,8 +43,7 @@ Activity in Chapter 2 | Child Node  | My Fun Corner
   </tr>
   </table>
 
-### Adding Child Node
-
+## Adding Child Node
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -58,8 +56,7 @@ Activity in Chapter 2 | Child Node  | My Fun Corner
   </tr>
   </table>
  
-### Adding Sibling Node
-
+## Adding Sibling Node
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -72,7 +69,7 @@ Activity in Chapter 2 | Child Node  | My Fun Corner
   </tr>
   </table>
 
-### Node Metadata
+## Node Metadata
 On clicking <b> New Sibling</b> or <b>New Child</b>, the metadata is displayed on the right
 <table>
   <tr>
@@ -86,8 +83,7 @@ On clicking <b> New Sibling</b> or <b>New Child</b>, the metadata is displayed o
   </tr>
   </table>
   
-### Deleting a Node
-
+## Deleting a Node
 <table>
   <tr>
     <th style="width:35%;">Step</th>
