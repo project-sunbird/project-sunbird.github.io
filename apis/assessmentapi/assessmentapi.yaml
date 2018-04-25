@@ -103,7 +103,7 @@ paths:
             - The **_/retire/{AssessmentItem_Id}_** endpoint executes the "delete assessment item" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for **required** parameters. 
             - Mandatory fields cannot be null or empty.
-      summary: Delete an assessment Item
+      summary: Delete an Assessment Item
       tags:
       - Assessment Item API(s)
       operationId: RetireQ1SUrduDelete
@@ -181,7 +181,7 @@ paths:
             - The **_/read/{AssessmentItem_Id}_** endpoint executes the "Read Assessment Item" request based on parameters provided as metadata in the request body.
             - It is mandatory to provide values for **required** parameters. 
             - Mandatory fields cannot be null or empty.
-      summary: Fetch an Assessment tem
+      summary: Fetch an Assessment Item
       tags:
       - Assessment Item API(s)
       operationId: ReadWingsD01Get
