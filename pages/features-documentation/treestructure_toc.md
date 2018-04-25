@@ -52,7 +52,7 @@ Activity in Chapter 2 | Child Node  | My Fun Corner
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. To add a child node, you can either <br>&emsp;a) Click <b>New child</b> from the burger menu &npsp;associated with the required   node in the left navigation pane, <b>OR</b> <br>&emsp;b) Right-click on the node name and select <b>New sibling</b>, <b>OR</b> <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+N</b> <br> <b>Note</b>: The metadata for sibling and child nodes is the same. For details on the metadata, refer <a href="features-documentation/treestructure_toc/#node-metadata"> Node Metadata</a>
+    <td>1. To add a child node, you can either: <br>&emsp;a) Click <b>New child</b> from the burger menu &npsp;associated with the required   node in the left navigation pane, <b>OR</b> <br> b) Right-click on the node name and select <b>New sibling</b>, <b>OR</b> <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+N</b> <br> <b>Note</b>: The metadata for sibling and child nodes is the same. For details on the metadata, refer <a href="features-documentation/treestructure_toc/#node-metadata"> Node Metadata</a>
     </td>
      <td><img src="pages/features-documentation/images/addingchild1.png"></td>
   </tr>
@@ -66,7 +66,7 @@ Activity in Chapter 2 | Child Node  | My Fun Corner
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add a sibling node, you can either <br>&emsp;a) Click <b>New sibling</b> from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b)  Right-click on the node name and select <b>New sibling</b>, OR <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b> <br>&emsp;<b>Note</b>: The metadata for sibling and child nodes is the same. For details on the metadata, refer <a href="features-documentation/treestructure_toc/#node-metadata"> Node Metadata</a>
+    <td>1. To add a sibling node, you can either <br>&emsp;a) Click <b>New sibling</b> from the burger menu associated with the required node in the left navigation pane, OR <br>&emsp;b)  Right-click on the node name and select <b>New sibling</b>, OR <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+Shift+N</b> <br>&emsp;<b>Note</b>: The metadata for sibling and child nodes is the same. For details on the metadata, refer <a href="features-documentation/treestructure_toc/#node-metadata"> Node Metadata</a>
     </td>
       <td><img src="pages/features-documentation/images/addingchild2.png"></td>
   </tr>
