@@ -30,6 +30,8 @@ paths:
           - The **_/create_** endpoint executes the "create location" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Create Page
+      tags:
+      - Page APIs
       operationId: CreatePost
       produces:
       - application/json
@@ -118,7 +120,9 @@ paths:
        This API is associated with fetching the settings of a page.
           - The **_/all/settings_** endpoint executes the "fetch settings" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Fetch All Page Settings
+      summary: Fetch Page Settings
+      tags:
+      - Page APIs
       operationId: AllSettingsGet
       produces:
       - application/json
@@ -199,6 +203,8 @@ paths:
           - The **_/Resource_** endpoint executes the "get specific page resources" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Get Specific Page Resources
+      tags:
+      - Page APIs
       operationId: ResourceGet
       produces:
       - application/json
@@ -279,6 +285,8 @@ paths:
           - The **_/section/all/settings_** endpoint executes the "fetch section settings" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Fetch Section Settings
+      tags:
+      - Page APIs
       operationId: SectionAllSettingsGet
       produces:
       - application/json
@@ -358,7 +366,9 @@ paths:
        This API is associated with creating a new section on a page.
           - The **_/org/v1/location/create_** endpoint executes the "create new section" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: create page section
+      summary: Create Page Section
+      tags:
+      - Page APIs
       operationId: SectionCreatePost
       produces:
       - application/json
@@ -475,6 +485,8 @@ paths:
           - The **_section/update_** endpoint executes the "update section" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Update Page Section 
+      tags:
+      - Page APIs
       operationId: SectionUpdatePatch
       produces:
       - application/json
@@ -604,6 +616,8 @@ paths:
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
       summary: Fetch Section Details by Id
+      tags:
+      - Page APIs
       operationId: Section0122771215738306560Get
       produces:
       - application/json
@@ -683,7 +697,9 @@ paths:
        This API is associated with updating the page information
           - The **_update_** endpoint executes the "update page information" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Update Page Info
+      summary: Update Page Information
+      tags:
+      - Page APIs
       operationId: UpdatePatch
       produces:
       - application/json
@@ -773,6 +789,8 @@ paths:
           - The **_assemble_** endpoint executes the "Get Page data" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Get Page Data 
+      tags:
+      - Page APIs
       operationId: AssemblePost
       produces:
       - application/json
