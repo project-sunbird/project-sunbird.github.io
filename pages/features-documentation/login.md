@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: features-documentation
-title: Sign Up and Login
+title: Login
 page_title: Sign Up and Login
 description: About Sign Up and Login feature in Sunbird 
 keywords: Login, sign up, forgot password
