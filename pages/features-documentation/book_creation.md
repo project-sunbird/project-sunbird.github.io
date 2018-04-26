@@ -32,7 +32,14 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
    <tr>
-    <td>1. Enter <b>Name</b> of the book <br>2.Select the following from their respective dropdown menus: <br>&emsp;a) <b>Board</b><br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Enter <b>Publisher</b> details <br>4. Click <b>Start Creating</b> 
+    <td>1. Enter <b>Name</b> of the book 
+      <br>2.Select the following from their respective dropdown menus: 
+      <br>&emsp;a) <b>Board</b>
+      <br>&emsp;b) <b>Grade</b> 
+      <br>&emsp;c) <b>Subject</b> 
+      <br>&emsp;d) <b>Medium</b> 
+      <br>3. Enter <b>Publisher</b> details 
+      <br>4. Click <b>Start Creating</b> 
       <br><b>Note</b>: These details can be filled later when updating the book details
        </td>
       <td><img src="pages/features-documentation/images/book/book_createbook.png"></td>
@@ -47,7 +54,19 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Edit Details</b> to enter the book details <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> <br>3. Enter <b>Title</b> of the book <br>4. Enter <b>Description</b> of the book <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content <br>6. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Board</b> <br>&emsp;b) <b>Class</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Year</b> <br>7. Enter <b>Publisher</b> details <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> on the header to save the details <br>10. Click <b>Cancel</b> to go back to the previous screen
+    <td>1. Click <b>Edit Details</b> to enter the book details 
+      <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
+      <br>3. Enter <b>Name</b> of the book 
+      <br>4. Enter <b>Description</b> of the book 
+      <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content 
+      <br>6. Select the following from their respective drop-down lists: 
+      <br>&emsp;a) <b>Board</b> 
+      <br>&emsp;b) <b>Grade</b> 
+      <br>&emsp;c) <b>Subject</b> 
+      <br>&emsp;d) <b>Medium</b> 
+      <br>&emsp;e) <b>Year</b> 
+      <br>7. Enter <b>Publisher</b> details 
+      <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> on the header to save the details <br>10. Click <b>Cancel</b> to go back to the previous screen
     </td>
     <td><img src="pages/features-documentation/images/book/book_metadata1.png"></td>
   </tr>
@@ -63,35 +82,40 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. To add headings to a book, click <b>New Child</b> node on the left navigation pane <br>2. On clicking child node, a heading is added to the Table of Contents pane
-    </td>
+    <td> 1. To add headings to a book, click <b>New Child</b> node on the left navigation pane 
+      <br>2. On clicking child node, a heading is added to the Table of Contents pane. For details on child node,
+sibling node, refer Exploring TOC Structure
+<br>3. Click ADD RESOURCE to add content to the headings. For details on adding resources, refer Adding Resource
+     </td>
       <td><img src="pages/features-documentation/images/adding_child.png"></td>
   </tr>
   </table>
   
 ### Heading Details
-On clicking child node, the details are displyed on the action pane
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook <br>2. Enter <b>Description</b> <br>3. Select the <b>Concepts</b> associated with the heading <br>4. Enter <b>Keywords</b> <br>5. Enter the <b>DIAL code</b>. Using DIAL code link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator  
+    <td>On clicking child node, the details are displayed on the action pane
+      <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook <br>2. Enter <b>Description</b> <br>3. Select the <b>Concepts</b> associated with the heading <br>4. Enter <b>Keywords</b> <br>5. Enter the <b>DIAL code</b>. Using DIAL code link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator  
     </td>
       <td><img src="pages/features-documentation/images/heading_details.png"></td>
   </tr>
   </table>
   
 ### DIAL Code Details
-Enter the code from the list of DIAL codes that correspond to the book being created
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
+    <td>Enter the code from the list of DIAL codes that correspond to the book being created
+      <br>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
     </td>
       <td><img src="pages/features-documentation/images/DIAL_code1.png"></td>
   </tr>
