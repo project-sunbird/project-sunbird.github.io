@@ -1012,7 +1012,7 @@ definitions:
             request:
               type: object
               properties:
-                id:
+                organisationId:
                   description: 'ID of organisation to which user is required to be added'
                   type: string
                 provider:
@@ -1020,7 +1020,9 @@ definitions:
                   type: string
                 roles:
                   description: 'List of roles.'
-                  type: string
+                  type: array
+                  items:
+                    type: string
                 userId:
                   description: 'ID of user who is required to be added'
                   type: string
@@ -1028,7 +1030,8 @@ definitions:
                   description: 'User name of user who is required to be added. This parameter is mandatory if userId is not provided.'
                   type: string
               required:
-              - id
+              - organisationId
+              - roles
 
   OrgRemoveUserRequest:
       title: Organisation Remove User API request format
@@ -1039,7 +1042,7 @@ definitions:
             request:
               type: object
               properties:
-                id:
+                organisationId:
                   description: 'ID of organisation from which user is required to be removed'
                   type: string
                 provider:
@@ -1052,7 +1055,7 @@ definitions:
                   description: 'User name of user who is required to be removed. This parameter is mandatory if userId is not provided.'
                   type: string
               required:
-              - id
+              - organisationId
 
   OrgSuccessResponse:
       title: Common success response for an Organisation Management API
@@ -1109,4 +1112,4 @@ definitions:
             content:  
               type: array
               items:
-                $ref: '#/definitions/Organisation'                  
+                $ref: '#/definitions/Organisation'
