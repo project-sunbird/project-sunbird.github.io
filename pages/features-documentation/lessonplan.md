@@ -194,7 +194,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
  - Right-click options associated with a tree node, **OR**
  - Keyboard shortcuts
 
-**Adding Child Node**
+<h4>Adding Child Node</h4>
 
 <table>
   <tr>
@@ -208,7 +208,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
   </tr>
 </table>
       
-**Adding Sibling Node**
+<H4>Adding Sibling Node</H4>
 
 <table>
   <tr>
