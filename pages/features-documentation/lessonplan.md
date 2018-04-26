@@ -7,7 +7,7 @@ description: About Lesson Plan feature
 published: true
 allowSearch: true
 ---
-Lesson plan is a structured outline of a given topic/unit/chapter to be taught in any given day. Lesson plan aids to streamline teaching and create an engaging learning experience.
+Lesson plan is a structured outline of a given topic, unit, chapter to be taught on any given day. Lesson plan aids to streamline teaching and create an engaging learning experience.
 
 ## Prerequisites
 
@@ -17,7 +17,9 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You want to create a lesson plan <br>4. You have clicked the <b>Lesson Plan</b> tile
+    <td>1. You are logged in 
+     <br>2. You are currently on <b>My Workspace</b> page 
+     <br>3. You have clicked the <b>Lesson Plan</b> tile
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/prerequisite.png"></td>
    </tr>
@@ -31,9 +33,9 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-  <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>a) Curriculum <br>b) Medium <br>c) Subject <br>d) Class <br>3. Click <b>Start Creating</b> to create the lesson plan
+  <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>&emsp;a) <b>Board</b> <br>&emsp;b) <b>Grade</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
   </td>
-  <td><img src="pages/features-documentation/images/lessonplan/create.png"></td>
+  <td><img src="pages/features-documentation/images/lessonplan/create_lesson_plan.png"></td>
  </tr>
  </table>
   
@@ -45,13 +47,27 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> for the lesson plan <br>3. Select the following from their respective drop-down lists: <br>&emsp;a) <b>Curriculum</b> <br>&emsp;b) <b>Subject</b> <br>&emsp;c) <b>Grade</b> <br>&emsp;d) <b>Medium</b> <br>&emsp;e) <b>Language</b> <br>&emsp;f) <b>Concepts</b> <br>4. Enter <b>Notes to Teacher</b>, if any <br>5. Enter <b>Duration</b> of the lesson plan <br>6. Describe the <b>Learning Objective</b> for the lesson plan <br>7. Click <b>Lesson Plan</b> on the left navigation pane to add other units of content to the plan <br><b>Note</b>: You can edit or update the title of units in the collection from the navigation hierarchy <br>8. If you wish to use the keyboard shortcuts for collection editor, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><b>Note</b>: You can add or update metadata for multiple pages within the collection and click <b>Save</b> to collectively save all updates.      
+    <td>1. Click the <b>Edit Details</b> link on the top left corner of the page. 
+      <br>2. Enter <b>Title</b> 
+      <br>2. Enter <b>Description</b> for the lesson plan 
+      <br>3. Enter Keywords 
+      <br>4. Select the following from their respective drop-down lists: 
+      <br>&emsp;a) <b>Curriculum</b> 
+      <br>&emsp;b) <b>Class</b> 
+      <br>&emsp;c) <b>Subject</b> 
+      <br>&emsp;d) <b>Medium</b> 
+      <br>&emsp;e) <b>Notes to Teacher</b> 
+      <br>&emsp;f) <b>Learning Objective</b> 
+      <br>&emsp;g) <b>Concepts</b>
+      <br>&emsp;h) <b>Duration</b>
+      <br>5. Click <b>Save</b> to collectively save all updates.  
+      <br>You can edit or update the title of the units in the collection from the navigation hierarchy
     </td>
-    <td><img src="pages/features-documentation/images/lessonplan/addmetadata.png"></td>
+    <td><img src="pages/features-documentation/images/lessonplan/edit_details.png"></td>
  </tr>
  </table>
 
-#### Adding Image to Lesson Plan metadata
+### Adding Image to Lesson Plan
 
 <table>
   <tr>
@@ -59,26 +75,97 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>Click the <b>Image</b> icon to add an image</td>
+    <td>The image can be added in the Lesson Plan title. 
+      <br>1. Click the <b>Edit Details</b> link on the top left corner of the page.
+      <br>2. Click the <b>Image</b> icon to add an image. The <b>Select Image</b> page appears </td>
     <td><img src="pages/features-documentation/images/lessonplan/addimage.png"></td>
   </tr>
   <tr>
-    <td>1. You can add images either by selecting an image from: 
-      <li>A list or uploading images</li>
-      <li>Your local machine to use immediately</li>
-      <br>2. Click <b>My images</b> to view a list of all image files that you have previously, uploaded <br>3. Click <b>All image</b> to view a list of image files from the repository 
-      <br><b>Note:</b> The repository contains all image files added and uploaded by any users 
-      <br>5. Choose an appropriate image file from any list and click <b>Select</b> <br>6. Click <b>Upload</b> and use to upload and use images from your gallery
-    </td>
-    <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
+   <td>1.Click <b>My images</b> to view a list of all image files that you have previously uploaded 
+<br>2. Click <b>All image</b> to view a list of image files from the repository
+<br><b>Note:</b> The repository contains all image files added and uploaded by any users. Choose an appropriate image file from the list.
+     <br>3. Click <b>Select</b>
+    <br>4. Click <B>Upload and Use</b> to upload an image from your local machine. A new Upload and use window appears.</td>
+   <td><img src="pages/features-documentation/images/course_selectimage.png"></td>
+  </tr>
+   <tr> 
+     <td>To upload an image:
+     <br>1. Click <b>Choose File</b> and browse an image from your local drive or open the explorer in a separate window and drag and drop the required file on the screen.
+     <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png
+     <br>2. Under <b>Copyright and License</b>, select if you want to: 
+     <br>&emsp;a. Make it available to everyone 
+     <br>&emsp;b. Not share with anyone
+     <br>3. Enter image details in the <b>Asset Caption</b>
+     <br>4. Enter <b>Tags</b> associated with the image
+     <br>5. Select the language
+     <br>6. Enter the name of creator
+     <br>7. Click <b>Upload and use image</b> to confirm the image
+     <br>8. Click <b>Cancel</b> to discard the changes
+     </td>
+   <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
+  </tr> 
+ </table>
+
+### Adding Content or Resources
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Choose <b>File</b> to browse and click <b>Select a file</b> from your local drive or open the explorer in a separate window or <b>drag and drop</b> the required file on the screen <br><b>Note:</b> Supported file formats are: .jpeg, .jpg, .png <br>2. Under <b>Copyright and License</b>, select if you want to: <br>a) Make it available to everyone <br>b) Not share with anyone
-      <br>4. Add image details in the <b>Asset Caption</b> area <br>5. Click <b>Upload and Use</b> to upload the image
-      </td>
-    <td><img src="pages/features-documentation/images/course_uploadimage.png"></td>
+    <td>To add content to the lesson plan
+      <br>1. Click <b>New Child</b> to start adding a node to the newly created lesson
+      <br>2. You can add another node at same level using <b>New Sibling</b> add a node to the next level using <b>New Child</b>. Refer <a href="#/adding-sibling-node">Adding Sibling Node</a> and <a href="#/adding-child-node">"Adding Child Node</a> to know more. The <b>LessonPlan Unit</b> page appears      
+    <br>4. Click <b>Add Resource</b> from:
+    <br>&emsp;- The right bottom corner of the page 
+    <br>&emsp;- Right click on the node name
+    <br>&emsp;- Use keyboard shortcut <b>Ctrl+Alt+A</b>
+    <br>The Find & Select Activities page is displayed.</td>
+  <td><img src="pages/features-documentation/images/lessonplan/add_resource1.png"></td>
   </tr>
+ <tr>
+   <td>To add resource
+  <br>1. Search the resource using search bar
+  <br>2. Select the relevant resource cards from the available lists
+  <br>3. Hover over the card to view the basic details about that resource 
+  <br>4. Click <b>View Details</b> to read illustrated information about the card in a new window. 
+      <br>&emsp;a. Select <b>Add</b> to imbibe the resoure
+      <br>&emsp;b. Select <b>Remove</b> to remove the resource
+  <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource section of the <b>LessonPlan</b> page. </td>
+    <td>
+   <img src="pages/features-documentation/images/lessonplan/add_resource2.png">
+ </td>     
+</tr>
 </table>
+
+### Preview and Upload the Resource
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr> 
+    <td>
+      The resource is added in the <b>Resource</b> section of the page that displays Name, Description, Keywords related to the resource. 
+     <br>1. Click Preview image to preview the resource. The content preview page appears  
+     <br>2. You can delete the resource using delete icon.   
+     <br>3. Click Save to save the changes
+     <br>4. Click send for review icon. click Send for Review to know more
+     <br>Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan-for-review">Send for Review</a> to know more.</td>
+   <td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
+</tr>
+  <tr> 
+    <td>
+      The Resource page displays the Name, Description, Keywords related to the resource. 
+      <br>1. Click the play icon to load the added resource 
+      <br>2. You can delete the resource using <b>Remove</b> icon 
+      <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
+      <br>3. Click <b>Save</b> to save the changes 
+ </td>
+<td><img src="pages/features-documentation/images/lessonplan/preview_page.png"></td>     
+</tr>
+</table>
+
 
 ### Exploring What's New
 
@@ -98,36 +185,7 @@ Lesson plan is a structured outline of a given topic/unit/chapter to be taught i
     <td><img src="pages/features-documentation/images/whatsnew2.png"></td>
   </tr>
   </table>
-      
-### Adding Content to Lesson Plan
 
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>To add content to the lesson plan, you can either <br>&emsp;a) Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, <b>OR</b> <br>&emsp;b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>&emsp;c) Use the keyboard shortcut <b>Ctrl+Alt+A</b>
-    </td>
-    <td><img src="pages/features-documentation/images/lessonplan/addcontent.png"></td>
-  </tr>
-</table>
-
-### Adding Resources
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. On clicking <b>Add Resource</b> from the burger menu drop-down, the <b>Browse Resource</b> page is displayed: 
-   <br>2. Type keywords to search for content <br>3. For faster and effective search of the resources, you can apply filters. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Reset</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane <br>6. Select the content you want to add <br>7. Click <b>Add</b> to add the selected content <br>8. Click <b>Close</b> icon to go back to the main menu
-   </td>
-   <td><img src="pages/features-documentation/images/lessonplan/addresource.png"></td>
-   </tr>
- </table>
- 
 ### Using Table of Contents Option
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
@@ -136,7 +194,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
  - Right-click options associated with a tree node, **OR**
  - Keyboard shortcuts
 
-**Adding Child Node**
+<h4>Adding Child Node</h4>
 
 <table>
   <tr>
@@ -150,7 +208,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
   </tr>
 </table>
       
-**Adding Sibling Node**
+<H4>Adding Sibling Node</H4>
 
 <table>
   <tr>

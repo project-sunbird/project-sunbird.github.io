@@ -1,0 +1,5 @@
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The security scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
+    

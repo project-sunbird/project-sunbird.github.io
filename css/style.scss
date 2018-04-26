@@ -23,7 +23,12 @@
 @import "./redoc";
 body{
 	font-family: "Roboto", Corbel, Avenir, "Lucida Grande", "Lucida Sans", sans-serif;
+	
 }
+@media screen and (min-width:992px){
+.doc-layout{
+	overflow:hidden;
+}}
 .btn-inactive {
 	border-color: white;
 }

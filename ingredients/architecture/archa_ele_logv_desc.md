@@ -1,6 +1,6 @@
 The logical view of Sunbird comprises of the following entities:
 
-+ Sunbird Functional Entities 
++ The Functional Entities 
 + Access to Sunbird 
-+ Underlying Sunbird Platform 
-+ Sunbird Infrastructure
++ Underlying Platform 
++ The Infrastructure

@@ -12,7 +12,7 @@ basePath: /v1/badges
 securityDefinitions:
   auth:
     type: apiKey
-    name: api_key
+    name: Authorization
     in: header
 schemes:
   - https

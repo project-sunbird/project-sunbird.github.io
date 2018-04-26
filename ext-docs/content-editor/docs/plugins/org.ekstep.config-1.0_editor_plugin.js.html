@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: org.ekstep.config-1.0/editor/plugin.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: org.ekstep.config-1.0/editor/plugin.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Config
+ * The purpose of {@link Configplugin} is to encapsulate configurable properties and providing a UI for changing values
+ *
+ * @class Config
+ * @extends org.ekstep.contenteditor.basePlugin
+ *
+ * @author Harishkumar Gangula &lt;harishg@ilimi.in>
+ */
+org.ekstep.contenteditor.basePlugin.extend({
+    type: "config",
+    /**
+     * 
+     * The events are registred which are used to update the selected editor object
+     * &lt;br/>Assign canvasOffset using &lt;b>jquery&lt;/b> offset method
+     * &lt;br/>Initialize toolbar 
+     * @override
+     * @memberof Config
+     */
+    initialize: function() {
+        var instance = this;
+        org.ekstep.contenteditor.api.addEventListener("org.ekstep.config:invoke", this.invoke, this);
+        org.ekstep.contenteditor.api.addEventListener("org.ekstep.config:toggleStageEvent", this.toggleEventToStage, this);
+        org.ekstep.contenteditor.api.addEventListener("config:updateValue", this.updateConfig, this);
+        org.ekstep.contenteditor.api.addEventListener("config:on:change", this._onConfigChange, this);
+        org.ekstep.contenteditor.api.addEventListener("config:add", this.addConfig, this);
+        var colorpickerDirPath = org.ekstep.contenteditor.api.resolvePluginResource(this.manifest.id, this.manifest.ver, 'editor/colorpicker-directive.js');
+        org.ekstep.contenteditor.api.getService(ServiceConstants.POPUP_SERVICE).loadNgModules(undefined, colorpickerDirPath);
+    },
+    updateConfig: function(event, data) {
+        var instance = this;
+        var changedValues = org.ekstep.contenteditor.api._.reduce(data.oldValue, function(result, value, key) {
+            return org.ekstep.contenteditor.api._.isEqual(value, data.newValue[key]) ? result : result.concat(key);
+        }, []);
+        org.ekstep.contenteditor.api._.forEach(changedValues, function(cv) {
+            instance.onConfigChange(cv, data.newValue[cv]);
+        })
+    },
+    /**
+     * This will call the selected plugin onConfigChange method with key and value which is recevied as params
+     * @param  key {String}
+     * @param  value {Any}
+     * @memberof Config
+     */
+    _onConfigChange: function(event, data) {
+        this.onConfigChange(data.key, data.value);
+    },
+    onConfigChange: function(key, value) {
+        var plugin = org.ekstep.contenteditor.api.getCurrentObject() ? org.ekstep.contenteditor.api.getCurrentObject() : org.ekstep.contenteditor.api.getCurrentStage();
+        if (!org.ekstep.contenteditor.api._.isUndefined(value) &amp;&amp; plugin) {
+            plugin._onConfigChange(key, value);
+            plugin.onConfigChange(key, value);
+            if (key === 'autoplay') {
+                this.toggleEventToStage('', { 'flag': value, 'id': plugin.id });
+            }
+        }
+    },
+    invoke: function(event, data) {
+        var instance = this;
+        if ((data.type == "browser") || (data.type == "button")) {
+            var type = data.type;
+            org.ekstep.contenteditor.api.dispatchEvent(data.event.id, {
+                type: data.event.type,
+                callback: function(data) { instance.onConfigChange(type, data) }
+            });
+        }
+    },
+    toggleEventToStage: function(event, data) {
+        var currentStage = org.ekstep.contenteditor.api.getCurrentStage();
+        var eventIndex = -1;
+        if (currentStage.event) {
+            _.forEach(currentStage.event, function(e, i) {
+                if (org.ekstep.contenteditor.api._.isArray(e.action)) {
+                    if (e.action[0].asset === data.id) {
+                        eventIndex = i;
+                    }
+                } else if (org.ekstep.contenteditor.api._.isObject(e.action)) {
+                    if (e.action.asset === data.id) {
+                        eventIndex = i;
+                    }
+                }
+            })
+        }
+        if (data.flag === true &amp;&amp; eventIndex === -1) {
+            currentStage.addEvent({ 'type': 'enter', 'action': [{ 'id': UUID(), 'type': 'command', 'command': 'play', 'asset': data.id }] })
+        } else if (data.flag === false &amp;&amp; eventIndex !== -1) {
+            currentStage.event.splice(eventIndex, 1);
+        }
+    }
+});
+//# sourceURL=configplugin.js
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module--%2520_org.ekstep.metadataform_.html">- 'org.ekstep.metadataform'</a></li></ul><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="breadcrumb.html">breadcrumb</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.iterator.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.navigation.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="global.html#reviewContent">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="EkstepRendererEvents.html#.event:actionNavigateNext">actionNavigateNext</a></li><li><a href="EkstepRendererEvents.html#.event:actionNavigatePrevious">actionNavigatePrevious</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="global.html#event:%2522renderer:load:html%2522">"renderer:load:html"</a></li><li><a href="global.html#event:%2522renderer:load:js%2522">"renderer:load:js"</a></li><li><a href="global.html#event:'org.ekstep.editcontentmeta:showpopup'">'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:cancel'">- 'editor:form:cancel'</a></li><li><a href="global.html#event:-'org.ekstep.editcontentmeta:showpopup'">- 'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:success'">-'editor:form:success'</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#config">config</a></li><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#convertToDataType">convertToDataType</a></li><li><a href="global.html#DEFAULT_TEMPLATE_NAME">DEFAULT_TEMPLATE_NAME</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#eventMap">eventMap</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#form">form</a></li><li><a href="global.html#formApp">formApp</a></li><li><a href="global.html#framework">framework</a></li><li><a href="global.html#getArrayOfKeywords">getArrayOfKeywords</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#getConfigurations">getConfigurations</a></li><li><a href="global.html#getFields">getFields</a></li><li><a href="global.html#getFormFields">getFormFields</a></li><li><a href="global.html#getMappedResponse">getMappedResponse</a></li><li><a href="global.html#getTemplate">getTemplate</a></li><li><a href="global.html#getUpdateDataType">getUpdateDataType</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#invoke">invoke</a></li><li><a href="global.html#isConfigurationsExists">isConfigurationsExists</a></li><li><a href="global.html#IteratorPlugin">IteratorPlugin</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#logTelemetry">logTelemetry</a></li><li><a href="global.html#mapObject">mapObject</a></li><li><a href="global.html#mappedResponse">mappedResponse</a></li><li><a href="global.html#mapResponse">mapResponse</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#onConfigChange">onConfigChange</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#renderForm">renderForm</a></li><li><a href="global.html#resetFields">resetFields</a></li><li><a href="global.html#resourceBundle">resourceBundle</a></li><li><a href="global.html#saveContent">saveContent</a></li><li><a href="global.html#saveMeta">saveMeta</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li><li><a href="global.html#updateState">updateState</a></li><li><a href="global.html#validate">validate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:11:17 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

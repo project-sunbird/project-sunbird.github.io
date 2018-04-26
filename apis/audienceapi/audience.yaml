@@ -12,7 +12,7 @@ basePath: /framework/v1
 securityDefinitions:
   auth:
     type: apiKey
-    name: api_key
+    name: Authorization
     in: header
 schemes:
   - https
@@ -29,7 +29,7 @@ paths:
        This API is associated with getting the user count foa specific location on the Sunbird Platform.
           - The **_/audience_** endpoint executes the "AudiencePost" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: get the audience count for a locations
+      summary: Get Audience Count for a location
       operationId: AudiencePost
       produces:
       - application/json

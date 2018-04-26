@@ -4,7 +4,7 @@ info:
   title: Org API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
-    email: admin@open-sunbird.org
+    email: info@sunbird.org
   description: >-
     The Organisation Management API resources perform operations related to management of an Organisation on the Sunbird Platform.
   license:
@@ -13,10 +13,10 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/org/v1
 securityDefinitions:
-  auth:
-    type: apiKey
-    name: api_key
-    in: header
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The security scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:

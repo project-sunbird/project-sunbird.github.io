@@ -1,0 +1,1280 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Badging Framework API(s)
+  description: >-
+      A Badge is a virtual representation of: 
+      
+        - Award, Certificate, Endorsement or Authorization. The Badging Framework API resources are used to accord badges to: 
+        - recognize user skills and accomplishments
+        - rate or authorize content for its quality and effectiveness
+host: staging.open-sunbird.org
+basePath: /api/badging/v1/issuer
+securityDefinitions: 
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description: >-
+       This API is used to create a badge issuer entity. 
+          
+          - To accord badges
+             
+             - Create the Issuer entity
+             - Create the Badge Class entity 
+             - and the Assertion
+       
+          - the **_/create/_** endpoint executes the "Create Issuer" request based on parameters provided as metadata in the request body.
+          - It is a must to provide values for all mandatory parameters 
+          
+      summary: Create Issuer
+      tags:
+        - Badging Framework API(s)
+      operationId: CreatePost
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: name
+          in: formData
+          required: true
+          type: string
+          description: 'The unique name of the badge issuing entity or organisation'
+        - name: description
+          in: formData
+          required: true
+          type: string
+          description: 'A short description of the badge issuing entity or organization'
+        - name: url
+          in: formData
+          required: true
+          type: string
+          description: 'The valid homepage URL of the badge issuing entity or organisation'
+        - name: email
+          in: formData
+          required: true
+          type: string
+          description: 'The valid contact E-mail address of the issuing entity or organisation'
+        - name: image
+          in: formData
+          required: false
+          type: file
+          format: file
+          description: 'An image/logo representing the badge issuer'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Create Badge Issuer** operation was successful!'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/singleIssuerResp'
+        '400':
+          description: >-
+            BAD REQUEST,**Create Badge Issuer** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found,**Create Badge Issuer** operation failed !The possible reason for failure is that requested resource not found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/search:
+    post:
+      description: >-
+       This API is associated with searching badge issuing entities or organizations, **_/badge/search/_** endpoint executes the "List Badge Classes" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for the required fields, mandatory fields cannot be null or empty
+      summary: List Badge Classes
+      tags:
+      - Badging Framework API(s)
+      operationId: BadgeSearchPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the badge issuer to be searched
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/ListBadgeClassesrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Search Badge Issuing Entities or Organizations** operation was successful!'
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgeClassListResp'
+        '400':
+          description: >-
+            BAD REQUEST,**Search Badge Issuing Entities or Organizations** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /list:
+    get:
+      description: >-
+       This API is associated with listing issuer entities or organizations, **_/list/_** endpoint executes the "List Issuers" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for the required fields, mandatory fields cannot be null or empty
+      summary: List Issuers
+      tags:
+      - Badging Framework API(s)
+      operationId: ListGet
+      produces:
+        - application/json
+      parameters:
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **List Issuers** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/issuerList'
+        '400':
+          description: >-
+            BAD REQUEST,**List Issuers*** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /read/{issuerId}:
+    get:
+      description: >-
+       This API is associated with fetching a badge issuer entity or organization by a specific ID
+          - **_/read/{issuerId}_** endpoint executes the **Get Issuer by ID** request based on parameters provided as metadata in the request body.
+          - {...}refers to a part of endpoint URL path that needs to be replaced by appropriate ID.
+          - It is mandatory to provide values for parameters 
+          - Mandatory fields cannot be null or empty.   
+      summary: Get Issuer by ID
+      tags:
+      - Badging Framework API(s)
+      operationId: ReadByIssuerIdGet
+      produces:
+        - application/json
+      parameters:
+        - name: issuerId
+          in: path
+          required: true
+          type: string
+          description: 'Please append a valid Issuer ID to the request URL'  
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description:  'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Get Issuer ID** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/singleIssuerResp'
+        '400':
+          description: >-
+            BAD REQUEST,**Get Issuer by ID*** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/read/{badgeId}:
+    get:
+      description: >-
+       This API is associated with fetching the details of badge class for a specific issuer entity or organization by a specific ID
+          - **_/badge/read/{badgeId}_** endpoint executes the **Get Badge Class by ID** request based on parameters provided as metadata in the request body.
+          - {...}refers to a part of endpoint URL path that needs to be replaced by appropriate ID.
+          - It is mandatory to provide values for parameters 
+          - Mandatory fields cannot be null or empty. 
+      summary: Get Badge Class by ID
+      tags:
+        - Badging Framework API(s)
+      operationId: BadgeReadByBadgeIdGet
+      produces:
+        - application/json
+      parameters:
+        - name: badgeId
+          in: path
+          required: true
+          type: string
+          description: 'Please append a valid Badge ID to the request URL'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description:  'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Get Badge Class by ID** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgeClassResp'
+        '400':
+          description: >-
+            BAD REQUEST,**Get Badge Class by ID*** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/search:
+    post:
+      description: >-
+       This API is associated with fetching and listing the assertions of a badge.
+          - **_/badge/assertion/search_** endpoint executes the **List Badge Assertions** request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for parameters 
+          - Mandatory fields cannot be null or empty 
+      summary: List Badge Assertions
+      tags:
+        - Badging Framework API(s)
+      operationId: BadgeAssertionSearchPost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the fetching and listing assertions
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/ListBadgeAssertionsrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **List Badge Assertions** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/AssertionListResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**List Badge Assertions** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/create:
+    post:
+      description: >-
+       This API is associated with creation of badge assertion.
+          - **_ /badge/assertion/create_** endpoint executes the **Create Badge Assertions** request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for parameters 
+          - Mandatory fields cannot be null or empty 
+      summary: Create Badge Assertion
+      tags:
+        - Badging Framework API(s)
+      operationId: BadgeAssertionCreatePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the creation of badge assertions
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/CreateBadgeAssertionrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description:  'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Create Badge Assertions** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/AssertionResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Create Badge Assertion** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /delete/{issuerId}:
+    delete:
+      description: >-
+       This API is associated with deleting an issuer by a specific ID.
+          - **_/delete/{issuerId}_** endpoint executes the **Delete Issuer by ID** request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for the required parameters 
+          - Mandatory fields cannot be null or empty 
+      summary: Delete Issuer by ID
+      tags:
+        - Badging Framework API(s)
+      operationId: DeleteByIssuerIdDelete
+      produces:
+        - application/json
+      parameters:
+        - name: issuerId
+          in: path
+          required: true
+          type: string
+          description: 'Please append a valid Issuer ID To the Request URL'  
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Delete Issuer by ID** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgeResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Delete Issuer by ID** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/delete:
+    delete:
+      description: >-
+       This API is associated with revoking a badge assertion by a specific ID.
+          - **_/badge/assertion/delete_** endpoint executes the **Revoke Badge Assertion by ID** request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for the required parameters 
+          - Mandatory fields cannot be null or empty 
+      summary: Revoke Badge Assertion by ID
+      tags:
+        - Badging Framework API(s)
+      operationId: BadgeAssertionDeleteDelete
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the revoking the badge assertions
+          schema:
+            $ref: '#/definitions/RevokeBadgeAssertionByIdrequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Revoke Badge Assertion by ID** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgeResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Revoke Badge Assertion by ID** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/delete/{badgeId}:
+    delete:
+      description: >-
+       This API is associated with deleting a badge by a specific ID.
+          - **_/badge/delete/{badgeId}_** endpoint executes the **Delete Badge Class** request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for the required parameters 
+          - Mandatory fields cannot be null or empty 
+      summary: Delete Badge Class
+      tags:
+        - Badging Framework API(s)
+      operationId: BadgeDeleteByBadgeIdDelete
+      produces:
+        - application/json
+      parameters:
+        - name: badgeId
+          in: path
+          required: true
+          type: string
+          description: 'An ID which uniquely identifies a Badge'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Delete Badge Class** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgeResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Delete Badge Class** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/create:
+    post:
+      description: >-
+       This API is associated with creating a badge class.
+          - **_/badge/create_** endpoint executes the **Create Badge Class** request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for the required parameters 
+          - Mandatory fields cannot be null or empty 
+      summary: Create Badge Class
+      tags:
+        - Badging Framework API(s)
+      operationId: BadgeCreatePost
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: issuerId
+          in: formData
+          required: true
+          type: string
+          description: 'Please append a valid Issuer ID To the Request URL'  
+        - name: name
+          in: formData
+          required: true
+          type: string
+          description: 'The name of the badge/achievement'
+        - name: description
+          in: formData
+          required: true
+          type: string
+          description: ' A short description of the badge/achievement.'
+        - name: criteria
+          in: formData
+          required: true
+          type: string
+          description: 'Its either a text string or a URL of a remotely hosted page describing the criteria for achievement'
+        - name: rootOrgId
+          in: formData
+          required: true
+          type: string
+          description: 'An ID which uniquly identifies the Root Organisation'
+        - name: type
+          in: formData
+          required: true
+          type: string
+          description: 'The Badge class type It can possibly be either of two (user | content)'
+        - name: subtype
+          in: formData
+          required: false
+          type: string
+          description: 'It represents the Badge Subtype (possible values: award,certificate,endorsement,authorization)'
+        - name: roles
+          in: formData
+          required: true
+          type: string
+          description: 'Represents Single or multiple roles, possibly a JSON array of roles (e.g. "roleId1" or [ "roleId1", "roleId2" ], any valid role inside system)'
+        - name: image
+          in: formData
+          required: true
+          type: file
+          format: file
+          description: 'It is a graphic which represents the Badge'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'  
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Create Badge Class** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgeClassResp'
+        '400':
+          description: >-
+            BAD REQUEST,**Create Badge Class** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+            allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /badge/assertion/read/{assertionId}:
+    get:
+      description: >-
+       This API is associated with fetching and reading the badge assertions by specific assertion ID.
+          - **_/badge/assertion/read/{assertionId}_** endpoint executes the **Create Badge Class** request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for the required parameters 
+          - Mandatory fields cannot be null or empty 
+      summary: Get Badge Assertion by ID
+      tags:
+        - Badging Framework API(s)
+      operationId: BadgeAssertionReadByAssertionIdGet
+      produces:
+        - application/json
+      parameters:
+        - name: assertionId
+          in: path
+          required: true
+          type: string
+          description: 'Please append a valid Assertion ID to the Request URL'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of any Badging API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        
+      responses:
+        '200':
+          description: >-
+            'SUCCESS. The **Get Badge Assertion by ID** operation was successful!'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/AssertionResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Get Badge Assertion by ID** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  ListBadgeClassesrequest:
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+  Request:
+    type: object
+    properties:
+      filters:
+        $ref: '#/definitions/Filters'
+    required:
+      - filters
+  Filters:
+    type: object
+    properties:
+      issuerList:
+        description: 'pass the list of issuer'
+        example: []
+        type: array
+        items:
+          type: string
+      rootOrgId:
+        description: 'pass rootOrg id'
+        example: something
+        type: string
+      type:
+        description: 'to whom you want to create or assign badge (user or content)'
+        example: user
+        type: string
+      subtype:
+        description: ''
+        example: award
+        type: string
+      roles:
+        description: ''
+        example: []
+        type: array
+        items:
+          type: string
+    required:
+      - rootOrgId
+      - type
+  ListBadgeAssertionsrequest:
+    title: List Badge AssertionsRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request4'
+    required:
+      - request
+  Request4:
+    title: Request4
+    example:
+      filters:
+        assertions:
+          - assertionIds
+    type: object
+    properties:
+      filters:
+        $ref: '#/definitions/Filters5'
+    required:
+      - filters
+  Filters5:
+    title: Filters5
+    example:
+      assertions:
+        - assertionIds
+    type: object
+    properties:
+      assertions:
+        description: ''
+        example:
+          - assertionIds
+        type: array
+        items:
+          type: string
+    required:
+      - assertions
+  CreateBadgeAssertionrequest:
+    title: Create Badge AssertionRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request7'
+    required:
+      - request
+  Request7:
+    title: Request7
+    example:
+      recipientId: 6fbd1dd5-418c-4cc5-834b-7e7413192f10
+      recipientType: user
+      evidence: >-
+        https://sunbirddev.blob.core.windows.net/user/uploads/badges/bfd203a3c494170dd7de199a97e05486.png
+      issuerId: swarn
+      badgeId: something
+    type: object
+    properties:
+      recipientId:
+        description: ''
+        example: 6fbd1dd5-418c-4cc5-834b-7e7413192f10
+        type: string
+      recipientType:
+        description: ''
+        example: user
+        type: string
+      evidence:
+        description: ''
+        example: >-
+          https://sunbirddev.blob.core.windows.net/user/uploads/badges/bfd203a3c494170dd7de199a97e05486.png
+        type: string
+      issuerId:
+        description: ''
+        example: swarn
+        type: string
+      badgeId:
+        description: 'An ID which uniquely identifies a Badge'
+        example: something
+        type: string
+    required:
+      - recipientId
+      - recipientType
+      - issuerId
+      - badgeId
+  RevokeBadgeAssertionByIdrequest:
+    title: Revoke Badge Assertion by IDRequest
+    example:
+      request:
+        assertionId: assertion id
+        recipientId: recipient id
+        recipientType: user or contnet
+        revocationReason: some reason
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request9'
+    required:
+      - request
+  Request9:
+    title: Request9
+    example:
+      assertionId: assertion id
+      recipientId: recipient id
+      recipientType: user
+      revocationReason: some reason
+    type: object
+    properties:
+      assertionId:
+        description: ''
+        example: assertion id
+        type: string
+      recipientId:
+        description: ''
+        example: recipient id
+        type: string
+      recipientType:
+        description: ''
+        example: user
+        type: string
+      revocationReason:
+        description: ''
+        example: some reason
+        type: string
+    required:
+      - assertionId
+      - recipientId
+      - recipientType
+      - revocationReason
+  Result:
+    title: Result 
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/deleteResp'
+  BadgeResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/Result'
+      - $ref: '#/definitions/ResponseHeader'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: string
+        description: 'ok'
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  deleteResp:
+    title: response on deleting issuer,badge class or assertions
+    type: object
+    properties:
+      status:
+        type: string
+        description: success or failure
+  BadgingErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  
+  issuerList:
+    title: list of issuer
+    type: object
+    properties:
+      result:
+       type: object
+       $ref: '#/definitions/issResp'
+  
+  issResp:
+    title: list of issuer
+    type: object
+    properties:
+      issuers:
+       type: object
+       $ref: '#/definitions/ListIssuerResponse'
+      
+  ListIssuerResponse:
+    title: ListIssuerResponse
+    type: array
+    items: 
+      type: object
+      $ref: '#/definitions/Issuer'
+   
+  singleIssuerResp:
+     title: single issuer response
+     type: object
+     properties:
+      result:
+       type: object
+       $ref: '#/definitions/Issuer'
+       
+  Issuer:
+    title: this contains response for issuer object
+    type: object
+    properties:
+      issuerId:
+        type: string
+        description: ID of an issuer
+      image:
+       type: string
+       description: Image of an issuer
+      createdDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      issuerUrl:
+        type: string
+        description: url of the issuer
+      issuerIdUrl:
+        type: string
+        description: issuer url with ID
+      name:
+        type: string
+        description: Name of the Issuer
+      description: 
+        type: string
+        description: 'details of the issuer'
+      email:
+        type: string
+        description: Valid email ID of the issuer
+  
+  
+  BadgeClassResp:
+    title: response of a single badge class
+    type: object
+    properties:
+      result:
+       type: object
+       $ref: '#/definitions/BadgeClass'
+  
+  
+  BadgeClassListResp:
+    title: response for badge class list
+    type: object
+    properties:
+     result:
+      type: object
+      $ref: '#/definitions/BadgeClassList'
+      
+  BadgeClassList:
+    title: this will contains list of badge class
+    properties:
+      badges:
+       type: array
+       items:
+        type: object
+        $ref: '#/definitions/BadgeClass'
+        
+  BadgeClass:
+    title: this contains response for badgeClass object
+    type: object
+    properties:
+      issuerId:
+        type: string
+        description: ID of an issuer
+      image:
+       type: string
+       description: Image of a badge class
+      criteria:
+        type: string
+        description: criteria in a sample language that will explain the badge achivement
+      roles:
+       type: array
+       items:
+        type: string
+        description: which roles can access this badge class
+      description:
+       type: string
+       description: short description about badge class
+      type:
+       type: string
+       description: on which Object this badge class can be used,possible values {user or content}
+      subtype:
+       type: string
+       description: possible values award,certificate,endorsement,authorization
+      rootOrgId:
+       type: string
+       description: contains creator rootOrg, so that later we can show all the badges for a root Org.
+      createdDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      recipientCount:
+        type: integer
+        description: how many user or content got this badge class
+      issuerIdUrl:
+        type: string
+        description: issuer url with ID
+      name:
+        type: string
+        description: Name of the badge class
+      badgeIdUrl:        
+        type: string
+        description: url of the badge class
+  
+  
+  AssertionListResponse:
+   title: this will contains response object of assertion list
+   type: object
+   properties:
+    result:
+     type: object
+     $ref: '#/definitions/AssertionList'
+  
+  AssertionList:
+   title: contains list of assertions
+   properties:
+    assertions:
+     type: array
+     items:
+      type: object
+      $ref: '#/definitions/AssertionResponse'
+
+  AssertionResponse:
+   title: contains response of single assertion object
+   type: object
+   properties:
+    result:
+      type: object
+      $ref: '#/definitions/Assertion'
+  
+  Assertion:
+    title: Data model for assertion object.
+    type: object
+    properties:
+      assertionDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      assertionImageUrl:
+        type: string
+        description: public access url of assertion image
+      assertionIdUrl:
+        type: string
+        description : public access url of assertion 
+      revoked:
+        type: boolean
+      issuerId:
+        type: string
+        description: ID of an issuer
+      assertionId:
+        type: string
+        description: id of the assertions
+      recipient:
+        type: object
+        properties:
+         type:
+          type: string
+          description: this will indicate recipient identity type.
+         salt:
+          type: string
+         hashed:
+          type: boolean
+         identity:
+          type: string
+          description: contains salt value
+      verify:
+       type: object
+       properties:
+        url:
+          type: string
+          description: public url of assertion by which it can be verifiable
+        type:
+          type: string
+          description: it will be badge is hosted or sign
+      revocationReason:
+       type: string
+       description: reason to revoke the badge class
+      recipientEmail:
+        type: string
+        description: email of badge reciver
+      createdDate:
+        type: string
+        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+      issuerIdUrl:
+        type: string
+        description: issuer url with ID
+      badgeIdUrl:        
+        type: string
+        description: url of the badge class

@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: RichText</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: RichText</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>RichText</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    <h4 class="name" id="RichText"><span class="type-signature"></span>new RichText<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Text
+The purpose of RichTextPlugin is used to create or modifiy the richtext in editor
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:akash.gupta@tarento.com">Akash Gupta</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li>org.ekstep.contenteditor.basePlugin</li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id=".editorWidth"><span class="type-signature">(static) </span>editorWidth<span class="type-signature"> :Number</span></h4>
+
+
+
+
+<div class="description">
+    Editor Width is used to calculate the from and to ECML conversion
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".magicNumber"><span class="type-signature">(static) </span>magicNumber<span class="type-signature"> :Number</span></h4>
+
+
+
+
+<div class="description">
+    Magic Number is used to calculate the from and to ECML conversion
+It is the target value which is used for refrence in calculating text size in percentage
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".richTextId"><span class="type-signature">(static) </span>richTextId<span class="type-signature"> :Sttring</span></h4>
+
+
+
+
+<div class="description">
+    Richtextid is used to append richtext wrapper inside html
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Sttring</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id=".type"><span class="type-signature">(static) </span>type<span class="type-signature"> :String</span></h4>
+
+
+
+
+<div class="description">
+    This expains the type of the plugin
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">String</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".addDivElement"><span class="type-signature">(static) </span>addDivElement<span class="signature">(event, instance)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Create the html div element and add it on canvas
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Click event of richtext</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>instance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Instance of richrtext element</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line131">line 131</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".dblClickHandler"><span class="type-signature">(static) </span>dblClickHandler<span class="signature">(event)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Dispatch event to open template on double click of eichtext element
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Click event of richtext</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line157">line 157</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".deselected"><span class="type-signature">(static) </span>deselected<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Remove listener of double click event on selection of richtext
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line117">line 117</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getAttributes"><span class="type-signature">(static) </span>getAttributes<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    This method overridden from org.ekstep.contenteditor.basePlugin and this will provide attributes to generate content for Genie
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line213">line 213</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getConfig"><span class="type-signature">(static) </span>getConfig<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    This method overridden from org.ekstep.contenteditor.basePlugin and it will provide the config of this plugin
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line223">line 223</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".initialize"><span class="type-signature">(static) </span>initialize<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    The events are registred which are used to add or remove fabric events and other custom events
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".loadHtml"><span class="type-signature">(static) </span>loadHtml<span class="signature">(event, eventData)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Open template of richtext
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Click event of richtext</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eventData</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Richtext html element data</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line170">line 170</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".moving"><span class="type-signature">(static) </span>moving<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Move the richtext element across canvas
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line97">line 97</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".newInstance"><span class="type-signature">(static) </span>newInstance<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    This method used to create the richtext html element object and assigns it to editor of the instance
+It shows the richtext popup to enter text to add it to canvas editor
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line62">line 62</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".onConfigChange"><span class="type-signature">(static) </span>onConfigChange<span class="signature">(key, value)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    This method overridden from org.ekstep.contenteditor.basePlugin and it will be called on change of config plugin,
+It will update the fontweight, fontstyle and alignment of the plugin
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Property need to be changed</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Property value that has to be updated</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line247">line 247</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".removeHtmlElements"><span class="type-signature">(static) </span>removeHtmlElements<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Remove existing richtext element available in canvas
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line204">line 204</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".render"><span class="type-signature">(static) </span>render<span class="signature">(canvas)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    his method overridden from org.ekstep.contenteditor.basePlugin and renders the richtext plugin to canvas.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>canvas</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this is canvas element</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line195">line 195</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".resizeObject"><span class="type-signature">(static) </span>resizeObject<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Resize the richtext element
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".selected"><span class="type-signature">(static) </span>selected<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Add listener for double click event on selection of richtext
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line109">line 109</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".toECML"><span class="type-signature">(static) </span>toECML<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Generates and returns the ECML string for this plugin.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line236">line 236</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".updateFontSize"><span class="type-signature">(static) </span>updateFontSize<span class="signature">(initFontSize, The)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This method is used to convert font size when we are doing from or to conversion
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>initFontSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This is font size need to be converted</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>The</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">flag  It provides the flag on conversion to ecml or from ecml with values false, true</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="org.ekstep.richtext-1.0_editor_plugin.js.html">org.ekstep.richtext-1.0/editor/plugin.js</a>, <a href="org.ekstep.richtext-1.0_editor_plugin.js.html#line287">line 287</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    fontsize The fontsize is converted font size
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module--%2520_org.ekstep.metadataform_.html">- 'org.ekstep.metadataform'</a></li></ul><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="breadcrumb.html">breadcrumb</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.iterator.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.navigation.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="global.html#reviewContent">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="EkstepRendererEvents.html#.event:actionNavigateNext">actionNavigateNext</a></li><li><a href="EkstepRendererEvents.html#.event:actionNavigatePrevious">actionNavigatePrevious</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="global.html#event:%2522renderer:load:html%2522">"renderer:load:html"</a></li><li><a href="global.html#event:%2522renderer:load:js%2522">"renderer:load:js"</a></li><li><a href="global.html#event:'org.ekstep.editcontentmeta:showpopup'">'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:cancel'">- 'editor:form:cancel'</a></li><li><a href="global.html#event:-'org.ekstep.editcontentmeta:showpopup'">- 'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:success'">-'editor:form:success'</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#config">config</a></li><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#convertToDataType">convertToDataType</a></li><li><a href="global.html#DEFAULT_TEMPLATE_NAME">DEFAULT_TEMPLATE_NAME</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#eventMap">eventMap</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#form">form</a></li><li><a href="global.html#formApp">formApp</a></li><li><a href="global.html#framework">framework</a></li><li><a href="global.html#getArrayOfKeywords">getArrayOfKeywords</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#getConfigurations">getConfigurations</a></li><li><a href="global.html#getFields">getFields</a></li><li><a href="global.html#getFormFields">getFormFields</a></li><li><a href="global.html#getMappedResponse">getMappedResponse</a></li><li><a href="global.html#getTemplate">getTemplate</a></li><li><a href="global.html#getUpdateDataType">getUpdateDataType</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#invoke">invoke</a></li><li><a href="global.html#isConfigurationsExists">isConfigurationsExists</a></li><li><a href="global.html#IteratorPlugin">IteratorPlugin</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#logTelemetry">logTelemetry</a></li><li><a href="global.html#mapObject">mapObject</a></li><li><a href="global.html#mappedResponse">mappedResponse</a></li><li><a href="global.html#mapResponse">mapResponse</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#onConfigChange">onConfigChange</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#renderForm">renderForm</a></li><li><a href="global.html#resetFields">resetFields</a></li><li><a href="global.html#resourceBundle">resourceBundle</a></li><li><a href="global.html#saveContent">saveContent</a></li><li><a href="global.html#saveMeta">saveMeta</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li><li><a href="global.html#updateState">updateState</a></li><li><a href="global.html#validate">validate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:11:17 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
