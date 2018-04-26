@@ -27,23 +27,23 @@ Organization administrators can use their registered credentials and add individ
 
 ## Uploading Users
 
-1. The **Upload Users** page is displayed 
-2. Enter Provider details. **Channel ID** of the organization administrator must be entered here
-3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here <br /> **OR**
-4. Enter **OrgID**. Unique ID of the admin organization must be entered here
+1.The **Upload Users** page is displayed 
+2.Enter Provider details. **Channel ID** of the organization administrator must be entered here
+3.Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here <br /> **OR**
+4.Enter **OrgID**. Unique ID of the admin organization must be entered here
     
      - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> **OR**
       - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
 
-5. Download the csv file for reference
-6. You can add or upload details of up to 199 users at a time in one csv file
-7. You can upload users of only a single organization in one csv file
-8. Descriptions and valid values for each columns are as listed below:
+5.Download the csv file for reference
+6.You can add or upload details of up to 199 users at a time in one csv file
+7.You can upload users of only a single organization in one csv file
+8.Descriptions and valid values for each columns are as listed below:
 
    Sl.No |Column Name  |Description  |Valid Value  |Field Type 
    ------|-------------|-------------|-------------|-----------
-   1 |FirstName  |User’s first name  |Alphabetic Value |Mandatory  
-   2 |LastName |User’s last name |Alphabetic Value  |Optional 
+   1 |firstName  |User’s first name  |Alphabetic Value |Mandatory  
+   2 |lastName |User’s last name |Alphabetic Value  |Optional 
    3 |phone  |User’s phone number  |Ten digit mobile number   |Optional 
    4 |email  |User’s email ID  |Alphanumeric, standard email ID format |Mandatory
    5 |userName |Unique name assigned to the user by the organization |Alphanumeric |Mandatory
@@ -65,6 +65,6 @@ Organization administrators can use their registered credentials and add individ
    You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column
 
 9.Click **UPLOAD USERS CSV**. The explorer window is displayed<br>
-10.Select the csv file and click **Open**
-11.The csv file is uploaded
+10.Select the csv file and click **Open**<br>
+11.The csv file is uploaded<br>
 12.On successful file upload, a process ID is generated, else an error message is displayed
