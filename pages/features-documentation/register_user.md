@@ -34,12 +34,11 @@ Organization administrators can use their registered credentials and add individ
     
      - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> OR
       - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
-
-5. Download the csv file for reference<br/>
-6. You can add or upload details of up to 199 users at a time in one csv file<br/>
-7. You can upload users of only a single organization in one csv file<br/>
-8. Descriptions and valid values for each columns are as listed below:<br/>
-
+      
+5.Download the csv file for reference<br/>
+6.You can add or upload details of up to 199 users at a time in one csv file<br/>
+7.You can upload users of only a single organization in one csv file<br/>
+8.Descriptions and valid values for each columns are as listed below:<br/>
    Sl.No |Column Name  |Description  |Valid Value  |Field Type 
    ------|-------------|-------------|-------------|-----------
    1 |firstName  |User’s first name  |Alphabetic Value |Mandatory  
