@@ -109,8 +109,8 @@ sibling node, refer Exploring TOC Structure
 <table>
   <tr>
     <th style="width:35%;">Step</th>
-    <th style="width:55%;">Screen</th>
-    <th style="width:20%;">Screen</th>
+    <th style="width:35%;">Screen</th>
+    <th style="width:40%;"></th>
   </tr>
   <tr>
     <td>Enter the code from the list of DIAL codes that correspond to the book being created
