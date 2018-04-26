@@ -8,9 +8,24 @@ keywords: 'Access workspace, view workspace, create workspace'
 published: true
 allowSearch: true
 ---
-## My Workspace
-
+## Overview
 Sunbird provides you with a workspace that is only yours. Once you have your own unique profile, you can start using your workspace to create, curate, review, upload and publish different types of  content artifacts using the customizable content editor. You can save your drafts, send them for a review, flag an issue, rework on them as often as you like until you publish it for use by the community.
+
+### Prerequisites
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br>2. You have clicked on <b>Profile</b> tab <br>3. You want to view your workspace, you have clicked on <b>View your workspace</b> 
+       </td>
+      <td><img src="pages/features-documentation/images/workspace/prerequisite2.png"></td>
+    <tr>
+      <td>1. Alternatively, you can click <b>Workspace</b> from the profile drop-down menu</td>
+      <<td><img src="pages/features-documentation/images/workspace/prerequisite1.png"></td>
+  </tr>
+  </table>
 
 ### Accessing your Workspace
 

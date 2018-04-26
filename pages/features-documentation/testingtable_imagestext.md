@@ -6,7 +6,7 @@ page_title: Login
 description: Login
 keywords: Login
 published: true
-allowSearch: true
+allowSearch: false
 ---
 ## Tabular test-image format (with fixed coulun width)
 

@@ -1,0 +1,344 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title:  Course Progress API(s)
+  description: >-
+    The Course Progress API resource is used to publish and update the status of the course as consumed by a user. The operations include the basic course status and the updated status. 
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /course/v1/user/content/state/
+securityDefinitions:
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The security scheme parameter in "header"
+      name: Authorization # name of the header, query parameter or cookie
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /read:
+    post:
+      description: >-
+       This API is used for reading the current progress of the course (content)consumed by a user. For example, the user can view and check the progress of a specific course or course(s)consumed.
+          - **_/read/_** endpoint executes the "post course state" request based on parameters provided as metadata in the request body.     
+          - It is a must to provide values for all mandatory fields.
+      summary: Read Course State
+      tags:
+        - Course Progress API(s)
+      operationId: StatePost
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            Represents the body and formdata parameters of the course progress state API
+          schema:
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+             - $ref: '#/definitions/GetContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: 'Represents the media types that are acceptable for the response'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource. Possible media types are:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'The time stamp at which the ** Read Course State** request was sent.'
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: 'This ID uniquely identifies a request incase the same API is executed multiple times'
+        - name: X-Authenticated-User-Token
+          in: header
+          required: true
+          type: string
+          description: 'The registered user token/key to authenticate user and execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The "Read Course States" operation was successful!'
+          schema:
+            $ref: '#/definitions/GetContentResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/ContentErrorResponse'
+  /update:
+    patch:
+      description: >-
+       This API is used to update the Course(content) state as consumed by a user. For example, when the user resumes a course or courses after the point at which it was stopped, the status of the course is updated. 
+          - **_/update/_** endpoint executes the "Update Course State" request based on parameters provided as metadata in the request body.     
+          - It is a must to give values for all mandatory fields
+      summary: Update Course State
+      tags:
+        - Course Progress API(s)
+      operationId: UpdatePatch
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: Represents the body and formdata parameters of the course progress state API 
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/UpdateContentStaterequest'
+        - name: Accept
+          in: header
+          required: true
+          type: string
+          description: 'Represents the media types which are acceptable for the response'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: ts
+          in: header
+          required: true
+          type: string
+          description: 'The time stamp at which the **Update Course State** request was sent.'
+        - name: X-msgid
+          in: header
+          required: true
+          type: string
+          description: 'This ID uniquely identifies a request incase the same API is executed multiple times'
+        - name: X-Authenticated-User-Token
+          in: header
+          required: true
+          type: string
+          description: 'The registered user token/key to authenticate user and execute the API.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The "Update Course State" operation was successful!'
+          schema:
+            $ref: '#/definitions/UpdateContentResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentErrorResponse'
+definitions:
+  GetContentStaterequest:
+    title: get content stateRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+    required:
+      - request
+  Request:
+    title: Request
+    type: object
+    properties:
+      userId:
+        description: 'This ID uniquely identifies a user'
+        example: Sam123
+        type: string
+      courseIds:
+        description: 'This represents the list of course IDs'
+        example:
+          - some course ID
+        type: array
+        items:
+          type: string
+      contentIds:
+        description: 'This represents the list of content IDs for that course'
+        type: array
+        items:
+          type: string
+    required:
+      - userId
+      - courseIds
+      - contentIds
+  UpdateContentStaterequest:
+    title: This represents the update content state request body
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/UpdateContentRequestBody'
+    required:
+      - request
+  UpdateContentRequestBody:
+    title: UpdateContentRequestBody
+    type: object
+    properties:
+      userId:
+        description: 'This ID uniquely identifies a user'
+        example: Sam123
+        type: string
+      contents:
+        description: 'The represents the array of the contents which comprises of various parameters related to the content'
+        type: array
+        items:
+          $ref: '#/definitions/Content'
+    required:
+      - userId
+      - contents
+  Content:
+    title: Content
+    type: object
+    properties:
+      contentId:
+        description: 'This ID uniquely identifies the content'
+        example: contentId
+        type: string
+      batchId:
+        description: 'This ID uniquely identifies a batch'
+        example: 115
+        type: string
+      status:
+        description: 'This represents the user content consumption status. For reference: Example 0 - not started, 1- in progress, 2- completed'
+        example: 2
+        type: integer
+        format: int32
+      lastAccessTime:
+        description: 'Represents when was the the course content last accessed'
+        example: '2017-05-15 10:58:07:509+0530'
+        type: string
+      courseId:
+        description: 'This ID Uniquely identifies the course'
+        example: courseId
+        type: string
+      result:
+        description: 'This represents the outcome on completing the course assessment'
+        example: pass
+        type: string
+      score:
+        description: 'This represents the Final outcome after taking a course assessment'
+        example: 10
+        type: string
+      grade:
+        description: 'This represents the grade obtained by the user on completing the course assessment'
+        example: B
+        type: string
+    required:
+      - contentId
+      - batchId
+      - status
+      - courseId
+  GetContentResponse:
+    description: Get Content Response
+    type: object
+    allOf:
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+      - $ref: '#/definitions/ResultWithEmptyBody'
+  ResultWithEmptyBody:
+    title: This is the result Containing empty body
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ResultStatus'
+  ResultStatus:
+    type: object
+    properties:
+      contentList:
+       type: array
+       items: 
+        type: object
+        properties: 
+         contentId: 
+          type: string
+          description: 'The ID uniquely represente the content'
+         lastAccessTime: 
+          type: string
+          description: 'Represents when was the the course content last accessed'
+         batchId: 
+          type: string
+          description: 'This represents the unique ID  of the batch to which content belongs'
+         result: 
+          type: string
+          description: 'This represents the outcome of course assessment'
+         viewCount: 
+          type: string
+          description: 'This represents the total number of  times the content is viewed by the user'
+         score: 
+          type: string
+          description: 'The score received by the user on completing the course assessment'
+         grade: 
+          type: string
+          description: 'The grade obtained by the user on completing the course assessment'
+         progress: 
+          type: string
+          description: 'The users progress while doing the course'
+         contentVersion: 
+          type: string
+          description: 'The version of the course content'
+         courseId: 
+          type: string
+          description: 'The Course ID to which the content belongs'
+         lastCompletedTime: 
+          type: string
+          description: 'The last time the user completed the course'
+         status: 
+          type: integer
+          description: 'User content consumption status. Example 0 - not started, 1- in progress, 2- completed'
+         completedCount: 
+          type: string
+          description: 'The represents the count of how many times the user has taken a course'
+         id: 
+          type: string
+          description: 'This is the unique ID to recognize the content that belongs to particular user and particular course'
+  UpdateContentResponse:
+    description: Update Content Response
+    type: object
+    allOf:
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+      - $ref: '#/definitions/ResultWithEmptyBody1'  
+  ResultWithEmptyBody1:
+    title: Result Containing empty body
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/UpdateContentResultStatus'
+  UpdateContentResultStatus:
+    type: object
+    properties:
+      contentId:
+        description: 'Response will contain the content ids along with status like SUCCESS or FAILURE in case content updation success or fail respectively .'
+        type: string
+  ContentErrorResponse:
+    title: This is the response body of when Content creation error is encountered  
+    type: object
+    allOf:
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+      - $ref: '#/definitions/EmptyResult'
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object

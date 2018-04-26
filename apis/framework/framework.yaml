@@ -3,7 +3,11 @@ info:
   version: '1.0'
   title: Framework API(s)
   description: >-
-         The Framework API resources is basically a supporting data structure which serves as a template. It can be used in places where the structure remains the same but only the usage changes are per requirement. These resources are used to create, update, search, frameworks, channels, catergories, terms.
+         The Framework API resources is basically a supporting data structure which serves as a template. 
+        
+         - It can be used in places where the structure remains the same but only the usage changes are per requirement
+         
+         - These resources are used to create, update, search, frameworks, channels, catergories, terms.
             - The Hierarchy is as: Framework-->Category-->Terms
               - Category: An abstract classification of the terms   partitioned according to requirement.
               - Terms: Refers to a keyword or a phrase to descibe a Concept
@@ -13,10 +17,10 @@ info:
 host: staging.open-sunbird.org
 basePath: /framework/v1
 securityDefinitions:
-  auth:
-    type: apiKey
-    name: api_key
-    in: header
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The security scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -26,11 +30,285 @@ consumes:
 produces:
   - application/json
 paths:
+  /channel/v1/create:
+    post:
+      description: >-
+       This API is used for creating a channel 
+          - The **_/channel/v1/create_** endpoint executes the "Create channel" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary:  Create Channel
+      tags:
+      - Channel APIs
+      operationId: ChannelV1CreatePost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body is the representation of the resource object 
+              - The body contains metadata for creating a channel
+        schema:
+          $ref: '#/definitions/ChannelCreateRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'The Unique ID to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Create channel" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ChannelCreate200Response'
+        '400':
+          description: 'BAD REQUEST. The "Create channel" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ChannelCreate400Response'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+  /channel/v1/read/{id}:
+    get:
+      description:  >-
+       This API is associated with fetching a channel by a specific channel ID
+          - The **_/channel/v1/read/{id}_** endpoint executes the "Get Channel" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty 
+      summary: Fetch a Channel
+      tags:
+      - Channel APIs
+      operationId: ChannelV1ReadGet
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: >-
+          Unique identifier of the channel to be fetched
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'Unique Id to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation.The "fetch channel by ID" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ChannelGet200Response'
+        '400':
+          description: 'BAD REQUEST. The "fetch channel by ID" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ChannelGet400Response'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+  /channel/v1/update/{id}:
+    patch:
+      description: >-
+       This API is associated with updating a specific channel 
+          - The **_/channel/v1/update/{id}_** endpoint executes the "Update channel" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty 
+      summary:  Update Channel
+      tags:
+      - Channel APIs
+      operationId: ChannelV1UpdatePatch
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: >-
+          Unique identifier of the channel to be updated
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body is the representation of the resource object 
+              - The body contains metadata for updating a channel
+        schema:
+          $ref: '#/definitions/ChannelCreateRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'Unique Id to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Update channel by ID" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ChannelCreate200Response'
+        '400':
+          description: 'BAD REQUEST. The "update channel by ID" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ChannelCreate400Response'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+  /channel/v1/list:
+    post:
+      description: >-
+       This API is associated with listing the existing channels 
+          - The **_/channel/v1/list_** endpoint executes the "List channels" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty API to get list of channels in platform.
+      summary: List Channels
+      tags:
+      - Channel APIs
+      operationId: ChannelV1ListPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body is the representation of the resource object 
+              - The body contains metadata for listing channels
+        schema:
+          $ref: '#/definitions/ChannelSearchRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."list channels" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "list channels" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+  /channel/v1/search:
+    post:
+      description: >-
+       This API is associated with searching the channels
+          - The **_/channel/v1/search_** endpoint executes the "ChannelV1SearchPost" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty 
+      summary: Search Channels 
+      tags:
+      - Channel APIs
+      operationId: ChannelV1SearchPost
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+            The body is the representation of the resource object 
+              - The body contains metadata for searching a channel
+        schema:
+          $ref: '#/definitions/ChannelSearchRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'Unique ID to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."search channels" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "search channels" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
   /create:
     post:
       description: >-
        This API is associated with creating a new framework on the Sunbird Platform.
-          - The **_/create_** endpoint executes the "FrameworkV1CreatePost" request based on parameters provided as metadata in the request body
+          - The **_/create_** endpoint executes the "Create framework" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Creates a Framework
       tags:
@@ -43,10 +321,10 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for creating a framework.
+            The body is the representation of the resource object 
+              - The body contains metadata for creating a framework
         schema:
-          $ref: '#/definitions/CreateFrameworkrequest'
+          $ref: '#/definitions/CreateFrameworkRequest'
       - name: Content-Type
         in: header
         required: true
@@ -54,14 +332,14 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -71,65 +349,34 @@ paths:
         '200':
           description: 'OK ! Successful operation."create framework" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/FrameworkCreate200Response'
         '400':
           description: 'BAD REQUEST. The "create framework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/FrameworkGet400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /framework/v1/create
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-              "id": "sunbird.framework.create",
-              "ver": "1.0",
-              "request": {
-                "framework": {
-                  "name": "Sunbird",
-                  "description": "Sunbird framework",
-                  "code": "Sunbird",
-                  "owner": "org.sunbird"
-                }
-              }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Create Framework
-        x-testDescription: Framework Create API
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /read:
+  /read/{id}:
     get:
       description: >-
-       This API is associated with fetching a framework on the Sunbird Platform.
-          - The **_/read_** endpoint executes the "FrameworkV1ReadGet" request based on parameters provided as metadata in the request body
+       This API is associated with fetching a specific framework 
+          - The **_/read_/{id}** endpoint executes the "Fetch framework" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Fetches a Framework
+      summary: Fetch Framework
       tags:
       - Framework - Core APIs
       operationId: FrameworkV1ReadGet
       produces:
       - application/json
       parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: >-
+          The identifier of the framework to be fetched
       - name: Content-Type
         in: header
         required: true
@@ -137,77 +384,59 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'Its a unique ID for identifying the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."read framework" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/FrameworkGet200Response'
         '400':
           description: 'BAD REQUEST. The "read framework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/FrameworkGet400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /framework/v1/read
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Get Framework
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /update:
+  /update/{id}:
     patch:
       description: >-
-       This API is associated with updating a framework on the Sunbird Platform.
-          - The **_/update_** endpoint executes the "FrameworkV1UpdatePatch" request based on parameters provided as metadata in the request body
+       This API is associated with updating a framework 
+          - The **_/update_** endpoint executes the "Update framework" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Updates a Framework
+      summary: Update Framework
       tags:
       - Framework - Core APIs
       operationId: FrameworkV1UpdatePatch
       produces:
       - application/json
       parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: >-
+          The identifier of the framework to be updated
       - name: Body
         in: body
         required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for updating a framework.
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for updating a framework
         schema:
-          $ref: '#/definitions/UpdateFrameworkrequest'
+          $ref: '#/definitions/UpdateFrameworkRequest'
       - name: Content-Type
         in: header
         required: true
@@ -215,14 +444,14 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -232,72 +461,22 @@ paths:
         '200':
           description: 'OK ! Successful operation."update framework" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/FrameworkUpdate200Response'
         '400':
           description: 'BAD REQUEST. The "update framework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/FrameworkUpdate400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: PATCH
-          uri: /framework/v1/update
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: Sunbird
-          body: >-
-            {
-              "id": "ekstep.framework.update",
-              "ver": "3.0",
-              "ts": "YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
-              "params": {
-                "did": "1234",
-                "key": "1234",
-                "msgid": "test1234"
-              },
-              "request": {
-                "framework": {
-                  "versionKey": "1511787372693",
-                  "description": " framework description",
-                  "categories": [{
-                      "identifier": "do_11238518943318835211",
-                      "name": "cat1"
-                    },
-                    {
-                      "identifier": "do_11238518975364300812",
-                      "name": "cat2"
-                    }
-                  ]
-                }
-              }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Update Framework
-        x-testDescription: Update Framework API
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
   /list:
     post:
       description: >-
-       This API is associated with listing of all existing frameworks on Sunbird Platform.
+       This API is associated with listing of all existing frameworks
           - The **_/list_** endpoint executes the "FrameworkV1ListPost" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Lists existing Frameworks
+      summary: List Existing Frameworks
       tags:
       - Framework - Core APIs
       operationId: FrameworkV1ListPost
@@ -307,11 +486,11 @@ paths:
       - name: Body
         in: body
         required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for listing the existing frameworks
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for listing the existing frameworks
         schema:
-          $ref: '#/definitions/ListFrameworkrequest'
+          $ref: '#/definitions/FrameworkListRequest'
       - name: Content-Type
         in: header
         required: true
@@ -319,14 +498,14 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -336,61 +515,42 @@ paths:
          '200':
           description: 'OK ! Successful operation."list framework" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/FrameworkList200Response'
          '400':
           description: 'BAD REQUEST. The "list framework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/FrameworkList400Response'
          '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /framework/v1/list
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: "{\n  \"id\": \"sunbird.framework.list\",\n  \"ver\": \"1.0\",\n  \"ts\": \"YYYY-MM-DDThh:mm:ssZ+/-nn.nn\",\n  \"params\": {\n    \"did\": \"1234\",\n    \"key\": \"1234\",\n    \"msgid\": \"test1234\"\n  },\n  \"request\": { \n    \"search\": {\n      \"status\":\"Live\"\n    }\n  }\n}"
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: List Framework
-        x-testDescription: Get All Framework Nodes
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /copy:
+  /copy/{id}:
     post:
       description:  >-
        This API is associated with copying a framework 
           - The **_/copy_** endpoint executes the "Copy Framework" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Copies a Framework
+      summary: Copy Framework
       tags:
       - Framework - Core APIs
       operationId: NCERTPost
       produces:
       - application/json
       parameters:
+      - name: id
+        in: path
+        required: true
+        type: string
+        description: >-
+          The identifier of the framework to be copied
       - name: Body
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for creating a framework.
+            The body is the representation of the resource object 
+              - The body contains metadata for creating a framework
         schema:
-          $ref: '#/definitions/Framework  copyrequest'
+          $ref: '#/definitions/CopyFrameworkRequest'
       - name: Content-Type
         in: header
         required: true
@@ -398,14 +558,14 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
              Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -413,168 +573,24 @@ paths:
         description: 'It the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
-          description: 'OK ! Successful operation."Copy Framework" operation was successfully executed.'
+          description: 'OK ! Successful operation."Copy framework" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/FrameworkCopy200Response'
         '400':
-          description: 'BAD REQUEST. The "Copy Framework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. The "Copy fFramework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/FrameworkCopy400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /NCERT
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-              "request": {
-                "framework": {
-                  "code": "NCERTCOPY"
-                }
-              }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Framework - Copy
-        x-testDescription: Framework Copy API
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /category/update/:
-    patch:
-      description: >-
-       This API is associated with updating a category in an  existing framework on Sunbird Platform.
-          - The **_/category/update/_** endpoint executes the "FrameworkV1CategoryUpdatePatch" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty
-      summary: Updates a Category 
-      tags:
-      - Framework - Category APIs
-      operationId: FrameworkV1CategoryUpdatePatch
-      produces:
-      - application/json
-      parameters:
-      - name: framework
-        in: query
-        required: true
-        type: string
-        description: 'Its an abstract data structure which serves as a template for categories and terms'
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for updating a category in a framework.
-        schema:
-          $ref: '#/definitions/UpdateCategoryInstancerequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Accept-Charset
-        in: header
-        required: true
-        type: string
-        description: 'Refers using Unicode Character Set'
-      - name: Accept-Encoding
-        in: header
-        required: true
-        type: string
-        description: 'UTF-8 (Unicode Transformation Format, 8-bit form) charset is accepted for all media types'
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."update category" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "update category" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security: []
-      x-unitTests:
-      - request:
-          method: PATCH
-          uri: /framework/v1/category/update/?framework=sunbird.framework
-          headers:
-            Content-Type: application/json
-            Accept-Charset: UTF-8
-            Accept-Encoding: UTF-8
-            Authorization: '{{APIKey}}'
-            X-Channel-Id: sunbird
-          body: >-
-            {
-
-              "request": {
-
-                  "category":{
-
-                    "description":"LP category API",
-
-                    "name":"test",
-
-                    "code":"testUpdate"
-
-                  }
-
-              }
-
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: update category Instance
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
   /category/create:
     post:
       description: >-
-       This API is associated with creating a category under a framework on Sunbird Platform.
-          - The **_/framework/v1/category/create_** endpoint executes the "FrameworkV1CategoryCreatePost" request based on parameters provided as metadata in the request body
+       This API is associated with creating a category under a framework
+          - The **_/framework/v1/category/create_** endpoint executes the "Create category" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty 
-      summary: Creates a Category 
+      summary: Create Category 
       tags:
       - Framework - Category APIs
       operationId: FrameworkV1CategoryCreatePost
@@ -589,11 +605,11 @@ paths:
       - name: Body
         in: body
         required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for creating a framework.
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for creating a category
         schema:
-          $ref: '#/definitions/CreateCategoryInstancerequest'
+          $ref: '#/definitions/CreateCategoryInstanceRequest'
       - name: Content-Type
         in: header
         required: true
@@ -601,14 +617,14 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -618,56 +634,153 @@ paths:
         '200':
           description: 'OK ! Successful operation."create category" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/CategoryInstanceCreate200Response'
         '400':
           description: 'BAD REQUEST. The "create category" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/CategoryInstanceCreate400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /framework/v1/category/create?framework=sunbird
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-               "request": {
-                  "category":{
-                      "name":"Class",
-                      "description":"",
-                      "code":"class"
-                  }
-                }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: create category Instance
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
+  /category/read/{code}:
+    get:
+      description: >-
+       This API is associated with fetching a category on Sunbird Platform.
+          - The **_/category/read/{code}_** endpoint executes the "Fetch a category" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty API to get list of channels in platform.
+      summary: Fetch Category
+      tags:
+      - Framework - Category APIs
+      operationId: FrameworkV1CategoryReadClassGet
+      produces:
+      - application/json
+      parameters:
+      - name: code
+        in: path
+        required: true
+        type: string
+        description: >-
+          The name/code of the category to be fetched
+      - name: framework
+        in: query
+        required: true
+        type: string
+        description: 'Its an abstract data structure which serves as a template for categories and terms'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."fetch category" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/CategoryInstanceGet200Response'
+        '400':
+          description: 'BAD REQUEST. The "fetch category" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/CategoryInstanceGet400Response'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+  /category/update/{code}:
+    patch:
+      description: >-
+       This API is associated with updating a category in an  existing framework
+          - The **_/category/update/_** endpoint executes the "Update category" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty
+      summary: Update Category 
+      tags:
+      - Framework - Category APIs
+      operationId: FrameworkV1CategoryUpdatePatch
+      produces:
+      - application/json
+      parameters:
+      - name: code
+        in: path
+        required: true
+        type: string
+        description: >-
+          The name/code of the category to be updated
+      - name: framework
+        in: query
+        required: true
+        type: string
+        description: 'Represents the framework to which the category belongs' 
+      - name: Body
+        in: body
+        required: true
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for updating a category in a framework
+        schema:
+          $ref: '#/definitions/UpdateCategoryInstanceRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Accept-Charset
+        in: header
+        required: true
+        type: string
+        description: 'The acceptable character set is: Unicode for all objects'
+      - name: Accept-Encoding
+        in: header
+        required: true
+        type: string
+        description: 'UTF-8 (Unicode Transformation Format, 8-bit form) charset is accepted for all media types'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'Unique ID for identifying the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."update category" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/CategoryInstanceUpdate200Response'
+        '400':
+          description: 'BAD REQUEST. The "update category" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/CategoryInstanceUpdate400Response'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security: []
   /category/search:
     post:
       description: >-
-       This API is associated with searching category on Sunbird Platform.
-          - The **_/framework/v1/category/search_** endpoint executes the "FrameworkV1CategorySearchPost" request based on parameters provided as metadata in the request body
+       This API is associated with searching a category 
+          - The **_/category/search_** endpoint executes the "Search category" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Search for Categories
+      summary: Search Categories
       tags:
       - Framework - Category APIs
       operationId: FrameworkV1CategorySearchPost
@@ -678,15 +791,15 @@ paths:
         in: query
         required: true
         type: string
-        description: 'Its an abstract data structure which serves as a template for categories and terms'
+        description: 'Represents the framework in which category can be searched' 
       - name: Body
         in: body
         required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for searching a category in a framework.
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for searching a category in a framework
         schema:
-          $ref: '#/definitions/SearchCategoryInstancerequest'
+          $ref: '#/definitions/CategoryInstanceSearchRequest'
       - name: Content-Type
         in: header
         required: true
@@ -694,14 +807,14 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -711,621 +824,22 @@ paths:
         '200':
           description: 'OK ! Successful operation."search category" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/CategoryInstanceSearch200Response'
         '400':
           description: 'BAD REQUEST. The "search category" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/CategoryInstanceSearch400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /framework/v1/category/search?framework=sunbird.framework
-          headers:
-            Content-Type: application/json
-            Authorization: '{{APIKey}}'
-            X-Channel-Id: sunbird
-          body: "{\n  \n  \"request\": { \n    \"search\": {\n      \n    }\n  }\n}"
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: search category Instance
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /category/read:
-    get:
-      description: >-
-       This API is associated with fetching a category on Sunbird Platform.
-          - The **_/framework/v1/category/read_** endpoint executes the "FrameworkV1CategoryReadClassGet" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Fetches a Category
-      tags:
-      - Framework - Category APIs
-      operationId: FrameworkV1CategoryReadClassGet
-      produces:
-      - application/json
-      parameters:
-      - name: framework
-        in: query
-        required: true
-        type: string
-        description: 'Its an abstract data structure which serves as a template for categories and terms'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."fetch category" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "fetch category" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /framework/v1/category/read/class?framework=sunbird
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: get category Instance
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /channel/v1/list:
-    post:
-      description: >-
-       This API is associated with listing the existing channels on Sunbird Platform.
-          - The **_/channel/v1/list_** endpoint executes the "ChannelV1ListPost" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Lists Channels
-      tags:
-      - Channel APIs
-      operationId: ChannelV1ListPost
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for listing channels.
-        schema:
-          $ref: '#/definitions/Channel  listrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."listing channels" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "listing channels" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /channel/v1/list
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-
-              "request": {
-
-              }
-
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Channel - List
-        x-testDescription: API to get list of channels in platform.
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /channel/v1/read:
-    get:
-      description:  >-
-       This API is associated with fetching a channel by a specific channel Id on Sunbird Platform.
-          - The **_/framework/v1/category/read_** endpoint executes the "ChannelV1ReadGet" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.API to get a channel by identifier.
-      summary: Fetches a Channel
-      tags:
-      - Channel APIs
-      operationId: ChannelV1ReadGet
-      produces:
-      - application/json
-      parameters:
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."search channel by Id" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "search channel by Id" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /channel/v1/read
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Channel - Get
-        x-testDescription: API to get a channel by identifier.
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /channel/v1/update:
-    patch:
-      description: >-
-       This API is associated with updating a channel on Sunbird Platform.
-          - The **_/channel/v1/update_** endpoint executes the "ChannelV1UpdatePatch" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary:  Updates a Channel
-      tags:
-      - Channel APIs
-      operationId: ChannelV1UpdatePatch
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for updating a channel.
-        schema:
-          $ref: '#/definitions/Channel  updaterequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."update channel" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "update channel" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: PATCH
-          uri: /channel/v1/update
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-               "request": {
-                  "channel":{
-                      "framework": [{
-                        "identifier": "org.sunbird",
-                        "name": "Sunbird"
-                      }]
-                  }
-                }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Channel - Update
-        x-testDescription: API to update channel.
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /channel/v1/search:
-    post:
-      description: >-
-       This API is associated with searching the channels with a specified criteria on Sunbird Platform.
-          - The **_/channel/v1/search_** endpoint executes the "ChannelV1SearchPost" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty 
-      summary: Searches a Channel with Specified Criteria
-      tags:
-      - Channel APIs
-      operationId: ChannelV1SearchPost
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for searching a channel
-        schema:
-          $ref: '#/definitions/Channel  searchrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."search channels" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "search channels" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /channel/v1/search
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-              "request": {
-                "channel":{
-                  "identifier":"do_2122484509757358081122"
-                }
-              }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Channel - Search
-        x-testDescription: API to search channels for given criteria.
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /channel/v1/create:
-    post:
-      description: >-
-       This API is associated with creating achannels on Sunbird Platform.
-          - The **_/channel/v1/create_** endpoint executes the "ChannelV1CreatePost" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary:  Creates a Channel
-      tags:
-      - Channel APIs
-      operationId: ChannelV1CreatePost
-      produces:
-      - application/json
-      parameters:
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for creating a channel.
-        schema:
-          $ref: '#/definitions/Channel  createrequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."create channel" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "create channel" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /channel/v1/create
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-               "request": {
-                  "channel":{
-                      "name":"Sunbird",
-                      "description":"Channel for org.sunbird",
-                      "code":"org.sunbird"
-                  }
-                }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Channel - Create
-        x-testDescription: API to create a channel.
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /framework/v1/term/read:
-    get:
-      description: >-
-       This API is associated with fetching the available terms under a specific category and a framework on Sunbird Platform.
-          - The **_/framework/v1/term/read_** endpoint executes the "FrameworkV1TermReadClass2Get" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Fetches a Term 
-      tags:
-      - Framework - Term APIs
-      operationId: FrameworkV1TermReadClass2Get
-      produces:
-      - application/json
-      parameters:
-      - name: framework
-        in: query
-        required: true
-        type: string
-        description: 'Its an abstract data structure which serves as a template for categories and terms'
-      - name: category
-        in: query
-        required: true
-        type: string
-        description: 'Its an abstract classification of the terms   partitioned according to requirement'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."Fetch term" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "Fetch term" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /framework/v1/term/read/class2?framework=sunbird&category=class
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: getFrameworkTerm
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
   /framework/v1/term/create:
     post:
       description: >-
-       This API is associated with creating a term under a framework category on Sunbird Platform.
-          - The **_/framework/v1/term/create_** endpoint executes the "FrameworkV1TermCreatePost" request based on parameters provided as metadata in the request body
+       This API is associated with creating a term under a framework category 
+          - The **_/framework/v1/term/create_** endpoint executes the "Create term" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Creates a Term
+      summary: Create Term
       tags:
       - Framework - Term APIs
       operationId: FrameworkV1TermCreatePost
@@ -1336,18 +850,18 @@ paths:
         in: query
         required: true
         type: string
-        description: 'Its an abstract data structure which serves as a template for categories and terms'
+        description: 'Represents the framework in which the term is to be created'
       - name: category
         in: query
         required: true
         type: string
-        description: 'Its an abstract classification of the terms   partitioned according to requirement'
+        description: 'Represents the category in which the term is to be created'
       - name: Body
         in: body
         required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for creating a framework.
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for creating a term
         schema:
           $ref: '#/definitions/CreateFrameworkTermRequest'
       - name: Content-Type
@@ -1357,74 +871,171 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'Unique ID for identifying the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."create term" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/FrameworkTermCreate200Response'
         '400':
           description: 'BAD REQUEST. The "create term" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/FrameworkTermCreate400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /framework/v1/term/create?framework=sunbird&category=class
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: >-
-            {
-
-            "request": {
-               "term": {
-                    "label": "Class2",
-                    "value": "class2",
-                    "description":"Term for Class 2"
-                }
-             }
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: createFrameworkTerm
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
+  /framework/v1/term/read/{code}:
+    get:
+      description: >-
+       This API is associated with fetching the available terms under a specific category and a framework on Sunbird Platform.
+          - The **_/framework/v1/term/read/{code}_** endpoint executes the "Fetch a term" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty 
+      summary: Fetch Term 
+      tags:
+      - Framework - Term APIs
+      operationId: FrameworkV1TermReadClass2Get
+      produces:
+      - application/json
+      parameters:
+      - name: code
+        in: path
+        required: true
+        type: string
+        description: >-
+          The name/code of the term to be fetched
+      - name: framework
+        in: query
+        required: true
+        type: string
+        description: 'Represents the framework in which the term can be fetched'
+      - name: category
+        in: query
+        required: true
+        type: string
+        description: 'Represents the category in which the term can be fetched'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'Unique ID for identifying the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Fetch term" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/FrameworkTermGet200Response'
+        '400':
+          description: 'BAD REQUEST. The "Fetch term" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FrameworkTermGet400Response'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+  /framework/v1/term/update{code}:
+    patch:
+      description:  >-
+       This API is associated with updating a term under a category in a framework on Sunbird Platform.
+          - The **_/framework/v1/term/update/{code}_** endpoint executes the "FrameworkV1TermUpdateClass2Patch" request based on parameters provided as metadata in the request body
+          - Required fields cannot be left null or empty API to get list of channels in platform.API to get a channel by identifier.
+      summary: Update Term
+      tags:
+      - Framework - Term APIs
+      operationId: FrameworkV1TermUpdateClass2Patch
+      produces:
+      - application/json
+      parameters:
+      - name: code
+        in: path
+        required: true
+        type: string
+        description: >-
+          The name/code of the term to be update
+      - name: framework
+        in: query
+        required: true
+        type: string
+        description: 'Represents the framework in which the terms is to be updated'
+      - name: category
+        in: query
+        required: true
+        type: string
+        description: 'Represents the category in which the term is to be updated'
+      - name: Body
+        in: body
+        required: true
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for updating a term
+        schema:
+          $ref: '#/definitions/UpdateFrameworkTermRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: X-Channel-Id
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique ID to identify the root organisation to which the user belongs'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."update term" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/FrameworkTermUpdate200Response'
+        '400':
+          description: 'BAD REQUEST. The "update term" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/FrameworkTermUpdate400Response'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
   /framework/v1/term/search:
     post:
       description: >-
        This API is associated with searching the existing terms under a category in a framework on Sunbird Platform.
-          - The **_/framework/v1/term/search_** endpoint executes the "FrameworkV1TermSearchPost" request based on parameters provided as metadata in the request body
+          - The **_/framework/v1/term/search_** endpoint executes the "Search term" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty API to get list of channels in platform.
-      summary: Searches a Term
+      summary: Search Term
       tags:
       - Framework - Term APIs
       operationId: FrameworkV1TermSearchPost
@@ -1435,25 +1046,25 @@ paths:
         in: query
         required: true
         type: string
-        description: 'Its an abstract data structure which serves as a template for categories and terms'
+        description: 'Represents the framework in which the term is to be searched'
       - name: category
         in: query
         required: true
         type: string
-        description: 'Its an abstract classification of the terms   partitioned according to requirement'
+        description: 'Represents the category in which the term is to be searched'
       - name: Body
         in: body
         required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for searching a term.
+        description:  >-
+            The body is the representation of the resource object 
+              - The body contains metadata for searching a term
         schema:
-          $ref: '#/definitions/SearchFrameworkTermRequest'
+          $ref: '#/definitions/FrameworkTermSearchRequest'
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: Content-Type
         in: header
         required: true
@@ -1461,775 +1072,99 @@ paths:
         description: >-
            The Content Type entity is the media type of the resource.
             Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+              - application/json
+              - multipart/form-data
+              - application/x-www-form-urlencoded
       - name: X-Channel-Id
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It the Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."search term operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/FrameworkTermSearch200Response'
         '400':
           description: 'BAD REQUEST. The "search term" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/FrameworkTermSearch400Response'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-      x-unitTests: []
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /framework/v1/term/update:
-    patch:
-      description:  >-
-       This API is associated with updating a term under a category in a framework on Sunbird Platform.
-          - The **_/framework/v1/term/update_** endpoint executes the "FrameworkV1TermUpdateClass2Patch" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.API to get a channel by identifier.
-      summary: Updates a Term
-      tags:
-      - Framework - Term APIs
-      operationId: FrameworkV1TermUpdateClass2Patch
-      produces:
-      - application/json
-      parameters:
-      - name: framework
-        in: query
-        required: true
-        type: string
-        description: 'Its an abstract data structure which serves as a template for categories and terms'
-      - name: category
-        in: query
-        required: true
-        type: string
-        description: 'An abstract classification of the terms partitioned according to requirement'
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for updating a term
-        schema:
-          $ref: '#/definitions/UpdateFrameworkTermRequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."update term" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "update term" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: PATCH
-          uri: /framework/v1/term/update/class2?framework=sunbird.framework&category=class
-          headers:
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-            X-Channel-Id: sunbird
-          body: "{\n\"request\": {\n   \"term\": {\n        \"childterms\":[\n          {\n            \"identifier\":\"sunbird.framework_subject_math\"\n          }, \n          {\n            \"identifier\":\"sunbird.framework_subject_english\"\n          }\n        ],\n        \"children\":[\n          {\"identifier\": \"sunbird.framework_class_class1\"}  \n        ]\n    }\n }\n}"
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: updateFrameworkTerm
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
 definitions:
-  UpdateCategoryInstancerequest:
-    title: update category InstanceRequest
-    example:
-      request:
-        category:
-          description: LP category API
-          name: test
-          code: testUpdate
+  CreateFrameworkRequest:
+    description: Framework create request
     type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkCreate'
+  RequestFrameworkCreate:
+    description: Request map of framework create api.
     properties:
-      request:
-        $ref: '#/definitions/Request'
-    required:
-    - request
-  Request:
-    title: Request
-    example:
-      category:
-        description: LP category API
-        name: test
-        code: testUpdate
-    type: object
-    properties:
-      category:
-        $ref: '#/definitions/Category'
-    required:
-    - category
-  Category:
-    title: Category
-    example:
-      description: LP category API
-      name: test
-      code: testUpdate
-    type: object
-    properties:
-      description:
-        description: ''
-        example: LP category API
-        type: string
-      name:
-        description: ''
-        example: test
-        type: string
-      code:
-        description: ''
-        example: testUpdate
-        type: string
-    required:
-    - description
-    - name
-    - code
-  Channel  listrequest:
-    title: Channel - ListRequest
-    example:
-      request: {}
-    type: object
-    properties:
-      request:
-        description: ''
-        example: {}
+      request: 
         type: object
-    required:
-    - request
-  CreateFrameworkrequest:
-    title: Create FrameworkRequest
-    example:
-      id: sunbird.framework.create
-      ver: 1.0
-      request:
-        framework:
-          name: Sunbird
-          description: Sunbird framework
-          code: Sunbird
-          owner: org.sunbird
-    type: object
-    properties:
-      id:
-        description: ''
-        example: sunbird.framework.create
-        type: string
-      ver:
-        description: ''
-        example: 1.0
-        type: string
-      request:
-        $ref: '#/definitions/Request5'
-    required:
-    - id
-    - ver
-    - request
-  Request5:
-    title: Request5
-    example:
-      framework:
-        name: Sunbird
-        description: Sunbird framework
-        code: Sunbird
-        owner: org.sunbird
-    type: object
-    properties:
-      framework:
-        $ref: '#/definitions/Framework'
-    required:
-    - framework
-  Framework:
-    title: Framework
-    example:
-      name: Sunbird
-      description: Sunbird framework
-      code: Sunbird
-      owner: org.sunbird
-    type: object
-    properties:
-      name:
-        description: ''
-        example: Sunbird
-        type: string
-      description:
-        description: ''
-        example: Sunbird framework
-        type: string
-      code:
-        description: ''
-        example: Sunbird
-        type: string
-      owner:
-        description: ''
-        example: org.sunbird
-        type: string
-    required:
-    - name
-    - description
-    - code
-    - owner
-  CreateFrameworkTermRequest:
-    title: createFrameworkTermRequest
-    example:
-      request:
-        term:
-          label: Class2
-          value: class2
-          description: Term for Class 2
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request8'
-    required:
-    - request
-  Request8:
-    title: Request8
-    example:
-      term:
-        label: Class2
-        value: class2
-        description: Term for Class 2
-    type: object
-    properties:
-      term:
-        $ref: '#/definitions/Term'
-    required:
-    - term
-  Term:
-    title: Term
-    example:
-      label: Class2
-      value: class2
-      description: Term for Class 2
-    type: object
-    properties:
-      label:
-        description: ''
-        example: Class2
-        type: string
-      value:
-        description: ''
-        example: class2
-        type: string
-      description:
-        description: ''
-        example: Term for Class 2
-        type: string
-    required:
-    - label
-    - value
-    - description
-  CreateCategoryInstancerequest:
-    title: create category InstanceRequest
-    example:
-      request:
-        category:
-          name: Class
-          description: ''
-          code: class
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request'
-    required:
-    - request
-  SearchFrameworkTermRequest:
-    title: searchFrameworkTermRequest
-    example:
-      request: {}
-    type: object
-    properties:
-      request:
-        description: ''
-        example: {}
-        type: object
-    required:
-    - request
-  Channel  searchrequest:
-    title: Channel - SearchRequest
-    example:
-      request:
-        channel:
-          identifier: do_2122484509757358081122
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request15'
-    required:
-    - request
-  Request15:
-    title: Request15
-    example:
-      channel:
-        identifier: do_2122484509757358081122
-    type: object
-    properties:
-      channel:
-        $ref: '#/definitions/Channel'
-    required:
-    - channel
-  Channel:
-    title: Channel
-    example:
-      identifier: do_2122484509757358081122
-    type: object
-    properties:
-      identifier:
-        description: ''
-        example: do_2122484509757358081122
-        type: string
-    required:
-    - identifier
-  Channel  createrequest:
-    title: Channel - CreateRequest
-    example:
-      request:
-        channel:
-          name: Sunbird
-          description: Channel for org.sunbird
-          code: org.sunbird
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request18'
-    required:
-    - request
-  Request18:
-    title: Request18
-    example:
-      channel:
-        name: Sunbird
-        description: Channel for org.sunbird
-        code: org.sunbird
-    type: object
-    properties:
-      channel:
-        $ref: '#/definitions/Channel19'
-    required:
-    - channel
-  Channel19:
-    title: Channel19
-    example:
-      name: Sunbird
-      description: Channel for org.sunbird
-      code: org.sunbird
-    type: object
-    properties:
-      name:
-        description: ''
-        example: Sunbird
-        type: string
-      description:
-        description: ''
-        example: Channel for org.sunbird
-        type: string
-      code:
-        description: ''
-        example: org.sunbird
-        type: string
-    required:
-    - name
-    - description
-    - code
-  UpdateFrameworkrequest:
-    title: Update FrameworkRequest
-    example:
-      id: ekstep.framework.update
-      ver: 3.0
-      ts: YYYY-MM-DDThh:mm:ssZ+/-nn.nn
-      params:
-        did: 1234
-        key: 1234
-        msgid: test1234
-      request:
-        framework:
-          versionKey: 1511787372693
-          description: ' framework description'
-          categories:
-          - identifier: do_11238518943318835211
-            name: cat1
-          - identifier: do_11238518975364300812
-            name: cat2
-    type: object
-    properties:
-      id:
-        description: ''
-        example: ekstep.framework.update
-        type: string
-      ver:
-        description: ''
-        example: 3.0
-        type: string
-      ts:
-        description: ''
-        example: YYYY-MM-DDThh:mm:ssZ+/-nn.nn
-        type: string
-      params:
-        $ref: '#/definitions/Params'
-      request:
-        $ref: '#/definitions/Request22'
-    required:
-    - id
-    - ver
-    - ts
-    - params
-    - request
-  Params:
-    title: Params
-    example:
-      did: 1234
-      key: 1234
-      msgid: test1234
-    type: object
-    properties:
-      did:
-        description: ''
-        example: 1234
-        type: string
-      key:
-        description: ''
-        example: 1234
-        type: string
-      msgid:
-        description: ''
-        example: test1234
-        type: string
-    required:
-    - did
-    - key
-    - msgid
-  Request22:
-    title: Request22
-    example:
-      framework:
-        versionKey: 1511787372693
-        description: ' framework description'
-        categories:
-        - identifier: do_11238518943318835211
-          name: cat1
-        - identifier: do_11238518975364300812
-          name: cat2
-    type: object
-    properties:
-      framework:
-        $ref: '#/definitions/Framework23'
-    required:
-    - framework
-  Framework23:
-    title: Framework23
-    example:
-      versionKey: 1511787372693
-      description: ' framework description'
-      categories:
-      - identifier: do_11238518943318835211
-        name: cat1
-      - identifier: do_11238518975364300812
-        name: cat2
-    type: object
-    properties:
-      versionKey:
-        description: ''
-        example: 1511787372693
-        type: string
-      description:
-        description: ''
-        example: ' framework description'
-        type: string
-      categories:
-        description: ''
-        example:
-        - identifier: do_11238518943318835211
-          name: cat1
-        - identifier: do_11238518975364300812
-          name: cat2
-        type: array
-        items:
-          $ref: '#/definitions/Category24'
-    required:
-    - versionKey
-    - description
-    - categories
-  Category24:
-    title: Category24
-    example:
-      identifier: do_11238518943318835211
-      name: cat1
-    type: object
-    properties:
-      identifier:
-        description: ''
-        example: do_11238518943318835211
-        type: string
-      name:
-        description: ''
-        example: cat1
-        type: string
-    required:
-    - identifier
-    - name
-  SearchCategoryInstancerequest:
-    title: search category InstanceRequest
-    example:
-      request:
-        search: {}
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request26'
-    required:
-    - request
-  Request26:
-    title: Request26
-    example:
-      search: {}
-    type: object
-    properties:
-      search:
-        description: ''
-        example: {}
-        type: object
-    required:
-    - search
-  Channel  updaterequest:
-    title: Channel - UpdateRequest
-    example:
-      request:
-        channel:
+        properties:
           framework:
-          - identifier: org.sunbird
-            name: Sunbird
+            type: object
+            properties:
+              name:
+                type: string
+                description: Name of the framework
+              code:
+                description: Unique code of the framework
+                type: string
+              description:
+                type: string
+                description: Description of the framework.
+              type:
+                type: string
+                description: Type of framework.
+              channels:
+                type: array
+                description: Channels associated with this framework
+                items:
+                  type: object
+              categories:
+                type: array
+                description: Categories associated with this framework
+                items:
+                  type: object
+  UpdateFrameworkRequest:
+    description: Framework update request.
     type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkUpdate'
+  RequestFrameworkUpdate:
+    description: Request map of framework update api.
     properties:
-      request:
-        $ref: '#/definitions/Request28'
-    required:
-    - request
-  Request28:
-    title: Request28
-    example:
-      channel:
-        framework:
-        - identifier: org.sunbird
-          name: Sunbird
-    type: object
-    properties:
-      channel:
-        $ref: '#/definitions/Channel29'
-    required:
-    - channel
-  Channel29:
-    title: Channel29
-    example:
-      framework:
-      - identifier: org.sunbird
-        name: Sunbird
-    type: object
-    properties:
-      framework:
-        description: ''
-        example:
-        - identifier: org.sunbird
-          name: Sunbird
-        type: array
-        items:
-          $ref: '#/definitions/Framework30'
-    required:
-    - framework
-  Framework30:
-    title: Framework30
-    example:
-      identifier: org.sunbird
-      name: Sunbird
-    type: object
-    properties:
-      identifier:
-        description: ''
-        example: org.sunbird
-        type: string
-      name:
-        description: ''
-        example: Sunbird
-        type: string
-    required:
-    - identifier
-    - name
-  UpdateFrameworkTermRequest:
-    title: updateFrameworkTermRequest
-    example:
-      request:
-        term:
-          childterms:
-          - identifier: sunbird.framework_subject_math
-          - identifier: sunbird.framework_subject_english
-          children:
-          - identifier: sunbird.framework_class_class1
-    type: object
-    properties:
-      request:
-        $ref: '#/definitions/Request32'
-    required:
-    - request
-  Request32:
-    title: Request32
-    example:
-      term:
-        childterms:
-        - identifier: sunbird.framework_subject_math
-        - identifier: sunbird.framework_subject_english
-        children:
-        - identifier: sunbird.framework_class_class1
-    type: object
-    properties:
-      term:
-        $ref: '#/definitions/Term33'
-    required:
-    - term
-  Term33:
-    title: Term33
-    example:
-      childterms:
-      - identifier: sunbird.framework_subject_math
-      - identifier: sunbird.framework_subject_english
-      children:
-      - identifier: sunbird.framework_class_class1
-    type: object
-    properties:
-      childterms:
-        description: ''
-        example:
-        - identifier: sunbird.framework_subject_math
-        - identifier: sunbird.framework_subject_english
-        type: array
-        items:
-          $ref: '#/definitions/Childterm'
-      children:
-        description: ''
-        example:
-        - identifier: sunbird.framework_class_class1
-        type: array
-        items:
-          $ref: '#/definitions/Child'
-    required:
-    - childterms
-    - children
-  Childterm:
-    title: Childterm
-    example:
-      identifier: sunbird.framework_subject_math
-    type: object
-    properties:
-      identifier:
-        description: ''
-        example: sunbird.framework_subject_math
-        type: string
-    required:
-    - identifier
-  Child:
-    title: Child
-    example:
-      identifier: sunbird.framework_class_class1
-    type: object
-    properties:
-      identifier:
-        description: ''
-        example: sunbird.framework_class_class1
-        type: string
-    required:
-    - identifier
-  ListFrameworkrequest:
-    title: List FrameworkRequest
-    example:
-      id: sunbird.framework.list
-      ver: 1.0
-      ts: YYYY-MM-DDThh:mm:ssZ+/-nn.nn
-      params:
-        did: 1234
-        key: 1234
-        msgid: test1234
-      request:
-        search:
-          status: Live
-    type: object
-    properties:
-      id:
-        description: ''
-        example: sunbird.framework.list
-        type: string
-      ver:
-        description: ''
-        example: 1.0
-        type: string
-      ts:
-        description: ''
-        example: YYYY-MM-DDThh:mm:ssZ+/-nn.nn
-        type: string
-      params:
-        $ref: '#/definitions/Params'
-      request:
-        $ref: '#/definitions/Request26'
-    required:
-    - id
-    - ver
-    - ts
-    - params
-    - request
-  Search:
-    title: Search
-    example:
-      status: Live
-    type: object
-    properties:
-      status:
-        description: ''
-        example: Live
-        type: string
-    required:
-    - status
-
+      request: 
+        type: object
+        properties:
+          framework:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Name of the framework.
+              description:
+                type: string
+                description: Description of the framework.
+              type:
+                type: string
+                description: Type of framework.
+              channels:
+                type: array
+                description: Channels associated with this framework
+                items:
+                  type: object
+              categories:
+                type: array
+                description: Categories associated with this framework
+                items:
+                  type: object
   ResultWithNodeId:
     title: Result Containing Node Id
     type: object
@@ -2293,44 +1228,906 @@ definitions:
       node_id:
         type: string
         description: Node Identifier
+      versionKey:
+            type: string
+            description: versionKey of the Category Instance
   ContentCreateErrorResponse:
     title: Create Content Error Response
     type: object
     allOf:
       - $ref: '#/definitions/EmptyResult'
       - $ref: '#/definitions/ResponseHeader'
-  Framework  copyrequest:
-    title: Framework - CopyRequest
-    example:
-      request:
-        framework:
-          code: NCERTCOPY
-    type: object
+  RequestChannelCreate:
+    description: Request map of channel create api.
     properties:
-      request:
-        $ref: '#/definitions/Request99'
-    required:
-    - request
-  Request99:
-    title: Request99
-    example:
-      framework:
-        code: NCERTCOPY
+      request: 
+        type: object
+        properties:
+          channel:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Name of the channel.
+              code:
+                description: Unique code of the channel.
+                type: string
+              description:
+                type: string
+                description: Description of the channel.
+  ChannelCreateRequest:
+    description: Channel create request.
     type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestChannelCreate'
+  ResponseChannelCreate200:
+    description: Response of the channel create.
     properties:
-      framework:
-        $ref: '#/definitions/Framework'
-    required:
-    - framework
-  Framework1:
-    title: Framework1
-    example:
-      code: NCERTCOPY
-    type: object
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the channel created.
+          versionKey:
+            type: string
+            description: Version key of the current channel object. This is used to all update calls of the same object.
+  ResponseChannelCreate400:
+    description: Response of the channel create on client error.
     properties:
-      code:
-        description: ''
-        example: NCERTCOPY
+      responseCode:
         type: string
-    required:
-    - code
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  ChannelCreate200Response:
+    description: 'Channel create response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseChannelCreate200'
+  ChannelCreate400Response:
+    description: Channel create response for 400.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseChannelCreate400'
+  ChannelObj:
+    type: object
+    properties:
+      identifier:
+        type: string
+        description: Unique id of the channel across sunbird installations.
+      code:
+        type: string
+        description: This is same as identifier.
+      description: 
+        type: string
+        description: Description of the channel.
+      defaultFramework:
+        type: string
+        description: Framework identifier which can be used fetch categories for create/update/search other objects.
+      frameworks:
+        type: object
+        description: List of frameworks subscribed by this channel.
+      suggested_frameworks:
+        type: array
+        description: List of frameworks available in platform to subscribe.
+        items:
+          type: object
+  ResponseChannelGet200:
+    description: Response of the channel get.
+    properties:
+      result:
+        type: object
+        properties:
+          channel:
+            $ref: '#/definitions/ChannelObj'
+  ChannelGet200Response:
+    description: 'Channel get response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseChannelGet200'
+  ChannelGet400Response:
+    description: 'Channel get response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseChannelCreate400'
+  RequestChannelSearch:
+    description: Request map of channel search api.
+    properties:
+      request:
+        type: object
+        properties:
+          channel:
+            type: object
+
+  ChannelSearchRequest:
+    description: Channel create request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestChannelSearch'
+  FrameworkGet400Response:
+    description: 'Framework get response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkCreate400'
+  ResponseFrameworkCreate400:
+    description: Response of the Framewrk create on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  FrameworkCreate200Response:
+    description: 'Framework create response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkCreate200'
+  ResponseFrameworkCreate200:
+    description: Response of the Framework create.
+    properties:
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the Framework created.
+          versionKey:
+            type: string
+            description: Version key of the current Framework object. This is used to all update calls of the same object.
+  FrameworkObj:
+    type: object
+    properties:
+      identifier:
+        type: string
+        description: Unique id of the framework across sunbird installations.
+      name:
+        type: string
+        description: Name of the framework.
+      code:
+        type: string
+        description: This is same as identifier.
+      description: 
+        type: string
+        description: Description of the framework.
+      consumerId:
+        type: string
+        description: consumerId.
+      channel:
+        type: string
+        description: Channel who created this framework.
+      type:
+        type: string
+        description: Type of the framework.
+      createdOn:
+        type: string
+        description: Creation date of the framework
+      versionKey:
+        type: string
+        description: Version key of the framework
+      channels:
+        type: array
+        description: Creation date of the framework
+        items:
+          type: object
+      appId:
+        type: string
+        description: AppId of the framework
+      lastUpdatedOn:
+        type: string
+        description: Last Updation date of the framework.
+      status:
+        type: string
+        description: Status of the framework
+      categories:
+        type: array
+        description: CCategories of the framework
+        items:
+          type: object
+  ResponseFrameworkGet200:
+    description: Response of the Framework get.
+    properties:
+      result:
+        type: object
+        properties:
+          framework:
+            $ref: '#/definitions/FrameworkObj'
+  FrameworkGet200Response:
+    description: 'Framework get response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkGet200'
+  FrameworkUpdate400Response:
+    description: 'Framework Update response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkUpdate400'
+  ResponseFrameworkUpdate400:
+    description: Response of the Framewrk update on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  FrameworkUpdate200Response:
+    description: 'Framework update response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkUpdate200'
+  ResponseFrameworkUpdate200:
+    description: Response of the Framework update.
+    properties:
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the Framework update.
+          versionKey:
+            type: string
+            description: Version key of the current Framework object. This is used to all update calls of the same object.
+  RequestFrameworkList:
+    description: Request map of framework list api.
+    properties:
+      request:
+        type: object
+        properties:
+          search:
+            type: object
+
+  FrameworkListRequest:
+    description: Framework List request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkList'
+  FrameworkList400Response:
+    description: 'Framework List response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkList400'
+  ResponseFrameworkList400:
+    description: Response of the Framewrk list on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  FrameworkList200Response:
+    description: 'Framework list response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkList200'
+  ResponseFrameworkList200:
+    description: Response of the Framework list.
+    properties:
+      result:
+        type: object
+        properties:
+          frameworks:
+            type: array
+            description: List of rframeworks
+            items:
+              type: object
+          count:
+            type: number
+            description: Number of frameworks searched.
+  CopyFrameworkRequest:
+    description: Framework copy request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkCopy'
+  RequestFrameworkCopy:
+    description: Request map of framework copy api.
+    properties:
+      request: 
+        type: object
+        properties:
+          framework:
+            type: object
+            properties:
+              code:
+                description: Unique code of the framework.
+                type: string
+  FrameworkCopy400Response:
+    description: 'Framework Copy response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkCopy400'
+  ResponseFrameworkCopy400:
+    description: Response of the Framewrk copy on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  FrameworkCopy200Response:
+    description: 'Framework copy response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkCopy200'
+  ResponseFrameworkCopy200:
+    description: Response of the Framework copy.
+    properties:
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the Framework update.
+  CreateCategoryInstanceRequest:
+    description: Category Instance create Request
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestCategoryInstanceCreate'
+  RequestCategoryInstanceCreate:
+    description: Request map of CategoryInstance Create api.
+    properties:
+      request: 
+        type: object
+        properties:
+          category:
+            type: object
+            properties:
+              code:
+                description: ''
+                type: string
+              name:
+                description: ''
+                type: string
+              description:
+                description: ''
+                type: string
+  CategoryInstanceCreate400Response:
+    description: 'CategoryInstance Create response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceCreate400'
+  ResponseCategoryInstanceCreate400:
+    description: Response of the CategoryInstance Create on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  CategoryInstanceCreate200Response:
+    description: 'CategoryInstance Create response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceCreate200'
+  ResponseCategoryInstanceCreate200:
+    description: Response of the CategoryInstance Create.
+    properties:
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the CategoryInstance.
+          versionKey:
+            type: string
+            description: versionKey of the Category Instance
+  CategoryInstanceObj:
+    type: object
+    properties:
+      identifier:
+        type: string
+        description: Unique id of the Category Instance across sunbird installations.
+      name:
+        type: string
+        description: Name of the Category Instance.
+      code:
+        type: string
+        description: This is same as identifier.
+      description: 
+        type: string
+        description: Description of the Category Instance.
+      consumerId:
+        type: string
+        description: consumerId.
+      channel:
+        type: string
+        description: Channel who created this Category Instance.
+      createdOn:
+        type: string
+        description: Creation date of the Category Instance
+      versionKey:
+        type: string
+        description: Version key of the Category Instance
+      appId:
+        type: string
+        description: AppId of the Category Instance
+      lastUpdatedOn:
+        type: string
+        description: Last Updation date of the Category Instance.
+      status:
+        type: string
+        description: Status of the Category Instance
+      frameworks:
+        type: array
+        description: Frameworks with which Category Instance is associated
+        items:
+          type: object
+      channels:
+        type: array
+        description: Channels with which Category Instance is associated
+        items:
+          type: object
+  ResponseCategoryInstanceGet200:
+    description: Response of the CategoryInstance get.
+    properties:
+      result:
+        type: object
+        properties:
+          category:
+            $ref: '#/definitions/CategoryInstanceObj'
+  CategoryInstanceGet200Response:
+    description: 'CategoryInstance get response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceGet200'
+  CategoryInstanceGet400Response:
+    description: 'CategoryInstance Get response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceGet400'
+  ResponseCategoryInstanceGet400:
+    description: Response of the CategoryInstance Get on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  UpdateCategoryInstanceRequest:
+    description: CategoryInstance update request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestCategoryInstanceUpdate'
+  RequestCategoryInstanceUpdate:
+    description: Request map of CategoryInstance update api.
+    properties:
+      request: 
+        type: object
+        properties:
+          framework:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Name of the Category Instance.
+              description: 
+                type: string
+                description: Description of the Category Instance.
+              frameworks:
+                type: array
+                description: Frameworks with which Category Instance is associated
+                items:
+                  type: object
+              channels:
+                type: array
+                description: Channels with which Category Instance is associated
+                items:
+                  type: object
+  CategoryInstanceUpdate400Response:
+    description: 'CategoryInstance Update response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceUpdate400'
+  ResponseCategoryInstanceUpdate400:
+    description: Response of the CategoryInstance Update on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  CategoryInstanceUpdate200Response:
+    description: 'CategoryInstance Update response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceUpdate200'
+  ResponseCategoryInstanceUpdate200:
+    description: Response of the CategoryInstance Update.
+    properties:
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the CategoryInstance.
+          versionKey:
+            type: string
+            description: versionKey of the Category Instance
+  RequestCategoryInstanceSearch:
+    description: Request map of CategoryInstance search api.
+    properties:
+      request:
+        type: object
+        properties:
+          search:
+            type: object
+
+  CategoryInstanceSearchRequest:
+    description: CategoryInstance Search request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestCategoryInstanceSearch'
+  CategoryInstanceSearch400Response:
+    description: 'CategoryInstance Search response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceSearch400'
+  ResponseCategoryInstanceSearch400:
+    description: Response of the CategoryInstance Search on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  CategoryInstanceSearch200Response:
+    description: 'CategoryInstance Search response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseCategoryInstanceSearch200'
+  ResponseCategoryInstanceSearch200:
+    description: Response of the CategoryInstance Search.
+    properties:
+      result:
+        type: object
+        properties:
+          categories:
+            type: array
+            description: List of CategoryInstance
+            items:
+              type: object
+          count:
+            type: number
+            description: Number of CategoryInstance searched.
+  CreateFrameworkTermRequest:
+    description: Framework Term create Request
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkTermCreate'
+  RequestFrameworkTermCreate:
+    description: Request map of FrameworkTerm Create api.
+    properties:
+      request: 
+        type: object
+        properties:
+          term:
+            type: object
+            properties:
+              code:
+                description: ''
+                type: string
+              name:
+                description: ''
+                type: string
+              description:
+                description: ''
+                type: string
+              category:
+                description: ''
+                type: string
+              index:
+                description: ''
+                type: number
+              categoryinstances:
+                type: array
+                description: ''
+                items:
+                  type: object
+              parents:
+                type: array
+                description: ''
+                items:
+                  type: object
+              associationswith:
+                type: array
+                description: ''
+                items:
+                  type: object
+              children:
+                type: array
+                description: ''
+                items:
+                  type: object
+              associations:
+                type: array
+                description: ''
+                items:
+                  type: object
+  FrameworkTermCreate400Response:
+    description: 'Framework Term Create response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermCreate400'
+  ResponseFrameworkTermCreate400:
+    description: Response of the FrameworkTerm Create on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  FrameworkTermCreate200Response:
+    description: 'Framework Term Create response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermCreate200'
+  ResponseFrameworkTermCreate200:
+    description: Response of the FrameworkTerm Create.
+    properties:
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the Framework Term.
+          versionKey:
+            type: string
+            description: versionKey of the Framework Term
+  FrameworkTermObj:
+    type: object
+    properties:
+      identifier:
+        type: string
+        description: Unique id of the Framework Term across sunbird installations.
+      name:
+        type: string
+        description: Name of the Framework Term.
+      code:
+        type: string
+        description: This is same as identifier.
+      description: 
+        type: string
+        description: Description of the Framework Term.
+      consumerId:
+        type: string
+        description: consumerId.
+      channel:
+        type: string
+        description: Channel who created this Framework Term.
+      createdOn:
+        type: string
+        description: Creation date of the Framework Term
+      versionKey:
+        type: string
+        description: Version key of the Framework Term
+      appId:
+        type: string
+        description: AppId of the Framework Term
+      lastUpdatedOn:
+        type: string
+        description: Last Updation date of the Framework Term
+      status:
+        type: string
+        description: Status of the Framework Term
+      categoryinstances:
+        type: array
+        description: Category Instances with which Framework Term is associated
+        items:
+          type: object
+      parents:
+        type: array
+        description: Parent terms
+        items:
+          type: object
+      associationswith:
+        type: array
+        description: Terms from which the current term is associated
+        items:
+          type: object
+      children:
+        type: array
+        description: Child terms
+        items:
+          type: object
+      associations:
+        type: array
+        description: Terms associated with the current term
+        items:
+          type: object
+  ResponseFrameworkTermGet200:
+    description: Response of the FrameworkTerm get.
+    properties:
+      result:
+        type: object
+        properties:
+          category:
+            $ref: '#/definitions/FrameworkTermObj'
+  FrameworkTermGet200Response:
+    description: 'FrameworkTerm get response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermGet200'
+  FrameworkTermGet400Response:
+    description: 'FrameworkTerm Get response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermGet400'
+  ResponseFrameworkTermGet400:
+    description: Response of the FrameworkTerm Get on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  UpdateFrameworkTermRequest:
+    description: FrameworkTerm update request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkTermUpdate'
+  RequestFrameworkTermUpdate:
+    description: Request map of FrameworkTerm update api.
+    properties:
+      request: 
+        type: object
+        properties:
+          term:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Name of the Framework Term.
+              description: 
+                type: string
+                description: Description of the Framework Term.
+              categoryinstances:
+                type: array
+                description: Category Instances with which Framework Term is associated
+                items:
+                  type: object
+              parents:
+                type: array
+                description: Parent terms
+                items:
+                  type: object
+              associationswith:
+                type: array
+                description: Terms from which the current term is associated
+                items:
+                  type: object
+              children:
+                type: array
+                description: Child terms
+                items:
+                  type: object
+              associations:
+                type: array
+                description: Terms associated with the current term
+                items:
+                  type: object
+  FrameworkTermUpdate400Response:
+    description: 'FrameworkTerm Update response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermUpdate400'
+  ResponseFrameworkTermUpdate400:
+    description: Response of the FrameworkTerm Update on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  FrameworkTermUpdate200Response:
+    description: 'CategoryInstance Update response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermUpdate200'
+  ResponseFrameworkTermUpdate200:
+    description: Response of the FrameworkTerm Update.
+    properties:
+      result:
+        type: object
+        properties:
+          node_id:
+            type: string
+            description: Identifier of the FrameworkTerm.
+          versionKey:
+            type: string
+            description: versionKey of the FrameworkTerm
+  RequestFrameworkTermSearch:
+    description: Request map of FrameworkTerm search api.
+    properties:
+      request:
+        type: object
+        properties:
+          search:
+            type: object
+  FrameworkTermSearchRequest:
+    description: FrameworkTerm Search request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkTermSearch'
+  FrameworkTermSearch400Response:
+    description: 'FrameworkTerm Search response for 400.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermSearch400'
+  ResponseFrameworkTermSearch400:
+    description: Response of the FrameworkTerm Search on client error.
+    properties:
+      responseCode:
+        type: string
+        description: 'Error code of the api response.'
+      result:
+        type: object
+        description: 'Empty response code.'
+  FrameworkTermSearch200Response:
+    description: 'FrameworkTerm Search response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkTermSearch200'
+  ResponseFrameworkTermSearch200:
+    description: Response of the FrameworkTerm Search.
+    properties:
+      result:
+        type: object
+        properties:
+          terms:
+            type: array
+            description: List of FrameworkTerm
+            items:
+              type: object
+          count:
+            type: number
+            description: Number of FrameworkTerm searched.

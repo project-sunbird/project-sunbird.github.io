@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js-libs/renderer/plugin/ShapePlugin.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js-libs/renderer/plugin/ShapePlugin.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Plugin to create different shapes on canvas using createJS graphics object.
+ * @class ShapePlugin
+ * @extends EkstepRenderer.Plugin
+ * @author Vinu Kumar V S &lt;vinu.kumar@tarento.com>
+ */
+var ShapePlugin = Plugin.extend({
+     
+     /**
+     * This explains the type of the plugin. 
+     * @member {String} _type.
+     * @memberof ShapePlugin
+     */
+    _type: 'shape',
+
+    /**
+     * This explains plugin is container OR not. 
+     * @member {boolean} _isContainer
+     * @memberof ShapePlugin
+     */
+    _isContainer: false,
+
+    /**
+     * This explains plugin should render on canvas OR not. 
+     * @member {boolean} _render
+     * @memberof ShapePlugin
+     */
+    _render: true,
+
+    /**
+    *   Invoked by framework when plugin instance created/renderered on stage.
+    *   Use this plugin to create different shapes like Square, Circle, Rectangle, Polygon, Star etc..
+    *   @param data {object} data is input object for the shape plugin.
+    *   @memberof ShapePlugin
+    *   @override
+    */
+    initPlugin: function(data) {
+    	this._self = new createjs.Shape();
+    	var graphics = this._self.graphics;
+    	var dims = this.relativeDims();
+
+        if(data.fill) {
+			graphics.beginFill(data.fill);
+		}
+
+        if(data.stroke) {
+			graphics.beginStroke(data.stroke);
+		}
+        if(data['strokeWidth']) {
+          // Content-Editor issue fix for storkeWidth 
+          data['stroke-width'] = data['strokeWidth'];
+        }
+
+        if(data['stroke-width']) {
+            graphics.setStrokeStyle(data['stroke-width']);
+        }
+        // Radius for rounded rectangle
+        var radius = data.radius || 10;
+        data.type = data.type ? data.type.toLowerCase() : 'rect';
+
+        switch(data.type) {
+    		case 'rect':
+    			graphics.dr(0, 0, dims.w, dims.h);
+    			if(data.hitArea) {
+		    		var hit = new createjs.Shape();
+					hit.graphics.beginFill("#000").r(0, 0, dims.w, dims.h);
+					this._self.hitArea = hit;
+		    	}
+    			break;
+            case 'roundrect':
+                graphics.drawRoundRect(0, 0, dims.w, dims.h, radius);
+                if(data.hitArea) {
+                    var hit = new createjs.Shape();
+                    hit.graphics.beginFill("#000").r(0, 0, dims.w, dims.h);
+                    this._self.hitArea = hit;
+                }
+                break;
+    		case 'circle':
+    			graphics.dc(0, 0, dims.r || dims.w);
+    			if(data.hitArea) {
+		    		var hit = new createjs.Shape();
+					hit.graphics.beginFill("#000").dc(0, 0, dims.w);
+					this._self.hitArea = hit;
+		    	}
+    			break;
+            case 'ellipse':
+                graphics.de(0, 0, dims.w, dims.h);
+                if(data.hitArea) {
+                    var hit = new createjs.Shape();
+                    hit.graphics.beginFill("#000").de(0, 0, dims.w, dims.h);
+                    this._self.hitArea = hit;
+                }
+                break;
+    		default:
+                this.drawPolygon(data, dims, graphics);
+    	}
+        // This is required to have border stroke(thick) to have proper close at the end
+        // reference: http://stackoverflow.com/questions/26191634/easeljs-triangle-stroke
+        graphics.cp(); 
+
+        this._self.x = dims.x;
+        this._self.y = dims.y;
+        if(!_.isUndefined(data.opacity))
+            this._self.alpha = data.opacity;
+    },
+    drawBorder : function(){
+
+    },
+    drawPolygon: function(data, dims, graphics) {
+
+        var points = this.getPoints(data);
+
+        if (!points) {
+            console.log("Unsupported shape");
+            return;
+        }
+
+        var end = points[points.length - 1];
+        var x = dims.w * (end.x || 0) / 100;
+        var y = dims.h * (end.y || 0) / 100;
+
+        graphics.moveTo(x, y);
+
+        points.forEach(function(point) {
+            x = dims.w * (point.x || 0) / 100;
+            y = dims.h * (point.y || 0) / 100;
+            graphics.lineTo(x, y);
+        });
+    },
+
+    getPoints: function(data) {
+        var shape = data.type;
+        var sides = data.sides;
+        var corners = data.corners;
+
+        // Check which shape
+        if (shape != 'trapezium') {
+            if (sides) {
+                shape = sides + "polygon";
+            }
+            else if (corners) {
+                shape = corners + "star";
+            }
+        }
+
+        var points;
+
+        // Check if shape is supported
+        if(this.shapes.hasOwnProperty(shape)) {
+            points = this.shapes[shape];
+
+        }
+        // If it is not a built-in, then expect points array from config data
+        else if (data.config.__cdata) {
+            try {
+                var config = JSON.parse(data.config.__cdata);
+                points = config.points;
+            }
+            catch(err) {
+                console.log('Points array not available');
+            }
+        }
+
+        return points;
+    },
+
+    shapes: {
+
+        // Star shapes
+        "4star" : [{"x":100,"y":50},{"x":62.7,"y":62.7},{"x":50,"y":100},{"x":37.3,"y":62.7},{"x":0,"y":50},{"x":37.3,"y":37.3},{"x":50,"y":0},{"x":62.7,"y":37.3}],
+        "5star" : [{"x":50,"y":0},{"x":60.9,"y":35},{"x":100,"y":35},{"x":67.6,"y":60},{"x":79.4,"y":100},{"x":50,"y":72},{"x":20.6,"y":100},{"x":32.4,"y":60},{"x":0,"y":35},{"x":39.1,"y":35}],
+        "6star" : [{"x":50,"y":100},{"x":35,"y":76},{"x":0,"y":75},{"x":20,"y":50},{"x":0,"y":25},{"x":35,"y":24},{"x":50,"y":0},{"x":65,"y":24},{"x":100,"y":25},{"x":80,"y":50},{"x":100,"y":75},{"x":65,"y":76}],
+        "7star" : [{"x":100,"y":59.8},{"x":74,"y":68},{"x":72.9,"y":100},{"x":50.8,"y":80},{"x":29.6,"y":100},{"x":27.1,"y":69.4},{"x":0,"y":62.5},{"x":20.6,"y":44.1},{"x":10,"y":19.9},{"x":36.2,"y":23.3},{"x":48.6,"y":0},{"x":62.3,"y":22.6},{"x":88.2,"y":17.7},{"x":79,"y":42.5}],
+        "8star" : [{"x":100,"y":50},{"x":82.3,"y":63.4},{"x":85.4,"y":85.4},{"x":63.4,"y":82.3},{"x":50,"y":100},{"x":36.6,"y":82.3},{"x":14.6,"y":85.4},{"x":17.7,"y":63.4},{"x":0,"y":50},{"x":17.7,"y":36.6},{"x":14.6,"y":14.6},{"x":36.6,"y":17.7},{"x":50,"y":0},{"x":63.4,"y":17.7},{"x":85.4,"y":14.6},{"x":82.3,"y":36.6}],
+        "9star" : [{"x":100,"y":40.2},{"x":84.6,"y":55.3},{"x":93.8,"y":74},{"x":73.1,"y":76.3},{"x":68.1,"y":100},{"x":50.8,"y":85},{"x":33.9,"y":100},{"x":28.1,"y":77.3},{"x":7.3,"y":75.9},{"x":15.7,"y":56.8},{"x":0,"y":42.4},{"x":19.3,"y":33.2},{"x":17,"y":12.4},{"x":37.3,"y":17.4},{"x":48.9,"y":0},{"x":61.3,"y":16.9},{"x":81.3,"y":11},{"x":79.9,"y":31.8}],
+        "10star" : [{"x":100,"y":65.5},{"x":78.3,"y":70.6},{"x":79.4,"y":90.5},{"x":60.8,"y":83.3},{"x":50,"y":100},{"x":39.2,"y":83.3},{"x":20.6,"y":90.5},{"x":21.7,"y":70.6},{"x":0,"y":65.5},{"x":15,"y":50},{"x":0,"y":34.5},{"x":21.7,"y":29.4},{"x":20.6,"y":9.5},{"x":39.2,"y":16.7},{"x":50,"y":0},{"x":60.8,"y":16.7},{"x":79.4,"y":9.5},{"x":78.3,"y":29.4},{"x":100,"y":34.5},{"x":85,"y":50}],
+
+        // Regular polygons
+        "3polygon" : [{"x":50,"y":0},{"x":100,"y":100},{"x":0,"y":100}],
+        "4polygon" : [{"x":50,"y":0},{"x":100,"y":50},{"x":50,"y":100},{"x":0,"y":50}],
+        "5polygon" : [{"x":50,"y":0},{"x":100,"y":34.5},{"x":79.4,"y":100},{"x":20.6,"y":100},{"x":0,"y":34.5}],
+        "6polygon" : [{"x":100,"y":50},{"x":75,"y":100},{"x":25,"y":100},{"x":0,"y":50},{"x":25,"y":0},{"x":75,"y":0}],
+        "7polygon" : [{"x":50,"y":0},{"x":89.1,"y":18.8},{"x":100,"y":61.1},{"x":71.7,"y":100},{"x":28.3,"y":100},{"x":0,"y":61.1},{"x":10.9,"y":18.8}],
+        "8polygon" : [{"x":100,"y":69.1},{"x":69.1,"y":100},{"x":30.9,"y":100},{"x":0,"y":69.1},{"x":0,"y":30.9},{"x":30.9,"y":0},{"x":69.1,"y":0},{"x":100,"y":30.9}],
+        "9polygon" : [{"x":50,"y":0},{"x":82.1,"y":11.7},{"x":100,"y":41.3},{"x":93.3,"y":75},{"x":67.1,"y":100},{"x":32.9,"y":100},{"x":6.7,"y":75},{"x":0,"y":41.3},{"x":17.9,"y":11.7}],
+        "10polygon": [{"x":100,"y":50},{"x":90.5,"y":79.4},{"x":65.5,"y":100},{"x":34.5,"y":100},{"x":9.5,"y":79.4},{"x":0,"y":50},{"x":9.5,"y":20.6},{"x":34.5,"y":0},{"x":65.5,"y":0},{"x":90.5,"y":20.6}],
+
+        // Other convex polygons
+        "trapezium" : [{"x":25,"y":0},{"x":75,"y":0},{"x":100,"y":100},{"x":0,"y":100}]
+    }
+});
+PluginManager.registerPlugin('shape', ShapePlugin);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AudioPlugin.html">AudioPlugin</a></li><li><a href="ecmlRenderer.html">ecmlRenderer</a></li><li><a href="EkstepRendererAPI.html">EkstepRendererAPI</a></li><li><a href="EkstepRendererEvents.html">EkstepRendererEvents</a></li><li><a href="EmbedPlugin.html">EmbedPlugin</a></li><li><a href="epubRenderer.html">epubRenderer</a></li><li><a href="ImagePlugin.html">ImagePlugin</a></li><li><a href="MCQPlugin.html">MCQPlugin</a></li><li><a href="MTFPlugin.html">MTFPlugin</a></li><li><a href="OptionPlugin.html">OptionPlugin</a></li><li><a href="org.ekstep.contentrenderer.baseEndepage.html">baseEndepage</a></li><li><a href="org.ekstep.contentrenderer.baseLauncher..html">baseLauncher.</a></li><li><a href="ShapePlugin.html">ShapePlugin</a></li><li><a href="TelemetryPlugin.html">TelemetryPlugin</a></li><li><a href="TextPlugin.html">TextPlugin</a></li><li><a href="ThemePlugin.html">ThemePlugin</a></li><li><a href="VideoPlugin.html">VideoPlugin</a></li></ul><h3>Events</h3><ul><li><a href="-_org.ekstep.launcher_.html#.event:'renderer.player.init'">'renderer.player.init'</a></li><li><a href="-_org.ekstep.launcher_.html#.event:'renderer:content:replay'">'renderer:content:replay'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:content:end'">'renderer:content:end'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:launcher:load'">'renderer:launcher:load'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:player:init'">'renderer:player:init'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:player:show'">'renderer:player:show'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:repo:create'">'renderer:repo:create'</a></li><li><a href="EkstepRendererEvents.html#.event:'telemetryPlugin:intialize'">'telemetryPlugin:intialize'</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:endpage:hide">renderer:endpage:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:endpage:show">renderer:endpage:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:toast:show">renderer:toast:show</a></li><li><a href="global.html#event:plugin:errorwhihcisbeingdispatchingfromthepluginframework">plugin:error whihc is being dispatching from the plugin framework</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addInstance">addInstance</a></li><li><a href="global.html#addToGameArea">addToGameArea</a></li><li><a href="global.html#content_renderer">content_renderer</a></li><li><a href="global.html#createInstance">createInstance</a></li><li><a href="global.html#endTelemetry">endTelemetry</a></li><li><a href="global.html#getGameArea">getGameArea</a></li><li><a href="global.html#getLauncherDom">getLauncherDom</a></li><li><a href="global.html#heartBeatEvent">heartBeatEvent</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#isAvailable">isAvailable</a></li><li><a href="global.html#progres">progres</a></li><li><a href="global.html#resetDomElement">resetDomElement</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#startTelemetry">startTelemetry</a></li><li><a href="global.html#throwError">throwError</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Mar 27 2018 10:58:45 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
