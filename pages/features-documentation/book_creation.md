@@ -102,7 +102,7 @@ sibling node, refer Exploring TOC Structure
     <td>On clicking child node, the details are displayed on the action pane
       <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook <br>2. Enter <b>Description</b> <br>3. Select the <b>Concepts</b> associated with the heading <br>4. Enter <b>Keywords</b> <br>5. Enter the <b>DIAL code</b>. Using DIAL code link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator  
     </td>
-      <td><img src="pages/features-documentation/images/heading_details.png"></td>
+      <td><img src="pages/features-documentation/images/book/heading_metadata.png"></td>
   </tr>
   </table>
   
@@ -117,12 +117,12 @@ sibling node, refer Exploring TOC Structure
     <td>Enter the code from the list of DIAL codes that correspond to the book being created
       <br>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
     </td>
-      <td><img src="pages/features-documentation/images/DIAL_code1.png"></td>
+      <td><img src="pages/features-documentation/images/book/dial_code1.png"></td>
   </tr>
   <tr>
     <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code <br>3. Click <b>Edit</b> to enter the right DIAL code
     </td>
-      <td><img src="pages/features-documentation/images/DIAL_code2.png"></td>
+      <td><img src="pages/features-documentation/images/book/dial_code1.png"></td>
   </tr>
   </table>
 
