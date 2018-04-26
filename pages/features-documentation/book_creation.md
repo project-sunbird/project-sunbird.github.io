@@ -103,7 +103,7 @@ sibling node, refer Exploring TOC Structure
       <td><img src="pages/features-documentation/images/book/heading_metadata.png"></td>
   </tr>
   </table>
-  
+    
 ### DIAL Code Details
 
 <table>
