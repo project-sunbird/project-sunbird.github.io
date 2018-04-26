@@ -28,11 +28,11 @@ Organization administrators can use their registered credentials and add other o
 
 ## Uploading Organizations
 
- 1.The upload organizations page is displayed<br>
- 2.Download the csv file for reference<br>
- 3.You can add or upload details of up to 199 organizations at a time in one csv file<br>
- 4.Enter each organization's name in a separate row<br>
- 5. Descriptions and valid values for each columns are as listed below:
+1. The upload organizations page is displayed
+2. Download the csv file for reference
+3. You can add or upload details of up to 199 organizations at a time in one csv file
+4. Enter each organization's name in a separate row
+5. Descriptions and valid values for each columns are as listed below:
 
 	Sl.No |Column Name  |Description  |Valid Value  |Column Type
 	------|-------------|-------------|-------------|-------------
@@ -52,3 +52,29 @@ Organization administrators can use their registered credentials and add other o
 7. Click **UPLOAD ORGANIZATIONS CSV**. The explorer window is displayed
 8. Select the saved csv file and click **Open**
 9. On successful file upload, a process ID will be generated, else an error message is displayed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
