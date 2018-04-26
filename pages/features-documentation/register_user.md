@@ -32,9 +32,9 @@ Organization administrators can use their registered credentials and add individ
 3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here **OR**<br/>
 4. Enter **OrgID**. Unique ID of the admin organization must be entered here<br/>
     
-     - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> **OR**
+     - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> OR
       - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
-
+      
 5. Download the csv file for reference<br/>
 6. You can add or upload details of up to 199 users at a time in one csv file<br/>
 7. You can upload users of only a single organization in one csv file<br/>
@@ -62,9 +62,9 @@ Organization administrators can use their registered credentials and add individ
    18  |subject  |Subjects taught by the user |Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali |Optional
 
 ***Note***: 
-   You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column
+You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column
 
-9.Click **UPLOAD USERS CSV**. The explorer window is displayed<br>
-10.Select the csv file and click **Open**<br>
-11.The csv file is uploaded<br>
+9.Click **UPLOAD USERS CSV**.The explorer window is displayed<br/>
+10.Select the csv file and click **Open**<br/>
+11.The csv file is uploaded<br/>
 12.On successful file upload, a process ID is generated, else an error message is displayed

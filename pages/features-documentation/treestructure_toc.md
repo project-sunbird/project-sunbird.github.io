@@ -37,13 +37,14 @@ Activity in Chapter 2 | Child Node  | My Fun Corner
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You have clicked on any one of the following: <br>&emsp;a)<b>Book<b> <br>&emsp;b)<b>Course<b> <br>&emsp;c)<b>Collection<b> <br>&emsp;d)<b>Lesson Plan<b> <br> <b>Note</b>: The images used to explain the node structure in this section correspond to adding nodes in collection. This is used for reference purpose. Screens vary slightly for each content type, viz., book, collection, course, lesson plan
+    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You have clicked on any one of the following: <br>&emsp;a)<b>Book</b> <br>&emsp;b)<b>Course</b> <br>&emsp;c)<b>Collection</b> <br>&emsp;d)<b>Lesson Plan</b> <br> <b>Note:</b> The images used to explain the node structure in this section correspond to adding nodes in collection. This is used for reference purpose. Screens vary slightly for each content type, viz., book, collection, course, lesson plan
     </td>
     <td><img src="pages/features-documentation/images/toc_workspce.png"></td>
   </tr>
     </table>
 
 ## Adding Child Node
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
