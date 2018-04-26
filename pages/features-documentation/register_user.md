@@ -65,4 +65,4 @@ Organization administrators can use their registered credentials and add individ
 7. Click **UPLOAD USERS CSV**. The explorer window is displayed
 8. Select the csv file and click **Open**
 9. The csv file is uploaded
-10. On successful file upload, a process ID will be generated, else an error message is displayed
+10. On successful file upload, a process ID is generated, else an error message is displayed
