@@ -115,12 +115,12 @@ sibling node, refer Exploring TOC Structure
     <td>Enter the code from the list of DIAL codes that correspond to the book being created
       <br>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
     </td>
-      <td><img src="pages/features-documentation/images/book/dial_code1.png" width="100" height="20"></td>
+      <td><img src="pages/features-documentation/images/book/dial_code1.png"></td>
   </tr>
   <tr>
     <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code <br>3. Click <b>Edit</b> to enter the right DIAL code
     </td>
-      <td><img src="pages/features-documentation/images/book/dial_code2.png" width="100" height="20"></td>
+      <td><img src="pages/features-documentation/images/book/dial_code2.png"></td>
     </tr>
   </table>
 
