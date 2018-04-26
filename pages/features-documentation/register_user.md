@@ -27,8 +27,8 @@ Organization administrators can use their registered credentials and add individ
 
 ## Uploading Users
 
-1.The **Upload Users** page is displayed 
-2.Enter Provider details. **Channel ID** of the organization administrator must be entered here
+1. The **Upload Users** page is displayed 
+2. Enter Provider details. **Channel ID** of the organization administrator must be entered here
 3.Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here <br /> **OR**
 4.Enter **OrgID**. Unique ID of the admin organization must be entered here
     
