@@ -1,0 +1,522 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Locations api(s)
+  description: |-
+    Location is an important entity to physically verify the existence, for location code must be unique.
+     - recognize user existence
+     - recognize org existence
+     - used to group user based on different location attribute
+host: staging.open-sunbird.org
+basePath: /api/v1/data/location
+securityDefinitions:
+  auth:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: 'https://staging.open-sunbird.org/api/v1/data'
+    scopes: {}
+    x-skip-client-authentication: false
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description: |-
+        This API is used to create locations inside sunbird.
+
+           - It is a must to provide values for all mandatory parameters 
+           
+      summary: Create location
+      tags:
+        - Location  API(s)
+      operationId: CreatePost
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: |-
+            The body refers to the format of the request.
+              - The body contains metadata about the create location
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest
+              - $ref: '#/definitions/CreateLocationRequest'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any location API, you require authorization. Raise a
+            request to the administrator for the use of the API. You will
+            receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: '''SUCCESS. The **create location** operation was successful!'''
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/locationCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Create location** operation failed !The possible
+            reason for failure is that you may have missed providing input for a
+            mandatory parameter.
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '404':
+          description: >-
+            Resource not found,**Create Location ** operation failed !The
+            possible reason for failure is that requested resource not found.
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These
+            errors are tracked automatically, but if the problem persists feel
+            free to contact us. In the meantime, try refreshing.
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update:
+    patch:
+      description: >-
+        This API is associated with updating location data, It's not allowed to update the type of location once created. if user need to chnage the type then better create a new location.
+        **_/location/update/_** endpoint executes the request based on
+        parameters provided as metadata in the request body.
+           - It is mandatory to provide values for the required fields, mandatory fields cannot be null or empty
+      summary: update location
+      tags:
+        - Location  API(s)
+      operationId: locationUpdate
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: |-
+            The body refers to the format of the request.
+              - The body contains metadata about the location to be updated
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest
+              - $ref: '#/definitions/UpdateLocationRequest'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any location API, you require authorization. Raise a
+            request to the administrator for the use of the API. You will
+            receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: '''SUCCESS. The **Update location** operation was successful!'''
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/Result'
+        '400':
+          description: >-
+            BAD REQUEST,**Update location** operation failed !The possible
+            reason for failure is that you may have missed providing input for a
+            mandatory parameter. 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These
+            errors are tracked automatically, but if the problem persists feel
+            free to contact us. In the meantime, try refreshing.
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /search:
+    post:
+      description: >-
+        This API is associated with searching location based on passed request
+        body.
+           - It is mandatory to provide values for the required fields, mandatory fields cannot be null or empty
+      summary: Location Search
+      tags:
+        - Location  API(s)
+      operationId: searchLocation
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: |-
+            The body refers to the format of the request.
+              - The body contains metadata about the location searched
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest
+              - $ref: '#/definitions/SearchLocationRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible
+            media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any Location API, you require authorization. Raise a
+            request to the administrator for the use of the API. You will
+            receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: '''SUCCESS. The **Location searchs** operation was successful!'''
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationListResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Location search*** operation failed !The possible
+            reason for failure is that you may have missed providing input for a
+            mandatory parameter. 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These
+            errors are tracked automatically, but if the problem persists feel
+            free to contact us. In the meantime, try refreshing.
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  '/delete/{locationId}':
+    delete:
+      description: |-
+        This API is associated with deleting a location by a specific ID.
+           - **_/location/delete/{locationId}_** endpoint executes the **Delete Issuer by ID** request based on parameters provided as metadata in the request body
+           - It is mandatory to provide values for the required parameters 
+           - Mandatory fields cannot be null or empty 
+      summary: Delete location by ID
+      tags:
+        - Location  API(s)
+      operationId: DeleteLocationById
+      produces:
+        - application/json
+      parameters:
+        - name: locationId
+          in: path
+          required: true
+          type: string
+          description: Please append a valid location ID To the Request URL
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any Location API, you require authorization. Raise a
+            request to the administrator for the use of the API. You will
+            receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: '''SUCCESS. The **Delete location by ID** operation was successful!'''
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/Result'
+        '400':
+          description: >-
+            BAD REQUEST,**Delete location by ID** operation failed !The possible
+            reason for failure is that you may have missed providing input for a
+            mandatory parameter. 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR ! Looks like something went wrong! These
+            errors are tracked automatically, but if the problem persists feel
+            free to contact us. In the meantime, try refreshing.
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  UpdateLocationRequest:
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/LocationRequest'
+  LocationRequest:
+    type: object
+    properties:
+      id:
+        type: string
+        description: identifier of the location
+      name:
+        type: string
+        description: name of the location
+      code:
+        type: string
+        description: location code
+      parentCode:
+        type: string
+        description: code of the parent to uniquely identify it.
+      parentId:
+        type: string
+        description: System generated id of the parent to identify the parent
+    required:
+      - id
+      - atlease any one attribute apart from id
+  CreateLocationRequest:
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+  Request:
+    type: object
+    properties:
+      name:
+        type: string
+        description: name of the location
+      code:
+        type: string
+        description: unique code of the location
+      parentCode:
+        type: string
+        description: >-
+          reference of parent code it may be state/district/block code, in case
+          of no direct parent then pass as empty
+      parentId:
+        type: string
+        description: >-
+          reference of parent id if any, in case of no direct parent then pass
+          as empty
+      type:
+        type: string
+        description: 'type refer to valid location types: state,district,block,cluster '
+    required:
+      - name
+      - code
+      - type
+  Result:
+    title: Result
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/deleteResp'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: API Identifier
+      ver:
+        type: string
+        description: API version information
+      ts:
+        type: string
+        description: API execution timespan
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: string
+        description: ok
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: Response Message Id
+      msgid:
+        type: string
+        description: Message Id
+      err:
+        type: string
+        description: Error Code
+      status:
+        type: string
+        description: Response Status
+      errmsg:
+        type: string
+        description: Error Message
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Empty Result
+  deleteResp:
+    title: response on deleting location
+    type: object
+    properties:
+      status:
+        type: string
+        description: success or failure
+  LocationErrorResponse:
+    title: Create Content Error Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  SearchLocationRequest:
+    title: Request for search location
+    type: object
+    properties:
+      request:
+        type: object
+        properties:
+          query:
+            type: string
+            description: any free text search
+          filters:
+            type: object
+            properties:
+              objectType:
+                type: string
+                description: >-
+                  user can pass any valid key and value as single string or an
+                  array
+              parentId:
+                type: string
+                description: >-
+                  user can pass any valid key and value as single string or an
+                  array
+              code:
+                type: string
+                description: 'code of state , district or any location type'
+          limit:
+            type: integer
+            description: how may recored user want to get
+          offset:
+            type: integer
+            description: after which recoreds user want to read
+  locationCreateResponse:
+    title: contains response for location create
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          id:
+            type: string
+            description: location created id in case of success
+          status:
+            type: string
+            description: success or failure for a particular location
+  LocationListResponse:
+    title: this will contains response object of location list
+    type: object
+    properties:
+      result:
+        type: object
+        $ref: '#/definitions/LocationList'
+  LocationList:
+    title: contains list of locations
+    properties:
+      locations:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/LocationResponse'
+  LocationResponse:
+    title: contains response of single Location object
+    type: object
+    properties:
+      result:
+        type: object
+        $ref: '#/definitions/Location'
+  Location:
+    title: Data model for location object.
+    type: object
+    properties:
+      name:
+        type: string
+        description: name of the location
+      code:
+        type: string
+        description: code to uniquely identify the location
+      id:
+        type: string
+        description: auto generated location id
+      parentId:
+        type: string
+        description: >-
+          reference of the parent for that location ex:for district state id
+          will be the parent id
+      objectType:
+        type: string
+        description: >-
+          define which kind of location object it is. is it state or district or
+          block or cluster
