@@ -83,9 +83,9 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <td> 1. To add headings to a book, click <b>New Child</b> node on the left navigation pane 
       <br>2. On clicking child node, a heading is added to the Table of Contents pane. For details on child node,
 sibling node, refer Exploring TOC Structure
-<br>3. Click ADD RESOURCE to add content to the headings. For details on adding resources, refer Adding Resource
+<br>3. Click ADD RESOURCE to add content to the headings. For details on adding resources, refer <a href="features-documentation/adding_resources" target="_blank"Adding Resource</a>
      </td>
-      <td><img src="pages/features-documentation/images/adding_child.png"></td>
+      <td><img src="pages/features-documentation/images/book/adding_child.png"></td>
   </tr>
   </table>
   
