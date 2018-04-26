@@ -20,13 +20,14 @@ Organization administrators can use their registered credentials and add other o
         <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-     <td>
+     <td><ol>
             <li>You are logged in</li> 
             <li>You are currently on <strong>Profile</strong> page</li>
             <li> You want to upload organizations</li>
             <li>You have clicked on <b>Upload Organizations</li><br> 
             
-   <b>Note</b>: Ensure that the system administrator of your organization has created the required organization types on the portal. For details on how to create organization types, refer <a href="features-documentation/create_orgtype" target="_blank">Organization Type Creation</a>      
+   <b>Note</b>: Ensure that the system administrator of your organization has created the required organization types on the portal. For details on how to create organization types, refer <a href="features-documentation/create_orgtype" target="_blank">Organization Type Creation</a> 
+   </ol>
     </td>
     <td><img src="pages/features-documentation/images/upldorg_prereqsite.png">
     </td>
