@@ -20,10 +20,10 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
   <tr>
     <td>1. You are logged in <br>2. You have clicked on <b>Profile</b> tab <br>3. You want to view your workspace, you have clicked on <b>View your workspace</b> 
        </td>
-      <td><img src="pages/features-documentation/images/book_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/workspace/prerequisite2.png"></td>
     <tr>
       <td>1. Alternatively, you can click <b>Workspace</b> from the profile drop-down menu</td>
-      <td><img src="pages/features-documentation/images/book_workspace.png"></td>
+      <<td><img src="pages/features-documentation/images/workspace/prerequisite1.png"></td>
   </tr>
   </table>
 
