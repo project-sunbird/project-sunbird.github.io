@@ -57,7 +57,7 @@ Organization administrators can use their registered credentials and add other o
 	10  |preferredLanguage  |Language preferences for the organization, if any  |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu	|Optional
 	11  |contactDetail  |Organization’s contact detail  |Enter details within curly brackets in double quotes. Separate each detail with a comma, and detail name and corresponding value with a colon (:). <br>For example [{"address":"Vizianagaram","phone":"8088407418","fax":"abc@gmail.com"}]	|Optional
 
-6.**Save** the csv file to your computer\
+6.**Save** the .csv file to your computer\
 7.Click **UPLOAD ORGANIZATIONS CSV**. The explorer window is displayed\
-8.Select the saved csv file and click **Open**\
+8.Select the saved .csv file and click **Open**\
 9.On successful file upload, a process ID will be generated, else an error message is displayed\
