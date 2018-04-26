@@ -64,7 +64,7 @@ Organization administrators can use their registered credentials and add individ
 ***Note***: 
    You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column
 
-9.Click **UPLOAD USERS CSV**. The explorer window is displayed<br/>
+9.Click **UPLOAD USERS CSV**. <br>The explorer window is displayed<br/>
 10.Select the csv file and click **Open**<br/>
 11.The csv file is uploaded<br/>
 12.On successful file upload, a process ID is generated, else an error message is displayed
