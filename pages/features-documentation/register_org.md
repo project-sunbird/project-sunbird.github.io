@@ -33,7 +33,8 @@ Organization administrators can use their registered credentials and add other o
  3.You can add or upload details of up to 199 organizations at a time in one csv file<br>
  4.Enter each organization's name in a separate row<br>
  5.Descriptions and valid values for each columns are as listed below:<br>
-	Sl.No |Column Name  |Description  |Valid Value  |Column Type
+ 
+ Sl.No |Column Name  |Description  |Valid Value  |Column Type
 	------|-------------|-------------|-------------|-------------
 	1 |Org Name  |Organization name  |Alphanumeric |Mandatory
 	2 |isRootOrg  |Whether the  organization has the authority to upload other organizations |TRUE, FALSE	|Optional
