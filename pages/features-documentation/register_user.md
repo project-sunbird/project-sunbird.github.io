@@ -27,12 +27,12 @@ Organization administrators can use their registered credentials and add individ
 
 ## Uploading Users
 
-1. The **Upload Users** page is displayed<br/>
-2. Enter Provider details. **Channel ID** of the organization administrator must be entered here<br/>
+1.The **Upload Users** page is displayed<br/>
+2.Enter Provider details. **Channel ID** of the organization administrator must be entered here<br/>
 3. Enter **External ID**. Unique ID of the user that has to be uploaded must be entered here **OR**<br/>
 4. Enter **OrgID**. Unique ID of the admin organization must be entered here<br/>
     
-     - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> <b>OR<b>
+     - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. <br /> OR
       - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
 
 5. Download the csv file for reference<br/>
