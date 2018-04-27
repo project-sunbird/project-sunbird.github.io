@@ -8,7 +8,7 @@ keywords: content reviewer, review content
 published: true
 allowSearch: true
 ---
-To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only they have undergone a review.
+To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review.
 Organizations can assign reviewer roles to users and set guidelines to ensure the quality of content being uploaded. However, there are some standard guidelines that have to be adhered by anyone who uploads
 content on Sunbird. To read more on review guidelines, refer Review Guidelines
 
@@ -27,7 +27,7 @@ This page contains the details of the procedure on how to review and publish con
    <li>You are on the <b>Profile</b> tab
    <li>You have clicked on <b>View your workspace</b></ol>
       </td>
-      <td><img src="pages/features-documentation/images/contenteditor/profile1.png"></td>
+      <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png"></td>
   </tr>
  </table>
   
@@ -42,15 +42,16 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   <tr>
     <td><ol>
-     <li>Click Up for Review
+     <li>Click <b>Up for Review</b>
      <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept etc.
      <li>Alternatively, apply filters to search for content
      <li>Click <b>Sort by</b> to sort content. Sort content based on:
        <ol><li>Last updated date
        <li>Last created date
-       <li>Alphabetically </ol></ol>
+       <li>Alphabetically </ol>
+     <li>Click on the page navigation to access the required list on a particular page</ol>
    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
   </tr>
   </table>
 
