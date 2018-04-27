@@ -30,7 +30,9 @@ In this section of documentation, we discuss the workspace of users who create a
   </table>
 
 ### Understanding your Workspace
+
 The workspace interface varies based on the role assigned to the user. For instance, a book reviewer has only the create book tile, while a content content would have all the tiles viz., collection, course, lesson plan, and, study material. The image used displays all the options in the workspace as it would appear for an organization administrator.
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
