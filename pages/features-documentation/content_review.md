@@ -38,9 +38,9 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   </table>
   
-## Content Editor Parts
+## Review Workspace
   
-  The broad areas of the content editor are:
+  To review the content, reviewers has to perform following 
   
   <table>
   <tr>
@@ -48,8 +48,15 @@ This page contains the details of the procedure on how to review and publish con
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. <b>Tool Bar</b>: A collection of several tools available to create content resources <br> 2. <strong>Preview</strong>: A viewer that allows you see how content will display when published <br> 3. <strong>Right Pane</strong>: A collection of tabs that allow you to customize defaults for tools from the tool bar, add animation or interactive controls and view information about the slide <br> 4. <strong>Working Area</strong>: The slide that is currently being worked upon <br>5. <strong>Slide Sorter</strong>: Use this area to order your slides
-    </td>
+    <td><ol>
+     <li>Click Up for Review
+     <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept etc.
+     <li>Alternatively, apply filters to search for content
+     <li>Click Sort by to sort content. Sort content based on:
+       <ol><li>Last updated date
+       <li>Last created date
+       <li>Alphabetically </ol></ol>
+   </td>
     <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
   </tr>
   </table>
