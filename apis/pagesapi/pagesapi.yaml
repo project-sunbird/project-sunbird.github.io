@@ -118,7 +118,7 @@ paths:
     get:
       description: >-
        This API is associated with fetching the settings of a page.
-          - The **_/all/settings_** endpoint executes the "fetch settings" request based on parameters provided as metadata in the request body
+          - The **_/section/list_** endpoint executes the "fetch settings" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Fetch Page Settings
       tags:
@@ -206,7 +206,7 @@ paths:
     get:
       description: >-
        This API is associated with fetching specific resources.
-          - The **_/Resource_** endpoint executes the "get specific page resources" request based on parameters provided as metadata in the request body
+          - The **_/read/{pageName}_** endpoint executes the "get specific page resources" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Get Specific Page Resources
       tags:
@@ -288,7 +288,7 @@ paths:
     post:
       description:  >-
        This API is associated with creating a new section on a page.
-          - The **_/org/v1/location/create_** endpoint executes the "create new section" request based on parameters provided as metadata in the request body
+          - The **_/section/create_** endpoint executes the "create new section" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Create Page Section
       tags:
@@ -536,7 +536,7 @@ paths:
     get:
       description:  >-
        This API is associated with fetching specific section details.
-          - The **_/section/{SectionId}_** endpoint executes the "fetch section" request based on parameters provided as metadata in the request body
+          - The **_/section/read/{sectionId}_** endpoint executes the "fetch section" request based on parameters provided as metadata in the request body
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
       summary: Fetch Section Details by Id
