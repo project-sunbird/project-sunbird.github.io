@@ -12,7 +12,6 @@ info:
      - create
      - update
      - search 
-     - delete
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
@@ -244,62 +243,6 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  '/delete/{location_ID}':
-    delete:
-      description: >-
-        This API is associated with deleting specific location data pertaining to user or organization. The deletion is done based on the criteria specified as a part of the request body
-        - **_/delete/{location_ID}_** endpoint executes the request based on parameters provided as metadata in the request body
-        
-        - Required fields cannot be left null or empty
-      summary: Delete Location by ID
-      tags:
-        - Location  API(s)
-      operationId: DeleteLocationById
-      produces:
-        - application/json
-      parameters:
-        - name: location_ID
-          in: path
-          required: true
-          type: string
-          description: Append a valid location ID to the Request URL
-        - name: Authorization
-          in: header
-          required: true
-          type: string
-          description: >-
-            To make use of any location API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.
-      responses:
-        '200':
-          description: 'SUCCESS. The **Delete location by ID** operation was successful!'
-          schema:
-            allOf:
-              - $ref: >-
-                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
-              - $ref: '#/definitions/Result'
-        '400':
-          description:  >-
-            RESOURCE NOT FOUND.**Delete Location by ID** operation failed !The possible reason for the failure is that requested resource could not be found 
-          schema:
-            allOf:
-              - $ref: >-
-                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
-              - $ref: '#/definitions/LocationErrorResponse'
-        '500':
-          description: >-
-            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
-          schema:
-            allOf:
-              - $ref: >-
-                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
-              - $ref: '#/definitions/LocationErrorResponse'
-      security:
-        - auth: []
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
 definitions:
   UpdateLocationRequest:
     type: object
@@ -322,14 +265,14 @@ definitions:
       parentCode:
         type: string
         description: >- 
-          The alphanumeric string to uniquely identify the parent of the location 
+          The alphanumeric string to uniquely identify the location of the parent organization 
           
           - In case a user belongs to the organization with location as state|district|block, that organization is treated as (parent) 
           - In case a sub organization belongs to a root organization with location as state|district|block, that organization is treated as (parent)
       parentId:
         type: string
         description: >-
-         This is a system generated ID that uniquely identifies the parent (organization) for example: For a district, state ID will be the parent ID
+          This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID
     required:
       - id
       - atlease any one attribute apart from id
@@ -347,19 +290,19 @@ definitions:
       code:
         type: string
         description: >- 
-                  The alphanumeric string to represent a unique code of the location and the code can be either the code of state , district or any location type
+                  The alphanumeric string to represent a unique code of the location and the code can be either the code of state , district or any location type and it must be unique. for system AP, ap ,Ap,aP all four will be treated as some code.
       parentCode:
         type: string
-        description: >-
-          The alphanumeric string to uniquely identify the parent of the location 
+        description: >- 
+          The alphanumeric string to uniquely identify the location of the parent organization 
           
           - In case a user belongs to the organization with location as state|district|block, that organization is treated as (parent) 
-          - In case a sub organization belongs to a root organization with location as state|district|block, that organization is treated as (parent) 
+          - In case a sub organization belongs to a root organization with location as state|district|block, that organization is treated as (parent)
           - In case of non availability of the parent entity, you can pass the parameter as empty
       parentId:
         type: string
         description: >-
-          This is a system generated ID that uniquely identifies the parent (organization) for example: For a district, state ID will be the parent ID
+         This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID.
       type:
         type: string
         description: 'type refer to valid location types: state,district,block,cluster '
@@ -450,7 +393,7 @@ definitions:
               parentId:
                 type: string
                 description: >-
-                  This is a system generated ID that uniquely identifies the parent (organization) for example: For a district, state ID will be the parent ID
+                  This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID
               code:
                 type: string
                 description: >- 
@@ -490,7 +433,7 @@ definitions:
           type: object
           $ref: '#/definitions/LocationResponse'
   LocationResponse:
-    title: This is the response bosy of single Location object
+    title: This is the response body of single Location object
     type: object
     properties:
       result:
@@ -512,9 +455,9 @@ definitions:
         description: This is a system generated ID that uniquely identifies the parent (organization)
       parentId:
         type: string
-        description: >- 
-          This is a system generated ID that uniquely identifies the parent (organization) for example: For a district state ID will be the parent ID
-      objectType:
+        description: >-
+          This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID
+      type:
         type: string
         description: >-
           Uniquely identifies the kind of location object, for instance the values can be state or district or block or cluster
