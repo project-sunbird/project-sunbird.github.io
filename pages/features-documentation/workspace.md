@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 ## Overview
-There are various user roles on Sunbird. Each user has a unique role to play in the organization they are a part of. Organization administrators assign one or many responsibilities to users on Sunbird. Extending the literal meaning of workspace, a space to work, Sunbird provides a unique workspace to suit the work needs of each user.  
+There are various user roles on Sunbird. Each user has a unique role to play in their respective organizations. Organization administrators assign one or many responsibilities to users on Sunbird. Extending the literal meaning of workspace, a space to work, Sunbird provides a unique workspace to suit the work needs of each user.  
 
 In this section of documentation, we discuss the workspace of users who create and curate content on Sunbird.
 
