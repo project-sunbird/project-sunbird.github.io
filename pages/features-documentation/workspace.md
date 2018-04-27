@@ -27,7 +27,7 @@ In this section of documentation, we discuss the workspace of users who create a
   </tr>
     <tr>
       <td>1. Alternatively, you can click <b>Workspace</b> from the profile drop-down menu</td>
-      <<td><img src="pages/features-documentation/images/workspace/prerequisite1.png"></td>
+      <td><img src="pages/features-documentation/images/workspace/prerequisite1.png"></td>
   </tr>
   </table>
 
