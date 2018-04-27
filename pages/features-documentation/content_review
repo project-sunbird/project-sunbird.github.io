@@ -1,23 +1,19 @@
 ---
 type: landing
 directory: features-documentation
-title: Content Editor
-page_title: Content Editor
-description: Features and functionality of the content editor
-keywords: content editor, create course, create content, create lesson, textbook, collection, course
+title: Content Review
+page_title: Content Review
+description: Features and functionality of the content reviewer
+keywords: content reviewer, review content
 published: true
 allowSearch: true
 ---
-Sunbird has an inbuilt content editor with various features that is used to create engaging and interesting study material. 
-Study material can be of different types like: 
+To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only they have undergone a review.
+Organizations can assign reviewer roles to users and set guidelines to ensure the quality of content being uploaded. However, there are some standard guidelines that have to be adhered by anyone who uploads
+content on DIKSHA. To read more on review guidelines, refer Review Guidelines
 
-- Games
-- Story
-- Worksheet
-- Quiz
-- Assessment
-
-This page expalins the features of and how to use the content editor to create any type of Study Material. 
+This page contains the details of the procedure on how to review and publish content on Sunbird
+ 
 ## Prerequisites
 
 <table>
