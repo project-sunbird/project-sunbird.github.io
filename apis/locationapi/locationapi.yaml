@@ -443,7 +443,7 @@ definitions:
           filters:
             type: object
             properties:
-              objectType:
+              type:
                 type: string
                 description: >-
                   Represents any valid key, value that can be passed as single string or an array 
