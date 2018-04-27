@@ -14,6 +14,7 @@ There are various user roles on Sunbird. Each user has a unique role to play in 
 In this section of documentation, we discuss the workspace of users who create and curate content on Sunbird.
 
 ### Prerequisites
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
