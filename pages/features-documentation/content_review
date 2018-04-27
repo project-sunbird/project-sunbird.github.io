@@ -1,0 +1,57 @@
+---
+type: landing
+directory: features-documentation
+title: Content Editor
+page_title: Content Editor
+description: Features and functionality of the content editor
+keywords: content editor, create course, create content, create lesson, textbook, collection, course
+published: true
+allowSearch: true
+---
+Sunbird has an inbuilt content editor with various features that is used to create engaging and interesting study material. 
+Study material can be of different types like: 
+
+- Games
+- Story
+- Worksheet
+- Quiz
+- Assessment
+
+This page expalins the features of and how to use the content editor to create any type of Study Material. 
+## Prerequisites
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. You want to create content
+      resources <br>4. You have clicked the <strong>Study Material</strong> tile
+      </td>
+      <td><img src="pages/features-documentation/images/contenteditor/profile1.png"></td>
+  </tr>
+  <tr>
+    <td> After clicking on the <strong>Study Material</strong> slide, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type 
+      <br> <strong>Note:</strong> You may opt to fill these details later before sending the content for review
+      <br>3. Click <b>Start Creating</b> to create content
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor/create_studymaterial.png"></td>
+  </tr>
+  </table>
+  
+## Content Editor Parts
+  
+  The broad areas of the content editor are:
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. <b>Tool Bar</b>: A collection of several tools available to create content resources <br> 2. <strong>Preview</strong>: A viewer that allows you see how content will display when published <br> 3. <strong>Right Pane</strong>: A collection of tabs that allow you to customize defaults for tools from the tool bar, add animation or interactive controls and view information about the slide <br> 4. <strong>Working Area</strong>: The slide that is currently being worked upon <br>5. <strong>Slide Sorter</strong>: Use this area to order your slides
+    </td>
+    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+  </tr>
+  </table>
