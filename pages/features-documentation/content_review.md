@@ -10,7 +10,7 @@ allowSearch: true
 ---
 To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only they have undergone a review.
 Organizations can assign reviewer roles to users and set guidelines to ensure the quality of content being uploaded. However, there are some standard guidelines that have to be adhered by anyone who uploads
-content on DIKSHA. To read more on review guidelines, refer Review Guidelines
+content on Sunbird. To read more on review guidelines, refer Review Guidelines
 
 This page contains the details of the procedure on how to review and publish content on Sunbird
  
@@ -22,8 +22,10 @@ This page contains the details of the procedure on how to review and publish con
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. You want to create content
-      resources <br>4. You have clicked the <strong>Study Material</strong> tile
+    <td><ol>
+   <li>You are logged in as the content reviewer
+   <li>You are on the <b>Profile</b> tab
+   <li>You have clicked on <b>View your workspace</b></ol>
       </td>
       <td><img src="pages/features-documentation/images/contenteditor/profile1.png"></td>
   </tr>
