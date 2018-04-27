@@ -52,10 +52,34 @@ This page contains the details of the procedure on how to review and publish con
      <li>Click Up for Review
      <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept etc.
      <li>Alternatively, apply filters to search for content
-     <li>Click Sort by to sort content. Sort content based on:
+     <li>Click <b>Sort by</b> to sort content. Sort content based on:
        <ol><li>Last updated date
        <li>Last created date
        <li>Alphabetically </ol></ol>
+   </td>
+    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+  </tr>
+  </table>
+
+## Filter Content
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td><ol>
+     <li>Click Show Filters to apply filters and narrow your search results
+     <li>Select the respective options from the following drop-down menus:
+      <ol><li>Curriculum
+          <li>Subjects
+          <li>Grade
+          <li>Medium
+          <li>Content Types </ol>
+     <li>Click Apply to apply filters and fetch the search results
+     <li>Click Reset to reset selected filter options
+      </ol>
    </td>
     <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
   </tr>
