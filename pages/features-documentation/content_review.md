@@ -84,3 +84,55 @@ This page contains the details of the procedure on how to review and publish con
     <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
   </tr>
   </table>
+  
+  ## Review Content
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td><ol>
+     <li>Click Show Filters to apply filters and narrow your search results
+     <li>Select the respective options from the following drop-down menus:
+      <ol><li>Curriculum
+          <li>Subjects
+          <li>Grade
+          <li>Medium
+          <li>Content Types </ol>
+     <li>Click Apply to apply filters and fetch the search results
+     <li>Click Reset to reset selected filter options
+      </ol>
+   </td>
+    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+  </tr>
+  </table>
+  
+## Publish Content
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+   <td>1. Click <b>Publish</b> to publish the content. 
+      <br> Once the content is successfully published, the creator is notified of the same and the
+    content will be available on Sunbird for view and consumption
+     </td>
+    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+  </tr>
+  </table>
+  
+  ## Reject Content
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+   <td>1. Click Reject to reject the content 
+  <br>Once the content is rejected, the creator is notified of the same and the content is rolled back to draft stage.
+     </td>
+    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+  </tr>
+  </table>
