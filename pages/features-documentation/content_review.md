@@ -31,7 +31,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   <tr>
     <td> After clicking on the <strong>Study Material</strong> slide, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type 
-      <br> <strong>Note:</strong> You may opt to fill these details later before sending the content for review
+      <br> <b>Note</b>: You may opt to fill these details later before sending the content for review
       <br>3. Click <b>Start Creating</b> to create content
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/create_studymaterial.png"></td>
