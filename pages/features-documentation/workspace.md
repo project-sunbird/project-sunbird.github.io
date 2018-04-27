@@ -9,7 +9,9 @@ published: true
 allowSearch: true
 ---
 ## Overview
-Sunbird provides you with a workspace that is only yours. Once you have your own unique profile, you can start using your workspace to create, curate, review, upload and publish different types of  content artifacts using the customizable content editor. You can save your drafts, send them for a review, flag an issue, rework on them as often as you like until you publish it for use by the community.
+There are various user roles on Sunbird. Each user has a unique role to play in the organization they are part of. Organiation administrators assign one or many responsibilities to users on Sunbird. Extending the literal meaning of workspace, a space to work, Sunbird provides a unique workspace to suit the work needs of each user.  
+
+In this section of documentation, we discuss the workspace of users who create and curate content on Sunbird.
 
 ### Prerequisites
 <table>
