@@ -48,10 +48,11 @@ This page contains the details of the procedure on how to review and publish con
      <li>Click <b>Sort by</b> to sort content. Sort content based on:
        <ol>a. Last updated date
         <br>b. Last created date
-       <br>c.Alphabetically </ol>
-     <li>Click on the page navigation to access the required list on a particular page</ol>
+       <br>c. Alphabetically </ol>
+     <li>Select the content you want to review. Refer <a>Review Content and Resources</a>
+      <li>Click on the page navigation to access the required list on a particular page</ol>
    </td>
-    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer1.png"></td>
   </tr>
   </table>
 
@@ -74,11 +75,11 @@ This page contains the details of the procedure on how to review and publish con
      <li>Click Reset to reset selected filter options
       </ol>
    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_filter.png"></td>
   </tr>
   </table>
   
-  ## Review Content
+  ## Review Content and Resources
   <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -86,18 +87,11 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   <tr>
     <td><ol>
-     <li>Click Show Filters to apply filters and narrow your search results
-     <li>Select the respective options from the following drop-down menus:
-      <ol><li>Curriculum
-          <li>Subjects
-          <li>Grade
-          <li>Medium
-          <li>Content Types </ol>
-     <li>Click Apply to apply filters and fetch the search results
-     <li>Click Reset to reset selected filter options
-      </ol>
+     <li>
+      <br>The book review page appears. A reviewer can review the content and resources associated with the book.  
+     </ol>
    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
   </tr>
   </table>
   
@@ -112,7 +106,7 @@ This page contains the details of the procedure on how to review and publish con
       <br> Once the content is successfully published, the creator is notified of the same and the
     content will be available on Sunbird for view and consumption
      </td>
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
   </tr>
   </table>
   
@@ -126,6 +120,6 @@ This page contains the details of the procedure on how to review and publish con
    <td>1. Click Reject to reject the content 
   <br>Once the content is rejected, the creator is notified of the same and the content is rolled back to draft stage.
      </td>
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
   </tr>
   </table>
