@@ -33,23 +33,22 @@ This page contains the details of the procedure on how to review and publish con
   
 ## Review Workspace
   
-  To review the content, reviewers has to perform following 
-  
-  <table>
+To review the content, reviewers has to perform following 
+ <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
+ <tr>
     <td><ol>
      <li>Click <b>Up for Review</b>
      <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
      <li>Alternatively, apply filters to search for content
      <li>Click <b>Sort by</b> to sort content. Sort content based on:
        <ol>a. Last updated date
-        <br>b. Last created date
+       <br>b. Last created date
        <br>c. Alphabetically </ol>
-     <li>Select the content you want to review. Refer <a>Review Content and Resources</a>
+     <li>Select the content you want to review. Refer <a=href:"/pages/features-documentation/content_review.md/##Review Content and Resources">Review Content and Resources</a>
       <li>Click on the page navigation to access the required list on a particular page</ol>
    </td>
     <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer1.png"></td>
@@ -65,9 +64,9 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   <tr>
     <td><ol>
-     <li>Click Show Filters to apply filters and narrow your search results
+     <li>Click <b>Show Filters</b> to apply filters and narrow your search results
      <li>Select the respective options from the following drop-down menus:
-      <ol>a. Curriculum
+       <ol>a. Curriculum
        <br>b. Subjects
        <br>c. Grades
        <br>d. Medium</ol>
