@@ -49,7 +49,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   <tr>
     <td>On clicking <b>Start Creating</b>, the metadata fields related to the collection are displayed: <br>1. Enter <b>Name</b> or title of the content<br>2. Enter <b>Description</b> <br>3. Enter <b>Keywords</b> <br><b>Note:</b> Keywords are ideas and topics that define content. Keywords aid in searching for content <br>4. Click <b>Save</b> on the header to save the details
     </td>
-    <td><img src="pages/features-documentation/images/collection%20metadata%201.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection%20metadata%201.png"></td>
   </tr>
   </table>
 
@@ -63,7 +63,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   <tr>
     <td>To add content to a collection, you can do one of the following actions: <br>&emsp;1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> <br>&emsp;2. Click <b>Add Resource</b> on the left bottom of the page <br>&emsp;3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
-      <td><img src="pages/features-documentation/images/add%20%20ressource%201.png"></td>
+      <td><img src="pages/features-documentation/images/collection/add%20%20ressource%201.png"></td>
   </tr>
   </table>
 
@@ -77,7 +77,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
    <tr>
      <td>1. Click <b>Add Resource</b>, <b>Find & Select Activities</b> page is displayed <br>2. Type keywords to search for content <br>3. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Clear All</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane <br>6. You can sort your search alphabetically or based on  published date. Click <b>Sort By</b> and <b>Published on</b> <br>7. Select the content you want to add <br>8. Click <b>Proceed</b> to add the selected content <br>9. Click <b>Close</b> icon to go back to the main menu
     </td>
-    <td><img src="pages/features-documentation/images/add_resource.png"></td>
+    <td><img src="pages/features-documentation/images/collection/add_resource.png"></td>
   </tr>
   </table>
 
@@ -102,7 +102,7 @@ For details on manipulating the tree and adding content, refer <a href="features
   </tr>
   <tr>
     <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content</td>
-    <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection_delete.png"></td>
   </tr>
 </table>
 
