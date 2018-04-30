@@ -85,13 +85,7 @@ To review the content, reviewers has to perform following
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td><ol>
-     <li>The Book Review page appears. A reviewer can review the content and resources associated with the book.  
- </ol>
-    </td>
-  </tr>
-   <tr>
-    <td>2. A reviewer can review the content and resources associated with the book.  
+    <td>1. The Book Review page appears. A reviewer can review the content and resources associated with the book.  
    </td>
     <td><img src="pages/features-documentation/images/contentreviewer/review_content.png"></td>
    </tr>
