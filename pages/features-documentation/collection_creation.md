@@ -49,7 +49,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   <tr>
     <td>On clicking <b>Start Creating</b>, the metadata fields related to the collection are displayed: <br>1. Enter <b>Name</b> or title of the content<br>2. Enter <b>Description</b> <br>3. Enter <b>Keywords</b> <br><b>Note:</b> Keywords are ideas and topics that define content. Keywords aid in searching for content <br>4. Click <b>Save</b> on the header to save the details
     </td>
-    <td><img src="pages/features-documentation/images/collection/collection%20metadata%201.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection_metadata.png"></td>
   </tr>
   </table>
 
@@ -63,7 +63,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   <tr>
     <td>To add content to a collection, you can do one of the following actions: <br>&emsp;1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> <br>&emsp;2. Click <b>Add Resource</b> on the left bottom of the page <br>&emsp;3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
-      <td><img src="pages/features-documentation/images/collection/add%20%20ressource%201.png"></td>
+      <td><img src="pages/features-documentation/images/collection/add_ressource1.png"></td>
   </tr>
   </table>
 
