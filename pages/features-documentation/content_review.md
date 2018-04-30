@@ -31,6 +31,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
  </table>
 
+
 ## Review Workspace
 To review the content, reviewers has to perform following 
  <table>
@@ -39,7 +40,7 @@ To review the content, reviewers has to perform following
     <th style="width:65%;">Screen</th>
   </tr>
  <tr>
-    <td><ol>
+    <td>
      <li>Click <b>Up for Review</b>
      <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
      <li>Alternatively, apply filters to search for content
