@@ -86,8 +86,13 @@ To review the content, reviewers has to perform following
   </tr>
   <tr>
     <td><ol>
-     <li>
-      <br>The book review page appears. A reviewer can review the content and resources associated with the book.  
+     The Book Review page appears. A reviewer can review the content and resources associated with the book.  
+     </ol>
+   </td>
+    <td><img src="pages/features-documentation/images/contentreviewer/review_content.png"></td>
+  </tr>
+   <tr>
+    <td><ol><li>A reviewer can review the content and resources associated with the book.  
      </ol>
    </td>
     <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
@@ -105,7 +110,7 @@ To review the content, reviewers has to perform following
       <br> Once the content is successfully published, the creator is notified of the same and the
     content will be available on Sunbird for view and consumption
      </td>
-    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/publish_content.png"></td>
   </tr>
   </table>
   
@@ -119,6 +124,6 @@ To review the content, reviewers has to perform following
    <td>1. Click Reject to reject the content 
   <br>Once the content is rejected, the creator is notified of the same and the content is rolled back to draft stage.
      </td>
-    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/reject_content.png"></td>
   </tr>
   </table>
