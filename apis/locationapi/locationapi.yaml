@@ -1,0 +1,466 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Location Management API(s)
+  description: |-
+    The Location management API resource is used to manage the the physical location data of the following: 
+      - Users
+      - Organization
+    on the basis of the data captured using this API resource, the location data helps in grouping the users based on the location attribute
+     Note: The parent location entity used as parent code parameter represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
+            - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+     The location management API resources enables you to perform the following operations:
+      - create
+      - update
+      - search 
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/v1/data/location
+securityDefinitions:
+  auth:
+    type: apiKey  # arbitrary name for the security scheme
+    in: header # The security scheme parameter is in "header"
+    name: Authorization # name of the header, query parameter or cookie
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+paths:
+  /create:
+    post:
+      description:  >- 
+        This API is used to create a physical location of a user or an organization, depending upon the usecase
+          
+          - The **_/create_** endpoint executes the "Create location" request based on parameters provided as metadata in the request body
+          
+          - Required fields cannot be left null or empty
+           
+      summary: Create location
+      tags:
+        - Location  API(s)
+      operationId: CreatePost
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: |-
+            The body refers to the format of the request.
+              - It represents the set of parameters to be passed for creating a location
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest
+              - $ref: '#/definitions/CreateLocationRequest'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'SUCCESS. The **create location** operation was successful!'
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/locationCreateResponse'
+        '400':
+          description: >-
+            BAD REQUEST,**Create location** operation failed !The possible
+            reason for failure is that you may have missed providing input for a
+            mandatory parameter.
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '404':
+          description: >-
+            RESOURCE NOT FOUND.**Create Location ** operation failed !The possible reason for the failure is that requested resource could not be found 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /update:
+    patch:
+      description: >-
+        This API is associated with updating the location data of a user or organization, 
+        - **_/update/_** endpoint executes the request based on parameters provided as metadata in the request body.
+           - Required fields cannot be left null or empty
+           
+        **Note:** 
+          - It's not allowed to update of type of the location once it is created 
+          - Incase, if you want to change the type of the location, it is recommended to re-create a new location
+      summary: Update Location
+      tags:
+        - Location  API(s)
+      operationId: locationUpdate
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: |-
+            The body refers to the format of the request.
+              - It represents the set of parameters to be passed for updating a location
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest
+              - $ref: '#/definitions/UpdateLocationRequest'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any location API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: '''SUCCESS. The **Update location** operation was successful!'''
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/Result'
+        '400':
+          description: >-
+            RESOURCE NOT FOUND.**Update Location ** operation failed !The possible reason for the failure is that requested resource could not be found 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+  /search:
+    post:
+      description: >-
+        This API is associated with fetching the location data of a user or organization based on the criterias specified in the request body.
+        - **_/search/_** endpoint executes the request based on parameters provided as metadata in the request body.
+           - Required fields cannot be left null or empty
+      summary: Search Location 
+      tags:
+        - Location  API(s)
+      operationId: searchLocation
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: |-
+            The body refers to the format of the request.
+              - The body contains metadata about the location to be searched
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest
+              - $ref: '#/definitions/SearchLocationRequest'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: >-
+            The Content Type entity is the media type of the resource.Possible
+            media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any location API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: 'SUCCESS. The **Search location** operation was successful!'
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationListResponse'
+        '400':
+          description: >-
+            RESOURCE NOT FOUND.**Search location** operation failed !The possible reason for the failure is that requested resource could not be found 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+      security:
+        - auth: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+definitions:
+  UpdateLocationRequest:
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/LocationRequest'
+  LocationRequest:
+    type: object
+    properties:
+      id:
+        type: string
+        description: The ID uniquely identifies a location
+      name:
+        type: string
+        description: The name of the location
+      code:
+        type: string
+        description: >- 
+                  The alphanumeric string to represent a unique code of the location and the code can be either the code of state , district or any location type 
+      parentCode:
+        type: string
+        description: >- 
+          The alphanumeric string that uniquely identifies the location of the parent entity
+          The parent location entity represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
+            - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+            - For example, If a an entity belongs to Z location , Z itself is subset of Y location entity and Y itself is the subset of X location. Here X entity is treated as parent entity. 
+            - Depending on the usecase, the parent location names vary
+      parentId:
+        type: string
+        description: >-
+          This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID
+    required:
+      - id
+      - atlease any one attribute apart from id
+  CreateLocationRequest:
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/Request'
+  Request:
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of the location
+      code:
+        type: string
+        description: >- 
+                  The alphanumeric string to represent a unique code of the location and the code can be either the code of state , district or any location type and it must be unique. for system AP, ap ,Ap,aP all four will be treated as some code.
+      parentCode:
+        type: string
+        description: >- 
+          The alphanumeric string that uniquely identifies the location of the parent entity
+           The parent location entity represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
+                - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+               - For example, If a an entity belongs to Z location , Z itself is subset of Y location entity and Y itself is the subset of X location. Here X entity is treated as parent entity. 
+               - Depending on the usecase, the parent location names vary
+               - In case of non availability of the parent entity, you can pass the parameter as empty
+      parentId:
+        type: string
+        description: >-
+         This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID.
+      type:
+        type: string
+        description: 'type refer to valid location types: state,district,block,cluster '
+    required:
+      - name
+      - code
+      - type
+  Result:
+    title: Result
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/deleteResp'
+  ResponseHeader:
+    title: ResponseHeader
+    type: object
+    properties:
+      id:
+        type: string
+        description: The ID uniquely identifies the API Identifier
+      ver:
+        type: string
+        description: The current version of the API version
+      ts:
+        type: string
+        description: Represents the total ETA of API execution
+      params:
+        $ref: '#/definitions/ResponseParams'
+      responseCode:
+        type: string
+        description: ok
+  ResponseParams:
+    title: Response Parameter
+    type: object
+    properties:
+      resmsgid:
+        type: string
+        description: The ID uniquely identifies the response Message
+      msgid:
+        type: string
+        description: The ID uniquely identifies the message in reponse
+      err:
+        type: string
+        description: Represents the Error Code in case an errors occurs
+      status:
+        type: string
+        description: Represents the response status of the request sent
+      errmsg:
+        type: string
+        description: Represent the error message which comes as the API is executed
+  EmptyResult:
+    title: Empty Result
+    type: object
+    properties:
+      result:
+        type: object
+        description: Represent the empty result state of the response
+  deleteResp:
+    title: This is the response body on deleting a location
+    type: object
+    properties:
+      status:
+        type: string
+        description: Represent state of success or failure of the request
+  LocationErrorResponse:
+    title: This is the response body of create content error
+    type: object
+    allOf:
+      - $ref: '#/definitions/EmptyResult'
+      - $ref: '#/definitions/ResponseHeader'
+  SearchLocationRequest:
+    title: This is the request body for searching location
+    type: object
+    properties:
+      request:
+        type: object
+        properties:
+          query:
+            type: string
+            description: Represents a search string 
+          filters:
+            type: object
+            properties:
+              type:
+                type: string
+                description: >-
+                  Represents any valid key, value that can be passed as single string or an array 
+              parentId:
+                type: string
+                description: >-
+                  This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID
+              code:
+                type: string
+                description: >- 
+                  The alphanumeric string to represent a unique code of the location and the code can be either the code of state , district or any location type
+          limit:
+            type: integer
+            description: Represents the set limit on how may records the user wants to get
+          offset:
+            type: integer
+            description: The offset after which user want to read the records
+  locationCreateResponse:
+    title: This is the response body for create location 
+    type: object
+    properties:
+      result:
+        type: object
+        properties:
+          id:
+            type: string
+            description: Represents the location ID in case the create request is successul
+          status:
+            type: string
+            description: Represents the state of the request whether the API exaecution is successful or a failure
+  LocationListResponse:
+    title: This is the reponse body of list location 
+    type: object
+    properties:
+      result:
+        type: object
+        $ref: '#/definitions/LocationList'
+  LocationList:
+    title: Represents the list of locations
+    properties:
+      locations:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/LocationResponse'
+  LocationResponse:
+    title: This is the response body of single Location object
+    type: object
+    properties:
+      result:
+        type: object
+        $ref: '#/definitions/Location'
+  Location:
+    title: This is the data model for location object
+    type: object
+    properties:
+      name:
+        type: string
+        description: Represents the name of the location
+      code:
+        type: string
+        description: >- 
+                  The alphanumeric string to represent a unique code of the location and the code can be either the code of state , district or any location type
+      id:
+        type: string
+        description: This is a system generated ID that uniquely identifies the parent (organization)
+      parentId:
+        type: string
+        description: >-
+          This is a system generated ID that uniquely identifies the parent organization (location) for example: For a district, state ID will be the parent ID
+      type:
+        type: string
+        description: >-
+          Uniquely identifies the kind of location object, for instance the values can be state or district or block or cluster

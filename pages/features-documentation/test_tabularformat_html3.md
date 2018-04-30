@@ -5,8 +5,6 @@ title: test tabularformat html3
 page_title: test tabularformat html3
 description: Administration
 keywords: 'System Admin,Org Admin,Network Admin,Roles, Permissions, Rights'
-hide_platform_selector: true
-hide_section_selector: true
 published: true
 ---
 <p>

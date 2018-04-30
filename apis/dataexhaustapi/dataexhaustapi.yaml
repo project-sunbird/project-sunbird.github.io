@@ -1,134 +1,138 @@
-
-swagger: "2.0"
+swagger: '2.0'
 info:
   description: >-
-    Set of internal apis available to interact with the data exhaust. It covers
-    the security and registeration aspects.
-  title: DataExhaust-API
-  version: v1
+    Data exhaust API resource refers to the data generated as trails or information byproducts resulting from all user activities.
+      - These resources are used to improve online processes based on
+      the behaviors of users 
+      - Also these resources are used to minimize required actions and find areas to optimize, improve or change outright 
+      - Data exhaust also helps in data mining analytics
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  title: Data Exhaust API(s)
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: info@sunbird.org
+  version: "1.0"
 host: staging.open-sunbird.org
+basePath: /data/v1/dataset/request/
+securityDefinitions:    
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 paths:
-  /data/v1/dataset/request/submit:
+   /submit:
     post:
       description: >-
-        Data exhaust API is used to submit a job to create a data file that can
-        be downloaded once the job is complete. request_id is returned by the
-        API that is used to retrieve status periodically. 
+        This API is used to submit the data request to get the exhaust data 
+          - The response of the request initiates with the creation of a data file
+          - This data file can be downloaded and used for analytics etc.
       operationId: Submit Data Request
       produces:
         - application/json
       tags:
-        - dataExhaust
+        - Data Exhaust API(s)
       parameters:
         - name: Authorization
           in: header
-          description: An authorization header
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
           required: true
           type: string
         - name: Body
           in: body
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the data request to be sent
           required: true
           x-is-map: false
           schema:
             $ref: '#/definitions/dataRequestBody'
       responses:
         '200':
-          description: successful operation
+          description: 'SUCCESS. The **Submit Data Request** operation was successful!'
           schema:
             $ref: '#/definitions/dataExhaustResponse'
+        '400':
+          description:  'BAD REQUEST,**Submit Data Request** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
+          schema:  
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
       security: []
-  '/data/v1/dataset/request/list/{channel}':
+   /list/{client_key}:
     get:
       description: >-
-        This API will take the client_key and return the respose with job status
-        message and any other details specific to channel.
+        This API is used to list the status messages and other data  related activities that are specific to a channel
+          - the format of the url is  **/request/list/{your channel ID}**
+          - {...} represents a variable value which is your channel ID, append a valid channel ID to the request URL 
       operationId: List Requests
       produces:
         - application/json
       tags:
-        - dataExhaust
+        - Data Exhaust API(s)
       parameters:
         - in: path
-          name: channel
-          description: Client id given when the job execution request made. (Mandatory)
+          name: client_key
+          description: 'Unique key/ID of the requester. In case of partners, the value can be partner_key'
           required: true
           type: string
         - in: query
           name: limit
-          description: Result jobs limit. Default limit is 100. (Optional)
-          required: true
+          description: 'Represents the limit of result entries, default limit is set to 100' 
+          required: false
           type: string
       responses:
         '200':
-          description: successful operation
+          description: 'SUCCESS. The **list status** operation was successful!'
           schema:
             $ref: '#/definitions/JobListResponse'
+        '400':
+          description:  'BAD REQUEST,**list status** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
+          schema:  
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
       security: []
-  '/data/v1/dataset/request/read/{channel}/{requestId}':
+   /read/{client_key}/{request_ID}:
     get:
       description: >-
-        This API will take the client_key , request id and return the respose
-        with job status, message, and any other details specific to the job
-        (data). This API is used to retrieve the latest status of the job
-        including output
+        This API is used to fetch and view the current status of the data that gets generated by user interaction and activities. - the format of the url is  **/read/{channel_ID}/{requestId}**
+          - {...} represents a variable value which is your channel ID and the request ID, append a valid channel ID, Request ID to the request URL 
       operationId: Get Request Details
       produces:
         - application/json
       tags:
-        - dataExhaust
+        - Data Exhaust API(s)
       parameters:
         - in: path
-          name: channel
-          description: Client id given when the job execution request made. (Mandatory)
+          name: client_key
+          description: 'Unique key/ID of the requester. In case of partners, the value can be partner_key'
           required: true
           type: string
         - in: path
-          name: requestId
+          name: request_ID
           description: >-
-            Request ID provided in the response when the job execution request
-            made.
+            Request ID provided in the response when the job execution request is made.
           required: true
           type: string
       responses:
         '200':
-          description: successful operation
+          description: 'SUCCESS. The **fetch current status** operation was successful!'
           schema:
             $ref: '#/definitions/JobInfoResponse'
+        '400':
+          description:  'BAD REQUEST,**fetch current status** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
+          schema:  
+            allOf:
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
       security: []
-  '/data/v1/dataset/request/{channel}':
-    get:
-      description: >-
-        This API will take the channel and from and to dates and will return the data
-      produces:
-        - application/json
-      tags:
-        - dataExhaust
-      parameters:
-        - in: path
-          name: channel
-          description: Channel id required to execute the opration
-          required: true
-          type: string
-        - in: query
-          type: string
-          name: from
-          description: >-
-            The date format is eg 2017-08-24.
-          required: true  
-        - in: query
-          name: to
-          description: >-
-            The date format is eg 2017-08-24.    
-          required: true
-          type: string
-      responses:
-        '200':
-          description: successful operation
-          schema:
-            $ref: '#/definitions/JobInfoResponse'
-      security: []      
 definitions:
   dataRequestBody:
     title: DataExhaust - Data Request
@@ -209,7 +213,7 @@ definitions:
       client_key:
         type: string
         x-go-name: Client_Key
-        description: uniqueID of the requestor. In partner case the partner id
+        description: Unique ID of the requestor. In partner case the partner id
     required:
       - client_key
   DataExhaustRequest:
