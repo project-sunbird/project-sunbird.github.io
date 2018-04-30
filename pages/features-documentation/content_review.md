@@ -86,17 +86,15 @@ To review the content, reviewers has to perform following
   </tr>
   <tr>
     <td><ol>
-     The Book Review page appears. A reviewer can review the content and resources associated with the book.  
-     </ol>
-   </td>
-    <td><img src="pages/features-documentation/images/contentreviewer/review_content.png"></td>
+     <li>The Book Review page appears. A reviewer can review the content and resources associated with the book.  
+ </ol>
+    </td>
   </tr>
    <tr>
-    <td><ol><li>A reviewer can review the content and resources associated with the book.  
-     </ol>
+    <td>2. A reviewer can review the content and resources associated with the book.  
    </td>
-    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
-  </tr>
+    <td><img src="pages/features-documentation/images/contentreviewer/review_content.png"></td>
+   </tr>
   </table>
   
 ## Publish Content
@@ -106,7 +104,7 @@ To review the content, reviewers has to perform following
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Click <b>Publish</b> to publish the content. 
+   <td><ol><li>Click <b>Publish</b> to publish the content. </ol>
       <br> Once the content is successfully published, the creator is notified of the same and the
     content will be available on Sunbird for view and consumption
      </td>
@@ -121,7 +119,7 @@ To review the content, reviewers has to perform following
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Click Reject to reject the content 
+   <td><ol><li>Click Reject to reject the content </ol>
   <br>Once the content is rejected, the creator is notified of the same and the content is rolled back to draft stage.
      </td>
     <td><img src="pages/features-documentation/images/contentreviewer/reject_content.png"></td>
