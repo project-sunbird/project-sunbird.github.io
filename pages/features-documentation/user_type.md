@@ -81,7 +81,7 @@ Functionality|Create Content|Upload Content|Review Content|Reject Content and Pu
 **Announcement Sender**|No| No| No| No| No| Yes| Yes| Yes|
 
 ## Content Creator 
-A Content Creator is a registered user with permission to create content on DIKSHA. They can curate content such as Collection, Lesson Plan, Course, and Study Material. A content creator cannot delete content created by others.
+A Content Creator is a registered user with permission to create content on Sunbird. They can curate content such as Collection, Lesson Plan, Course, and Study Material. A content creator cannot delete content created by others.
 
 <b>User Role Matrix for a Content Creator</b>
 
