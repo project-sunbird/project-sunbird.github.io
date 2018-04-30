@@ -132,7 +132,7 @@ For details on manipulating the tree and adding content, refer <a href="features
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>A collection must be reviewed before it is published <br>1. Click <b>Save</b> on the header to save the collection <br>2. Click <b>Send for review</b> to send the created collection for review. Before sending for review, you can share the content to a limited audience. To know more, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
+    <td>A collection must be reviewed before it is published <br>1. Click <b>Save</b> on the header to save the collection <br>2. Click <b>Send for review</b> to send the created collection for review <br>Before sending for review, you can share the content to a limited audience. To know more, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_sendforreview.png"></td>
   </tr>    
