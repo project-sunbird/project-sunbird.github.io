@@ -294,13 +294,13 @@ definitions:
                   The alphanumeric string to represent a unique code of the location and the code can be either the code of state , district or any location type and it must be unique. for system AP, ap ,Ap,aP all four will be treated as some code.
       parentCode:
         type: string
-        description:>- 
+        description: >- 
           The alphanumeric string that uniquely identifies the location of the parent entity
-          The parent location entity represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
-          - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
-          - For example, If a an entity belongs to Z location , Z itself is subset of Y location entity and Y itself is the subset of X location. Here X entity is treated as parent entity. 
-          - Depending on the usecase, the parent location names vary
-          - In case of non availability of the parent entity, you can pass the parameter as empty
+           The parent location entity represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
+                - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+               - For example, If a an entity belongs to Z location , Z itself is subset of Y location entity and Y itself is the subset of X location. Here X entity is treated as parent entity. 
+               - Depending on the usecase, the parent location names vary
+               - In case of non availability of the parent entity, you can pass the parameter as empty
       parentId:
         type: string
         description: >-
