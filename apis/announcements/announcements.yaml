@@ -141,7 +141,7 @@ paths:
           - The **_/get/{announcementId}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
           - The format of the request URL is: /get/{announcementId}
           - Required fields cannot be left null or empty.
-      summary: Fetches an announcement by Id
+      summary: Fetch an announcement by ID
       tags:
       - Announcement APIs
       operationId: GetAnnouncementById
@@ -225,7 +225,7 @@ paths:
           - The **_/user/outbox_** endpoint executes the "UserOutboxPost" request based on parameters provided as metadata in the request body.
           - The format of the request URL is: /user/outbox
           - Required fields cannot be left null or empty.
-      summary: Posting sent announcements in users outbox 
+      summary: Posting sent announcement in users outbox 
       tags:
       - Announcement APIs
       operationId: UserOutboxPost
@@ -322,7 +322,7 @@ paths:
           - The **_/user/inbox_** endpoint executes the "userInbox" request based on parameters provided as metadata in the request body.
           - The format of the request URL is: /user/inbox
           - Required fields cannot be left null or empty.
-      summary: To get the list of announcement which are targetted to the particular user. 
+      summary: Get list of announcements targeted to a particular user 
       tags:
       - Announcement APIs
       operationId: UserInboxPost
@@ -418,7 +418,7 @@ paths:
        This API is associated with acknowledging the recieved reciept of a sent announcement.
           - The **_/recieved_** endpoint executes the "recieved" request based on parameters provided as metadata in the request body.
           - Required fields cannot be left null or empty.
-      summary: Acknowledges received reciept of an Announcement
+      summary: Acknowledge received receipt of an Announcement
       tags:
       - Announcement APIs
       operationId: ReceivedPost
@@ -511,10 +511,10 @@ paths:
   /read:
     post:
       description: >-
-        This API acknowledges the read reciept of a sent Announcement.
+        This API acknowledges the read receipt of a sent Announcement.
           - The **_read_** endpoint executes the "read" request based on parameters provided as metadata in the request body.
           - Required fields cannot be left null or empty.
-      summary: Acknowledges the read reciept of an Announcement
+      summary: Acknowledge read receipt of an Announcement
       tags:
       - Announcement APIs
       operationId: ReadPost
@@ -610,7 +610,7 @@ paths:
        This API is associated with cancelling an announcement on the Sunbird Platform.
           - The **_/cancel_** endpoint executes the "cancelDelete" request based on parameters provided as metadata in the request body.
           - Required fields cannot be left null or empty.
-      summary: Cancels an Announcement
+      summary: Cancel Announcement
       tags:
       - Announcement APIs      
       operationId: CancelDelete
@@ -707,7 +707,7 @@ paths:
           - The **_/resend/{announcementId}_** endpoint executes the "resend" request based on parameters provided as metadata in the request body.
           - The format of the request URL is: /resend/{announcementId}
           - Required fields cannot be left null or empty.
-      summary: Fetches a specific previously sent Announcement
+      summary: Fetch specific Announcement
       tags:
       - Announcement APIs
       operationId: ResendGet
@@ -914,7 +914,7 @@ paths:
        This API is associated with providing metadata about creating an announcement and other technical information regarding announcements, also it provides information about the destination of announcement.
           - The **_/definitions_** endpoint executes the "definition" request based on parameters provided as metadata in the request body.
           - Required fields cannot be left null or empty.
-      summary: Created announcement metadata 
+      summary: Create Announcement Metadata 
       tags:
         - Announcement APIs
       operationId: DefinitionsPost

@@ -29,6 +29,8 @@ paths:
           
           - Required fields cannot be left null or empty
       summary: Create Form
+      tags: 
+       - Form API(s)
       operationId: FormCreate
       produces:
       - application/json
@@ -80,6 +82,8 @@ paths:
         
         - Required fields cannot be left null or empty
       summary: Update Form
+      tags: 
+       - Form API(s)
       operationId: FormUpdate
       produces:
       - application/json
@@ -131,6 +135,8 @@ paths:
        
         - Required fields cannot be left null or empty
       summary: Read Form
+      tags: 
+       - Form API(s)
       operationId: FormRead
       produces:
       - application/json
