@@ -25,8 +25,8 @@ This page contains the details of the procedure on how to review and publish con
     <td><ol>
    <li>You are logged in as the content reviewer
    <li>You are on the <b>Profile</b> tab
-     <li>You have clicked on <b>View your workspace</b></ol>
-      </td>
+     <li>You have clicked on <b>View your workspace</b>
+      </td></ol>
       <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png"></td>
   </tr>
  </table>
