@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: framework/service/meta-service.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: framework/service/meta-service.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Service to get meta information from platform
+ * 
+ * @class org.ekstep.services.metaService
+ * @author Santhosh Vasabhaktula &lt;santhosh@ilimi.in>
+ */
+org.ekstep.services.metaService = new(org.ekstep.services.iService.extend({
+    /** 
+     * @member {string} learningURL
+     * @memberof org.ekstep.services.metaService
+     */
+    learningURL: function() {
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('learningEndPoint', '/learning')
+    },
+    /** 
+     * @member {string} learningURL
+     * @memberof org.ekstep.services.metaService
+     */
+    metaURL: function() {
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('metaEndPoint', '/meta')
+    },
+    /** 
+     * @member {string} configURL
+     * @memberof org.ekstep.services.metaService
+     */
+    configURL: function() {
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('configEndPoint', '/domain')
+    },
+    /** 
+     * @member {string} domainURL
+     * @memberof org.ekstep.services.metaService
+     */
+    domainURL: function(){
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('domainEndPoint', '/domain')
+    },
+    /** 
+     * @member {string} frameworkURL
+     * @memberof org.ekstep.services.metaService
+     */
+    frameworkURL: function(){
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('frameworkEndPoint', '/framework')
+    },
+    /** 
+     * @member {string} channelURL
+     * @memberof org.ekstep.services.metaService
+     */
+    channelURL: function(){
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('channelEndPoint', '/channel')
+    },
+    /** 
+     * @member {string} vocabularyURL
+     * @memberof org.ekstep.services.metaService
+     */
+    vocabularyURL: function(){
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('vocabularyEndPoint','/vocabulary')
+    },
+
+    /** 
+     * @member {string} pageAssembleUrl
+     * @memberof org.ekstep.services.metaService
+     */
+    pageAssembleUrl: function(){
+        return this.getBaseURL() + this.getAPISlug() + this.getConfig('pageAssembleEndPoint','/data')
+    },
+
+
+    /**
+     * Returns the schema of the specified object. The schema will contain all the properties details (name, code, datatype, identifier etc,.).
+     * @param  {string}   objectType  eg.AssessmentItem, Language etc.
+     * @param  {Function} callback    returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+    getDefinitions: function(objectType, callback) {
+        this.getFromService(this.learningURL() + this.getConfig('definitionsGetUrl', '/taxonomy/domain/definition/') + objectType, { "headers": { "content-type": "application/json", "user-id": "content-editor" } }, callback);
+    },
+    /**
+     * Returns all property values in the specified language.
+     * @param  {string}   languageCode  eg. en, hi etc.
+     * @param  {Function} callback      returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+    getResourceBundles: function(languageCode, callback) {
+        this.getFromService(this.metaURL() + this.getConfig('resourceBundleUrl', '/v3/resourcebundles/read/') + languageCode, this.requestHeaders, callback);
+    },
+    /**
+     * Get config items from learning api terms list
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.configService
+     */
+    getLearningConfig: function(callback) {
+        this.getFromService(this.domainURL() + this.getConfig('termsListUrl', '/v3/terms/list'), this.requestHeaders, callback);
+    },
+    /**
+     * Get config items from config api ordinals
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.configService
+     */
+    getConfigOrdinals: function(callback) {
+        this.getFromService(this.metaURL() + this.getConfig('ordinalsGetUrl', '/v3/ordinals/list'), this.requestHeaders, callback);
+    },
+
+    /**
+     * Get config items from vocabulary api 
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+    suggestVocabulary: function(data, callback){
+        this.postFromService(this.vocabularyURL() + this.getConfig('suggestVocabularyUrl','/v3/term/suggest'),data, this.requestHeaders, callback); 
+    },
+
+    /**
+     * Get config items from vocabulary api 
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+    createVocabulary: function(data, callback){
+        this.postFromService(this.vocabularyURL() + this.getConfig('createVocabularUrl','/v3/term/create'),data, this.requestHeaders, callback);
+    },
+    /**
+     * Get Categorys based on framework
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+    getCategorys: function(framework, callback){
+        this.getFromService(this.frameworkURL() + this.getConfig('getCategorysUrl','/v3/read/') + framework, this.requestHeaders, callback);
+    },
+    /**
+     * Get framework based on channel
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+    getFrameworks: function(channel, callback){
+        this.getFromService(this.channelURL() + this.getConfig('getFrameworksUrl','/v3/read/') + channel, this.requestHeaders, callback);
+    },
+    /**
+     * Get config items from pageAssemble api 
+     * @param  {Function} callback returns error and response as arguments
+     * @memberof org.ekstep.services.metaService
+     */
+    getPageAssemble: function(data, callback){
+        this.postFromService(this.pageAssembleUrl() + this.getConfig('pageAssembleUrl','/v1/page/assemble'), data, this.requestHeaders, callback);
+    }
+
+}));
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="org.ekstep.contenteditor.api.html">api</a></li><li><a href="org.ekstep.contenteditor.basePlugin.html">basePlugin</a></li><li><a href="org.ekstep.contenteditor.basePlugin.init.html">init</a></li><li><a href="org.ekstep.services.assessmentService.html">assessmentService</a></li><li><a href="org.ekstep.services.assetService.html">assetService</a></li><li><a href="org.ekstep.services.contentService.html">contentService</a></li><li><a href="org.ekstep.services.dialcodeService.html">dialcodeService</a></li><li><a href="org.ekstep.services.languageService.html">languageService</a></li><li><a href="org.ekstep.services.metaService.html">metaService</a></li><li><a href="org.ekstep.services.popupService.html">popupService</a></li><li><a href="org.ekstep.services.searchService.html">searchService</a></li><li><a href="org.ekstep.services.telemetryService.html">telemetryService</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getSyllables">getSyllables</a></li><li><a href="global.html#getTranslation">getTranslation</a></li><li><a href="global.html#getTransliteration">getTransliteration</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:10:55 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+AddressCreateRequest:
+  description: Request of Sunbird API containing an address
+  type: object
+  properties:
+    addType:
+      description: 'Type of address. E.g. Present, Permanent etc.'
+      type: string
+    addressLine1:
+      description: 'First line of address'
+      type: string
+    addressLine2:
+      description: 'Second line of address'
+      type: string
+    city:
+      description: 'City'
+      type: string
+    state:
+      description: 'State'
+      type: string    
+    zipcode:
+      description: 'Zip code'
+      type: string
+    country:
+      description: 'Country'
+      type: string
+
+OrgCreateRequest:
+    title: Organisation Create API request format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiRequest'
+      - type: object
+        properties:
+          request:
+            type: object
+            properties:
+              address:
+                description: 'Address of organisation'
+                type: object
+              channel:
+                description: 'Name identifying a tenant (e.g. APEKX). Channel is mandatory for a root organisation'
+                type: string
+              description:
+                description: 'Organisation description'
+                type: string
+              externalId:
+                description: 'Organisation specific ID. This parameter is required if provider is given.'
+                type: string
+              isRootOrg:
+                description: 'Set to true for root organisation'
+                type: boolean
+              locationId:
+                description: 'ID of location returned using Location Create API'
+                type: string
+              provider:
+                description: 'Specified by sub-organisations to identify channel of root organisation.  This parameter is required if externalId is given.'
+                type: string
+              orgName:
+                description: 'Organisation name'
+                type: string
+              orgType:
+                description: 'Organisation type'
+                type: string
+              orgTypeId:
+                description: 'ID of organisation type returned using Organisation Type Create API'
+                type: string
+              rootOrgId:
+                description: 'Root organisation ID'
+                type: string
+            required:
+            - orgName
+
+OrgCreateResponse:
+    title: Organisation Create API response format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiResponse'
+      - type: object
+        properties:
+          result:
+            type: object
+            properties:
+              organisationId:
+                description: 'ID of the newly created organisation'
+                type: string
+              response:
+                description: 'Response message for successfully created organisation'
+                type: string
+
+OrgGetRequest:
+    title: Organisation Get API request format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiRequest'
+      - type: object
+        properties:
+          request:
+            type: object
+            properties:
+              organisationId:
+                description: 'ID of the organisation whose details to be viewed'
+                type: string
+
+OrgGetResponse:
+    title: Organisation Get API response format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiResponse'
+      - type: object
+        properties:
+          result:
+            type: object
+            properties:
+              response:
+                type: object
+                  addressId:
+                    type: string
+                  approvedBy:
+                    type: string
+                  approvedDate:
+                    type: string
+                  channel:
+                    type: string
+                  communityId:
+                    type: string
+                  contactDetail:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        phone:
+                          type: string
+                        email:
+                          type: string
+                  createdBy:
+                    type: string
+                  createdDate:
+                    type: string
+                  dateTime:
+                    type: integer
+                  description:
+                    type: string
+                  externalId:
+                    type: string
+                  hashTagId:
+                    type: string
+                  homeUrl:
+                    type: string
+                  id:
+                    type: string
+                  identifier:
+                    type: string
+                  imgUrl:
+                    type: string
+                  isApproved:
+                    type: boolean
+                  isDefault:
+                    type: boolean
+                  isRootOrg:
+                    type: boolean
+                  locationId:
+                    type: string
+                  noOfMembers:
+                    type: integer
+                  orgCode:
+                    type: string
+                  orgName:
+                    type: string
+                  orgType:
+                    type: string
+                  orgTypeId:
+                    type: string
+                  parentOrgId:
+                    type: string
+                  preferredLanguage:
+                    type: string
+                  provider:
+                    type: string
+                  rootOrgId:
+                    type: string
+                  slug:
+                    type: string
+                  status:
+                    type: string
+                  theme:
+                    type: string
+                  thumbnail:
+                    type: string
+                  updatedBy:
+                    type: string
+                  updatedDate:
+                    type: string
+
+OrgTypeCreateRequest:
+    title: Organisation Type Create API request format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiRequest'
+      - type: object
+        properties:
+          request:
+            type: object
+            properties:
+              name:
+                description: 'Organisation type name'
+                type: string
+            required:
+            - name
+
+OrgTypeListResponse:
+    title: Organisation Type List API response format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiResponse'
+      - type: object
+        properties:
+          result:
+            type: object
+            properties:
+              response:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      description: 'Organisation type ID'
+                      type: string
+                    name:
+                      description: 'Organisation type name'
+                      type: string
+
+OrgTypeUpdateRequest:
+    title: Organisation Type Update API request format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiRequest'
+      - type: object
+        properties:
+          request:
+            type: object
+            properties:
+              id:
+                description: 'ID of organisation type whose name is required to be updated'
+                type: string
+              name:
+                description: 'Organisation type name'
+                type: string
+            required:
+            - id
+            - name
+
+OrgAddUserRequest:
+    title: Organisation Add User API request format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiRequest'
+      - type: object
+        properties:
+          request:
+            type: object
+            properties:
+              id:
+                description: 'ID of organisation to which user is required to be added'
+                type: string
+              provider:
+                description: '?. This parameter is mandatory if userId is not provided.'
+                type: string
+              roles:
+                description: 'List of roles.'
+                type: string
+              userId:
+                description: 'ID of user who is required to be added'
+                type: string
+              userName:
+                description: 'User name of user who is required to be added. This parameter is mandatory if userId is not provided.'
+                type: string
+            required:
+            - id
+
+OrgRemoveUserRequest:
+    title: Organisation Remove User API request format
+    allOf:
+      - $ref: '../envelop.yaml#/ApiRequest'
+      - type: object
+        properties:
+          request:
+            type: object
+            properties:
+              id:
+                description: 'ID of organisation from which user is required to be removed'
+                type: string
+              provider:
+                description: '?. This parameter is mandatory if userId is not provided.'
+                type: string
+              userId:
+                description: 'ID of user who is required to be removed'
+                type: string
+              userName:
+                description: 'User name of user who is required to be removed. This parameter is mandatory if userId is not provided.'
+                type: string
+            required:
+            - id
+
+OrgSuccessResponse:
+    title: Common success response for an Organisation Management API
+    allOf:
+      - $ref: '../envelop.yaml#/ApiResponse'
+      - type: object
+        properties:
+          result:
+            type: object
+            properties:
+              response:
+                description: 'Response message for successfully performed request'
+                type: string
+
+OrgErrorResponse:
+    title: Common error response for any Organisation Management API
+    allOf:
+      - $ref: '../envelop.yaml#/ApiResponse'
+      - type: object
+        properties:
+          result:
+            type: object
+                      

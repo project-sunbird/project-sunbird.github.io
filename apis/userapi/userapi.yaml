@@ -168,7 +168,9 @@ paths:
             {
                 "request": {
                     "filters":{
-                      "provider": ["provider value"]
+
+                      "userAttribute": ["value of user attribute , either you can pass single string or list"]
+
                     },
                     "limit": 500
                 }
@@ -1349,7 +1351,6 @@ definitions:
     items:
       type: string
        
-  
   UserReq:
     title: user object
     type: object
@@ -1430,8 +1431,7 @@ definitions:
       - password 
       - email
       - userName
-      - phone
-    
+      - phone    
     
   User:
     title: user object

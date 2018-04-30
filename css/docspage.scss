@@ -207,3 +207,52 @@ tbody{
 .solution-partners {
 	margin:0 !important;
 }
+.zoom{
+	border: 1px solid #eee;
+	padding:2px;
+	border-radius:4px;
+}
+
+figcaption{
+	margin-bottom:10px;
+	font-size:14px;
+}
+.fullscreen{
+	position:fixed;
+	top:0;
+	left:0;
+	right: 0;
+    bottom: 0;
+	background:rgba(0,0,0,0.7);
+    overflow: hidden;
+    box-sizing: content-box;	
+}
+.fullscreen figcaption{
+	display:none;
+}
+.zoomclose{
+	display:none;
+}
+.fullscreen .zoomclose {
+	display:inline-block;
+	color:#fff;
+	font-weight:600;
+	font-size:25px;
+	text-align:right;
+	cursor:pointer;
+	line-height:1;
+	position: absolute;
+    top: 10px;
+    right: 30px;
+}
+.inner__content .zoomcover img{
+	max-width:100%;
+}
+.inner__content .fullscreen img{
+	max-width:calc(100vw - 10px) ;
+	max-height:calc(100vh - 10px);
+	border:0;
+	width:auto;
+	height:auto;
+	margin:5px auto;
+}

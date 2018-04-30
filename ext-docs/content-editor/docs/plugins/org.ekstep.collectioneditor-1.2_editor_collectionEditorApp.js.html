@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: org.ekstep.collectioneditor-1.2/editor/collectionEditorApp.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: org.ekstep.collectioneditor-1.2/editor/collectionEditorApp.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>angular.module('org.ekstep.collectioneditor', ["Scope.safeApply", "ui.sortable"]).controller('mainController', ['$scope', '$location', function($scope, $location) {
+    $scope.contentDetails = {
+        contentTitle: ""
+    };
+    $scope.contentId = ecEditor.getContext('contentId');
+    $scope.metaPages = [];
+    $scope.sidebarPages = [];
+    $scope.selectedObjectType = undefined;
+    $scope.nodeFilter = "";
+    $scope.expandNodeFlag = true;
+    var manifest = org.ekstep.pluginframework.pluginManager.getPluginManifest("org.ekstep.collectioneditor");
+    $scope.defaultImage = ecEditor.resolvePluginResource(manifest.id, manifest.ver, "assets/default.png");
+    $scope.playImage = ecEditor.resolvePluginResource(manifest.id, manifest.ver, "assets/icn_play.png");
+    $scope.contentList = [];
+    $scope.selectedContent;
+    $scope.isContent = false;
+    $scope.isCollection = false;
+    $scope.collectionCache = [];
+    $scope.mode = ecEditor.getConfig('editorConfig').mode; 
+    $scope.collectionTreeHeight = ($scope.mode == "Edit") ? "collection-tree-height-with-footer" : "collection-tree-height-without-footer"; 
+    $scope.getObjectType = function(objectType) {
+        return _.find(objectType, function(type) {
+            return type == $scope.selectedObjectType
+        });
+    }
+
+    /**
+     * Callback Function after drag &amp; drop is complete to update the collection tree node
+     */
+    $scope.sortableOptions = {
+        stop: function() {
+            var collectionData = org.ekstep.collectioneditor._.cloneDeep($scope.contentList);
+            var activeNode = org.ekstep.services.collectionService.getActiveNode();
+            var treeData = activeNode.getChildren();
+            var fancyTreeChild = org.ekstep.collectioneditor._.cloneDeep(collectionData);
+            _.forEach(treeData, function(child) {
+                if (child.folder) {
+                    fancyTreeChild.push(child)
+                }
+            })
+            activeNode.removeChildren();
+            activeNode.addChildren(fancyTreeChild);
+            activeNode.setActive();
+            $scope.contentList = collectionData;
+        },
+        cancel: ".unsortable"
+      };
+
+    $scope.searchNode = function(event) {
+        if (event.target.value == "") org.ekstep.services.collectionService.clearFilter();
+        org.ekstep.services.collectionService.filterNode(event.target.value);
+    };
+
+    /**
+     * Resetting the content list/preview page when a new node is selected
+     */
+    $scope.resetContentList = function() {
+        var rootNode = ecEditor.jQuery("#collection-tree").fancytree("getRootNode").getFirstChild();
+        $scope.isNewCollection = rootNode.data.objectType !== "Collection" ? (rootNode.children ? false : true) : false;
+        $scope.contentList = [];
+        $scope.isContent = false;
+        var iframe = document.getElementById('previewContentIframe');
+        if (iframe) {
+            iframe.src = "";
+            var previewImage = document.getElementsByClassName('preview-image')[0];
+            previewImage.style.display = 'block';
+        }
+    }
+
+    /**
+     * Construct the content list &amp; collection list to show
+     */
+    $scope.getContentList = function(data) {
+        if (data &amp;&amp; data.folder) {          // Node folder
+            $scope.isCollection = false;
+            org.ekstep.collectioneditor._.each(data.children, function(content) {
+                if (!content.isFolder()) {
+                    $scope.contentList.push(content);
+                    return;
+                }
+            })
+        } else if (data.data.metadata &amp;&amp; data.data.metadata.mimeType == "application/vnd.ekstep.content-collection") {    // Node collection/collection
+            $scope.isCollection = true;
+            $scope.getSubCollection(data.data.metadata.identifier)
+            return;
+        }
+        if (!data.type &amp;&amp; !data.folder) {           // Node content
+            $scope.selectedContent = data;
+            $scope.isContent = true;
+        }
+        $scope.$safeApply();
+    }
+
+    /**
+     * Add content to collection list
+     */
+    $scope.addContent = function(event, data) {
+        if (!data.folder) {
+            $scope.contentList.push(data);
+        }
+    }
+
+    /**
+     * Remove content from collection list
+     */
+    $scope.removeContent = function(event, data) {
+        var rootNode = ecEditor.jQuery("#collection-tree").fancytree("getRootNode").getFirstChild();
+        $scope.isNewCollection = rootNode.data.objectType !== "Collection" ? (rootNode.children ? false : true) : false;
+        $scope.contentList = _.remove($scope.contentList, function(content) {
+            return content.data.metadata.identifier != data
+        });
+    }
+
+    /**
+     * Play the content in Genie-canvas
+     */
+    $scope.playContent = function(data) {
+        var previewButton = document.getElementsByClassName('preview-image')[0];
+        previewButton.style.display = 'none';
+        var previewIframe = document.getElementById('previewContentIframe');
+        previewIframe.src = (ecEditor.getConfig('previewURL') || '/content/preview/preview.html') + '?webview=true';
+        previewIframe.onload = function() {
+            org.ekstep.services.contentService.getContent(data.data.metadata.identifier, function(err, content) {
+                var configuration = {};
+                var userData = {};
+                userData.etags = ecEditor.getContext('etags') || [];
+                configuration.context = {
+                    'mode':'edit',
+                    'contentId': ecEditor.getContext('contentId'),
+                    'sid': ecEditor.getContext('sid'),
+                    'uid': ecEditor.getContext('uid'), 
+                    'channel': ecEditor.getContext('channel') || "in.ekstep", 
+                    'pdata': ecEditor.getContext('pdata') || {id: "in.ekstep", pid: "", ver: "1.0"}, 
+                    'app': userData.etags.app || [], 
+                    'dims': userData.etags.dims || [], 
+                    'partner': userData.etags.partner || []
+                }; 
+                if (ecEditor.getConfig('previewConfig')) {
+                    configuration.config = ecEditor.getConfig('previewConfig');
+                } else {
+                    configuration.config = {showEndpage:true};
+                }
+                configuration.metadata = content; 
+                configuration.data = (content.mimeType == 'application/vnd.ekstep.ecml-archive') ?  content.body : {};
+                previewIframe.contentWindow.initializePreview(configuration);
+            })
+        }
+    }
+
+    /**
+     * Function will be triggured on selecting node &amp; initialization of drag &amp; drop
+     */
+    $scope.setSelectedNode = function(event, data) {
+        $scope.resetContentList();
+        $scope.getContentList(data);
+        if (data.data.objectType) {
+            $scope.selectedObjectType = data.data.objectType
+            $scope.$safeApply();
+        }
+    };
+
+    /**
+     * Delete node popup &amp; position
+     */
+    $scope.deleteNode = function(node, event) {
+        if (!node.data.root) {
+            ecEditor.getService('popup').open({
+                template: '&lt;div class="ui mini modal active" id="deletePopup"> &lt;div class="content"> &lt;div class="ui grid"> &lt;div class="ten wide column"> &lt;span class="custom-modal-heading">Are you sure you want to delete this content?&lt;/span> &lt;/div>&lt;div class="two wide column"> &lt;i class="close large icon four wide column right-float pointer" ng-click="closeThisDialog()">&lt;/i>&lt;/div>&lt;/div>&lt;p class="custom-modal-content">All content within this folder will also be deleted from this textbook.&lt;/p>&lt;button class="ui red button" ng-click="confirm()">YES, DELETE&lt;/button> &lt;/div>&lt;/div>',
+                controller: ["$scope", function($scope) {
+                    $scope.confirm = function() {
+                        var parentNode = node.getParent();
+                        node.remove();
+                        delete org.ekstep.collectioneditor.cache.nodesModified[node.data.id];
+                        parentNode.setActive();
+                        $scope.closeThisDialog();
+                        ecEditor.dispatchEvent("org.ekstep.collectioneditor:node:removed", node.data.id);
+                    };
+               }],
+                plain: true,
+                showClose: false
+            });
+            var ngDialogEventListener = $scope.$on('ngDialog.opened', function (e, $dialog) {
+                var dialogWidth = ecEditor.jQuery('#deletePopup').width();
+                var dialogHeight = ecEditor.jQuery('#deletePopup').height();
+                var height = event.pageY;
+                var viewPortHeight = ecEditor.jQuery(window).height();
+                if ((viewPortHeight-(event.pageY + dialogHeight)) &lt; 0)
+                    height = height-dialogHeight;
+                    ecEditor.jQuery('#deletePopup').offset({ top: height, left:  (event.pageX-dialogWidth)}).fadeIn(); 
+                ngDialogEventListener();
+            });
+        }
+    }
+
+    /**
+     * Calling api to get collection list to show in collection content list
+     */
+    $scope.getSubCollection = function(contentId) {
+        var collection = $scope.getCollectionFromCache(contentId);
+        if (collection) {
+            $scope.contentList = collection;
+            $scope.$safeApply();
+        } else {
+            var mode = "live";
+            ecEditor.getService(ServiceConstants.CONTENT_SERVICE).getCollectionHierarchy({ contentId: contentId, mode: mode }, function(err, res) {
+                if (res &amp;&amp; res.data &amp;&amp; res.data.responseCode === "OK") {
+                    $scope.contentList = $scope.generateCollectionContent(res.data.result.content.children);
+                    $scope.storeCollectionInCache(contentId,$scope.contentList);
+                    $scope.$safeApply();
+                } else {
+                    console.log('unable to fetch the content!', res);
+                }
+            });
+        }
+    }
+
+    /**
+     * Store collection data in cache to limit the collection api calls
+     */
+    $scope.storeCollectionInCache = function(contentId, collection) {
+        $scope.collectionCache[contentId] = collection;
+    }
+
+    /**
+     * Get collection data from cache
+     */
+    $scope.getCollectionFromCache = function(identifier) {
+        if ($scope.collectionCache[identifier]) {
+            return $scope.collectionCache[identifier]
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Reconstructing the content to show on content list
+     */
+    $scope.generateCollectionContent = function(data) {
+        var array = [];
+        _.forEach(data, function(child) {
+            var obj = {'data':{'metadata':child}}
+            array.push(obj);
+        })
+        return array;
+    }
+
+    //Header scope starts
+    $scope.headers = [];
+
+    $scope.addToHeader = function(header) {
+        $scope.headers.push(header);
+        $scope.$safeApply();
+    }
+
+    org.ekstep.contenteditor.headerManager.initialize({ loadNgModules: $scope.loadNgModules, scope: $scope });
+
+    //Header scope ends
+
+    $scope.loadContent = function(callback) {
+        var mode;
+        if (ecEditor.getConfig('editorConfig').contentStatus === "draft") mode = "edit";
+        ecEditor.getService(ServiceConstants.CONTENT_SERVICE).getCollectionHierarchy({ contentId: $scope.contentId, mode: mode }, function(err, res) {
+            if (res &amp;&amp; res.data &amp;&amp; res.data.responseCode === "OK") {
+                res.data.result.content.keywords = $scope.parseKeywords(res.data.result.content.keywords);
+                org.ekstep.services.collectionService.fromCollection(res.data.result.content);
+                $scope.sidebarPages = org.ekstep.collectioneditor.metaPageManager.getSidebar();
+                $scope.breadcrumb = org.ekstep.collectioneditor.metaPageManager.getBreadcrumb();
+                $scope.showsuggestedContent = $scope.sidebarPages.length > 0 ? true : false;
+                $scope.metaPages = org.ekstep.collectioneditor.metaPageManager.getPages();
+                var rootNodeConfig = ecEditor._.find(ecEditor.getConfig('editorConfig').rules.objectTypes, ['isRoot', true]);
+                if(rootNodeConfig.type.toLowerCase() === "textbook"){
+                    var channel = ecEditor.getContext('channel');
+                    var reqObj = {
+                        "request": {
+                            "search": {}
+                        }
+                    };
+                    ecEditor.getService('dialcode').getAllDialCodes(channel, reqObj, function(dialerr, dialrep) {
+                        if (!dialerr) {
+                            _.forEach(dialrep.data.result.dialcodes, function(dialcodeData){
+                                org.ekstep.services.collectionService.dialcodeList.push(dialcodeData.identifier);
+                            });
+                            $scope.metaPages = org.ekstep.collectioneditor.metaPageManager.getPages();
+                            $scope.$safeApply();
+                            callback &amp;&amp; callback(err, res);
+                        }else{
+                            callback &amp;&amp; callback('unable to fetch dialcodes!', dialrep);
+                        }
+                    });
+                }else{
+                    callback &amp;&amp; callback('unable to fetch the content!', res);
+                }
+            } else {
+                callback &amp;&amp; callback('unable to fetch the content!', res);
+            }
+        });
+    };
+
+    $scope.expandNode = function() {
+        ecEditor.getService(ServiceConstants.COLLECTION_SERVICE).expandAll($scope.expandNodeFlag);
+        $scope.expandNodeFlag = !($scope.expandNodeFlag);
+        setTimeout(function() {
+            ecEditor.jQuery('.popup-item').popup();
+        }, 0);
+    };
+
+    $scope.telemetry = function(data) {
+        org.ekstep.services.telemetryService.interact({ "type": 'click', "subtype": data.subtype, "target": data.target, "pluginid": manifest.id, "pluginver": manifest.ver, "objectid": ecEditor.getCurrentStage().id, "stage": ecEditor.getCurrentStage().id });
+    };
+    
+    org.ekstep.collectioneditor.api.initEditor(ecEditor.getConfig('editorConfig'), function() {
+        $scope.loadContent(function(err, res) {
+            if (res) {
+                var activeNode = org.ekstep.services.collectionService.getActiveNode();
+                $scope.contentDetails.contentTitle = activeNode.title ? activeNode.title : "Untitled Content";
+                setTimeout(function() {
+                    ecEditor.dispatchEvent('org.ekstep.collectioneditor:node:selected', activeNode);
+                    ecEditor.dispatchEvent('org.ekstep.collectioneditor:node:selected:' + activeNode.data.objectType, activeNode);
+                    ecEditor.dispatchEvent("org.ekstep.collectioneditor:content:load");
+                }, 200);
+                // close the loading screen
+                window.loading_screen &amp;&amp; window.loading_screen.finish();
+            } else {
+                ecEditor.jQuery('.loading-message').remove();
+                ecEditor.jQuery('.sk-cube-grid').remove();
+                ecEditor.jQuery('.pg-loading-html').prepend('&lt;p class="loading-message">Unable to fetch content! Please try again later&lt;/p>&lt;button class="ui red button" onclick="ecEditor.dispatchEvent(\'org.ekstep.collectioneditor:content:notfound\');">&lt;i class="window close icon">&lt;/i>Close Editor!&lt;/button>');
+            }
+        });
+    });
+
+    $scope.addNodeType = function(nodeType) {
+        if (nodeType == 'sibling') {
+            org.ekstep.services.collectionService.addSibling()
+        }
+        if (nodeType == 'child') {
+            org.ekstep.services.collectionService.addChild()
+            $scope.isNewCollection = false;
+            $scope.$safeApply();
+        }
+    }
+
+     /**
+     * setting active node/collection children
+     */
+    $scope.setActiveNode = function(node) {
+        if (node.key) {
+            org.ekstep.collectioneditor.api.getService('collection').setActiveNode(node.key);
+        } else {
+            $scope.setSelectedNode(undefined, node);
+            if (node.data.metadata.mimeType !== "application/vnd.ekstep.content-collection")
+                ecEditor.dispatchEvent('org.ekstep.collectioneditor:content:update', node.data.metadata);
+            ecEditor.dispatchEvent('org.ekstep.collectioneditor:addToBreadcrumb', node.data.metadata);
+
+
+        }
+    }
+
+     /**
+     * Open lesson browser to add in collection tree
+     */
+    $scope.addResource = function() {
+        var collectionTree = document.getElementById('collection-tree');
+        org.ekstep.collectioneditor.jQuery(collectionTree).trigger("nodeCommand", {cmd: 'addLesson'});
+    }
+
+    ecEditor.addEventListener('org.ekstep.collectioneditor:node:selected', $scope.setSelectedNode, $scope);
+    ecEditor.addEventListener('org.ekstep.collectioneditor:node:added', $scope.addContent, $scope);
+    ecEditor.addEventListener('org.ekstep.collectioneditor:node:removed', $scope.removeContent, $scope);
+
+    $scope.parseKeywords = function(keywords){
+        if(_.isString(keywords)){
+            return JSON.parse(keywords);
+        }else{
+            return keywords;
+        }
+    }
+
+}]);
+//# sourceURL=collectiontreeApp.js</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module--%2520_org.ekstep.metadataform_.html">- 'org.ekstep.metadataform'</a></li></ul><h3>Classes</h3><ul><li><a href="activityBrowser.html">activityBrowser</a></li><li><a href="assessment.html">assessment</a></li><li><a href="assessmentBrowser.html">assessmentBrowser</a></li><li><a href="assetBrowser.html">assetBrowser</a></li><li><a href="audio.html">audio</a></li><li><a href="breadcrumb.html">breadcrumb</a></li><li><a href="collaborator.html">collaborator</a></li><li><a href="colorpicker.html">colorpicker</a></li><li><a href="conceptselector.html">conceptselector</a></li><li><a href="Config.html">Config</a></li><li><a href="download.html">download</a></li><li><a href="ECML.html">ECML</a></li><li><a href="editcontentmeta.html">editcontentmeta</a></li><li><a href="Help.html">Help</a></li><li><a href="hotspot.html">hotspot</a></li><li><a href="image.html">image</a></li><li><a href="lessonBrowser.html">lessonBrowser</a></li><li><a href="org.ekstep.collectioneditor.contentProviderRepo.html">contentProviderRepo</a></li><li><a href="org.ekstep.contenteditor.questionUnitPlugin.html">questionUnitPlugin</a></li><li><a href="org.ekstep.iframeEvent.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.iterator.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.navigation.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.ftbplugin.EditorPlugin.html">EditorPlugin</a></li><li><a href="org.ekstep.plugins.text.MultilineTransliterator.html">MultilineTransliterator</a></li><li><a href="org.ekstep.plugins.text.WordExtractor.html">WordExtractor</a></li><li><a href="org.ekstep.questionunit.ftb.html">ftb</a></li><li><a href="org.ekstep.questionunit.mcq.html">mcq</a></li><li><a href="org.ekstep.questionunit.mcqlongtext.html">mcqlongtext</a></li><li><a href="Preview.html">Preview</a></li><li><a href="question.html">question</a></li><li><a href="questionbank.html">questionbank</a></li><li><a href="questionset.html">questionset</a></li><li><a href="readalongbrowser.html">readalongbrowser</a></li><li><a href="global.html#reviewContent">reviewContent</a></li><li><a href="RichText.html">RichText</a></li><li><a href="scribblePad.html">scribblePad</a></li><li><a href="shape.html">shape</a></li><li><a href="Shortcuts.html">Shortcuts</a></li><li><a href="Text.html">Text</a></li><li><a href="Utils.html">Utils</a></li><li><a href="whatsnew.html">whatsnew</a></li><li><a href="wordinfobrowser.html">wordinfobrowser</a></li></ul><h3>Events</h3><ul><li><a href="EkstepRendererEvents.html#.event:actionNavigateNext">actionNavigateNext</a></li><li><a href="EkstepRendererEvents.html#.event:actionNavigatePrevious">actionNavigatePrevious</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="global.html#event:%2522renderer:load:html%2522">"renderer:load:html"</a></li><li><a href="global.html#event:%2522renderer:load:js%2522">"renderer:load:js"</a></li><li><a href="global.html#event:'org.ekstep.editcontentmeta:showpopup'">'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:cancel'">- 'editor:form:cancel'</a></li><li><a href="global.html#event:-'org.ekstep.editcontentmeta:showpopup'">- 'org.ekstep.editcontentmeta:showpopup'</a></li><li><a href="global.html#event:-'editor:form:success'">-'editor:form:success'</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:click">ftb:click</a></li><li><a href="org.ekstep.questionunit.ftb.renderer_questionunit.html#.event:ftb:dispatch">ftb:dispatch</a></li></ul><h3>Global</h3><ul><li><a href="global.html#config">config</a></li><li><a href="global.html#controllerCallback">controllerCallback</a></li><li><a href="global.html#convertToDataType">convertToDataType</a></li><li><a href="global.html#DEFAULT_TEMPLATE_NAME">DEFAULT_TEMPLATE_NAME</a></li><li><a href="global.html#deleteComment">deleteComment</a></li><li><a href="global.html#eventMap">eventMap</a></li><li><a href="global.html#extractText">extractText</a></li><li><a href="global.html#form">form</a></li><li><a href="global.html#formApp">formApp</a></li><li><a href="global.html#framework">framework</a></li><li><a href="global.html#getArrayOfKeywords">getArrayOfKeywords</a></li><li><a href="global.html#getComments">getComments</a></li><li><a href="global.html#getConfigurations">getConfigurations</a></li><li><a href="global.html#getFields">getFields</a></li><li><a href="global.html#getFormFields">getFormFields</a></li><li><a href="global.html#getMappedResponse">getMappedResponse</a></li><li><a href="global.html#getTemplate">getTemplate</a></li><li><a href="global.html#getUpdateDataType">getUpdateDataType</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#initPreview">initPreview</a></li><li><a href="global.html#invoke">invoke</a></li><li><a href="global.html#isConfigurationsExists">isConfigurationsExists</a></li><li><a href="global.html#IteratorPlugin">IteratorPlugin</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#logTelemetry">logTelemetry</a></li><li><a href="global.html#mapObject">mapObject</a></li><li><a href="global.html#mappedResponse">mappedResponse</a></li><li><a href="global.html#mapResponse">mapResponse</a></li><li><a href="global.html#minSearchQueryLength">minSearchQueryLength</a></li><li><a href="global.html#of">of</a></li><li><a href="global.html#onConfigChange">onConfigChange</a></li><li><a href="global.html#options">options</a></li><li><a href="global.html#postComment">postComment</a></li><li><a href="global.html#putComment">putComment</a></li><li><a href="global.html#recorderUtils">recorderUtils</a></li><li><a href="global.html#renderForm">renderForm</a></li><li><a href="global.html#resetFields">resetFields</a></li><li><a href="global.html#resourceBundle">resourceBundle</a></li><li><a href="global.html#saveContent">saveContent</a></li><li><a href="global.html#saveMeta">saveMeta</a></li><li><a href="global.html#stageAudios">stageAudios</a></li><li><a href="global.html#transliterate">transliterate</a></li><li><a href="global.html#updateState">updateState</a></li><li><a href="global.html#validate">validate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 26 2018 13:11:17 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

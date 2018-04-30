@@ -9,9 +9,7 @@ published: true
 allowSearch: true
 ---
 ## Overview
-
-Writing a good bug report is not hard. Just follow a few effective techniques and you will be writing super bug reports in no time at all. 
-
+You can write effective bug reports in no time using few techniques.
 It is worth noting that there are a few alternative options for support:
 
 1. Check the [Sunbird troubleshooting](http://www.sunbird.org/developer-docs/troubleshooting/){:target="_blank"} page for a solution. If there is no solution for your issue, the following process will guide you in figuring out what to do.
@@ -27,24 +25,23 @@ To file a bug report that is effective, ensure the following:
 - Follow up
 
 ## Separate out the bug
-The first step in in writing an effective bug report is to find exactly:
+The first step in writing an effective bug report is to find:
 
 - **What is the problem?**
   
-  Clearly and precisely state what exactly is wrong?
+  Clearly and precisely state what is wrong?
 
 - **How to reproduce it?**
 
-    - If you have an explicit understanding about what exactly is wrong, you can reproduce an example of the problem        	
-    - If you can answer both the questions and reliably reproduce an example of the problem, you are successful in distinctly separating out the bug.
+    - You can report a bug with appropriate steps if you have an explicit understanding about the issue.
 
 ## Single issue for a single bug
 
-Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively
+Since Sunbird is open source, there is always a possibility that you encounter more than one bug, Incase, if you have multiple issues, it is better to file them separately, so that they can be tracked more effectively.
 
 ## Writing an effective bug report
 
-Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answers to these allows you to file an efficient and clear in the process of filing bug reports.
+Before you raise an issue, make sure to check the following questions that are used for filing a bug report, answering to these questions allows you to file a bug reports efficiently.
 
 ### Issue Title
 
@@ -53,13 +50,13 @@ Everything starts with a title. It must be clear and descriptive so that you can
   1. What is the problem?
   2. Where does the problem occur?
   3. What action must the user perform to trigger the problem?
+  4. What is the expected output?
  
+Ensure these questions must be answered in less than 140 characters!
 
-And keep in mind, these questions must be answered in less than 140 characters!
+The title should describe the problem as best as possible. 
 
-The title should describe the problem as best as possible. Remember that the title is read more often than any other part of the bug report.
-
-After submitting the issue, you can modify the title.
+After submitting the issue, you can modify the title if required.
 
 ### A concise issue description
 
@@ -67,11 +64,11 @@ A good bug report has a clear and concise description. This is an opportunity to
 
 ### Sequence of steps to reproduce bug
 
-One of the most important steps in a good bug report is providing a step-by-step account of exactly what you did to find the defect. You can use software tools that catch your key strokes, or record screenshots or video files as you test. Other times you’ll be writing from memory, so take notes as you go. Make sure that you test your own steps again before submitting the bug.
+One of the most important steps in a good bug report is providing a step-by-step account of exactly what you did to find the defect. You can use software tools that catch your key strokes, or record screenshots or video files as you test. Make sure that you test the steps again before submitting the bug.
 
 Ensure the following:
-- A bug report needs clear instructions, so that others can understand and exclusively reproduce it
-- Include good set of instructions i.e a numbered list that details each button press, or menu selection
+- A bug report needs clear instructions, so that others can understand and reproduce it
+- Include good set of instructions i.e a numbered list that details each button press or menu selection
 
 ### Actual behavior
 
@@ -79,7 +76,7 @@ Ensure the following:
 
 ### Expected behavior
 
-- Describe what actually is correct workflow or exactly should happen if the bug was fixed.
+- Describe the correct workflow and outcome post fixing the issue.
 
 ### Environment in which the issue is encountered
 
@@ -88,27 +85,25 @@ Ensure the following:
 
 ### Supporting files
 
-Supporting material is always gratefully received by those assigned with fixing defects. Usually the files can be be screenshots, but it can include audio and video files also. Annotate your screenshots to highlight problems.
+Supporting material is always gratefully received by those assigned Developers. Usually the files can be screenshots, audio and video files. Annotate your screenshots to highlight problems.
 
-The visuals are always looked at first prior to reading the text you provide. If you can convey the issue in a single screenshot, you’re helping save precious time.
+The visuals are always looked prior to reading the description. 
 
-So, ensure to:
-
-- Supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
+Ensure to supplement your bug report with an image, audio, or crash log that helps others reproduce the issue, attach these files.
 
 ### Sunbird Version
 
-The version of Sunbird in which you discovered the bug (e.g., 1.3). If you can reproduce the problem in more than one version, write down the earliest.
+If you are able to replicate the issue on different version then update the details with the different version numbers.
 
 ### Issue Category
 
-A "bug report" is usually for when Sunbird does something which is not what it is expected to. An example of a bug could be: a link to a page, instead of opening it shows an error.
+A "bug report" is usually filed when there is any deviation from actual behaviour. An example of a bug could be __ a link to a page, instead of opening it shows an error.
 
 Tasks, feature requests and support requests are beyond the scope of this article.
 
 ### Type and severity
 
-Every bug will have a different type and severity.These fields go hand-in-hand. A functional bug will generally be treated more seriously than a suggestion. No product ships with zero defects, so having bugs categorized correctly in terms of type and severity helps the decision-making process with regards to what gets fixed and what doesn’t. If you don’t understand these fields, ask for instruction. It also helps to review other bug entries the issue tracker.
+Every bug will have a different type and severity.These fields go hand-in-hand. A functional bug will generally be treated more seriously than a suggestion. No product ships with zero defects, so having bugs categorized correctly in terms of type and severity helps the decision-making process with regards to what gets fixed and what doesn’t. If you don’t understand these fields, ask for instruction.
 
 You can use the following tags in your bug reports:
 
@@ -133,4 +128,4 @@ Click **Submit button** to submit your bug report to the issue tracker.
 
 ## Following up
 
-Once a developer marks a bug as fixed, it is a good idea to ensure that it is completely fixed. To test, download the latest build. 
+Once a developer marks a bug as fixed, Cross verify the fix is 'working as expected' by downloading the latest build.  

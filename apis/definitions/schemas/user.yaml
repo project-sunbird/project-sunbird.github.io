@@ -24,7 +24,7 @@ definitions:
         type: array
         item:
           type: string
-      description: All languages known by the user
+	  description: All languages known by the user
       gender:
         type: string
       phone:
@@ -32,22 +32,22 @@ definitions:
       status:
         type: integer
         format: int32
-        description: user status ini
+	description: user status ini
       loginId:
         type: string
       subject:
         type: array
         item:
-           type: string
+        type: string
       roles:
        type: array
        item:
-           type: string
+       type: string
       lastUpdatedDate:
-        type: string
-        format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+       type: string
+       format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
       provider:
-        type: string
+       type: string
       countryCode:
        type: stirng
       updatedBy:
@@ -62,7 +62,7 @@ definitions:
        type: boolean
       lastLoginTime:
        type: string
-       format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
+	   format: yyyy-MM-dd HH:mm:ss:SSSZZZZ
       createdDate:   
        type: string
        format : yyyy-MM-dd HH:mm:ss:SSSZZZZ
@@ -72,7 +72,7 @@ definitions:
       grade:
         type: array
         item:
-          type: string
+         type: string
       location:
         type: string
       education:
@@ -83,22 +83,22 @@ definitions:
       organisations:
          type: array
          item: 
-           type: object
-           ref: ./organisation.yaml
+         type: object
+         ref: ./organisation.yaml
       profileVisibility:
         type: object
-     	description: it will be a map , having key as any user attribute and value can be public or private. 
+     	  description: It will be a map, having key as any user attribute and value can be public or private. 
       address: 
-        type: array
-        item:
-           type: object
-           ref: ./address.yaml
-        description: it will contains list of address object.
+       type: array
+       item:
+       type: object
+       ref: ./address.yaml
+       description: It contains a list of address objects.
       jobProfile:
        type: array
        item: 
-         type: object
-         ref: ./jobprofile.yaml
+       type: object
+       ref: ./jobprofile.yaml
       registeredOrg:
        type: object
        ref: ./organisation.yaml
@@ -106,9 +106,9 @@ definitions:
        type: array
        item:
         type: object
-        property:
+       property:
          type:
            type: string
          url:
            type: string   
-                
+

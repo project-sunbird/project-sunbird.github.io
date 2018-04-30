@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: player/public/coreplugins/org.ekstep.repo-1.0/renderer/plugin.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: player/public/coreplugins/org.ekstep.repo-1.0/renderer/plugin.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Plugin to create repo instance and to register repo instance.
+ * It is usefull to load the plugins from the difrrent location.
+ * Pass the postion of the repo which will insert to stack based on the posion so 
+ * loading the plugin speed will increases.
+ * @extends EkstepRenderer.Plugin
+ * @example
+ * EkstepRendererAPI.dispatchEvent("renderer:repo:create",undefined,['/location1','/location2'])
+ * @example
+ * EkstepRendererAPI.dispatchEvent("renderer:repo:create",undefined,{path:'location1',position:0})
+ * @author Manjunath Davanam &lt;manjunathd@ilimi.in>
+ */
+
+Plugin.extend({
+    /**
+     * Initialization of the repo plugin.
+     */
+    initialize: function() {
+        EkstepRendererAPI.addEventListener('renderer:repo:create', this.start, this);
+    },
+    /**
+     * Looping of repos to create a instance of each repo
+     * @example
+     * EkstepRendererAPI.dispatchEvent("renderer:repo:create",undefined,['/location1','/location2'])
+     * @example
+     * EkstepRendererAPI.dispatchEvent("renderer:repo:create",undefined,{path:'location1',position:0})
+     * @param  {string} event [Name of the event]
+     * @param  {array} repos [repos]
+     */
+    start: function(event, repos) {
+        var instance = this;
+        if (repos) {
+            if (_.isArray(repos)) {
+                _.each(repos, function(repoPath, index) {
+                    instance.isAvailable(repoPath, function(isPresent) {
+                        if (!isPresent) {
+                            instance.createInstance(repoPath, index);
+                        }
+                    });
+                });
+            } else {
+                instance.isAvailable(repos.path, function(isPresent) {
+                    if (!isPresent) {
+                        instance.createInstance(repos.path, repos.position);
+                    }
+                });
+            }
+        }
+    },
+    initPlugin: function() {
+        console.info("Repo plugin init");
+    },
+    /**
+     * Create the plugin repo instance to load the plugin
+     * @param  {string} repoPath [path of the plugin which is need to be load]
+     * @param  {integer} position [Which increases speed of loading plugin from the path]
+     * @return {class}          [creates the repo instance]
+     */
+    createInstance: function(repoPath, position) {
+        var repoInstance = new(org.ekstep.pluginframework.iRepo.extend({
+            id: Math.random() + 'ekstepPluginRepo_' + new Date().getTime(),
+            basePath: repoPath,
+            discoverManifest: function(pluginId, pluginVer, callback, publishedTime) {
+                var instance = this;
+                org.ekstep.pluginframework.resourceManager.loadResource(this.resolveResource(pluginId, pluginVer, "manifest.json"), "json", function(err, response) {
+                    callback(undefined, {
+                        manifest: response,
+                        repo: instance
+                    });
+                }, publishedTime);
+            },
+            resolveResource: function(pluginId, pluginVer, resource) {
+                return this.basePath + "/" + pluginId + "-" + pluginVer + "/" + resource;
+            }
+        }))();
+        this.addInstance(repoInstance, position);
+    },
+    /**
+     * It will add the repo instance to registredRepo stack
+     * @param {class} repoInstance [Repo instance]
+     * @param {integer} position     [postion of the registedRepos stack]
+     */
+    addInstance: function(repoInstance, position) {
+        org.ekstep.pluginframework.resourceManager.addRepo(repoInstance, position);
+    },
+
+    /**
+     * To avoid duplicate repos
+     * @param  {path}   repo [repo path]
+     * @return {Boolean}       [If the path is already present then it will return true else false in the callback]
+     */
+    isAvailable: function(repo, cb) {
+        var isAvailable = undefined;
+        if (org.ekstep.pluginframework.resourceManager.registeredRepos) {
+            isAvailable = _.find(org.ekstep.pluginframework.resourceManager.registeredRepos, function(r) {
+                return r.basePath == repo;
+            });
+            isAvailable ? cb(true) : cb(false);
+        } else {
+            cb(false);
+        }
+    }
+});
+//# sourceURL=RepoPlugin.js</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="AudioPlugin.html">AudioPlugin</a></li><li><a href="ecmlRenderer.html">ecmlRenderer</a></li><li><a href="EkstepRendererAPI.html">EkstepRendererAPI</a></li><li><a href="EkstepRendererEvents.html">EkstepRendererEvents</a></li><li><a href="EmbedPlugin.html">EmbedPlugin</a></li><li><a href="epubRenderer.html">epubRenderer</a></li><li><a href="ImagePlugin.html">ImagePlugin</a></li><li><a href="MCQPlugin.html">MCQPlugin</a></li><li><a href="MTFPlugin.html">MTFPlugin</a></li><li><a href="OptionPlugin.html">OptionPlugin</a></li><li><a href="org.ekstep.contentrenderer.baseEndepage.html">baseEndepage</a></li><li><a href="org.ekstep.contentrenderer.baseLauncher..html">baseLauncher.</a></li><li><a href="ShapePlugin.html">ShapePlugin</a></li><li><a href="TelemetryPlugin.html">TelemetryPlugin</a></li><li><a href="TextPlugin.html">TextPlugin</a></li><li><a href="ThemePlugin.html">ThemePlugin</a></li><li><a href="VideoPlugin.html">VideoPlugin</a></li></ul><h3>Events</h3><ul><li><a href="-_org.ekstep.launcher_.html#.event:'renderer.player.init'">'renderer.player.init'</a></li><li><a href="-_org.ekstep.launcher_.html#.event:'renderer:content:replay'">'renderer:content:replay'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:content:end'">'renderer:content:end'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:launcher:load'">'renderer:launcher:load'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:player:init'">'renderer:player:init'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:player:show'">'renderer:player:show'</a></li><li><a href="EkstepRendererEvents.html#.event:'renderer:repo:create'">'renderer:repo:create'</a></li><li><a href="EkstepRendererEvents.html#.event:'telemetryPlugin:intialize'">'telemetryPlugin:intialize'</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:endpage:hide">renderer:endpage:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:endpage:show">renderer:endpage:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:hide">renderer:next:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:next:show">renderer:next:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:hide">renderer:previous:hide</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:previous:show">renderer:previous:show</a></li><li><a href="EkstepRendererEvents.html#.event:renderer:toast:show">renderer:toast:show</a></li><li><a href="global.html#event:plugin:errorwhihcisbeingdispatchingfromthepluginframework">plugin:error whihc is being dispatching from the plugin framework</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addInstance">addInstance</a></li><li><a href="global.html#addToGameArea">addToGameArea</a></li><li><a href="global.html#content_renderer">content_renderer</a></li><li><a href="global.html#createInstance">createInstance</a></li><li><a href="global.html#endTelemetry">endTelemetry</a></li><li><a href="global.html#getGameArea">getGameArea</a></li><li><a href="global.html#getLauncherDom">getLauncherDom</a></li><li><a href="global.html#heartBeatEvent">heartBeatEvent</a></li><li><a href="global.html#initialize">initialize</a></li><li><a href="global.html#isAvailable">isAvailable</a></li><li><a href="global.html#progres">progres</a></li><li><a href="global.html#resetDomElement">resetDomElement</a></li><li><a href="global.html#start">start</a></li><li><a href="global.html#startTelemetry">startTelemetry</a></li><li><a href="global.html#throwError">throwError</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Mar 27 2018 10:58:45 GMT+0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
