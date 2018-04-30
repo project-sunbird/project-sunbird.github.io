@@ -43,12 +43,12 @@ This page contains the details of the procedure on how to review and publish con
   <tr>
     <td><ol>
      <li>Click <b>Up for Review</b>
-     <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept etc.
+     <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
      <li>Alternatively, apply filters to search for content
      <li>Click <b>Sort by</b> to sort content. Sort content based on:
-       <ol><li>Last updated date
-       <li>Last created date
-       <li>Alphabetically </ol>
+       <ol>a. Last updated date
+        <br>b. Last created date
+       <br>c.Alphabetically </ol>
      <li>Click on the page navigation to access the required list on a particular page</ol>
    </td>
     <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png"></td>
@@ -66,11 +66,10 @@ This page contains the details of the procedure on how to review and publish con
     <td><ol>
      <li>Click Show Filters to apply filters and narrow your search results
      <li>Select the respective options from the following drop-down menus:
-      <ol><li>Curriculum
-          <li>Subjects
-          <li>Grade
-          <li>Medium
-          <li>Content Types </ol>
+      <ol>a. Curriculum
+       <br>b. Subjects
+       <br>c. Grades
+       <br>d. Medium</ol>
      <li>Click Apply to apply filters and fetch the search results
      <li>Click Reset to reset selected filter options
       </ol>
