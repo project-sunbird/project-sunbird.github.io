@@ -115,6 +115,6 @@ To review the content, reviewers has to perform following
    <td><li>Click <b>Reject</b> to reject the content
   <br>Once the content is rejected, the creator is notified of the same and the content is rolled back to draft stage.
      </td>
-    <td><img src="pages/features-documentation/images/contentreviewer/reject_content.png"></td>
+    <td><img src="pages/features-documentation/images/images/contentreviewer/reject_content.png"></td>
   </tr>
   </table>
