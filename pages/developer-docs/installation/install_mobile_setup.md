@@ -42,7 +42,6 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
 <br>
 <pre>
 <code>
-sh
 buildConfigField 'String', 'REDIRECT_BASE_URL', '"<http or https://domain-name>"'
 buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>/api/data/v1"'
 </code>
@@ -53,17 +52,14 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
   <tr>
     <td>5.</td>
     <td>Replace the producer id <code>PRODUCER_ID</code> for respective environments in gradle.properties as per the format mentioned below
-
-<pre>
-<code>sh
-<env>.<implementation-name>.app
-</code>
-</pre>
+<pre> <code>
+"env.implementation-name.app"
+</code> </pre>
 </td>
   </tr>
   <tr>
     <td>6.</td>
-    <td>Add your keystore detail `keystore`, `keystore_password`, `key_alias` and `key_password` in `gradle.properties`. Please refer to the official Android documentation for <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank"> generating a key and keystore</a>.</td>
+    <td>Add your keystore details: <code>keystore</code>, <code>keystore_password</code>, <code>key_alias</code> and <code>key_password</code> in <code>gradle.properties</code>.<bbrr> Please refer to the official Android documentation for <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank"> generating a key and keystore</a>.</td>
   </tr>
   <tr>
     <td>7.</td>
@@ -80,7 +76,7 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
   
  
 <pre>
-<code>sh
+<code>
  curl -X POST \
    <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
    -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
@@ -113,11 +109,11 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
   </tr>
   <tr>
     <td>10.</td>
-    <td>To `change the app name, navigate to `sunbird-android/app/src/main/res/values/strings.xml` and enter the required app name</td>
+    <td>To change the app name, navigate to <code>sunbird-android/app/src/main/res/values/strings.xml</code> and enter the required app name</td>
   </tr>
   <tr>
     <td>11.</td>
-    <td>To change the app logo navigate to `sunbird-android/app/src/main/res`in android studio.
+    <td>To change the app logo navigate to <code>sunbird-android/app/src/main/res</code> in android studio.
     <li>In all the mipmap and drawable folders, replace ic_launcher.png image with your desired logo</li>
       <li>The logo name should exactly match the text <B>ic_launcher.png</b></li></td>
   </tr>
