@@ -56,7 +56,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   </table>
 
-## Filter Content
+### Filter Content
 
 <table>
   <tr>
@@ -79,7 +79,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   </table>
   
-## Review Content and Resources
+### Review Content and Resources
   <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -92,7 +92,7 @@ This page contains the details of the procedure on how to review and publish con
    </tr>
   </table>
   
-## Publish Content
+### Publish Content
 <table>
   <tr>
     <th style="width:35%;">Step</th>
