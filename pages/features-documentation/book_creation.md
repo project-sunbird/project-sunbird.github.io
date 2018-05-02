@@ -128,13 +128,12 @@ sibling node, refer Exploring TOC Structure
   </tr>
   <tr>
       <td>3. Click <b>Edit</b> to link or unlink the DIAL code
-        <br>a. Unlink the DIAL code from the book
-        <br>b. Link the DIAL code to the book
+        <br>&emsp;a. Unlink the DIAL code from the book
+        <br>&emsp;b. Link the DIAL code to the book
     </td>
       <td colspan="2"><img src="pages/features-documentation/images/book/dial_code_un_link.png"></td> 
     </tr>
- 
-  </table>
+ </table>
 
 ### Adding Resources 
 
