@@ -39,11 +39,14 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
     <td>Replace redirect base url <code>REDIRECT_BASE_URL</code> and all other base urls with your respective domain name in build.gradle<br>
   <br>
   Example:
-
-```sh
+<br>
+<pre>
+<code>
+sh
 buildConfigField 'String', 'REDIRECT_BASE_URL', '"<http or https://domain-name>"'
 buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>/api/data/v1"'
-```
+</code>
+</pre>
 
   </td>
   </tr>
@@ -51,9 +54,11 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
     <td>5.</td>
     <td>Replace the producer id <code>PRODUCER_ID</code> for respective environments in gradle.properties as per the format mentioned below
 
-```sh
+<pre>
+<code>sh
 <env>.<implementation-name>.app
-```
+</code>
+</pre>
 </td>
   </tr>
   <tr>
@@ -74,7 +79,8 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
  
   
  
-```sh
+<pre>
+<code>sh
  curl -X POST \
    <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
    -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
@@ -84,19 +90,24 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
      "key": "<implementation-name>-mobile-app-<version-number>"
    }
  }'
-```
+</code>
+</pre>
  Result will be
  
-```json
+<pre>
+<code>json
  {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}}
-```
+</code>
+</pre>
  Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file.
  <br>
  Example:<br> 
- ```
+<pre>
+ <code>
  dev_mobile_app_key = "<implementation-name>-mobile-app-<version-number>"
  dev_mobile_app_secret = "<secret>"
- ```
+ </code>
+</pre>
 
 </td> 
   </tr>
