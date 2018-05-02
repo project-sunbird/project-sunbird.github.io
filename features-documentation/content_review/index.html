@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.38.a/";
+			baseURL.href="/releases/release.1.39.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-04-30 11:39:10 +0530">
+<meta name="last-modified" content="2018-05-02 20:44:37 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.38.a" />
-<meta name="buildNo" content="3182" />
+<meta name="buildVersion" content="release.1.39.a" />
+<meta name="buildNo" content="3263" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?30042018"  />
-<link rel="stylesheet" href="css/style.css?30042018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?30042018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?30042018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?30042018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?30042018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?02052018"  />
+<link rel="stylesheet" href="css/style.css?02052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?02052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?02052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?02052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?02052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -148,7 +148,7 @@
                     <div class="">
                         <ul class="sidebar-group">
                             <li>
-                                <a href="features-documentation/user_type/">Types of Users</a>
+                                <a href="features-documentation/userrole/">Types of Users</a>
                             </li>
                             <li>
                                 <a href="features-documentation/userprofile/">User Profile</a>
@@ -524,6 +524,21 @@
             <li class="toc_level-1 toc_section-1">
               <a href="#prerequisites"><span class="tocnumber">1 .</span> <span class="toctext">Prerequisites</span></a>
             </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#review-workspace"><span class="tocnumber">2 .</span> <span class="toctext">Review Workspace</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#filter-content"><span class="tocnumber">3 .</span> <span class="toctext">Filter Content</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#review-content-and-resources"><span class="tocnumber">4 .</span> <span class="toctext">Review Content and Resources</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#publish-content"><span class="tocnumber">5 .</span> <span class="toctext">Publish Content</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-6">
+              <a href="#reject-content"><span class="tocnumber">6 .</span> <span class="toctext">Reject Content</span></a>
+            </li>
           </ul>
         </td>
       </tr>
@@ -531,7 +546,7 @@
   </table>
 </div><p>To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review.
 Organizations can assign reviewer roles to users and set guidelines to ensure the quality of content being uploaded. However, there are some standard guidelines that have to be adhered by anyone who uploads
-content on Sunbird. To read more on review guidelines, refer Review Guidelines</p>
+content on Sunbird.</p>
 
 <p>This page contains the details of the procedure on how to review and publish content on Sunbird</p>
 
@@ -543,114 +558,101 @@ content on Sunbird. To read more on review guidelines, refer Review Guidelines</
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td><ol>
-   <li>You are logged in as the content reviewer
-   </li><li>You are on the <b>Profile</b> tab
-   </li><li>You have clicked on <b>View your workspace</b>&lt;/ol&gt;
-      &lt;/td&gt;
+    <td>
+     <br />1. You are logged in as the content reviewer
+     <br />2. You are on the <b>Profile</b> tab
+     <br />3. You have clicked on <b>View your workspace</b>
+      </td>
       <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png" /></td>
-  &lt;/tr&gt;
- &lt;/table&gt;
-  
-## Review Workspace
-  
-  To review the content, reviewers has to perform following 
-  
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <td><ol>
-     <li>Click <b>Up for Review</b>
-     </li><li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
-     </li><li>Alternatively, apply filters to search for content
-     </li><li>Click <b>Sort by</b> to sort content. Sort content based on:
-       <ol>a. Last updated date
-        <br />b. Last created date
-       <br />c.Alphabetically </ol>
-     </li><li>Click on the page navigation to access the required list on a particular page&lt;/ol&gt;
-   &lt;/td&gt;
-    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer.png" /></td>
-  &lt;/tr&gt;
-  &lt;/table&gt;
+ </table>
 
-## Filter Content
+<h2 id="review-workspace">Review Workspace</h2>
 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr>
-    <td><ol>
-     <li>Click Show Filters to apply filters and narrow your search results
-     </li><li>Select the respective options from the following drop-down menus:
-      <ol>a. Curriculum
-       <br />b. Subjects
-       <br />c. Grades
-       <br />d. Medium</ol>
-     </li><li>Click Apply to apply filters and fetch the search results
-     </li><li>Click Reset to reset selected filter options
-      &lt;/ol&gt;
-   &lt;/td&gt;
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png" /></td>
-  &lt;/tr&gt;
-  &lt;/table&gt;
-  
-  ## Review Content
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td><ol>
-     <li>Click Show Filters to apply filters and narrow your search results
-     </li><li>Select the respective options from the following drop-down menus:
-      <ol><li>Curriculum
-          </li><li>Subjects
-          </li><li>Grade
-          </li><li>Medium
-          </li><li>Content Types &lt;/ol&gt;
-     </li><li>Click Apply to apply filters and fetch the search results
-     </li><li>Click Reset to reset selected filter options
-      &lt;/ol&gt;
-   &lt;/td&gt;
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png" /></td>
-  &lt;/tr&gt;
-  &lt;/table&gt;
-  
-## Publish Content
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-   <td>1. Click <b>Publish</b> to publish the content. 
-      <br /> Once the content is successfully published, the creator is notified of the same and the
-    content will be available on Sunbird for view and consumption
-     </td>
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png" /></td>
+ <tr>
+    <td>
+     <br />1. Click <b>Up for Review</b>
+     <br />2. Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
+     <br />3. Alternatively, apply filters to search for content
+     <br />4. Click <b>Sort by</b> to sort content. Sort content based on:
+       <br /> a. Last updated date
+       <br /> b. Last created date
+       <br /> c. Alphabetically
+     <br />5. Select the content you want to review. Refer <a href="features-documentation/content_review.md/##Review Content and Resources" target="_blank">Review Content and Resources</a>
+      <br />6. Click on the page navigation to access the required list on a particular page
+  </td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer1.png" /></td>
   </tr>
   </table>
-  
-  ## Reject Content
-  <table>
+
+<h2 id="filter-content">Filter Content</h2>
+
+<table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Click Reject to reject the content 
+    <td>
+     <br />1. Click <b>Show Filters</b> to apply filters and narrow your search results
+     <br />2. Select the respective options from the following drop-down menus:
+       <br /> a. Curriculum
+       <br /> b. Subjects
+       <br /> c. Grades
+       <br /> d. Medium
+     <br />3. Click <b>Apply</b> to apply filters and fetch the search results
+     <br />4. Click <b>Reset</b> to reset selected filter options
+      &lt;/ol&gt;
+   </td>
+    <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_filter.png" /></td>
+  </tr>
+  </table>
+
+<h2 id="review-content-and-resources">Review Content and Resources</h2>
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. The Book Review page appears. A reviewer can review the content and resources associated with the book.  
+   </td>
+    <td><img src="pages/features-documentation/images/contentreviewer/review_content.png" /></td>
+   </tr>
+  </table>
+
+<h2 id="publish-content">Publish Content</h2>
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+   <td><br />1. Click <b>Publish</b> to publish the content
+      <br /> Once the content is successfully published, the creator is notified of the same and the content will be available on Sunbird for view and consumption
+     </td>
+    <td><img src="pages/features-documentation/images/contentreviewer/publish_content.png" /></td>
+  </tr>
+  </table>
+
+<h2 id="reject-content">Reject Content</h2>
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+   <td><br />1. Click <b>Reject</b> to reject the content
   <br />Once the content is rejected, the creator is notified of the same and the content is rolled back to draft stage.
      </td>
-    <td><img src="pages/features-documentation/images/contenteditor/contenteditor1.png" /></td>
+    <td><img src="pages/features-documentation/images/images/contentreviewer/reject_content.png" /></td>
   </tr>
   </table>
-</li></ol></li></ol></td></tr></table></li></ol></td></tr></table></li></ol></td></tr></table></li></ol></td></tr></table>
 
           
           <hr />

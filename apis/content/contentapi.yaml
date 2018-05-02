@@ -1526,6 +1526,113 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  /copy/{ContentId}:
+    parameters:
+      - in: path
+        name: ContentId
+        type: string
+        required: true
+        description: 'Please append a valid Content ID To the Request URL' 
+    post:
+      description: >-
+       This API is associated with copying content on the Sunbird Platform .
+          - **_/copy/_** endpoint executes the "Copy Content" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for the required fields
+          - Required fields cannot be null or empty.
+      summary: Copy Content
+      tags:
+        - Content APIs
+      operationId: Copy Content
+      produces:
+        - application/json
+      parameters:
+        - name: Body
+          in: body
+          required: true
+          description: >-
+            The body refers to the format of the request.
+              - The body contains metadata about the content to be copied, i.e an array of parameters which describes the content.
+          schema:
+             $ref: '#/definitions/CopyContentRequestBody' 
+            
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description:  >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: 'The Registered User token to execute the API.' 
+        - name: x-channel-id
+          in: header
+          required: true
+          type: string
+          description: 'The unique ID provided to the State to which the user belongs.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: >-
+            SUCCESS. The **Copy Content** operation was successful!
+          schema:
+            $ref: '#/definitions/ContentCopySuccessResponse'
+        '400':
+          description: >-
+            'BAD REQUEST. The **Copy Content** operation failed. You may have missed input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+        - auth: []
+      x-unitTests:
+        - request:
+            method: POST
+            uri: /content/v1/create
+            headers:
+              Content-Type: application/json
+              X-Authenticated-Userid: '{{user_id}}'
+              X-Channel-id: channel
+              Authorization: 'Bearer {{api_key}}'
+            body: |-
+              {
+                "request": {
+                    "content": {
+                        "description": "",
+                        "code": "",
+                        "createdBy": "",
+                        "createdFor": ["", "", ""],
+                        "creator": "",
+                        "organization": [""]
+                    }
+                }
+              }
+          expectedResponse:
+            x-allowExtraHeaders: true
+            x-bodyMatchMode: NONE
+            x-arrayOrderedMatching: false
+            x-arrayCheckCount: false
+            x-matchResponseSchema: true
+            headers: {}
+          x-testShouldPass: true
+          x-testEnabled: true
+          x-testName: Create Content
+          x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false      
 definitions:
   CreateContentRequest:
     title: Create ContentRequest
@@ -1548,10 +1655,10 @@ definitions:
     type: object
     properties:
       name:
-        description: 'Name of the content'
+        description: 'Represents the name of the content'
         type: string
       code:
-        description: 'Unique code for the content'
+        description: 'Represents the unique code for the content'
         type: string
       os:
         description: 'Supported Operating Systems'
@@ -1559,13 +1666,13 @@ definitions:
         items:
           type: string
       minOsVersion:
-        description: 'Min Supported OS Version'
+        description: 'Minimimum Supported OS Version'
         type: string
       compatibilityLevel:
-        description: 'It is the integer value being used by Client (Genie) for the Compatibility information of Content.'
+        description: 'It is the integer value being used by Client (mobile) for the Compatibility information of Content.'
         type: number
       minGenieVersion:
-        description: 'Min Supported Genie Version'
+        description: 'Minimum Supported mobile Version'
         type: string
       minSupportedVersion:
         description: 'Minimum Supported Version of this content'
@@ -2091,6 +2198,11 @@ definitions:
       lastPublishedBy:
         description: ''
         type: string
+      publishChecklist:
+        description: 'List of checklist mandatory for publishing the content.'
+        type: array
+        items:
+          type: string
     required:
       - lastPublishedBy
   RetireContentRequest:
@@ -2248,8 +2360,23 @@ definitions:
     required:
       - request
   ContentRejectObject:
-    title: ContentFlagRejectObject
+    title: ContentRejectObject
     type: object
+    properties:
+      content:
+        $ref: '#/definitions/ContentRejectObjectRequest'
+  ContentRejectObjectRequest:
+    title: ContentRejectObjectRequest
+    type: object
+    properties:
+      rejectReasons:
+        type: array
+        description: 'List of reject Reasons'
+        items:
+          type: string
+      rejectComment:
+        type: string
+        description: 'Reject comments'
   UpdateHierarchyContentRequest:
     title: Update Hierarchy Content Request
     type: object
@@ -2710,3 +2837,110 @@ definitions:
     allOf:
       - $ref: '#/definitions/EmptyResult'
       - $ref: '#/definitions/ResponseHeader'
+  CopyContentRequestBody:
+    title: CopyContentRequest
+    example:
+      request:
+        content:
+          description: Akshara Kannada
+          code: org.ekstep.feb22.story.test03.copy
+          createdBy: 159e93d1-da0c-4231-be94-e75b0c226d7c
+          createdFor:
+          - 0123673542904299520
+          - 0123673689120112640
+          creator: Harish Gangula
+          organization:
+          - Sunbird
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/ContentCopyRequest'
+    required:
+    - request
+  ContentCopyRequest:
+    title: ContentCopyRequest
+    example:
+      content:
+        description: Akshara Kannada
+        code: org.ekstep.feb22.story.test03.copy
+        createdBy: 159e93d1-da0c-4231-be94-e75b0c226d7c
+        createdFor:
+        - 0123673542904299520
+        - 0123673689120112640
+        - ORG_001
+        creator: Sunil Pandith
+        organization:
+        - Sunbird
+    type: object
+    properties:
+      content:
+        $ref: '#/definitions/CopyContent'
+    required:
+    - content
+  CopyContent:
+    title: CopyContent
+    example:
+      description: Akshara Kannada
+      code: org.ekstep.feb22.story.test03.copy
+      createdBy: 159e93d1-da0c-4231-be94-e75b0c226d7c
+      createdFor:
+      - 0123673542904299520
+      - 0123673689120112640
+      - ORG_001
+      creator: Sunil Pandith
+      organization:
+      - Sunbird
+    type: object
+    properties:
+      description:
+        description: ''
+        example: Akshara Kannada
+        type: string
+      code:
+        description: ''
+        example: org.ekstep.feb22.story.test03.copy
+        type: string
+      createdBy:
+        description: ''
+        example: 159e93d1-da0c-4231-be94-e75b0c226d7c
+        type: string
+      createdFor:
+        description: ''
+        example:
+        - 0123673542904299520
+        - 0123673689120112640
+        type: array
+        items:
+          type: string
+      creator:
+        description: ''
+        example: Harish Gangula
+        type: string
+      organization:
+        description: ''
+        example:
+        - Sunbird
+        type: array
+        items:
+          type: string
+    required:
+    - createdBy
+    - createdFor
+    - organization
+  ContentCopySuccessResponse:  
+    description: Copy Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResponseHeader'
+      - $ref: '#/definitions/ResultWithCopyContentId'
+  ResultWithCopyContentId:
+    title: Content Id
+    type: object
+    properties:
+        result:
+          type: object
+          description: result
+          properties:
+            sourceId:
+              type: string
+              example: 'copiedId'

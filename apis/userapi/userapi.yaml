@@ -3,7 +3,9 @@ info:
   version: '1.0'
   title: User Management  API(s)
   description: >-
-    The User Management API resources provide programmatic access to the users and other user related tasks.You can use the API in scripts or programs to allow authorized administrators to create, update,delete,read user and retrieve information. 
+    The User Management API resources are used to manage individual users and user memberships, also these resources allow you to add skills, block and unblock users, encrypt user data and also you can perform various other related tasks. 
+     
+    **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
@@ -26,9 +28,8 @@ paths:
  /create:
     post:
       description: >-
-       This API is associated with creation of user on the Sunbird Platform.
+       This API is used to create a user 
           - **_/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Create User
       tags:
@@ -41,8 +42,15 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the user to be created.
+          - The body payload comprises of the metadata about the user to be created.
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
+            
+         
         schema:
            $ref: '#/definitions/CreateUserrequest'
       - name: Content-Type
@@ -58,7 +66,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **create user** request was sent.'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the create user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: Authorization
         in: header
         required: true
@@ -74,11 +83,12 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
         '404':
-          description: 'Resource not found. The "Create User" operation failed ! The possible reason for failure is the requested resource is not available.' 
+          description: 'RESOURSE NOT FOUND. The "Create User" operation failed ! The possible reason for failure is the requested resource is not available.' 
           schema:
             $ref: '#/definitions/UserErrorResponse'    
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
@@ -92,10 +102,9 @@ paths:
  /search:
     post:
       description: >-
-       This API is associated for searching a particular user on the Sunbird Platform.
+       This API is used for searching a particular user 
           - **_/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters marked with *
-          - Mandatory fields cannot be null or empty.
+           - Required fields cannot be left null or empty
       summary: Search User
       tags:
       - User APIs
@@ -107,8 +116,17 @@ paths:
         in: body
         required: true
         description: >-
-           Search the user based on different user attributes, particular attribute need to be passed insdie filters
-              - The body contains metadata about the user to be fetched.
+          - The body payload comprises of the metadata about the user to be searched.
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
+        
+           **Note**: You can search the user based on different user attributes
+              
+            - The  attributes need to be passed inside the filters of the request payload
         schema:
           $ref: '#/definitions/SearchUserrequest'
       - name: Content-Type
@@ -130,12 +148,13 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+          It a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
       - name: ts
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Search User** request was sent.'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the search user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       responses:
         '200':
           description: 'OK ! Successful operation."Search User" operation was successfully executed.'
@@ -150,7 +169,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'    
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
@@ -168,7 +188,9 @@ paths:
             {
                 "request": {
                     "filters":{
-                      "userAttribute": ["channel value"]
+
+                      "userAttribute": ["value of user attribute , either you can pass single string or list"]
+
                     },
                     "limit": 500
                 }
@@ -195,7 +217,7 @@ paths:
         This API is associated with fetching User profile on the Sunbird Platform.
           - **_/profile/read_** endpoint executes the "Get User By Login Id" request to fetch the User profile.
           - It is mandatory to provide values for required parameters
-      summary: Get User by Login Id
+      summary: Get User by Login ID
       tags:
       - User APIs
       operationId: Get User by Login Id
@@ -206,8 +228,21 @@ paths:
         in: body
         required: true
         description: >-
-           The login ID value will be username@provider, while creating user if you haven't provided the provider anme then your login ID would be same as username
-              - The body contains metadata about the user profile to be fetched using Login Id.
+          - The body payload comprises of the metadata about the user to be searched.
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
+        
+           **Note**: 
+              
+            - The login ID value should ideally be username@provider, 
+              
+            - While creating the user if you haven't specified the provider name then your login ID would be same as username
+          
+          - The body contains metadata about the reading the user profile
         schema:
           $ref: '#/definitions/GetUserByLoginIdrequest'
       - name: Content-Type
@@ -223,12 +258,14 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The Registered User ID to execute the API.'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       - name: ts
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Get User by Login Id** request was sent.'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the read user profile API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: Authorization
         in: header
         required: true
@@ -248,7 +285,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'   
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
@@ -293,11 +331,11 @@ paths:
         description: 'Please append a valid User Id To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic'   
     get:
       description: >-
-        This API is associated with searching user on the Sunbird Platform.
+        This API is associated with searching a specific user
           - **_/read/{User_Id}_** endpoint executes the "Fetch User profile" request. 
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-      summary: Fetch User by User Id
+      summary: Get User by User ID
       tags:
       - User APIs
       operationId: Get User by Id
@@ -323,7 +361,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Get User by Login Id** request was sent.'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the search specific user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: Authorization
         in: header
         required: true
@@ -343,7 +382,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'   
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
@@ -379,7 +419,7 @@ paths:
         This API is associated with updating user details on the Sunbird Platform.
           - **_/update/_** endpoint executes the "Update User" request
           - It is mandatory to provide values for required parameters
-      summary: Updates User
+      summary: Update User
       tags:
       - User APIs
       operationId: Update User
@@ -390,8 +430,13 @@ paths:
         in: body
         required: true
         description:  >-
-            The body refers to the format of the request.
-              - The body contains metadata about the user to be updated.
+          - The body payload comprises of the metadata about the user to be updated.
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
         schema:
           $ref: '#/definitions/UpdateUserrequest'
       - name: x-authenticated-user-token
@@ -413,7 +458,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Update User** request was sent.'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the update user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: Authorization
         in: header
         required: true
@@ -433,7 +479,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'    
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
@@ -444,15 +491,17 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
-
  /update/logintime:
     patch:
       description: >-
-         this api will update user login time to sunbird env. this api need to be call
-         after successful login from portal or app. User login is handle by SSO(KeyCloak) , so Sunbir won't know any thing about user login time, that's why user need to make this api call after success login 
-          - The format of the request URL is:  {{host}}/v1/user/update/logintime
+         This API is used to update user login time . 
+         
+         - This API is called after the user successfully logs in either from portal or app. 
+         
+         - User login is handle by SSO(KeyCloak) , so Sunbir won't know any thing about user login time, that's why user need to make this api call after success login 
+         
           - It is mandatory to provide values for required parameters
-      summary: Adds Users Current  Login Time
+      summary: Add Users Current Login Time
       tags:
       - User APIs
       operationId: '{{host}}/user/v1/updatelogin'
@@ -463,8 +512,13 @@ paths:
         in: body
         required: true
         description: >-
-          The body refers to the format of the request.
-            - The body contains metadata about forgot password fields. 
+          - The body payload comprises of the metadata about updating the users login time in the system
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
         schema:
           $ref: '#/definitions/{{host}}~1v1~1user~1updateloginrequest'
       - name: Content-Type
@@ -481,7 +535,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Login Time** request was sent.'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the update user login time API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -513,7 +568,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'   
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
             
@@ -550,9 +606,8 @@ paths:
  /role/read:
     get:
       description:  >-
-       This API will provide list of available roles inside sunbird.
+       This API is used to list the assigned roles pertaining to a user
           - The **_/role/read_** endpoint executes the "read role" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is:  {{host}}/data/v1/role/read
           - It is mandatory to provide values for required parameters
       summary: Fetches User Role Information
       tags: 
@@ -575,13 +630,14 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **fetch user information** request was sent'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the read user role API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+
       - name: Authorization
         in: header
         required: true
@@ -591,14 +647,15 @@ paths:
         in: header
         required: true
         type: string
-        description: 'The token/key used to execute the API'
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       responses:
         '200':
-          description: 'OK ! Successful operation."fetch user information" operation was successfully executed.'
+          description: 'OK ! Successful operation."Get user roles" operation was successfully executed.'
           schema:
             $ref: '#/definitions/RolesResponse'
         '400':
-          description: 'BAD REQUEST. The "fetch user information" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          description: 'BAD REQUEST. The "Get user roles" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
         '404':
@@ -606,7 +663,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'    
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
             
@@ -642,9 +700,8 @@ paths:
  /profile/visibility:
     post:
       description:  >-
-       This API is associated with configuring the visibility of user profiles  on the Sunbird Platform.
-          - The **_/user/profile/visibility_** endpoint executes the "user profile visibility" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is:  '{{host}}/v1/user/profile/visibility'
+       This API is used to configure the visibility of user profile
+          - The **_/profile/visibility_** endpoint executes the "user profile visibility" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: User profile Visibility
       tags:
@@ -657,8 +714,14 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for user profile visibility.
+          - The body payload comprises of the metadata about the user profile visibility request
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
+     
         schema:
           $ref: '#/definitions/{{host}}~1v1~1user~1profile~1visibilityrequest'
       - name: Content-Type
@@ -675,13 +738,14 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **user profile visibilty** request was sent'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the user profile visibility API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+
       - name: Authorization
         in: header
         required: true
@@ -691,7 +755,8 @@ paths:
         in: header
         required: true
         type: string
-        description: ''
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
@@ -706,7 +771,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'    
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
@@ -739,12 +805,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  
  /block:
     post:
       description:  >-
-       This api will do soft delete of user from sunbir.
-          - The format of the request URL is:  '{{host}}/user/v1/block'
+       This API is used to ban/block a user
+          - The **_/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Block user
       tags:
@@ -757,8 +822,14 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for user.
+          - The body payload comprises of the metadata about blocking a user request
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
+     
         schema:
           $ref: '#/definitions/blockUserReq'
       - name: Content-Type
@@ -775,13 +846,14 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **user profile visibilty** request was sent'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the block user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+
       - name: Authorization
         in: header
         required: true
@@ -791,7 +863,8 @@ paths:
         in: header
         required: true
         type: string
-        description: ''
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
@@ -806,7 +879,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'    
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
@@ -838,12 +912,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- 
  /unblock:
     post:
-      description:  >-
-       This api will make deleted user back to system.
-          - The format of the request URL is:  '{{host}}/user/v1/unblock'
+      description: >-
+       This API is used to unban/unblock a user
+          - The **_/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: unblock user
       tags:
@@ -856,8 +929,13 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for user.
+          - The body payload comprises of the metadata about unblocking a user request
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
         schema:
           $ref: '#/definitions/blockUserReq'
       - name: Content-Type
@@ -874,12 +952,14 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **user profile visibilty** request was sent'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the unblock API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+
       - name: Authorization
         in: header
         required: true
@@ -905,7 +985,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'    
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
@@ -937,15 +1018,21 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
-         
  /org/v1/role/assign:
     post:
       description:  >-
-       This API is associated with assigning roles to a user on the Sunbird Platform.
-       if user pass the userId and roles then role will be assign insdie user profile directly. in case user passess userId, organisationId and roles then roles will be assign org for that user.
-          - The **_/org/v1/role/assign_** endpoint executes the "read role" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is:  {'{{host}}/org/v1/role/assign'
+       This API is associated with assigning roles to a user
+          - The **_/org/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
+        
+        **Note:** Depending on the request payload, if you pass the userID and roles 
+          
+          - then the corresponding user role will be assigned to the user inside the user profile 
+        
+        In case the userId, organisationId and roles are passed 
+          
+          - then roles will be assigned by the corresponding organization for that user
+
       summary: Assign Role to a User
       tags:
       - User APIs
@@ -957,8 +1044,13 @@ paths:
         in: body
         required: true
         description: >-
-             Assign roles is accepting userId, orgId and roles. if user pass only userId and roels then role will be directly assign under user profile, if user is passing all three values then roles will be assign under org.
-              - The body contains metadata about the request for assigning roles to user.
+          - The body payload comprises of the metadata about assigninig roles to a user request
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
         schema:
           $ref: '#/definitions/{{host}}~1user~1v1~1role~1assignrequest'
       - name: Content-Type
@@ -975,7 +1067,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **assign role** request was sent'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the assigning role API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1006,7 +1099,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'   
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'   
       security:
@@ -1019,9 +1113,8 @@ paths:
  /encrypt:
     get:
       description: >-
-       This API is associated with securing the user information on  Sunbird Platform.
+       This API is associated with securing the user information with an encryption scheme  
           - The **_ /encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
-          - The format of the request URL is:  '{{host}/api/user/v1/encrypt'
           - It is mandatory to provide values for required parameters
       summary: Encrypt User Information
       tags:
@@ -1044,7 +1137,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which **Encrypt User Information** request was sent.'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the encrypt user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1070,7 +1164,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
             
@@ -1084,7 +1179,7 @@ paths:
  /skill/add:
     post:
       description: >-
-       This API is associated with adding skills to a user on the Sunbird Platform.
+       This API is used to add skill set to a user 
           - The **_/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Add User Skill
@@ -1098,8 +1193,13 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the request for adding user skill.
+          - The body payload comprises of the metadata about addinfg skills to a user 
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+             - XML data
         schema:
           $ref: '#/definitions/AddSkillToUserrequest'
       - name: Content-Type
@@ -1116,7 +1216,8 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which add user skills request was sent'
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the add user skills API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1143,7 +1244,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
@@ -1186,11 +1288,10 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-        
  /data/v1/skills:
     get:
       description: >-
-       This API is associated with listing all user skills  on the Sunbird Platform.
+       This API is associated with listing all user skills
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Lists all Skills of a User
@@ -1214,7 +1315,9 @@ paths:
         in: header
         required: true
         type: string
-        description: 'Time Stamp at which add list user skills request was sent'
+        description: >-
+        
+          Timestamp is a sequence of characters or encoded information identifying when the list user skills API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1225,7 +1328,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       - name: Authorization
         in: header
         required: true
@@ -1241,7 +1344,8 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
         '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
             
@@ -1287,7 +1391,7 @@ definitions:
    properties:
       request:
        type: object
-       $ref: '#/definitions/User'
+       $ref: '#/definitions/UserReq'
  
   RolesResponse:
    description: this will hold roles api response
@@ -1349,7 +1453,87 @@ definitions:
     items:
       type: string
        
-    
+  UserReq:
+    title: user object
+    type: object
+    properties:
+          email:
+            type: string
+            description: 'in create user either email or phone is mandatory'
+          firstName:
+            type: string
+          lastName:
+            type: string
+          password:
+            type: string
+          avatar:
+            type: string
+          language:
+            type: array
+            items:
+             type: string
+             description: any know language by user
+          gender:
+            type: string
+          phone:
+            type: string
+          phoneVerified:
+            type: boolean
+            description: 'this key is required with value as true, if user is pass phone value and provider both. in create user either email or phone is required.'
+          subject:
+            type: array
+            items:
+             type: string
+          provider:
+            type: string
+            description: 'value of channel, that you can get while creating rootOrg.System will get the rootOrg from provider and add that rootOrg into user profile.'
+          profileSummary:
+            type: string
+          userName:
+            type: string
+          regOrgId:
+            type: string
+            description: 'Your registered organisation id. System will identify the root org id from your registered org id and add into your profile.'
+          dob:
+            type: string
+            format: yyyy-MM-dd  
+          grade:
+            type: string
+          location:
+            type: string
+            description: 'current location of user'
+          education:
+            type: array
+            items:
+             type : object
+             $ref: "#/definitions/Education"
+          profileVisibility:
+            type: object
+            description: it will be a map having key as any user attribute and value can be public or private. 
+          address: 
+            type: array
+            items:
+              type: object
+              $ref: "#/definitions/Address"
+            description: it will contains list of address object.
+          jobProfile:
+            type: array
+            items:
+              type: object
+              $ref: "#/definitions/JobProfile"
+          webPages:
+            type: object
+            properties:
+              type:
+                type: string
+              url:
+                type: string
+    required:
+      - firstName
+      - password 
+      - email
+      - userName
+      - phone    
     
   User:
     title: user object
@@ -1560,9 +1744,11 @@ definitions:
     title: Search UserRequest
     example:
       request:
+        query: free text search. if user wan't free text search then pass the query as string
         filters:
           userAttribute:
-          - value of user attribute
+          - value of user attribute, it can be as string or array.
+          - Ex: firstName:test  or firstName:[test,test1] 
         limit: 500
     type: object
     properties:
