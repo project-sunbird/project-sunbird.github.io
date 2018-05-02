@@ -39,6 +39,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
       <br>&emsp;b) <b>Grade</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
+      <br>&emsp;e) <b>Year</b> 
       <br>3. Enter <b>Publisher</b> details 
       <br>4. Click <b>Start Creating</b> 
       <br><b>Note</b>: These details can be filled later when updating the book details
@@ -56,18 +57,22 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
   </tr>
   <tr>
     <td>1. Click <b>Edit Details</b> to enter the book details 
-      <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
-      <br>3. Enter <b>Name</b> of the book 
+    <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
+      <br>3. Enter <b>Title</b> of the book 
       <br>4. Enter <b>Description</b> of the book 
       <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content 
       <br>6. Select the following from their respective drop-down lists: 
-      <br>&emsp;a) <b>Board</b> 
-      <br>&emsp;b) <b>Grade</b> 
+      <br>&emsp;a) <b>Curriculum</b> 
+      <br>&emsp;b) <b>Class</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
       <br>&emsp;e) <b>Year</b> 
       <br>7. Enter <b>Publisher</b> details 
-      <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> on the header to save the details <br>10. Click <b>Cancel</b> to go back to the previous screen
+      <br>8. Enter <b>Attributions</b> 
+      <br>9. Select <b>Audience</b> 
+      <br>10. Enter the <b>DIAL CODE</b> 
+      <br>11. Click <b>Save</b> on the header to save the details
+      <br>12. Click <b>Cancel</b> to go back to the previous screen
     </td>
     <td><img src="pages/features-documentation/images/book/book_metadata1.png"></td>
   </tr>
@@ -75,37 +80,37 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
 
 ### Adding Content to Book
 
+You can add content in the book like headings, DIAL Codes, and resources.
+  
+#### Heading Details
+To start adding heading details in a node 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td> 1. To add headings to a book, click <b>New Child</b> node on the left navigation pane 
+     <tr>
+    <td> 1. To start adding content to the book click <b>New Child</b> node, on the left navigation pane, the details are displayed on the action pane
       <br>2. On clicking child node, a heading is added to the Table of Contents pane. For details on child node,
 sibling node, refer Exploring TOC Structure
-<br>3. Click ADD RESOURCE to add content to the headings. For details on adding resources, refer <a href="features-documentation/adding_resources" target="_blank">Adding Resource</a>
+      <br>3. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook 
+      <br>4. Enter <b>Description</b> 
+      <br>5. Select the <b>Concepts</b> associated with the heading 
+      <br>6. Enter <b>Keywords</b> 
+      <br>7. Enter the <b>DIAL code</b>. Using DIAL code link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator 
+     <br>8. Click <b>ADD RESOURCE</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/adding_resources" target="_blank">Adding Resource</a>
      </td>
       <td><img src="pages/features-documentation/images/book/adding_child.png"></td>
   </tr>
-  </table>
-  
-### Heading Details
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>On clicking child node, the details are displayed on the action pane
-      <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook <br>2. Enter <b>Description</b> <br>3. Select the <b>Concepts</b> associated with the heading <br>4. Enter <b>Keywords</b> <br>5. Enter the <b>DIAL code</b>. Using DIAL code link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator  
+  <td>On clicking child node, 
+       
     </td>
       <td><img src="pages/features-documentation/images/book/heading_metadata.png"></td>
   </tr>
   </table>
     
-### DIAL Code Details
+#### DIAL Code Details
 
 <table>
   <tr>
@@ -125,6 +130,7 @@ sibling node, refer Exploring TOC Structure
     <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code 
       </td>
       <td><img src="pages/features-documentation/images/book/dial_code2.png"></td> 
+    <td> </td>
   </tr>
   <tr>
       <td>3. Click <b>Edit</b> to link or unlink the DIAL code
@@ -135,15 +141,15 @@ sibling node, refer Exploring TOC Structure
     </tr>
  </table>
 
-### Adding Resources 
-
+#### Adding Resources 
+Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: 
 <table> 
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: 
+   <td>
      <br>a. Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR 
      <br>b. Right-click on the node name and select <b>Add Resource</b>, OR 
      <br>c. Click <b>Add Resources</b> button in the action pane, OR 
@@ -161,7 +167,10 @@ sibling node, refer Exploring TOC Structure
 
 ### Using the Table of Contents Options 
 
-The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, OR <br>&emsp;c) Keyboard shortcuts <br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
+The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
+<br>&emsp;a) The burger menu associated with a tree node 
+<br>&emsp;b) Right-click options associated with a tree node, OR 
+<br>&emsp;c) Keyboard shortcuts <br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
   
 ### Deleting Content 
 
