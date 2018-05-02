@@ -61,7 +61,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to a collection, you can do one of the following actions: <br>&emsp;1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> <br>&emsp;2. Click <b>Add Resource</b> on the left bottom of the page <br>&emsp;3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
+    <td>To add content to a collection, you can do one of the following actions: <br>&emsp;1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> <br>&emsp;2. Click <b>Add Resource</b> on the right bottom of the page <br>&emsp;3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
       <td><img src="pages/features-documentation/images/collection/add_ressource1.png"></td>
   </tr>
@@ -79,19 +79,20 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
     </td>
     <td><img src="pages/features-documentation/images/collection/add_resource.png"></td>
   </tr>
+  <tr>
+    <td>Hover over the resource card to view concise content details <br>1. Click <b>View Details</b> on the resource card to view all the details, OR <br>2. Click <b>View</b> to view all the details
+    </td>
+    <td><img src="pages/features-documentation/images/collection/hover_resource.png"></td>
+  </tr>
+  <tr>
+    <td>1. Drag the horizontol scroll down to view all resources added to collection <br> 2. Click <b>Preview</b> icon to view/play the content <br>3. Click <b>Delete</b> icon to delete the content. <br><br><b>Note:</b> You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down. For details refer <a href="features-documentation/collection_creation/# deleting-content">Deleting Content</a> 
+    </td>
+    <td><img src="pages/features-documentation/images/collection/view_resource.png"></td>
   </table>
 
 ### Using the Table of Contents Options 
 
-The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
-
-a) The burger menu associated with a tree node 
-
-b) Right-click options associated with a tree node, **OR**
-
-c) Keyboard shortcuts 
-
-For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
+The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, **OR** <br>&emsp;c) Keyboard shortcuts <br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
   
 ### Deleting Content 
 
