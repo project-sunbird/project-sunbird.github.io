@@ -85,9 +85,10 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
     <td><img src="pages/features-documentation/images/collection/hover_resource.png"></td>
   </tr>
   <tr>
-    <td>1. Drag the horizontol scroll down to view all resources added to collection <br> 2. Click <b>Preview</b> icon to view/play the content <br>3. Click <b>Delete</b> icon to delete the content. <br><br><b>Note:</b> You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down. For details refer <a href="features-documentation/collection_creation/# deleting-content">Deleting Content</a> 
+    <td>1. Drag the horizontol scrollbar downards to view all resources added to collection <br>2. Click <b>Preview</b> icon to view/play the content <br>3. Click <b>Delete</b> icon to delete the content <br><br><b>Note:</b> You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down. For details refer <a href="features-documentation/collection_creation/#deleting-content">Deleting Content</a> 
     </td>
     <td><img src="pages/features-documentation/images/collection/view_resource.png"></td>
+  </tr>
   </table>
 
 ### Using the Table of Contents Options 
