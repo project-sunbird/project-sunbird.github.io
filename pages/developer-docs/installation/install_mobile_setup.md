@@ -32,6 +32,10 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
   </tr>
   <tr>
     <td>4.</td>
+    <td>Replace the application id in app/build.gradle with implementation specific application id. <br><br>Example: <br> <code> applicationId: "org.implementation.app" </code> <br> </td>
+  </tr>
+  <tr>
+    <td>4.</td>
     <td>Replace redirect base url <code>REDIRECT_BASE_URL</code> and all other base urls with your respective domain name in build.gradle<br>
   <br>
   Example:
