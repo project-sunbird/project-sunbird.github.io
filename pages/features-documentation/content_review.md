@@ -8,13 +8,15 @@ keywords: content reviewer, review content
 published: true
 allowSearch: true
 ---
+
+## Overview
 To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review.
 Organizations can assign reviewer roles to users and set guidelines to ensure the quality of content being uploaded. However, there are some standard guidelines that have to be adhered by anyone who uploads
 content on Sunbird. To read more on review guidelines, refer Review Guidelines
 
 This page contains the details of the procedure on how to review and publish content on Sunbird
  
-## Prerequisites
+### Prerequisites
 
 <table>
   <tr>
@@ -27,12 +29,12 @@ This page contains the details of the procedure on how to review and publish con
    <li>You are on the <b>Profile</b> tab
      <li>You have clicked on <b>View your workspace</b>
       </td>
-      <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png">
+      <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png"></td>
   </tr>
  </table>
 
-## Review Workspace
-To review the content, reviewers has to perform following 
+###  Review Workspace
+ 
  <table>
   <tr>
     <th style="width:35%;">Step</th>
