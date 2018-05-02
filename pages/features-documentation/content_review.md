@@ -49,7 +49,7 @@ This page contains the details of the procedure on how to review and publish con
        <br>&emsp;a. Last updated date
        <br>&emsp;b. Last created date
        <br>&emsp;c. Alphabetically
-     <br>5. Select the content you want to review. Refer <a=href:"/pages/features-documentation/content_review.md/##Review Content and Resources">Review Content and Resources</a>
+     <br>5. Select the content you want to review. Refer <a href:"/pages/features-documentation/content_review.md/##Review Content and Resources">Review Content and Resources</a>
       <br>6. Click on the page navigation to access the required list on a particular page
   </td>
     <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer1.png"></td>
