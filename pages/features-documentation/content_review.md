@@ -27,10 +27,9 @@ This page contains the details of the procedure on how to review and publish con
    <li>You are on the <b>Profile</b> tab
      <li>You have clicked on <b>View your workspace</b>
       </td>
-      <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png"></td>
+      <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png">
   </tr>
  </table>
-
 
 ## Review Workspace
 To review the content, reviewers has to perform following 
