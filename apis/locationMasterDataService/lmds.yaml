@@ -1,0 +1,328 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Location Master Data Service
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: admin@open-sunbird.org
+  description: >-
+    The Location Master Data Service APIs are for performing bulk upload of
+    location master data into Diksha Sunbird Platform. The master data is
+    provided in CSV format.
+  license:
+    name: GNU Affero General Public License v3.0
+    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+host: staging.open-sunbird.org
+basePath: /api/shaalakosh/v1
+schemes:
+  - https
+paths:
+  /location/state/upload:
+    post:
+      summary: >-
+        Request for bulk upload of state location data into Diksha Sunbird
+        Platform.
+      description: >-
+        This API is a request to create a background job for bulk upload of
+        state location data into Diksha Sunbird platform. The data is provided
+        in CSV format.
+      tags:
+        - LMDS APIs
+      operationId: State Location Data Bulk Upload Request
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: csvFile
+          in: formData
+          required: true
+          type: file
+          description: |-
+            CSV file which contains state location data in following format:
+              - code: National level code for state
+              - name: Name of state
+      responses:
+        '200':
+          description: >-
+            OK. Successful operation. The data upload operation is accepted for
+            further processing.
+          schema:
+            $ref: '#/definitions/LocationDataBulkUploadCreateResponse'
+        '400':
+          description: >-
+            CLIENT_ERROR. The upload operation failed due to bad request from
+            client. Possible reasons for failure,
+
+            Mandatory parameter "csvFile" is missing.
+
+            Maximum upload file size x MB is exceeded.
+
+            CSV file content is improper.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR. The upload operation failed due to a server
+            error.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+  /location/district/upload:
+    post:
+      summary: >-
+        Request for bulk upload of district location data into Diksha Sunbird
+        Platform.
+      description: >-
+        This API is a request to create a background job for bulk upload of
+        district location data into Diksha Sunbird platform. The data is
+        provided in CSV format.
+      tags:
+        - LMDS APIs
+      operationId: District Location Data Bulk Upload Request
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: csvFile
+          in: formData
+          required: true
+          type: file
+          description: |-
+            CSV file which contains district location data in following format:
+              - code: National level code for district
+              - name: Name of district
+              - stateCode: National level code for state
+      responses:
+        '200':
+          description: >-
+            OK. Successful operation. The data upload operation is accepted for
+            further processing.
+          schema:
+            $ref: '#/definitions/LocationDataBulkUploadCreateResponse'
+        '400':
+          description: >-
+            CLIENT_ERROR. The upload operation failed due to bad request from
+            client. Possible reasons for failure,
+
+            Mandatory parameter "csvFile" is missing.
+
+            Maximum upload file size x MB is exceeded.
+
+            CSV file content is improper.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR. The upload operation failed due to a server
+            error.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+  /location/block/upload:
+    post:
+      summary: >-
+        Request for bulk upload of block location data into Diksha Sunbird
+        Platform.
+      description: >-
+        This API is a request to create a background job for bulk upload of
+        block location data into Diksha Sunbird platform. The data is provided
+        in CSV format.
+      tags:
+        - LMDS APIs
+      operationId: Block Location Data Bulk Upload Request
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: csvFile
+          in: formData
+          required: true
+          type: file
+          description: |-
+            CSV file which contains block location data in following format:
+              - code: National level code for block
+              - name: Name of block
+              - districtCode: National level code for district
+      responses:
+        '200':
+          description: >-
+            OK. Successful operation. The data upload operation is accepted for
+            further processing.
+          schema:
+            $ref: '#/definitions/LocationDataBulkUploadCreateResponse'
+        '400':
+          description: >-
+            CLIENT_ERROR. The upload operation failed due to bad request from
+            client. Possible reasons for failure,
+
+            Mandatory parameter "csvFile" is missing.
+
+            Maximum upload file size x MB is exceeded.
+
+            CSV file content is improper.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR. The upload operation failed due to a server
+            error.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+  /location/cluster/upload:
+    post:
+      summary: >-
+        Request for bulk upload of cluster location data into Diksha Sunbird
+        Platform.
+      description: >-
+        This API is a request to create a background job for bulk upload of
+        cluster location data into Diksha Sunbird platform. The data is provided
+        in CSV format.
+      tags:
+        - LMDS APIs
+      operationId: Cluster Location Data Bulk Upload Request
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: csvFile
+          in: formData
+          required: true
+          type: file
+          description: |-
+            CSV file which contains cluster location data in following format:
+              - code: National level code for cluster
+              - name: Name of cluster
+              - blockCode: National level code for block
+      responses:
+        '200':
+          description: >-
+            OK. Successful operation. The data upload operation is accepted for
+            further processing.
+          schema:
+            $ref: '#/definitions/LocationDataBulkUploadCreateResponse'
+        '400':
+          description: >-
+            CLIENT_ERROR. The upload operation failed due to bad request from
+            client. Possible reasons for failure,
+
+            Mandatory parameter "csvFile" is missing.
+
+            Maximum upload file size x MB is exceeded.
+
+            CSV file content is improper.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR. The upload operation failed due to a server
+            error.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse' 
+            
+  /school/upload:
+    post:
+      summary: >-
+        Request for bulk upload of school data into Diksha Sunbird
+        Platform.
+      description: >-
+        This API is a request to create or update the organisation details inside sunbird.sunbird will save some of the field which is releated to an org. other field will be store under some other table.
+      tags:
+        - LMDS APIs
+      operationId: School bulk upload
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: csvFile
+          in: formData
+          required: true
+          type: file
+          description: |-
+            CSV file which contains school  data in following format:
+              - schoolCode: National level code for school 
+                - type: string
+              - name: Name of the school
+                - type: string
+              - latlong: latitude and longitude value with comma seprated 12.972442,779,964.99
+                - type: string
+              - educationLevel: Define if it is a primary, secondary or senior secondary , need to be validated from master list
+                - type: string  
+              - schoolType : type of school (Urban, Semi-Urban, Rural) , need to be verified from master list
+                - type: string
+              - noOfTeachers: total number of teachers in school
+                - type: integer
+              - clusterCode: code of the cluster , it will content location code only.
+                - type: string
+              - schoolWithSpecialNeed : Flag to identify if school has children with special needs
+                - type: boolean
+              - schoolInchargeCode: Teacher Code of the school incharge as defined in the teacher registry
+                - type: string
+              - schoolInchargeName: name of the school incharge
+                - type: stirng
+              - schoolInchargeMobile: contact number of school incharge
+                - type: string
+              - address: seems human readable address in one line
+                - type: string
+              - externalId: internal identity of the school in their system
+                - type: string
+              - provider:  provider of the data. 
+                 - type: string
+              
+      responses:
+        '200':
+          description: >-
+            OK. Successful operation. The data upload operation is accepted for
+            further processing.
+          schema:
+            $ref: '#/definitions/LocationDataBulkUploadCreateResponse'
+        '400':
+          description: >-
+            CLIENT_ERROR. The upload operation failed due to bad request from
+            client. Possible reasons for failure,
+
+            Mandatory parameter "csvFile" is missing.
+
+            Maximum upload file size x MB is exceeded.
+
+            CSV file content is improper.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR. The upload operation failed due to a server
+            error.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+            
+definitions:
+  LocationDataBulkUploadCreateResponse:
+    title: Response for successfully accepted location data bulk upload API request
+    allOf:
+      - $ref: >-
+          https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+      - type: object
+        properties:
+          result:
+            type: object
+            properties:
+              processId:
+                description: >-
+                  ID which can be used to query status of a background process
+                  created by location data bulk upload API
+                type: string
+              response:
+                description: Response message for successfully accepted request
+                type: string
+  CommonErrorResponse:
+    title: Error response for location data bulk upload API request
+    allOf:
+      - $ref: >-
+          https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+      - type: object
+        properties:
+          result:
+            description: Error message for failed location data bulk upload API request
+            type: object
