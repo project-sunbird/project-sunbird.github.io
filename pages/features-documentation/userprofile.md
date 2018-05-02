@@ -89,7 +89,7 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
   </tr>
   </table>
     
-### Receiving Badges
+### Viewing Certifications and Awards
 
 <table>
   <tr>
