@@ -102,7 +102,7 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
   </tr>
   </table>
   
-  ### Adding or Editing Profile Details
+### Adding or Editing Profile Details
   
   <table>
   <tr>
