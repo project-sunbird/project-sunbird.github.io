@@ -73,7 +73,8 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
   </table>
   
 ### Viewing Profile Completeness Status
-  <table>
+ 
+ <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -83,7 +84,7 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
     <td><img src="pages/features-documentation/images/profilestatus.png"></td>
   </tr>
   <tr>
-      <td>You can add or edit details viz. - Profile Summary<br>1. Enter <strong>Description</strong><br>2. You can show or hide your description to others<br>3. Click <strong>Save</strong> to save the description<br>4. Click <strong>Close</strong> to exit the page</td>
+      <td>You can add or edit details viz. - Profile Summary <br>1. Enter <b>Description</b> <br>2. You can show or hide your description to others <br>3. Click <b>Save</b> to save the description <br>4. Click <b>Close</b> to exit the page</td>
     <td><img src="pages/features-documentation/images/profile_summary.png"></td>
   </tr>
   </table>
