@@ -19,7 +19,8 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> page <br>3. You want to create a book, you have clicked on <b>Book</b> tile
+    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b>  
+      <br>3. You want to create a book, you have clicked on <b>Book</b> tile
        </td>
       <td><img src="pages/features-documentation/images/book_workspace.png"></td>
   </tr>
@@ -113,7 +114,7 @@ sibling node, refer Exploring TOC Structure
     <th style="width:50%;"></th>
   </tr>
   <tr>
-    <td>Enter the code from the list of DIAL codes that correspond to the book being created
+    <td>Enter the code from the list of DIAL codes that correspond to the book being created.   
       <br>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
     </td>
       <td><img src="pages/features-documentation/images/book/dial_code1.png"></td>
@@ -121,11 +122,16 @@ sibling node, refer Exploring TOC Structure
   </td>
   </tr>
   <tr>
-    <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code <br>3. Click <b>Edit</b> to enter the right DIAL code
-    </td>
+    <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code 
+      </td>
       <td><img src="pages/features-documentation/images/book/dial_code2.png"></td> 
-    <td>
-  </td>
+  </tr>
+  <tr>
+      <td>3. Click <b>Edit</b> to link or unlink the DIAL code
+        <br>a. Unlink the DIAL code from the book
+        <br>b. Link the DIAL code to the book
+    </td>
+      <td colspan="2"><img src="pages/features-documentation/images/book/dial_code_un_link.png"></td> 
     </tr>
  
   </table>
@@ -138,7 +144,12 @@ sibling node, refer Exploring TOC Structure
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: <br>a. Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR <br>b. Right-click on the node name and select <b>Add Resource</b>, OR <br>c. Click <b>Add Resources</b> button in the action pane, OR <br>d. Click <b>Add</b> on the resource card on the left pane, OR <br>e. Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
+   <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: 
+     <br>a. Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR 
+     <br>b. Right-click on the node name and select <b>Add Resource</b>, OR 
+     <br>c. Click <b>Add Resources</b> button in the action pane, OR 
+     <br>d. Click <b>Add</b> on the resource card on the left pane, OR 
+     <br>e. Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
     <td><img src="pages/features-documentation/images/book/selecting_resource.png"></td>
   </tr>
@@ -197,7 +208,8 @@ A book must be reviewed before it is published.
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Save</b> on the header to save the book <br>2. Click <b>Send for review</b> to send the created book for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
+    <td>1. Click <b>Save</b> on the header to save the book 
+      <br>2. Click <b>Send for review</b> to send the created book for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
     </td>
     <td><img src="pages/features-documentation/images/book_sendforreview.png"></td>
   </tr>    
@@ -211,7 +223,9 @@ A book must be reviewed before it is published.
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.The What’s New feature informs you of the product features added or enhanced since the last product release <br>1. Click on the <b>What's New</b> icon to view concise information about new product functionality <br><b>Note</b>: The What's New icon is red before you view it for the first time. The icon turns grey after you view the information, until the next product version
+    <td>The What’s New feature informs you of the product features added or enhanced since the last product release 
+      <br>1. Click on the <b>What's New</b> icon to view concise information about new product functionality 
+      <br><b>Note</b>: The What's New icon is red before you view it for the first time. The icon turns grey after you view the information, until the next product version
     </td>
     <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
   </tr>
