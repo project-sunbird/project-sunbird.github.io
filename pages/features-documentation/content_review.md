@@ -12,7 +12,7 @@ allowSearch: true
 ## Overview
 To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review.
 Organizations can assign reviewer roles to users and set guidelines to ensure the quality of content being uploaded. However, there are some standard guidelines that have to be adhered by anyone who uploads
-content on Sunbird. To read more on review guidelines, refer Review Guidelines
+content on Sunbird. 
 
 This page contains the details of the procedure on how to review and publish content on Sunbird
  
@@ -25,9 +25,9 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   <tr>
     <td>
-   <li>You are logged in as the content reviewer
-   <li>You are on the <b>Profile</b> tab
-     <li>You have clicked on <b>View your workspace</b>
+     <br>1. You are logged in as the content reviewer
+     <br>2. You are on the <b>Profile</b> tab
+     <br>3. You have clicked on <b>View your workspace</b>
       </td>
       <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_profile.png"></td>
   </tr>
@@ -42,16 +42,16 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
  <tr>
     <td>
-     <li>Click <b>Up for Review</b>
-     <li>Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
-     <li>Alternatively, apply filters to search for content
-     <li>Click <b>Sort by</b> to sort content. Sort content based on:
-       <ol>a. Last updated date
-       <br>b. Last created date
-       <br>c. Alphabetically </ol>
-     <li>Select the content you want to review. Refer <a=href:"/pages/features-documentation/content_review.md/##Review Content and Resources">Review Content and Resources</a>
-      <li>Click on the page navigation to access the required list on a particular page</ol>
-   </td>
+     <br>1. Click <b>Up for Review</b>
+     <br>2. Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
+     <br>3. Alternatively, apply filters to search for content
+     <br>4. Click <b>Sort by</b> to sort content. Sort content based on:
+       <br>&emps;a. Last updated date
+       <br>&emps;b. Last created date
+       <br>&emps;c. Alphabetically
+     <br>5. Select the content you want to review. Refer <a=href:"/pages/features-documentation/content_review.md/##Review Content and Resources">Review Content and Resources</a>
+      <br>6. Click on the page navigation to access the required list on a particular page
+  </td>
     <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer1.png"></td>
   </tr>
   </table>
@@ -64,15 +64,15 @@ This page contains the details of the procedure on how to review and publish con
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td><ol>
-     <li>Click <b>Show Filters</b> to apply filters and narrow your search results
-     <li>Select the respective options from the following drop-down menus:
-       <ol>a. Curriculum
-       <br>b. Subjects
-       <br>c. Grades
-       <br>d. Medium</ol>
-     <li>Click Apply to apply filters and fetch the search results
-     <li>Click Reset to reset selected filter options
+    <td>
+     <br>1. Click <b>Show Filters</b> to apply filters and narrow your search results
+     <br>2. Select the respective options from the following drop-down menus:
+       <br>&emps;a. Curriculum
+       <br>&emps;b. Subjects
+       <br>&emps;c. Grades
+       <br>&emps;d. Medium</ol>
+     <br>3. Click <b>Apply</b> to apply filters and fetch the search results
+     <br>4. Click <b>Reset</b> to reset selected filter options
       </ol>
    </td>
     <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer_filter.png"></td>
@@ -99,7 +99,7 @@ This page contains the details of the procedure on how to review and publish con
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td><li>Click <b>Publish</b> to publish the content
+   <td><br>1. Click <b>Publish</b> to publish the content
       <br> Once the content is successfully published, the creator is notified of the same and the
     content will be available on Sunbird for view and consumption
      </td>
@@ -114,7 +114,7 @@ This page contains the details of the procedure on how to review and publish con
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td><li>Click <b>Reject</b> to reject the content
+   <td><br>1. Click <b>Reject</b> to reject the content
   <br>Once the content is rejected, the creator is notified of the same and the content is rolled back to draft stage.
      </td>
     <td><img src="pages/features-documentation/images/images/contentreviewer/reject_content.png"></td>
