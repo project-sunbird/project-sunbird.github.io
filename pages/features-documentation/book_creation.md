@@ -80,7 +80,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
 
 ### Adding Content to Book
 
-You can add content in the book like headings, DIAL Codes, and resources.
+You can add content in the book like Headings, DIAL Codes, and Resources.
   
 #### Heading Details
 To start adding heading details in a node 
@@ -103,9 +103,7 @@ sibling node, refer Exploring TOC Structure
      </td>
       <td><img src="pages/features-documentation/images/book/adding_child.png"></td>
   </tr>
-  <td>On clicking child node, 
-       
-    </td>
+  <td>    </td>
       <td><img src="pages/features-documentation/images/book/heading_metadata.png"></td>
   </tr>
   </table>
