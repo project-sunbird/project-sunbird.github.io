@@ -696,6 +696,10 @@ definitions:
         description: ''
         example: mcq
         type: string
+      framework:
+        description: 'Framework name - item is associated'
+        example: NCF
+        type: string
       num_answers:
         description: ''
         example: 2
