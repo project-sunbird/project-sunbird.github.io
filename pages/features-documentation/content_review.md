@@ -46,9 +46,9 @@ This page contains the details of the procedure on how to review and publish con
      <br>2. Type keywords to search any particular content to review. Keywords can be details of content name, author, concept
      <br>3. Alternatively, apply filters to search for content
      <br>4. Click <b>Sort by</b> to sort content. Sort content based on:
-       <br>&emps;a. Last updated date
-       <br>&emps;b. Last created date
-       <br>&emps;c. Alphabetically
+       <br>&emsp;a. Last updated date
+       <br>&emsp;b. Last created date
+       <br>&emsp;c. Alphabetically
      <br>5. Select the content you want to review. Refer <a=href:"/pages/features-documentation/content_review.md/##Review Content and Resources">Review Content and Resources</a>
       <br>6. Click on the page navigation to access the required list on a particular page
   </td>
@@ -67,10 +67,10 @@ This page contains the details of the procedure on how to review and publish con
     <td>
      <br>1. Click <b>Show Filters</b> to apply filters and narrow your search results
      <br>2. Select the respective options from the following drop-down menus:
-       <br>&emps;a. Curriculum
-       <br>&emps;b. Subjects
-       <br>&emps;c. Grades
-       <br>&emps;d. Medium</ol>
+       <br>&emsp;a. Curriculum
+       <br>&emsp;b. Subjects
+       <br>&emsp;c. Grades
+       <br>&emsp;d. Medium</ol>
      <br>3. Click <b>Apply</b> to apply filters and fetch the search results
      <br>4. Click <b>Reset</b> to reset selected filter options
       </ol>
