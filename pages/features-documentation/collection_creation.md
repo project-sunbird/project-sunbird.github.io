@@ -102,7 +102,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content</td>
+    <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content <br><br><b>Note:</b> You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down</td>
     <td><img src="pages/features-documentation/images/collection/collection_delete.png"></td>
   </tr>
 </table>
