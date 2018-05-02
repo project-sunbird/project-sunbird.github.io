@@ -2198,6 +2198,11 @@ definitions:
       lastPublishedBy:
         description: ''
         type: string
+      publishChecklist:
+        description: 'List of checklist mandatory for publishing the content.'
+        type: array
+        items:
+          type: string
     required:
       - lastPublishedBy
   RetireContentRequest:
@@ -2355,8 +2360,23 @@ definitions:
     required:
       - request
   ContentRejectObject:
-    title: ContentFlagRejectObject
+    title: ContentRejectObject
     type: object
+    properties:
+      content:
+        $ref: '#/definitions/ContentRejectObjectRequest'
+  ContentRejectObjectRequest:
+    title: ContentRejectObjectRequest
+    type: object
+    properties:
+      rejectReasons:
+        type: array
+        description: 'List of reject Reasons'
+        items:
+          type: string
+      rejectComment:
+        type: string
+        description: 'Reject comments'
   UpdateHierarchyContentRequest:
     title: Update Hierarchy Content Request
     type: object
@@ -2924,5 +2944,3 @@ definitions:
             sourceId:
               type: string
               example: 'copiedId'
-        
-    
