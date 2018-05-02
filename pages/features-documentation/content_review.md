@@ -70,7 +70,7 @@ This page contains the details of the procedure on how to review and publish con
        <br>&emsp;a. Curriculum
        <br>&emsp;b. Subjects
        <br>&emsp;c. Grades
-       <br>&emsp;d. Medium</ol>
+       <br>&emsp;d. Medium
      <br>3. Click <b>Apply</b> to apply filters and fetch the search results
      <br>4. Click <b>Reset</b> to reset selected filter options
       </ol>
