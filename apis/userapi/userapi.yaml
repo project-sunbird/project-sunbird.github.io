@@ -168,7 +168,9 @@ paths:
             {
                 "request": {
                     "filters":{
-                      "userAttribute": ["channel value"]
+
+                      "userAttribute": ["value of user attribute , either you can pass single string or list"]
+
                     },
                     "limit": 500
                 }
@@ -1287,7 +1289,7 @@ definitions:
    properties:
       request:
        type: object
-       $ref: '#/definitions/User'
+       $ref: '#/definitions/UserReq'
  
   RolesResponse:
    description: this will hold roles api response
@@ -1349,7 +1351,87 @@ definitions:
     items:
       type: string
        
-    
+  UserReq:
+    title: user object
+    type: object
+    properties:
+          email:
+            type: string
+            description: 'in create user either email or phone is mandatory'
+          firstName:
+            type: string
+          lastName:
+            type: string
+          password:
+            type: string
+          avatar:
+            type: string
+          language:
+            type: array
+            items:
+             type: string
+             description: any know language by user
+          gender:
+            type: string
+          phone:
+            type: string
+          phoneVerified:
+            type: boolean
+            description: 'this key is required with value as true, if user is pass phone value and provider both. in create user either email or phone is required.'
+          subject:
+            type: array
+            items:
+             type: string
+          provider:
+            type: string
+            description: 'value of channel, that you can get while creating rootOrg.System will get the rootOrg from provider and add that rootOrg into user profile.'
+          profileSummary:
+            type: string
+          userName:
+            type: string
+          regOrgId:
+            type: string
+            description: 'Your registered organisation id. System will identify the root org id from your registered org id and add into your profile.'
+          dob:
+            type: string
+            format: yyyy-MM-dd  
+          grade:
+            type: string
+          location:
+            type: string
+            description: 'current location of user'
+          education:
+            type: array
+            items:
+             type : object
+             $ref: "#/definitions/Education"
+          profileVisibility:
+            type: object
+            description: it will be a map having key as any user attribute and value can be public or private. 
+          address: 
+            type: array
+            items:
+              type: object
+              $ref: "#/definitions/Address"
+            description: it will contains list of address object.
+          jobProfile:
+            type: array
+            items:
+              type: object
+              $ref: "#/definitions/JobProfile"
+          webPages:
+            type: object
+            properties:
+              type:
+                type: string
+              url:
+                type: string
+    required:
+      - firstName
+      - password 
+      - email
+      - userName
+      - phone    
     
   User:
     title: user object
@@ -1560,9 +1642,11 @@ definitions:
     title: Search UserRequest
     example:
       request:
+        query: free text search. if user wan't free text search then pass the query as string
         filters:
           userAttribute:
-          - value of user attribute
+          - value of user attribute, it can be as string or array.
+          - Ex: firstName:test  or firstName:[test,test1] 
         limit: 500
     type: object
     properties:
