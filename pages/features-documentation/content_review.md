@@ -100,8 +100,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   <tr>
    <td><br>1. Click <b>Publish</b> to publish the content
-      <br> Once the content is successfully published, the creator is notified of the same and the
-    content will be available on Sunbird for view and consumption
+      <br> Once the content is successfully published, the creator is notified of the same and the content will be available on Sunbird for view and consumption
      </td>
     <td><img src="pages/features-documentation/images/contentreviewer/publish_content.png"></td>
   </tr>
