@@ -703,7 +703,7 @@ paths:
   /content/link:
     post:
       description:  >-
-         This API is associated with linking DIAL code to the conten
+         This API is associated with linking DIAL code to the content
           -  The **_/content/link_** endpoint executes the "Link DIAL code" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
           - As it is update request, whatever the list of dialcodes API get in the request body against any particular contentId or list of contentIds, API update as content metadata. If API does not get any value in dialcode list it will delink the content with all the existing dialcode as well by removing dialcodes from content metadata.
