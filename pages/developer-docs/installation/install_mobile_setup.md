@@ -70,35 +70,30 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
     <td>Replace PRODUCER_ID, CHANNEL_ID, MOBILE_APP_KEY and MOBILE_APP_SECRET in `gradle.properties` for your dev, release and production build variants</td>
   </tr>
   <tr>
-    <td>10.</td>
-    <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user. The JWT token for mobile_admin user will be printed on the application server folder /where-you-cloned-sunbird-devops-repo/sunbird-devops/deploy/logs/apis.log.<br><br>Please invoke the below API to generate the key and secret for the mobile app:<br>
-    <pre>
-    <code>
-     curl -X POST \
-       <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
-       -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
-       -H 'content-type: application/json' \
-       -d '{
-       "request": {
-         "key": "&lt;implementation-name&gt;-mobile-app-&lt;version-number&gt;"
-       }
-     }'
-    </code>
-    </pre>
-     Result will be
-    <pre>
-    <code>json
-     {"result":{"key":"&lt;implementation-name&gt;-mobile-app-&lt;version-number&gt;","secret":"&lt;secret&gt;"}}
-    </code>
-    </pre>
-     Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file.
-     <br>
-     Example:<br> 
-    <pre>
-     <code> dev_mobile_app_key = "&lt;implementation-name&gt;-mobile-app-&lt;version-number&gt;"
-     dev_mobile_app_secret = "&lt;secret&gt;" </code>
-    </pre>
-    </td> 
+  <td>10.</td>
+  <td>Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user. The JWT token for mobile_admin user will be printed on the application server folder /where-you-cloned-sunbird-devops-repo/sunbird-devops/deploy/logs/apis.log.<br>Please invoke the below API to generate the key and secret for the mobile app:
+  <pre> <code>
+   curl -X POST \
+     &lt;your-sunbird-base-url&gt;/api/api-manager/v1/consumer/mobile_app/credential/register \
+     -H 'authorization: Bearer &lt;mobile_admin_jwt_token_from_apis_log_file&gt;' \
+     -H 'content-type: application/json' \
+     -d '{
+     "request": {
+       "key": "&lt;implementation-name&gt;-mobile-app-&lt;version-number&gt;"
+     }
+   }' </code> </pre>
+   Result will be
+  <br>
+  <code>{"result":{"key":"&lt;implementation-name&gt;-mobile-app-&lt;version-number&gt;","secret":"&lt;secret&gt;"}}</code>
+
+   Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file.
+   Example:
+  <pre>
+  <code>
+dev_mobile_app_key = "&lt;implementation-name&gt;-mobile-app-&lt;version-number&gt;"
+dev_mobile_app_secret = "&lt;secret&gt;" </code>
+  </pre>
+  </td> 
   </tr>
   <tr>
     <td>11.</td>
