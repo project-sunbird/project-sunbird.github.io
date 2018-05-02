@@ -86,8 +86,7 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
       <td>You can add or edit details viz. - Profile Summary<br>1. Enter <strong>Description</strong><br>2. You can show or hide your description to others<br>3. Click <strong>Save</strong> to save the description<br>4. Click <strong>Close</strong> to exit the page</td>
     <td><img src="pages/features-documentation/images/profile_summary.png"></td>
   </tr>
-  <tr>
-    </table>
+  </table>
     
 ### Receiving Badges
 
