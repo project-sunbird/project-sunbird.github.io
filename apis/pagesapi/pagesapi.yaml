@@ -8,7 +8,7 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /v1/page
+basePath: /data/v1/page
 securityDefinitions:
     auth:
       type: apiKey  # arbitrary name for the security scheme
@@ -26,7 +26,7 @@ paths:
   /create:
     post:
       description: >-
-       This API is associated with creating a new page.
+       This API is associated with creating a new page. To create a page first create the page section using section create api.make page name unique.
           - The **_/create_** endpoint executes the "create location" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Create Page
@@ -114,11 +114,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /all/settings:
+  /section/list:
     get:
       description: >-
        This API is associated with fetching the settings of a page.
-          - The **_/all/settings_** endpoint executes the "fetch settings" request based on parameters provided as metadata in the request body
+          - The **_/section/list_** endpoint executes the "fetch settings" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Fetch Page Settings
       tags:
@@ -196,11 +196,17 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /Resource:
+  /read/{pageName}:
+    parameters:
+      - in: path
+        name: pageName
+        type: string
+        required: true
+        description: 'Please append a valid Section Id to the request URL' 
     get:
       description: >-
        This API is associated with fetching specific resources.
-          - The **_/Resource_** endpoint executes the "get specific page resources" request based on parameters provided as metadata in the request body
+          - The **_/read/{pageName}_** endpoint executes the "get specific page resources" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Get Specific Page Resources
       tags:
@@ -278,93 +284,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /section/all/settings:
-    get:
-      description: >-
-       This API is associated with fetching the setting of sections on pages.
-          - The **_/section/all/settings_** endpoint executes the "fetch section settings" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty
-      summary: Fetch Section Settings
-      tags:
-      - Page APIs
-      operationId: SectionAllSettingsGet
-      produces:
-      - application/json
-      parameters:
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: X-msgid
-        in: header
-        required: true
-        type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times.'
-      - name: ts
-        in: header
-        required: true
-        type: string
-        description: 'Time Stamp at which fetch section settings request was sent.'
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      - name: x-authenticated-user-token
-        in: header
-        required: true
-        type: string
-        description: 'The token/key used to execute the API'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."fetch section settings" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "fetch section settings" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /section/all/settings
-          headers:
-            Content-Type: application/json
-            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
-            ts: 2017-05-25 10:18:56:578+0530
-            Authorization: Bearer {{api-key}}
-            x-authenticated-user-token: '{{user-token}}'
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: get all section settings
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
   /section/create:
     post:
       description:  >-
        This API is associated with creating a new section on a page.
-          - The **_/org/v1/location/create_** endpoint executes the "create new section" request based on parameters provided as metadata in the request body
+          - The **_/section/create_** endpoint executes the "create new section" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Create Page Section
       tags:
@@ -602,7 +526,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /section/{SectionId}:
+  /section/read/{SectionId}:
     parameters:
       - in: path
         name: SectionId
@@ -612,7 +536,7 @@ paths:
     get:
       description:  >-
        This API is associated with fetching specific section details.
-          - The **_/section/{SectionId}_** endpoint executes the "fetch section" request based on parameters provided as metadata in the request body
+          - The **_/section/read/{sectionId}_** endpoint executes the "fetch section" request based on parameters provided as metadata in the request body
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
       summary: Fetch Section Details by Id
@@ -668,7 +592,7 @@ paths:
       x-unitTests:
       - request:
           method: GET
-          uri: /section/0122771215738306560
+          uri: /section/read/0122771215738306560
           headers:
             Content-Type: application/json
             X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
@@ -785,7 +709,7 @@ paths:
   /assemble:
     post:
       description:  >-
-       This API is associated with fetching page data.
+       This API is associated with fetching page complete data.
           - The **_assemble_** endpoint executes the "Get Page data" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
       summary: Get Page Data 
@@ -882,6 +806,7 @@ definitions:
       params: {}
       request:
         name: Resources
+        organisationId: id of organisation, if you want to create page for your org only. if not pass then page will be created for all org.
         portalMap:
         - id: 01228383082462412826
           index: 1
@@ -954,9 +879,12 @@ definitions:
     type: object
     properties:
       name:
-        description: ''
+        description: 'name of your page'
         example: Resources
         type: string
+      organisationId:
+        description: 'your organisation id '
+        type : string
       portalMap:
         description: ''
         example:
@@ -1123,7 +1051,7 @@ definitions:
     type: object
     properties:
       name:
-        description: ''
+        description: 'unique name of your section. it will refer to your page'
         example: Recommended TextBook
         type: string
       searchQuery:
@@ -1668,6 +1596,7 @@ definitions:
       request:
         source: web
         name: page
+        organisationId: id of the organisation optional
         filters:
           objectType:
           - Content
@@ -1709,13 +1638,15 @@ definitions:
     type: object
     properties:
       source:
-        description: ''
+        description: 'possible values are app or web'
         example: web
         type: string
       name:
-        description: ''
+        description: 'name of your page'
         example: page
         type: string
+      organisationId:
+        description: 'if you pass the organisation id then system will try to match page name created by that organisation . if you have not created any page then don not pass organisationid key , you will get default creaetd page'
       filters:
         $ref: '#/definitions/Filters25'
         example:
@@ -1724,7 +1655,7 @@ definitions:
     required:
     - source
     - name
-    - filters
+    
   Filters25:
     title: Filters25
     example:

@@ -9,9 +9,12 @@ published: true
 allowSearch: true
 ---
 ## Overview
-Sunbird provides you with a workspace that is only yours. Once you have your own unique profile, you can start using your workspace to create, curate, review, upload and publish different types of  content artifacts using the customizable content editor. You can save your drafts, send them for a review, flag an issue, rework on them as often as you like until you publish it for use by the community.
+There are various user roles on Sunbird. Each user has a unique role to play in their respective organizations. Organization administrators assign one or many responsibilities to users on Sunbird. Extending the literal meaning of workspace, a space to work, Sunbird provides a unique workspace to suit the work needs of each user.  
+
+In this section of documentation, we discuss the workspace of users who create and curate content on Sunbird.
 
 ### Prerequisites
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -21,13 +24,16 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <td>1. You are logged in <br>2. You have clicked on <b>Profile</b> tab <br>3. You want to view your workspace, you have clicked on <b>View your workspace</b> 
        </td>
       <td><img src="pages/features-documentation/images/workspace/prerequisite2.png"></td>
+  </tr>
     <tr>
       <td>1. Alternatively, you can click <b>Workspace</b> from the profile drop-down menu</td>
-      <<td><img src="pages/features-documentation/images/workspace/prerequisite1.png"></td>
+      <td><img src="pages/features-documentation/images/workspace/prerequisite1.png"></td>
   </tr>
   </table>
 
-### Accessing your Workspace
+### Understanding your Workspace
+
+The workspace interface varies based on the role assigned to the user. For instance, a book reviewer has only the create book tile, while a content content would have all the tiles viz., collection, course, lesson plan, and, study material. The image used displays all the options in the workspace as it would appear for an organization administrator.
 
 <table>
   <tr>
@@ -35,45 +41,9 @@ Sunbird provides you with a workspace that is only yours. Once you have your own
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Login with the registered credential, to land into <b>Home</b> page<br>2. Click <b>Profile</b> tab on the header<br>Or<br>3. Click <b>Profile</b> icon to the right</td>
-    <td><img src="pages/features-documentation/images/profileimg1.png"></td>
-  </tr>
-  </table>
-
-### Viewing your Workspace
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>Click <b>View your Workspace</b> to land to <b>My Workspace</b> page</td>
-    <td><img src="pages/features-documentation/images/workspace1.png"></td>
-  </tr>
-  <tr>
-    <td>In your Workspace you can: <br>- Create Book, Course, Study material, Collection, Lesson plan <br>- View Drafts <br>- Review content submitted <br>- View published content <br>- View all uploaded content <br>- Limited publishing <br>Note: 
+    <td>In your Workspace you can: <br>a. Create Book, Course, Study material, Collection, Lesson plan <br>b. View content drafts which are not send for review <br>c. View list of content submitted for review <br>d. View published content <br>e. View all uploaded content <br>f. View list of content submitted for review. This option is available only for a content reviewer <br>g. View all the course batches you are enrolled in <br>h. View all flagged content. This option is available only for a flag content reviewer <br>i. View list of content that which have been shared to a specific audience. To read more on limited sharing feature, refer refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
     </td>
-    <td><img src="pages/features-documentation/images/workspace3.png"></td>
+    <td><img src="pages/features-documentation/images/workspace/workspace1.png"></td>
   </tr>
   </table>
   
-### Up For Review feature
- 
- ```
- Note: Up For Review, feature is only available for the users with Reviewer Rights
- ```
- <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Login with registered credential and password <br>2. Go to <b>My Workspace</b> <br>3. Click <b>Up For Review</b> in your workspace to see all the contents available for review</td>
-    <td><img src="pages/features-documentation/images/up4review.png"></td>
-  </tr>
-  <tr>
-    <td><b>Up For Review</b> page opens. View details viz, <br>1. <b>Content</b>: You can see all the contents send for review <br>2. <b>Author</b>: The author name is displayed for the content created by them <br>3. <b>Status</b>: You can see the status for all contents. Reviewer can review and publish the content</td>
-    <td><img src="pages/features-documentation/images/up4review1.png"></td>
-  </tr>
-  </table>

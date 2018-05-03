@@ -24,87 +24,6 @@ consumes:
 produces:
   - application/json
 paths:
-  /process/status/{processId}:
-    parameters:
-    - in: path
-      name: processId
-      type: string
-      required: true
-      description: 'Please append a valid note Id To the request URL'
-    get:
-      description:  >-
-       This API is associated with fetching the process Id while generating DIAL codes or when DIAL codes are listed.
-          - The **_/process/status/{processId}_** endpoint executes the "Get process status" request based on parameters provided as metadata in the request body
-          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
-          - Required fields cannot be left null or empty
-      summary: Get Process Status
-      tags:
-      - DIAL APIs
-      operationId: ProcessStatusGet
-      produces:
-      - application/json
-      parameters:
-      - name: processId
-        in: path
-        required: true
-        type: string
-        description: 'The process id is unique Id which is returned while generation or listing of DIAL codes'
-      - name: X-Channel-ID
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organization to which the user belongs'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."Get Process Status" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "Get Process Status" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /process/status
-          headers:
-            X-Channel-ID: sunbird
-            Content-Type: application/json
-            Authorization: Bearer {{api_key}}
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Get Process Status
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
   /generate:
     post:
       description:  >-
@@ -278,6 +197,81 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  /process/status/{processId}:
+    get:
+      description:  >-
+       This API is associated with fetching the process Id while generating DIAL codes or when DIAL codes are listed.
+          - The **_/process/status/{processId}_** endpoint executes the "Get process status" request based on parameters provided as metadata in the request body
+          -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+          - Required fields cannot be left null or empty
+      summary: Get Process Status
+      tags:
+      - DIAL APIs
+      operationId: ProcessStatusGet
+      produces:
+      - application/json
+      parameters:
+      - name: processId
+        in: path
+        required: true
+        type: string
+        description: 'The process id is unique Id which is returned while generation or listing of DIAL codes'
+      - name: X-Channel-ID
+        in: header
+        required: true
+        type: string
+        description: 'It the Unique Id to identify the root organization to which the user belongs'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Get Process Status" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Get Process Status" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+      security:
+      - auth: []
+      x-unitTests:
+      - request:
+          method: GET
+          uri: /process/status
+          headers:
+            X-Channel-ID: sunbird
+            Content-Type: application/json
+            Authorization: Bearer {{api_key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Get Process Status
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /read:
     post:
       description:  >-
@@ -366,12 +360,6 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
   /publisher/read/{publisherId}:
-    parameters:
-    - in: path
-      name: publisherId
-      type: string
-      required: true
-      description: 'Please append a valid note Id To the request URL'
     get:
       description:  >-
        This API is associated with fetching a specific publisher owning a DIAL code.
@@ -447,12 +435,6 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
   /update/{dialcode}:
-    parameters:
-    - in: path
-      name: dialcode
-      type: string
-      required: true
-      description: 'Please append a valid note Id To the request URL'
     patch:
       description:  >-
        This API is associated with updating the DIAL code.
@@ -545,12 +527,6 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
   /publisher/update/{publisherId}:
-    parameters:
-    - in: path
-      name: publisherId
-      type: string
-      required: true
-      description: 'Please append a valid note Id To the request URL'
     patch:
       description:  >-
        This API is associated with updating specific DIAL code publisher.
@@ -706,7 +682,6 @@ paths:
           body: >-
             {
               "request": {
-
               }
             }
         expectedResponse:
@@ -728,9 +703,10 @@ paths:
   /content/link:
     post:
       description:  >-
-         This API is associated with linking DIAL code to the conten
+         This API is associated with linking DIAL code to the content
           -  The **_/content/link_** endpoint executes the "Link DIAL code" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
+          - As it is update request, whatever the list of dialcodes API get in the request body against any particular contentId or list of contentIds, API update as content metadata. If API does not get any value in dialcode list it will delink the content with all the existing dialcode as well by removing dialcodes from content metadata.
       summary: Link DIAL code
       tags:
       - DIAL APIs

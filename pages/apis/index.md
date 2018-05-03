@@ -45,7 +45,8 @@ They are categorized by resource type. Each resource type has one or more data r
             <li><a href="apis/notificationapi/" target="_blank">Notification </a></li>
             <li><a href="apis/firebasecloudmessagingapi/" target="_blank">Push Notification </a></li>
             <li><a href="apis/geolocationapi/" target="_blank">Geo Location </a></li>
-            <li><a href="apis/form/" target="_blank">Form </a></li>      
+            <li><a href="apis/form/" target="_blank">Form </a></li>   
+            <li><a href="apis/locationapi/" target="_blank"> Location </a></li>
         </ul>
         <h3>Setup API(s)</h3>
         <ul>
