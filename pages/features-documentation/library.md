@@ -12,7 +12,7 @@ allowSearch: true
 
 A Library typically refers to a space, housing a large collection of books, study material or information. Extending the literary meaning, Library, one of the key modules on Sunbird, displays all content created or uploaded on the platform. The library is accessible to all registered users.
 
-This documentation elaborates the various User Interface elements of the Library
+This documentation elaborates the various user interface elements of the Library
 
 ### Prerequisites
 <table>
@@ -59,22 +59,20 @@ This documentation elaborates the various User Interface elements of the Library
 				<br>&emsp;d) <b>Medium</b>
 				<br>&emsp;e) <b>Content Types</b>
 				<br>&emsp;e) <b>Concepts</b>
-	<br>2. Click <b>Apply</>. The search results are displayed <br>3. Click <b>Reset</b> to reset the filters  </td>
+	<br>2. Click <b>Apply</b>. The search results are displayed <br>3. Click <b>Reset</b> to reset the filters  </td>
     <td><img src="pages/features-documentation/images/library/applying_filters.png"></td>
   </tr>
   </table>
    
 ## Sort content
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-	       <li>Click on the <strong>Dropdown</strong> option on the right</li>
+   <td>       <li>Click on the <strong>Dropdown</strong> option on the right</li>
 	       <li>Sort content based on latest <strong>Modified</strong> or <strong>Created</strong></li>
 	   </ol>
     </td>
