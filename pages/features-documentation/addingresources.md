@@ -17,40 +17,82 @@ Four types of resources are available (and can be created) on Sunbird:
 <br>4. Worksheets
 <br>This document explains the procedure of adding published resources. Resources can be added to book, course, collection, study material, or lesson plan.
 
-## Announcement Workflow
 
-The sequential set of tasks, the announcement sender has to complete to successfully send announcements, are explained diagrammatically  in the workflow:
 
-<center><img src="pages/features-documentation/images/announcement/workflow.png"></center>
+## Adding Resources to Headings 
 
-## Announcement Sender Role Function Matrix
-
-On Sunbird, an announcement sender is a person who creates and sends announcement to various registered users on the portal. Announcement sender can also view and analyse the announcement receiver's data on their dashboard. To know more on the various roles and functions of an Announcement Sender refer <a href="features-documentation/announcementsender_rolematrix/">Announcement Sender Role Function Matrix</a>{:target="_blank"}
-
-## Prerequisite
-
-<table>
+ <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <strong>Home</strong> page. You want to view and analyze all the sent announcements <br>3. You have clicked the <b>Announcement Dashboard</b> from the profile drop down 
-      </td>
-      <td><img src="pages/features-documentation/images/announcement/prerequisite.png"></td>
-  </tr>
-    </table>
-  
-## Viewing Announcement Dashboard
-  
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>You can view all necessary data related to announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following details: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published date <br>&emsp;c) Number of users to whom announcements were sent <br>&emsp;d) Number of users who received the announcements <br>&emsp;e) Number of users who have seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
-    </td>
+    <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either:
+    <br>a. Click Add Resource from the burger menu associated with the required node in the left navigation pane, OR
+    <br>b. Right-click on the node name and select Add Resource, OR
+    <br>c. Click Add Resources button in the action pane, OR
+    <br>d. Click Add on the resource card on the left pane, OR
+    <br>e. Use the keyboard shortcut Ctrl+Alt+A. For more details on keyboard shortcuts, refer Keyboard Shortcuts
+   </td>
     <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
   </tr>
   </table>
+  
+  ## Adding Resources
+  
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>On clicking <b>Add Resource</b>, the <b>Find & Select Activities</b> page is displayed 
+      <br>1. Type keywords to search for resources.
+      <br><b>Note<b>: On entering three characters, you see content titles as suggestions
+      <br>2. Sort resource displays alphabetically or based on published date
+      <br>3. For an effective search, select from the following drop-down filters:
+      <br>&emsp;a. <b>Category</b>
+      <br>&emsp;b. <b>Language</b>
+      <br>&emsp;c. <b>Class</b>
+      <br>&emsp;d. <b>Subject</b>
+      <br>&emsp;e. <b>Concepts</b>
+      <br>4. Click <b>Clear All</b> to edit and reset the filters
+      <br>5. Click <b>Apply</b>
+      <br>6. Select the content you want to add
+      <br>7. Click <b>Proceed</b>
+      <br>8. Click <b>Back</b> to go back to the previous screen
+     </td>
+    <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
+  </tr>
+  </table>
+  
+  ## Viewing Selected Resources
+ 
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>Hover over the resource card to view concise content details
+    <br>1. Click <b>View Details</b> on the resource card to view all the details, OR
+    <br>2. Click <b>View</b> to view all the details
+    </td>
+    <td><img src="pages/features-documentation/images/announcement/workflow.png"></td>
+    </table>
+    
+## Adding Resources
+   <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr><br>1. Search for the resource using the search bar
+      <br>2. Select the relevant resource cards from the available list
+      <br>3. Hover over the card to view the details about that resource
+      <br>4. Click <b>View Details</b> to see resource information in a new window
+       <br>&emsp;a. Click <b>Add</b> to add the selected resource to the Lesson Plan TOC
+       <br>&emsp;b. Click <b>Remove</b> to remove the resource
+      <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource pane of the node
+    </td>
+    <td><img src="pages/features-documentation/images/announcement/workflow.png"></td>
+    </table>
