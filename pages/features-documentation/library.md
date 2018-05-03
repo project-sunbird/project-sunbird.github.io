@@ -8,27 +8,22 @@ keywords: 'resources, classroom resources, classroom content, consume resources,
 published: true
 allowSearch: true
 ---
+## Overview
 
+A Library typically refers to a space, housing a large collection of books, study material or information. Extending the literary meaning, Library, one of the key modules on Sunbird, displays all content created or uploaded on the platform. The library is accessible to all registered users.
 
-A Library typically refers to a place or a space, housing a large collection of books, study material or information. On Sunbird, library is one of the key modules where all content created or uploaded.
+This documentation elaborates the various User Iterface elements of the Library
 
-<br/><br/>
-
-## Prerequisite
-
-<table class="table table-img">
+### Prerequisites
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-	 <li>Login with your registered credential</li>
-         <li>Click on the <strong>Library</strong> tab</li>
-        </ol>
-     </td>
-    <td><img src="pages/features-documentation/images/library_prerequisite.png"></td>
+    <td>1. You are logged in <br>3. You want to view the Sunbird library, you have clicked on <b>Library</b> tile
+       </td>
+      <td><img src="pages/features-documentation/images/library/prerequisite.png"></td>
   </tr>
   </table>
        
