@@ -109,7 +109,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <br>2. You can remove the resource from the list using Delete icon
     <br>3. Click Save to save the changes
     <br>4. Click Send for Review icon to send the lesson plan for review.
-    <br><b>Note<b>: For details, refer Send for Review
+    <br><b>Note</b>: For details, refer Send for Review
     <br>The Resource page displays the Name, Description, and Keywords related to the resource.
     <br>1. Click the play icon to load the added resource
     <br>2. You can delete the resource using Remove icon
