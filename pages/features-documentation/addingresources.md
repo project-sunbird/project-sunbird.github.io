@@ -96,3 +96,27 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <td><img src="pages/features-documentation/images/announcement/workflow.png"></td>
     </tr>
     </table>
+
+## Previewing Resources
+   <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+   <td>After adding the resource, preview the resource content from the action pane
+    <br>1. Click the Play icon to load the content of the resource
+    <br>2. You can remove the resource from the list using Delete icon
+    <br>3. Click Save to save the changes
+    <br>4. Click Send for Review icon to send the lesson plan for review.
+    <br><b>Note<b>: For details, refer Send for Review
+    <br>The Resource page displays the Name, Description, and Keywords related to the resource.
+    <br>1. Click the play icon to load the added resource
+    <br>2. You can delete the resource using Remove icon
+    <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
+    <br>3. Click <b>Save</b> to save the changes
+ </td>
+    <td><img src="pages/features-documentation/images/announcement/workflow.png"></td>
+    </tr>
+    </table>    
+  
