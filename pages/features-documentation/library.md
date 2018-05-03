@@ -12,7 +12,7 @@ allowSearch: true
 
 A Library typically refers to a space, housing a large collection of books, study material or information. Extending the literary meaning, Library, one of the key modules on Sunbird, displays all content created or uploaded on the platform. The library is accessible to all registered users.
 
-This documentation elaborates the various User Iterface elements of the Library
+This documentation elaborates the various User Interface elements of the Library
 
 ### Prerequisites
 <table>
@@ -38,7 +38,7 @@ This documentation elaborates the various User Iterface elements of the Library
 	<td><img src="pages/features-documentation/images/library/search_options.png"></td>  
 	</tr>
 	<tr>
-	<td>1. Select any of the following from the drop-down menu: <br>&emsp;a) <b>All<>b>: To search for all content available in the portal <br>&emsp;b) <b>Courses</b>: To search for all the courses available in the portal <br>&emsp;c) <b>Library</b>: To search for content available in the library <br>&emsp;d) <b>Organizations</b>: To search for organizations uploaded in the portal <br>&emsp;e) <b>Users</b>: To search for users uploaded in the portal <br>2. Alternatively, you can type keywords in the search bar
+	<td>1. Select any of the following from the drop-down menu: <br>&emsp;a) <b>All</b>: To search for all content available in the portal <br>&emsp;b) <b>Courses</b>: To search for all the courses available in the portal <br>&emsp;c) <b>Library</b>: To search for content available in the library <br>&emsp;d) <b>Organizations</b>: To search for organizations uploaded in the portal <br>&emsp;e) <b>Users</b>: To search for users uploaded in the portal <br>2. Alternatively, you can type keywords in the search bar
      </td>
     <td><img src="pages/features-documentation/images/library/searchbar_options.png"></td>
   </tr>
@@ -52,27 +52,15 @@ This documentation elaborates the various User Iterface elements of the Library
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-         <li>Click on the <strong>Filter icon</strong></li>
-         <li>You can filter the content by selecting from the respective dropdowns:
-			<ul>
-				<li>Curriculum</li>
-				<li>Content Types</li>
-				<li>Medium</li>
-				<li>Subjects</li>
-				<li>Concepts</li>
-			</ul>
-         </li>
-         <li>Alternatively, you can type and search for the content in the library
-			<ul>
-			<li>Click <strong>Apply</strong> to apply the filters</li>
-			<li>Click <strong>Reset</strong> to reset the selected filters</li>
-         </ul>
-         </li>
-        </ol>
-     </td>
-    <td><img src="pages/features-documentation/images/library_filter.png"></td>
+	  <td>1.Click <b>Filters</b>  <br>2. Select the following from their respective drop-down menus: 
+		  		<br>&emsp;a) <b>Board</b>
+				<br>&emsp;b) <b>Grade</b>
+				<br>&emsp;c) <b>Subject</b>
+				<br>&emsp;d) <b>Medium</b>
+				<br>&emsp;e) <b>Content Types</b>
+				<br>&emsp;e) <b>Concepts</b>
+	<br>2. Click <b>Apply</>. The search results are displayed <br>3. Click <b>Reset</b> to reset the filters  </td>
+    <td><img src="pages/features-documentation/images/library/applying_filters.png"></td>
   </tr>
   </table>
    
