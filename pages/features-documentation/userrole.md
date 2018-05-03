@@ -15,7 +15,7 @@ Before users are assigned with appropriate roles, it is important to understand:
 
 This section elaborates the various user types and their assocated responsibilites on Sunbird
 
-### User Roles and Respective Responsibilites
+### User Roles and Respective Responsibilities
 
 |  User Role    | Content Creation | Review, Reject , & Publish | Upload Content | Other Role Specific Responsibilites |
 |-------------------|---------------------|---------------------|-------------------------|-----------------|
