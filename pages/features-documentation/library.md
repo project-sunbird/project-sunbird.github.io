@@ -27,44 +27,29 @@ This documentation elaborates the various User Iterface elements of the Library
   </tr>
   </table>
        
-## Search 
-
-<table class="table table-img">
+### Searching for Content
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-         <li>Click the <strong>Dropdown</strong></li>
-         <li>Select from the following lists:
-			<ul>
-				<li>All: To search for all content available in the portal</li>
-				<li>Courses: To search for all the courses available in the portal</li>
-				<li>Library: To search for content available in the library</li>
-				<li>Organizations: To search for organizations uploaded in the portal</li>
-				<li>Users: To search for users uploaded in the portal</li>
-			</ul>
-         </li>
-         <li>Alternatively, you can type and search for the content in the library
-			<ul>
-				<li>Enter the name or keyword of the content in the <strong>Search Bar</strong></li>
-				<li>Click on the search icon or press <strong>Enter</strong></li>
-			</ul>
-         </li>
-        </ol>
+    <td>Search for content using either of the following: <br>&emsp;a)  search bar, or, <br>&emsp;b) filter options, or, <br>&emsp;c) sort options</td> 
+	<td><img src="pages/features-documentation/images/library/search_options.png"></td>  
+	</tr>
+	<tr>
+	<td>1. Select any of the following from the drop-down menu: <br>&emsp;a) <b>All<>b>: To search for all content available in the portal <br>&emsp;b) <b>Courses</b>: To search for all the courses available in the portal <br>&emsp;c) <b>Library</b>: To search for content available in the library <br>&emsp;d) <b>Organizations</b>: To search for organizations uploaded in the portal <br>&emsp;e) <b>Users</b>: To search for users uploaded in the portal <br>2. Alternatively, you can type keywords in the search bar
      </td>
-    <td><img src="pages/features-documentation/images/library_search.png"></td>
+    <td><img src="pages/features-documentation/images/library/searchbar_options.png"></td>
   </tr>
   </table>
    
-## Advance Filter
+#### Applying Filters
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
    <td>
