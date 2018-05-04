@@ -70,7 +70,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
       <br>7. Enter <b>Publisher</b> details 
       <br>8. Enter <b>Attributions</b> 
       <br>9. Select <b>Audience</b> 
-      <br>10. Enter the <b>DIAL CODE</b> 
+      <br>10. Enter the <b>DIAL Code</b> 
       <br>11. Click <b>Save</b> on the header to save the details
       <br>12. Click <b>Cancel</b> to go back to the previous screen
     </td>
@@ -80,31 +80,39 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
 
 ### Adding Content to Book
 
-You can add content in the book like Headings, DIAL Codes, and Resources.
-  
+You can add content in the book like unit/chapters, heading details, DIAL Codes, and resources. 
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr><td>To start adding chapters to the book click <b>New Child</b> node, on the left navigation pane. A unit is added to the Table of Contents pane and the heading details are displayed on the action pane.
+    <br>
+    </td>
+    <td> </td>
+  </tr>
+ </table>
+ 
 #### Heading Details
-To start adding heading details in a node 
+To start adding heading details in a unit/chapter 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-     <tr>
-    <td> 1. To start adding content to the book click <b>New Child</b> node, on the left navigation pane, the details are displayed on the action pane
-      <br>2. On clicking child node, a heading is added to the Table of Contents pane. For details on child node,
-sibling node, refer Exploring TOC Structure
-      <br>3. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook 
-      <br>4. Enter <b>Description</b> 
-      <br>5. Select the <b>Concepts</b> associated with the heading 
-      <br>6. Enter <b>Keywords</b> 
-      <br>7. Enter the <b>DIAL code</b>. Using DIAL code link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator 
-     <br>8. Click <b>ADD RESOURCE</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/adding_resources" target="_blank">Adding Resource</a>
-     </td>
+      <td>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook  
+      <br>2. Enter <b>Description</b> 
+      <br>3. Select the <b>Concepts</b> associated with the heading
+      <br>4. Enter <b>Keywords</b> 
+      <br>5. Enter the <b>DIAL code</b>. DIAL code is used to link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator
+      <br>6. Click <b>Add Resource</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/adding_resources" target="_blank">Adding Resources</a>
+       </td>
       <td><img src="pages/features-documentation/images/book/adding_child.png"></td>
   </tr>
-  <td>    </td>
-      <td><img src="pages/features-documentation/images/book/heading_metadata.png"></td>
+    <tr> <td>    For details on child node,
+sibling node, refer Exploring TOC Structure</td>
+   <td><img src="pages/features-documentation/images/book/heading_metadata.png"></td>
   </tr>
   </table>
     
@@ -121,8 +129,7 @@ sibling node, refer Exploring TOC Structure
       <br>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
     </td>
       <td><img src="pages/features-documentation/images/book/dial_code1.png"></td>
-    <td>
-  </td>
+    <td>  </td>
   </tr>
   <tr>
     <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code 
@@ -140,7 +147,7 @@ sibling node, refer Exploring TOC Structure
  </table>
 
 #### Adding Resources 
-Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: 
+Resources are added to each unit/chapter created in the ToC pane.  
 <table> 
   <tr>
     <th style="width:35%;">Step</th>
