@@ -64,7 +64,7 @@ This documentation elaborates the various user interface elements of the Library
   </tr>
   </table>
    
-## Sort content
+#### Sorting Content
 
 <table>
   <tr>
@@ -72,11 +72,9 @@ This documentation elaborates the various user interface elements of the Library
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>       <li>Click on the <strong>Dropdown</strong> option on the right</li>
-	       <li>Sort content based on latest <strong>Modified</strong> or <strong>Created</strong></li>
-	   </ol>
+   <td>1. Click the <b>Sort drop-down</b> icon <br>2.Sort content based on:  <br>&emsp;b) modified date, or <br>&emsp;b) created date
     </td>
-	<td><img src="pages/features-documentation/images/library_sort.png"></td>
+	<td><img src="pages/features-documentation/images/library/sort_options.png"></td>
     </tr>
     </table>
 
