@@ -221,7 +221,7 @@ A book must be reviewed before it is published.
   </tr>    
   </table>
   
-  ### Exploring What's New
+### Exploring What's New
 
 <table>
   <tr>
