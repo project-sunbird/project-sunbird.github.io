@@ -86,7 +86,8 @@ You can add content in the book like unit/chapters, heading details, DIAL Codes,
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr><td>To start adding chapters to the book click <b>New Child</b> node, on the left navigation pane. A unit is added to the Table of Contents pane and the heading details are displayed on the action pane. For details on child node, sibling node, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
+  <tr><td>1. To start adding chapters to the book click <b>New Child</b> node, on the left navigation pane. 
+    <br>2. A unit is added to the Table of Contents pane and the heading details are displayed on the action pane. For details on child node, sibling node, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
     <br>
     </td>
     <td><img src="pages/features-documentation/images/book/adding_child.png"> </td>
