@@ -113,7 +113,8 @@ Resources are added to each heading created in the ToC pane. To add resources to
    </td>
     <td><img src="pages/features-documentation/images/preview_resources"></td>
  </tr>
-    <br>The Resource page displays the Name, Description, and Keywords related to the resource.
+    <tr>
+     <td><br>The Resource page displays the Name, Description, and Keywords related to the resource.
     <br>1. Click the play icon to load the added resource
     <br>2. You can delete the resource using Remove icon
     <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
