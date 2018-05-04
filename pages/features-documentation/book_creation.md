@@ -107,7 +107,7 @@ To start adding heading details in a unit/chapter
       <br>3. Select the <b>Concepts</b> associated with the heading
       <br>4. Enter <b>Keywords</b> 
       <br>5. Enter the <b>DIAL code</b>. DIAL code is used to link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator
-      <br>6. Click <b>Add Resource</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/addingresources/" target="_blank">Adding Resources</a>
+      <br>6. Click <b>Add Resource</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
        </td>
       <td><img src="pages/features-documentation/images/book/heading_metadata.png"> </td>
   </tr>
