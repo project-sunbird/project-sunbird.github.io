@@ -91,9 +91,19 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`es_etc_cluster_name`| elasticsearch backupstorage cluster name |yes|
 |`sunbird_environment`| The Sunbird installation environment |yes|
 |`sunbird_instance`| The Sunbird installation name |yes|
-|`badger_admin_password`| Badger admin password |yes|
-|`badger_admin_email`| Badger admin email for admin user |yes|   
-|`vault_badging_authorization_key`| Badger authorization key for admin user  |yes|
+|`badger_admin_password`| Badger admin password |no|
+|`badger_admin_email`| Badger admin email for admin user |no|   
+|`vault_badging_authorization_key`| Badger authorization key for admin user  |no|
+|`mail_server_host`| mail server host for alerting |no|   
+|`mail_server_port`| mail server port used by mail server for alerting  |no|   
+|`mail_server_username`| username of mail |no|   
+|`mail_server_password`| password of mail |no|   
+|`vault_postgres_exporter_password`| postgres vault exporter password |no|   
+|`grafana_admin_password`| password for grafana dashboard |no|   
+|`monitor_alerts_slack_url`| slack app webhook url  |no|   
+|`monitor_alerts_slack_channel`| list of emails to send alerts |no|   
+|`vault_proxy_prometheus_admin_creds`| prometheus admin password |no|   
+
 
 5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
 
