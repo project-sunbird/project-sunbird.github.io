@@ -58,11 +58,11 @@ Resources are added to each heading created in the ToC pane. To add resources to
       <br>7. Click <b>Proceed</b>
       <br>8. Click <b>Back</b> to go back to the previous screen
      </td>
-    <td><img src="pages/features-documentation/images/add_resources1"></td>
+    <td><img src="pages/features-documentation/images/add_resources1.png"></td>
   </tr>
   </table>
   
-  ## Viewing Selected Resources
+## Viewing Selected Resources
  
  <table>
   <tr>
@@ -74,7 +74,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <br>1. Click <b>View Details</b> on the resource card to view all the details, OR
     <br>2. Click <b>View</b> to view all the details
     </td>
-    <td><img src="pages/features-documentation/images/add_resources2"></td>
+    <td><img src="pages/features-documentation/images/add_resources2.png"></td>
     </tr>
   </table>
     
@@ -93,7 +93,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
        <br>&emsp;b. Click <b>Remove</b> to remove the resource
       <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource pane of the node
     </td>
-    <td><img src="pages/features-documentation/images/add_resources3"></td>
+    <td><img src="pages/features-documentation/images/add_resources3.png"></td>
     </tr>
     </table>
 
@@ -111,7 +111,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <br>4. Click Send for Review icon to send the lesson plan for review.
     <br><b>Note</b>: For details, refer Send for Review
    </td>
-    <td><img src="pages/features-documentation/images/preview_resources"></td>
+    <td><img src="pages/features-documentation/images/preview_resources.png"></td>
  </tr>
     <tr>
      <td><br>The Resource page displays the Name, Description, and Keywords related to the resource.
@@ -120,7 +120,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
     <br>3. Click <b>Save</b> to save the changes
  </td>
-    <td><img src="pages/features-documentation/images/preview_page"></td>
+    <td><img src="pages/features-documentation/images/preview_page.png"></td>
     </tr>
     </table>    
   
