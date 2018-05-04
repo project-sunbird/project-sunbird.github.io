@@ -91,8 +91,9 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`es_etc_cluster_name`| elasticsearch backupstorage cluster name |yes|
 |`sunbird_environment`| The Sunbird installation environment |yes|
 |`sunbird_instance`| The Sunbird installation name |yes|
-
-
+|`badger_admin_password`| Badger admin password |yes|
+|`badger_admin_email`| Badger admin email for admin user |yes|   
+|`vault_badging_authorization_key`| Badger authorization key for admin user  |yes|
 
 5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
 
@@ -106,17 +107,15 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
 
-6.The badger service is set up manually. To do so, follow the steps given [here](#badger-setup).
-
 **Note**: The badger service does not work without an Azure storage account name and key. 
 
-7.Verify that all the mandatory variables, for example; sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script `./sunbird_install.sh -s core` to deploying the core services.
+6.Verify that all the mandatory variables, for example; vault_badging_authorization_key, sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script `./sunbird_install.sh -s core` to deploying the core services.
 
 **Note**: If you want to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`
 
 To know more about the script `sunbird_install.sh`, click [here](#sunbird-install-script).
 
-8.Open https://[domain-name] and verify the installation. 
+7.Open https://[domain-name] and verify the installation. 
   
 ## Sunbird Install Script 
 
@@ -134,8 +133,6 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 * `deploy-apis.sh` - Deploys the api gateway (Kong) as a docker service using Ansible. 
 
-* `onboard-apis.sh`  - Onboards the Sunbird APIs and consumers to the API gateway using Ansible. 
-
 * `deploy-proxy.sh` - Deploys the proxy (Nginx) as a docker service.
 
 * `provision-keycloak.sh` - Installs Keycloak.
@@ -148,7 +145,6 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
 
-
 ## Mapping Ports 
 The following is a list of ports that must be open:
 
@@ -158,38 +154,6 @@ The following is a list of ports that must be open:
 |ELB|0.0.0.0|80,433|TCP|
 |swarm managers subnet|swarm nodes subnet|All|TCP & UDP|
 |swarm nodes|Cassandra servers|9042|TCP|
-|swarm nodes|Cassandra servers|9042|TCP|
 |swarm nodes|Elasticsearch servers| 9200 |TCP|
 |swarm nodes|Postgres servers| 5432|TCP|
 |swarm nodes|Keycloak| 8080|TCP|
-
-## Badger Setup
-
-1. Run `ssh -i <key path (which you gave in config file)> $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')` to login to node where badger container is running.  
- Example: `ssh -i ~/ssh_key.pem $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')`
-
-2. Run `docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}') /bin/sh` to login  to the badger container.
-
-3. Move to the directory `cd /badger/code`
-
-4. Run `./manage.py createsuperuser`. Provide a valid username, email ID and password.
-
-5. Install curl.
-     `apt-get install curl -y`
-     
-6. Run the following curl command to get the sunbird badger authorization variable.
-     
-     `curl -X POST 'http://localhost:8004/api-auth/token' -d "username=<emailid>&password=<password>"`
-
-7. Set the output token of above command as the value for the `vault_sunbird_badger_authorization` in config file. 
-
-## Keycloak Setup
-
-Keycloak is the auth server for sunbird.
-
-In order to make keycloak work with android application, please follow the below steps
-
-1. Open keycloak web ui `https://dns-name/auth`
-2. Log in to the admin console using credentials (default uesername : admin and passwod: <keycloak_admin_password given in config>)
-3. Navigate to Clients -> Android and delete both redirection urls and update with `https://<dns-name>/oauth2callback`
-<img src="pages/developer-docs/installation/images/keycloak-android-redirect.png">
