@@ -22,7 +22,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
     <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b>  
       <br>3. You want to create a book, you have clicked on <b>Book</b> tile
        </td>
-      <td><img src="pages/features-documentation/images/book_workspace.png"></td>
+      <td><img src="pages/features-documentation/images/book/book_workspace.png"></td>
   </tr>
   </table>
   
@@ -89,7 +89,7 @@ You can add content in the book like unit/chapters, heading details, DIAL Codes,
   <tr><td>To start adding chapters to the book click <b>New Child</b> node, on the left navigation pane. A unit is added to the Table of Contents pane and the heading details are displayed on the action pane. For details on child node, sibling node, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
     <br>
     </td>
-    <td> </td>
+    <td><img src="pages/features-documentation/images/book/adding_child.png"> </td>
   </tr>
  </table>
  
@@ -108,10 +108,10 @@ To start adding heading details in a unit/chapter
       <br>5. Enter the <b>DIAL code</b>. DIAL code is used to link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator
       <br>6. Click <b>Add Resource</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/adding_resources" target="_blank">Adding Resources</a>
        </td>
-      <td><img src="pages/features-documentation/images/book/adding_child.png"></td>
+      <td><img src="pages/features-documentation/images/book/heading_metadata.png"> </td>
   </tr>
     <tr> <td></td>
-   <td><img src="pages/features-documentation/images/book/heading_metadata.png"></td>
+   <td></td>
   </tr>
   </table>
     
