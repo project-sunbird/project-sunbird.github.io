@@ -123,4 +123,3 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <td><img src="pages/features-documentation/images/preview_page.png"></td>
     </tr>
     </table>    
-  
