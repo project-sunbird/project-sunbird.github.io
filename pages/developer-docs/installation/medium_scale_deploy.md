@@ -121,6 +121,8 @@ To know more about the script `sunbird_install.sh`, click [here](#sunbird-instal
 
 The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository. 
 
+* `sanity.sh` - Basic Sunbird prerequisites check. 
+
 * `install-deps.sh` - Installs Ansible v2.4.1.0 on the installation server to provision and deploy Sunbird. This script also sets up the docker swarm.
 
 * `generate_config.sh` - Creates a workspace for the installation and sets up necessary config files. 
