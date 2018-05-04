@@ -1,0 +1,53 @@
+#This file contains all those environment variable that need to be set during sunbird installation, if any one is not set , it will have some impact on system behaviour.
+# I won't have idea , where it will fit in out documentation section, but have feeling it's required some where under installation guide.
+
+
+| variable                              | description                                                                                                 |
+|---------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| sunbird_cassandra_host                | host running the Cassandra server , in case of multiple host pass value as comma separated.                                                                          |
+| sunbird_cassandra_port                | port on which cassandra server is running , same as above for multiple port.                                                                  |
+| sunbird_cassandra_username (optional) | username for Cassandra database, if authentication is enabled                                               |
+| sunbird_cassandra_password (optional) | password for Cassandra database, if authentication is enabled                                               |
+| sunbird_es_host                       | host running the Elasticsearch server,for multiple host pass value as comma separated.                                                                       |
+| sunbird_es_port                       | port on which Elasticsearch server is running                                                               |
+| sunbird_es_cluster (optional)         | name of the Elasticsearch cluster                                                                           |
+| sunbird_learner_actor_host            | host running for learner actor                                                                              |
+| sunbird_learner_actor_port            | port on which learner actor is running                                                                      |
+| sunbird_sso_url                       | url for keycloak server (Example : **http://localhost:8080/auth** )                                                                                    |
+| sunbird_sso_realm                     | keycloak realm name   (use default realm as master or you can create new realm)                                                                                      |
+| sunbird_sso_username                  | keycloak user name                                                                                          |
+| sunbird_sso_password                  | keycloak password                                                                                           |
+| sunbird_sso_client_id                 | key cloak client id  (use default as admin-cli or you can create new client in key cloak)                                                                                                                                               |
+| sunbird_sso_client_secret (optional)  | keycloak client secret (not mandatory)                                                                      |
+| ekstep_content_search_base_url        | provide base url for EkStep content search                                                                  |
+| ekstep_authorization                  | provide Authorization , api key to connect with ekstep                                                      |
+| sunbird_pg_host                       | Postgres host name or ip                                                                                   |
+| sunbird_pg_port                       | Postgres port number                                                                                        |
+| sunbird_pg_db                         | Postgres db name                                                                                            |
+| sunbird_pg_user                       | Postgres db user name                                                                                       |
+| sunbird_pg_password                   | Postgress db password                                                                                       |
+| sunbird_installation                  | Used to send telemetry and in email template name is used                                                                                                             |
+| ekstep_api_base_url                   |  To make ekstep api call                                                                                                            |
+| sunbird_mail_server_host              |  to send email                                                                                                           |
+| sunbird_mail_server_port              |  to send email                                                                                                           |
+| sunbird_mail_server_username          |  to send email                                                                                                           |
+| sunbird_mail_server_password          |  to send email                                                                                                          |
+| sunbird_mail_server_from_email        |  to send email                                                                                                           |
+| sunbird_account_name                  | account name of azure blob storage                                                                          |
+| sunbird_account_key                   | azure blob storage account key                                                                              |
+| sunbird_quartz_mode                   | put this value {"embedded" to run quartz without any data base, "any other value" to run with postgres db } |
+| sunbird_encryption_key                |  to do the data encrypt and decrypt                                                                                                           |
+| sunbird_encryption_mode               | mode value is either local or remote                                                                        |
+| sunbird_sso_publickey                 | SSO public key                                                                                               |
+| sunbird_env_logo_url                  | logo url for sending email.(http://www.paramountias.com/media/images/current-affairs/diksha-portal.jpg)     |
+| sunird_web_url                        | web page url(in welcome email user will get this link)                                                                                                |
+| sunbird_app_url                       | Play store url to download the app                                                                          |
+| sunbird_msg_91_auth                   | msg 91 auth  
+|sunbird_msg_sender                     | message sender name        
+|sunbird_installation_email             | this email is used for badgr , for sending badge assertion
+|badging_authorization_key              |  badgr server auth key
+| sunbird_badger_baseurl                | badgr server base url 
+| telemetry_pdata_id                    | {{env}}.{{installation}}.{{servicename}}.service  ex: dev.sunbird.learning.service
+| telemetry_pdata_pid                   | Producer id of the telemetry EX:  actor-service
+|telemetry_pdata_ver                    |  producer version or buid version which is generation the telemetry Ex: 1.5
+|  
