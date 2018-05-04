@@ -30,11 +30,11 @@ Resources are added to each heading created in the ToC pane. To add resources to
      <br>d. Click <b>Add</b> on the resource card on the left pane, OR
      <br>e. Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer Keyboard Shortcuts
     </td>
-    <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
+    <td><img src="pages/features-documentation/images/add_resources.png"></td>
   </tr>
   </table>
   
-  ## Adding Resources
+## Adding Resources
   
  <table>
   <tr>
@@ -58,7 +58,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
       <br>7. Click <b>Proceed</b>
       <br>8. Click <b>Back</b> to go back to the previous screen
      </td>
-    <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
+    <td><img src="pages/features-documentation/images/add_resources1"></td>
   </tr>
   </table>
   
@@ -74,7 +74,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <br>1. Click <b>View Details</b> on the resource card to view all the details, OR
     <br>2. Click <b>View</b> to view all the details
     </td>
-    <td><img src="pages/features-documentation/images/announcement/workflow.png"></td>
+    <td><img src="pages/features-documentation/images/add_resources2"></td>
     </tr>
   </table>
     
@@ -93,7 +93,7 @@ Resources are added to each heading created in the ToC pane. To add resources to
        <br>&emsp;b. Click <b>Remove</b> to remove the resource
       <br>5. Click <b>Proceed</b> to add resources to the section. The resource is added to the Resource pane of the node
     </td>
-    <td><img src="pages/features-documentation/images/announcement/workflow.png"></td>
+    <td><img src="pages/features-documentation/images/add_resources3"></td>
     </tr>
     </table>
 
@@ -110,13 +110,16 @@ Resources are added to each heading created in the ToC pane. To add resources to
     <br>3. Click Save to save the changes
     <br>4. Click Send for Review icon to send the lesson plan for review.
     <br><b>Note</b>: For details, refer Send for Review
+   </td>
+    <td><img src="pages/features-documentation/images/preview_resources"></td>
+ </tr>
     <br>The Resource page displays the Name, Description, and Keywords related to the resource.
     <br>1. Click the play icon to load the added resource
     <br>2. You can delete the resource using Remove icon
     <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
     <br>3. Click <b>Save</b> to save the changes
  </td>
-    <td><img src="pages/features-documentation/images/announcement/workflow.png"></td>
+    <td><img src="pages/features-documentation/images/preview_page"></td>
     </tr>
     </table>    
   
