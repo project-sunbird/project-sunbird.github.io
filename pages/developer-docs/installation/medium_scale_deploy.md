@@ -123,7 +123,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 **Note**: If you want to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`
 
-To know more about the script `sunbird_install.sh`, click [here](#sunbird-install-script).
+To know more about the script `sunbird_install.sh`, click [here](developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
 
 7.Open https://[domain-name] and verify the installation. 
   
