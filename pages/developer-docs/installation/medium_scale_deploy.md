@@ -103,6 +103,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`monitor_alerts_slack_url`| slack app webhook url  |no|   
 |`monitor_alerts_slack_channel`| list of emails to send alerts |no|   
 |`vault_proxy_prometheus_admin_creds`| prometheus admin password |no|   
+|`proxy_prometheus`| Setting up Prometheus Proxy |no| 
 
 
 5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
