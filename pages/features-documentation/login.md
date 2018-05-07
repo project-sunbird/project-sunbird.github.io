@@ -87,7 +87,7 @@ Signing in on Sunbird is a seamless process. Any organization, recognized educat
   </tr>
   <tr>
     <td>1. You will receive a <b>One Time Password (OTP)</b> on your registered phone number</td>
-    <td colspan="6"><img src="pages/features-documentation/images/mobileotp.png"></td>
+    <td><img src="pages/features-documentation/images/mobileotp.png"></td>
   </tr>
   <tr>
     <td>1. Enter the <b>OTP</b> code sent to your mobile device <br>2. Click <b>Login</b></td>
