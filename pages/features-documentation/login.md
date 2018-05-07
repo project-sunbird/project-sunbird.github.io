@@ -66,7 +66,7 @@ Signing in on Sunbird is a seamless process. Any organization, recognized educat
   </tr>
   <tr>
     <td>1. You will receive an email to reset your password <br>2. Click the <b>Link</b> in the email to reset credentials</td>
-    <td><img src="pages/features-documentation/images/emaillink.png"></td>
+    <td colspan="2"><img src="pages/features-documentation/images/emaillink.png"></td>
   </tr>
   <tr>
     <td>1. The <b>Login</b> page is displayed <br>2. Enter <b>Email ID</b> <br>3. Enter new <b>Password</b> of your choice <br>4. Click <b>Login</b></td>
