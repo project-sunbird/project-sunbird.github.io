@@ -91,9 +91,9 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`es_etc_cluster_name`| elasticsearch backupstorage cluster name |yes|
 |`sunbird_environment`| The Sunbird installation environment |yes|
 |`sunbird_instance`| The Sunbird installation name |yes|
-|`badger_admin_password`| Badger admin password |no|
-|`badger_admin_email`| Badger admin email for admin user |no|   
-|`vault_badging_authorization_key`| Badger authorization key for admin user  |no|
+|`badger_admin_password`| Badger admin password |yes|
+|`badger_admin_email`| Badger admin email for admin user |yes|   
+|`vault_badging_authorization_key`| Badger authorization key for admin user  |yes|
 |`mail_server_host`| mail server host for alerting |no|   
 |`mail_server_port`| mail server port used by mail server for alerting  |no|   
 |`mail_server_username`| username of mail |no|   
