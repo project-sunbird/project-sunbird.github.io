@@ -8,7 +8,7 @@ keywords: Login, sign up, forgot password
 published: true
 allowSearch: true
 ---
-Signing in on Sunbird is a seamless process. Any organization, recognized education or learning body or individual users can sign in on the portal. Successful sign in on the portal is notified to the user via an auto-generated email.
+Sign in on Sunbird is a seamless process. Any organization, recognized education or learning body or individual users can sign in on the portal. Successful sign in on the portal is notified to the user via an auto-generated email.
 
 <table>
 	<tr>
@@ -21,7 +21,7 @@ Signing in on Sunbird is a seamless process. Any organization, recognized educat
 	</tr>
 	</table>
 	
-## Signing In 
+## Logging to Sunbird Portal
 
 <table>
   <tr>
