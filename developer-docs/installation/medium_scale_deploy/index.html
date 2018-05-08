@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.40/";
+			baseURL.href="/releases/release.1.41/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-05-03 13:54:19 +0530">
+<meta name="last-modified" content="2018-05-08 18:35:18 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.40" />
-<meta name="buildNo" content="3278" />
+<meta name="buildVersion" content="release.1.41" />
+<meta name="buildNo" content="3370" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?03052018"  />
-<link rel="stylesheet" href="css/style.css?03052018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?03052018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?03052018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?03052018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?03052018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?08052018"  />
+<link rel="stylesheet" href="css/style.css?08052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?08052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?08052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?08052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?08052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -133,7 +133,7 @@
             </a>
             <ul class="sidebar-group features-documentation">
                 <li>
-                    <a href="features-documentation/login/">Login</a>
+                    <a href="features-documentation/login/">Sign In</a>
                 </li>
                 <li>
                     <a href="features-documentation/register_org/">Register Organizations</a>
@@ -189,7 +189,10 @@
                         </ul>
                     </div>
 				</li>
-				<li>
+			<li>
+			     <a href="features-documentation/upload/">Upload Contents</a>
+                	</li>	
+		    		<li>
                     <div class="">
                         <a href="features-documentation/badging_framework/badging_overview/">Badging Framework</a>
                         <ul class="sidebar-group">
@@ -209,6 +212,9 @@
                     <a href="features-documentation/announcement/">Announcement</a>
                 </li>
                 <li>
+                    <a href="features-documentation/content_review/">Content Review</a>
+                </li>
+		<li>
                     <a href="features-documentation/library/">Library</a>
                 </li>
                 <li>
@@ -536,12 +542,6 @@
             <li class="toc_level-1 toc_section-5">
               <a href="#mapping-ports"><span class="tocnumber">5 .</span> <span class="toctext">Mapping Ports</span></a>
             </li>
-            <li class="toc_level-1 toc_section-6">
-              <a href="#badger-setup"><span class="tocnumber">6 .</span> <span class="toctext">Badger Setup</span></a>
-            </li>
-            <li class="toc_level-1 toc_section-7">
-              <a href="#keycloak-setup"><span class="tocnumber">7 .</span> <span class="toctext">Keycloak Setup</span></a>
-            </li>
           </ul>
         </td>
       </tr>
@@ -557,7 +557,7 @@
 
 <ul>
   <li>
-    <p>Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following <a href="#mapping-ports">ports</a>. The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.</p>
+    <p>Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following <a href="developer-docs/installation/medium_scale_deploy/#mapping-ports">ports</a> The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.</p>
   </li>
   <li>
     <p>Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name, and want to get an SSL certificate, use <a href="https://letsencrypt.org/">Let’s Encrypt</a> to generate a free certificate that is valid for 90 days.</p>
@@ -883,6 +883,84 @@
       <td style="text-align: left">yes</td>
       <td> </td>
     </tr>
+    <tr>
+      <td style="text-align: left"><code>badger_admin_password</code></td>
+      <td style="text-align: left">Badger admin password</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>badger_admin_email</code></td>
+      <td style="text-align: left">Badger admin email for admin user</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>vault_badging_authorization_key</code></td>
+      <td style="text-align: left">Badger authorization key for admin user</td>
+      <td style="text-align: left">yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>mail_server_host</code></td>
+      <td style="text-align: left">mail server host for alerting</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>mail_server_port</code></td>
+      <td style="text-align: left">mail server port used by mail server for alerting</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>mail_server_username</code></td>
+      <td style="text-align: left">username of mail</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>mail_server_password</code></td>
+      <td style="text-align: left">password of mail</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>vault_postgres_exporter_password</code></td>
+      <td style="text-align: left">postgres vault exporter password</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>grafana_admin_password</code></td>
+      <td style="text-align: left">password for grafana dashboard</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>monitor_alerts_slack_url</code></td>
+      <td style="text-align: left">slack app webhook url</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>monitor_alerts_slack_channel</code></td>
+      <td style="text-align: left">list of emails to send alerts</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>vault_proxy_prometheus_admin_creds</code></td>
+      <td style="text-align: left">prometheus admin password</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>proxy_prometheus</code></td>
+      <td style="text-align: left">Setting up Prometheus Proxy</td>
+      <td style="text-align: left">no</td>
+      <td> </td>
+    </tr>
   </tbody>
 </table>
 
@@ -935,23 +1013,24 @@
   </tbody>
 </table>
 
-<p>6.The badger service is set up manually. To do so, follow the steps given <a href="#badger-setup">here</a>.</p>
-
 <p><strong>Note</strong>: The badger service does not work without an Azure storage account name and key.</p>
 
-<p>7.Verify that all the mandatory variables, for example; sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script <code>./sunbird_install.sh -s core</code> to deploying the core services.</p>
+<p>6.Verify that all the mandatory variables, for example; vault_badging_authorization_key, sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script <code>./sunbird_install.sh -s core</code> to deploying the core services.</p>
 
 <p><strong>Note</strong>: If you want to re-run any particular stage in the installation, just run <code>./sunbird_install.sh -s &lt;stagename&gt;</code></p>
 
-<p>To know more about the script <code>sunbird_install.sh</code>, click <a href="#sunbird-install-script">here</a>.</p>
+<p>To know more about the script <code>sunbird_install.sh</code>, click <a href="developer-docs/installation/medium_scale_deploy/#sunbird-install-script">here</a>.</p>
 
-<p>8.Open https://[domain-name] and verify the installation.</p>
+<p>7.Open https://[domain-name] and verify the installation.</p>
 
 <h2 id="sunbird-install-script">Sunbird Install Script</h2>
 
 <p>The Sunbird installation script <code>./sunbird_install.sh</code> is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository.</p>
 
 <ul>
+  <li>
+    <p><code>sanity.sh</code> - Basic Sunbird prerequisites check.</p>
+  </li>
   <li>
     <p><code>install-deps.sh</code> - Installs Ansible v2.4.1.0 on the installation server to provision and deploy Sunbird. This script also sets up the docker swarm.</p>
   </li>
@@ -969,9 +1048,6 @@
   </li>
   <li>
     <p><code>deploy-apis.sh</code> - Deploys the api gateway (Kong) as a docker service using Ansible.</p>
-  </li>
-  <li>
-    <p><code>onboard-apis.sh</code>  - Onboards the Sunbird APIs and consumers to the API gateway using Ansible.</p>
   </li>
   <li>
     <p><code>deploy-proxy.sh</code> - Deploys the proxy (Nginx) as a docker service.</p>
@@ -1032,12 +1108,6 @@
     </tr>
     <tr>
       <td style="text-align: left">swarm nodes</td>
-      <td style="text-align: left">Cassandra servers</td>
-      <td style="text-align: left">9042</td>
-      <td style="text-align: left">TCP</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">swarm nodes</td>
       <td style="text-align: left">Elasticsearch servers</td>
       <td style="text-align: left">9200</td>
       <td style="text-align: left">TCP</td>
@@ -1057,56 +1127,10 @@
   </tbody>
 </table>
 
-<h2 id="badger-setup">Badger Setup</h2>
-
-<ol>
-  <li>
-    <p>Run <code>ssh -i &lt;key path (which you gave in config file)&gt; $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')</code> to login to node where badger container is running.<br />
- Example: <code>ssh -i ~/ssh_key.pem $(whoami)@$(docker service ps badger-service | grep Runn | awk '{print $4}')</code></p>
-  </li>
-  <li>
-    <p>Run <code>docker exec -it -u root $(docker ps | grep badger | head -n1 | awk '{print $1}') /bin/sh</code> to login  to the badger container.</p>
-  </li>
-  <li>
-    <p>Move to the directory <code>cd /badger/code</code></p>
-  </li>
-  <li>
-    <p>Run <code>./manage.py createsuperuser</code>. Provide a valid username, email ID and password.</p>
-  </li>
-  <li>
-    <p>Install curl.
-  <code>apt-get install curl -y</code></p>
-  </li>
-  <li>
-    <p>Run the following curl command to get the sunbird badger authorization variable.</p>
-
-    <p><code>curl -X POST 'http://localhost:8004/api-auth/token' -d "username=&lt;emailid&gt;&amp;password=&lt;password&gt;"</code></p>
-  </li>
-  <li>
-    <p>Set the output token of above command as the value for the <code>vault_sunbird_badger_authorization</code> in config file.</p>
-  </li>
-</ol>
-
-<h2 id="keycloak-setup">Keycloak Setup</h2>
-
-<p>Keycloak is the auth server for sunbird.</p>
-
-<p>In order to make keycloak work with android application, please follow the below steps</p>
-
-<ol>
-  <li>Open keycloak web ui <code>https://dns-name/auth</code></li>
-  <li>Log in to the admin console using credentials (default uesername : admin and passwod: <keycloak_admin_password given="" in="" config="">)</keycloak_admin_password></li>
-  <li>Navigate to Clients -&gt; Android and delete both redirection urls and update with <code>https://&lt;dns-name&gt;/oauth2callback</code>
-<img src="pages/developer-docs/installation/images/keycloak-android-redirect.png" /></li>
-</ol>
-
           
           <hr />
           
           <p class="edit-para text-right">
-			<!--<a target="_blank"  class="" href="">
-				  <i>Contribution Guidelines</i>
-			  </a> &nbsp;&nbsp;-->
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/medium_scale_deploy.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
