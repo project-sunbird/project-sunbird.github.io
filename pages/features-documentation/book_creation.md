@@ -50,14 +50,14 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
   
 ### Adding Content to Book
 
-You can add various elements in the book like units/chapters, heading details, DIAL codes, and resources. 
+You can add various elements in the book like units or chapters, heading details, DIAL codes, and resources. 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr><td>1. To start adding chapters to the book click <b>New Child</b> node, on the left navigation pane. 
-    <br>2. A unit is added to the Table of Contents pane and the heading details are displayed on the action pane. For details on child node, sibling node, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
+  <tr><td>1. Click <b>New Child</b> node, on the left navigation pane to add chapter or unit
+    <br>2. A unit is added to the left pane and the corresponding heading details are displayed on the action pane. For details on child node, sibling node, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
     <br>
     </td>
     <td><img src="pages/features-documentation/images/book/adding_child.png"> </td>
@@ -65,19 +65,21 @@ You can add various elements in the book like units/chapters, heading details, D
  </table>
  
 #### Heading Details
-To start adding heading details in a unit/chapter 
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-      <td>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook  
+      <td>To start adding heading details in a unit or chapter 
+      <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook  
       <br>2. Enter <b>Description</b> 
       <br>3. Select the <b>Concepts</b> associated with the heading
       <br>4. Enter <b>Keywords</b> 
-      <br>5. Enter the <b>DIAL code</b>. DIAL code is used to link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator
-      <br>6. Click <b>Add Resource</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
+      <br>5. Enter the <b>DIAL code</b> 
+        <br><b>Note:</b> DIAL code is used to link other digital content to the book. The list of DIAL codes associated with the book is provided to you by the organization administrator
+      <br>6. Click <b>Add Resource</b> to add content to the unit or chapter. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
        </td>
       <td><img src="pages/features-documentation/images/book/heading_metadata.png"> </td>
   </tr>
@@ -92,17 +94,17 @@ To start adding heading details in a unit/chapter
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:25%;">Screen</th>
-    <th style="width:50%;"></th>
+    <th style="width:40%;"></th>
   </tr>
   <tr>
-    <td>Enter the code from the list of DIAL codes that correspond to the book being created.   
-      <br>1. On entering the right code for the heading a ✔️ icon is displayed beside the code 
+    <td>Enter the code from the list of DIAL codes that correspond to the book being created   
+      <br>1. Enter the right code for the heading to display ✔️ icon beside the code 
     </td>
       <td><img src="pages/features-documentation/images/book/dial_code1.png"></td>
     <td>  </td>
   </tr>
   <tr>
-    <td>2. If the code entered is incorrect, a ❌, icon is displayed beside the code 
+    <td>2. Incorrect code displays ❌ icon 
       </td>
       <td><img src="pages/features-documentation/images/book/dial_code2.png"></td> 
     <td> </td>
@@ -117,7 +119,7 @@ To start adding heading details in a unit/chapter
  </table>
 
 #### Adding Resources 
-Resources are added to each unit/chapter created in the ToC pane.  
+
 <table> 
   <tr>
     <th style="width:35%;">Step</th>
@@ -142,7 +144,7 @@ Resources are added to each unit/chapter created in the ToC pane.
 
 ### Using the Table of Contents Options 
 
-The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
+You can see <b>Table of Content</b> tree in the left pane to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
 <br>&emsp;a) The burger menu associated with a tree node 
 <br>&emsp;b) Right-click options associated with a tree node, OR 
 <br>&emsp;c) Keyboard shortcuts <br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
@@ -156,9 +158,9 @@ The Table of Contents tree seen in the left pane is used to navigate content com
   </tr>
   <tr>
     <td>1. Click <b>Delete</b> icon beside the burger menu <br>2. Click <b>Yes</b> to delete the added content
-      <br><b>Note</b>: You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
+      <br><b>Note:</b> You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down
       </td>
-    <td><img src="pages/features-documentation/images/book/book_unit_delete.png"></td>
+    <td><img src="pages/features-documentation/images/collection/collection_delete.png"></td>
   </tr>
 </table>
 
@@ -170,7 +172,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Drag and drop the content to the desired position to rearrange  the order of the content added to the textbook  
+    <td>1. Drag and drop the content to the desired position to rearrange the order of the content added to the textbook  
       </td>
     <td><img src="pages/features-documentation/images/book/book_drag_content.png"></td>
   </tr>
@@ -213,15 +215,14 @@ The Table of Contents tree seen in the left pane is used to navigate content com
 
 ### Sending Book for Review
 
-A book must be reviewed before it is published. 
-
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Save</b> on the header to save the book 
+    <td>A book must be reviewed before it is published
+      <br>1. Click <b>Save</b> on the header to save the book 
       <br>2. Click <b>Send for review</b> to send the created book for review. Before sending for review, you can share the content to a limited audience. To know more about Limited Sharing, refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
     </td>
     <td><img src="pages/features-documentation/images/book_sendforreview.png"></td>
