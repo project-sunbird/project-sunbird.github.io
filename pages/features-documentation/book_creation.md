@@ -80,7 +80,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
 
 ### Adding Content to Book
 
-You can add content in the book like unit/chapters, heading details, DIAL Codes, and resources. 
+You can add various elements in the book like units/chapters, heading details, DIAL codes, and resources. 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
