@@ -78,9 +78,9 @@ This documentation elaborates the various user interface elements of the Library
     </tr>
     </table>
 
-## View Popular Stories
+### Viewing Popular Stories
 
-Popular stories are listed here. The different story types displayed are:
+Sunbird houses a wide variety of Content. Popular story is a bucket term which includes the following content types:
 
 - YouTube videos
 - Audio Clips
@@ -96,17 +96,12 @@ Popular stories are listed here. The different story types displayed are:
     <td><strong>Screen</strong></td>
   </tr>
   <tr>
-   <td>
-       <ol>
-	       <li>Click on any of the story to view</li>
-	       <li>Click right or left <strong>Scroll bar</strong> to scroll</li>
-	   </ol>
-   </td>
+   <td>1. Click on any of the story <br>2.Click right or left <b>Scroll bar</b> to scroll through listed content   </td>
   <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
   </tr>
   </table>
 
-### Consuming a Story
+#### Consuming a Story
 
 <table class="table table-img">
   <tr>
@@ -114,10 +109,7 @@ Popular stories are listed here. The different story types displayed are:
     <td><strong>Screen</strong></td>
   </tr>
   <tr>
-   <td>
-	   <ul>
-		   <li>Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story are provided below the player</li>
-	   </ul>
+   <td>1. Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story are provided below the player
 	</td>
 	<td><img src="pages/features-documentation/images/library_desc_cont_inf.png"></td>
 	</tr>
