@@ -54,7 +54,7 @@ To create a badge class:
 | Description | A short description about the badge | Mandatory |
 | Image| An image file that represents the badge | Optional |
 | Type | Specify if the badge is for a user or content. Valid values are User/Content | Mandatory |
-| Subtype | Specify what the badge is related to. It is predefined list of values such as Official,Certificate, Award etc. | Optional |
+| Subtype | Specify what the badge is related to. It is predefined list of values such as Official,Certificate, Award etc. | Mandatory |
 | Criteria | A text string or a URL that describes criteria in achieving the badge | Mandatory|
 | Roles | List of user roles on Sunbird who can issue the badge | Mandatory |
 
