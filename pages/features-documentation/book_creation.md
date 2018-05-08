@@ -86,7 +86,7 @@ To start adding heading details in a unit/chapter
   </tr>
   </table>
     
-#### DIAL Code Details
+#### Linking or Unlinking DIAL Code
 
 <table>
   <tr>
@@ -181,7 +181,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
   </tr>  
 </table>
 
-### Adding/Editing Book Details
+### Adding or Editing Book Details
  
 <table>
   <tr>
