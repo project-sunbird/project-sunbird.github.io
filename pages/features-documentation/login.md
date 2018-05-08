@@ -79,8 +79,8 @@ Sign in on Sunbird is a seamless process. Any organization, recognized education
   <table>
   <tr>
     <th style="width:35%;">Step</th>
-    <th style="width:25%;">Screen</th>
-    <th style="width:40%;">Screen</th>
+    <th style="width:45%;">Screen</th>
+    <th style="width:20%;">Screen</th>
   </tr>
   <tr>  
     <td>1. Enter your registered <b>Phone Number</b> <br>2. Click <b>Submit</b></td> 
