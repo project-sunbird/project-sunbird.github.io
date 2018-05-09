@@ -61,33 +61,12 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>To add content to a collection, you can do one of the following actions: <br>&emsp;1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> <br>&emsp;2. Click <b>Add Resource</b> on the right bottom of the page <br>&emsp;3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
+    <td>To add content to a collection, you can do one of the following actions: 
+      <br>1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> 
+      <br>2. Click <b>Add Resource</b> on the right bottom of the page to add content to the unit or chapter. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
+      <br>3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
     </td>
       <td><img src="pages/features-documentation/images/collection/add_ressource1.png"></td>
-  </tr>
-  </table>
-
-### Adding Resources to a Collection
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-   <tr>
-     <td>1. Click <b>Add Resource</b>, <b>Find & Select Activities</b> page is displayed <br>2. Type keywords to search for content <br>3. To apply filters, select from the drop-down lists available for: <br>&emsp;a) <b>Category</b> <br>&emsp;b) <b>Language</b> <br>&emsp;c) <b>Class</b> <br>&emsp;d) <b>Subject</b> <br>4. Click <b>Clear All</b> to edit and reset the filters <br>5. Click <b>Apply</b>. Results are loaded on the right pane <br>6. You can sort your search alphabetically or based on  published date. Click <b>Sort By</b> and <b>Published on</b> <br>7. Select the content you want to add <br>8. Click <b>Proceed</b> to add the selected content <br>9. Click <b>Close</b> icon to go back to the main menu
-    </td>
-    <td><img src="pages/features-documentation/images/collection/add_resource.png"></td>
-  </tr>
-  <tr>
-    <td>Hover over the resource card to view concise content details <br>1. Click <b>View Details</b> on the resource card to view all the details, OR <br>2. Click <b>View</b> to view all the details
-    </td>
-    <td><img src="pages/features-documentation/images/collection/hover_resource.png"></td>
-  </tr>
-  <tr>
-    <td>1. Drag the horizontol scrollbar downards to view all resources added to collection <br>2. Click <b>Preview</b> icon to view/play the content <br>3. Click <b>Delete</b> icon to delete the content <br><br><b>Note:</b> You can alternatively delete content by clicking <b>Delete</b> in the burger menu drop-down. For details refer <a href="features-documentation/collection_creation/#deleting-content">Deleting Content</a> 
-    </td>
-    <td><img src="pages/features-documentation/images/collection/view_resource.png"></td>
   </tr>
   </table>
 
