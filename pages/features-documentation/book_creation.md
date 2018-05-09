@@ -64,7 +64,7 @@ You can add various elements in the book like units or chapters, heading details
   </tr>
  </table>
  
-#### Heading Details
+#### Adding Details to Unit or Chapter
 
 <table>
   <tr>
@@ -83,10 +83,7 @@ You can add various elements in the book like units or chapters, heading details
        </td>
       <td><img src="pages/features-documentation/images/book/heading_metadata.png"> </td>
   </tr>
-    <tr> <td></td>
-   <td></td>
-  </tr>
-  </table>
+    </table>
     
 #### Linking or Unlinking DIAL Code
 
@@ -117,30 +114,6 @@ You can add various elements in the book like units or chapters, heading details
       <td colspan="2"><img src="pages/features-documentation/images/book/dial_code_un_link.png"></td> 
     </tr>
  </table>
-
-#### Adding Resources 
-
-<table> 
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-   <td>
-     <br>a. Click <b>Add Resource</b> from the burger menu associated with the required node in the left navigation pane, OR 
-     <br>b. Right-click on the node name and select <b>Add Resource</b>, OR 
-     <br>c. Click <b>Add Resources</b> button in the action pane, OR 
-     <br>d. Click <b>Add</b> on the resource card on the left pane, OR 
-     <br>e. Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
-    </td>
-    <td><img src="pages/features-documentation/images/book/selecting_resource.png"></td>
-  </tr>
-  <tr>
-    <td>Hover over the resource card to view concise content details <br>1. Click <b>View Details</b> on the resource card to view all the details, OR <br>2. Click <b>View</b> to view all the details
-    </td>
-    <td><img src="pages/features-documentation/images/book/selecting_resource2.png"></td>
-  </tr>
-  </table>
 
 ### Using the Table of Contents Options 
 
