@@ -463,7 +463,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
 </tr>
 </table>
   
-### Creating Questions
+#### Creating Questions
    <table>
  <tr>
     <th style="width:35%;">Step</th>
@@ -500,7 +500,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
   </tr> 
   
-### **Creating Multiple Choice Question Set**
+#### **Creating Multiple Choice Question Set**
   
  <table>
  <tr>
@@ -662,7 +662,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
     
-### Reviewing and Publishing Content 
+#### Reviewing and Publishing Content 
 
  <table>
  <tr>
