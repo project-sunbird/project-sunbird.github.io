@@ -93,9 +93,9 @@ The maximum file size supported for upload is 25MB
   </tr>
   </table>
   
-### Adding Metadata
+### Adding Details
 
-Before the file is uploaded on the portal, metadata should be updated.
+Before the file is uploaded on the portal, details should be updated.
   <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -116,7 +116,7 @@ Before the file is uploaded on the portal, metadata should be updated.
   </tr>
   </table>
   
-### Sending Upload content for Review
+### Sending Upload Content for Review
 
 A content must be sent for review after it is uploaded. 
 <table>
