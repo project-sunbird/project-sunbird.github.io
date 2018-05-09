@@ -8,16 +8,17 @@ keywords: content editor, create course, create content, create lesson, textbook
 published: true
 allowSearch: true
 ---
-Sunbird has an inbuilt content editor with various features that is used to create engaging and interesting study material. 
-Study material can be of different types like: 
+Sunbird houses a wide variety of content. Users can can create content on Sunbird or upload content created offline. For more details on uploading conntent, created offine, refer <a href="features-documentation/upload" target="_blank">Uploading Content</a>
 
-- Games
-- Story
+Resources  are the simplest/smallest unit of content that can be created by any user on Sunbird using the inbuilt content editor.
+
+The various types of resources that can be created on Sunbird include:
+- Activity
 - Worksheet
-- Quiz
-- Assessment
+- Study Material
+- Tests
 
-This page expalins the features of and how to use the content editor to create any type of Study Material. 
+This page expalins the features of and how to use the content editor to create resources. 
 
 ## Prerequisites
 
