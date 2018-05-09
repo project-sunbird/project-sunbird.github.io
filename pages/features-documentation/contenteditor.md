@@ -8,6 +8,8 @@ keywords: content editor, create course, create content, create lesson, textbook
 published: true
 allowSearch: true
 ---
+## Overview
+
 Sunbird houses a wide variety of content. Users can can create content on Sunbird or upload content created offline. For more details on uploading conntent, created offine, refer <a href="features-documentation/upload" target="_blank">Uploading Content</a>
 
 Resources  are the simplest/smallest unit of content that can be created by any user on Sunbird using the inbuilt content editor.
@@ -18,10 +20,9 @@ The various types of resources that can be created on Sunbird include:
 - Study Material
 - Tests
 
-This page expalins the features of and how to use the content editor to create resources. 
+This section details the procedure on how to create resources using the inbuilt content editor.
 
-## Prerequisites
-
+### Prerequisites
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -42,7 +43,7 @@ This page expalins the features of and how to use the content editor to create r
   </tr>
   </table>
   
-## Content Editor Parts
+### Content Editor Parts
   
   The broad areas of the content editor are:
   
@@ -58,7 +59,7 @@ This page expalins the features of and how to use the content editor to create r
   </tr>
   </table>
   
-### Right pane
+#### Right pane
   
   **Customize Tab and Default Options**
   
