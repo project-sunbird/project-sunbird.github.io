@@ -47,12 +47,12 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click <b>Edit Details</b> to enter the course details <br>2. Click the camera icon to add an image <br><b>Note:</b> For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images to Metadata</a> <br><br>3. Enter <b>Title</b> of the course <br>4. Enter <b>Description</b> <br>5. Enter <b>Keywords</b> <br>6. Select the following from their respective drop-down lists: <br>a) Board <br>b) <br>c)Class <br>d)Subject <br>e)Medium <br><br>7. Select <b>Audience</b> <br>5. Enter <b>Attributions</b> <br>6. Click <b>Save</b> to save the metadata <br>7. Click <b>Cancel</b> to exit the page
+    <td>1. Click <b>Edit Details</b> to enter the course details <br>2. Click the camera icon to add an image <br><b>Note:</b> For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images to Metadata</a> <br>3. Enter <b>Title</b> of the course <br>4. Enter <b>Description</b> <br>5. Enter <b>Keywords</b> <br>6. Select the following from their respective drop-down lists: <br>a) Board <br>b) Class <br>c) Subject <br>d) Medium <br>7. Select <b>Audience</b> <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> to save the details <br>10. Click <b>Cancel</b> to exit the page
     </td>
     <td><img src="pages/features-documentation/images/add_details.png"></td>
   </tr>
     <tr>
-      <td><b>Adding Content to course</b><br><br>1. To add headings to course, click <b>New Child</b> node on the left navigation pane <br>2. On clicking child node, a heading is added to the <b>Table of Contents</b> pane
+      <td><b>Adding Content to course</b><br><br>1. To add headings to course, click <b>New Child</b> node on the left navigation pane <br>2. On clicking child node, a heading is added to the <b>Table of Contents</b> pane <br>3. Click <b>Add Resource</b> to add content. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
       </td>
       <td><img src="pages/features-documentation/images/add_content0.png"></td>
   </tr>
@@ -62,30 +62,6 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <td><img src="pages/features-documentation/images/add_content1.png"></td>
   </tr>
   </table> 
-  
-### Adding Resources to Heading
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>Resources are added to each heading created in the ToC pane. To add resources to headings, you can either: <br>a) Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane, <b>OR</b> <br>b) Right-click on the node name and select <b>Add Resource</b>, <b>OR</b> <br>c) Click <b>Add Resources</b> button in the action pane, <b>OR</b> <br>d) Use the keyboard shortcut <b>Ctrl+Alt+A</b>. For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a> <br><br><b>Note</b>:You can edit or update the title of units in the collection from the navigation hierarchy
-    </td>
-    <td><img src="pages/features-documentation/images/add_resource1.png"></td>
-  </tr>
-  <tr>
-    <td><b>Adding Resources</b> <br><br>On clicking <b>View All</b>, the <b>Find & Select Activities</b> page is displayed <br>1. Type keywords to search for resources <br><b>Note:</b> On entering three characters, you see content titles as suggestions <br><br>2. Sort resource display alphabetically or based on published date <br>3. For an effective search, select from the following drop-down filters: <br>a)Category <br>b)Language <br>c) Class <br>d) Subject <br>e) Concepts <br><br>4. Click <b>Clear All</b> to edit and reset the filters <br>5. Click <b>Apply</b> <br>6. Select the content you want to add <br>7. Click <b>Proceed</b> <br>8. Click <b>Back</b> to go back to the previous screen
-    </td>
-    <td><img src="pages/features-documentation/images/add_resource2.png"></td>
-  </tr>
-  <tr>
-    <td><b>Viewing Selected Resources</b> <br><br>Hover over the resource card to view concise content details <br>1. Click <b>View Details</b> on the resource card to view all the details, <b>OR</b> <br>2. Click <b>View</b> to view all the details
-    </td>
-    <td><img src="pages/features-documentation/images/view_resource.png"></td>
-   </tr>
-  </table>
   
 ### Exploring the Table of Contents Option
 
