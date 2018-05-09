@@ -78,11 +78,11 @@ This documentation elaborates the various user interface elements of the Library
     </tr>
     </table>
 
-### Viewing Popular Stories
+#### Viewing Popular Stories
 
-Sunbird houses a wide variety of Content. Popular story is a bucket term which includes the following content types:
+Sunbird houses a wide variety of content referred to as Resources. Popular story is a bucket term which includes the various types of resources:
 
-- YouTube videos
+- Study Material
 - Audio Clips
 - Video Clips
 - Assessments
@@ -90,10 +90,10 @@ Sunbird houses a wide variety of Content. Popular story is a bucket term which i
 - Presentations
 - Worksheets
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
    <td>1. Click on any of the story <br>2.Click right or left <b>Scroll bar</b> to scroll through listed content   </td>
@@ -103,13 +103,13 @@ Sunbird houses a wide variety of Content. Popular story is a bucket term which i
 
 #### Consuming a Story
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story are provided below the player
+   <td>1. Click the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story are provided below the player
 	</td>
 	<td><img src="pages/features-documentation/images/library_desc_cont_inf.png"></td>
 	</tr>
@@ -117,26 +117,19 @@ Sunbird houses a wide variety of Content. Popular story is a bucket term which i
 
 **Sharing Stroies**
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-	       <li>Click on the <strong>Share</strong> icon to share the story</li>
-	</ol>
+   <td>1.Click the <b>Share</b> icon to share the story
    </td>
   <td><img src="pages/features-documentation/images/library_shareicon.png"></td>
   </tr>
   <tr>
-  <td>
-       <ol>
-	       <li>A screen with the link to the story is displayed</li>
-	       <li>Click <strong>COPY LINK</strong> to copy the link</li>
-	       <li>Click <strong>Close</strong> icon to go back to the content player</li>
-	</ol>
+  <td>1. A screen with the link to the story is displayed <br>2. Click <b>COPY LINK</b> to copy the link
+	       <br>3. Click <b>Close</b> icon to go back to the content player
    </td>
   <td><img src="pages/features-documentation/images/library_copylink.png"></td>
   </tr>
@@ -144,27 +137,19 @@ Sunbird houses a wide variety of Content. Popular story is a bucket term which i
   
   **Flagging Stories**
   
-  <table class="table table-img">
+ <table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
     <tr>
-    <td>
-	  <ol>
-		<li>Click <strong>Flag</strong> icon to flag the displayed content</li>
-	    </ol>
+    <td>1.Click <strong>Flag</strong> icon to flag the displayed content
 	</td>
 	<td><img src="pages/features-documentation/images/library_flagicon.png"></td>
 	</tr>
 	<tr>
-	<td>
-	   <ol>
-	    	<li>Select a reason to describe why the content should be reviewed again</li>
-		<li>Add additional comments, if any</li>
-	        <li>Click <strong>Submit</strong> to submit the reasons for flagging the content</li>
-		<li>Click <strong>Close</strong> icon to exit the page</li>
-	   </ol>
+	<td>1.Select a reason to describe why the content should be reviewed again <br>2. Add additional comments, if any
+	        <br>3. Click <b>Submit</b> to submit the reasons for flagging the content <br>4. Click <b>Close</b> icon to exit the page
     </td>
  <td><img src="pages/features-documentation/images/library_flagreason.png"></td>
   </tr>
@@ -172,29 +157,18 @@ Sunbird houses a wide variety of Content. Popular story is a bucket term which i
   
   **Taking Notes**
  
- <table class="table table-img">
+ <table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
     <tr>
-  <td>
-	  <ol>
-		  <li>Click <strong>TAKE NOTE</strong> icon or link to take notes while viewing the story</li>
-	    </ol>
-	</td>
+  <td>1. Click <b>TAKE NOTE</b> icon or link to take notes while viewing the story
+	    	</td>
 	<td><img src="pages/features-documentation/images/library_takenote.png"></td>
 	  </tr>
 	   <tr>
-	<td>
-		<ol>
-			<li>Enter <strong>Title</strong></li>
-		  	<li>Enter <strong>Description</strong></li>
-			<li>You can format the description entered with the various formatting options available</li>
-			<li>Click <strong>Clear</strong> to clear the note</li>
-			<li>Click <strong>Save</strong> to save the note</li>
-			<li>Click <strong>Close</strong> icon to exit the page</li>
-	        </ol>
+	<td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> <br>3. You can format the description entered with the various formatting options available <br>4. Click <b>Clear</b> to clear the note <br>5. Click <b>Save</b> to save the note <br>6. Click <b>Close</b> icon to exit the page
 	</td>
 	<td><img src="pages/features-documentation/images/library_notescreen.png"></td>
 	</tr>
