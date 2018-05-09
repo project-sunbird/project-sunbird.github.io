@@ -31,7 +31,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
  </table>
 
-##  Review Workspace
+## Reviewing Content
  
  <table>
   <tr>
@@ -47,14 +47,14 @@ This page contains the details of the procedure on how to review and publish con
        <br>&emsp;a. Last updated date
        <br>&emsp;b. Last created date
        <br>&emsp;c. Alphabetically
-     <br>5. Select the content you want to review. Refer <a href="features-documentation/content_review.md/##Review Content and Resources" target="_blank">Review Content and Resources</a>
+     <br>5. Select the content you want to review. Refer <a href="features-documentation/content_review.md/#reviewing-content-and- resources" target="_blank">Reviewing Content and Resources</a>
       <br>6. Click on the page navigation to access the required list on a particular page
   </td>
     <td><img src="pages/features-documentation/images/contentreviewer/content_reviewer1.png"></td>
   </tr>
   </table>
 
-## Filter Content
+### Filtering Content
 
 <table>
   <tr>
@@ -77,7 +77,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   </table>
   
-## Review Content and Resources
+### Reviewing Resources
   <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -90,7 +90,7 @@ This page contains the details of the procedure on how to review and publish con
    </tr>
   </table>
   
-## Publish Content
+### Publishing Content
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -104,7 +104,7 @@ This page contains the details of the procedure on how to review and publish con
   </tr>
   </table>
   
-## Reject Content
+### Rejecting Content
   <table>
   <tr>
     <th style="width:35%;">Step</th>
