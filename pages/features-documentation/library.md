@@ -175,7 +175,7 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
   </table>
 
 ### Copying Content 
-User with appropriate rights (Creation right of Content or Book) can copy any content available under Library.
+User with appropriate rights (Creation right of Content or Book) can copy any content available under Library.<br>
 To copy a content:
 <table>
   <tr>
