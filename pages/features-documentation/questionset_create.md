@@ -1,7 +1,7 @@
 ---
 type: landing
 directory: features-documentation
-title: Content Editor
+title: Adding Question Set
 page_title: Content Editor
 description: Features and functionality of the content editor
 keywords: content editor, create course, create content, create lesson, textbook, collection, course
@@ -9,16 +9,15 @@ published: true
 allowSearch: true
 ---
 
-## Adding Question Set
-  
-  <table>
+## Overview
+To add question set, click the <strong>Add Question Set</strong> icon on the toolbar. The question set browser page is displayed.
+ <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>To add question set, click the <strong>Add Question Set</strong> icon on the toolbar. The question set browser page is displayed.
-<br>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <b>Add Question Set</b> icon on the toolbar
+    <td>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <b>Add Question Set</b> icon on the toolbar
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/addquestionset.png"></td>
   </tr>
@@ -34,24 +33,24 @@ allowSearch: true
   <tr>
     <td>1. Type keywords on the Search Bar to search the repository for questions. The search results are displayed in the bottom left pane
 <br>2. Select Advanced Filters for better search result 
-      <br>a) <b>Language</b>
-<br>b) <b>Difficulty </b>
-<br>c) <b>Question Type </b>
-<br>d) <b>Grade </b>
-<br>e) <b>Concepts </b>
+      <br>&emsp;a) <b>Language</b>
+      <br>&emsp;b) <b>Difficulty </b>
+      <br>&emsp;c) <b>Question Type </b>
+      <br>&emsp;d) <b>Grade </b>
+      <br>&emsp;e) <b>Concepts </b>
 <br>3. Use the <b>My Questions</b> slider to search for questions that you have uploaded. To search for questions available on the portal, disable this option
 <br>4. The search result is displayed on the left pane 
 <br>5. The selected question can be previewed on the right pane 
 <br>6. Select questions from the results displayed by marking the checkbox 
 <br>7. Click <b>Create Question</b> to create your own question. Click <b>Create Question</b> to know more.
-<br>8. Click Next
+<br>8. Click <b>Next</b>
 </td>
   <td><img src="pages/features-documentation/images/contenteditor/selectquestions.png"></td>
 </tr>
 </table>
   
-#### Creating Questions
-   <table>
+### Creating Questions
+<table>
  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -65,9 +64,9 @@ allowSearch: true
     <tr>
       <td>
         <br>3. Enter the questions in <b>Question Configuration</b> page. 
-    <br>&emsp;a. If you have selected Multiple choice question, refer <b>Creating Multiple Choice Question Set</b>
-    <br>&emsp;b. If you have selected Fill in the blanks questions, refer <b>Creating Fill in the blanks Question Set</b> 
-    <br>&emsp;c. If you have selected Match the following questions, refer <b>Creating Match the Following Question Set</b> 
+    <br>&emsp;a) If you have selected Multiple choice question, refer <b>Creating Multiple Choice Question Set</b>
+    <br>&emsp;b) If you have selected Fill in the blanks questions, refer <b>Creating Fill in the blanks Question Set</b> 
+    <br>&emsp;c) If you have selected Match the following questions, refer <b>Creating Match the Following Question Set</b> 
     </td>
     <td>image</td>
   </tr>
@@ -76,18 +75,18 @@ allowSearch: true
     <br>4. Click <b>Back</b> to go to the previous screen
     <br>5. Click <b>Next</b>
     <br>6. Enter the <b>Question Details</b>
-    <br>&emsp;a. The <b>Title</b> displays the title
-    <br>&emsp;b. Select <b>Language</b>
-    <br>&emsp;c. Select <b>Level</b>
-    <br>&emsp;d. Select <b>Grade Level</b>
-    <br>&emsp;e. Select <b>Max Score</b>
-    <br>&emsp;f. Select <b>Concept</b>
-    <br>&emsp;g. Enter <b>Description</b>
+      <br>&emsp;a) The <b>Title</b> displays the title
+      <br>&emsp;b) Select <b>Language</b>
+      <br>&emsp;c) Select <b>Level</b>
+      <br>&emsp;d) Select <b>Grade Level</b>
+      <br>&emsp;e) Select <b>Max Score</b>
+      <br>&emsp;f) Select <b>Concept</b>
+      <br>&emsp;g) Enter <b>Description</b>
     </td> 
     <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
   </tr> 
   
-#### **Creating Multiple Choice Question Set**
+#### Creating Multiple Choice Question Set
   
  <table>
  <tr>
@@ -110,7 +109,7 @@ allowSearch: true
  </tr>
  </table>
  
-**Creating Fill in the Blanks Question Set **
+#### Creating Fill in the Blanks Question Set
   
  <table>
  <tr>
@@ -132,8 +131,33 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
  </tr>
  </table>
- 
-**Customizing Question Set**
+
+#### Creating Match the Following Question Set
+  
+ <table>
+ <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>  
+ <tr>
+  <td>1. Enter the question 
+  <br>2. Enter the answers 
+  <br>3. Select the answer amongst the multiple answers 
+  <br>4. Click <b>Delete</b> icon to remove an answer
+  <br>5. Click <b>Image</b> icon to add an image
+  <br>6. Click <b>Audio</b> icon to add an audio message 
+  <br>7. Select <b>Add answer to add another option in the Mark as Right multiple choice 
+  <br>8. Click Refresh icon to preview your question 
+  <br>9. Select the layout from the drop-down menu
+  <br>10. Use Shuffle Option to change the sequence of answers
+  <br>11. Select <b>Back</b> to go back to the previous page 
+  <br>12. Click <b>Next</b> to enter the Question Details.
+  </td>
+    <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
+ </tr>
+ </table>
+
+## Customizing Question Set
  
   <table>
   <tr>
@@ -141,13 +165,19 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>After adding the question set, the customize tab displays options to modify them. You can: <br>1. Click <strong>Assessment Browser</strong> to return to the <strong>Selecting Questions</strong>screen <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions <br>3. View and modify the <strong>Assessment Title</strong>, if required <br>4. Use the sliders to enable or disable <strong>Shuffle Questions, Shuffle Options and Show Immediate Feedback</strong> <br>5. Select the number of questions to be displayed in each screen <br>6. Enter the <strong>Total Marks</strong> for the assessment
+    <td>After adding the question set, the customize tab displays options to modify them. You can: 
+      <br>1. Click <strong>Assessment Browser</strong> to return to the <strong>Selecting Questions</strong>screen 
+      <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions 
+      <br>3. View and modify the <strong>Assessment Title</strong>, if required 
+      <br>4. Use the sliders to enable or disable <strong>Shuffle Questions, Shuffle Options and Show Immediate Feedback</strong> 
+      <br>5. Select the number of questions to be displayed in each screen 
+      <br>6. Enter the <strong>Total Marks</strong> for the assessment
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/customizetab.png"></td>
   </tr>
   </table>      
       
-  **Configuring Question Set**
+## Configuring Question Set
 
  <table>
  <tr>
