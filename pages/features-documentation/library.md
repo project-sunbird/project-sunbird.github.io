@@ -183,21 +183,20 @@ To copy a content:
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-	  <td>1.Click on any content under <b>librabry</b>. <br> You can see the <b>Make Copy</b> icon on the Content Details page. <br>2.Click the icon. <br> The content gets copied and user is taken to respective editor:
-
+	  <td>1. Click on any content under <b>librabry</b>. <br> You can see the <b>Make Copy</b> icon on the Content Details page.
+	    	</td>
+	<td><img src=""></td>
+	  </tr>
+	   <tr>
+          <td>2. Click the icon. <br> The content gets copied and user is taken to respective editor
+	</td>
+	<td><img src=""></td>
+	</tr>
+When a copy is made, system does the following by itself:
 - Create new copy in draft state for currently logged in user
 - Add <b>Copy of<b/> as prefix to name
 - It capture user & org details for newly copied content, Copy type & Source information
-- Retain linkages to assets & objects used in original content
-				
-				<br>&emsp;Create new copy in draft state for currently logged in user
-				<br>&emsp;Add <b>Copy of<b/> as prefix to name
-				<br>&emsp;It capture user & org details for newly copied content, Copy type & Source information
-				<br>&emsp;Retain linkages to assets & objects used in original content
-				
-	<br>2. Click <b>Apply</b>. The search results are displayed <br>3. Click <b>Reset</b> to reset the filters  </td>
-    <td><img src="pages/features-documentation/images/library/applying_filters.png"></td>
-  </tr>
+- Retain linkages to assets & objects used in original content								
   </table>
 
 
