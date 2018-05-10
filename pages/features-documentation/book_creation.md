@@ -26,7 +26,7 @@ Book is a collection of content units.	On Sunbird, books can be compiled or cura
   </tr>
   </table>
   
-### Creating Book
+## Creating Book
  <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -64,7 +64,7 @@ You can add various elements in the book like units or chapters, heading details
   </tr>
  </table>
  
-#### Adding Details to Unit or Chapter
+#### Adding Details
 
 <table>
   <tr>
