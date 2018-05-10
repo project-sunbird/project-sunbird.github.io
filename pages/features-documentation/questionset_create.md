@@ -57,35 +57,26 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   </tr>  
   <tr>
     <td>To create a question set <br>1.Select the type of question you want to create
-    <br>2. Click <b>Select</b> 
-    </td>
-    <td>image</td>
-  </tr>
-    <tr>
-      <td>
-        <br>3. Enter the questions in <b>Question Configuration</b> page. 
+    <br>2. Click <b>Select</b>
+     <br>3. Enter the questions in <b>Question Configuration</b> page. 
     <br>&emsp;a) If you have selected Multiple choice question, refer <b>Creating Multiple Choice Question Set</b>
     <br>&emsp;b) If you have selected Fill in the blanks questions, refer <b>Creating Fill in the blanks Question Set</b> 
     <br>&emsp;c) If you have selected Match the following questions, refer <b>Creating Match the Following Question Set</b> 
-    </td>
-    <td>image</td>
-  </tr>
-   <tr>
-      <td>
-    <br>4. Click <b>Back</b> to go to the previous screen
-    <br>5. Click <b>Next</b>
-    <br>6. Enter the <b>Question Details</b>
+     </td>
+    <td><img src="features-documentation/images/questionset/createquestion.png"></td>
+ </tr>
+ <tr><td> 
+    <br>1. Enter the <b>Question Details</b>
       <br>&emsp;a) The <b>Title</b> displays the title
       <br>&emsp;b) Select <b>Language</b>
       <br>&emsp;c) Select <b>Level</b>
       <br>&emsp;d) Select <b>Grade Level</b>
       <br>&emsp;e) Select <b>Max Score</b>
       <br>&emsp;f) Select <b>Concept</b>
-      <br>&emsp;g) Enter <b>Description</b>
-    </td> 
-    <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
-  </tr> 
- </table>
+      <br>&emsp;g) Enter <b>Description</b></td>
+    <td><img src="features-documentation/images/questionset/selectquestions.png"></td>
+  </tr>
+</table>
   
 #### Creating Multiple Choice Question Set
   
@@ -106,7 +97,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   <br>8. Click <b>Add More Questions</b> to increase the questions in the question set
   <br>9. Click <b>Add</b> to append the selected questions in Question Set. The Question Set is added on the slide.   
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor/configureques.png"></td>
+    <td><img src="pages/features-documentation/images/questionset/questionset.png"></td>
  </tr>
  </table>
  
@@ -128,7 +119,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   <br>8. Click <b>Add More Questions</b> to increase the questions in the question set
   <br>9. Click <b>Add</b> to append the selected questions in Question Set. The Question Set is added on the slide.   
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
+    <td><img src="pages/features-documentation/images/questionset/questionsetconfigurations.png"></td>
  </tr>
  </table>
 
@@ -153,7 +144,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   <br>11. Select <b>Back</b> to go back to the previous page 
   <br>12. Click <b>Next</b> to enter the Question Details.
   </td>
-    <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
+    <td><img src="pages/features-documentation/images/questionset/questionsetconfigurations.png"></td>
  </tr>
  </table>
 
@@ -173,7 +164,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
       <br>5. Select the number of questions to be displayed in each screen 
       <br>6. Enter the <b>Total Marks</b> for the assessment
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor/customizetab.png"></td>
+    <td><img src="pages/features-documentation/images/questionset/questionsetcustomised.png"></td>
   </tr>
   </table>      
       
@@ -187,6 +178,6 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
  <tr>
     <td>1. Click the trash icon to delete the added question set <br>2. Click the spanner icon to edit details of the question set. The settings options are displayed on the right <br>a) Click on the upward/downward arrows to determine the marks of the question set <br>3. Click the eye icon to view the preview of the question set <br>4. Click <strong>Done</strong> to save
    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/ques_set.png"></td>
+    <td><img src="pages/features-documentation/images/questionset/selectquestions.png"></td>
  </tr>
  </table>   
