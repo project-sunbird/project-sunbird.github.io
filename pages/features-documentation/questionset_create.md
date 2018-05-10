@@ -137,7 +137,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   <br>4. Click <b>Delete</b> icon to remove an answer
   <br>5. Click <b>Image</b> icon to add an image
   <br>6. Click <b>Audio</b> icon to add an audio message 
-  <br>7. Select <b>Add answer to add another option in the Mark as Right multiple choice 
+   <br>7. Select <b>Add answer</b> to add another option in the Mark as Right multiple choice 
    <br>8. Click <b>Refresh</b> icon to preview your question 
   <br>9. Select the layout from the drop-down menu
    <br>10. Use <b>Shuffle Option</b> to change the sequence of answers
