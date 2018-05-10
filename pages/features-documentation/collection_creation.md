@@ -98,7 +98,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
   
-## Using the Table of Contents Options 
+## Working with Table of Contents 
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
 <br>&emsp;a) The burger menu associated with a tree node 
