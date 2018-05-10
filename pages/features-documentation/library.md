@@ -28,6 +28,7 @@ This documentation elaborates the various user interface elements of the Library
   </table>
        
 ### Searching for Content
+
 <table>
   <tr>
     <th style="width:35%;">Step</th>
