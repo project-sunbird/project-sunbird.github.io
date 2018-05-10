@@ -11,7 +11,7 @@ allowSearch: true
 
 Lesson plan is a structured outline of a given topic, unit, chapter to be taught on any given day. Lesson plan aids to streamline teaching and create an engaging learning experience.
 
-### Prerequisites
+## Prerequisites
 
 <table>
   <tr>
