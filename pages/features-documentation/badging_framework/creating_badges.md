@@ -42,9 +42,9 @@ On successful execution of the creation API, you will get the Issuer ID.
 
 ### Defining Badge Class
 
-To create a badge class:
+To create a badge class:<br>
 1. Execute the [Badging Framework API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeCreatePost){:target="_blank"}<br> 
-2. Enter the following details in the request body of Create Badge Class Endpoint:
+2. Enter the following details in the request body of Create Badge Class Endpoint:<br>
 
 |  Field Name                 | Description | Field Type | 
 |--------------------------------|---------------------|--------------|
