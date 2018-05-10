@@ -49,10 +49,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
-  <tr> <tr>
-      <td>
-        <b></b>
-        <br>1. To add headings to course, click <b>New Child</b> node on the left navigation pane 
+  <tr><td>1. To add headings to course, click <b>New Child</b> node on the left navigation pane 
         <br>2. On clicking child node, a heading is added to the <b>Table of Contents</b> pane 
         <br>3. Click <b>Add Resource</b> to add content. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
       </td>
@@ -89,8 +86,8 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
-  </tr><tr>
-  <td>Enter details for the heading: 
+  </tr>
+  <tr><td>Enter details for the heading: 
     <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the course 
     <br>2. Enter <b>Description</b> 
     <br>3. Select the <b>Concepts</b> associated with the heading 
@@ -160,22 +157,16 @@ Before the Course is publihed, it must be reviewed. You can send it for reviewin
 
 ### Exploring What's New
 
-**What's New** feature informs you about all the latest and significant changes build and made available for your better user experience.
-
 <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Click on the <b>What's New</b> icon to view new functionalities and related content <br><br><b>Note</b>: What's new icon appears in red color, when it is viewed for the first time. It turns to grey from next view, until next version of the feature is not available.</td>
-    <td><img src="pages/features-documentation/images/whatsnew1.png"></td>
-  </tr>
-  <tr>
-    <td>What's new page opens, with the highlights of the latest changes</td>
-    <td><img src="pages/features-documentation/images/whatsnew2.png"></td>
+    <td>The What’s New feature informs you of the product features added or enhanced since the last product release 
+      <br>1. Click on the <b>What's New</b> icon to view concise information about new product functionality 
+      <br><b>Note</b>: The What's New icon is red before you view it for the first time. The icon turns grey after you view the information, until the next product version
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
   </tr>
   </table>
-
-
-
