@@ -81,16 +81,7 @@ This documentation elaborates the various user interface elements of the Library
 
 ### Viewing Popular Stories
 
-Sunbird houses a wide variety of content referred to as Resources. Popular story is a bucket term which includes the various types of resources:
-
-- Study Material
-- Audio Clips
-- Video Clips
-- Assessments
-- Tutorials
-- Presentations
-- Worksheets
-
+Sunbird houses a wide variety of content. Users with registered credentials can view and download content from the Library.
 <table>
   <tr>
     <th style="width:35%;">Step</th>
