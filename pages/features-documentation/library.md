@@ -194,6 +194,7 @@ To copy a content:
 	</tr>								
   </table>
 When a copy is made, system does the following by itself:<br>
+
 - Create new copy in draft state for currently logged in user
 - Add <b>Copy of<b> as prefix to name
 - It capture user & org details for newly copied content, Copy type & Source information
