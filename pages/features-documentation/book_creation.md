@@ -94,7 +94,7 @@ You can add various elements in the book like units or chapters, heading details
   </tr>
   </table>
 
-#### Adding Details
+### Adding Book Details
 
 <table>
   <tr>
