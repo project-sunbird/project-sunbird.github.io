@@ -13,18 +13,6 @@ anchorPrefix: link
 tocTopTag: h2
 showToggleButton: true
 showSearch: true
-versions: 
-- name: '1.4'
-  release-date: 15th Feb 2018
-  latest: true
-- name: '1.3'
-  release-date: 15th Jan 2018
-- name: '1.2'
-  release-date: 15th Dec 2017
-- name: '1.1'
-  release-date: 15th Nov 2017
-- name: '1.0'
-  release-date: 15th Oct 2017
   
 defaults:
   -
@@ -51,6 +39,11 @@ exclude:
 - circle.yml
 - s3_website.yml
 - staging
+- docs/*/ingredients
+- docs/*/*.sh
+- docs/*/version.yaml
+- .sh
 
 sass:
     sass_dir: css
+ 

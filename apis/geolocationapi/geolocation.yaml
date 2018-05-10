@@ -3,16 +3,16 @@ info:
   version: '1.0'
   title: Geo-location API(s)
   description: >- 
-    Geo-location resources API classifies the organisation on the basis of their location. 
+    Geo-location resources API are used to identify the geographic location of an organization, while the geo-location of an organization can be a particular point or place in physical space. 
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 basePath: /org/v1/location
 securityDefinitions:
-  auth:
-    type: apiKey
-    name: api_key
-    in: header
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The security scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:

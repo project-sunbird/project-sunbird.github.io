@@ -32,21 +32,21 @@ module Jekyll
       super
       
       @href = /href=['"]\S*['"]/.match(text).to_s
-      @title = /title=['"].\S*['"]/.match(text).to_s
+      @title = /title=['"](.*?)(?=[#'"])/.match(text).to_s
       @target = /\s(blank)\s/.match(text).to_s.strip!
       @url = /\s(relative|absolute)\s/.match(text).to_s.strip!
-      @classes = /class=['"].\S*['"]/.match(text).to_s
+      @classes = /class=['"](.*?)(?=[#'"])/.match(text).to_s
 
     end
 
     def render(context)
       href = @href ? @href.gsub('href=', '').gsub("\"", ''): '#'
       paths = context.registers[:page]["url"].split('/')
-      this_version = paths[2]
+      this_version_branch = paths[2]
       url = @url
       
       if url == 'relative'
-		href = 'docs/'+this_version+'/'+href
+		href = 'docs/'+this_version_branch+'/'+href
 	  elsif url == 'absolute'
 		href = href
 	  else
@@ -55,13 +55,13 @@ module Jekyll
       
       
       title = @title ? @title.gsub('title=', '').gsub("\"", ''): 'Link'
-      target = @target ? @target : ''
-      classes = @classes ? @classes : ''
+      target = @target ? '_'+@target : ''
+      classes = @classes ? @classes.gsub('class=', '').gsub("\"", '') : ''
       
       
       
 
-      '<a href="'+href+'" '+classes+' target="'+target+'" >'+title+'</a>'
+      '<a href="'+href+'" class="'+classes+'" target="'+target+'" >'+title+'</a>'
     end
   end
 end

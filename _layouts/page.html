@@ -8,7 +8,7 @@
 		<meta name="robots" content="noindex, nofollow">
 	{% endif %}
   </head>
-  <body id="body">
+  <body id="body" class="doc-layout">
   <div class="container inner container-height docs">
     <header class="logo-container">
       <div class="logo">
@@ -52,9 +52,6 @@
           <hr />
           
           <p class="edit-para text-right">
-			<!--<a target="_blank"  class="" href="">
-				  <i>Contribution Guidelines</i>
-			  </a> &nbsp;&nbsp;-->
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/{{page.path}}" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
@@ -87,6 +84,37 @@
 		var url = this.href.replace(baseURL.href, "");
 		this.href = '{{page.url | remove_first: "/" }}' + url;
     })
+	$(".zoomcover").click(function(){
+		if (!$(this).hasClass("fullscreen")){
+			$(this).addClass("fullscreen");
+			$(this).find(".zoom").addClass("enabled").elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+		} else {
+			$(this).removeClass("fullscreen");
+			$(this).find(".zoom").removeClass("enabled");
+			$(".zoomContainer").hide();
+		}
+	});
+	$(document).keyup(function(e) {
+     if (e.keyCode == 27) { 
+		$(".zoomcover").removeClass("fullscreen");
+		$(".zoomcover").find(".zoom").removeClass("enabled");
+		$(".zoomContainer").hide();
+    }
+});
   </script>
+  <style>
+  .zoom:hover{
+	cursor:url(img/zoom.png),crosshair;
+  }
+  .zoomWindowContainer:hover div{
+	cursor:url(img/scroll.png),crosshair !important;
+	height:15px;
+	width:15px;
+  }
+  </style>
   </body>
 </html>

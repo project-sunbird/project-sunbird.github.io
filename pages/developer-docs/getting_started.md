@@ -25,22 +25,22 @@ The tech stack used to develop the Sunbird is as follows:
 
 - **AngularJS** - simplifies and structures the Sunbird portal
 
-  - For details on AngularJS, refer to the [AngularJS site](https://angularjs.org/)
+  - For details on AngularJS, refer to the [AngularJS site](https://angularjs.org/){:target="_blank"}
   
 - **Java Play** - optimizes resource consumption (CPU, memory, threads) for high scalability
 
-  - For details on Java Play, refer to the [Play framework site](https://playframework.com)
+  - For details on Java Play, refer to the [Play framework site](https://playframework.com){:target="_blank"}
   
 - **Apache Cassandra** - proven database with large active data sets, fault tolerant, de-centralized, highly scalable and consistent without compromising on performance
 
-  - For details on Apache Cassandra, refer to the [Apache Cassandra site](http://cassandra.apache.org)
+  - For details on Apache Cassandra, refer to the [Apache Cassandra site](http://cassandra.apache.org){:target="_blank"}
 
 - **ElasticSearch** - performs and combines many types of searches — structured, unstructured, geo, metric and lets you zoom out to explore trends and patterns in your data
 
-  - For details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch)
+  - For details on ElasticSearch, refer to the [ElasticSearch site](http://www.elastic.co/products/elasticsearch){:target="_blank"}
 
 - **Docker** - enables containerization of Sunbird components, making each component independent facilitating innovation, collaboration and co-creation
-  - For details on Docker, refer to the [Docker site](https://www.docker.com/what-docker)
+  - For details on Docker, refer to the [Docker site](https://www.docker.com/what-docker){:target="_blank"}
 
 While the installation is automated, it is recommended that you have exposure to the following areas for managing a production grade setup:
 
@@ -82,7 +82,7 @@ If you are looking to explore Sunbird and test its feature set, we recommend you
 
 **Note: Data created in the sandbox is erased after 24 hours**
 
-### Developer Installation
+## Developer Installation
 
 For a comprehensive walk through to install Sunbird on your workstation, refer to [Developer Installation](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/){:target="_blank"}
 

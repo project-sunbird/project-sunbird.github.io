@@ -15,7 +15,7 @@ basePath: /api/v1
 securityDefinitions:
   auth:
     type: apiKey
-    name: api_key
+    name: Authorization
     in: header
 schemes:
   - https
@@ -290,6 +290,73 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+    
+  /bulk/location/upload:
+    post:
+      summary: >-
+        Request for bulk upload of location data into Diksha Sunbird
+        Platform. Data will be identifed by type and type will come under header.
+      description: >-
+        This API is a request to create a background job for bulk upload of
+        location data into Diksha Sunbird platform. The data is provided
+        in CSV format.
+      tags:
+        - Bulk Operation APIs
+      operationId: Location Data Bulk Upload Request
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: csvFile
+          in: formData
+          required: true
+          type: file
+          description: |-
+            CSV file which contains state location data in following format:
+              - code: 'National level code for state'
+              - name: 'Name of state'
+              - parentCode: 'code of the parent'
+              - parentId : 'id of the parent. parentCode and parentId any one is required if type belong to some parent. in other words if its highest level of type then no parent details required.'
+        - name: type
+          in:  formData
+          required: true
+          type: string
+          description: >-
+            possible values of location types state,district,block,cluster.
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any Location API, you require authorization. Raise a
+            request to the administrator for the use of the API. You will
+            receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: >-
+            OK. Successful operation. The data upload operation is accepted for
+            further processing.
+          schema:
+            $ref: '#/definitions/LocationDataBulkUploadCreateResponse'
+        '400':
+          description: >-
+            CLIENT_ERROR. The upload operation failed due to bad request from
+            client. Possible reasons for failure,
+
+            Mandatory parameter "csvFile" is missing.
+
+            Maximum upload file size x MB is exceeded.
+
+            CSV file content is improper.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR. The upload operation failed due to a server
+            error.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'        
 definitions:
   ContentCreateResponse:
     description: Create Content Response
@@ -360,3 +427,31 @@ definitions:
       result:
         type: object
         description: Empty Result
+  LocationDataBulkUploadCreateResponse:
+    title: Response for successfully accepted location data bulk upload API request
+    allOf:
+      - $ref: >-
+          https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+      - type: object
+        properties:
+          result:
+            type: object
+            properties:
+              processId:
+                description: >-
+                  ID which can be used to query status of a background process
+                  created by location data bulk upload API
+                type: string
+              response:
+                description: Response message for successfully accepted request
+                type: string       
+  CommonErrorResponse:
+    title: Error response for location data bulk upload API request
+    allOf:
+      - $ref: >-
+          https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+      - type: object
+        properties:
+          result:
+            description: Error message for failed location data bulk upload API request
+            type: object			

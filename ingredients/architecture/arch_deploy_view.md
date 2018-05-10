@@ -5,10 +5,10 @@ Cloud Infrastructure automation process will be updated soon on the website.
 
 **Stable Builds Registry**
 
-- Sunbird builds are available at a [Image Registry](https://hub.docker.com/u/sunbird){:target="_blank"}. 
-- These builds are in the form of a [Dockerfile](https://docs.docker.com/engine/reference/builder/){:target="_blank"}. 
-- Sunbird stable releases are tagged as ```gold```. While as Deployment scripts pull the ```gold``` images for production deployment. 
-- The ```gold``` images are also versioned to allow release management and upgrade paths.
+- Sunbird builds are available at a [Image Registry](https://hub.docker.com/u/sunbird){:target="_blank"}
+- These builds are in the form of a [Dockerfile](https://docs.docker.com/engine/reference/builder/){:target="_blank"} 
+- Sunbird stable releases are tagged as ```gold```. While as Deployment scripts pull the ```gold``` images for production deployment
+- The ```gold``` images are also versioned to allow release management and upgrade paths
 
 **Software Runtime**
 

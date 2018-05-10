@@ -13,10 +13,10 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:
-  auth:
-    type: apiKey
-    name: api_key
-    in: header
+    auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -35,6 +35,8 @@ paths:
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Syncs data
+      tags:
+      - Data Sync API(s)
       operationId: '{{host}}/data/v1/index/sync'
       produces:
       - application/json
