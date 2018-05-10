@@ -103,14 +103,10 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
 ### Exploring the Table of Contents Option
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
-
-a) The burger menu associated with a tree node 
-
-b) Right-click options associated with a tree node, **OR**
-
-c) Keyboard shortcuts 
-
-For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
+<br>&emsp;a) The burger menu associated with a tree node 
+<br>&emsp;b) Right-click options associated with a tree node, **OR**
+<br>&emsp;c) Keyboard shortcuts 
+<br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
 
 ### Deleting Content 
 
