@@ -82,13 +82,13 @@ To ensure that content uploaded and available on Sunbird are quality driven and 
   <tr>
    <td>1. You can view the associated content 
     <br>2. Click <b>Menu</b> icon to view, replay, and enable or disable sound 
-    <br>3. Scroll down to view the <b>Content Information</b>
-    <br>4. Click <b>Request Changes</b> to guide the creator to make changes in the content according to the guidelines
-    <br>5. Click <b>Publish</b> to publish the content
+    <br>3. Scroll down to view the <b>Description</b> and <b>Content Information</b>
+    <br>4. Click <b>Request Changes</b> to guide the creator to make changes in the content according to the guidelines. The Request Change page appears 
+    <br>5. Click <b>Publish</b> to publish the content. The Publish page appears 
    </td>
-    <td><img src="pages/features-documentation/images/contentreviewer/review_content.png"></td>
-   </tr>
-  </table>
+    <td><img src="pages/features-documentation/images/contentreviewer/review_content.png"></td>
+   </tr>
+  </table>
   
 ### Requesting Change in Content
   <table>
@@ -97,13 +97,13 @@ To ensure that content uploaded and available on Sunbird are quality driven and 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Click <b>Request Changes</b>
+   <td>1. The <b>Request Changes</b> page appears
    <br>2. Select the appropriate reasons from the list 
    <br>3. Enter comment in the <b>Comment</b> section
-   <br><b>Note:</b>The <b>Request Changes</b> button is enabled after entering a comment
-   <br><b>Note:</b> Once the content sent for change, the creator is notified of the same and the content is rolled back to draft stage.
-     </t<br><b>Note:</b>
-   d>
+   <br>4. Click <b>Request Changes</b>  
+   <br>5. Click <b>Cancel</b> to cancel   
+     <br><b>Note:</b> Once the content sent for change, the creator is notified of the same and the content is rolled back to draft stage.
+     </td> 
     <td><img src="pages/features-documentation/images/images/contentreviewer/reject_content.png"></td>
   </tr>
   </table>
@@ -116,9 +116,12 @@ To ensure that content uploaded and available on Sunbird are quality driven and 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>1. Click <b>Publish</b> to publish the content. The <b>Publish</b> page is displayed
-   <br>2. Select all check boxes to confirm appropriateness, relevance, and usability of the content. The creator is notified about the published content and the content will be available on Sunbird for consumption
-     </td>
+   <td>1. The <b>Publish</b> page appears
+   <br>2. Select all check boxes to confirm appropriateness, relevance, and usability of the content
+   <br>3. Click <b>Publish</b> to publish the content
+     <br>The creator is notified about the published content and the content will be available on Sunbird for consumption
+   <br>4. Click <b>Cancel</b> to cancel   
+   </td>
     <td><img src="pages/features-documentation/images/contentreviewer/publish_content.png"></td>
   </tr>
   </table>
