@@ -74,7 +74,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
       <br>&emsp;e) Select <b>Max Score</b>
       <br>&emsp;f) Select <b>Concept</b>
       <br>&emsp;g) Enter <b>Description</b></td>
-    <td><img src="features-documentation/images/questionset/selectquestions.png"></td>
+    <td><img src="features-documentation/images/questionset/questiondetails.png"></td>
   </tr>
 </table>
   
