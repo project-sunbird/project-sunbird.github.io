@@ -151,7 +151,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
   </tr>    
   </table>
   
-### Exploring What's New
+## Exploring What's New
 
 <table>
   <tr>
