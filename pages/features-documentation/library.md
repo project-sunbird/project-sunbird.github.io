@@ -10,7 +10,7 @@ allowSearch: true
 ---
 ## Overview
 
-A Library typically refers to a space, housing a large collection of books, study material or information. Extending the literary meaning, Library, one of the key modules on Sunbird, displays all content created or uploaded on the platform. The library is accessible to all registered users.
+A Library typically refers to a space, housing a large collection of books, resources or information. Extending the literary meaning, Library, one of the key modules on Sunbird, displays all content created or uploaded on the platform. The library is accessible to all registered users.
 
 This documentation elaborates the various user interface elements of the Library
 
@@ -21,7 +21,7 @@ This documentation elaborates the various user interface elements of the Library
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>3. You want to view the Sunbird library, you have clicked on <b>Library</b> tile
+    <td>1. You are logged in <br>2. You want to view the library, you have clicked on the <b>Library</b> tile
        </td>
       <td><img src="pages/features-documentation/images/library/prerequisite.png"></td>
   </tr>
@@ -44,7 +44,7 @@ This documentation elaborates the various user interface elements of the Library
   </tr>
   </table>
    
-#### Applying Filters
+### Applying Filtersx
 
 <table>
   <tr>
@@ -64,7 +64,7 @@ This documentation elaborates the various user interface elements of the Library
   </tr>
   </table>
    
-#### Sorting Content
+### Sorting Content
 
 <table>
   <tr>
@@ -78,7 +78,7 @@ This documentation elaborates the various user interface elements of the Library
     </tr>
     </table>
 
-#### Viewing Popular Stories
+### Viewing Popular Stories
 
 Sunbird houses a wide variety of content referred to as Resources. Popular story is a bucket term which includes the various types of resources:
 
@@ -101,7 +101,7 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
   </tr>
   </table>
 
-#### Consuming a Story
+### Consuming a Story
 
 <table>
   <tr>
@@ -128,8 +128,8 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
   <td><img src="pages/features-documentation/images/library_shareicon.png"></td>
   </tr>
   <tr>
-  <td>1. A screen with the link to the story is displayed <br>2. Click <b>COPY LINK</b> to copy the link
-	       <br>3. Click <b>Close</b> icon to go back to the content player
+  <td>2. A screen with the link to the story is displayed <br>3. Click <b>COPY LINK</b> to copy the link
+	       <br>4. Click <b>Close</b> icon to go back to the content player
    </td>
   <td><img src="pages/features-documentation/images/library_copylink.png"></td>
   </tr>
@@ -148,14 +148,14 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
 	<td><img src="pages/features-documentation/images/library_flagicon.png"></td>
 	</tr>
 	<tr>
-	<td>1.Select a reason to describe why the content should be reviewed again <br>2. Add additional comments, if any
-	        <br>3. Click <b>Submit</b> to submit the reasons for flagging the content <br>4. Click <b>Close</b> icon to exit the page
+	<td>2.Select a reason to describe why the content should be reviewed again <br>3. Add additional comments, if any
+	        <br>4. Click <b>Submit</b> to submit the reasons for flagging the content <br>5. Click <b>Close</b> icon to exit the page
     </td>
  <td><img src="pages/features-documentation/images/library_flagreason.png"></td>
   </tr>
   </table>
   
-  **Taking Notes**
+### Taking Notes
  
  <table>
   <tr>
@@ -168,12 +168,39 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
 	<td><img src="pages/features-documentation/images/library_takenote.png"></td>
 	  </tr>
 	   <tr>
-	<td>1. Enter <b>Title</b> <br>2. Enter <b>Description</b> <br>3. You can format the description entered with the various formatting options available <br>4. Click <b>Clear</b> to clear the note <br>5. Click <b>Save</b> to save the note <br>6. Click <b>Close</b> icon to exit the page
+	<td>2. Enter <b>Title</b> <br>3. Enter <b>Description</b> <br>4. You can format the description entered with the various formatting options available <br>5. Click <b>Clear</b> to clear the note <br>6. Click <b>Save</b> to save the note <br>7. Click <b>Close</b> icon to exit the page
 	</td>
 	<td><img src="pages/features-documentation/images/library_notescreen.png"></td>
 	</tr>
   </table>
 
-  
+### Copying Content 
+User with appropriate rights (Creation right of Content or Book) can copy any content available under Library.
+To copy a content:
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+	  <td>1.Click on any content under <b>librabry</b>. <br> You can see the <b>Make Copy</b> icon on the Content Details page. <br>2.Click the icon. <br> The content gets copied and user is taken to respective editor:
+
+- Create new copy in draft state for currently logged in user
+- Add <b>Copy of<b/> as prefix to name
+- It capture user & org details for newly copied content, Copy type & Source information
+- Retain linkages to assets & objects used in original content
+				
+				<br>&emsp;Create new copy in draft state for currently logged in user
+				<br>&emsp;Add <b>Copy of<b/> as prefix to name
+				<br>&emsp;It capture user & org details for newly copied content, Copy type & Source information
+				<br>&emsp;Retain linkages to assets & objects used in original content
+				
+	<br>2. Click <b>Apply</b>. The search results are displayed <br>3. Click <b>Reset</b> to reset the filters  </td>
+    <td><img src="pages/features-documentation/images/library/applying_filters.png"></td>
+  </tr>
+  </table>
+
+
+
 
 
