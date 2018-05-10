@@ -44,7 +44,7 @@ This documentation elaborates the various user interface elements of the Library
   </tr>
   </table>
    
-### Applying Filtersx
+### Applying Filters
 
 <table>
   <tr>
@@ -155,6 +155,31 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
   </tr>
   </table>
   
+  **Copying Content**
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+        <td>1. Select any content in <b>Library</b> to view the content
+	<br><b>Note:</b> User with appropriate rights, example, Creation right for Content or Book can copy any content available under Library
+        </td>
+	<td><img src="pages/features-documentation/images/copy_image1.png"></td
+	</tr>
+	<tr>
+          <td>1. Click <b>Make Copy</b> icon to copy content 
+		  <br><b>Note:</b> Copy content allows the portal to take following actions:
+		  &emsp;<li>The copied content is directed to the draft folders</li>
+		  <li><b>Copy of</b> tag will be added as prefix to the original content name</li>
+		  <li>User, org deatils, copy type, and source information are captured</li>
+		  <li>The links for the assets and objects remain intact</li>
+	</td>
+	<td><img src="pages/features-documentation/images/copy_image2.png"></td>
+	</tr>								
+  </table>
+	
 ### Taking Notes
  
  <table>
@@ -173,33 +198,3 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
 	<td><img src="pages/features-documentation/images/library_notescreen.png"></td>
 	</tr>
   </table>
-
-### Copying Content 
-User with appropriate rights (Creation right of Content or Book) can copy any content available under Library.<br>
-To copy a content:
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-	  <td>1. Click on any content under <b>librabry</b>. <br> You can see the <b>Make Copy</b> icon <img src="pages/features-documentation/images/copy%20icon.png"> on the Content Details page.
-	    	</td>
-	<td><img src="pages/features-documentation/images/1%20c.png"></td>
-	  </tr>
-	   <tr>
-          <td>2. Click the icon. <br> The content gets copied and user is taken to respective editor
-	</td>
-	<td><img src="pages/features-documentation/images/2%20c.png"></td>
-	</tr>								
-  </table>
-When a copy is made, system does the following by itself:<br>
-
-- Create new copy in draft state for currently logged in user
-- Add <b>Copy of<b> as prefix to name
-- It capture user & org details for newly copied content, Copy type & Source information
-- Retain linkages to assets & objects used in original content
-
-
-
-
