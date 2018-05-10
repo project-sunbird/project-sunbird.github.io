@@ -15,9 +15,9 @@ Based on user responsibilities, rights are provided to:
 - create 
 - review 
 - publish 
-- consume content.
+- consume
 
-Specific users are granted administration rights to manage user or organization profile creation, onboarding, deletion, passwords, and site look-and-feel customization.
+Specific users are granted administration rights to manage users or organization profile creation, onboarding, deletion, passwords, and site look-and-feel customization.
 
 
 
