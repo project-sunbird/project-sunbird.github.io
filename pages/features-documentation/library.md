@@ -166,7 +166,7 @@ Sunbird houses a wide variety of content referred to as Resources. Popular story
         <td>1. Select any content from <b>Library</b> to view the content
 	<br><b>Note:</b> User with appropriate rights (Creation right for Content or Book) can copy any content available under Library
         </td>
-	<td><img src="pages/features-documentation/images/copy_image1.png"></td
+	  <td><img src="pages/features-documentation/images/copy_image1.png"></td>
 	</tr>
 	<tr>
           <td>1. Click <b>Make Copy</b> icon to copy content <br> Then content gets copied and reside in the draft folder.
