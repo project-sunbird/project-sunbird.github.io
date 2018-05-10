@@ -7,9 +7,11 @@ description: About Lesson Plan feature
 published: true
 allowSearch: true
 ---
+## Overview
+
 Lesson plan is a structured outline of a given topic, unit, chapter to be taught on any given day. Lesson plan aids to streamline teaching and create an engaging learning experience.
 
-## Prerequisites
+### Prerequisites
 
 <table>
   <tr>
@@ -18,8 +20,9 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
   </tr>
   <tr>
     <td>1. You are logged in 
-     <br>2. You are currently on <b>My Workspace</b> page 
-     <br>3. You have clicked the <b>Lesson Plan</b> tile
+     <br>2. You are currently on <b>My Workspace</b>
+     <br>3. You have selected <b>Create</b> 
+     <br>4. You have clicked the <b>Lesson Plan</b> tile
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/prerequisite.png"></td>
    </tr>
@@ -33,7 +36,13 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-  <td>1. Enter a <b>Name</b> for the lesson plan <br>2. Select other metadata from their respective dropdowns: <br>&emsp;a) <b>Board</b> <br>&emsp;b) <b>Grade</b> <br>&emsp;c) <b>Subject</b> <br>&emsp;d) <b>Medium</b> <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
+  <td>1. Enter a <b>Name</b> for the lesson plan 
+   <br>2. Select other metadata from their respective dropdowns: 
+    <br>&emsp;a) <b>Board</b> 
+    <br>&emsp;b) <b>Grade</b> 
+    <br>&emsp;c) <b>Subject</b> 
+    <br>&emsp;d) <b>Medium</b> 
+   <br>3. Click <b>Start Creating</b> to create the lesson plan. A new Lesson Plan is created and displayed in a new page.
   </td>
   <td><img src="pages/features-documentation/images/lessonplan/create_lesson_plan.png"></td>
  </tr>
@@ -81,26 +90,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
  </tr>
  </table>
 
-### Exploring What's New
-
-**What's New** feature informs you about all the latest and significant changes build and made available for your better user experience.
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Click on the <b>What's New</b> icon to view new functionalities and related content <br><b>Note</b>: What's new icon appears in red color, when it is viewed for the first time. It turns to grey from next view, until next version of the feature is not available.</td>
-    <td><img src="pages/features-documentation/images/whatsnew1.png"></td>
-  </tr>
-  <tr>
-    <td>What's new page opens, with the highlights of the latest changes</td>
-    <td><img src="pages/features-documentation/images/whatsnew2.png"></td>
-  </tr>
-  </table>
-
-### Using Table of Contents Option
+### Using the Table of Contents Option
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
 
@@ -143,7 +133,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
   </tr>  
 </table>
 
-### Sending Lesson Plan for Review
+## Sending Lesson Plan for Review
 
 Before the Lesson Plan is publihed, it must be reviewed. You can send it for reviewing and publishing.
 
@@ -157,4 +147,20 @@ Before the Lesson Plan is publihed, it must be reviewed. You can send it for rev
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/review.png"></td>
   </tr>    
+  </table>
+
+### Exploring What's New
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>The What’s New feature informs you of the product features added or enhanced since the last product release 
+      <br>1. Click on the <b>What's New</b> icon to view concise information about new product functionality 
+      <br><b>Note</b>: The What's New icon is red before you view it for the first time. The icon turns grey after you view the information, until the next product version
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
+  </tr>
   </table>
