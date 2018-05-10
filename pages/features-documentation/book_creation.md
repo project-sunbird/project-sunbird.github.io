@@ -145,7 +145,7 @@ You can add various elements in the book like units or chapters, heading details
     </tr>
  </table>
 
-### Using the Table of Contents Options 
+## Working with Table of Contents 
 
 You can see <b>Table of Content</b> tree in the left pane to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
 <br>&emsp;a) The burger menu associated with a tree node 
@@ -186,7 +186,7 @@ You can see <b>Table of Content</b> tree in the left pane to navigate content co
   </tr>  
 </table>
 
-### Sending Book for Review
+## Sending Book for Review
 
 <table>
   <tr>
@@ -202,7 +202,7 @@ You can see <b>Table of Content</b> tree in the left pane to navigate content co
   </tr>    
   </table>
   
-### Exploring What's New
+## Exploring What's New
 
 <table>
   <tr>
