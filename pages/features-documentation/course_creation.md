@@ -21,8 +21,8 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
   </tr>
   <tr>
     <td>1. You are logged in 
-      <br>2. You are currently on <b>My Workspace</b> page 
-      <br>3. Select <b>Create</b> 
+      <br>2. You are currently on <b>My Workspace</b> 
+      <br>3. You have selected <b>Create</b> 
       <br>4. You have clicked the <b>Courses</b> tile
       </td>
       <td><img src="pages/features-documentation/images/course_workspace.png"></td>
