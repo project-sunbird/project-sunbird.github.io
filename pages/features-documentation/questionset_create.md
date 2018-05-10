@@ -55,8 +55,8 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
-  <tr>To create a question set
-  <td><br>1.Select the type of question you want to create.
+  <tr>
+    <td>To create a question set <br>1.Select the type of question you want to create
     <br>2. Click <b>Select</b> 
     </td>
     <td>image</td>
@@ -118,8 +118,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
- <td>
-<br>1. Enter <b>Question Set Title</b> for the questionaire 
+ <td>1. Enter <b>Question Set Title</b> for the questionaire 
 <br>2. The <b>Max Score</b> displays the maximum score for the question 
 <br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
 <br>4. Select <b>Show Immediate Feedback</b> to determine when the feedback for the answers should be displayed
@@ -148,9 +147,9 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   <br>5. Click <b>Image</b> icon to add an image
   <br>6. Click <b>Audio</b> icon to add an audio message 
   <br>7. Select <b>Add answer to add another option in the Mark as Right multiple choice 
-  <br>8. Click Refresh icon to preview your question 
+   <br>8. Click <b>Refresh</b> icon to preview your question 
   <br>9. Select the layout from the drop-down menu
-  <br>10. Use Shuffle Option to change the sequence of answers
+   <br>10. Use <b>Shuffle Option</b> to change the sequence of answers
   <br>11. Select <b>Back</b> to go back to the previous page 
   <br>12. Click <b>Next</b> to enter the Question Details.
   </td>
@@ -167,12 +166,12 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   </tr>  
   <tr>
     <td>After adding the question set, the customize tab displays options to modify them. You can: 
-      <br>1. Click <strong>Assessment Browser</strong> to return to the <strong>Selecting Questions</strong>screen 
+      <br>1. Click <b>Assessment Browser</b> to return to the <b>Selecting Questions</b>screen 
       <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions 
-      <br>3. View and modify the <strong>Assessment Title</strong>, if required 
-      <br>4. Use the sliders to enable or disable <strong>Shuffle Questions, Shuffle Options and Show Immediate Feedback</strong> 
+      <br>3. View and modify the <b>Assessment Title</b>, if required 
+      <br>4. Use the sliders to enable or disable <b>Shuffle Questions, Shuffle Options and Show Immediate Feedback</b> 
       <br>5. Select the number of questions to be displayed in each screen 
-      <br>6. Enter the <strong>Total Marks</strong> for the assessment
+      <br>6. Enter the <b>Total Marks</b> for the assessment
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/customizetab.png"></td>
   </tr>
