@@ -15,6 +15,7 @@ Sunbird houses a wide variety of content. Users can can create content on Sunbir
 Resources  are the simplest/smallest unit of content that can be created by any user on Sunbird using the inbuilt content editor.
 
 The various categories of resources that can be created on Sunbird include:
+
 - Experiment
 - Learn
 - Play
