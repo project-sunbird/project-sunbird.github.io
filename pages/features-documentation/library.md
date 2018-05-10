@@ -183,7 +183,7 @@ To copy a content:
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-	  <td>1. Click on any content under <b>librabry</b>. <br> You can see the <b>Make Copy</b> icon on the Content Details page.
+	  <td>1. Click on any content under <b>librabry</b>. <br> You can see the <b>Make Copy</b> icon <img src="pages/features-documentation/images/copy%20icon.png"> on the Content Details page.
 	    	</td>
 	<td><img src="pages/features-documentation/images/1%20c.png"></td>
 	  </tr>
@@ -194,7 +194,6 @@ To copy a content:
 	</tr>								
   </table>
 When a copy is made, system does the following by itself:<br>
-
 - Create new copy in draft state for currently logged in user
 - Add <b>Copy of<b> as prefix to name
 - It capture user & org details for newly copied content, Copy type & Source information
