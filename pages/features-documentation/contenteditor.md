@@ -14,11 +14,16 @@ Sunbird houses a wide variety of content. Users can can create content on Sunbir
 
 Resources  are the simplest/smallest unit of content that can be created by any user on Sunbird using the inbuilt content editor.
 
-The various types of resources that can be created on Sunbird include:
-- Activity
-- Worksheet
-- Study Material
-- Tests
+The various categories of resources that can be created on Sunbird include:
+- Experiment
+- Learn
+- Play
+- Practice
+- Read
+- Teach
+- Test 
+
+Each of these categories corresponds to the learning process/methodology that is deployed to teach a particular piece of content. For example, a tutor creates an acitivity and the intent is to educate the learner a concept through a game. The resource category in this case , Play. Similarly, a tutor creates a story to enhance the reading skills of the learner, the story falls under the category of Read. 
 
 This section details the procedure on how to create resources using the inbuilt content editor.
 
