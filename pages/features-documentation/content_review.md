@@ -119,7 +119,7 @@ To ensure that content uploaded and available on Sunbird are quality driven and 
    <td>1. The <b>Publish</b> page appears
    <br>2. Select all check boxes to confirm appropriateness, relevance, and usability of the content
    <br>3. Click <b>Publish</b> to publish the content
-     <br>The creator is notified about the published content and the content will be available on Sunbird for consumption
+     <br><b>Note:</b>The creator is notified about the published content and the content will be available on Sunbird for consumption
    <br>4. Click <b>Cancel</b> to cancel   
    </td>
     <td><img src="pages/features-documentation/images/contentreviewer/publish_content.png"></td>
