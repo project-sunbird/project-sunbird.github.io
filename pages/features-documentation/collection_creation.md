@@ -19,7 +19,10 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. You are logged in <br>2. You are currently on <b>My Workspace</b> <br>3. You want to create a collection, you have clicked on <b>Collection</b> tile
+    <td>1. You are logged in 
+      <br>2. You are currently on <b>My Workspace</b> 
+      <br>3. You have selected <b>Create</b> 
+      <br>4. You have clicked on <b>Collection</b> tile
        </td>
       <td><img src="pages/features-documentation/images/collection/collection_workspace.png"></td>
   </tr>
