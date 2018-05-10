@@ -430,7 +430,7 @@ paths:
     post:
       description: >-
        This API is associated with creation of badge assertion.
-          - **_ /badge/assertion/create_** endpoint executes the **Create Badge Assertions** request based on parameters provided as metadata in the request body
+          - **_/badge/assertion/create_** endpoint executes the **Create Badge Assertions** request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for parameters 
           - Mandatory fields cannot be null or empty 
       summary: Create Badge Assertion
