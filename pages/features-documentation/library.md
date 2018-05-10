@@ -185,19 +185,19 @@ To copy a content:
   <tr>
 	  <td>1. Click on any content under <b>librabry</b>. <br> You can see the <b>Make Copy</b> icon on the Content Details page.
 	    	</td>
-	<td><img src=""></td>
+	<td><img src="pages/features-documentation/images/1%20c.png"></td>
 	  </tr>
 	   <tr>
           <td>2. Click the icon. <br> The content gets copied and user is taken to respective editor
 	</td>
-	<td><img src=""></td>
+	<td><img src="pages/features-documentation/images/2%20c.png"></td>
 	</tr>								
   </table>
-When a copy is made, system does the following by itself:
-- Create new copy in draft state for currently logged in user
-- Add <b>Copy of<b/> as prefix to name
-- It capture user & org details for newly copied content, Copy type & Source information
-- Retain linkages to assets & objects used in original content
+When a copy is made, system does the following by itself:<br>
+-Create new copy in draft state for currently logged in user
+-Add <b>Copy of<b/> as prefix to name
+-It capture user & org details for newly copied content, Copy type & Source information
+-Retain linkages to assets & objects used in original content
 
 
 
