@@ -90,7 +90,7 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
  </tr>
  </table>
 
-### Using the Table of Contents Options 
+## Using the Table of Contents Options 
 
 You can see <b>Table of Content</b> tree in the left pane to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: 
 <br>&emsp;a) The burger menu associated with a tree node 
@@ -147,7 +147,7 @@ Before the Lesson Plan is publihed, it must be reviewed. You can send it for rev
   </tr>    
   </table>
 
-### Exploring What's New
+## Exploring What's New
 
 <table>
   <tr>
