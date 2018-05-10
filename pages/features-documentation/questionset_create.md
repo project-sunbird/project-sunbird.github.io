@@ -2,7 +2,7 @@
 type: landing
 directory: features-documentation
 title: Adding Question Set
-page_title: Content Editor
+page_title: Adding Question Set
 description: Features and functionality of the content editor
 keywords: content editor, create course, create content, create lesson, textbook, collection, course
 published: true
