@@ -191,14 +191,13 @@ To copy a content:
           <td>2. Click the icon. <br> The content gets copied and user is taken to respective editor
 	</td>
 	<td><img src=""></td>
-	</tr>
+	</tr>								
+  </table>
 When a copy is made, system does the following by itself:
 - Create new copy in draft state for currently logged in user
 - Add <b>Copy of<b/> as prefix to name
 - It capture user & org details for newly copied content, Copy type & Source information
-- Retain linkages to assets & objects used in original content								
-  </table>
-
+- Retain linkages to assets & objects used in original content
 
 
 
