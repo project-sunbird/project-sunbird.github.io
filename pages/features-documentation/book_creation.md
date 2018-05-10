@@ -12,7 +12,7 @@ allowSearch: true
 
 Book is a collection of content units.	On Sunbird, books can be compiled or curated from school books or any book that conform to syllabi of state or central boards or any recognized institution or publication, in the said medium of instruction and language. Books may also be compiled separately without adhering to any syllabus, but forming a logical unit of content pieces for the given subject matter. 
 
-### Prerequisites
+## Prerequisites
 <table>
   <tr>
     <th style="width:35%;">Step</th>
