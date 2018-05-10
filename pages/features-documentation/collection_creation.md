@@ -12,7 +12,7 @@ allowSearch: true
 
 Collection is a compilation of content.	A collection can be compiled on Sunbird using the various learning resources available on the portal or by creating content on the in-built content editor and later collating them as a collection. Related or unrelated content can be compiled together. 
 
-### Prerequisites
+## Prerequisites
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -28,7 +28,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
   
-### Creating Collection
+## Creating Collection
  <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -42,7 +42,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
   
-### Collection Details
+### Adding Collection Details
  
 <table>
   <tr>
@@ -56,7 +56,34 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
 
-### Adding Content to a Collection
+### Adding or Editing Collection Details
+ 
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Edit Details</b> to enter the collection details 
+    <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
+      <br>3. Enter <b>Title</b> of the collection 
+      <br>4. Enter <b>Description</b> of the collection 
+      <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content 
+      <br>6. Select the following from their respective drop-down lists: 
+      <br>&emsp;a) <b>Curriculum</b> 
+      <br>&emsp;b) <b>Class</b> 
+      <br>&emsp;c) <b>Subject</b> 
+      <br>&emsp;d) <b>Medium</b> 
+      <br>7. Enter <b>Attributions</b> 
+      <br>8. Select <b>Audience</b> 
+      <br>9. Click <b>Save</b> on the header to save the details
+      <br>10. Click <b>Cancel</b> to go back to the previous screen
+    </td>
+    <td><img src="pages/features-documentation/images/collection/collection_editdetails.png"></td>
+  </tr>
+  </table>
+  
+### Adding Content to Collection
 
 <table>
   <tr>
@@ -73,7 +100,7 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
 
-### Using the Table of Contents Options 
+## Using the Table of Contents Options 
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, **OR** <br>&emsp;c) Keyboard shortcuts <br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
   
@@ -108,34 +135,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
   </tr>  
 </table>
 
-### Adding or Editing Collection Details
- 
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Click <b>Edit Details</b> to enter the collection details 
-    <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
-      <br>3. Enter <b>Title</b> of the collection 
-      <br>4. Enter <b>Description</b> of the collection 
-      <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content 
-      <br>6. Select the following from their respective drop-down lists: 
-      <br>&emsp;a) <b>Curriculum</b> 
-      <br>&emsp;b) <b>Class</b> 
-      <br>&emsp;c) <b>Subject</b> 
-      <br>&emsp;d) <b>Medium</b> 
-      <br>7. Enter <b>Attributions</b> 
-      <br>8. Select <b>Audience</b> 
-      <br>9. Click <b>Save</b> on the header to save the details
-      <br>10. Click <b>Cancel</b> to go back to the previous screen
-    </td>
-    <td><img src="pages/features-documentation/images/collection/collection_editdetails.png"></td>
-  </tr>
-  </table>
-
-### Sending Collection for Review
+## Sending Collection for Review
 
 <table>
   <tr>
@@ -147,4 +147,20 @@ The Table of Contents tree seen in the left pane is used to navigate content com
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_sendforreview.png"></td>
   </tr>    
+  </table>
+  
+### Exploring What's New
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>The What’s New feature informs you of the product features added or enhanced since the last product release 
+      <br>1. Click on the <b>What's New</b> icon to view concise information about new product functionality 
+      <br><b>Note</b>: The What's New icon is red before you view it for the first time. The icon turns grey after you view the information, until the next product version
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_whats_new1.png"></td>
+  </tr>
   </table>
