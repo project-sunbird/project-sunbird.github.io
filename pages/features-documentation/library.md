@@ -161,7 +161,7 @@ Sunbird houses a wide variety of content. Users with registered credentials can 
 	  <td><img src="pages/features-documentation/images/copy_image1.png"></td>
 	</tr>
 	<tr>
-          <td>1. Click <b>Make Copy</b> icon to copy content <br> The content is copied and into the <b>Draft</b> folder.
+          <td>1. Click <b>Make Copy</b> icon to copy content <br> The content is copied into the <b>Draft</b> folder.
 		  <br><b>Note:</b> The following automatically happens to all content that is copied:
 		  &emsp;<li>All copied content resides in the <b>Draft</b> folder</li>
 		  <li>The copied content is tagged with the prefix <b>Copy of</b> before the original content name</li>
