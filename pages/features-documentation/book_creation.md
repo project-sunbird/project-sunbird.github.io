@@ -64,6 +64,36 @@ You can add various elements in the book like units or chapters, heading details
   </tr>
  </table>
  
+### Adding or Editing Book Details
+ 
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Edit Details</b> to enter the book details 
+    <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
+      <br>3. Enter <b>Title</b> of the book 
+      <br>4. Enter <b>Description</b> of the book 
+      <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content 
+      <br>6. Select the following from their respective drop-down lists: 
+      <br>&emsp;a) <b>Curriculum</b> 
+      <br>&emsp;b) <b>Class</b> 
+      <br>&emsp;c) <b>Subject</b> 
+      <br>&emsp;d) <b>Medium</b> 
+      <br>&emsp;e) <b>Year</b> 
+      <br>7. Enter <b>Publisher</b> details 
+      <br>8. Enter <b>Attributions</b> 
+      <br>9. Select <b>Audience</b> 
+      <br>10. Enter the <b>DIAL Code</b> 
+      <br>11. Click <b>Save</b> on the header to save the details
+      <br>12. Click <b>Cancel</b> to go back to the previous screen
+    </td>
+    <td><img src="pages/features-documentation/images/book/book_metadata1.png"></td>
+  </tr>
+  </table>
+
 #### Adding Details
 
 <table>
@@ -155,36 +185,6 @@ You can see <b>Table of Content</b> tree in the left pane to navigate content co
     <td><img src="pages/features-documentation/images/book/book_toc.png"></td>
   </tr>  
 </table>
-
-### Adding or Editing Book Details
- 
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Click <b>Edit Details</b> to enter the book details 
-    <br>2. Click the camera icon to add an image <br><b>Note</b>: For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> 
-      <br>3. Enter <b>Title</b> of the book 
-      <br>4. Enter <b>Description</b> of the book 
-      <br>5. Enter <b>Keywords</b>. Keywords are ideas and topics that define content. Keywords aid in searching for content 
-      <br>6. Select the following from their respective drop-down lists: 
-      <br>&emsp;a) <b>Curriculum</b> 
-      <br>&emsp;b) <b>Class</b> 
-      <br>&emsp;c) <b>Subject</b> 
-      <br>&emsp;d) <b>Medium</b> 
-      <br>&emsp;e) <b>Year</b> 
-      <br>7. Enter <b>Publisher</b> details 
-      <br>8. Enter <b>Attributions</b> 
-      <br>9. Select <b>Audience</b> 
-      <br>10. Enter the <b>DIAL Code</b> 
-      <br>11. Click <b>Save</b> on the header to save the details
-      <br>12. Click <b>Cancel</b> to go back to the previous screen
-    </td>
-    <td><img src="pages/features-documentation/images/book/book_metadata1.png"></td>
-  </tr>
-  </table>
 
 ### Sending Book for Review
 
