@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 
-#### Adding Question Set
+## Adding Question Set
   
   <table>
   <tr>
@@ -24,7 +24,7 @@ allowSearch: true
   </tr>
   </table>
   
-  **Selecting Questions - Using filter**
+### Selecting Questions - Using filter
   
   <table>
   <tr>
