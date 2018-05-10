@@ -8,7 +8,16 @@ keywords: 'Admin, System Admin, Org Admin, Instructor, Student, Roles, Permissio
 published: true
 allowSearch: true
 ---
-For effective functioning of an organization, it is necessary to control and distribute responsibilities across users appropriately. Sunbird has multiple user types. All the portal members are Users. Based on user responsibilities, rights are provided to create, review, publish or consume content. Specific users are granted administration rights to manage user or organization profile creation, onboarding, deletion, passwords, and site look-and-feel customization.
+For effective functioning of an organization, it is necessary to control and distribute responsibilities across users appropriately. Sunbird has multiple user types. All the portal members are Users. 
+
+Based on user responsibilities, rights are provided to: 
+
+- create 
+- review 
+- publish 
+- consume content.
+
+Specific users are granted administration rights to manage user or organization profile creation, onboarding, deletion, passwords, and site look-and-feel customization.
 
 
 
