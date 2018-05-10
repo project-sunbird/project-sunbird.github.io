@@ -165,7 +165,7 @@ Sunbird houses a wide variety of content. Users with registered credentials can 
 		  <br><b>Note:</b> The following automatically happens to all content that is copied:
 		  &emsp;<li>All copied content resides in the <b>Draft</b> folder</li>
 		  <li>The copied content is tagged with the prefix <b>Copy of</b> before the original content name</li>
-		  <li>The user, organisation deatils, copy type, and source information are captured</li>
+		  <li>The user, organisation details, copy type, and source information are captured</li>
 		  <li>The links to the assets and objects remain intact</li>
 	</td>
 	<td><img src="pages/features-documentation/images/copy_image2.png"></td>
