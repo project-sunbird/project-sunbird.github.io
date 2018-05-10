@@ -85,6 +85,7 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
     </td> 
     <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
   </tr> 
+ </table>
   
 #### Creating Multiple Choice Question Set
   
