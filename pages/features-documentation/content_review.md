@@ -104,7 +104,7 @@ To ensure that content uploaded and available on Sunbird are quality driven and 
    <br>5. Click <b>Cancel</b> to cancel   
      <br><b>Note:</b> Once the content sent for change, the creator is notified of the same and the content is rolled back to draft stage.
      </td> 
-    <td><img src="pages/features-documentation/images/images/contentreviewer/reject_content.png"></td>
+    <td><img src="pages/features-documentation/images/contentreviewer/reject_content.png"></td>
   </tr>
   </table>
 
