@@ -42,32 +42,8 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
     <td><img src="pages/features-documentation/images/course_metadata.png"></td>
   </tr>
   </table>
-  
-### Adding Details
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. Click <b>Edit Details</b> to enter the course details 
-      <br>2. Click the camera icon to add an image <br><b>Note:</b> For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images to Metadata</a> 
-      <br>3. Enter <b>Title</b> of the course 
-      <br>4. Enter <b>Description</b> 
-      <br>5. Enter <b>Keywords</b> 
-      <br>6. Select the following from their respective drop-down lists: 
-      <br>a) Board 
-      <br>b) Class 
-      <br>c) Subject 
-      <br>d) Medium 
-      <br>7. Select <b>Audience</b> 
-      <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> to save the details <br>10. Click <b>Cancel</b> to exit the page
-    </td>
-    <td><img src="pages/features-documentation/images/add_details.png"></td>
-  </tr>
- </table>
- 
- ### Adding Content to course
+
+### Adding Content to Course
  <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -83,8 +59,32 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
       <td><img src="pages/features-documentation/images/add_content0.png"></td>
   </tr>
    </table>
+   
+### Adding or Editing Course Details
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. Click <b>Edit Details</b> to enter the course details 
+      <br>2. Click the camera icon to add an image <br><b>Note:</b> For details, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images to Metadata</a> 
+      <br>3. Enter <b>Title</b> of the course 
+      <br>4. Enter <b>Description</b> 
+      <br>5. Enter <b>Keywords</b> 
+      <br>6. Select the following from their respective drop-down lists: 
+      <br>&emsp;a) Board 
+      <br>&emsp;b) Class 
+      <br>&emsp;c) Subject 
+      <br>&emsp;d) Medium 
+      <br>7. Select <b>Audience</b> 
+      <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> to save the details <br>10. Click <b>Cancel</b> to exit the page
+    </td>
+    <td><img src="pages/features-documentation/images/add_details.png"></td>
+  </tr>
+ </table>
  
- ### Heading Details
+### Heading Details
    <table>
   <tr>
     <th style="width:35%;">Step</th>
