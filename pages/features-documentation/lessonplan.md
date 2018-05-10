@@ -49,6 +49,10 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
     <td>1. Click <b>New Child</b> on the left pane to add lesson unit or chapter
       <br>2. On clicking child node, a heading is added to the Table of Contents pane. For details on child node, sibling node, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
       <br>3. Click <b>Add Resource</b> to add content to the headings. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
+    </td>
+    <td><img src="pages/features-documentation/images/lessonplan/add_content.png"></td>
+  </tr>
+  </table>
 
 ### Adding Details
 
@@ -68,44 +72,14 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
       <br>&emsp;b) <b>Class</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
-      <br>&emsp;e) <b>Notes to Teacher</b> 
-      <br>&emsp;f) <b>Learning Objective</b> 
-      <br>&emsp;g) <b>Concepts</b>
-      <br>&emsp;h) <b>Duration</b>
-      <br>7. Click <b>Save</b> to collectively save all updates.  
-      <br>You can edit or update the title of the units in the lessonplan from the navigation hierarchy
+      <br>7. Enter <b>Attributions</b>
+      <br>8. Select <b>Audience</b>
+      <br>9. Click <b>Save</b> to collectively save all updates.  
+      <br>10. Click <b>Cancel</b> to exit the page 
     </td>
     <td><img src="pages/features-documentation/images/lessonplan/edit_details.png"></td>
  </tr>
  </table>
-
-### Preview and Upload the Resource
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr> 
-    <td>
-      The resource is added in the <b>Resource</b> section of the page that displays Name, Description, Keywords related to the resource. 
-     <br>1. Click Preview image to preview the resource. The content preview page appears  
-     <br>2. You can delete the resource using delete icon.   
-     <br>3. Click Save to save the changes
-     <br>4. Click send for review icon. click Send for Review to know more
-     <br>Click <a href="pages/features-documentation/lessonplan/# sending-lesson-plan-for-review">Send for Review</a> to know more.</td>
-   <td><img src="pages/features-documentation/images/lessonplan/preview.png"></td>     
-</tr>
-  <tr> 
-    <td>
-      The Resource page displays the Name, Description, Keywords related to the resource. 
-      <br>1. Click the play icon to load the added resource 
-      <br>2. You can delete the resource using <b>Remove</b> icon 
-      <br>3. Click the link in the breadcrumb to visit the corresponding lesson plan
-      <br>3. Click <b>Save</b> to save the changes 
- </td>
-<td><img src="pages/features-documentation/images/lessonplan/preview_page.png"></td>     
-</tr>
-</table>
 
 ### Exploring What's New
 
