@@ -156,7 +156,6 @@ Sunbird houses a wide variety of content. Users with registered credentials can 
   </tr>
   <tr>
         <td>1. Select any content from the <b>Library</b> to view the content
-		
 	<br><b>Note:</b> Users with creation rights can copy any content available in the Library
         </td>
 	  <td><img src="pages/features-documentation/images/copy_image1.png"></td>
