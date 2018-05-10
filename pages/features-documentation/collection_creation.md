@@ -42,8 +42,23 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
   
+### Adding Content to Collection
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>To add content to a collection, you can do one of the following actions: 
+      <br>1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> 
+      <br>2. Click <b>Add Resource</b> on the right bottom of the page to add content to the unit or chapter. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
+      <br>3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
+    </td>
+      <td><img src="pages/features-documentation/images/collection/add_ressource1.png"></td>
+  </tr>
+  </table>
+  
 ### Adding Collection Details
- 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -83,23 +98,6 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
   </tr>
   </table>
   
-### Adding Content to Collection
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>To add content to a collection, you can do one of the following actions: 
-      <br>1. Click <b>Add Resource</b> from the menu associated with the required node in the left navigation pane or right-click on the node name and select <b>Add Resource</b> 
-      <br>2. Click <b>Add Resource</b> on the right bottom of the page to add content to the unit or chapter. For details on adding resources, refer <a href="features-documentation/addingresources" target="_blank">Adding Resources</a>
-      <br>3. Use the keyboard shortcut <b>Ctrl+Alt+A</b> <br> For more details on keyboard shortcuts, refer <a href="features-documentation/keyboardshortcuts" target="_blank">Keyboard Shortcuts</a>
-    </td>
-      <td><img src="pages/features-documentation/images/collection/add_ressource1.png"></td>
-  </tr>
-  </table>
-
 ## Using the Table of Contents Options 
 
 The Table of Contents tree seen in the left pane is used to navigate content compiled for a collection, textbook, course or lesson plan. You can manipulate the tree using either: <br>&emsp;a) The burger menu associated with a tree node <br>&emsp;b) Right-click options associated with a tree node, **OR** <br>&emsp;c) Keyboard shortcuts <br>For details on manipulating the tree and adding content, refer <a href="features-documentation/treestructure_toc" target="_blank">Exploring ToC Structure</a>
