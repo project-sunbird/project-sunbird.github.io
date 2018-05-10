@@ -8,11 +8,11 @@ keywords: 'teacher training, training, assessment, training instituites, teacher
 published: true
 allowSearch: true
 ---
-## Compiling Courses on Sunbird
+## Overview
 
 On Sunbird, you can compile a course by adding content to it. You can create each unit of course content and then compile them or compile a course using existing content in the portal.
 
-### Prerequisites
+## Prerequisites
 
 <table>
   <tr>
@@ -29,7 +29,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
   </tr>
   </table>
   
-### Creating Course
+## Creating Course
  <table>
   <tr>
     <th style="width:35%;">Step</th>
