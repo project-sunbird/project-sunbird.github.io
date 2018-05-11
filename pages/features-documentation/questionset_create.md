@@ -150,21 +150,13 @@ To add question set, click the <strong>Add Question Set</strong> icon on the too
   </tr>  
   <tr>
     <td>Enter Question Set Title 
-The Max Score box displays the maximum score allotted to the question
-Select the number of questions that should be displayed in each screen from the Display drop-down menu
-Use the Show Immediate Feedback slider to determine when the details for the answers should be displayed
-Use the Shuffle Questions slider to enable shuffling of  questions from the set 
-Click Add to add selected questions
-Click Add More Questions to go back and select another question
-
-     After adding the question set, the customize tab displays options to modify them. You can: 
-      <br>1. Click <b>Assessment Browser</b> to return to the <b>Selecting Questions</b>screen 
-      <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions 
-      <br>3. View and modify the <b>Assessment Title</b>, if required 
-      <br>4. Use the sliders to enable or disable <b>Shuffle Questions, Shuffle Options and Show Immediate Feedback</b> 
-      <br>5. Select the number of questions to be displayed in each screen 
-      <br>6. Enter the <b>Total Marks</b> for the assessment
-    </td>
+ <br>1. The Max Score box displays the maximum score allotted to the question
+ <br>2. Select the number of questions that should be displayed in each screen from the Display drop-down menu
+ <br>3.Use the Show Immediate Feedback slider to determine when the details for the answers should be displayed
+ <br>4. Use the Shuffle Questions slider to enable shuffling of  questions from the set 
+ <br>5. Click Add to add selected questions
+ <br>6. Click Add More Questions to go back and select another question
+   </td>
     <td><img src="pages/features-documentation/images/questionset/questionsetcustomised.png"></td>
   </tr>
   </table>      
