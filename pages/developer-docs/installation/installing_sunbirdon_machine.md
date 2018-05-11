@@ -107,7 +107,11 @@ Once you open the file, ensure you enter the following values:
         ...
 	
 	// 7. ANDROID_APP_URL
-        ANDROID_APP_URL: env.sunbird_android_app_url || 'http://www.sunbird.org'                                              
+        ANDROID_APP_URL: env.sunbird_android_app_url || 'http://www.sunbird.org'   
+
+	//8. CONTENT CHANNEL FILTER  TYPE
+	CONTENT_CHANNEL_FILTER_TYPE: env.sunbird_content_channel_filter_type || 'all',
+	This value will be 'self' to get content from only current channel and 'all' to get all channel contents including self
         ...
     }
    
