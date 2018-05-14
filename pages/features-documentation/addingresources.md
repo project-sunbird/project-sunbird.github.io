@@ -7,13 +7,19 @@ description: About Adding Resources in a book, course, collection, study materia
 published: true
 allowSearch: true
 ---
-On Sunbird, Resources refers to the available stock of content. Content creators can use content from
-the existing list or create a resource. Four types of content are available in resources:
-<br>1. Study Material
-<br>2. Activities
-<br>3. Tests
-<br>4. Worksheets
-<br>Resources can be added to book, course, collection, or lesson plan.
+On Sunbird, Resources refers to the available stock of content. The various categories of resources that are available on Sunbird include:
+
+- Experiment
+- Learn
+- Play
+- Practice
+- Read
+- Teach
+- Test 
+
+Content creators can add resources from the existing list or create new resources. For details on creating resources, refer <a href="features-documentation/resource_creation" target="_blank">Creating Resources</a>
+
+Only published resources can be selected and added while creating content. Resources can be added to Book, Collection, Course or Lesson Plan. 
 
 ## Adding Resources to Units or Chapters
 
