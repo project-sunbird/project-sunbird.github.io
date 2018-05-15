@@ -76,19 +76,19 @@ To ensure that the content achieves the learning objective it is important to ch
  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
- </tr>  asd ADFgAzgBHNZXCM ´ed
+ </tr>
  <tr>
  <td>1. Enter the question. You can format the questions using rich text editor 
 <br>2. Enter the answers 
 <br><b>Note:</b> Mark the correct answer amongst the multiple answers 
-<br>Click <b>Delete</b> icon to remove an answer
-<br>Click <b>Image</b> icon to add an image
-<br>Click <b>Audio</b> icon to add an audio message 
-11ZEXRCRCXZ<br>Click <b>Refresh</b> icon to preview your question 
-<br>Select the layout from the drop-down menu
-<br>Use <b>Shuffle</b> Option to change the sequence of answers
-<br>Select <b>Back</b> to go back to the previous page 
-<br>Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears 
+<br>3. Click <b>Delete</b> icon to remove an answer
+<br>4. Click <b>Image</b> icon to add an image
+<br>5. Click <b>Audio</b> icon to add an audio message 
+<br>6. Click <b>Refresh</b> icon to preview your question 
+<br>7. Select the layout from the drop-down menu
+<br>8. Use <b>Shuffle</b> Option to change the sequence of answers
+<br>9. Select <b>Back</b> to go back to the previous page 
+<br>10. Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears 
   </td>
     <td><img src="pages/features-documentation/images/questionset/matchthefollowing.png"></td>
  </tr>
@@ -130,10 +130,10 @@ To ensure that the content achieves the learning objective it is important to ch
   <br>4. Click <b>Delete</b> icon to remove an answer
   <br>5. Click <b>Image</b> icon to add an image
   <br>6. Click <b>Audio</b> icon to add an audio message 
-   <br>7. Select <b>Add answer</b> to add another option in the Mark as Right multiple choice 
-   <br>8. Click <b>Refresh</b> icon to preview your question 
+  <br>7. Select <b>Add answer</b> to add another option in the Mark as Right multiple choice 
+  <br>8. Click <b>Refresh</b> icon to preview your question 
   <br>9. Select the layout from the drop-down menu
-   <br>10. Use <b>Shuffle Option</b> to change the sequence of answers
+  <br>10. Use <b>Shuffle Option</b> to change the sequence of answers
   <br>11. Select <b>Back</b> to go back to the previous page 
   <br>12. Click <b>Next</b> to enter the Question Details.
   </td>
@@ -170,10 +170,10 @@ To ensure that the content achieves the learning objective it is important to ch
  </tr>  
  <tr>
     <td>1. Click the trash icon to delete the added question set 
-     <br>2. Click the spanner icon to edit details of the question set. The settings options are displayed on the right 
-     <br>a) Click on the upward/downward arrows to determine the marks of the question set 
-     <br>3. Click the eye icon to view the preview of the question set 
-     <br>4. Click <b>Done</b> to save
+    <br>2. Click the spanner icon to edit details of the question set. The settings options are displayed on the right 
+    <br>a) Click on the upward/downward arrows to determine the marks of the question set 
+    <br>3. Click the eye icon to view the preview of the question set 
+    <br>4. Click <b>Done</b> to save
    </td>
    <td><img src="pages/features-documentation/images/questionset/selectquestions.png"></td>
  </tr>
