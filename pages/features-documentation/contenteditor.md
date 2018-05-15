@@ -49,7 +49,7 @@ This section details the procedure on how to create resources using the inbuilt 
   </tr>
   </table>
   
-### Content Editor Parts
+## Content Editor Parts
   
   The broad areas of the content editor are:
   
@@ -65,7 +65,7 @@ This section details the procedure on how to create resources using the inbuilt 
   </tr>
   </table>
   
-#### Right pane
+### Right pane
   
   **Customize Tab and Default Options**
   
@@ -107,11 +107,11 @@ This section details the procedure on how to create resources using the inbuilt 
   </tr>
   </table>
   
-### Tool Bar
+## Tool Bar
   
   Understanding the Tools of the Tool Bar
-  
-#### Adding Slide
+
+### Adding Slide
   
   <table>
   <tr>
@@ -126,7 +126,7 @@ page to reorder them
   </tr>
   </table>
   
-#### Adding Text
+### Adding Text
   
    <table>
   <tr>
@@ -262,7 +262,7 @@ words that already exist in the repository <br>1. To use this feature, select th
   </tr>
   </table>
   
-#### Adding Richtext 
+### Adding Richtext 
    
    <table>
   <tr>
@@ -287,7 +287,7 @@ words that already exist in the repository <br>1. To use this feature, select th
   </tr>
   </table>
   
-#### Adding Shapes
+### Adding Shapes
   
   <table>
   <tr>
@@ -302,7 +302,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Images
+### Adding Images
   
   <table>
   <tr>
@@ -357,7 +357,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
 
-#### Adding Audio
+### Adding Audio
 
   <table>
   <tr>
@@ -386,7 +386,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Hotspot
+### Adding Hotspot
   
   <table>
   <tr>
@@ -414,7 +414,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Scribblepad
+### Adding Scribblepad
   
  <table>
   <tr>
@@ -428,7 +428,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Question Set
+### Adding Question Set
   
   <table>
   <tr>
@@ -443,7 +443,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Activity
+### Adding Activity
 
  <table>
  <tr>
@@ -499,7 +499,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
  </tr>
  </table>
    
-#### Adding Video
+### Adding Video
   
   <table>
   <tr>
@@ -531,7 +531,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
- #### Adding Details
+ ### Adding Details
  All details associated with the resource must be updated before sending the resource for review.
 
   <table>
@@ -546,7 +546,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>   
     
-#### Reviewing and Publishing Content 
+## Reviewing and Publishing Content 
 
  <table>
  <tr>
