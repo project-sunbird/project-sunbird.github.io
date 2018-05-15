@@ -70,7 +70,7 @@ Telemetry events are generated based on the configuration of the telemetry libra
     <td>channel</td>
     <td>It is an string containing unique channel name.</td>
     <td>true</td>
-    <td></td>
+    <td>Defaults to in.ekstep</td>
   </tr>
   <tr>
     <td>uid</td>
@@ -80,9 +80,12 @@ Telemetry events are generated based on the configuration of the telemetry libra
   </tr>
   <tr>
     <td>did</td>
-    <td>It is an string containing unique device id. To generate this value refer to here . ANDROID_ID is generally used</td>
+    <td>It is an string containing unique device id. 
+      <ul><li>To generate did value for android refer to <a href ='https://android-developers.googleblog.com/2011/03/identifying-app-installations.html'>here</a> ANDROID_ID is generally used for mobiles</li>
+        <li>To generate did value for web client refer <a href = 'https://github.com/Valve/fingerprintjs2'>here</a>. If consumer is not sending any did value then by default library will generate did using <a href ='https://github.com/Valve/fingerprintjs2'>fingerPrintJs2</a>.</li><li>For server side it's mandtory to pass did value</li></ul>
+   </td>
     <td>true</td>
-    <td></td>
+    <td>Default to <a href="https://github.com/Valve/fingerprintjs2">fingerPrintjs2</a>(Note: Only for web client)</td>
   </tr>
   <tr>
     <td>authtoken</td>
@@ -118,7 +121,7 @@ Telemetry events are generated based on the configuration of the telemetry libra
     <td>sid</td>
     <td>It is an string containing user session id.</td>
     <td>optional</td>
-    <td>defaults to uuid</td>
+    <td> </td>
   </tr>
   <tr>
     <td>batchsize</td>
@@ -219,10 +222,11 @@ To use the telemetry JS libraries, add the following to your HTML/application. T
           // Generate auth token
           // Key: Partner generated key
           // secret: partner secret value 
-          var token = AuthTokenGenerate.generate(key, secret);
+          let token = AuthTokenGenerate.generate(key, secret);
           config.authToken = token;
-          startEdata = {};
-          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata );
+          let startEdata = {};
+          let options = {};
+          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata, options );
       }
   init()
   &#x3C;/script&#x3E;
@@ -266,28 +270,36 @@ Every API method has an associated event. The following API methods log details 
 
 * [Exdata](developer-docs/telemetry/jslibrary/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
+ 
+ 
+
 ### Start
 
 This API is used to log telemetry when users view content or initiate game play 
 
 <pre>
-start: function(config, contentId, contentVer, data) { }
+start: function(config, contentId, contentVer, data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-{
-  "config": Object, //Config object
-  "contentId": String, //Required. Id of the content
-  "contentVer": String, //Required. Version of the content. Defaults to "1.0"
-  "data": { // Required. event data
-
+let config = Object; // Telemetry Configurations
+let contentId = String; //Required. Id of the content
+let contentVer = String; //Required. Version of the content. Defaults to "1.0"
+let data = { // Required. event data
     "type": String, //Required.  app, session, editor, player, workflow, assessment
     "mode": "", //Required. mode of preview: preview, edit or play 
     "stageid": "" //Required. stage id where the play has been initiated
-  }
-}
+};
+let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
+
 </pre>
 
 ### Impression
@@ -295,88 +307,109 @@ Request Arguments:
 This API is used to log telemetry when users visit a specific page.
 
 <pre>
-impression: function(data) { }
+impression: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
 
-{
-
+let data = { // Required
     "type": String, //Required. Impression type (list, detail, view, edit, workflow, search)
-
     "subtype": String, //Optional. Additional subtype. "Paginate", "Scroll"
-
     "pageid": String, //Required.  Unique page id
-
     "itype": "", // type of interaction - SWIPE, SCRUB (fast forward using page thumbnails) or AUTO
-
     "stageto": "" // game level, stage of page id to which the navigation was done
-
-}
+};
 </pre>
+
+<pre>
+let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
+</pre>  
+
 
 ### Interact
 
 This API is used to log telemetry of user interactions on the page. For example, search, click, preview, move, resize, configure
 
 <pre>
-interact: function(data) { }
+interact: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "type": "", // Required. Type of interaction TOUCH,DRAG,DROP,PINCH,ZOOM,SHAKE,ROTATE,SPEAK,LISTEN,WRITE,DRAW,START,ENDCHOOSE,ACTIVATE,SHOW,HIDE,SCROLL,HEARTBEAT,OTHER
-  "subtype": "", // Optional. Additional types for a global type. For ex: for an audio the type is LISTEN and thesubtype can be one of PLAY,PAUSE,STOP,RESUME,END
-  "id": "", // Required. Resource (button, screen, page, etc) id on which the interaction happened - use systemidentifiers when reporting device events
-  "pageid": "", // Optional. Stage or page id on which the event happened
-  "extra": { // Optional. Extra attributes for an interaction
-    "pos": [{"x":,"y":,"z":}], // Array of positional attributes. For ex: Drag and Drop has two positional attributes. One where the drag has started and the drop point
-    "values": [], // Array of values, e.g. for timestamp of audio interactions
-    "tid": "", // When interaction is between multiple resources, (e.g. drag and drop) - target resource id
-    "uri": "" // Unique external resource identifier if any (for recorded voice, image, etc.)
-  }
-}
+
+let data = { // Required
+    "type": "", // Required. Type of interaction TOUCH,DRAG,DROP,PINCH,ZOOM,SHAKE,ROTATE,SPEAK,LISTEN,WRITE,DRAW,START,ENDCHOOSE,ACTIVATE,SHOW,HIDE,SCROLL,HEARTBEAT,OTHER
+    "subtype": "", // Optional. Additional types for a global type. For ex: for an audio the type is LISTEN and thesubtype can be one of PLAY,PAUSE,STOP,RESUME,END
+    "id": "", // Required. Resource (button, screen, page, etc) id on which the interaction happened - use systemidentifiers when reporting device events
+    "pageid": "", // Optional. Stage or page id on which the event happened
+    "extra": { // Optional. Extra attributes for an interaction
+        "pos": [{ "x": , "y": , "z": }], // Array of positional attributes. For ex: Drag and Drop has two positional attributes. One where the drag has started and the drop point
+        "values": [], // Array of values, e.g. for timestamp of audio interactions
+        "tid": "", // When interaction is between multiple resources, (e.g. drag and drop) - target resource id
+        "uri": "" // Unique external resource identifier if any (for recorded voice, image, etc.)
+    }
+};
 </pre>
+<pre>
+let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+}; 
+</pre>  
 
 ### Assess
 
 This API is used to log telemetry of assessments that have occured when the user is viewing content
 
 <pre>
-assess: function(data) { }
+assess: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "item": QUESTION, // Required. Question Data
-  "pass": "", // Required. Yes, No. This is case-sensitive. default value: No.
-  "score": , // Required. Evaluated score (Integer or decimal) on answer(between 0 to 1), default is 1 if pass=YES or 0 if pass=NO. 
-  "resvalues": [{"id":"value"}], // Required. Array of key-value pairs that represent child answer (result of this assessment)
-  "duration":  // Required. time taken (decimal number) for this assessment in seconds
+let QUESTION = {
+    "id": "", // unique assessment question id. its an required property.
+    "maxscore", // user defined score to this assessment/question.
+    "exlength": , // expected time (decimal number) in seconds that ideally child should take
+    "params": [ // Array of parameter tuples
+        { "id": "value" } // for ex: if var1 is substituted with 5 apples the parameter is {"var1":"5"}
+    ],
+    "uri": "", // Unique external resource identifier if any (for recorded voice, image, etc.)
+    "desc": "short description",
+    "title": "title",
+    "mmc": [], // User defined missing micros concepts
+    "mc": [] // micro concepts list
 }
 
-QUESTION = {
-  "id": "", // unique assessment question id. its an required property.
-  "maxscore", // user defined score to this assessment/question.
-  "exlength": , // expected time (decimal number) in seconds that ideally child should take
-  "params": [ // Array of parameter tuples
-     {"id":"value"} // for ex: if var1 is substituted with 5 apples the parameter is {"var1":"5"}
-  ],
-  "uri": "", // Unique external resource identifier if any (for recorded voice, image, etc.)
-  "desc": "short description",
-  "title": "title",
-  "mmc": [], // User defined missing micros concepts
-  "mc": []   // micro concepts list
-}
+let data = { //Required
+    "item": QUESTION, // Required. Question Data
+    "pass": "", // Required. Yes, No. This is case-sensitive. default value: No.
+    "score": "", // Required. Evaluated score (Integer or decimal) on answer(between 0 to 1), default is 1 if pass=YES or 0 if pass=NO. 
+    "resvalues": [{ "id": "value" }], // Required. Array of key-value pairs that represent child answer (result of this assessment)
+    "duration": "" // Required. time taken (decimal number) for this assessment in seconds
+};
+</pre>
+<pre>
+ let options = { //Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Response
@@ -384,29 +417,37 @@ QUESTION = {
 This API is used to log telemetry of user response. For example; Responded to assessments.
 
 <pre>
-response: function(data) { }
+response: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data  - Object //Required
-{
-  "target": TARGET, // Required. Target of the response
-  "qid": "", // Required. Unique assessment/question id
-  "type": "", // Required. Type of response. CHOOSE, DRAG, SELECT, MATCH, INPUT, SPEAK, WRITE
-  "values": [{"key":"value"}] // Required. Array of response tuples. For ex: if lhs option1 is matched with rhs optionN - [{"lhs":"option1"}, {"rhs":"optionN"}]
-}
+let TARGET = {
+    "id": "", // Required. unique id for the target
+    "ver": "", // Required. version of the target
+    "type": "", // Required. Type of the target
+    "parent": {
+        "id": "", // Optional. parent id of the object
+        "type": "" // Optional. parent type of the object. Required if parentid is present.
+    }
+};
 
-TARGET = {
-  "id": "", // Required. unique id for the target
-  "ver": "", // Required. version of the target
-  "type": "", // Required. Type of the target
-  "parent": {
-    "id": "", // Optional. parent id of the object
-    "type": "" // Optional. parent type of the object. Required if parentid is present.
-  }
-}
+let data = { // Required
+    "target": TARGET, // Required. Target of the response
+    "qid": "", // Required. Unique assessment/question id
+    "type": "", // Required. Type of response. CHOOSE, DRAG, SELECT, MATCH, INPUT, SPEAK, WRITE
+    "values": [{ "key": "value" }] // Required. Array of response tuples. For ex: if lhs option1 is matched with rhs optionN - [{"lhs":"option1"}, {"rhs":"optionN"}]
+};
+</pre>
+<pre>
+let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Interrupt
@@ -414,19 +455,30 @@ TARGET = {
 This API is used to log telemetry for any interruptions that have occurred when a user is viewing content or playing games. For example; screen lock, incoming call, etc.
 
 <pre>
-interrupt: function(data) { }
+interrupt: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "type": "", // Required. Type of interuption
-  "pageid": "", // Optional. Current Stage/Page unique id on which interuption occured
-  "eventid": "" // Optional. unique event ID
-}
+let data = { //Required
+    "type": "", // Required. Type of interuption
+    "pageid": "", // Optional. Current Stage/Page unique id on which interuption occured
+    "eventid": "" // Optional. unique event ID
+};
 </pre>
+  
+<pre>
+ let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
+</pre>
+
+
 
 ### Feedback
 
@@ -434,18 +486,27 @@ This API is used to log telemetry of feedback provided by the user.
 
 <pre>
 // To log content start/play event
-feedback: function(data) { }
+feedback: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "contentId": "", // Required. Id of the content
-  "rating": 3, // Optional. Numeric score (+1 for like, -1 for dislike, or 4.5 stars given in a rating)
-  "comments": "User entered feedback" // Optional. Text feedback (if any)
-}
+let data = { // Required
+    "contentId": "", // Required. Id of the content
+    "rating": 3, // Optional. Numeric score (+1 for like, -1 for dislike, or 4.5 stars given in a rating)
+    "comments": "User entered feedback" // Optional. Text feedback (if any)
+};
+</pre>
+
+<pre>
+let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Share
@@ -454,35 +515,44 @@ This API is used to log telemetry when a user shares any content with other user
 
 <pre>
 // To log content start/play event
-share: function(data) { }
+share: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "dir": "", // In/Out
-  "type": "", // File/Link/Message
-  "items": [{ // Required. array of items shared
-    "obj": {
-      "id": "",
-      "type": "",
-      "ver": ""
-    },
-    "params": [
-      {"key": "value"}
-    ],
-    "origin": { // Origin of the share file/link/content
-      "id": "", // Origin id
-      "type": "" // Origin type
-    },
-    "to": {
-      "id": "",
-      "type": ""
-    }
-  }]
-}
+let data = { // Required
+    "dir": "", // In/Out
+    "type": "", // File/Link/Message
+    "items": [{ // Required. array of items shared
+        "obj": {
+            "id": "",
+            "type": "",
+            "ver": ""
+        },
+        "params": [
+            { "key": "value" }
+        ],
+        "origin": { // Origin of the share file/link/content
+            "id": "", // Origin id
+            "type": "" // Origin type
+        },
+        "to": {
+            "id": "",
+            "type": ""
+        }
+    }]
+};
+</pre>
+<pre>
+ let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
+
 </pre>
 
 ### Audit
@@ -490,20 +560,28 @@ data - Object //Required
 This API is used to log telemetry when an object is changed. This includes life-cycle changes as well.
 
 <pre>
-audit: function(data) { }
+audit: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "edata": {
-    "props": [""], // Updated properties
-    "state": "", // Optional. Current state
-    "prevstate": "" // Optional. Previous state
-  }
-}
+let data = { // Required
+    "edata": {
+        "props": [""], // Updated properties
+        "state": "", // Optional. Current state
+        "prevstate": "" // Optional. Previous state
+    }
+};
+</pre>
+<pre>
+  let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Error
@@ -511,18 +589,27 @@ data - Object //Required
 This API is used to log telemetry of any error that has occurred when a user is viewing content or playing games. 
 
 <pre>
-error: function(error) { }
+error: function(error, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-error - Object //Required
-{
-  "err": "", // Required. Error code
-  "errtype": "", // Required. Error type classification - "SYSTEM", "MOBILEAPP", "CONTENT"
-  "stacktrace": "", // Required. Detailed error data/stack trace
-}
+let error = { // Required
+    "err": "", // Required. Error code
+    "errtype": "", // Required. Error type classification - "SYSTEM", "MOBILEAPP", "CONTENT"
+    "stacktrace": "", // Required. Detailed error data/stack trace
+};
+</pre>
+
+<pre>
+ let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Heartbeat
@@ -530,18 +617,26 @@ error - Object //Required
 This API is used to log telemetry for heartbeat event to denote that the process is running.
 
 <pre>
-heartbeat: function(data) { }
+heartbeat: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  {
-  "edata": {
-  }
+let data = { // Required
+    "edata": {}
 }
+</pre>
+
+<pre>
+ let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
+
 </pre>
 
 ### Log
@@ -549,19 +644,28 @@ data - Object //Required
 This API is used to log telemetry of generic log events. For example; API calls, service calls, app updates, etc.
 
 <pre>
-log: function(data) { }
+log: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "type": "", // Required. Type of log (system, process, api_access, api_call, job, app_update etc)
-  "level": "", // Required. Level of the log. TRACE, DEBUG, INFO, WARN, ERROR, FATAL
-  "message": "", // Required. Log message
-  "params": [{"key":"value"}] // Optional. Additional params in the log message
-}
+let data = { // Required
+    "type": "", // Required. Type of log (system, process, api_access, api_call, job, app_update etc)
+    "level": "", // Required. Level of the log. TRACE, DEBUG, INFO, WARN, ERROR, FATAL
+    "message": "", // Required. Log message
+    "params": [{ "key": "value" }] // Optional. Additional params in the log message
+};
+</pre>
+
+<pre>
+let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Search
@@ -569,22 +673,30 @@ data - Object //Required
 This API is used to log telemetry when a user triggers a search for any content, item or asset 
 
 <pre>
-search: function(data) { }
+search: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object - Required
-{
-  "type": "", // Required. content, assessment, asset 
-  "query": "", // Required. Search query string 
-  "filters": {}, // Optional. Additional filters
-  "sort": {}, // Optional. Additional sort parameters
-  "correlationid": "", // Optional. Server generated correlation id (for mobile app's telemetry)
-  "size": 333, // Required. Number of search results
-  "topn": [{}] // Required. top N (configurable) results with their score
-}
+let data = { // Required
+    "type": "", // Required. content, assessment, asset 
+    "query": "", // Required. Search query string 
+    "filters": {}, // Optional. Additional filters
+    "sort": {}, // Optional. Additional sort parameters
+    "correlationid": "", // Optional. Server generated correlation id (for mobile app's telemetry)
+    "size": 333, // Required. Number of search results
+    "topn": [{}] // Required. top N (configurable) results with their score
+};
+</pre>
+<pre>
+let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+}; 
 </pre>
 
 ### Metrics
@@ -592,20 +704,29 @@ data - Object - Required
 This API is used to log telemetry for service business metrics (also accessible via health API).
 
 <pre>
-metrics: function(data) { }
+metrics: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object - Required
-{
-  "edata": {
-    "metric1": Int,
-    "metric2": Int
-    /// more metrics, each is a key value
-  }
-}
+let data = { // Required
+    "edata": {
+        "metric1": Int,
+        "metric2": Int
+            /// more metrics, each is a key value
+    }
+};
+</pre>
+
+<pre>
+ let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Summary
@@ -613,40 +734,49 @@ data - Object - Required
 This API is used to log telemetry summary event
 
 <pre>
-summary: function(data) { }
+summary: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object - Required
-{
-  "edata": {
-    "type": "", // Required. Type of summary. Free text. "session", "app", "tool" etc
-    "mode": "", // Optional.
-    "starttime": Long, // Required. Epoch Timestamp of app start. Retrieved from first event.
-    "endtime": Long, // Required. Epoch Timestamp of app end. Retrieved from last event.
-    "timespent": Double, // Required. Total time spent by visitor on app in seconds excluding idle time.
-    "pageviews": Long, // Required. Total page views per session(count of CP_IMPRESSION)
-    "interactions": Long, // Required. Count of interact events
-    "envsummary": [{ // Optional
-        "env": String, // High level env within the app (content, domain, resources, community)
-        "timespent": Double, // Time spent per env
-        "visits": Long // count of times the environment has been visited
-    }],
-    "eventssummary": [{ // Optional
-        "id": String, // event id such as CE_START, CE_END, CP_INTERACT etc.
-        "count": Long // Count of events.
-    }],
-    "pagesummary": [{ // Optional
-        "id": String, // Page id
-        "type": String, // type of page - view/edit
-        "env": String, // env of page
-        "timespent": Double, // Time taken per page
-        "visits": Long // Number of times each page was visited
-    }]
-  }
-}
+let data = { // Required
+    "edata": {
+        "type": "", // Required. Type of summary. Free text. "session", "app", "tool" etc
+        "mode": "", // Optional.
+        "starttime": Long, // Required. Epoch Timestamp of app start. Retrieved from first event.
+        "endtime": Long, // Required. Epoch Timestamp of app end. Retrieved from last event.
+        "timespent": Double, // Required. Total time spent by visitor on app in seconds excluding idle time.
+        "pageviews": Long, // Required. Total page views per session(count of CP_IMPRESSION)
+        "interactions": Long, // Required. Count of interact events
+        "envsummary": [{ // Optional
+            "env": String, // High level env within the app (content, domain, resources, community)
+            "timespent": Double, // Time spent per env
+            "visits": Long // count of times the environment has been visited
+        }],
+        "eventssummary": [{ // Optional
+            "id": String, // event id such as CE_START, CE_END, CP_INTERACT etc.
+            "count": Long // Count of events.
+        }],
+        "pagesummary": [{ // Optional
+            "id": String, // Page id
+            "type": String, // type of page - view/edit
+            "env": String, // env of page
+            "timespent": Double, // Time taken per page
+            "visits": Long // Number of times each page was visited
+        }]
+    }
+};
+</pre>
+
+<pre>
+  let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### Exdata
@@ -654,21 +784,27 @@ data - Object - Required
 This API is used to log telemetry for external data, while playing content
 
 <pre>
-exdata: function(data) { }
+exdata: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object - Required
+let data = {
+    "type":"" - Free flowing text.For ex: partnerdata,xapi etc
+   ....Serialized data(can be either encrypted / encoded / stringified)
 
-{
+};
+</pre>
 
-  type - Free flowing text. For ex: partnerdata, xapi etc
-
-  .... Serialized data (can be either encrypted/encoded/stringified)
-
-}
+<pre>
+  let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
 </pre>
 
 ### End
@@ -676,20 +812,92 @@ data - Object - Required
 This API is used to log telemetry while the user is closing or exiting the content or game
 
 <pre>
-end: function(data) { }
+end: function(data, options) { }
 </pre>
 
 Request Arguments:
 
 <pre>
-data - Object //Required
-{
-  "contentId": "", // Required. Id of the content
-  "type": , // Required. app, session, editor, player, workflow, assessment
-  "duration": , // Required. Total duration from start to end in seconds
-  "pageid": "", // Optional. Page/Stage id where the end has happened.
-  "summary": [{"key":"value"}] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
-}
+let data = { // Required
+    "contentId": "", // Required. Id of the content
+    "type": "", // Required. app, session, editor, player, workflow, assessment
+    "duration": "", // Required. Total duration from start to end in seconds
+    "pageid": "", // Optional. Page/Stage id where the end has happened.
+    "summary": [{ "key": "value" }] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+};
 </pre>
+
+<pre>
+  let options = { // Optional
+    context: {}, // To override the existing context
+    object: {}, // To override the existing object
+    actor: {}, // To override the existing actor
+    tags: {}, // To override the existing tags
+    runningEnv: "server" // It can be either client or server
+};
+</pre>
+
+
+### ResetContext
+  Which is used to reset the current context value with new context  object.
+
+<pre>
+ @param {context} Object    - If context is undefined then library will reset to previous event context value.
+ Ektelemetry.resetContext(context) 
+</pre>
+
+### ResetObject
+ Which is used reset the current object value with new obj
+
+<pre>
+ @param {obj} Object      - If the Object is undefined then library will reset to previous event object value.
+ Ektelemetry.resetObject(obj) 
+</pre>
+
+### ResetActor
+  Which is used reset the current actor value with new actor   
+
+<pre>
+ @param {actor} Object    - If the actor is undefined then library will reset to previous event actor value.
+ Ektelemetry.resetActor(actor) 
+</pre>
+
+### ResetTags
+  Which is used to reset the current tag's value with new tag's
+
+<pre>
+ @param {tags} Array      - If tags are undefined then library will reset to previous event tags value.
+ Ektelemetry.resetTags(tags) 
+</pre>
+
+
+
+## ChangeLog
+
+  **Jan 2018**
+
+* For the `start` event, Changed the both `contentId` and `contentVer` to an optional parameters from mandtory.
+ 
+* Decoupling of the both init and start methods.
+
+* Introduced new initialize method, Where user can initialize the telemetry without calling ``` start ``` event. [More details](#initialize)
+
+* Introduced new context parameter in all telemetry event methods, Where user can easily update the context value for each event.  
+
+* Introduced ``` resetContext ``` method, Which is used to reset the context to new context value/global context. [More details](developer-docs/telemetry/jslibrary/#resetcontext) 
+
+* Introduced ``` resetObject ``` method, Which is used to reset the current object value.
+[More details](developer-docs/telemetry/jslibrary/#resetobject) 
+
+* Introduced ``` resetTags ``` method, Which is used to reset the current tags value.
+[More details](developer-docs/telemetry/jslibrary/#resettags) 
+
+* Introduced ``` resetActor ``` method, Which is used to reset the current actor value.
+[More details](developer-docs/telemetry/jslibrary/#resetactor) 
+
+* Previously if the user invokes an end event then the user must and should invoke start event to initialize the telemetry. but in the updated on no need to invoke start event because telemetry is initialized globally.
+
+* Bug fixes
+
   
   
