@@ -531,10 +531,9 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
- ### Adding Details
- All details associated with the resource must be updated before sending the resource for review.
-
-  <table>
+### Adding Details
+<br>All details associated with the resource must be updated before sending the resource for review.
+ <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
