@@ -175,6 +175,6 @@ To ensure that the content achieves the learning objective it is important to ch
     <br>3. Click the eye icon to view the preview of the question set 
     <br>4. Click <b>Done</b> to save
    </td>
-   <td><img src="pages/features-documentation/images/questionset/selectquestions.png"></td>
+   <td><img src="features-documentation/images/questionset/questionsetconfigurations.png"></td>
  </tr>
  </table>   
