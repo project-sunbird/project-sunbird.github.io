@@ -7,7 +7,7 @@ description: For adopters and users to get started on Sunbird. It provides the l
 published: true
 allowSearch: true
 ---
-## Optional Configuration Variables 
+## Other Configuration Variables 
 
 |Sl.No|Variable Name|Description|Default Value|
 |-----|:-----------:|:---------:|:-----------:|
