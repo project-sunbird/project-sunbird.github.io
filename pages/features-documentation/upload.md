@@ -1,11 +1,10 @@
 ---
 type: landing
 directory: features-documentation
-title: Upload Contents
-page_title: Upload Contents
-description: Procedure on Uploading Content
-keywords: >-
-  Uploading content, upload image, upload pdf, upload HTML Archive, upload video, MIME type
+title: Upload Contents on Sunbird
+page_title: Upload Contents on Suncbird
+description: Procedure for Uploading Content
+keywords: Uploading content, upload image, upload pdf, upload HTML Archive, upload video, MIME type
 published: true
 ---
 ## Overview
