@@ -22,7 +22,7 @@ Content created or available offline can be uploaded on Sunbird. The following c
 - Document format (.pdf)
 - URLs for YouTube videos and other files
 
-The maximum file size supported for upload is 25MB
+The maximum file size supported for upload is 50 MB
 
 **Note:** For any Youtube video that is uploaded, Sunbird validates the Standard Youtube Credits and Licenses. Users have the permission of using, copying or distributing Youtube contents with the regulations, in accordance with its license policy.
 
@@ -103,20 +103,20 @@ Before the file is uploaded on the portal, details should be updated.
  </tr>
  <tr>
    <td>1. Enter <b>Title</b> <br>2. Enter a <b>Description</b> <br>3. Enter <b>Keywords</b> <br>4. Select other metadata like: 
-     <li><b>Curriculum</b></li>
-     <li><b>Class</b></li>
-     <li><b>Subject</b></li>
-     <li><b>Medium</b></li>
-     <li><b>Concepts</b></li>
-     <li><b>Resource Type</b></li>
-     <li><b>Audience</b></li>
+     &emsp; a) <b>Curriculum</b>
+     &emsp; b) <b>Class</b>
+     &emsp; c) <b>Subject</b>
+     &emsp; d) <b>Medium</b>
+     &emsp; e) <b>Concepts</b>
+     &emsp; f) <b>Resource Type</b>
+     &emsp; g) <b>Audience</b>
      5. Enter <b>Attributions</b>, if any <br><b>Note:</b> Keywords help search engines find content associated with it during search <br>6. Click <b>Image</b> icon to upload image. For details on adding image, refer  <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> <br>7. Click <b>Save</b>
         </td>
       <td><img src="pages/features-documentation/images/upload_metadata.png"></td>
   </tr>
   </table>
   
-### Sending Upload Content for Review
+### Sending Content for Review
 
 A content must be sent for review after it is uploaded. 
 <table>
