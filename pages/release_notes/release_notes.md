@@ -4,29 +4,27 @@ directory: release_notes
 title: Sunbird Release Notes
 page_title: Sunbird Release Notes
 description: Sunbird Release Notes
-keywords: Release, fixes, bugs
+keywords: Release, fixes, bugs, Release Notes, Enhancements, New, what's new, version
 published: true
 allowSearch: true
 ---
-Welcome to Sunbird Release Notes Page !
 
-This page lists the release notes for every production version of the Sunbird.
-These release notes provide complete information about the following: 
+Sunbird has release notes for every production version. The release notes provide information on: 
 
-- the current release version
-- bugs that were fixed
-- known bugs 
+- the release version
 - new features
-- other enhancements 
+- enhancements done / technical tasks undertaken as part of the release
+- deprecated features (if any)
+- new and enhanced APIs
+- known issues and their suggested solutions 
+- known gaps, and
+- an issue tracker with the list of issues that are closed or abandoned as part of the release 
 
-## About the latest Release
-
-This release is a full version of the Sunbird 1.6 release. It contains fixes made since the 1.5.0 release and is a better choice for production.
+This page has a list of release notes specific to each release from Sunbird version 1.3 onwards
 
 ## Download the Release Notes
 
-- Learn what’s new in Sunbird 1.6 release
-- The release notes are specific to each version of the application
+To download 
 - Select your version from the list below to see the release notes for it
 
 <div class="row">
