@@ -153,7 +153,7 @@ To ensure that the content achieves the learning objective it is important to ch
   <br>1. The Max Score box displays the maximum score allotted to the question
   <br>2. Select the number of questions that should be displayed in each screen from the Display drop-down menu
   <br>3.Use the Show Immediate Feedback slider to determine when the details for the answers should be displayed
-  <br>4. Use the Shuffle Questions slider to enable shuffling of  questions from the set 
+   <br>4. Use the <b>Shuffle Questions</b> slider to enable shuffling of questions from the set 
   <br>5. Click Add to add selected questions
   <br>6. Click Add More Questions to go back and select another question
    </td>
