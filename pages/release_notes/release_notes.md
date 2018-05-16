@@ -26,8 +26,8 @@ This release is a full version of the Sunbird 1.6 release. It contains fixes mad
 ## Download the Release Notes
 
 - Learn what’s new in Sunbird 1.6 release
-
-- The release notes are specific to each version of the application. Select your version from the list below to see the release notes for it
+- The release notes are specific to each version of the application
+- Select your version from the list below to see the release notes for it
 
 <div class="row">
     <div class="col-sm-4">
