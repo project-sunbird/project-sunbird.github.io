@@ -10,7 +10,7 @@ allowSearch: true
 ---
 ## Overview
 
-Sunbird houses a wide variety of content. Users can directly create content on Sunbird or upload content created offline. For more details on uploading content, created offine, refer <a href="features-documentation/upload" target="_blank">Uploading Content</a>
+Sunbird houses a wide variety of content. Users can directly create content on Sunbird or upload content created offline. For more details on uploading content, created offline, refer <a href="features-documentation/upload" target="_blank">Uploading Content</a>
 
 Resources  are the simplest/smallest unit of content that can be created by any user on Sunbird using the inbuilt content editor.The various categories of resources that can be created on Sunbird include:
 
