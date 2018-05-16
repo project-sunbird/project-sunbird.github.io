@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs
+directory: developer-docs/configuration/
 title: Optional Configuration
 page_title: Sunbird optional configuration
 description: For adopters and users to get started on Sunbird. It provides the list of optional configuration that need to be done.
