@@ -33,13 +33,14 @@ This release is a full version of the Sunbird 1.6 release. It contains fixes mad
     <div class="col-sm-4">
         <h3>Latest Release</h3>
         <ul>
-            <li><a href="" target="_blank">Release Note Ver 1.6 </a></li>
+            <li>Release Date : xx/yy/zzzz </li>
             <li><a href="" target="_blank">Release Note Ver 1.6 </a></li>
         </ul>
     </div>
     <div class="col-sm-4">
         <h3>Previous Release</h3>
         <ul>
+            <li>Release Date : xx/yy/zzzz </li>
             <li><a href="" target="_blank">Release Note Ver 1.5 </a></li>
         </ul>
         
