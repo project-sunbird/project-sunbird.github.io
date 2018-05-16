@@ -12,3 +12,5 @@ allowSearch: true
 
 Signing in on Sunbird is a seamless process. Any organization, recognized education or learning body or individual users can sign in on the portal. Successful sign in on the portal is notified to the user via an auto-generated email.
 
+{% image src='pages/features-documentation/images/testimages/imagepocabc.svg' full center alt='Login' zoom %}
+
