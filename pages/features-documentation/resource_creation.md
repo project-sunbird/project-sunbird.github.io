@@ -82,7 +82,7 @@ Once the resource is created, using the content editor, all details pertaining t
       <br>&emsp;e) <b>Concept</b> 
       <br>&emsp;f) <b>Resource Type</b>
       <br>&emsp;g) <b>Audience</b>  
-  <br>7. Enter <b>Attributions</b>, if any <br>7. Click <b>Save</b> to save all the details
+  <br>7. Enter <b>Attributions</b>, if any <br>8. Click <b>Save</b> to save all the details
     </td>
     <td><img src="pages/features-documentation/images/resource/resource_details.png"></td>
   </tr>
