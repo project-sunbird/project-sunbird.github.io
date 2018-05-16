@@ -22,7 +22,7 @@ Resources  are the simplest/smallest unit of content that can be created by any 
 - Teach
 - Test 
 
-Each of these categories corresponds to the learning process/methodology that is deployed to teach a particular piece of content. For example, a tutor creates an acitivity and the intent is to educate the learner about a concept through a game. The resource category in this case is, Play. Similarly, a tutor creates a story to enhance the reading skills of the learner, the story falls under the category of Read. 
+Each of these categories corresponds to the learning process/methodology that is deployed to teach a particular piece of content. For example, a tutor creates an activity and the intent is to educate the learner about a concept through a game. The resource category in this case is, Play. Similarly, a tutor creates a story to enhance the reading skills of the learner, the story falls under the category of Read. 
 
 This page details the procedure of creating resources on Sunbird.
 
