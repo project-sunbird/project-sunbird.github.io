@@ -31,7 +31,7 @@ The following are prerequisites to use or integrate the JS library:
 
 * Valid Authtoken and Key to make API calls
 
-* The [telemetry.min.js](https://github.com/project-sunbird/project-sunbird.github.io/raw/dev/pages/developer-docs/telemetry/other_files/telemetry.min.js){:target="_blank"} file
+* The [telemetry.min.js](https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/developer-docs/telemetry/other_files/telemetry.min.js){:target="_blank"} file
 
 **Note:** For details on generating and using the Authtoken and Key, refer to the section 
 
@@ -254,19 +254,19 @@ Every API method has an associated event. The following API methods log details 
 
 * [Share](developer-docs/telemetry/jslibrary/#share) - This method is used to capture everything associated with sharing. For example; Share content, telemetry data, link, file etc.
 
-* [Audit](developer-docs/telemetry//jslibrary/#audit)
+* [Audit](developer-docs/telemetry//jslibrary/#audit) - This method is used when an object is changed to know previous and current state. This includes lifecycle changes as well.
 
 * [Error](developer-docs/telemetry/jslibrary/#error) - This method is used to capture when users face an error
 
-* [Heartbeat](developer-docs/telemetry/jslibrary/#heartbeat) - 
+* [Heartbeat](developer-docs/telemetry/jslibrary/#heartbeat) - This method is used to know is process is running or not.
 
 * [Log](developer-docs/telemetry/jslibrary/#log) - This method is used to capture generic logging of events.  For example; capturing logs for API calls, service calls, app updates etc.
 
 * [Search](developer-docs/telemetry/jslibrary/#search) - This method is used to capture the search state i.e. when search is triggered for content, item, assets etc.
 
-* [Metrics](developer-docs/telemetry/jslibrary/#metrics)
+* [Metrics](developer-docs/telemetry/jslibrary/#metrics) - Service business metrics (also accessible via health API)
 
-* [Summary](developer-docs/telemetry/jslibrary/#summary)
+* [Summary](developer-docs/telemetry/jslibrary/#summary) - Summary event
 
 * [Exdata](developer-docs/telemetry/jslibrary/#exdata) - This method is used as a generic wrapper event to capture encrypted or serialized data
 
