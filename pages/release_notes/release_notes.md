@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: apis
+directory: release_notes
 title: Sunbird Release Notes
 page_title: Sunbird Release Notes
 description: Sunbird Release Notes
