@@ -11,7 +11,7 @@ host: staging.open-sunbird.org
 basePath: /announcement/v1
 securityDefinitions:
     schema:
-      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/authorization.yaml#/securityDefinitions'
+      - $ref: '//raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/authorization.yaml#/securityDefinitions'
 schemes:
   - https
 consumes:
