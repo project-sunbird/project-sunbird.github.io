@@ -11,7 +11,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="{{page.url}}";
 		} else {
-			baseURL.href="{{basejsdocs }}{{page.url}}";
+			baseURL.href="{{basejsdocs}}{{page.url | remove_first: "/"}}";
 		}
 	}
 	getBase();
