@@ -27,12 +27,12 @@ This page has a list of release notes specific to each release from Sunbird vers
 To download 
 - Select your version from the list below to see the release notes for it
 <table>
-  <col width="130">
+  <col width="200">
   <tr>
     <th>Release Version</th>
     <th>Release Date</th>
-    <th>View Release Note</th>
-    <th>Download Release Note</th>
+    <th>View</th>
+    <th>Download</th>
   </tr>
   <tr>
     <td>Release 1.3</td>
