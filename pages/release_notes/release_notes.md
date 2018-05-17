@@ -27,34 +27,38 @@ This page has a list of release notes specific to each release from Sunbird vers
 To view or download the release notes, look for the the version from the list and click on view icon in the corresponding row alternatively, download the release notes by clicking the download icon in the corresponding release rows.
 
 <table>
-  <col width="230">
-  <col width="140">
-  <col width="100">
-  <col width="100">
-  <tr>
-    <th>Release Version</th>
-    <th align="center">Release Date</th>
-    <th align="center">View</th>
-    <th align="center">Download</th>
-  </tr>
-  <tr>
-    <td align="left">Release 1.3</td>
-    <td align="center">29/01/2018</td>
-    <td align="center"><a href="release_notes/view_pdf/ver1-3/">
-  <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
-</a></td>
-    <td align="center"><a href="">
-  <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
-</a></td>
-  </tr>
-  <tr>
-    <td align="left">Release 1.4</td>
-    <td align="center">30/02/2018</td>
-    <td align="center"><a href="release_notes/view_pdf/ver1-3/">
-  <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
-</a></td>
-    <td align="center"><a href="">
-  <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
-</a></td>
-  </tr>
+    <col width="230">
+    <col width="140">
+    <col width="100">
+    <col width="100">
+    <tr>
+        <th align="left">Release Version</th>
+        <th align="center">Release Date</th>
+        <th align="center">View</th>
+        <th align="center">Download</th>
+    </tr>
+    <tr>
+        <td align="left">Release 1.3</td>
+         <td align="center">29/01/2018</td>
+        <td align="center"><a href="release_notes/view_pdf/ver1-3/">
+            <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
+            </a>
+        </td>
+      <td align="center"><a href="">
+            <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
+            </a>
+    </td>
+    </tr>
+    <tr>
+        <td align="left">Release 1.4</td>
+        <td align="center">30/02/2018</td>
+        <td align="center"><a href="release_notes/view_pdf/ver1-3/">
+            <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
+            </a>
+        </td>
+      <td align="center"><a href="">
+            <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
+            </a>
+      </td>
+    </tr>
 </table>
