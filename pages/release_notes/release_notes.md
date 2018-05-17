@@ -36,21 +36,21 @@ To download
   <tr>
     <td>Release 1.3</td>
     <td>29/01/2018</td>
-    <td><a href="default.asp">
+    <td><a href="">
   <img src="https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/pages/release_notes/icons_used/viewicon.png" alt="View" style="width:42px;height:42px;border:0;">
 </a></td>
-    <td><a href="default.asp">
-  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+    <td><a href="">
+  <img src="smiley.gif" alt="Download" style="width:42px;height:42px;border:0;">
 </a></td>
   </tr>
   <tr>
     <td>Release 1.4</td>
     <td>30/02/2018</td>
-    <td><a href="default.asp">
-  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+    <td><a href="">
+  <img src="smiley.gif" alt="View" style="width:42px;height:42px;border:0;">
 </a></td>
-    <td><a href="default.asp">
-  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+    <td><a href="">
+  <img src="smiley.gif" alt="Download" style="width:42px;height:42px;border:0;">
 </a></td>
   </tr>
 </table>
