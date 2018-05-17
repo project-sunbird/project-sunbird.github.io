@@ -26,32 +26,24 @@ This page has a list of release notes specific to each release from Sunbird vers
 
 To download 
 - Select your version from the list below to see the release notes for it
-
-   <div class="divTable">
-                <div class="divTableBody">
-                    <div class="divTableRow">
-                        <div class="divTableCell">iiii</div>
-                        <div class="divTableCell">jjjj</div>
-                        <div class="divTableCell">kkkk</div>
-                        <div class="divTableCell">kkkk</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell">hhhhh</div>
-                        <div class="divTableCell">hhhhh</div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell">kkk</div>
-                        <div class="divTableCell">kkk</div>
-                        <div class="divTableCell">lll</div>
-                        <div class="divTableCell">&nbsp;</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
-                    </div>
-                </div>
-            </div>
+<table>
+  <tr>
+    <th>Releases</th>
+    <th>Release Date</th>
+    <th>View Release Note</th>
+    <th>Download Release Note</th>
+  </tr>
+  <tr>
+    <td>Release 1.3</td>
+    <td>29/01/2018</td>
+    <td><a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+</a></td>
+    <td></td>
+    <td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+  </tr>
+</table>
