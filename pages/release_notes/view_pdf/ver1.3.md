@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: release_notes
+directory: release_notes/view_pdf
 title: Sunbird Release Notes
 page_title: Sunbird Release Notes
 description: Sunbird Release Notes
