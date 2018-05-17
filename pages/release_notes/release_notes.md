@@ -34,8 +34,8 @@ To view or download the release notes, look for the the version from the list an
   <tr>
     <th>Release Version</th>
     <th align="center">Release Date</th>
-    <th>View</th>
-    <th>Download</th>
+    <th align="center">View</th>
+    <th align="center">Download</th>
   </tr>
   <tr>
     <td align="left">Release 1.3</td>
