@@ -27,8 +27,8 @@ This page has a list of release notes specific to each release from Sunbird vers
 To download 
 - Select your version from the list below to see the release notes for it
 <table>
-  <col width="200">
-  <col width="160">
+  <col width="230">
+  <col width="140">
   <col width="100">
   <col width="100">
   <tr>
