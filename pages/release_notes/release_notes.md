@@ -38,8 +38,8 @@ To download
     <th>Download</th>
   </tr>
   <tr>
-    <td>Release 1.3</td>
-    <td>29/01/2018</td>
+    <td align="center">Release 1.3</td>
+    <td align="center">29/01/2018</td>
     <td><a href="release_notes/view_pdf/ver1-3/">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
 </a></td>
@@ -48,8 +48,8 @@ To download
 </a></td>
   </tr>
   <tr>
-    <td>Release 1.4</td>
-    <td>30/02/2018</td>
+    <td align="center">Release 1.4</td>
+    <td align="center">30/02/2018</td>
     <td><a href="release_notes/view_pdf/ver1-3/">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
 </a></td>
