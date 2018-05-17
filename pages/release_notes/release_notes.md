@@ -28,7 +28,7 @@ To download
 - Select your version from the list below to see the release notes for it
 <table>
   <tr>
-    <th>Releases</th>
+    <th>Release Version</th>
     <th>Release Date</th>
     <th>View Release Note</th>
     <th>Download Release Note</th>
@@ -39,11 +39,19 @@ To download
     <td><a href="default.asp">
   <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
 </a></td>
-    <td></td>
+    <td><a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+</a></td>
     <td>
   </tr>
   <tr>
-    <td>February</td>
-    <td>$80</td>
+    <td>Release 1.4</td>
+    <td>30/02/2018</td>
+    <td><a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+</a></td>
+    <td><a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+</a></td>
   </tr>
 </table>
