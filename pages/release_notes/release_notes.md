@@ -36,7 +36,7 @@ To download
   <tr>
     <td>Release 1.3</td>
     <td>29/01/2018</td>
-    <td><a href="pages/release_notes/view_pdf/ver1.3">
+    <td><a href="release_notes/view_pdf/ver1-3/">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:42px;height:42px;border:0;">
 </a></td>
     <td><a href="">
@@ -46,7 +46,7 @@ To download
   <tr>
     <td>Release 1.4</td>
     <td>30/02/2018</td>
-    <td><a href="pages/release_notes/view_pdf/ver1.3">
+    <td><a href="release_notes/view_pdf/ver1-3/">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:42px;height:42px;border:0;">
 </a></td>
     <td><a href="">
