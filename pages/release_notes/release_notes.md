@@ -40,7 +40,7 @@ To download
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:42px;height:42px;border:0;">
 </a></td>
     <td><a href="">
-  <img src="smiley.gif" alt="Download" style="width:42px;height:42px;border:0;">
+  <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
 </a></td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ To download
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:42px;height:42px;border:0;">
 </a></td>
     <td><a href="">
-  <img src="smiley.gif" alt="Download" style="width:42px;height:42px;border:0;">
+  <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
 </a></td>
   </tr>
 </table>
