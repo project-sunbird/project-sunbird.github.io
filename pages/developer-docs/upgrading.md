@@ -44,8 +44,12 @@ Upgrading to the latest version of Sunbird allows you to avail benefits of new a
 		nodetool snapshot -t my_backup
    
   * Copy the snapshot to your backup directory. 
-	
-		./cassandra_backup.py --datadir /var/lib/cassandra/data --snapshotname my_backup --targetdir <path-to-backup-directory>/$(date +%Y-%m-%d)
+    
+        ./cassandra_backup.py <cassandra_data_path> <snapshot_name> <path_to_backup_directory>
+
+      for example:
+
+        ./cassandra_backup.py  /var/lib/cassandra/data my_backup  cassandra_backup_20180412
 		
  * Above command creates the snapshot of all the keyspaces mentioned below. 
 		
@@ -61,7 +65,11 @@ Upgrading to the latest version of Sunbird allows you to avail benefits of new a
 
 * Restore Cassandra database using command
 	           
-	    ./cassandra_restore.py --cassandra_host ip_address --snapshotdir <path-to-the-restore>/$(date +%Y-%m-%d)
+      ./cassandra_restore.py <cassandra_host_ip_address> <snapshotdir>
+      
+  for example: 
+
+	  ./cassandra_restore.py 10.10.10.10 ./cassandra_bakup_20180412
 
 
 ### Postgres
@@ -116,6 +124,4 @@ Run
 	./restore_elasticsearch.sh <path/to/the/restore_file	
 	
 **Note:** Install Python on the Cassandra machine, if you use our scripts to backup or restore the Cassandra database.
-
-
 
