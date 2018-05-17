@@ -39,7 +39,7 @@ To download
     <td>Release 1.3</td>
     <td>29/01/2018</td>
     <td><a href="release_notes/view_pdf/ver1-3/">
-  <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:42px;height:42px;border:0;">
+  <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:30px;height:30px;border:0;">
 </a></td>
     <td><a href="">
   <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
