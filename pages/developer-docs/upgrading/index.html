@@ -18,7 +18,7 @@
     <p>Pull the latest code of <code>project-sunbird/sunbird-devops</code> from the master branch.</p>
   </li>
   <li>
-    <p>It is good practice to take a full backup of all the databases before updating the new schema. Follow steps <a href="http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers">here</a> to take backup.</p>
+    <p>It is good practice to take a full backup of all the databases before updating the new schema. Follow steps <a href="developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers">here</a> to take backup.</p>
   </li>
   <li>
     <p>Run <code>./sunbird-install.sh</code>. This will deploy the latest version of sunbird services and also update the latest schema on databases.</p>
@@ -54,7 +54,12 @@
   <li>
     <p>Copy the snapshot to your backup directory.</p>
 
-    <pre><code>./cassandra_backup.py --datadir /var/lib/cassandra/data --snapshotname my_backup --targetdir &lt;path-to-backup-directory&gt;/$(date +%Y-%m-%d)
+    <pre><code>./cassandra_backup.py &lt;cassandra_data_path&gt; &lt;snapshot_name&gt; &lt;path_to_backup_directory&gt;
+</code></pre>
+
+    <p>for example:</p>
+
+    <pre><code>./cassandra_backup.py  /var/lib/cassandra/data my_backup  cassandra_backup_20180412
 </code></pre>
   </li>
   <li>
@@ -77,7 +82,12 @@
   <li>
     <p>Restore Cassandra database using command</p>
 
-    <pre><code>  ./cassandra_restore.py --cassandra_host ip_address --snapshotdir &lt;path-to-the-restore&gt;/$(date +%Y-%m-%d)
+    <pre><code>./cassandra_restore.py &lt;cassandra_host_ip_address&gt; &lt;snapshotdir&gt;
+</code></pre>
+
+    <p>for example:</p>
+
+    <pre><code>./cassandra_restore.py 10.10.10.10 ./cassandra_bakup_20180412
 </code></pre>
   </li>
 </ul>

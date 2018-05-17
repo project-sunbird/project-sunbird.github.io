@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.44/";
+			baseURL.href="/releases/release.1.44.a/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Upload Contents</title>
-<meta name="description" content="Sunbird Site Procedure on Uploading Content"/>
+<title>Sunbird Upload Contents on Suncbird</title>
+<meta name="description" content="Sunbird Site Procedure for Uploading Content"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-05-14 18:01:54 +0530">
+<meta name="last-modified" content="2018-05-17 18:55:01 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.44" />
-<meta name="buildNo" content="3503" />
+<meta name="buildVersion" content="release.1.44.a" />
+<meta name="buildNo" content="3607" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?14052018"  />
-<link rel="stylesheet" href="css/style.css?14052018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?14052018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?14052018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?14052018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?14052018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?17052018"  />
+<link rel="stylesheet" href="css/style.css?17052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?17052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?17052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?17052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?17052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -404,6 +404,15 @@
                             <li>
                                 <a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
                             </li>
+                            <!--<li>
+                                <a href="pages/developer-docs/content-renderer/" target="_blank">Content Renderer</a>
+                            </li>
+                            <li>
+                                <a href="pages/developer-docs/content-editor-framework/" target="_blank">Content Editor Framework</a>
+                            </li>
+                            <li>
+                                <a href="pages/developer-docs/content-editor-plugins/" target="_blank">Content Editor Plugins</a>
+                            </li>-->
                         </ul>
                     </div>
                 </li>
@@ -500,7 +509,7 @@
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Upload Contents </h1>
+        <h1>Upload Contents on Sunbird </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -552,7 +561,7 @@
                   <a href="#adding-details"><span class="tocnumber">1.6 .</span> <span class="toctext">Adding Details</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-8">
-                  <a href="#sending-upload-content-for-review"><span class="tocnumber">1.7 .</span> <span class="toctext">Sending Upload Content for Review</span></a>
+                  <a href="#sending-content-for-review"><span class="tocnumber">1.7 .</span> <span class="toctext">Sending Content for Review</span></a>
                 </li>
               </ul>
             </li>
@@ -577,7 +586,7 @@
   <li>URLs for YouTube videos and other files</li>
 </ul>
 
-<p>The maximum file size supported for upload is 25MB</p>
+<p>The maximum file size supported for upload is 50 MB</p>
 
 <p><strong>Note:</strong> For any Youtube video that is uploaded, Sunbird validates the Standard Youtube Credits and Licenses. Users have the permission of using, copying or distributing Youtube contents with the regulations, in accordance with its license policy.</p>
 
@@ -642,7 +651,7 @@
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-    <td>On clicking the **Profile** icon in the content editor, settings as available in the mobile application are displayed<br /> 1. Click <strong>Refresh</strong> icon to replay content <br />2. Click <strong>Profile</strong> icon to change the profile of the user <br />3. Click <strong>Music</strong> icon to turn sound on/off
+   <td>On clicking the <b>Profile</b> icon in the content editor, settings as available in the mobile application are displayed<br /> 1. Click <strong>Refresh</strong> to replay content <br />2. Click <strong>Profile</strong> to change the profile of the user <br />3. Click <strong>Music</strong> to turn sound on/off
         </td>
       <td><img src="pages/features-documentation/images/upload_playerview.png" /></td>
   </tr>
@@ -658,22 +667,22 @@
  </tr>
  <tr>
    <td>1. Enter <b>Title</b> <br />2. Enter a <b>Description</b> <br />3. Enter <b>Keywords</b> <br />4. Select other metadata like: 
-     <li><b>Curriculum</b></li>
-     <li><b>Class</b></li>
-     <li><b>Subject</b></li>
-     <li><b>Medium</b></li>
-     <li><b>Concepts</b></li>
-     <li><b>Resource Type</b></li>
-     <li><b>Audience</b></li>
+       a) <b>Curriculum</b>
+       b) <b>Class</b>
+       c) <b>Subject</b>
+       d) <b>Medium</b>
+       e) <b>Concepts</b>
+       f) <b>Resource Type</b>
+       g) <b>Audience</b>
      5. Enter <b>Attributions</b>, if any <br /><b>Note:</b> Keywords help search engines find content associated with it during search <br />6. Click <b>Image</b> icon to upload image. For details on adding image, refer  <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a> <br />7. Click <b>Save</b>
         </td>
       <td><img src="pages/features-documentation/images/upload_metadata.png" /></td>
   </tr>
   </table>
 
-<h3 id="sending-upload-content-for-review">Sending Upload Content for Review</h3>
+<h3 id="sending-content-for-review">Sending Content for Review</h3>
 
-<p>A content must be sent for review after it is uploaded.</p>
+<p>Content must be sent for review after it is uploaded.</p>
 <table>
   <tr>
     <th style="width:35%;">Step</th>

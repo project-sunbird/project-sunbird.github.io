@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.44/";
+			baseURL.href="/releases/release.1.44.a/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-05-14 18:01:54 +0530">
+<meta name="last-modified" content="2018-05-17 18:55:01 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.44" />
-<meta name="buildNo" content="3503" />
+<meta name="buildVersion" content="release.1.44.a" />
+<meta name="buildNo" content="3607" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?14052018"  />
-<link rel="stylesheet" href="css/style.css?14052018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?14052018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?14052018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?14052018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?14052018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?17052018"  />
+<link rel="stylesheet" href="css/style.css?17052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?17052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?17052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?17052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?17052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -404,6 +404,15 @@
                             <li>
                                 <a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
                             </li>
+                            <!--<li>
+                                <a href="pages/developer-docs/content-renderer/" target="_blank">Content Renderer</a>
+                            </li>
+                            <li>
+                                <a href="pages/developer-docs/content-editor-framework/" target="_blank">Content Editor Framework</a>
+                            </li>
+                            <li>
+                                <a href="pages/developer-docs/content-editor-plugins/" target="_blank">Content Editor Plugins</a>
+                            </li>-->
                         </ul>
                     </div>
                 </li>
@@ -575,7 +584,7 @@
     <p>Pull the latest code of <code>project-sunbird/sunbird-devops</code> from the master branch.</p>
   </li>
   <li>
-    <p>It is good practice to take a full backup of all the databases before updating the new schema. Follow steps <a href="http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers">here</a> to take backup.</p>
+    <p>It is good practice to take a full backup of all the databases before updating the new schema. Follow steps <a href="developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers">here</a> to take backup.</p>
   </li>
   <li>
     <p>Run <code>./sunbird-install.sh</code>. This will deploy the latest version of sunbird services and also update the latest schema on databases.</p>
@@ -613,7 +622,12 @@
   <li>
     <p>Copy the snapshot to your backup directory.</p>
 
-    <pre><code>./cassandra_backup.py --datadir /var/lib/cassandra/data --snapshotname my_backup --targetdir &lt;path-to-backup-directory&gt;/$(date +%Y-%m-%d)
+    <pre><code>./cassandra_backup.py &lt;cassandra_data_path&gt; &lt;snapshot_name&gt; &lt;path_to_backup_directory&gt;
+</code></pre>
+
+    <p>for example:</p>
+
+    <pre><code>./cassandra_backup.py  /var/lib/cassandra/data my_backup  cassandra_backup_20180412
 </code></pre>
   </li>
   <li>
@@ -638,7 +652,12 @@
   <li>
     <p>Restore Cassandra database using command</p>
 
-    <pre><code>  ./cassandra_restore.py --cassandra_host ip_address --snapshotdir &lt;path-to-the-restore&gt;/$(date +%Y-%m-%d)
+    <pre><code>./cassandra_restore.py &lt;cassandra_host_ip_address&gt; &lt;snapshotdir&gt;
+</code></pre>
+
+    <p>for example:</p>
+
+    <pre><code>./cassandra_restore.py 10.10.10.10 ./cassandra_bakup_20180412
 </code></pre>
   </li>
 </ul>
