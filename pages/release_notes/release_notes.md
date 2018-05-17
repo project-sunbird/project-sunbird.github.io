@@ -28,6 +28,7 @@ To download
 - Select your version from the list below to see the release notes for it
 <table>
   <col width="200">
+  <col width="160">
   <tr>
     <th>Release Version</th>
     <th>Release Date</th>
