@@ -86,7 +86,7 @@ The maximum file size supported for upload is 50 MB
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-    <td>On clicking the **Profile** icon in the content editor, settings as available in the mobile application are displayed<br> 1. Click <strong>Refresh</strong> icon to replay content <br>2. Click <strong>Profile</strong> icon to change the profile of the user <br>3. Click <strong>Music</strong> icon to turn sound on/off
+   <td>On clicking the <b>Profile</b> icon in the content editor, settings as available in the mobile application are displayed<br> 1. Click <strong>Refresh</strong> to replay content <br>2. Click <strong>Profile</strong> to change the profile of the user <br>3. Click <strong>Music</strong> to turn sound on/off
         </td>
       <td><img src="pages/features-documentation/images/upload_playerview.png"></td>
   </tr>
@@ -117,7 +117,7 @@ Before the file is uploaded on the portal, details should be updated.
   
 ### Sending Content for Review
 
-A content must be sent for review after it is uploaded. 
+Content must be sent for review after it is uploaded. 
 <table>
   <tr>
     <th style="width:35%;">Step</th>
