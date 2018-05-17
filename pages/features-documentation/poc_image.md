@@ -28,24 +28,29 @@ allowSearch: true
 
 ## Concept: 3
 
-<body>
-<button class="accordion">Prerequisite</button>
-<div class="panel">
-  <p>
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1. You are logged in as the administrator<br>2. You are currently on <b>Home</b> page. You want to view, review and analyze content creation or consumption patterns<br>3. You have clicked  <b>Admin Dashboard</b> from the profile drop down 
-      </td>
-      <td><img src="pages/features-documentation/images/admindashboard/prerequisites.png"></td>
-  </tr>
-</table>
-</p>
-</div>
+<ul class="collapsible">
+  <li>
+    <button class="accordion">Prerequisite</button>
+    <div class="panel">
+    <p>
+     <table>
+       <tr>
+        <th style="width:35%;">Step</th>
+        <th style="width:65%;">Screen</th>
+       </tr>
+       <tr>
+         <td>1. You are logged in as the administrator<br>2. You are currently on <b>Home</b> page. You want to view, review and analyze content creation or consumption patterns<br>3. You have clicked  <b>Admin Dashboard</b> from the profile drop down 
+        </td>
+        <td><img src="pages/features-documentation/images/admindashboard/prerequisites.png"></td>
+      </tr>
+      </table>
+   </p>
+   </div>
+   </li>
+   </ul>
 
+<ul class="collapsible">
+  <li>
 <button class="accordion">Selecting Organization</button>
 <div class="panel">
   <p>
@@ -61,23 +66,10 @@ allowSearch: true
 </table>
   </p>
   </div>
-  </body>
+  </li>
+  </ul>
   
 ## Concept: 4
 
-<ul class="collapsible">
-    <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-  </ul>
  
 
