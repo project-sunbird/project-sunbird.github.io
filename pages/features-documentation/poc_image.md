@@ -23,5 +23,5 @@ allowSearch: true
 
 ## Concept:2
 
-[[img src=features-documentation/images/logintest.png alt=login]]
+[[img src=attached-features-documentation/images/logintest.png alt=login]]
 
