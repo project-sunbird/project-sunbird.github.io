@@ -27,18 +27,31 @@ This page has a list of release notes specific to each release from Sunbird vers
 To download 
 - Select your version from the list below to see the release notes for it
 
-<div class="row">
-    <div class="col-sm-4">
-        <h3>Latest Release</h3>
-        <ul>
-            <li>Release Date : xx/yy/zzzz </li>
-            <li><a href="" target="_blank">Release Note Ver 1.6 </a></li>
-        </ul>
-    </div>
-    <div class="col-sm-4">
-        <h3>Previous Release</h3>
-        <ul>
-            <li>Release Date : xx/yy/zzzz </li>
-            <li><a href="" target="_blank">Release Note Ver 1.5 </a></li>
-        </ul>
-        
+   <div class="divTable">
+                <div class="divTableBody">
+                    <div class="divTableRow">
+                        <div class="divTableCell">iiii</div>
+                        <div class="divTableCell">jjjj</div>
+                        <div class="divTableCell">kkkk</div>
+                        <div class="divTableCell">kkkk</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell">hhhhh</div>
+                        <div class="divTableCell">hhhhh</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
