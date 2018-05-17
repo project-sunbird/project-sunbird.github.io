@@ -38,12 +38,12 @@ This page details how to create resources using the inbuilt content editor.
   </tr>
   <tr>
     <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. You want to create content
-      resources <br>4. You have clicked the <strong>Study Material</strong> tile
+      resources.You have clicked the <strong>Resource</strong> tile
       </td>
-      <td><img src="pages/features-documentation/images/contenteditor/profile1.png"></td>
+      <td><img src="pages/features-documentation/images/contenteditor/resource_prerequisite.png"></td>
   </tr>
   <tr>
-    <td> After clicking on the <strong>Study Material</strong> slide, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type 
+    <td> After clicking on the <strong>Resource</strong> slide, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type 
       <br> <strong>Note:</strong> You may opt to fill these details later before sending the content for review
       <br>3. Click <b>Start Creating</b> to create content
     </td>
