@@ -28,10 +28,8 @@ allowSearch: true
 
 ## Concept: 3
 
-<ul class="collapsible">
-  <li>
-    <button class="accordion">Prerequisite</button>
-    <div class="panel">
+<button class="collapsible">Prerequisite</button>
+<div class="panel">
     <p>
      <table>
        <tr>
@@ -46,13 +44,10 @@ allowSearch: true
       </table>
    </p>
    </div>
-   </li>
-   </ul>
+   
 
-<ul class="collapsible">
-  <li>
-<button class="accordion">Selecting Organization</button>
-<div class="panel">
+<button class="collapsible">Selecting Organization</button>
+<div class="content">
   <p>
     <table>
   <tr>
@@ -66,9 +61,7 @@ allowSearch: true
 </table>
   </p>
   </div>
-  </li>
-  </ul>
-  
+    
 ## Concept: 4
 
  
