@@ -20,7 +20,7 @@ Upgrading to the latest version of Sunbird allows you to avail benefits of new a
 
 1. Pull the latest code of `project-sunbird/sunbird-devops` from the master branch.
  
-2. It is good practice to take a full backup of all the databases before updating the new schema. Follow steps [here](http://sunbird-docs-qa.s3-website.ap-south-1.amazonaws.com/pr/326/developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers) to take backup. 
+2. It is good practice to take a full backup of all the databases before updating the new schema. Follow steps [here](developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers) to take backup. 
 
 3. Run `./sunbird-install.sh`. This will deploy the latest version of sunbird services and also update the latest schema on databases.
 
