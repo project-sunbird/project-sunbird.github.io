@@ -2,7 +2,7 @@
 type: landing
 directory: developer-docs/installation/
 title: Server Installation
-page_title: Server Installationn
+page_title: Server Installation
 description: Setting up Sunbird on a server
 allowSearch: true
 ---
@@ -161,7 +161,7 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 ## Mapping Ports 
 The following is a list of ports that must be open:
 
-|From server |To server|port| protocal|
+|From server |To server|port| protocol|
 |:-----      |:-------|:--------|:------|
 |Administration server|All servers|22|TCP|
 |ELB|0.0.0.0|80,433|TCP|
