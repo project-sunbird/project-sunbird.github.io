@@ -38,7 +38,7 @@ To download
     <th>Download</th>
   </tr>
   <tr>
-    <td align="center">Release 1.3</td>
+    <td align="left">Release 1.3</td>
     <td align="center">29/01/2018</td>
     <td align="center"><a href="release_notes/view_pdf/ver1-3/">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
@@ -48,7 +48,7 @@ To download
 </a></td>
   </tr>
   <tr>
-    <td align="center">Release 1.4</td>
+    <td align="left">Release 1.4</td>
     <td align="center">30/02/2018</td>
     <td align="center"><a href="release_notes/view_pdf/ver1-3/">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
