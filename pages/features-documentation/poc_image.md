@@ -25,3 +25,41 @@ allowSearch: true
 
 [[img src=pages/features-documentation/images/logintest.png alt=login]]
 
+
+## Concept: 3
+
+<button class="accordion">Prerequisite</button>
+<div class="panel">
+  <p>
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in as the administrator<br>2. You are currently on <b>Home</b> page. You want to view, review and analyze content creation or consumption patterns<br>3. You have clicked  <b>Admin Dashboard</b> from the profile drop down 
+      </td>
+      <td><img src="pages/features-documentation/images/admindashboard/prerequisites.png"></td>
+  </tr>
+</table>
+</p>
+</div>
+
+<button class="accordion">Selecting Organization</button>
+<div class="panel">
+  <p>
+    <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1.Click <b>Select Organization</b> from the drop down, to select the organization for which you require the analytics</td>
+     <td><img src="pages/features-documentation/images/admindashboard/selectorg.png"></td>
+  </tr>
+</table>
+  </p>
+  </div>
+
+
+
