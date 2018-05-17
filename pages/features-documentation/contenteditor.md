@@ -10,11 +10,13 @@ allowSearch: true
 ---
 ## Overview
 
-Sunbird houses a wide variety of content. Users can can create content on Sunbird or upload content created offline. For more details on uploading conntent, created offine, refer <a href="features-documentation/upload" target="_blank">Uploading Content</a>
+Sunbird houses a wide variety of content. Users can can create content on Sunbird or upload content created offline. 
 
-Resources  are the simplest/smallest unit of content that can be created by any user on Sunbird using the inbuilt content editor.
+**Note:** For details on uploading content that is created offine, refer <a href="features-documentation/upload" target="_blank">Uploading Content</a>
 
-The various categories of resources that can be created on Sunbird include:
+A user with content creation rights can use Sunbird's inbuilt content editor to create **Resources** that are Sunbird's simplest or smallest unit of content.
+
+You can create the following categories of resources on Sunbird:
 
 - Experiment
 - Learn
@@ -24,9 +26,9 @@ The various categories of resources that can be created on Sunbird include:
 - Teach
 - Test 
 
-Each of these categories corresponds to the learning process/methodology that is deployed to teach a particular piece of content. For example, a tutor creates an acitivity and the intent is to educate the learner a concept through a game. The resource category in this case , Play. Similarly, a tutor creates a story to enhance the reading skills of the learner, the story falls under the category of Read. 
+Each of these categories corresponds to a stage or intent of the learning process or methodology that is used by tutors to impart knowledge of the subject. For example, a tutor intends to educate learners of a concept through a game. When the tutor creates the game, the category of the resource (the game) is, **Play**. Similarly, if a tutor creates a story to enhance the reading skills of learners, the category of the resource (the story) is, **Read**. 
 
-This section details the procedure on how to create resources using the inbuilt content editor.
+This page details how to create resources using the inbuilt content editor.
 
 ### Prerequisites
 <table>
