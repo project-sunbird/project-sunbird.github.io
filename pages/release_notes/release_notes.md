@@ -22,10 +22,10 @@ Sunbird has release notes for every production version. The release notes provid
 
 This page has a list of release notes specific to each release from Sunbird version 1.3 onwards
 
-## Download the Release Notes
+## View or Download Release Notes
 
-To download 
-- Select your version from the list below to see the release notes for it
+To view or download the release notes, look for the the version from the list and click on view icon in the corresponding row alternatively, download the release notes by clicking the download icon in the corresponding release rows.
+
 <table>
   <col width="230">
   <col width="140">
@@ -33,7 +33,7 @@ To download
   <col width="100">
   <tr>
     <th>Release Version</th>
-    <th>Release Date</th>
+    <th align="center">Release Date</th>
     <th>View</th>
     <th>Download</th>
   </tr>
@@ -53,7 +53,7 @@ To download
     <td align="center"><a href="release_notes/view_pdf/ver1-3/">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
 </a></td>
-    <td><a href="">
+    <td align="center"><a href="">
   <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
 </a></td>
   </tr>
