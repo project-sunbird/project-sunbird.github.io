@@ -36,7 +36,7 @@ To download
   <tr>
     <td>Release 1.3</td>
     <td>29/01/2018</td>
-    <td><a href="">
+    <td><a href="pages/release_notes/view_pdf/ver1.3.md">
   <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:42px;height:42px;border:0;">
 </a></td>
     <td><a href="">
