@@ -24,7 +24,7 @@ This page has a list of release notes specific to each release from Sunbird vers
 
 ## View or Download Release Notes
 
-To view or download the release notes, look for the the version from the list and click on view icon in the corresponding row alternatively, download the release notes by clicking the download icon in the corresponding release rows.
+To view or download the release notes, look for the the version from the list and click on view icon in the corresponding row to view the release note. Alternatively, download the release note by clicking the download icon in the corresponding row for each release version.
 
 <table>
     <col width="230">
