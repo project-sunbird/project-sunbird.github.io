@@ -44,7 +44,7 @@ To view or download the release notes, look for the the version from the list an
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
         </td>
-      <td align="center"><a href="">
+      <td align="center"><a href="release_notes/view_pdf/ver1-3/">
             <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
             </a>
     </td>
@@ -56,7 +56,7 @@ To view or download the release notes, look for the the version from the list an
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
         </td>
-      <td align="center"><a href="">
+      <td align="center"><a href="release_notes/view_pdf/ver1-3/">
             <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
             </a>
       </td>
