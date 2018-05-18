@@ -10,21 +10,17 @@ allowSearch: true
 ---
 ## Concept:1
 
-```
 1. The image contains steps/instruction along with the display. The image frame is taken in the ratio of 16:9 (an ideal size of the frame for rectangular images). <br>
 2. Image Scale: <br>
 - **Horizontal spread** 20% on the either side (left & right) of the image is left for writing/viewing instructions (Total measurment= 20%+20% - instructions and 60% image area)<br>
 - **Vertical spread** 15% on the either side (top & bottom) of the image is left for writing Title/Caption and Notes respectively<br>
 3. The image is saved in the .svg format and zoom feature is enabled
-```
 
 {% image src='pages/features-documentation/images/testimages/imagepocabc.svg' full center alt='Login' zoom %}
 
 ## Concept:2
 
-```
 - Different sections created with collapsible and expandible feature. The table-image template is nested inside the **Accordian** sections. The reference to the links and images are used in the similar manner as we use for markdown pages.
-```
 
 <details>
     <summary>
@@ -61,9 +57,9 @@ allowSearch: true
 
 ## Concept: 3
 
-```
+
 The concept of thumbnail is used here. The instruction scan be written in markdown and image thumbnail can be wrapped around the text. The thumbnail is is clickable and on click, opens in a new tab.
-```
+
 
 <body>
 	<ol>
