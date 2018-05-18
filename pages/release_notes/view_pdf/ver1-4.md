@@ -8,4 +8,4 @@ keywords: Release, fixes, bugs, Release Notes, Enhancements, New, what's new, ve
 published: true
 allowSearch: true
 ---
-<iframe frameborder="0" allowfullscreen="" src="pages/release_notes/source_releasenotefiles/release_note_v1-4-0_feb2018"></iframe>
+<iframe frameborder="0" allowfullscreen="" src="pages/release_notes/source_releasenotefiles/release_note_v1-4-0_feb2018.pdf"></iframe>
