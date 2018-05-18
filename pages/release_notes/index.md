@@ -40,11 +40,11 @@ To view or download the release notes, look for the the version from the list an
     <tr>
         <td align="left">Release 1.6</td>
          <td>03/05/2018</td>
-        <td align="center"><a href="release_notes/view_pdf/ver1-6/">
+        <td align="center"><a href="release_notes/view_pdf/ver1-6/" target="_blank">
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
         </td>
-      <td align="center"><a href="release_notes/view_pdf/ver1-6/">
+      <td align="center"><a href="https://github.com/project-sunbird/project-sunbird.github.io/raw/dev/pages/release_notes/source_releasenotefiles/release_note_v1-6-0_may2018.pdf" target="_blank">
             <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
             </a>
     </td>
@@ -52,11 +52,11 @@ To view or download the release notes, look for the the version from the list an
     <tr>
         <td align="left">Release 1.5</td>
         <td>29/03/2018</td>
-        <td align="center"><a href="release_notes/view_pdf/ver1-5/">
+        <td align="center"><a href="release_notes/view_pdf/ver1-5/" target="_blank">
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
         </td>
-      <td align="center"><a href="release_notes/view_pdf/ver1-5/">
+      <td align="center"><a href="https://github.com/project-sunbird/project-sunbird.github.io/raw/dev/pages/release_notes/source_releasenotefiles/release_note_v1-5-0_mar2018.pdf" target="_blank">
             <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
             </a>
       </td>
@@ -64,11 +64,11 @@ To view or download the release notes, look for the the version from the list an
 <tr>
         <td align="left">Release 1.4</td>
         <td>06/02/2018</td>
-        <td align="center"><a href="release_notes/view_pdf/ver1-4/">
+        <td align="center"><a href="release_notes/view_pdf/ver1-4/" target="_blank">
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
         </td>
-      <td align="center"><a href="https://github.com/project-sunbird/project-sunbird.github.io/raw/dev/pages/release_notes/source_releasenotefiles/release_note_v1-4-0_feb2018.pdf">
+      <td align="center"><a href="https://github.com/project-sunbird/project-sunbird.github.io/raw/dev/pages/release_notes/source_releasenotefiles/release_note_v1-4-0_feb2018.pdf" target="_blank">
             <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
             </a>
       </td>
