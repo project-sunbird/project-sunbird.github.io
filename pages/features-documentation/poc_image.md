@@ -58,7 +58,9 @@ allowSearch: true
 <body>
 	<ol>
 		<li>
-			Click <b>Select Organization</b> from the drop down, to select the organization for which you require the analytics. <a href="pages/features-documentation/images/admindashboard/selectorg.png"  target="_blank"><img src="thumbnail.png"/></a>
+			Enter your Username or Email ID or Phone number <br>2. Enter your Password <br>3. Click Login. 
+			
+<a href="pages/features-documentation/images/testimages/poc_image1.png"  target="_blank"><img src="thumbnail.png"/></a>
 		</li>
 	</ol>
 </body>
