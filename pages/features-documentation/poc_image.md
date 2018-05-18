@@ -28,10 +28,11 @@ allowSearch: true
 
 ## Concept: 3
 
-<button class="collapsible">Prerequisite</button>
-<div class="panel">
-    <p>
-     <table>
+<details>
+    <summary>
+        Prerequisites
+    </summary>
+    <table>
        <tr>
         <th style="width:35%;">Step</th>
         <th style="width:65%;">Screen</th>
@@ -42,25 +43,7 @@ allowSearch: true
         <td><img src="pages/features-documentation/images/admindashboard/prerequisites.png"></td>
       </tr>
       </table>
-   </p>
-   </div>
-   
-
-<button class="collapsible">Selecting Organization</button>
-<div class="content">
-  <p>
-    <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1.Click <b>Select Organization</b> from the drop down, to select the organization for which you require the analytics</td>
-     <td><img src="pages/features-documentation/images/admindashboard/selectorg.png"></td>
-  </tr>
-</table>
-  </p>
-  </div>
+    </details>
     
 ## Concept: 4
 
