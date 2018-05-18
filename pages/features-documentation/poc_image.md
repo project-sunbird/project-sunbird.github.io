@@ -64,9 +64,5 @@ allowSearch: true
     
 ## Concept: 4
 
-<html>
-	<body >
-		<a href="real-image.png"  target="_blank"><img src="thumbnail.png"/></a>
-	</body>
-</html> 
+
 
