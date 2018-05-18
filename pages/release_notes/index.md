@@ -44,7 +44,7 @@ To view or download the release notes, look for the the version from the list an
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
         </td>
-      <td align="center"><a href="pages/release_notes/source_releasenotefiles/release_note_v1-6-0_may2018.pdf" target="_blank">
+      <td align="center"><a href="https://github.com/project-sunbird/project-sunbird.github.io/raw/dev/pages/release_notes/source_releasenotefiles/release_note_v1-6-0_may2018.pdf" target="_blank">
             <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
             </a>
     </td>
