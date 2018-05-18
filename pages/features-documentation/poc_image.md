@@ -56,7 +56,11 @@ allowSearch: true
 ## Concept: 3
 
 <body>
-	<a href="pages/features-documentation/images/admindashboard/selectorg.png"  target="_blank"><img src="thumbnail.png"/></a>
+	<ol>
+		<li>
+			Click <b>Select Organization</b> from the drop down, to select the organization for which you require the analytics. <a href="pages/features-documentation/images/admindashboard/selectorg.png"  target="_blank"><img src="thumbnail.png"/></a>
+		</li>
+	</ol>
 </body>
 
 
