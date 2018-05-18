@@ -61,9 +61,9 @@ To view or download the release notes, look for the the version from the list an
             </a>
       </td>
     </tr>
-<!--<tr>
+<tr>
         <td align="left">Release 1.4</td>
-        <td align="center">29/03/2018</td>
+        <td align="center">06/02/2018</td>
         <td align="center"><a href="release_notes/view_pdf/ver1-4/">
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
@@ -72,5 +72,5 @@ To view or download the release notes, look for the the version from the list an
             <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
             </a>
       </td>
-    </tr>-->
+    </tr>
 </table>
