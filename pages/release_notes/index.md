@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: release_notes
-title: Sunbird Release Notes
-page_title: Sunbird Release Notes
-description: Sunbird Release Notes
+title: Release Notes
+page_title: Release Notes
+description: Release Notes
 keywords: Release, fixes, bugs, Release Notes, Enhancements, New, what's new, version
 published: true
 allowSearch: true
