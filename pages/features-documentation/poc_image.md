@@ -56,7 +56,7 @@ allowSearch: true
 ## Concept: 3
 
 <body>
-	<a href="real-image.png"  target="_blank"><img src="thumbnail.png"/></a>
+	<a href="pages/features-documentation/images/admindashboard/selectorg.png"  target="_blank"><img src="thumbnail.png"/></a>
 </body>
 
 
