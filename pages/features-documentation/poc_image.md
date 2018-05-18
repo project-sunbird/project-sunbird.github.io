@@ -20,11 +20,6 @@ allowSearch: true
 
 ## Concept:2
 
-[[img src=pages/features-documentation/images/logintest.png alt=login]]
-
-
-## Concept: 3
-
 <details>
     <summary>
         Prerequisites
@@ -57,8 +52,18 @@ allowSearch: true
   </tr>
 </table>
     </details>
+
+## Concept: 3
+
+<body>
+	<a href="real-image.png"  target="_blank"><img src="thumbnail.png"/></a>
+</body>
+
+
+
+
+
+
+
     
-## Concept: 4
-
-
 
