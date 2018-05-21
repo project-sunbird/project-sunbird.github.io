@@ -11,4 +11,4 @@ allowSearch: true
 
 |Sl.No|Variable Name|Description|Default Value|
 |-----|:-----------:|:---------:|:-----------:|
-|1|SUNBIRD_EXTERNAL_CONTENT_WHITELISTED_DOMAIN|This is a comma separated domain names that are whitelisted|Youtube.com
+|1|SUNBIRD_EXTERNAL_CONTENT_WHITELISTED_DOMAIN|Whitelisted domain names that are comma separated|Youtube.com
