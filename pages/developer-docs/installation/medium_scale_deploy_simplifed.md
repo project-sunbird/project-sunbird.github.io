@@ -1,4 +1,4 @@
-Issue : update---
+---
 type: landing
 directory: developer-docs/installation
 title: Simplified Medium Scale Deployment - Sunbird Version 1.4  
