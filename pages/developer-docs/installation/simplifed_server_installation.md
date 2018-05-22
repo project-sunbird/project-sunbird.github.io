@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: developer-docs/installation
-title: Simplified Medium Scale Deployment   
-page_title: Simplified Medium Scale Deployment 
-description: Instructions for simplified medium scale deployment for Sunbird version 1.4 
+title: Simplified Server Installation 
+page_title: Simplified Server Installation 
+description: Instructions for Simplified Server Installation for Sunbird version 1.4 
 keywords: Installation, deployment, version 1.4
 published: true
 allowSearch: true
