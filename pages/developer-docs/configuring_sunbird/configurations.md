@@ -7,8 +7,4 @@ description: For adopters and users to get started on Sunbird. It provides the l
 published: true
 allowSearch: true
 ---
-## Other Configuration Variables 
-
-|Sl.No|Variable Name|Description|Default Value|
-|-----|:-----------:|:---------:|:-----------:|
-|1|SUNBIRD_EXTERNAL_CONTENT_WHITELISTED_DOMAIN|Whitelisted domain names that are comma separated|Youtube.com
+Overview 
