@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation
-title: Course Consumption
-page_title: Course Consumption
+title: Taking a Course 
+page_title: Taking a Course 
 description: Procedure on how to consume a course on Sunbird
 keywords: >-
   content editor, create course, create content, create lesson, textbook,
