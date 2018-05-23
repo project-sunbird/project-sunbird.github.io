@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.44.b/";
+			baseURL.href="/releases/release.1.44.c/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Developer Installation</title>
-<meta name="description" content="Sunbird Site Installing  the Sunbird portal or web application,"/>
+<title>Sunbird Configuring Sunbird</title>
+<meta name="description" content="Sunbird Site For adopters and users to get started on Sunbird. It provides the list of configuration that need to be done to customize the sunbird"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-05-17 19:12:25 +0530">
+<meta name="last-modified" content="2018-05-23 11:04:27 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.44.b" />
-<meta name="buildNo" content="3612" />
+<meta name="buildVersion" content="release.1.44.c" />
+<meta name="buildNo" content="3676" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?17052018"  />
-<link rel="stylesheet" href="css/style.css?17052018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?17052018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?17052018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23052018"  />
+<link rel="stylesheet" href="css/style.css?23052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?23052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?23052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -93,7 +93,7 @@
 	</form>
 </div>
  
-    <div class="sidebar-wrapper developer-docs-installation">
+    <div class="sidebar-wrapper developer-docs-configuring-sunbird">
         <div class="">
             <a href="architecture/">
                 <h4 class="sidebar-group-title">Architecture</h4>
@@ -187,7 +187,7 @@
                                 <a href="features-documentation/course_batches/">Batch Creation</a>
                             </li>
                             <li>
-                                <a href="features-documentation/course_consumption/">Course Consumption</a>
+                                <a href="features-documentation/course_consumption/">Taking a Course</a>
                             </li>
                         </ul>
                     </div>
@@ -320,10 +320,10 @@
                         <a href="developer-docs/installation/">Installation</a>
                         <ul class="sidebar-group">
                             <li>
-                                <a href="developer-docs/installation/installing_sunbirdon_machine/">Developer Installation</a>
+                                <a href="developer-docs/installation/developer_installation/">Developer Installation</a>
                             </li>
                             <li>
-                                <a href="developer-docs/installation/medium_scale_deploy/">Server Installation</a>
+                                <a href="developer-docs/installation/server_installation/">Server Installation</a>
                             </li>
                             <li>
                                 <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
@@ -448,7 +448,10 @@
                     <a href="contributions/contribution_guidelines/">Contributing to Sunbird Documentation</a>
                 </li>
             </ul>
-            <a href="faqs/">
+             <a href="release_notes/">
+                <h4 class="sidebar-group-title">Release Notes</h4>
+            </a> 
+	   <a href="faqs/">
                 <h4 class="sidebar-group-title">Frequently asked questions</h4>
             </a>
             <ul class="sidebar-group faqs">
@@ -502,14 +505,14 @@
     </div>
 </div>
 <script>
-    $("a[href$='developer-docs/installation/installing_sunbirdon_machine/']").addClass("sidebar-link-selected");
+    $("a[href$='developer-docs/configuring_sunbird/configurations/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Developer Installation </h1>
+        <h1>Configuring Sunbird </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -519,7 +522,7 @@
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/installing_sunbirdon_machine.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/configurations.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -540,187 +543,25 @@
           </div>
           <ul>
             <li class="toc_level-1 toc_section-1">
-              <a href="#pre-requisites"><span class="tocnumber">1 .</span> <span class="toctext">Pre-requisites</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#system-requirements"><span class="tocnumber">1.1 .</span> <span class="toctext">System Requirements</span></a>
-                </li>
-              </ul>
-            </li>
-            <li class="toc_level-1 toc_section-3">
-              <a href="#sunbird-portal-setup"><span class="tocnumber">2 .</span> <span class="toctext">Sunbird Portal Setup</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#prerequisites"><span class="tocnumber">2.1 .</span> <span class="toctext">Prerequisites</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#setup"><span class="tocnumber">2.2 .</span> <span class="toctext">Setup</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#configure-backend-service-stack"><span class="tocnumber">2.3 .</span> <span class="toctext">Configure Backend Service Stack</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-7">
-                  <a href="#edit-the-application-configuration-file"><span class="tocnumber">2.4 .</span> <span class="toctext">Edit the Application Configuration file</span></a>
-                </li>
-              </ul>
-            </li>
-            <li class="toc_level-1 toc_section-8">
-              <a href="#run-the-application"><span class="tocnumber">3 .</span> <span class="toctext">Run the Application</span></a>
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
             </li>
           </ul>
         </td>
       </tr>
     </tbody>
   </table>
-</div><h2 id="pre-requisites">Pre-requisites</h2>
-
-<p>Before you install Sunbird on your laptop, examine your environment and gather data to ensure an optimal installation experience.
-Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.</p>
-
-<h3 id="system-requirements">System Requirements</h3>
-
-<p>To install Sunbird, your laptop/PC should have at least the following minimum system requirements:</p>
-
-<ul>
-  <li>Operating System: Windows 7 and above/4.2 Mac OS X 10.0 and above/Linux</li>
-  <li>RAM: &gt;1.5GB</li>
-  <li>CPU: 2 cores, &gt;2 GHz</li>
-</ul>
-
-<p>Installing Sunbird requires two primary software components:</p>
-
-<ul>
-  <li>Sunbird portal or web application</li>
-  <li>Sunbird services stack or the backend API interface.</li>
-</ul>
-
-<h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
-
-<p>To setup the Sunbird portal successfully, follow these steps sequentially:</p>
-
-<ol>
-  <li>Check for the pre-requisites</li>
-  <li>Setup</li>
-  <li>Configure Backend Service Stack</li>
-  <li>Edit the Application Configuration file</li>
-  <li>Run the Application</li>
-</ol>
-
-<h3 id="prerequisites">Prerequisites</h3>
-<p>Check the following pre-requisites before installing and running the Sunbird-player application:</p>
-
-<ol>
-  <li><strong>Software dependencies</strong>
-    <ul>
-      <li><a href="https://nodejs.org/en/download/" target="_blank">Node</a> - install the latest release of 6.x.x LTS series</li>
-      <li><a href="https://bower.io/#install-bower" target="_blank">Bower</a> - latest version of bower: <code>npm install -g bower</code></li>
-      <li><a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank">Gulp</a>- 
-latest version of gulp: <code>npm install -g gulp-cli</code></li>
-    </ul>
-  </li>
-  <li><strong>API Keys</strong></li>
-</ol>
-
-<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.</p>
-
-<ul>
-  <li>For getting an API key you should send an email to: info@sunbird.org.</li>
-</ul>
-
-<h3 id="setup">Setup</h3>
-
-<p>For setting up the application, check out the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a>.</p>
-
-<p>The code can be cloned to your repository using the command:</p>
-
-<pre>
-  <code>git clone https://github.com/project-sunbird/sunbird-portal.git
-</code>
-</pre>
-
-<p><strong><em>Note</em></strong>: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release <a href="https://github.com/project-sunbird/sunbird-portal/" target="_blank">refer</a></p>
-
-<p>Once the <strong>git clone</strong> command executes, proceed with running the following set of commands in the console:</p>
-
-<pre>
-   $ cd {PROJECT-FOLDER}/src
-   $ npm install
-   $ bower cache clean
-   $ bower install --force
-</pre>
-
-<h3 id="configure-backend-service-stack">Configure Backend Service Stack</h3>
-
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service API(s) run in a distributed environment.For instance, deploying the Sunbird to production; but for the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.</p>
-
-<p>For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
-
-<p><strong><em>Note</em></strong>: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.</p>
-
-<h3 id="edit-the-application-configuration-file">Edit the Application Configuration file</h3>
-
-<p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in any available text editor.</p>
-
-<p>Once you open the file, ensure you enter the following values:</p>
-
-<pre>
-  <code>module.exports = {
-    // 1. LEARNER_URL   
-    LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
-    // 2. CONTENT_URL
-    CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
-    // 3. CONTENT_PROXY  
-    CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
-    PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
-    // 4. PORTAL_AUTH_SERVER_URL
-    PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
-    PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
-    ...
-    PORTAL_PORT: env.sunbird_port || 3000,
-     	
-    // 5. PORTAL_API_AUTH_TOKEN     
-    PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
-    ...
-    
-    // 6. PORTAL_ECHO_API_URL
-    PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
-    ...
-
-// 7. ANDROID_APP_URL
-    ANDROID_APP_URL: env.sunbird_android_app_url || 'http://www.sunbird.org'   
-
-//8. CONTENT CHANNEL FILTER  TYPE
-CONTENT_CHANNEL_FILTER_TYPE: env.sunbird_content_channel_filter_type || 'all',
-This value will be 'self' to get content belongs current user channel and 'all' to get all channel contents including current 	
-channel content
-    ...
-		}
-</code>
-</pre>
-
-<h2 id="run-the-application">Run the Application</h2>
-
-<p>Run the following commands:</p>
-
-<pre>
-  <code>$ cd {PROJECT-FOLDER}/src/app
-$ node server.js
-</code>
-</pre>
-
-<p>After the commands get executed, open <code>http://localhost:3000</code> in the browser.</p>
-
+</div><h2 id="overview">Overview</h2>
 
           
           <hr />
           
           <p class="edit-para text-right">
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/installing_sunbirdon_machine.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/configurations.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="developer-docs/installation/installing_sunbirdon_machine/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="developer-docs/configuring_sunbird/configurations/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -775,7 +616,7 @@ $ node server.js
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'developer-docs/installation/installing_sunbirdon_machine/' + url;
+		this.href = 'developer-docs/configuring_sunbird/configurations/' + url;
     })
 	$(".zoomcover").click(function(){
 		if (!$(this).hasClass("fullscreen")){

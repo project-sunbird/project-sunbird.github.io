@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.44.b/";
+			baseURL.href="/releases/release.1.44.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-05-17 19:12:25 +0530">
+<meta name="last-modified" content="2018-05-23 11:04:27 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.44.b" />
-<meta name="buildNo" content="3612" />
+<meta name="buildVersion" content="release.1.44.c" />
+<meta name="buildNo" content="3676" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?17052018"  />
-<link rel="stylesheet" href="css/style.css?17052018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?17052018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?17052018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23052018"  />
+<link rel="stylesheet" href="css/style.css?23052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?23052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?23052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -93,7 +93,7 @@
 	</form>
 </div>
  
-    <div class="sidebar-wrapper release-notes">
+    <div class="sidebar-wrapper release-notes-view-pdf">
         <div class="">
             <a href="architecture/">
                 <h4 class="sidebar-group-title">Architecture</h4>
@@ -187,7 +187,7 @@
                                 <a href="features-documentation/course_batches/">Batch Creation</a>
                             </li>
                             <li>
-                                <a href="features-documentation/course_consumption/">Course Consumption</a>
+                                <a href="features-documentation/course_consumption/">Taking a Course</a>
                             </li>
                         </ul>
                     </div>
@@ -320,10 +320,10 @@
                         <a href="developer-docs/installation/">Installation</a>
                         <ul class="sidebar-group">
                             <li>
-                                <a href="developer-docs/installation/installing_sunbirdon_machine/">Developer Installation</a>
+                                <a href="developer-docs/installation/developer_installation/">Developer Installation</a>
                             </li>
                             <li>
-                                <a href="developer-docs/installation/medium_scale_deploy/">Server Installation</a>
+                                <a href="developer-docs/installation/server_installation/">Server Installation</a>
                             </li>
                             <li>
                                 <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
@@ -448,7 +448,10 @@
                     <a href="contributions/contribution_guidelines/">Contributing to Sunbird Documentation</a>
                 </li>
             </ul>
-            <a href="faqs/">
+             <a href="release_notes/">
+                <h4 class="sidebar-group-title">Release Notes</h4>
+            </a> 
+	   <a href="faqs/">
                 <h4 class="sidebar-group-title">Frequently asked questions</h4>
             </a>
             <ul class="sidebar-group faqs">
@@ -502,7 +505,7 @@
     </div>
 </div>
 <script>
-    $("a[href$='release_notes/release_notes/']").addClass("sidebar-link-selected");
+    $("a[href$='release_notes/view_pdf/ver1-6/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
@@ -519,7 +522,7 @@
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/release_notes/release_notes.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/release_notes/view_pdf/ver1-6.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -529,90 +532,18 @@
 			  </a>
 			  </span>
 			</p>
-          <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#view-or-download-release-notes"><span class="tocnumber">1 .</span> <span class="toctext">View or Download Release Notes</span></a>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><p>Sunbird has release notes for every production version. The release notes provide information on:</p>
-
-<ul>
-  <li>the release version</li>
-  <li>new features</li>
-  <li>enhancements done / technical tasks undertaken as part of the release</li>
-  <li>deprecated features (if any)</li>
-  <li>new and enhanced APIs</li>
-  <li>known issues and their suggested solutions</li>
-  <li>known gaps, and</li>
-  <li>an issue tracker with the list of issues that are closed or abandoned as part of the release</li>
-</ul>
-
-<p>This page has a list of release notes specific to each release from Sunbird version 1.3 onwards</p>
-
-<h2 id="view-or-download-release-notes">View or Download Release Notes</h2>
-
-<p>To view or download the release notes, look for the the version from the list and click on view icon in the corresponding row alternatively, download the release notes by clicking the download icon in the corresponding release rows.</p>
-
-<table>
-    <col width="230" />
-    <col width="140" />
-    <col width="100" />
-    <col width="100" />
-    <tr>
-        <th align="left">Release Version</th>
-        <th align="center">Release Date</th>
-        <th align="center">View</th>
-        <th align="center">Download</th>
-    </tr>
-    <tr>
-        <td align="left">Release 1.3</td>
-         <td align="center">29/01/2018</td>
-        <td align="center"><a href="release_notes/view_pdf/ver1-3/">
-            <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;" />
-            </a>
-        </td>
-      <td align="center"><a href="">
-            <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;" />
-            </a>
-    </td>
-    </tr>
-    <tr>
-        <td align="left">Release 1.4</td>
-        <td align="center">30/02/2018</td>
-        <td align="center"><a href="release_notes/view_pdf/ver1-3/">
-            <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;" />
-            </a>
-        </td>
-      <td align="center"><a href="">
-            <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;" />
-            </a>
-      </td>
-    </tr>
-</table>
+          <iframe frameborder="0" allowfullscreen="" src="pages/release_notes/source_releasenotefiles/release_note_v1-6-0_may2018.pdf"></iframe>
 
           
           <hr />
           
           <p class="edit-para text-right">
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/release_notes/release_notes.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/release_notes/view_pdf/ver1-6.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="release_notes/release_notes/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="release_notes/view_pdf/ver1-6/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -667,7 +598,7 @@
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'release_notes/release_notes/' + url;
+		this.href = 'release_notes/view_pdf/ver1-6/' + url;
     })
 	$(".zoomcover").click(function(){
 		if (!$(this).hasClass("fullscreen")){

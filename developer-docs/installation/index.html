@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.44.a/";
+			baseURL.href="/releases/release.1.44.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-05-17 18:55:01 +0530">
+<meta name="last-modified" content="2018-05-23 11:04:27 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.44.a" />
-<meta name="buildNo" content="3607" />
+<meta name="buildVersion" content="release.1.44.c" />
+<meta name="buildNo" content="3676" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?17052018"  />
-<link rel="stylesheet" href="css/style.css?17052018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?17052018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?17052018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23052018"  />
+<link rel="stylesheet" href="css/style.css?23052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?23052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?23052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -187,7 +187,7 @@
                                 <a href="features-documentation/course_batches/">Batch Creation</a>
                             </li>
                             <li>
-                                <a href="features-documentation/course_consumption/">Course Consumption</a>
+                                <a href="features-documentation/course_consumption/">Taking a Course</a>
                             </li>
                         </ul>
                     </div>
@@ -320,10 +320,10 @@
                         <a href="developer-docs/installation/">Installation</a>
                         <ul class="sidebar-group">
                             <li>
-                                <a href="developer-docs/installation/installing_sunbirdon_machine/">Developer Installation</a>
+                                <a href="developer-docs/installation/developer_installation/">Developer Installation</a>
                             </li>
                             <li>
-                                <a href="developer-docs/installation/medium_scale_deploy/">Server Installation</a>
+                                <a href="developer-docs/installation/server_installation/">Server Installation</a>
                             </li>
                             <li>
                                 <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
@@ -448,7 +448,10 @@
                     <a href="contributions/contribution_guidelines/">Contributing to Sunbird Documentation</a>
                 </li>
             </ul>
-            <a href="faqs/">
+             <a href="release_notes/">
+                <h4 class="sidebar-group-title">Release Notes</h4>
+            </a> 
+	   <a href="faqs/">
                 <h4 class="sidebar-group-title">Frequently asked questions</h4>
             </a>
             <ul class="sidebar-group faqs">
@@ -543,30 +546,13 @@
               <a href="#plan-install-and-configure-sunbird"><span class="tocnumber">1 .</span> <span class="toctext">Plan, Install and Configure Sunbird</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-2">
-                  <a href="#size-and-verify-your-environment"><span class="tocnumber">1.1 .</span> <span class="toctext">Size and Verify your Environment</span></a>
+                  <a href="#try-sunbird"><span class="tocnumber">1.1 .</span> <span class="toctext">Try Sunbird</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-3">
-                  <a href="#choosing-an-installation-method"><span class="tocnumber">1.2 .</span> <span class="toctext">Choosing an Installation method</span></a>
+                  <a href="#extend-sunbird"><span class="tocnumber">1.2 .</span> <span class="toctext">Extend Sunbird</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-4">
-                  <a href="#pre-requisites"><span class="tocnumber">1.3 .</span> <span class="toctext">Pre-requisites</span></a>
-                </li>
-              </ul>
-            </li>
-            <li class="toc_level-1 toc_section-5">
-              <a href="#installation-options"><span class="tocnumber">2 .</span> <span class="toctext">Installation options</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-6">
-                  <a href="#try-sunbird"><span class="tocnumber">2.1 .</span> <span class="toctext">Try Sunbird</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-7">
-                  <a href="#extend-sunbird"><span class="tocnumber">2.2 .</span> <span class="toctext">Extend Sunbird</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-8">
-                  <a href="#deploy-sunbird-for-up-to-10-thousand-users"><span class="tocnumber">2.3 .</span> <span class="toctext">Deploy Sunbird for up to 10 Thousand Users</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-9">
-                  <a href="#deploy-sunbird-for-over-10-thousand-users"><span class="tocnumber">2.4 .</span> <span class="toctext">Deploy Sunbird for over 10 Thousand Users</span></a>
+                  <a href="#deploy-sunbird-for-your-users"><span class="tocnumber">1.3 .</span> <span class="toctext">Deploy Sunbird for your users</span></a>
                 </li>
               </ul>
             </li>
@@ -576,39 +562,11 @@
     </tbody>
   </table>
 </div><h2 id="plan-install-and-configure-sunbird">Plan, Install and Configure Sunbird</h2>
-<p>The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, check for the following components:</p>
-
-<h3 id="size-and-verify-your-environment">Size and Verify your Environment</h3>
-
-<p>Requirements for Sunbird installation depends on the environment on which you install and use Sunbird. 
-For details, check the <strong>Prerequisites</strong> section for your chosen installation method.</p>
-
-<p>For example; if you choose to do a medium-scale deployment of Sunbird, check <a href="http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/#pre-requisites" target="_blank">here</a></p>
-
-<h3 id="choosing-an-installation-method">Choosing an Installation method</h3>
-
-<p>Based on your usage and the level of complexity which you are comfortable with, choose from among the different options available for installing and running Sunbird.</p>
-
-<h3 id="pre-requisites">Pre-requisites</h3>
-
-<p>If you install Sunbird in any environment or choose any method of installation, the basic minimum prerequisites are:</p>
-
-<ul>
-  <li>Use of a Linux OS flavor (developer installation is possible on MacOS)</li>
-  <li>Comfort with use of a terminal as Sunbird installation is triggered from a command-line terminal</li>
-</ul>
-
-<p>
-  <strong>
-    <em>Note: The prerequisites are not necessary to try the sandbox option</em>
-  </strong>
-</p>
-
-<h2 id="installation-options">Installation options</h2>
+<p>The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, please understand the following possibilities:</p>
 
 <h3 id="try-sunbird">Try Sunbird</h3>
 
-<p>If you are looking to experiment with Sunbird and test its feature set, we recommend you use the <a href="https://staging.open-sunbird.org/" target="_blank">Sunbird sandbox</a> which is running in the cloud.</p>
+<p>If you are looking to experiment with Sunbird and test its feature set, we recommend you use the <a href="https://staging.open-sunbird.org/" target="_blank">Sunbird sandbox</a> which is hosted in the cloud.</p>
 
 <p>
   <strong>Note: Data created in the sandbox is erased after 24 hours</strong>
@@ -616,15 +574,11 @@ For details, check the <strong>Prerequisites</strong> section for your chosen in
 
 <h3 id="extend-sunbird">Extend Sunbird</h3>
 
-<p>If you plan to modify and contribute code to the Sunbird project, we recommend you <a href="developer-docs/installation/installing_sunbirdon_machine/" target="_blank">Install Sunbird on your machine</a>. This allows you to get started quickly and help extend Sunbird.</p>
+<p>If you plan to modify and contribute code to the Sunbird project, we recommend you <a href="developer-docs/installation/developer_installation/" target="_blank">Developer Installation</a>. This allows you to get started quickly and help extend the Sunbird.</p>
 
-<h3 id="deploy-sunbird-for-up-to-10-thousand-users">Deploy Sunbird for up to 10 Thousand Users</h3>
+<h3 id="deploy-sunbird-for-your-users">Deploy Sunbird for your users</h3>
 
-<p>If you plan to run Sunbird for up to 10 thousand users, we recommend you follow the <a href="developer-docs/installation/medium_scale_deploy/" target="_blank">Medium scale deployment</a> process. This option uses fewer resources to run Sunbird and has some limits on how much the installed application can scale.</p>
-
-<h3 id="deploy-sunbird-for-over-10-thousand-users">Deploy Sunbird for over 10 Thousand Users</h3>
-
-<p>You can plan to run Sunbird in a setting with over 10 thousand users. This will deploy Sunbird to a cloud-hosting provider of your choice in a fully containerized manner. The containers allow you to scale the resources Sunbird consumes based on the usage.</p>
+<p>If you plan to install Sunbird for your users, we recommend you follow the <a href="developer-docs/installation/medium_scale_deploy/" target="_blank">Server Installation</a> process.</p>
 
 
           

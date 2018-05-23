@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.44.b/";
+			baseURL.href="/releases/release.1.44.c/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Sunbird Release Notes</title>
-<meta name="description" content="Sunbird Site Sunbird Release Notes"/>
+<title>Sunbird Simplified Server Installation</title>
+<meta name="description" content="Sunbird Site Instructions for Simplified Server Installation for Sunbird version 1.4"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-05-17 19:12:25 +0530">
+<meta name="last-modified" content="2018-05-23 11:04:27 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.44.b" />
-<meta name="buildNo" content="3612" />
+<meta name="buildVersion" content="release.1.44.c" />
+<meta name="buildNo" content="3676" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?17052018"  />
-<link rel="stylesheet" href="css/style.css?17052018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?17052018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?17052018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?17052018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?23052018"  />
+<link rel="stylesheet" href="css/style.css?23052018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?23052018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?23052018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?23052018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -93,7 +93,7 @@
 	</form>
 </div>
  
-    <div class="sidebar-wrapper release-notes-view-pdf">
+    <div class="sidebar-wrapper developer-docs-installation">
         <div class="">
             <a href="architecture/">
                 <h4 class="sidebar-group-title">Architecture</h4>
@@ -187,7 +187,7 @@
                                 <a href="features-documentation/course_batches/">Batch Creation</a>
                             </li>
                             <li>
-                                <a href="features-documentation/course_consumption/">Course Consumption</a>
+                                <a href="features-documentation/course_consumption/">Taking a Course</a>
                             </li>
                         </ul>
                     </div>
@@ -320,10 +320,10 @@
                         <a href="developer-docs/installation/">Installation</a>
                         <ul class="sidebar-group">
                             <li>
-                                <a href="developer-docs/installation/installing_sunbirdon_machine/">Developer Installation</a>
+                                <a href="developer-docs/installation/developer_installation/">Developer Installation</a>
                             </li>
                             <li>
-                                <a href="developer-docs/installation/medium_scale_deploy/">Server Installation</a>
+                                <a href="developer-docs/installation/server_installation/">Server Installation</a>
                             </li>
                             <li>
                                 <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
@@ -448,7 +448,10 @@
                     <a href="contributions/contribution_guidelines/">Contributing to Sunbird Documentation</a>
                 </li>
             </ul>
-            <a href="faqs/">
+             <a href="release_notes/">
+                <h4 class="sidebar-group-title">Release Notes</h4>
+            </a> 
+	   <a href="faqs/">
                 <h4 class="sidebar-group-title">Frequently asked questions</h4>
             </a>
             <ul class="sidebar-group faqs">
@@ -502,14 +505,14 @@
     </div>
 </div>
 <script>
-    $("a[href$='release_notes/view_pdf/ver1-3/']").addClass("sidebar-link-selected");
+    $("a[href$='developer-docs/installation/simplifed_server_installation/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Sunbird Release Notes </h1>
+        <h1>Simplified Server Installation </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -519,7 +522,7 @@
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/release_notes/view_pdf/ver1-3.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/simplifed_server_installation.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -529,18 +532,164 @@
 			  </a>
 			  </span>
 			</p>
-          <iframe frameborder="0" allowfullscreen="" src="pages/release_notes/source_releasenotefiles/rnfeb2018.pdf"></iframe>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#prerequisites"><span class="tocnumber">1.1 .</span> <span class="toctext">Prerequisites</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-3">
+                  <a href="#simplified-sunbird-installation-procedure"><span class="tocnumber">1.2 .</span> <span class="toctext">Simplified Sunbird Installation Procedure</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+
+<p>Sunbird version 1.4 onwards has a simplified installation procedure wherein all the fine-tuned configurations that were earlier manually configured, are automatically deployed. The entire installlation process takes approximately 45 minutes.</p>
+
+<p>You could also choose to follow the detailed installation procedures provided at<a href="http://www.sunbird.org/developer-docs/installation/server_installation/" target="_blank">Server Installation</a>.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ul>
+  <li>
+    <p>Availability of 2 Virtual Machines (VMs) - one for the application server and the other for the database server. Both servers must have the following minimum system requirements:</p>
+
+    <ul>
+      <li><strong>Operating System:</strong> Ubuntu 16.04 LTS</li>
+      <li><strong>RAM:</strong> 7GB</li>
+      <li><strong>CPU:</strong> 2 cores, &gt; 2 GHz</li>
+      <li><strong>root access</strong> Should be able to sudo</li>
+    </ul>
+  </li>
+  <li>
+    <p>Access to a Fully Qualified Domain Name (FQDN) For example: test.sunbird.org).</p>
+  </li>
+</ul>
+
+<p><strong>Note:</strong> If you’re testing Sunbird, you don’t have to buy an FQDN. All cloud providers give free domain names for their instances.<br />
+For example, Azure: sunbird-test.centralindia.cloudapp.azure.com. Check with the cloud provider for details.</p>
+
+<ul>
+  <li>A valid <a href="https://en.wikipedia.org/wiki/Public_key_certificate#TLS/SSL_server_certificate" target="_blank">SSL certificate</a> for your domain.</li>
+</ul>
+
+<p><strong>Note:</strong> To generate free SSL, use <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a> for most common cases. The script does not support some free domain names, provided by cloud providers. For example, the AWS provided free domain names ec2-13-127-177-29.ap-south-1.compute.amazonaws.com, is not supported because of spammers. If the script is not compatible with your cloud provider, purchase a certificate or get a <a href="http://dot.tk" target="_blank">free one</a>.</p>
+
+<ul>
+  <li>
+    <p>A git installation for Debian/Ubuntu</p>
+
+    <p><code>apt install git -y</code></p>
+  </li>
+  <li>
+    <p>Ensure that the two servers - application and DB - are able to ping each other</p>
+  </li>
+</ul>
+
+<p><strong>Note</strong> If you are in AWS, you have to open a few ports between security groups. To test, we opened all ports between these private security groups.</p>
+
+<ul>
+  <li>
+    <p>Ensure the application server can access port 443 from the internet</p>
+  </li>
+  <li>
+    <p>Get the <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">Ekstep API keys</a></p>
+  </li>
+</ul>
+
+<h3 id="simplified-sunbird-installation-procedure">Simplified Sunbird Installation Procedure</h3>
+
+<ol>
+  <li>
+    <p>Log in to your application server using ssh</p>
+  </li>
+  <li>
+    <p>Clone the sunbird repository using the command:</p>
+
+    <p><code>git clone https://github.com/project-sunbird/sunbird-devops</code></p>
+  </li>
+  <li>
+    <p>Go to the deploy directory using the command:</p>
+  </li>
+</ol>
+
+<p>
+  <code>cd sunbird-devops/deploy</code>
+</p>
+
+<ol>
+  <li>
+    <p>If you do not have a valid ssl certificate and have a valid domain name, get the valid ssl certificate from <a href="https://letsencrypt.org/" target="_blank">Let’s Encrypt</a> using the command:
+ execute <code>./certbot.sh</code></p>
+  </li>
+  <li>
+    <p>Edit all the mandatory fields in the deploy/config file</p>
+  </li>
+  <li>
+    <p>Install sunbird using the command:</p>
+
+    <p><code>./sunbird_install.sh</code></p>
+  </li>
+  <li>
+    <p>Open https://[ domain-name ]/auth and complete the <a href="http://www.sunbird.org/developer-docs/installation/keycloak_realm_configuration">keycloak configuration</a>.</p>
+  </li>
+  <li>
+    <p>Copy the value of the <code>jwt token for player</code> from <strong>~/jwt_token.txt</strong> file present in your home directory.</p>
+  </li>
+  <li>
+    <p>Paste the same value in the deploy/config file for the <strong>ekstep_auth_token</strong> parameter.</p>
+  </li>
+</ol>
+
+<p>
+  <strong>For example:</strong>
+</p>
+
+<p>
+  <code>JWT token for player is : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3TRlZmNlYzc0NY0NjBhYzQzNCJ9.VCf69</code>
+</p>
+
+<ol>
+  <li>
+    <p><a href="https://community.ekstep.in/developer-knowledgebase/45-getting-started-with-apis">Genereate a jwt token</a> using the key provided by the Ekstep infrastructure and update the <strong>ekstep_api_key</strong> parameter in deploy/config file</p>
+  </li>
+  <li>
+    <p>Install the core Sunbird services using the command:</p>
+
+    <p><code>./sunbird_installation.sh -s core</code></p>
+  </li>
+  <li>
+    <p>Open https://[domain-name] and verify the installation</p>
+  </li>
+</ol>
+
 
           
           <hr />
           
           <p class="edit-para text-right">
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/release_notes/view_pdf/ver1-3.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/installation/simplifed_server_installation.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="release_notes/view_pdf/ver1-3/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="developer-docs/installation/simplifed_server_installation/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -595,7 +744,7 @@
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'release_notes/view_pdf/ver1-3/' + url;
+		this.href = 'developer-docs/installation/simplifed_server_installation/' + url;
     })
 	$(".zoomcover").click(function(){
 		if (!$(this).hasClass("fullscreen")){

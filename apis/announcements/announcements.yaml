@@ -10,7 +10,14 @@ info:
 host: staging.open-sunbird.org
 basePath: /announcement/v1
 securityDefinitions:
-  - $ref: '//raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/authorization.yaml#/securityDefinitions'
+  auth:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
