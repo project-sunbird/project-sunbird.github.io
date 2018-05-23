@@ -12,6 +12,7 @@ allowSearch: true
 ## Overview
 
 Organization administrators can create and customize badges to suit their organization needs. This page provides you information on the procedures to:
+
 - Create badges
 - Create badge Issuers
 - Define created badges in the platform
