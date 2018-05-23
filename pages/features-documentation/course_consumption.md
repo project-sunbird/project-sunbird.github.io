@@ -10,6 +10,8 @@ keywords: >-
 published: true
 allowSearch: true
 ---
+## Overview
+
 Any registered user can take up a course on Sunbird. The guidelines to taking a course varies from course to course and is upto the discretion of the course creator.
 
 ### Prerequisites
