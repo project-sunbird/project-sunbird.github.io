@@ -18,7 +18,7 @@ For example, you can change the default logo to the logo of your choice, or  cha
 ### List of Environment Variables
 
 | S No.| Variable Name | Description | Purpose| Default Value | Path |
-|---------|----------------|---------|----------|------|----|-----|
-1 | name of the env. variable  | Configure the email address  | The variable is setup for configuring the default email address to your desired email address| DEFAULT_DEFAULT| /config/LMS/Var/2.0 |
-A2 | B2 | C2 | D2 | E2 | F2 |
-A3 | B3 | C3 | D3 | E3 | F3 |
+|---------|----------------|---------|----------|------|--------|
+| 1 | name of the env. variable  | Configure the email address  | The variable is setup for configuring the default email address to your desired email address| DEFAULT_DEFAULT| /config/LMS/Var/2.0 |
+| A2 | B2 | C2 | D2 | E2 | F2 |
+| A3 | B3 | C3 | D3 | E3 | F3 |
