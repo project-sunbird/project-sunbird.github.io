@@ -25,7 +25,7 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
   </tr>
   </table>
 
-### Sunbird Homepage
+### Exploring the Courses Page 
 
 <table>
   <tr>
@@ -36,16 +36,7 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
     <td>1. All courses assigned to you appear in the <b>To Do</b> list <br>2. Click <b>Resume</b> button, to start the course for the first time or continue from where you stopped, if you had started the course earlier</td>
       <td><img src="pages/features-documentation/images/consumption_todo.png"></td>
   </tr>
-  </table>
-  
-### Exploring the Courses Page
-  
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
+   <tr>
     <td>1. The selected course opens in the <b>Courses</b> tab <br>2. See details about the course - its content, structure, your progress, etc. here <br>3. Click <b>(+)</b> icon, on the right pane, to add notes to your notebook. You can maintain separate notes for each course that you take <br>4. The progress of your course is displayed on the right side <br><b>Note:</b> Course materials can be in different content types, for example, pdf, video etc. In such cases: <br>&emsp;a) Click <b>Adobe PDF</b> icon, to read printable course material <br>&emsp;b) Click <b>Play</b> icon to view a video of the course material</td>
       <td><img src="pages/features-documentation/images/consumption_details.png"></td>
   </tr>
