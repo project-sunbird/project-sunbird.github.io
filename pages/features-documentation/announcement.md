@@ -48,7 +48,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
     <td><img src="pages/features-documentation/images/announcement/create1.png"></td>
   </tr>
   <tr>
-    <td>1. <b>Create New Announcement</b> page opens <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b>. Details of the  organization or department, who is sending the announcement, have to be entered here <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br>&emsp;<b>Or</b>  <br>&emsp;Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
+    <td>1. <b>Create New Announcement</b> page is displayed <br>2. Enter <b>Title</b> for the announcement <br>3. Enter <b>From</b>. Details of the  organization or department, who is sending the announcement, have to be entered here <br>4. Select <b>Announcement Type</b> (Order or Circular) <br>5. Enter a <b>Description</b> for the announcement <br>6. Click <b>+</b> icon to add URL or web link <br>&emsp;<b>Or</b>  <br>&emsp;Click on <b>Upload Attachment</b> or drag and drop relevant attachments in the box <br>
 &emsp;<b>Note:</b> You can attach or give links for more than one file. For attachments, the following file formats are supported: .pdf, .png, .jpg. Maximum file size limit is 1MB.<br>
 7. Click <b>Select Recipients</b> button to select all the recipients 
       
@@ -67,7 +67,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. <b>Select Announcement Recipients</b> page opens <br>2. Enter location name and search  <br>3. Select the recipients segregated based on location <br>4. Click <b>Back</b> button to move to previous page <br>5. Click <b>Confirm Recipients</b> button to confirm the selection
+    <td>1. <b>Select Announcement Recipients</b> page is displayed <br>2. Enter location name and search  <br>3. Select the recipients segregated based on location <br>4. Click <b>Back</b> button to move to previous page <br>5. Click <b>Confirm Recipients</b> button to confirm the selection
   </td>
   <td><img src="pages/features-documentation/images/announcement/selectrecipient1.png"></td>  
   </tr>
@@ -133,7 +133,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
     <td><img src="pages/features-documentation/images/announcement/resend1.png"></td>
   </tr>
   <tr>
-    <td> The announcement page opens <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further, repeat all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> 
+    <td> The announcement page is displayed <br>1. Edit all the required fields <br>2.Click <b>Edit Recipients</b> button to re-select the recipients. Further, repeat all the steps for <a href="features-documentation/announcement/#selecting-recipients">Selecting Recipient</a> 
     </td>
     <td><img src="pages/features-documentation/images/announcement/resend2.png"></td>
   </tr>
@@ -152,7 +152,7 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
     <td><img src="pages/features-documentation/images/announcement/view_homepage1.png"></td>
   </tr>
   <tr>
-    <td>The announcement page opens. You can view all the announcements from one page to other</td>
+    <td>The announcement page is displayed. You can view all the announcements from one page to other</td>
     <td><img src="pages/features-documentation/images/announcement/seeall.png"></td>
   </tr>
   <tr>
