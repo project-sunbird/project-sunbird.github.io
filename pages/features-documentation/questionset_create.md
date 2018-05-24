@@ -93,7 +93,7 @@ To ensure that the content achieves the learning objective it is important to ch
 <br>11. Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears 
 <br>12. Select <b>Back</b> to go back to the previous page
   </td>
-    <td><img src="pages/features-documentation/images/questionset/matchthefollowing.png"></td>
+    <td><img src="pages/features-documentation/images/questionset/multiplechoicequestion.png"></td>
  </tr>
  </table>
  
