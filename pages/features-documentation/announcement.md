@@ -36,20 +36,6 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
   </tr>
     </table>
   
-## Viewing Announcement Dashboard
-  
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>You can view all necessary data related to announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following details: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published date <br>&emsp;c) Number of users to whom announcements were sent <br>&emsp;d) Number of users who received the announcements <br>&emsp;e) Number of users who have seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
-    </td>
-    <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
-  </tr>
-  </table>
-  
 ## Creating a New Announcement 
 
 <table>
@@ -175,4 +161,16 @@ On Sunbird, an announcement sender is a person who creates and sends announcemen
   </tr>
 </table>
 
-
+## Viewing Announcement Dashboard
+  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>You can view all necessary data related to announcements on your dashboard <br>1. <strong>My Announcements</strong> page opens, with the following details: <br>&emsp;a) Announcement name <br>&emsp;b) Announcement published date <br>&emsp;c) Number of users to whom announcements were sent <br>&emsp;d) Number of users who received the announcements <br>&emsp;e) Number of users who have seen the announcements <br>&emsp;f) Delete or resend actions taken by the announcement creator and the sender
+    </td>
+    <td><img src="pages/features-documentation/images/announcement/view_dashboard.png"></td>
+  </tr>
+  </table>
