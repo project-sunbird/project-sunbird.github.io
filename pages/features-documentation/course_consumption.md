@@ -67,7 +67,7 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. <b>Replay</b>: To replay the study material <br>2. <b>Change</b>: To add or modify your profile avatar <br>3. <b>Sound on</b>: To turn on or off sound for audio or video study material <br>4. <b>Teacher’s Note</b>: To view teacher’s notes for the current course material <br>5. <b>Home</b>: To navigate to the Home page </td>
+    <td>1. <b>Replay</b>: To replay the study material <br>2. <b>Sound on</b>: To turn on or off sound for audio or video study material <br>3. <b>Teacher’s Note</b>: To view teacher’s notes for the current course material <br>4. <b>Home</b>: To navigate to the Home page </td>
       <td><img src="pages/features-documentation/images/consumption_contentplayer2.png"></td>
   </tr>
   </table>
