@@ -67,8 +67,7 @@ To ensure that the content achieves the learning objective it is important to ch
       <br>&emsp;b) <b>Fill in the Blanks Question</b> 
       <br>&emsp;c) <b>Match the Following Question</b> 
       <br>3. Click <b>Select</b> 
-     <br>4.Click <b>Cancel</b> to go back to the previous page
-    </td>
+     </td>
     <td><img src="features-documentation/images/questionset/createquestion.png"> </td>
   </tr>
 </table>
@@ -110,11 +109,9 @@ To ensure that the content achieves the learning objective it is important to ch
  <br>3. Enter the answers within a pair of square brackets [[Answer]]
  <br>4. Use <b>Select Keyboard</b> option select the text input method for the question 
  <br>5. Select <b>Refresh</b> icon to preview your question
- <br>6. Use the <b>Shuffle Questions</b> slider to enable shuffling of questions from the set. The list of selected questions appears in the left pane
- Select <b>Show Immediate Feedback</b> to determine when the feedback for the answers should be displayed
- <br>7. Select <b>Partial Scoring</b> to enable scoring for each correct answer
- <br>8. Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears
- <br>9. Select <b>Back</b> to go back to the previous page
+ <br>6. Select <b>Partial Scoring</b> to enable scoring for each correct answer
+ <br>7. Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears
+ <br>8. Select <b>Back</b> to go back to the previous page
  </td>
     <td><img src="pages/features-documentation/images/questionset/Fillintheblanks.png"></td>
  </tr>
@@ -133,15 +130,15 @@ To ensure that the content achieves the learning objective it is important to ch
   <br>3. Select <b>Delete Pair</b> icon to remove answer set
   <br>4. Select <b>Add another question answer pair</b> to add another question and answer 
   <br>5. Select <b>Refresh</b> icon to preview your question
-  <br>7. Select <b>Partial Scoring</b> to enable scoring for each correct answer
-  <br>8. Click <b>Next</b> to enter the Question Details
-  <br>9. Select <b>Back</b> to go back to the previous page 
+  <br>6. Select <b>Partial Scoring</b> to enable scoring for each correct answer
+  <br>7. Click <b>Next</b> to enter the Question Details
+  <br>8. Select <b>Back</b> to go back to the previous page 
    </td>
     <td><img src="pages/features-documentation/images/questionset/matchthefollowing.png"></td>
  </tr>
 </table>
 
-## Customizing Question Set
+## Configuring Question Set
  
 <table>
 <tr>
@@ -149,19 +146,24 @@ To ensure that the content achieves the learning objective it is important to ch
    <th style="width:65%;">Screen</th>
 </tr>  
 <tr>
-  <td>Enter Question Set Title 
-  <br>1. The Max Score box displays the maximum score allotted to the question
-  <br>2. Select the number of questions that should be displayed in each screen from the Display drop-down menu
-  <br>3.Use the Show Immediate Feedback slider to determine when the details for the answers should be displayed
-  <br>4. Use the <b>Shuffle Questions</b> slider to enable shuffling of questions from the set 
-  <br>5. Click <b>Add</b> to add selected questions
-  <br>6. Click <b>Add More Questions</b> to go back and select another question
+  <td>1. Enter <b>Name</b> of the question set 
+  <br>2. Enter <b>Description</b> 
+  <br>3. Select the following from the drop-down menu
+    <br>a. Select <b>Medium</b>
+    <br>b. Select <b>Level</b>
+    <br>c. Select <b>Class</b>
+    <br>4. Enter the <b>Max Score</b> of the question
+    <br>5. Select the <b>Concepts</b> of the question 
+    <br>6. Select <b>Refresh</b> icon to preview your question
+    <br>7. Select <b>Partial Scoring</b> to enable scoring for each correct answer
+    <br>8. Click <b>Submit</b> to configure the question details
+    <br>9. Select <b>Back</b> to go back to the previous page 
   </td>
   <td><img src="pages/features-documentation/images/questionset/questionsetcustomised.png"></td>
  </tr>
 </table>
       
-## Configuring Question Set
+## Customizing Question Set
 
 <table>
  <tr>
