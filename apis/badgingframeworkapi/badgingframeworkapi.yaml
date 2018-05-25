@@ -646,7 +646,7 @@ paths:
         '400':
           description: >-
             BAD REQUEST,**Delete Badge Class** operation failed ! Possible reasons for request failure:
-            Badge class could not be deleted. It has already been issued at least once.
+            The Badge class could not be deleted. It is issued at least once.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
