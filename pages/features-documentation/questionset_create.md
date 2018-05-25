@@ -179,22 +179,4 @@ To ensure that the content achieves the learning objective it is important to ch
    </td>
    <td><img src="features-documentation/images/questionset/questionsetconfigurations.png"></td>
  </tr>
- </table>   
-
-## Editing Question Set
-
-<table>
- <tr>
-   <th style="width:35%;">Step</th>
-   <th style="width:65%;">Screen</th>
- </tr>  
- <tr>
-    <td>1. Click the trash icon to delete the added question set 
-    <br>2. Click the spanner icon to edit details of the question set. The settings options are displayed on the right 
-    <br>a) Click on the upward/downward arrows to determine the marks of the question set 
-    <br>3. Click the eye icon to view the preview of the question set 
-    <br>4. Click <b>Done</b> to save
-   </td>
-   <td><img src="features-documentation/images/questionset/questionsetconfigurations.png"></td>
- </tr>
  </table>
