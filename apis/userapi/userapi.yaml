@@ -217,7 +217,7 @@ paths:
         This API is associated with fetching User profile on the Sunbird Platform.
           - **_/profile/read_** endpoint executes the "Get User By Login Id" request to fetch the User profile.
           - It is mandatory to provide values for required parameters
-      summary: Get User by Login ID
+      summary: Read User Profile
       tags:
       - User APIs
       operationId: Get User by Login Id
@@ -322,17 +322,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /read/{User_Id}:
-    parameters:
-      - in: path
-        name: User_Id
-        type: string
-        required: true
-        description: 'Please append a valid User Id To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic'   
+ /read/{User_ID}:
     get:
       description: >-
         This API is associated with searching a specific user
-          - **_/read/{User_Id}_** endpoint executes the "Fetch User profile" request. 
+          - **_/read/{User_ID}_** endpoint executes the "Fetch User profile" request. 
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Get User by User ID
@@ -342,6 +336,11 @@ paths:
       produces:
       - application/json
       parameters:
+      - in: path
+        name: User_ID
+        type: string
+        required: true
+        description: 'Please append a valid User ID To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic'   
       - name: x-authenticated-user-token
         in: header
         required: true
