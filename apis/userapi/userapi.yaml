@@ -5,7 +5,7 @@ info:
   description: >-
     The User Management API resources are used to manage individual users and user memberships, also these resources allow you to add skills, block and unblock users, encrypt user data and also you can perform various other related tasks. 
      
-    **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstrators to manage the users.
+    **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
@@ -217,7 +217,7 @@ paths:
         This API is associated with fetching User profile on the Sunbird Platform.
           - **_/profile/read_** endpoint executes the "Get User By Login Id" request to fetch the User profile.
           - It is mandatory to provide values for required parameters
-      summary: Read User Profile
+      summary: Get User by Login ID
       tags:
       - User APIs
       operationId: Get User by Login Id
@@ -322,11 +322,17 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /read/{User_ID}:
+ /read/{User_Id}:
+    parameters:
+      - in: path
+        name: User_Id
+        type: string
+        required: true
+        description: 'Please append a valid User Id To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic Ex: ?Fields=completeness,missingFields,topic'   
     get:
       description: >-
         This API is associated with searching a specific user
-          - **_/read/{User_ID}_** endpoint executes the "Fetch User profile" request. 
+          - **_/read/{User_Id}_** endpoint executes the "Fetch User profile" request. 
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
       summary: Get User by User ID
@@ -336,11 +342,6 @@ paths:
       produces:
       - application/json
       parameters:
-      - in: path
-        name: User_ID
-        type: string
-        required: true
-        description: 'Please append a valid User ID To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic'   
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -519,7 +520,7 @@ paths:
          
              - XML data
         schema:
-          $ref: '#/definitions/{{host}}~1v1~1user~1updateloginrequest'
+          $ref: '#/definitions/updateloginrequest'
       - name: Content-Type
         in: header
         required: true
@@ -722,7 +723,7 @@ paths:
              - XML data
      
         schema:
-          $ref: '#/definitions/{{host}}~1v1~1user~1profile~1visibilityrequest'
+          $ref: '#/definitions/visibilityrequest'
       - name: Content-Type
         in: header
         required: true
@@ -1051,7 +1052,7 @@ paths:
          
              - XML data
         schema:
-          $ref: '#/definitions/{{host}}~1user~1v1~1role~1assignrequest'
+          $ref: '#/definitions/assignrequest'
       - name: Content-Type
         in: header
         required: true
@@ -1483,16 +1484,19 @@ definitions:
             type: array
             items:
              type: string
+          channel:
+            type: string
+            description: 'value of channel, that you can get while creating rootOrg.if user provide channel then user will be associated with that root org, if channel is not provided in request body then it will pick channel set inside Environment variable and used that to associated user with that rootOrg.incase channel is not provided nither in request nor Env then user creation will fail.'
+          externalId:
+            type : string
+            description: 'identity of user in some other system. by providing externalId the creator can corelate their user with sunbird system. externalId and provider combination must be unique. if user is passing externalId then they have to pass provider.'
           provider:
             type: string
-            description: 'value of channel, that you can get while creating rootOrg.System will get the rootOrg from provider and add that rootOrg into user profile.'
+            description : 'provider is just an orgainsation , who is providing user details to sunbird. that organisation may or maynot be part of sunbird. provider will always come with externalId.'
           profileSummary:
             type: string
           userName:
             type: string
-          regOrgId:
-            type: string
-            description: 'Your registered organisation id. System will identify the root org id from your registered org id and add into your profile.'
           dob:
             type: string
             format: yyyy-MM-dd  
@@ -1532,7 +1536,8 @@ definitions:
       - password 
       - email
       - userName
-      - phone    
+      - phone
+      - channel
     
   User:
     title: user object
@@ -1567,9 +1572,6 @@ definitions:
             type: integer
             format: int32
             description: user status 
-          loginId:
-                type: string
-                description: loginID will be generated by system based on your username and provider value. if user is passing only username then login id will be same as username , if user is passing username and provider both then login id would be username@provider. it will make same user to work with different provider based on loginId
           subject:
             type: array
             items:
@@ -1581,7 +1583,13 @@ definitions:
              description: user roles independent to any org. api won't access roles param. even if user pass the roles api(create or update ) will ignore it.  
           provider:
             type: string
-            description: 'value of channel, that you can get while creating rootOrg'
+            description: 'value of provider, this can be just name of an organisation or code of an organisation by which organisation can be identified.'
+          externalId:
+            type: string
+            description: 'User identifier in some other system'
+          channel:
+            type : string
+            description : 'unique identifier for a rootOrg. channel is not primaryKey but a unique value inside sunbird. this key is applicable for rootOrg only.'
           profileSummary:
             type: string
           userName:
@@ -1747,7 +1755,7 @@ definitions:
         filters:
           userAttribute:
           - value of user attribute, it can be as string or array.
-          - Ex: firstName:test  or firstName:[test,test1] 
+          - Ex: firstName:test  or firstName:["test","test1"] 
         limit: 500
     type: object
     properties:
@@ -1873,12 +1881,12 @@ definitions:
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
       - $ref: '#/definitions/EmptyResult'
       
-  '{{host}}/v1/user/updateloginrequest':
-    title: '{{host}}/v1/user/updateloginRequest'
+  updateloginrequest:
+    title: '{{host}}/user/v1/updateloginRequest'
     example:
       params: {}
       request:
-        userId: 9b679965-c38a-4099-a9e8-9ca89e20eab3
+        userId: {userId}
     type: object
     properties:
       params:
@@ -1898,11 +1906,11 @@ definitions:
         type: string
     required:
     - userId
-  '{{host}}/v1/user/profile/visibilityrequest':
-    title: '{{host}}/v1/user/profile/visibilityRequest'
+  visibilityrequest:
+    title: '{{host}}/user/v1/profile/visibilityRequest'
     example:
       request:
-        userId: userid
+        userId: {userid}
         private:
         - gender
         - location
@@ -1960,7 +1968,7 @@ definitions:
     - private
     - public
  
-  '{{host}}/user/v1/role/assignrequest':
+  assignrequest:
     title: '{{host}}/user/v1/role/assignRequest'
     example:
       request:
