@@ -68,7 +68,7 @@ To ensure that the content achieves the learning objective it is important to ch
       <br>&emsp;c) <b>Match the Following Question</b> 
       <br>3. Click <b>Select</b> 
      </td>
-    <td><img src="features-documentation/images/questionset/createquestion.png"> </td>
+    <td><img src="pages/features-documentation/images/questionset/createquestion.png"> </td>
   </tr>
 </table>
   
