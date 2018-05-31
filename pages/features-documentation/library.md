@@ -8,179 +8,120 @@ keywords: 'resources, classroom resources, classroom content, consume resources,
 published: true
 allowSearch: true
 ---
+## Overview
 
+A Library typically refers to a space, housing a large collection of books, resources or information. Extending the literary meaning, **Library**, a key module of Sunbird, displays all content created or uploaded on the platform. The library is accessible to all registered users.
 
-A Library typically refers to a place or a space, housing a large collection of books, study material or information. On Sunbird, library is one of the key modules where all content created or uploaded.
+This page elaborates the various user interface elements of the **Library**
 
-<br/><br/>
-
-## Prerequisite
-
-<table class="table table-img">
+### Prerequisites
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-	 <li>Login with your registered credential</li>
-         <li>Click on the <strong>Library</strong> tab</li>
-        </ol>
-     </td>
-    <td><img src="pages/features-documentation/images/library_prerequisite.png"></td>
+    <td>1. You are logged in <br>2. You want to view the library, you have clicked on the <b>Library</b> tile
+       </td>
+      <td><img src="pages/features-documentation/images/library/prerequisite.png"></td>
   </tr>
   </table>
        
-## Search 
+### Searching for Content
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-         <li>Click the <strong>Dropdown</strong></li>
-         <li>Select from the following lists:
-			<ul>
-				<li>All: To search for all content available in the portal</li>
-				<li>Courses: To search for all the courses available in the portal</li>
-				<li>Library: To search for content available in the library</li>
-				<li>Organizations: To search for organizations uploaded in the portal</li>
-				<li>Users: To search for users uploaded in the portal</li>
-			</ul>
-         </li>
-         <li>Alternatively, you can type and search for the content in the library
-			<ul>
-				<li>Enter the name or keyword of the content in the <strong>Search Bar</strong></li>
-				<li>Click on the search icon or press <strong>Enter</strong></li>
-			</ul>
-         </li>
-        </ol>
+    <td>Search for content using either of the following: <br>&emsp;a)  Search bar <br>&emsp;b) Filter options, or <br>&emsp;c) Sort options</td> 
+	<td><img src="pages/features-documentation/images/library/search_options.png"></td>  
+	</tr>
+	<tr>
+	<td>1. Select any of the following from the drop-down menu: <br>&emsp;a) <b>All</b>: To search for all content available in the portal <br>&emsp;b) <b>Courses</b>: To search for all the courses available in the portal <br>&emsp;c) <b>Library</b>: To search for content available in the library <br>&emsp;d) <b>Organizations</b>: To search for organizations uploaded in the portal <br>&emsp;e) <b>Users</b>: To search for users uploaded in the portal <br>2. Alternatively, you can type keywords in the search bar
      </td>
-    <td><img src="pages/features-documentation/images/library_search.png"></td>
+    <td><img src="pages/features-documentation/images/library/searchbar_options.png"></td>
   </tr>
   </table>
    
-## Advance Filter
+### Applying Filters
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-         <li>Click on the <strong>Filter icon</strong></li>
-         <li>You can filter the content by selecting from the respective dropdowns:
-			<ul>
-				<li>Curriculum</li>
-				<li>Content Types</li>
-				<li>Medium</li>
-				<li>Subjects</li>
-				<li>Concepts</li>
-			</ul>
-         </li>
-         <li>Alternatively, you can type and search for the content in the library
-			<ul>
-			<li>Click <strong>Apply</strong> to apply the filters</li>
-			<li>Click <strong>Reset</strong> to reset the selected filters</li>
-         </ul>
-         </li>
-        </ol>
-     </td>
-    <td><img src="pages/features-documentation/images/library_filter.png"></td>
+	  <td>1.Click <b>Filters</b>  <br>2. Select the following from their respective drop-down menus: 
+		  		<br>&emsp;a) <b>Board</b>
+				<br>&emsp;b) <b>Grade</b>
+				<br>&emsp;c) <b>Subject</b>
+				<br>&emsp;d) <b>Medium</b>
+				<br>&emsp;e) <b>Content Types</b>
+				<br>&emsp;f) <b>Concepts</b>
+	<br>2. Click <b>Apply</b>. The search results are displayed <br>3. Click <b>Reset</b> to reset the filters  </td>
+    <td><img src="pages/features-documentation/images/library/applying_filters.png"></td>
   </tr>
   </table>
    
-## Sort content
+### Sorting Content
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-	       <li>Click on the <strong>Dropdown</strong> option on the right</li>
-	       <li>Sort content based on latest <strong>Modified</strong> or <strong>Created</strong></li>
-	   </ol>
+   <td>1. Click the <b>Sort </b> drop-down icon <br>2.Sort content on the:  <br>&emsp;b) modified date, or <br>&emsp;b) created date
     </td>
-	<td><img src="pages/features-documentation/images/library_sort.png"></td>
+	<td><img src="pages/features-documentation/images/library/sort_options.png"></td>
     </tr>
     </table>
 
-## View Popular Stories
+### Viewing Popular Stories
 
-Popular stories are listed here. The different story types displayed are:
-
-- YouTube videos
-- Audio Clips
-- Video Clips
-- Assessments
-- Tutorials
-- Presentations
-- Worksheets
-
-<table class="table table-img">
+Sunbird houses a wide variety of content. Users with registered credentials can view and download content from the Library.
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-	       <li>Click on any of the story to view</li>
-	       <li>Click right or left <strong>Scroll bar</strong> to scroll</li>
-	   </ol>
-   </td>
+   <td>1. Click on any story <br>2. Scroll right or left using the <b>Arrows </b> to scroll through listed content   </td>
   <td><img src="pages/features-documentation/images/library_popularstory.png"></td>
   </tr>
   </table>
 
 ### Consuming a Story
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-	   <ul>
-		   <li>Click on the story you wish to consume. The story is displayed on the inbuilt content player. Description and content information of the story are provided below the player</li>
-	   </ul>
+   <td>1. Click the story you wish to consume. The story is displayed within the inbuilt content player. Description and content information of the story are provided below the player
 	</td>
 	<td><img src="pages/features-documentation/images/library_desc_cont_inf.png"></td>
 	</tr>
 	</table>
 
-**Sharing Stroies**
+**Sharing Stories**
 
-<table class="table table-img">
+<table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-   <td>
-       <ol>
-	       <li>Click on the <strong>Share</strong> icon to share the story</li>
-	</ol>
+   <td>1.Click the <b>Share</b> icon to share the story
    </td>
   <td><img src="pages/features-documentation/images/library_shareicon.png"></td>
   </tr>
   <tr>
-  <td>
-       <ol>
-	       <li>A screen with the link to the story is displayed</li>
-	       <li>Click <strong>COPY LINK</strong> to copy the link</li>
-	       <li>Click <strong>Close</strong> icon to go back to the content player</li>
-	</ol>
+  <td>2. A screen with the link to the story is displayed <br>3. Click <b>COPY LINK</b> to copy the link
+	       <br>4. Click <b>Close</b> icon to go back to the content player
    </td>
   <td><img src="pages/features-documentation/images/library_copylink.png"></td>
   </tr>
@@ -188,62 +129,64 @@ Popular stories are listed here. The different story types displayed are:
   
   **Flagging Stories**
   
-  <table class="table table-img">
+ <table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
     <tr>
-    <td>
-	  <ol>
-		<li>Click <strong>Flag</strong> icon to flag the displayed content</li>
-	    </ol>
+    <td>1.Click <strong>Flag</strong> icon to flag the displayed content
 	</td>
 	<td><img src="pages/features-documentation/images/library_flagicon.png"></td>
 	</tr>
 	<tr>
-	<td>
-	   <ol>
-	    	<li>Select a reason to describe why the content should be reviewed again</li>
-		<li>Add additional comments, if any</li>
-	        <li>Click <strong>Submit</strong> to submit the reasons for flagging the content</li>
-		<li>Click <strong>Close</strong> icon to exit the page</li>
-	   </ol>
+	<td>2.Select a reason to describe why the content should be reviewed again <br>3. Add additional comments, if any
+	        <br>4. Click <b>Submit</b> to submit the reasons for flagging the content <br>5. Click <b>Close</b> icon to exit the page
     </td>
  <td><img src="pages/features-documentation/images/library_flagreason.png"></td>
   </tr>
   </table>
   
-  **Taking Notes**
- 
- <table class="table table-img">
+  **Copying Content**
+  
+  <table>
   <tr>
-    <td><strong>Step</strong></td>
-    <td><strong>Screen</strong></td>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+        <td>1. Select any content from the <b>Library</b> to view the content
+	<br><b>Note:</b> Users with creation rights can copy any content available in the Library
+        </td>
+	  <td><img src="pages/features-documentation/images/copy_image1.png"></td>
+	</tr>
+	<tr>
+          <td>1. Click <b>Make Copy</b> icon to copy content <br> The content is copied into the <b>Draft</b> folder.
+		  <br><b>Note:</b> The following automatically happens to all content that is copied:
+		  &emsp;<li>All copied content resides in the <b>Draft</b> folder</li>
+		  <li>The copied content is tagged with the prefix <b>Copy of</b> before the original content name</li>
+		  <li>The user, organisation details, copy type, and source information are captured</li>
+		  <li>The links to the assets and objects remain intact</li>
+	</td>
+	<td><img src="pages/features-documentation/images/copy_image2.png"></td>
+	</tr>								
+  </table>
+	
+### Taking Notes
+ 
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
   </tr>
     <tr>
-  <td>
-	  <ol>
-		  <li>Click <strong>TAKE NOTE</strong> icon or link to take notes while viewing the story</li>
-	    </ol>
-	</td>
+  <td>1. Click <b>TAKE NOTE</b> icon or link to take notes while viewing the story
+	    	</td>
 	<td><img src="pages/features-documentation/images/library_takenote.png"></td>
 	  </tr>
 	   <tr>
-	<td>
-		<ol>
-			<li>Enter <strong>Title</strong></li>
-		  	<li>Enter <strong>Description</strong></li>
-			<li>You can format the description entered with the various formatting options available</li>
-			<li>Click <strong>Clear</strong> to clear the note</li>
-			<li>Click <strong>Save</strong> to save the note</li>
-			<li>Click <strong>Close</strong> icon to exit the page</li>
-	        </ol>
+	<td>2. Enter <b>Title</b> <br>3. Enter <b>Description</b> <br>4. You can format the description entered with the various formatting options available <br>5. Click <b>Clear</b> to clear the note <br>6. Click <b>Save</b> to save the note <br>7. Click <b>Close</b> icon to exit the page
 	</td>
 	<td><img src="pages/features-documentation/images/library_notescreen.png"></td>
 	</tr>
   </table>
-
-  
-
-

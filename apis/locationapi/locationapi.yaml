@@ -17,12 +17,16 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /api/v1/data/location
+basePath: /api/data/v1/location
 securityDefinitions:
   auth:
-    type: apiKey  # arbitrary name for the security scheme
-    in: header # The security scheme parameter is in "header"
-    name: Authorization # name of the header, query parameter or cookie
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -158,6 +162,16 @@ paths:
               - $ref: >-
                   https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
               - $ref: '#/definitions/LocationErrorResponse'
+    
+        '404':
+          description: >-
+            RESOURCE NOT FOUND.**Update Location ** operation failed !The possible reason for the failure is that requested resource could not be found 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+
         '500':
           description: >-
             'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
@@ -229,6 +243,15 @@ paths:
               - $ref: >-
                   https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
               - $ref: '#/definitions/LocationErrorResponse'
+        '404':
+          description: >-
+            RESOURCE NOT FOUND.**Search Location ** operation failed !The possible reason for the failure is that requested resource could not be found 
+          schema:
+            allOf:
+              - $ref: >-
+                  https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+              - $ref: '#/definitions/LocationErrorResponse'
+    
         '500':
           description: >-
             'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'

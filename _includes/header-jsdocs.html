@@ -1,0 +1,38 @@
+<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8 col-sm-3 col-md-2 logo">
+				<a href="{{basejsdocs}}/index.html" >
+					<img src="{{basejsdocs}}img/sunbird-logo.png" alt="logo">
+				</a>
+			</div>
+			<div class="col-xs-4 text-right visible-xs mobile-menu">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+					<span class="sr-only">Toggle navigation</span>
+					<i class="material-icons">menu</i>
+				</button>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-6 text-right navbar main-menu">
+				<div class="navbar-header">
+					<div class="collapse navbar-collapse" id="mainNav" >
+						<ul class="nav navbar-nav">
+							<li class=""><a href="{{basejsdocs}}about/">About</a></li>
+							<li class=""><a href="{{basejsdocs}}features/">Features</a></li>
+							<li class=""><a href="{{basejsdocs}}docs/">Documentation</a></li>
+							<li class=""><a href="{{basejsdocs}}partner/">Partner</a></li>
+							<li class=""><a href="https://github.com/project-sunbird" target="_blank">Source Code</a></li>
+							<li class=""><a href="{{basejsdocs}}contact/">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>		
+			<div class="col-xs-12 col-sm-4">
+				{% if site.showSearch == true %}
+					{% include search.html %}
+				{% endif %}
+			</div>			
+		</div>
+	</div>
+</header>
+
+ 

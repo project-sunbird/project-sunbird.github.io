@@ -16,10 +16,14 @@ info:
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 securityDefinitions:
-    auth:
+  auth:
       type: apiKey  # arbitrary name for the security scheme
-      in: header # The security scheme parameter is in "header"
+      in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -558,7 +562,6 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /framework/v1/category/create:
     post:
       description: >-
        This API is associated with creating a category under a framework
@@ -2105,3 +2108,31 @@ definitions:
           count:
             type: number
             description: Number of FrameworkTerm searched.
+  PublishFrameworkRequest:
+    description: Framework copy request.
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
+      - $ref: '#/definitions/RequestFrameworkPublish'          
+  RequestFrameworkPublish:
+    description: Request map of framework publish api.
+    properties:
+      request: 
+        type: object
+  FrameworkPublish200Response:
+    description: 'Framework copy response on success.'
+    type: object
+    allOf:
+      - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
+      - $ref: '#/definitions/ResponseFrameworkPublish200'      
+  ResponseFrameworkPublish200:
+    description: Response of the Framework copy.
+    properties:
+      result:
+        type: object
+        properties:
+          publishStatus:
+            type: string
+            description: Status response of the publish operation
+            example: Publish Operation for Content Id 'test_300_framework' Started Successfully!
+            

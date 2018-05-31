@@ -8,19 +8,29 @@ keywords: content editor, create course, create content, create lesson, textbook
 published: true
 allowSearch: true
 ---
-Sunbird has an inbuilt content editor with various features that is used to create engaging and interesting study material. 
-Study material can be of different types like: 
+## Overview
 
-- Games
-- Story
-- Worksheet
-- Quiz
-- Assessment
+Sunbird houses a wide variety of content. Users can can create content on Sunbird or upload content created offline. 
 
-This page expalins the features of and how to use the content editor to create any type of Study Material. 
+**Note:** For details on uploading content that is created offine, refer <a href="features-documentation/upload" target="_blank">Uploading Content</a>
 
-## Prerequisites
+A user with content creation rights can use Sunbird's inbuilt content editor to create **Resources** that are Sunbird's simplest or smallest unit of content.
 
+You can create the following categories of resources on Sunbird:
+
+- Experiment
+- Learn
+- Play
+- Practice
+- Read
+- Teach
+- Test 
+
+Each of these categories corresponds to a stage or intent of the learning process or methodology that is used by tutors to impart knowledge of the subject. For example, a tutor intends to educate learners of a concept through a game. When the tutor creates the game, the category of the resource (the game) is, **Play**. Similarly, if a tutor creates a story to enhance the reading skills of learners, the category of the resource (the story) is, **Read**. 
+
+This page details how to create resources using the inbuilt content editor.
+
+### Prerequisites
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -28,16 +38,21 @@ This page expalins the features of and how to use the content editor to create a
   </tr>
   <tr>
     <td>1. You are logged in <br>2. You are currently on <strong>My Workspace</strong> page <br>3. You want to create content
-      resources <br>4. You have clicked the <strong>Study Material</strong> tile
+      resources.You have clicked the <strong>Resource</strong> tile
       </td>
-      <td><img src="pages/features-documentation/images/contenteditor/profile1.png"></td>
+      <td><img src="pages/features-documentation/images/contenteditor/resource_prerequisite.png"></td>
   </tr>
   <tr>
-    <td> After clicking on the <strong>Study Material</strong> slide, you can:<br> 1. Enter title for content <br>2. Select values from the dropdown list for: Curriculum, Medium, Subject, Class and Resource Type 
-      <br> <strong>Note:</strong> You may opt to fill these details later before sending the content for review
-      <br>3. Click <b>Start Creating</b> to create content
+    <td>1. Enter <b>Name</b> of the resource <br>2. Select the following from their respective drop-down menu:
+      <br>&emsp;a) <b>Board</b>
+      <br>&emsp;b) <b>Grade</b> 
+      <br>&emsp;c) <b>Subject</b> 
+      <br>&emsp;d) <b>Medium</b> 
+      <br>&emsp;e) <b>Concept</b>
+      <br>&emsp;f) <b>Resource Type</b>
+      <br>3. Click <b>Start Creating</b> 
     </td>
-    <td><img src="pages/features-documentation/images/contenteditor/create_studymaterial.png"></td>
+    <td><img src="pages/features-documentation/images/contenteditor/resource_create.png"></td>
   </tr>
   </table>
   
@@ -99,11 +114,11 @@ This page expalins the features of and how to use the content editor to create a
   </tr>
   </table>
   
-### Tool Bar
+## Tool Bar
   
   Understanding the Tools of the Tool Bar
-  
-#### Adding Slide
+
+### Adding Slide
   
   <table>
   <tr>
@@ -118,7 +133,7 @@ page to reorder them
   </tr>
   </table>
   
-#### Adding Text
+### Adding Text
   
    <table>
   <tr>
@@ -254,7 +269,7 @@ words that already exist in the repository <br>1. To use this feature, select th
   </tr>
   </table>
   
-#### Adding Richtext 
+### Adding Richtext 
    
    <table>
   <tr>
@@ -279,7 +294,7 @@ words that already exist in the repository <br>1. To use this feature, select th
   </tr>
   </table>
   
-#### Adding Shapes
+### Adding Shapes
   
   <table>
   <tr>
@@ -294,7 +309,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Images
+### Adding Images
   
   <table>
   <tr>
@@ -349,7 +364,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
 
-#### Adding Audio
+### Adding Audio
 
   <table>
   <tr>
@@ -378,7 +393,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Hotspot
+### Adding Hotspot
   
   <table>
   <tr>
@@ -406,7 +421,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Scribblepad
+### Adding Scribblepad
   
  <table>
   <tr>
@@ -420,7 +435,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-#### Adding Question Set
+### Adding Question Set
   
   <table>
   <tr>
@@ -429,150 +444,13 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>  
   <tr>
     <td>To add question set, click the <strong>Add Question Set</strong> icon on the toolbar. The question set browser page is displayed.
-<br>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <b>Add Question Set</b> icon on the toolbar
+<br>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <b>Add Question Set</b> icon on the toolbar. Refer <a href="features-documentation/questionset_create" target="_blank">Adding Question Set</a>
     </td>
     <td><img src="pages/features-documentation/images/contenteditor/addquestionset.png"></td>
   </tr>
   </table>
   
-  **Selecting Questions - Using filter**
-  
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
-    <td>1. Type keywords on the Search Bar to search the repository for questions. The search results are displayed in the bottom left pane
-<br>2. Select Advanced Filters for better search result 
-      <br>a) <b>Language</b>
-<br>b) <b>Difficulty </b>
-<br>c) <b>Question Type </b>
-<br>d) <b>Grade </b>
-<br>e) <b>Concepts </b>
-<br>3. Use the <b>My Questions</b> slider to search for questions that you have uploaded. To search for questions available on the portal, disable this option
-<br>4. The search result is displayed on the left pane 
-<br>5. The selected question can be previewed on the right pane 
-<br>6. Select questions from the results displayed by marking the checkbox 
-<br>7. Click <b>Create Question</b> to create your own question. Click <b>Create Question</b> to know more.
-<br>8. Click Next
-</td>
-  <td><img src="pages/features-documentation/images/contenteditor/selectquestions.png"></td>
-</tr>
-</table>
-  
-### Creating Questions
-   <table>
- <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>To create a question set
-  <td><br>1.Select the type of question you want to create.
-    <br>2. Click <b>Select</b> 
-    </td>
-    <td>image</td>
-  </tr>
-    <tr>
-      <td>
-        <br>3. Enter the questions in <b>Question Configuration</b> page. 
-    <br>&emsp;a. If you have selected Multiple choice question, refer <b>Creating Multiple Choice Question Set</b>
-    <br>&emsp;b. If you have selected Fill in the blanks questions, refer <b>Creating Fill in the blanks Question Set</b> 
-    <br>&emsp;c. If you have selected Match the following questions, refer <b>Creating Match the Following Question Set</b> 
-    </td>
-    <td>image</td>
-  </tr>
-   <tr>
-      <td>
-    <br>4. Click <b>Back</b> to go to the previous screen
-    <br>5. Click <b>Next</b>
-    <br>6. Enter the <b>Question Details</b>
-    <br>&emsp;a. The <b>Title</b> displays the title
-    <br>&emsp;b. Select <b>Language</b>
-    <br>&emsp;c. Select <b>Level</b>
-    <br>&emsp;d. Select <b>Grade Level</b>
-    <br>&emsp;e. Select <b>Max Score</b>
-    <br>&emsp;f. Select <b>Concept</b>
-    <br>&emsp;g. Enter <b>Description</b>
-    </td> 
-    <td><img src="pages/features-documentation/images/contenteditor/createquestion.png"> </td>
-  </tr> 
-  
-### **Creating Multiple Choice Question Set**
-  
- <table>
- <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>  
- <tr>
- <td>Multiple Choice Questions
-<br>1. Enter <b>Question Set Title</b> for the questionaire 
-<br>2. The <b>Max Score</b> displays the maximum score for the question 
-<br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
-<br>4. Select <b>Show Immediate Feedback</b> to determine when the feedback for the answers should be displayed
-<br>5. Select <b>Shuffle Question</b> to enable shuffling of questions from the set
-<br>6. The list of selected questions appears in the left pane
-<br>7. Enter the score for each question using <b>Configure Score</b> 
-  <br>8. Click <b>Add More Questions</b> to increase the questions in the question set
-  <br>9. Click <b>Add</b> to append the selected questions in Question Set. The Question Set is added on the slide.   
-    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/configureques.png"></td>
- </tr>
- </table>
- 
-**Creating Fill in the Blanks Question Set **
-  
- <table>
- <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>  
- <tr>
- <td>
-<br>1. Enter <b>Question Set Title</b> for the questionaire 
-<br>2. The <b>Max Score</b> displays the maximum score for the question 
-<br>3. Select the number of questions that should be displayed in each screen from the <b>Display</b> drop-down menu. The question amongst the selected questions is displayed in the right pane
-<br>4. Select <b>Show Immediate Feedback</b> to determine when the feedback for the answers should be displayed
-<br>5. Select <b>Shuffle Question</b> to enable shuffling of questions from the set
-<br>6. The list of selected questions appears in the left pane
-<br>7. Enter the score for each question using <b>Configure Score</b> 
-  <br>8. Click <b>Add More Questions</b> to increase the questions in the question set
-  <br>9. Click <b>Add</b> to append the selected questions in Question Set. The Question Set is added on the slide.   
-    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/configurequeston.png"></td>
- </tr>
- </table>
- 
-**Customizing Question Set**
- 
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
-    <td>After adding the question set, the customize tab displays options to modify them. You can: <br>1. Click <strong>Assessment Browser</strong> to return to the <strong>Selecting Questions</strong>screen <br>2. Click <strong>Question Config</strong> to manage the configuration of the selected questions <br>3. View and modify the <strong>Assessment Title</strong>, if required <br>4. Use the sliders to enable or disable <strong>Shuffle Questions, Shuffle Options and Show Immediate Feedback</strong> <br>5. Select the number of questions to be displayed in each screen <br>6. Enter the <strong>Total Marks</strong> for the assessment
-    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/customizetab.png"></td>
-  </tr>
-  </table>      
-      
-  **Configuring Question Set**
-
- <table>
- <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>  
- <tr>
-    <td>1. Click the trash icon to delete the added question set <br>2. Click the spanner icon to edit details of the question set. The settings options are displayed on the right <br>a) Click on the upward/downward arrows to determine the marks of the question set <br>3. Click the eye icon to view the preview of the question set <br>4. Click <strong>Done</strong> to save
-   </td>
-    <td><img src="pages/features-documentation/images/contenteditor/ques_set.png"></td>
- </tr>
- </table>   
-      
-#### Adding Activity
+### Adding Activity
 
  <table>
  <tr>
@@ -628,7 +506,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
  </tr>
  </table>
    
-#### Adding Video
+### Adding Video
   
   <table>
   <tr>
@@ -659,8 +537,22 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td><img src="pages/features-documentation/images/contenteditor/videodetail.png"></td>
   </tr>
   </table>
+  
+### Adding Details
+<br>All details associated with the resource must be updated before sending the resource for review.
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>  
+  <tr>
+    <td>1. Enter a <b>Name</b> for the resource <br>2. Enter a <b>Description</b> <br>3. Enter Keywords <br><strong>Note:</strong> Keywords help search engines find content associated with them when you search <br>4. Select the following from their respective drop-down menus: <br>&emsp;a) Curriculum <br>&emsp;b) Class <br>&emsp;c) Subject <br>&emsp;d) Medium <br>&emsp;e) Concepts <br>f) Resource Type <br>&emsp;g) Audience <br>5. Enter Attributions, if any  <br>6. Click <b>Save</b>
+   </td>
+    <td><img src="pages/features-documentation/images/contenteditor/addmetadata.png"></td>
+  </tr>
+  </table>   
     
-### Reviewing and Publishing Content 
+## Reviewing and Publishing Content 
 
  <table>
  <tr>
@@ -674,17 +566,4 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   </tr>
   </table>
   
-  **Adding Metadata**
-
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>  
-  <tr>
-    <td>You need to add metadata to the study material <br>1. Select an icon and enter a <strong>Name</strong> for the study material created <br>2. Enter a <strong>Description</strong> for the study material <br>3. Select other metadata like: <br>a) Curriculum <br>b) Medium
-c) Subject <br>d) Grade <br>e) Audience <br>f) Resource Type <br>g) Concepts <br>4. Enter Attributions, if any <br>5. Enter Keywords <br><strong>Note:</strong> Keywords help search engines find content associated with them when you search <br>6. Click <strong>Save</strong>
-   </td>
-    <td><img src="pages/features-documentation/images/contenteditor/addmetadata.png"></td>
-  </tr>
-  </table>   
+ 

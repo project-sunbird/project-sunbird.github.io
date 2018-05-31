@@ -9,3 +9,5 @@ published: true
 allowSearch: true
 ---
 {% image src='pages/usertaskflow/images/upload_content.svg' full center alt='How Do I Upload Content' zoom %} 
+
+**Note:** The URL to Upload Content need to be set as white-Listed Domains [Other Configurations](developer-docs/configuration/other_configs/)

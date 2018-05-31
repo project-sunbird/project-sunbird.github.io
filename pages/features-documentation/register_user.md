@@ -50,16 +50,15 @@ Organization administrators can use their registered credentials and add individ
    6 |password |Unique/common password given by the organization  |Alphanumeric |Optional
    7 |provider |Channel ID shared to the system administrator by Sunbird. <br>**Note:** Enter values in the **provider** column and the **phoneVerified** column or keep both columns blank  |Alphanumeric  |Conditional
    8 |phoneVerified  |Whether user’s phone number is verified. <br>**Note:** Enter values in the **provider** column and the **phoneVerified** column or keep both columns blank  |TRUE, if phone number is provided  |Conditional
-   9 |emailVerified  |Whether user’s email ID is verified  |TRUE, if email ID is provided |Optional
-   10  |roles  |User’s role on Sunbird |Select one or more of the following roles: <br>CONTENT_CREATOR, CONTENT_REVIEWER, FLAG_REVIEWER, COURSE_MENTOR, ORG_ADMIN, SYSTEM_ADMINISTRATION, PUBLIC  |Optional
-   11  |position  |User’s designation in the organization hierarchy |Alphanumeric |Optional 
-   12  |grade  |Classes taught by the user |Select one or more of the following grades: <br>Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Kindergarten, Other  |Optional
-   13  |location |User’s geographical location |Alphanumeric |Optional |
-   14  |DOB  |User’s date of birth |YYYY-MM-DD  |Optional
-   15  |gender |User’s gender  |Male, Female, Transgender |Optional
-   16  |language |User’s language preferences  |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu  |Optional
-   17  |profileSummary |User’s professional profile summary, skills, certifications etc. |Alphanumeric |Optional 
-   18  |subject  |Subjects taught by the user |Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali |Optional
+   9  |roles  |User’s role on Sunbird |Select one or more of the following roles: <br>CONTENT_CREATOR, CONTENT_REVIEWER, FLAG_REVIEWER, COURSE_MENTOR, ORG_ADMIN, SYSTEM_ADMINISTRATION, PUBLIC  |Optional
+   10 |position  |User’s designation in the organization hierarchy |Alphanumeric |Optional 
+   11  |grade  |Classes taught by the user |Select one or more of the following grades: <br>Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Kindergarten, Other  |Optional
+   12  |location |User’s geographical location |Alphanumeric |Optional |
+   13  |DOB  |User’s date of birth |YYYY-MM-DD  |Optional
+   14  |gender |User’s gender  |Male, Female, Transgender |Optional
+   15  |language |User’s language preferences  |English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu  |Optional
+   16  |profileSummary |User’s professional profile summary, skills, certifications etc. |Alphanumeric |Optional 
+   17  |subject  |Subjects taught by the user |Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali |Optional
 
 ***Note***: 
 You can select more than one value for the columns grade, language and subject. Ensure that you separate the values with a comma when you select more than one value for any column

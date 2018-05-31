@@ -1,0 +1,43 @@
+{% assign basejsdocs = site.baseurl %}
+{% if basejsdocs =="" %}
+{% assign basejsdocs = "/" %}
+{% endif %}
+<base id="baseURL" href="{{page.url}}" />
+<script>
+	// Dynamic Base URL
+	function getBase(){
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		baseURL = document.getElementById('baseURL');
+		if (excludedSites.indexOf(window.location.host) > -1){
+			baseURL.href="{{page.url}}";
+		} else {
+			baseURL.href="{{basejsdocs}}{{page.url | remove_first: "/"}}";
+		}
+	}
+	getBase();
+</script>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="last-modified" content="{{ site.time }}">
+<meta http-equiv="Expires" content="600" />
+
+<!--Build Details-->
+<meta name="buildVersion" content="{{site.buildVersion}}" />
+<meta name="buildNo" content="{{site.buildNo}}" />
+<!--/Build Details-->
+
+<link rel="stylesheet" href="{{basejsdocs}}css/style.css?{{ site.time | | date: '%d%m%Y'}}"  />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-106552125-1');
+</script>
+<style>
+	header{position:relative !important;}
+</style>

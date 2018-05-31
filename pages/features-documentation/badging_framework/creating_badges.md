@@ -12,6 +12,7 @@ allowSearch: true
 ## Overview
 
 Organization administrators can create and customize badges to suit their organization needs. This page provides you information on the procedures to:
+
 - Create badges
 - Create badge Issuers
 - Define created badges in the platform
@@ -42,9 +43,9 @@ On successful execution of the creation API, you will get the Issuer ID.
 
 ### Defining Badge Class
 
-To create a badge class:
+To create a badge class:<br>
 1. Execute the [Badging Framework API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeCreatePost){:target="_blank"}<br> 
-2. Enter the following details in the request body of Create Badge Class Endpoint:
+2. Enter the following details in the request body of Create Badge Class Endpoint:<br>
 
 |  Field Name                 | Description | Field Type | 
 |--------------------------------|---------------------|--------------|
@@ -54,7 +55,7 @@ To create a badge class:
 | Description | A short description about the badge | Mandatory |
 | Image| An image file that represents the badge | Optional |
 | Type | Specify if the badge is for a user or content. Valid values are User/Content | Mandatory |
-| Subtype | Specify what the badge is related to. It is predefined list of values such as Official,Certificate, Award etc. | Optional |
+| Subtype | Specify what the badge is related to. It is predefined list of values such as Official,Certificate, Award etc. | Mandatory |
 | Criteria | A text string or a URL that describes criteria in achieving the badge | Mandatory|
 | Roles | List of user roles on Sunbird who can issue the badge | Mandatory |
 

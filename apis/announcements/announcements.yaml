@@ -11,9 +11,13 @@ host: staging.open-sunbird.org
 basePath: /announcement/v1
 securityDefinitions:
   auth:
-    type: apiKey
-    name: Authorization
-    in: header
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:

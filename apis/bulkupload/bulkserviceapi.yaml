@@ -14,9 +14,13 @@ host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:
   auth:
-    type: apiKey
-    name: Authorization
-    in: header
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -33,7 +37,7 @@ paths:
           - The **_/bulk/user/upload_** endpoint executes " bulk upload user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-      summary: Uploads user in bulk
+      summary: Upload User in Bulk
       tags:
       - Bulk Operation APIs
       operationId: bulk upload user req1
@@ -46,7 +50,7 @@ paths:
         in: formData
         required: true
         type: string
-        description: 'The Id identifies an Organisation uniquely. This Id is provided at the time of organisational registration'
+        description: 'The ID identifies an Organisation uniquely. This ID is provided at the time of organisational registration'
       - name: user
         in: formData
         required: true
@@ -106,7 +110,7 @@ paths:
           - The **_/batch/bulk/enrollment_** endpoint executes "bulk batch enrollment" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-      summary: Uploads batches in bulk
+      summary: Upload Batches in Bulk
       tags:
       - Bulk Operation APIs
       operationId: bulk batch enrollment req
@@ -152,26 +156,25 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /upload/status/{Job_Id}:
-    parameters:
-      - in: path
-        name: Job_Id
-        type: string
-        required: true
-        description: 'Please append a valid Job Id To the Request URL'
+  /upload/status/{Job_ID}:
     get:
       description: >-
        This API is associated with check the uploasd status on the Sunbird Platform.
           - The **_/upload/status/_** endpoint executes "get status" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-      summary: Checks upload Status
+      summary: Check Upload Status
       tags:
       - Bulk Operation APIs
       operationId: getStatus
       produces:
       - application/json
       parameters:
+      - in: path
+        name: Job_ID
+        type: string
+        required: true
+        description: 'Please append a valid Job ID to the Request URL'
       - name: Accept
         in: header
         required: true
@@ -228,14 +231,13 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /org/upload :
+  /org/upload:
     post:
       description: >-
        This API is associated with bulk uploading organisations on the Sunbird Platform.
           - The **_/org/upload_** endpoint executes "bulk org upload" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
-      summary: Uploads organisations in bulk 
+          - It is mandatory to provide values for required parameters
+      summary: Upload Organisations in Bulk 
       tags:
       - Bulk Operation APIs
       operationId: bulk org upload req
@@ -290,6 +292,66 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  /bulk/location/upload:
+    post:
+      summary: Upload Location Data in Bulk
+      description: >-
+        This API is used to create a background job for bulk upload of location data into the platform. The upload data is provided
+        in CSV format.
+      tags:
+        - Bulk Operation APIs
+      operationId: Location Data Bulk Upload Request
+      consumes:
+        - multipart/form-data
+      produces:
+        - application/json
+      parameters:
+        - name: csvFile
+          in: formData
+          required: true
+          type: file
+          description: |-
+            CSV file which contains state location data in following format:
+              - code: 'National level code for state'
+              - name: 'Name of state'
+              - parentCode: 'code of the parent'
+              - parentId : 'ID of the parent. parentCode and parentId any one is required if type belongs to some parent. in other words if its highest (top) node in the hierarchy,then no parent details are required.'
+        - name: type
+          in:  formData
+          required: true
+          type: string
+          description: >-
+            possible values of location types state,district,block,cluster.
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: >-
+            To make use of any Location API, you require authorization. Raise a
+            request to the administrator for the use of the API. You will
+            receive the authorization key. Specify the key received, here.
+      responses:
+        '200':
+          description: >-
+            OK. Successful operation. The data upload operation is accepted for
+            further processing.
+          schema:
+            $ref: '#/definitions/LocationDataBulkUploadCreateResponse'
+        '400':
+          description: >-
+            CLIENT_ERROR. The upload operation failed due to bad request from
+            client. Possible reasons for failure,
+            Mandatory parameter "csvFile" is missing.
+            Maximum upload file size x MB is exceeded.
+            CSV file content is improper.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'
+        '500':
+          description: >-
+            INTERNAL SERVER ERROR. The upload operation failed due to a server
+            error.
+          schema:
+            $ref: '#/definitions/CommonErrorResponse'        
 definitions:
   ContentCreateResponse:
     description: Create Content Response
@@ -360,3 +422,31 @@ definitions:
       result:
         type: object
         description: Empty Result
+  LocationDataBulkUploadCreateResponse:
+    title: Response for successfully accepted location data bulk upload API request
+    allOf:
+      - $ref: >-
+          https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+      - type: object
+        properties:
+          result:
+            type: object
+            properties:
+              processId:
+                description: >-
+                  ID which can be used to query status of a background process
+                  created by location data bulk upload API
+                type: string
+              response:
+                description: Response message for successfully accepted request
+                type: string       
+  CommonErrorResponse:
+    title: Error response for location data bulk upload API request
+    allOf:
+      - $ref: >-
+          https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
+      - type: object
+        properties:
+          result:
+            description: Error message for failed location data bulk upload API request
+            type: object      
