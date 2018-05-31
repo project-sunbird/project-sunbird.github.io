@@ -15,7 +15,6 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /framework/v1
 securityDefinitions:
   auth:
       type: apiKey  # arbitrary name for the security scheme
@@ -70,11 +69,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'The Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."Create channel" operation was successfully executed.'
@@ -122,11 +116,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation.The "fetch channel by ID" operation was successfully executed.'
@@ -182,11 +171,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."Update channel by ID" operation was successfully executed.'
@@ -236,11 +220,6 @@ paths:
         required: true
         type: string
         description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."list channels" operation was successfully executed.'
@@ -290,11 +269,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."search channels" operation was successfully executed.'
@@ -308,7 +282,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /create:
+  /framework/v1/create:
     post:
       description: >-
        This API is associated with creating a new framework on the Sunbird Platform.
@@ -362,7 +336,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /read/{id}:
+  /framework/v1/read/{id}:
     get:
       description: >-
        This API is associated with fetching a specific framework 
@@ -414,7 +388,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /update/{id}:
+  /framework/v1/update/{id}:
     patch:
       description: >-
        This API is associated with updating a framework 
@@ -474,7 +448,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /list:
+  /framework/v1/list:
     post:
       description: >-
        This API is associated with listing of all existing frameworks
@@ -528,7 +502,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /copy/{id}:
+  /framework/v1/copy/{id}:
     post:
       description:  >-
        This API is associated with copying a framework 
@@ -588,65 +562,6 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /publish/{id}:
-    post:
-      description:  >-
-       This API is associated with publishing a framework 
-          - The **_/publish** endpoint executes the "Publish Framework" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty
-      summary: Publish Framework
-      tags:
-      - Framework - Core APIs
-      operationId: publishFramework
-      produces:
-      - application/json
-      parameters:
-      - name: id
-        in: path
-        required: true
-        type: string
-        description: >-
-          The identifier of the framework to be published
-      - name: Body
-        in: body
-        required: true
-        description: >-
-            The body is the representation of the resource object 
-              - The body contains metadata for publishing a framework which is empty request object
-        schema:
-          $ref: '#/definitions/PublishFrameworkRequest'
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-           The Content Type entity is the media type of the resource.
-             Possible media types can be:- 
-              - application/json
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."Copy framework" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/FrameworkPublish200Response'
-        '400':
-          description: 'BAD REQUEST. The "Copy fFramework" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/FrameworkCopy400Response'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-      security:
-      - auth: []    
-  /category/create:
     post:
       description: >-
        This API is associated with creating a category under a framework
@@ -705,7 +620,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /category/read/{code}:
+  /framework/v1/category/read/{code}:
     get:
       description: >-
        This API is associated with fetching a category on Sunbird Platform.
@@ -762,7 +677,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /category/update/{code}:
+  /framework/v1/category/update/{code}:
     patch:
       description: >-
        This API is associated with updating a category in an  existing framework
@@ -836,7 +751,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security: []
-  /category/search:
+  /framework/v1/category/search:
     post:
       description: >-
        This API is associated with searching a category 
