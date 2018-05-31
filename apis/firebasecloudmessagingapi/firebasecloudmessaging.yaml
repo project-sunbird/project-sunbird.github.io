@@ -8,7 +8,7 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /v1/notification
+basePath: /api/data/v1/notification
 securityDefinitions:
   auth:
       type: apiKey  # arbitrary name for the security scheme
@@ -200,17 +200,17 @@ definitions:
     - notifType
     - summary
     - body
-  ResultWithNodeId:
-    title: Result Containing Node Id
+  NotificationResponseWrapper:
+    title: wrapper for FCM notification response
     type: object
     properties:
       result:
-        $ref: '#/definitions/NodeId'
+        $ref: '#/definitions/NotificationResponse'
   ContentCreateResponse:
     description: Create Content Response
     type: object
     allOf:
-      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/NotificationResponseWrapper'
       - $ref: '#/definitions/ResponseHeader'
   ResponseHeader:
     title: ResponseHeader
@@ -256,13 +256,12 @@ definitions:
       result:
         type: object
         description: Empty Result
-  NodeId:
-    title: Node Id
+  NotificationResponse:
     type: object
     properties:
-      node_id:
+      response:
         type: string
-        description: Node Identifier
+        description: 'FCM response msg id.'
   ContentCreateErrorResponse:
     title: Create Content Error Response
     type: object
