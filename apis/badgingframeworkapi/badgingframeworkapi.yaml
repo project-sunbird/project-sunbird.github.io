@@ -10,11 +10,15 @@ info:
         - rate or authorize content for its quality and effectiveness
 host: staging.open-sunbird.org
 basePath: /api/badging/v1/issuer
-securityDefinitions: 
-    auth:
+securityDefinitions:
+  auth:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
