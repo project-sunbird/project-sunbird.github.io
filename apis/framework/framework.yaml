@@ -15,7 +15,6 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath:  /api
 securityDefinitions:
   auth:
       type: apiKey  # arbitrary name for the security scheme
