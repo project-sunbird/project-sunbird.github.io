@@ -3,7 +3,7 @@ info:
   version: '1.0'
   title: User Management  API(s)
   description: >-
-    The User Management API resources are used to manage individual users and user memberships, also these resources allow you to add skills, block and unblock users, encrypt user data and also you can perform various other related tasks. 
+    The User Management API resources are used to manage individual users and their memberships, also these resources allow you to add skills, block and unblock users, encrypt user data. You can perform various other user management related tasks. 
      
     **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
   license:
@@ -12,10 +12,14 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/user/v1
 securityDefinitions:
-    auth:
+  auth:
       type: apiKey  # arbitrary name for the security scheme
-      in: header # The security scheme parameter is in "header"
+      in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -67,12 +71,12 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the create user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.
       responses:
         '200':
           description: 'OK ! Successful operation."Create User" operation was successfully executed.'
@@ -134,7 +138,8 @@ paths:
         required: true
         type: string
         description: >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
@@ -142,7 +147,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -188,9 +193,7 @@ paths:
             {
                 "request": {
                     "filters":{
-
                       "userAttribute": ["value of user attribute , either you can pass single string or list"]
-
                     },
                     "limit": 500
                 }
@@ -214,8 +217,8 @@ paths:
  /profile/read:
     post:
       description: >-
-        This API is associated with fetching User profile on the Sunbird Platform.
-          - **_/profile/read_** endpoint executes the "Get User By Login Id" request to fetch the User profile.
+        This API is used for getting information about the currently authenticated user
+          - **_/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
           - It is mandatory to provide values for required parameters
       summary: Get User by Login ID
       tags:
@@ -235,14 +238,11 @@ paths:
              - JSON 
          
              - XML data
-        
+          -  The body contains metadata about reading the user profile
            **Note**: 
               
-            - The login ID value should ideally be username@provider, 
-              
+            - The login ID is ideally in the following format:  username@provider
             - While creating the user if you haven't specified the provider name then your login ID would be same as username
-          
-          - The body contains metadata about the reading the user profile
         schema:
           $ref: '#/definitions/GetUserByLoginIdrequest'
       - name: Content-Type
@@ -270,7 +270,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Fetching User profile" operation was successfully executed.'
@@ -322,19 +322,12 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /read/{User_Id}:
-    parameters:
-      - in: path
-        name: User_Id
-        type: string
-        required: true
-        description: 'Please append a valid User Id To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic Ex: ?Fields=completeness,missingFields,topic'   
+ /read/{User_ID}:
     get:
       description: >-
-        This API is associated with searching a specific user
-          - **_/read/{User_Id}_** endpoint executes the "Fetch User profile" request. 
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+        This API is used for searching a specific user, the user search is based on the unique ID of the user
+          - **_/read/{User_ID}_** endpoint executes the "Get User profile" request
+          - It is mandatory to provide values for required parameters
       summary: Get User by User ID
       tags:
       - User APIs
@@ -342,6 +335,11 @@ paths:
       produces:
       - application/json
       parameters:
+      - in: path
+        name: User_ID
+        type: string
+        required: true
+        description: 'Please append a valid User Id To the Request URL and if user need any specific values like , profile completeness ,missingFields,topic Ex: ?Fields=completeness,missingFields,topic'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -353,7 +351,8 @@ paths:
         required: true
         type: string
         description: >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
+            The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
@@ -367,7 +366,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Get User by Id" operation was successfully executed.'
@@ -416,7 +415,7 @@ paths:
  /update:
     patch:
       description:  >-
-        This API is associated with updating user details on the Sunbird Platform.
+        This API is use for updating the user realted details 
           - **_/update/_** endpoint executes the "Update User" request
           - It is mandatory to provide values for required parameters
       summary: Update User
@@ -464,7 +463,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Update User" operation was successfully executed.'
@@ -494,11 +493,11 @@ paths:
  /update/logintime:
     patch:
       description: >-
-         This API is used to update user login time . 
+         This API is used to update user login time 
          
-         - This API is called after the user successfully logs in either from portal or app. 
+         - This API is called after the user successfully logs in either from portal or the app 
          
-         - User login is handle by SSO(KeyCloak) , so Sunbir won't know any thing about user login time, that's why user need to make this api call after success login 
+         - On Sunbird, User login is handled by SSO(KeyCloak) ,You need to call this API after successful login to update logintime
          
           - It is mandatory to provide values for required parameters
       summary: Add Users Current Login Time
@@ -553,7 +552,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All the APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Login Time" operation was successfully executed.'
@@ -607,9 +606,9 @@ paths:
     get:
       description:  >-
        This API is used to list the assigned roles pertaining to a user
-          - The **_/role/read_** endpoint executes the "read role" request based on parameters provided as metadata in the request body.
+          - The **_/role/read_** endpoint executes the "Get user role information" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
-      summary: Fetches User Role Information
+      summary: Get User Role Information
       tags: 
       - User APIs
       operationId: V1RoleReadGet
@@ -637,12 +636,11 @@ paths:
         required: true
         type: string
         description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
-
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -667,7 +665,6 @@ paths:
             'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
-            
       security:
       - auth: []
       x-unitTests:
@@ -701,7 +698,7 @@ paths:
     post:
       description:  >-
        This API is used to configure the visibility of user profile
-          - The **_/profile/visibility_** endpoint executes the "user profile visibility" request based on parameters provided as metadata in the request body.
+          - The **_/profile/visibility_** endpoint executes the "user profile visibility" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
       summary: User profile Visibility
       tags:
@@ -750,7 +747,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -808,7 +805,7 @@ paths:
  /block:
     post:
       description:  >-
-       This API is used to ban/block a user
+       This API is used to ban/block a user, banning or blocking a user is done calling this API.  
           - The **_/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Block user
@@ -858,7 +855,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -958,13 +955,13 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+        description: 'This ID uniquely identifies a request if the same API is called multiple times.'
 
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -1021,7 +1018,7 @@ paths:
  /org/v1/role/assign:
     post:
       description:  >-
-       This API is associated with assigning roles to a user
+       This API is used to assign a roles to the user
           - The **_/org/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
         
@@ -1029,10 +1026,9 @@ paths:
           
           - then the corresponding user role will be assigned to the user inside the user profile 
         
-        In case the userId, organisationId and roles are passed 
+        In case the userID, organisationID and roles parameter values are passed 
           
           - then roles will be assigned by the corresponding organization for that user
-
       summary: Assign Role to a User
       tags:
       - User APIs
@@ -1078,7 +1074,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -1113,7 +1109,7 @@ paths:
  /encrypt:
     get:
       description: >-
-       This API is associated with securing the user information with an encryption scheme  
+       This API is used for securing the user information with an encryption scheme  
           - The **_ /encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Encrypt User Information
@@ -1153,7 +1149,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Encrypt User Information" operation was successfully executed.'
@@ -1179,7 +1175,7 @@ paths:
  /skill/add:
     post:
       description: >-
-       This API is used to add skill set to a user 
+       This API is used to add a skill set to the user 
           - The **_/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Add User Skill
@@ -1227,7 +1223,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -1262,15 +1258,10 @@ paths:
             x-authenticated-user-token: '{{user-token}}'
           body: >2-
               {
-
             "request": {
-
                   "endorsedUserId":"userId",
-
                   "skillName":["ElasticSearch"]
-
             }
-
             }
         expectedResponse:
           x-allowExtraHeaders: true
@@ -1291,7 +1282,7 @@ paths:
  /data/v1/skills:
     get:
       description: >-
-       This API is associated with listing all user skills
+       This API is associated with listing all the skills that a user possesses
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Lists all Skills of a User
@@ -1322,7 +1313,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: 'This ID Uniquely identifies a request if the same API is called multiple times'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -1333,7 +1324,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."list user skills" operation was successfully executed.'
@@ -1386,7 +1377,7 @@ definitions:
        - $ref: '#/definitions/CreateUserSingleResp'
 
   CreateUserSingleResp:
-   description: this will hold single userObject
+   description: Represents the  hold single userObject request
    type: object
    properties:
       request:
@@ -1394,7 +1385,7 @@ definitions:
        $ref: '#/definitions/UserReq'
  
   RolesResponse:
-   description: this will hold roles api response
+   description: Represents the hold roles response
    type: array
    items:
     type: object
@@ -1404,7 +1395,7 @@ definitions:
        $ref: '#/definitions/Role'
   
   Role:
-    description: this will contains one role object
+    description: Represents the request body for role o
     type: array
     items:
      type: object
@@ -1459,7 +1450,7 @@ definitions:
     properties:
           email:
             type: string
-            description: 'in create user either email or phone is mandatory'
+            description: 'Represents the email of the user'
           firstName:
             type: string
           lastName:
@@ -1472,27 +1463,40 @@ definitions:
             type: array
             items:
              type: string
-             description: any know language by user
+             description: 'Represents the langauage that user is known to'
           gender:
             type: string
           phone:
             type: string
           phoneVerified:
             type: boolean
-            description: 'this key is required with value as true, if user is pass phone value and provider both. in create user either email or phone is required.'
+            description: >-
+              This key is required with value as true, if you passes both the values for phone and provider.
+            
+               - But incases of create user either of email or phone is required.'
           subject:
             type: array
             items:
              type: string
           channel:
             type: string
-            description: 'value of channel, that you can get while creating rootOrg.if user provide channel then user will be associated with that root org, if channel is not provided in request body then it will pick channel set inside Environment variable and used that to associated user with that rootOrg.incase channel is not provided nither in request nor Env then user creation will fail.'
-          externalId:
+            description: >-
+            
+              'Represents the value of channel, which you get while creating a rootOrg
+              - if you provide channel value, then you will get associated with that particular root organization  
+              - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization
+              - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
+          exernalId:
             type : string
-            description: 'identity of user in some other system. by providing externalId the creator can corelate their user with sunbird system. externalId and provider combination must be unique. if user is passing externalId then they have to pass provider.'
+            description: >-
+              Represents the identity of user in some other system - - Providing externalId, the creator can corelate their user with sunbird system. 
+                - The externalID and provider combination must be unique. If you pass externalID then you have to pass provider also.'
           provider:
             type: string
-            description : 'provider is just an orgainsation , who is providing user details to sunbird. that organisation may or maynot be part of sunbird. provider will always come with externalId.'
+            description : >-
+               The provider represents an orgainsation, which provides user details.
+                - The organisation may or maynot be part of the Sunbird system
+                - The provider is always represented by an externalId
           profileSummary:
             type: string
           userName:
@@ -1504,7 +1508,7 @@ definitions:
             type: string
           location:
             type: string
-            description: 'current location of user'
+            description: 'Represents the current location of the  user'
           education:
             type: array
             items:
@@ -1512,13 +1516,13 @@ definitions:
              $ref: "#/definitions/Education"
           profileVisibility:
             type: object
-            description: it will be a map having key as any user attribute and value can be public or private. 
+            description: 'Represents the profile visibility, it is a map having key as any user attribute and the value can be public or private'
           address: 
             type: array
             items:
               type: object
               $ref: "#/definitions/Address"
-            description: it will contains list of address object.
+            description: 'Represents the address, it contains list of address object'
           jobProfile:
             type: array
             items:
@@ -1547,7 +1551,7 @@ definitions:
             type: string
           email:
             type: string
-            description: 'in create user either email or phone is mandatory'
+            description: 'Represents the email of the user'
           firstName:
             type: string
           lastName:
@@ -1560,14 +1564,17 @@ definitions:
             type: array
             items:
              type: string
-             description: any know language by user
+             description: Represents any known language of the user
           gender:
             type: string
           phone:
             type: string
           phoneVerified:
             type: boolean
-            description: 'this key is required with value as true, if user is pass phone value and provider both. in create user either email or phone is required.'
+            description: >- 
+              Represents that a key is required with value 
+              - True, if you pass both phone number and provider values
+              - Alternatively false , as In create User if you have provided either email or phone 
           status:
             type: integer
             format: int32
@@ -1580,23 +1587,28 @@ definitions:
             type: array
             items: 
              type: string
-             description: user roles independent to any org. api won't access roles param. even if user pass the roles api(create or update ) will ignore it.  
+             description: >- 
+              Represents the user roles that are independent to any org. 
+               **Note:** This API does not access the roles parameters, even if user passes the roles API(create or update ) , These parameters will get ignored  
           provider:
             type: string
-            description: 'value of provider, this can be just name of an organisation or code of an organisation by which organisation can be identified.'
+            description: 'Represents the value of provider, this can be just name of an organisation or code of an organisation, It is used to identify an organisation'
           externalId:
             type: string
-            description: 'User identifier in some other system'
+            description: 'Represents a user identifier in some other system'
           channel:
             type : string
-            description : 'unique identifier for a rootOrg. channel is not primaryKey but a unique value inside sunbird. this key is applicable for rootOrg only.'
+            description : >-
+              Represents the unique identifier for a rootOrg 
+              - A channel is not a primaryKey but a unique value inside sunbird. 
+              - This key is applicable for root organization only
           profileSummary:
             type: string
           userName:
             type: string
           rootOrgId:
             type: string
-            description: 'ID of the rootorg'
+            description: 'Represents the ID of the root organozation'
           dob:
             type: string
             format: yyyy-MM-dd  
@@ -1604,13 +1616,14 @@ definitions:
             type: string
           location:
             type: string
-            description: 'current location of user'
+            description: 'Represents the current location of the  user'
           education:
             type: object
             $ref: "#/definitions/Education"
           profileVisibility:
             type: object
-            description: it will be a map having key as any user attribute and value can be public or private. 
+            description: >-
+              Represents the value for profile visibility, the values can be a map having key as any user attribute also the value can be either public or private. 
           address: 
             type: object
             $ref: "#/definitions/Address"
@@ -1660,23 +1673,22 @@ definitions:
       - addressLine1
       - city
       - state
-
   Education:
     title: Education
     type: object
     properties:
       degree:
-        description: 'name of degree'
+        description: 'Represents the name of degree'
         type: string
       yearOfPassing:
-        description: 'year of passing 2007'
+        description: 'Represents the year of passing in format YYYY'
         type: integer
         format: int32
       courseName:
-        description: 'name of the course'
+        description: 'Represents the name of the course enrolled in' 
         type: string
       boardOrUniversity:
-        description: 'name of board or university'
+        description: 'Represents the name of board or university'
         type: string
       address:
         $ref: '#/definitions/Address'
@@ -1697,16 +1709,16 @@ definitions:
     type: object
     properties:
       jobName:
-        description: 'name of the job'
+        description: 'Represents the name of the job that user is doing'
         type: string
       role:
-        description: 'on whcih position inside the org'
+        description: 'Represents the hierarchial position of a user  inside an organization'
         type: string
       joiningDate:
-        description: 'job joining date yyyy-MM-dd'
+        description: 'Represents the joining date in format YYYY-MM-DDDD'
         type: string
       endDate:
-        description: 'end date of the job yyyy-MM-dd'
+        description: 'Represents the Release date from the job in format yyyy-MM-dd'
         type: string
       orgId:
         description: ''
@@ -1743,7 +1755,9 @@ definitions:
     type: object
     properties:
       loginId:
-        description: 'user login ID . value will be username@provider if user is created by providing username and provider both then login id would be username@provider , if user is created without provider then loginId would be username itself.'
+        description: >-
+          - Represents the user login ID, If the user is created by providing username and provider, then login ID would be username@provider 
+          - If the user is created without provider then loginID would be same as username
         type: string
     required:
       - loginId
@@ -1751,10 +1765,11 @@ definitions:
     title: Search UserRequest
     example:
       request:
-        query: free text search. if user wan't free text search then pass the query as string
+        query: >- 
+          Represents text search, if you want enable free text search then pass the query as string
         filters:
           userAttribute:
-          - value of user attribute, it can be as string or array.
+          - Represents the value of user attribute, it can be either a string or array.
           - Ex: firstName:test  or firstName:["test","test1"] 
         limit: 500
     type: object
@@ -1783,7 +1798,10 @@ definitions:
     type: object
     properties:
       userAttribute:
-        description: 'userAttribute can be any attribute of user. for single attribute pass string only , if user want to get response based on same key multiple value then pass values as an array. inside filter user can pass multiple attribute with multiple values'
+        description: >-
+          Represents the userAttributes. It can be any attribute of user.
+            - For single attribute pass string only 
+            - if you want to get response based on same key multiple value then pass values as an array that can be done inside the filter, you can pass multiple attributes with multiple values'
         type: array
         items:
           type: string
@@ -1805,30 +1823,30 @@ definitions:
     type: object
     properties:
       userId:
-        description: 'ID of the authenticated User'
+        description: 'Represents the ID of the authenticated User'
         type: string
       firstName:
-        description: 'Ist name of the user'
+        description: 'Represents the First name of the user'
         type: string
       lastName:
-        description: 'Last name of the user'
+        description: ' Represents the Last name of the user'
         type: string
       gender:
-        description: 'Gender can Male|Female'
+        description: 'Represents the  Gender of the user,  Male|Female'
         type: string
       avatar:
-        description: 'The profile picture of the user'
+        description: 'Represents the profile picture of the user'
         type: string
       dob:
-        description: 'Data of Birth of the user'
+        description: 'Represents the Data of Birth of the user'
         type: string
       language:
-        description: 'The language of the user'
+        description: 'Represents the language of the user'
         type: array
         items:
           type: string
       subject:
-        description: 'An array of the parameters'
+        description: 'Represents the array of the parameters'
         type: array
         items:
           type: string

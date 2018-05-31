@@ -15,12 +15,15 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /framework/v1
 securityDefinitions:
-    auth:
+  auth:
       type: apiKey  # arbitrary name for the security scheme
-      in: header # The security scheme parameter is in "header"
+      in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -47,8 +50,10 @@ paths:
         in: body
         required: true
         description: >-
-            The body is the representation of the resource object 
-              - The body contains metadata for creating a channel
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+             - JSON 
+             - XML data
+          The body is the representation of the resource object for creating a channel
         schema:
           $ref: '#/definitions/ChannelCreateRequest'
       - name: Content-Type
@@ -66,11 +71,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'The Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."Create channel" operation was successfully executed.'
@@ -84,7 +84,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /channel/v1/read/{id}:
+  /channel/v1/read/{ID}:
     get:
       description:  >-
        This API is associated with fetching a channel by a specific channel ID
@@ -97,7 +97,7 @@ paths:
       produces:
       - application/json
       parameters:
-      - name: id
+      - name: ID
         in: path
         required: true
         type: string
@@ -118,11 +118,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation.The "fetch channel by ID" operation was successfully executed.'
@@ -159,8 +154,10 @@ paths:
         in: body
         required: true
         description: >-
-            The body is the representation of the resource object 
-              - The body contains metadata for updating a channel
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+             - JSON 
+             - XML data
+            The body is the representation of the resource object for updating a channel
         schema:
           $ref: '#/definitions/ChannelCreateRequest'
       - name: Content-Type
@@ -178,11 +175,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."Update channel by ID" operation was successfully executed.'
@@ -213,8 +205,10 @@ paths:
         in: body
         required: true
         description: >-
-            The body is the representation of the resource object 
-              - The body contains metadata for listing channels
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+             - JSON 
+             - XML data
+            The body is the representation of the resource object for listing channels
         schema:
           $ref: '#/definitions/ChannelSearchRequest'
       - name: Content-Type
@@ -232,11 +226,6 @@ paths:
         required: true
         type: string
         description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."list channels" operation was successfully executed.'
@@ -267,8 +256,10 @@ paths:
         in: body
         required: true
         description: >-
-            The body is the representation of the resource object 
-              - The body contains metadata for searching a channel
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+             - JSON 
+             - XML data
+            The body is the representation of the resource object for searching a channel
         schema:
           $ref: '#/definitions/ChannelSearchRequest'
       - name: Content-Type
@@ -286,11 +277,6 @@ paths:
         required: true
         type: string
         description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      - name: X-Channel-Id
-        in: header
-        required: true
-        type: string
-        description: 'Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."search channels" operation was successfully executed.'
@@ -304,7 +290,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /create:
+  /framework/v1/create:
     post:
       description: >-
        This API is associated with creating a new framework on the Sunbird Platform.
@@ -321,8 +307,10 @@ paths:
         in: body
         required: true
         description: >-
-            The body is the representation of the resource object 
-              - The body contains metadata for creating a framework
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+             - JSON 
+             - XML data
+            The body is the representation of the resource object for updating a channel
         schema:
           $ref: '#/definitions/CreateFrameworkRequest'
       - name: Content-Type
@@ -358,13 +346,13 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /read/{id}:
+  /framework/v1/read/{id}:
     get:
       description: >-
        This API is associated with fetching a specific framework 
           - The **_/read_/{id}** endpoint executes the "Fetch framework" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty
-      summary: Fetch Framework
+      summary: Get a Framework
       tags:
       - Framework - Core APIs
       operationId: FrameworkV1ReadGet
@@ -410,7 +398,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /update/{id}:
+  /framework/v1/update/{id}:
     patch:
       description: >-
        This API is associated with updating a framework 
@@ -470,7 +458,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /list:
+  /framework/v1/list:
     post:
       description: >-
        This API is associated with listing of all existing frameworks
@@ -524,7 +512,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /copy/{id}:
+  /framework/v1/copy/{id}:
     post:
       description:  >-
        This API is associated with copying a framework 
@@ -584,7 +572,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /publish/{id}:
+  /framework/v1/publish/{id}:
     post:
       description:  >-
        This API is associated with publishing a framework 
@@ -641,8 +629,8 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []    
-  /category/create:
+      - auth: []
+  /framework/v1/category/create:
     post:
       description: >-
        This API is associated with creating a category under a framework
@@ -701,7 +689,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /category/read/{code}:
+  /framework/v1/category/read/{code}:
     get:
       description: >-
        This API is associated with fetching a category on Sunbird Platform.
@@ -758,7 +746,7 @@ paths:
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
       - auth: []
-  /category/update/{code}:
+  /framework/v1/category/update/{code}:
     patch:
       description: >-
        This API is associated with updating a category in an  existing framework
@@ -832,7 +820,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security: []
-  /category/search:
+  /framework/v1/category/search:
     post:
       description: >-
        This API is associated with searching a category 
@@ -2194,7 +2182,7 @@ definitions:
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
-      - $ref: '#/definitions/RequestFrameworkPublish'          
+      - $ref: '#/definitions/RequestFrameworkPublish'
   RequestFrameworkPublish:
     description: Request map of framework publish api.
     properties:
@@ -2205,7 +2193,7 @@ definitions:
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
-      - $ref: '#/definitions/ResponseFrameworkPublish200'      
+      - $ref: '#/definitions/ResponseFrameworkPublish200'
   ResponseFrameworkPublish200:
     description: Response of the Framework copy.
     properties:
@@ -2216,4 +2204,3 @@ definitions:
             type: string
             description: Status response of the publish operation
             example: Publish Operation for Content Id 'test_300_framework' Started Successfully!
-            
