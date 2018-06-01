@@ -4,7 +4,7 @@ info:
   title: Announcement API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
-     email: admin@open-sunbird.org
+     email: info@sunbird.org
   description: >-
     The Announcements API resources allow users to communicate with other users and post information about various related topics. Announcements are designed to allow administrators to broadcast information out to a specific user or to an entire group of users.  
   license:
