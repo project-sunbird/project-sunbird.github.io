@@ -46,5 +46,5 @@ The User Interface (UI) differs for each Sunbird user role. The UI elements vary
 <br>1. <b>Course Mentor</b>: The chief responsibilites of a course mentor are: <br>&emsp;a) Create, edit, and delete batches <br>&emsp;b) Add mentors and participants
 <br>2. <b>Teacher Badge Issuer</b>: Organization administrators create badges and assign users to issue this badge to teachers. A user with teacher badge issuer rights issues these created badges to eligible teachers
 <br>3. <b>Public</b>: A public user can only view and consume content on Sunbird. A public user cannot create, curate, review , upload or publish content
-<br>4. <b>Announcement Sender</b>:  An announcement sender, on Sundird, can create and send announcements based on organizational requirements
+<br>4. <b>Announcement Sender</b>:  An announcement sender, on Sundird, creates and sends announcements based on organizational requirements
 

@@ -686,8 +686,6 @@ definitions:
             request:
               type: object
               properties:
-                address:
-                  $ref: '#/definitions/AddressCreateRequest'
                 channel:
                   description: 'Name identifying a tenant (e.g. APEKX). Channel is mandatory for a root organisation'
                   type: string
@@ -698,11 +696,17 @@ definitions:
                   description: 'Organisation specific ID. This parameter is required if provider is given.'
                   type: string
                 isRootOrg:
-                  description: 'Set to true for root organisation'
+                  description: 'Set to true for root organisation only'
                   type: boolean
                 locationId:
                   description: 'ID of location returned using Location Create API'
                   type: string
+                locationCode:
+                  description: 'Code of created state,district,block etc.'
+                  type: array
+                  items:
+                    type: string
+                    description: '["BH"]'
                 provider:
                   description: 'Specified by sub-organisations to identify channel of root organisation.  This parameter is required if externalId is given.'
                   type: string
@@ -718,6 +722,8 @@ definitions:
                 rootOrgId:
                   description: 'Root organisation ID'
                   type: string
+                address:
+                  $ref: '#/definitions/AddressCreateRequest'  
               required:
               - orgName
 
@@ -1119,4 +1125,3 @@ definitions:
             
 
                 $ref: '#/definitions/Organisation'
-

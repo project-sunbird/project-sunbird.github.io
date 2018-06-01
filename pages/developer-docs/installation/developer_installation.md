@@ -40,10 +40,7 @@ To setup the Sunbird portal successfully, follow these steps sequentially:
 Check the following pre-requisites before installing and running the Sunbird-player application:
 
 1. **Software dependencies**
-	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 6.x.x LTS series
-	* [Bower](https://bower.io/#install-bower){:target="_blank"} - latest version of bower: `npm install -g bower`
-	* [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md){:target="_blank"}- 
-	  latest version of gulp: `npm install -g gulp-cli`
+	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 8.11.2 LTS series
 
 2. **API Keys** 
 
@@ -66,9 +63,11 @@ Once the **git clone** command executes, proceed with running the following set 
 <pre>
    $ cd {PROJECT-FOLDER}/src
    $ npm install
-   $ bower cache clean
-   $ bower install --force
+   $ cd {PROJECT-FOLDER}/src/app/client
+   $ npm install
 </pre>
+
+***Note***: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set sunbird_environment=local and sunbird_instance=sunbird.
 
 ### Configure Backend Service Stack
 
@@ -122,6 +121,9 @@ Run the following commands:
    
     $ cd {PROJECT-FOLDER}/src/app
     $ node server.js
+    // Open a new terminal
+    $ cd {PROJECT-FOLDER}/src/app/client
+    $ nodemon
 
 After the commands get executed, open `http://localhost:3000` in the browser.
  

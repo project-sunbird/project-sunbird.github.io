@@ -126,7 +126,7 @@ All content resources that you have saved on your device or popular artifacts fr
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap the <b>Library</b> icon to view all the resources in your library <br>2. Tap the <b>Search</b> icon and enter keywords to search for relevant content resources <br>3. Tap the <b>Filter</b> icon to apply filters on your library content. The sample app has the following filters: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Tap <b>Apply</b> to apply the filter <br>5. Tap <b>Cancel</b> to exit the screen</td>
+  <td>1. Tap the <b>Library</b> icon to view all the resources in your library <br>2. Tap the <b>Search</b> icon and enter keywords to search for relevant content resources <br>3. Tap the <b>Filter</b> icon to apply filters on your library content. The sample app has the following filters: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Tap <b>Apply</b> to apply the filter <br>5. Tap <b>Cancel</b> to exit the screen</td> <br><b>Note</b>: The application only diplays and plays resources which are availble in the Sunbird repository. The application does not support content from other external sources 
   <td><img src="pages/features-documentation/images/mobileapp/library1.png"></td> 
  </tr>
  <tr>
