@@ -107,7 +107,7 @@ To ensure that the content achieves the learning objective it is important to ch
  <td>1. Enter the question
  <br>2. You can format the questions using rich text editor 
  <br>3. Enter the answers within a pair of square brackets [[Answer]]
- <br>4. Use <b>Select Keyboard</b> option select the text input method for the question 
+ <br>4. Use <b>Select Keyboard</b> option select the text input method 
  <br>5. Select <b>Refresh</b> icon to preview your question
  <br>6. Select <b>Partial Scoring</b> to enable scoring for each correct answer
  <br>7. Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears
