@@ -143,7 +143,7 @@ All content resources that you have saved on your device or popular artifacts fr
   <td><img src="pages/features-documentation/images/mobileapp/library5.png"></td>
   </tr>
  <tr>
-  <td><b>Playing and rating content</b><br><br>1. Tap <b>Play</b> to play the content <br>2. After you view the content, Tap the <b>Star</b> icons to rate it. Adding comments as feedback is optional <br>3. Tap <b>Submit</b> to submit your rating and feedback <br><br><b>Note:</b> All the content which is downloaded in the local device and played once in the device can only be rated by the users </td>
+  <td><b>Playing and rating content</b><br><br>1. Tap <b>Play</b> to play the content <br>2. Tap the <b>Star</b> icons to rate the content. Sunbird uses the rating system of one to five stars, with five stars being the highest quality and one star being the lowest quality. You can aslo prove additonal feedback, if required <br>3. Tap <b>Submit</b> to submit your rating and feedback <br><br><b>Note:</b> Users can rate content only after they have downloaded and played it at least once in their device </td>
   <td><img src="pages/features-documentation/images/mobileapp/library3.png"></td>
  </tr>
  <tr>
