@@ -53,7 +53,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the new assessment item to be created.
         schema:
-          $ref: '#/definitions/Question  saverequest'
+          $ref: '#/definitions/Questionsaverequest'
       - name: Content-Type
         in: header
         required: true
@@ -271,7 +271,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the new Organisation to be created.
         schema:
-          $ref: '#/definitions/Question  searchrequest'
+          $ref: '#/definitions/Questionsearchrequest'
       - name: Content-Type
         in: header
         required: true
@@ -370,7 +370,7 @@ paths:
         required: true
         description: 'The Registered User ID to execute the API.'
         schema:
-          $ref: '#/definitions/Question  updaterequest'
+          $ref: '#/definitions/Questionupdaterequest'
       - name: user-id
         in: header
         required: true
@@ -528,7 +528,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 definitions:
-  Question  searchrequest:
+  Questionsearchrequest:
     title: Question - SearchRequest
     example:
       request:
@@ -650,7 +650,7 @@ definitions:
     required:
     - sortField
     - sortOrder
-  Question  saverequest:
+  Questionsaverequest:
     title: Question - SaveRequest
     type: object
     properties:
@@ -704,6 +704,30 @@ definitions:
         description: 'Framework name - item is associated'
         example: NCF
         type: string
+      board:
+        description: 'Framework board - item is associated'
+        example: NCERT
+        type: string
+      medium:
+        description: 'Framework medium - item is associated'
+        example: English
+        type: string
+      subject:
+        description: 'Framework subject - item is associated'
+        example: History
+        type: string
+      gradeLevel:
+        description: 'Framework gradeLevel - item is associated'
+        example: [Class 1]
+        type: array
+        items:
+          type: string
+      topic:
+        description: 'Framework topic - item is associated'
+        example: [Topic 1]
+        type: array
+        items:
+          type: string
       num_answers:
         description: ''
         example: 2
@@ -918,7 +942,7 @@ definitions:
     required:
     - endNodeId
     - relationType
-  Question  updaterequest:
+  Questionupdaterequest:
     title: Question - UpdateRequest
     example:
       request:
@@ -940,8 +964,14 @@ definitions:
             domain: Numeracy
             language:
             - Hindi
+            framework:  NCF
+            board: NCERT
+            medium: English
+            subject: History
             gradeLevel:
-            - Grade 1
+            - Class 1
+            topic:
+            - Topic 1
             qlevel: EASY
             keywords:
             - addition
