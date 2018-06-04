@@ -33,8 +33,21 @@ The following process guides you in setting up the SSO authentication key:
   </tr>
   
   <tr>
-    <td> Login to keycloak with admin account
+    <td> 1. Login to Key cloak with admin account
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
+  </tr>
+    <tr>
+    <td> 2. Select the realm (default selected realm will be master), if you intend to use some other realm then select that <br>
+     3. Click on the "Keys" tab
+     </td>
+      <td><img src="pages\developer-docs\configuring_sunbird\images\real_select.png"></td>
+  </tr>
+     <tr>
+    <td>4.  Click on the Public key button<br>
+5. A popup opens up<br>
+6. Copy the value which looks like this <br>
+     </td>
+      <td><img src="pages\developer-docs\configuring_sunbird\images\real_select.png"></td>
   </tr>
   </table>
