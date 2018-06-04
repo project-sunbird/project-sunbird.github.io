@@ -118,7 +118,8 @@ The <b>Courses</b> screen lists current courses, courses in progress, latest cou
   
 ### Library
 
-All content resources that you have saved on your device or popular artifacts from the portal are maintained in a library.  
+All content resources that you have saved on your device or popular artifacts from the portal are maintained in a library. 
+<br><b>Note</b>: The application only diplays and plays resources which are availble in the Sunbird repository. The application does not support content from other external sources
 
 <table>
   <tr>
@@ -126,16 +127,19 @@ All content resources that you have saved on your device or popular artifacts fr
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap the <b>Library</b> icon to view all the resources in your library <br>2. Tap the <b>Search</b> icon and enter keywords to search for relevant content resources <br>3. Tap the <b>Filter</b> icon to apply filters on your library content. The sample app has the following filters: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Tap <b>Apply</b> to apply the filter <br>5. Tap <b>Cancel</b> to exit the screen</td> <br><b>Note</b>: The application only diplays and plays resources which are availble in the Sunbird repository. The application does not support content from other external sources</td>
+  <td>1. Tap the <b>Library</b> icon to view all the resources in your library <br>2. Tap the <b>Search</b> icon and enter keywords to search for relevant content resources <br>3. Tap the <b>Filter</b> icon to apply filters on your library content. The sample app has the following filters: <b>Board</b>, <b>Grade</b>, <b>Subject</b>, <b>Medium</b> and <b>Content Type</b> <br>4. Tap <b>Apply</b> to apply the filter <br>5. Tap <b>Cancel</b> to exit the screen
+  </td> 
   <td><img src="pages/features-documentation/images/mobileapp/library1.png"></td> 
  </tr>
  <tr>
-  <td>1. Swipe the associated content category to browse relevant resources in that category. In the sample app, content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br><br>2. Tap <b>View all</b> to view all the content in the category <br>3. Tap <b>Open</b> to open and view content details<br>4. Tap <b>Play</b> to play the content <br>5. Tap <b>Download</b> to download the content</td>
+  <td>1. Swipe the associated content category to browse relevant resources in that category. In the sample app, content is categorized as: <br>a) Saved Resources <br>b) Popular Story <br><br>2. Tap <b>View all</b> to view all the content in the category <br>3. Tap <b>Open</b> to open and view content details<br>4. Tap <b>Play</b> to play the content <br>5. Tap <b>Download</b> to download the content
+  </td>
   <td><img src="pages/features-documentation/images/mobileapp/library2.png"></td> 
  </tr>
  <tr>
-  <td>1. Tap <b>Open</b> to open any content types viz, textbook, collection, stories, worksheets etc <br>2. In the sample app you can view details of the content in <b>About</b> section for: <br>a) Grade <br>b) Subject <br>c) Medium <br>3. View <b>Author</b> detail which is displayed in the content card</td>
-  </td><img src="pages/features-documentation/images/mobileapp/library5.png"></td>
+  <td>1. Tap <b>Open</b> to open any content types viz, textbook, collection, stories, worksheets etc <br>2. In the sample app you can view details of the content in <b>About</b> section for: <br>a) Grade <br>b) Subject <br>c) Medium <br>3. View <b>Author</b> detail which is displayed in the content card
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/library5.png"></td>
   </tr>
  <tr>
   <td><b>Playing and rating content</b><br><br>1. Tap <b>Play</b> to play the content <br>2. After you view the content, Tap the <b>Star</b> icons to rate it. Adding comments as feedback is optional <br>3. Tap <b>Submit</b> to submit your rating and feedback <br><br><b>Note:</b> All the content which is downloaded in the local device and played once in the device can only be rated by the users </td>
