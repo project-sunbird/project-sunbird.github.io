@@ -9,13 +9,13 @@ allowSearch: false
 ---
 ## Overview
 
-Single Sign On (SSO) occurs when a user logs in to one application and is then signed in to other applications automatically, regardless of the platform, technology, or domain used. Single SignOn usually makes use of a Central Service which orchestrates the single signon between multiple applications. 
+Single Sign On (SSO) occurs when a user logs in to one application and is then signed in to other applications automatically, regardless of the platform, technology, or domain used. Single SignOn usually makes use of a Central Service which orchestrates the single sign on between multiple applications.
 
-To provide user access and enable API operations, you need to set the SSO authentication key values in the environment correctly.  
+To provide user access and enable API operations, you need to set the SSO authentication key values in the environment correctly.
 
-## Process for Setting Up the SSO public key 
+## Process for Setting Up the SSO public key
 
-The following process guides you in seeting up the SSO authentication key:
+The following process guides you in setting up the SSO authentication key:
 
 1.  Login to keycloak with admin account.
 2.  Select the realm (default selected realm will be master), if you intend to use some other realm then select that 
@@ -33,21 +33,8 @@ The following process guides you in seeting up the SSO authentication key:
   </tr>
   
   <tr>
-    <td>  1. You are logged in 
-      <br>2. You are currently on <b>My Workspace</b>  
-      <br>3. You want to create a book, you have clicked on <b>Book</b> tile
+    <td> Login to keycloak with admin account
      </td>
-      <td><img src="pages/features-documentation/images/book/book_workspace.png"></td>
+      <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
   </table>
-
-
-
-
-
-Screen shot:
-   
-
-<img src="https://github.com/ekstep/Common-Design/blob/master/images/sunbird/Sso_Screen-1.png"/>
-
-<img src="https://github.com/ekstep/Common-Design/blob/master/images/sunbird/sso-screen-2.png"/>
