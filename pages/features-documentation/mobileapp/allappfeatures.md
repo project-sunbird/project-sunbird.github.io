@@ -119,7 +119,8 @@ The <b>Courses</b> screen lists current courses, courses in progress, latest cou
 ### Library
 
 All content resources that you have saved on your device or popular artifacts from the portal are maintained in a library. 
-<br><b>Note</b>: The application only diplays and plays resources which are availble in the Sunbird repository. The application does not support content from other external sources
+
+**Note:** The application only diplays and plays resources which are availble in the Sunbird repository. The application does not support content from other external sources
 
 <table>
   <tr>
