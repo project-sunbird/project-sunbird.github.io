@@ -39,7 +39,7 @@ The following process guides you in setting up the SSO authentication key:
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
      <tr>
-    <td
+    <td>
         5. Click on the public key button <br>
         <b>Note:</b> A pop up opens up
     </td>
