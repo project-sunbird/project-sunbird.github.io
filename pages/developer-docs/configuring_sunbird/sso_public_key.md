@@ -26,15 +26,15 @@ The following process guides you in setting up the SSO authentication key:
   </tr>
   
   <tr>
-    <td> 1. Enter your credentials to login into Keycloak admin console
+    <td> 1. Enter your credentials to login into Keycloak admin console<br>
     <br>2. Click the login button
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
     <tr>
     <td> 3. Click on the dropdown and select appropriate realm<br>
-<b>Note:<b> By default the master realm is selected<br>
-4.  Click on the "Keys" tab in the menu bar <br>
+<b>Note:</b> By default the master realm is selected<br>
+4.  Click on the "Keys" tab in the menu bar
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
