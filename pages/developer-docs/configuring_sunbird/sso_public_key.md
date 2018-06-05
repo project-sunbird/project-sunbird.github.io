@@ -9,9 +9,9 @@ allowSearch: false
 ---
 ## Overview
 
-Single Sign On (SSO) occurs when a user logs in to one application and is then signed in to other applications automatically, regardless of the platform, technology, or domain used. Single SignOn usually makes use of a central service which orchestrates the single sign on between multiple applications.
+Single Sign On (SSO) occurs when a user logs in to one Sunbird application and is then signed in to other related applications automatically, regardless of the platform, technology, or domain used. In Sunbird, the Single Sign on usually makes use of a central service which orchestrates the single sign on between multiple and related applications.
 
-To provide user access and enable API operations, you need to set the SSO authentication key values in the environment correctly.
+To provide user access and enable API operations, you need to set the SSO authentication key values in your environment correctly.
 
 ## Process for Setting Up the SSO public key
 
