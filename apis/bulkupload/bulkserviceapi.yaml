@@ -79,8 +79,9 @@ paths:
             - language,
             - profileSummary,
             - subject,
+             
              Omit (•) 
-             (•) is used to enhance readibility here.
+              - (•) is used to enhance readibility here.
       - name: Authorization
         in: header
         required: true
@@ -268,8 +269,9 @@ paths:
             - preferredLanguage,
             - theme,
             - contactDetail
-             Omit (•) 
-             (•) is used to enhance readibility here.
+            
+            Omit (•) 
+             - (•) is used to enhance readibility here.
       - name: Authorization
         in: header
         required: true
