@@ -60,7 +60,7 @@ paths:
           This is a .csv file.
             - Each line of the file is a data record. Each record consists of one or more fields, separated by commas.
             
-          This format of this file is as :
+          The format of this file is as :
             - firstName,
             - lastName,
             - phone,
@@ -88,11 +88,11 @@ paths:
         '200':
           description: 'OK ! Successful operation."bulk upload user" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadResponse'
         '400':
           description: 'BAD REQUEST. The "bulk upload user" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
@@ -127,7 +127,7 @@ paths:
         description: >-
           This is a .csv file.
             - Each line of the file is a data record. Each record consists of one or more fields, separated by commas.
-           This format of this file is as :
+           The format of this file is as :
             - batchId,
             - userIds,
             Please omit (-) 
@@ -141,11 +141,11 @@ paths:
         '200':
           description: 'OK ! Successful operation."bulk batch enrollment " operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadResponse'
         '400':
           description: 'BAD REQUEST. The "bulk batch enrollment" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
@@ -198,11 +198,11 @@ paths:
         '200':
           description: 'OK ! Successful operation."get status" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadStatusResponse'
         '400':
           description: 'BAD REQUEST. The "get status" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
@@ -277,11 +277,11 @@ paths:
         '200':
           description: 'OK ! Successful operation."bulk org upload " operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadResponse'
         '400':
           description: 'BAD REQUEST. The "bulk org upload " operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
@@ -353,8 +353,43 @@ paths:
           schema:
             $ref: '#/definitions/CommonErrorResponse'        
 definitions:
-  ContentCreateResponse:
-    description: Create Content Response
+
+  BulkUploadStatusResponse:
+    description: Bulk Upload status response
+    type: object
+    properties: 
+      objectType:
+       type: string
+       description: Type of object uploaded i.e. User, Org, Location, Batch enrollment
+      processId:
+       type: string
+       description: Id to uniquely identify the bulk upload process.
+      successResult:
+       type: array
+       items:
+         type: object
+         description: it will represent each row of uploaded file which got success
+         properties:
+          id:
+            type: string
+            description: identifier of the row
+          operation:
+            type: string
+            description : possible values create or update
+      failureResult:
+       type: array
+       items:
+         type: object
+         description: it will represent each row of uploaded file which got failed
+         properties:
+          err_msg:
+            type: string
+            description: Represents the error message which occurred while processing the row.
+          operation:
+            type: string
+            description : possible values create or update
+  BulkUploadResponse:
+    description: Bulk Upload Response
     type: object
     allOf:
       - $ref: '#/definitions/ResultWithNodeId'
@@ -409,8 +444,8 @@ definitions:
       errmsg:
         type: string
         description: Error Message
-  ContentCreateErrorResponse:
-    title: Create Content Error Response
+  BulkUploadErrorResponse:
+    title: Bulk Upload Error Response
     type: object
     allOf:
       - $ref: '#/definitions/EmptyResult'
