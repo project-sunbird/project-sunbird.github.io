@@ -107,7 +107,7 @@ paths:
                   "content": {
                     "visibility": "Default",
                     "status": "Draft",
-                    "contentType": "Story",
+                    "contentType": "Resource",
                     "code": "test_cwp_3",
                     "osId": "org.ekstep.quiz.app",
                     "languageCode": "hi",
@@ -819,7 +819,7 @@ paths:
                       "filters":{
                           "channel": "505c7c48ac6dc1edc9b08f21db5a571d",
                           "objectType": ["Content"],
-                          "contentType": ["Story", "Worksheet", "Textbook", "Course", "Collection"],
+                          "contentType": ["Resource", "Collection", "TextBook", "LessonPlan", "Course", "Template", "Asset", "Plugin", "LessonPlanUnit", "CourseUnit", "TextBookUnit"],
                     "status":["Live"]
                       },
                       "sort_by": {"createdOn": "asc"},
@@ -1408,7 +1408,7 @@ paths:
                   "content": {
                     "visibility": "Default",
                     "status": "Draft",
-                    "contentType": "Story",
+                    "contentType": "Resource",
                     "code": "test_cwp_3",
                     "osId": "org.ekstep.quiz.app",
                     "languageCode": "hi",
@@ -1707,7 +1707,9 @@ definitions:
         type: string
       badgeAssertions:
         description: 'List of Badges'
-        type: string
+        type: array
+        items:
+          type: object
       mimeType:
         description: 'Content mime type'
         type: string
@@ -1863,31 +1865,6 @@ definitions:
           - Open Game License
           - Standard YouTube License
           - Other
-      language:
-        description: 'Language'
-        type: string
-        example:
-          - English
-          - Hindi
-          - Assamese
-          - Bengali
-          - Gujarati
-          - Kannada
-          - Malayalam
-          - Marathi
-          - Nepali
-          - Odia
-          - Punjabi
-          - Tamil
-          - Telugu
-          - Urdu
-          - Sanskrit
-          - Maithili
-          - Munda
-          - Santali
-          - Juang
-          - Ho
-          - Other
       forkable:
         description: 'Forkable'
         type: boolean
@@ -1907,22 +1884,14 @@ definitions:
           - 'Other'
       gradeLevel:
         description: 'Grade Level'
-        type: string
-        example:
-          - Kindergarten
-          - Grade 1
-          - Grade 2
-          - Grade 3
-          - Grade 4
-          - Grade 5
-          - Grade 6
-          - Grade 7
-          - Grade 8
-          - Grade 9
-          - Grade 10
-          - Grade 11
-          - Grade 12
-          - Other
+        type: array
+        items:
+          type: string
+      topic:
+        description: 'Topic of the content'
+        type: array
+        items:
+          type: string
       interactivityLevel:
         description: 'Interactivity Level'
         type: string
@@ -1934,52 +1903,32 @@ definitions:
         description: 'Content Type'
         type: string
         example:
-          - Story
-          - Worksheet
-          - Game
-          - Simulation
-          - Puzzle
-          - Diagnostic
+          - Resource
           - Collection
-          - Asset
-          - Template
-          - Plugin
-          - ContentTemplate
-          - ItemTemplate
           - TextBook
-          - TextBookUnit
+          - LessonPlan
           - Course
+          - Template
+          - Asset
+          - Plugin
+          - LessonPlanUnit
           - CourseUnit
+          - TextBookUnit
       resourceType:
         description: 'Resource Type'
         type: string
         example:
-          - Story
-          - Worksheet
-          - Game
-          - Course
+          - Read
+          - Learn
+          - Teach
+          - Play
+          - Test
+          - Practice
+          - Experiment
+          - Collection
           - Book
-          - Diagnostic
-          - Puzzle
-          - Benchmark assessment
-          - Daily test
-          - Summative exam
-          - (Annual / Half-yearly / Semester) Examination
-          - Article
-          - Learning / Study material
-          - Reference material
-          - Simulation
-          - Activity
-          - Quiz
-          - Lesson plan
-          - Unit plan
-          - Academic calendar
-          - Classroom assessments
-          - Reflective journals
-          - Timed worksheets
-          - Teaching resources
-          - E-resources for Professional Development
-          - Micro practice videos
+          - Lesson Plan
+          - Course
       category:
         description: 'Category'
         type: string
@@ -2104,22 +2053,17 @@ definitions:
         description: ''
         type: string
         example:
-          - Story
-          - Worksheet
-          - Game
-          - Simulation
-          - Puzzle
-          - Diagnostic
+          - Resource
           - Collection
-          - Asset
-          - Template
-          - Plugin
-          - ContentTemplate
-          - ItemTemplate
           - TextBook
-          - TextBookUnit
+          - LessonPlan
           - Course
+          - Template
+          - Asset
+          - Plugin
+          - LessonPlanUnit
           - CourseUnit
+          - TextBookUnit
       description:
         description: ''
         type: string
@@ -2773,6 +2717,14 @@ definitions:
       medium:
         type: string
         description: Represents the medium of the content
+      topic:
+        type: array
+        description: Represents the topic of the content
+        items:
+          type: string
+      board:
+        description: Represents the board of the content
+        type: string
   ContentHierarchyGetResponse:
     title: Get Content Response
     type: object
