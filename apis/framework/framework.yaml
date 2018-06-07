@@ -72,7 +72,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Create channel" operation was successfully executed.'
@@ -120,7 +120,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation.The "fetch channel by ID" operation was successfully executed.'
@@ -179,7 +179,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Update channel by ID" operation was successfully executed.'
@@ -232,7 +232,7 @@ paths:
         in: header
         required: true
         type: string
-        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."list channels" operation was successfully executed.'
@@ -285,7 +285,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."search channels" operation was successfully executed.'
@@ -338,7 +338,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -390,7 +390,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -454,7 +454,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -508,7 +508,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -570,7 +570,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -634,7 +634,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -697,7 +697,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -754,12 +754,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It the Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."fetch category" operation was successfully executed.'
@@ -833,7 +833,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -895,7 +895,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -963,7 +963,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -1025,7 +1025,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -1099,7 +1099,7 @@ paths:
         in: header
         required: true
         type: string
-        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -1157,7 +1157,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: Content-Type
         in: header
         required: true
