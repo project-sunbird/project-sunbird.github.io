@@ -9,11 +9,17 @@ allowSearch: false
 ---
 ## Overview
 
+<<<<<<< HEAD
 Single SignOn is a user authentication service and is usually known as (SSO). It is used when you log in to an application once, you are automatically signed in to other related applications. It is very helpful in enriching the user experience where user has to login multiple times to get access across the related applications.
 
 Technically, Single SignOn usually makes use of a central service which orchestrates the single sign on between multiple applications.
 
 You need to set the SSO authentication key value to provide access to users and enables you to perform the API operations. 
+=======
+Single Sign On (SSO) occurs when a user logs in to one Sunbird application and is then signed in to other related applications automatically, regardless of the platform, technology, or domain used. In Sunbird, the Single Sign on usually makes use of a central service which orchestrates the single sign on between multiple and related applications.
+
+To provide user access and enable API operations, you need to set the SSO authentication key values in your environment correctly.
+>>>>>>> 257dd41586f20477976e559b6892902fed507908
 
 ## Process for Setting Up the SSO public key
 
@@ -28,20 +34,20 @@ The following process guides you in setting up the SSO authentication key:
   </tr>
   
   <tr>
-    <td> 1. Enter your credentials to login into Keycloak admin console
+    <td> 1. Enter your credentials to login into Keycloak admin console<br>
     <br>2. Click the login button
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
     <tr>
     <td> 3. Click on the dropdown and select appropriate realm<br>
-<b>Note:<b> By default the master realm is selected<br>
-4.  Click on the "Keys" tab in the menu bar <br>
+<b>Note:</b> By default the master realm is selected<br>
+4.  Click on the "Keys" tab in the menu bar
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
      <tr>
-    <td
+    <td>
         5. Click on the public key button <br>
         <b>Note:</b> A pop up opens up
     </td>
@@ -50,7 +56,7 @@ The following process guides you in setting up the SSO authentication key:
       </td>
   </tr>
   <tr>
-    <td> 6. Copy the string and paste in your environment variable <br>
+    <td> 6. Copy the string and paste in your environment variable to setup public SSO key<br>
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
   </tr>
