@@ -15,7 +15,6 @@ Sunbird faciltates the use of Single SignOn (SSO) for user authentication. Techn
 To provide access to users and enable them to perform API operations, you need to set up the SSO authentication key value in your environment. 
 
 ## Setting Up the SSO Public Key
-
 <table>
   <tr>
     <th style="width:35%;">Step
