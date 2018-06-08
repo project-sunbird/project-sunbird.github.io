@@ -33,8 +33,8 @@ The following process guides you in setting up the SSO authentication key:
   </tr>
     <tr>
     <td> 
-    3. Click the <b>realm selector dropdown</b> from the left corner of your screen and select appropriate realm
-      <b>Note:</b> The <b>Master</b> realm is selected by default.<br>
+    3. Click the <b>Realm Selector Dropdown</b> from the left corner of your screen and select appropriate realm <br>
+      <b>Note:</b> The <b>Master</b> realm is selected by default.</br>
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
@@ -46,7 +46,7 @@ The following process guides you in setting up the SSO authentication key:
   </tr>
      <tr>
     <td> 
-      5. Click on the <b>public key</b> button from the table<br>
+      5. Click on the <b>Public key</b> button from the table<br>
         <b>Note:</b> A text string is displayed as a popup 
     </td>
     <td>
@@ -58,4 +58,4 @@ The following process guides you in setting up the SSO authentication key:
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
   </tr>
-  </table>
+</table>
