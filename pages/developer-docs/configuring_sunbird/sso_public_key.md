@@ -28,28 +28,27 @@ The following process guides you in setting up the SSO authentication key:
   </tr>
   
   <tr>
-    <td> 1. Enter your credentials to login into Keycloak admin console<br>
-    <br>2. Click the login button
+  <td> 1. Enter your credentials in the textboxes next to <b>Username</b> and <b>Password</b><br>
+    <br>2. Click the login button to logon to Keycloak admin console
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
     <tr>
-    <td> On the left corner of your screen, you see a realm selector drop down 
+    <td> On the left corner of your screen, you see a realm selector drop down<br>
     3. Click on the <b>dropdown</b> and select appropriate realm<br>
 <b>Note:</b> Master realm is selected by default.<br>
-4.  Click on the "Keys" tab in the menu bar
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
       <tr>
-    <td> On the menu bar search for <b>Keys tab</b> <br>
-5.  Click on the <b>Keys tab</b>
+    <td> On the menu bar, search for <b>Keys tab</b> <br>
+4.  Click on the <b>Keys tab</b>
      </td>
-      <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
+      <td><img src="pages\developer-docs\configuring_sunbird\images\select_key_tab.png"></td>
   </tr>
      <tr>
-    <td> In the table, search for <b>public key</b> button
-        5. Click on the public key button <br>
+    <td> In the table, search for <b>public key</b> button<br>
+      5. Click on the <b>public key</b> button <br>
         <b>Note:</b> A popup with a text string gets displayed on your screen
     </td>
     <td>
