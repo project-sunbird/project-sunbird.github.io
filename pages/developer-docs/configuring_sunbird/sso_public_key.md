@@ -9,7 +9,7 @@ allowSearch: false
 ---
 ## Overview
 
-Single SignOn is a user authentication service and is usually known as (SSO). It is used when you log in to an application once, you are automatically signed in to other related applications. It is very helpful in enriching the user experience where user has to login multiple times to get access across the related applications.
+Single SignOn is a centralized user authentication service and is known as (SSO). It provides the capability to authenticate a user once, and be subsequently and automatically authenticated when accessing various related applications. It eliminates the need to separately authenticate and sign on to individual applications. 
 
 Technically, Single SignOn makes use of a central service which orchestrates the single sign on between multiple applications.
 
