@@ -57,5 +57,5 @@ The following process guides you in setting up the SSO authentication key:
     <td> 6. Copy the text string and paste it as a value for the <b>xxxxx</b> environment variable in the <b>../xxxx/setup.md</b> file<br> 
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
-  </tr>
-</table>
+    </tr>
+  </table>
