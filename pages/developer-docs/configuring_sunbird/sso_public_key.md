@@ -13,7 +13,7 @@ Single SignOn is a centralized user authentication service and is known as (SSO)
 
 Technically, Single SignOn makes use of a central service which orchestrates the single sign on between multiple applications.
 
-You need to set the SSO authentication key value in your environment to manage the user authentication and other related operations. 
+You need to set the SSO authentication key value to provide access to users and enables you to perform the API operations. 
 
 ## Process for Setting Up the SSO public key
 
@@ -56,7 +56,7 @@ The following process guides you in setting up the SSO authentication key:
       </td>
   </tr>
   <tr>
-    <td> 6. Copy the string and paste it in your environment variable xxxxx which is located at ../xxxx/setup.md<br> 
+    <td> 6. Copy the string and paste it in your environment variable sunbird_sso_publickey which is located at    https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md<br> 
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
   </tr>
