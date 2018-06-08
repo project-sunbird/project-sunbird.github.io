@@ -12,7 +12,7 @@ keywords: SSO, Keys, Public key, user authentication, single sign on, single sig
 
 Sunbird faciltates the use of Single SignOn (SSO) for user authentication. Technically, SSO uses a central service that orchestrates common authentication between multiple applications. Use of the SSO service eliminates the need for users to sign in to individual applications and hence removes separate authentication of the user for each application. It authenticates users only once, for the first time, when they sign in. Subsequently, users are automatically authenticated when they access other related applications. 
 
-To enable and manage user authentication and other related operations, you need to set up the SSO authentication key value in your environment. 
+To provide access to users and enable them to perform API operations, you need to set up the SSO authentication key value in your environment. 
 
 ## Setting Up the SSO Public Key
 
@@ -54,8 +54,8 @@ The following process guides you in setting up the SSO authentication key:
       </td>
   </tr>
   <tr>
-    <td> 6. Copy the text string and paste it as a value for the <b>xxxxx</b> environment variable in the <b>../xxxx/setup.md</b> file<br> 
+    <td> 6. Copy the text string and paste it as a value for the <b>sunbird_sso_publickey</b> environment variable in the <b>https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file<br> 
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
     </tr>
-  </table>
+</table>
