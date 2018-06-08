@@ -9,9 +9,11 @@ allowSearch: false
 ---
 ## Overview
 
-Single Sign On (SSO) occurs when a user logs in to one application and is then signed in to other applications automatically, regardless of the platform, technology, or domain used. Single SignOn usually makes use of a central service which orchestrates the single sign on between multiple applications.
+Single SignOn is a user authentication service and is usually known as (SSO). It is used when you log in to an application once, you are automatically signed in to other related applications. It is very helpful in enriching the user experience where user has to login multiple times to get access across the related applications.
 
-To provide user access and enable API operations, you need to set the SSO authentication key values in the environment correctly.
+Technically, Single SignOn usually makes use of a central service which orchestrates the single sign on between multiple applications.
+
+You need to set the SSO authentication key value to provide access to users and enables you to perform the API operations. 
 
 ## Process for Setting Up the SSO public key
 
