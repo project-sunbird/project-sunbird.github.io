@@ -29,7 +29,7 @@ The following process guides you in setting up the SSO authentication key:
   
   <tr>
   <td> 1. Enter your credentials in the textboxes next to <b>Username</b> and <b>Password</b><br>
-    <br>2. Click the login button to logon to Keycloak admin console
+    <br>2. Click the <b>Log in<b> button to logon to Keycloak admin console
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
