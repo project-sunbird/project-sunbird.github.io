@@ -13,7 +13,7 @@ Single SignOn is a centralized user authentication service and is known as (SSO)
 
 Technically, Single SignOn makes use of a central service which orchestrates the single sign on between multiple applications.
 
-You need to set the SSO authentication key value to provide access to users and enables you to perform the API operations. 
+You need to set the SSO authentication key value in your environment to manage the user authentication and other related operations. 
 
 ## Process for Setting Up the SSO public key
 
