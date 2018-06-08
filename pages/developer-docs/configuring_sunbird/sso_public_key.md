@@ -26,36 +26,36 @@ The following process guides you in setting up the SSO authentication key:
     </th>
   </tr>
   <tr>
-  <td> 1. Enter your <b>Username or email</b> and <b>Password</b><br>
+  <td> 1. Enter your <b>Username or email</b> and <b>Password</b>
     <br>2. Click <b>Log in<b> to log into the Keycloak admin console
   </td>
-      <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
     <tr>
     <td> 
     3. Click the <b>Realm Selector Dropdown</b> from the left corner of your screen and select appropriate realm <br>
-      <b>Note:</b> The <b>Master</b> realm is selected by default.</br>
+      <b>Note:</b> The <b>Master</b> realm is selected by default.
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
-  </tr>
-      <tr>
+    </tr>
+    <tr>
     <td> 
    4. Click on the <b>Keys tab</b> from the menu bar
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\select_key_tab.png"></td>
-  </tr>
-     <tr>
+    </tr>
+    <tr>
     <td> 
       5. Click on the <b>Public key</b> button from the table<br>
         <b>Note:</b> A text string is displayed as a popup 
     </td>
     <td>
       <img src="pages\developer-docs\configuring_sunbird\images\public_key_btn.png">
-      </td>
-  </tr>
-  <tr>
-    <td> 6. Copy the text string and paste it as a value for the <b>sunbird_sso_publickey</b> environment variable in the <b>https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file<br> 
+    </td>
+    </tr>
+    <tr>
+    <td> 6. Copy the text string and paste it as a value for the <b>sunbird_sso_publickey</b> environment variable in the <b>https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file 
      </td>
-      <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
+     <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
     </tr>
 </table>
