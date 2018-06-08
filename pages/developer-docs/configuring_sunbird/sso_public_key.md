@@ -43,7 +43,7 @@ The following process guides you in setting up the SSO authentication key:
   </tr>
       <tr>
     <td> On the menu bar search for <b>keys tab</b> <br>
-5.  Click on the <b<Keys tab</b>
+5.  Click on the <b>Keys tab</b>
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
