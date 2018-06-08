@@ -6,19 +6,15 @@ page_title: Setting up SSO Public Key
 description: How to set up the SSO public key
 published: true
 allowSearch: false
+keywords: SSO, Keys, Public key, user authentication, single sign on, single signon, singlesignon, sign in
 ---
 ## Overview
 
-Single SignOn is a centralized user authentication service and is known as (SSO). It provides the capability to authenticate a user once, and be subsequently and automatically authenticated when accessing various other related applications. It eliminates the need to separately authenticate and sign on to individual applications. 
+Sunbird faciltates the use of Single SignOn (SSO) for user authentication. Technically, SSO uses a central service that orchestrates common authentication between multiple applications. Use of the SSO service eliminates the need for users to sign in to individual applications and hence removes separate authentication of the user for each application. It authenticates users only once, for the first time, when they sign in. Subsequently, users are automatically authenticated when they access other related applications. 
 
-Technically, Single SignOn makes use of a central service which orchestrates the single sign on between multiple applications.
+To provide access to users and enable them to perform API operations, you need to set up the SSO authentication key value in your environment. 
 
-You need to set the SSO authentication key value to provide access to users and enables you to perform the API operations. 
-
-## Process for Setting Up the SSO public key
-
-The following process guides you in setting up the SSO authentication key:
-
+## Setting Up the SSO Public Key
 <table>
   <tr>
     <th style="width:35%;">Step
@@ -26,38 +22,39 @@ The following process guides you in setting up the SSO authentication key:
     <th style="width:65%;">Screen
     </th>
   </tr>
-  
   <tr>
-  <td> 1. Enter your credentials in the textboxes next to <b>Username</b> and <b>Password</b><br>
-    <br>2. Click the <b>Log in<b> button to logon to Keycloak admin console
-     </td>
-      <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
-  </tr>
-    <tr>
-    <td> On the left corner of your screen, you see a realm selector drop down<br>
-    3. Click on the <b>dropdown</b> and select appropriate realm<br>
-<b>Note:</b> Master realm is selected by default.<br>
-     </td>
-      <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
-  </tr>
-      <tr>
-    <td> On the menu bar, search for <b>Keys tab</b> <br>
-4.  Click on the <b>Keys tab</b>
-     </td>
-      <td><img src="pages\developer-docs\configuring_sunbird\images\select_key_tab.png"></td>
-  </tr>
-     <tr>
-    <td> In the table, search for <b>public key</b> button<br>
-      5. Click on the <b>public key</b> button <br>
-        <b>Note:</b> A popup with a text string gets displayed on your screen
-    </td>
-    <td>
-      <img src="pages\developer-docs\configuring_sunbird\images\public_key_btn.png">
-      </td>
+  <td>
+  1. Enter your <b>Username or email</b> and <b>Password</b><br>
+  2. Click <b>Log in<b> to log into the Keycloak admin console
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
   <tr>
-    <td> 6. Copy the string and paste it in your environment variable xxxxx which is located at ../xxxx/setup.md<br> 
-     </td>
-      <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
+  <td> 
+  3. Click the <b>Realm Selector Dropdown</b> from the left corner of your screen and select appropriate realm <br>
+      <b>Note:</b> The <b>Master</b> realm is selected by default.
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
-  </table>
+  <tr>
+  <td> 
+  4. Click on the <b>Keys tab</b> from the menu bar
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\select_key_tab.png"></td>
+  </tr>
+  <tr>
+  <td> 
+  5. Click on the <b>Public key</b> button from the table<br>
+  <b>Note:</b> A text string is displayed as a popup 
+  </td>
+  <td>
+  <img src="pages\developer-docs\configuring_sunbird\images\public_key_btn.png">
+  </td>
+  </tr>
+  <tr>
+  <td> 
+  6. Copy the text string and paste it as a value for the <b>sunbird_sso_publickey</b> environment variable in the    <b>https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file 
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
+  </tr>
+</table>
