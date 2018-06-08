@@ -34,23 +34,30 @@ The following process guides you in setting up the SSO authentication key:
       <td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
   </tr>
     <tr>
-    <td> 3. Click on the dropdown and select appropriate realm<br>
-<b>Note:</b> By default the master realm is selected<br>
+    <td> On the left corner of your screen, you see a realm selector drop down 
+    3. Click on the <b>dropdown</b> and select appropriate realm<br>
+<b>Note:</b> Master realm is selected by default.<br>
 4.  Click on the "Keys" tab in the menu bar
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
   </tr>
+      <tr>
+    <td> On the menu bar search for <b>keys tab</b>  
+4.  Click on the <b<Keys tab</b>
+     </td>
+      <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
+  </tr>
      <tr>
-    <td>
+    <td> In the table, search for <b>public key</b> button
         5. Click on the public key button <br>
-        <b>Note:</b> A pop up opens up
+        <b>Note:</b> A popup with a text string gets displayed on your screen
     </td>
     <td>
       <img src="pages\developer-docs\configuring_sunbird\images\public_key_btn.png">
       </td>
   </tr>
   <tr>
-    <td> 6. Copy the string and paste in your environment variable to setup public SSO key<br>
+    <td> 6. Copy the string and paste it in your environment variable xxxxx which is located at ../xxxx/setup.md<br> 
      </td>
       <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
   </tr>
