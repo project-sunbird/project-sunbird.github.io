@@ -121,14 +121,14 @@ Once you open the file, ensure you enter the following values:
 ## Run the Application
 
 Run the following commands:
-   
-    $ cd {PROJECT-FOLDER}/src/app
-    $ node server.js
-    
-    **Open a new terminal**
-    
-    $ cd {PROJECT-FOLDER}/src/app/client
-    $ nodemon
 
+<pre>
+$ cd {PROJECT-FOLDER}/src/app
+$ node server.js
+    
+**Open a new terminal**
+$ cd {PROJECT-FOLDER}/src/app/client
+$ nodemon
+</pre>
 After the commands get executed, open `http://localhost:3000` in the browser.
  
