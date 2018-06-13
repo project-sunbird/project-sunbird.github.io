@@ -58,7 +58,7 @@ To provide access to users and enable them to perform API operations, you need t
   
   <tr>
   <td> 
-  6.Copy the text string and paste it as a value for the sunbird_sso_publickey environment variable located inside <b> https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file, while you are deploying Sunbird platform services 
+	  6.Copy the text string and paste it as a value for the <b>sunbird_sso_publickey</b> environment variable located inside <b> https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file, while you are deploying Sunbird platform services 
   </td>
   <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
   </tr>
