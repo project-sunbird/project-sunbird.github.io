@@ -8,11 +8,12 @@ info:
       - Users
       - Organization
  
- On the basis of the data captured using this API resource, the location data helps in grouping the users based on the location attribute.
+    On the basis of the data captured using this API resource, the location data helps in grouping the users based on the location attribute.
 
-_Note:_ The parent location entity used as parent code parameter represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
+    **Note:** The parent location entity used as parent code parameter represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
        
-   - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+       - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+     
      The location management API resources enables you to perform the following operations:
       - create
       - update
