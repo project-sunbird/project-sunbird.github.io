@@ -62,19 +62,7 @@ To download the release notes, click the download icon that corresponds to the r
             </a>
     </td>
     </tr>    
-    <tr>
-        <td align="left">Release 1.7</td>
-         <td>03/05/2018</td>
-        <td align="center"><a href="release_notes/view_pdf/ver1-7/" target="_blank">
-            <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
-            </a>
-        </td>
-      <td align="center"><a href="https://github.com/project-sunbird/project-sunbird.github.io/raw/dev/pages/release_notes/source_releasenotefiles/release_note_v1-6-0_may2018.pdf" target="_blank">
-            <img src="pages/release_notes/icons_used/download.png" alt="Download" style="width:42px;height:42px;border:0;">
-            </a>
-    </td>
-    </tr>
-    <tr>
+        <tr>
         <td align="left">Release 1.5</td>
         <td>29/03/2018</td>
         <td align="center"><a href="release_notes/view_pdf/ver1-5/" target="_blank">
