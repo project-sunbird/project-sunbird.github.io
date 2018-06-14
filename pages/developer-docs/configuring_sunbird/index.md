@@ -10,7 +10,7 @@ keywords: SSO, Keys, Public key, user authentication, single sign on, single sig
 ---
 ## Overview
 
-Sunbird faciltates the use of Single SignOn (SSO) for user authentication. Technically, SSO uses a central service that orchestrates common authentication between multiple applications. Use of the SSO service eliminates the need for users to sign in to individual applications and hence removes separate authentication of the user for each application. It authenticates users only once, for the first time, when they sign in. Subsequently, users are automatically authenticated when they access other related applications. 
+Sunbird facilitates the use of Single SignOn (SSO) for user authentication. Technically, SSO uses a central service that orchestrates common authentication between multiple applications. Use of the SSO service eliminates the need for users to sign in to individual applications and hence removes separate authentication of the user for each application. It authenticates users only once, for the first time, when they sign in. Subsequently, users are automatically authenticated when they access other related applications. 
 
 To provide access to users and enable them to perform API operations, you need to set up the SSO authentication key value in your environment.
 
