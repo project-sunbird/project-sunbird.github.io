@@ -1,36 +1,66 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird/
-title: Configuring Sunbird 
-page_title: Configuring Sunbird 
-description: For adopters and users to get started on Sunbird. It provides the list of configuration that need to be done to customize the sunbird 
+title: Setting up SSO Public Key
+page_title: Setting up SSO Public Key 
+description: How to set up the SSO public key
 published: true
-allowSearch: false
+allowSearch: true
+keywords: SSO, Keys, Public key, user authentication, single sign on, single signon, singlesignon, sign in
 ---
-
 ## Overview
 
-On installation,  users can explore and work with Sunbird.  The installation process takes care of the default minimum configuration required to run Sunbird. However, if you want to customize your instance of Sunbird, it is simple.
-Modify default behaviour or the look and feel by overriding the default values of environment variables as mentioned in the following table.
-For example, you can change the default logo to the logo of your choice, or  change the default email address to your preferred email address.
+Sunbird faciltates the use of Single SignOn (SSO) for user authentication. Technically, SSO uses a central service that orchestrates common authentication between multiple applications. Use of the SSO service eliminates the need for users to sign in to individual applications and hence removes separate authentication of the user for each application. It authenticates users only once, for the first time, when they sign in. Subsequently, users are automatically authenticated when they access other related applications. 
 
-**Note:** If you have not installed Sunbird, refer to [Server Installation](\pages\developer-docs\installation\server_installation)
+To provide access to users and enable them to perform API operations, you need to set up the SSO authentication key value in your environment.
 
-### List of Environment Variables
+## Setting Up the SSO Public Key
 
-| S No. | Variable Name                   | Description                                                        | Purpose                                                                                                                                             | Default Value                                        | Path        |
-|-------|---------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|-------------|
-| 1     | sunbird_mail_server_from_email  |  The default communication email address | If set, user will get an email from the set email address                                                                                                                                  | no default                                           | Sunbird-LMS |
-| 2     | sunbird_env_logo_url            | public access image url                                            | used to sent in email as logo                                                                                                                       | no default                                           | Sunbird-LMS |
-| 3     | sunird_web_url                  | The URL of the home page of sunbird                                           | This URL is shared in an email such that the users are able to login                                                                                                               | no default                                           | Sunbird-LMS |
-| 4     | sunbird_app_url                 | Th URL of Sunbird app in Play store                                      | This Sunbird app URL is shared in an email such that users are able to download the app                                                                                                               | no default                                           | Sunbird-LMS |
-| 5     | sunbird_msg_sender              | The name of the SMS sender            | This is the name that will appear on users screen in case an SMS is sent from the system                                                                                                                             | no default                                           | Sunbird-LMS |
-| 6     | sunbird_installation_email      | This is the email address used for badger system                                        | This email is used for notifying the users while the install badger system                                                                                                                         | no default                                           | Sunbird-LMS |
-| 7     | sunbird_installation            | Just a name of instance                                            | used to send telemetry and in sending email as well this value is used. Don't used name having spaces EX: "Sunbird Dev" , instead used "SunbirdDev" | no default                                           | Sunbird-LMS |
-| 8     | sunbird_encryption_key          | key to encrypt and decrypt the attribute                           | key to encrypt and decrypt the attribute , once set then it should not be change.                                                                   | no default                                           | Sunbird-LMS |
-| 9     | sunbird_default_channel         | create a rootOrg in sunbird and add channel here                    | this is used to associate user creation with rootOrg                                                                                                | each installer need to put it.                       | Sunbird-LMS |
-| 10    | sunbird_sso_publickey           | to validate JWT token generated by keyclaok                        | used to authenticate user against keyclaok                                                                                                          | Need to get from keycloak (realm->keys->public keys) | Sunbird-LMS |
-| 11    | telemetry_pdata_id              | {{env}}.{{installation}}.{{servicename}}.service                   | {{env}}.{{installation}}.{{servicename}}.service  ex: dev.sunbird.learning.service                                                                  |                                                      | Sunbird-LMS |
-| 12    | telemetry_pdata_pid             | Producer id of the telemetry                                       | Producer id of the telemetry EX:  actor-service                                                                                                     |                                                      | Sunbird-LMS |
-| 13    | telemetry_pdata_ver             | Producer version or buid version which is generation the telemetry | producer version or buid version which is generation the telemetry Ex: 1.5                                                                          |                                                      | Sunbird-LMS |
-| 14    | ekstep_telemetry_storage_toggle | toggle to make telemetry storage on and off for ekstep             | by default it's on                                                                                                                                  | on                                                   | Sunbird-LMS |
+<table>
+
+	<tr>
+		<th style="width:35%;">Step</th>
+		<th style="width:65%;">Screen</th>
+	 </tr>
+  
+	<tr>
+		<td>
+			1. Enter your <b>Username or email</b> and <b>Password</b><br>
+			2. Click <b>Log in</b> to log into the Keycloak admin console
+		 </td>
+		<td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
+	</tr>
+  
+	<tr>
+	  <td> 
+	  3. Click the <b>Realm Selector Dropdown</b> from the left corner of your screen and select appropriate realm <br>
+		  <b>Note:</b> The <b>Master</b> realm is selected by default.
+	  </td>
+	  <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
+	</tr>
+	
+  <tr>
+  <td> 
+  4. Click on the <b>Keys tab</b> from the menu bar
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\select_key_tab.png"></td>
+  </tr>
+  
+  <tr>
+  <td> 
+  5. Click on the <b>Public key</b> button from the table<br>
+  <b>Note:</b> A text string is displayed as a popup 
+  </td>
+  <td>
+  <img src="pages\developer-docs\configuring_sunbird\images\public_key_btn.png">
+  </td>
+  </tr>
+  
+  <tr>
+  <td> 
+	  6.Copy the text string and paste it as a value for the <b>sunbird_sso_publickey</b> environment variable located inside <b> https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file, while you are deploying Sunbird platform services 
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png"></td>
+  </tr>
+  
+</table>
