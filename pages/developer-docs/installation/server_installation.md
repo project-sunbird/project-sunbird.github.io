@@ -126,7 +126,9 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 To know more about the script `sunbird_install.sh`, click [here](developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
 
-7.Open https://[domain-name] and verify the installation. 
+7.Run `./sunbird_install.sh -s posttest` . This validates the sunbird installation by checking all the services for successful installation. Executing the command generates a file named  as 'postInstallationLogs.log' under logs directory.
+
+8.Open https://[domain-name] and verify the installation. 
   
 ## Sunbird Install Script 
 
