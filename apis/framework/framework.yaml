@@ -16,7 +16,7 @@ info:
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -72,7 +72,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require bearerorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Create channel" operation was successfully executed.'
@@ -85,7 +85,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/read/{ID}:
     get:
       description:  >-
@@ -133,7 +133,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/update/{ID}:
     patch:
       description: >-
@@ -192,7 +192,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/list:
     post:
       description: >-
@@ -245,7 +245,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/search:
     post:
       description: >-
@@ -298,7 +298,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/create:
     post:
       description: >-
@@ -356,7 +356,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/read/{ID}:
     get:
       description: >-
@@ -408,7 +408,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/update/{ID}:
     patch:
       description: >-
@@ -472,7 +472,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/list:
     post:
       description: >-
@@ -526,7 +526,7 @@ paths:
          '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/publish/{ID}:
     post:
       description:  >-
@@ -588,7 +588,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/copy/{ID}:
     post:
       description:  >-
@@ -652,7 +652,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/category/create:
     post:
       description: >-
@@ -715,7 +715,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/category/read/{code}:
     get:
       description: >-
@@ -772,7 +772,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/category/update/{code}:
     patch:
       description: >-
@@ -913,7 +913,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/create:
     post:
       description: >-
@@ -981,7 +981,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/read/{code}:
     get:
       description: >-
@@ -1043,7 +1043,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/update{code}:
     patch:
       description:  >-
@@ -1117,7 +1117,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/search:
     post:
       description: >-
@@ -1185,7 +1185,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
 definitions:
   CreateFrameworkRequest:
     description: This is the create Framework request body

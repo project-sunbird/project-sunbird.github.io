@@ -15,7 +15,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/org/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -75,7 +75,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of any User API, you require bearerorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Create Assessment Item" operation was successfully executed.'
@@ -90,7 +90,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -148,7 +148,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -224,7 +224,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: DELETE
@@ -308,7 +308,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -411,7 +411,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: PATCH

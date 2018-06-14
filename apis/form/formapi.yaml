@@ -9,7 +9,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /data/v1/form
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -76,7 +76,7 @@ paths:
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
-      - auth: []
+      - bearer: []
   /update:
     post:
       description: >-
@@ -129,7 +129,7 @@ paths:
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
-      - auth: []
+      - bearer: []
   /read:
     post:
       description: >-
@@ -182,7 +182,7 @@ paths:
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
-      - auth: []
+      - bearer: []
 
 
 definitions:

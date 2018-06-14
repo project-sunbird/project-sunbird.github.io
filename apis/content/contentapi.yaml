@@ -17,7 +17,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/content/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -100,7 +100,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -221,7 +221,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: PATCH
@@ -335,7 +335,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -441,7 +441,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -547,7 +547,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: DELETE
@@ -654,7 +654,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -750,7 +750,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -824,7 +824,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -936,7 +936,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1043,7 +1043,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1141,7 +1141,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1242,7 +1242,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1330,7 +1330,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: GET
@@ -1422,7 +1422,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1532,7 +1532,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: GET
@@ -1628,7 +1628,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST

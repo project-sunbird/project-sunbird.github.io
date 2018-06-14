@@ -9,7 +9,7 @@ info:
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 basePath: /api/org/v1/location
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -95,7 +95,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -230,7 +230,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -305,7 +305,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: DELETE
@@ -408,7 +408,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET

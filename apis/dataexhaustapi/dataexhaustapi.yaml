@@ -17,7 +17,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /data/v1/dataset/request/
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie

@@ -10,7 +10,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/data/v1/notification
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie

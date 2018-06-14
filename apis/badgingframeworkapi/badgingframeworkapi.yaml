@@ -11,7 +11,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/badging/v1/issuer
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -111,7 +111,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -176,7 +176,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -231,7 +231,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -294,7 +294,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -357,7 +357,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -424,7 +424,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -491,7 +491,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -544,7 +544,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -609,7 +609,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -663,7 +663,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -759,7 +759,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -822,7 +822,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
