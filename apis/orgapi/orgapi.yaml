@@ -13,7 +13,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/org/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -94,7 +94,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /read:
     post:
       summary: Read a particular Organisation details.
@@ -157,7 +157,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /search:
     post:
       summary: Search for Organisations
@@ -225,7 +225,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /update:
     patch:
       summary: Update details of an existing Organisation
@@ -288,7 +288,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /status/update:
     patch:
       description: >-
@@ -410,7 +410,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /type/list:
     get:
       summary: List all Organisation Types.
@@ -459,7 +459,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /type/update:
     patch:
       summary: Update details of an existing Organisation Type.
@@ -519,7 +519,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /member/add:
     post:
       summary: Add a User to Organisation
@@ -585,7 +585,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /member/remove:
     post:
       summary: Remove a User from Organisation

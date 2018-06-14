@@ -333,11 +333,11 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
-  /read/{id}:
+  /read/{ID}:
     get:
       description:  >-
        This API is used for fetching a Geo-location of an organisation on Sunbird platform.
-          - The **_/read/{locationId}_** endpoint executes the "fetch Geo-location" request based on parameters provided as metadata in the request body
+          - The **_/read/{ID}_** endpoint executes the "fetch Geo-location" request based on parameters provided as metadata in the request body
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
       summary: Get Geolocation details
@@ -348,7 +348,7 @@ paths:
         - application/json
       parameters:
         - in: path
-          name: id
+          name: ID
           type: string
           required: true
           description: 'Location ID OR Tenant ID should be appended here' 

@@ -10,7 +10,7 @@ info:
 host: staging.open-sunbird.org
 basePath:  /api/notes/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -90,7 +90,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -181,7 +181,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -279,7 +279,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: PATCH
@@ -380,7 +380,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: DELETE
@@ -471,7 +471,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST

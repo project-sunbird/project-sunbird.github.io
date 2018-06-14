@@ -15,7 +15,7 @@ info:
     email: info@sunbird.org
   version: "1.0"
 host: staging.open-sunbird.org
-basePath: /data/v1/dataset/request/
+basePath: /api/data/v1/dataset/request/
 securityDefinitions:
   bearer:
       type: apiKey  # arbitrary name for the security scheme

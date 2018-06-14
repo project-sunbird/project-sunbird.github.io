@@ -12,7 +12,7 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/user/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -96,7 +96,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -179,7 +179,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -290,7 +290,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -386,7 +386,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -483,7 +483,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -573,7 +573,7 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: PATCH
@@ -666,7 +666,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -773,7 +773,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -881,7 +881,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -987,7 +987,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -1100,7 +1100,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'   
       security:
-      - auth: []
+      - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -1166,7 +1166,7 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -1245,7 +1245,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -1341,7 +1341,7 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
