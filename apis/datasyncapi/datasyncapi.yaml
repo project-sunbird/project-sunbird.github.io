@@ -13,10 +13,14 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:
-    auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -95,7 +99,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST

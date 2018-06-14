@@ -10,11 +10,15 @@ info:
         - rate or authorize content for its quality and effectiveness
 host: staging.open-sunbird.org
 basePath: /api/badging/v1/issuer
-securityDefinitions: 
-    auth:
+securityDefinitions:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -107,7 +111,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -172,7 +176,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -227,7 +231,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -290,7 +294,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -353,7 +357,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -420,7 +424,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -487,7 +491,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -540,7 +544,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -605,7 +609,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -645,7 +649,8 @@ paths:
               - $ref: '#/definitions/BadgeResponse'
         '400':
           description: >-
-            BAD REQUEST,**Delete Badge Class** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter. 
+            BAD REQUEST,**Delete Badge Class** operation failed ! Possible reasons for request failure:
+            The Badge class could not be deleted. It has been issued at least once.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -658,7 +663,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -754,7 +759,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -817,7 +822,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false

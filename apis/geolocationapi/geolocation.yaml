@@ -7,12 +7,16 @@ info:
   license:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
-basePath: /org/v1/location
+basePath: /api/org/v1/location
 securityDefinitions:
-    auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
-      in: header # The security scheme parameter is in "header"
+      in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -91,7 +95,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -226,7 +230,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -301,7 +305,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: DELETE
@@ -329,11 +333,11 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
 
-  /read/{id}:
+  /read/{ID}:
     get:
       description:  >-
        This API is used for fetching a Geo-location of an organisation on Sunbird platform.
-          - The **_/read/{locationId}_** endpoint executes the "fetch Geo-location" request based on parameters provided as metadata in the request body
+          - The **_/read/{ID}_** endpoint executes the "fetch Geo-location" request based on parameters provided as metadata in the request body
           -  {...}refers to a section of endpoint URL path that needs to be replaced by appropriate Id
           - Required fields cannot be left null or empty
       summary: Get Geolocation details
@@ -344,7 +348,7 @@ paths:
         - application/json
       parameters:
         - in: path
-          name: id
+          name: ID
           type: string
           required: true
           description: 'Location ID OR Tenant ID should be appended here' 
@@ -404,7 +408,7 @@ paths:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/ErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET

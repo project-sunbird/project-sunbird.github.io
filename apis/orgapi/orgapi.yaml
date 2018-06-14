@@ -13,10 +13,14 @@ info:
 host: staging.open-sunbird.org
 basePath: /api/org/v1
 securityDefinitions:
-    auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
-      in: header # The security scheme parameter is in "header"
+      in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
+  userToken:
+      type: apiKey  # arbitrary name for the security scheme
+      in: header # The secrity scheme parameter is in "header"
+      name: x-authenticated-user-token # name of the header, query parameter or cookie
 schemes:
   - https
 consumes:
@@ -90,7 +94,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /read:
     post:
       summary: Read a particular Organisation details.
@@ -153,7 +157,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /search:
     post:
       summary: Search for Organisations
@@ -221,7 +225,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /update:
     patch:
       summary: Update details of an existing Organisation
@@ -284,7 +288,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /status/update:
     patch:
       description: >-
@@ -406,7 +410,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /type/list:
     get:
       summary: List all Organisation Types.
@@ -455,7 +459,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /type/update:
     patch:
       summary: Update details of an existing Organisation Type.
@@ -515,7 +519,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /member/add:
     post:
       summary: Add a User to Organisation
@@ -581,7 +585,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /member/remove:
     post:
       summary: Remove a User from Organisation
@@ -682,8 +686,6 @@ definitions:
             request:
               type: object
               properties:
-                address:
-                  $ref: '#/definitions/AddressCreateRequest'
                 channel:
                   description: 'Name identifying a tenant (e.g. APEKX). Channel is mandatory for a root organisation'
                   type: string
@@ -694,11 +696,17 @@ definitions:
                   description: 'Organisation specific ID. This parameter is required if provider is given.'
                   type: string
                 isRootOrg:
-                  description: 'Set to true for root organisation'
+                  description: 'Set to true for root organisation only'
                   type: boolean
                 locationId:
                   description: 'ID of location returned using Location Create API'
                   type: string
+                locationCode:
+                  description: 'Code of created state,district,block etc.'
+                  type: array
+                  items:
+                    type: string
+                    description: '["BH"]'
                 provider:
                   description: 'Specified by sub-organisations to identify channel of root organisation.  This parameter is required if externalId is given.'
                   type: string
@@ -714,6 +722,8 @@ definitions:
                 rootOrgId:
                   description: 'Root organisation ID'
                   type: string
+                address:
+                  $ref: '#/definitions/AddressCreateRequest'  
               required:
               - orgName
 
@@ -1115,4 +1125,3 @@ definitions:
             
 
                 $ref: '#/definitions/Organisation'
-
