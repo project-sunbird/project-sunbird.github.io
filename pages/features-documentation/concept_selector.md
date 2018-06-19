@@ -22,6 +22,6 @@ The concept selector ensure that the content is establishes correct channel in t
     <td>1. Click the <b>Concepts</b>. The Concepts pop-up appears
      <br> Select the correct channel in the concept tree
     </td>
-    <td><img src="pages/features-documentation/images/questionset/addquestionset.png"></td>
+    <td><img src="pages/features-documentation/images/concept_selector.png"></td>
   </tr>
   </table>
