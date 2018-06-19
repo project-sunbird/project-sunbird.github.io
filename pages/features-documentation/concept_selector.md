@@ -11,7 +11,7 @@ allowSearch: true
 
 ## Overview
 
-The concept selector ensure that the content is establishes correct channel in the conceptulization structure
+The concept selector ensure that the content is establishes correct channel in the conceptulization tree
 
 <table>
   <tr>
@@ -19,10 +19,8 @@ The concept selector ensure that the content is establishes correct channel in t
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. Click the <b>Add Question Set</b> icon on the toolbar. The question set browser page is displayed
-     You can add questions to content editor by 
-     <br>- Selecting Questions 
-     <br>- Creating Questions
+    <td>1. Click the <b>Concepts</b>. The Concepts pop-up appears
+     <br> Select the correct channel in the concept tree
     </td>
     <td><img src="pages/features-documentation/images/questionset/addquestionset.png"></td>
   </tr>
