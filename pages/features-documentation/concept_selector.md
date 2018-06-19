@@ -10,7 +10,8 @@ allowSearch: true
 ---
 
 ## Overview
-To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. 
+
+The concept selector ensure that the content is establishes correct channel in the conceptulization structure.
 
 <table>
   <tr>
