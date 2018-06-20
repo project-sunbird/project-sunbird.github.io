@@ -19,7 +19,7 @@ The concept selector ensure that the content is establishes correct channel in t
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1 Click the <b>Concepts</b>. The Concepts pop-up appears
+    <td>1 Click <b>Concepts</b>. The Concepts pop-up appears
     <br>2. Search the concept using <b>Search</b> bar
     <br>3. Select the concept(s) from the concept tree
     <br>4. Concept tab displays complete list of the available concepts in Sunbird
