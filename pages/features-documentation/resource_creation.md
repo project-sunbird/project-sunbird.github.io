@@ -79,7 +79,7 @@ Once the resource is created, using the content editor, all details pertaining t
       <br>&emsp;b) <b>Class</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
-      <br>&emsp;e) <b>Concept</b> 
+      <br>&emsp;e) <b>Concept</b>. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a> 
       <br>&emsp;f) <b>Resource Type</b>
       <br>&emsp;g) <b>Audience</b>  
   <br>7. Enter <b>Attributions</b>, if any <br>8. Click <b>Save</b> to save all the details
