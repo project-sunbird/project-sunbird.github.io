@@ -141,7 +141,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
 
 ### Sending Course for Review
 
-Before the Course is publihed, it must be reviewed. You can send it for reviewing and publishing.
+Before the Course is published, it must be reviewed. You can send it for reviewing and publishing.
 
 <table>
   <tr>
