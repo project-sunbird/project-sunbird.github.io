@@ -9,9 +9,7 @@ published: true
 allowSearch: true
 ---
 
-## Overview
-
-The concept selector ensure that the content is establishes correct channel in the conceptulization tree and is assigned correct metadata
+The concept selector ensures that the content is synced with the concept tree and extracts correct metadata
 
 <table>
   <tr>
@@ -19,14 +17,14 @@ The concept selector ensure that the content is establishes correct channel in t
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1 Click <b>Concepts</b>. The Concepts pop-up appears
+    <td>1 Click <b>Concepts</b>. The Concepts page is displayed
     <br>2. Search the concept using <b>Search</b> bar
-    <br>3. Select the concept(s) from the concept tree
-    <br>4. Concept tab displays complete list of the available concepts in Sunbird
-    <br>5. <b>Selected Concepts</b> displays the concepts that are selected
+    <br>3. Concept tab displays complete list of the available concepts in Sunbird 
+    <br>4. Browse and select the concept(s) from the concept tree
+    <br>5. View the selected concepts in <b>Selected Concepts</b> tab 
     <br>6. Click <b>Done</b> to proceed
-    <br>7. Click <b>Cancel</b> to go back to previous page
+    <br>7. Click <b>Cancel</b> to exit
     </td> 
-    <td><img src="images/concept_selector.png"></td>
+    <td><img src="pages/features-documentation/images/concept_selector.png"></td>
   </tr>
   </table>
