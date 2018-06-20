@@ -11,7 +11,7 @@ allowSearch: true
 
 ## Overview
 
-The concept selector ensure that the content is establishes correct channel in the conceptulization tree
+The concept selector ensure that the content is establishes correct channel in the conceptulization tree and is assigned correct metadata
 
 <table>
   <tr>
