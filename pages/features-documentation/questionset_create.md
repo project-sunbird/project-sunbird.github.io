@@ -42,7 +42,7 @@ To ensure that the content achieves the learning objective it is important to ch
       <br>&emsp;b) <b>Difficulty</b>
       <br>&emsp;c) <b>Question Type</b>
       <br>&emsp;d) <b>Grade Level</b>
-      <br>&emsp;e) <b>Concepts</b>
+      <br>&emsp;e) <b>Concepts</b>. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a>
 <br>3. Use <b>My Questions</b> slider to search for questions that you have uploaded. To search for questions available on the portal, disable this option
    <br>4. Select questions from the results displayed on the left pane 
    <br>5. The selected question can be previewed on the right pane 
