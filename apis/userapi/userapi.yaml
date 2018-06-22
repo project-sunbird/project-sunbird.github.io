@@ -223,7 +223,7 @@ paths:
       summary: Get User by Login ID
       tags:
       - User APIs
-      operationId: Get User by Login Id
+      operationId: Get User by Login ID
       produces:
       - application/json
       parameters:
@@ -239,12 +239,16 @@ paths:
          
              - XML data
           -  The body contains metadata about reading the user profile
-           **Note**: 
+          
+           - **Note**: 
               
-            - The login ID is ideally in the following format:  username@provider
-            - While creating the user if you haven't specified the provider name then your login ID would be same as username
+                - The login ID is ideally in the following format:  username@provider
+               
+                - While creating the user, if you haven't specified the provider name then your login ID would be same as username
         schema:
-          $ref: '#/definitions/GetUserByLoginIdrequest'
+           allOf:
+            - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+            - $ref: '#/definitions/GetUserByLoginIdrequest'
       - name: Content-Type
         in: header
         required: true
@@ -254,12 +258,6 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-      - name: x-authenticated-user-token
-        in: header
-        required: true
-        type: string
-        description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       - name: ts
         in: header
         required: true
@@ -1741,17 +1739,14 @@ definitions:
       
   GetUserByLoginIdrequest:
     title: Get User by Login IdRequest
-
     type: object
     properties:
-      request:
-       allOf:
-        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-        - $ref: '#/definitions/Request50'
+     request:
+         $ref: '#/definitions/userLoginIdRequest'
     required:
       - request
-  Request50:
-    title: Request50
+  userLoginIdRequest:
+    title: request structure for user login id
     type: object
     properties:
       loginId:
