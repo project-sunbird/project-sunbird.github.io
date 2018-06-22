@@ -240,10 +240,11 @@ paths:
              - XML data
           -  The body contains metadata about reading the user profile
           
-          **Note**: 
+           - **Note**: 
               
-            - The login ID is ideally in the following format:  username@provider
-            - While creating the user, if you haven't specified the provider name then your login ID would be same as username
+                - The login ID is ideally in the following format:  username@provider
+               
+                - While creating the user, if you haven't specified the provider name then your login ID would be same as username
         schema:
            allOf:
             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
