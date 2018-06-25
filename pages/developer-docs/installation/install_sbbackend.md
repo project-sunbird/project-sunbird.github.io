@@ -237,11 +237,11 @@ From rellease-1.7 user creation requires channel attribute. You need to follow t
 2. Generate JWT token using below curl command
 
 <pre>
-curl -X POST \
-  {{base-url}}/auth/realms/{realm-name}/protocol/openid-connect/token \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/x-www-form-urlencoded' \
-  -H 'postman-token: de8e2bb4-3669-b86a-8d06-d5c0c66dae14' \
+curl -X POST 
+  {{base-url}}/auth/realms/{realm-name}/protocol/openid-connect/token 
+  -H 'cache-control: no-cache' 
+  -H 'content-type: application/x-www-form-urlencoded' 
+  -H 'postman-token: de8e2bb4-3669-b86a-8d06-d5c0c66dae14' 
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
 </pre>
 
