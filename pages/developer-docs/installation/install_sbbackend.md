@@ -173,7 +173,6 @@ To run sunbird backend services, at least you need to set the following environm
 16. sunbird_installation : name of environment in which you are running the application or instance name
 17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
 18. sunbird_sso_publickey
-
 </pre>
    
 For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
@@ -236,6 +235,7 @@ From rellease-1.7 user creation requires channel attribute. You need to follow t
 1. Create a user inside Keycloak .
 
 2. Generate JWT token using below curl command
+
 <pre>
 curl -X POST \
   {{base-url}}/auth/realms/{realm-name}/protocol/openid-connect/token \
@@ -244,6 +244,7 @@ curl -X POST \
   -H 'postman-token: de8e2bb4-3669-b86a-8d06-d5c0c66dae14' \
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
 </pre>
+
 3. Use this token to create the RootOrg. You can create organisation using create organisation API. [refer] (http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create)
 
 4. You need to set the RootOrg channel value inside environment variable with key "sunbird_default_channel"
