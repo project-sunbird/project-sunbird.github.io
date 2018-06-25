@@ -80,7 +80,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`swarm_manager_host`           |A comma-separated (,) list of IP addresses of the swarm managers.                |no|
 |`swarm_node_host`           | A comma-separated (,) list of swarm node IP addresses .             |no|
 |`keycloak_host`           | A comma-separated (,) list of keycloak IP addresses.              |no|
-|`sunbird_dataservice_url` |The API url of sunbird, for example; https://demo.opensunbird.o    |no|
+|`sunbird_dataservice_url` |The API url of sunbird, for example; https://demo.open-sunbird.org    |no|
 |`sunbird_azure_storage_account`  | The Azure storage account for the badger service     |no|
 |`sunbird_azure_storage_key`  | The Azure storage key for the badger service    |no|
 |`sunbird_image_storage_url`| The Azure image url for the badger service |no|
@@ -122,9 +122,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 6.Verify that all the mandatory variables, for example; vault_badging_authorization_key, sunbird_auth_token, ekstep_api_key, of the Sunbird core services are updated, and run the script `./sunbird_install.sh -s core` to deploying the core services.
 
-**Note**: If you want to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`
-
-To know more about the script `sunbird_install.sh`, click [here](developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
+**Note**: If you want to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`.
 
 7.Run `./sunbird_install.sh -s posttest` . This validates the sunbird installation by checking all the services for successful installation. Executing the command generates a file named  as 'postInstallationLogs.log' under logs directory.
 
