@@ -100,7 +100,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
 
 
-5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 7 in a sequence shown in following table.
+5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence shown in following table.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
@@ -117,8 +117,6 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 6.Get the sunbird_sso_publickey from keycloak under http://dns_name/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value obtained in variable sunbird_sso_publickey under config file and run `./sunbird_install.sh -s core` to redeploy the core services.
 
 **Note**: If you want to re-run any particular stage in the installation, just run `./sunbird_install.sh -s <stagename>`
-
-To know more about the script `sunbird_install.sh`, click [here](developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
 
 7.For creating users and root organisation please follow this [link](http://www.sunbird.org/developer-docs/installation/install_sbbackend/)
 
