@@ -11,18 +11,20 @@ allowSearch: true
 
 The purpose of this section is to assist you:
 
-  - With installing the Sunbird backend on your local machine 
+  - with the installation of Sunbird backend on your local machine 
 
-Also, if you are interested in Testing:
-
-  - Sunbird backend services
-  - API workflows
+  - in testing Sunbird backend services and API workflows
 
 ## Sunbird Backend Services
 
 To set up the Sunbird Back-end services, follow the steps chronologically:
 
-1.	Setup
+1.	Setup 
+
+    a. Cassandra
+    b. Elastic Search
+    c. Keycloak
+
 2.	Configure back-end service stack
 
 ### Setup
@@ -40,7 +42,7 @@ Let us set up the environment and then proceed with deploying the services.
  
 1. For step by step installation guide, refer to the official [website](http://cassandra.apache.org/doc/latest/getting_started/installing.html){:target="_blank"}
 2. The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface) 
-3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file to      create the required keyspace, tables and indices
+3. Run [cassandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file to create the required keyspace, tables and indices
 4. Copy the following files to a temp folder in a Cassandra installed machine 
     
     - [PageMgmt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"} 
@@ -51,29 +53,32 @@ Let us set up the environment and then proceed with deploying the services.
 5. Execute the following commands 
 
 <pre>
-cqlsh -e "COPY sunbird.page_management(id, appmap,createdby, createddate, name, 
+ cqlsh -e "COPY sunbird.page_management(id, appmap,createdby, createddate, name, 
 organisationid, portalmap, updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv'"
  cqlsh -e "COPY sunbird.page_section(id, alt, createdby, createddate, description,
  display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) 
  FROM '/tmp/cql/pageSection.csv'"
 </pre>
+
 Next section details about setting up the Elastic search on your local machine.
 
 **Setup Elastic search**
 
   1. For step by step installation guide of Elastic search refer to the official [website](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html){:target="_blank"}
 
-  2. The official website guides you through the installation, and if you have done a successful install of Elastic search, you need to start the server and open Elastic search CLI (Command Line Interface)
+  2. The official website guides you through the installation, and if you have done a successful installation of Elastic search, you need to start the server and open Elastic search CLI (Command Line Interface)
 
   3. Run the following curl command
 
 <pre>
+
 curl -X PUT \
 http://localhost:9200/searchindex/org/ORG_001 \
 -H 'cache-control: no-cache' \
 -H 'content-type: application/json' \
 -H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' \
 -d '{}'
+
 </pre>     
 
 Next section details about setting up the Keycloak on your local machine.
@@ -82,19 +87,19 @@ Next section details about setting up the Keycloak on your local machine.
 
 1. For step by step installation guide of Keycloak refer to the official [website](http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html){:target="_blank"} 
 
-2. The official website guides you through the installation, and if you have done a successful install of Keycloak, now you need to start the server 
+2. The official website guides you through the installation, and if you have done a successful installation of Keycloak, you need to start the server 
 
-3. To start the Keycloak server, navigate to “Bin” Directory and run the standalone file. Performing this action will start the Keycloak server 
+3. To start the Keycloak server, navigate to `Bin` Directory and run the standalone file. Performing this action will start the Keycloak server 
 
 4. You can access the Keycloak admin console on ```http://localhost:8080``` 
 
-5. For Public key, navigate to Realm settings tab -> Keys -> Public Keys 
+5. For Public key, navigate to **Realm settings tab** -> **Keys** -> **Public Keys** 
 
-6. For sending welcome email when a user registers, you need to configure email server by navigating to: Realm Settings tab -> Emails (optional)
+6. For sending welcome email when a user registers, you need to configure email server by navigating to: **Realm Settings tab** -> **Emails** (optional)
 
 ### Configuring the Application
 
-To run Sunbird services, you need to set the following environment variables:
+To run Sunbird services, following configuration variables must be set:
 
 | variable                              | description                                                         |
 |---------------------------------------|---------------------------------------------------------------------|
@@ -149,6 +154,7 @@ The table mentions all the environment variables with description. Add or edit t
 To run sunbird backend services, at least you need to set the following environment variables. Ensure that you set the environment variables at appropriate locations.
 
 <pre>
+
 1. sunbird_cassandra_host
 2. sunbird_cassandra_port
 3. sunbird_cassandra_username 
@@ -167,6 +173,7 @@ To run sunbird backend services, at least you need to set the following environm
 16. sunbird_installation : name of environment in which you are running the application or instance name
 17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
 18. sunbird_sso_publickey
+
 </pre>
    
 For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
@@ -224,20 +231,22 @@ To run the **sunbird-lms-service** execute the following command
   
 Test any API using postman, e.g. download **user API** and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f){:target="_blank"}
 
-From reasle-1.7 user creation required channel attribute. it means installer have to do following operations.
+From rellease-1.7 user creation requires channel attribute. You need to follow the following instructions:
 
-1. Create a user insdie keyclaok .
+1. Create a user inside Keycloak .
 
-2. generate JWT token using below curl command
+2. Generate JWT token using below curl command
+<pre>
 curl -X POST \
   {{base-url}}/auth/realms/{realm-name}/protocol/openid-connect/token \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/x-www-form-urlencoded' \
   -H 'postman-token: de8e2bb4-3669-b86a-8d06-d5c0c66dae14' \
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
+</pre>
+3. Use this token to create the RootOrg. You can create organisation using create organisation API. [refer] (http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create)
 
-3. use this token create first RootOrg. You can create organisation using create organisation api. ref:http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create
+4. You need to set the RootOrg channel value inside environment variable with key "sunbird_default_channel"
 
-4. Need to set the RootOrg channel value inside Environment variable with key "sunbird_default_channel"
-Once you are done with above step then you can start creating user and other organisations.  
+Once you are done with above step then you can start creating users and other organisations.  
   
