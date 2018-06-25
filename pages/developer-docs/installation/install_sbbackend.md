@@ -225,7 +225,9 @@ To run the **sunbird-lms-service** execute the following command
 Test any API using postman, e.g. download **user API** and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f){:target="_blank"}
 
 From reasle-1.7 user creation required channel attribute. it means installer have to do following operations.
+
 1. Create a user insdie keyclaok .
+
 2. generate JWT token using below curl command
 curl -X POST \
   {{base-url}}/auth/realms/{realm-name}/protocol/openid-connect/token \
@@ -233,7 +235,9 @@ curl -X POST \
   -H 'content-type: application/x-www-form-urlencoded' \
   -H 'postman-token: de8e2bb4-3669-b86a-8d06-d5c0c66dae14' \
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
+
 3. use this token create first RootOrg. You can create organisation using create organisation api. ref:http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create
+
 4. Need to set the RootOrg channel value inside Environment variable with key "sunbird_default_channel"
 Once you are done with above step then you can start creating user and other organisations.  
   
