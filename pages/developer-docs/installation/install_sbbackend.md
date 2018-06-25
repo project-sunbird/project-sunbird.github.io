@@ -147,11 +147,11 @@ To run Sunbird services, following configuration variables must be set:
 
 The table mentions all the environment variables with description. Add or edit the environment variables in their appropriate locations.
 
-**Note:** The following environment variables are mandatory to run the backend services.
-
 ### Setting Environment Variables
 
-To run sunbird backend services, at least you need to set the following environment variables. Ensure that you set the environment variables at appropriate locations.
+To get sunbird backend services up and running, atleast, perform the following minimum required configuration.
+
+**Note**: Ensure that you need to set the environment variables at appropriate location.
 
 <pre>
 
@@ -245,7 +245,7 @@ curl -X POST
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
 </pre>
 
-3. Use this token to create the RootOrg. You can create organisation using create organisation API. [refer] (http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create)
+3. Use this token to create the RootOrg. You can create organisation using create organisation API. [refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create)
 
 4. You need to set the RootOrg channel value inside environment variable with key "sunbird_default_channel"
 
