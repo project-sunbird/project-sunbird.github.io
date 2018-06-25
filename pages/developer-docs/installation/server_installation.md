@@ -118,9 +118,9 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 **Note**: If you want to re-run any particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
 
-To know more about the script `sunbird_install.sh`, [refer](developer-docs/installation/medium_scale_deploy/#sunbird-install-script).
+To know more about the script [refer] to the page(developer-docs/installation/medium_scale_deploy/#sunbird-install-script)`sunbird_install.sh`
 
-7.For creating users and root organisation, [refer](http://www.sunbird.org/developer-docs/installation/install_sbbackend/)
+7.For creating users and root organisation, [refer](http://www.sunbird.org/developer-docs/installation/install_sbbackend/) to the page.
 
 8.Run `./sunbird_install.sh -s posttest` . The script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
 
