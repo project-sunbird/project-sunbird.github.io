@@ -99,7 +99,7 @@ Next section details about setting up the Keycloak on your local machine.
 
 ### Configuring the Application
 
-To run Sunbird services, following configuration variables must be set:
+To run Sunbird services, it is recommended that the following configuration variables must be set:
 
 | variable                              | description                                                         |
 |---------------------------------------|---------------------------------------------------------------------|
@@ -147,35 +147,38 @@ To run Sunbird services, following configuration variables must be set:
 
 The table mentions all the environment variables with description. Add or edit the environment variables in their appropriate locations.
 
-### Setting Environment Variables
+### Minimal Required Configuration
 
-To get sunbird backend services up and running, atleast, perform the following minimum required configuration.
+The following variables are mandatory as apart of minimalistic required configuration to get services up and running.
 
 **Note**: Ensure that you need to set the environment variables at appropriate location.
 
-<pre>
+| variable                              | description                                                         |
+|---------------------------------------|---------------------------------------------------------------------|
+| sunbird_cassandra_host                | host running the Cassandra server                                   |
+| sunbird_cassandra_port                | port on which Cassandra server is running                           |
+| sunbird_cassandra_username (optional) | username for Cassandra database, if authentication is enabled       |
+| sunbird_cassandra_password (optional) | password for Cassandra database, if authentication is enabled       |
+| sunbird_es_host                       | host running the Elastic search server                              |
+| sunbird_es_port                       | port on which Elastic search server is running                      |
+| sunbird_es_cluster (optional)         | name of the Elastic search cluster                                  |
+| sunbird_learner_actor_host            | host running for learner actor                                      |
+| sunbird_learner_actor_port            | port on which learner actor is running                              |
+| sunbird_sso_url                       | URL for keycloak server (Example : **http://localhost:8080/auth** ) |
+| sunbird_sso_realm                     | keycloak realm name   (use default realm as master or you can create new realm)                                                                                      |
+| sunbird_sso_username                  | keycloak user name                                                                                          |
+| sunbird_sso_password                  | keycloak password                                                                                           |
+| sunbird_sso_client_id                 | keycloak client id  (use default as admin-cli or you can create new client in keycloak)                                                                                        |
+| sunbird_sso_client_secret             | keycloak client secret (not mandatory)                                                                      |
+| ekstep_content_search_base_url        | provide base URL for EkStep content search                                                                  |
+| ekstep_authorization                  | provide Authorization value for content search                                                          |
+|sunbird_installation | name of environment in which you are running the application or instance name
+| sunbird_quartz_mode | set value as "embedded" as you are not running scheduler in distributed environment|
+|sunbird_sso_publickey|
 
-1. sunbird_cassandra_host
-2. sunbird_cassandra_port
-3. sunbird_cassandra_username 
-4. sunbird_cassandra_password 
-5. sunbird_es_host
-6. sunbird_es_port
-7. sunbird_learner_actor_host
-8. sunbird_learner_actor_port
-9. sunbird_sso_url
-10. sunbird_sso_realm
-11. sunbird_sso_username
-12. sunbird_sso_password
-13. sunbird_sso_client_id
-14. ekstep_content_search_base_url
-15. ekstep_authorization
-16. sunbird_installation : name of environment in which you are running the application or instance name
-17. sunbird_quartz_mode : set value as "embedded" as you are not running scheduler in distributed environment.
-18. sunbird_sso_publickey
-</pre>
    
 For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
+
 
 ## Configuring and running Back-End Services Stack
 
