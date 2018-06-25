@@ -22,7 +22,9 @@ To set up the Sunbird Back-end services, follow the steps chronologically:
 1.	Setup 
 
     a. Cassandra
+    
     b. Elastic Search
+    
     c. Keycloak
 
 2.	Configure back-end service stack
