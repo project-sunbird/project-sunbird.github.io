@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs/configuring_sunbird/
+directory: developer-docs/configuring_sunbird
 title: Configuration
 page_title: Setting up SSO Public Key 
 description: How to set up the SSO public key
