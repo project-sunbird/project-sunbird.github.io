@@ -913,7 +913,7 @@ paths:
        This API is used to unban/unblock a user
           - The **_/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: unblock user
+      summary: Unblock user
       tags:
       - User APIs
       operationId: make deleted user active
@@ -1027,7 +1027,7 @@ paths:
         In case the userID, organisationID and roles parameter values are passed 
           
           - then roles will be assigned by the corresponding organization for that user
-      summary: Assign Role to a User
+      summary: Assign Role to User
       tags:
       - User APIs
       operationId: OrgV1RoleAssignPost
@@ -1283,7 +1283,7 @@ paths:
        This API is associated with listing all the skills that a user possesses
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: Lists all Skills of a User
+      summary: List all Skills of User
       tags:
       - User APIs
       operationId: DataV1SkillsGet

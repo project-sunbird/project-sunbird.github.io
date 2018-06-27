@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.48.b/";
+			baseURL.href="/releases/release.1.48.d/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Configuring Sunbird</title>
-<meta name="description" content="Sunbird Site For adopters and users to get started on Sunbird. It provides the list of configuration that need to be done to customize the sunbird"/>
+<title>Sunbird Configuration for SSO Public Key</title>
+<meta name="description" content="Sunbird Site How to set up the SSO public key"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-06-27 14:16:04 +0530">
+<meta name="last-modified" content="2018-06-27 18:02:40 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.48.b" />
-<meta name="buildNo" content="3923" />
+<meta name="buildVersion" content="release.1.48.d" />
+<meta name="buildNo" content="3954" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -63,7 +63,7 @@
 </script>
 
 	
-		<meta name="robots" content="noindex, nofollow">
+		<meta name="robots" content="index, follow">
 	
   </head>
   <body id="body" class="doc-layout">
@@ -337,27 +337,18 @@
                 <li>
                     <div class="">
                         <a href="developer-docs/configuring_sunbird/">Configuration</a>
-                        <!--<ul class="sidebar-group">
+                        <ul class="sidebar-group">
                             <li>
-                                <div class="">
-                                    <a href="developer-docs/singlesignon/overview_sso/">Onboarding via Single Sign On</a>
-                                    <ul class="sidebar-group">
-                                        <li>
-                                            <a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
-                                        </li>
-                                        <li>
-                                            <a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
-                                        </li>
-                                        <li>
-                                            <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
-                                        </li>
-                                    </ul>
-                                </div>
+				    <a href="developer-docs/configuring_sunbird/env_variables_temp/">Configuration Variables</a>
                             </li>
                             <li>
-                                <a href="developer-docs/configuring_announcement/">Configuring for Announcements</a>
+				    <a href="developer-docs/configuring_sunbird/sso_publickey/">Configuration for SSO Public Key</a>
                             </li>
-                        </ul>-->
+                            <li>
+                                
+				  <a href="developer-docs/configuring_sunbird/configuring_announcement/">Configuration for Announcements</a>
+                            </li>
+                        </ul>
                     </div>
                 </li>
 		        <li>
@@ -379,9 +370,6 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li>
-                                <a href="developer-docs/configuring_announcement/">Configuring for Announcements</a>
                             </li>
                         </ul>
                     </div>
@@ -531,14 +519,14 @@
     </div>
 </div>
 <script>
-    $("a[href$='developer-docs/configuring_sunbird/index_original/']").addClass("sidebar-link-selected");
+    $("a[href$='developer-docs/configuring_sunbird/sso_publickey/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Configuring Sunbird </h1>
+        <h1>Configuration for SSO Public Key </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -548,7 +536,7 @@
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/index_original.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/sso_publickey.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -570,11 +558,9 @@
           <ul>
             <li class="toc_level-1 toc_section-1">
               <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#list-of-environment-variables"><span class="tocnumber">1.1 .</span> <span class="toctext">List of Environment Variables</span></a>
-                </li>
-              </ul>
+            </li>
+            <li class="toc_level-1 toc_section-2">
+              <a href="#setting-up-the-sso-public-key"><span class="tocnumber">2 .</span> <span class="toctext">Setting Up the SSO Public Key</span></a>
             </li>
           </ul>
         </td>
@@ -583,159 +569,71 @@
   </table>
 </div><h2 id="overview">Overview</h2>
 
-<p>On installation,  users can explore and work with Sunbird.  The installation process takes care of the default minimum configuration required to run Sunbird. However, if you want to customize your instance of Sunbird, it is simple.
-Modify default behaviour or the look and feel by overriding the default values of environment variables as mentioned in the following table.
-For example, you can change the default logo to the logo of your choice, or  change the default email address to your preferred email address.</p>
+<p>Sunbird facilitates the use of Single SignOn (SSO) for user authentication. Technically, SSO uses a central service that orchestrates common authentication between multiple applications. Use of the SSO service eliminates the need for users to sign in to individual applications and hence removes separate authentication of the user for each application. It authenticates users only once, for the first time, when they sign in. Subsequently, users are automatically authenticated when they access other related applications.</p>
 
-<p><strong>Note:</strong> If you have not installed Sunbird, refer to <a href="\pages\developer-docs\installation\server_installation">Server Installation</a></p>
+<p>To provide access to users and enable them to perform API operations, you need to set up the SSO authentication key value in your environment.</p>
 
-<h3 id="list-of-environment-variables">List of Environment Variables</h3>
+<h2 id="setting-up-the-sso-public-key">Setting Up the SSO Public Key</h2>
 
 <table>
-  <thead>
-    <tr>
-      <th>S No.</th>
-      <th>Variable Name</th>
-      <th>Description</th>
-      <th>Purpose</th>
-      <th>Default Value</th>
-      <th>Path</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>sunbird_mail_server_from_email</td>
-      <td>The default communication email address</td>
-      <td>If set, user will get an email from the set email address</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>sunbird_env_logo_url</td>
-      <td>public access image url</td>
-      <td>used to sent in email as logo</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>sunird_web_url</td>
-      <td>The URL of the home page of sunbird</td>
-      <td>This URL is shared in an email such that the users are able to login</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>sunbird_app_url</td>
-      <td>Th URL of Sunbird app in Play store</td>
-      <td>This Sunbird app URL is shared in an email such that users are able to download the app</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>sunbird_msg_sender</td>
-      <td>The name of the SMS sender</td>
-      <td>This is the name that will appear on users screen in case an SMS is sent from the system</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>sunbird_installation_email</td>
-      <td>This is the email address used for badger system</td>
-      <td>This email is used for notifying the users while the install badger system</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>sunbird_installation</td>
-      <td>Just a name of instance</td>
-      <td>used to send telemetry and in sending email as well this value is used. Don’t used name having spaces EX: “Sunbird Dev” , instead used “SunbirdDev”</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>sunbird_encryption_key</td>
-      <td>key to encrypt and decrypt the attribute</td>
-      <td>key to encrypt and decrypt the attribute , once set then it should not be change.</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>sunbird_default_channel</td>
-      <td>create a rootOrg in sunbird and add channel here</td>
-      <td>this is used to associate user creation with rootOrg</td>
-      <td>each installer need to put it.</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>sunbird_sso_publickey</td>
-      <td>to validate JWT token generated by keyclaok</td>
-      <td>used to authenticate user against keyclaok</td>
-      <td>Need to get from keycloak (realm-&gt;keys-&gt;public keys)</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>telemetry_pdata_id</td>
-      <td>…service</td>
-      <td>…service  ex: dev.sunbird.learning.service</td>
-      <td> </td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>telemetry_pdata_pid</td>
-      <td>Producer id of the telemetry</td>
-      <td>Producer id of the telemetry EX:  actor-service</td>
-      <td> </td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>telemetry_pdata_ver</td>
-      <td>Producer version or buid version which generates the telemetry</td>
-      <td>producer version or buid version which  generates the telemetry Ex: 1.5</td>
-      <td> </td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>ekstep_telemetry_storage_toggle</td>
-      <td>toggle to make telemetry storage on and off for ekstep</td>
-      <td>by default it’s on</td>
-      <td>on</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>sunbird_external_content_whitelisted_domains</td>
-      <td>to store the whitelisted domains comma seperated</td>
-      <td>by default it’s youtube.com</td>
-      <td>YouTube.com</td>
-      <td>Sunbird-portal</td>
-    </tr>
-  </tbody>
+
+	<tr>
+		<th style="width:35%;">Step</th>
+		<th style="width:65%;">Screen</th>
+	 </tr>
+  
+	<tr>
+		<td>
+			1. Enter your <b>Username or email</b> and <b>Password</b><br />
+			2. Click <b>Log in</b> to log into the Keycloak admin console
+		 </td>
+		<td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png" /></td>
+	</tr>
+  
+	<tr>
+	  <td> 
+	  3. Click the <b>Realm Selector Dropdown</b> from the left corner of your screen and select appropriate realm <br />
+		  <b>Note:</b> The <b>Master</b> realm is selected by default.
+	  </td>
+	  <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png" /></td>
+	</tr>
+	
+  <tr>
+  <td> 
+  4. Click on the <b>Keys tab</b> from the menu bar
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\select_key_tab.png" /></td>
+  </tr>
+  
+  <tr>
+  <td> 
+  5. Click on the <b>Public key</b> button from the table<br />
+  <b>Note:</b> A text string is displayed as a popup 
+  </td>
+  <td>
+  <img src="pages\developer-docs\configuring_sunbird\images\public_key_btn.png" />
+  </td>
+  </tr>
+  
+  <tr>
+  <td> 
+	  6.Copy the text string and paste it as a value for the <b>sunbird_sso_publickey</b> environment variable located inside <b> https://github.com/project-sunbird/sunbird-lms-mw/blob/master/setup.md</b> file, while you are deploying Sunbird platform services 
+  </td>
+  <td><img src="pages\developer-docs\configuring_sunbird\images\copy_token.png" /></td>
+  </tr>
+  
 </table>
 
           
           <hr />
           
           <p class="edit-para text-right">
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/index_original.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/sso_publickey.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="developer-docs/configuring_sunbird/index_original/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="developer-docs/configuring_sunbird/sso_publickey/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -790,7 +688,7 @@ For example, you can change the default logo to the logo of your choice, or  cha
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'developer-docs/configuring_sunbird/index_original/' + url;
+		this.href = 'developer-docs/configuring_sunbird/sso_publickey/' + url;
     })
 	$(".zoomcover").click(function(){
 		if (!$(this).hasClass("fullscreen")){

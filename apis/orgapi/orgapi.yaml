@@ -30,7 +30,7 @@ produces:
 paths:
   /create:
     post:
-      summary: Create a new Organisation.
+      summary: Create a new Organisation
       description: >-
           This API is for creation of a new Organisation on the Sunbird Platform.
       tags:
@@ -97,7 +97,7 @@ paths:
       - bearer: []
   /read:
     post:
-      summary: Read a particular Organisation details.
+      summary: Read Organisation details
       description: >-
           This API is for viewing details of an existing Organisation on the Sunbird Platform.
       tags:
@@ -160,7 +160,7 @@ paths:
       - bearer: []
   /search:
     post:
-      summary: Search for Organisations
+      summary: Search for an Organisation
       description: >-
           This API is for searching for Organisations on the Sunbird Platform.
       tags:
@@ -228,7 +228,7 @@ paths:
       - bearer: []
   /update:
     patch:
-      summary: Update details of an existing Organisation
+      summary: Update particulars of an existing Organisation
       description: >-
         This API is for updating details of an existing Organisation on the Sunbird Platform.
       tags:
@@ -353,7 +353,7 @@ paths:
       security: []
   /type/create:
     post:
-      summary: Create a new Organisation Type.
+      summary: Create new Organisation Type
       description: >-
         This API is for creation of a new Organisation Type on the Sunbird Platform.
       tags:
@@ -413,7 +413,7 @@ paths:
       - bearer: []
   /type/list:
     get:
-      summary: List all Organisation Types.
+      summary: List all Organisation Types
       description: >-
           This API is for listing all Organisation Types on the Sunbird Platform.
       tags:
@@ -462,7 +462,7 @@ paths:
       - bearer: []
   /type/update:
     patch:
-      summary: Update details of an existing Organisation Type.
+      summary: Update particulars of an existing Organisation Type
       description: >-
         This API is for updating details of an existing Organisation Type on the Sunbird Platform.
       tags:

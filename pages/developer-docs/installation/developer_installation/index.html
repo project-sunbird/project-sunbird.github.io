@@ -1,6 +1,6 @@
-<h2 id="pre-requisites">Pre-requisites</h2>
+<h2 id="overview">Overview</h2>
 
-<p>Before you install Sunbird on your laptop, examine your environment and gather data to ensure an optimal installation experience.
+<p>Before installing Sunbird on your laptop, check your environment and gather data to ensure an optimal installation experience.
 Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.</p>
 
 <h3 id="system-requirements">System Requirements</h3>
@@ -17,51 +17,57 @@ Review the following to determine that the environment has the necessary resourc
 
 <ul>
   <li>Sunbird portal or web application</li>
-  <li>Sunbird services stack or the backend API interface.</li>
+  <li>Sunbird services stack or the backend API interface</li>
 </ul>
 
 <h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
 
-<p>To setup the Sunbird portal successfully, follow these steps sequentially:</p>
+<p>To run the Sunbird portal successfully, follow these steps sequentially:</p>
 
 <ol>
-  <li>Check for the pre-requisites</li>
-  <li>Setup</li>
-  <li>Configure Backend Service Stack</li>
-  <li>Edit the Application Configuration file</li>
-  <li>Run the Application</li>
+  <li>Ensure that you meet the <strong>Prerequisites</strong></li>
+  <li>Follow the instructions in <strong>Getting started with setting up the application</strong></li>
+  <li>Follow the instruction in <strong>Configure Backend Services Stack</strong></li>
+  <li>Follow the instruction in <strong>Edit the Application Configuration file</strong></li>
+  <li>Follow the instructions in <strong>Run the Application</strong></li>
 </ol>
 
 <h3 id="prerequisites">Prerequisites</h3>
-<p>Check the following pre-requisites before installing and running the Sunbird-player application:</p>
+
+<p>Ensure that you meet the following prerequisites before installing and running the Sunbird-player application:</p>
 
 <ol>
-  <li><strong>Software dependencies</strong>
+  <li>
+    <p><strong>Software dependencies</strong></p>
+
     <ul>
       <li><a href="https://nodejs.org/en/download/" target="_blank">Node</a> - install the latest release of 8.11.2 LTS series</li>
+      <li><a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a> - install nodemon</li>
     </ul>
   </li>
-  <li><strong>API Keys</strong></li>
+  <li>
+    <p><strong>API Keys</strong></p>
+
+    <ul>
+      <li>For getting an API key you should send an email to: info@sunbird.org</li>
+    </ul>
+  </li>
 </ol>
 
-<p>This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.</p>
+<p><strong>Note:</strong> This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.</p>
 
-<ul>
-  <li>For getting an API key you should send an email to: info@sunbird.org.</li>
-</ul>
-
-<h3 id="setup">Setup</h3>
+<h3 id="getting-started-with-setting-up-the-application">Getting started with setting up the Application</h3>
 
 <p>For setting up the application, check out the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a>.</p>
 
-<p>The code can be cloned to your repository using the command:</p>
+<p>The code can be cloned to your repository using the following command:</p>
 
 <pre><code>git clone https://github.com/project-sunbird/sunbird-portal.git
 </code></pre>
 
 <p><strong><em>Note</em></strong>: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release <a href="https://github.com/project-sunbird/sunbird-portal/" target="_blank">refer</a></p>
 
-<p>Once the <strong>git clone</strong> command executes, proceed with running the following set of commands in the console:</p>
+<p>Once the <strong>git clone</strong> command is executed, proceed with running the following set of commands in the console:</p>
 
 <pre>
    $ cd {PROJECT-FOLDER}/src/app
@@ -70,21 +76,29 @@ Review the following to determine that the environment has the necessary resourc
    $ npm install
 </pre>
 
-<p><strong><em>Note</em></strong>: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set sunbird_environment=local and sunbird_instance=sunbird.</p>
+<p><strong><em>Note</em></strong>: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set the following:</p>
+
+<pre>
+sunbird_environment=local 
+sunbird_instance=sunbird
+sunbird_default_tenant=sunbird
+</pre>
 
 <h3 id="configure-backend-service-stack">Configure Backend Service Stack</h3>
 
-<p>The Sunbird portal application is powered by a set of Service APIs. These Service API(s) run in a distributed environment.For instance, deploying the Sunbird to production; but for the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.</p>
+<p>The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment, for instance: deploying the Sunbird to production.</p>
 
-<p>For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes.</p>
+<p>For the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.</p>
 
-<p><strong><em>Note</em></strong>: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.</p>
+<p>Configure your Sunbird portal to use a cloud instance of the Sunbird service API(s).These APIs are hosted by Sunbird and are used for testing and demonstration purposes.</p>
+
+<p><strong><em>Note</em></strong>: The cloud instance of the API(s) are not for production use.</p>
 
 <h3 id="edit-the-application-configuration-file">Edit the Application Configuration file</h3>
 
 <p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in any available text editor.</p>
 
-<p>Once you open the file, ensure you enter the following values:</p>
+<p>Once you open the file, ensure you enter the following values are set:</p>
 <pre>
     module.exports = {
         
@@ -124,7 +138,11 @@ Review the following to determine that the environment has the necessary resourc
 
 <h2 id="run-the-application">Run the Application</h2>
 
-<p>To run the application, execute the following commands:</p>
+<p>Before running the application, ensure that you have installed <strong>nodemon</strong>, if you have not, use the following command to install it:</p>
+
+<p><code>npm install -g nodemon</code></p>
+
+<p>After you verify the availability of nodemon, run the application by executing the following commands:</p>
 
 <pre>
 $ cd {PROJECT-FOLDER}/src/app
@@ -135,5 +153,6 @@ Open a new terminal window
 $ cd {PROJECT-FOLDER}/src/app/client
 $ nodemon
 </pre>
-<p>After the commands get executed, open <code>http://localhost:3000</code> in the browser.</p>
+
+<p>Open <code>http://localhost:3000</code> in the browser.</p>
 

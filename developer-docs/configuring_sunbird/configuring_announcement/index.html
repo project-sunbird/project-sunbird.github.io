@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.48.b/";
+			baseURL.href="/releases/release.1.48.d/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Configuring for Announcements</title>
+<title>Sunbird Configuration for Announcements</title>
 <meta name="description" content="Sunbird Site Enable organizations and users to configure and use the Announcement feature on Sunbird"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-06-27 14:16:04 +0530">
+<meta name="last-modified" content="2018-06-27 18:02:40 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.48.b" />
-<meta name="buildNo" content="3923" />
+<meta name="buildVersion" content="release.1.48.d" />
+<meta name="buildNo" content="3954" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -93,7 +93,7 @@
 	</form>
 </div>
  
-    <div class="sidebar-wrapper developer-docs">
+    <div class="sidebar-wrapper developer-docs-configuring-sunbird">
         <div class="">
             <a href="architecture/">
                 <h4 class="sidebar-group-title">Architecture</h4>
@@ -337,27 +337,18 @@
                 <li>
                     <div class="">
                         <a href="developer-docs/configuring_sunbird/">Configuration</a>
-                        <!--<ul class="sidebar-group">
+                        <ul class="sidebar-group">
                             <li>
-                                <div class="">
-                                    <a href="developer-docs/singlesignon/overview_sso/">Onboarding via Single Sign On</a>
-                                    <ul class="sidebar-group">
-                                        <li>
-                                            <a href="developer-docs/singlesignon/protocol_sso/">Protocol</a>
-                                        </li>
-                                        <li>
-                                            <a href="developer-docs/singlesignon/procedure_sso/">Procedure</a>
-                                        </li>
-                                        <li>
-                                            <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
-                                        </li>
-                                    </ul>
-                                </div>
+				    <a href="developer-docs/configuring_sunbird/env_variables_temp/">Configuration Variables</a>
                             </li>
                             <li>
-                                <a href="developer-docs/configuring_announcement/">Configuring for Announcements</a>
+				    <a href="developer-docs/configuring_sunbird/sso_publickey/">Configuration for SSO Public Key</a>
                             </li>
-                        </ul>-->
+                            <li>
+                                
+				  <a href="developer-docs/configuring_sunbird/configuring_announcement/">Configuration for Announcements</a>
+                            </li>
+                        </ul>
                     </div>
                 </li>
 		        <li>
@@ -379,9 +370,6 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </li>
-                            <li>
-                                <a href="developer-docs/configuring_announcement/">Configuring for Announcements</a>
                             </li>
                         </ul>
                     </div>
@@ -531,14 +519,14 @@
     </div>
 </div>
 <script>
-    $("a[href$='developer-docs/configuring_announcement/']").addClass("sidebar-link-selected");
+    $("a[href$='developer-docs/configuring_sunbird/configuring_announcement/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Configuring for Announcements </h1>
+        <h1>Configuration for Announcements </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -548,7 +536,7 @@
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_announcement.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/configuring_announcement.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -669,12 +657,12 @@
           <hr />
           
           <p class="edit-para text-right">
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_announcement.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/configuring_announcement.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="developer-docs/configuring_announcement/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="developer-docs/configuring_sunbird/configuring_announcement/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -729,7 +717,7 @@
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'developer-docs/configuring_announcement/' + url;
+		this.href = 'developer-docs/configuring_sunbird/configuring_announcement/' + url;
     })
 	$(".zoomcover").click(function(){
 		if (!$(this).hasClass("fullscreen")){
