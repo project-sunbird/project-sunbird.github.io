@@ -253,7 +253,7 @@ curl -X POST
 
 3. Use this token to create the RootOrg. 
  
-**Note:** [refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create) to the Create Orgnization API to can create organisation 
+**Note:** [Refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create) to the create orgnization API to can create organisation 
 
 4. You need to set the RootOrg channel value inside environment variable with key `sunbird_default_channel`
 
