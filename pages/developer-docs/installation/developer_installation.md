@@ -127,7 +127,7 @@ Once you open the file, ensure you enter the following values:
 
 ## Run the Application
 
-Before running the application, ensure that you have installed **nodemon**, if you have not, use the following command:
+Before running the application, ensure that you have installed **nodemon**, if you have not, use the following command to install it:
 
 `npm install -g nodemon`
 
