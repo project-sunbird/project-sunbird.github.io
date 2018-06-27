@@ -30,26 +30,27 @@ Installing Sunbird requires two primary software components:
 
 To run the Sunbird portal successfully, follow these steps sequentially:
 
-1. Ensure that you meet the prerequisites
-2. Follow the instructions in Setup 
-3. Configure Backend Services Stack
-4. Edit the Application Configuration file
-5. Run the Application
+1. Ensure that you meet the **Prerequisites**
+2. Follow the instructions in **Getting started with setting up the application**
+3.  Follow the instruction in **Configure Backend Services Stack**
+4. Follow the instruction in **Edit the Application Configuration file**
+5. Follow the instructions in **Run the Application**
 
 ### Prerequisites
 
 Ensure that you meet the following prerequisites before installing and running the Sunbird-player application:
 
 1. **Software dependencies**
+	
 	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 8.11.2 LTS series
 
 2. **API Keys** 
 
+	* For getting an API key you should send an email to: info@sunbird.org
+
 **Note:** This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
 
-- For getting an API key you should send an email to: info@sunbird.org.
-
-### Setup 
+### Getting started with setting up the Application 
 
 For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}. 
 
