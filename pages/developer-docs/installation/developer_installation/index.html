@@ -1,18 +1,18 @@
 <h2 id="overview">Overview</h2>
 
-<p>Before installing Sunbird on your laptop, check your environment and gather data to ensure an optimal installation experience.
-Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.</p>
+<p>This page provides information for you to install, setup, configure, run and use a Sunbird instance on your laptop or desktop. The objective of such an installation is to demo and test the Sunbird. It is not advised to use the instance for a production environment. Follow the instructions provided on this page to ensure an optimal installation experience. Before installing Sunbird on your laptop or desktop, check that the you have the necessary resources and compliant target systems.</p>
 
-<h3 id="system-requirements">System Requirements</h3>
+<h2 id="system-requirements">System Requirements</h2>
 
-<p>To install Sunbird, your laptop/PC should have at least the following minimum system requirements:</p>
+<p>To install Sunbird, ensure that your laptop or desktop has the following minimum system requirements:</p>
 
 <ul>
-  <li>Operating System: Windows 7 and above/4.2 Mac OS X 10.0 and above/Linux</li>
+  <li>Operating System: Windows 7 and above, or 4.2 Mac OS X 10.0 and above/Linux</li>
   <li>RAM: &gt;1.5GB</li>
   <li>CPU: 2 cores, &gt;2 GHz</li>
 </ul>
 
+<h2 id="sunbird-components">Sunbird Components</h2>
 <p>Installing Sunbird requires two primary software components:</p>
 
 <ul>
@@ -22,19 +22,9 @@ Review the following to determine that the environment has the necessary resourc
 
 <h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
 
-<p>To run the Sunbird portal successfully, follow these steps sequentially:</p>
-
-<ol>
-  <li>Ensure that you meet the <strong>Prerequisites</strong></li>
-  <li>Follow the instructions in <strong>Getting started with setting up the application</strong></li>
-  <li>Follow the instruction in <strong>Configure Backend Services Stack</strong></li>
-  <li>Follow the instruction in <strong>Edit the Application Configuration file</strong></li>
-  <li>Follow the instructions in <strong>Run the Application</strong></li>
-</ol>
+<p>The following sections provide you with the sequence to set up the Sunbird portal instance successfully</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
-
-<p>Ensure that you meet the following prerequisites before installing and running the Sunbird-player application:</p>
 
 <ol>
   <li>
@@ -49,25 +39,31 @@ Review the following to determine that the environment has the necessary resourc
     <p><strong>API Keys</strong></p>
 
     <ul>
-      <li>For getting an API key you should send an email to: info@sunbird.org</li>
+      <li>To get an API key, send an email to: info@sunbird.org</li>
     </ul>
   </li>
 </ol>
 
-<p><strong>Note:</strong> This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.</p>
+<p><strong>Note:</strong> These installation instructions use cloud hosted Sunbird APIs, which require an API key.</p>
 
-<h3 id="getting-started-with-setting-up-the-application">Getting started with setting up the Application</h3>
+<h3 id="set-up-the-sunbird-application">Set Up the Sunbird Application</h3>
 
-<p>For setting up the application, check out the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a>.</p>
+<ol>
+  <li>
+    <p>To set up the Sunbird application, get the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a> from the sunbird-portal Git repository.</p>
+  </li>
+  <li>
+    <p>Clone the repository to your local system using the command:</p>
 
-<p>The code can be cloned to your repository using the following command:</p>
+    <p>git clone https://github.com/project-sunbird/sunbird-portal.git</p>
+  </li>
+</ol>
 
-<pre><code>git clone https://github.com/project-sunbird/sunbird-portal.git
-</code></pre>
+<p><strong><em>Note</em></strong>: Stable versions of the sunbird portal code are available via tags for each release. The master branch contains the latest stable release. To get the latest stable release of Sunbird, <a href="https://github.com/project-sunbird/sunbird-portal/" target="_blank">click here</a>.</p>
 
-<p><strong><em>Note</em></strong>: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release <a href="https://github.com/project-sunbird/sunbird-portal/" target="_blank">refer</a></p>
-
-<p>Once the <strong>git clone</strong> command is executed, proceed with running the following set of commands in the console:</p>
+<ol>
+  <li>After executing the <strong>git clone</strong> command, run the following set of commands in the console:</li>
+</ol>
 
 <pre>
    $ cd {PROJECT-FOLDER}/src/app
@@ -76,7 +72,11 @@ Review the following to determine that the environment has the necessary resourc
    $ npm install
 </pre>
 
-<p><strong><em>Note</em></strong>: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set the following:</p>
+<p><strong><em>Note</em></strong>: Ensure that you use node version 8.11.2 or above.</p>
+
+<ol>
+  <li>Set the following environment variables when you are prompted to:</li>
+</ol>
 
 <pre>
 sunbird_environment=local 
@@ -84,21 +84,24 @@ sunbird_instance=sunbird
 sunbird_default_tenant=sunbird
 </pre>
 
-<h3 id="configure-backend-service-stack">Configure Backend Service Stack</h3>
+<h3 id="configure-the-backend-service-stack">Configure the Backend Service Stack</h3>
 
-<p>The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment, for instance: deploying the Sunbird to production.</p>
+<p>The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment when Sunbird is  deployed to production. For the sake of simplicity and ease of debugging, you can run these service API(s) locally on a single server.</p>
 
-<p>For the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.</p>
-
-<p>Configure your Sunbird portal to use a cloud instance of the Sunbird service API(s).These APIs are hosted by Sunbird and are used for testing and demonstration purposes.</p>
+<p>Configure your Sunbird portal instance to use a cloud instance of the Sunbird service API(s) hosted by Sunbird, and are used for testing and demonstration purposes.</p>
 
 <p><strong><em>Note</em></strong>: The cloud instance of the API(s) are not for production use.</p>
 
-<h3 id="edit-the-application-configuration-file">Edit the Application Configuration file</h3>
+<p>To edit the application configuration file:</p>
 
-<p>Open <code>&lt;PROJECT-FOLDER&gt;/src/app/helpers/environmentVariablesHelper.js</code> in any available text editor.</p>
-
-<p>Once you open the file, ensure you enter the following values are set:</p>
+<ol>
+  <li>
+    <p>Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js** file in any available text editor.</PROJECT-FOLDER></p>
+  </li>
+  <li>
+    <p>Set the values for the following parameters:</p>
+  </li>
+</ol>
 <pre>
     module.exports = {
         
@@ -138,21 +141,30 @@ sunbird_default_tenant=sunbird
 
 <h2 id="run-the-application">Run the Application</h2>
 
-<p>Before running the application, ensure that you have installed <strong>nodemon</strong>, if you have not, use the following command to install it:</p>
+<ol>
+  <li>Before you run the application, install <strong>nodemon</strong>. To do so, use the following command:</li>
+</ol>
 
 <p><code>npm install -g nodemon</code></p>
 
-<p>After you verify the availability of nodemon, run the application by executing the following commands:</p>
+<ol>
+  <li>After verifying the availability of nodemon, run the application by executing the following commands:</li>
+</ol>
 
 <pre>
 $ cd {PROJECT-FOLDER}/src/app
 $ node server.js
-    
-Open a new terminal window
+</pre>
 
+<ol>
+  <li>Open a new terminal window</li>
+</ol>
+<pre>
 $ cd {PROJECT-FOLDER}/src/app/client
 $ nodemon
 </pre>
 
-<p>Open <code>http://localhost:3000</code> in the browser.</p>
+<ol>
+  <li>Open <strong>http://localhost:3000</strong> in the browser</li>
+</ol>
 
