@@ -177,7 +177,7 @@ The following variables are mandatory as apart of minimalistic required configur
 |sunbird_sso_publickey|
 
    
-For remaining environment variable values[refer] (https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
+For remaining environment variable values [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"}
 
 
 ## Configuring and running Back-End Services Stack
@@ -211,6 +211,7 @@ Sunbird architecture supports two Akka actor systems:
 
 
 By default, both run on different machines. In order to run these actor systems on a single machine, you need to modify the [resource.properties file]
+
 For more details [refer](https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties){:target="_blank"} to this repository.
 
 
@@ -233,24 +234,28 @@ To run the **sunbird-lms-service** execute the following command
   
 Test any API using postman, e.g. download **user API** and perform different actions on user using this [Postman collection](https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f){:target="_blank"}
 
-From rellease-1.7 user creation requires channel attribute. You need to follow the following instructions:
+From release-1.7, user creation requires channel attribute. You need to follow these instructions:
 
-1. Create a user inside Keycloak .
+1. Create a user inside Keycloak 
 
-2. Generate JWT token using below curl command
+2. Generate JWT token using the following curl command
 
 <pre>
+
 curl -X POST 
   {{base-url}}/auth/realms/{realm-name}/protocol/openid-connect/token 
   -H 'cache-control: no-cache' 
   -H 'content-type: application/x-www-form-urlencoded' 
   -H 'postman-token: de8e2bb4-3669-b86a-8d06-d5c0c66dae14' 
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
+
 </pre>
 
-3. Use this token to create the RootOrg. You can create organisation using create organisation API. [refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create)
+3. Use this token to create the RootOrg. 
 
-4. You need to set the RootOrg channel value inside environment variable with key "sunbird_default_channel"
+**Note:** You can create organisation using create organisation API. [refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create)
 
-Once you are done with above step then you can start creating users and other organisations.  
+4. You need to set the RootOrg channel value inside environment variable with key `sunbird_default_channel`
+
+Once you are done with above step then you can start creating other users and sub organisations.  
   
