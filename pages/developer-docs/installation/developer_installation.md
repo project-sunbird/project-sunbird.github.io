@@ -24,7 +24,7 @@ To install Sunbird, your laptop/PC should have at least the following minimum sy
 Installing Sunbird requires two primary software components:
 
 - Sunbird portal or web application
-- Sunbird services stack or the backend API interface. 
+- Sunbird services stack or the backend API interface
 
 ## Sunbird Portal Setup
 
