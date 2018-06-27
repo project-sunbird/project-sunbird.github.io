@@ -12,7 +12,7 @@ On installation,  users can explore and work with Sunbird.  The installation pro
 
 Modify default behaviour, look and feel by overriding the default values of environment variables as mentioned in the following tables.
 
-**Note:** If you have not installed Sunbird, refer to [Server Installation](\pages\developer-docs\installation\server_installation)
+**Note:** If you have not installed Sunbird yet, refer to [Server Installation](\pages\developer-docs\installation\server_installation)
 
 
 
