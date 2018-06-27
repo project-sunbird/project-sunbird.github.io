@@ -8,7 +8,6 @@ published: true
 allowSearch: true
 keywords: Configure, configuration, env, environment variables, variables
 ---
-## Overview
 
 The goal of the configuration section is to provide a simple, but flexible, way for anyone to get an instance of Sunbird up and running that is fully configured and ready-to-go.
 
