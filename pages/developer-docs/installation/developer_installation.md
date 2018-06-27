@@ -61,7 +61,7 @@ The code can be cloned to your repository using the command:
 Once the **git clone** command executes, proceed with running the following set of commands in the console:
 
 <pre>
-   $ cd {PROJECT-FOLDER}/src
+   $ cd {PROJECT-FOLDER}/src/app
    $ npm install
    $ cd {PROJECT-FOLDER}/src/app/client
    $ npm install
