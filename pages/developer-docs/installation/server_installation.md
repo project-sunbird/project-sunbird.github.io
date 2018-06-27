@@ -17,11 +17,11 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 * Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](developer-docs/installation/medium_scale_deploy/#mapping-ports) The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.
 
-* Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird to be accessible over an IP address. If you have a domain name, and want to get an SSL certificate, use [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate that is valid for 90 days.
+* Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird such that it can be accessed over an IP address. If you have a domain name, and you want to get an SSL certificate, refer [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate which is valid for 90 days.
 
 * Sunbird requires Ekstep API keys to access the Ekstep content repository. Follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. If you are creating a test environment, get the QA API keys.
 
-* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have sudo access on the servers.
+* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
 
 * The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.
 
@@ -49,7 +49,9 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 3.`cd sunbird-devops/deploy`
 
-4.Update the configuration parameters in the `config` file. The configuration parameters are explained in the following table: 
+4.Update the configuration parameters in the `config` file. 
+
+The configuration parameters are explained in the following table: 
 
 | variable | description   | mandatory|                                                                             
 |:----------------------|:-----------------|:---------|
@@ -100,7 +102,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 |`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
 
 
-5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 7 in a sequence shown in following table.
+5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
@@ -122,7 +124,7 @@ To know more about the script [refer] to the page(developer-docs/installation/me
 
 7.For creating users and root organisation, [refer](http://www.sunbird.org/developer-docs/installation/install_sbbackend/) to the page.
 
-8.Run `./sunbird_install.sh -s posttest` . The script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
+8.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
 
 9.Open https://[domain-name] and verify your installation 
   
@@ -157,6 +159,7 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
 
 ## Mapping Ports 
+
 The following is a list of ports that must be open:
 
 |From server |To server|port| protocol|
