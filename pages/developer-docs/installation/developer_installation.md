@@ -10,17 +10,17 @@ allowSearch: true
 
 ## Overview
 
-Before installing Sunbird on your laptop, check your environment and gather data to ensure an optimal installation experience.
-Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.
+This page provides information for you to install, setup, configure, run and use a Sunbird instance on your laptop or desktop. The objective of such an installation is to demo and test the Sunbird. It is not advised to use the instance for a production environment. Follow the instructions provided on this page to ensure an optimal installation experience. Before installing Sunbird on your laptop or desktop, check that the you have the necessary resources and compliant target systems. 
 
-### System Requirements
+## System Requirements
 
-To install Sunbird, your laptop/PC should have at least the following minimum system requirements:
+To install Sunbird, ensure that your laptop or desktop has the following minimum system requirements:
 
-- Operating System: Windows 7 and above/4.2 Mac OS X 10.0 and above/Linux  
+- Operating System: Windows 7 and above, or 4.2 Mac OS X 10.0 and above/Linux  
 - RAM: >1.5GB
 - CPU: 2 cores, >2 GHz
 
+## Sunbird Components
 Installing Sunbird requires two primary software components:
 
 - Sunbird portal or web application
@@ -28,17 +28,9 @@ Installing Sunbird requires two primary software components:
 
 ## Sunbird Portal Setup
 
-To run the Sunbird portal successfully, follow these steps sequentially:
-
-1. Ensure that you meet the **Prerequisites**
-2. Follow the instructions in **Getting started with setting up the application**
-3.  Follow the instruction in **Configure Backend Services Stack**
-4. Follow the instruction in **Edit the Application Configuration file**
-5. Follow the instructions in **Run the Application**
+The following sections provide you with the sequence to set up the Sunbird portal instance successfully 
 
 ### Prerequisites
-
-Ensure that you meet the following prerequisites before installing and running the Sunbird-player application:
 
 1. **Software dependencies**
 	
@@ -47,21 +39,21 @@ Ensure that you meet the following prerequisites before installing and running t
 
 2. **API Keys** 
 
-	* For getting an API key you should send an email to: info@sunbird.org
+	* To get an API key, send an email to: info@sunbird.org
 
-**Note:** This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
+**Note:** These installation instructions use cloud hosted Sunbird APIs, which require an API key.
 
-### Getting started with setting up the Application 
+### Set Up the Sunbird Application 
 
-For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}. 
+1. To set up the Sunbird application, get the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"} from the sunbird-portal Git repository. 
 
-The code can be cloned to your repository using the following command:
+2. Clone the repository to your local system using the command:
     
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
-***Note***: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
+***Note***: Stable versions of the sunbird portal code are available via tags for each release. The master branch contains the latest stable release. To get the latest stable release of Sunbird, [click here](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}.
 
-Once the **git clone** command is executed, proceed with running the following set of commands in the console:
+3. After executing the **git clone** command, run the following set of commands in the console:
 
 <pre>
    $ cd {PROJECT-FOLDER}/src/app
@@ -70,7 +62,9 @@ Once the **git clone** command is executed, proceed with running the following s
    $ npm install
 </pre>
 
-***Note***: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set the following:
+***Note***: Ensure that you use node version 8.11.2 or above. 
+
+4. Set the following environment variables when you are prompted to:
 
 <pre>
 sunbird_environment=local 
@@ -78,21 +72,19 @@ sunbird_instance=sunbird
 sunbird_default_tenant=sunbird
 </pre>
 
-### Configure Backend Service Stack
+### Configure the Backend Service Stack
 
-The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment, for instance: deploying the Sunbird to production.
+The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment when Sunbird is  deployed to production. For the sake of simplicity and ease of debugging, you can run these service API(s) locally on a single server.
 
-For the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.
-
-Configure your Sunbird portal to use a cloud instance of the Sunbird service API(s).These APIs are hosted by Sunbird and are used for testing and demonstration purposes. 
+Configure your Sunbird portal instance to use a cloud instance of the Sunbird service API(s) hosted by Sunbird, and are used for testing and demonstration purposes. 
 
 ***Note***: The cloud instance of the API(s) are not for production use.
 
-### Edit the Application Configuration file
+To edit the application configuration file:
 
-Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any available text editor. 
+1. Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js** file in any available text editor. 
 
-Once you open the file, ensure you enter the following values are set:
+2. Set the values for the following parameters:
 <pre>
     module.exports = {
         
@@ -132,21 +124,22 @@ Once you open the file, ensure you enter the following values are set:
 
 ## Run the Application
 
-Before running the application, ensure that you have installed **nodemon**, if you have not, use the following command to install it:
+1. Before you run the application, install **nodemon**. To do so, use the following command:
 
 `npm install -g nodemon`
 
-After you verify the availability of nodemon, run the application by executing the following commands:
+2. After verifying the availability of nodemon, run the application by executing the following commands:
 
 <pre>
 $ cd {PROJECT-FOLDER}/src/app
 $ node server.js
+</pre>
     
-Open a new terminal window
-
+3. Open a new terminal window
+<pre>
 $ cd {PROJECT-FOLDER}/src/app/client
 $ nodemon
 </pre>
 
-Open `http://localhost:3000` in the browser.
+4. Open **http://localhost:3000** in the browser
  
