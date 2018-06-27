@@ -127,7 +127,7 @@ To run the application, execute the following commands:
 $ cd {PROJECT-FOLDER}/src/app
 $ node server.js
     
-Open a new terminal
+Open a new terminal window
 
 $ cd {PROJECT-FOLDER}/src/app/client
 $ nodemon
