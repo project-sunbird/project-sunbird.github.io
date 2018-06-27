@@ -17,7 +17,7 @@ For example, you can change the default logo to the logo of your choice, or  cha
 **Note:** If you have not installed Sunbird, refer to [Server Installation](\pages\developer-docs\installation\server_installation)
 
 
-## Environment Variables for LMS service
+### Environment Variables for LMS service
 
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |
 |-------|-----------|---------|---------|---------------|-------------|
@@ -36,15 +36,14 @@ For example, you can change the default logo to the logo of your choice, or  cha
 | 13    | telemetry_pdata_ver             | Producer version or buid version which generates the telemetry | Represents the producer version or buid version which  generates the telemetry, e.g.: 1.5                                                                          |                                                      | Sunbird-LMS |
 
 
-## Environment Variables for Content service
+### Environment Variables for Content service
 
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |
 ---------|----------|---------|-------|-------|-------
  1  | ekstep_telemetry_storage_toggle | Toggle to make telemetry storage on and off for ekstep  |  It turns the telemetry off or on  | on |Sunbird-LMS |
  2 | sunbird_external_content_whitelisted_domains | To store the whitelisted domains comma seperated | It stores the white listed domains| youtube.com  |Sunbird-portal |
- A3 | B3 | C3
 
-## Environment Variables for {your service}
+### Environment Variables for {your service}
 
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |
 ---------|----------|---------|-------|-------|-------
@@ -53,7 +52,7 @@ For example, you can change the default logo to the logo of your choice, or  cha
  A3 | B3 | C3 |  |  |  |
 
 
-## Environment Variables for {your service}
+### Environment Variables for {your service}
 
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |
 ---------|----------|---------|-------|-------|-------
