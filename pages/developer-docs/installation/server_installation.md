@@ -43,13 +43,13 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1.Install git using `apt-get update -y && apt-get install git -y `
+1. Install git using `apt-get update -y && apt-get install git -y `
 
-2.Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
+2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
 
-3.`cd sunbird-devops/deploy`
+3. `cd sunbird-devops/deploy`
 
-4.Update the configuration parameters in the `config` file. 
+4. Update the configuration parameters in the `config` file. 
 
 The configuration parameters are explained in the following table: 
 
@@ -102,7 +102,7 @@ The configuration parameters are explained in the following table:
 |`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
 
 
-5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
+5. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
