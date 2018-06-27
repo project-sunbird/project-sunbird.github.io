@@ -118,6 +118,7 @@ Once you open the file, ensure you enter the following values:
         ...
     		}
 </pre>   
+
 ## Run the Application
 
 Run the following commands:
