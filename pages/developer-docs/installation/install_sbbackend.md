@@ -72,11 +72,11 @@ Next section details about setting up the Elastic search on your local machine.
 
 <pre>
 
-curl -X PUT \
-http://localhost:9200/searchindex/org/ORG_001 \
--H 'cache-control: no-cache' \
--H 'content-type: application/json' \
--H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' \
+curl -X PUT 
+http://localhost:9200/searchindex/org/ORG_001 
+-H 'cache-control: no-cache' 
+-H 'content-type: application/json' 
+-H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' 
 -d '{}'
 
 </pre>     
@@ -220,8 +220,8 @@ To run both the actor systems on a single machine follow these steps:
   1.	Open **externalresource.properties** file
   2.	Modify the following properties:
          
-          - background_actor_provider
-          - api_actor_provider
+        - background_actor_provider
+        - api_actor_provider
   
   3.	Set value of both properties as “local”
   4.	Run ```mvn clean install``` command to make build of each module
@@ -253,7 +253,7 @@ curl -X POST
 
 3. Use this token to create the RootOrg. 
  
-**Note:** [Refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create) to the create orgnization API to can create organisation 
+**Note:** [Refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create){:target="_blank"} to the create orgnization API to can create an organisation. 
 
 4. You need to set the RootOrg channel value inside environment variable with key `sunbird_default_channel`
 
