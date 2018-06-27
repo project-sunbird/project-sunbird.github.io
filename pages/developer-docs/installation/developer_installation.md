@@ -121,7 +121,7 @@ Once you open the file, ensure you enter the following values:
 
 ## Run the Application
 
-Run the following commands:
+To run the application, execute the following commands:
 
 <pre>
 $ cd {PROJECT-FOLDER}/src/app
