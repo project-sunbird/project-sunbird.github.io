@@ -67,7 +67,11 @@ Once the **git clone** command executes, proceed with running the following set 
    $ npm install
 </pre>
 
-***Note***: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set sunbird_environment=local and sunbird_instance=sunbird.
+***Note***: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set the following 
+
+`sunbird_environment = local 
+sunbird_instance = sunbird
+sunbird_default_tenant = sunbird'
 
 ### Configure Backend Service Stack
 
