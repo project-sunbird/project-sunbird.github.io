@@ -16,8 +16,6 @@ For example, you can change the default logo to the logo of your choice, or  cha
 
 **Note:** If you have not installed Sunbird, refer to [Server Installation](\pages\developer-docs\installation\server_installation)
 
-### List of Environment Variables
-
 
 ## Environment Variables for LMS service
 
