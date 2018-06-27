@@ -69,9 +69,11 @@ Once the **git clone** command executes, proceed with running the following set 
 
 ***Note***: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set the following 
 
-`sunbird_environment = local 
-sunbird_instance = sunbird
-sunbird_default_tenant = sunbird'
+<pre>
+sunbird_environment=local 
+sunbird_instance=sunbird
+sunbird_default_tenant=sunbird
+</pre>
 
 ### Configure Backend Service Stack
 
@@ -125,7 +127,11 @@ Once you open the file, ensure you enter the following values:
 
 ## Run the Application
 
-To run the application, execute the following commands:
+Before running the application, ensure that you have installed **nodemon**, if you have not, use the following command:
+
+`npm install -g nodemon`
+
+After verifying the availability of nodemon, you can run the application by executing the following commands:
 
 <pre>
 $ cd {PROJECT-FOLDER}/src/app
