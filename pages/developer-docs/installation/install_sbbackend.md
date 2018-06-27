@@ -237,9 +237,7 @@ Test any API using postman, e.g. download **user API** and perform different act
 From release-1.7, user creation requires channel attribute. You need to follow these instructions:
 
 1. Create a user inside Keycloak 
-
 2. Generate JWT token using the following curl command
-
 <pre>
 
 curl -X POST 
@@ -250,11 +248,9 @@ curl -X POST
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
 
 </pre>
-
 3. Use this token to create the RootOrg. 
  
 **Note:** [Refer](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create){:target="_blank"} to the create orgnization API to can create an organisation. 
-
 4. You need to set the RootOrg channel value inside environment variable with key `sunbird_default_channel`
 
 Once you are done with above step then you can start creating other users and sub organisations.  
