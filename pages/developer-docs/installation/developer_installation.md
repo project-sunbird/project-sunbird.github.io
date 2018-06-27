@@ -8,9 +8,9 @@ published: true
 allowSearch: true
 ---
 
-## Pre-requisites
+## Overview
 
-Before you install Sunbird on your laptop, examine your environment and gather data to ensure an optimal installation experience.
+Before installing Sunbird on your laptop, check your environment and gather data to ensure an optimal installation experience.
 Review the following to determine that the environment has the necessary resources and compliant target systems to successfully install and run Sunbird.
 
 ### System Requirements
@@ -28,23 +28,24 @@ Installing Sunbird requires two primary software components:
 
 ## Sunbird Portal Setup
 
-To setup the Sunbird portal successfully, follow these steps sequentially:
+To run the Sunbird portal successfully, follow these steps sequentially:
 
-1. Check for the pre-requisites
-2. Setup 
-3. Configure Backend Service Stack
+1. Ensure that you meet the prerequisites
+2. Follow the instructions in Setup 
+3. Configure Backend Services Stack
 4. Edit the Application Configuration file
 5. Run the Application
 
 ### Prerequisites
-Check the following pre-requisites before installing and running the Sunbird-player application:
+
+Ensure that you meet the following prerequisites before installing and running the Sunbird-player application:
 
 1. **Software dependencies**
 	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 8.11.2 LTS series
 
 2. **API Keys** 
 
-This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
+**Note:** This installation guide will use a cloud hosted Sunbird APIs for which an API key is needed.
 
 - For getting an API key you should send an email to: info@sunbird.org.
 
@@ -52,7 +53,7 @@ This installation guide will use a cloud hosted Sunbird APIs for which an API ke
 
 For setting up the application, check out the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"}. 
 
-The code can be cloned to your repository using the command:
+The code can be cloned to your repository using the following command:
     
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
@@ -77,17 +78,19 @@ sunbird_default_tenant=sunbird
 
 ### Configure Backend Service Stack
 
-The Sunbird portal application is powered by a set of Service APIs. These Service API(s) run in a distributed environment.For instance, deploying the Sunbird to production; but for the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.
+The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment, for instance: deploying the Sunbird to production.
 
-For now, let us configure the Sunbird portal to use a cloud instance of the Sunbird Service API(s).These APIs are hosted by project Sunbird and are used for testing and demonstration purposes. 
+For the sake of simplicity and ease of debugging, you can also run these service API(s) locally on a single server.
 
-***Note***: The cloud instance of the API(s) hosted by Project Sunbird are not for production usage.
+Configure your Sunbird portal to use a cloud instance of the Sunbird service API(s).These APIs are hosted by Sunbird and are used for testing and demonstration purposes. 
+
+***Note***: The cloud instance of the API(s) are not for production use.
 
 ### Edit the Application Configuration file
 
 Open `<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js` in any available text editor. 
 
-Once you open the file, ensure you enter the following values:
+Once you open the file, ensure you enter the following values are set:
 <pre>
     module.exports = {
         
@@ -131,7 +134,7 @@ Before running the application, ensure that you have installed **nodemon**, if y
 
 `npm install -g nodemon`
 
-After verifying the availability of nodemon, you can run the application by executing the following commands:
+After you verify the availability of nodemon, run the application by executing the following commands:
 
 <pre>
 $ cd {PROJECT-FOLDER}/src/app
