@@ -43,6 +43,7 @@ Ensure that you meet the following prerequisites before installing and running t
 1. **Software dependencies**
 	
 	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 8.11.2 LTS series
+	* [nodemon](https://www.npmjs.com/package/nodemon){:target="_blank"} - install nodemon
 
 2. **API Keys** 
 
@@ -60,7 +61,7 @@ The code can be cloned to your repository using the following command:
 
 ***Note***: Stable versions of the sunbird portal are available via tags for each release, and the master branch contains latest stable release. For latest stable release [refer](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}
 
-Once the **git clone** command executes, proceed with running the following set of commands in the console:
+Once the **git clone** command is executed, proceed with running the following set of commands in the console:
 
 <pre>
    $ cd {PROJECT-FOLDER}/src/app
@@ -69,7 +70,7 @@ Once the **git clone** command executes, proceed with running the following set 
    $ npm install
 </pre>
 
-***Note***: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set the following 
+***Note***: Please ensure that you are using node version 8.11.2 or above. Also, when prompted to set the environment variable please set the following:
 
 <pre>
 sunbird_environment=local 
@@ -146,5 +147,6 @@ Open a new terminal window
 $ cd {PROJECT-FOLDER}/src/app/client
 $ nodemon
 </pre>
-After the commands get executed, open `http://localhost:3000` in the browser.
+
+Open `http://localhost:3000` in the browser.
  
