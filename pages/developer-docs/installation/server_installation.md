@@ -120,7 +120,7 @@ The configuration parameters are explained in the following table:
 
 **Note**: If you want to re-run any particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
 
-To know more about the script [refer] to the page(developer-docs/installation/medium_scale_deploy/#sunbird-install-script)`sunbird_install.sh`
+To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
 
 7. For creating users and root organisation, [refer](http://www.sunbird.org/developer-docs/installation/install_sbbackend/) to the page.
 
