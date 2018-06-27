@@ -17,25 +17,25 @@ To provide access to users and enable them to perform API operations, you need t
 
 <table>
 
-	<tr>
-		<th style="width:35%;">Step</th>
-		<th style="width:65%;">Screen</th>
-	 </tr>
+<tr>
+<th style="width:35%;">Step</th>
+<th style="width:65%;">Screen</th>
+ </tr>
   
-	<tr>
-		<td>
-			1. Enter your <b>Username or email</b> and <b>Password</b><br>
-			2. Click <b>Log in</b> to log into the Keycloak admin console
-		 </td>
-		<td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
-	</tr>
-  
-	<tr>
-	  <td> 
-	  3. Click the <b>Realm Selector Dropdown</b> from the left corner of your screen and select appropriate realm <br>
-		  <b>Note:</b> The <b>Master</b> realm is selected by default.
-	  </td>
-	  <td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
+<tr>
+<td>
+1. Enter your <b>Username or email</b> and <b>Password</b><br>
+2. Click <b>Log in</b> to log into the Keycloak admin console
+</td>
+<td><img src="pages\developer-docs\configuring_sunbird\images\keycloak_login.png"></td>
+</tr>
+ 
+<tr>
+  <td> 
+3. Click the <b>Realm Selector Dropdown</b> from the left corner of your screen and select appropriate realm <br>
+<b>Note:</b> The <b>Master</b> realm is selected by default.
+	</td>
+	<td><img src="pages\developer-docs\configuring_sunbird\images\realm_select.png"></td>
 	</tr>
 	
   <tr>
