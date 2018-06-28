@@ -6,9 +6,6 @@ info:
     The User Management API resources are used to manage individual users and their memberships, also these resources allow you to add skills, block and unblock users, encrypt user data. You can perform various other user management related tasks. 
      
     **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/user/v1
 securityDefinitions:

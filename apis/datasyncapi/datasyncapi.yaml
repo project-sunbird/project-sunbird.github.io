@@ -7,9 +7,6 @@ info:
     email: admin@open-sunbird.org
   description: >-
         The  Data synchronization API resources perform operations related to data on the Sunbird Platform. Data synchronization API(s) are responsible for establishing consistency among data from a source to a target data storage and vice versa with continuous harmonization of the data over time.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:

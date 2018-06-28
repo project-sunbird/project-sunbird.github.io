@@ -6,9 +6,6 @@ info:
       the behaviors of users 
       - Also these resources are used to minimize required actions and find areas to optimize, improve or change outright 
       - Data exhaust also helps in data mining analytics
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   title: Data Exhaust API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:

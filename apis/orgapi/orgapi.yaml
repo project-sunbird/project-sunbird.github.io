@@ -7,9 +7,6 @@ info:
     email: info@sunbird.org
   description: >-
     The Organisation Management API resources perform operations related to management of an Organisation on the Sunbird Platform.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/org/v1
 securityDefinitions:

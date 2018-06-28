@@ -3,9 +3,6 @@ info:
   version: '1.0'
   title: Form API(s)
   description: The Form APIs allow you to create and update metadata form fields based on type, subtype and action. Use the APIs to configure form fields as required for the specific form.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/data/v1/form
 securityDefinitions:

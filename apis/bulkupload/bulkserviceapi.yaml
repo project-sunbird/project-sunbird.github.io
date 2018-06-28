@@ -7,9 +7,6 @@ info:
     email: info@sunbird.org
   description: >-
         The  Bulk Upload resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include Uploads, Updations
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:

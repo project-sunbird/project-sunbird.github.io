@@ -11,9 +11,6 @@ info:
             - The Hierarchy is as: Framework-->Category-->Terms
               - Category: An abstract classification of the terms   partitioned according to requirement.
               - Terms: Refers to a keyword or a phrase to descibe a Concept
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 securityDefinitions:
   bearer:

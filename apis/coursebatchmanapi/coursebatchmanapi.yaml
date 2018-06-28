@@ -7,9 +7,6 @@ info:
     email: info@sunbird.org
   description: >-
         The Course Batch Management API resources perform operations related to management of batches for courses on the Sunbird Platform. A Batch is used to arrange (courses) in specific sets or groups.The basic operations include Creation, Updation,joining ,listing.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/course/v1
 securityDefinitions:
