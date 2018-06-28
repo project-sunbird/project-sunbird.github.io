@@ -82,7 +82,7 @@ Configure your Sunbird portal instance to use a cloud instance of the Sunbird se
 
 To edit the application configuration file:
 
-1.Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js**  file in any available text editor. 
+1.Open the **{PROJECT-FOLDER}/src/app/helpers/environmentVariablesHelper.js**  file in any available text editor. 
 
 2.Set the values for the following parameters:
 <pre>
