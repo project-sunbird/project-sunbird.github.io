@@ -152,14 +152,15 @@ The demo users are required to test out different workflows in Sunbird after the
 
 The following is the list of the demo users:
 
- Username |	Role
+ Role |	User ID
  ---------|----------
-adopterorgadmin@adopter| Org Admin
-adoptercreator@adopter | Content Creator
-adopterreviewer@adopter| Content Reviewer
-adopterbookcreator@adopter | Book Creator
-adopterbookreviewer@adopter| Book Reviewer
-adopterflagreviewer@adopter| Flag Reviewer
-adoptercoursementor@adopter| Course Mentor
+Org Admin| adopterorgadmin@adopter
+Content Creator| adoptercreator@adopter 
+Content Reviewer| adopterreviewer@adopter
+Book Creator| adopterbookcreator@adopter 
+Book Reviewer| adopterbookreviewer@adopter
+Flag Reviewer| adopterflagreviewer@adopter
+Course Mentor| adoptercoursementor@adopter
 
 **Note:** To get the passwords for each of the demo user, send an email to: info@sunbird.org
+For information about user roles refer to [Types of Users] (features-documentation/userrole){:target="_blank"} page.
