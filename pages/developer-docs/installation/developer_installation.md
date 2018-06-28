@@ -10,7 +10,7 @@ allowSearch: true
 
 ## Overview
 
-This page provides information for you to install, setup, configure, run and use a Sunbird instance on your laptop or desktop. The objective of such an installation is to demo and test the Sunbird. It is not advised to use the instance for a production environment. Follow the instructions provided on this page to ensure an optimal installation experience. Before installing Sunbird on your laptop or desktop, check that the you have the necessary resources and compliant target systems. 
+This page provides information for you to install, setup, configure, run and use a Sunbird instance on your laptop or desktop. The objective of such an installation is to demo and test the Sunbird application. It is not advised to use the instance for a production environment. Follow the instructions provided on this page to ensure an optimal installation experience. Before installing Sunbird on your laptop or desktop, ensure that the you have the necessary resources and compliant target systems. 
 
 ## System Requirements
 
@@ -72,7 +72,7 @@ sunbird_instance=sunbird
 sunbird_default_tenant=sunbird
 </pre>
 
-### Configure the Backend Service Stack
+## Configure the Service Stack
 
 The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment when Sunbird is  deployed to production. For the sake of simplicity and ease of debugging, you can run these service API(s) locally on a single server.
 
