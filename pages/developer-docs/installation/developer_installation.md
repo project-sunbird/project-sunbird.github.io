@@ -164,4 +164,4 @@ Course Mentor| adoptercoursementor@adopter
 
 **Note:** To get the passwords for each of the demo user, send an email to: info@sunbird.org
 
-For information about user roles refer to [Types of Users](pages/features-documentation/user_type){:target="_blank"} page.
+- For information about user roles refer to [Types of Users](pages/features-documentation/user_type){:target="_blank"} page.
