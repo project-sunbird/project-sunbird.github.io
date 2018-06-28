@@ -442,7 +442,7 @@
 <p><strong>Note</strong>: The badger service does not work without an Azure storage account name and key.</p>
 
 <ol>
-  <li>Get the sunbird_sso_publickey from keycloak under <strong>http://dns_name/auth -&gt; realm settings -&gt; keys -&gt; public keys</strong> (click on public keys) and paste the value obtained in variable <strong>sunbird_sso_publickey</strong> under config file and execute <code>./sunbird_install.sh -s core</code> to redeploy the core services.</li>
+  <li>Get the sunbird_sso_publickey from keycloak under <strong>http://dns_name/auth -&gt; realm settings -&gt; keys -&gt; public keys</strong> (click on public keys) and paste the value obtained in variable <strong>sunbird_sso_publickey</strong> and <strong>sunbird_default_channel</strong>  under config file and execute <code>./sunbird_install.sh -s core</code> to redeploy the core services.</li>
 </ol>
 
 <p><strong>Note</strong>: If you want to re-run any particular stage in the installation, execute <code>./sunbird_install.sh -s &lt;stagename&gt;</code></p>
@@ -457,7 +457,7 @@
     <p>Run <code>./sunbird_install.sh -s posttest</code>, the script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as ‘postInstallationLogs.log’ under logs directory</p>
   </li>
   <li>
-    <p>Open https://[domain-name] and verify your installation</p>
+    <p>Open https://[domain-name] and verify your installation by logging with username@channelName with the password file provided in config file</p>
   </li>
 </ol>
 
