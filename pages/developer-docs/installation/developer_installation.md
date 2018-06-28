@@ -117,8 +117,7 @@ G) ANDROID_APP_URL
 
 H) CONTENT CHANNEL FILTER  TYPE
 	CONTENT_CHANNEL_FILTER_TYPE: env.sunbird_content_channel_filter_type || 'all',
-	Set the value to 'self', to get content that belongs to the current user's channel,
-	and set the value to 'all' to get content from all channels
+	Set the value to 'self', to get content that belongs to the current user's channel, and set the value to 'all' to get content from all channels
         ...
     		}
 </pre>   
