@@ -164,6 +164,6 @@ Book Reviewer| adopterbookreviewer@adopter
 Flag Reviewer| adopterflagreviewer@adopter
 Course Mentor| adoptercoursementor@adopter
 
-**Note:** To get the password for each demo user ID, send an email to info@sunbird.org
-
-- For information about user roles refer to [Types of Users](pages/features-documentation/userrole){:target="_blank"} page.
+**Note:** 
+- To get the password for each demo user ID, send an email to info@sunbird.org
+- For information on user roles, refer to [Types of Users](pages/features-documentation/userrole){:target="_blank"} page.
