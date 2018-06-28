@@ -105,7 +105,7 @@ D) PORTAL_AUTH_SERVER_URL
         PORTAL_PORT: env.sunbird_port || 3000,
         	
 E) PORTAL_API_AUTH_TOKEN     
-        PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
+        PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' to get Auth-Token 
         ...
         
 F) PORTAL_ECHO_API_URL
