@@ -34,8 +34,8 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 1.**Software dependencies**
 	
-	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 8.11.2 LTS series
-	* [nodemon](https://www.npmjs.com/package/nodemon){:target="_blank"} - install nodemon
+   * [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 8.11.2 LTS series
+   * [nodemon](https://www.npmjs.com/package/nodemon){:target="_blank"} - install nodemon
 
 2.**API Keys**
 
