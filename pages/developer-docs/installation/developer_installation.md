@@ -32,12 +32,12 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 ### Prerequisites
 
-1. **Software dependencies**
+1.**Software dependencies**
 	
 	* [Node](https://nodejs.org/en/download/){:target="_blank"} - install the latest release of 8.11.2 LTS series
 	* [nodemon](https://www.npmjs.com/package/nodemon){:target="_blank"} - install nodemon
 
-2. **API Keys**
+2.**API Keys**
 
 	* To get an API key, send an email to: info@sunbird.org
 
@@ -45,15 +45,15 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 ### Set Up the Sunbird Application 
 
-1. To set up the Sunbird application, get the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"} from the sunbird-portal Git repository. 
+1.To set up the Sunbird application, get the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"} from the sunbird-portal Git repository. 
 
-2. Clone the repository to your local system using the command:
+2.Clone the repository to your local system using the command:
     
     **git clone https://github.com/project-sunbird/sunbird-portal.git**
 
 **Note**: Stable versions of the sunbird portal code are available via tags for each release. The master branch contains the latest stable release. To get the latest stable release of Sunbird, [click here](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}.
 
-3. After executing the **git clone** command, run the following set of commands in the console:
+3.After executing the **git clone** command, run the following set of commands in the console:
 
 <pre>
    $ cd {PROJECT-FOLDER}/src/app
@@ -64,7 +64,7 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 ***Note***: Ensure that you use node version 8.11.2 or above. 
 
-4. Set the following environment variables when you are prompted to:
+4.Set the following environment variables when you are prompted to:
 
 <pre>
 sunbird_environment=local 
@@ -82,9 +82,9 @@ Configure your Sunbird portal instance to use a cloud instance of the Sunbird se
 
 To edit the application configuration file:
 
-1. Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js** file in any available text editor. 
+1.Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js** file in any available text editor. 
 
-2. Set the values for the following parameters:
+2.Set the values for the following parameters:
 <pre>
     module.exports = {
         
@@ -143,7 +143,7 @@ $ nodemon
 
 4.Open **http://localhost:3000** in the browser
  
-### Use the Application  
+## Use the Application  
 
 The demo users are required to test out different workflows in Sunbird after the installation is successful.
 
