@@ -45,15 +45,15 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 ### Set Up the Sunbird Application 
 
-1. To set up the Sunbird application, get the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"} from the sunbird-portal Git repository. 
+1.To set up the Sunbird application, get the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"} from the sunbird-portal Git repository. 
 
-2. Clone the repository to your local system using the command:
+2.Clone the repository to your local system using the command:
     
     git clone https://github.com/project-sunbird/sunbird-portal.git
 
 ***Note***: Stable versions of the sunbird portal code are available via tags for each release. The master branch contains the latest stable release. To get the latest stable release of Sunbird, [click here](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}.
 
-3. After executing the **git clone** command, run the following set of commands in the console:
+3.After executing the **git clone** command, run the following set of commands in the console:
 
 <pre>
    $ cd {PROJECT-FOLDER}/src/app
@@ -64,7 +64,7 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 ***Note***: Ensure that you use node version 8.11.2 or above. 
 
-4. Set the following environment variables when you are prompted to:
+4.Set the following environment variables when you are prompted to:
 
 <pre>
 sunbird_environment=local 
@@ -82,40 +82,40 @@ Configure your Sunbird portal instance to use a cloud instance of the Sunbird se
 
 To edit the application configuration file:
 
-1. Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js** file in any available text editor. 
+1.Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js** file in any available text editor. 
 
-2. Set the values for the following parameters:
+2.Set the values for the following parameters:
 <pre>
     module.exports = {
         
-1. LEARNER_URL   
+A) LEARNER_URL   
 	LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
       
-2. CONTENT_URL
+B) CONTENT_URL
 	CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
         
-3. CONTENT_PROXY  
+C) CONTENT_PROXY  
 	CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
 	PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
         
-4. PORTAL_AUTH_SERVER_URL
+D) PORTAL_AUTH_SERVER_URL
 	PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
         PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
         ...
         PORTAL_PORT: env.sunbird_port || 3000,
         	
-5. PORTAL_API_AUTH_TOKEN     
+E) PORTAL_API_AUTH_TOKEN     
         PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' for getting Auth-Token 
         ...
         
-6. PORTAL_ECHO_API_URL
+F) PORTAL_ECHO_API_URL
         PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
         ...
 	
-7. ANDROID_APP_URL
+G) ANDROID_APP_URL
         ANDROID_APP_URL: env.sunbird_android_app_url || 'http://www.sunbird.org'   
 
-8. CONTENT CHANNEL FILTER  TYPE
+H) CONTENT CHANNEL FILTER  TYPE
 	CONTENT_CHANNEL_FILTER_TYPE: env.sunbird_content_channel_filter_type || 'all',
 	This value should be set to 'self' for getting the content that belongs to current user channel and set to 'all' to get all 		channel contents
         ...
@@ -124,22 +124,22 @@ To edit the application configuration file:
 
 ## Run the Application
 
-1. Before you run the application, install **nodemon**. To do so, use the following command:
+1.Before you run the application, install **nodemon**. To do so, use the following command:
 
 `npm install -g nodemon`
 
-2. After verifying the availability of nodemon, run the application by executing the following commands:
+2.After verifying the availability of nodemon, run the application by executing the following commands:
 
 <pre>
 $ cd {PROJECT-FOLDER}/src/app
 $ node server.js
 </pre>
     
-3. Open a new terminal window
+3.Open a new terminal window
 <pre>
 $ cd {PROJECT-FOLDER}/src/app/client
 $ nodemon
 </pre>
 
-4. Open **http://localhost:3000** in the browser
+4.Open **http://localhost:3000** in the browser
  
