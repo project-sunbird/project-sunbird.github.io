@@ -39,7 +39,7 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 2.**API Keys**
 
-	* To get an API key, send an email to: info@sunbird.org
+   * To get an API key, send an email to: info@sunbird.org
 
 **Note:** These installation instructions use cloud hosted Sunbird APIs, which require an API key.
 
@@ -49,7 +49,7 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 2.Clone the repository to your local system using the command:
     
-    **git clone https://github.com/project-sunbird/sunbird-portal.git**
+   **git clone https://github.com/project-sunbird/sunbird-portal.git**
 
 **Note**: Stable versions of the sunbird portal code are available via tags for each release. The master branch contains the latest stable release. To get the latest stable release of Sunbird, [click here](https://github.com/project-sunbird/sunbird-portal/){:target="_blank"}.
 
@@ -82,7 +82,7 @@ Configure your Sunbird portal instance to use a cloud instance of the Sunbird se
 
 To edit the application configuration file:
 
-1.Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js** file in any available text editor. 
+1.Open the **<PROJECT-FOLDER>/src/app/helpers/environmentVariablesHelper.js**  file in any available text editor. 
 
 2.Set the values for the following parameters:
 <pre>
@@ -117,7 +117,8 @@ G) ANDROID_APP_URL
 
 H) CONTENT CHANNEL FILTER  TYPE
 	CONTENT_CHANNEL_FILTER_TYPE: env.sunbird_content_channel_filter_type || 'all',
-	This value should be set to 'self' for getting the content that belongs to current user channel and set to 'all' to get all 		channel contents
+	Set the value to 'self', to get content that belongs to the current user's channel,
+	and set the value to 'all' to get content from all channels
         ...
     		}
 </pre>   
@@ -145,14 +146,15 @@ $ nodemon
  
 ## Use the Application  
 
-The demo users are required to test out different workflows in Sunbird after the installation is successful.
+After successfully installing Sunbird, use demo user IDs to explore and test different workflows.
 
-* Each demo user is assigned one or more user roles that apply when you sign in to the application with that user
-* When the application starts for the first time, demo user names and their respective passwords are required
+* For each user role, you require a separate demo user ID and its respective password
 
-The following is the list of the demo users:
+* Any user can be assigned one or more user role. The role rules that apply depend on the demo user ID and password that is used to sign in 
+ 
+The following is the list of the demo user IDs per user role:
 
- Role |	User ID
+ User Role |	User ID
  ---------|----------
 Org Admin| adopterorgadmin@adopter
 Content Creator| adoptercreator@adopter 
@@ -162,6 +164,6 @@ Book Reviewer| adopterbookreviewer@adopter
 Flag Reviewer| adopterflagreviewer@adopter
 Course Mentor| adoptercoursementor@adopter
 
-**Note:** To get the passwords for each of the demo user, send an email to: info@sunbird.org
+**Note:** To get the password for each demo user ID, send an email to info@sunbird.org
 
 - For information about user roles refer to [Types of Users](pages/features-documentation/userrole){:target="_blank"} page.
