@@ -158,7 +158,7 @@ curl -X POST \
 
 9.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
 
-10.Open https://[domain-name] and verify your installation by logging with username@channelName with the password file provided in config file 
+10.Open https://[domain-name] and verify your installation by logging in with the user ID as:  username@channelName he password file provided in config file 
   
 ## Sunbird Install Script 
 
