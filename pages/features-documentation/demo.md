@@ -9,14 +9,13 @@ allowSearch: true
 ---
 
 <table border="0">
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
+ <ol>
+    <li><h2> TOPIC HEADING</h2><li>
+ </ol>
   <tr>
     <td>
         <ol>
-        <li>This is step </li>
+        <li>This is a heading </li>
         <li>hello</li>
         </ol>
    </td>
