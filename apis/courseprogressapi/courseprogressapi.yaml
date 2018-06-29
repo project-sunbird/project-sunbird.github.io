@@ -8,7 +8,7 @@ info:
     name: GNU Affero General Public License v3.0
     url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /course/v1/user/content/state/
+basePath: /api/course/v1/user/content/state
 securityDefinitions:
   auth:
       type: apiKey  # arbitrary name for the security scheme
@@ -42,7 +42,7 @@ paths:
           in: body
           required: true
           description: >-
-            Represents the body and formdata parameters of the course progress state API
+            'Represents the body and formdata parameters of the course progress state API. Request example is' "request":{ "userId":"id of the user","courseIds":["one courseId"],"contentIds":["list of content ids for particular course"],"batchId":"particulerBatchId" }
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -169,25 +169,29 @@ definitions:
     type: object
     properties:
       userId:
-        description: 'This ID uniquely identifies a user'
+        description: 'This Id uniquely identifies a user'
         example: Sam123
         type: string
       courseIds:
-        description: 'This represents the list of course IDs'
+        description: 'This represents the list of course IDs, pass only one id incase you are passing contentIds as well. Multiple courseIds will be consider if user need to fetch data for different courseId irrespective of any batch and content.'
         example:
           - some course ID
         type: array
         items:
           type: string
       contentIds:
-        description: 'This represents the list of content IDs for that course'
+        description: 'This represents the list of content IDs for that course and batch.Pass one courseId and batchId and list of all content ids.'
         type: array
         items:
           type: string
+      batchId: 
+       description: 'id of the batch, for which course belong to.'
+       type: string 
     required:
       - userId
       - courseIds
       - contentIds
+      - batchId
   UpdateContentStaterequest:
     title: This represents the update content state request body
     type: object
