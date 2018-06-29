@@ -158,10 +158,8 @@ curl -X POST \
 
 9.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
 
-10.Open https://[domain-name] and signup.
+10.Open https://[domain-name] and signup using your desired login username in the following format username@channelName, and choose a desired password.
 
-11.Login username@channelName with the password.
-  
 ## Sunbird Install Script 
 
 The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository. 
