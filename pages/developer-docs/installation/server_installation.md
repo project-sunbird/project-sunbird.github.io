@@ -116,9 +116,9 @@ The configuration parameters are explained in the following table:
 
 **Note**: The badger service does not work without an Azure storage account name and key. 
 
-6.Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste the value obtained in variable **sunbird_sso_publickey** under config file and execute `./sunbird_install.sh -s core` to redeploy the core services.
+6.Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste that value in **sunbird_sso_publickey** under config file and execute the command `./sunbird_install.sh -s core` to redeploy the core services.
 
-**Note**: If you want to re-run any particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
+**Note**: If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
 
 To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
 
@@ -126,9 +126,10 @@ To know more about the script [refer] to the page(developer-docs/installation/se
 
 **Note:**
 
-- The values inside { } should be replaced with your values, e.g: {dns_name} should be replaced with mydomain.com
+-  The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
 
-- Create access token for user creation
+Use the following command to create the user access token, which is needed for user creation. 
+
 <pre>
 curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
   -H 'cache-control: no-cache' 
@@ -136,15 +137,16 @@ curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
 </pre>
 
-- Create root organization
+- Create root organization using the following command:
+
 <pre>
-curl -X POST \
-  {dns_name}/api/org/v1/create \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -H 'accept: application/json' \
-  -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' \
-  -H 'x-authenticated-user-token: {access token created last step}' \
+curl -X POST 
+  {dns_name}/api/org/v1/create 
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json' 
+  -H 'accept: application/json' 
+  -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' 
+  -H 'x-authenticated-user-token: {access token created last step}' 
   -d '{
   "request":{
      "orgName": "{YourOrganizationName}",
@@ -152,7 +154,7 @@ curl -X POST \
       "isRootOrg":true,
        "channel":"{YourChannelName}"
   }
-}'
+}
 </pre>
 
 8.Update `sunbird_default_channel` in **config** file with `{YourChannelName}` (that was created in previous step) and rerun the command `./sunbird_install.sh -s core`
