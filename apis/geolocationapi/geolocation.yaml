@@ -4,9 +4,6 @@ info:
   title: Geo-location API(s)
   description: >- 
     Geo-location resources API are used to identify the geographic location of an organization, while the geo-location of an organization can be a particular point or place in physical space. 
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 basePath: /api/org/v1/location
 securityDefinitions:
   bearer:

@@ -4,9 +4,6 @@ info:
   title: Firebase Cloud Messaging API(s)
   description: >- 
      Firebase Cloud Messaging resources API  is a cross-platform solution for sending notifications on Android, iOS, and web applications.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/data/v1/notification
 securityDefinitions:

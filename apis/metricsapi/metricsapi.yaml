@@ -7,10 +7,7 @@ info:
     email: admin@open-sunbird.org
   description: >-
     The Metrics resources analyze sunbird's overall performance and efficiency.These resources perform operations related to 
-      the _metrics_ on the Sunbird Platform. The metrics resource performs various operations related to content consumption, Content Snapshot aggregation, 
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+      the _metrics_ on the Sunbird Platform. The metrics resource performs various operations related to content consumption, Content Snapshot aggregation. 
 host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:

@@ -3860,6 +3860,7 @@ Uncomment this in multiversion
 .sidebar-wrapper.contributions .sidebar-group.contributions,
 .sidebar-wrapper.developer-docs-installation .sidebar-group.developer-docs,
 .sidebar-wrapper.developer-docs-singlesignon .sidebar-group.developer-docs,
+.sidebar-wrapper.developer-docs-configuring-sunbird .sidebar-group.developer-docs,
 .sidebar-wrapper.developer-docs-telemetry .sidebar-group.developer-docs,
 .sidebar-wrapper.apis .sidebar-group.apis,
 .sidebar-wrapper.faqs .sidebar-group.faqs {
@@ -4486,7 +4487,14 @@ iframe {
       padding: 0px 6px;
       display: inline-block;
       margin-right: 8px;
-      margin-left: -30px; }
+      margin-left: -30px;
+      height: 28px;
+      width: 28px;
+      line-height: 28px;
+      text-align: center;
+      vertical-align: middle;
+      background: #e5e5e5;
+      border-radius: 50%; }
     .inner__content ol ul {
       margin-top: 5px;
       list-style-type: disc;

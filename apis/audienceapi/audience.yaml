@@ -4,9 +4,6 @@ info:
   title: Audience API(s)
   description: >-
          Audience API resources allow to get a count of users from a particular location.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/framework/v1
 securityDefinitions:

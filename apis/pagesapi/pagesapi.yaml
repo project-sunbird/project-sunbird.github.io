@@ -4,9 +4,6 @@ info:
   title: Page API(s)
   description: >-
          The Page resources APIs are used to set up the current page, change settings, and configure how things will be displayed to the user
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/data/v1/page
 securityDefinitions:

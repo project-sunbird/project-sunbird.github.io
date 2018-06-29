@@ -11,9 +11,6 @@ info:
       - Each of the endpoints serve a different purpose, so which one to use depends on what you want to do
       
       - The operations include CRUD (Create, Update,Read and Delete) operations and other operations such as upload, publish.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/content/v1
 securityDefinitions:

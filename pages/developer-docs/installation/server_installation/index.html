@@ -88,20 +88,13 @@
 
 <p><strong>Note:</strong> Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server.</p>
 
-<ol>
-  <li>
-    <p>Install git using <code>apt-get update -y &amp;&amp; apt-get install git -y </code></p>
-  </li>
-  <li>
-    <p>Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></p>
-  </li>
-  <li>
-    <p><code>cd sunbird-devops/deploy</code></p>
-  </li>
-  <li>
-    <p>Update the configuration parameters in the <code>config</code> file.</p>
-  </li>
-</ol>
+<p>1.Install git using <code>apt-get update -y &amp;&amp; apt-get install git -y </code></p>
+
+<p>2.Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></p>
+
+<p>3.<code>cd sunbird-devops/deploy</code></p>
+
+<p>4.Update the configuration parameters in the <code>config</code> file.</p>
 
 <p>The configuration parameters are explained in the following table:</p>
 
@@ -268,19 +261,19 @@
     <tr>
       <td style="text-align: left"><code>sunbird_azure_storage_account</code></td>
       <td style="text-align: left">The Azure storage account for the badger service</td>
-      <td style="text-align: left">no</td>
+      <td style="text-align: left">yes</td>
       <td> </td>
     </tr>
     <tr>
       <td style="text-align: left"><code>sunbird_azure_storage_key</code></td>
       <td style="text-align: left">The Azure storage key for the badger service</td>
-      <td style="text-align: left">no</td>
+      <td style="text-align: left">yes</td>
       <td> </td>
     </tr>
     <tr>
       <td style="text-align: left"><code>sunbird_image_storage_url</code></td>
       <td style="text-align: left">The Azure image url for the badger service</td>
-      <td style="text-align: left">no</td>
+      <td style="text-align: left">yes</td>
       <td> </td>
     </tr>
     <tr>
@@ -388,9 +381,7 @@
   </tbody>
 </table>
 
-<ol>
-  <li>Run the script <code>./sunbird_install.sh</code>. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.</li>
-</ol>
+<p>5.Run the script <code>./sunbird_install.sh</code>. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.</p>
 
 <table>
   <thead>
@@ -441,25 +432,59 @@
 
 <p><strong>Note</strong>: The badger service does not work without an Azure storage account name and key.</p>
 
-<ol>
-  <li>Get the sunbird_sso_publickey from keycloak under <strong>http://dns_name/auth -&gt; realm settings -&gt; keys -&gt; public keys</strong> (click on public keys) and paste the value obtained in variable <strong>sunbird_sso_publickey</strong> and <strong>sunbird_default_channel</strong>  under config file and execute <code>./sunbird_install.sh -s core</code> to redeploy the core services.</li>
-</ol>
+<p>6.Get the sunbird_sso_publickey from keycloak under <strong>http://dns_name/auth -&gt; realm settings -&gt; keys -&gt; public keys</strong> (click on public keys) and paste that value in <strong>sunbird_sso_publickey</strong> under config file and execute the command <code>./sunbird_install.sh -s core</code> to redeploy the core services.</p>
 
-<p><strong>Note</strong>: If you want to re-run any particular stage in the installation, execute <code>./sunbird_install.sh -s &lt;stagename&gt;</code></p>
+<p><strong>Note</strong>: 
+- If you want to re-run particular stage in the installation, execute <code>./sunbird_install.sh -s &lt;stagename&gt;</code></p>
 
-<p>To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)<code>sunbird_install.sh</code></p>
+<ul>
+  <li>To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)<code>sunbird_install.sh</code></li>
+</ul>
 
-<ol>
-  <li>
-    <p>For creating users and root organisation, <a href="http://www.sunbird.org/developer-docs/installation/install_sbbackend/">refer</a> to the page.</p>
-  </li>
-  <li>
-    <p>Run <code>./sunbird_install.sh -s posttest</code>, the script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as ‘postInstallationLogs.log’ under logs directory</p>
-  </li>
-  <li>
-    <p>Open https://[domain-name] and verify your installation by logging with username@channelName with the password file provided in config file</p>
-  </li>
-</ol>
+<p>7.To create access token and root organization, execute the following commands:</p>
+
+<p><strong>Create user access token</strong></p>
+
+<pre>
+curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
+  -H 'cache-control: no-cache' 
+  -H 'content-type: application/x-www-form-urlencoded' 
+  -d 'client_id={client-name}&amp;username={username}&amp;password={password}&amp;grant_type=password'
+</pre>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+  <li>The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com</li>
+</ul>
+
+<p><strong>Create root organization</strong></p>
+
+<pre>
+curl -X POST 
+  {dns_name}/api/org/v1/create 
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json' 
+  -H 'accept: application/json' 
+  -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' 
+  -H 'x-authenticated-user-token: {access token created last step}' 
+  -d '{
+  "request":{
+     "orgName": "{YourOrganizationName}",
+     "description": "Organization for demonstrating Sunbird Skills Training",
+      "isRootOrg":true,
+       "channel":"{YourChannelName}"
+  }
+}
+</pre>
+
+<p>8.Update <strong>sunbird_default_channel</strong> in the <strong>config</strong> file with <strong>{YourChannelName}</strong> (that was created in previous step) and re-run the command ‘./sunbird_install.sh -s core`</p>
+
+<p>9.Run <code>./sunbird_install.sh -s posttest</code>, this script validates checks all the services for a successful installation. On executing the script, a file <strong>postInstallationLogs.log</strong> in the <strong>logs</strong> directory</p>
+
+<p>10.Open <strong>https://[domain-name]</strong> and sign up.</p>
+
+<p>11.You can choose your own user name and password. The format for the username is: username@channelName</p>
 
 <h2 id="sunbird-install-script">Sunbird Install Script</h2>
 
