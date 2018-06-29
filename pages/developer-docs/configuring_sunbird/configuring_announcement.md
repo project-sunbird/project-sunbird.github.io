@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configuration for Announcements
-page_title: Configuration for Announcements 
+title: Creating Announcements
+page_title: Creating Announcements 
 description: Enable organizations and users to configure and use the Announcement feature on Sunbird 
 published: true
 allowSearch: true
