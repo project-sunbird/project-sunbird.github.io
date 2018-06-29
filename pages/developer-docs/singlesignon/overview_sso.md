@@ -4,8 +4,8 @@ directory: developer-docs/singlesignon
 title: Onboarding via Single Sign On
 page_title: Onboarding via Single Sign On
 description: Overview of single sign on process and user onboarding
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 ---
 
 Single sign on is an authentication service enabling users to use one set of login credentials, i.e, user name and password, to access multiple applications. The Sunbird platform allows signed on users on integrated systems to effortlessly navigate through all instances of the portal simply by sharing the trusted login status. 
