@@ -154,9 +154,9 @@ curl -X POST \
 }'
 </pre>
 
-8.Update `sunbird_default_channel` in **config** with `{YourChannelName}` (which you created in last step) and rerun `./sunbird_install.sh -s core`
+8.Update `sunbird_default_channel` in **config** file with `{YourChannelName}` (that was created in previous step) and rerun the command `./sunbird_install.sh -s core`
 
-9.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
+9.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
 
 10.Open https://[domain-name] and verify your installation by logging with username@channelName with the password file provided in config file 
   
