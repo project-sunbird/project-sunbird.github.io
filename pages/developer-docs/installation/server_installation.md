@@ -124,8 +124,9 @@ To know more about the script [refer] to the page(developer-docs/installation/se
 
 7.For creating root organisation, follow these steps.
 
-> Contents inside { } should be replaced with your values.  
-eg: {dns_name} should be replaced with mydomain.com
+**Note:**
+
+- The values inside { } should be replaced with your values, e.g: {dns_name} should be replaced with mydomain.com
 
 - Create access token for user creation
 <pre>
