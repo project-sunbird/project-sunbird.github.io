@@ -10,7 +10,7 @@ allowSearch: true
 
 <table border="0">
  <ol>
-    <li><h2> TOPIC HEADING</h2><li>
+    <li><h2>TOPIC HEADING</h2></li>
  </ol>
   <tr>
     <td>
