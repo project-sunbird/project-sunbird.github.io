@@ -118,17 +118,16 @@ The configuration parameters are explained in the following table:
 
 6.Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste that value in **sunbird_sso_publickey** under config file and execute the command `./sunbird_install.sh -s core` to redeploy the core services.
 
-**Note**: If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
+**Note**: 
+- If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
 
-To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
+- To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
 
-7.For creating root organisation, follow these steps.
+7.To create access token and root organisation, execute the following commands:
 
-**Note:**
+**Create user access token**
 
--  The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
-
-Use the following command to create the user access token, which is needed for user creation. 
+- Execute the following command to create access token:
 
 <pre>
 curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
@@ -137,7 +136,13 @@ curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token
   -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
 </pre>
 
-- Create root organization using the following command:
+**Note:**
+
+-  The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
+
+**Create root organization**
+
+- Execute the following command to create a root organization:
 
 <pre>
 curl -X POST 
