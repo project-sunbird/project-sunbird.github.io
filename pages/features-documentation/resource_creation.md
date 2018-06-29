@@ -52,7 +52,7 @@ This page details the procedure of creating resources on Sunbird.
       <br>&emsp;b) <b>Grade</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
-      <br>&emsp;e) <b>Concept</b> 
+      <br>&emsp;e) <b>Concept</b>. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a>
       <br>&emsp;f) <b>Resource Type</b>
       <br>3. Click <b>Start Creating</b> 
       <br><b>Note</b>: These details can also be filled in later when updating the resource details before sending it for review
@@ -79,7 +79,7 @@ Once the resource is created, using the content editor, all details pertaining t
       <br>&emsp;b) <b>Class</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
-      <br>&emsp;e) <b>Concept</b> 
+      <br>&emsp;e) <b>Concept</b>. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a> 
       <br>&emsp;f) <b>Resource Type</b>
       <br>&emsp;g) <b>Audience</b>  
   <br>7. Enter <b>Attributions</b>, if any <br>8. Click <b>Save</b> to save all the details

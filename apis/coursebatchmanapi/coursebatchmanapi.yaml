@@ -7,13 +7,10 @@ info:
     email: info@sunbird.org
   description: >-
         The Course Batch Management API resources perform operations related to management of batches for courses on the Sunbird Platform. A Batch is used to arrange (courses) in specific sets or groups.The basic operations include Creation, Updation,joining ,listing.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/course/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -108,13 +105,13 @@ paths:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
              - $ref: '#/definitions/BatchCreateErrorResponse'
-  /batch/read/{Batch_Id}:
+  /batch/read/{Batch_ID}:
     parameters:
       - in: path
-        name: Batch_Id
+        name: Batch_ID
         type: string
         required: true
-        description: 'Append a valid Batch Id To the Request URL'   
+        description: 'Append a valid Batch ID To the Request URL'   
     get:
       description: >-
         This API is associated with fetching a particular batch on the Sunbird Platform.

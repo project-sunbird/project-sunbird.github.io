@@ -42,7 +42,7 @@ To ensure that the content achieves the learning objective it is important to ch
       <br>&emsp;b) <b>Difficulty</b>
       <br>&emsp;c) <b>Question Type</b>
       <br>&emsp;d) <b>Grade Level</b>
-      <br>&emsp;e) <b>Concepts</b>
+      <br>&emsp;e) <b>Concepts</b>. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a>
 <br>3. Use <b>My Questions</b> slider to search for questions that you have uploaded. To search for questions available on the portal, disable this option
    <br>4. Select questions from the results displayed on the left pane 
    <br>5. The selected question can be previewed on the right pane 
@@ -107,7 +107,7 @@ To ensure that the content achieves the learning objective it is important to ch
  <td>1. Enter the question
  <br>2. You can format the questions using rich text editor 
  <br>3. Enter the answers within a pair of square brackets [[Answer]]
- <br>4. Use <b>Select Keyboard</b> option select the text input method for the question 
+ <br>4. Use <b>Select Keyboard</b> option select the text input method 
  <br>5. Select <b>Refresh</b> icon to preview your question
  <br>6. Select <b>Partial Scoring</b> to enable scoring for each correct answer
  <br>7. Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears

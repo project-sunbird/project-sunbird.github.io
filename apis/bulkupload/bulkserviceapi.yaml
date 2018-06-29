@@ -4,16 +4,13 @@ info:
   title: Bulk Upload Service API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
-    email: admin@open-sunbird.org
+    email: info@sunbird.org
   description: >-
-        The  Bulk Upload resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include Uploads, Updations ,
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+        The  Bulk Upload resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include Uploads, Updations
 host: staging.open-sunbird.org
 basePath: /api/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -37,7 +34,7 @@ paths:
           - The **_/bulk/user/upload_** endpoint executes " bulk upload user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-      summary: Upload User in Bulk
+      summary: Upload Users in Bulk
       tags:
       - Bulk Operation APIs
       operationId: bulk upload user req1
@@ -50,7 +47,7 @@ paths:
         in: formData
         required: true
         type: string
-        description: 'The ID identifies an Organisation uniquely. This ID is provided at the time of organisational registration'
+        description: 'This ID identifies an Organisation uniquely. The ID is provided when an organization is registered'
       - name: user
         in: formData
         required: true
@@ -58,9 +55,9 @@ paths:
         format: file
         description: >-
           This is a .csv file.
-            - Each line of the file is a data record. Each record consists of one or more fields, separated by commas.
+            - Each line of the file is a data record, and each record consists of one or more fields, separated by commas.
             
-          This format of this file is as :
+          The format of this file is as :
             - firstName,
             - lastName,
             - phone,
@@ -78,25 +75,28 @@ paths:
             - gender,
             - language,
             - profileSummary,
-            - subject,' 
+            - subject,
+             
+             Omit (•) 
+              - (•) is used to enhance readibility here.
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.
       responses:
         '200':
           description: 'OK ! Successful operation."bulk upload user" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadResponse'
         '400':
           description: 'BAD REQUEST. The "bulk upload user" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -106,10 +106,9 @@ paths:
   /batch/bulk/enrollment:
     post:
       description: >-
-       This API is associated with bulk batch enrollment on the Sunbird Platform.
+       This API is used for enrolling batches in bulk
           - The **_/batch/bulk/enrollment_** endpoint executes "bulk batch enrollment" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for all mandatory fields
       summary: Upload Batches in Bulk
       tags:
       - Bulk Operation APIs
@@ -127,29 +126,29 @@ paths:
         description: >-
           This is a .csv file.
             - Each line of the file is a data record. Each record consists of one or more fields, separated by commas.
-           This format of this file is as :
+           The format of this file is as :
             - batchId,
             - userIds,
-            Please omit (-) 
-             (-) is used to enhance readibility here.
+            Omit (•) 
+             (•) is used to enhance readibility here.
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."bulk batch enrollment " operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadResponse'
         '400':
           description: 'BAD REQUEST. The "bulk batch enrollment" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -159,10 +158,9 @@ paths:
   /upload/status/{Job_ID}:
     get:
       description: >-
-       This API is associated with check the uploasd status on the Sunbird Platform.
-          - The **_/upload/status/_** endpoint executes "get status" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+       This API is used to check the upload status
+          - The **_/upload/status/{Job_ID}_** endpoint executes "get status" request based on parameters provided as metadata in the request body.
+          - It is must to provide values for all mandatory fields
       summary: Check Upload Status
       tags:
       - Bulk Operation APIs
@@ -193,28 +191,28 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of the API, you require bearerorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
-          description: 'OK ! Successful operation."get status" operation was successfully executed.'
+          description: 'OK ! Successful operation." check upload status" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadStatusResponse'
         '400':
-          description: 'BAD REQUEST. The "get status" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          description: 'BAD REQUEST. The "check upload status" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
-          uri: /upload/status/01233701572763648024
+          uri: /upload/status/{}
           headers:
             Accept: application/json
             Content-Type: application/json
-            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJkMTc1MDIwNDdlODc0ODZjOTM0ZDQ1ODdlYTQ4MmM3MyJ9.7LWocwCn5rrCScFQYOne8_Op2EOo-xTCK5JCFarHKSs
+            Authorization: Bearer 
         expectedResponse:
           x-allowExtraHeaders: true
           x-bodyMatchMode: NONE
@@ -268,6 +266,9 @@ paths:
             - preferredLanguage,
             - theme,
             - contactDetail
+            
+            Omit (•) 
+             - (•) is used to enhance readibility here.
       - name: Authorization
         in: header
         required: true
@@ -277,15 +278,15 @@ paths:
         '200':
           description: 'OK ! Successful operation."bulk org upload " operation was successfully executed.'
           schema:
-            $ref: '#/definitions/ContentCreateResponse'
+            $ref: '#/definitions/BulkUploadResponse'
         '400':
           description: 'BAD REQUEST. The "bulk org upload " operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
           schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
+            $ref: '#/definitions/BulkUploadErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -311,17 +312,20 @@ paths:
           required: true
           type: file
           description: |-
-            CSV file which contains state location data in following format:
+            CSV file which contains location data in following format:
               - code: 'National level code for state'
-              - name: 'Name of state'
+              - name: 'Name of entity e.g a state'
               - parentCode: 'code of the parent'
-              - parentId : 'ID of the parent. parentCode and parentId any one is required if type belongs to some parent. in other words if its highest (top) node in the hierarchy,then no parent details are required.'
+              - parentId : 'ID of the parent (In a hierarchy),    
+                
+                - if there exists a parent node either parentCode and parentID is required (in case of a child node) 
+                - if it is highest (top) node in the hierarchy,then no parent details are required
         - name: type
           in:  formData
           required: true
           type: string
-          description: >-
-            possible values of location types state,district,block,cluster.
+          description: >-  
+            Represents the information about the possible values of location types state, district, block, cluster 
         - name: Authorization
           in: header
           required: true
@@ -353,8 +357,43 @@ paths:
           schema:
             $ref: '#/definitions/CommonErrorResponse'        
 definitions:
-  ContentCreateResponse:
-    description: Create Content Response
+
+  BulkUploadStatusResponse:
+    description: Bulk Upload status response
+    type: object
+    properties: 
+      objectType:
+       type: string
+       description: Type of object uploaded i.e. User, Organization, Location, or  Batch enrollment
+      processId:
+       type: string
+       description: ID that uniquely identifies the bulk upload process.
+      successResult:
+       type: array
+       items:
+         type: object
+         description: Represents each row of successful uploads
+         properties:
+          id:
+            type: string
+            description: unique identifier of the row
+          operation:
+            type: string
+            description : Represents the possible values for create or update
+      failureResult:
+       type: array
+       items:
+         type: object
+         description: Represents each row of failed uploads
+         properties:
+          err_msg:
+            type: string
+            description: Represents the error message that occurrs while processing a data row.
+          operation:
+            type: string
+            description : Reprents the possible values for create or update
+  BulkUploadResponse:
+    description: Bulk Upload Response
     type: object
     allOf:
       - $ref: '#/definitions/ResultWithNodeId'
@@ -371,13 +410,13 @@ definitions:
     properties:
       id:
         type: string
-        description: API Identifier
+        description: Represents the API uniquely
       ver:
         type: string
-        description: API version information
+        description: Represents the API version information
       ts:
         type: string
-        description: API execution timespan
+        description: Represents the API execution timespan
       params:
         $ref: '#/definitions/ResponseParams'
       responseCode:
@@ -396,21 +435,21 @@ definitions:
     properties:
       resmsgid:
         type: string
-        description: Response Message Id
+        description: Represesnts the response identifier of the message
       msgid:
         type: string
-        description: Message Id
+        description: Represents a message uniquely 
       err:
         type: string
-        description: Error Code
+        description: Represents the Error Code
       status:
         type: string
-        description: Response Status
+        description: Represents the response Status
       errmsg:
         type: string
-        description: Error Message
-  ContentCreateErrorResponse:
-    title: Create Content Error Response
+        description: Represents the Error Message
+  BulkUploadErrorResponse:
+    title: Bulk Upload Error Response
     type: object
     allOf:
       - $ref: '#/definitions/EmptyResult'
@@ -423,7 +462,7 @@ definitions:
         type: object
         description: Empty Result
   LocationDataBulkUploadCreateResponse:
-    title: Response for successfully accepted location data bulk upload API request
+    title: Response body for successful location  bulk data upload
     allOf:
       - $ref: >-
           https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
@@ -438,10 +477,10 @@ definitions:
                   created by location data bulk upload API
                 type: string
               response:
-                description: Response message for successfully accepted request
+                description: Response message for successful request
                 type: string       
   CommonErrorResponse:
-    title: Error response for location data bulk upload API request
+    title: Error response body for location bulk data upload API request
     allOf:
       - $ref: >-
           https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse

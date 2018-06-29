@@ -34,4 +34,4 @@ Sunbird enables its users to feature of extendibility.A user can take as a base 
 
 **License**
 
-The code in this repository is licensed under AGPL-3.0 unless otherwise noted. Please see the [LICENSE](https://github.com/project-sunbird/sunbird-devops/blob/master/LICENSE){:target="_blank"} file for details.
+The code in this repository is licensed under MIT unless otherwise noted. <!--Please see the [LICENSE](https://github.com/project-sunbird/sunbird-devops/blob/master/LICENSE){:target="_blank"} file for details.-->

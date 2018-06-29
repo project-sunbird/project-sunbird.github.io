@@ -18,8 +18,10 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
     <th>Instruction</th>
   </tr>
   <tr>
-    <td>1.</td>
-    <td>Install Android Studio<br><i>Please refer to the official <a href="https://developer.android.com/studio/index.html">Android documentation</a></i> for installation instructions.</td>
+    <td>1.
+    </td>
+    <td>Install Android Studio<br><i>Please refer to the official <a href="https://developer.android.com/studio/index.html">Android documentation</a></i> for installation instructions.
+    </td>
   </tr>
   <tr>
     <td>2.</td>
@@ -46,7 +48,6 @@ buildConfigField 'String', 'REDIRECT_BASE_URL', '"<http or https://domain-name>"
 buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>/api/data/v1"'
 </code>
 </pre>
-
   </td>
   </tr>
   <tr>
@@ -115,6 +116,6 @@ dev_mobile_app_secret = "&lt;secret&gt;" </code>
   </tr>
   <tr>
     <td>15.</td>
-    <td>Please setup FCM to support anncouncement feature in mobile app following the <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase" target="_blank">Android documentation</a>.</td>
+    <td>Please setup FCM to support announcement feature in mobile app following the <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase" target="_blank">Android documentation</a>.</td>
   </tr>
 </table>

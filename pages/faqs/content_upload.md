@@ -54,7 +54,7 @@ Using the Bulk upload  method  you can add multiple content files simultaneously
 
 To bulk upload content,
 
-1. Send a mail to content.ntp@centralsquarefound.org, with the subject as  request to bulk upload 
+1. Send a mail to info@sunbird.org, with the subject as  request to bulk upload 
 2. Supported file formats:
 
 	- Text (.pdf)
@@ -77,7 +77,7 @@ To bulk upload content,
 
 	***Note:***
 	
-    Before sharing the .zip file, check that every author, or content creator is a registered user on the platform. To register on the platform, share your details at content.ntp@centralsquarefoundation.org. All content that is  uploaded will be added with  the creator’s credentials
+    Before sharing the .zip file, check that every author, or content creator is a registered user on the platform. To register on the platform, share your details at info@sunbird.org. All content that is  uploaded will be added with  the creator’s credentials
 
 10. On receiving the .zip file, the Content PMU will review it before it is uploaded 
 11. The status of all  content uploaded in bulk  will  be  ‘Draft’

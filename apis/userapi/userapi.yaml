@@ -6,13 +6,10 @@ info:
     The User Management API resources are used to manage individual users and their memberships, also these resources allow you to add skills, block and unblock users, encrypt user data. You can perform various other user management related tasks. 
      
     **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/user/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -96,7 +93,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -179,7 +176,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -223,7 +220,7 @@ paths:
       summary: Get User by Login ID
       tags:
       - User APIs
-      operationId: Get User by Login Id
+      operationId: Get User by Login ID
       produces:
       - application/json
       parameters:
@@ -239,10 +236,12 @@ paths:
          
              - XML data
           -  The body contains metadata about reading the user profile
-           **Note**: 
+          
+           - **Note**: 
               
-            - The login ID is ideally in the following format:  username@provider
-            - While creating the user if you haven't specified the provider name then your login ID would be same as username
+                - The login ID is ideally in the following format:  username@provider
+               
+                - While creating the user, if you haven't specified the provider name then your login ID would be same as username
         schema:
            allOf:
             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -286,7 +285,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -382,7 +381,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -479,7 +478,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -569,7 +568,7 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: PATCH
@@ -662,7 +661,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -769,7 +768,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -877,7 +876,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -911,7 +910,7 @@ paths:
        This API is used to unban/unblock a user
           - The **_/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: unblock user
+      summary: Unblock user
       tags:
       - User APIs
       operationId: make deleted user active
@@ -983,7 +982,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -1025,7 +1024,7 @@ paths:
         In case the userID, organisationID and roles parameter values are passed 
           
           - then roles will be assigned by the corresponding organization for that user
-      summary: Assign Role to a User
+      summary: Assign Role to User
       tags:
       - User APIs
       operationId: OrgV1RoleAssignPost
@@ -1096,7 +1095,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'   
       security:
-      - auth: []
+      - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -1162,7 +1161,7 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -1241,7 +1240,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -1281,7 +1280,7 @@ paths:
        This API is associated with listing all the skills that a user possesses
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: Lists all Skills of a User
+      summary: List all Skills of User
       tags:
       - User APIs
       operationId: DataV1SkillsGet
@@ -1337,7 +1336,7 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET

@@ -2,16 +2,19 @@ swagger: '2.0'
 info:
   version: '1.0'
   title: Sunbird Content API(s)
+  termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+  contact:
+    email: info@sunbird.org
   description: >-
-    The Content API resources perform operations related to 
-    _Content_ on the Sunbird Platform. The operations include the basic CRUD (Create, Update,Read and Delete) operations and other operations such as upload, publish.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+      The Content API resources perform operations related to all the _Content_ on the Sunbird Platform. 
+      
+      - Each of the endpoints serve a different purpose, so which one to use depends on what you want to do
+      
+      - The operations include CRUD (Create, Update,Read and Delete) operations and other operations such as upload, publish.
 host: staging.open-sunbird.org
 basePath: /api/content/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -33,8 +36,7 @@ paths:
       description: >-
        This API is associated with creating content on the Sunbird Platform .
           - **_/create/_** endpoint executes the "Create Content" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - It is a must to provide values for the required parameters 
       summary: Create Content
       tags:
         - Content APIs
@@ -46,8 +48,12 @@ paths:
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be created, i.e an array of parameters which describes the content.
+           'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+           The body is the representation of the resource object for creating content (an array of parameters which describes the content)
           schema:
             $ref: '#/definitions/CreateContentRequest'
         - name: Content-Type
@@ -63,17 +69,17 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.' 
+          description: 'Represents the authorized User ID to execute the API.' 
         - name: x-channel-id
           in: header
           required: true
           type: string
-          description: 'The unique ID provided to the State to which the user belongs.'
+          description: 'Represents a physical location (e.g: state) uniquely to which the user belongs.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: >-
@@ -91,7 +97,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -107,7 +113,7 @@ paths:
                   "content": {
                     "visibility": "Default",
                     "status": "Draft",
-                    "contentType": "Story",
+                    "contentType": "Resource",
                     "code": "test_cwp_3",
                     "osId": "org.ekstep.quiz.app",
                     "languageCode": "hi",
@@ -140,20 +146,13 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /update/{Content_Id}:
-     parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /update/{Content_ID}:
      patch:
       description: >-
         This API is associated with updating content on the Sunbird Platform .
-          - **_/Update/_** endpoint executes the "Update Content" request based on parameters provided as metadata in the request body.
+          - **_/Update/{Content_ID}_** endpoint executes the "Update Content" request based on parameters provided as metadata in the request body.
           - {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - It is a must to provide values for the required parameters
       summary: Update Content
       tags:
         - Content APIs
@@ -161,12 +160,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'   
         - name: Body
           in: body
           required: true
-          description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be updated.
+          description: >- 
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for  updating the content.
           schema:
             $ref: '#/definitions/UpdateContentRequest'
         - name: Content-Type
@@ -182,17 +190,17 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID used to execute the API.'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: X-Channel-id
           in: header
           required: true
           type: string
-          description: 'The unique ID provided to the State to which the user belongs.'
+          description: 'Represents a physical location (e.g: state) uniquely to which the user belongs.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: >-
@@ -210,7 +218,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: PATCH
@@ -252,20 +260,13 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /publish/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: ''
+  /publish/{Content_ID}:
     post:
       description: >-
         This API is associated with publishing content on the Sunbird Platform .
-          - **_/publish/_** endpoint executes the "Publish Content" request based on parameters provided as metadata in the request body.
+          - **_/publish/{Content_ID}_** endpoint executes the "Publish Content" request based on parameters provided as metadata in the request body.
           -  {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - It is a must to provide values for the required parameters
       summary: Publish Content
       tags:
         - Content APIs
@@ -273,12 +274,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'
         - name: Body
           in: body
           required: true
           description: >- 
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be published.
+           'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+           The body is the representation of the resource object for publishing the content 
           schema:
             $ref: '#/definitions/PublishContentRequest'
         - name: Content-Type
@@ -294,12 +304,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'User Registered ID , which is used for logging In'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: Authorizing user in order to grant access.
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -322,7 +332,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -356,33 +366,35 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /unlisted/publish/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: ''
+  /unlisted/publish/{Content_ID}:
     post:
       description: >-
         This API is associated with publishing content on the Sunbird Platform .
-          - **_/publish/_** endpoint executes the "Publish Content" request based on parameters provided as metadata in the request body.
+          - **_/publish/{Content_ID}_** endpoint executes the "Publish Content" request based on parameters provided as metadata in the request body.
           -  {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty
-      summary: Private Publish Content
+          - It is a must to provide values for the required parameters
+      summary: Privately Publish Content
       tags:
         - Content APIs
       operationId: Unlisted Publish Content
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'
         - name: Body
           in: body
           required: true
           description: >- 
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be published privately.
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for publishing the (unlisted)content privately 
           schema:
             $ref: '#/definitions/PublishContentRequest'
         - name: Content-Type
@@ -398,12 +410,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'User Registered ID , which is used for logging In'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: Authorizing user in order to grant access.
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -426,7 +438,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -460,20 +472,13 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /retire/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content Id To the Request URL'   
+  /retire/{Content_ID}:
     delete:
       description: >-
         This API is associated with publishing content on the Sunbird Platform .
-          - The **_/retire/{contentId}_** endpoint executes  "Retire Content" request based on content Id to delete the specific content.'
+          - The **_/retire/{content_ID}_** endpoint executes  "Retire Content" request based on content Id to delete the specific content.'
           - {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty
+          - It is a must to provide values for the required parameters
       summary: Retire Content
       tags:
         - Content APIs
@@ -481,12 +486,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content Id To the Request URL'
         - name: Body
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be deleted.
+           The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for deleting content
           schema:
             $ref: '#/definitions/RetireContentRequest'
         - name: Content-Type
@@ -502,12 +516,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the registered User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -530,7 +544,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: DELETE
@@ -564,21 +578,14 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /review/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /review/{Content_ID}:
     post:
       description: >-
        >-
        This API is associated with Submission of content for Review  on the Sunbird Platform .
-          - The**_/review/{content Id}_** endpoint executes "Submit for Review" request based on parameters provided as metadata in the request body.
+          - The**_/review/{content_ID}_** endpoint executes "Submit for Review" request based on parameters provided as metadata in the request body.
           - {...}refers to a section of review endpoint URL path that needs to be replaced by appropriate Id.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty
+          - It is a must to provide values for the required parameters
       summary: Submit for Review
       tags:
         - Content APIs
@@ -586,12 +593,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'  
         - name: Body
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be sent for review.
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for  sending content for review
           schema:
             $ref: '#/definitions/ReviewContentRequest'
         - name: Content-Type
@@ -607,12 +623,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the registered User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -635,7 +651,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -662,21 +678,14 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /upload/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /upload/{Content_ID}:
     post:
       description:  >-
        This API is associated with uploading content on the Sunbird Platform .
-          - The**_/upload/{content Id}_** endpoint executes "Create Content" request based on parameters provided as metadata in the request body.
+          - The**_/upload/{content_ID}** endpoint executes "Create Content" request based on parameters provided as metadata in the request body.
           - {...}refers to a section of upload endpoint URL path that needs to be replaced by appropriate Id.
           - You need to provide a valid content ID value in {Content Id} field of API URL.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for the required parameters
       summary: Upload Content
       tags:
         - Content APIs
@@ -686,6 +695,11 @@ paths:
       consumes:
         - multipart/form-data
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'
         - name: file
           in: formData
           required: true
@@ -705,12 +719,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the registered User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -733,7 +747,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -758,8 +772,12 @@ paths:
           in: body
           required: true
           description:  >-
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be fetched.
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for searching the content.
           schema:
             $ref: '#/definitions/SearchContentRequest'
         - name: Content-Type
@@ -775,12 +793,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: X-Authenticated-Userid
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the registered User ID to execute the API.'
         - name: ts
           in: header
           required: true
@@ -803,7 +821,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -819,7 +837,7 @@ paths:
                       "filters":{
                           "channel": "505c7c48ac6dc1edc9b08f21db5a571d",
                           "objectType": ["Content"],
-                          "contentType": ["Story", "Worksheet", "Textbook", "Course", "Collection"],
+                          "contentType": ["Resource", "Collection", "TextBook", "LessonPlan", "Course", "Template", "Asset", "Plugin", "LessonPlanUnit", "CourseUnit", "TextBookUnit"],
                     "status":["Live"]
                       },
                       "sort_by": {"createdOn": "asc"},
@@ -842,21 +860,14 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /flag/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /flag/{Content_ID}:
     post:
       description: >-
         This API is associated with setting Flag for content under review on the Sunbird Platform .
-          - The **_/flag/{content Id}_** endpoint executes a request to set flagging status for content ,flag can either be set to "Accepted" or "Rejected".
+          - The **_/flag/{content_ID}_** endpoint executes a request to set flagging status for content ,flag can either be set to "Accepted" or "Rejected".
           - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
           - You need to provide a valid content ID value in {Content Id} field of API URL.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - It is a must to provide values for the required parameters
       summary: Flag Content
       tags:
         - Content APIs
@@ -864,12 +875,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'
         - name: Body
           in: body
           required: true
           description: >-
-           The body refers to the format of the request.
-            - The body contains request about setting flag to "Accept" or "Reject" for content in review process.
+           The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object, that contains request for setting flag to "Accept" or "Reject" for any of the content that is in review process.
           schema:
             $ref: '#/definitions/FlagContentRequest'
         - name: Content-Type
@@ -885,12 +905,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -913,7 +933,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -949,19 +969,12 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /flag/accept/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /flag/accept/{Content_ID}:
     post:
       description: >-
         This API is associated with setting Accept Flag for content under review process on the Sunbird Platform .
           - The **_/flag/accept/_**endpoint executes request for flagging content under review to "Accept flag", if content is found appropriate.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty
+          - It is a must to provide values for the required parameters
       summary: Accept Flag
       tags:
         - Content APIs
@@ -969,12 +982,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'
         - name: Body
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains request about setting flag to accept for content in review process.
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for setting the flag to "accept" for the content that is in review process.
           schema:
             $ref: '#/definitions/FlagAcceptContentRequest'
         - name: Content-Type
@@ -990,12 +1012,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.' 
+          description: 'Represents the authorized User ID to execute the API.' 
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -1018,7 +1040,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1045,19 +1067,12 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /flag/reject/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /flag/reject/{Content_ID}:
     post:
       description: >-
         This API is associated with setting Reject Flag for content under review process on the Sunbird Platform .
           - The **_/flag/reject/_**endpoint executes request for flagging content under review to "Reject flag", if content is found in-appropriate.
-          - It is mandatory to provide values for parameters marked with *. 
-          - Mandatory fields cannot be null or empty.
+          - It is a must to provide values for the required parameters
       summary: Reject Flag
       tags:
         - Content APIs
@@ -1065,12 +1080,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'
         - name: Body
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains request about setting flag to accept for content in review process.
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for  setting the flag to "reject" for the content in review process.
           schema:
             $ref: '#/definitions/FlagRejectContentRequest'
         - name: Content-Type
@@ -1086,12 +1110,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -1114,7 +1138,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1141,22 +1165,15 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /reject/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /reject/{Content_ID}:
     post:
       description: >-
         This API is associated with Rejecting rejecting content
         under review after "Reject content flag" has been set on the Sunbird Platform .
-          - The **_/reject/{contentId}_** endpoint executes request for rejecting content which is under review. 
+          - The **_/reject/{content_ID}_** endpoint executes request for rejecting content which is under review. 
           - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content ID value in {Content Id} field of API URL.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - You need to provide a valid content ID value in {Content_ID} field of API URL.
+          - It is a must to provide values for the required parameters
       summary: Reject Content Review
       tags:
         - Content APIs
@@ -1164,12 +1181,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL'
         - name: Body
           in: body
           required: true
-          description: >-
-            The body refers to the format of the request.
-             - The body contains request about setting flag to reject for content in review process.
+          description:  >-
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for rejecting the content after the review process.
           schema:
             $ref: '#/definitions/RejectContentRequest'
         - name: Content-Type
@@ -1185,12 +1211,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
         - name: ts
           in: header
           required: true
@@ -1213,7 +1239,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1240,21 +1266,14 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /read/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /read/{Content_ID}:
     get:
       description: >-
         This API is associated with viewing and reading out the content on the Sunbird Platform .
-          - The **_/read/{contentId}_** endpoint executes request for fetching the contents to be viewed and read.
+          - The **_/read/{content_ID}_** endpoint executes request for fetching the contents to be viewed and read.
           - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content ID value in {Content Id} field of API URL.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - You need to provide a valid content ID value in {Content_ID} field of API URL.
+          - It is a must to provide values for the required parameters
       summary: Read Content
       tags:
         - Content APIs
@@ -1262,6 +1281,11 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL' 
         - name: Content-Type
           in: header
           required: true
@@ -1275,17 +1299,17 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: X-Channel-id
           in: header
           required: true
           type: string
-          description:  'The unique ID provided to the State to which the user belongs.'
+          description:  'Represents a physical location (e.g: state) uniquely to which the user belongs.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: >-
@@ -1303,7 +1327,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: GET
@@ -1334,8 +1358,7 @@ paths:
       description: >-
        This API is associated with updating hierarchy content on the Sunbird Platform .
           - **_/hierarchy/update_** endpoint executes the "Create Content" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - It is a must to provide values for the required parameters
       summary: Hierarchy Update Content
       tags:
         - Content APIs
@@ -1347,8 +1370,12 @@ paths:
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be updated, i.e an array of parameters which describes the content.
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for updating the content hierarchy.
           schema:
             $ref: '#/definitions/UpdateHierarchyContentRequest'
         - name: Content-Type
@@ -1369,12 +1396,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The unique ID provided to the State to which the user belongs.'
+          description: 'Represents a physical location (e.g: state) uniquely to which the user belongs.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: >-
@@ -1392,7 +1419,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1408,7 +1435,7 @@ paths:
                   "content": {
                     "visibility": "Default",
                     "status": "Draft",
-                    "contentType": "Story",
+                    "contentType": "Resource",
                     "code": "test_cwp_3",
                     "osId": "org.ekstep.quiz.app",
                     "languageCode": "hi",
@@ -1441,21 +1468,14 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /hierarchy/{Content_Id}:
-    parameters:
-      - in: path
-        name: Content_Id
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL'   
+  /hierarchy/{Content_ID}:
     get:
       description: >-
         This API is associated with fetching the content hierarchy using a specific content ID on the Sunbird Platform .
-          - The **_/hierarchy/{contentId}_** endpoint executes request for fetching the contents to be viewed and read.
+          - The **_/hierarchy/{content_ID}_** endpoint executes request for fetching the contents to be viewed and read.
           - {...}refers to a section of reject endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content ID value in {Content Id} field of API URL
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - You need to provide a valid content ID value in {Content_ID} field of API URL
+          - It is a must to provide values for the required parameters
       summary: Get Content Hierarchy Object
       tags:
         - Content APIs
@@ -1463,6 +1483,11 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL' 
         - name: Content-Type
           in: header
           required: true
@@ -1476,17 +1501,17 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The Registered User ID to execute the API.'
+          description: 'Represents the authorized User ID to execute the API.'
         - name: X-Channel-id
           in: header
           required: true
           type: string
-          description:  'The unique ID provided to the State to which the user belongs.'
+          description:  'Represents a physical location (e.g: state) uniquely to which the user belongs.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: >-
@@ -1504,7 +1529,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: GET
@@ -1530,19 +1555,12 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /copy/{ContentId}:
-    parameters:
-      - in: path
-        name: ContentId
-        type: string
-        required: true
-        description: 'Please append a valid Content ID To the Request URL' 
+  /copy/{Content_ID}:
     post:
       description: >-
        This API is associated with copying content on the Sunbird Platform .
-          - **_/copy/_** endpoint executes the "Copy Content" request based on parameters provided as metadata in the request body.
-          - It is mandatory to provide values for the required fields
-          - Required fields cannot be null or empty.
+          - **_/copy/{Content_ID}_** endpoint executes the "Copy Content" request based on parameters provided as metadata in the request body.
+          - It is a must to provide values for the required parameters
       summary: Copy Content
       tags:
         - Content APIs
@@ -1550,12 +1568,21 @@ paths:
       produces:
         - application/json
       parameters:
+        - in: path
+          name: Content_ID
+          type: string
+          required: true
+          description: 'Please append a valid Content ID To the Request URL' 
         - name: Body
           in: body
           required: true
           description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the content to be copied, i.e an array of parameters which describes the content.
+            The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload
+            
+            - JSON 
+            - XML data
+          
+            The body is the representation of the resource object for copying the content 
           schema:
              $ref: '#/definitions/CopyContentRequestBody' 
             
@@ -1575,12 +1602,12 @@ paths:
           in: header
           required: true
           type: string
-          description: 'The unique ID provided to the State to which the user belongs.'
+          description: 'Represents a physical location (e.g: state) uniquely to which the user belongs.'
         - name: Authorization
           in: header
           required: true
           type: string
-          description: 'All content APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+          description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: >-
@@ -1598,7 +1625,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-unitTests:
         - request:
             method: POST
@@ -1707,7 +1734,9 @@ definitions:
         type: string
       badgeAssertions:
         description: 'List of Badges'
-        type: string
+        type: array
+        items:
+          type: object
       mimeType:
         description: 'Content mime type'
         type: string
@@ -1863,31 +1892,6 @@ definitions:
           - Open Game License
           - Standard YouTube License
           - Other
-      language:
-        description: 'Language'
-        type: string
-        example:
-          - English
-          - Hindi
-          - Assamese
-          - Bengali
-          - Gujarati
-          - Kannada
-          - Malayalam
-          - Marathi
-          - Nepali
-          - Odia
-          - Punjabi
-          - Tamil
-          - Telugu
-          - Urdu
-          - Sanskrit
-          - Maithili
-          - Munda
-          - Santali
-          - Juang
-          - Ho
-          - Other
       forkable:
         description: 'Forkable'
         type: boolean
@@ -1907,22 +1911,14 @@ definitions:
           - 'Other'
       gradeLevel:
         description: 'Grade Level'
-        type: string
-        example:
-          - Kindergarten
-          - Grade 1
-          - Grade 2
-          - Grade 3
-          - Grade 4
-          - Grade 5
-          - Grade 6
-          - Grade 7
-          - Grade 8
-          - Grade 9
-          - Grade 10
-          - Grade 11
-          - Grade 12
-          - Other
+        type: array
+        items:
+          type: string
+      topic:
+        description: 'Topic of the content'
+        type: array
+        items:
+          type: string
       interactivityLevel:
         description: 'Interactivity Level'
         type: string
@@ -1934,52 +1930,32 @@ definitions:
         description: 'Content Type'
         type: string
         example:
-          - Story
-          - Worksheet
-          - Game
-          - Simulation
-          - Puzzle
-          - Diagnostic
+          - Resource
           - Collection
-          - Asset
-          - Template
-          - Plugin
-          - ContentTemplate
-          - ItemTemplate
           - TextBook
-          - TextBookUnit
+          - LessonPlan
           - Course
+          - Template
+          - Asset
+          - Plugin
+          - LessonPlanUnit
           - CourseUnit
+          - TextBookUnit
       resourceType:
         description: 'Resource Type'
         type: string
         example:
-          - Story
-          - Worksheet
-          - Game
-          - Course
+          - Read
+          - Learn
+          - Teach
+          - Play
+          - Test
+          - Practice
+          - Experiment
+          - Collection
           - Book
-          - Diagnostic
-          - Puzzle
-          - Benchmark assessment
-          - Daily test
-          - Summative exam
-          - (Annual / Half-yearly / Semester) Examination
-          - Article
-          - Learning / Study material
-          - Reference material
-          - Simulation
-          - Activity
-          - Quiz
-          - Lesson plan
-          - Unit plan
-          - Academic calendar
-          - Classroom assessments
-          - Reflective journals
-          - Timed worksheets
-          - Teaching resources
-          - E-resources for Professional Development
-          - Micro practice videos
+          - Lesson Plan
+          - Course
       category:
         description: 'Category'
         type: string
@@ -2104,22 +2080,17 @@ definitions:
         description: ''
         type: string
         example:
-          - Story
-          - Worksheet
-          - Game
-          - Simulation
-          - Puzzle
-          - Diagnostic
+          - Resource
           - Collection
-          - Asset
-          - Template
-          - Plugin
-          - ContentTemplate
-          - ItemTemplate
           - TextBook
-          - TextBookUnit
+          - LessonPlan
           - Course
+          - Template
+          - Asset
+          - Plugin
+          - LessonPlanUnit
           - CourseUnit
+          - TextBookUnit
       description:
         description: ''
         type: string
@@ -2444,16 +2415,16 @@ definitions:
     properties:
       name:
         type: string
-        description: Name of the content
+        description: Represents the name of the content
       contentType:
         type: string
-        description: contentType of the content
+        description: Represents the content type of the content
       root:
         type: boolean
-        description: Whether the contetn is root
+        description: Represents that the content is at root level in a hierarchial content tree
       children:
         type: array
-        description: children of the content
+        description: Represents the children node of the content tree
         items:
           type: string
   ContentCreateResponse:
@@ -2531,7 +2502,7 @@ definitions:
         description: Node Identifier
       versionKey:
         type: string
-        description: Content version key
+        description: Represents the content version key
   NodeIdAndUrl:
     title: Node Id
     type: object
@@ -2551,7 +2522,7 @@ definitions:
     properties:
       count:
         type: number
-        description: Number of content searched
+        description: Represents the number of times the content is searched
       content:
         type: array
         description: Content object list
@@ -2587,7 +2558,7 @@ definitions:
         description: It is the name given to a node
       code:
         type: string
-        description: It is the Node that is associated with a specific node
+        description: Represents the Node associated with other specific node
       keywords:
         type: array
         items:
@@ -2595,7 +2566,7 @@ definitions:
         description: It represents the Keywords associated with a node
       downloadUrl:
         type: string
-        description: It is the Ecar S3 link, which can be used for dowmnloading the Ecar
+        description: Represents the S3 URL of the Ecar, which can be used for downloading the Ecar
       channel:
         type: string
         description: Represents the channel with which the content is associated
@@ -2607,7 +2578,7 @@ definitions:
         description: Represents the language of the content
       variants:
         type: object
-        description: represents the content variants based on medium of language 
+        description: Represents the content variants based on medium of language 
       mimeType:
         type: string
         description: Represents the mimetype of the content
@@ -2626,7 +2597,7 @@ definitions:
         type: array
         items:
           type: object
-        description: Represents the children (node) associated with the content
+        description: Represents the children (nodes) associated with the content
       appId:
         type: string
         description: Represents the associated application Id
@@ -2655,7 +2626,7 @@ definitions:
         description: Represents the audience of the content
       toc_url:
         type: string
-        description: Represents the S3 url of table of contents of a content file
+        description: Represents the S3 URL of the table of contents of a content file
       visibility:
         type: string
         description: Represents the visibility mode of the content
@@ -2664,7 +2635,7 @@ definitions:
         description: Represents the type of Operating system
       contentTypesCount:
         type: string
-        description: Gives the count of different content types within the associated content
+        description: Represents the count of different content types within the associated content
       childNodes:
         type: array
         items:
@@ -2672,7 +2643,7 @@ definitions:
         description: Lists the child nodes asociated with content
       consumerId:
         type: string
-        description: It is the unique Id for consumers
+        description: Represents the unique ID for consumers
       mediaType:
         type: string
         description: Represents the MediaType of the content
@@ -2707,7 +2678,7 @@ definitions:
         description: Represents which framework was used to create the content
       size:
         type: integer
-        description: Represents the size of content
+        description: Represents the size of the content
       lastPublishedOn:
         type: string
         description: Represents the date on which the content was last published
@@ -2773,6 +2744,14 @@ definitions:
       medium:
         type: string
         description: Represents the medium of the content
+      topic:
+        type: array
+        description: Represents the topic of the content
+        items:
+          type: string
+      board:
+        description: Represents the board of the content
+        type: string
   ContentHierarchyGetResponse:
     title: Get Content Response
     type: object
@@ -2808,26 +2787,26 @@ definitions:
         $ref: '#/definitions/ResponseParams'
       responseCode:
         type: object
-        description: 'Represents the API response code '
+        description: 'Represents the API response code'
   ResponseParams:
     title: Response Parameter
     type: object
     properties:
       resmsgid:
         type: string
-        description: Represents the Id of the response
+        description: ID represents the response uniquely
       msgid:
         type: string
-        description: Represents the unique Id of the response message
+        description: Represents the unique ID of the response message
       err:
         type: string
-        description: Represents the Error Code if the execution fails
+        description: Represents the Error Code in case the execution fails
       status:
         type: string
         description: Represents the Response status when an API is called
       errmsg:
         type: string
-        description: Represents the text that comes as a part of response status
+        description: Represents the text that is part response status
   EmptyResult:
     title: Empty Result
     type: object
@@ -2848,11 +2827,11 @@ definitions:
         content:
           description: Akshara Kannada
           code: org.ekstep.feb22.story.test03.copy
-          createdBy: 159e93d1-da0c-4231-be94-e75b0c226d7c
+          createdBy: 
           createdFor:
           - 0123673542904299520
           - 0123673689120112640
-          creator: Harish Gangula
+          creator: 
           organization:
           - Sunbird
     type: object
@@ -2867,12 +2846,10 @@ definitions:
       content:
         description: Akshara Kannada
         code: org.ekstep.feb22.story.test03.copy
-        createdBy: 159e93d1-da0c-4231-be94-e75b0c226d7c
+        createdBy: 
         createdFor:
-        - 0123673542904299520
-        - 0123673689120112640
         - ORG_001
-        creator: Sunil Pandith
+        creator: Sun
         organization:
         - Sunbird
     type: object
@@ -2888,10 +2865,8 @@ definitions:
       code: org.ekstep.feb22.story.test03.copy
       createdBy: 159e93d1-da0c-4231-be94-e75b0c226d7c
       createdFor:
-      - 0123673542904299520
-      - 0123673689120112640
       - ORG_001
-      creator: Sunil Pandith
+      creator: Sun
       organization:
       - Sunbird
     type: object
@@ -2906,19 +2881,17 @@ definitions:
         type: string
       createdBy:
         description: ''
-        example: 159e93d1-da0c-4231-be94-e75b0c226d7c
+        example: 
         type: string
       createdFor:
         description: ''
         example:
-        - 0123673542904299520
-        - 0123673689120112640
         type: array
         items:
           type: string
       creator:
         description: ''
-        example: Harish Gangula
+        example: 
         type: string
       organization:
         description: ''
