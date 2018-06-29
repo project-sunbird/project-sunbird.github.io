@@ -1192,7 +1192,7 @@ paths:
          
              - XML data
         schema:
-          $ref: '#/definitions/AddSkillToUserrequest'
+          $ref: '#/definitions/addSkillToUserrequest'
       - name: Content-Type
         in: header
         required: true
@@ -1481,17 +1481,12 @@ definitions:
               - if you provide channel value, then you will get associated with that particular root organization  
               - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization
               - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
-          exernalId:
-            type : string
-            description: >-
-              Represents the identity of user in some other system - - Providing externalId, the creator can corelate their user with sunbird system. 
-                - The externalID and provider combination must be unique. If you pass externalID then you have to pass provider also.'
-          provider:
-            type: string
-            description : >-
-               The provider represents an orgainsation, which provides user details.
-                - The organisation may or maynot be part of the Sunbird system
-                - The provider is always represented by an externalId
+          externalIds:
+            type: array
+            items:
+              type: object
+              allOf:
+                - $ref: "#/definitions/ExternalId" 
           profileSummary:
             type: string
           userName:
@@ -1769,11 +1764,11 @@ definitions:
       request:
        allOf:
         - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-        - $ref: '#/definitions/Request18'
+        - $ref: '#/definitions/userSearch'
     required:
     - request
-  Request18:
-    title: Request18
+  userSearch:
+    description: Search user request
     type: object
     properties:
       filters:
@@ -1807,11 +1802,11 @@ definitions:
       request:
        allOf:
         - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-        - $ref: '#/definitions/Request74'
+        - $ref: '#/definitions/userUpdate'
     required:
     - request
-  Request74:
-    title: Request74
+  userUpdate:
+    description: Request body for user profile update
     type: object
     properties:
       userId:
@@ -1842,6 +1837,21 @@ definitions:
         type: array
         items:
           type: string
+      externalId:
+        description: 'externalId,externalIdType,externalIdProvider these three keys are required if user is not passing userId'
+        type: string
+      externalIdType:
+        description: 'externalId,externalIdType,externalIdProvider these three keys are required if user is not passing userId'
+        type: string
+      externalIdProvider:
+        description: 'externalId,externalIdType,externalIdProvider these three keys are required if user is not passing userId'
+        type: string
+      externalIds:
+        description: 'details of external ids and provider'
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/ExternalIdUpdate'  
     required:
     - userId    
   ResultStatus:
@@ -1903,12 +1913,12 @@ definitions:
         description: ''
         type: object
       request:
-        $ref: '#/definitions/Request23'
+        $ref: '#/definitions/loginRequestUpdate'
     required:
     - params
     - request
-  Request23:
-    title: Request23
+  loginRequestUpdate:
+    description: request body for updating user login time
     type: object
     properties:
       userId:
@@ -1930,7 +1940,7 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request10'
+        $ref: '#/definitions/profileVisibility'
         example:
           userId: userid
           private:
@@ -1941,8 +1951,8 @@ definitions:
           - private field name which you want to make public
     required:
     - request
-  Request10:
-    title: Request10
+  profileVisibility:
+    description: profile visibility request data
     example:
       userId: userid
       private:
@@ -1982,8 +1992,8 @@ definitions:
     title: '{{host}}/user/v1/role/assignRequest'
     example:
       request:
-        userId: 3d45fbd8-b911-4cc5-b503-61215902d780
-        organisationId: 0123653943740170242
+        userId: valid userId
+        organisationId: valid org id
         roles:
         - CONTENT_CREATION
         - PUBLIC
@@ -2030,7 +2040,7 @@ definitions:
     - organisationId
     - roles
     
-  AddSkillToUserrequest:
+  addSkillToUserrequest:
     title: add skill to userRequest
     type: object
     properties:
@@ -2045,3 +2055,33 @@ definitions:
            type: string
     required:
     - request
+    
+  ExternalId:
+    title: ExternalId
+    type: object
+    properties:
+      id:
+        type : string
+        description: 'Identity of user in an external system. By providing externalId the creator can corelate a user within sunbird system. externalId and provider combination must be unique. If user is passing externalId then they have to pass provider.'
+      provider:
+        type: string
+        description : 'Provider is an orgainsation, who is providing an (external) ID to a user in sunbird. that organisation may or maynot be part of sunbird. If user is passing externalId then they have to pass provider.'
+      idType:
+        type :  string
+        description : 'PAN card is an id type whose provider is central government'
+  ExternalIdUpdate:
+    description : user externl id request for update profile
+    type: object
+    properties:
+      id:
+        type : string
+        description: 'Identity of user in an external system. By providing externalId the creator can corelate a user within sunbird system. externalId and provider combination must be unique. If user is passing externalId then they have to pass provider.'
+      provider:
+        type: string
+        description : 'Provider is an orgainsation, who is providing an (external) ID to a user in sunbird. that organisation may or maynot be part of sunbird. If user is passing externalId then they have to pass provider.'
+      idType:
+        type :  string
+        description : 'PAN card is an id type whose provider is central government' 
+      operation:
+        type: string
+        description : 'possible valies are {ADD,EDIT,REMOVE}'
