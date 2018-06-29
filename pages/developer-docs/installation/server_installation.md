@@ -127,8 +127,6 @@ The configuration parameters are explained in the following table:
 
 **Create user access token**
 
-- Execute the following command to create access token:
-
 <pre>
 curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
   -H 'cache-control: no-cache' 
@@ -141,8 +139,6 @@ curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token
 -  The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
 
 **Create root organization**
-
-- Execute the following command to create a root organization:
 
 <pre>
 curl -X POST 
