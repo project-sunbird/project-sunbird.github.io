@@ -123,7 +123,7 @@ The configuration parameters are explained in the following table:
 
 - To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
 
-7.To create access token and root organisation, execute the following commands:
+7.To create access token and root organization, execute the following commands:
 
 **Create user access token**
 
@@ -155,18 +155,20 @@ curl -X POST
   -d '{
   "request":{
      "orgName": "{YourOrganizationName}",
-     "description": "Organisation for demonstrating Sunbird Skills Training",
+     "description": "Organization for demonstrating Sunbird Skills Training",
       "isRootOrg":true,
        "channel":"{YourChannelName}"
   }
 }
 </pre>
 
-8.Update `sunbird_default_channel` in **config** file with `{YourChannelName}` (that was created in previous step) and rerun the command `./sunbird_install.sh -s core`
+8.Update **sunbird_default_channel** in the **config** file with **{YourChannelName}** (that was created in previous step) and re-run the command './sunbird_install.sh -s core`
 
-9.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
+9.Run `./sunbird_install.sh -s posttest`, this script validates checks all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory
 
-10.Open https://[domain-name] and signup using your desired login username in the following format username@channelName, and choose a desired password.
+10.Open **https://[domain-name]** and sign up. 
+
+11.You can choose your own user name and password. The format for the username is: username@channelName
 
 ## Sunbird Install Script 
 
