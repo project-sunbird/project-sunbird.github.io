@@ -5,7 +5,7 @@ title: Protocol
 page_title: Protocol
 description: Lists Sunbird's authentication protocols. 
 published: true
-allowSearch: true
+allowSearch: false
 ---
 
 Protocols are a set of rules and guidelines that enable communication between two or more networks. The authentication protocol of Sunbird provides secure API endpoints to: 
