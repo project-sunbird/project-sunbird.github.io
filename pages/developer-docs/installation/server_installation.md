@@ -43,13 +43,13 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1. Install git using `apt-get update -y && apt-get install git -y `
+1.Install git using `apt-get update -y && apt-get install git -y `
 
-2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
+2.Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
 
-3. `cd sunbird-devops/deploy`
+3.`cd sunbird-devops/deploy`
 
-4. Update the configuration parameters in the `config` file. 
+4.Update the configuration parameters in the `config` file. 
 
 The configuration parameters are explained in the following table: 
 
@@ -102,7 +102,7 @@ The configuration parameters are explained in the following table:
 |`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
 
 
-5. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
+5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
 
 |stage no |stage name|Description| 
 |:-----      |:-------|:--------|
@@ -116,17 +116,17 @@ The configuration parameters are explained in the following table:
 
 **Note**: The badger service does not work without an Azure storage account name and key. 
 
-6. Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste the value obtained in variable **sunbird_sso_publickey** and **sunbird_default_channel**  under config file and execute `./sunbird_install.sh -s core` to redeploy the core services.
+6.Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste the value obtained in variable **sunbird_sso_publickey** and **sunbird_default_channel**  under config file and execute `./sunbird_install.sh -s core` to redeploy the core services.
 
 **Note**: If you want to re-run any particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
 
 To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
 
-7. For creating users and root organisation, [refer](http://www.sunbird.org/developer-docs/installation/install_sbbackend/) to the page.
+7.For creating users and root organisation, [refer](http://www.sunbird.org/developer-docs/installation/install_sbbackend/) to the page.
 
-8. Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
+8.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
 
-9. Open https://[domain-name] and verify your installation by logging with username@channelName with the password file provided in config file 
+9.Open https://[domain-name] and verify your installation by logging with username@channelName with the password file provided in config file 
   
 ## Sunbird Install Script 
 
