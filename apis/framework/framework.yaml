@@ -196,7 +196,7 @@ paths:
       description: >-
        This API is associated with listing the existing channels 
           - The **_/channel/v1/list_** endpoint executes the "List channels" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
+          - Required fields cannot be left null or empty API to get list of channels
       summary: List Channels
       tags:
       - Channel APIs
