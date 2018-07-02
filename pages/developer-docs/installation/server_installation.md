@@ -43,7 +43,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1.Install git using `apt-get update -y && apt-get install git -y `
+1.Install git using `sudo apt-get update -y && sudo apt-get install git -y `
 
 2.Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
 
@@ -98,7 +98,7 @@ The configuration parameters are explained in the following table:
 |`monitor_alerts_slack_channel`| list of emails to send alerts |no|   
 |`vault_proxy_prometheus_admin_creds`| prometheus admin password |no|   
 |`proxy_prometheus`| Setting up Prometheus Proxy |no| 
-|`sunbird_sso_publickey`| For creation of User, http://dns_name/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
+|`sunbird_sso_publickey`| For creation of User, http://<dns_name>/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
 |`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
 
 
