@@ -37,6 +37,7 @@ For example, you can change the default logo to the logo of your choice, or  cha
 | 14    | telemetry_local_storage_type  | Location to store the telemetry data | The location for storing the telemetry data is only kafka                      |         kafka           | Sunbird-telemetry-service |
 | 15    | telemetry_kafka_broker_list | IP address and ports of kafka | Kafka connection details,  - <IP>:<port>,<IP>:<port>                    |   The installer need to provide appropriate setails for IP and port   | Sunbird-telemetry-service |
 | 16    | telemetry_kafka_topic  | Name of the kafka topic | Recommended topic name format is <env>.telemetry.ingestion                     |           | Sunbird-telemetry-service |
+
 ### Environment Variables for Content service
 
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |
