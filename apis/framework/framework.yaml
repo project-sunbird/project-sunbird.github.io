@@ -12,6 +12,7 @@ info:
               - Category: An abstract classification of the terms   partitioned according to requirement.
               - Terms: Refers to a keyword or a phrase to descibe a Concept
 host: staging.open-sunbird.org
+basePath: /api
 securityDefinitions:
   bearer:
       type: apiKey  # arbitrary name for the security scheme
