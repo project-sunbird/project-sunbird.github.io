@@ -7,7 +7,7 @@ info:
      
     **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
 host: staging.open-sunbird.org
-basePath: /api/user/v1
+basePath: /api/user/
 securityDefinitions:
   bearer:
       type: apiKey  # arbitrary name for the security scheme
@@ -26,11 +26,11 @@ consumes:
 produces:
   - application/json
 paths:
- /create:
+ /v1/create:
     post:
       description: >-
        This API is used to create a user 
-          - **_/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
+          - **_/v1/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
           - Mandatory fields cannot be null or empty.
       summary: Create User
       tags:
@@ -100,11 +100,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /search:
+ /v1/search:
     post:
       description: >-
        This API is used for searching a particular user 
-          - **_/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
+          - **_/v1/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
            - Required fields cannot be left null or empty
       summary: Search User
       tags:
@@ -211,11 +211,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /profile/read:
+ /v1/profile/read:
     post:
       description: >-
         This API is used for getting information about the currently authenticated user
-          - **_/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
+          - **_/v1/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
           - It is mandatory to provide values for required parameters
       summary: Get User by Login ID
       tags:
@@ -317,11 +317,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /read/{User_ID}:
+ /v1/read/{User_ID}:
     get:
       description: >-
         This API is used for searching a specific user, the user search is based on the unique ID of the user
-          - **_/read/{User_ID}_** endpoint executes the "Get User profile" request
+          - **_/v1/read/{User_ID}_** endpoint executes the "Get User profile" request
           - It is mandatory to provide values for required parameters
       summary: Get User by User ID
       tags:
@@ -407,11 +407,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false      
- /update:
+ /v1/update:
     patch:
       description:  >-
         This API is use for updating the user realted details 
-          - **_/update/_** endpoint executes the "Update User" request
+          - **_/v1/update/_** endpoint executes the "Update User" request
           - It is mandatory to provide values for required parameters
       summary: Update User
       tags:
@@ -485,7 +485,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /update/logintime:
+ /v1/update/logintime:
     patch:
       description: >-
          This API is used to update user login time 
@@ -597,11 +597,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /role/read:
+ /v1/role/read:
     get:
       description:  >-
        This API is used to list the assigned roles pertaining to a user
-          - The **_/role/read_** endpoint executes the "Get user role information" request based on parameters provided as metadata in the request body
+          - The **_/v1/role/read_** endpoint executes the "Get user role information" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
       summary: Get User Role Information
       tags: 
@@ -689,7 +689,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /profile/visibility:
+ /v1/profile/visibility:
     post:
       description:  >-
        This API is used to configure the visibility of user profile
@@ -797,11 +797,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /block:
+ /v1/block:
     post:
       description:  >-
        This API is used to ban/block a user, banning or blocking a user is done calling this API.  
-          - The **_/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
+          - The **_/v1/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Block user
       tags:
@@ -904,11 +904,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /unblock:
+ /v1/unblock:
     post:
       description: >-
        This API is used to unban/unblock a user
-          - The **_/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
+          - The **_/v1/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Unblock user
       tags:
@@ -1101,11 +1101,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /encrypt:
+ /v1/encrypt:
     get:
       description: >-
        This API is used for securing the user information with an encryption scheme  
-          - The **_ /encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
+          - The **_/v1/encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Encrypt User Information
       tags:
@@ -1167,11 +1167,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /skill/add:
+ /v1/skill/add:
     post:
       description: >-
        This API is used to add a skill set to the user 
-          - The **_/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
+          - The **_/v1/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Add User Skill
       tags:
