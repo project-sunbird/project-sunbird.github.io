@@ -4,6 +4,7 @@ directory: developer-docs/installation/
 title: Server Installation
 page_title: Server Installation
 description: Setting up Sunbird on a server
+keywords: installation, server, install, nodes, script, installation script 
 allowSearch: true
 ---
  
