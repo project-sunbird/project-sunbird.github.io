@@ -166,23 +166,23 @@ definitions:
     type: object
     properties:
       userId:
-        description: 'This Id uniquely identifies a user'
+        description: 'This identifier uniquely identifies a user'
         example: Sam123
         type: string
       courseIds:
-        description: 'This represents the list of course IDs, pass only one id incase you are passing contentIds as well. Multiple courseIds will be consider if user need to fetch data for different courseId irrespective of any batch and content.'
+        description: 'This represents the list of course IDs.'
         example:
           - some course ID
         type: array
         items:
           type: string
       contentIds:
-        description: 'This represents the list of content IDs for that course and batch.Pass one courseId and batchId and list of all content ids.'
+        description: 'This represents the list of content IDs for that course and batch. Associate only one courseId and batchId to the list of all content IDs.'
         type: array
         items:
           type: string
       batchId: 
-       description: 'id of the batch, for which course belong to.'
+       description: 'The idenfier of the batch to which the course belongs.'
        type: string 
     required:
       - userId
