@@ -83,12 +83,14 @@ You can add various elements in the book like units or chapters, heading details
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
       <br>&emsp;e) <b>Year</b> 
-      <br>7. Enter <b>Publisher</b> details 
-      <br>8. Enter <b>Attributions</b> 
-      <br>9. Select <b>Audience</b> 
-      <br>10. Enter the <b>DIAL Code</b> 
-      <br>11. Click <b>Save</b> on the header to save the details
-      <br>12. Click <b>Cancel</b> to go back to the previous screen
+      <br>7. Select <b>Topic</b>
+      <br><b>Note</b>: For details, refer <a href="features-documentation/topic_tree" target="_blank">Adding Topics</a>
+      <br>8. Enter <b>Publisher</b> details 
+      <br>9. Enter <b>Attributions</b> 
+      <br>10. Select <b>Audience</b> 
+      <br>11. Enter the <b>DIAL Code</b> 
+      <br>12. Click <b>Save</b> on the header to save the details
+      <br>13. Click <b>Cancel</b> to go back to the previous screen
     </td>
     <td><img src="pages/features-documentation/images/book/book_metadata1.png"></td>
   </tr>
@@ -103,7 +105,7 @@ You can add various elements in the book like units or chapters, heading details
   </tr>
   <tr>
       <td>To start adding heading details in a unit or chapter 
-      <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the physical textbook  
+      <br>1. Enter <b>Name</b>. This is the chapter/unit name as in the physical textbook  
       <br>2. Enter <b>Description</b> 
       <br>3. Select the <b>Concepts</b> associated with the heading. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a>
       <br>4. Enter <b>Keywords</b> 
