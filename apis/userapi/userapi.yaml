@@ -1838,16 +1838,16 @@ definitions:
         items:
           type: string
       externalId:
-        description: 'externalId,externalIdType,externalIdProvider these three keys are required if user is not passing userId'
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
         type: string
       externalIdType:
-        description: 'externalId,externalIdType,externalIdProvider these three keys are required if user is not passing userId'
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
         type: string
       externalIdProvider:
-        description: 'externalId,externalIdType,externalIdProvider these three keys are required if user is not passing userId'
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
         type: string
       externalIds:
-        description: 'details of external ids and provider'
+        description: 'details of external IDs and provider'
         type: array
         items:
           type: object
@@ -1855,7 +1855,7 @@ definitions:
     required:
     - userId    
   ResultStatus:
-    description: Node id description
+    description: Node ID description
     type: object
     properties:
       status:
@@ -1918,7 +1918,7 @@ definitions:
     - params
     - request
   loginRequestUpdate:
-    description: request body for updating user login time
+    description: request body to update user login time
     type: object
     properties:
       userId:
@@ -1979,7 +1979,7 @@ definitions:
       public:
         description: ''
         example:
-        - private field name which you want to make public
+        - private field name that you want to make public
         type: array
         items:
           type: string
@@ -1993,7 +1993,7 @@ definitions:
     example:
       request:
         userId: valid userId
-        organisationId: valid org id
+        organisationId: valid org ID
         roles:
         - CONTENT_CREATION
         - PUBLIC
@@ -2062,26 +2062,26 @@ definitions:
     properties:
       id:
         type : string
-        description: 'Identity of user in an external system. By providing externalId the creator can corelate a user within sunbird system. externalId and provider combination must be unique. If user is passing externalId then they have to pass provider.'
+        description: 'Identity of the user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       provider:
         type: string
-        description : 'Provider is an orgainsation, who is providing an (external) ID to a user in sunbird. that organisation may or maynot be part of sunbird. If user is passing externalId then they have to pass provider.'
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       idType:
         type :  string
-        description : 'PAN card is an id type whose provider is central government'
+        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government.'
   ExternalIdUpdate:
-    description : user externl id request for update profile
+    description : The user request to update the external ID in the profile
     type: object
     properties:
       id:
         type : string
-        description: 'Identity of user in an external system. By providing externalId the creator can corelate a user within sunbird system. externalId and provider combination must be unique. If user is passing externalId then they have to pass provider.'
+        description: 'Identity of user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       provider:
         type: string
-        description : 'Provider is an orgainsation, who is providing an (external) ID to a user in sunbird. that organisation may or maynot be part of sunbird. If user is passing externalId then they have to pass provider.'
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       idType:
         type :  string
-        description : 'PAN card is an id type whose provider is central government' 
+        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government' 
       operation:
         type: string
-        description : 'possible valies are {ADD,EDIT,REMOVE}'
+        description : 'possible values are {ADD,EDIT,REMOVE}'
