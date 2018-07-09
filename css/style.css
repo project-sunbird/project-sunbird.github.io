@@ -4642,6 +4642,14 @@ a:hover {
 .auto {
   width: auto !important; }
 
+table.noborder,
+.noborder thead,
+.noborder tbody,
+.noborder tr,
+.noborder th,
+.noborder td {
+  border: 0 !important; }
+
 .breadcrumbs {
   list-style: none;
   padding: 0; }
