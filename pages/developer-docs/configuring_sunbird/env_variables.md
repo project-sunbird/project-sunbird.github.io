@@ -37,8 +37,6 @@ For example, you can change the default logo to the logo of your choice, or  cha
 | 14    | telemetry_local_storage_type  | Location to store the telemetry data | The location for storing the telemetry data is only kafka                      |         kafka           | Sunbird-telemetry-service |
 | 15    | telemetry_kafka_broker_list | IP address and ports of kafka | Kafka connection details,  - <IP>:<port>,<IP>:<port>                    |   The installer need to provide appropriate setails for IP and port   | Sunbird-telemetry-service |
 | 16    | telemetry_kafka_topic  | Name of the kafka topic | Recommended topic name format is <env>.telemetry.ingestion                     |           | Sunbird-telemetry-service |
- | 17   | sunbird_user_bulk_upload_size  | Specifies the bulk user upload limit | Specifies a limit on the number of lines (including headers line) in CSV file that is used for bulk user upload request. For instance, setting up a value to 1001 restricts the maximum number of users that can be created is 1000 using a bulk user upload request. It is recommended not to configure this value beyond 2001.                    |     1001      | Sunbird-LMS |
- | 18 | sunbird_installation_display_name  | Refers to the display name of the installation | It is used to show the instance display name              |     sunbird    | Sunbird-LMS |
 
 ### Environment Variables for Content service
 
@@ -46,14 +44,55 @@ For example, you can change the default logo to the logo of your choice, or  cha
 ---------|----------|---------|-------|-------|-------
  1  | ekstep_telemetry_storage_toggle | Toggle to make telemetry storage on and off for ekstep  |  It turns the telemetry off or on  | on |Sunbird-LMS |
  2 | sunbird_external_content_whitelisted_domains | To store the whitelisted domains comma seperated | It stores the white listed domains| youtube.com  |Sunbird-portal |
+ |  3 | sunbird_default_channel | The default channel to generate telemetry if nothing is sent from client headers<br/>Same as the one in learner-service<br/>Should be a valid root org | To have channel for each telemetry event generated |  |
+|  4 | sunbird_content_plugin_base_url | proxy url to content plugins repo<br/>needed only in dev setup. In server environments, plugins are handled by the nginx proxy | To update plugins base url | https://qa.ekstep.in |
+|  5 | sunbird_content_provider_api_base_url | It is base url of content provider | it is used to update content provider url  | https://qa.ekstep.in/api |
+|  6 | sunbird_content_provider_api_key | API Key of content provider for authorization | this value required to authorize with content provider  |  |
+|  7 | sunbird_environment | The environment where it is running | to send the telemetry with proper pdata and other purposes |  |
+|  8 | sunbird_instance | name of the instance<br/>should be same as the value in player/learner-service | to set the name of the instance |  |
+|  9 | sunbird_cassandra_ips | cassandra db ips to connnect | used to connect to cassandra db  | 127.0.0.1 |
+|  10 | sunbird_cassandra_port | port number on which cassandra db is running | used to update cassandra port number | 9042 |
+|  11 | sunbird_keycloak_auth_server_url | keycloak auth service url to connect | It is used to connect keycloak server | https://staging.open-sunbird.org/auth |
+|  12 | sunbird_keycloak_realm | keycloak realm value | realm value of keycloak to update per installation | sunbird |
+|  13 | sunbird_keycloak_client_id | The client id of the keycloak client used | Used to update the client id  | portal |
+|  14 | sunbird_keycloak_public | keycloak public type | keycloak pulic type from config | true |
+|  15 | sunbird_image_storage_url | base url where images are stored after generating qrcode images | Used to edit the storage url |  |
+|  16 | sunbird_dial_code_registry_url | The base url of the qr code image generated | It is used to set the base url for qr code |  |
+|  17 | sunbird_azure_account_name | The azure account name to connect to azure storage | It is used to connect azure account  |  |
+|  18 | sunbird_azure_account_key | The azure account key to connect to azure storage | The key used to connect to azure |  |
+|  19 | sunbird_telemetry_sync_batch_size | The size of the batch to sync  | Used to set the size of events to be synced | 20 |
 
-### Environment Variables for {your service}
 
-| S No. | Variable Name | Description| Purpose | Default Value |Path   |
----------|----------|---------|-------|-------|-------
- A1 | B1 | C1 |  |  |  |
- A2 | B2 | C2 |  |  |  |
- A3 | B3 | C3 |  |  |  |
+### Environment Variables for Portal
+
+|  **S No** | **Variable Name** | **Description** | **Purpose** | **Defult Value** | **Path** |
+|  ------ | ------ | ------ | ------ | ------ | ------ |
+|  1 | sunbird_portal_realm | keycloak realm value | realm value of keycloak to update per installation | sunbird | Sunbird Portal |
+|  2 | sunbird_portal_auth_server_url | keycloak auth service url to connect | It is used to connect keycloak server | https://staging.open-sunbird.org/auth | Sunbird Portal |
+|  3 | sunbird_portal_auth_server_client | The client id of the keycloak client used | Used to update the client id  | portal | Sunbird Portal |
+|  4 | sunbird_environment | The environment where it is running | to send the telemetry with proper pdata and other purposes |  | Sunbird Portal |
+|  5 | sunbird_instance | name of the instance | to set the name of the instance |  | Sunbird Portal |
+|  6 | sunbird_learner_player_url | Learner service Proxy Url | To change learner service Proxy Url | https://staging.open-sunbird.org/api/ | Sunbird Portal |
+|  7 | sunbird_content_player_url | Content service Proxy Url | To change content service Proxy Url | https://staging.open-sunbird.org/api/ | Sunbird Portal |
+|  8 | sunbird_content_proxy_url | Proxy url to load plugins | Proxy url to load plugins | https://staging.open-sunbird.org | Sunbird Portal |
+|  9 | sunbird_default_tenant | default tenant for installation | Used to set default tenant for installation |  | Sunbird Portal |
+|  10 | sunbird_api_auth_token | auth token to connect api's | token for connecting services |  | Sunbird Portal |
+|  11 | sunbird_telemetry_packet_size | The size of the batch to sync  | Used to set the size of events to be synced | 20 | Sunbird Portal |
+|  12 | sunbird_echo_api_url | used to validate JWT Token from trampoline  | URL which is used to validate tokem from sso | https://staging.open-sunbird.org/api/echo/ | Sunbird Portal |
+|  13 | sunbird_autocreate_trampoline_user | It is used to auto create user from trampoline service if user is  not exists | It is used to change the handle of the user creation from trampoline service | true | Sunbird Portal |
+|  14 | sunbird_trampoline_client_id |  |  | trampoline | Sunbird Portal |
+|  15 | sunbird_trampoline_secret |  |  |  | Sunbird Portal |
+|  16 | sunbird_session_store_type | session storage of portal | this used to set the storage type | in-memory | Sunbird Portal |
+|  17 | sunbird_portal_title_name | title name displayed in browser | used to update title name for browser | Sunbird | Sunbird Portal |
+|  18 | sunbird_portal_cdn_url | CDN BASE URL where the static assets are stored | To update the cdn based on implementation |  | Sunbird Portal |
+|  19 | sunbird_portal_default_language | default language of portal |  | en | Sunbird Portal |
+|  20 | sunbird_dataservice_url |  |  | https://staging.open-sunbird.org/api/ | Sunbird Portal |
+|  21 | sunbird_keycloak_public |  |  | true | Sunbird Portal |
+|  22 | sunbird_keycloak_realm |  |  | sunbird | Sunbird Portal |
+|  23 | sunbird_content_channel_filter_type | filter type for to show content based on filter by default all  which shows all content and self  which shows current channel(loggedin user channel content) |  | all | Sunbird Portal |
+|  24 | sunbird_android_app_url | android app url to open play store | used to set android app url | http://www.sunbird.org | Sunbird Portal |
+|  25 | sunbird_enable_signup | This is used to enable and disable signup funcationality |  | true | Sunbird Portal |
+|  26 | sunbird_api_response_cache_ttl | TTL for api response cache in seconds | Used to set cache for api responses in seconds | 600 | Sunbird Portal |
 
 
 ### Environment Variables for {your service}
