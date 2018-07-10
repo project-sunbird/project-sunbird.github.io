@@ -15,9 +15,9 @@ The topic selector ensures that the content is linked with the topics and extrac
   </tr>  
   <tr>
     <td>1 Click <b>Topic</b>. The Topics page is displayed
-    <br>2. Search the topic using <b>Search</b> bar
-    <br>3. <b>Topics</b> tab displays complete list of the available topics  
-    <br>4. Browse and select the topics(s) from the topic tree
+    <br>2. Search for a topic using the <b>Search</b> bar
+    <br>3. The <b>Topics</b> tab displays a complete list of available topics  
+    <br>4. Browse and select the topic(s) from the topic tree
     <br>5. View the selected concepts in <b>Selected Topics</b> tab 
     <br>6. Click <b>Done</b> to proceed
     <br>7. Click <b>Cancel</b> to exit
