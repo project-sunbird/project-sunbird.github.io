@@ -3,7 +3,7 @@ type: landing
 directory: developer-docs/installation
 title: Developer Installation
 page_title: Developer Installation
-description: Installing  the Sunbird portal or web application, 
+description: Installing  the Sunbird portal or web application
 published: true
 allowSearch: true
 ---
