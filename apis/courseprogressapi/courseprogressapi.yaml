@@ -177,14 +177,14 @@ definitions:
         items:
           type: string
       contentIds:
-        description: 'This represents one or more content IDs associated with the course ID. When specifying content IDs associate only one course ID.'
+        description: 'This represents the list of content IDs for that course and batch. Associate only one courseId and batchId to the list of all content IDs.'
         type: array
         items:
           type: string
       batchId: 
-       description: 'ID of the batch associated with the course ID. When specifying the batch ID associate it with only one course ID as a batch can belong to only one course.'
-       type:string 
-       required:
+       description: 'The idenfier of the batch to which the course belongs.'
+       type: string 
+    required:
       - userId
       optional:
       - courseIds
