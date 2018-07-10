@@ -80,9 +80,9 @@ The configuration parameters are explained in the following table:
 |`swarm_manager_host`           |A comma-separated (,) list of IP addresses of the swarm managers.                |no|
 |`swarm_node_host`           | A comma-separated (,) list of swarm node IP addresses .             |no|
 |`keycloak_host`           | A comma-separated (,) list of keycloak IP addresses.              |no|
-|`sunbird_azure_storage_account`  | The Azure storage account for the badger service     |no|
-|`sunbird_azure_storage_key`  | The Azure storage key for the badger service    |no|
-|`sunbird_image_storage_url`| The Azure image url for the badger service |no|
+|`sunbird_azure_storage_account`  | The Azure storage account for the badger service     |yes|
+|`sunbird_azure_storage_key`  | The Azure storage key for the badger service    |yes|
+|`sunbird_image_storage_url`| The Azure image url for the badger service |yes|
 |`sunbird_installation_email`| The Sunbird installation email ID |no|
 |`sunbird_telemetry_pdata_id`| The Sunbird telemetry pdata ID, for example <br> {env}.{implimentation_name}.learning.service |no|
 |`backup_storage_key`| elasticsearch backupstorage key |yes|
@@ -116,18 +116,56 @@ The configuration parameters are explained in the following table:
 
 **Note**: The badger service does not work without an Azure storage account name and key. 
 
-6.Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste the value obtained in variable **sunbird_sso_publickey** and **sunbird_default_channel**  under config file and execute `./sunbird_install.sh -s core` to redeploy the core services.
+6.Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste that value in **sunbird_sso_publickey** under config file and execute the command `./sunbird_install.sh -s core` to redeploy the core services.
 
-**Note**: If you want to re-run any particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
+**Note**: 
+- If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
 
-To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
+- To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
 
-7.For creating users and root organisation, [refer](http://www.sunbird.org/developer-docs/installation/install_sbbackend/) to the page.
+7.To create access token and root organization, execute the following commands:
 
-8.Run `./sunbird_install.sh -s posttest`, the script validates the sunbird installation by checking all the services for their successful installation. Executing the script creates a file named  as 'postInstallationLogs.log' under logs directory
+**Create user access token**
 
-9.Open https://[domain-name] and verify your installation by logging with username@channelName with the password file provided in config file 
-  
+<pre>
+curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
+  -H 'cache-control: no-cache' 
+  -H 'content-type: application/x-www-form-urlencoded' 
+  -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
+</pre>
+
+**Note:**
+
+-  The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
+
+**Create root organization**
+
+<pre>
+curl -X POST 
+  {dns_name}/api/org/v1/create 
+  -H 'Cache-Control: no-cache' 
+  -H 'Content-Type: application/json' 
+  -H 'accept: application/json' 
+  -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' 
+  -H 'x-authenticated-user-token: {access token created last step}' 
+  -d '{
+  "request":{
+     "orgName": "{YourOrganizationName}",
+     "description": "Organization for demonstrating Sunbird Skills Training",
+      "isRootOrg":true,
+       "channel":"{YourChannelName}"
+  }
+}
+</pre>
+
+8.Update **sunbird_default_channel** in the **config** file with **{YourChannelName}** (that was created in previous step) and re-run the command './sunbird_install.sh -s core`
+
+9.Run `./sunbird_install.sh -s posttest`, this script validates checks all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory
+
+10.Open **https://[domain-name]** and sign up. 
+
+11.You can choose your own user name and password. The format for the username is: username@channelName
+
 ## Sunbird Install Script 
 
 The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository. 

@@ -21,10 +21,10 @@ For example, you can change the default logo to the logo of your choice, or  cha
 
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |
 |-------|-----------|---------|---------|---------------|-------------|
-| 1     | sunbird_mail_server_from_email  |  The default communication email address | If set, user will get an email from the set email address                                                                                                                                  | no default                                           | Sunbird-LMS |
-| 2     | sunbird_env_logo_url            | public access image url                                            | used to sent in email as logo                                                                                                                       | no default                                           | Sunbird-LMS |
-| 3     | sunird_web_url                  | The URL of the home page                                            | This URL is shared in an email such that the users are able to login                                                                                                               | no default                                           | Sunbird-LMS |
-| 4     | sunbird_app_url                 | Th URL of Sunbird app in Play store                                      | This Sunbird app URL is shared in an email such that users are able to download the app                                                                                                               | no default                                           | Sunbird-LMS |
+| 1     | sunbird_mail_server_from_email  |  The default communication email address | If set, user will get an email from the set email address                                                                                                                                  | no default | Sunbird-LMS |
+| 2     | sunbird_env_logo_url | public access image url|  used to sent in email as logo|  no default  | Sunbird-LMS |
+| 3     | sunird_web_url | The URL of the home page | This URL is shared in an email such that the users are able to login | no default  | Sunbird-LMS |
+| 4     | sunbird_app_url | Th URL of Sunbird app in Play store                                      | This Sunbird app URL is shared in an email such that users are able to download the app                                                                                                               | no default                                           | Sunbird-LMS |
 | 5     | sunbird_msg_sender              | The name of the SMS sender            | This is the name that will appear on users screen in case an SMS is sent from the system                                                                                                                             | no default                                           | Sunbird-LMS |
 | 6     | sunbird_installation_email      | This is the email address used for badger system                                        | This email is used for notifying the users while they install badger system                                                                                                                         | no default                                           | Sunbird-LMS |
 | 7     | sunbird_installation            | The name of your instance                                            | Used to send telemetry and also for sending email. Spaces are not allowed in the name e.g: "Sunbird Dev", instead use "SunbirdDev" | no default                                           | Sunbird-LMS |
@@ -37,6 +37,7 @@ For example, you can change the default logo to the logo of your choice, or  cha
 | 14    | telemetry_local_storage_type  | Location to store the telemetry data | The location for storing the telemetry data is only kafka                      |         kafka           | Sunbird-telemetry-service |
 | 15    | telemetry_kafka_broker_list | IP address and ports of kafka | Kafka connection details,  - <IP>:<port>,<IP>:<port>                    |   The installer need to provide appropriate setails for IP and port   | Sunbird-telemetry-service |
 | 16    | telemetry_kafka_topic  | Name of the kafka topic | Recommended topic name format is <env>.telemetry.ingestion                     |           | Sunbird-telemetry-service |
+
 ### Environment Variables for Content service
 
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |

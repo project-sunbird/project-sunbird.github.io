@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configuration for Announcements
-page_title: Configuration for Announcements 
+title: Creating Announcements
+page_title: Creating Announcements 
 description: Enable organizations and users to configure and use the Announcement feature on Sunbird 
 published: true
 allowSearch: true
@@ -31,12 +31,12 @@ The Announcements feature does not support location hierarchy. While targeting a
  
  The process to establish a corelation between the organization and its location is as follows: 
  
-  1. Create **Location** in Sunbird
+  1.Create **Location** in Sunbird
  
 **Note:** To create locations, refer to [Geo Location APIs](http://www.sunbird.org/apis/geolocationapi/){:target="_blank"}.
 
-  2. On successful creation of a location, you will get a **locationId**
-  3. Use the **locationId** to create or update an organization
+  2.On successful creation of a location, you will get a **locationId**
+  3.Use the **locationId** to create or update an organization
  
 **Note** To create organizations, refer to [Organization Management APIs](http://www.sunbird.org/apis/orgapi/){:target="_blank"}
  

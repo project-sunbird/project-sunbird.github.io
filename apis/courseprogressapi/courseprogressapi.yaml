@@ -186,6 +186,7 @@ definitions:
        type: string 
     required:
       - userId
+      optional:
       - courseIds
       - contentIds
       - batchId
