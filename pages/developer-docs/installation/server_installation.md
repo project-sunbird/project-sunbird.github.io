@@ -15,13 +15,15 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 ## Prerequisites
 
-* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](developer-docs/installation/medium_scale_deploy/#mapping-ports) The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.
+* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](developer-docs/installation/server_installation/#mapping-ports) The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.
 
 * Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird such that it can be accessed over an IP address. If you have a domain name, and you want to get an SSL certificate, refer [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate which is valid for 90 days.
 
 * Sunbird requires Ekstep API keys to access the Ekstep content repository. Follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. If you are creating a test environment, get the QA API keys.
 
 * Create a common linux user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
+
+* Create an [Azure storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account) to complete the Sunbird installation. This account is used to store QR code images and achievement badges.
 
 * The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.
 
@@ -43,7 +45,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1.Install git using `apt-get update -y && apt-get install git -y `
+1.Install git using `sudo apt-get update -y && sudo apt-get install git -y `
 
 2.Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
 
@@ -98,7 +100,7 @@ The configuration parameters are explained in the following table:
 |`monitor_alerts_slack_channel`| list of emails to send alerts |no|   
 |`vault_proxy_prometheus_admin_creds`| prometheus admin password |no|   
 |`proxy_prometheus`| Setting up Prometheus Proxy |no| 
-|`sunbird_sso_publickey`| For creation of User, http://dns_name/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
+|`sunbird_sso_publickey`| For creation of User, http://<dns_name>/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
 |`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
 
 
@@ -128,10 +130,10 @@ The configuration parameters are explained in the following table:
 **Create user access token**
 
 <pre>
-curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
-  -H 'cache-control: no-cache' 
-  -H 'content-type: application/x-www-form-urlencoded' 
-  -d 'client_id={client-name}&username={username}&password={password}&grant_type=password'
+curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'client_id=admin-cli&username=user-manager&password={sso_password in config file}&grant_type=password'
 </pre>
 
 **Note:**
@@ -203,7 +205,7 @@ The following is a list of ports that must be open:
 |From server |To server|port| protocol|
 |:-----      |:-------|:--------|:------|
 |Administration server|All servers|22|TCP|
-|ELB|0.0.0.0|80,433|TCP|
+|ELB/Internet|0.0.0.0|80,433|TCP|
 |swarm managers subnet|swarm nodes subnet|All|TCP & UDP|
 |swarm nodes|Cassandra servers|9042|TCP|
 |swarm nodes|Elasticsearch servers| 9200 |TCP|
