@@ -5,7 +5,7 @@ title: Initialization Setup
 page_title: Initialization Setup
 description: Initialization Setup
 keywords: Initialize Sunbird, create root org, root org, channel setup, rootorg, rootOrg
-published: true
+published: false
 allowSearch: true
 ---
 ## Overview
