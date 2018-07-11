@@ -131,9 +131,9 @@ eg: {dns_name} should be replaced with mydomain.com
 
 - Create access token for user creation
 <pre>
-curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
-  -H 'cache-control: no-cache' 
-  -H 'content-type: application/x-www-form-urlencoded' 
+curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/x-www-form-urlencoded' \
   -d 'client_id=admin-cli&username=user-manager&password={sso_password in config file}&grant_type=password'
 </pre>
 
