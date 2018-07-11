@@ -16,28 +16,39 @@ Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the fo
 
 ```
 curl -X POST \
- {{learner_service_host}}/v1/system/init \
-  -H 'Accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "id":"api.system.init",
-  "ts":"{{current_timestamp}}",
-  "params": { },
-    "request":{
-        "orgName":"{{organisation_name}}",
-         "channel": "{{org_channel}}"        
+
+{{learner_service_host}}/v1/system/init \
+ 
+ -H 'Accept: application/json' \
+ 
+ -H 'Content-Type: application/json' \
+ 
+ -d '{
+ 
+ "id":"api.system.init",
+ 
+ "ts":"{{current_timestamp}}",
+ 
+ "params": { },
+ 
+ "request":{
+ 
+ "orgName":"{{organisation_name}}",
+ 
+ "channel": "{{org_channel}}"        
     }       
 }'
+
 ```
 **Note:** The values for the variables in the command are as follows:
 
-**learner_service_host** http host address where learner service is running
+- **learner_service_host** http host address where learner service is running
 
-**current_timestamp** valid timestamp in format of 'yyyy-mm-dd hh:mm:ss' 
+- **current_timestamp** valid timestamp in format of 'yyyy-mm-dd hh:mm:ss' 
 
-**organisation_name** valid organisation name
+- **organisation_name** valid organisation name
 
-**channel** valid channel to be used for the created rootOrg (should be provided while adding users later)
+- **channel** valid channel to be used for the created rootOrg (should be provided while adding users later)
 
 The API response is as follows:
 
@@ -64,11 +75,13 @@ The API response is as follows:
         "response": "SUCCESS"
     }
 }
+
 ```
 
 **Note** The Intialise API can be used only once to create the first rootOrg. If you try to execute it again, it will return the following error response:
 
- ```{
+ ```
+ {
     "id": "api.system.init",
     
     "ver": "v1",
@@ -85,7 +98,8 @@ The API response is as follows:
     
     "responseCode": "CLIENT_ERROR",
     "result": {}
-}```
+}
+```
 
 
 
