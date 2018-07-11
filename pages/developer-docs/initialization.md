@@ -30,9 +30,13 @@ curl -X POST \
 }'
 ```
 **Note:** The values for the variables in the command are as follows:
+
 **learner_service_host** http host address where learner service is running
+
 **current_timestamp** valid timestamp in format of 'yyyy-mm-dd hh:mm:ss' 
+
 **organisation_name** valid organisation name
+
 **channel** valid channel to be used for the created rootOrg (should be provided while adding users later)
 
 The API response is as follows:
@@ -40,8 +44,11 @@ The API response is as follows:
 ```
 {
     "id": "api.system.init",
+    
     "ver": "v1",
+    
     "ts": "2018-07-10 20:10:44:139+0530",
+    
     "params": {
         "resmsgid": null,
         "msgid": "41626e26-1b9b-414d-99ea-d563336fb106",
@@ -49,8 +56,10 @@ The API response is as follows:
         "status": "success",
         "errmsg": null
     },
-    "responseCode": "OK",
-    "result": {
+    
+   "responseCode": "OK",
+   
+   "result": {
         "organisationId": "0125438741727805440",
         "response": "SUCCESS"
     }
@@ -58,10 +67,14 @@ The API response is as follows:
 ```
 
 **Note** The Intialise API can be used only once to create the first rootOrg. If you try to execute it again, it will return the following error response:
+
  ```{
     "id": "api.system.init",
+    
     "ver": "v1",
+    
     "ts": "2018-07-11 15:38:00:213+0530",
+    
     "params": {
         "resmsgid": null,
         "msgid": "3db7ee89-edc9-4fcf-b463-dc7aa46a309e",
@@ -69,6 +82,7 @@ The API response is as follows:
         "status": "SYSTEM_ALREADY_INITIALISED",
         "errmsg": "System already initialised.Cannot initialise again."
     },
+    
     "responseCode": "CLIENT_ERROR",
     "result": {}
 }```
