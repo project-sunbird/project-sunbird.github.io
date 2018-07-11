@@ -138,7 +138,7 @@ curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
 
 **Note:**
 
--  The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
+- The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
 
 **Create root organization**
 
