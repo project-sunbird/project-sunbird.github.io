@@ -23,7 +23,7 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
 
 * Create a common linux user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
 
-* You have to create an [Azure storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account) account for completing Sunbird installation. This account is used to store QR code images and storing badges for achievements.
+* Create an [Azure storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account) to complete the Sunbird installation. This account is used to store QR code images and achievement badges.
 
 * The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.
 
