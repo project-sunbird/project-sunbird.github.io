@@ -1,3 +1,13 @@
+---
+type: landing
+directory: developer-docs/configuring_sunbird
+title: Configuration Variables for Content service 
+page_title: Configuration Variables for Content Service
+description: For adopters and users to get started on Sunbird. It provides the list of configuration that need to be done to customize the sunbird 
+published: true
+allowSearch: false
+---
+
 ### Environment Variables for Content service
 To run the Sunbird content services, you need to configure the following environment variables:
  	 
