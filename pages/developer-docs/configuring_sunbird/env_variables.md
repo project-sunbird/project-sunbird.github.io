@@ -37,8 +37,12 @@ For example, you can change the default logo to the logo of your choice, or  cha
 | 14    | telemetry_local_storage_type  | Location to store the telemetry data | The location for storing the telemetry data is only kafka                      |         kafka           | Sunbird-telemetry-service |
 | 15    | telemetry_kafka_broker_list | IP address and ports of kafka | Kafka connection details,  - <IP>:<port>,<IP>:<port>                    |   The installer need to provide appropriate setails for IP and port   | Sunbird-telemetry-service |
 | 16    | telemetry_kafka_topic  | Name of the kafka topic | Recommended topic name format is <env>.telemetry.ingestion                     |           | Sunbird-telemetry-service |
- | 17   | sunbird_user_bulk_upload_size  | Specifies the bulk user upload limit | Specifies a limit on the number of lines (including headers line) in CSV file that is used for bulk user upload request. For instance, setting up a value to 1001 restricts the maximum number of users that can be created is 1000 using a bulk user upload request. It is recommended not to configure this value beyond 2001.                    |     1001      | Sunbird-LMS |
- | 18 | sunbird_installation_display_name  | Refers to the display name of the installation | It is used to show the instance display name              |     sunbird    | Sunbird-LMS |
+| 17   | sunbird_user_bulk_upload_size  | Specifies the bulk user upload limit | Specifies a limit on the number of lines (including headers line) in CSV file that is used for bulk user upload request. For instance, setting up a value to 1001 restricts the maximum number of users that can be created is 1000 using a bulk user upload request. It is recommended not to configure this value beyond 2001.                    |     1001      | Sunbird-LMS |
+| 18 | sunbird_installation_display_name  | Refers to the display name of the installation | It is used to show the instance display name              |     sunbird    | Sunbird-LMS |
+| 19 | telemetry_proxy_enabled  | Enable or disable forward of telemetry data to configured proxy. If telemetry proxy is enabled then telemetry proxy URL and authentication key configuration is necessary to forward telemetry events. | Allows forwarding of telemetry data to another telemetry proxy (i.e. existing data analytics platform telemetry API). |     false    | Telemetry-Service |
+| 20 | telemetry_proxy_url  | URL of telemetry proxy API.  |For storing telemetry data in configured telemetry proxy. |   | Telemetry-Service |
+| 21 | telemetry_proxy_auth_key  | Telemetry proxy API key.  |For storing telemetry data in configured telemetry proxy. |   | Telemetry-Service | 
+ 
 
 ### Environment Variables for Content service
 
