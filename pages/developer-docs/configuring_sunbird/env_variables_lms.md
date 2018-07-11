@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configuration Variables
-page_title: Configuration Variables
+title: Configuration Variables for Sunbird LMS
+page_title: Configuration Variables for Sunbird LMs
 description: For adopters and users to get started on Sunbird. It provides the list of configuration that need to be done to customize the sunbird 
 published: true
 allowSearch: false
@@ -40,26 +40,3 @@ For example, you can change the default logo to the logo of your choice, or  cha
  | 17   | sunbird_user_bulk_upload_size  | Specifies the bulk user upload limit | Specifies a limit on the number of lines (including headers line) in CSV file that is used for bulk user upload request. For instance, setting up a value to 1001 restricts the maximum number of users that can be created is 1000 using a bulk user upload request. It is recommended not to configure this value beyond 2001.                    |     1001      | Sunbird-LMS |
  | 18 | sunbird_installation_display_name  | Refers to the display name of the installation | It is used to show the instance display name              |     sunbird    | Sunbird-LMS |
 
-### Environment Variables for Content service
-
-| S No. | Variable Name | Description| Purpose | Default Value |Path   |
----------|----------|---------|-------|-------|-------
- 1  | ekstep_telemetry_storage_toggle | Toggle to make telemetry storage on and off for ekstep  |  It turns the telemetry off or on  | on |Sunbird-LMS |
- 2 | sunbird_external_content_whitelisted_domains | To store the whitelisted domains comma seperated | It stores the white listed domains| youtube.com  |Sunbird-portal |
-
-### Environment Variables for {your service}
-
-| S No. | Variable Name | Description| Purpose | Default Value |Path   |
----------|----------|---------|-------|-------|-------
- A1 | B1 | C1 |  |  |  |
- A2 | B2 | C2 |  |  |  |
- A3 | B3 | C3 |  |  |  |
-
-
-### Environment Variables for {your service}
-
-| S No. | Variable Name | Description| Purpose | Default Value |Path   |
----------|----------|---------|-------|-------|-------
- A1 | B1 | C1 |  |  |  |
- A2 | B2 | C2 |  |  |  |
- A3 | B3 | C3 |  |  |  |
