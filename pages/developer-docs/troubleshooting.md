@@ -12,7 +12,7 @@ allowSearch: true
 **Q:** Does Sunbird use any data initialization scripts?
 
 **A:** Use the Cassandra.cql file to do the initial data setup. 
-Click [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} and run the file to create the initial Cassandra data base.
+Click [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/service/src/main/resources/cassandra.cql){:target="_blank"} and run the file to create the initial Cassandra data base.
 
 **Q:**  Does the database have initial/ default entries for 'Org', 'Role' and 'Users'?
 
