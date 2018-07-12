@@ -1,27 +1,27 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Channel Based Content Filtering
-page_title: Channel Based Content Filtering 
-description: Channel Based Content Filtering
+title: Fliter Content for a Channel
+page_title: Fliter Content for a Channel 
+description: Fliter Content for a Channel
+keywords: filter, channel, channel based filtering, content filtering, set up content filtering
 published: true
 allowSearch: true
 ---
 ## Scenario
+XYZ Organization works in the domain of water conservation and works with multiple NGOs, village panchayats and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders own need and condition. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users alone.           
 
-Multiple tenants can share content from the EkStep content repository using the Sunbird platform. In Sunbird, a tenant is a root organisation who shares a common access with specific privileges to the software instance. Root orgs can define their own frameworks and set preferences like default language and default search categories. Sunbird maps each root org to a concept called a channel. Sunbird allows an instance owner to change the default behavior to channel-based content filtering for filtering content based on channel.
+### Version
 
-## Version
+This feature is applicable from Sunbird 1.7.0 onwards
 
-This feature is applicable for Sunbird 1.7.
+### Intended Audience
 
-## Intended Audience
+The Instance Admin
 
-Instance Admin
+## Prerequisites
 
-## Prerequisite
-
-Prerequisite to access  the shared EkStep content repository:
+To access the shared EkStep content repository:
 
 * Get Sunbird API key
 
@@ -31,15 +31,17 @@ Prerequisite to access  the shared EkStep content repository:
 
 * Configure the framework and taxonomy
 
-## Overview and Concept
+## Overview 
 
-Content discovery in Sunbird is not limited to a single channel. Sunbird adopters can access to a global, shared content repository. However, given the diversity of content across channels, content published in one channel may not always be helpful to the users of other channels. A Sunbird adopter can configure the list of channels from which it would like to consume content. Once this configuration is defined, a filter will be applied for content consumption. Only content from the configured channels will be available in Sunbird through search or navigation. A tenant can blacklist channels as well. In that case, they will not receive any content from the channels that are blacklisted by them.
+Sunbird allows you to set up a hierarchy of organizations for every instance installed. On successfully installing Sunbird, the first step is to create the first root organization. After this, you can set up a heirarchy of tenant organizations under it. All tenant organizations may share a common content repository (possibly the EkStep content repository) through the Sunbird platform. In Sunbird, a tenant is a root organisation that shares common access with specific privileges to the software instance. Root orgs can define their own framework and set preferences like default language and search categories. Sunbird maps each root org to a concept called a channel. Sunbird allows the instance owner to change the default behavior to channel-based content filtering for filtering content based on channel.
 
-As an example: If an adopter whitelists channels X and Y, they will receive content only from the channel X and Y. If  they blacklists channels X and Y, they will receive content other channels apart from X and Y. If they whitelists X and Y channels and blacklists Y and Z channels, they will receive content from (X+Y) (Y+Z) = X channel
+Sunbird adopters can access a global, shared content repository. Sunbird does not limit content discovery to a single channel. However, given the diversity of content across channels, content published in one channel may not always be helpful to the users of other channels. Hence, a Sunbird adopter can choose the list of channels from which its users can use and explore content. This forms the list of whitelisted channels. The tenant organization can also blacklist channels. In that case, users will not receive any content from the channels that are blacklisted. For example, if an adopter whitelists channels X and Y, their users receive content only from channel X and Y. If an adopter blacklists channels X and Y, their users receive content from channels other than from channels X and Y. If an adopter whitelists channels X and Y and blacklists channels Y and Z, their users receive content from (X+Y) (Y+Z) = X channel
+
+Once this is configured, Sunbird applies a filter for the content that is made available to users of that organization. Users can only search or navigate to content from the chosen channels.
 
 ## Taskflow
 
-This configuration is a deployment time configuration. Being a Sunbird adopter, you need to set environment variable to enable channel based content filter. 
+To enable filtering of content for a channel, This configuration is a deployment time configuration. Being a Sunbird adopter, you need to set environment variable to enable channel based content filter. 
 
 **Variables for whitelisting and blacklisting channels** to enable the channel-based content filtering:
 
@@ -73,7 +75,7 @@ This configuration is a deployment time configuration. Being a Sunbird adopter, 
 </table>
 
 
-For more information, refer to the **Configuration Variables page**.
+For details, refer to the **Configuration Variables page**.
 
 ## Glossary
 
