@@ -41,47 +41,21 @@ Once this is configured, Sunbird applies a filter for the content that is made a
 
 ## Taskflow
 
-To enable filtering of content for a channel, This configuration is a deployment time configuration. Being a Sunbird adopter, you need to set environment variable to enable channel based content filter. 
+To enable filtering of content for a channel, set the following environment variables at the time of deployment. 
 
-**Variables for whitelisting and blacklisting channels** to enable the channel-based content filtering:
 
-	 	 	 	
-
-<table>
-  <tr>
-    <td>S No.</td>
-    <td>Variable Name</td>
-    <td>Description</td>
-    <td>Purpose</td>
-    <td>Default Value</td>
-    <td>Path</td>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>sunbird_content_service_whitelisted_channels</td>
-    <td>Configures the channels whose content can be displayed in the portal. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels</td>
-    <td>Variable is used to whitelist the Channel whose content should be displayed</td>
-    <td><blank></td>
-    <td>Content Service</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>sunbird_content_service_blacklisted_channels</td>
-    <td>Configures the channels whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels</td>
-    <td>Variable is used to blacklist the channel whose content should not be displayed</td>
-    <td><blank></td>
-    <td>Content Service</td>
-  </tr>
-</table>
-
+|S No. | Variable Name | Description | Purpose | Default Value | Path |
+|------|---------------|-------------|---------|---------------|------|
+|1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the portal. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed |   |  Content Service |
+| 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed |  | Content Service |  
 
 For details, refer to the **Configuration Variables page**.
 
-## Glossary
+## Concepts Covered
 
-**Tenant** - A tenant is a root org who share a common access with specific privileges to the software instance.
+**Tenant** - A tenant is a root org that shares common access with specific privileges to the software instance
 
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
-**Channel** - A channel is a tenant on the platform which can define its own frameworks and set preferences like default language and default search categories. 
+**Channel** - A channel is a tenant on the platform that can define its own frameworks and set preferences like default language and default search categories. 
 
