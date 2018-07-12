@@ -26,7 +26,7 @@ Sunbird comes with log aggregation and metrics reporting out of the box. For log
 - [ELK stack](https://www.elastic.co/webinars/introduction-elk-stack){:target="_blank"}
 - [Prometheus](https://prometheus.io/){:target="_blank"} and their plugin ecosystem.
 
-Ops dashboards are built using: [Grafana](https://grafana.com/){:target="_blank"} with some [reference](https://github.com/project-sunbird/sunbird-devops/tree/master/cloud/monitoring/grafana){:target="_blank"} dashboards.
+Ops dashboards are built using: [Grafana](https://grafana.com/){:target="_blank"}.
 
 **Custom builds**
 
