@@ -37,7 +37,7 @@ Sunbird allows you to set up a hierarchy of organizations for every instance ins
 
 Sunbird adopters can access a global, shared content repository. Sunbird does not limit content discovery to a single channel. However, given the diversity of content across channels, content published in one channel may not always be helpful to the users of other channels. Hence, adopters can choose to mark channels as: 
 
-* Whitelisted: Those channels whose content is best suited for their user's needs and demands. accessible to users. Users can use and explore content from across whitelisted channels.
+* Whitelisted: Those channels whose content is best suited for their user's needs and demands. Users can use and explore content from across whitelisted channels.
 
 * Blacklisted: Those channels whose content cannot be accessed. Users cannot access any content from blacklisted channels. 
 
