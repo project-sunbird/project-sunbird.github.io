@@ -3,7 +3,7 @@ type: landing
 directory: developer-docs/configuring_sunbird
 title: Environment Variables for Content service 
 page_title: Environment Variables for Content Service
-description:List of Environment variables required to operationalize the Sunbird content service 
+description: List of Environment variables required to operationalize the Sunbird content service 
 published: true
 allowSearch: true
 ---
