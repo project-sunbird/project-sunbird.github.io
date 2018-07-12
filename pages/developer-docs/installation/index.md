@@ -4,7 +4,7 @@ directory: developer-docs/installation/
 title: Installation 
 page_title: Installation
 description: installation 
-keywords: 'Try Sunbird, Installation method, Pre-requisites, prerequisites, Sandbox, Deployment'
+keywords: 'Try Sunbird, Installation method, Pre-requisites, prerequisites, Sandbox, Deployment, Install
 allowSearch: true
 
 ---
