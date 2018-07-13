@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: LMS Environment Variables  
-page_title: LMS Environment Variables 
+title: Portal Environment Variables  
+page_title: Portal Environment Variables 
 description: List of environment variables needed to operationalize and customize Sunbird 
 published: true
 allowSearch: true
