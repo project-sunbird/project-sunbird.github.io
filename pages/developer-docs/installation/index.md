@@ -4,12 +4,13 @@ directory: developer-docs/installation/
 title: Installation 
 page_title: Installation
 description: installation 
-keywords: 'Try Sunbird, Installation method, Pre-requisites, prerequisites, Sandbox, Deployment, Install
+keywords: Try Sunbird, Installation method, Pre-requisites, prerequisites, Sandbox, Deployment, Install
 allowSearch: true
 
 ---
 
 ## Plan, Install and Configure Sunbird 
+
 The deployment of Sunbird in a live environment requires several distributed components. Before you start installation, please understand the following possibilities:
 
 ### Try Sunbird
@@ -25,5 +26,3 @@ If you plan to modify and contribute code to the Sunbird project, we recommend y
 ### Deploy Sunbird for your users
 
 If you plan to install Sunbird for your users, we recommend you follow the [Server Installation](developer-docs/installation/server_installation/){:target="_blank"} process.
-
-
