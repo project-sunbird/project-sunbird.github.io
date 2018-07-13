@@ -1,14 +1,13 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configure Sunbird Portal 
-page_title: Configure Sunbird Portal 
+title: Portal Environment Variables  
+page_title: Portal Environment Variables 
 description: List of environment variables needed to operationalize and customize Sunbird 
 published: true
 allowSearch: true
 ---
 
-### Environment Variables for Sunbird Portal
 The following is a list of environment variables and their default values, as required to run the Sunbird portal service. The list also gives you an indication of the purpose of the variable. Modifying the variable value, allows you to change default behavior based on your need or purpose.      
 
 |  **S No** | **Variable Name** | **Description** | **Purpose** | **Defult Value** | **Path** |
