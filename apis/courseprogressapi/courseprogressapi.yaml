@@ -39,7 +39,7 @@ paths:
           in: body
           required: true
           description: >-
-            Represents the body and formdata parameters of the course progress state API
+            'Represents the body and formdata parameters of the course progress state API. Request example is' "request":{ "userId":"id of the user","courseIds":["one courseId"],"contentIds":["list of content ids for particular course"],"batchId":"particulerBatchId" }
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
@@ -166,25 +166,30 @@ definitions:
     type: object
     properties:
       userId:
-        description: 'This ID uniquely identifies a user'
+        description: 'This identifier uniquely identifies a user'
         example: Sam123
         type: string
       courseIds:
-        description: 'This represents the list of course IDs'
+        description: 'This represents the list of course IDs.'
         example:
           - some course ID
         type: array
         items:
           type: string
       contentIds:
-        description: 'This represents the list of content IDs for that course'
+        description: 'This represents the list of content IDs for that course and batch. Associate only one courseId and batchId to the list of all content IDs.'
         type: array
         items:
           type: string
+      batchId: 
+       description: 'The idenfier of the batch to which the course belongs.'
+       type: string 
     required:
       - userId
+      optional:
       - courseIds
       - contentIds
+      - batchId
   UpdateContentStaterequest:
     title: This represents the update content state request body
     type: object

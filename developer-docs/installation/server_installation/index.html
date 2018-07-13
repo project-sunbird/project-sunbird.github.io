@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.8.0.a/";
+			baseURL.href="/releases/release.1.8.0.b/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-07-09 15:13:30 +0530">
+<meta name="last-modified" content="2018-07-13 15:36:59 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.8.0.a" />
-<meta name="buildNo" content="4064" />
+<meta name="buildVersion" content="release.1.8.0.b" />
+<meta name="buildNo" content="4192" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?09072018"  />
-<link rel="stylesheet" href="css/style.css?09072018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?09072018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?09072018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?09072018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?09072018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?13072018"  />
+<link rel="stylesheet" href="css/style.css?13072018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?13072018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?13072018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?13072018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?13072018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -171,7 +171,7 @@
                 <li>
                     <a href="features-documentation/collection_creation/">Collection</a>
                 </li>
-		 <li>
+		<li>
                     <a href="features-documentation/resource_creation/">Resource</a>
                 </li>
                 <li>
@@ -333,11 +333,17 @@
                         <a href="developer-docs/configuring_sunbird/">Configuration</a>
                         <ul class="sidebar-group">
                             <li>
-				                <a href="developer-docs/configuring_sunbird/env_variables_temp/">Configuration Variables</a>
+				                <a href="developer-docs/configuring_sunbird/sso_publickey/">SSO Public Key Configuration</a>
                             </li>
-                            <li>
-				                <a href="developer-docs/configuring_sunbird/sso_publickey/">Configuration for SSO Public Key</a>
+			    <li>
+				                <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
                             </li>
+			    <li>
+				                <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
+                            </li>
+			     <li>
+				                <a href="developer-docs/configuring_sunbird/env_variables_lms/">LMS Service Environment Variables</a>
+			     </li>
                           </ul>
                     </div>
                 </li>
@@ -574,7 +580,7 @@
 
 <ul>
   <li>
-    <p>Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following <a href="developer-docs/installation/medium_scale_deploy/#mapping-ports">ports</a> The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.</p>
+    <p>Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following <a href="developer-docs/installation/server_installation/#mapping-ports">ports</a> The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.</p>
   </li>
   <li>
     <p>Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird such that it can be accessed over an IP address. If you have a domain name, and you want to get an SSL certificate, refer <a href="https://letsencrypt.org/">Let’s Encrypt</a> to generate a free certificate which is valid for 90 days.</p>
@@ -584,6 +590,9 @@
   </li>
   <li>
     <p>Create a common linux user (e.g. deployer) on all the servers. Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">key based ssh</a>. Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have <strong>sudo</strong> access on the servers.</p>
+  </li>
+  <li>
+    <p>Create an <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account">Azure storage account</a> to complete the Sunbird installation. This account is used to store QR code images and achievement badges.</p>
   </li>
   <li>
     <p>The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.</p>
@@ -654,7 +663,7 @@
 
 <p><strong>Note:</strong> Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server.</p>
 
-<p>1.Install git using <code>apt-get update -y &amp;&amp; apt-get install git -y </code></p>
+<p>1.Install git using <code>sudo apt-get update -y &amp;&amp; sudo apt-get install git -y </code></p>
 
 <p>2.Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></p>
 
@@ -934,7 +943,7 @@
     </tr>
     <tr>
       <td style="text-align: left"><code>sunbird_sso_publickey</code></td>
-      <td style="text-align: left">For creation of User, http://dns_name/auth -&gt; realm settings -&gt; keys -&gt; public keys (click on public keys) and paste the value</td>
+      <td style="text-align: left">For creation of User, http://<dns_name>/auth -&gt; realm settings -&gt; keys -&gt; public keys (click on public keys) and paste the value</dns_name></td>
       <td style="text-align: left">yes</td>
       <td> </td>
     </tr>
@@ -1014,10 +1023,10 @@
 </p>
 
 <pre>
-curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token 
-  -H 'cache-control: no-cache' 
-  -H 'content-type: application/x-www-form-urlencoded' 
-  -d 'client_id={client-name}&amp;username={username}&amp;password={password}&amp;grant_type=password'
+curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'client_id=admin-cli&amp;username=user-manager&amp;password={sso_password in config file}&amp;grant_type=password'
 </pre>
 
 <p>
@@ -1125,7 +1134,7 @@ curl -X POST
       <td style="text-align: left">TCP</td>
     </tr>
     <tr>
-      <td style="text-align: left">ELB</td>
+      <td style="text-align: left">ELB/Internet</td>
       <td style="text-align: left">0.0.0.0</td>
       <td style="text-align: left">80,433</td>
       <td style="text-align: left">TCP</td>

@@ -1,0 +1,168 @@
+<p>The following is a list of environment variables and their default values, as required to run the Sunbird content service. The list also gives you an indication of the purpose of the variable. Modifying the variable value, allows you to change default behavior based on your need or purpose.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>S No.</th>
+      <th>Variable Name</th>
+      <th>Description</th>
+      <th>Purpose</th>
+      <th>Default Value</th>
+      <th>Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>ekstep_telemetry_storage_toggle</td>
+      <td>Represents the toggle to turn the EkStep telemetry storage on or off</td>
+      <td>Used to turn the telemetry off or on</td>
+      <td>on</td>
+      <td>Sunbird-LMS</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>sunbird_external_content_whitelisted_domains</td>
+      <td>Represents the file that stores the whitelisted domains in a comma-separated format</td>
+      <td>Used to store the white listed domains</td>
+      <td>youtube.com</td>
+      <td>Sunbird-portal</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>sunbird_default_channel</td>
+      <td>Represents the default channel used to generate telemetry, if nothing is sent from client headers<br />This is the same as specified in the Learner service<br />It should be a valid root org</td>
+      <td>Used to ensure there is a channel for each telemetry event generated</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>sunbird_content_plugin_base_url</td>
+      <td>Represents the proxy URL to the content plugins repository<br /> This is needed only in the dev setup. In the server environment, plugins are handled by the nginx proxy</td>
+      <td>Used to update the plugins base URL</td>
+      <td>https://qa.ekstep.in</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>sunbird_content_provider_api_base_url</td>
+      <td>Represents the base URL of the content provider</td>
+      <td>Used to update the content provider URL</td>
+      <td>https://qa.ekstep.in/api</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>sunbird_content_provider_api_key</td>
+      <td>Represents the API Key used to authorize the content provider</td>
+      <td>Used to authorize the content provider</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>sunbird_environment</td>
+      <td>Represents the instance environment</td>
+      <td>Used to identify the environment to which to send telemetry data with proper pdata. It is also used for other related purposes</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>sunbird_instance</td>
+      <td>Represents the name of the instance<br /> This should be the same as the value in the player/learner-service</td>
+      <td>Used to set the name of the instance</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>sunbird_cassandra_ips</td>
+      <td>Represents the IP address of the Cassandra DB to connnect the Sunbird Content service</td>
+      <td>Used to connect to cassandra db</td>
+      <td>127.0.0.1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>sunbird_cassandra_port</td>
+      <td>The port number on which the Cassandra DB is running</td>
+      <td>Used to update the Cassandra port number</td>
+      <td>9042</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>sunbird_keycloak_auth_server_url</td>
+      <td>The URL of the Keycloak auth service to connect the Sunbird Content service</td>
+      <td>Used to connect the Keycloak server</td>
+      <td>https://staging.open-sunbird.org/auth</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>sunbird_keycloak_realm</td>
+      <td>Represents the keycloak realm value</td>
+      <td>Used to update the realm value of Keycloak, per installation</td>
+      <td>Sunbird</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>sunbird_keycloak_client_id</td>
+      <td>Represents the client ID in Keycloak</td>
+      <td>Used to update the client ID in Keycloak</td>
+      <td>portal</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>sunbird_keycloak_public</td>
+      <td>Represents the Keycloak type</td>
+      <td>Used to specify the keycloak public type</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>sunbird_image_storage_url</td>
+      <td>Represents the base URL where images are stored after generating the qrcode images</td>
+      <td>Used to edit the storage URL</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>sunbird_dial_code_registry_url</td>
+      <td>Represents the base URL of the qr code image generated</td>
+      <td>Used to set the base URL for qr code</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>sunbird_azure_account_name</td>
+      <td>Represents the Azure account name to connect to Azure storage</td>
+      <td>Used to connect the Azure account</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>sunbird_azure_account_key</td>
+      <td>Represents the azure account key to connect to the Azure storage</td>
+      <td>Used to connect to Azure</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>sunbird_telemetry_sync_batch_size</td>
+      <td>Represents the batch size to sync data</td>
+      <td>Used to set the size of events to be synced</td>
+      <td>20</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>

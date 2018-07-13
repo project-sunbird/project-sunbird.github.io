@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.8.0.a/";
+			baseURL.href="/releases/release.1.8.0.b/";
 		}
 	}
 	getBase();
@@ -23,19 +23,19 @@
 <meta name="msapplication-TileColor" content="#65d3f7">
 <meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
 
-<title>Sunbird Configuration Variables</title>
-<meta name="description" content="Sunbird Site For adopters and users to get started on Sunbird. It provides the list of configuration that need to be done to customize the sunbird"/>
+<title>Sunbird Configuration for OTP based SMS</title>
+<meta name="description" content="Sunbird Site How to set up the OTP for SMS"/>
 
 <meta http-equiv="cache-control" content="max-age=0" />
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-07-09 15:13:30 +0530">
+<meta name="last-modified" content="2018-07-13 15:36:59 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.8.0.a" />
-<meta name="buildNo" content="4064" />
+<meta name="buildVersion" content="release.1.8.0.b" />
+<meta name="buildNo" content="4192" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?09072018"  />
-<link rel="stylesheet" href="css/style.css?09072018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?09072018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?09072018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?09072018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?09072018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?13072018"  />
+<link rel="stylesheet" href="css/style.css?13072018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?13072018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?13072018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?13072018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?13072018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -63,7 +63,7 @@
 </script>
 
 	
-		<meta name="robots" content="noindex, nofollow">
+		<meta name="robots" content="index, follow">
 	
   </head>
   <body id="body" class="doc-layout">
@@ -171,7 +171,7 @@
                 <li>
                     <a href="features-documentation/collection_creation/">Collection</a>
                 </li>
-		 <li>
+		<li>
                     <a href="features-documentation/resource_creation/">Resource</a>
                 </li>
                 <li>
@@ -333,11 +333,17 @@
                         <a href="developer-docs/configuring_sunbird/">Configuration</a>
                         <ul class="sidebar-group">
                             <li>
-				                <a href="developer-docs/configuring_sunbird/env_variables_temp/">Configuration Variables</a>
+				                <a href="developer-docs/configuring_sunbird/sso_publickey/">SSO Public Key Configuration</a>
                             </li>
-                            <li>
-				                <a href="developer-docs/configuring_sunbird/sso_publickey/">Configuration for SSO Public Key</a>
+			    <li>
+				                <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
                             </li>
+			    <li>
+				                <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
+                            </li>
+			     <li>
+				                <a href="developer-docs/configuring_sunbird/env_variables_lms/">LMS Service Environment Variables</a>
+			     </li>
                           </ul>
                     </div>
                 </li>
@@ -507,14 +513,14 @@
     </div>
 </div>
 <script>
-    $("a[href$='developer-docs/configuring_sunbird/env_variables/']").addClass("sidebar-link-selected");
+    $("a[href$='developer-docs/configuring_sunbird/sso_otpsms/']").addClass("sidebar-link-selected");
 </script>
 
       </div>
     </nav>
     <div class="content">
       <div class="inner__content header" id="heading">
-        <h1>Configuration Variables </h1>
+        <h1>Configuration for OTP based SMS </h1>
       </div>
 
       <div id="main-content" class="inner__content">
@@ -524,7 +530,7 @@
 				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
 			  </a> &nbsp;&nbsp;
 			  
-			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/env_variables.md">
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/sso_otpsms.md">
 				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
 			  </a> 
 			  | 
@@ -534,316 +540,18 @@
 			  </a>
 			  </span>
 			</p>
-          <div id="toc-container">
-  <table class="toc" id="toc">
-    <tbody>
-      <tr>
-        <td>
-          <div id="toctitle">
-            <h2>Contents</h2>
-            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
-          </div>
-          <ul>
-            <li class="toc_level-1 toc_section-1">
-              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
-              <ul>
-                <li class="toc_level-2 toc_section-2">
-                  <a href="#environment-variables-for-lms-service"><span class="tocnumber">1.1 .</span> <span class="toctext">Environment Variables for LMS service</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-3">
-                  <a href="#environment-variables-for-content-service"><span class="tocnumber">1.2 .</span> <span class="toctext">Environment Variables for Content service</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#environment-variables-for-your-service"><span class="tocnumber">1.3 .</span> <span class="toctext">Environment Variables for {your service}</span></a>
-                </li>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#environment-variables-for-your-service"><span class="tocnumber">1.4 .</span> <span class="toctext">Environment Variables for {your service}</span></a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div><h2 id="overview">Overview</h2>
-
-<p>On installation,  users can explore and work with Sunbird.  The installation process takes care of the default minimum configuration required to run Sunbird. However, if you want to customize your instance of Sunbird, it is simple.
-Modify default behaviour or the look and feel by overriding the default values of environment variables as mentioned in the following table.
-For example, you can change the default logo to the logo of your choice, or  change the default email address to your preferred email address.</p>
-
-<p><strong>Note:</strong> If you have not installed Sunbird, refer to <a href="\pages\developer-docs\installation\server_installation">Server Installation</a></p>
-
-<h3 id="environment-variables-for-lms-service">Environment Variables for LMS service</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>S No.</th>
-      <th>Variable Name</th>
-      <th>Description</th>
-      <th>Purpose</th>
-      <th>Default Value</th>
-      <th>Path</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>sunbird_mail_server_from_email</td>
-      <td>The default communication email address</td>
-      <td>If set, user will get an email from the set email address</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>sunbird_env_logo_url</td>
-      <td>public access image url</td>
-      <td>used to sent in email as logo</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>sunird_web_url</td>
-      <td>The URL of the home page</td>
-      <td>This URL is shared in an email such that the users are able to login</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>sunbird_app_url</td>
-      <td>Th URL of Sunbird app in Play store</td>
-      <td>This Sunbird app URL is shared in an email such that users are able to download the app</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>sunbird_msg_sender</td>
-      <td>The name of the SMS sender</td>
-      <td>This is the name that will appear on users screen in case an SMS is sent from the system</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>sunbird_installation_email</td>
-      <td>This is the email address used for badger system</td>
-      <td>This email is used for notifying the users while they install badger system</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>sunbird_installation</td>
-      <td>The name of your instance</td>
-      <td>Used to send telemetry and also for sending email. Spaces are not allowed in the name e.g: “Sunbird Dev”, instead use “SunbirdDev”</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>sunbird_encryption_key</td>
-      <td>This is the key to encrypt and decrypt the attribute</td>
-      <td>The key is used to to encrypt and decrypt the attribute, once set then it should not be changed</td>
-      <td>no default</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>sunbird_default_channel</td>
-      <td>Create a rootOrg in system and add the channel here</td>
-      <td>This is used to associate user with the rootOrg</td>
-      <td>each installer need to put it.</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>sunbird_sso_publickey</td>
-      <td>To validate JWT token generated by Keycloak</td>
-      <td>It is used to authenticate a user</td>
-      <td>Need to get the key from keycloak (realm-&gt;keys-&gt;public keys)</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>telemetry_pdata_id</td>
-      <td>…service</td>
-      <td>…service  ex: dev.sunbird.learning.service</td>
-      <td> </td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>telemetry_pdata_pid</td>
-      <td>Producer ID of the telemetry</td>
-      <td>It is the producer ID of the telemetry, e.g:  actor-service</td>
-      <td> </td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>telemetry_pdata_ver</td>
-      <td>Producer version or buid version which generates the telemetry</td>
-      <td>Represents the producer version or buid version which  generates the telemetry, e.g.: 1.5</td>
-      <td> </td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>telemetry_local_storage_type</td>
-      <td>Location to store the telemetry data</td>
-      <td>The location for storing the telemetry data is only kafka</td>
-      <td>kafka</td>
-      <td>Sunbird-telemetry-service</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>telemetry_kafka_broker_list</td>
-      <td>IP address and ports of kafka</td>
-      <td>Kafka connection details,  - <ip>:<port>,<ip>:<port></port></ip></port></ip></td>
-      <td>The installer need to provide appropriate setails for IP and port</td>
-      <td>Sunbird-telemetry-service</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>telemetry_kafka_topic</td>
-      <td>Name of the kafka topic</td>
-      <td>Recommended topic name format is <env>.telemetry.ingestion</env></td>
-      <td> </td>
-      <td>Sunbird-telemetry-service</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="environment-variables-for-content-service">Environment Variables for Content service</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>S No.</th>
-      <th>Variable Name</th>
-      <th>Description</th>
-      <th>Purpose</th>
-      <th>Default Value</th>
-      <th>Path</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>ekstep_telemetry_storage_toggle</td>
-      <td>Toggle to make telemetry storage on and off for ekstep</td>
-      <td>It turns the telemetry off or on</td>
-      <td>on</td>
-      <td>Sunbird-LMS</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>sunbird_external_content_whitelisted_domains</td>
-      <td>To store the whitelisted domains comma seperated</td>
-      <td>It stores the white listed domains</td>
-      <td>youtube.com</td>
-      <td>Sunbird-portal</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="environment-variables-for-your-service">Environment Variables for {your service}</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>S No.</th>
-      <th>Variable Name</th>
-      <th>Description</th>
-      <th>Purpose</th>
-      <th>Default Value</th>
-      <th>Path</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>A1</td>
-      <td>B1</td>
-      <td>C1</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>A2</td>
-      <td>B2</td>
-      <td>C2</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>A3</td>
-      <td>B3</td>
-      <td>C3</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="environment-variables-for-your-service">Environment Variables for {your service}</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>S No.</th>
-      <th>Variable Name</th>
-      <th>Description</th>
-      <th>Purpose</th>
-      <th>Default Value</th>
-      <th>Path</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>A1</td>
-      <td>B1</td>
-      <td>C1</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>A2</td>
-      <td>B2</td>
-      <td>C2</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>A3</td>
-      <td>B3</td>
-      <td>C3</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+          
 
           
           <hr />
           
           <p class="edit-para text-right">
-			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/env_variables.md" title="Fix this page">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/configuring_sunbird/sso_otpsms.md" title="Fix this page">
 				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
 			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
 				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
 		  </p>
-		  <a href="developer-docs/configuring_sunbird/env_variables/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+		  <a href="developer-docs/configuring_sunbird/sso_otpsms/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
           
       </div>
     </div>
@@ -898,7 +606,7 @@ For example, you can change the default logo to the logo of your choice, or  cha
 	});
 	$('#toc a').each(function(){
 		var url = this.href.replace(baseURL.href, "");
-		this.href = 'developer-docs/configuring_sunbird/env_variables/' + url;
+		this.href = 'developer-docs/configuring_sunbird/sso_otpsms/' + url;
     })
 	$(".zoomcover").click(function(){
 		if (!$(this).hasClass("fullscreen")){
