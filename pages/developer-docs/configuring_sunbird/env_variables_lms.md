@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Environment Variables for Sunbird LMS
-page_title: Environment Variables for Sunbird LMS
+title: LMS Environment Variables 
+page_title: LMS Environment Variables 
 description: The list of environment variables that are required to operationalize Sunbird 
 published: true
 allowSearch: true
