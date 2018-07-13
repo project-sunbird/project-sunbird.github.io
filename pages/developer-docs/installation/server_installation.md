@@ -13,17 +13,19 @@ Sunbird software is containerized. The installation script uses the Docker swarm
 
 All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Proxies - are run as docker containers inside the swarm. All stateful services consisting of Cassandra, PostgreSql, Elasticsearch and the OAuth service(Keycloak) are run on Virtual Machines (VMs) directly. The installation is automated using shell scripts and Ansible.
 
+The steps below helps with installing Sunbird v1.8
+
 ## Prerequisites
 
 * Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS. You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally. The servers should connect to each other over TCP on the following [ports](developer-docs/installation/server_installation/#mapping-ports) The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs.
 
-* Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird such that it can be accessed over an IP address. If you have a domain name, and you want to get an SSL certificate, refer [Let's Encrypt](https://letsencrypt.org/) to generate a free certificate which is valid for 90 days.
+* Recommended that you have a domain name and a valid SSL certificate for the domain. If you do not have a domain name, you can configure Sunbird such that it can be accessed over an IP address. If you have a domain name, and you want to get an SSL certificate, refer <a href="https://letsencrypt.org/" target="_blank">Let's Encrypt</a> to generate a free certificate which is valid for 90 days.
 
-* Sunbird requires Ekstep API keys to access the Ekstep content repository. Follow the steps [here](http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials) to get the keys. If you are creating a test environment, get the QA API keys.
+* Sunbird requires EkStep API keys to access the EkStep content repository. Follow the steps <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">here</a> to get the keys. If you are creating a test environment, get the QA API keys.
 
-* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use [key based ssh](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
+* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server" target="_blank">key based ssh</a>. Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
 
-* Create an [Azure storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account) to complete the Sunbird installation. This account is used to store QR code images and achievement badges.
+* Create an <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account" target="_blank">Azure storage account</a> to complete the Sunbird installation. This account is used to store QR code images and achievement badges.
 
 * The following table lists the services that are set up and run as part of installation. The table also lists the optimal server count for a typical staging or production environment with thousands of users.
 
@@ -38,20 +40,40 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
     |Keycloak<sup>1</sup> | Staging&Prod - 1|CPU: 1core & RAM: 4GB|Any |
 
 * When you install Sunbird on 2 servers, all the services with the common superscript (e.g. servername<sup>2</sup>) in the Server Name are run on the same server. The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup>. 
- 
+
+#### Mapping Ports 
+
+The following is a list of ports that must be open:
+
+|From server |To server|port| protocol|
+|:-----      |:-------|:--------|:------|
+|Administration server|All servers|22|TCP|
+|ELB/Internet|0.0.0.0|80,433|TCP|
+|swarm managers subnet|swarm nodes subnet|All|TCP & UDP|
+|swarm nodes|Cassandra servers|9042|TCP|
+|swarm nodes|Elasticsearch servers| 9200 |TCP|
+|swarm nodes|Postgres servers| 5432|TCP|
+|swarm nodes|Keycloak| 8080|TCP|
+
 **Note:** If you setup more than one swarm agent node, you will need to configure a load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm route the request to the right service.
+
 
 ## Installation Procedure
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1.Install git using `sudo apt-get update -y && sudo apt-get install git -y `
+1. Install git using `sudo apt-get update -y && sudo apt-get install git -y `
 
-2.Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
+2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
 
-3.`cd sunbird-devops/deploy`
+3. `cd sunbird-devops`
 
-4.Update the configuration parameters in the `config` file. 
+4. Checkout the latest release branch `git checkout tags/release-1.8 -b release-1.8`
+
+5. `cd deploy`
+
+6. Update the configuration parameters in the `config` file. 
+
 
 The configuration parameters are explained in the following table: 
 
@@ -104,9 +126,9 @@ The configuration parameters are explained in the following table:
 |`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
 
 
-5.Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
+7. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
 
-|stage no |stage name|Description| 
+|Stage no |Stage name|Description| 
 |:-----      |:-------|:--------|
 |1 |config |Generates configuration file and hosts file |
 |2|dbs|Installs all databases and creates schema  |
@@ -116,57 +138,60 @@ The configuration parameters are explained in the following table:
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
 
-**Note**: The badger service does not work without an Azure storage account name and key. 
+**Note**: The badger service does not work without an Azure storage account name and key.
 
-6.Get the sunbird_sso_publickey from keycloak under **http://dns_name/auth -> realm settings -> keys -> public keys** (click on public keys) and paste that value in **sunbird_sso_publickey** under config file and execute the command `./sunbird_install.sh -s core` to redeploy the core services.
+8. Get the public key from keycloak **http://<dns_name / IP>/auth -> realm settings -> keys -> public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.
 
 **Note**: 
-- If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stagename>`
+- If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>`
 
-- To know more about the script [refer] to the page(developer-docs/installation/server_installation/#sunbird-install-script)`sunbird_install.sh`
+- To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script).
 
-7.To create access token and root organization, execute the following commands:
 
-**Create user access token**
+## Post Installation Configuration
+
+1. **Create user access token** - To create a user access token you should execute the following cURL:
 
 <pre>
 curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'client_id=admin-cli&username=user-manager&password={sso_password in config file}&grant_type=password'
+  -d 'client_id=admin-cli&username=user-manager&password={password}&grant_type=password'
 </pre>
+The values in the { } braces should be replaced with your environment values
+- {dns_name} - Domain or the IP address of your application server.
+- {password} - Password of the `user-manager` user. The one you have provided for `sso_password` parameter in the `config` file above.
 
-**Note:**
-
-- The values in the { } braces should be replaced with your environment values, e.g: {dns_name} should be replaced with mydomain.com
-
-**Create root organization**
+2. **Create root organization** - To create a root organization you should the following cURL:
 
 <pre>
-curl -X POST 
-  {dns_name}/api/org/v1/create 
-  -H 'Cache-Control: no-cache' 
-  -H 'Content-Type: application/json' 
-  -H 'accept: application/json' 
-  -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' 
-  -H 'x-authenticated-user-token: {access token created last step}' 
+curl -X POST  \ 
+  {dns_name}/api/org/v1/create \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' \
+  -H 'x-authenticated-user-token: {access token created last step}' \
   -d '{
   "request":{
-     "orgName": "{YourOrganizationName}",
-     "description": "Organization for demonstrating Sunbird Skills Training",
-      "isRootOrg":true,
-       "channel":"{YourChannelName}"
-  }
-}
+     "orgName": "{Your Organization Name}",
+     "description": "{Your organization description}",
+     "isRootOrg":true,
+     "channel":"{Your Channel Name}"
+    }
+   }'
 </pre>
+**Note** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
 
-8.Update **sunbird_default_channel** in the **config** file with **{YourChannelName}** (that was created in previous step) and re-run the command './sunbird_install.sh -s core`
+3. Update `sunbird_default_channel` in the `config` file with **{Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
 
-9.Run `./sunbird_install.sh -s posttest`, this script validates checks all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory
+4. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory will be created.
 
-10.Open **https://[domain-name]** and sign up. 
+5. Open **https://[domain-name]** and sign up. 
 
-11.You can choose your own user name and password. The format for the username is: username@channelName
+6. You may choose your own user name and password. The format for the username while login is: username@channelName
+
+
 
 ## Sunbird Install Script 
 
@@ -197,17 +222,3 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 * `deploy-badger.sh` - Deploys the badger service as docker service.
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
-
-## Mapping Ports 
-
-The following is a list of ports that must be open:
-
-|From server |To server|port| protocol|
-|:-----      |:-------|:--------|:------|
-|Administration server|All servers|22|TCP|
-|ELB/Internet|0.0.0.0|80,433|TCP|
-|swarm managers subnet|swarm nodes subnet|All|TCP & UDP|
-|swarm nodes|Cassandra servers|9042|TCP|
-|swarm nodes|Elasticsearch servers| 9200 |TCP|
-|swarm nodes|Postgres servers| 5432|TCP|
-|swarm nodes|Keycloak| 8080|TCP|
