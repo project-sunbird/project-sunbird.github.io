@@ -16,7 +16,7 @@ The deployment of Sunbird in a live environment requires several distributed com
 
 If you are looking to experiment with Sunbird and test its feature set, we recommend you use the [Sunbird sandbox](https://staging.open-sunbird.org/){:target="_blank"} which is hosted in the cloud. 
 
-**Note: Data created in the sandbox is erased after 24 hours**
+**Note: Data created in the sandbox is erased every 24 hours**
 
 ### Extend Sunbird
 
