@@ -19,13 +19,13 @@ This section elaborates the various user types and their assocated responsibilit
 
 |  User Role    | Content Creation | Review, Reject , & Publish | Upload Content | Other Role Specific Responsibilites |
 |-------------------|---------------------|---------------------|-------------------------|-----------------|
-| A **Course Mentor** guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course and ensure completion of a course within a stipulated time |       No       |       No       |  No | ✔️   <a href="features-documentation/userrole/#user-roles-and-respective-responsibilities"> read more</a>       
+| A **Course Mentor** guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course and ensure completion of a course within a stipulated time |       No       |       No       |  No | ✔️   <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>       
 | A **Content Reviewer** assesses  created content within prescribed guidelines | No | ✔️  | ✔️  | No 
-| A **Teacher Badge Issuer** is responsible for assigning badges to teachers based on the discretion of the concerned organization | No | No | No | ✔️  <a href="features-documentation/userrole/#user-roles-and-respective-responsibilities"> read more</a>
+| A **Teacher Badge Issuer** is responsible for assigning badges to teachers based on the discretion of the concerned organization | No | No | No | ✔️  <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>
 | A **Book Creator** curates and compiles books. Registered users become book creators when book creation rights are assigned to them | ✔️  (Only Books) | No | No | No 
 |  A **Book Reviewer** assesses books within defined and prescribed guidelines| No | ✔️  (Only Books) | No | No
-|A **Public** user is any user with registered credentials | No | No | No | ✔️  <a href="features-documentation/userrole/#user-roles-and-respective-responsibilities"> read more</a>
-| An **Announcement Sender** creates and sends announcements. The Announcement feature allows to send system wide messages to a target audience| No | No | No | ✔️  <a href="features-documentation/userrole/#user-roles-and-respective-responsibilities"> read more</a>
+|A **Public** user is any user with registered credentials | No | No | No | ✔️  <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>
+| An **Announcement Sender** creates and sends announcements. The Announcement feature allows to send system wide messages to a target audience| No | No | No | ✔️  <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>
 | A **Content Creator** is a registered user with permission to create content | ✔️ (Collection, Course, Study Material, Lesson Plan) | No | No | No
 | A **Flag Reviewer** assesses flagged content within prescribed guidelines | No | ✔️ (Only flagged content) | No | No
 
