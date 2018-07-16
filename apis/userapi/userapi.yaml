@@ -1010,24 +1010,17 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /org/v1/role/assign:
+ /v1/role/assign:
     post:
       description:  >-
-       This API is used to assign a roles to the user
-          - The **_/org/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
+       This API is used to assign a roles to the user as well as removed already assign role. It will replace incoming role with user already saved role. if you want to remove all the roles from user for a particular org then pass role as empty array.
+          - The **_/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
-        
-        **Note:** Depending on the request payload, if you pass the userID and roles 
-          
-          - then the corresponding user role will be assigned to the user inside the user profile 
-        
-        In case the userID, organisationID and roles parameter values are passed 
-          
-          - then roles will be assigned by the corresponding organization for that user
+       
       summary: Assign Role to User
       tags:
       - User APIs
-      operationId: OrgV1RoleAssignPost
+      operationId: userV1RoleAssign
       produces:
       - application/json
       parameters:
@@ -1493,7 +1486,8 @@ definitions:
             type: string
           dob:
             type: string
-            format: yyyy-MM-dd  
+            format: yyyy-MM-dd
+            example: '2001-02-27'
           grade:
             type: string
           location:
@@ -1601,7 +1595,8 @@ definitions:
             description: 'Represents the ID of the root organozation'
           dob:
             type: string
-            format: yyyy-MM-dd  
+            format: yyyy-MM-dd 
+            example: '2001-02-27'
           grade:
             type: string
           location:
@@ -1827,6 +1822,8 @@ definitions:
       dob:
         description: 'Represents the Data of Birth of the user'
         type: string
+        format: yyyy-MM-dd
+        example: '2001-02-27'
       language:
         description: 'Represents the language of the user'
         type: array
@@ -2009,7 +2006,7 @@ definitions:
     title: assignRoleExp
     example:
       userId: userid
-      organisationId: 
+      organisationId: valid organisation id
       roles:
       - CONTENT_CREATION
       - PUBLIC
@@ -2026,7 +2023,7 @@ definitions:
         example: 012365
         type: string
       roles:
-        description: 'The role assigned to a user'
+        description: 'The role assigned to a user.Role will be directly replace with saved roles if any.Make sure every time request need to have all the roles that user should have.If you want to remove all the roles to a user then pass empty array'
         example:
         - CONTENT_CREATION
         - PUBLIC
