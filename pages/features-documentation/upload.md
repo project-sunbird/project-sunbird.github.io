@@ -46,7 +46,7 @@ The maximum file size supported for upload is 50 MB
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-    <td>1. Enter <strong>URL</strong> of the file <br>2. Click <strong>Browse</strong> to select the desired file for upload. You can alternatively <strong>Drag & Drop</strong> files to upload <br>3. Click <strong>Upload</strong> to upload the selected content <br><b>Note</b>: Only those URLs of websites whitelisted by the organization administrator can be uploaded. For details on whitelisted websites contact your organization administrator </td>
+    <td>1. Enter <strong>URL</strong> of the file <br>2. Click <strong>Browse</strong> to select the desired file for upload. You can alternatively <strong>Drag & Drop</strong> files to upload <br>3. Click <strong>Upload</strong> to upload the selected content <br><b>Note</b>: Only those URLs of websites whitelisted by the organization administrator can be uploaded. For details on websites that can be whitelisted on Sunbird refer <a href="developer-docs/configuring_sunbird/env_variables_content_service.md" target="_blank">Environment Variables</a> </td>
       <td><img src="pages/features-documentation/images/upload_upldcontent.png"></td>
   </tr>
   </table>
