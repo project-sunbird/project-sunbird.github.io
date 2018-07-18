@@ -27,8 +27,10 @@ A user is created in an organization to perform different task or the roles. The
 ### Taskflow
 A user can be created using Create User API and associated with an organization using channel ID. 
 
+| Step  | Action         | Description                                                   |
+|-------|----------------|---------------------------------------------------------------|
 |Step 1 | Authentication | Enter the Bearer {{api-key}} to pass the Authorization header |
-|Step 2 | Create User    | Create user from postman or curl command using sunbird create user API documentation  | 
+|Step 2 | Create user    | Create user from postman or curl command using sunbird create user API documentation  | 
 |Step 3 | Save           | Save the created user ID |
 
 The user is created under the organisation. 
