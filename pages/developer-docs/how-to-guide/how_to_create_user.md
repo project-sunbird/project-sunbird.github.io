@@ -11,7 +11,7 @@ allowSearch: true
 ## Scenario
 Any organization, recognized education or learning body or an individual user with privileges  can add other users on Sunbird. To create users on Sunbird, the organization administrator must first upload all the required details of the users. This document elaborates the process of creating and uploading users on the organization Sunbird instance using the appropriate APIs.
 
-### Prerequisite
+### Prerequisites
  - Sunbird instance is installed and configured
  - Postman app is installed, refer How to install and Call an API using Postman
  - Root Organization with channel ID, refer 
@@ -22,7 +22,7 @@ Any organization, recognized education or learning body or an individual user wi
  
 ## Overview
 
-A user is created in an organization to perform different task or the roles. The created user should be authenticated and assigned to a channel with a specific role. For example, a system administrator  is the root user of the organisation who manages end-to-end system. 
+A user is created in an organization to perform different task or roles. The created user should be authenticated and assigned to a organization and a channel. For example, a system administrator is the root user of the organisation who manages end-to-end system. 
 
 ### Taskflow
 A user can be created using Create User API and associated with an organization using channel ID. 
