@@ -13,7 +13,7 @@ The following is a list of environment variables and their default values, as re
 | S No. | Variable Name | Description| Purpose | Default Value |Path   |	
 |---------|----------|---------|-------|-------|-------|
 | 1  | ekstep_telemetry_storage_toggle | Represents the toggle to turn the EkStep telemetry storage on or off |  Used to turn the telemetry off or on  | on |Sunbird-LMS |	
-| 2  | sunbird_external_content_whitelisted_domains | Represents the file that stores the whitelisted domains in a comma-separated format | Used to store the white listed domains| youtube.com  |Sunbird-portal |	  
+| 2  | sunbird_external_content_whitelisted_domains | Represents the file that stores the whitelisted domains in a comma-separated format | Used to store the white listed domains| youtube.com,youtu.be,dailymotion.com |Sunbird-portal |	  
 |  3 | sunbird_default_channel | Represents the default channel used to generate telemetry, if nothing is sent from client headers<br/>This is the same as specified in the Learner service<br/>It should be a valid root org | Used to ensure there is a channel for each telemetry event generated |  |  |
 | 4 | sunbird_content_plugin_base_url | Represents the proxy URL to the content plugins repository<br/> This is needed only in the dev setup. In the server environment, plugins are handled by the nginx proxy | Used to update the plugins base URL | https://qa.ekstep.in |
 |  5 | sunbird_content_provider_api_base_url | Represents the base URL of the content provider | Used to update the content provider URL  | https://qa.ekstep.in/api |
