@@ -1,14 +1,12 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Environment Variables for Content service 
-page_title: Environment Variables for Content Service
+title: Content Service Environment Variables
+page_title: Content Service Environment Variables
 description: List of Environment variables required to operationalize the Sunbird content service 
 published: true
 allowSearch: true
 ---
-
-## Environment Variables for Content Service
 
 The following is a list of environment variables and their default values, as required to run the Sunbird content service. The list also gives you an indication of the purpose of the variable. Modifying the variable value, allows you to change default behavior based on your need or purpose.  
  	 
