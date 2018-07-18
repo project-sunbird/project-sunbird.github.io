@@ -13,7 +13,7 @@ Sunbird software is containerized. The installation script uses the Docker swarm
 
 All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Proxies - are run as docker containers inside the swarm. All stateful services consisting of Cassandra, PostgreSql, Elasticsearch and the OAuth service(Keycloak) are run on Virtual Machines (VMs) directly. The installation is automated using shell scripts and Ansible.
 
-The steps below helps with installing Sunbird v1.8
+This page provides you with information on the prerequisites and the sequence for installation.
 
 ## Prerequisites
 
