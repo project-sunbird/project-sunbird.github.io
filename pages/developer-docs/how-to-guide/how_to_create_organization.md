@@ -11,7 +11,7 @@ allowSearch: true
 ## Scenario
 Organizations, on Sunbird can be an institute or a body of individuals. To utilize Sunbird for organizational needs, an organization account must be created on the portal.
 
-### Prerequisite
+### Prerequisites
   - Sunbird instance is installed and configured
   - Postman app is installed, refer How to install and call an API using Postman
   - First Organization with channel ID
