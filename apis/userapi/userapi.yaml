@@ -7,7 +7,7 @@ info:
      
     **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
 host: staging.open-sunbird.org
-basePath: /api/user/
+basePath: /api/
 securityDefinitions:
   bearer:
       type: apiKey  # arbitrary name for the security scheme
@@ -26,7 +26,7 @@ consumes:
 produces:
   - application/json
 paths:
- /v1/create:
+ /user/v1/create:
     post:
       description: >-
        This API is used to create a user 
@@ -97,7 +97,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/search:
+ /user/v1/search:
     post:
       description: >-
        This API is used for searching a particular user 
@@ -207,7 +207,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/profile/read:
+ /user/v1/profile/read:
     post:
       description: >-
         This API is used for getting information about the currently authenticated user
@@ -311,7 +311,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/read/{User_ID}:
+ /user/v1/read/{User_ID}:
     get:
       description: >-
         This API is used for searching a specific user, the user search is based on the unique ID of the user
@@ -401,7 +401,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false      
- /v1/update:
+ /user/v1/update:
     patch:
       description:  >-
         This API is use for updating the user realted details 
@@ -424,7 +424,9 @@ paths:
          
              - JSON 
         schema:
-          $ref: '#/definitions/UpdateUserRequest'
+         allOf:
+           - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+           - $ref: '#/definitions/UpdateUserRequest'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -477,7 +479,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /v1/update/logintime:
+ /user/v1/update/logintime:
     patch:
       description: >-
          This API is used to update user login time 
@@ -587,7 +589,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/role/read:
+ /user/v1/role/read:
     get:
       description:  >-
        This API is used to list the assigned roles pertaining to a user
@@ -679,7 +681,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/profile/visibility:
+ /user/v1/profile/visibility:
     post:
       description:  >-
        This API is used to configure the visibility of user profile
@@ -703,7 +705,9 @@ paths:
              - JSON 
      
         schema:
-          $ref: '#/definitions/VisibilityRequest'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/VisibilityRequest'
       - name: Content-Type
         in: header
         required: true
@@ -785,7 +789,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/block:
+ /user/v1/block:
     post:
       description:  >-
        This API is used to ban/block a user, banning or blocking a user is done calling this API.  
@@ -809,7 +813,9 @@ paths:
              - JSON 
      
         schema:
-          $ref: '#/definitions/BlockUserReq'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest' 
+              - $ref: '#/definitions/BlockUserReq'
       - name: Content-Type
         in: header
         required: true
@@ -890,7 +896,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/unblock:
+ /user/v1/unblock:
     post:
       description: >-
        This API is used to unban/unblock a user
@@ -913,7 +919,9 @@ paths:
          
              - JSON 
         schema:
-          $ref: '#/definitions/BlockUserReq'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/BlockUserReq'
       - name: Content-Type
         in: header
         required: true
@@ -994,7 +1002,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /v1/role/assign:
+ /user/v1/role/assign:
     post:
       description:  >-
        This API is used to assign or remove roles for a user. The roles specified in the request are used to replace the existing roles. To remove all the roles assigned to a user for a particular organisation then pass an empty array for roles in the request.
@@ -1016,7 +1024,9 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload.
              - JSON 
         schema:
-          $ref: '#/definitions/AssignRequest'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/AssignRequest'
       - name: Content-Type
         in: header
         required: true
@@ -1063,7 +1073,7 @@ paths:
             'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'   
- /v1/encrypt:
+ /user/v1/encrypt:
     get:
       description: >-
        This API is used for securing the user information with an encryption scheme  
@@ -1129,7 +1139,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /v1/skill/add:
+ /user/v1/skill/add:
     post:
       description: >-
        This API is used to add a skill set to the user 
@@ -1152,7 +1162,9 @@ paths:
          
              - JSON 
         schema:
-          $ref: '#/definitions/AddSkillToUserRequest'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/AddSkillToUserRequest'
       - name: Content-Type
         in: header
         required: true
@@ -1234,13 +1246,124 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+        
+ /user/v1/skill/read:
+    post:
+      description: >-
+       This API is used to read user added skill.
+          - The **_/user/v1/skill/read_** endpoint executes the "read user skill" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for required parameters
+      summary: get user skill
+      tags:
+      - User APIs
+      operationId: UserV1SkillRead
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          - The body payload comprises of the metadata about addinfg skills to a user 
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+        schema:
+          allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/ReadUserSkill'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the add user skills API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This ID Uniquely identifies a request if the same API is executed multiple times'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+      responses:
+        '200':
+          description: 'OK ! Successful operation."add user skills" operation was successfully executed.'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/GetUserSkill'
+        '400':
+          description: 'BAD REQUEST. The "add user skills" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+      security:
+      - bearer: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /user/v1/skill/add
+          headers:
+            Content-Type: application/json
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: >2-
+              {
+            "request": {
+                  "endorsedUserId":"userId",
+                  "skillName":["ElasticSearch"]
+            }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: add skill to user
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false      
+ 
  /data/v1/skills:
     get:
       description: >-
        This API is associated with listing all the skills that a user possesses
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: List all Skills of User
+      summary: List all Skills
       tags:
       - User APIs
       operationId: DataV1SkillsGet
@@ -1729,9 +1852,7 @@ definitions:
     type: object
     properties:
       request:
-       allOf:
-        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-        - $ref: '#/definitions/UserUpdate'
+        $ref: '#/definitions/UserUpdate'
     required:
     - request
   UserUpdate:
@@ -1954,7 +2075,6 @@ definitions:
            type: string
     required:
     - request
-    
   ExternalId:
     title: ExternalId
     type: object
@@ -1984,3 +2104,57 @@ definitions:
       operation:
         type: string
         description : 'possible values are {ADD,EDIT,REMOVE}'
+  ReadUserSkill:
+    title: ReadUserSkill
+    type: object
+    properties:
+      request:
+       type: object
+       properties:
+         endorsedUserId:
+          type: string
+    required:
+    - endorsedUserId
+  
+  GetUserSkill:
+    title: GetUserSkill
+    type: object
+    properties:
+      result:
+       type: object
+       properties:
+         skills:
+          type: array
+          items:
+           type: object
+           properties:
+            skillName:
+             type: string
+             description: 'name of the skill'
+            addedAt:
+             type: string
+             description: 'Date of skill endorsement in yyyy-MM-dd'
+            endorsersList:
+             type: array
+             items:
+              type: object
+              properties:
+               endorseDate:
+                type: string
+                description : 'Date of skill endorsement in yyyy-MM-dd'
+               userId:
+                type: string
+                description: 'who did endorsement'
+            addedBy:
+             type: string
+            endorsementcount:
+             type: integer
+            id:
+             type: string
+            skillNameToLowercase:
+             type: string
+             description : 'skill name in lower case'
+            userId :
+             type: string
+    required:
+    - endorsedUserId  
