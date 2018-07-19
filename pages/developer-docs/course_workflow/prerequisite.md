@@ -9,7 +9,7 @@ published: true
 allowSearch: true
 ---
 
-<a href="pages/developer-docs/course_workflow/course_creation_overview"> Overview </a>| <a href="pages/developer-docs/course_workflow/start_creating"> Create Course</a>| <a href="pages/developer-docs/course_workflow/adding_metadata"> Add Details</a>| <a href="pages/developer-docs/course_workflow/exploring_toc"> Explore TOC</a>| <a href="pages/developer-docs/course_workflow/adding_resource"> Add Resources</a>| <a href="pages/developer-docs/course_workflow/save_edit"> Edit & Save Details</a>| <a href="pages/developer-docs/course_workflow/send_for_review"> Send Course for Review</a>| <a href="pages/developer-docs/course_workflow/limited_share"> Limited Share</a>| <a href="pages/developer-docs/course_workflow/view_publish_content"> View Published Content</a>
+<a href="developer-docs/course_workflow/course_creation_overview"> Overview </a>| <a href="developer-docs/course_workflow/start_creating"> Create Course</a>| <a href="developer-docs/course_workflow/adding_metadata"> Add Details</a>| <a href="developer-docs/course_workflow/exploring_toc"> Explore TOC</a>| <a href="developer-docs/course_workflow/adding_resource"> Add Resources</a>| <a href="developer-docs/course_workflow/save_edit"> Edit & Save Details</a>| <a href="developer-docs/course_workflow/send_for_review"> Send Course for Review</a>| <a href="developer-docs/course_workflow/limited_share"> Limited Share</a>| <a href="developer-docs/course_workflow/view_publish_content"> View Published Content</a>
 
 ## Prerequisites
 
