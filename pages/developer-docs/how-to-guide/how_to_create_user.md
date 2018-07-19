@@ -31,6 +31,21 @@ To add users to the Sunbird instance, ensure that the following prerequisites ar
 A user in an organization performs different task or roles. The created user should be authenticated and assigned to a organization and a channel. For example, a system administrator is the root user of the organisation who manages end-to-end system. 
 
 ### Taskflow
+
+A user is created after installing and configuring Sunbird. A Sunbird adopter organization must create system administrator user to create other users.
+
+**Create a New Form** 
+
+Let us assume that you want to create a new form, to do so follow these steps: 
+Ensure that the prerequisites are met
+Get access to Form APIs Resources
+Use an API client to perform the create form operation 
+Use API client 
+Use Create Form API endpoint to create an entire new form 
+
+Note: It is a must to provide values to the parameters in the request payload of the Create Form API 
+
+
 A user can be created using Create User API and associated with an organization using channel ID. 
 
 | Step  | Action         | Description                                                   |
