@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: Limited Share
 page_title: Limited Share
 description: Details on Limited Sharing

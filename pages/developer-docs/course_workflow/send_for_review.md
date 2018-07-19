@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: Send Course for Review
 page_title: Send Course for Review
 description: Details on the procedure to send course for review

@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: View Published Content
 page_title: View Published Content
 description: Detail procedure on viewing the published course content

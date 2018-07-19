@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: Exploring TOC 
 page_title: Exploring TOC
 description: An overview of the Exploring TOC on Sunbird

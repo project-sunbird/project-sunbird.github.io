@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: Prerequisites
 page_title: Prerequisites
 description: Prerequisites of creating courses on Sunbird

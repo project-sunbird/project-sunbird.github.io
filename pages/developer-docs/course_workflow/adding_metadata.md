@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: Adding Details
 page_title: Adding Details
 description: Details on the procedure of adding metadata while creating course

@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: Adding Resources
 page_title: Adding Resources
 description: Details on the procedure to add resources to Course

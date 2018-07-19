@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs\course_workflow
+directory: developer-docs/course_workflow
 title: Edit and Save Details
 page_title: Edit and Save Details
 description: Details on the procedure to edit and save course details
