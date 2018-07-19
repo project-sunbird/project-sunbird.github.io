@@ -9,11 +9,12 @@ published: true
 allowSearch: true
 ---
 ## Scenario
-Consider an organization Nurture Institutions, recognized education or learning body, that exists in multiple cities across the country wants to use Sunbird and Ekstep content service for their organizational needs. They must register their organization with Ekstep and get a unique channel ID. The registered organisations must have replica of over Sunbird.Further, they need to create system administrtor and other individual user with different privileges to perform various tasks. This document elaborates the process of creating and uploading users on the organization Sunbird instance using the appropriate APIs.
+
+Consider an organization Nurture Institutions, recognized education and learning body, that exists in multiple cities across the country wants to use Sunbird and Ekstep content service for their organizational needs. They must register their organization with Ekstep and get a unique channel ID. The registered organisations must have their replica over Sunbird. Further, they need to create system administrtor and other individual user with different privileges to perform tasks. This document elaborates the process of creating and uploading users in the organization for the Sunbird instance using the appropriate APIs.
 
 ### Prerequisites
 
-To add users to the Sunbird instance,ensure that the following prerequisites are met:
+To add users to the Sunbird instance, ensure that the following prerequisites are met:
 
 
 1. Register your channel (organization) with Ekstep. On registration, a unique Channel ID is assigned to your organization. 
@@ -23,7 +24,7 @@ To add users to the Sunbird instance,ensure that the following prerequisites are
 4. Have the API Key for access and basic authentication
 5. Use an API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)
 6. Access to [Create User API](http://www.sunbird.org/apis/userapi/#tag/User-APIs)
-7. Have are a valid [Admin user](http://www.sunbird.org/) 
+7. Have a valid [Admin user](http://www.sunbird.org/) 
 
 ## Overview
 
