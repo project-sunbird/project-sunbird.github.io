@@ -1013,7 +1013,7 @@ paths:
  /v1/role/assign:
     post:
       description:  >-
-       This API is used to assign a roles to the user as well as removed already assign role. It will replace incoming role with user already saved role. if you want to remove all the roles from user for a particular org then pass role as empty array.
+       This API is used to assign roles to a user. It can also be used to replace and remove already assigned user roles. If a user should not be assigned any role in the organization, pass the role paramater as an empty array.
           - The **_/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
        
@@ -2006,7 +2006,7 @@ definitions:
     title: assignRoleExp
     example:
       userId: userid
-      organisationId: valid organisation id
+      organisationId: The valid organisation ID
       roles:
       - CONTENT_CREATION
       - PUBLIC
@@ -2023,7 +2023,7 @@ definitions:
         example: 012365
         type: string
       roles:
-        description: 'The role assigned to a user.Role will be directly replace with saved roles if any.Make sure every time request need to have all the roles that user should have.If you want to remove all the roles to a user then pass empty array'
+        description: 'The role assigned to a user. The role is directly replaced with saved roles if any. Ensure that the request has a list of all the user's roles. To remove all roles assigned to a user, pass an empty array'
         example:
         - CONTENT_CREATION
         - PUBLIC
