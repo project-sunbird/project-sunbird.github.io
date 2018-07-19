@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: features-documentation/course_workflow
+directory: developer-docs/course_workflow
 title: Exploring TOC 
 page_title: Exploring TOC
 description: An overview of the Exploring TOC on Sunbird
@@ -8,8 +8,7 @@ keywords: 'TOC'
 published: true
 allowSearch: true
 ---
-<a href="features-documentation/course_workflow/course_creation_overview"> Overview </a>|
-<a href="features-documentation/course_workflow/prerequisites"> Prerequisites </a>|<a href="features-documentation/course_workflow/start_creating"> Create Course</a>|<a href="features-documentation/course_workflow/adding_metadata"> Add Details</a>|<a href="features-documentation/course_workflow/adding_resource"> Add Resource</a>|<a href="features-documentation/course_workflow/save_edit"> Edit & Save Details</a>|<a href="features-documentation/course_workflow/send_for_review"> Send Course for Review</a>|<a href="features-documentation/course_workflow/limited_share"> Limited Share</a>|<a href="features-documentation/course_workflow/view_publish_content"> View Published Content</a>
+<a href="pages/developer-docs/course_workflow/course_creation_overview"> Overview</a>| <a href="pages/developer-docs/course_workflow/prerequisite"> Prerequisites </a>| <a href="pages/developer-docs/course_workflow/start_creating"> Create Course</a>| <a href="pages/developer-docs/course_workflow/adding_metadata"> Add Details</a>| <a href="pages/developer-docs/course_workflow/adding_resource"> Add Resources</a>| <a href="pages/developer-docs/course_workflow/save_edit"> Edit & Save Details</a>| <a href="pages/developer-docs/course_workflow/send_for_review"> Send Course for Review</a>| <a href="pages/developer-docs/course_workflow/limited_share"> Limited Share</a>| <a href="pages/developer-docs/course_workflow/view_publish_content"> View Published Content</a> 
 
 ## Introduction
 
@@ -81,7 +80,7 @@ On clicking <b> New Sibling</b> or <b>New Child</b>, the metadata is displayed o
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata <br>5. Click <b>Image</b> icon to add image to the metadata. For details on the metadata, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Image to Metadata</a>
+    <td>1. Enter <b>Content Title</b> <br>2. Enter <b>Description</b> <br>3. Enter <b>Keywords</b> <br>4. Click <b>Save</b> to save the metadata <br>5. Click <b>Image</b> icon to add image to the metadata. 
     </td>
     <td><img src="pages/features-documentation/images/addchild_metadata2.png"></td>
   </tr>
