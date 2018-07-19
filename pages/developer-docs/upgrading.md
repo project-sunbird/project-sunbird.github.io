@@ -10,12 +10,16 @@ allowSearch: true
 
 ## Overview
 
-Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and ensures that bugs are fixed on the platform as well the latest updated versions of any third party component used by it.  
+Upgrading to the latest version of Sunbird allows you to avail benefits of:
+
+- Sunbird's new and enhanced features
+- fixes done for bugs raised on the platform
+- the latest updated versions of any third party component used within Sunbird  
 
 * From release 1.5 onwards:
 	
-	- All the services are maintained with same image gold version 
-	- Cassandra migration is introduced to update cassandra database schema.
+- All the services are maintained with same image gold version 
+- Cassandra migration is introduced to update cassandra database schema
 
 ## Prerequisites
 
