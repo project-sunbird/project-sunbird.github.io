@@ -1493,7 +1493,8 @@ definitions:
             type: string
           dob:
             type: string
-            format: yyyy-MM-dd  
+            format: yyyy-MM-dd
+            example: '2001-02-27'
           grade:
             type: string
           location:
@@ -1601,7 +1602,8 @@ definitions:
             description: 'Represents the ID of the root organozation'
           dob:
             type: string
-            format: yyyy-MM-dd  
+            format: yyyy-MM-dd 
+            example: '2001-02-27'
           grade:
             type: string
           location:
@@ -1827,6 +1829,8 @@ definitions:
       dob:
         description: 'Represents the Data of Birth of the user'
         type: string
+        format: yyyy-MM-dd
+        example: '2001-02-27'
       language:
         description: 'Represents the language of the user'
         type: array
