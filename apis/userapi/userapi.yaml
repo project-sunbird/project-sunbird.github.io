@@ -1002,16 +1002,19 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /user/v1/role/assign:
+
+ /v1/role/assign:
     post:
       description:  >-
-       This API is used to assign or remove roles for a user. The roles specified in the request are used to replace the existing roles. To remove all the roles assigned to a user for a particular organisation then pass an empty array for roles in the request.
+       This API is used to assign roles to a user. It can also be used to replace and remove already assigned user roles. If a user should not be assigned any role in the organization, pass the role paramater as an empty array.
           - The **_/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
+       
       summary: Assign Role to User
       tags:
       - User APIs
-      operationId: UserRoleAssign
+      operationId: userV1RoleAssign
+
       produces:
       - application/json
       parameters:
@@ -2041,7 +2044,20 @@ definitions:
         $ref: '#/definitions/AssignRole'
     required:
     - request
+
+  assignRoleExp:
+    title: assignRoleExp
+    example:
+      userId: userid
+      organisationId: The valid organisation ID
+      roles:
+      - CONTENT_CREATION
+      - PUBLIC
+      - CONTENT_CREATOR
+      - ANNOUNCEMENT_SENDER
+
   AssignRole:
+
     type: object
     properties:
       userId:
@@ -2051,7 +2067,14 @@ definitions:
         description: 'The unique ID of the organisation'
         type: string
       roles:
-        description: 'The roles to be assigned to a user. Specified roles will replace previously saved roles (if any). To remove all the roles assigned to a user, pass an empty array for roles in the request.'
+
+        description: 'The role assigned to a user. The role is directly replaced with saved roles if any. Ensure that the request has a list of all the user's roles. To remove all roles assigned to a user, pass an empty array'
+        example:
+        - CONTENT_CREATION
+        - PUBLIC
+        - CONTENT_CREATOR
+        - ANNOUNCEMENT_SENDER
+
         type: array
         items:
           type: string
