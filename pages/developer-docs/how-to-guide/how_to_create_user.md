@@ -9,20 +9,25 @@ published: true
 allowSearch: true
 ---
 ## Scenario
-Any organization, recognized education or learning body or an individual user with privileges  can add other users on Sunbird. To create users on Sunbird, the organization administrator must first upload all the required details of the users. This document elaborates the process of creating and uploading users on the organization Sunbird instance using the appropriate APIs.
+Consider an organization Nurture Institutions, recognized education or learning body, that exists in multiple cities across the country wants to use Sunbird and Ekstep content service for their organizational needs. They must register their organization with Ekstep and get a unique channel ID. The registered organisations must have replica of over Sunbird.Further, they need to create system administrtor and other individual user with different privileges to perform various tasks. This document elaborates the process of creating and uploading users on the organization Sunbird instance using the appropriate APIs.
 
 ### Prerequisites
- - Sunbird instance is installed and configured
- - Postman app is installed, refer How to install and Call an API using Postman
- - Root Organization with channel ID, refer 
-   - Access API using
-   - Authorization header with Bearer {{api-key}}
- - User authentication key
- - Create User API - To create other users associated with an organisation 
- 
+
+To add users to the Sunbird instance,ensure that the following prerequisites are met:
+
+
+1. Register your channel (organization) with Ekstep. On registration, a unique Channel ID is assigned to your organization. 
+2. Install a server instance of Sunbird. For details, refer to [Server Installation](http://www.sunbird.org/developer-docs/installation/server_installation/)
+3. Create a channel for your organization. For details, refer to [Channel APIs](http://www.sunbird.org/apis/framework/#tag/Channel-APIs)
+4. Have a [first organization](http://www.sunbird.org/developer-docs/initialization) associated with channel ID
+4. Have the API Key for access and basic authentication
+5. Use an API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)
+6. Access to [Create User API](http://www.sunbird.org/apis/userapi/#tag/User-APIs)
+7. Have are a valid [Admin user](http://www.sunbird.org/) 
+
 ## Overview
 
-A user is created in an organization to perform different task or roles. The created user should be authenticated and assigned to a organization and a channel. For example, a system administrator is the root user of the organisation who manages end-to-end system. 
+A user in an organization performs different task or roles. The created user should be authenticated and assigned to a organization and a channel. For example, a system administrator is the root user of the organisation who manages end-to-end system. 
 
 ### Taskflow
 A user can be created using Create User API and associated with an organization using channel ID. 
