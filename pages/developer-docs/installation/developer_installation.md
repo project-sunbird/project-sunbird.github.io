@@ -45,7 +45,7 @@ The following sections provide you with the sequence to set up the Sunbird porta
 
 ### Set Up the Sunbird Application 
 
-1.To set up the Sunbird application, get the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"} from the sunbird-portal Git repository. 
+1.To set up the Sunbird application **release 1.8** , get the [code](https://github.com/project-sunbird/sunbird-portal.git){:target="_blank"} from the sunbird-portal Git repository. 
 
 2.Clone the repository to your local system using the command:
     
