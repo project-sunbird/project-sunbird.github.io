@@ -24,7 +24,7 @@ Content created or available offline can be uploaded on Sunbird. The following c
 
 The maximum file size supported for upload is 50 MB
 
-**Note:** <br>1. For any Youtube video that is uploaded, Sunbird validates the Standard Youtube Credits and Licenses. Users have the permission of using, copying or distributing Youtube contents with the regulations, in accordance with its license policy <br>2. Only those URLs of websites whitelisted by the organization administrator can be uploaded. For details on websites that can be whitelisted on Sunbird refer <a href="developer-docs/configuring_sunbird/env_variables_content_service.md" target="_blank"> Environment Variables </a>
+**Note:** <br>1. For any Youtube video that is uploaded, Sunbird validates the Standard Youtube Credits and Licenses. Users have the permission of using, copying or distributing Youtube contents with the regulations, in accordance with its license policy <br>2. Only those URLs of websites whitelisted by the organization administrator can be uploaded. For details on websites that can be whitelisted on Sunbird refer <a href="developer-docs/configuring_sunbird/env_variables_content_service" target="_blank"> Environment Variables </a>
 
 ### Prerequisites
 <table>
