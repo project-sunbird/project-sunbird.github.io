@@ -9,12 +9,14 @@ published: true
 allowSearch: true
 ---
 
-##Overview
+## Overview
 Content created or available offline can be uploaded on Sunbird. Organization administrators can upload content available on external sources such as dailymotion.com etc. on Sunbird. This section explains the procedure of how to configure domains to allow hosting content from such external sources. 
 
-###Prerequisite
+### Prerequisite
 To configure domains to host external links, ensure the following:
 - You are logged in as the organization administrator
 - You have access to 
 
-###Configuing the Domain
+### Configuing the Domain
+
+
