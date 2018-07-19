@@ -1,15 +1,16 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configuration for OTP based SMS
-page_title: Configuration for OTP based SMS 
+title: Configure OTP based SMS
+page_title: Configure OTP based SMS 
 description: How to set up the OTP for SMS
 published: true
 allowSearch: true
 keywords: SSO, single sign on, single signon, singlesignon, sign in, SMS, sms, otp, OTP, Keycloak
 ---
 
-### Please follow below steps to do SMS text configuration in keycloak.
+## Overview
+An OTP sent via SMS to the user's registered mobile number is one of the most secure and efficient ways to authenticate users for specific transactions. For example, if a user wants to reset the password. You need to configure the text of the message to be sent via SMS along with the generated OTP in Keycloak. This page provides you with instructions to do so.   
 
 <table>
 
@@ -35,14 +36,14 @@ keywords: SSO, single sign on, single signon, singlesignon, sign in, SMS, sms, o
 	
   <tr>
   <td> 
-  3. Select <b>Authentication</b> under configure section.
+3. Go to <b>Configure </b> section, select <b>Authentication</b> .
   </td>
   <td><img src="https://github.com/manzarul/project-sunbird.github.io/blob/dev/img/keycloack/SelectAuthenticationsection.png"></td>
   </tr>
   
   <tr>
   <td> 
-  4. Under <b>flows tab </b> select "Reset Credentials With SMS OTP" from drop down.
+	  4. Go to <b>Flows </b> tab, select <b>Reset Credentials With SMS OTP</b> from the drop-down.
 </td>
 <td>
   <img src="https://github.com/manzarul/project-sunbird.github.io/blob/dev/img/keycloack/SelectFlows.png">
@@ -51,14 +52,14 @@ keywords: SSO, single sign on, single signon, singlesignon, sign in, SMS, sms, o
 
 <tr>
 <td> 
-  5.Select "Config" as <b>Actions</b> for "SMS Authentication (Reset credentials with SMS OTP)".
+	5.Select <b>Actions</b> as <i>Config </i> for <b> SMS Authentication (Reset credentials with SMS OTP) </b>.
   </td>
   <td><img src="https://github.com/manzarul/project-sunbird.github.io/blob/dev/img/keycloack/SelectConfig.png"></td>
   </tr>
 
 <tr>
 <td> 
-	  6.Change the text message "Template of text to send to the user".
+	6.Change the text for <b> Template of text to send to the user </b> with the actual text of the message to be sent to users while sending the OTP SMS.
   </td>
   <td><img src="https://github.com/manzarul/project-sunbird.github.io/blob/dev/img/keycloack/ChangeSMSOTP.png"></td>
   </tr>
