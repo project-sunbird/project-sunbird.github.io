@@ -1,6 +1,6 @@
 ---
 type: landing
-directory: developer-docs/course_workflow
+directory: developer-docs\course_workflow
 title: Creating Course
 page_title: Creating Course
 description: Details on the procedure of creating course
