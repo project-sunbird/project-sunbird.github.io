@@ -37,7 +37,21 @@ A user can be created using Create User API and associated with an organization 
 
 Enter the following data for creating the sample request body in the 
 
+Field | Sample Value |Description | |
+--- | --- |---| --- |
+Information about API| |Refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User) documentation |
+id | | |
+ver| | |
+ets |0| |
 
+
+Field | Sample Value |Description | |
+--- | --- |---| --- |
+params |  |
+msgid"| |"string",|
+did":| |"string"|
+
+Following is an example of request body for creating a user:
 
 ```{
 "id": "string",
@@ -130,8 +144,8 @@ Enter the following data for creating the sample request body in the
 "url": "string"
 }
 }
-}`
-
+}
+```
 | Step  | Action         | Description                                                   |
 |-------|----------------|---------------------------------------------------------------|
 |Step 2 | Create user    | Create user from postman or curl command using sunbird create user API documentation  | 
