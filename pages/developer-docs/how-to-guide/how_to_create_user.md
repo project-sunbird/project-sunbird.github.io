@@ -57,6 +57,61 @@ lastName |Pal|Last name of the user
 password |password123| Password
 avatar|sam.png |Image of the user 
 language|English|Language of the user
+gender ||string
+phone  |string|
+phoneVerified  true
+subject  |string|
+channel  |string|
+externalIds
+id  |string|
+provider  |string|
+idType  |string|
+profileSummary  |string|
+userName  |string|
+dob  |string|
+grade  |string|
+location  |string|
+education
+degree  |string|
+yearOfPassing  
+courseName  |string|
+boardOrUniversity  |string|
+address  
+addType  |string|
+addressLine1  |string|
+addressLine2  |string|
+city  |string|
+state  |string|
+zipCode  |string|
+percentage  
+grade  |string|
+profileVisibility
+address ||
+addType  |string|
+addressLine1  |string|
+addressLine2  |string|
+city  |string|
+state  |string|
+zipCode  |string|
+jobProfile||
+jobName  |string|
+role  |string|
+joiningDate  |string|
+endDate  |string|
+orgId  |string|
+orgName  |string|
+subject  ||
+string||
+address || 
+addType  |string|
+addressLine1  |string|
+addressLine2  |string|
+city  |string|
+state  |string|
+zipCode  |string|
+webPages 
+type  |string|
+url  |string|
 
 
 Following is an example of request body for creating a user:
