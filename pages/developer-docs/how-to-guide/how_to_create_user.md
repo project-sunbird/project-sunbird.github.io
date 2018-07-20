@@ -33,47 +33,37 @@ A user in an organization performs different task or roles. The created user sho
 A organization admin can create a user and associate it with an organization. Let us assume that a new user needs to be created in  Nurture Institutions. 
 
 **Create a New User** 
-A user can be created using Create User API and associated with an organization using channel ID. It is must to provide values to the parameters in the request body of the Create User API. 
+A general user can be created in the organization using Create User API, it is further associated with an organization ID and channel ID and is assigned a role, refer [Mapping User to Organization](www.sunbird.org). For creating a user follow the steps:
 
-Enter the following data for creating the sample request body in the 
+1. Ensure the prerequisites are met 
+2. Get access to Create User API 
+3. Use an API client (postman) to perform the operation
+4. Execute Create User API. 
+5. Enter the values for the header of the API 
 
-Field | Sample Value |Description 
---- | --- |---
-Information about API| |Refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User) documentation |
-id | |
-ver| | 
-ets |0|
+Field | Sample Value 
+--- | ---|
+content-Type | appilcation/json
+Authorization| JWT token with keyword "Bearer" example: {Bearer JWT Token}
+
+6. Following table depicts the mandatory field in the request body. You can provide values to other fields of the API, for morre information refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User) documentation   
 
 
-Field | Sample Value |Description 
---- | --- |--- 
-params |    |
-msgid|   |  
-did| | 
-request | |
-email | xyz@nurtureeducorp.com|Email ID of the new user
-firstName |Sam| First name of the user
-lastName |Pal|Last name of the user 
-password |password123| Password
-avatar|sam.png |Image of the user 
-language|English|Language of the user
-gender ||string
-phone  |string|
-phoneVerified  true
-subject  |string|
-channel  |string|
-externalIds
-id  |string|
-provider  |string|
-idType  |string|
-profileSummary  |string|
-userName  |string|
-dob  |string|
-grade  |string|
-location  |string|
-education
-degree  |string|
-yearOfPassing  
+Field | Sample Value |Description | Is Mandatory
+--- | --- |--- |---
+email | xyz@nurtureeducorp.com|Email ID of the new user| Yes
+firstName |Sam| First name of the user|Yes
+lastName |Pal|Last name of the user |No
+password |password123| Password|Yes
+avatar|sam.png |Image of the user |No
+language|English|List of the language user knows |No
+gender |Male|No
+phone  |987654321|Yes
+phoneVerified| |true
+channel  |string|Represents the value of channel, which you get while creating a rootOrg - if you provide channel value, then you will get associated with that particular root organization - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail
+education|Yes
+degree  |M.A., B.A.|Represents the name of degree| Yes
+yearOfPassing || No
 courseName  |string|
 boardOrUniversity  |string|
 address  
