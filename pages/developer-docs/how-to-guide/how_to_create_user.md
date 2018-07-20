@@ -37,19 +37,27 @@ A user can be created using Create User API and associated with an organization 
 
 Enter the following data for creating the sample request body in the 
 
-Field | Sample Value |Description | |
---- | --- |---| --- |
+Field | Sample Value |Description 
+--- | --- |---
 Information about API| |Refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User) documentation |
-id | | |
-ver| | |
-ets |0| |
+id | |
+ver| | 
+ets |0|
 
 
-Field | Sample Value |Description | |
---- | --- |---| --- |
-params |  |
-msgid"| |"string",|
-did":| |"string"|
+Field | Sample Value |Description 
+--- | --- |--- 
+params |    |
+msgid|   |  
+did| | 
+request | |
+email | xyz@nurtureeducorp.com|Email ID of the new user
+firstName |Sam| First name of the user
+lastName |Pal|Last name of the user 
+password |password123| Password
+avatar|sam.png |Image of the user 
+language|English|Language of the user
+
 
 Following is an example of request body for creating a user:
 
