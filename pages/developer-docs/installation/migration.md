@@ -10,46 +10,64 @@ allowSearch: true
 
 ## Overview
 
-In Release-1.8 sunbird decide to support for multiple externalIds of a user.TO support multiple externalIds ,we design new table usr_external_identity.Now old table user_external_identity data need to be moved to new table.This activity need to be done after server setup.
+From release-1.8, Sunbird provides support for multiple external IDs for a user. To add multiple external IDs, an administrator of any sunbird instance needs to design a new table with name "usr_external_identity"
+This table must be seeded with the data from the existing table "user_external_identity.
+
+**Note:** This is a post server setup task.
 
 ## Prerequisites
 
-To configure domains to host external links, ensure the following:
-- Caller should have the access of cassandra db , to read the records.
-- get all unique provider value stored under user_external_identity table
-- Run this cql:  select provider from user_external_identity;
-- create a csv file as follow 
--  provider,idType
-   ka,kaIdType
-   ap,apIdType
-- no need to repeat same provider again inside file.   
-- Save this as {someName}.csv
+To configure your domain to host external links, ensure that the following prerequisites are met:
+
+1. Administrator access to read the record sets from Cassandra DB
+2. Ensure to store all unique provider values under user_external_identity table, to do so, execute the following command: 
+
+    A. Run this cql:  select provider from user_external_identity;
+
+    B. create a csv file as follow 
+    - provider,idType
+    - ka,kaIdType
+    - ap,apIdType
+
+    Note: You do not need to repeat same provider again inside the file   
+
+    C.  Save this as file as {typeyouename}.csv
 
 ## Configuration Parameters
 
-- encryption_key (used to encrypt the data)
-- keyspace_name  (cassandra keyspace name)
-- cassandra_port (cassandra port)
-- cassandra_server_ip (cassandra ip)
-- provider_idtype_mapping_file_path (created .csv file path)
+The following are the configuration parameters: 
+
+|Sno.|Configuration parameter| Usage|
+| 1 | encryption_key | It is used to encrypt the data |
+| 2 | keyspace_name  | It is the cassandra keyspace name |
+| 3 | cassandra_port | It is the port number for Cassandra |
+| 4 | cassandra_server_ip | It is the IP address for Cassandra |
+| 5 |provider_idtype_mapping_file_path | It is the .csv file path (which is created) |
 
 ## Migrating User Data
-Step 1: Download https://github.com/project-sunbird/sunbird-utils/tree/data-migration-etl/cassandra-migration-etl/r1.8 - UserExternalIdentityMigrationBin.zip 
 
-Step2: unzip UserExternalIdentityMigrationBin.zip
-step3: run below command 
+In order to migrate the user data, follow these steps:
+
+1. Download the code from [here] https://github.com/project-sunbird/sunbird-utils/tree/data-migration-etl/cassandra-migration-etl/r1.8 - UserExternalIdentityMigrationBin.zip 
+
+2. Unzip the UserExternalIdentityMigrationBin.zip file
+
+3. Run the following commands based on the operating systems you are using: 
  
-### For windows : 
+    - For Windows, run the following command:
 
-ExternalIdentityTableMigrationExtension_run.bat --context_param sunbird_encryption_key="{encryption_key}" --context_param cassandra_keyspace="{keyspace_name}" --context_param cassandra_port="{cassandra_port}" --context_param cassandra_server="{cassandra_server_ip}" --context_param provider_idtype_mapping_file_path="{provider_idtype_mapping_file_path}"
+    `ExternalIdentityTableMigrationExtension_run.bat --context_param sunbird_encryption_key="{encryption_key}" --context_param cassandra_keyspace="{keyspace_name}" --context_param cassandra_port="{cassandra_port}" --context_param cassandra_server="{cassandra_server_ip}" --context_param provider_idtype_mapping_file_path="{provider_idtype_mapping_file_path}"`
 
-## For Linux :
+    - For Linux, run the following command:
 
-ExternalIdentityTableMigrationExtension_run.sh --context_param sunbird_encryption_key="{encryption_key}" --context_param cassandra_keyspace="{keyspace_name}" --context_param cassandra_port="{cassandra_port}" --context_param cassandra_server="{cassandra_server_ip}" --context_param provider_idtype_mapping_file_path="{provider_idtype_mapping_file_path}"
+    `ExternalIdentityTableMigrationExtension_run.sh --context_param sunbird_encryption_key="{encryption_key}" --context_param cassandra_keyspace="{keyspace_name}" --context_param cassandra_port="{cassandra_port}" --context_param cassandra_server="{cassandra_server_ip}" --context_param provider_idtype_mapping_file_path="{provider_idtype_mapping_file_path}"`
 
 
 ## Table Details
-Old Table (user_external_identity) structure:
+
+The details of the existing table are as follows: 
+
+user_external_identity structure:
    - id text PRIMARY KEY,
    - createdby text,
    - createdon timestamp,
@@ -59,7 +77,9 @@ Old Table (user_external_identity) structure:
    - provider text,
    - userid text
 
- New Table (usr_external_identity) structure:
+The details of the new table are as follows: 
+
+usr_external_identity structure:
    - provider text,
    - idtype text,
    - externalid text,
