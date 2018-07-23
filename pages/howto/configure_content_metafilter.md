@@ -11,18 +11,18 @@ allowSearch: true
 
 ## Sample Scenario
 
-<this section should contain information about a scenario for which the task will be required>
+<This section should contain information about a scenario for which the task will be required>
 
 ## Prerequisites
 
-<this section should contain information about what should have been done before a user can proceed to undertake this task>
+<This section should contain information about what should have been done before a user can proceed to undertake this task>
 
 ## Overview
 
-<this section should contain information about why the task needs to be done, when, and what the task is about.> 
+<This section should contain information about why the task needs to be done, when, and what the task is about.> 
 
 ## Taskflows
-<this section should contain how the task should be performed in a sequence of steps.>
+<This section should contain how the task should be performed in a sequence of steps.>
 
 ## Concepts Covered
 
@@ -31,3 +31,4 @@ allowSearch: true
 ## Related Topics
 
 <This section should provide links to related topics>
+
