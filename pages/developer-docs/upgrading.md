@@ -51,7 +51,7 @@ Ensure that you have Python installed on the Cassandra machine
 
 ### Backup Cassandra
 
-Ensure that the prerequisites are met and follow the steps to backup the Cassandra database: 
+Ensure that the prerequisites are met. To backup the Cassandra database: 
 
 1. Take a snapshot of the Cassandara database using the following command  
 	
@@ -63,7 +63,7 @@ Ensure that the prerequisites are met and follow the steps to backup the Cassand
 	
 For example, `./cassandra_backup.py  /var/lib/cassandra/data my_backup  cassandra_backup_20180412`
 		
- **Note:** Executing the command creates snapshots of all the keyspaces as:  
+ **Note:** Executing the command creates snapshots of all the keyspaces such as:  
 		
 a) portal         -  Stores the session data
 b) dialcodes      -  Stores the energized text book details
@@ -72,7 +72,7 @@ d) sunbird	  -  Stores the organization ,user, course, batch, badger etc.
 		
 ### Restore Cassandra
 
-Ensure that the prerequisites are met and follow the steps to restore the Cassandra database: 
+Ensure that the prerequisites are met. To restore the Cassandra database: 
 
 1.Copy the Cassandra backup snapshot to the instance where you want to restore 
 
@@ -82,7 +82,7 @@ Ensure that the prerequisites are met and follow the steps to restore the Cassan
 
 ### Backup Postgres
 
-To take a backup of Postgres, follow these steps: 
+To take a backup of the Postgres database: 
 
 1.Run the following script to take a full backup of the Postgres database
 		
@@ -100,9 +100,9 @@ c) Keycloak    -	Used by Keycloak
 d) quartz      -	Used by sunbird backend services
 	
 
-## Restore Postgres
+### Restore Postgres
 
-To restore Postgres database, follow these steps: 
+To restore the Postgres database: 
 
 1.Copy the backup file from  **/tmp/postgresql-backup/<backup_file>**
 
@@ -111,7 +111,7 @@ To restore Postgres database, follow these steps:
 
 ### Backup Elastic Search 
 
-To take a backup of Elastic Search databases, follow these steps: 
+To take a backup of Elastic Search databases: 
 
 1.Run the following script to take the backup 
 	
@@ -125,7 +125,7 @@ a) searchindex      - Stores the user, org , course, batch data
 b) sunbirdplugin    - Stores the plugin related data (object API)
 c) sunbirddataaudit - Stores the user & organization audit history data
 
-## Restore Elastic Search
+### Restore Elastic Search
 
 To restore the Elastic Search databases, follow these steps: 
 
@@ -135,4 +135,4 @@ To restore the Elastic Search databases, follow these steps:
 
 	`./restore_elasticsearch.sh <path/to/the/restore_file`	
 
-**Note:** Executing this command restores the Elastic search databases. 
+
