@@ -39,13 +39,12 @@ Following are the pre-requisites before running the migration script:
 2. Before performing any migration take a backup of data in sunbird keyspace within Cassandra DB.
 
 ## Configuration Parameters
-
-The following are the configuration parameters: 
+   The following are the configuration parameters:   
 
 | S.No. | Configuration parameter | Description |
-| 1 | cassandra_server | Cassandra DB IP Address |
+| 1 | cassandra_server | Cassandra DB IP Address|
 | 2 | cassandra_port | Cassandra DB Port Number |
-| 3 | keyspace_name  | Cassandra DB Keyspace Name |
+| 3 | keyspace_name  | Cassandra DB Keyspace Name|
 | 4 | encryption_key | Key used in Sunbird for encryption of private user information |
 | 5 | provider_idtype_mapping_file_path | Path to CSV file which defines mapping between external ID provider and type |
 
@@ -67,6 +66,9 @@ In order to migrate the user external ID data, follow below mentioned steps:
     ```
     UserExternalIdentityMigration_run.bat --context_param cassandra_server="{cassandra_server}" --context_param cassandra_port="{cassandra_port}" --context_param cassandra_keyspace="{keyspace_name}" --context_param sunbird_encryption_key="{encryption_key}" --context_param provider_idtype_mapping_file_path="{provider_idtype_mapping_file_path}"
     ```
+
+3. Verify that external IDs are updated in usr_external_identity table with desired ID type and provider using CQL query: select * from usr_external_identity;
+
 
 ## Table Details
 
