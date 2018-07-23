@@ -1,14 +1,17 @@
 ---
 type: landing
 directory: developer-docs
-title: Migrating Tenant System Static Pages to CDN 
-page_title: Migrating Tenant System Static Pages to CDN 
-description: How and Why's about migrating the static pages to CDN  
+title: Migrate Tenant System Static Pages to CDN 
+page_title: Migrate Tenant System Static Pages to CDN 
+description: How and Why's about migrating the static pages to CDN
+Keywords: 'migrate, CDN, static pages, tenant system, pages'
 published: true
 allowSearch: false
 ---
 ## Overview
-<This section should include the basics about what are static pages? 
+<This section should include the information about:
+Why do static pages need to be migrated?
+what are static pages? 
 where a tenant can find these pages? 
 In what circumstances should these pages be migrated to CDN?
 What are the benefits of using a CDN?
