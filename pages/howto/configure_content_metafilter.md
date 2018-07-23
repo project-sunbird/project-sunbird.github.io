@@ -11,11 +11,11 @@ allowSearch: true
 
 ## Sample Scenario
 
-<This section should contain information about a scenario for which the task will be required>
-
+<This section should contain information about a scenario for which the task will be required.>
+  
 ## Prerequisites
 
-<This section should contain information about what should have been done before a user can proceed to undertake this task>
+<This section should contain information about what should have been done before a user can proceed to undertake this task.>
 
 ## Overview
 
@@ -26,9 +26,9 @@ allowSearch: true
 
 ## Concepts Covered
 
-<This section should cover in brief, the concepts covered>
+<This section should cover in brief, the concepts covered.>
 
 ## Related Topics
 
-<This section should provide links to related topics>
+<This section should provide links to related topics.>
 
