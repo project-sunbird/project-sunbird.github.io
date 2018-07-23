@@ -27,11 +27,11 @@ Ensure that you have Python installed on the Cassandra machine
 
 ## Upgrading Sunbird Services 
 
-   1.Pull the latest code of `project-sunbird/sunbird-devops` from the master branch.
+   1.Pull the latest code of `project-sunbird/sunbird-devops` from its master branch
  
    2.It is recommended to take a full backup of all the databases before updating the schema 
 
-   3.Follow the steps [here](developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers) to take the backup 
+   3.Follow the steps [here](developer-docs/upgrading/#backup-and-restore-of-sunbird-databases) to take the backup 
 
    4.Run the command `./sunbird-install.sh`
 
@@ -74,17 +74,17 @@ d) sunbird	  -  Stores the organization ,user, course, batch, badger etc.
 
 Ensure that the prerequisites are met and follow the steps to restore the Cassandra database: 
 
-1.Copy the Cassandra backup snapshot to the instance where you want to run restore.
+1.Copy the Cassandra backup snapshot to the instance where you want to restore 
 
-2.Restore Cassandra database using the command:
+2.Restore Cassandra database using the following command:
 	           
    	`./cassandra_restore.py <cassandra_host_ip_address> <snapshotdir>` for example: `./cassandra_restore.py 10.10.10.10 ./cassandra_bakup_20180412`
 
 ### Backup Postgres
 
-Use the following steps to backup the Postgres database: 
+To take a backup of Postgres, follow these steps: 
 
-1.Run the following script to take a full backup of the Postgres database:
+1.Run the following script to take a full backup of the Postgres database
 		
 		./backup_postgres.sh
 		
@@ -92,7 +92,7 @@ Use the following steps to backup the Postgres database:
 
 		**/tmp/postgresql-backup** 
 
-2.Backup of Postgres includes the following databases:
+2.Postgres Backup includes the following databases:
        
 a) api_manager -	Used by kong
 b) badger      -	Used by badger services
@@ -102,7 +102,7 @@ d) quartz      -	Used by sunbird backend services
 
 ## Restore Postgres
 
-Use the following steps to restore the Postgres database: 
+To restore Postgres database, follow these steps: 
 
 1.Copy the backup file from  **/tmp/postgresql-backup/<backup_file>**
 
@@ -111,7 +111,7 @@ Use the following steps to restore the Postgres database:
 
 ### Backup Elastic Search 
 
-Use the following steps to backup the Elastic Search database: 
+To take a backup of Elastic Search databases, follow these steps: 
 
 1.Run the following script to take the backup 
 	
@@ -119,7 +119,7 @@ Use the following steps to backup the Elastic Search database:
 
 **Note:** Executing the command creates the backup file at **/etc/elasticsearch/backup** 
 
- 2. Backup of Elasticsearch includes the following databases: 
+ 2. Elasticsearch backup includes the following databases: 
 		
 a) searchindex      - Stores the user, org , course, batch data
 b) sunbirdplugin    - Stores the plugin related data (object API)
@@ -127,7 +127,7 @@ c) sunbirddataaudit - Stores the user & organization audit history data
 
 ## Restore Elastic Search
 
-User the following steps to restore Elastic Search database: 
+To restore the Elastic Search databases, follow these steps: 
 
 1.Copy the backup file from `/tmp/elasticsearch-backup/<backup_file>` to the instance where you want to run the restore operation.
 
@@ -135,4 +135,4 @@ User the following steps to restore Elastic Search database:
 
 	`./restore_elasticsearch.sh <path/to/the/restore_file`	
 
-**Note:** Executing this command ensures that elastic search database is restored. 
+**Note:** Executing this command restores the Elastic search databases. 
