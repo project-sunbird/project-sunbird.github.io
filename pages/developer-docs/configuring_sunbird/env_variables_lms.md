@@ -1,14 +1,12 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Environment Variables for Sunbird LMS
-page_title: Environment Variables for Sunbird LMS
+title: LMS Service Environment Variables 
+page_title: LMS Service Environment Variables 
 description: The list of environment variables that are required to operationalize Sunbird 
 published: true
 allowSearch: true
 ---
-
-## Environment Variables for Sunbird LMS Service
 
 The following is a list of environment variables and their default values, as required to run the Sunbird LMS service. The list also gives you an indication of the purpose of the variable. Modifying the variable value, allows you to change default behavior based on your need or purpose.  
 
