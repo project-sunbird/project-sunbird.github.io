@@ -1,7 +1,7 @@
 ---
-directory: developer-docs
-title: Developer Documentation 
-page_title: Developer Documentation
+directory: developer-docs/configuring_sunbird
+title: Configuring Domain External Links 
+page_title: Configuring Domain External Links
 description: Developer Documentation Overview
 keywords: 'Installation, pre requisite, extending sunbird'
 published: true
