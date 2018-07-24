@@ -19,7 +19,7 @@ Click [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/mast
 **A:**  'Users' do not have initial/default entries. There are default entries for 'Org' and 'Roles'. 
 For details, refer the files:
 
-+ [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql){:target="_blank"} file, for data setup
++ [Casandra.cql](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/service/src/main/resources/cassandra.cql){:target="_blank"} file, for data setup
 + [pageMgnt.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv){:target="_blank"}, for page section details
 + [pageSection.csv](https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv){:target="_blank"}, for details of a particular section
      
