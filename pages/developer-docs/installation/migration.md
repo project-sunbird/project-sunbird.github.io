@@ -11,6 +11,10 @@ allowSearch: true
 ## Overview
 
 Sunbird provides support for multiple external IDs for a user. In release 1.8, the table name and schema used to store user external IDs has changed. 
+* external id is the identity of user out-side of sunbird system. 
+  Example: John belongs to organisation **X** and in **X** his identity is **jo_123** and idType is **employeeId**, 
+now he is trying to register with sunbird, then in sunbird he can use externalId as  **jo_123** and provider as **X** and idType as **employeeId**. 
+* Similarly John can be part of multiple organisations and each organisations can have there own identity to recognise John, in that case during sunbird registration (create/update user api), he can pass all the externalIds and provider and idType.
 
 The purpose of this document is to describe the steps for migration of user external IDs from old "user_external_identity" table to new "usr_external_identity" table format.
 
@@ -71,6 +75,28 @@ In order to migrate the user external ID data, follow below mentioned steps:
 
 
 ## Table Details
+### Details description of old table user_external_identity
+| S.No. | Field | Description |
+| 1 | id | identity of the recoreds.Primary key|
+| 2 | createdby | User id , By whom recoreds is created  |
+| 3 | createdon  | On which date and time records inserted into database|
+| 4 | externalid | Identity of user apart from sunbird system, so that when other system fetch records from sunbird, they can co-relate user within there system using externalid and provider combination |
+| 5 | provider | provider can be any organisation|
+| 6 | lastupdatedon | When recoreds was last updated|
+| 7 | userid | User identity within sunbird|
+
+
+### Details description of new table usr_external_identity
+| S.No. | Field | Description |
+| 1 | provider | provider can be any organisation|
+| 2 | idtype | idtype can be employeeId, studentid etc |
+| 3 | externalid  | Identity of user apart from sunbird system, so that when other system fetch records from sunbird, they can co-relate user within there system using externalid and provider combination|
+| 4 | createdby | User id , By whom recoreds is created |
+| 5 | createdon | On which date and time records inserted into database|
+| 6 | lastupdatedon | When recoreds was last updated|
+| 7 | userid | User identity within sunbird|
+
+##Note : Combination of provider,idtype,externalid must be unique. System is using these combination as primaryKey.
 
 The schema of the existing table is as follows: 
 
