@@ -41,6 +41,15 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
  
 **Note:** If you setup more than one swarm agent node, you will need to configure a load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm route the request to the right service.
 
+## Supported application versions
+
+    | Application |Version|
+    |:-----      |:--------|
+    |Docker | 17.06, 18.03|
+    |Elasticsearch        | 5.4 |
+    |Postgres | 9.5 |
+    |Cassandra            | 3.9 |
+
 ## Installation Procedure
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
