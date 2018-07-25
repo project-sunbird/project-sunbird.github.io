@@ -1,0 +1,491 @@
+<h2 id="overview">Overview</h2>
+
+<p>The purpose of this section is to assist you:</p>
+
+<ul>
+  <li>
+    <p>with the installation of Sunbird backend on your local machine</p>
+  </li>
+  <li>
+    <p>in testing Sunbird backend services and API workflows</p>
+  </li>
+</ul>
+
+<h2 id="sunbird-backend-services">Sunbird Backend Services</h2>
+
+<p>To set up the Sunbird Back-end services, follow the steps chronologically:</p>
+
+<ol>
+  <li>
+    <p>Setup</p>
+
+    <ul>
+      <li>Cassandra</li>
+      <li>Elastic Search</li>
+      <li>Keycloak</li>
+    </ul>
+  </li>
+  <li>
+    <p>Configure back-end service stack</p>
+  </li>
+</ol>
+
+<h3 id="setup">Setup</h3>
+
+<p>Before configuring the services, ensure the installation of following dependencies:</p>
+
+<ul>
+  <li>Apache Cassandra ver-3.10</li>
+  <li>Elasticsearch ver-5.4.0</li>
+  <li>Keycloak ver-3.2.1. Final</li>
+  <li>PostgreSQL (required only when you wish to run quartz scheduler in distributed environment, not recommended on local machines)</li>
+</ul>
+
+<p>Let us set up the environment and then proceed with deploying the services.</p>
+
+<p><strong>Setup Cassandra</strong></p>
+
+<ol>
+  <li>For step by step installation guide, refer to the official <a href="http://cassandra.apache.org/doc/latest/getting_started/installing.html" target="_blank">website</a></li>
+  <li>The official website guides you through the installation, and if you have done a successful install of Cassandra, now you need to        start the server and open Cassandra CLI (Command Line Interface)</li>
+  <li>Run <a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/cassandra.cql" target="_blank">cassandra.cql</a> file to create the required keyspace, tables and indices</li>
+  <li>
+    <p>Copy the following files to a temp folder in a Cassandra installed machine</p>
+
+    <ul>
+      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageMgmt.csv" target="_blank">PageMgmt.csv</a></li>
+      <li><a href="https://github.com/project-sunbird/sunbird-lms-mw/blob/master/actors/src/main/resources/pageSection.csv" target="_blank">PageSection.csv</a></li>
+    </ul>
+  </li>
+</ol>
+
+<p>Example:  <code>/tmp/cql/pageMgmt.csv and /tmp/cql/pageSection.csv</code></p>
+
+<ol>
+  <li>Execute the following commands</li>
+</ol>
+
+<pre>
+ cqlsh -e "COPY sunbird.page_management(id, appmap,createdby, createddate, name, 
+organisationid, portalmap, updatedby, updateddate) FROM '/tmp/cql/pageMgmt.csv'"
+ cqlsh -e "COPY sunbird.page_section(id, alt, createdby, createddate, description,
+ display, imgurl, name, searchquery, sectiondatatype, status, updatedby, updateddate) 
+ FROM '/tmp/cql/pageSection.csv'"
+</pre>
+
+<p>Next section details about setting up the Elastic search on your local machine.</p>
+
+<p><strong>Setup Elastic search</strong></p>
+
+<ol>
+  <li>
+    <p>For step by step installation guide of Elastic search refer to the official <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html" target="_blank">website</a></p>
+  </li>
+  <li>
+    <p>The official website guides you through the installation, and if you have done a successful installation of Elastic search, you need to start the server and open Elastic search CLI (Command Line Interface)</p>
+  </li>
+  <li>
+    <p>Run the following curl command</p>
+  </li>
+</ol>
+
+<pre>
+
+curl -X PUT 
+http://localhost:9200/searchindex/org/ORG_001 
+-H 'cache-control: no-cache' 
+-H 'content-type: application/json' 
+-H 'postman-token: caa7eaa7-2a08-d1f3-1eb2-bf7c73bef663' 
+-d '{}'
+
+</pre>
+
+<p>Next section details about setting up the Keycloak on your local machine.</p>
+
+<p><strong>Setup Keycloak</strong></p>
+
+<ol>
+  <li>
+    <p>For step by step installation guide of Keycloak refer to the official <a href="http://www.keycloak.org/docs/3.3/server_installation/topics/installation/distribution-files-community.html" target="_blank">website</a></p>
+  </li>
+  <li>
+    <p>The official website guides you through the installation, and if you have done a successful installation of Keycloak, you need to start the server</p>
+  </li>
+  <li>
+    <p>To start the Keycloak server, navigate to <code>Bin</code> Directory and run the standalone file. Performing this action will start the Keycloak server</p>
+  </li>
+  <li>
+    <p>You can access the Keycloak admin console on <code>http://localhost:8080</code></p>
+  </li>
+  <li>
+    <p>For Public key, navigate to <strong>Realm settings tab</strong> -&gt; <strong>Keys</strong> -&gt; <strong>Public Keys</strong></p>
+  </li>
+  <li>
+    <p>For sending welcome email when a user registers, you need to configure email server by navigating to: <strong>Realm Settings tab</strong> -&gt; <strong>Emails</strong> (optional)</p>
+  </li>
+</ol>
+
+<h3 id="configuring-the-application">Configuring the Application</h3>
+
+<p>To run Sunbird services, it is recommended that the following configuration variables must be set:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>variable</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sunbird_cassandra_host</td>
+      <td>host running the Cassandra server</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_port</td>
+      <td>port on which Cassandra server is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_username (optional)</td>
+      <td>username for Cassandra database, if authentication is enabled</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_password (optional)</td>
+      <td>password for Cassandra database, if authentication is enabled</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_host</td>
+      <td>host running the Elastic search server</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_port</td>
+      <td>port on which Elastic search server is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_cluster (optional)</td>
+      <td>name of the Elastic search cluster</td>
+    </tr>
+    <tr>
+      <td>sunbird_learner_actor_host</td>
+      <td>host running for learner actor</td>
+    </tr>
+    <tr>
+      <td>sunbird_learner_actor_port</td>
+      <td>port on which learner actor is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_url</td>
+      <td>URL for keycloak server (Example : <strong>http://localhost:8080/auth</strong> )</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_realm</td>
+      <td>keycloak realm name   (use default realm as master or you can create new realm)</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_username</td>
+      <td>keycloak user name</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_password</td>
+      <td>keycloak password</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_client_id</td>
+      <td>keycloak client id  (use default as admin-cli or you can create new client in keycloak)</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_client_secret</td>
+      <td>keycloak client secret (not mandatory)</td>
+    </tr>
+    <tr>
+      <td>ekstep_content_search_base_url</td>
+      <td>provide base URL for EkStep content search</td>
+    </tr>
+    <tr>
+      <td>ekstep_authorization</td>
+      <td>provide Authorization value for content search</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_host</td>
+      <td>Postgres host name or ip</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_port</td>
+      <td>Postgres port number</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_db</td>
+      <td>Postgres db name</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_user</td>
+      <td>Postgres db user name</td>
+    </tr>
+    <tr>
+      <td>sunbird_pg_password</td>
+      <td>Postgress db password</td>
+    </tr>
+    <tr>
+      <td>sunbird_installation</td>
+      <td>sunbird</td>
+    </tr>
+    <tr>
+      <td>ekstep_api_base_url</td>
+      <td>https://dev.ekstep.in/api</td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_host</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_port</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_username</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_password</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_mail_server_from_email</td>
+      <td>support@open-sunbird.org</td>
+    </tr>
+    <tr>
+      <td>sunbird_account_name</td>
+      <td>account name of azure blob storage</td>
+    </tr>
+    <tr>
+      <td>sunbird_account_key</td>
+      <td>Azure blob storage account key</td>
+    </tr>
+    <tr>
+      <td>sunbird_quartz_mode</td>
+      <td>put this value {“embedded” to run quartz without any database, “any other value” to run with postgres db }</td>
+    </tr>
+    <tr>
+      <td>sunbird_encryption_key</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunbird_encryption_mode</td>
+      <td>mode value is either local or remote</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_publickey</td>
+      <td>SSO public key</td>
+    </tr>
+    <tr>
+      <td>sunbird_env_logo_url</td>
+      <td>logo URL for sending email.(http://www.paramountias.com/media/images/current-affairs/sunbird-portal.jpg)</td>
+    </tr>
+    <tr>
+      <td>sunird_web_url</td>
+      <td>web page URL</td>
+    </tr>
+    <tr>
+      <td>sunbird_app_url</td>
+      <td>Play store URL to download the app</td>
+    </tr>
+    <tr>
+      <td>sunbird_msg_91_auth</td>
+      <td>msg 91 auth</td>
+    </tr>
+    <tr>
+      <td>sunbird_msg_sender</td>
+      <td>message sender name</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The table mentions all the environment variables with description. Add or edit the environment variables in their appropriate locations.</p>
+
+<h3 id="minimal-required-configuration">Minimal Required Configuration</h3>
+
+<p>The following variables are mandatory as apart of minimalistic required configuration to get services up and running.</p>
+
+<p><strong>Note</strong>: Ensure that you need to set the environment variables at appropriate location.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>variable</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sunbird_cassandra_host</td>
+      <td>host running the Cassandra server</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_port</td>
+      <td>port on which Cassandra server is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_username (optional)</td>
+      <td>username for Cassandra database, if authentication is enabled</td>
+    </tr>
+    <tr>
+      <td>sunbird_cassandra_password (optional)</td>
+      <td>password for Cassandra database, if authentication is enabled</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_host</td>
+      <td>host running the Elastic search server</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_port</td>
+      <td>port on which Elastic search server is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_es_cluster (optional)</td>
+      <td>name of the Elastic search cluster</td>
+    </tr>
+    <tr>
+      <td>sunbird_learner_actor_host</td>
+      <td>host running for learner actor</td>
+    </tr>
+    <tr>
+      <td>sunbird_learner_actor_port</td>
+      <td>port on which learner actor is running</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_url</td>
+      <td>URL for keycloak server (Example : <strong>http://localhost:8080/auth</strong> )</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_realm</td>
+      <td>keycloak realm name   (use default realm as master or you can create new realm)</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_username</td>
+      <td>keycloak user name</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_password</td>
+      <td>keycloak password</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_client_id</td>
+      <td>keycloak client id  (use default as admin-cli or you can create new client in keycloak)</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_client_secret</td>
+      <td>keycloak client secret (not mandatory)</td>
+    </tr>
+    <tr>
+      <td>ekstep_content_search_base_url</td>
+      <td>provide base URL for EkStep content search</td>
+    </tr>
+    <tr>
+      <td>ekstep_authorization</td>
+      <td>provide Authorization value for content search</td>
+    </tr>
+    <tr>
+      <td>sunbird_installation</td>
+      <td>name of environment in which you are running the application or instance name</td>
+    </tr>
+    <tr>
+      <td>sunbird_quartz_mode</td>
+      <td>set value as “embedded” as you are not running scheduler in distributed environment</td>
+    </tr>
+    <tr>
+      <td>sunbird_sso_publickey</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For remaining environment variable values <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">refer</a></p>
+
+<h2 id="configuring-and-running-back-end-services-stack">Configuring and running Back-End Services Stack</h2>
+
+<p>You can configure the Backend service by following these instructions:</p>
+
+<ul>
+  <li>Cloning the repositories</li>
+  <li>Making the Build</li>
+</ul>
+
+<h3 id="clone-the-repositories">Clone the Repositories</h3>
+
+<ul>
+  <li><a href="https://github.com/project-sunbird/sunbird-utils" target="_blank">sunbird-utils</a></li>
+  <li><a href="https://github.com/project-sunbird/sunbird-lms-service" target="_blank">sunbird-lms-service</a></li>
+  <li><a href="https://github.com/project-sunbird/sunbird-lms-mw" target="_blank">sunbird-lms-mw</a></li>
+</ul>
+
+<h3 id="making-the-build">Making the build</h3>
+
+<p>Make the builds in following order:</p>
+
+<ul>
+  <li>sunbird-utils</li>
+  <li>sunbird-lms-mw</li>
+  <li>sunbird-lms-service</li>
+</ul>
+
+<h2 id="configuring-the-akka-actors">Configuring the (Akka) Actors</h2>
+
+<p>Sunbird architecture supports two Akka actor systems:</p>
+
+<ol>
+  <li>Normal ActorSystem</li>
+  <li>Background ActorSystem</li>
+</ol>
+
+<p>By default, both run on different machines. In order to run these actor systems on a single machine, you need to modify the [resource.properties file]</p>
+
+<p>For more details <a href="https://github.com/project-sunbird/sunbird-utils/blob/master/common-util/src/main/resources/externalresource.properties" target="_blank">refer</a> to this repository.</p>
+
+<p>To run both the actor systems on a single machine follow these steps:</p>
+
+<ol>
+  <li>Open <strong>externalresource.properties</strong> file</li>
+  <li>
+    <p>Modify the following properties:</p>
+
+    <ul>
+      <li>background_actor_provider</li>
+      <li>api_actor_provider</li>
+    </ul>
+  </li>
+  <li>Set value of both properties as “local”</li>
+  <li>Run <code>mvn clean install</code> command to make build of each module</li>
+</ol>
+
+<p>To run the <strong>sunbird-lms-service</strong> execute the following command</p>
+
+<pre><code>  ```mvn play2:run```
+</code></pre>
+
+<h2 id="testing-the-services">Testing the services</h2>
+
+<p>Test any API using postman, e.g. download <strong>user API</strong> and perform different actions on user using this <a href="https://www.getpostman.com/collections/d314ef7df8fb02c9fa0f" target="_blank">Postman collection</a></p>
+
+<p>From release-1.7, user creation requires channel attribute. You need to follow these instructions:</p>
+
+<p>1.Create a user inside Keycloak 
+2.Generate JWT token using the following curl command</p>
+<pre>
+
+curl -X POST 
+  /auth/realms/{realm-name}/protocol/openid-connect/token 
+  -H 'cache-control: no-cache' 
+  -H 'content-type: application/x-www-form-urlencoded' 
+  -H 'postman-token: de8e2bb4-3669-b86a-8d06-d5c0c66dae14' 
+  -d 'client_id={client-name}&amp;username={username}&amp;password={password}&amp;grant_type=password'
+
+</pre>
+
+<p>3.Use this token to create the RootOrg.</p>
+
+<p><strong>Note:</strong> <a href="http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create" target="_blank">Refer</a> to the create orgnization API to can create an organisation.</p>
+
+<p>4.You need to set the RootOrg channel value inside environment variable with key <code>sunbird_default_channel</code></p>
+
+<p>Once you are done with above step then you can start creating other users and sub organisations.</p>
+

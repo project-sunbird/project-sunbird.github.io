@@ -1,0 +1,60 @@
+<h2 id="master-data-interchange">Master Data Interchange</h2>
+
+<p>Sunbird requires some data that currently resides in external SSO systems to provide required functionality to the users who sign in to the platform. For example; in the case of DIKSHA, Sunbird requires data are about organization type (teacher education/training Institutes) and the members of the organizations. Within Sunbird, users are not granted permissions system-wide. User permissions are defined at the level of the organization to which they belong. This allows a user to be a part of many organizations and have different permissions for each organization.</p>
+
+<h3 id="data-requirements">Data Requirements</h3>
+
+<p>To make this feasible, Sunbird requires the following information from the integrating party:</p>
+
+<ul>
+  <li>
+    <p>List of organisations - their names and any unique identifier for them in external system</p>
+  </li>
+  <li>
+    <p>List of members for each organisation - the username, full name and verified email address</p>
+  </li>
+  <li>
+    <p>List of roles of each member in the organisation - Available roles are member, content creator and admin</p>
+  </li>
+</ul>
+
+<h2 id="organization-apis">Organization APIs</h2>
+
+<p>Tenants can import their organizations on Sunbird using the organization APIs.</p>
+
+<p>The API has the following resources:</p>
+
+<ul>
+  <li>Create Organization</li>
+  <li>Update Organization</li>
+  <li>Create User</li>
+  <li>Update User</li>
+  <li>Add Member to Organization</li>
+  <li>Remove Member from Organization</li>
+  <li>Single Sign-On API</li>
+</ul>
+
+<p><em>For information on Organization Management APIs, refer <a href="http://www.sunbird.org/apis/orgapi/">Organization Management APIs</a></em></p>
+
+<h2 id="user-apis">User APIs</h2>
+
+<p>Tenants can import their users on Sunbird using the user APIs.</p>
+
+<p>The API has the following resources:</p>
+
+<ul>
+  <li>Create User</li>
+  <li>Search User</li>
+  <li>Fetch User by Login ID</li>
+  <li>Get User by Login ID</li>
+  <li>Updates User</li>
+  <li>Logs in User</li>
+  <li>Logs out User</li>
+  <li>Resets Forgotten Password</li>
+  <li>Add badges to user</li>
+  <li>Changes User Password</li>
+  <li>Adds Users Current Login Time</li>
+</ul>
+
+<p><em>For information on User APIs, refer <a href="http://www.sunbird.org/apis/userapi/">User APIs</a></em></p>
+

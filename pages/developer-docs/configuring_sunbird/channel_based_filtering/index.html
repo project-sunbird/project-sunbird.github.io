@@ -1,0 +1,86 @@
+<h2 id="scenario">Scenario</h2>
+<p>An organization works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A.</p>
+
+<h3 id="version">Version</h3>
+
+<p>This feature is applicable from Sunbird 1.7.0 onwards</p>
+
+<h3 id="intended-audience">Intended Audience</h3>
+
+<p>The Instance Admin</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li>
+    <p>An instance of Sunbird that is successfully installed and configured</p>
+  </li>
+  <li>
+    <p>The instance should have access to the shared EkStep content repository</p>
+  </li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p>In Sunbird, a tenant is a root organization, that shares common access to the content repository with specific privileges to the software instance. Sunbird allows you to set up a hierarchy of organizations for every instance installed. After sucessfully installing Sunbird, the first step is to create the first root organization also called as the tenant organization, followed by creating a heirarchy of organizations under each of it. Root organizations can define their own framework and set preferences like default language and search categories. Sunbird maps each root organization to a concept called a channel. Sunbird allows the instance owner to change the default behavior to channel-based content filtering.</p>
+
+<p>Sunbird adopters can access a global, shared content repository (possibly the EkStep content repository). Sunbird does not limit content discovery to a single channel. However, given the diversity of content across channels, content published in one channel may not always be helpful to the users of other channels. Hence, adopters can choose to mark channels as:</p>
+
+<ul>
+  <li>
+    <p>Whitelisted: Those channels whose content is best suited for their user’s needs and demands. Users can use and explore content across whitelisted channels.</p>
+  </li>
+  <li>
+    <p>Blacklisted: Those channels whose content cannot be accessed. Users cannot access any content from blacklisted channels.</p>
+  </li>
+</ul>
+
+<p>For example, if an adopter whitelists channels X and Y, their users receive content only from channel X and Y. If an adopter blacklists channels X and Y, their users receive content from channels other than from channels X and Y. If an adopter whitelists channels X and Y and blacklists channels Y and Z, their users receive content from (X+Y) minus (Y+Z) = X channel</p>
+
+<p>Once this is configured, Sunbird applies a filter for the content that is made available to users of that organization. Users can only search or navigate to content from the chosen channels.</p>
+
+<h2 id="taskflow">Taskflow</h2>
+
+<p>To enable filtering of content for a channel, set the following environment variables at the time of deployment.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>S No.</th>
+      <th>Variable Name</th>
+      <th>Description</th>
+      <th>Purpose</th>
+      <th>Default Value</th>
+      <th>Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>sunbird_content_service_whitelisted_channels</td>
+      <td>Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:”A,B,C”where A,B,C are different channels</td>
+      <td>Variable is used to whitelist the Channel whose content should be displayed</td>
+      <td> </td>
+      <td>Content Service</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>sunbird_content_service_blacklisted_channels</td>
+      <td>Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels</td>
+      <td>Variable is used to blacklist the channel whose content should not be displayed</td>
+      <td> </td>
+      <td>Content Service</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For details, refer to the <strong>Configuration Variables page</strong>.</p>
+
+<h2 id="concepts-covered">Concepts Covered</h2>
+
+<p><strong>Tenant</strong> - A tenant is a root organization that shares common access with specific privileges to the software instance</p>
+
+<p><strong>Multi-tenant</strong> - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant.</p>
+
+<p><strong>Channel</strong> - A channel is the identifier that makes the tenant unique.</p>
+
