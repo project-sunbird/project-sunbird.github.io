@@ -1,39 +1,36 @@
 ---
 type: landing
 directory: developer-docs/upgrade
-title: Upgrading to newer versions of Angular and Node
-page_title: Upgrade to newer versions of Angular and Node
-description:  How to upgrade to newer versions of Angular and Node?
-published: false
+title: Upgrading to Angular versions 6
+page_title: Upgrading to Angular versions 6
+description:  Upgrading to Angular versions 6?
+published: true
 allowSearch: false
 ---
 
 ## Overview
 
-<this section should provide an overview of the activity. The overview should provide information on the purpose of the activity, why such an activity is required  who can do it, what is user data>
+Sunbird release-1.9 updated angular Version to 6 from vesrion 5. This allow Sunbird portal to utilize angular 6 feature such as 
 
-## Prerequisites
+1. **ng update:** is a new CLI command that analyzes your package.json and uses its knowledge of Angular to recommend updates to your application
+2. **Library Support:** Angular CLI v6 comes with library support via ng-packagr plugged into the build system we use in Angular CLI, together with schematics for generating a library.
+3. **RxJS v6:** RxJS v6 brings with it several major changes, along with a backwards compatibility package rxjs-compat that will keep your applications working.
+4. **Angular Elements:** The first release of Angular Elements is focused on allowing you to bootstrap Angular components within an existing Angular application by registering them as Custom Elements.
 
-<this section should provide information on the prerequisites to perform the activity.  Information can be about, but not limited to - hardware, software requirements, space requirements, installed version of Sunbird and/or other components, data requirements, configurations (if any) to be done prior to taking up this activity>
+Please refer below links for more details on new features 
+
+* [Angular 6](https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4)  
+* [RxJS 6](https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md)
 
 ## Dependencies 
 
 <Any dependencies should be listed here>
+Please update Node.js to v8.9 and above. Node.js download [link](https://nodejs.org/en/download/)
 
-## Update Angular  X.x Version to Angular X.x version 
+## Steps to update Angular v5 to v6:
 
-<this section should contain the sequence of steps / task flow>
-
-## Update Node X.x Version to Node X.x version 
-
-<this section should contain the sequence of steps / task flow>
-
-## Updating library 
-
- <List down the Imports, usage of Creation methods, types, and the operators that will change after upgrade> 
- 
-## Configuration Parameters (if any)
-
-<this section should provide configuration parameter details, if any. If there are no specific details, this section can be deleted.>
-
-
+*  take latest sunbird-portal release v1.9 or above
+*  run npm install @angular/cli@latest -g
+*  move to src/app/client
+*  run npm install @angular/cli@latest
+*  run npm install
