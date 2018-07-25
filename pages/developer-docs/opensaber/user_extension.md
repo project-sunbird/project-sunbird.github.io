@@ -4,8 +4,8 @@ directory: developer-docs/opensaber
 title: User Extension 
 page_title: User Extension 
 description: User Extension 
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 ---
 
 
