@@ -5,7 +5,7 @@ title: Migrate Tenant System Static Pages to CDN
 page_title: Migrate Tenant System Static Pages to CDN 
 description: How and Why's about migrating the static pages to CDN
 Keywords: 'migrate, CDN, static pages, tenant system, pages'
-published: true
+published: false
 allowSearch: false
 ---
 ## Overview

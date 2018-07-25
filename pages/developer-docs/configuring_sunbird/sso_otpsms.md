@@ -4,8 +4,8 @@ directory: developer-docs/configuring_sunbird
 title: Configure OTP based SMS
 page_title: Configure OTP based SMS 
 description: How to set up the OTP for SMS
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 keywords: SSO, single sign on, single signon, singlesignon, sign in, SMS, sms, otp, OTP, Keycloak
 ---
 
