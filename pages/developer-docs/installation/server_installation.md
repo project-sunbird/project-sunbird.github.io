@@ -57,6 +57,15 @@ The following is a list of ports that must be open:
 
 **Note:** If you setup more than one swarm agent node, you will need to configure a load balancer to spray the incoming requests to all the agent nodes. All agent nodes in a swarm route the request to the right service.
 
+## Supported application versions
+
+  | Application |Version|
+  |:-----      |:--------|
+  |Docker | 17.06, 18.03|
+  |Elasticsearch        | 5.4 |
+  |Postgres | 9.5 |
+  |Cassandra            | 3.9 |
+
 
 ## Installation Procedure
 
@@ -68,7 +77,7 @@ The following is a list of ports that must be open:
 
 3.`cd sunbird-devops`
 
-4.Checkout the latest release branch `git checkout tags/release-1.8 -b release-1.8`
+4.Checkout the latest release branch `git checkout tags/release-1.8.1 -b release-1.8.1`
 
 5.`cd deploy`
 
