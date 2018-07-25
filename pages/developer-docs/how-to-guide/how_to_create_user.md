@@ -1,16 +1,16 @@
 ---
 type: landing
 directory: developer-docs/how-to-guide
-title: How to Create User
-page_title: How to Create User
-description: creating a new user in sunbird instance
-keywords: create user, new user in sunbird
+title: Create User
+page_title: Create User
+description: Create a new user in Sunbird instance
+keywords: create user, new user, create, user
 published: true
 allowSearch: true
 ---
 ## Scenario
 
-Consider an organization Nurture Institutions, recognized education and learning body, that exists in multiple cities across the country wants to use Sunbird and Ekstep content service for their organizational needs. They must register their organization with Ekstep and get a unique channel ID. The registered organisations must have their virtual replica over Sunbird. Further, they need to create organization administrator (org admin)   and other individual user with different privileges to perform tasks. This document elaborates the process of creating and uploading users in the organization for the Sunbird instance using the appropriate APIs.
+XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly upskilled, the XYZ Corp has set up an instance of Sunbird platform. In order to give their employees access to the learning platform, the organization's administrator needs to    . Consider an organization Nurture Institutions, recognized education and learning body, that exists in multiple cities across the country wants to use Sunbird and Ekstep content service for their organizational needs. They must register their organization with Ekstep and get a unique channel ID. The registered organisations must have their virtual replica over Sunbird. Further, they need to create organization administrator (org admin)   and other individual user with different privileges to perform tasks. This document elaborates the process of creating and uploading users in the organization for the Sunbird instance using the appropriate APIs.
 
 ### Prerequisites
 
