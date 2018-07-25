@@ -7,7 +7,7 @@ info:
      
     **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
 host: staging.open-sunbird.org
-basePath: /api/user/v1
+basePath: /api/
 securityDefinitions:
   bearer:
       type: apiKey  # arbitrary name for the security scheme
@@ -26,11 +26,11 @@ consumes:
 produces:
   - application/json
 paths:
- /create:
+ /user/v1/create:
     post:
       description: >-
        This API is used to create a user 
-          - **_/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
+          - **_/v1/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
           - Mandatory fields cannot be null or empty.
       summary: Create User
       tags:
@@ -48,9 +48,6 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
-            
          
         schema:
            $ref: '#/definitions/CreateUserrequest'
@@ -100,11 +97,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /search:
+ /user/v1/search:
     post:
       description: >-
        This API is used for searching a particular user 
-          - **_/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
+          - **_/v1/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
            - Required fields cannot be left null or empty
       summary: Search User
       tags:
@@ -123,13 +120,12 @@ paths:
          
              - JSON 
          
-             - XML data
-        
+            
            **Note**: You can search the user based on different user attributes
               
             - The  attributes need to be passed inside the filters of the request payload
         schema:
-          $ref: '#/definitions/SearchUserrequest'
+          $ref: '#/definitions/SearchUserRequest'
       - name: Content-Type
         in: header
         required: true
@@ -211,11 +207,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /profile/read:
+ /user/v1/profile/read:
     post:
       description: >-
         This API is used for getting information about the currently authenticated user
-          - **_/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
+          - **_/v1/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
           - It is mandatory to provide values for required parameters
       summary: Get User by Login ID
       tags:
@@ -233,8 +229,6 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
           -  The body contains metadata about reading the user profile
           
            - **Note**: 
@@ -245,7 +239,7 @@ paths:
         schema:
            allOf:
             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-            - $ref: '#/definitions/GetUserByLoginIdrequest'
+            - $ref: '#/definitions/GetUserByLoginIdRequest'
       - name: Content-Type
         in: header
         required: true
@@ -317,11 +311,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /read/{User_ID}:
+ /user/v1/read/{User_ID}:
     get:
       description: >-
         This API is used for searching a specific user, the user search is based on the unique ID of the user
-          - **_/read/{User_ID}_** endpoint executes the "Get User profile" request
+          - **_/v1/read/{User_ID}_** endpoint executes the "Get User profile" request
           - It is mandatory to provide values for required parameters
       summary: Get User by User ID
       tags:
@@ -407,11 +401,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false      
- /update:
+ /user/v1/update:
     patch:
       description:  >-
         This API is use for updating the user realted details 
-          - **_/update/_** endpoint executes the "Update User" request
+          - **_/v1/update/_** endpoint executes the "Update User" request
           - It is mandatory to provide values for required parameters
       summary: Update User
       tags:
@@ -429,10 +423,10 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
         schema:
-          $ref: '#/definitions/UpdateUserrequest'
+         allOf:
+           - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+           - $ref: '#/definitions/UpdateUserRequest'
       - name: x-authenticated-user-token
         in: header
         required: true
@@ -485,7 +479,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /update/logintime:
+ /user/v1/update/logintime:
     patch:
       description: >-
          This API is used to update user login time 
@@ -511,10 +505,8 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
         schema:
-          $ref: '#/definitions/updateloginrequest'
+          $ref: '#/definitions/UpdateLoginRequest'
       - name: Content-Type
         in: header
         required: true
@@ -597,11 +589,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /role/read:
+ /user/v1/role/read:
     get:
       description:  >-
        This API is used to list the assigned roles pertaining to a user
-          - The **_/role/read_** endpoint executes the "Get user role information" request based on parameters provided as metadata in the request body
+          - The **_/v1/role/read_** endpoint executes the "Get user role information" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
       summary: Get User Role Information
       tags: 
@@ -689,7 +681,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /profile/visibility:
+ /user/v1/profile/visibility:
     post:
       description:  >-
        This API is used to configure the visibility of user profile
@@ -711,11 +703,11 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
      
         schema:
-          $ref: '#/definitions/visibilityrequest'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/VisibilityRequest'
       - name: Content-Type
         in: header
         required: true
@@ -797,11 +789,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /block:
+ /user/v1/block:
     post:
       description:  >-
        This API is used to ban/block a user, banning or blocking a user is done calling this API.  
-          - The **_/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
+          - The **_/v1/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Block user
       tags:
@@ -819,11 +811,11 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
      
         schema:
-          $ref: '#/definitions/blockUserReq'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest' 
+              - $ref: '#/definitions/BlockUserReq'
       - name: Content-Type
         in: header
         required: true
@@ -904,11 +896,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /unblock:
+ /user/v1/unblock:
     post:
       description: >-
        This API is used to unban/unblock a user
-          - The **_/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
+          - The **_/v1/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Unblock user
       tags:
@@ -926,10 +918,10 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
         schema:
-          $ref: '#/definitions/blockUserReq'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/BlockUserReq'
       - name: Content-Type
         in: header
         required: true
@@ -1010,24 +1002,19 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /org/v1/role/assign:
+
+ /v1/role/assign:
     post:
       description:  >-
-       This API is used to assign a roles to the user
-          - The **_/org/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
+       This API is used to assign roles to a user. It can also be used to replace and remove already assigned user roles. If a user should not be assigned any role in the organization, pass the role paramater as an empty array.
+          - The **_/v1/role/assign_** endpoint executes the "Assign roles to a user" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
-        
-        **Note:** Depending on the request payload, if you pass the userID and roles 
-          
-          - then the corresponding user role will be assigned to the user inside the user profile 
-        
-        In case the userID, organisationID and roles parameter values are passed 
-          
-          - then roles will be assigned by the corresponding organization for that user
+       
       summary: Assign Role to User
       tags:
       - User APIs
-      operationId: OrgV1RoleAssignPost
+      operationId: userV1RoleAssign
+
       produces:
       - application/json
       parameters:
@@ -1035,50 +1022,45 @@ paths:
         in: body
         required: true
         description: >-
-          - The body payload comprises of the metadata about assigninig roles to a user request
+          - The body payload comprises of the metadata about assigning roles to a user.
           
-          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
-         
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload.
              - JSON 
-         
-             - XML data
         schema:
-          $ref: '#/definitions/assignrequest'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/AssignRequest'
       - name: Content-Type
         in: header
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
-            Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+           The Content-Type header specifies the media type of the resource. This needs to be set to application/json.
       - name: ts
         in: header
-        required: true
+        required: false
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the assigning role API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the assign role API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'This Id Uniquely identifies a request if the same API is executed multiple times'
+        description: 'This ID uniquely identifies a particular request of the same API which can be executed multiple times'
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received here.'
       - name: x-authenticated-user-token
         in: header
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+          It is a unique token/key to authenticate the user each time an API is called.
       responses:
         '200':
-          description: 'OK ! Successful operation."assign role" operation was successfully executed.'
+          description: 'OK ! Successful operation. "assign role" operation was successfully executed.'
           schema:
             $ref: '#/definitions/UserCreateResponse'
         '400':
@@ -1094,18 +1076,11 @@ paths:
             'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'   
-      security:
-      - bearer: []
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
- /encrypt:
+ /user/v1/encrypt:
     get:
       description: >-
        This API is used for securing the user information with an encryption scheme  
-          - The **_ /encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
+          - The **_/v1/encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Encrypt User Information
       tags:
@@ -1167,11 +1142,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /skill/add:
+ /user/v1/skill/add:
     post:
       description: >-
        This API is used to add a skill set to the user 
-          - The **_/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
+          - The **_/v1/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Add User Skill
       tags:
@@ -1189,10 +1164,10 @@ paths:
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
-         
-             - XML data
         schema:
-          $ref: '#/definitions/AddSkillToUserrequest'
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/AddSkillToUserRequest'
       - name: Content-Type
         in: header
         required: true
@@ -1274,13 +1249,124 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+        
+ /user/v1/skill/read:
+    post:
+      description: >-
+       This API is used to read user added skill.
+          - The **_/user/v1/skill/read_** endpoint executes the "read user skill" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for required parameters
+      summary: get user skill
+      tags:
+      - User APIs
+      operationId: UserV1SkillRead
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          - The body payload comprises of the metadata about addinfg skills to a user 
+          
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+        schema:
+          allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/ReadUserSkill'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           The Content Type entity is the media type of the resource.
+            Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the add user skills API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+      - name: X-msgid
+        in: header
+        required: true
+        type: string
+        description: 'This ID Uniquely identifies a request if the same API is executed multiple times'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+      responses:
+        '200':
+          description: 'OK ! Successful operation."add user skills" operation was successfully executed.'
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/GetUserSkill'
+        '400':
+          description: 'BAD REQUEST. The "add user skills" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+      security:
+      - bearer: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: /user/v1/skill/add
+          headers:
+            Content-Type: application/json
+            ts: 2017-05-25 10:18:56:578+0530
+            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
+            Authorization: Bearer {{api-key}}
+            x-authenticated-user-token: '{{user-token}}'
+          body: >2-
+              {
+            "request": {
+                  "endorsedUserId":"userId",
+                  "skillName":["ElasticSearch"]
+            }
+            }
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: add skill to user
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false      
+ 
  /data/v1/skills:
     get:
       description: >-
        This API is associated with listing all the skills that a user possesses
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: List all Skills of User
+      summary: List all Skills
       tags:
       - User APIs
       operationId: DataV1SkillsGet
@@ -1324,7 +1410,7 @@ paths:
         '200':
           description: 'OK ! Successful operation."list user skills" operation was successfully executed.'
           schema:
-            $ref: '#/definitions/skillsResp'
+            $ref: '#/definitions/SkillsResp'
         '400':
           description: 'BAD REQUEST. The "list user skills" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
           schema:
@@ -1335,34 +1421,6 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
             
-      security:
-      - bearer: []
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /data/v1/skills
-          headers:
-            Content-Type: application/json
-            ts: 2017-05-25 10:18:56:578+0530
-            X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
-            x-authenticated-user-token: '{{user-token}}'
-            Authorization: Bearer {{api-key}}
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: provide all available skills list
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
 definitions:
   CreateUserrequest:
     description: User object
@@ -1412,7 +1470,7 @@ definitions:
              items:
               type: string
   
-  blockUserReq:
+  BlockUserReq:
     description: request body for block user
     type: object
     properties:
@@ -1424,7 +1482,7 @@ definitions:
         description: userId 
     
   
-  skillsResp:
+  SkillsResp:
    description: contains list of skills
    type: object
    properties:
@@ -1440,7 +1498,7 @@ definitions:
       type: string
        
   UserReq:
-    title: user object
+    title: User Object
     type: object
     properties:
           email:
@@ -1481,24 +1539,20 @@ definitions:
               - if you provide channel value, then you will get associated with that particular root organization  
               - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization
               - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
-          exernalId:
-            type : string
-            description: >-
-              Represents the identity of user in some other system - - Providing externalId, the creator can corelate their user with sunbird system. 
-                - The externalID and provider combination must be unique. If you pass externalID then you have to pass provider also.'
-          provider:
-            type: string
-            description : >-
-               The provider represents an orgainsation, which provides user details.
-                - The organisation may or maynot be part of the Sunbird system
-                - The provider is always represented by an externalId
+          externalIds:
+            type: array
+            items:
+              type: object
+              allOf:
+                - $ref: "#/definitions/ExternalId" 
           profileSummary:
             type: string
           userName:
             type: string
           dob:
             type: string
-            format: yyyy-MM-dd  
+            format: yyyy-MM-dd
+            example: '2001-02-27'
           grade:
             type: string
           location:
@@ -1539,7 +1593,6 @@ definitions:
       - channel
     
   User:
-    title: user object
     type: object
     properties:
           id:
@@ -1606,7 +1659,8 @@ definitions:
             description: 'Represents the ID of the root organozation'
           dob:
             type: string
-            format: yyyy-MM-dd  
+            format: yyyy-MM-dd 
+            example: '2001-02-27'
           grade:
             type: string
           location:
@@ -1734,27 +1788,24 @@ definitions:
       - joiningDate
       - orgName
       
-  GetUserByLoginIdrequest:
-    title: Get User by Login IdRequest
+  GetUserByLoginIdRequest:
     type: object
     properties:
      request:
-         $ref: '#/definitions/userLoginIdRequest'
+         $ref: '#/definitions/UserLoginIdRequest'
     required:
       - request
-  userLoginIdRequest:
-    title: request structure for user login id
+  UserLoginIdRequest:
     type: object
     properties:
       loginId:
         description: >-
-          - Represents the user login ID, If the user is created by providing username and provider, then login ID would be username@provider 
-          - If the user is created without provider then loginID would be same as username
+          - Represents the user login ID, If the user is created by providing username and channel, then login ID would be username@channel 
+          - If the user is created without channel then loginID would be same as username@{sunbird_default_channel}.
         type: string
     required:
       - loginId
-  SearchUserrequest:
-    title: Search UserRequest
+  SearchUserRequest:
     example:
       request:
         query: >- 
@@ -1769,11 +1820,11 @@ definitions:
       request:
        allOf:
         - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-        - $ref: '#/definitions/Request18'
+        - $ref: '#/definitions/userSearch'
     required:
     - request
-  Request18:
-    title: Request18
+  userSearch:
+    description: Search user request
     type: object
     properties:
       filters:
@@ -1800,18 +1851,14 @@ definitions:
     required:
     - userAttribute
     
-  UpdateUserrequest:
-    title: Update UserRequest
+  UpdateUserRequest:
     type: object
     properties:
       request:
-       allOf:
-        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-        - $ref: '#/definitions/Request74'
+        $ref: '#/definitions/UserUpdate'
     required:
     - request
-  Request74:
-    title: Request74
+  UserUpdate:
     type: object
     properties:
       userId:
@@ -1832,6 +1879,8 @@ definitions:
       dob:
         description: 'Represents the Data of Birth of the user'
         type: string
+        format: yyyy-MM-dd
+        example: '2001-02-27'
       language:
         description: 'Represents the language of the user'
         type: array
@@ -1842,17 +1891,30 @@ definitions:
         type: array
         items:
           type: string
+      externalId:
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        type: string
+      externalIdType:
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        type: string
+      externalIdProvider:
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        type: string
+      externalIds:
+        description: 'details of external IDs and provider'
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/ExternalIdUpdate'  
     required:
     - userId    
   ResultStatus:
-    description: Node id description
     type: object
     properties:
       status:
        type: string
        description: Success or Failure
   ResultWithEmptyBody:
-    title: The result Containing empty body
     type: object
     properties:
       result:
@@ -1878,21 +1940,18 @@ definitions:
       - $ref: '#/definitions/ResultWithEmptyBody'
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
   EmptyResult:
-    title: Empty Result
     type: object
     properties:
       result:
         type: object
         description: Empty Result
   UserErrorResponse:
-    title: This is response body of Create Content Error 
     type: object
     allOf:
       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
       - $ref: '#/definitions/EmptyResult'
       
-  updateloginrequest:
-    title: '{{host}}/user/v1/updateloginRequest'
+  UpdateLoginRequest:
     example:
       params: {}
       request:
@@ -1903,12 +1962,12 @@ definitions:
         description: ''
         type: object
       request:
-        $ref: '#/definitions/Request23'
+        $ref: '#/definitions/LoginRequestUpdate'
     required:
     - params
     - request
-  Request23:
-    title: Request23
+  LoginRequestUpdate:
+    description: request body to update user login time
     type: object
     properties:
       userId:
@@ -1916,8 +1975,7 @@ definitions:
         type: string
     required:
     - userId
-  visibilityrequest:
-    title: '{{host}}/user/v1/profile/visibilityRequest'
+  VisibilityRequest:
     example:
       request:
         userId: {userid}
@@ -1930,7 +1988,7 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request10'
+        $ref: '#/definitions/ProfileVisibility'
         example:
           userId: userid
           private:
@@ -1941,8 +1999,8 @@ definitions:
           - private field name which you want to make public
     required:
     - request
-  Request10:
-    title: Request10
+  ProfileVisibility:
+    description: profile visibility request data
     example:
       userId: userid
       private:
@@ -1969,7 +2027,7 @@ definitions:
       public:
         description: ''
         example:
-        - private field name which you want to make public
+        - private field name that you want to make public
         type: array
         items:
           type: string
@@ -1978,50 +2036,45 @@ definitions:
     - private
     - public
  
-  assignrequest:
-    title: '{{host}}/user/v1/role/assignRequest'
-    example:
-      request:
-        userId: 3d45fbd8-b911-4cc5-b503-61215902d780
-        organisationId: 0123653943740170242
-        roles:
-        - CONTENT_CREATION
-        - PUBLIC
-        - CONTENT_CREATOR
-        - ANNOUNCEMENT_SENDER
+  AssignRequest:
+    title: 'AssignRequest'
     type: object
     properties:
       request:
-        $ref: '#/definitions/assignRoleExp'
+        $ref: '#/definitions/AssignRole'
     required:
     - request
+
   assignRoleExp:
     title: assignRoleExp
     example:
       userId: userid
-      organisationId: 
+      organisationId: The valid organisation ID
       roles:
       - CONTENT_CREATION
       - PUBLIC
       - CONTENT_CREATOR
       - ANNOUNCEMENT_SENDER
+
+  AssignRole:
+
     type: object
     properties:
       userId:
         description: 'The unique ID of the user'
-        example: userid
         type: string
       organisationId:
-        description: 'The unique ID of the organization'
-        example: 012365
+        description: 'The unique ID of the organisation'
         type: string
       roles:
-        description: 'The role assigned to a user'
+
+        description: 'The role assigned to a user. The role is directly replaced with saved roles if any. Ensure that the request has a list of all the user's roles. To remove all roles assigned to a user, pass an empty array'
         example:
         - CONTENT_CREATION
         - PUBLIC
         - CONTENT_CREATOR
         - ANNOUNCEMENT_SENDER
+
         type: array
         items:
           type: string
@@ -2030,8 +2083,8 @@ definitions:
     - organisationId
     - roles
     
-  AddSkillToUserrequest:
-    title: add skill to userRequest
+  AddSkillToUserRequest:
+    title: AddSkillToUserRequest
     type: object
     properties:
       request:
@@ -2045,3 +2098,86 @@ definitions:
            type: string
     required:
     - request
+  ExternalId:
+    title: ExternalId
+    type: object
+    properties:
+      id:
+        type : string
+        description: 'Identity of the user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      provider:
+        type: string
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      idType:
+        type :  string
+        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government.'
+  ExternalIdUpdate:
+    description : The user request to update the external ID in the profile
+    type: object
+    properties:
+      id:
+        type : string
+        description: 'Identity of user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      provider:
+        type: string
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      idType:
+        type :  string
+        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government' 
+      operation:
+        type: string
+        description : 'possible values are {ADD,EDIT,REMOVE}'
+  ReadUserSkill:
+    title: ReadUserSkill
+    type: object
+    properties:
+      request:
+       type: object
+       properties:
+         endorsedUserId:
+          type: string
+    required:
+    - endorsedUserId
+  
+  GetUserSkill:
+    title: GetUserSkill
+    type: object
+    properties:
+      result:
+       type: object
+       properties:
+         skills:
+          type: array
+          items:
+           type: object
+           properties:
+            skillName:
+             type: string
+             description: 'name of the skill'
+            addedAt:
+             type: string
+             description: 'Date of skill endorsement in yyyy-MM-dd'
+            endorsersList:
+             type: array
+             items:
+              type: object
+              properties:
+               endorseDate:
+                type: string
+                description : 'Date of skill endorsement in yyyy-MM-dd'
+               userId:
+                type: string
+                description: 'who did endorsement'
+            addedBy:
+             type: string
+            endorsementcount:
+             type: integer
+            id:
+             type: string
+            skillNameToLowercase:
+             type: string
+             description : 'skill name in lower case'
+            userId :
+             type: string
+    required:
+    - endorsedUserId  

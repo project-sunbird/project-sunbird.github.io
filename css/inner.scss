@@ -162,6 +162,13 @@
       display: inline-block;
       margin-right: 8px;
       margin-left: -30px;
+      height:28px;
+      width:28px;
+      line-height:28px;
+      text-align:center;
+      vertical-align:middle;
+      background:#e5e5e5;
+      border-radius:50%;
     }
     ul {
       margin-top: 5px;
@@ -355,3 +362,12 @@ a:hover{cursor:pointer;}
 .auto{
 	width:auto !important;
 }
+table.noborder,
+.noborder thead,
+.noborder tbody,
+.noborder tr,
+.noborder th,
+.noborder td {
+	border:0 !important;
+}
+
