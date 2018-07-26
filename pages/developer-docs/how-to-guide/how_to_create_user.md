@@ -10,68 +10,68 @@ allowSearch: true
 ---
 ## Scenario
 
-XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly upskilled, the XYZ Corp has set up an instance of Sunbird platform. In order to give their employees access to the learning platform, the organization's administrator needs to    . Consider an organization Nurture Institutions, recognized education and learning body, that exists in multiple cities across the country wants to use Sunbird and Ekstep content service for their organizational needs. They must register their organization with Ekstep and get a unique channel ID. The registered organisations must have their virtual replica over Sunbird. Further, they need to create organization administrator (org admin)   and other individual user with different privileges to perform tasks. This document elaborates the process of creating and uploading users in the organization for the Sunbird instance using the appropriate APIs.
+XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization's administrator needs to create and add user details. 
 
 ### Prerequisites
 
-To add users to the Sunbird instance, ensure that the following prerequisites are met:
+1.An initialized server instance of Sunbird. Initialization includes creating an org admin user (through Keycloak), creating a channel and associating a first organization with the channel.
 
-1. Register your channel (organization) with Ekstep. On registration, a unique Channel ID is assigned to your organization. 
-2. Install a server instance of Sunbird. For details, refer to [Server Installation](http://www.sunbird.org/developer-docs/installation/server_installation/)
-3. Create a channel for your organization. For details, refer to [Channel APIs](http://www.sunbird.org/apis/framework/#tag/Channel-APIs)
-4. Have a [first organization](http://www.sunbird.org/developer-docs/initialization) associated with channel ID
-4. Have the API Key for access and basic authentication
-5. Use an API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)
-6. Access to [Create User API](http://www.sunbird.org/apis/userapi/#tag/User-APIs)
-7. Have a valid [Admin user](http://www.sunbird.org/) 
+For details, refer to:
+* [Server Installation](http://www.sunbird.org/developer-docs/installation/server_installation/)
+* [Channel APIs](http://www.sunbird.org/apis/framework/#tag/Channel-APIs)
+* [First organization](http://www.sunbird.org/developer-docs/initialization) associated with channel ID
+
+2.The API Key for access and basic authentication
+
+3.An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)
+
+4.Access to the [Create User API](http://www.sunbird.org/apis/userapi/#tag/User-APIs)
 
 ## Overview
 
-A user in an organization performs different task or roles. The created user should be authenticated and assigned to a organization and a channel. For example, a system administrator is the root user of the organisation who manages end-to-end system. 
+Every user belongs to an organization and is identified within the organization through a unique user ID. Sunbird, uniquely identifies every tenant organization through a channel. Hence, when creating a user, its not enough to only add user details and assign a user ID. To enable users, the user ID has to be associated with an organization and channel. Since a user also plays a role within an organization, the user gets fully enabled only after the user ID is associated to a role. For example, John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them.  
 
 ### Taskflow
-A organization admin can create a user and associate it with an organization. Let us assume that a new user needs to be created in  Nurture Institutions. 
+ 
+Only an org administrator can create users. Follow the sequence of steps provided to create a general user: 
 
-**Create a New User** 
-A general user can be created in the organization using Create User API, it is further associated with an organization ID and channel ID and is assigned a role, refer [Mapping User to Organization](www.sunbird.org). For creating a user follow the steps:
-
-1. Ensure the prerequisites are met 
-2. Get access to Create User API 
-3. Use an API client (postman) to perform the operation
-4. Execute Create User API. 
-5. Enter the values for the header of the API 
+1. Ensure that all prerequisites are met 
+2. Specify values in the header of the Create User API 
 
 Field | Sample Value 
 --- | ---|
 content-Type | appilcation/json
 Authorization| JWT token with keyword "Bearer" example: {Bearer JWT Token}
 
-6. Following table depicts the mandatory field in the request body. You can provide values to other fields of the API, for morre information refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User) documentation   
+3.Specify values for the following parameters in the request body of the API 
 
+**Note:** 
+i)While you may provide values for other parameters in the request body, it is essential to provide values in those mentioned in the following table. For more information, refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User)
+ii)The sample values provided in the table are indicative
 
-Field | Sample Value |Description | Is Mandatory
---- | --- |--- |---
-email | xyz@nurtureeducorp.com|Email ID of the new user| Yes
-firstName |Sam| First name of the user|Yes
-lastName |Pal|Last name of the user |No
-password |password123| Password|Yes
-avatar|sam.png |Image of the user |No
-language|English|List of the language user knows |No
-phone  |987654321|Phone number of the user|Yes
-phoneVerified| true|Is the phone number verified with sunbird |No
-channel  |string|Represents the value of channel, which you get while creating a rootOrg - if you provide channel value, then you will get associated with that particular root organization - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail
-education|Contains the following fields
-degree  |M.A., B.A.|Represents the name of degree| Yes
-yearOfPassing || No
-courseName  |string|
-boardOrUniversity  |string|
-address  
-addType  |string|
-addressLine1  |string|
-addressLine2  |string|
-city  |string|
-state  |string|
-zipCode  |string|
+|Parameter | Sample Value |Description | Is Mandatory|
+|--- | --- |--- |---|
+email | john@xyzcorp.com|The email ID of the user| Yes
+firstName |John| The first name of the user|Yes
+lastName |Pal|The last name of the user |No
+password |password123| The user's password|Yes
+avatar|john.png |The user's photograph. It is recommended that images are in .png format. |No
+language|English|A comma separated list of languages that are known to the user |No
+phone  |987654321|The user's phone number |Yes
+phoneVerified| true| Indicates if the phone number is verified | No
+channel  |a1234567b890c|Represents the channel value. The channel value is got while creating a rootOrg - if you provide channel value, then you will get associated with that particular root organization - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail
+education|**Contains the following fields**
+degree  |B.A.|Represents the academic qualifications obtained by the user| Yes
+yearOfPassing | 1934| The year in which the user obtained the degreee |No
+courseName  |Bachelor of Arts| The name of the course that the user attended|No
+boardOrUniversity  |ABC University| The name of the board or university that awarded the degree|No
+address| **Contains the following fields** 
+addType  |Permanent|The type of address. For example, permanent, communication, home, office, etc| No
+addressLine1  |#34, ASDF Apartments| The first line in the user's address| No 
+addressLine2  |ERTY Lane| The second line in the user's address|No
+city  |Bangalore| The name of the city in the user's address|No
+state  |Karnataka| The name of the state in the user's address|No
+zipCode  |560089| The zip code in the user's address|No
 percentage  
 grade  |string|
 profileVisibility
