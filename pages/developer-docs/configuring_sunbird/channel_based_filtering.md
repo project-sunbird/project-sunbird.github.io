@@ -5,8 +5,8 @@ title: Filter Content for a Channel
 page_title: Filter Content for a Channel 
 description: How to setup filtering of content for a channel. 
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 ---
 ## Scenario
 
