@@ -1678,8 +1678,8 @@ definitions:
             $ref: "#/definitions/Address"
             description: it will contains list of address object.
           jobProfile:
-            type: object
-            $ref: "#/definitions/JobProfile"
+              type: object
+              $ref: "#/definitions/JobProfile"
           webPages:
             type: object
             properties:
@@ -2068,7 +2068,8 @@ definitions:
         type: string
       roles:
 
-        description: 'The role assigned to a user. The role is directly replaced with saved roles if any. Ensure that the request has a list of all the user's roles. To remove all roles assigned to a user, pass an empty array'
+        description:
+          The role assigned to a user. The role is directly replaced with saved roles if any. Ensure that the request has a list of all the users roles. To remove all roles assigned to a user, pass an empty array'
         example:
         - CONTENT_CREATION
         - PUBLIC
