@@ -1,11 +1,11 @@
 ---
 type: landing
 directory: developer-docs/upgrade
-title: Upgrading to Angular versions 6
-page_title: Upgrading to Angular versions 6
-description:  Upgrading to Angular versions 6?
+title: Upgrade to Angular Version 6
+page_title: Upgrade to Angular Version 6
+description:  How to upgrading to Angular versions 6
 published: true
-allowSearch: false
+allowSearch: true
 ---
 
 ## Overview
