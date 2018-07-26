@@ -1,24 +1,24 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Fliter Content for a Channel
-page_title: Channel Based Filtering 
-description: Channel Based Filtering
+title: Filter Content for a Channel
+page_title: Filter Content for a Channel 
+description: How to setup filtering of content for a channel. 
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
 published: true
 allowSearch: true
 ---
 ## Scenario
 
-An organization works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A.           
+An organization works in the domain of water conservation and works in multiple Indian states, with NGOs, village panchayats and other authorities. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each state to independently access content that is specific to them. For example, village A in state B is plagued with a problem of a rapidly depleting the water table. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display only to users of state B.           
 
-### Version
+**Version Applicable**
 
 This feature is applicable from Sunbird 1.7.0 onwards
 
-### Intended Audience
+**Intended Audience**
 
-The Instance Admin
+The Sunbird instance administrator
 
 ## Prerequisites
 

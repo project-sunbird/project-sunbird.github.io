@@ -1,19 +1,19 @@
 ---
 type: landing
 directory: developer-docs/how-to-guide
-title: How to Create Organization
-page_title: How to Create Organization
+title: Create Organization
+page_title: Create Organization
 description: creating a new organization in sunbird instance
-keywords: create organization, new organization in sunbird
+keywords: create organization, new organization in sunbird, organization, create
 published: true
 allowSearch: true
 ---
 ## Scenario
-Organizations, on Sunbird can be an institute or a body of individuals. To utilize Sunbird for organizational needs, an organization account must be created on the portal.
+Organizations, on Sunbird can be an institute or a body of individuals. To utilize Sunbird for organizational needs, create an organization account on the portal.
 
 ### Prerequisites
   - Sunbird instance is installed and configured
-  - Postman app is installed, refer How to install and call an API using Postman
+  - Postman app is installed, refer [How to install and call an API using Postman]
   - First Organization with channel ID
   - Access API using
      - Authorization header with Bearer {{api-key}}
