@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.8.0.b/";
+			baseURL.href="/releases/release.1.5.2/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-07-13 15:36:59 +0530">
+<meta name="last-modified" content="2018-07-26 09:53:07 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.8.0.b" />
-<meta name="buildNo" content="4192" />
+<meta name="buildVersion" content="release.1.5.2" />
+<meta name="buildNo" content="4289" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?13072018"  />
-<link rel="stylesheet" href="css/style.css?13072018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?13072018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?13072018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?13072018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?13072018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?26072018"  />
+<link rel="stylesheet" href="css/style.css?26072018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?26072018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?26072018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?26072018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?26072018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -554,19 +554,31 @@
               <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
             </li>
             <li class="toc_level-1 toc_section-2">
-              <a href="#upgrading-sunbird-services"><span class="tocnumber">2 .</span> <span class="toctext">Upgrading Sunbird Services</span></a>
+              <a href="#prerequisites"><span class="tocnumber">2 .</span> <span class="toctext">Prerequisites</span></a>
             </li>
             <li class="toc_level-1 toc_section-3">
-              <a href="#backup-and-restore-of-sunbird-databases"><span class="tocnumber">3 .</span> <span class="toctext">Backup and Restore of Sunbird Databases</span></a>
+              <a href="#upgrading-sunbird-services"><span class="tocnumber">3 .</span> <span class="toctext">Upgrading Sunbird Services</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-4">
+              <a href="#backup-the-databases"><span class="tocnumber">4 .</span> <span class="toctext">Backup the Databases</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-4">
-                  <a href="#cassandra"><span class="tocnumber">3.1 .</span> <span class="toctext">Cassandra</span></a>
-                </li>
                 <li class="toc_level-2 toc_section-5">
-                  <a href="#postgres"><span class="tocnumber">3.2 .</span> <span class="toctext">Postgres</span></a>
+                  <a href="#backup-cassandra"><span class="tocnumber">4.1 .</span> <span class="toctext">Backup Cassandra</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-6">
-                  <a href="#elasticsearch"><span class="tocnumber">3.3 .</span> <span class="toctext">Elasticsearch</span></a>
+                  <a href="#restore-cassandra"><span class="tocnumber">4.2 .</span> <span class="toctext">Restore Cassandra</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-7">
+                  <a href="#backup-postgres"><span class="tocnumber">4.3 .</span> <span class="toctext">Backup Postgres</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-8">
+                  <a href="#restore-postgres"><span class="tocnumber">4.4 .</span> <span class="toctext">Restore Postgres</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-9">
+                  <a href="#backup-elastic-search"><span class="tocnumber">4.5 .</span> <span class="toctext">Backup Elastic Search</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-10">
+                  <a href="#restore-elastic-search"><span class="tocnumber">4.6 .</span> <span class="toctext">Restore Elastic Search</span></a>
                 </li>
               </ul>
             </li>
@@ -577,185 +589,159 @@
   </table>
 </div><h2 id="overview">Overview</h2>
 
-<p>Upgrading to the latest version of Sunbird allows you to avail benefits of new and enhanced features and bugs fixed on the platform as well the latest updated versions of any third party component used by it.</p>
+<p>Upgrading to the latest version of Sunbird allows you to avail benefits of:</p>
 
 <ul>
-  <li>From release-1.5:
-    <ul>
-      <li>All the services are maintained with same image gold  version</li>
-      <li>Cassandra migration is introduced to update  cassandra database schema.</li>
-    </ul>
+  <li>Sunbird’s new and enhanced features</li>
+  <li>fixes done for bugs raised on the platform</li>
+  <li>
+    <p>the latest updated versions of any third party component used within Sunbird</p>
   </li>
+  <li>
+    <p>From release 1.5 onwards:</p>
+  </li>
+  <li>All the services are maintained with same image gold version</li>
+  <li>Cassandra migration is introduced to update cassandra database schema</li>
 </ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Ensure that you have Python installed on the Cassandra machine</p>
 
 <h2 id="upgrading-sunbird-services">Upgrading Sunbird Services</h2>
 
+<p>1.Pull the latest code of <code>project-sunbird/sunbird-devops</code> from its master branch</p>
+
+<p>2.It is recommended to take a full backup of all the databases before updating the schema</p>
+
+<p>3.Follow the steps <a href="developer-docs/upgrading/#backup-and-restore-of-sunbird-databases">here</a> to take the backup</p>
+
+<p>4.Run the command <code>./sunbird-install.sh</code></p>
+
+<p>
+  <strong>Note:</strong>
+</p>
+
+<ul>
+  <li>
+    <p>Executing the command deploys the latest version of Sunbird services and also updates the latest schema in the databases</p>
+  </li>
+  <li>
+    <p>The latest image versions of all the services are updated in the master branch. To get a hotfix image of any Sunbird service, update the minor version in the <code>sunbird-devops/deploy/deploy-core.sh</code> file and re-run the <code>sunbird-devops/deploy/deploy-core.sh</code> script.</p>
+  </li>
+</ul>
+
+<h2 id="backup-the-databases">Backup the Databases</h2>
+
+<p>1.SSH to the database server where you want to store your backup</p>
+
+<p>2.Run the command <code>git clone https://github.com/project-sunbird/sunbird-devops</code></p>
+
+<p>3.cd <code>sunbird-devops/deploy/</code></p>
+
+<h3 id="backup-cassandra">Backup Cassandra</h3>
+
+<p>Ensure that the prerequisites are met. To backup the Cassandra database:</p>
+
 <ol>
   <li>
-    <p>Pull the latest code of <code>project-sunbird/sunbird-devops</code> from the master branch.</p>
+    <p>Take a snapshot of the Cassandara database using the following command</p>
+
+    <p><code>nodetool snapshot -t my_backup</code></p>
   </li>
   <li>
-    <p>It is good practice to take a full backup of all the databases before updating the new schema. Follow steps <a href="developer-docs/installation/medium_scale_deploy/#taking-a-back-up-of-database-servers">here</a> to take backup.</p>
-  </li>
-  <li>
-    <p>Run <code>./sunbird-install.sh</code>. This will deploy the latest version of sunbird services and also update the latest schema on databases.</p>
+    <p>Copy the snapshot to your backup directory</p>
+
+    <pre><code>`./cassandra_backup.py &lt;cassandra_data_path&gt; &lt;snapshot_name&gt; &lt;path_to_backup_directory&gt;` 
+</code></pre>
   </li>
 </ol>
 
-<p><strong>Note:</strong> Latest images versions of all the services are updated in the master branch. To get the particular hotfix image of any Sunbird service, update the minor version in the <code>sunbird-devops/deploy/deploy-core.sh</code> file. Re-run the <code>sunbird-devops/deploy/deploy-core.sh</code></p>
+<p>For example, <code>./cassandra_backup.py  /var/lib/cassandra/data my_backup  cassandra_backup_20180412</code></p>
 
-<h2 id="backup-and-restore-of-sunbird-databases">Backup and Restore of Sunbird Databases</h2>
+<p><strong>Note:</strong> Executing the command creates snapshots of all the keyspaces such as:</p>
 
-<ol>
-  <li>
-    <p>ssh to the database server on which you want to take backup.</p>
-  </li>
-  <li>
-    <p>Run <code>git clone https://github.com/project-sunbird/sunbird-devops</code></p>
-  </li>
-  <li>
-    <p>cd <code>sunbird-devops/deploy/</code></p>
-  </li>
-</ol>
+<p>a) portal         -  Stores the session data
+b) dialcodes      -  Stores the energized text book details
+c) sunbirdplugin  -  Stores the custom or plugin data(used in announcement feature (Object API)
+d) sunbird	  -  Stores the organization ,user, course, batch, badger etc.</p>
 
-<h3 id="cassandra">Cassandra</h3>
+<h3 id="restore-cassandra">Restore Cassandra</h3>
 
-<p>
-  <strong>Backup:</strong>
-</p>
+<p>Ensure that the prerequisites are met. To restore the Cassandra database:</p>
 
-<ul>
-  <li>
-    <p>Take a snapshot of Cassandara database using</p>
+<p>1.Copy the Cassandra backup snapshot to the instance where you want to restore</p>
 
-    <p>nodetool snapshot -t my_backup</p>
-  </li>
-  <li>
-    <p>Copy the snapshot to your backup directory.</p>
+<p>2.Restore Cassandra database using the following command:</p>
 
-    <pre><code>./cassandra_backup.py &lt;cassandra_data_path&gt; &lt;snapshot_name&gt; &lt;path_to_backup_directory&gt;
-</code></pre>
+   	<code>./cassandra_restore.py &lt;cassandra_host_ip_address&gt; &lt;snapshotdir&gt;</code> for example: <code>./cassandra_restore.py 10.10.10.10 ./cassandra_bakup_20180412</code>
 
-    <p>for example:</p>
+<h3 id="backup-postgres">Backup Postgres</h3>
 
-    <pre><code>./cassandra_backup.py  /var/lib/cassandra/data my_backup  cassandra_backup_20180412
-</code></pre>
-  </li>
-  <li>
-    <p>Above command creates the snapshot of all the keyspaces mentioned below.</p>
+<p>To take a backup of the Postgres database:</p>
 
-    <pre><code> portal         -  Stores the session data
- dialcodes      -  Stores the energized text book details
- sunbirdplugin  -  Stores the custom or plugin data(used by announcment team as an object api internally)
- sunbird	       -  Stores the org,user,course,batch,badgr etc..
-</code></pre>
-  </li>
-</ul>
-
-<p>
-  <strong>Restore:</strong>
-</p>
-
-<ul>
-  <li>
-    <p>Copy the Cassandra backup snapshot to the instance where you want to run restore.</p>
-  </li>
-  <li>
-    <p>Restore Cassandra database using command</p>
-
-    <pre><code>./cassandra_restore.py &lt;cassandra_host_ip_address&gt; &lt;snapshotdir&gt;
-</code></pre>
-
-    <p>for example:</p>
-
-    <pre><code>./cassandra_restore.py 10.10.10.10 ./cassandra_bakup_20180412
-</code></pre>
-  </li>
-</ul>
-
-<h3 id="postgres">Postgres</h3>
-
-<p>
-  <strong>Backup:</strong>
-</p>
-
-<ul>
-  <li>
-    <p>Run the script below to take a full backup of the Postgres database.</p>
-
-    <pre><code>  ./backup_postgres.sh
-</code></pre>
-  </li>
-  <li>
-    <p>Above command creates the backup file in the location <code>/tmp/postgresql-backup</code>.</p>
-  </li>
-  <li>
-    <p>Backup of Postgres is done for below databases</p>
-
-    <pre><code>  api_manager -	Used by kong
-  badger	    -	Used by badger services
-  Keycloak    -	Used by Keycloak
-  quartz      -	Used by sunbird backend services
-</code></pre>
-  </li>
-</ul>
-
-<p>
-  <strong>Restore:</strong>
-</p>
-
-<ul>
-  <li>
-    <p>Copy the backup file from the <code>/tmp/postgresql-backup/&lt;backup_file&gt;</code></p>
-  </li>
-  <li>
-    <p>Run the below command for restore</p>
-
-    <pre><code>  ./restore_postgres.sh
-</code></pre>
-  </li>
-</ul>
-
-<h3 id="elasticsearch">Elasticsearch</h3>
-
-<p>
-  <strong>Backup:</strong>
-</p>
-
-<ul>
-  <li>
-    <p>Run the below script for backup</p>
-
-    <pre><code>  ./backup_elasticsearch.sh
-</code></pre>
-  </li>
-  <li>
-    <p>Above command creates the backup file in the location <code>/etc/elasticsearch/backup</code>.</p>
-  </li>
-  <li>
-    <p>Backup of Elasticsearch is done for below databases</p>
-
-    <pre><code>  searchindex      - Stores the user, org , course, batch data
-  sunbirdplugin    - Stores the plugin related data (object API)
-  sunbirddataaudit - Stores the user &amp; org audit history data.
-</code></pre>
-  </li>
-</ul>
-
-<p>
-  <strong>Restore:</strong>
-</p>
-
-<p>Copy the backup file from the <code>/tmp/elasticsearch-backup/&lt;backup_file&gt;</code> to the instance where you want to run restore.</p>
-
-<p>Run</p>
+<p>1.Run the following script to take a full backup of the Postgres database</p>
 
 <pre>
-  <code>./restore_elasticsearch.sh &lt;path/to/the/restore_file	
+  <code>	./backup_postgres.sh
 </code>
 </pre>
 
-<p><strong>Note:</strong> Install Python on the Cassandra machine, if you use our scripts to backup or restore the Cassandra database.</p>
+<p><strong>Note:</strong> Executing the command creates the backup file at the following location:</p>
+
+<pre>
+  <code>	**/tmp/postgresql-backup** 
+</code>
+</pre>
+
+<p>2.Postgres Backup includes the following databases:</p>
+
+<p>a) api_manager -	Used by kong
+b) badger      -	Used by badger services
+c) Keycloak    -	Used by Keycloak
+d) quartz      -	Used by sunbird backend services</p>
+
+<h3 id="restore-postgres">Restore Postgres</h3>
+
+<p>To restore the Postgres database:</p>
+
+<p>1.Copy the backup file from  **/tmp/postgresql-backup/<backup_file>**</backup_file></p>
+
+<p>2.Run the command <code>./restore_postgres.sh</code></p>
+
+<h3 id="backup-elastic-search">Backup Elastic Search</h3>
+
+<p>To take a backup of Elastic Search databases:</p>
+
+<p>1.Run the following script to take the backup</p>
+
+<pre>
+  <code>  `./backup_elasticsearch.sh`
+</code>
+</pre>
+
+<p><strong>Note:</strong> Executing the command creates the backup file at <strong>/etc/elasticsearch/backup</strong></p>
+
+<ol>
+  <li>Elasticsearch backup includes the following databases:</li>
+</ol>
+
+<p>a) searchindex      - Stores the user, org , course, batch data
+b) sunbirdplugin    - Stores the plugin related data (object API)
+c) sunbirddataaudit - Stores the user &amp; organization audit history data</p>
+
+<h3 id="restore-elastic-search">Restore Elastic Search</h3>
+
+<p>To restore the Elastic Search databases, follow these steps:</p>
+
+<p>1.Copy the backup file from <code>/tmp/elasticsearch-backup/&lt;backup_file&gt;</code> to the instance where you want to run the restore operation.</p>
+
+<p>2.Run the following command:</p>
+
+<pre>
+  <code>`./restore_elasticsearch.sh &lt;path/to/the/restore_file`	
+</code>
+</pre>
 
 
           

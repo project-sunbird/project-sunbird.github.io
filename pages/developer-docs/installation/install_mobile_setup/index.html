@@ -36,8 +36,8 @@
 <br />
 <pre>
 <code>
-buildConfigField 'String', 'REDIRECT_BASE_URL', '"&lt;http or https://domain-name&gt;"'
-buildConfigField 'String', 'TELEMETRY_BASE_URL', '"&lt;http or https://domain-name&gt;/api/data/v1"'
+buildConfigField 'String', 'REDIRECT_BASE_URL', '"(http or https://domain-name)"'
+buildConfigField 'String', 'TELEMETRY_BASE_URL', '"(http or https://domain-name)/api/data/v1"'
 </code>
 </pre>
   </td>
@@ -52,8 +52,8 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"&lt;http or https://domain-na
   </tr>
   <tr>
     <td>7.</td>
-    <td>Add your keystore details: <code>keystore</code>, <code>keystore_password</code>, <code>key_alias</code> and <code>key_password</code> in <code>gradle.properties</code>.<bbrr> Please refer to the official Android documentation for <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank"> generating a key and keystore</a>.&lt;/td&gt;
-  &lt;/tr&gt;
+    <td>Add your keystore details: <code>keystore</code>, <code>keystore_password</code>, <code>key_alias</code> and <code>key_password</code> in <code>gradle.properties</code>.<br /> Please refer to the official Android documentation for <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank"> generating a key and keystore</a>.</td>
+  </tr>
   <tr>
     <td>8.</td>
     <td>Replace `release_fabric_api_key` in `gradle.properties` with your fabric API Key. Please create an account in <a href="https://get.fabric.io/" target="_blank">fabric.io</a> and register the app to get the API key. </td>
@@ -110,5 +110,4 @@ dev_mobile_app_secret = "&lt;secret&gt;" </code>
     <td>15.</td>
     <td>Please setup FCM to support announcement feature in mobile app following the <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase" target="_blank">Android documentation</a>.</td>
   </tr>
-&lt;/table&gt;
-</bbrr></td></tr></table>
+</table>

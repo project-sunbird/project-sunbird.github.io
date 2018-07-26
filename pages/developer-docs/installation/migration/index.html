@@ -1,0 +1,235 @@
+<h2 id="overview">Overview</h2>
+
+<p>Sunbird supports multiple external IDs for a user. An external ID is the user’s identity outside the Sunbird system. For example; John is an employee of <strong>XYZ Corporation</strong>.  In <strong>XYZ Corporation</strong>, his identity(ID) is <strong>jo_123</strong> and ID Type is <strong>employeeId</strong>. 
+When he registers with Sunbird, he can specify his external ID as  <strong>jo_123</strong>, provider as <strong>XYZ Corporation</strong> and ID Type as <strong>employeeId</strong>. Similarly, John, being part of multiple organizations, (like also being an account holder in <strong>ABC bank</strong>), has a separate identity in each organization. The ID provided by that organization identifies and recognises John as being part of that particular organization. When John is registered in Sunbird, using the create or update user API, he can specify all the external IDs, providers and ID types as values in the associated parameters.</p>
+
+<p>As part of Sunbird release version 1.8, the table holding user external ID data is modified as follows:</p>
+
+<ul>
+  <li>The table name is modified from <strong>user_external_identity</strong> to <strong>usr_external_identity</strong>.</li>
+  <li>A new column <strong>idtype</strong> is introduced in the <strong>usr_external_identity</strong> table to store external ID type. For example, UIDAI is the provider for ID type Aadhaar.</li>
+  <li>In Sunbird release version 1.7, the external ID was unencrypted. In release 1.8, the external ID is encrypted to ensure privacy of user external ID information.</li>
+</ul>
+
+<p><strong>Note:</strong> This data migration should be done after deploying Sunbird learner service release version 1.8.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To run the migration script:</p>
+
+<p>1.Define a mapping file that specifies the ID type for each unique external ID provider available in the <strong>user_external_identity</strong> table.
+    a.Get a list of all providers using CQL query: <code>select provider from user_external_identity</code>
+    b.Create a CSV file (mapping.csv) that maps each unique external ID to its associated ID type
+    For example;
+    <code>
+    provider,idType
+    ka,kaIdType
+    ap,apIdType
+   </code></p>
+
+<ol>
+  <li>Before migrating any data, take a backup in Sunbird keyspace within the Cassandra DB.</li>
+</ol>
+
+<h2 id="configuration-parameters">Configuration Parameters</h2>
+<p>The following parameters need to be configured for migrating user data:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>S.No.</td>
+      <td>Parameter</td>
+      <td>Description</td>
+      <td>Example</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>cassandra_server</td>
+      <td>Cassandra DB IP Address</td>
+      <td>50.34.16.33</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>cassandra_port</td>
+      <td>Cassandra DB Port Number</td>
+      <td>9145</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>keyspace_name</td>
+      <td>Cassandra DB Keyspace Name</td>
+      <td>demodb</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>encryption_key</td>
+      <td>Key used in Sunbird for encryption of private user information</td>
+      <td>60B568970ASDFer321</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>provider_idtype_mapping_file_path</td>
+      <td>Path to CSV file which defines mapping between external ID provider and type</td>
+      <td>\john\mapfile.csv</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="run-the-migration-script">Run the Migration Script</h2>
+
+<p>To migrate user external ID data:</p>
+
+<p>1.Extract the archive file (sunbird-utils/cassandra-migration-etl/r1.8/UserExternalIdentityMigrationBin.zip) that contains the script for user external identity table migration</p>
+
+<p>2.Based on the OS, run the corresponding script to migrate the data</p>
+
+<ul>
+  <li>
+    <p>For Linux, run the following command:
+  <code>
+  UserExternalIdentityMigration_run.sh --context_param cassandra_server="{cassandra_server}" --context_param cassandra_port="{cassandra_port}" --context_param cassandra_keyspace="{keyspace_name}" --context_param sunbird_encryption_key="{encryption_key}" --context_param provider_idtype_mapping_file_path="{provider_idtype_mapping_file_path}"
+ </code></p>
+  </li>
+  <li>
+    <p>For Windows, run the following command:</p>
+
+    <p><code>
+  UserExternalIdentityMigration_run.bat --context_param cassandra_server="{cassandra_server}" --context_param cassandra_port="{cassandra_port}" --context_param cassandra_keyspace="{keyspace_name}" --context_param sunbird_encryption_key="{encryption_key}" --context_param provider_idtype_mapping_file_path="{provider_idtype_mapping_file_path}"
+ </code></p>
+  </li>
+</ul>
+
+<ol>
+  <li>Verify that the external IDs are updated in the <strong>usr_external_identity</strong> table with the desired ID type and provider using CQL query: <code>select * from usr_external_identity;</code></li>
+</ol>
+
+<h2 id="userexternalidentity-table-details">user_external_identity Table Details</h2>
+
+<p><strong>Note</strong> The <strong>user_external_identity</strong> table is used prior to Sunbird release version 1.8</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>S.No.</td>
+      <td>Field</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>id</td>
+      <td>Identity of the record. This is the primary key</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>createdby</td>
+      <td>The User ID of the person who created the record</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>createdon</td>
+      <td>The date and time when the record was inserted into the database</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>externalid</td>
+      <td>The user’s identity apart from the Sunbird system. This field allows other systems fetch records from Sunbird and co-relate the user within their system using a combination of the externalid and provider</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>provider</td>
+      <td>The provider of the external ID. This can be any organisation</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>lastupdatedon</td>
+      <td>The date on which the record was last updated</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>userid</td>
+      <td>The User’s identity within Sunbird</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="userexternalidentity-table-schema">user_external_identity Table Schema</h3>
+
+<p><code>
+user_external_identity (
+    id text PRIMARY KEY,
+    createdby text,
+    createdon timestamp,
+    externalid text,
+    lastupdatedby text,
+    lastupdatedon timestamp,
+    provider text,
+    userid text
+)
+</code></p>
+
+<h3 id="usrexternalidentity-table-details">usr_external_identity Table Details</h3>
+
+<p><strong>Note</strong> The <strong>usr_external_identity</strong> table is used from Sunbird release version 1.8</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>S.No.</td>
+      <td>Field</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>provider</td>
+      <td>The provider of the external ID. This can be any organisation</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>idtype</td>
+      <td>The type of ID for example; employee ID, student ID, etc.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>externalid</td>
+      <td>The user’s identity apart from the Sunbird system. This field allows other systems fetch records from Sunbird and co-relate the user within their system using a combination of the externalid and provider</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>createdby</td>
+      <td>The User ID of the person who created the record</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>createdon</td>
+      <td>The date and time when the record was inserted into the database</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>lastupdatedon</td>
+      <td>The date on which the record was last updated</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>userid</td>
+      <td>The User’s identity within Sunbird</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> The combination of provider, idtype and externalid must be unique. The system uses this combination as a primary Key.</p>
+
+<h3 id="usrexternalidentity-table-schema">usr_external_identity Table Schema</h3>
+
+<p><code>
+usr_external_identity (
+    provider text,
+    idtype text,
+    externalid text,
+    createdby text,
+    createdon timestamp,
+    lastupdatedby text,
+    lastupdatedon timestamp,
+    userid text,
+    PRIMARY KEY (provider, idtype, externalid)
+)
+</code></p>
