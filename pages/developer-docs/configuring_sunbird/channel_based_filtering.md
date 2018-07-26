@@ -5,8 +5,8 @@ title: Fliter Content for a Channel
 page_title: Fliter Content for a Channel 
 description: Fliter Content for a Channel
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 ---
 ## Scenario
 An organization works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A.           
