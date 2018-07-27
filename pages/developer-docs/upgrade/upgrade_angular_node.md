@@ -29,7 +29,7 @@ Please update Node.js to v8.9 and above. Node.js download [link](https://nodejs.
 
 ## Steps to update Angular v5 to v6:
 
-*  take latest sunbird-portal release v1.9 or above
+*  take latest sunbird-portal release v1.9 or above from [sunbird-portal](https://github.com/project-sunbird/sunbird-portal)
 *  run npm install @angular/cli@latest -g
 *  move to src/app/client
 *  run npm install @angular/cli@latest
