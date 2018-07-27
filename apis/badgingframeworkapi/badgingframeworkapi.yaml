@@ -288,7 +288,7 @@ paths:
               - $ref: '#/definitions/BadgingErrorResponse'
         '404':
           description: >-
-            Resource not found,**Get Issuer ID** operation failed !The possible reason for failure is that requested resource not found.
+            Resource not found,**Get Issuer ID** operation failed !The possible reason for failure is that the requested is resource not found.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -360,7 +360,7 @@ paths:
         
         '404':
           description: >-
-            Resource not found,**Get Badge Class by ID** operation failed !The possible reason for failure is that requested resource not found.
+            Resource not found,**Get Badge Class by ID** operation failed !The possible reason for failure is that the requested is resource not found.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -556,7 +556,7 @@ paths:
           
         '404':
           description: >-
-            Resource not found,**Delete Issuer by ID** operation failed !The possible reason for failure is that requested resource not found.
+            Resource not found,**Delete Issuer by ID** operation failed !The possible reason for failure is that the requested is resource not found.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -630,7 +630,7 @@ paths:
         
         '404':
           description: >-
-            Resource not found,**Revoke Badge Assertion by ID** operation failed !The possible reason for failure is that requested resource not found.
+            Resource not found,**Revoke Badge Assertion by ID** operation failed !The possible reason for failure is that the requested is resource not found.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -693,7 +693,7 @@ paths:
               
         '404':
           description: >-
-            Resource not found,**Delete Badge Class By Id** operation failed !The possible reason for failure is that requested resource not found.
+            Resource not found,**Delete Badge Class By Id** operation failed !The possible reason for failure is that the requested is resource not found.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
@@ -861,7 +861,7 @@ paths:
               
         '404':
           description: >-
-            Resource not found,**Get Badge Assertion by ID** operation failed !The possible reason for failure is that requested resource not found.
+            Resource not found,**Get Badge Assertion by ID** operation failed !The possible reason for failure is that the requested is resource not found.
           schema:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
