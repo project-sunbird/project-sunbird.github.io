@@ -36,14 +36,15 @@ Every user belongs to an organization and is identified within the organization 
 Only an org administrator can create users. Follow the sequence of steps provided to create a general user: 
 
 1. Ensure that all prerequisites are met 
-2. Specify values in the header of the Create User API 
+2. Use postman or curl command to execute Sunbird's Create User API
+3. Specify values in the Create User API header   
 
 Field | Sample Value 
 --- | ---|
 content-Type | appilcation/json
 Authorization| JWT token with keyword "Bearer" example: {Bearer JWT Token}
 
-3.Specify values for the following parameters in the request body of the API 
+4.Specify values for the following parameters in the request body of the API 
 
 **Note:** 
 i)While you may provide values for other parameters in the request body, it is essential to provide values in those mentioned in the following table. For more information, refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User)
@@ -147,17 +148,13 @@ Following is an example of request body for creating a user:
 }
 }
 ```
-| Step  | Action         | Description                                                   |
-|-------|----------------|---------------------------------------------------------------|
-|Step 2 | Create user    | Create user from postman or curl command using sunbird create user API documentation  | 
-|Step 3 | Save           | Save the created user ID |
-
-The user is created under the organisation. 
+5.Save the created user ID
+6.The user is created under the organization
 
 ### Concepts covered
-**Users**: The individual who can sign in and access the Sunbird portal to perform a set of action that is assigned by the system administrator.
-**Organization**: Organizations can be an institute or a body of individuals. 
-**Channel**: Unique identification number associated with the user or an organization
+**Users**: Individuals who can sign in and access the Sunbird portal.
+**Organization**: An Organization is an institute or a body of individuals. 
+**Channel**: A unique identifier associated with the tenant organization
 
 ### Additional Topics
 
