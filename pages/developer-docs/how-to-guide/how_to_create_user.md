@@ -60,48 +60,31 @@ language|English|A comma separated list of languages that are known to the user 
 phone  |987654321|The user's phone number |Yes
 phoneVerified| true| Indicates if the phone number is verified | No
 channel  |a1234567b890c|Represents the channel value. The channel value is got while creating a rootOrg - if you provide channel value, then you will get associated with that particular root organization - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail
+userName| john1| The name assigned to the user in Sunbird|Yes 
 education|**Contains the following fields**
 degree  |B.A.|Represents the academic qualifications obtained by the user| Yes
 yearOfPassing | 1934| The year in which the user obtained the degreee |No
 courseName  |Bachelor of Arts| The name of the course that the user attended|No
-boardOrUniversity  |ABC University| The name of the board or university that awarded the degree|No
+boardOrUniversity  |ABC University| The name of the board or university that awarded the degree|Yes
 address| **Contains the following fields** 
-addType  |Permanent|The type of address. For example, permanent, communication, home, office, etc| No
-addressLine1  |#34, ASDF Apartments| The first line in the user's address| No 
+addType  |Permanent|The type of address. For example, permanent, communication, home, office, etc| Yes
+addressLine1  |#34, ASDF Apartments| The first line in the user's address| Yes 
 addressLine2  |ERTY Lane| The second line in the user's address|No
-city  |Bangalore| The name of the city in the user's address|No
-state  |Karnataka| The name of the state in the user's address|No
-zipCode  |560089| The zip code in the user's address|No
-percentage  
-grade  |string|
-profileVisibility
-address ||
-addType  |string|
-addressLine1  |string|
-addressLine2  |string|
-city  |string|
-state  |string|
-zipCode  |string|
-jobProfile||
-jobName  |string|
-role  |string|
-joiningDate  |string|
-endDate  |string|
-orgId  |string|
-orgName  |string|
-subject  ||
-string||
-address || 
-addType  |string|
-addressLine1  |string|
-addressLine2  |string|
-city  |string|
-state  |string|
-zipCode  |string|
-webPages 
-type  |string|
-url  |string|
-
+city  |Bangalore| The name of the city in the user's address|Yes
+state  |Karnataka| The name of the state in the user's address|Yes
+zipCode  |560089| The zip code in the user's address|Yes
+jobProfile|**Contains the following fields** |
+jobName  |Manager| The name of the job the user does in the organization|Yes
+role  |L3| The hierarchical position of the user in the organization| Yes
+joiningDate|2013-12-01| The date on which the user joined the organization. The date should be in YYYY-MM-DD|Yes
+orgName  |XYZ Corp| The name of the user's organization| Yes
+address |**Contains the following fields** | 
+addType  |Organization|The type of address. For example, permanent, communication, home, office, etc| Yes
+addressLine1  |#34, QWETY Bldg| The first line in the organization's address| Yes 
+addressLine2  |ERTY Lane| The second line in the organization's address|No
+city  |Bangalore| The name of the city in the organization's address|Yes
+state  |Karnataka| The name of the state in the organization's address|Yes
+zipCode  |560089| The zip code in the organization's address|Yes
 
 Following is an example of request body for creating a user:
 
@@ -114,87 +97,53 @@ Following is an example of request body for creating a user:
 "did": "string"
 },
 "request": {
-"email": "string",
-"firstName": "string",
-"lastName": "string",
-"password": "string",
-"avatar": "string",
+"email": "john@xyzcorp.com",
+"firstName": "John",
+"lastName": "Pal",
+"password": "password123",
+"avatar": "john.png",
 "language": [
-"string"
+"English|"
 ],
-"gender": "string",
-"phone": "string",
+"phone": "987654321",
 "phoneVerified": true,
 "subject": [
 "string"
 ],
-"channel": "string",
-"externalIds": [
-{
-"id": "string",
-"provider": "string",
-"idType": "string"
-}
-],
-"profileSummary": "string",
-"userName": "string",
-"dob": "string",
-"grade": "string",
-"location": "string",
+"channel": "a1234567b890c",
+"userName": "john1"
 "education": [
 {
-"degree": "string",
-"yearOfPassing": 0,
-"courseName": "string",
-"boardOrUniversity": "string",
+"degree": "BA",
+"yearOfPassing": 1934,
+"courseName": "Bachelor of Arts",
+"boardOrUniversity": "ABC University",
 "address": {
-"addType": "string",
-"addressLine1": "string",
-"addressLine2": "string",
-"city": "string",
-"state": "string",
-"zipCode": "string"
+"addType": "Permanent",
+"addressLine1": "#34, ASDF Apartments",
+"addressLine2": "ERTY Lane",
+"city": "Bangalore",
+"state": "Karnataka",
+"zipCode": "560089"
 },
-"percentage": 0,
-"grade": "string"
-}
-],
-"profileVisibility": { },
-"address": [
-{
-"addType": "string",
-"addressLine1": "string",
-"addressLine2": "string",
-"city": "string",
-"state": "string",
-"zipCode": "string"
 }
 ],
 "jobProfile": [
 {
-"jobName": "string",
-"role": "string",
-"joiningDate": "string",
-"endDate": "string",
-"orgId": "string",
-"orgName": "string",
-"subject": [
-"string"
-],
+"jobName": "Manager",
+"role": "L3",
+"joiningDate": "2013-12-01",
+"orgName": "XYZ Corp",
 "address": {
-"addType": "string",
-"addressLine1": "string",
-"addressLine2": "string",
-"city": "string",
-"state": "string",
-"zipCode": "string"
+"addType": "Organization",
+"addressLine1": "#34, QWETY Bldg",
+"addressLine2": "ERTY Lane",
+"city": "Bangalore",
+"state": "Karnataka",
+"zipCode": "560089"
 }
 }
 ],
-"webPages": {
-"type": "string",
-"url": "string"
-}
 }
 }
 ```
