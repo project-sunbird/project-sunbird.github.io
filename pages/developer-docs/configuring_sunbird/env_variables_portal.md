@@ -38,5 +38,7 @@ The following is a list of environment variables and their default values, as re
 |  24 | sunbird_android_app_url | Represents the android app URL in play store | Used to set the android app URL | http://www.sunbird.org | Sunbird Portal |
 |  25 | sunbird_enable_signup | This is used to enable and disable signup funcationality |  | true | Sunbird Portal |
 |  26 | sunbird_api_response_cache_ttl | Represents the Time-to-Live (TTL) for the API response cache in seconds | Used to set cache for API responses in seconds | 600 | Sunbird Portal |
+|  27 | sunbird_tenant_cdn_url | Represents the CDN URL where static tenant files are stored	 | Used to enable serving tenant pages from CDN |  | Sunbird Portal |
+
  	 
  	 
