@@ -9,10 +9,9 @@ published: true
 allowSearch: true
 ---
 ## Scenario
-Organizations, on Sunbird can be an institute or a body of individuals. To utilize Sunbird for organizational needs, create an organization account on the portal.
+
 
 ### Prerequisites
-  - Sunbird instance is installed and configured
   - Postman app is installed, refer [How to install and call an API using Postman]
   - First Organization with channel ID
   - Access API using
@@ -23,18 +22,23 @@ Organizations, on Sunbird can be an institute or a body of individuals. To utili
 
 ## Overview
 
-To create an organization a system administrator user needs to be created under the first organization. System Administrator can to generate an authorization token for creating organizations. 
+Organizations, on Sunbird can be an institute or a body of individuals. To utilize Sunbird for organizational needs, an orgnization needs to be created on Sunbird.  
+
+create an organization account replicating the organization containing multiple employees or users and  . To create an organization, the organization administrator user needs to be created under root organization. System Administrator can to generate an authorization token for creating organizations.
 
 ### Taskflow
-An organization can be created in a Sunbird instance using ORG API 
 
-| Step  | Action         | Description                                                   |
-|-------|----------------|---------------------------------------------------------------|
-| 1 | Authentication | Enter the Bearer {{api-key}} to pass the Authorization header |
-| 2 |Create first Organization     |To create first organization or a tenant for an installed instance on Sunbird, refer Initialize Sunbird  | 
-| 3 |Credentials|Use System administrator credentials to create the following instances Root Organization New User Root Org Admin|
-| 4 |Create root organization |Create an organisation using Org API document **Note**: To create rootOrg, pass the following attribute along with API    isRootOrg : true channel : a unique string value that can be used for filtering the data|
-|5| Save   | Save the created organization ID |
+An organization can be created in a Sunbird instance using ORG API, it can be further associated with a user and channel, refer [Mapping User to Organization](www.sunbird.org). For creating an organization follow the steps:
+
+ 
+
+ Step  | Action         | Description                           |
+-------|----------------|---------------------------------------------------------------|
+ 1 | Authentication | Enter the Bearer {{api-key}} to pass the Authorization header |
+ 2 |Create first Organization |To create first organization or a tenant for an installed instance on Sunbird, refer Initialize Sunbird  | 
+ 3 |Credentials|Use System administrator credentials to create the following instances Root Organization New User Root Org Admin|
+ 4 |Create root organization |Create an organisation using Org API document **Note**: To create rootOrg, pass the following attribute along with API    isRootOrg : true channel : a unique string value that can be used for filtering the data|
+ 5| Save   | Save the created organization ID |
 
 
 ### Concepts Covered
@@ -47,8 +51,8 @@ An organization can be created in a Sunbird instance using ORG API
 
 ### Additional Topics
 
-[Creating Organization](http://github.com)
+[Creating Organization](http://www.sunbird.org)
 
-[Map users to different business units within the organisation](http://github.com)
+[Map users to different business units within the organisation](http://www.sunbird.org)
 
-[Creating first organization](http://github.com)
+[Creating first organization](http://www.sunbird.org)
