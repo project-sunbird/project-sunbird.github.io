@@ -14,7 +14,8 @@ After successfully installing Sunbird, to make it functional, it is important to
 ### Create First RootOrg 
 Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the following curl command :
 
-```
+```,
+
 curl -X POST \
 
 {{learner_service_host}}/v1/system/init \
@@ -39,6 +40,7 @@ curl -X POST \
     }       
 }'
 ```
+
 **Note:** The values for the variables in the command are as follows:
 
 - **learner_service_host** http host address where learner service is running
@@ -51,7 +53,9 @@ curl -X POST \
 
 The API response is as follows:
 
-```{
+```,
+
+  {
     "id": "api.system.init",
     
     "ver": "v1",
@@ -77,7 +81,7 @@ The API response is as follows:
 
 **Note** The Intialise API can be used only once to create the first rootOrg. If you try to execute it again, it will return the following error response:
 
- ```
+ ```,
  {
     "id": "api.system.init",
     
