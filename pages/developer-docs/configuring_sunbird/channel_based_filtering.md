@@ -59,4 +59,3 @@ For details, refer to the **Configuration Variables page**.
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
 **Channel** - A channel is the identifier that makes the tenant unique. 
-
