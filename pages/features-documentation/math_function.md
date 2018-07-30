@@ -46,8 +46,8 @@ This section explains the steps involved in using math text editor to write comp
     <td>The <b>Library</b> tab displays the list of extensively used mathematical formulas 
     <br>1.Select <b>Library</b> tab
     <br>2.Select the formula from the list
-    <br>3.The expression appears in the text box. You can append the values, add constants and variables in the text box.  
-    <br>4.Click <b>Add</b> to proceed. The formula is added on the slide in a text box. 
+    <br>3.The expression appears in the text box. You can append the values, add constants and variables in the text box
+    <br>4.Click <b>Add</b> to proceed. The formula is added on the slide in a text box
     </td>
     <td><img src="pages/features-documentation/images/mathfunction/math-library.png">
     </td>
@@ -57,8 +57,8 @@ This section explains the steps involved in using math text editor to write comp
     <br>1.Select <b>Symbol</b> tab
     <br>2.Select the type of symbol from the dropdown 
     <br>3.Select the symbol 
-    <br>4.The symbol appears in the text box. You can append the values, add constants and variables in the text box.  
-    <br>4.Click <b>Add</b> to proceed. The symbol is added on the slide in a text box. 
+    <br>4.The symbol appears in the text box. You can append the values, add constants and variables in the text box 
+    <br>4.Click <b>Add</b> to proceed. The symbol is added on the slide in a text box
     </td>
     <td><img src="pages/features-documentation/images/mathfunction/math-symbol.png">
     </td>
@@ -68,8 +68,8 @@ This section explains the steps involved in using math text editor to write comp
     <br>1.Select <b>Equations</b> tab
     <br>2.Select the type of equation from the dropdown 
     <br>3.Select the equation 
-    <br>3.The equation appears in the text box. You can append the values, add constants and variables in the text box.  
-    <br>4.Click <b>Add</b> to proceed. The equation is added on the slide in a text box. 
+    <br>3.The equation appears in the text box. You can append the values, add constants and variables in the text box  
+    <br>4.Click <b>Add</b> to proceed. The equation is added on the slide in a text box
     </td>
     <td><img src="pages/features-documentation/images/mathfunction/math-equation.png">
     </td>
