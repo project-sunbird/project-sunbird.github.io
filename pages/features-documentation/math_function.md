@@ -8,7 +8,7 @@ published: true
 allowSearch: true
 ---
 
-This section explains the steps involved in using math text editor to write complex mathematical formulas on the editor.
+This section explains the procedure of using the math text editor to write complex mathematical formulas on the editor.
 
 ## Adding Math Function 
 
@@ -53,7 +53,7 @@ This section explains the steps involved in using math text editor to write comp
     </td>
     </tr>
   <tr>
-    <td>The <b>Symbol</b> tab displays the list of letters in Greek and Hebrew, the binary opeartions and relational symbols, different styles of arrows and other related symbols 
+    <td>The <b>Symbol</b> tab displays the list of letters in Greek and Hebrew, binary opeartions and relational symbols, different styles of arrows and other related symbols 
     <br>1.Select <b>Symbol</b> tab
     <br>2.Select the type of symbol from the dropdown 
     <br>3.Select the symbol 
