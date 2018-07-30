@@ -9,12 +9,16 @@ published: true
 allowSearch: true
 ---
 ## Overview
+
 After successfully installing Sunbird, to make it functional, it is important to create users and organizations. However, before creating users, it is necessary to create the channel (rootOrg).
 
 ### Create First RootOrg 
-Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the following curl command :
 
-```curl -X POST \
+Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the following curl command:
+
+<pre>
+
+curl -X POST \
 
 {{learner_service_host}}/v1/system/init \
  
@@ -37,7 +41,9 @@ Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the fo
  "channel": "{{org_channel}}"        
     }       
 }'
-```
+
+</pre?
+
 **Note:** The values for the variables in the command are as follows:
 
 - **learner_service_host** http host address where learner service is running
@@ -50,7 +56,8 @@ Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the fo
 
 The API response is as follows:
 
-```{
+<pre>
+{
     "id": "api.system.init",
     
     "ver": "v1",
@@ -72,11 +79,13 @@ The API response is as follows:
         "response": "SUCCESS"
     }
 }
-```
+
+</pre>
 
 **Note** The Intialise API can be used only once to create the first rootOrg. If you try to execute it again, it will return the following error response:
 
- ```{
+<pre>
+    {
     "id": "api.system.init",
     
     "ver": "v1",
@@ -94,7 +103,8 @@ The API response is as follows:
     "responseCode": "CLIENT_ERROR",
     "result": {}
 }
-```
+
+</pre>
 
 
 
