@@ -1,0 +1,138 @@
+<h2 id="overview">Overview</h2>
+
+<p>Metadata is absolutely essential in the digital environment. It is the fulcrum for content discoverability.</p>
+
+<p>Whenever you create and submit content on Sunbird, you have to enter a form with details about the submitted content, like its title, description, etc. The details entered is the metadata of the submitted content.</p>
+
+<p>In order to take customization and flexibility to a different level, the framework offers metadata driven forms. The form fields such as labels, text, number, value, etc. are defined as metadata in a database rather than being hard-coded. As a result, administrators can:</p>
+
+<ul>
+  <li>
+    <p>Customize form templates</p>
+  </li>
+  <li>
+    <p>Rearrange fields in the form</p>
+  </li>
+  <li>
+    <p>Modify values and attributes of each form field</p>
+  </li>
+</ul>
+
+<p>Currently,the administrators configure forms. However, it is possible to provide these privileges to any trusted user of the organization. The form metadata configuration and rendering is done for a specific channel using form API resources.</p>
+
+<p>This page describes how to configure the metadata forms.Ensure that the following prerequisites are met:</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ul>
+  <li>
+    <p>Understanding of the following:</p>
+
+    <ul>
+      <li>
+        <p>Content model</p>
+      </li>
+      <li>
+        <p>Content lifecycle</p>
+      </li>
+      <li>
+        <p>Content types</p>
+      </li>
+      <li>
+        <p>Default configuration</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Ensure availability of:</p>
+
+    <ul>
+      <li>
+        <p>Administrator access</p>
+      </li>
+      <li>
+        <p>Form APIs</p>
+      </li>
+      <li>
+        <p>API access token</p>
+      </li>
+      <li>
+        <p>User authentication token</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="configurations">Configurations</h3>
+
+<ol>
+  <li>
+    <p>You can configure the following forms:</p>
+
+    <ul>
+      <li>Start create</li>
+      <li>Edit details (save)</li>
+      <li>Submit content for review</li>
+      <li>Question details</li>
+    </ul>
+  </li>
+  <li>
+    <p>For each form  you can decide:</p>
+
+    <ul>
+      <li>
+        <p>Sequence of fields</p>
+      </li>
+      <li>
+        <p>Layout / template</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>For each form field, you can configure:</p>
+
+    <ul>
+      <li>
+        <p>To show (view only) or allow editing or keep hidden</p>
+      </li>
+      <li>
+        <p>To make it mandatory or optional</p>
+      </li>
+      <li>
+        <p>Data type of that field</p>
+      </li>
+      <li>
+        <p>Default value</p>
+      </li>
+      <li>
+        <p>Validations</p>
+      </li>
+      <li>
+        <p>Display name (Name of the field)</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="operations-on-metadata-driven-forms">Operations on Metadata driven Forms</h3>
+
+<p>To Create, update or read a metadata form:</p>
+
+<ol>
+  <li>
+    <p>Check the prerequisites</p>
+  </li>
+  <li>
+    <p>Get the Form API resources</p>
+  </li>
+  <li>
+    <p>Use the <a href="http://www.sunbird.org/apis/form/">Form API</a> endpoints for either creating, updating or reading a form. For each of the operations, it is mandatory to provide the input for the required  fields of the request object payload</p>
+  </li>
+  <li>
+    <p>You can  <a href="http://www.sunbird.org/apis/form/">refer</a> to the Form API  for more information about the request object payload</p>
+  </li>
+</ol>
+
+<p>You can configure only one form field and its attribute or value at a time. Repeat the process to configure other form fields.</p>
+
+<p><strong>Note:</strong> All the parameters that are bold are mandatory as a part of request body for create and update.</p>

@@ -1,0 +1,130 @@
+<h2 id="access-keycloak-administration">Access Keycloak Administration</h2>
+
+<p>Assuming that you have set up Sunbird on sunbird.example.com, You can open Keycloak administration panel simply by navigating to: <strong>https://sunbird.example.com/auth/admin</strong></p>
+
+<h2 id="import-realm">Import Realm</h2>
+
+<ul>
+  <li>To simplify the configuration, Sunbird provides a ready to use realm that can be imported and used. 
+-<a href="https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/pages/developer-docs/installation/other_files/keycloak-realm.json">Download</a> the realm to get started.</li>
+</ul>
+
+<p>Follow the steps to add, import and create the Keycloak realm:</p>
+<table>
+    <tr>
+         <th style="width:35%;">Step</th>
+         <th style="width:65%;">Screen</th>
+    </tr>
+ <tr>
+        <td> 
+        In order to  import the realm:<br /> 
+
+        1. Click on <b>Add realm</b> button
+
+        </td>
+            <td>
+            <img src="pages/developer-docs/installation/images/keycloack-add-realm.png" />
+            </td>
+</tr>
+<tr>
+        <td> On the add realm screen<br />
+        
+
+1. Click on <strong>Select file</strong> next to the Import label on the screen, choose the appropriate .json file <br />
+
+2. Type the appropriate name <br />
+        </td>
+            <td>
+            <img src="pages/developer-docs/installation/images/keycloak-choose-json.png" />
+            </td>
+</tr>
+<tr>
+        <td> 1. Click on &lt;
+        </td>
+            <td>
+            <img src="pages/developer-docs/installation/images/keycloak-import-realm-create.png" />
+            </td>
+</tr>
+</table>
+
+<p><strong>Note:</strong>Once the realm is imported, ensure that the realm is set as active before proceeding with the rest of the configuration.</p>
+
+<h2 id="create-user-to-access-user-management-api">Create User to Access User Management API</h2>
+
+<p>Navigate to Manage tab, then to Users and create a new user.</p>
+
+<ol>
+  <li>Enter the username as <strong>user-manager</strong></li>
+  <li>Set the email to be verified</li>
+  <li>Click save</li>
+  <li>Assign/Type a password for this new user</li>
+  <li>
+    <p>Update client roles under role mappings to ensure that this new user has the following permissions:</p>
+
+    <ul>
+      <li>manage-users</li>
+      <li>query-users</li>
+      <li>query-groups</li>
+      <li>view-users</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Note:</strong> Refer to the following image for reference configuration.</p>
+
+<p><a target="_blank" href="pages/developer-docs/installation/images/keycloak-add-user-manager.png">
+        <img src="pages/developer-docs/installation/images/keycloak-add-user-manager.png" alt="Keycloak use management" class="plugin center " width="50%" />
+      </a></p>
+
+<p>Use the corresponding username and password values for this newly created user and set the values for <strong>sunbird_sso_username</strong> and <strong>sunbird_sso_password</strong> in the configuration file.</p>
+
+<h2 id="update-client--secrets">Update Client &amp; Secrets</h2>
+
+<ul>
+  <li>Navigate to Clients and make the following changes to each of the clients</li>
+</ul>
+
+<p><strong>Note:</strong> Modify only the clients listed below. You do not need to modify the settings for other clients.</p>
+
+<h3 id="account-broker-realm-management">Account, broker, realm-management</h3>
+
+<ul>
+  <li>Go to the Credentials tab and regenerate the Secret and Registration Access Token. Make a note of both as you will require these at a later stage.</li>
+</ul>
+
+<h2 id="configurations">Configurations</h2>
+
+<p>The following steps will guide you through the configuration settings:</p>
+
+<h3 id="android">Android</h3>
+
+<ol>
+  <li>Change the Root URL <code>https://sunbird.example.com</code></li>
+  <li>Add a Valid Redirect URL <code>https://sunbird.example.com/oauth2callback</code></li>
+</ol>
+
+<h3 id="portal">Portal</h3>
+
+<ol>
+  <li>Change the Root URL to <code>https://sunbird.example.com</code></li>
+  <li>Add Valid Redirect URIs <code>https://sunbird.example.com/private/*</code> and <code>https://sunbird.example.com/</code></li>
+</ol>
+
+<h3 id="trampoline">Trampoline</h3>
+
+<ol>
+  <li>Change the Root URL to <strong>https://sunbird.example.com</strong></li>
+  <li>Go to the Credentials tab and regenerate the Secret and Registration Access Token</li>
+  <li>Use the secret as the value for the <strong>sunbird_trampoline_secret</strong> configuration</li>
+</ol>
+
+<h3 id="smtp">SMTP</h3>
+
+<ol>
+  <li>It is necessary to configure email for smooth working of the password reset functionality and user management workflows</li>
+  <li>Navigate to <strong>Realm Settings</strong> and then to <strong>Email</strong></li>
+  <li>
+    <p>Enter the <strong>SMTP credentials</strong></p>
+  </li>
+  <li>Click the <strong>Test Connection</strong> button to verify that the SMTP connection is configured correctly</li>
+</ol>

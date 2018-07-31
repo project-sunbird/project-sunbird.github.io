@@ -1,0 +1,120 @@
+<p>Organization administrators can use their registered credentials and add other organizations onto Sunbird. To add organizations on Sunbird, the administrator must upload required details of the organizations which have to be uploaded.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1. You are logged in <br />2. You are currently on <strong>Profile</strong> page. You want to upload organizations <br />3. You have clicked on <b>Upload Organizations</b> <br /><b>Note</b>: Ensure that the system administrator of your organization has created the required organization types on the portal. For details on how to create organization types, refer <a href="features-documentation/create_orgtype" target="_blank">Organization Type Creation</a>    
+      </td>
+      <td><img src="pages/features-documentation/images/upldorg_prereqsite.png" /></td>
+  </tr>
+    </table>
+
+<h2 id="uploading-organizations">Uploading Organizations</h2>
+
+<p>1.The upload organizations page is displayed<br />
+ 2.Download the csv file for reference<br />
+ 3.You can add or upload details of up to 199 organizations at a time in one csv file<br />
+ 4.Enter each organization’s name in a separate row<br />
+ 5.Descriptions and valid values for each columns are as listed below:<br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sl.No</th>
+      <th>Column Name</th>
+      <th>Description</th>
+      <th>Valid Value</th>
+      <th>Column Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Org Name</td>
+      <td>Organization name</td>
+      <td>Alphanumeric</td>
+      <td>Mandatory</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>isRootOrg</td>
+      <td>Whether the  organization has the authority to upload other organizations</td>
+      <td>TRUE, FALSE</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>channel</td>
+      <td>Unique ID provided by the administrator organization by Sunbird. <br /><strong>Note</strong>: Enter a value in the <strong>channel</strong> column, if the value for the <strong>isRootorg</strong> column is TRUE</td>
+      <td>Alphanumeric</td>
+      <td>Conditional</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>externalId</td>
+      <td>Unique ID associated with each organization in the administrating  organization’s repository. <br /><strong>Note</strong>: Enter values in the <strong>externalid</strong> column and the <strong>provider</strong> column or keep both columns blank</td>
+      <td>Alphanumeric</td>
+      <td>Co-mandatory</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>provider</td>
+      <td>Unique ID provided to the administrator organization by Sunbird. <br /><strong>Note</strong>: Enter values in the <strong>externalid</strong> column and the <strong>provider</strong> column or keep both columns blank</td>
+      <td>Alphanumeric</td>
+      <td>Co-mandatory</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>description</td>
+      <td>Details describing the organization</td>
+      <td>Alphanumeric</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>homeUrl</td>
+      <td>Organization’s homepage url</td>
+      <td> </td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>orgCode</td>
+      <td>Organization’s unique code, if any</td>
+      <td>Alphanumeric</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>orgType</td>
+      <td>Organization Type</td>
+      <td>Org types predefined by the system administrator</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>preferredLanguage</td>
+      <td>Language preferences for the organization, if any</td>
+      <td>English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>contactDetail</td>
+      <td>Organization’s contact detail</td>
+      <td>Enter details within curly brackets in double quotes. Separate each detail with a comma, and detail name and corresponding value with a colon (:). <br />For example [{“address”:”Vizianagaram”,”phone”:”8088407418”,”fax”:”abc@gmail.com”}]</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>6.<strong>Save</strong> the csv file to your computer<br />
+7.Click <strong>UPLOAD ORGANIZATIONS CSV</strong>. The explorer window is displayed<br />
+8.Select the saved csv file and click <strong>Open</strong><br />
+9.On successful file upload, a process ID will be generated, else an error message is displayed<br /></p>
+
