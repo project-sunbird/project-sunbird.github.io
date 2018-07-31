@@ -4,8 +4,9 @@ directory: developer-docs
 title: Getting Started with Sunbird
 page_title: Getting Started with Sunbird
 description: For adopters and users to get started on Sunbird. It provides an overview and links to Sunbird's tech stack, components and installation procedures.
-published: true
-allowSearch: true
+published: false
+allowSearch: false
+keywords: install, installation, server, try sunbird, developer installation, tech stack, 
 ---
 
 Sunbird is an open source, configurable, extendable, modular learning management platform architected for scale. Designed to support multiple teaching and learning solutions supporting multiple languages and available for online and offline use.
@@ -84,13 +85,13 @@ If you are looking to explore Sunbird and test its feature set, we recommend you
 
 ## Developer Installation
 
-For a comprehensive walk through to install Sunbird on your workstation, refer to [Developer Installation](http://www.sunbird.org/developer-docs/installation/installing_sunbirdon_machine/){:target="_blank"}
+For a comprehensive walk through to install Sunbird on your workstation, refer to [Developer Installation](http://www.sunbird.org/developer-docs/installation/developer_installation/){:target="_blank"}
 
 
 ## Server Installation
 
-Please refer to the [Server Installation Steps](http://www.sunbird.org/developer-docs/installation/medium_scale_deploy/){:target="_blank"} if you want to host sunbird on your servers. Sunbird supports various deployment topologies and it can scale for thousands of users. 
+Please refer to the [Server Installation Steps](http://www.sunbird.org/developer-docs/installation/server_installation/){:target="_blank"} if you want to host sunbird on your servers. Sunbird supports various deployment topologies and it can scale for thousands of users. 
 
 ## Mobile App Installation
 
-To create a customized Sunbird mobile application for your hosted Sunbird, refer to [Mobile App Setup](http://www.sunbird.org/developer-docs/installation/install_mobile_setup){:target="_blank"}
+To create a customized Sunbird mobile application for your hosted Sunbird, refer to [Mobile App Setup](http://www.sunbird.org/developer-docs/installation/install_mobile_setup/){:target="_blank"}

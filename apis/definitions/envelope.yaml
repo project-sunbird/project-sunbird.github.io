@@ -2,46 +2,46 @@ ApiRequest:
   type: object
   properties:
     id:
-      description: a unique API ID
+      description: Represents an API uniquely
       type: string
     ver:
-      description: version of the API which was used
+      description: Represents the version of the API which was used
       type: string
     ets:
-      description: epoch UTC timestamp in milliseconds since epoch
+      description: Represents the EPOCH (UTC) timestamp in milliseconds since EPOCH
       type: integer
       format: int64
     params:
       type: object
       properties:
         msgid:
-            description: A unique id of the message being sent
+            description: Represents the unique ID of the message being sent
             type: string
         did:
-            description: The device UUID from which API is called
+            description: Represents the device UUID from which API is called
             type: string
 
 ApiResponse:
   type: object
   properties:
     id:
-      description: id of the request which was made
+      description: Represents the ID of the request which was made
       type: string
     ver:
-      description: version of the API which was used
+      description: Represents the version of the API which was used
       type: string
     ets:
-      description: epoch UTC timestamp in milliseconds since epoch
+      description: Represents the EPOCH (UTC) timestamp in milliseconds since EPOCH
       type: integer
       format: int64
     params:
       type: object
       properties:
         msgid:
-          description: The id of the message sent
+          description: Represents the ID of the message sent
           type: string
         resmsgid:
-          description: The ide of the reply message
+          description: Represents the ID of the response message
           type: string
         err:
           type:

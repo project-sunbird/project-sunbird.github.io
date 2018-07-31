@@ -1,0 +1,95 @@
+<h2 id="overview">Overview</h2>
+<p>After successfully installing Sunbird, to make it functional, it is important to create users and organizations. However, before creating users, it is necessary to create the channel (rootOrg).</p>
+
+<h3 id="create-first-rootorg">Create First RootOrg</h3>
+<p>Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the following curl command :</p>
+
+<p>```curl -X POST \</p>
+
+<p>/v1/system/init \</p>
+
+<p>-H ‘Accept: application/json’ \</p>
+
+<p>-H ‘Content-Type: application/json’ \</p>
+
+<p>-d ‘{</p>
+
+<p>“id”:”api.system.init”,</p>
+
+<p>“ts”:””,</p>
+
+<p>“params”: { },</p>
+
+<p>“request”:{</p>
+
+<p>“orgName”:””,</p>
+
+<p>“channel”: “”      <br />
+    }     <br />
+}’
+```
+<strong>Note:</strong> The values for the variables in the command are as follows:</p>
+
+<ul>
+  <li>
+    <p><strong>learner_service_host</strong> http host address where learner service is running</p>
+  </li>
+  <li>
+    <p><strong>current_timestamp</strong> valid timestamp in format of ‘yyyy-mm-dd hh:mm:ss’</p>
+  </li>
+  <li>
+    <p><strong>organisation_name</strong> valid organisation name</p>
+  </li>
+  <li>
+    <p><strong>channel</strong> valid channel to be used for the created rootOrg (should be provided while adding users later)</p>
+  </li>
+</ul>
+
+<p>The API response is as follows:</p>
+
+<p>```{
+    “id”: “api.system.init”,</p>
+
+<pre><code>"ver": "v1",
+
+"ts": "2018-07-10 20:10:44:139+0530",
+
+"params": {
+    "resmsgid": null,
+    "msgid": "41626e26-1b9b-414d-99ea-d563336fb106",
+    "err": null,
+    "status": "success",
+    "errmsg": null
+},
+</code></pre>
+
+<p>“responseCode”: “OK”,</p>
+
+<p>“result”: {
+        “organisationId”: “0125438741727805440”,
+        “response”: “SUCCESS”
+    }
+}
+```</p>
+
+<p><strong>Note</strong> The Intialise API can be used only once to create the first rootOrg. If you try to execute it again, it will return the following error response:</p>
+
+<p>```{
+    “id”: “api.system.init”,</p>
+
+<pre><code>"ver": "v1",
+
+"ts": "2018-07-11 15:38:00:213+0530",
+
+"params": {
+    "resmsgid": null,
+    "msgid": "3db7ee89-edc9-4fcf-b463-dc7aa46a309e",
+    "err": "SYSTEM_ALREADY_INITIALISED",
+    "status": "SYSTEM_ALREADY_INITIALISED",
+    "errmsg": "System already initialised.Cannot initialise again."
+},
+
+"responseCode": "CLIENT_ERROR",
+"result": {} } ```
+</code></pre>
+

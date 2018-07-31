@@ -18,8 +18,10 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
     <th>Instruction</th>
   </tr>
   <tr>
-    <td>1.</td>
-    <td>Install Android Studio<br><i>Please refer to the official <a href="https://developer.android.com/studio/index.html">Android documentation</a></i> for installation instructions.</td>
+    <td>1.
+    </td>
+    <td>Install Android Studio<br><i>Please refer to the official <a href="https://developer.android.com/studio/index.html">Android documentation</a></i> for installation instructions.
+    </td>
   </tr>
   <tr>
     <td>2.</td>
@@ -42,11 +44,10 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
 <br>
 <pre>
 <code>
-buildConfigField 'String', 'REDIRECT_BASE_URL', '"<http or https://domain-name>"'
-buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>/api/data/v1"'
+buildConfigField 'String', 'REDIRECT_BASE_URL', '"(http or https://domain-name)"'
+buildConfigField 'String', 'TELEMETRY_BASE_URL', '"(http or https://domain-name)/api/data/v1"'
 </code>
 </pre>
-
   </td>
   </tr>
   <tr>
@@ -59,7 +60,7 @@ buildConfigField 'String', 'TELEMETRY_BASE_URL', '"<http or https://domain-name>
   </tr>
   <tr>
     <td>7.</td>
-    <td>Add your keystore details: <code>keystore</code>, <code>keystore_password</code>, <code>key_alias</code> and <code>key_password</code> in <code>gradle.properties</code>.<bbrr> Please refer to the official Android documentation for <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank"> generating a key and keystore</a>.</td>
+    <td>Add your keystore details: <code>keystore</code>, <code>keystore_password</code>, <code>key_alias</code> and <code>key_password</code> in <code>gradle.properties</code>.<br> Please refer to the official Android documentation for <a href="https://developer.android.com/studio/publish/app-signing.html#generate-key" target="_blank"> generating a key and keystore</a>.</td>
   </tr>
   <tr>
     <td>8.</td>
@@ -103,7 +104,7 @@ dev_mobile_app_secret = "&lt;secret&gt;" </code>
     <td>12.</td>
     <td>To change the app logo navigate to <code>sunbird-android/app/src/main/res</code> in android studio.
     <li>In all the mipmap and drawable folders, replace ic_launcher.png image with your desired logo</li>
-      <li>The logo name should exactly match the text <B>ic_launcher.png</b></li></td>
+      <li>The logo name should exactly match the text <b>ic_launcher.png</b></li></td>
   </tr>
   <tr>
     <td>13.</td>
@@ -115,6 +116,6 @@ dev_mobile_app_secret = "&lt;secret&gt;" </code>
   </tr>
   <tr>
     <td>15.</td>
-    <td>Please setup FCM to support anncouncement feature in mobile app following the <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase" target="_blank">Android documentation</a>.</td>
+    <td>Please setup FCM to support announcement feature in mobile app following the <a href="https://firebase.google.com/docs/android/setup#manually_add_firebase" target="_blank">Android documentation</a>.</td>
   </tr>
 </table>

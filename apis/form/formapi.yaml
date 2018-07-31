@@ -3,13 +3,10 @@ info:
   version: '1.0'
   title: Form API(s)
   description: The Form APIs allow you to create and update metadata form fields based on type, subtype and action. Use the APIs to configure form fields as required for the specific form.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /data/v1/form
+basePath: /api/data/v1/form
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -76,7 +73,7 @@ paths:
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
-      - auth: []
+      - bearer: []
   /update:
     post:
       description: >-
@@ -129,7 +126,7 @@ paths:
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
-      - auth: []
+      - bearer: []
   /read:
     post:
       description: >-
@@ -182,7 +179,7 @@ paths:
           schema:
             $ref: '#/definitions/FailedResponseHeader'
       security:
-      - auth: []
+      - bearer: []
 
 
 definitions:

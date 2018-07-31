@@ -90,7 +90,7 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
   <tr><td>Enter details for the heading: 
     <br>1. Enter <b>Name</b>. This is the topic/chapter/unit name as in the course 
     <br>2. Enter <b>Description</b> 
-    <br>3. Select the <b>Concepts</b> associated with the heading 
+    <br>3. Select the <b>Concepts</b> associated with the heading. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a>
     <br>4. Enter <b>Keywords</b>
     </td>
     <td><img src="pages/features-documentation/images/add_content1.png"></td>
@@ -141,7 +141,7 @@ The Table of Contents tree seen in the left pane is used to navigate content com
 
 ### Sending Course for Review
 
-Before the Course is publihed, it must be reviewed. You can send it for reviewing and publishing.
+Before the Course is published, it must be reviewed. You can send it for reviewing and publishing.
 
 <table>
   <tr>

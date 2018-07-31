@@ -10,4 +10,4 @@ allowSearch: true
 ---
 {% image src='pages/usertaskflow/images/upload_content.svg' full center alt='How Do I Upload Content' zoom %} 
 
-**Note:** The URL to Upload Content need to be set as white-Listed Domains [Other Configurations](developer-docs/configuration/other_configs/)
+**Note:** Ensure that you set the upload content URL to allowed **white-Listed Domains**, refer to row number 2 of the table in [Content Service Environment Variables](developer-docs/configuring_sunbird/env_variables_content_service/) page.

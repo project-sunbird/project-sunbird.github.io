@@ -7,13 +7,10 @@ info:
     email: info@sunbird.org
   description: >-
     The Email resources provides the notification mechanism for all the users on Sunbird .The Resource notifies users officially about something on Sunbird.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie

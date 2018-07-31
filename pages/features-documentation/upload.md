@@ -19,11 +19,12 @@ Content created or available offline can be uploaded on Sunbird. The following c
 - Audio (.mp3)
 - Images (.jpeg, .png)
 - Document format (.pdf)
-- URLs for YouTube videos and other files
+- URLs of YouTube videos and other files
+- URLs of other externally hosted content
 
 The maximum file size supported for upload is 50 MB
 
-**Note:** For any Youtube video that is uploaded, Sunbird validates the Standard Youtube Credits and Licenses. Users have the permission of using, copying or distributing Youtube contents with the regulations, in accordance with its license policy.
+**Note:** <br>1. For any Youtube video that is uploaded, Sunbird validates the Standard Youtube Credits and Licenses. Users have the permission of using, copying or distributing Youtube contents with the regulations, in accordance with its license policy <br>2. Only those URLs of websites whitelisted by the organization administrator can be uploaded. For details on websites that can be whitelisted on Sunbird refer <a href="developer-docs/configuring_sunbird/env_variables_content_service" target="_blank"> Environment Variables </a>
 
 ### Prerequisites
 <table>
@@ -45,7 +46,7 @@ The maximum file size supported for upload is 50 MB
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-    <td>1. Enter <strong>URL</strong> of the video ( If the file to be uploaded is a Youtube Video) <br>2. Click <strong>Browse</strong> to select the desired file for upload. You can alternatively <strong>Drag & Drop</strong> files to upload <br>3. Click <strong>Upload</strong> to upload the selected content</td>
+    <td>1. Enter <b>URL</b> of the Youtube video or the external website URL <br>2. Click <strong>Browse</strong> to select the desired file for upload from your local storage. You can alternatively <strong>Drag & Drop</strong> files from your local <br>3. Click <strong>Upload</strong> to upload the selected content <br> </td>
       <td><img src="pages/features-documentation/images/upload_upldcontent.png"></td>
   </tr>
   </table>

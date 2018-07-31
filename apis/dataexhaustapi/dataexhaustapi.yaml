@@ -6,18 +6,15 @@ info:
       the behaviors of users 
       - Also these resources are used to minimize required actions and find areas to optimize, improve or change outright 
       - Data exhaust also helps in data mining analytics
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   title: Data Exhaust API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
     email: info@sunbird.org
   version: "1.0"
 host: staging.open-sunbird.org
-basePath: /data/v1/dataset/request/
+basePath: /api/data/v1/dataset/request/
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie

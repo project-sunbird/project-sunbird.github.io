@@ -4,18 +4,15 @@ info:
   title: Assessment Item API(s)
   termsOfService: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
   contact:
-    email: admin@open-sunbird.org
+    email: info@sunbird.org
   description: >-
       - The Assessment API resources are used for managing the questions known as **Assessment items**.
       
-      - The Assessment API resources provides the basic functionality to perform the operations like Creating, Reading,  Updating, deleting these assessment items. 
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/project-sunbird.github.io/blob/dev/LICENSE'
+      - The Assessment API resources provides the basic functionality to perform the operations like Creating, Reading,  Updating, deleting these assessment items.
 host: staging.open-sunbird.org
 basePath: /api/org/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -35,10 +32,9 @@ paths:
   /create:
     post:
       description: >-
-          This API is associated with creating an assessment Item.
+          This API is used for creating an assessment Item.
             - The **_/create_** endpoint executes the "Create Assessment Item" request based on parameters provided as metadata in the request body.
-            - It is mandatory to provide values for **required** parameters. 
-            - Mandatory fields cannot be null or empty.
+            - Required fields cannot be left null or empty
       summary: Create Assessment Item
       tags:
       - Assessment Item API(s)
@@ -50,8 +46,12 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the new assessment item to be created.
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+          The body is the representation of the resource object for creating a new assessment item.
         schema:
           $ref: '#/definitions/Questionsaverequest'
       - name: Content-Type
@@ -63,7 +63,7 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-      - name: user-id
+      - name: User_ID
         in: header
         required: true
         type: string
@@ -72,7 +72,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require bearerorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Create Assessment Item" operation was successfully executed.'
@@ -87,111 +87,31 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /retire/{AssessmentItem_Id}:
-    parameters:
-      - in: path
-        name: AssessmentItem_Id
-        type: string
-        required: true
-        description: 'Please append a valid Assessment Id to the Request URL' 
-    delete:
-      description: >-
-          This API is associated with deleting an assessment Item.
-            - The **_/retire/{AssessmentItem_Id}_** endpoint executes the "delete assessment item" request based on parameters provided as metadata in the request body.
-            - It is mandatory to provide values for **required** parameters. 
-            - Mandatory fields cannot be null or empty.
-      summary: Delete an Assessment Item
-      tags:
-      - Assessment Item API(s)
-      operationId: RetireQ1SUrduDelete
-      produces:
-      - application/json
-      parameters:
-      - name: Content-Type
-        in: header
-        required: true
-        type: string
-        description: >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
-      - name: user-id
-        in: header
-        required: true
-        type: string
-        description: 'The Registered User ID to execute the API.'
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."Delete Assessment Item" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/ContentCreateResponse'
-        '400':
-          description: 'BAD REQUEST. The "Delete Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-        '500':
-          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-          schema:
-            $ref: '#/definitions/ContentCreateErrorResponse'
-      security:
-      - auth: []
-      x-unitTests:
-      - request:
-          method: DELETE
-          uri: /retire/{Assessment_Id}
-          headers:
-            Content-Type: application/json
-            user-id: ilimi
-            Authorization: Bearer {{api_key}}
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: true
-        x-testName: Question - Delete
-        x-testDescription: ''
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-  /read/{AssessmentItem_Id}: 
-    parameters:
-      - in: path
-        name: AssessmentItem_Id
-        type: string
-        required: true
-        description: 'Please append a valid Assessment Id to the Request URL' 
+  /read/{AssessmentItem_ID}: 
     get:
       description: >-
           This API is associated with  fetching a specific assessment Item.
-            - The **_/read/{AssessmentItem_Id}_** endpoint executes the "Read Assessment Item" request based on parameters provided as metadata in the request body.
-            - It is mandatory to provide values for **required** parameters. 
-            - Mandatory fields cannot be null or empty.
-      summary: Fetch an Assessment Item
+            - The **_/read/{AssessmentItem_ID}_** endpoint executes the "Read Assessment Item" request based on parameters provided as metadata in the request body.
+            - Required fields cannot be left null or empty
+      summary: Get an Assessment Item
       tags:
       - Assessment Item API(s)
       operationId: ReadWingsD01Get
       produces:
       - application/json
       parameters:
+      - in: path
+        name: AssessmentItem_ID
+        type: string
+        required: true
+        description: 'Please append a valid Assessment ID to the Request URL' 
       - name: Content-Type
         in: header
         required: true
@@ -210,7 +130,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Read Assessment Item" operation was successfully executed.'
@@ -225,7 +145,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -250,13 +170,88 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  /retire/{AssessmentItem_ID}:
+    delete:
+      description: >-
+          This API is associated with deleting an assessment Item.
+            - The **_/retire/{AssessmentItem_Id}_** endpoint executes the "delete assessment item" request based on parameters provided as metadata in the request body.
+            - Required fields cannot be left null or empty
+      summary: Delete an Assessment Item
+      tags:
+      - Assessment Item API(s)
+      operationId: RetireQ1SUrduDelete
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: AssessmentItem_ID
+        type: string
+        required: true
+        description: 'Please append a valid Assessment ID to the Request URL' 
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: User_ID
+        in: header
+        required: true
+        type: string
+        description: 'Represents the authorized User ID to execute the API.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Delete Assessment Item" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/ContentCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Delete Assessment Item" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+      security:
+      - bearer: []
+      x-unitTests:
+      - request:
+          method: DELETE
+          uri: /retire/{Assessment_Id}
+          headers:
+            Content-Type: application/json
+            user-id: <>
+            Authorization: Bearer {{api_key}}
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: Question - Delete
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
   /search:
     post:
       description:  >-
           This API is associated with searching an assessment Item.
             - The **_/search_** endpoint executes the "Search Assessment Item" request based on parameters provided as metadata in the request body.
-            - It is mandatory to provide values for **required** parameters. 
-            - Mandatory fields cannot be null or empty.
+            - Required fields cannot be left null or empty
       summary: Search an Assessment Item
       tags:
       - Assessment Item API(s)
@@ -268,8 +263,13 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the new Organisation to be created.
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+          The body is the representation of the resource object for
+          searching an Assessment item
         schema:
           $ref: '#/definitions/Questionsearchrequest'
       - name: Content-Type
@@ -281,7 +281,7 @@ paths:
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-      - name: user-id
+      - name: User_ID
         in: header
         required: true
         type: string
@@ -290,7 +290,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Search Assessment Item" operation was successfully executed.'
@@ -305,14 +305,14 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
           uri: /search
           headers:
             Content-Type: application/json
-            user-id: ilimi
+            user-id: <>
             Authorization: Bearer {{api_key}}
           body: >-
             {
@@ -345,19 +345,12 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /update/{AssessmentItem_Id}:
-    parameters:
-      - in: path
-        name: AssessmentItem_Id
-        type: string
-        required: true
-        description: 'Please append a valid Assessment Id to the Request URL' 
+  /update/{AssessmentItem_ID}:
     patch:
       description:  >-
           This API is associated with updating an assessment Item.
-            - The **_/update/{AssessmentItem_Id}_** endpoint executes the "Update Assessment Item" request based on parameters provided as metadata in the request body.
-            - It is mandatory to provide values for **required** parameters. 
-            - Mandatory fields cannot be null or empty.
+            - The **_/update/{AssessmentItem_ID}_** endpoint executes the "Update Assessment Item" request based on parameters provided as metadata in the request body.
+            - Required fields cannot be left null or empty
       summary: Update an Assessment Item
       tags:
       - Assessment Item API(s)
@@ -365,10 +358,21 @@ paths:
       produces:
       - application/json
       parameters:
+      - in: path
+        name: AssessmentItem_ID
+        type: string
+        required: true
+        description: 'Please append a valid Assessment ID to the Request URL' 
       - name: Body
         in: body
         required: true
-        description: 'The Registered User ID to execute the API.'
+        description: >-
+         'The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:'
+            
+            - JSON 
+            - XML data
+          
+          The body is the representation of the resource object for updating an assessment item.
         schema:
           $ref: '#/definitions/Questionupdaterequest'
       - name: user-id
@@ -389,7 +393,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Update Assessment Item" operation was successfully executed.'
@@ -404,7 +408,7 @@ paths:
           schema:
             $ref: '#/definitions/ContentCreateErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: PATCH
@@ -529,7 +533,7 @@ paths:
         IsMultiContentStreaming: false
 definitions:
   Questionsearchrequest:
-    title: Question - SearchRequest
+    title: The request body for seaching a question in an assessment
     example:
       request:
         metadata:
@@ -539,7 +543,7 @@ definitions:
             value: domain_3490
         sortOrder:
         - sortField: code
-          sortOrder: ASC
+          sortOrder: (ABC)
         startPosition: 0
         resultSize: 10
     type: object
@@ -557,30 +561,30 @@ definitions:
           operator: =
           value: domain_3490
       sortOrder:
-      - sortField: code
-        sortOrder: ASC
-      startPosition: 0
-      resultSize: 10
+      - sortField: <code>
+        sortOrder: (ASC)
+      startPosition: <0>
+      resultSize: <10>
     type: object
     properties:
       metadata:
         $ref: '#/definitions/Metadata'
       sortOrder:
-        description: ''
+        description: 'Represents the sorting order'
         example:
-        - sortField: code
-          sortOrder: ASC
+        - sortField: <code>
+          sortOrder: <ASC>
         type: array
         items:
           $ref: '#/definitions/SortOrder'
       startPosition:
         description: ''
-        example: 0
+        example: <0>
         type: integer
         format: int32
       resultSize:
         description: ''
-        example: 10
+        example: <10>
         type: integer
         format: int32
     required:
@@ -633,10 +637,10 @@ definitions:
     - operator
     - value
   SortOrder:
-    title: SortOrder
+    title: Represents the sorting format/order
     example:
-      sortField: code
-      sortOrder: ASC
+      sortField: <code>
+      sortOrder: <ASC>
     type: object
     properties:
       sortField:
@@ -645,20 +649,20 @@ definitions:
         type: string
       sortOrder:
         description: ''
-        example: ASC
+        example: <ASC>
         type: string
     required:
     - sortField
     - sortOrder
   Questionsaverequest:
-    title: Question - SaveRequest
+    title: The request body for save question
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request6'
+        $ref: '#/definitions/questsave'
     required:
     - request
-  Request6:
+  questsave:
     title: Request6
     type: object
     properties:
@@ -671,7 +675,7 @@ definitions:
     type: object
     properties:
       identifier:
-        description: ''
+        description: 'The unique ID for a question'
         example: test.mcq_mixsed_zaxabc
         type: string
       objectType:
@@ -689,7 +693,7 @@ definitions:
     type: object
     properties:
       code:
-        description: ''
+        description: 'The unique code for identifying a question '
         example: test.mcq_misxed_115
         type: string
       name:
@@ -701,29 +705,29 @@ definitions:
         example: mcq
         type: string
       framework:
-        description: 'Framework name - item is associated'
+        description: 'Represents the name of the framework'
         example: NCF
         type: string
       board:
-        description: 'Framework board - item is associated'
+        description: 'Represents the name of entity, organization.t gets populated using a framework'
         example: NCERT
         type: string
       medium:
-        description: 'Framework medium - item is associated'
+        description: 'Represents the medium followed, medium relates to language used. It gets populated using a framework'
         example: English
         type: string
       subject:
-        description: 'Framework subject - item is associated'
+        description: 'Represents the name of the subject.t gets populated using a framework'
         example: History
         type: string
       gradeLevel:
-        description: 'Framework gradeLevel - item is associated'
+        description: 'Represents the value for grade\Level of the content.t gets populated using a framework'
         example: [Class 1]
         type: array
         items:
           type: string
       topic:
-        description: 'Framework topic - item is associated'
+        description: 'Represents the value for topic in content.t gets populated using a framework'
         example: [Topic 1]
         type: array
         items:
@@ -754,7 +758,7 @@ definitions:
         example: ಈ ಚaಿತ್ರದ ವಿಸ್xsxxxxxxxxxxxxತೀರ್ಣವನ್ನುzsaZZ ಹಾಗೂ ಸುತ್ತಳತೆಯನ್ನು ಲೆಕ್ಕ ಮಾಡಿ.  ಸೂಕ್ತ ಉತ್ತರವನ್ನು ಆರಿಸಿರಿ.
         type: string
       question:
-        description: ''
+        description: 'A representation of questions'
         example: "ವಿಸ್ತೀರ್ಣ = ___________ ಚದರ ಸೆಂ.ಮೀ.             \nಸುತ್ತಳತೆ= __________ ಚದರ ಸೆಂ.ಮೀ."
         type: string
       model:
@@ -947,14 +951,14 @@ definitions:
     example:
       request:
         assessment_item:
-          identifier: ek.n.ib.a.ssnc.bp1.4
+          identifier: <>
           objectType: AssessmentItem
           metadata:
             type: mcq
-            lastUpdatedBy: csv-import
-            used_for: worksheet
-            num_answers: 1
-            max_score: 1
+            lastUpdatedBy: <>
+            used_for: <>
+            num_answers: <>
+            max_score: <>
             partial_scoring: false
             code: ek.n.ib.a.ssnc.bp1.4
             title: acvv

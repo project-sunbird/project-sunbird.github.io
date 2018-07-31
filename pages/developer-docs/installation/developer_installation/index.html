@@ -1,0 +1,208 @@
+<h2 id="overview">Overview</h2>
+
+<p>This page provides information for you to install, setup, configure, run and use a Sunbird instance on your laptop or desktop. The objective of such an installation is to demo and test the Sunbird application. It is not advised to use the instance for a production environment. Follow the instructions provided on this page to ensure an optimal installation experience. Before installing Sunbird on your laptop or desktop, ensure that the you have the necessary resources and compliant target systems.</p>
+
+<h2 id="system-requirements">System Requirements</h2>
+
+<p>To install Sunbird, ensure that your laptop or desktop has the following minimum system requirements:</p>
+
+<ul>
+  <li>Operating System: Windows 7 and above, or 4.2 Mac OS X 10.0 and above/Linux</li>
+  <li>RAM: &gt;1.5GB</li>
+  <li>CPU: 2 cores, &gt;2 GHz</li>
+</ul>
+
+<h2 id="sunbird-components">Sunbird Components</h2>
+<p>Installing Sunbird requires two primary software components:</p>
+
+<ul>
+  <li>Sunbird portal or web application</li>
+  <li>Sunbird services stack or the backend API interface</li>
+</ul>
+
+<h2 id="sunbird-portal-setup">Sunbird Portal Setup</h2>
+
+<p>The following sections provide you with the sequence to set up the Sunbird portal instance successfully</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>1.<strong>Software dependencies</strong></p>
+
+<ul>
+  <li><a href="https://nodejs.org/en/download/" target="_blank">Node</a> - install the latest release of 8.11.2 LTS series</li>
+  <li><a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a> - install nodemon</li>
+</ul>
+
+<p>2.<strong>API Keys</strong></p>
+
+<ul>
+  <li>To get an API key, send an email to: info@sunbird.org</li>
+</ul>
+
+<p><strong>Note:</strong> These installation instructions use cloud hosted Sunbird APIs, which require an API key.</p>
+
+<h3 id="set-up-the-sunbird-application">Set Up the Sunbird Application</h3>
+
+<p>1.To set up the Sunbird application, get the <a href="https://github.com/project-sunbird/sunbird-portal.git" target="_blank">code</a> from the sunbird-portal Git repository.</p>
+
+<p>2.Clone the repository to your local system using the command:</p>
+
+<p><strong>git clone https://github.com/project-sunbird/sunbird-portal.git</strong></p>
+
+<p><strong>Note</strong>: Stable versions of the sunbird portal code are available via tags for each release. The master branch contains the latest stable release. To get the latest stable release of Sunbird, <a href="https://github.com/project-sunbird/sunbird-portal/" target="_blank">click here</a>.</p>
+
+<p>3.After executing the <strong>git clone</strong> command, run the following set of commands in the console:</p>
+
+<pre>
+   $ cd {PROJECT-FOLDER}/src/app
+   $ npm install
+   $ cd {PROJECT-FOLDER}/src/app/client
+   $ npm install
+</pre>
+
+<p><strong><em>Note</em></strong>: Ensure that you use node version 8.11.2 or above.</p>
+
+<p>4.Set the following environment variables when you are prompted to:</p>
+
+<pre>
+sunbird_environment=local 
+sunbird_instance=sunbird
+sunbird_default_tenant=sunbird
+</pre>
+
+<h2 id="configure-the-service-stack">Configure the Service Stack</h2>
+
+<p>The Sunbird portal application is powered by a set of service APIs. These API(s) run in a distributed environment when Sunbird is  deployed to production. For the sake of simplicity and ease of debugging, you can run these service API(s) locally on a single server.</p>
+
+<p>Configure your Sunbird portal instance to use a cloud instance of the Sunbird service API(s) hosted by Sunbird, and are used for testing and demonstration purposes.</p>
+
+<p><strong><em>Note</em></strong>: The cloud instance of the API(s) are not for production use.</p>
+
+<p>To edit the application configuration file:</p>
+
+<p>1.Open the <strong>{PROJECT-FOLDER}/src/app/helpers/environmentVariablesHelper.js</strong>  file in any available text editor.</p>
+
+<p>2.Set the values for the following parameters:</p>
+<pre>
+    module.exports = {
+        
+A) LEARNER_URL   
+   LEARNER_URL: env.sunbird_learner_player_url || 'https://staging.open-sunbird.org/api/',                    
+      
+B) CONTENT_URL
+   CONTENT_URL: env.sunbird_content_player_url || 'https://staging.open-sunbird.org/api/',                   
+        
+C) CONTENT_PROXY  
+   CONTENT_PROXY_URL: env.sunbird_content_proxy_url || 'https://staging.open-sunbird.org',                    
+   PORTAL_REALM: env.sunbird_portal_realm || 'sunbird',
+        
+D) PORTAL_AUTH_SERVER_URL
+   PORTAL_AUTH_SERVER_URL: env.sunbird_portal_auth_server_url || 'https://staging.open-sunbird.org/auth',     
+   PORTAL_AUTH_SERVER_CLIENT: env.sunbird_portal_auth_server_client || "portal",
+   ...
+   PORTAL_PORT: env.sunbird_port || 3000,
+        	
+E) PORTAL_API_AUTH_TOKEN     
+   PORTAL_API_AUTH_TOKEN: env.sunbird_api_auth_token || 'E-mail to: info@sunbird.org' to get Auth-Token 
+   ...
+        
+F) PORTAL_ECHO_API_URL
+   PORTAL_ECHO_API_URL: env.sunbird_echo_api_url || '',                                                       
+   ...
+	
+G) ANDROID_APP_URL
+   ANDROID_APP_URL: env.sunbird_android_app_url || 'http://www.sunbird.org'   
+
+H) CONTENT CHANNEL FILTER  TYPE
+   CONTENT_CHANNEL_FILTER_TYPE: env.sunbird_content_channel_filter_type || 'all',
+   Set the value to 'self', to get content that belongs to the current user's channel, 
+   and set the value to 'all' to get content from all channels
+   ...
+   		}
+</pre>
+
+<h2 id="run-the-application">Run the Application</h2>
+
+<p>1.Before you run the application, install <strong>nodemon</strong>. To do so, use the following command:</p>
+
+<p><code>npm install -g nodemon</code></p>
+
+<p>2.After verifying the availability of nodemon, run the application by executing the following commands:</p>
+
+<pre>
+$ cd {PROJECT-FOLDER}/src/app
+$ node server.js
+</pre>
+
+<p>3.Open a new terminal window</p>
+<pre>
+$ cd {PROJECT-FOLDER}/src/app/client
+$ nodemon
+</pre>
+
+<p>4.Open <strong>http://localhost:3000</strong> in the browser</p>
+
+<h2 id="use-the-application">Use the Application</h2>
+
+<p>After successfully installing Sunbird, use demo user IDs to explore and test different workflows.</p>
+
+<ul>
+  <li>
+    <p>For each user role, you require a separate demo user ID and its respective password</p>
+  </li>
+  <li>
+    <p>Any user can be assigned one or more user role. The role rules that apply depend on the demo user ID and password that is used to sign in</p>
+  </li>
+</ul>
+
+<p>The following is the list of the demo user IDs per user role:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User Role</th>
+      <th>User ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Org Admin</td>
+      <td>adopterorgadmin@adopter</td>
+    </tr>
+    <tr>
+      <td>Content Creator</td>
+      <td>adoptercreator@adopter</td>
+    </tr>
+    <tr>
+      <td>Content Reviewer</td>
+      <td>adopterreviewer@adopter</td>
+    </tr>
+    <tr>
+      <td>Book Creator</td>
+      <td>adopterbookcreator@adopter</td>
+    </tr>
+    <tr>
+      <td>Book Reviewer</td>
+      <td>adopterbookreviewer@adopter</td>
+    </tr>
+    <tr>
+      <td>Flag Reviewer</td>
+      <td>adopterflagreviewer@adopter</td>
+    </tr>
+    <tr>
+      <td>Course Mentor</td>
+      <td>adoptercoursementor@adopter</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+  <li>
+    <p>To get the password for each demo user ID, send an email to info@sunbird.org</p>
+  </li>
+  <li>
+    <p>For information on user roles, refer to <a href="pages/features-documentation/userrole" target="_blank">Types of Users</a></p>
+  </li>
+</ul>

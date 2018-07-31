@@ -6,14 +6,11 @@ info:
   contact:
      email: info@sunbird.org
   description: >-
-    The Announcements API resources allow users to communicate with other users and post information about various related topics. Announcements are designed to allow administrators to broadcast information out to a specific user or to an entire group of users.  
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
+    The Announcements API resources allow users to communicate with other users and post information about various related topics. Announcements are designed to allow administrators to broadcast information out to a specific user or to an entire group of users. 
 host: staging.open-sunbird.org
 basePath: /api/announcement/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -110,7 +107,7 @@ paths:
             uri: /create
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
             body: |-
               {
@@ -219,7 +216,7 @@ paths:
             uri: /read
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
             body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"1a5a7080-c5fa-11e7-9062-e7cbc001200b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
           expectedResponse:
@@ -314,8 +311,8 @@ paths:
             uri: /cancel
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
-              x-authenticated-user-token: '{{user_token}}'
+              Authorization: '{{bearer}}'
+              x-bearerenticated-user-token: '{{user_token}}'
             body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"4380faf0-da73-11e7-b9e2-450490e1f739\"\n\t}\n}"
           expectedResponse:
             x-allowExtraHeaders: true
@@ -410,7 +407,7 @@ paths:
             uri: /resend
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
             body: |-
               {
@@ -521,7 +518,7 @@ paths:
             method: GET
             uri: /resend/{Announcement_Id}
             headers:
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
           expectedResponse:
             x-allowExtraHeaders: true
@@ -615,7 +612,7 @@ paths:
             uri: /received
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
             body: "{\n\t\"request\": {\n\t\t\"announcementId\": \"e138-45e9-bed2-a0db5eb9696b\",\n\t\t\"channel\": \"web\"\n\t}\n}"
           expectedResponse:
@@ -711,7 +708,7 @@ paths:
             uri: /user/inbox
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
             body: "{\n\t\"request\": {\n\t\t\"limit\": 2,\n\t\t\"offset\": 0\n\t}\n}"
           expectedResponse:
@@ -807,7 +804,7 @@ paths:
             uri: /user/outbox
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
             body: "{\n\t\"request\": {\n\t\t\"limit\": 5,\n\t\t\"offset\": 0\n\t}\n}"
           expectedResponse:
@@ -891,7 +888,7 @@ paths:
             method: GET
             uri: /get/{announcementId}
             headers:
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
           expectedResponse:
             x-allowExtraHeaders: true
@@ -986,7 +983,7 @@ paths:
             uri: /definitions
             headers:
               Content-Type: application/json
-              Authorization: '{{auth}}'
+              Authorization: '{{bearer}}'
               x-authenticated-user-token: '{{user_token}}'
             body: "{\n\t\"request\": {\n\t\t\"rootorgid\":\"ORG_001\",\n\t\t\"definitions\":[\"announcementTypes\"]\n\t}\n}"
           expectedResponse:

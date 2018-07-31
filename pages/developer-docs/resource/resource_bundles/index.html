@@ -1,0 +1,29 @@
+<p>Rendering sunbird portal pages in multiple languages , user can view page elements in their preferred language.</p>
+
+<h2 id="how-resource-bundle-work">How Resource Bundle Work</h2>
+
+<p>The Resource Bundle reads a property file based on the locale and name suffix used in the naming of the property. For example, consider a label file named en.properties. This file is read by ResourceBundle helper(app/helpers/resourceBundlesHelper.js) and it will generate js file in app/common folder .
+Locale represents a region or location with its attributes. Locale is generally used to maintain details about the client using our application. Locale contains attributes of location and language to be used for the respective location. Thus, a Locale assists ResourceBundle to pick the right label file by determining the location to which the user belongs.</p>
+
+<h3 id="how-to-add-resource-element-for-existing-languages-in-resource-bundles">How to add resource element for existing languages in resource bundles</h3>
+
+<p>There are two sections,
+1. <strong>Form elements(app/reosurcebundles/data/formElements/en.Properties)</strong>
+2. <strong>Messages(app/reosurcebundles/data/messages/en.Properties)</strong></p>
+
+<pre><code>  * While adding new resource element(like if we want to add text for a label or for button or add new success/error messages) first add in en.properties file.
+  
+  * en.properties file is a primary bundle, if any resorce elements not available in other language bundle files it gets copied from en.properties file.
+</code></pre>
+
+<h3 id="how-to-add-a-resource-bundle-for-a-new-language">How to add a resource bundle for a new language</h3>
+
+<ul>
+  <li>
+    <p>To add a new language,  create a property file for respective language under formElements and messsages folder and copy the resource elements from primary language bundle(en.properties) to target language properties file and then replace the translation of the values in the new language.</p>
+  </li>
+  <li>
+    <p>Finally run the server.js file of app folder to complie the resource bundle properties file and verify the new generated/updated js files under app/common folder.</p>
+  </li>
+</ul>
+

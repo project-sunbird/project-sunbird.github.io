@@ -11,12 +11,10 @@ info:
             - The Hierarchy is as: Framework-->Category-->Terms
               - Category: An abstract classification of the terms   partitioned according to requirement.
               - Terms: Refers to a keyword or a phrase to descibe a Concept
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
+basePath: /api
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -72,7 +70,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require bearerorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Create channel" operation was successfully executed.'
@@ -85,7 +83,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/read/{ID}:
     get:
       description:  >-
@@ -120,7 +118,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation.The "fetch channel by ID" operation was successfully executed.'
@@ -133,7 +131,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/update/{ID}:
     patch:
       description: >-
@@ -179,7 +177,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Update channel by ID" operation was successfully executed.'
@@ -192,13 +190,13 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/list:
     post:
       description: >-
        This API is associated with listing the existing channels 
           - The **_/channel/v1/list_** endpoint executes the "List channels" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
+          - Required fields cannot be left null or empty API to get list of channels
       summary: List Channels
       tags:
       - Channel APIs
@@ -232,7 +230,7 @@ paths:
         in: header
         required: true
         type: string
-        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."list channels" operation was successfully executed.'
@@ -245,7 +243,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /channel/v1/search:
     post:
       description: >-
@@ -285,7 +283,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."search channels" operation was successfully executed.'
@@ -298,7 +296,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/create:
     post:
       description: >-
@@ -338,7 +336,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -356,7 +354,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/read/{ID}:
     get:
       description: >-
@@ -390,7 +388,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -408,7 +406,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/update/{ID}:
     patch:
       description: >-
@@ -454,7 +452,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -472,7 +470,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/list:
     post:
       description: >-
@@ -508,7 +506,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -526,7 +524,7 @@ paths:
          '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/publish/{ID}:
     post:
       description:  >-
@@ -570,7 +568,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -588,7 +586,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/copy/{ID}:
     post:
       description:  >-
@@ -634,7 +632,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -652,7 +650,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/category/create:
     post:
       description: >-
@@ -697,7 +695,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -715,7 +713,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/category/read/{code}:
     get:
       description: >-
@@ -754,12 +752,12 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It the Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."fetch category" operation was successfully executed.'
@@ -772,7 +770,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/category/update/{code}:
     patch:
       description: >-
@@ -833,7 +831,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -895,7 +893,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -913,7 +911,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/create:
     post:
       description: >-
@@ -963,7 +961,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -981,7 +979,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/read/{code}:
     get:
       description: >-
@@ -1025,7 +1023,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -1043,7 +1041,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/update{code}:
     patch:
       description:  >-
@@ -1099,7 +1097,7 @@ paths:
         in: header
         required: true
         type: string
-        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: X-Channel-Id
         in: header
         required: true
@@ -1117,7 +1115,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
   /framework/v1/term/search:
     post:
       description: >-
@@ -1157,7 +1155,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       - name: Content-Type
         in: header
         required: true
@@ -1185,7 +1183,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
 definitions:
   CreateFrameworkRequest:
     description: This is the create Framework request body

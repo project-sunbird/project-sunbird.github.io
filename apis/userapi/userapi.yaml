@@ -6,13 +6,10 @@ info:
     The User Management API resources are used to manage individual users and their memberships, also these resources allow you to add skills, block and unblock users, encrypt user data. You can perform various other user management related tasks. 
      
     **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
-basePath: /api/user/v1
+basePath: /api/user/
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -29,11 +26,11 @@ consumes:
 produces:
   - application/json
 paths:
- /create:
+ /v1/create:
     post:
       description: >-
        This API is used to create a user 
-          - **_/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
+          - **_/v1/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
           - Mandatory fields cannot be null or empty.
       summary: Create User
       tags:
@@ -96,18 +93,18 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /search:
+ /v1/search:
     post:
       description: >-
        This API is used for searching a particular user 
-          - **_/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
+          - **_/v1/search/_** endpoint executes the "Search User" request based on parameters provided as metadata in the request body.
            - Required fields cannot be left null or empty
       summary: Search User
       tags:
@@ -179,7 +176,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -214,16 +211,16 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /profile/read:
+ /v1/profile/read:
     post:
       description: >-
         This API is used for getting information about the currently authenticated user
-          - **_/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
+          - **_/v1/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
           - It is mandatory to provide values for required parameters
       summary: Get User by Login ID
       tags:
       - User APIs
-      operationId: Get User by Login Id
+      operationId: Get User by Login ID
       produces:
       - application/json
       parameters:
@@ -239,27 +236,21 @@ paths:
          
              - XML data
           -  The body contains metadata about reading the user profile
-           **Note**: 
+          
+           - **Note**: 
               
-            - The login ID is ideally in the following format:  username@provider
-            - While creating the user if you haven't specified the provider name then your login ID would be same as username
+                - The login ID is ideally in the following format:  username@provider
+               
+                - While creating the user, if you haven't specified the provider name then your login ID would be same as username
         schema:
-          $ref: '#/definitions/GetUserByLoginIdrequest'
+           allOf:
+            - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
       - name: Content-Type
-        in: header
-        required: true
-        type: string
         description:  >-
             The Content Type entity is the media type of the resource.Possible media types can be:- 
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
-      - name: x-authenticated-user-token
-        in: header
-        required: true
-        type: string
-        description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       - name: ts
         in: header
         required: true
@@ -290,7 +281,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -322,11 +313,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /read/{User_ID}:
+ /v1/read/{User_ID}:
     get:
       description: >-
         This API is used for searching a specific user, the user search is based on the unique ID of the user
-          - **_/read/{User_ID}_** endpoint executes the "Get User profile" request
+          - **_/v1/read/{User_ID}_** endpoint executes the "Get User profile" request
           - It is mandatory to provide values for required parameters
       summary: Get User by User ID
       tags:
@@ -386,7 +377,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -412,11 +403,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false      
- /update:
+ /v1/update:
     patch:
       description:  >-
         This API is use for updating the user realted details 
-          - **_/update/_** endpoint executes the "Update User" request
+          - **_/v1/update/_** endpoint executes the "Update User" request
           - It is mandatory to provide values for required parameters
       summary: Update User
       tags:
@@ -483,14 +474,14 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
- /update/logintime:
+ /v1/update/logintime:
     patch:
       description: >-
          This API is used to update user login time 
@@ -573,7 +564,7 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: PATCH
@@ -602,11 +593,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /role/read:
+ /v1/role/read:
     get:
       description:  >-
        This API is used to list the assigned roles pertaining to a user
-          - The **_/role/read_** endpoint executes the "Get user role information" request based on parameters provided as metadata in the request body
+          - The **_/v1/role/read_** endpoint executes the "Get user role information" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
       summary: Get User Role Information
       tags: 
@@ -666,7 +657,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
@@ -694,7 +685,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /profile/visibility:
+ /v1/profile/visibility:
     post:
       description:  >-
        This API is used to configure the visibility of user profile
@@ -773,7 +764,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -802,11 +793,11 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /block:
+ /v1/block:
     post:
       description:  >-
        This API is used to ban/block a user, banning or blocking a user is done calling this API.  
-          - The **_/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
+          - The **_/v1/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Block user
       tags:
@@ -881,7 +872,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -909,13 +900,13 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /unblock:
+ /v1/unblock:
     post:
       description: >-
        This API is used to unban/unblock a user
-          - The **_/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
+          - The **_/v1/unblock_** endpoint executes the "unblock user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: unblock user
+      summary: Unblock user
       tags:
       - User APIs
       operationId: make deleted user active
@@ -987,7 +978,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'  
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -1029,7 +1020,7 @@ paths:
         In case the userID, organisationID and roles parameter values are passed 
           
           - then roles will be assigned by the corresponding organization for that user
-      summary: Assign Role to a User
+      summary: Assign Role to User
       tags:
       - User APIs
       operationId: OrgV1RoleAssignPost
@@ -1100,17 +1091,17 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'   
       security:
-      - auth: []
+      - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /encrypt:
+ /v1/encrypt:
     get:
       description: >-
        This API is used for securing the user information with an encryption scheme  
-          - The **_ /encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
+          - The **_/v1/encrypt_** endpoint executes the "Encrypt User Information" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Encrypt User Information
       tags:
@@ -1166,17 +1157,17 @@ paths:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
- /skill/add:
+ /v1/skill/add:
     post:
       description: >-
        This API is used to add a skill set to the user 
-          - The **_/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
+          - The **_/v1/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Add User Skill
       tags:
@@ -1197,7 +1188,7 @@ paths:
          
              - XML data
         schema:
-          $ref: '#/definitions/AddSkillToUserrequest'
+          $ref: '#/definitions/addSkillToUserrequest'
       - name: Content-Type
         in: header
         required: true
@@ -1245,7 +1236,7 @@ paths:
           schema:
             $ref: '#/definitions/UserErrorResponse'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST
@@ -1285,7 +1276,7 @@ paths:
        This API is associated with listing all the skills that a user possesses
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
-      summary: Lists all Skills of a User
+      summary: List all Skills of User
       tags:
       - User APIs
       operationId: DataV1SkillsGet
@@ -1313,41 +1304,17 @@ paths:
         in: header
         required: true
         type: string
-        description: 'This ID Uniquely identifies a request if the same API is called multiple times'
-      - name: x-authenticated-user-token
-        in: header
-        required: true
-        type: string
-        description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
-      - name: Authorization
-        in: header
-        required: true
-        type: string
-        description: 'To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
-      responses:
-        '200':
-          description: 'OK ! Successful operation."list user skills" operation was successfully executed.'
-          schema:
-            $ref: '#/definitions/skillsResp'
-        '400':
-          description: 'BAD REQUEST. The "list user skills" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
-          schema:
-            $ref: '#/definitions/UserErrorResponse'
-        '500':
-          description: >-
             'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
           schema:
             $ref: '#/definitions/UserErrorResponse'
             
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: GET
           uri: /data/v1/skills
           headers:
-            Content-Type: application/json
             ts: 2017-05-25 10:18:56:578+0530
             X-msgid: 8e27cbf5-e299-43b0-bca7-8347f7e5abcf
             x-authenticated-user-token: '{{user-token}}'
@@ -1367,69 +1334,8 @@ paths:
         CollectParameters: false
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-definitions:
-  CreateUserrequest:
-    description: User object
-    type: object
-    allOf:
-       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-       - $ref: '#/definitions/CreateUserSingleResp'
-
-  CreateUserSingleResp:
-   description: Represents the  hold single userObject request
-   type: object
-   properties:
-      request:
-       type: object
-       $ref: '#/definitions/UserReq'
- 
-  RolesResponse:
-   description: Represents the hold roles response
-   type: array
-   items:
-    type: object
-    properties:
-     roles:
-       type: object
-       $ref: '#/definitions/Role'
   
-  Role:
-    description: Represents the request body for role o
-    type: array
-    items:
-     type: object
-     properties:
-      actionGroups:
-        type: object
-        properties:
-         name:
-          type: string
-         id:
-          type: string
-         actions:
-          type: array
-          items:
-           type: object
-           properties:
-            urls:
-             type: array
-             items:
-              type: string
-  
-  blockUserReq:
-    description: request body for block user
-    type: object
-    properties:
-     request:
-      type: object
-      properties:
-       userId:
-        type: string  
-        description: userId 
-    
-  
-  skillsResp:
+  SkillsResp:
    description: contains list of skills
    type: object
    properties:
@@ -1486,17 +1392,12 @@ definitions:
               - if you provide channel value, then you will get associated with that particular root organization  
               - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization
               - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
-          exernalId:
-            type : string
-            description: >-
-              Represents the identity of user in some other system - - Providing externalId, the creator can corelate their user with sunbird system. 
-                - The externalID and provider combination must be unique. If you pass externalID then you have to pass provider also.'
-          provider:
-            type: string
-            description : >-
-               The provider represents an orgainsation, which provides user details.
-                - The organisation may or maynot be part of the Sunbird system
-                - The provider is always represented by an externalId
+          externalIds:
+            type: array
+            items:
+              type: object
+              allOf:
+                - $ref: "#/definitions/ExternalId" 
           profileSummary:
             type: string
           userName:
@@ -1629,8 +1530,8 @@ definitions:
             $ref: "#/definitions/Address"
             description: it will contains list of address object.
           jobProfile:
-            type: object
-            $ref: "#/definitions/JobProfile"
+              type: object
+              $ref: "#/definitions/JobProfile"
           webPages:
             type: object
             properties:
@@ -1741,17 +1642,14 @@ definitions:
       
   GetUserByLoginIdrequest:
     title: Get User by Login IdRequest
-
     type: object
     properties:
-      request:
-       allOf:
-        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-        - $ref: '#/definitions/Request50'
+     request:
+         $ref: '#/definitions/userLoginIdRequest'
     required:
       - request
-  Request50:
-    title: Request50
+  userLoginIdRequest:
+    title: request structure for user login id
     type: object
     properties:
       loginId:
@@ -1777,11 +1675,11 @@ definitions:
       request:
        allOf:
         - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-        - $ref: '#/definitions/Request18'
+        - $ref: '#/definitions/userSearch'
     required:
     - request
-  Request18:
-    title: Request18
+  userSearch:
+    description: Search user request
     type: object
     properties:
       filters:
@@ -1815,11 +1713,11 @@ definitions:
       request:
        allOf:
         - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-        - $ref: '#/definitions/Request74'
+        - $ref: '#/definitions/userUpdate'
     required:
     - request
-  Request74:
-    title: Request74
+  userUpdate:
+    description: Request body for user profile update
     type: object
     properties:
       userId:
@@ -1850,10 +1748,25 @@ definitions:
         type: array
         items:
           type: string
+      externalId:
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        type: string
+      externalIdType:
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        type: string
+      externalIdProvider:
+        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        type: string
+      externalIds:
+        description: 'details of external IDs and provider'
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/ExternalIdUpdate'  
     required:
     - userId    
   ResultStatus:
-    description: Node id description
+    description: Node ID description
     type: object
     properties:
       status:
@@ -1911,12 +1824,12 @@ definitions:
         description: ''
         type: object
       request:
-        $ref: '#/definitions/Request23'
+        $ref: '#/definitions/loginRequestUpdate'
     required:
     - params
     - request
-  Request23:
-    title: Request23
+  loginRequestUpdate:
+    description: request body to update user login time
     type: object
     properties:
       userId:
@@ -1938,7 +1851,7 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request10'
+        $ref: '#/definitions/profileVisibility'
         example:
           userId: userid
           private:
@@ -1949,8 +1862,8 @@ definitions:
           - private field name which you want to make public
     required:
     - request
-  Request10:
-    title: Request10
+  profileVisibility:
+    description: profile visibility request data
     example:
       userId: userid
       private:
@@ -1977,7 +1890,7 @@ definitions:
       public:
         description: ''
         example:
-        - private field name which you want to make public
+        - private field name that you want to make public
         type: array
         items:
           type: string
@@ -1990,8 +1903,8 @@ definitions:
     title: '{{host}}/user/v1/role/assignRequest'
     example:
       request:
-        userId: 3d45fbd8-b911-4cc5-b503-61215902d780
-        organisationId: 0123653943740170242
+        userId: valid userId
+        organisationId: valid org ID
         roles:
         - CONTENT_CREATION
         - PUBLIC
@@ -2017,6 +1930,12 @@ definitions:
     properties:
       userId:
         description: 'The unique ID of the user'
+        type: string
+      organisationId:
+        description: 'The unique ID of the organisation'
+        type: string
+      roles:
+
         example: userid
         type: string
       organisationId:
@@ -2024,7 +1943,8 @@ definitions:
         example: 012365
         type: string
       roles:
-        description: 'The role assigned to a user'
+        description:
+          The role assigned to a user. The role is directly replaced with saved roles if any. Ensure that the request has a list of all the users roles. To remove all roles assigned to a user, pass an empty array'
         example:
         - CONTENT_CREATION
         - PUBLIC
@@ -2038,7 +1958,7 @@ definitions:
     - organisationId
     - roles
     
-  AddSkillToUserrequest:
+  addSkillToUserrequest:
     title: add skill to userRequest
     type: object
     properties:
@@ -2053,3 +1973,33 @@ definitions:
            type: string
     required:
     - request
+    
+  ExternalId:
+    title: ExternalId
+    type: object
+    properties:
+      id:
+        type : string
+        description: 'Identity of the user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      provider:
+        type: string
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      idType:
+        type :  string
+        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government.'
+  ExternalIdUpdate:
+    description : The user request to update the external ID in the profile
+    type: object
+    properties:
+      id:
+        type : string
+        description: 'Identity of user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      provider:
+        type: string
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+      idType:
+        type :  string
+        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government' 
+      operation:
+        type: string
+        description : 'possible values are {ADD,EDIT,REMOVE}'

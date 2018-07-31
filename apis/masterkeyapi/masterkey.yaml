@@ -7,13 +7,10 @@ info:
        
        - It is handy for administrative tasks as there is no need to implement OAuth2 workflow to access the services. 
        - Also, there is a useful feature that allows us to suppress custom scripts implemented on various constructs, so we can get base-level CRUD operations on the constructs without any user customizations such as filtering by user or validation affecting the results.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/data/v1/client
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -98,7 +95,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: PATCH
@@ -197,7 +194,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests: []
       x-operation-settings:
         CollectParameters: false
@@ -262,7 +259,7 @@ paths:
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
       security:
-      - auth: []
+      - bearer: []
       x-unitTests:
       - request:
           method: POST

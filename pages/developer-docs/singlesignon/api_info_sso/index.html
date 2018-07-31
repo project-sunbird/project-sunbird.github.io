@@ -1,0 +1,405 @@
+<h2 id="organization-apis">Organization APIs</h2>
+<p>Tenants can import their organizations and users on Sunbird using the organization and user APIs. The API has the following resources:</p>
+
+<ul>
+  <li>Create Organization</li>
+  <li>Update Organization</li>
+  <li>Create User</li>
+  <li>Update User</li>
+  <li>Add Member to Organization</li>
+  <li>Remove Member from Organization</li>
+  <li>Single-Sign-On API</li>
+</ul>
+
+<h3 id="create-organization">Create Organization</h3>
+<p>POST - <BASE_URL>/api/org/v1/create</BASE_URL></p>
+
+<p>Creates a new organization</p>
+
+<p><strong>Request</strong></p>
+
+<p>Request Body - organization details</p>
+<pre>
+{
+  "request":{  
+      "orgName": "name of the organization", //required
+      
+      "description": "description", //optional
+      
+      "externalId": "identifier of the organization in the partner system", // required
+      
+      "provider": "channel of the tenant to which the organization belongs to, e.g.: ap",   //required
+      
+      “homeUrl”: Organization’s homepage url, //optional
+      
+“orgCode”: Unique code for the organization that is being uploaded, //optional
+
+“orgType”: Type of organization, such as, NGO, primary school, secondary school etc., //optional
+
+“preferredLanguage”: Language preferences for the organization, if any, //optional
+
+"contactDetail": [{ "email": "user@sunbird.com",  “Phone”: “1234567890” }] //optional
+
+   }
+}
+</pre>
+
+<p>District, Block and Cluster fields will be introduced shortly.</p>
+
+<p><strong>Response</strong></p>
+
+<p>orgId - Identifier of the created organization</p>
+<pre>
+{  
+   "id":"api.org.create",
+   
+   "ver":"1.0",
+   
+   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
+   
+   "params":{ 
+   
+      "resmsgid":"",
+      
+      "msgid":"",
+      
+      "err":"0",
+      
+      "status":"SUCCESS",
+      
+      "errmsg":"Operation successful"
+   },
+   "result":{  
+        "response": "SUCCESS",
+	
+        "orgId": "0122852840502968322"
+   },
+   "responseCode":"OK"
+}
+</pre>
+
+<h3 id="update-organization">Update Organization</h3>
+
+<p>PATCH - <BASE_URL>/api/org/v1/update</BASE_URL></p>
+
+<p>Updates an existing organization.</p>
+
+<p><strong>Request</strong></p>
+
+<p>Request Body - organization details</p>
+<pre>
+{
+  "request":{  
+  
+      "externalId": "identifier of the organization in the partner system", // required
+      
+      "provider": "channel of the tenant to which the organization belongs to, e.g.: ap", //required
+      
+      "orgName": "name of the organization", //optional
+      
+      "description": "description", //optional
+   }
+}
+</pre>
+
+<p><strong>Response</strong></p>
+<pre>
+{  
+   "id":"api.org.update",
+   
+   "ver":"1.0",
+   
+   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
+   
+   "params":{  
+   
+      "resmsgid":"",
+      
+      "msgid":"",
+      
+      "err":"0",
+      
+      "status":"SUCCESS",
+      
+      "errmsg":"Operation successful"
+   },
+   "result":{  
+   
+        "response": "SUCCESS"
+   },
+   "responseCode":"OK"
+}
+</pre>
+
+<h3 id="user-apis">User APIs</h3>
+
+<p><strong>Create User</strong></p>
+
+<p>POST - <BASE_URL>/api/user/v1/create</BASE_URL></p>
+
+<p>Creates a new user</p>
+
+<p><strong>Request</strong></p>
+
+<p>Request Body - user details</p>
+
+<pre>
+{
+  "request":{  
+  
+      "firstName": "first name of the user", //required
+      
+      "lastName": "last name of the user", //optional
+      
+      "provider": "channel of the tenant to which the user belongs to, e.g.: ap", //required
+      
+      "email": "user.email@test.com", //required
+      
+      "emailVerified": true, //required
+      
+      "userName": "unique username for the user", //required
+      
+      "phone": "9900032121",
+      
+      "phoneVerified": true,
+      
+      "password": "password for the user to login into sunbird" //optional
+      
+      “roles”: “roles to be associated with user. E.g.: CONTENT_CREATOR, CONTENT_REVIEWER, COURSE_MENTOR, FLAG_REVIEWER” //optional
+      
+ 	“position”: //optional
+	
+	“grade”: Classes taught by the user //optional. Values - Class 1 to Class10, Kindergarten, Other
+	
+	“location”: User’s place of location //optional
+	
+	“dob”: User’s date of birth //optional. Format - YYYY-MM-DD
+	
+	“aadhaarNo”: //optional
+	
+	“gender”: //optional. Values - Male, Female, Transgender
+	
+	“language”: User’s language preferences. //optional 
+	
+	“profileSummary”: User’s profile summary //optional
+	
+	“subject”: Taught by the user //optional. Values - Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali   
+}
+}
+</pre>
+
+<p><strong>Response</strong></p>
+
+<p>userId - Identifier of the created user</p>
+
+<pre>
+{  
+   "id":"api.user.create",
+   
+   "ver":"1.0",
+   
+   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
+   
+   "params":{  
+   
+      "resmsgid":"",
+      
+      "msgid":"",
+      
+      "err":"0",
+      
+      "status":"SUCCESS",
+      
+      "errmsg":"Operation successful"
+   },
+   "result":{  
+   
+        "response": "SUCCESS",
+	
+        "userId": "0122852840502968322"
+   },
+   "responseCode":"OK"
+}
+</pre>
+
+<p>** Update User**</p>
+
+<p>POST - <BASE_URL>/api/user/v1/update</BASE_URL></p>
+
+<p>Updates an existing user. All optional fields mentioned in Create User can be added in the Update User request.</p>
+
+<p><strong>Request</strong></p>
+
+<p>Request Body - user details</p>
+
+<pre>
+{
+  "request":{
+  
+      "userName": "unique userName for the user", //required
+      
+      "provider": "channel of the tenant organization to which the user belongs to, e.g.: ap", //required
+      
+      "firstName": "first name of the user", //optional
+      
+      "lastName": "last name of the user", //optional
+      
+      "email": "user.email@test.com", //required
+      
+      "emailVerified": true, //required
+      
+      "phone": "9900032121",
+      
+      "phoneVerified": true
+   }
+}
+</pre>
+
+<p><strong>Response</strong></p>
+
+<pre>
+{  
+   "id":"api.user.update",
+   
+   "ver":"1.0",
+   
+   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
+   
+   "params":{  
+   
+      "resmsgid":"",
+      
+      "msgid":"",
+      
+      "err":"0",
+      
+      "status":"SUCCESS",
+      
+      "errmsg":"Operation successful"
+   },
+   "result":{  
+   
+        "response": "SUCCESS"
+   },
+   
+   "responseCode":"OK"
+}
+</pre>
+
+<p><strong>Add Member</strong></p>
+
+<p>POST - <BASE_URL>/api/org/v1/member/add</BASE_URL></p>
+
+<p>Adds a member to the organization</p>
+
+<p>Request</p>
+
+<p>Request Body - membership details</p>
+
+<pre>
+{
+  "request":{  
+  
+      "externalId": "identifier of the organization in the partner system", //required
+      
+      "provider": "channel of the tenant organization to which the organization belongs to, e.g.: ap", //required
+      
+      "userName": "username with which the user is created", // required
+      
+      "role": "member/content-creator/admin", //optional, default to member if not provided
+      
+      "position": "position of the person in the organization, e.g.: Principal, Teacher, Student" // optional
+   }
+}
+</pre>
+
+<p><strong>Response</strong></p>
+
+<pre>
+{  
+   "id":"api.org.member.add",
+   
+   "ver":"1.0",
+   
+   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
+   
+   "params":{  
+   
+      "resmsgid":"",
+      
+      "msgid":"",
+      
+      "err":"0",
+      
+      "status":"SUCCESS",
+      
+      "errmsg":"Operation successful"
+   },
+   "result":{  
+   
+        "response": "SUCCESS"
+   },
+   "responseCode":"OK"
+}
+</pre>
+
+<p><strong>Remove Member</strong></p>
+
+<p>POST - <BASE_URL>/api/org/v1/member/remove</BASE_URL></p>
+
+<p>Removes a member from an organization</p>
+
+<p>Request</p>
+
+<p>Request Body - membership details</p>
+
+<pre>
+{
+  "request":{  
+      "externalId": "identifier of the organization in the partner system", //required
+      
+     
+      "provider": "channel of the tenant to which the organization belongs to, e.g.: ap", //required
+      
+      "userName": "username with which the user is created", // required
+   }
+}
+</pre>
+
+<p><strong>Response</strong></p>
+
+<pre>
+{  
+   "id":"api.org.member.remove",
+   
+   "ver":"1.0",
+   
+   "ts":"YYYY-MM-DDThh:mm:ssZ+/-nn.nn",
+   
+   "params":{  
+   
+      "resmsgid":"",
+      
+      "msgid":"",
+      
+      "err":"0",
+      
+      "status":"SUCCESS",
+      
+      "errmsg":"Operation successful"
+   },
+   "result":{ 
+   
+        "response": "SUCCESS"
+   },
+   "responseCode":"OK"
+}
+</pre>
+
+<h3 id="single-sign-on-api">Single-Sign-On API</h3>
+<p>To login a user, the client must provide a link (which makes a GET request) to the auto-login endpoint /v1/user/session/create?token=<jwt_token> with the JWT token in the query parameter of the request. Here’s an example:</jwt_token></p>
+
+<base_url>/v1/user/session/create?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
+
+
+</base_url>

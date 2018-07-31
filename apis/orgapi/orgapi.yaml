@@ -7,13 +7,10 @@ info:
     email: info@sunbird.org
   description: >-
     The Organisation Management API resources perform operations related to management of an Organisation on the Sunbird Platform.
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/org/v1
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -30,7 +27,7 @@ produces:
 paths:
   /create:
     post:
-      summary: Create a new Organisation.
+      summary: Create a new Organisation
       description: >-
           This API is for creation of a new Organisation on the Sunbird Platform.
       tags:
@@ -94,10 +91,10 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /read:
     post:
-      summary: Read a particular Organisation details.
+      summary: Read Organisation details
       description: >-
           This API is for viewing details of an existing Organisation on the Sunbird Platform.
       tags:
@@ -157,10 +154,10 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /search:
     post:
-      summary: Search for Organisations
+      summary: Search for an Organisation
       description: >-
           This API is for searching for Organisations on the Sunbird Platform.
       tags:
@@ -225,10 +222,10 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /update:
     patch:
-      summary: Update details of an existing Organisation
+      summary: Update particulars of an existing Organisation
       description: >-
         This API is for updating details of an existing Organisation on the Sunbird Platform.
       tags:
@@ -288,7 +285,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /status/update:
     patch:
       description: >-
@@ -353,7 +350,7 @@ paths:
       security: []
   /type/create:
     post:
-      summary: Create a new Organisation Type.
+      summary: Create new Organisation Type
       description: >-
         This API is for creation of a new Organisation Type on the Sunbird Platform.
       tags:
@@ -410,10 +407,10 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /type/list:
     get:
-      summary: List all Organisation Types.
+      summary: List all Organisation Types
       description: >-
           This API is for listing all Organisation Types on the Sunbird Platform.
       tags:
@@ -459,10 +456,10 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /type/update:
     patch:
-      summary: Update details of an existing Organisation Type.
+      summary: Update particulars of an existing Organisation Type
       description: >-
         This API is for updating details of an existing Organisation Type on the Sunbird Platform.
       tags:
@@ -519,7 +516,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /member/add:
     post:
       summary: Add a User to Organisation
@@ -585,7 +582,7 @@ paths:
           schema:
             $ref: '#/definitions/OrgErrorResponse'
       security:
-      - auth: []
+      - bearer: []
   /member/remove:
     post:
       summary: Remove a User from Organisation

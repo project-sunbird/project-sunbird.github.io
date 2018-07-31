@@ -4,22 +4,24 @@ info:
   title: Location Management API(s)
   description: |-
     The Location management API resource is used to manage the the physical location data of the following: 
+      
       - Users
       - Organization
-    on the basis of the data captured using this API resource, the location data helps in grouping the users based on the location attribute
-     Note: The parent location entity used as parent code parameter represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
-            - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+ 
+    On the basis of the data captured using this API resource, the location data helps in grouping the users based on the location attribute.
+
+    **Note:** The parent location entity used as parent code parameter represents the physical location (X) of a large physical area, and incorporates locations of other smaller areas (Y). Similarly location entity (Y) may incorporate futher smaller areas(Z) in each location entity of (Y).   
+       
+       - You can say entity (X) is superset of location entities in (Y). The (Y) location entity is the superset of location entities in (Z). Also that (X), (Y) may have "n" number of "Y","Z" entities respectively.  
+     
      The location management API resources enables you to perform the following operations:
       - create
       - update
       - search 
-  license:
-    name: GNU Affero General Public License v3.0
-    url: 'https://github.com/project-sunbird/sunbird-commons/blob/master/LICENSE'
 host: staging.open-sunbird.org
 basePath: /api/data/v1/location
 securityDefinitions:
-  auth:
+  bearer:
       type: apiKey  # arbitrary name for the security scheme
       in: header # The secrity scheme parameter is in "header"
       name: Authorization # name of the header, query parameter or cookie
@@ -106,7 +108,7 @@ paths:
                   https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
               - $ref: '#/definitions/LocationErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -181,7 +183,7 @@ paths:
                   https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
               - $ref: '#/definitions/LocationErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false
@@ -261,7 +263,7 @@ paths:
                   https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse
               - $ref: '#/definitions/LocationErrorResponse'
       security:
-        - auth: []
+        - bearer: []
       x-operation-settings:
         CollectParameters: false
         AllowDynamicQueryParameters: false

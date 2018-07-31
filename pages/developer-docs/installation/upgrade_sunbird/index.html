@@ -1,0 +1,31 @@
+<p>Sunbird updates are released on a regular basis. For upgrading to the latest version of Sunbird .
+To update/redeploy sunbird please follow these steps:
+1. Update the Sunbird image versions to latest gold version (e.g. <code>PLAYER_VERSION</code>).</p>
+
+<ol>
+  <li>
+    <p>Update the configuration as per Sunbird release notes.</p>
+  </li>
+  <li>
+    <p>Run <code>cd sunbird-devops/deploy</code></p>
+  </li>
+</ol>
+
+<p>Executing the following command will onboard various APIs and consumer groups.</p>
+
+<ol>
+  <li>Run <code>sudo ./deploy-apis.sh /ansible/inventoriesRun </code></li>
+</ol>
+
+<p>Executing the following command will setup all the sunbird core services.</p>
+
+<ol>
+  <li>Run <code>sudo ./deploy-core.sh /ansible/inventories/</code>.</li>
+</ol>
+
+<p>Executing the following command will setup sunbird proxy services.</p>
+
+<ol>
+  <li>Run <code>sudo ./deploy-proxy.sh /ansible/inventories/</code>.</li>
+</ol>
+
