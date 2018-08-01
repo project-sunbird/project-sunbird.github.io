@@ -1035,13 +1035,13 @@ paths:
         required: true
         type: string
         description: >-
-           The Content-Type header specifies the media type of the resource. This needs to be set to application/json.
+           The Content-Type header specifies the media type of the resource. Set this to application/json.
       - name: ts
         in: header
         required: false
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the assign role API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the assign role API call has occurred, usually it gives date and time of the call, mostly accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1267,7 +1267,7 @@ paths:
         in: body
         required: true
         description: >-
-          - The body payload comprises of the metadata about addinfg skills to a user 
+          - The body payload comprises of metadata on adding skills for a user 
           
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
@@ -1291,7 +1291,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the add user skills API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the add user skills API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1387,9 +1387,8 @@ paths:
         in: header
         required: true
         type: string
-        description: >-
-        
-          Timestamp is a sequence of characters or encoded information identifying when the list user skills API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+        description: >
+          Timestamp is a sequence of characters or encoded information identifying when the list user skills API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1448,7 +1447,7 @@ definitions:
        $ref: '#/definitions/Role'
   
   Role:
-    description: Represents the request body for role o
+    description: Represents the request body for role 
     type: array
     items:
      type: object
@@ -1526,16 +1525,15 @@ definitions:
             description: >-
               This key is required with value as true, if you passes both the values for phone and provider.
             
-               - But incases of create user either of email or phone is required.'
+               - But incases of create user either email or phone is required.'
           subject:
             type: array
             items:
              type: string
           channel:
             type: string
-            description: >-
-            
-              'Represents the value of channel, which you get while creating a rootOrg
+            description: >-      
+              'Represents the channel value received while creating a rootOrg
               - if you provide channel value, then you will get associated with that particular root organization  
               - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization
               - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
@@ -1622,7 +1620,7 @@ definitions:
             description: >- 
               Represents that a key is required with value 
               - True, if you pass both phone number and provider values
-              - Alternatively false , as In create User if you have provided either email or phone 
+              - Alternatively false , as Create User if you have provided either email or phone 
           status:
             type: integer
             format: int32
@@ -1637,10 +1635,10 @@ definitions:
              type: string
              description: >- 
               Represents the user roles that are independent to any org. 
-               **Note:** This API does not access the roles parameters, even if user passes the roles API(create or update ) , These parameters will get ignored  
+               **Note:** This API does not access the roles parameters, even if user passes the roles API(create or update ), these parameters are ignored  
           provider:
             type: string
-            description: 'Represents the value of provider, this can be just name of an organisation or code of an organisation, It is used to identify an organisation'
+            description: 'Represents the value of provider, this can just be the name of an organisation or code of an organisation, it is used to identify an organisation'
           externalId:
             type: string
             description: 'Represents a user identifier in some other system'
@@ -1758,10 +1756,10 @@ definitions:
     type: object
     properties:
       jobName:
-        description: 'Represents the name of the job that user is doing'
+        description: 'Represents the job of the user'
         type: string
       role:
-        description: 'Represents the hierarchial position of a user  inside an organization'
+        description: 'Represents the hierarchial position of a user within an organization'
         type: string
       joiningDate:
         description: 'Represents the joining date in format YYYY-MM-DD'
@@ -1800,7 +1798,7 @@ definitions:
     properties:
       loginId:
         description: >-
-          - Represents the user login ID, If the user is created by providing username and channel, then login ID would be username@channel 
+          - Represents the user login ID, if the user is created by providing username and channel, then login ID would be username@channel 
           - If the user is created without channel then loginID would be same as username@{sunbird_default_channel}.
         type: string
     required:
@@ -1812,7 +1810,7 @@ definitions:
           Represents text search, if you want enable free text search then pass the query as string
         filters:
           userAttribute:
-          - Represents the value of user attribute, it can be either a string or array.
+          - Represents the value of user attribute, it can be either a string or an array
           - Ex: firstName:test  or firstName:["test","test1"] 
         limit: 500
     type: object
@@ -1842,9 +1840,9 @@ definitions:
     properties:
       userAttribute:
         description: >-
-          Represents the userAttributes. It can be any attribute of user.
-            - For single attribute pass string only 
-            - if you want to get response based on same key multiple value then pass values as an array that can be done inside the filter, you can pass multiple attributes with multiple values'
+          Represents the user attributes. It can be any attribute of the user
+            - For single attribute, pass only the string 
+            - To get response based on same key multiple value then pass values as an array that can be done inside the filter, you can pass multiple attributes with multiple values'
         type: array
         items:
           type: string
@@ -1892,13 +1890,13 @@ definitions:
         items:
           type: string
       externalId:
-        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        description: 'externalId,externalIdType,externalIdProvider are the keys required if the user does not pass the userId'
         type: string
       externalIdType:
-        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        description: 'externalId,externalIdType,externalIdProvider are the keys required if the user does not pass the userId'
         type: string
       externalIdProvider:
-        description: 'externalId,externalIdType,externalIdProvider are the keys that are required if the user does not pass the userId'
+        description: 'externalId,externalIdType,externalIdProvider are the keys required if the user does not pass the userId'
         type: string
       externalIds:
         description: 'details of external IDs and provider'
@@ -1920,7 +1918,7 @@ definitions:
       result:
         $ref: '#/definitions/ResultStatus'
   SearchUserResponse:
-     description: The response body of search user
+     description: The response body of Search User
      type: object
      properties:
        response:
@@ -2069,7 +2067,7 @@ definitions:
       roles:
 
         description:
-          The role assigned to a user. The role is directly replaced with saved roles if any. Ensure that the request has a list of all the users roles. To remove all roles assigned to a user, pass an empty array'
+          The role assigned to a user. The role is directly replaced with saved roles, if any. Ensure that the request has a list of all the users roles. To remove all roles assigned to a user, pass an empty array
         example:
         - CONTENT_CREATION
         - PUBLIC
@@ -2111,7 +2109,7 @@ definitions:
         description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       idType:
         type :  string
-        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government.'
+        description : 'The type of identity proof. For example, PAN card is an ID type whose provider is the central government.'
   ExternalIdUpdate:
     description : The user request to update the external ID in the profile
     type: object
