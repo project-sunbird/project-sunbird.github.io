@@ -9,89 +9,48 @@ published: true
 allowSearch: true
 ---
 
-## Sample Scenario
+## Overview
 
-Multiple tenants can share content from the EkStep content repository using the Sunbird platform. In Sunbird, a tenant is a root organisation who shares a common access with specific privileges to the software instance. Root orgs can define their own frameworks and set preferences like default language and default search categories. Sunbird maps each root org to a concept called a channel. Sunbird allows an instance owner to change the default behavior to content meta based filtering for filtering content based on content meta attributes like channels, framework, contentType, mimeType and resourceType.
+Multiple tenants can share content from EkStep content repository using the Sunbird platform. In Sunbird, a tenant is a root organisation that shares a common access with specific privileges to the software instance. Root organizations can define their own frameworks and set preferences like default language and default search categories. Sunbird maps each root organization to a concept known as a channel. Sunbird allows an instance owner to change the default behavior to content meta based filtering for filtering content based on content meta attributes like channels, framework, contentType, mimeType and resourceType.
   
-## Prerequisites
+### Prerequisites
 
 <This section should contain information about what should have been done before a user can proceed to undertake this task.>
 
-## Overview
+### Scenario
+ A Sunbird adopter can configure content filters to consume content from preferred sources. Once this configuration is defined, the filter is applied for content consumption. For example:
+- An organization administrator whitelists channels X and Y, then they receive content only from the channel X and Y. 
+- An organization administrator blacklists channels X and Y, then they receive content from channels apart from X and Y. 
+- An organization administrator whitelists X and Y channels and blacklists Y and Z channels, then they receive content from (X+Y) -(Y+Z) = X channel.
 
-<This section should contain information about why the task needs to be done, when, and what the task is about.> 
- A Sunbird adopter can configure the list of ‘content meta filters’ from which it would like to consume content. Once this configuration is defined, a filter will be applied for content consumption. In that case, they will not receive any content from the channels that are blacklisted by them.
+Meta filters can be applied to the following:
+- Channels 
+- Framework 
+- ResourceType 
+- MimeType 
+- ContentType 
 
-As an example for single configuration: 
-If an adopter whitelists channels X and Y, they will receive content only from the channel X and Y. 
-If they blacklists channels X and Y, they will receive content other channels apart from X and Y. 
-If they whitelists X and Y channels and blacklists Y and Z channels, they will receive content from (X+Y) -(Y+Z) = X channel.
-
-Example for all whitelisted content meta filter configuration: 
-If an adopter whitelists 
-channels A, B, C 
-framework E, F, 
-resourceType G, H, I, 
-mimeType J,K,L and 
-contentType M,N,O, 
-
-then they will receive content only from the whitelisted channels, framework, resourceType and mimeType and contentType.
-
-Example for all blacklisted content meta filter configuration: 
-If an adopter blacklists 
-channels A, B, 
-framework E, F 
-resourceType G 
-mimeType J,K,L and 
-contentType M,N,O 
-
-then they will not receive content from the blacklisted channels, framework, resourceType, mimeType and contentType.
-
-Example for combination of meta filter configuration: 
-If an adopter whitelists 
-channels and 
-contentType
-And blacklists 
-framework, 
-resourceType and
-mimeType 
-
-then they will receive the content from whitelisted channels and contentType, and will not receive content from blacklisted framework, resourceType and mimeType.
+Organization administrator can blacklist or whitelist any one or all of these categories. For example for a combination of meta filter configuration: 
+An administrator whitelists channels and contentType and blacklists framework, resourceType and mimeType. As a result of applying these filters, they will receive content from the whitelisted categories, channels and contentType, and will not receive content from blacklisted categories framework, resourceType, and mimeType.
 
 
-## Taskflows
-<This section should contain how the task should be performed in a sequence of steps.>
+### Configured Environment Variables
+---|S.NO|  Environment Variable | Sample Value |---
 
-The following variables are configured environment variables
-
-sunbird_content_filter_framework_whitelist
-sunbird_content_filter_framework_blacklist
-sunbird_content_filter_contenttype_whitelist
-sunbird_content_filter_contenttype_blacklist
-sunbird_content_filter_resourcetype_whitelist
-sunbird_content_filter_resourcetype_blacklist
-sunbird_content_filter_mimetype_whitelist
-sunbird_content_filter_mimetype_blacklist
-sunbird_content_service_whitelisted_channels
-Sunbird_content_service_blacklisted_channels
-
-Example of the environment variable configuration:
-
-sunbird_content_service_whitelisted_channels =b00bc992ef25f1a9a8d63291e20efc8d
-sunbird_content_service_blacklisted_channels =012345678901210240402
-sunbird_content_service_whitelisted_framework =NCF,01231711180382208027
-sunbird_content_service_blacklisted_framework =012315809814749184151,FWATMPT1
-sunbird_content_service_whitelisted_contenttype = “Resource”, “Plugin”
-sunbird_content_service_blacklisted_contenttype=Story
-Sunbird_content_filter_mimetype_whitelist = “application/vnd.ekstep.content-collection”,
-Sunbird_content_filter_mimetype_blacklist = “application/vnd.ekstep.ecml-archive”
-Sunbird_content_filter_resourcetype_whitelist = ”Learn”, “Read”
-sunbird_content_filter_resourcetype_blacklist = "application/vnd.ekstep.h5p-archive"
+| 1 | sunbird_content_filter_framework_whitelist | 
+| 2 | sunbird_content_filter_framework_blacklist | 
+| 3 | sunbird_content_filter_contenttype_whitelist | =NCF,01231711180382208027
+| 4 | sunbird_content_filter_contenttype_blacklist | =NCF,01231711180382208027
+| 5 | sunbird_content_filter_resourcetype_whitelist |  = ”Learn”, “Read”
+| 6 | sunbird_content_filter_resourcetype_blacklist |  = "application/vnd.ekstep.h5p-archive"
+| 7 | sunbird_content_filter_mimetype_whitelist | =Story
+| 8 | sunbird_content_filter_mimetype_blacklist | =“application/vnd.ekstep.content-collection”
+| 9 | sunbird_content_service_whitelisted_channels | =b00bc992ef25f1a9a8d63291e20efc8d
+| 9 | sunbird_content_service_blacklisted_channels | =012345678901210240402
 
 The values assigned in environment variables are comma separated.
 
-If the values are assigned to the above variables, then a filter query is generated based on the filter values. There are whitelisted and blacklisted types for each meta filter. If whitelisted values are configured, then the content from the whitelisted meta filters are only displayed. 
-If blacklist values are defined then, those contents are not displayed.
+When values are assigned to the environment variables, then a filter query result is generated based on these filter values. 
 
 An Object of the filters is generated with the blacklist and whitelist configurations of meta filter and applied for content consumption.
 
