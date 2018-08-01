@@ -36,7 +36,7 @@ Organization administrators can use their registered credentials and add individ
       - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
       
 5. Download the csv file for reference<br/>
-6. You can add or upload details of up to 199 users at a time in one csv file<br/>
+6. You can add or upload details of up to 1000 users at a time in one csv file<br/>
 7. You can upload users of only a single organization in one csv file<br/>
 8. Descriptions and valid values for each columns are as listed below:<br/>
 
@@ -67,3 +67,7 @@ You can select more than one value for the columns grade, language and subject. 
 10.Select the csv file and click **Open**<br/>
 11.The csv file is uploaded<br/>
 12.On successful file upload, a process ID is generated, else an error message is displayed
+13. Possible causes for failure of upload includes:
+  a. The csv file is not saved in the right format. Select CSV (Comma delimited) (.csv) as the file type while saving 
+  b. Using the same email, phonenumber etc. for more than one user. Details must be unique for each user
+  c. Providing invalid values in the csv file. In such cases, the error message denotes the column name for which incorrect value is provided
