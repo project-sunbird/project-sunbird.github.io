@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: '1.0'
-  title: User Management  API(s)
+  title: User Management  API(s)  
   description: >-
     The User Management API resources are used to manage individual users and their memberships, also these resources allow you to add skills, block and unblock users, encrypt user data. You can perform various other user management related tasks. 
      
@@ -1551,7 +1551,7 @@ definitions:
             type: string
           dob:
             type: string
-            format: yyyy-MM-dd
+            format: YYYY-MM-DD
             example: '2001-02-27'
           grade:
             type: string
@@ -1764,10 +1764,10 @@ definitions:
         description: 'Represents the hierarchial position of a user  inside an organization'
         type: string
       joiningDate:
-        description: 'Represents the joining date in format YYYY-MM-DDDD'
+        description: 'Represents the joining date in format YYYY-MM-DD'
         type: string
       endDate:
-        description: 'Represents the Release date from the job in format yyyy-MM-dd'
+        description: 'Represents the Release date from the job in format YYYY-MM-dd'
         type: string
       orgId:
         description: ''
