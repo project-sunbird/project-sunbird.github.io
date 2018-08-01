@@ -3,34 +3,38 @@ type: landing
 directory: developer-docs/upgrade
 title: Upgrade to Angular Version 6
 page_title: Upgrade to Angular Version 6
-description:  How to upgrading to Angular versions 6
+description:  How to upgrade to Angular versions 6
 published: true
 allowSearch: true
 ---
 
 ## Overview
 
-Sunbird release-1.9 updated angular Version to 6 from vesrion 5. This allow Sunbird portal to utilize angular 6 feature such as 
+Sunbird is an open source, configurable, extendable, modular learning management platform. Sunbird makes it possible to leverage technology for education by providing building blocks for the creation of learning solutions. Sunbird uses a wide spectrum of technologies that support the development, delivery, deployment, and consumption of its resources. 
+  
+In the latest release 1.9, Sunbird has upgraded to the latest Angular version 6, for details about new features of Angular 6, refer to the Angularjs [official website](https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4/) 
 
-1. **ng update:** is a new CLI command that analyzes your package.json and uses its knowledge of Angular to recommend updates to your application
-2. **Library Support:** Angular CLI v6 comes with library support via ng-packagr plugged into the build system we use in Angular CLI, together with schematics for generating a library.
-3. **RxJS v6:** RxJS v6 brings with it several major changes, along with a backwards compatibility package rxjs-compat that will keep your applications working.
-4. **Angular Elements:** The first release of Angular Elements is focused on allowing you to bootstrap Angular components within an existing Angular application by registering them as Custom Elements.
+## Prerequisites 
 
-Please refer below links for more details on new features 
+To update, Angular 5 to Angular 6, ensure that the following prerequisites are met:  
 
-* [Angular 6](https://blog.angular.io/version-6-of-angular-now-available-cc56b0efa7a4)  
-* [RxJS 6](https://github.com/ReactiveX/rxjs/blob/master/docs_app/content/guide/v6/migration.md)
+- Checkout the [Angular update checklist](https://update.angular.io/)
+- Install the latest version of Nodejs, preferably Nodejs v8.9 and above  
 
-## Dependencies 
+**Note:** To update your Nodejs version to the latest Nodejs version, refer to the [official website](https://nodejs.org/en/)
 
-<Any dependencies should be listed here>
-Please update Node.js to v8.9 and above. Node.js download [link](https://nodejs.org/en/download/)
+## Upgrade
+To upgrade your version of Angularjs to the latest version of Angularjs:
 
-## Steps to update Angular v5 to v6:
+1.	Get the latest Sunbird-Portal codebase for release v1.9 from [sunbird-portal](https://github.com/project-sunbird/sunbird-portal) repository
+2.	Execute the following command in the console
+    `npm install @angular/cli@latest -g`
+3.	Using console, navigate to the following location 
+    **src/app/client** 
+4. Execute the following commands:
+   
+   `run npm install @angular/cli@latest`
 
-*  take latest sunbird-portal release v1.9 or above from [sunbird-portal](https://github.com/project-sunbird/sunbird-portal)
-*  run npm install @angular/cli@latest -g
-*  move to src/app/client
-*  run npm install @angular/cli@latest
-*  run npm install
+   `run npm install`
+
+Executing the command upgrades your current version of Angularjs to the latest version. 
