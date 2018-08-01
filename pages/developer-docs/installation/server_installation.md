@@ -48,7 +48,7 @@ The following is a list of ports that must be open:
 |From server |To server|port| protocol|
 |:-----      |:-------|:--------|:------|
 |Administration server|All servers|22|TCP|
-|ELB/Internet|0.0.0.0|80,433|TCP|
+|ELB/Internet|0.0.0.0|80,443|TCP|
 |swarm managers subnet|swarm nodes subnet|All|TCP & UDP|
 |swarm nodes|Cassandra servers|9042|TCP|
 |swarm nodes|Elasticsearch servers| 9200 |TCP|
