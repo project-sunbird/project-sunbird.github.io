@@ -1,0 +1,218 @@
+<h2 id="need">Need</h2>
+
+<p>The HTML interface library eases the HTML developer’s effort to log telemetry events from HTML content. It uses simple API methods exposed by the library to log associated events. The reasons to develop the HTML interface library are:</p>
+
+<ul>
+  <li>
+    <p>Any HTML content can package the interface library as part of the content. Thus using the library, the HTML content can log telemetry events.</p>
+  </li>
+  <li>
+    <p>There are simple API methods to generate the complete telemetry event as only the required fields are passed</p>
+  </li>
+  <li>
+    <p>It is easy to upgrade to new versions, in case of major changes in the telemetry library</p>
+  </li>
+  <li>
+    <p>There is effortless backward compatibility, as changes are handled within the telemetry library. Any upgrade of the telemetry library does not require code changes in the content</p>
+  </li>
+  <li>
+    <p>The library will handle logging of events from HTML content when it is playing in case portal or device/app.</p>
+  </li>
+</ul>
+
+<h2 id="how-to-use-html-interface-library">How to use HTML interface library</h2>
+
+<p>Add the following to your HTML Content:</p>
+
+<p>The file_path is the relative path (eg. assets/js) to these files within the html content.</p>
+
+<pre>
+&#x3C;!-- HTML Interface  JS library --&#x3E;
+&#x3C;script src=&#x22;[relative_path]/htmlinterface.js&#x22;&#x3E;&#x3C;/script&#x3E;
+
+//you can log telemetry interact event as shown below
+org.ekstep.contentrenderer.interface.telemetryService.interact(data) 
+//or 
+RI.telemetryService.interact(data)
+</pre>
+
+<h2 id="api-methods">API methods</h2>
+
+<p>The HTML interface provides simple methods to log telemetry, to handle the ContentRenderer overlay, to get content information, etc.</p>
+
+<p>The HTML interface exposes the following list of API methods:</p>
+
+<ul>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#dispatchevent">dispatchEvent</a> - This method helps dispatch events to the ContentRenderer to handle specific functionality of ContentRenderer</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#getcontentmetadata">getcontentMetadata</a> - This method is used to access content metadata</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#getconfig">getConfig</a> - This method is used to access content-renderer configuration</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#gotoendpage">gotoEndPage</a> - This method helps to open the ContentRenderer end page after HTML content is completely viewed</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#exit">exit</a> - This method helps to close the ContentRenderer</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#telemetry-interact">telemetryService.interact</a>- This method helps to log telemetry interact event</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#telemetry-impression">telemetryService.impression</a> - This method helps to log the Impression event on page or state change</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#telemetry-response">telemetryService.response</a> - This method helps to log telemetry response event when an option is selected during an assessment</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#telemetry-assessmentstart">telemetryService.assessmentStart</a> - This method is used when an assessment begins and it returns the event object</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#telemetry-assess">telemetryService.assess</a> - This method helps to log the Assess event when the assessment is evaluated</p>
+  </li>
+  <li>
+    <p><a href="developer-docs/telemetry/htmlinterfacelibrary/#telemetry-exdata">telemetryService.exdata</a> - This method helps log the telemetry ExData event</p>
+  </li>
+</ul>
+
+<h3 id="dispatchevent">DispatchEvent</h3>
+
+<p>Dispatch an specific event to control ContentRenderer functionalities.</p>
+
+<pre>
+/**
+  * eventName - Event name that has to dispatch to handle ContentRenderer functionality
+  */
+dispatchEvent: function(eventName) {
+  // dispatch event to control ContentRenderer functionalities
+}
+</pre>
+
+<h3 id="getcontentmetadata">getcontentMetadata</h3>
+
+<p>This will return the content metadata information(HTML Cotnent metadata here).</p>
+
+<pre>
+/**
+  * contentId - Current opened HTML content identifier
+  * cb - callback function after after getting content iformation from API call
+  */
+getcontentMetadata = function(contentId, cb){
+}
+</pre>
+
+<h3 id="getconfig">getConfig</h3>
+
+<p>This will return the content renderer configuration. This will help to know what is the context of HTML content playing in ContentRenderer.</p>
+
+<pre>
+getConfig = function(){
+}
+</pre>
+
+<h3 id="gotoendpage">gotoEndPage</h3>
+
+<p>After completion of HTML content, you can call this function to show ContentRenderer end-page. This will take the user out of HTML content view.</p>
+
+<pre>
+gotoEndPage = function(){
+}
+</pre>
+
+<h3 id="exit">exit</h3>
+
+<p>If you want to close the HTML game &amp; contentRenderer to take user back to app, you can call this function.</p>
+
+<pre>
+exit= function(){
+}
+</pre>
+
+<h3 id="telemetry-interact">Telemetry Interact</h3>
+
+<p>Api method to log telemetry interact events. Any interact events in HTML can log using this API method.</p>
+
+<pre>
+/**
+ * Interface to log temetry interact(INTERACT) event
+ * data - {Object} Telemetry event data
+ */
+interact: function(data){
+  _telemetryService.interact(data.type, data.id, data.extype, data.eks);
+}
+</pre>
+
+<h3 id="telemetry-response">Telemetry Response</h3>
+
+<p>Api method to log telemetry response events. When an assessment is playing in content, on selection of option/answer data can be passed by calling this function.</p>
+
+<pre>
+/**
+ * Interface to log telemetry response(RESPONSE) event
+ * data - {Object} Telemetry event data
+ */
+response: function(data){
+    _telemetryService.interact(data.type, data.id, data.extype, data.eks);
+}
+</pre>
+
+<h3 id="telemetry-assessmentstart">Telemetry assessmentStart</h3>
+
+<p>Api method to get assessment start event data. This event object should be passed as a parameter while calling telemetry assess api method.</p>
+
+<pre>
+/**
+ * Interface to get assess start event
+ * data - {Object} Telemetry event data
+ */
+assessmentStart: function(data){
+    _telemetryService.assess(data.qid, data.subj, data.qlevel, data.data);
+}
+</pre>
+
+<h3 id="telemetry-assess">Telemetry Assess</h3>
+
+<p>Api method to log telemetry assess event. After submitting/validating the result of assessment question, call this funciton to log assessment result data.</p>
+
+<pre>
+/**
+ * Interface to log telemetry assess(ASSESS) event
+ * event - {Object} telemetry event object returned after calling assessmentStart() API method
+ * data - {Object} Telemetry event data
+ */
+assess: function(event, data){
+    _telemetryService.assessEnd(event, data);
+}
+</pre>
+
+<h3 id="telemetry-impression">Telemetry Impression</h3>
+
+<p>Api method to log telemtry impression event. When there is a state/page change, call this method to log impression event</p>
+
+<pre>
+/**
+ * Interface to log telemetry impression(IMPRESSION)  event
+ * data - {Object} Telemetry event data
+ */
+impression: function(data){
+    _telemetryService.impression(data.stageid, data.stageto, data.data);
+}
+</pre>
+
+<h3 id="telemetry-exdata">Telemetry Exdata</h3>
+
+<p>Api method to log telemtry exdata events. Any additional information of can be passed by calling this function.</p>
+
+<pre>
+/**
+ * Interface to log telemetry Exdata(EXDATA) event
+ * data - {Object} Telemetry event data
+ */
+exdata: function(data){
+   _telemetryService.xapi(data);
+},
+</pre>
+
