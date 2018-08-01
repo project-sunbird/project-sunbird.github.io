@@ -67,3 +67,7 @@ You can select more than one value for the columns grade, language and subject. 
 10.Select the csv file and click **Open**<br/>
 11.The csv file is uploaded<br/>
 12.On successful file upload, a process ID is generated, else an error message is displayed
+13.On user upload data validation failure, system will not provide userId in response. To know exact error user need to read "ErrorMessage" field. Following can be cause of failure.
+  a. File type is incorrect (Ecpected CSV only)
+  b. Uploading same file by changing either email or phone or externalIds , which is used by another person
+  c. Uploading file with some invalid colum name
