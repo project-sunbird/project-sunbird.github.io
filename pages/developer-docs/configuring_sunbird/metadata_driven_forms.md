@@ -20,11 +20,11 @@ An organization works in the domain of water conservation and works in multiple 
 
 2. created a channel for your organization (XYZ corporation). For details, refer to[ Channel APIs](http://www.sunbird.org/apis/framework/#tag/Channel-APIs)
 
-3. registered  your channel/ organization i.e, XYZ corporation) with Ekstep. On registration, a unique **Channel ID** is assigned to your organization (XYZ corporation) say your channel ID is: 12300786
+3. registered  your channel/ organization i.e, (XYZ corporation) with Ekstep. On registration, a unique **Channel ID** is assigned to your organization (XYZ corporation) say your channel ID is: 12300786
 
 4. have organizational administrator privileges
 
-5. created users for your organization  (XYZ corporation) either by: 
+5. created users for your organization (XYZ corporation) either by: 
 
    -   onboarding XYZ corporation users in bulk, refer to [Bulk upload service APIs](http://www.sunbird.org/apis/bulkupload/)
 
