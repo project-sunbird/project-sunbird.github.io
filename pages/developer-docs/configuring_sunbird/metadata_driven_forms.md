@@ -62,7 +62,7 @@ To alter the configuration of each of the available metadata driven forms, Sunbi
 
 The following table provides a detailed list of all the available metadata driven forms on the Sunbird platform:
 
-### Forms in Editor
+## Forms in Editor
 
 **The following table lists down the available forms in Editor component:**
 
@@ -231,8 +231,7 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
 
 
 ## Sample payload for  Update Form API
-
-```
+<pre>
 {
   "request": {
             
@@ -443,11 +442,10 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
             }
         }
 }
-```
+</pre>
 
 ## Sample payload for Read Form API 
-
- ```
+<pre>
  {
   "request": {
     "type": "content",
@@ -457,11 +455,10 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
     "framework": "NCF"
   }
 }
-```
+</pre>
 
 ## Sample payload for Create form API  
-
- ```
+<pre>
 {
 
   "request": {
@@ -586,7 +583,8 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
             }
   }
 }
-```
+</pre>
+
 ## Concepts Covered
 
 * Metadata driven forms
