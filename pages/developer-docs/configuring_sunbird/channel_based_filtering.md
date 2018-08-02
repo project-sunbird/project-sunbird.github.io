@@ -71,8 +71,8 @@ For details, refer to the [Configuration Variables page]{Configuration variable 
 
 ## Concepts Covered
 
-**Tenant** - A tenant is a root organization that shares common access with specific privileges to the software instance
+**Tenant** - A tenant is a root organization that shares common access with specific privileges to the software.
 
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
-**Channel** - A channel is the identifier that makes the tenant unique. 
+**Channel** - A channel is the identifier that makes a tenant unique. 
