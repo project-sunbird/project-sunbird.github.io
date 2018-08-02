@@ -3,10 +3,10 @@ type: landing
 directory: developer-docs/configuring_sunbird
 title: Content Filtering
 page_title:  Content Filter 
-description: How to setup filtering of content for a channel 
-keywords: filter, channel, channel based filtering, content filtering, set up content filtering
-published: false
-allowSearch: false
+description: How to setup filtering of content
+keywords: content filter, channel, channel based filtering, content filtering, Framework filtering, resource based filtering, mimetype filter
+published: True
+allowSearch: True
 ---
 ## Overview
 
@@ -50,7 +50,7 @@ The Sunbird instance administrator
 
 To enable fitering content according to the various categories set the following environment variables at the time of deployment. 
 
-**Channel**
+**Channel Based Filtering**
 
 Sunbird maps each root organization to a concept called a channel. Sunbird allows the instance owner to change the default behavior to channel-based content filtering. Sunbird adopters can access a global, shared content repository (possibly the EkStep content repository). Sunbird does not limit content discovery to a single channel. However, given the diversity of content across channels, content published in one channel may not always be helpful to the users of other channels. To enable filtering of content for a channel, 
 
