@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: '1.0'
-  title: User Management  API(s)
+  title: User Management  API(s)  
   description: >-
     The User Management API resources are used to manage individual users and their memberships, also these resources allow you to add skills, block and unblock users, encrypt user data. You can perform various other user management related tasks. 
      
@@ -1035,7 +1035,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content-Type header specifies the media type of the resource. Set this to application/json.
+        The Content-Type header specifies the media type of the resource. Set this to application/json.
       - name: ts
         in: header
         required: false
@@ -1267,6 +1267,7 @@ paths:
         in: body
         required: true
         description: >-
+        
           - The body payload comprises of metadata on adding skills for a user 
           
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
@@ -1447,7 +1448,8 @@ definitions:
        $ref: '#/definitions/Role'
   
   Role:
-    description: Represents the request body for role 
+    description: Represents the request body for role
+
     type: array
     items:
      type: object
@@ -1799,6 +1801,7 @@ definitions:
       loginId:
         description: >-
           - Represents the user login ID, if the user is created by providing username and channel, then login ID would be username@channel 
+
           - If the user is created without channel then loginID would be same as username@{sunbird_default_channel}.
         type: string
     required:
@@ -2180,3 +2183,4 @@ definitions:
              type: string
     required:
     - endorsedUserId
+
