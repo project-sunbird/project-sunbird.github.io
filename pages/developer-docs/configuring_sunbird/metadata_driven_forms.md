@@ -22,7 +22,7 @@ An organization works in the domain of water conservation and works in multiple 
 
 3. registered  your channel/ organization i.e, XYZ corporation) with Ekstep. On registration, a unique **Channel ID** is assigned to your organization (XYZ corporation) say your channel ID is: 12300786
 
-4. have Org administrator privileges
+4. have organizational administrator privileges
 
 5. created users for your organization  (XYZ corporation) either by: 
 
@@ -54,9 +54,9 @@ The architecture of the Sunbird platform is logically divided into following mai
 
 Each of the components uses a metadata-driven development model to help the adopters to be more productive by allowing the flexibility to tailor these components as per their needs.The platform provides a mechanism where each of the forms in the components are configurable as they are metadata driven.
 
-It implies, that the basic functionality of an — that is, (the forms, labels, fields, number of fields, and the types of fields) are defined as metadata in a database rather than being hard-coded in a programming language. When any end user accesses a form on the portal or on mobile, it renders the metadata into the interface the user experiences.
+It implies, that the basic functionality of a — that is, (the forms, labels, fields, number of fields, and the types of fields) are defined as metadata in a database rather than being hard-coded in a programming language. When any end user accesses a form on the portal or on mobile, it renders the metadata into the interface the user experiences.
 
-To alter the configuration of each of the available metadata driven forms, Sunbird provides a set of[Form API](http://www.sunbird.org/apis/form/) endpoints. The administrator must use these APIs to programmatically manage, configure and customize each form.These APIs provide straightforward, powerful, and open ways to programmatically access the form data and provides the capabilities of configuring all the metadata available for forms. The detailed list for metadata driven forms within each Sunbird component.
+To alter the configuration of each of the available metadata driven forms, Sunbird provides a set of [Form API](http://www.sunbird.org/apis/form/) endpoints. The administrator must use these APIs to programmatically manage, configure and customize each form.These APIs provide straightforward, powerful, and open ways to programmatically access the form data and provides the capabilities of configuring all the metadata available for forms. The detailed list for metadata driven forms within each Sunbird component.
 
 ## List of Metadata driven Forms  
 
@@ -64,7 +64,7 @@ The following table provides a detailed list of all the available metadata drive
 
 ### Forms in Editor
 
-**The following table lists down the available forms in Editor component **
+**The following table lists down the available forms in Editor component:**
 
 | Form | Description | Type | Subtype| Action| Component | 
 | --- | ------ |------| ------| ------| ------| 
@@ -91,7 +91,7 @@ The following table provides a detailed list of all the available metadata drive
 | List | multiselect, conceptselector, keywordsuggestion, dialcode, topicselector |
 | Url | file |
 
-### JSON Structure
+### JSON Structure definitions
 
 **The following table lists down the example JSON structure with descriptions for each form in the Sunbird Editor component:**
 
@@ -115,7 +115,7 @@ The following table provides a detailed list of all the available metadata drive
 
 ## Forms in Portal 
 
-**The following table lists down the available forms in  Sunbird Portal component**
+**The following table lists down the available forms in  Sunbird Portal component:**
 
 | Form | Description | Type | Subtype| Action| Component | 
 | --- | --- |------| ------| ------| ------| 
@@ -135,7 +135,7 @@ The following table provides a detailed list of all the available metadata drive
 
 **The following table lists down the supported input types with corresponding data types in the Sunbird Portal component:**
 
-| dataType | probable inputType |
+| Data Type | Input Type |
 | --- | --- |
 | Text | text, select, number |
 | List | multiselect, conceptselector |
@@ -181,7 +181,7 @@ The following table provides a detailed list of all the available metadata drive
 | List | fields, range |
 | type | force, optional |
 
-### JSON Structure definition
+### JSON Structure definitions
 
 **The following table lists down the example JSON structure with descriptions for each form in the Mobile app component:**
 
@@ -211,27 +211,26 @@ The form configuration is a post installation task. Being a Sunbird adopter, you
 
 **Configure an Existing Form**
 
-Follow the steps below to configure existing forms available in the Sunbird:
+Follow the steps to configure the forms available:
 
-1. Ensure that all  prerequisites are met
-2. Get access to Form APIs Resources
+1. Ensure that all the prerequisites are met
+2. Get access to [Form API](http://www.sunbird.org/apis/form/)Resources
 3. Use an API client to perform the update form operation
-4. Use[ Update Form API](http://www.sunbird.org/apis/form/#operation/FormUpdate) to configure the metadata fields on a form, ensure that you provide valid inputs to the configuration parameters in the header, request payload while calling the API.
+4. Use[Update Form API](http://www.sunbird.org/apis/form/#operation/FormUpdate) to configure the metadata fields on a form, ensure that you provide valid inputs to the configuration parameters in the header, request payload while calling the API.
 
 **Configuration Parameters** 
 
 The following are the header parameters for Update Form API endpoint:
 
-1.  Authorization
-
+1. Authorization
 2. Content-Type
 
-For more information about the usage of header parameters refer to the [Update Form API](http://www.sunbird.org/apis/form/#operation/FormUpdate) reference document.  
+For more inf about the usage of header parameters refer to the [Update Form API](http://www.sunbird.org/apis/form/#operation/FormUpdate) reference document.  
 
 Follow steps 1-4 to configure each type of form in editor, portal or mobile app, refer to the JSON structures for detailed descriptions of each parameter
 
 ## Sample payload for  Update Form API
-
+```
 {
   "request": {
             "type": "content",
@@ -441,9 +440,11 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
             }
         }
 }
+```
 
 ## Sample payload for Read Form API 
 
+```
  {
   "request": {
     "type": "content",
@@ -454,10 +455,10 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
   }
 }
 
+```
 ## Sample payload for Create form API  
 
- 
-
+``` 
 {
 
   "request": {
@@ -582,7 +583,7 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
             }
   }
 }
-
+```
 ## Concepts Covered
 
 * Metadata driven forms
