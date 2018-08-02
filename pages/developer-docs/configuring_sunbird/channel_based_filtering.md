@@ -22,7 +22,7 @@ For example, if an adopter whitelists channels X and Y, their users receive cont
 
 Once this is configured, Sunbird applies a filter for the content that is made available to users of that organization. Users can only search or navigate to content from the chosen channels.
 
-If an adopter set the <b>$.instance.all<b> keyword inside the whitelisting variable (X,Y, $instance.all), in that case, all the available channels in the instance along with X and Y will be whitelisted.
+If an adopter set the <b>$.instance.all</b> keyword inside the whitelisting variable (X,Y, $instance.all), in that case, all the available channels in the instance along with X and Y will be whitelisted.
 
 Let us consider an example of an organization which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A of state B.  
 
