@@ -1,7 +1,7 @@
 ---
 directory: developer-docs/configuring_sunbird
-title: Configur Domain for External Links 
-page_title: Configuring Domain External Links
+title: Import External Content 
+page_title: Import External Content
 description: Details on how to configure Sunbird domain to whitelist external domains
 keywords: whitelist, upload external link, upload external video, upload other than youtube
 published: true

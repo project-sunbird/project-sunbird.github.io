@@ -1,12 +1,12 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Filter Content for a Channel
-page_title: Filter Content for a Channel 
+title: Content Filtering
+page_title: Content Filtering 
 description: How to setup filtering of content for a channel 
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
-published: false
-allowSearch: false
+published: True
+allowSearch: True
 ---
 ## Overview
 
