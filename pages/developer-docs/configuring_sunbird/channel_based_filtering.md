@@ -1,31 +1,14 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Fliter Content for a Channel
-page_title: Fliter Content for a Channel 
-description: Fliter Content for a Channel
+title: Filter Content for a Channel
+page_title: Filter Content for a Channel 
+description: How to setup filtering of content for a channel 
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
 published: false
 allowSearch: false
 ---
-## Scenario
-An organization works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A.           
-
-### Version
-
-This feature is applicable from Sunbird 1.7.0 onwards
-
-### Intended Audience
-
-The Instance Admin
-
-## Prerequisites
-
-- An instance of Sunbird that is successfully installed and configured
-
-- The instance should have access to the shared EkStep content repository
-
-## Overview 
+## Overview
 
 In Sunbird, a tenant is a root organization, that shares common access to the content repository with specific privileges to the software instance. Sunbird allows you to set up a hierarchy of organizations for every instance installed. After sucessfully installing Sunbird, the first step is to create the first root organization also called as the tenant organization, followed by creating a heirarchy of organizations under each of it. Root organizations can define their own framework and set preferences like default language and search categories. Sunbird maps each root organization to a concept called a channel. Sunbird allows the instance owner to change the default behavior to channel-based content filtering.
 
@@ -39,6 +22,24 @@ For example, if an adopter whitelists channels X and Y, their users receive cont
 
 Once this is configured, Sunbird applies a filter for the content that is made available to users of that organization. Users can only search or navigate to content from the chosen channels.
 
+If an adopter set the <b>$.instance.all</b> keyword inside the whitelisting variable (X,Y, $instance.all), in that case, all the available channels in the instance along with X and Y will be whitelisted.
+
+Let us consider an example of an organization which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A of state B.  
+
+**Version Applicable**
+
+This feature is applicable from Sunbird 1.7.0 onwards
+
+**Intended Audience**
+
+The Sunbird instance administrator
+
+## Prerequisites
+
+- An instance of Sunbird that is successfully installed and configured
+
+- The instance should have access to the shared EkStep content repository
+
 ## Taskflow
 
 To enable filtering of content for a channel, set the following environment variables at the time of deployment. 
@@ -46,16 +47,29 @@ To enable filtering of content for a channel, set the following environment vari
 
 |S No. | Variable Name | Description | Purpose | Default Value | Path |
 |------|---------------|-------------|---------|---------------|------|
-|1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed |   |  Content Service |
-| 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed |  | Content Service |  
+| 1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed | <blank>  |  Content Service |
+| 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed | <blank> | Content Service |  
+| 3 | sunbird_content_filter_framework_whitelist | Configures the framework whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different framework ID | Variable is used to whitelist the framework whose content should be displayed | <blank> | Content Service |
+| 4 | sunbird_content_filter_framework_blacklist | Configures the framework whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are framework ID| Variable is used to blacklist the framework whose content should not be displayed|<blank> |Content Service |
+| 5 | sunbird_content_filter_contenttype_whitelist | Configures the contentType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different contentType | Variable is used to whitelist the contentType whose content should be displayed | <blank> | Content Service |
+| 6 | sunbird_content_filter_contenttype_blacklist | Configures the contentType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are contentType  | Variable is used to blacklist the contentType whose content should not be displayed | <blank> |Content Service| 
+| 7 | sunbird_content_filter_resourcetype_whitelist | Configures the resourceType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different resourceType | Variable is used to whitelist the resourceType whose content should be displayed |<blank> / Collection, Lesson Plan, Course, Book, Story, Read, | Content Service|
+| 8 | sunbird_content_filter_resourcetype_blacklist | Configures the resourceType whose content should not be displayed in the portal. This is a comma-separated string ex:”X,Y,Z”where X,Y,Z are resourceType | Variable is used to blacklist the resourceType whose content should not be displayed | <blank> | Content Service
+| 9 | sunbird_content_filter_mimetype_whitelist | Configures the mimeType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different mimeType | Variable is used to whitelist the mimeType whose content should be displayed | <blank> | Content Service |
+| 10 | sunbird_content_filter_mimetype_blacklist | Configures the mimeType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are mimeType | Variable is used to blacklist the mimeType whose content should not be displayed | <blank> | Content Service | 
 
-For details, refer to the **Configuration Variables page**.
+**Updating the Database**
+
+|S No. | Variable Name | Description | Purpose | Default Value | Path |
+|------|---------------|-------------|---------|---------------|------|
+| 1 | sunbird_content_service_channel_refresh_cron | Configures the cron job interval to update the channels regularly.E.g: “*/5****” this value updates the channel every 5 minutes | Variable is used to set the cron scheduler |<blank>| Content Service |
+
+For details, refer to the [Configuration Variables page]{Configuration variable page}
 
 ## Concepts Covered
 
-**Tenant** - A tenant is a root organization that shares common access with specific privileges to the software instance
+**Tenant** - A tenant is a root organization that shares common access with specific privileges to the software.
 
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
-**Channel** - A channel is the identifier that makes the tenant unique. 
-
+**Channel** - A channel is the identifier that makes a tenant unique. 
