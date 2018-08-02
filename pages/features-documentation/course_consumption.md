@@ -63,25 +63,8 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>Once the whole course is complete, you get a window as an end screen .<br>On this screen, you can view:<br>*Your score<br>*Duration of the course<br>*Replay button: You can switch user using the <b>Replay button<b>.<br>*Next and Previous arrow: Using the arrows, you can navigate to the next and previous content.</td>
+    <td>On completion of a course, a end screen window is displayed <br>On this screen, you can view:<br>*Your score<br>*Duration of the course<br>*Replay button <br>*Next and Previous arrows to navigate to the next and previous slide</td>
     <td><img src="pages/features-documentation/images/course/course_endscreen_updated.png"></td>
-  </tr>
-  </table>
-
-### Switching User
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1.Click on the <b>Replay button<b> <br>One window appears.You get list of user with whom you can share the content.</td>
-    <td><img src="pages/features-documentation/images/course/switch_user.png"></td>
-  </tr>
-  <tr>
-    <td>2.To switch user, select a new user from the list with whom you wnat to share the course, and click the <b>Play<b>button.</td>
-    <td><img src="pages/features-documentation/images/course/switched_user.png"></td>
   </tr>
   </table>
 
