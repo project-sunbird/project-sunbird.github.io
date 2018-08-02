@@ -4,8 +4,8 @@ directory: developer-docs
 title: Getting Started with Sunbird
 page_title: Getting Started with Sunbird
 description: For adopters and users to get started on Sunbird. It provides an overview and links to Sunbird's tech stack, components and installation procedures.
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 keywords: install, installation, server, try sunbird, developer installation, tech stack, 
 ---
 

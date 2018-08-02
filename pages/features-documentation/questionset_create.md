@@ -19,10 +19,10 @@ To ensure that the content achieves the learning objective it is important to ch
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. Click the <b>Add Question Set</b> icon on the toolbar. The question set browser page is displayed
+    <td>Click the <b>Add Question Set</b> icon on the toolbar. The question set browser page is displayed
      You can add questions to content editor by 
-     <br>a Selecting Questions 
-     <br>b Creating Questions
+     <br>1.Selecting Questions 
+     <br>2.Creating Questions
     </td>
     <td><img src="pages/features-documentation/images/questionset/addquestionset.png"></td>
   </tr>
@@ -44,6 +44,7 @@ On the <b>Question Set</b> page, search for questions or apply filters to narrow
   <br>&emsp;c) <b>Question Type</b>
   <br>&emsp;d) <b>Grade Level</b>
   <br>&emsp;e) <b>Concepts</b>. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a>
+  <br>&emsp;e) <b>Topic</b>. Refer <a href="features-documentation/topic_selector" target="_blank">Topic Selector</a>
   <br>3. Use <b>My Questions</b> slider to search for questions that you have uploaded. To search for questions available on the portal, disable this option
   <br>4. Select questions from the results displayed on the left pane 
   <br>5. The selected question can be previewed on the right pane 
@@ -72,23 +73,23 @@ On the <b>Question Set</b> page, search for questions or apply filters to narrow
 </table>
   
 #### Creating Fill in the Blanks Question
-  
+
 <table>
  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
- <td>1. Enter the question
- <br>2. You can format the text, and also include the questions in your preffered language using rich text editor
- <br>3. Enter the answers within a pair of square brackets [[Answer]]
- <br>4. Use <b>Select Keyboard</b> option select the text input method as Device, English and Custom. 
+ <td>1.Enter the question in the text box
+ <br>2.You can format the text, and also include the questions in your preffered language using rich text editor
+ <br>3.Displays the characters used in the question. You can enter the answers within a pair of square brackets [[Answer]]
+ <br>4.Use <b>Select Keyboard</b> option select the text input method as Device, English and Custom. 
  <br><b>Note</b>:You can add up to 26 characters in your preffered language to appear on the custom keyboard 
  <br>5. Select <b>Refresh</b> icon to preview your question
  <br>6. Select <b>Partial Scoring</b> to enable scoring for each correct answer
  <br>7. Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears
  <br>8. Select <b>Back</b> to go back to the previous page
- <br><b>Note</b>: Editing a Fill in the Blanks question displays the above options 
+ <br><b>Note</b>: Editing a Fill in the Blanks question displays all the above options 
  </td>
     <td><img src="pages/features-documentation/images/questionset/Fillintheblanks.png"></td>
  </tr>
@@ -101,25 +102,27 @@ On the <b>Question Set</b> page, search for questions or apply filters to narrow
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-<td>1. Enter the question
-<br>2. Enter the answers
-<br><b>Note</b>:You can format the text, and also include the questions in your preffered language using rich text editor 
-<br>3. Mark the correct answer amongst the multiple answers
-<br>4. Click <b>Delete</b> icon to remove an answer
-<br>5. Click <b>Image</b> icon to add an image. Refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images</a>
-<br>6. Click <b>Audio</b> icon to add an audio 
-<br>7. Select <b>Refresh</b> icon to preview your question
-<br>8. Select the layout from the drop-down menu 
-<br>9. Use <b>Shuffle</b> Option to change the sequence of answers
-<br>10.Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears
-<br>11.Select <b>Back</b> to go back to the previous page  
-<br><b>Note</b>: Editing a Multiple Choice question displays the above options 
+  <td>1.Enter the question in the text box
+  <br>2.You can format the text, and also include the questions in your preffered language using rich text editor
+  <br>3.Displays the characters used in the question.
+  <br>4.Click <b>Image</b> icon to add an image. Refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images</a>
+  <br>5.Click <b>Audio</b> icon to add an audio 
+  <br>6.Select <b>Multiple Correct Answer</b>, if the question has more than one correct answer
+  <br>7.Enter the answer
+  <br>8.Mark the correct answer amongst the multiple answers
+  <br>9.Click <b>Delete</b> icon to remove an answer
+  <br>10.Click <b>Add Answer</b> to insert another option amonsgt the answers
+  <br>11.Select <b>Refresh</b> icon to preview your question 
+  <br>12.Select the layout from the drop-down menu
+  <br>13.Use <b>Shuffle</b> Option to change the sequence of answers
+  <br>14.Click <b>Next</b> to enter the Question Details. The <b>Create Question</b> page appears
+  <br>15.Select <b>Back</b> to go back to the previous page 
+  <br><b>Note</b>: Editing a Multiple Choice question displays the above options 
  </td>
     <td><img src="pages/features-documentation/images/questionset/multiplechoicequestion.png"></td>
  </tr>
  </table>
  
-
 #### Creating Match the Following Question
   
 <table>
@@ -128,22 +131,24 @@ On the <b>Question Set</b> page, search for questions or apply filters to narrow
     <th style="width:65%;">Screen</th>
  </tr>  
  <tr>
-  <td>1. Enter the question 
-  <br>2. Enter the answers
-  <br><b>Note</b>: You can format the text, and also include the questions in your preffered language using rich text editor
-  <br>3. Select <b>Delete Pair</b> icon to remove answer set 
-  <br>4. Select <b>Add another question answer pair</b> to add another question and answer
-  <br>5. Select <b>Refresh</b> icon to preview your question  
-  <br>6. Select <b>Partial Scoring</b> to enable scoring for each correct answer
-  <br>7. Click <b>Next</b> to enter the Question Details
-  <br>8. Select <b>Back</b> to go back to the previous page 
-  <br><b>Note</b>: Editing a Match the following question displays the above options 
+  <td>1.Enter the question in the text box
+  <br>2.You can format the text, and also include the questions in your preffered language using rich text editor 
+  <br>3.Displays the characters used in the question.
+  <br>4.Enter the answers
+  <br><b>Note</b>:You can add up to 26 characters in your preffered language to appear on the custom keyboard 
+  <br>5. Select <b>Delete Pair</b> icon to remove answer set 
+  <br>6. Select <b>Add another question answer pair</b> to add another question and answer
+  <br>7. Select <b>Refresh</b> icon to preview your question  
+  <br>8. Select <b>Partial Scoring</b> to enable scoring for each correct answer
+  <br>9. Click <b>Next</b> to enter the Question Details
+  <br>10. Select <b>Back</b> to go back to the previous page 
+  <br><b>Note</b>: Editing a Match the following question displays all the above options 
  </td>
     <td><img src="pages/features-documentation/images/questionset/matchthefollowing.png"></td>
  </tr>
 </table>
 
-## Configuring Questions
+## Configuring Questions Details
  
 <table>
 <tr>
@@ -151,20 +156,27 @@ On the <b>Question Set</b> page, search for questions or apply filters to narrow
    <th style="width:65%;">Screen</th>
 </tr>  
 <tr>
-  <td>1. <b>Name</b> contains the question entered in the question set 
-  <br>2. Enter <b>Description</b> 
-  <br>3. Select the following from the drop-down menu
-    <br>a. Select <b>Board</b>
-    <br>b. Select <b>Medium</b>
-    <br>c. Select <b>Class</b>
-    <br>d. Select <b>Level</b>
-    <br>4. Enter the <b>Max Score</b> of the question
-    <br>5. Select <b>Refresh</b> icon to preview your question
-    <br>6. Select <b>Partial Scoring</b> to enable scoring for each correct answer
-    <br>7. Choose <b>Select Layout</b>
-    <br>8. Select <b>Shuffle Option</b>
-    <br>9. Click <b>Submit</b> to configure the question details
-    <br>10. Select <b>Back</b> to go back to the previous page 
+  <td>1. <b>Title</b> displays the question that is entered in the question set 
+  <br>2.Select the following from the drop-down menu
+    <br>a.Select <b>Medium</b>
+    <br>b.Select <b>Level</b>
+    <br>c.Select <b>Grade Level</b>
+    <br>d.Select <b>Subject</b>
+    <br>e.Select <b>Board</b>
+    <br>3.Enter the <b>Max Score</b> of the question
+    <br>4.Select <b>Concept</b>. Refer <a href="features-documentation/concept_selector" target="_blank">Concept Selector</a>
+    <br>5.Enter <b>Description</b>
+    <br>6.Select <b>Topic</b>. Refer <a href="features-documentation/topic_selector" target="_blank">Topic Selector</a>
+    <br>7.Select <b>Refresh</b> icon to preview your question
+    <br>8.Select menu to Replay, enable sound, take teachers notes, and go to Home screen.
+    <br>9.Select to go to previous question
+    <br>10.Select to go to next question
+    <br>11.Select to replay sound
+    <br>12.Select <b>Partial Scoring</b> to enable scoring for each correct answer
+    <br>13.Choose <b>Select Layout</b>
+    <br>14.Select <b>Shuffle Option</b>    
+    <br>15. Click <b>Submit</b> to configure the question details
+    <br>16. Select <b>Back</b> to go back to the previous page 
   </td>
   <td><img src="pages/features-documentation/images/questionset/questiondetails.png"></td>
  </tr>

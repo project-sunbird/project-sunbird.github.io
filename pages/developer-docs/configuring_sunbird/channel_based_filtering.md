@@ -1,23 +1,24 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Fliter Content for a Channel
-page_title: Fliter Content for a Channel 
-description: Fliter Content for a Channel
+title: Filter Content for a Channel
+page_title: Filter Content for a Channel 
+description: How to setup filtering of content for a channel. 
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 ---
 ## Scenario
-An organization works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A.           
 
-### Version
+An organization works in the domain of water conservation and works in multiple Indian states, with NGOs, village panchayats and other authorities. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each state to independently access content that is specific to them. For example, village A in state B is plagued with a problem of a rapidly depleting the water table. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display only to users of state B.           
+
+**Version Applicable**
 
 This feature is applicable from Sunbird 1.7.0 onwards
 
-### Intended Audience
+**Intended Audience**
 
-The Instance Admin
+The Sunbird instance administrator
 
 ## Prerequisites
 
@@ -48,7 +49,8 @@ To enable filtering of content for a channel, set the following environment vari
 
 |S No. | Variable Name | Description | Purpose | Default Value | Path |
 |------|---------------|-------------|---------|---------------|------|
-|1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed | <blank>|  Content Service |
+
+| 1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed | <blank>|  Content Service |
 | 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed |<blank>| Content Service |  
 | 3 | sunbird_content_service_channel_refresh_cron | Configures the cron job interval to update the channels regularly.E.g:“*/5 * * * *” - this value updates the channel every 5 minutes.
  | Variable is used to set the cron scheduler |<blank>| Content Service |  
@@ -61,4 +63,3 @@ For more information, refer to the **Configuration Variables page**.
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
 **Channel** - A channel is the identifier that makes a tenant unique. 
-
