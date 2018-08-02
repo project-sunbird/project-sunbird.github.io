@@ -3,14 +3,14 @@ type: landing
 directory: developer-docs/configuring_sunbird
 title: Filter Content for a Channel
 page_title: Filter Content for a Channel 
-description: How to setup filtering of content for a channel. 
+description: How to setup filtering of content for a channel 
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
 published: false
 allowSearch: false
 ---
 ## Scenario
 
-An organization works in the domain of water conservation and works in multiple Indian states, with NGOs, village panchayats and other authorities. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each state to independently access content that is specific to them. For example, village A in state B is plagued with a problem of a rapidly depleting the water table. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display only to users of state B.           
+An organization works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. The organization would like to allow all their stakeholders to have access to the common knowledge repository, and at the same time also allow each stakeholder to independently access content that is specific to the stakeholders. For example, village A in state B is plagued with a problem of industrial effluents depleting the water table at a very rapid pace. The village panchayat needs content with specific solutions. Other states do not require such content. In such a scenario, Sunbird allows content to be filtered for display to a specific group of users for the vilage A of state B.  
 
 **Version Applicable**
 
@@ -40,6 +40,8 @@ For example, if an adopter whitelists channels X and Y, their users receive cont
 
 Once this is configured, Sunbird applies a filter for the content that is made available to users of that organization. Users can only search or navigate to content from the chosen channels.
 
+If an adopter set the <b>$.instance.all<b> keyword inside the whitelisting variable (X,Y, $instance.all), in that case, all the available channels in the instance along with X and Y will be whitelisted.
+
 ## Taskflow
 
 To enable filtering of content for a channel, set the following environment variables at the time of deployment. 
@@ -57,8 +59,15 @@ To enable filtering of content for a channel, set the following environment vari
 | 8 | sunbird_content_filter_resourcetype_blacklist | Configures the resourceType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are resourceType | Variable is used to blacklist the resourceType whose content should not be displayed | <blank> | Content Service
 | 9 | sunbird_content_filter_mimetype_whitelist | Configures the mimeType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different mimeType | Variable is used to whitelist the mimeType whose content should be displayed | <blank> | Content Service |
 | 10 | sunbird_content_filter_mimetype_blacklist | Configures the mimeType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are mimeType | Variable is used to blacklist the mimeType whose content should not be displayed | <blank> | Content Service |
+  
 
-For details, refer to the **Configuration Variables page**.
+**Updating the Database**
+
+|S No. | Variable Name | Description | Purpose | Default Value | Path |
+|------|---------------|-------------|---------|---------------|------|
+| 1 | sunbird_content_service_channel_refresh_cron | Configures the cron job interval to update the channels regularly.E.g:“*/5 * * * *” - this value updates the channel every 5 minutes | Variable is used to set the cron scheduler |<blank>| Content Service |
+
+For details, refer to the [Configuration Variables page]{Configuration variable page}
 
 ## Concepts Covered
 
