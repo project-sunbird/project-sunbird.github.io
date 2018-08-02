@@ -39,6 +39,8 @@ For example, if an adopter whitelists channels X and Y, their users receive cont
 
 Once this is configured, Sunbird applies a filter for the content that is made available to users of that organization. Users can only search or navigate to content from the chosen channels.
 
+If an adopter set the <b>$.instance.all<b> keyword inside the whitelisting variable (X,Y, $instance.all), in that case, all the available channels in the instance along with X and Y will be whitelisted.
+
 ## Taskflow
 
 To enable filtering of content for a channel, set the following environment variables at the time of deployment. 
@@ -46,16 +48,17 @@ To enable filtering of content for a channel, set the following environment vari
 
 |S No. | Variable Name | Description | Purpose | Default Value | Path |
 |------|---------------|-------------|---------|---------------|------|
-|1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed |   |  Content Service |
-| 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed |  | Content Service |  
-
-For details, refer to the **Configuration Variables page**.
+|1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed | <blank>|  Content Service |
+| 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed |<blank>| Content Service |  
+| 3 | sunbird_content_service_channel_refresh_cron | Configures the cron job interval to update the channels regularly.E.g:“*/5 * * * *” - this value updates the channel every 5 minutes.
+ | Variable is used to set the cron scheduler |<blank>| Content Service |  
+For more information, refer to the **Configuration Variables page**.
 
 ## Concepts Covered
 
-**Tenant** - A tenant is a root organization that shares common access with specific privileges to the software instance
+**Tenant** - A tenant is a root organization that shares common access with specific privileges to the software.
 
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
-**Channel** - A channel is the identifier that makes the tenant unique. 
+**Channel** - A channel is the identifier that makes a tenant unique. 
 
