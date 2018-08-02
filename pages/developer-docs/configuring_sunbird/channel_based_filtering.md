@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Filter Content for a Channel
-page_title: Filter Content for a Channel 
+title: Content Filtering
+page_title:  Content Filter 
 description: How to setup filtering of content for a channel 
 keywords: filter, channel, channel based filtering, content filtering, set up content filtering
 published: false
@@ -10,9 +10,15 @@ allowSearch: false
 ---
 ## Overview
 
-In Sunbird, a tenant is a root organization, that shares common access to the content repository with specific privileges to the software instance. Sunbird allows you to set up a hierarchy of organizations for every instance installed. After sucessfully installing Sunbird, the first step is to create the first root organization also called as the tenant organization, followed by creating a heirarchy of organizations under each of it. Root organizations can define their own framework and set preferences like default language and search categories. Sunbird maps each root organization to a concept called a channel. Sunbird allows the instance owner to change the default behavior to channel-based content filtering.
+In Sunbird, a tenant is a root organization, that shares common access to the content repository with specific privileges to the software instance. Sunbird allows you to set up a hierarchy of organizations for every instance installed. After sucessfully installing Sunbird, the first step is to create the first root organization also called as the tenant organization, followed by creating a heirarchy of organizations under each of it. Root organizations can define their own framework and set preferences like default language and search categories. The content is categorized in Sunbird is using: 
 
-Sunbird adopters can access a global, shared content repository (possibly the EkStep content repository). Sunbird does not limit content discovery to a single channel. However, given the diversity of content across channels, content published in one channel may not always be helpful to the users of other channels. Hence, adopters can choose to mark channels as: 
+**Channel**
+**Framework**
+**Resource Type**
+**Mime Type**
+**Content Type**
+
+The adopters can choose to mark the search categories as: 
 
 * Whitelisted: Those channels whose content is best suited for their user's needs and demands. Users can use and explore content across whitelisted channels.
 
@@ -42,29 +48,62 @@ The Sunbird instance administrator
 
 ## Taskflow
 
-To enable filtering of content for a channel, set the following environment variables at the time of deployment. 
+To enable fitering content according to the various categories set the following environment variables at the time of deployment. 
+
+**Channel**
+
+Sunbird maps each root organization to a concept called a channel. Sunbird allows the instance owner to change the default behavior to channel-based content filtering. Sunbird adopters can access a global, shared content repository (possibly the EkStep content repository). Sunbird does not limit content discovery to a single channel. However, given the diversity of content across channels, content published in one channel may not always be helpful to the users of other channels. To enable filtering of content for a channel, 
+
+|S No. | Variable Name | Description | Purpose | Default Value | Path |Example |
+|------|---------------|-------------|---------|---------------|------|-----|
+| 1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed | <blank>  |  Content Service | Whitelist channels in Sunbird are ekstep.in and 0124758418460180480 |
+| 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed | <blank> | Content Service |  Blacklist channels in Sunbird 0124758449502453761 |
 
 
-|S No. | Variable Name | Description | Purpose | Default Value | Path |
-|------|---------------|-------------|---------|---------------|------|
-| 1 | sunbird_content_service_whitelisted_channels | Configures the channels whose content can be displayed in the Sunbird instance. This is a comma-separated string ex:"A,B,C”where A,B,C are different channels | Variable is used to whitelist the Channel whose content should be displayed | <blank>  |  Content Service |
-| 2 | sunbird_content_service_blacklisted_channels | Configures the channels whose content should not be displayed in the Sunbird instance this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are channels | Variable is used to blacklist the channel whose content should not be displayed | <blank> | Content Service |  
-| 3 | sunbird_content_filter_framework_whitelist | Configures the framework whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different framework ID | Variable is used to whitelist the framework whose content should be displayed | <blank> | Content Service |
-| 4 | sunbird_content_filter_framework_blacklist | Configures the framework whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are framework ID| Variable is used to blacklist the framework whose content should not be displayed|<blank> |Content Service |
-| 5 | sunbird_content_filter_contenttype_whitelist | Configures the contentType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different contentType | Variable is used to whitelist the contentType whose content should be displayed | <blank> | Content Service |
-| 6 | sunbird_content_filter_contenttype_blacklist | Configures the contentType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are contentType  | Variable is used to blacklist the contentType whose content should not be displayed | <blank> |Content Service| 
-| 7 | sunbird_content_filter_resourcetype_whitelist | Configures the resourceType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different resourceType | Variable is used to whitelist the resourceType whose content should be displayed |<blank> / Collection, Lesson Plan, Course, Book, Story, Read, | Content Service|
-| 8 | sunbird_content_filter_resourcetype_blacklist | Configures the resourceType whose content should not be displayed in the portal. This is a comma-separated string ex:”X,Y,Z”where X,Y,Z are resourceType | Variable is used to blacklist the resourceType whose content should not be displayed | <blank> | Content Service
-| 9 | sunbird_content_filter_mimetype_whitelist | Configures the mimeType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different mimeType | Variable is used to whitelist the mimeType whose content should be displayed | <blank> | Content Service |
-| 10 | sunbird_content_filter_mimetype_blacklist | Configures the mimeType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are mimeType | Variable is used to blacklist the mimeType whose content should not be displayed | <blank> | Content Service | 
+**Framework**
+
+
+|S No. | Variable Name | Description | Purpose | Default Value | Path |Example |
+|------|---------------|-------------|---------|---------------|------|-----|
+| 1 | sunbird_content_filter_framework_whitelist | Configures the framework whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different framework ID | Variable is used to whitelist the framework whose content should be displayed | <blank> | Content Service |NCF |
+| 2 | sunbird_content_filter_framework_blacklist | Configures the framework whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are framework ID| Variable is used to blacklist the framework whose content should not be displayed|<blank> |Content Service |NCFCOPY |
+
+**Content Type** 
+
+The content types defined in Sunbird are Resource, Asset, Collection, Course, and Lesson Plan
+
+|S No. | Variable Name | Description | Purpose | Default Value | Path |Example |
+|------|---------------|-------------|---------|---------------|------|------|
+| 1 | sunbird_content_filter_contenttype_whitelist | Configures the contentType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different contentType | Variable is used to whitelist the contentType whose content should be displayed | <blank> | Content Service | |
+| 2 | sunbird_content_filter_contenttype_blacklist | Configures the contentType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are contentType  | Variable is used to blacklist the contentType whose content should not be displayed | <blank> |Content Service| |
+
+
+**Resource Type**
+ The resource type defined in Sunbird are Collection, Lesson Plan, Course, Book, Story, Read
+
+|S No. | Variable Name | Description | Purpose | Default Value | Path |Example |
+|------|---------------|-------------|---------|---------------|------|--------|
+| 1 | sunbird_content_filter_resourcetype_whitelist | Configures the resourceType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different resourceType | Variable is used to whitelist the resourceType whose content should be displayed |<blank>/ Collection, Lesson Plan, Course, Book, Story, Read, | Content Service|  |
+| 2 | sunbird_content_filter_resourcetype_blacklist | Configures the resourceType whose content should not be displayed in the portal. This is a comma-separated string ex:”X,Y,Z”where X,Y,Z are resourceType | Variable is used to blacklist the resourceType whose content should not be displayed | <blank> | Content Service |  |
+
+**Mime Type**
+
+The file formats that are supported in Sunbird are application/pdf, video/mp4, video/x-youtube, video/youtube, application/vnd.ekstep.html-archive, application/epub, application/vnd.ekstep.h5p-archive, video/webm, text/x-url
+
+|S No. | Variable Name | Description | Purpose | Default Value | Path |Example |
+|------|---------------|-------------|---------|---------------|------|--------|
+| 1 | sunbird_content_filter_mimetype_whitelist | Configures the mimeType whose content can be displayed in the portal. This is a comma-separated string ex:”A,B,C”where A,B,C are different mimeType | Variable is used to whitelist the mimeType whose content should be displayed | <blank> | Content Service |  |
+| 2 | sunbird_content_filter_mimetype_blacklist | Configures the mimeType whose content should not be displayed in the portal this is a comma-separated string ex:”X,Y,Z”where X,Y,Z are mimeType | Variable is used to blacklist the mimeType whose content should not be displayed | <blank> | Content Service |  |
+
 
 **Updating the Database**
 
-|S No. | Variable Name | Description | Purpose | Default Value | Path |
-|------|---------------|-------------|---------|---------------|------|
-| 1 | sunbird_content_service_channel_refresh_cron | Configures the cron job interval to update the channels regularly.E.g: “*/5****” this value updates the channel every 5 minutes | Variable is used to set the cron scheduler |<blank>| Content Service |
 
-For details, refer to the [Configuration Variables page]{Configuration variable page}
+|S No. | Variable Name | Description | Purpose | Default Value | Path | 
+|------|---------------|-------------|---------|---------------|------|------- |
+| 1 | sunbird_content_service_channel_refresh_cron | Configures the cron job interval to update the channels regularly.E.g: “*/5****” this value updates the channel every 5 minutes | Variable is used to set the cron scheduler |<blank>| Content Service | |
+
+For details, refer to the [Configuration Variables page](Configuration variable page)
 
 ## Concepts Covered
 
@@ -73,3 +112,12 @@ For details, refer to the [Configuration Variables page]{Configuration variable 
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
 **Channel** - A channel is the identifier that makes a tenant unique. 
+
+**Framework**-
+
+**Resource Type**-
+
+**Mime Type**-
+
+**Content Type**-
+
