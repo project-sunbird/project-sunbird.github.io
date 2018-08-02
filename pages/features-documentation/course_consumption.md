@@ -57,7 +57,17 @@ Any registered user can take up a course on Sunbird. The guidelines to taking a 
     <td><img src="pages/features-documentation/images/consumption_contentplayer.png"></td>
   </tr>
   </table>
-  
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>On completion of a course, a end screen window is displayed <br>On this screen, you can view:<br>*Your score<br>*Duration of the course<br>*Replay button <br>*Next and Previous arrows to navigate to the next and previous slide</td>
+    <td><img src="pages/features-documentation/images/course/course_endscreen_updated.png"></td>
+  </tr>
+  </table>
+
 #### Content Player Menu
 
   Click the course player menu for the content player options. The name of the course is displayed in the header
