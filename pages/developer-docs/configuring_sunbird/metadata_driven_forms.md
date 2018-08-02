@@ -104,7 +104,7 @@ The following table provides a detailed list of all the available metadata drive
 | editable | `boolean` | Defines the mode of the field i.e either it can be read only or  editable | true | true, false |
 | index | `integer` | Represents the location/ position of the field on your form | NA | `1` |
 | inputType | `string` example: select | defines the type of your form field | NA |`text`,`number`, `select`,`multiselect`,`conceptselector`, `topicselector`, `keywordsuggestion`,`dialcode`|
-| label | `string` For example ‘yamaha’| It is the display name of your field | NA | Title |
+| label | `string` For example ‘syallabus’| It is the display name of your field | NA | Title |
 | name | `string` |Name of the field| None | fieldSelect |
 | placeholder | `string` |Represents the placeholder for the field| NA | Enter Title For Book |
 | range | `array` |  Represents the range of all the values specific to a particular field in a form| None | `range: ['story','game','worksheet']`|
@@ -153,7 +153,7 @@ The following table provides a detailed list of all the available metadata drive
 | editable | `boolean` | defines the mode of the field i.e either you can keep your field as read only or make it editable | true | Ex: true, false |
 | index | `integer` | location/ position of the field on your form | None | `1` |
 | inputType | `string` example: select | defines the type of your form field | None |`text`,`number`, `select`,`multiselect`,`conceptselector`, `topicselector`, `keywordsuggestion`,`dialcode`|
-| label | `string` For example ‘yamaha’| It is the display name of your field | None | Ex: Title |
+| label | `string` For example ‘syallabus’| It is the display name of your field | None | Ex: Title |
 | name | `string` |Name of the field| None | Ex: Title |
 | placeholder | `string` |Placeholder for the field| None | Ex: Enter Title For Book |
 | range | `array` | It is used to populate dropdown values| None | `range: ['story','game','worksheet']`|
