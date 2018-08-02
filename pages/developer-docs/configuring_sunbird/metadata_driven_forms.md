@@ -229,10 +229,13 @@ For more inf about the usage of header parameters refer to the [Update Form API]
 
 Follow steps 1-4 to configure each type of form in editor, portal or mobile app, refer to the JSON structures for detailed descriptions of each parameter
 
+
 ## Sample payload for  Update Form API
+
 ```
 {
   "request": {
+            
             "type": "content",
             "subType": "resource",
             "action": "save",
@@ -444,7 +447,7 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
 
 ## Sample payload for Read Form API 
 
-```
+ ```
  {
   "request": {
     "type": "content",
@@ -454,11 +457,11 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
     "framework": "NCF"
   }
 }
-
 ```
+
 ## Sample payload for Create form API  
 
-``` 
+ ```
 {
 
   "request": {
