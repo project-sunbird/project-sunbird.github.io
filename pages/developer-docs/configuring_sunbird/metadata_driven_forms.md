@@ -158,7 +158,7 @@ The following table lists down the sample JSON structure with descriptions for e
 
 | Form | Description | Type | Subtype| Action| Component
 | --- | --- |------| ------| ------| ------|
-| **Onboarding Details** | This form is used to save/update/read onboarding details | user | instructor | onboarding | app
+| **Onboarding Details** | This form is used to save/update/read onboarding question details | user | instructor | onboarding | app
 | **Force/Optional Upgrade** | This form is used to save/update/read or force/optional app upgrade | app | install | upgrade | app
 
 ### Input & Data Types 
