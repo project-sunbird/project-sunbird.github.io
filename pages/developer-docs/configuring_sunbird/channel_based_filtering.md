@@ -111,13 +111,12 @@ For details, refer to the [Configuration Variables page](Configuration variable 
 
 **Multi-tenant** - Multi-tenancy is an architecture in which a single instance of a software application serves multiple customers. Each customer is called a tenant. 
 
-**Channel** - A channel is the identifier that makes a tenant unique. 
+**Channel** - A channel is a unique identifier that makes a tenant unique. 
 
-**Framework**-
+**Framework**- A structure designed to define the scope of something.	On Sunbird, the framework is defined through a string of vocabularies
 
-**Resource Type**-
+**Resource Type**- Resource is the smallest unit of content that can be created on Sunbird. Resource type refers to the different types of resources that can be created on Sunbird, namely, Learn, Play, Practice, Read, Teach, Test  
 
-**Mime Type**-
+**Mime Type**- Mime type refers to the different file formats that can be uploaded on Sunbird, for example, .mp4, ECML, EPUB etc. 
 
-**Content Type**-
-
+**Content Type**- Content type refers to the different resources that can be created on Sunbird, namely, book, course, collection, lesson plan, resource 
