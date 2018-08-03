@@ -111,7 +111,8 @@ The following table lists down the sample JSON structure with descriptions for e
 | --- | --- |------| ------| ------| ------| 
 | **Book Create** | This form is displayed on clicking `Book` from your workspace | content | textbook | create | portal |
 | **Course Create** | This form is displayed on clicking `Course` from your workspace | content | course | create | portal |
-| **Collection Create** | This form is displayed on clicking `Collection` from your workspace | content | collection | create | portal |  | **Lesson Plan Create** | This form is displayed on clicking `Lesson Plan` from your workspace | content | lesson | review | editor |
+| **Collection Create** | This form is displayed on clicking `Collection` from your workspace | content | collection | create | portal |
+| **Lesson Plan Create** | This form is displayed on clicking `Lesson Plan` from your workspace | content | lesson | review | editor |
 | **Resource create** | This form is displayed on clicking `Resource` from your workspace | content | course | save | editor |
 | **Library Filters** | This form is displayed on clicking `filters` from your library | content | library | search | portal | 
 | **Course Filters** | This form is displayed on clicking `filters` from your course | content | course | search | portal |   
@@ -119,6 +120,7 @@ The following table lists down the sample JSON structure with descriptions for e
 | **Up For Review Filters** | This form is displayed on clicking `Up For Review` in the UP FOR REVIEW section in your workspace | content | upforreview | search | portal | 
 | **Explore Filters** | This form is displayed on clicking `filters` in the explore page | content | explore | search | portal | 
 | **Resource Bundle Filters** |This form is displayed on clicking `language drop down` in the explore Page | content | resourcebundle | search | portal |
+
 
 ### Supported Input & Data Types 
 
