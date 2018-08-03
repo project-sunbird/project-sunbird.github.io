@@ -51,7 +51,7 @@ Parameter | Type | Description | Sample Value
  
 **Note:** <br>1. If accountName or accessKey is not provided in the arguments then the tenant files are not pushed to CDN, however versioning of files is done and the saved in the folder `tenants-build` at the same path where `gulp-tenant.js` is present
 <br>2. For the parameter `tenantpath` tenant folder is expected at the same path where `tenant-gulp.js` file present, and if tenant folder path is different and not at the path of `tenant-gulp.js` then the respective path must be given
-<br>3. For the parameter `tenant`, by default, all the folders present inside the tenant (source) folder will be processed, and can be overridden by specifying the particular folder names which have to be processed by comma seperated values.Eg: `tenant1,tenant2,tenant3` <br>4. On completing the script the following message is displayed:
+<br>3. For the parameter `tenant`, by default, all the folders present inside the tenant (source) folder will be processed, and can be overridden by specifying the particular folder names which have to be processed by comma seperated values.Eg: `<tenant1>,<tenant2>,<tenant3>` <br>4. On completing the script the following message is displayed:
 `Success! - All files processing done and pushed to CDN Provider`
 <br>5. If the tenant folder is already present in CDN service provider container then this script replaces the existing folder with the latest one.
 
