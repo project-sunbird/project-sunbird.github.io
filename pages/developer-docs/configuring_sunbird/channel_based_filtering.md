@@ -2,9 +2,9 @@
 type: landing
 directory: developer-docs/configuring_sunbird
 title: Content Filtering
-page_title:  Content Filter 
+page_title:  Content Filtering
 description: How to setup filtering of content
-keywords: content filter, channel, channel based filtering, content filtering, Framework filtering, resource based filtering, mimetype filter
+keywords: content filter, channel, channel based filtering, content filtering, Framework filtering, resource based filtering, mimetype filter, filter
 published: True
 allowSearch: True
 ---
