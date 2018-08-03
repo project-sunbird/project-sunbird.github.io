@@ -138,10 +138,9 @@ The following table lists down the sample JSON structure with descriptions for e
 | code | `string` | Unique identifier of the field on your form | None | name, description etc. |
 | dataType | `string`| Format of data of the field on your form | None | `list`,`text`|
 | description | `string` | Description specific to a field on your form | None | Title of the content|
-| depends | `array` | Describes the dependency in case if a field-A is dependent on field-B on your form | None | `depends: ["Subject", "Maths"]` |
 | editable | `boolean` | Defines the mode of the field i.e either you can keep your field as read only or make it editable | true | true, false |
 | index | `integer` | Location/ position of the field on your form | None | `1` |
-| inputType | `string` | Defines the type of your form field | None |`text`,`number`, `select`,`multiselect`,`conceptselector`, `topicselector`, `keywordsuggestion`,`dialcode`|
+| inputType | `string` | Defines the type of your form field | None |`text`,`number`, `select`,`multiselect`,`conceptselector`|
 | label | `string` | Display name of your field | None | Title |
 | name | `string` | Name of the field | None | Title |
 | placeholder | `string` | Placeholder for the field | None | Enter Title For Book |
