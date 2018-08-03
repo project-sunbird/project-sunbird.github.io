@@ -11,10 +11,10 @@ allowSearch: true
 
 
 ## Overview
-Content created or available offline can be uploaded on Sunbird. Organization administrators can upload content available on external sources such as dailymotion.com etc. on Sunbird. This section explains the procedure of how to configure domains to allow hosting content from such external sources. 
+Sunbird platform allows adopters/users to upload content from external sources. Using the option, an adopter can upload the content that is already available with them and the content from the external sources to sunbird content library. They can upload external content from different websites such as youtube, Dailymotion and so on. This section explains the procedure of enabling a domain to host content from external sources. 
 
 ### Prerequisite
-To configure domains to host external links ensure the following:
+Ensure the following to enable a domain to host content from external links:
 - You are logged in as the organization administrator
 - You have access to set the environment variables
 
@@ -22,6 +22,12 @@ To configure domains to host external links ensure the following:
 <Will be taken care by legal team>
 
 ### Configuring the Domain
-You can set the whitelisted domain in the environment variables of Sunbird to variable 'sunbird_extcont_whitelisted_domains'
-Example: sunbird_extcont_whitelisted_domains='youtube.com,youtu.be,dailymotion.com', where youtube.com and youtu.be are default whitelisted domains, and dailymotion.com is the newly whitelisted domain. 
+To enable domains to host content from external links, an admin needs to configure an enviroenment variable.
+You must set the<b>sunbird_extcont_whitelisted_domains<b>variable to whitelist a external website.
+
+For an example, if you need to allow a domain to host content from an external source "dailymotion.com", you need to configure the domain in the below format:
+<b>SUNBIRD_EXTCONT_WHITELISTED_DOMAINS: env.sunbird_extcont_whitelisted_domains || 'dailymotion.com'<b>
+
+Once the domain is configured in this manner, it will allow content creators of the organisation to upload content from external sources.
+To know <b>how to upload external content to Sunbird content library<b>, refer to the [Upload Content to Sunbird](http://www.sunbird.org/features-documentation/upload/){:target="_blank"}section.
 
