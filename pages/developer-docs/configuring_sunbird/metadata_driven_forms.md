@@ -10,24 +10,18 @@ keywords: Meta Data, Meta, form, API, Form API,
 ---
 ## Scenario
 
-An organization works in the domain of water conservation and works in multiple Indian states, with NGOs, village panchayats and other authorities. The organization would like to tailor different forms on Sunbird to match their requirements. They want to configure various available forms with respect to their terminology and needs. They intend to change the display labels, the fields, the types of fields on the forms.   
+An organization works in the domain of water conservation and works in multiple Indian states, with NGOs, village panchayats and other authorities. The organization would like to tailor different forms on Sunbird to match their requirements. They want to configure various available forms based on their terminology and needs. They intend to change the display labels, the fields, the types of fields etc. on the forms.   
 
 ## Prerequisites
+As the organization administrator ensure the following:
+1. Install  the server instance of Sunbird. For details, refer to[ Server Installation ](http://www.sunbird.org/developer-docs/installation/server_installation/)
 
- As an administrator, you must have:
+2. Create a channel for your organization (XYZ corporation). For details, refer to[ Channel APIs](http://www.sunbird.org/apis/framework/#tag/Channel-APIs)
 
-1. installed server instance of Sunbird. For details, refer to[ Server Installation ](http://www.sunbird.org/developer-docs/installation/server_installation/)
+3. Register  your channel/ organization i.e, (XYZ corporation) with Ekstep. On registration, a unique **Channel ID** is assigned to your organization (XYZ corporation) channel ID is: 12300786
 
-2. created a channel for your organization (XYZ corporation). For details, refer to[ Channel APIs](http://www.sunbird.org/apis/framework/#tag/Channel-APIs)
-
-3. registered  your channel/ organization i.e, (XYZ corporation) with Ekstep. On registration, a unique **Channel ID** is assigned to your organization (XYZ corporation) say your channel ID is: 12300786
-
-4. have organizational administrator privileges
-
-5. created users for your organization (XYZ corporation) either by: 
-
-   -   onboarding XYZ corporation users in bulk, refer to [Bulk upload service APIs](http://www.sunbird.org/apis/bulkupload/)
-
+4. Create users for your organization (XYZ corporation) either by: 
+   -  onboarding XYZ corporation users in bulk, refer to [Bulk upload service APIs](http://www.sunbird.org/apis/bulkupload/), or
    -  creating the XYZ corporation  users individually, refer to [User APIs](http://www.sunbird.org/apis/userapi/)   
 
 **Note:**
@@ -52,11 +46,9 @@ The architecture of the Sunbird platform is logically divided into following mai
 
 * Sunbird Mobile etc.
 
-Each of the components uses a metadata-driven development model to help the adopters to be more productive by allowing the flexibility to tailor these components as per their needs.The platform provides a mechanism where each of the forms in the components are configurable as they are metadata driven.
+Each of the component uses a metadata-driven development model to help the adopters to be more productive by allowing the flexibility to tailor these components based on their needs.The platform provides a mechanism where each of the forms in the components are configurable as they are metadata driven. This implies that the basic functionality of elements, such as, the forms, labels, fields, number of fields, types of fields etc. are defined as metadata in a database,instead of hard-coding them in a programming language. When any end user accesses a form on the portal or on mobile, it renders the metadata into the interface of user interface.
 
-It implies, that the basic functionality of a — that is, (the forms, labels, fields, number of fields, and the types of fields) are defined as metadata in a database rather than being hard-coded in a programming language. When any end user accesses a form on the portal or on mobile, it renders the metadata into the interface the user experiences.
-
-To alter the configuration of each of the available metadata driven forms, Sunbird provides a set of [Form API](http://www.sunbird.org/apis/form/) endpoints. The administrator must use these APIs to programmatically manage, configure and customize each form.These APIs provide straightforward, powerful, and open ways to programmatically access the form data and provides the capabilities of configuring all the metadata available for forms. The detailed list for metadata driven forms within each Sunbird component.
+To alter the configuration of each of the available metadata driven forms, Sunbird provides a set of [Form API](http://www.sunbird.org/apis/form/) endpoints. The administrator uses these APIs to programmatically manage, configure and customize each form.These APIs provide straightforward, powerful, and open ways to programmatically access the form data and provide the capabilities of configuring all the metadata available for forms. 
 
 ## List of Metadata driven Forms  
 
@@ -64,26 +56,24 @@ The following table provides a detailed list of all the available metadata drive
 
 ## Forms in Editor
 
-**The following table lists down the available forms in Editor component:**
-
 | Form | Description | Type | Subtype| Action| Component | 
 | --- | ------ |------| ------| ------| ------| 
-| **Book Save** | This form is displayed on click of `edit details` in Book Editor | content | textbook | save | editor | |
-| **Book Review** | This form is displayed on click of `send for review` in Book Editor | content | textbook | review | editor |
-| **Resource Save** | This form is displayed on click of `edit details` in Content/ Generic Editor's | content | resource | save | editor |  
-| **Resource Review** | This form is displayed on click of `send for review` in Content/ Generic Editor's | content | resource | review | editor |
-| **Course Save** | This form is displayed on click of `edit details` in Course Editor | content | course | save | editor |
-| **Course Review** | This form is displayed on click of `send for review` in Course Editor | content | course | review | editor 
-| **Lesson Plan Save** | This form is displayed on click of `edit details` in Lesson Plan Editor | content | Lessonplan | save | editor |    
-| **Lesson Plan Review** |This form is displayed on click of `send for review` in Lesson Plan Editor | content | Lessonplan | review | editor |      
-| **Collection Save** | This form is displayed on click of `edit details` in Collection Editor | content | collection | save | editor | 
-| **Collection Review** | This form is displayed on click of `send for review` in Collection Editor | content | collection | review | editor |  
-| **Question Save** | This form is displayed on click of  `create question` in Content Editor | content | questions | question-meta-save | editor |
-| **Question Search** | This form is displayed on click of   `search questions` in Content Editor | content | questions | question-filter-view | editor |
+| **Book Save** | This form is displayed on clicking `edit details` in book editor | content | textbook | save | editor | |
+| **Book Review** | This form is displayed on clicking `send for review` in book editor | content | textbook | review | editor |
+| **Resource Save** | This form is displayed on clicking `edit details` in content/generic editors | content | resource | save | editor |  
+| **Resource Review** | This form is displayed on clicking `send for review` in content/generic editors | content | resource | review | editor |
+| **Course Save** | This form is displayed on clicking `edit details` in course editor | content | course | save | editor |
+| **Course Review** | This form is displayed on clicking `send for review` in course editor | content | course | review | editor 
+| **Lesson Plan Save** | This form is displayed on clicking `edit details` in lesson plan editor | content | Lessonplan | save | editor |    
+| **Lesson Plan Review** |This form is displayed on clicking `send for review` in lesson plan editor | content | Lessonplan | review | editor |      
+| **Collection Save** | This form is displayed on clicking `edit details` in collection editor | content | collection | save | editor | 
+| **Collection Review** | This form is displayed on clicking `send for review` in collection editor | content | collection | review | editor |  
+| **Question Save** | This form is displayed on clicking `create question` in content editor | content | questions | question-meta-save | editor |
+| **Question Search** | This form is displayed on clicking `search questions` in content editor | content | questions | question-filter-view | editor |
 
 ### Supported Input & Data Types 
 
-**The following table lists down the supported input types with corresponding data types in the Sunbird Editor component:**
+The following table lists down the supported input types with corresponding data types in the Sunbird Editor component:
 
 | Data Type | Input Type |
 | --- | --- |
@@ -93,25 +83,25 @@ The following table provides a detailed list of all the available metadata drive
 
 ### JSON Structure definitions
 
-**The following table lists down the example JSON structure with descriptions for each form in the Sunbird Editor component:**
+The following table lists down the sample JSON structure with descriptions for each form in the Sunbird Editor component:
 
 | Property Name | Type | Description | Default Value | Example |
 | --- | --- | --- | --- | --- |
 | code | `string` | Unique identifier of the field on your form| NA | name, description etc. |
 | dataType | `string`| Format of data of the field on your form| NA | `list`,`text`|
 | description | `string` | Description specific to a field on your form| NA |  Title of the content|
-| depends | `array` | describes the dependency in case if a field-A is dependent on  field-B on your form | NA | `depends: ["subject", "science"]` |
-| editable | `boolean` | Defines the mode of the field i.e either it can be read only or  editable | true | true, false |
+| depends | `array` | Describes the dependency in case if a field-A is dependent on field-B on your form | NA | `depends: ["subject", "science"]` |
+| editable | `boolean` | Defines the mode of the field i.e whether it can be read only or editable | true | true, false |
 | index | `integer` | Represents the location/ position of the field on your form | NA | `1` |
-| inputType | `string` example: select | defines the type of your form field | NA |`text`,`number`, `select`,`multiselect`,`conceptselector`, `topicselector`, `keywordsuggestion`,`dialcode`|
-| label | `string` For example ‘syallabus’| It is the display name of your field | NA | Title |
-| name | `string` |Name of the field| None | fieldSelect |
-| placeholder | `string` |Represents the placeholder for the field| NA | Enter Title For Book |
+| inputType | `string`| Defines the type of your form field | NA |`text`,`number`, `select`,`multiselect`,`conceptselector`, `topicselector`, `keywordsuggestion`,`dialcode`|
+| label | `string` | It is the display name of your field | NA | Title |
+| name | `string` | Name of the field | None | fieldSelect |
+| placeholder | `string` |Represents the placeholder for the field | NA | Enter Title For Book |
 | range | `array` |  Represents the range of all the values specific to a particular field in a form| None | `range: ['story','game','worksheet']`|
 | renderingHints | `object` | "renderingHints": {"width": "xx%", maxlength: 00} | None | Ex: { maxlength : 100 } |
-| required | `boolean` | if you want to keep a field as mandatory | None | Ex: false |
-| visible | `boolean` | if  you want to keep the field to be visible or hidden | None | Ex: true |
-| validation | `array` | Allows validation on a particular field of your form | None | Ex: [{ "type": "regex", "value": "[A-Z]","message": "Invalid Input" }] |
+| required | `boolean` |To make a field as mandatory | None | Ex: false |
+| visible | `boolean` | To make the field visible or hidden | None | Ex: true |
+| validation | `array` | Allows validation on any particular field of your form | None | Ex: [{ "type": "regex", "value": "[A-Z]","message": "Invalid Input" }] |
 
 ## Forms in Portal 
 
@@ -119,17 +109,16 @@ The following table provides a detailed list of all the available metadata drive
 
 | Form | Description | Type | Subtype| Action| Component | 
 | --- | --- |------| ------| ------| ------| 
-| **Book Create** | This form is displayed on click of `Book` in workspace | content | textbook | create | portal |
-| **Course Create** | This form is displayed on click of `Course` in workspace | content | course | create | portal |
-| **Collection Create** | This form is displayed on click of `Collection` in workspace | content | collection | create | portal |  
-| **Lesson Plan Create** | This form is displayed on click of `Lesson Plan` in workspace | content | lesson | review | editor |
-| **Resource create** | This form is displayed on click of `Resource` in workspace | content | course | save | editor |
-| **Library Filters** | This form is displayed on click of `filters` in library page | content | library | search | portal | 
-| **Course Filters** | This form is displayed on click of `filters` in course page | content | course | search | portal |   
-| **All My Contents Filters** |This form is displayed on click of `filters` in all my content in workspace| content | allmycontent | search | portal |      
-| **Up For Review Filters** | This form is displayed on click of `Up For Review` in UP FOR REVIEW in workspace | content | upforreview | search | portal | 
-| **Explore Filters** | This form is displayed on click of `filters` in Explore page | content | explore | search | portal | 
-| **Resource Bundle Filters** |This form is displayed on click of  `language drop down` in Explore Page | content | resourcebundle | search | portal |
+| **Book Create** | This form is displayed on clicking `Book` from your workspace | content | textbook | create | portal |
+| **Course Create** | This form is displayed on clicking `Course` from your workspace | content | course | create | portal |
+| **Collection Create** | This form is displayed on clicking `Collection` from your workspace | content | collection | create | portal |  | **Lesson Plan Create** | This form is displayed on clicking `Lesson Plan` from your workspace | content | lesson | review | editor |
+| **Resource create** | This form is displayed on clicking `Resource` from your workspace | content | course | save | editor |
+| **Library Filters** | This form is displayed on clicking `filters` from your library | content | library | search | portal | 
+| **Course Filters** | This form is displayed on clicking `filters` from your course | content | course | search | portal |   
+| **All My Contents Filters** |This form is displayed on clicking `filters` option from any of the content types in your workspace| content | allmycontent | search | portal |      
+| **Up For Review Filters** | This form is displayed on clicking `Up For Review` in the UP FOR REVIEW section in your workspace | content | upforreview | search | portal | 
+| **Explore Filters** | This form is displayed on clicking `filters` in the explore page | content | explore | search | portal | 
+| **Resource Bundle Filters** |This form is displayed on clicking `language drop down` in the explore Page | content | resourcebundle | search | portal |
 
 ### Supported Input & Data Types 
 
@@ -146,21 +135,21 @@ The following table provides a detailed list of all the available metadata drive
 
 | Property Name | Type | Description | Default Value | Example |
 | --- | --- | --- | --- | --- |
-| code | `string` | Unique identifier of the field on your form| None | Ex: name, description etc. |
-| dataType | `string`| Format of data of the field on your form| None |Ex: `list`,`text`|
-| description | `string` | Description specific to a field on your form| None | Ex: Title of the content|
-| depends | `array` | describes the dependency in case if a field-A is dependent on  field-B on your form | None | `depends: ["Subject", "Maths"]` |
-| editable | `boolean` | defines the mode of the field i.e either you can keep your field as read only or make it editable | true | Ex: true, false |
-| index | `integer` | location/ position of the field on your form | None | `1` |
-| inputType | `string` example: select | defines the type of your form field | None |`text`,`number`, `select`,`multiselect`,`conceptselector`, `topicselector`, `keywordsuggestion`,`dialcode`|
-| label | `string` For example ‘syallabus’| It is the display name of your field | None | Ex: Title |
-| name | `string` |Name of the field| None | Ex: Title |
-| placeholder | `string` |Placeholder for the field| None | Ex: Enter Title For Book |
-| range | `array` | It is used to populate dropdown values| None | `range: ['story','game','worksheet']`|
-| renderingHints | `object` | "renderingHints": {"width": "xx%", maxlength: 00} | None | Ex: { semanticColumnWidth : three } |
-| required | `boolean` | if you want to keep a field as mandatory | None | Ex: false |
-| visible | `boolean` | if  you want to keep the field to be visible or hidden | None | Ex: true |
-| validation | `array` | Allows validation on a particular field of your form | None | Ex: [{ "type": "regex", "value": "[A-Z]","message": "Invalid Input" }] |
+| code | `string` | Unique identifier of the field on your form | None | name, description etc. |
+| dataType | `string`| Format of data of the field on your form | None | `list`,`text`|
+| description | `string` | Description specific to a field on your form | None | Title of the content|
+| depends | `array` | Describes the dependency in case if a field-A is dependent on field-B on your form | None | `depends: ["Subject", "Maths"]` |
+| editable | `boolean` | Defines the mode of the field i.e either you can keep your field as read only or make it editable | true | true, false |
+| index | `integer` | Location/ position of the field on your form | None | `1` |
+| inputType | `string` | Defines the type of your form field | None |`text`,`number`, `select`,`multiselect`,`conceptselector`, `topicselector`, `keywordsuggestion`,`dialcode`|
+| label | `string` | Display name of your field | None | Title |
+| name | `string` | Name of the field | None | Title |
+| placeholder | `string` | Placeholder for the field | None | Enter Title For Book |
+| range | `array` | Used to populate dropdown values| None | `range: ['story','game','worksheet']`|
+| renderingHints | `object` | "renderingHints": {"width": "xx%", maxlength: 00} | None | { semanticColumnWidth : three } |
+| required | `boolean` | To make a field a mandatory or optional | None | false |
+| visible | `boolean` | To make the field visible or hidden | None | true |
+| validation | `array` | Allows validation on a particular field of your form | None | [{ "type": "regex", "value": "[A-Z]","message": "Invalid Input" }] |
 
 ## Forms in Mobile App
 
@@ -225,10 +214,7 @@ The following are the header parameters for Update Form API endpoint:
 1. Authorization
 2. Content-Type
 
-For more inf about the usage of header parameters refer to the [Update Form API](http://www.sunbird.org/apis/form/#operation/FormUpdate) reference document.  
-
-Follow steps 1-4 to configure each type of form in editor, portal or mobile app, refer to the JSON structures for detailed descriptions of each parameter
-
+For more information about the usage of header parameters refer to the [Update Form API](http://www.sunbird.org/apis/form/#operation/FormUpdate) reference document.  
 
 ## Sample payload for  Update Form API
 <pre>
@@ -444,7 +430,7 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
 }
 </pre>
 
-## Sample payload for Read Form API 
+## Sample Payload for Read Form API 
 <pre>
  {
   "request": {
@@ -457,7 +443,7 @@ Follow steps 1-4 to configure each type of form in editor, portal or mobile app,
 }
 </pre>
 
-## Sample payload for Create form API  
+## Sample Payload for Create form API  
 <pre>
 {
 
