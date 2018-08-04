@@ -3613,7 +3613,7 @@ body > header {
 
 @media screen and (min-width: 768px) {
   .main-menu {
-    padding: 20px 0; } }
+    padding: 30px 0 20px 0; } }
 .collapse {
   display: none; }
 
@@ -3676,7 +3676,10 @@ body > header {
   position: fixed;
   top: 0;
   width: 275px;
-  padding: 10px 55px 0 70px; }
+  text-align: center; }
+  .logo-container .logo img {
+    max-height: 55px;
+    margin-top: 5px; }
   @media (max-width: 991px) {
     .logo-container .logo {
       width: 100%;
@@ -4681,7 +4684,7 @@ table.noborder,
     padding: 0 0 10px 0; } }
 @media screen and (min-width: 768px) {
   .search-cover {
-    padding: 25px 0 10px 0;
+    padding: 30px 0 10px 0;
     max-width: 250px; } }
 .search-btn {
   height: 25px;
