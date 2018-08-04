@@ -29,7 +29,11 @@
 		position: fixed;
 		top: 0;
 		width: 275px;
-		padding: 10px 55px 0 70px;
+		text-align:center;
+		img {
+			max-height:55px;
+			margin-top: 5px;
+		}	
 		@media (max-width: $screen-sm-max) {
 			width: 100%;
 			padding: 10px 15px;
