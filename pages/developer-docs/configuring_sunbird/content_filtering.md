@@ -34,7 +34,7 @@ Let us consider an example of an organization which works in the domain of water
 
 **Version Applicable**
 
-This feature is applicable from Sunbird 1.7.0 onwards
+This feature is applicable from Sunbird 1.9.0 onwards
 
 **Intended Audience**
 
