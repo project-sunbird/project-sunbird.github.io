@@ -16,7 +16,7 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-		<td>Click <b>Explore Sunbird</b></td> 
+		<td>Click the <b>Explore Sunbird</b></td> 
 	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
 	</tr>
 	</table>
@@ -29,20 +29,19 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
     <th style="width:65%;"><b>Screen</b></th>
   </tr>
   <tr>
-   <td>To search for content
-   <br>1.Enter search text in the <b>Search</b> text box
+   <td>On Sunbird you can search the content using
+   <br>1.Enter the text in <b>Search</b> text box. 
    <br>2.Click <b>search</b> icon 
-   <br><b>Note</b>: You can further filter the search result using the filter options
-   <br>3.Enter the DIAL code. Refer  <a href="features-documentation/explore_sunbird/#searching-content-using-DIAL-code" target="_blank">Searching Content Using DIAL Code</a>
-   <br>4.Click the drop-down icon to change the language preference
-   <br>5.Select the following filters from their respective drop-down lists to filter the content: 
+   <br><b>Note</b>: You can further filter the search result
+   <br>3.Enter the <b>Enter DIAL Code</b> text box. Refer Searching Content Using DIAL Code
+   <br>4.Select following filter from their respective drop-down lists to filter the content: 
      <br>&emsp;a) Board 
      <br>&emsp;b) Medium  
      <br>&emsp;c) Subject 
      <br>&emsp;d) Class 
-   <br>6.Click <b>Submit</b> to search using filters
-   <br>7.Click <b>Reset</b> to reset filters 
-   <br>8.Browse through the list of available content. Use: 
+   <br>5.Click <b>Submit</b> to search using filters
+   <br>6.Click <b>Reset</b> to reset filters 
+   <br>7.Browse through the list of available content. Use 
    <br>a.<b>Previous</b> to go to previous set of content 
    <br>b.<b>Next</b> to go to next set of content </td>
   </tr>
@@ -58,13 +57,13 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
     <th style="width:65%;"><b>Screen</b></th>
   </tr>
   <tr>
-  <td>1.Select <b>Enter Dial Code</b> button. An explore content window is displayed
+  <td>1.Select <b>Enter Dial Code</b> button to search a textbook. The popup is displayed to enter the Dial Code.
   <br>a.Enter the DIAL Code in <b>Enter DIAL Code here</b> text box
-  <br><b>Note</b>:DIAL Code is the six digit alphanumeric code found along with a QR code in your physical text book. 
-  <br>b.Click <b>Submit</b>. Textbook linked to the particular DIAL code is displayed
+  <br><b>Note</b>:DIAL Code is the 6 digit alphanumeric code found under a QR code in your physical text book. 
+  <br>b.Click <b>Submit</b>
   </tr>
   <tr>
-	<td><img src="pages/features-documentation/images/explore_sunbird.png"></td>
+	<td><img src="pages/features-documentation/images/explore_sunbird_dial.png"></td>
 	</tr>
 </table>
    
