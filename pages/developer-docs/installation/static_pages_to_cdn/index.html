@@ -1,0 +1,110 @@
+<h2 id="overview">Overview</h2>
+
+<p>To increase the performance of loading tenant pages and at the same time decrease the load on the player service, tenant pages must be served from a Content Distribution Network (CDN). This document details the procedure on how to push the tenant pages to CDN Store within the specified container.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ul>
+  <li>Install Node Version 8.11.2
+For details on downloading node refer <a href="https://nodejs.org/en/download/">official Node.js</a></li>
+  <li>Install Node Package Manager (NPM)</li>
+  <li>Install Git</li>
+  <li>Install Gulp globally</li>
+</ul>
+<pre> npm install gulp -g </pre>
+<ul>
+  <li>Ensure that the tenant folder with all the required sub-folders is present in the application folder</li>
+  <li>Ensure you have a CDN service provider account credential i.e., account name and access key. This account is used to store all the tenant pages in single blob container.</li>
+</ul>
+
+<h3 id="migrating-static-pages-to-cdn">Migrating Static pages to CDN</h3>
+
+<p><br />1. Clone the sunbird portal source code by executing the command given in console:</p>
+<pre> git clone https://github.com/project-sunbird/sunbird-portal.git </pre>
+
+<p><br />2. Run the command <code>cd</code> to the cloned sunbird-portal source code and switch to branch <code>release-1.9</code> by executing the command given in console:</p>
+<pre> git checkout release-1.9 </pre>
+
+<p><br />3. Run the command <code>cd src/app</code> followed by the following command in console to install the dependencies</p>
+<pre> npm install </pre>
+
+<p><br />4. After ensuring that tenant folder exists inside <code>src/app</code> (for those files that have to be moved to cdn) run the following gulp script at the level <code>gulp-tenant.js</code> file exists i.e., inside <code>(src/app/)</code>folder from the console. This command versions the files and pushes it to CDN</p>
+<pre>
+gulp pushTenantsToCDN --gulpfile gulp-tenant.js --accountName="" --accessKey="" --provider="" --cdnurl="" --tenant="" --tenantpath="" --containerName=""
+</pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Sample Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>accountName</code></td>
+      <td>Optional</td>
+      <td>account name of the service provider</td>
+      <td>azure</td>
+    </tr>
+    <tr>
+      <td><code>accessKey</code></td>
+      <td>Optional</td>
+      <td>access key of azure</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>provider</code></td>
+      <td>Optional</td>
+      <td>cdn service provider</td>
+      <td>Currently, only Azure is supported</td>
+    </tr>
+    <tr>
+      <td><code>cdnurl</code></td>
+      <td>Mandatory</td>
+      <td>cdn service provider link</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>tenant</code></td>
+      <td>Optional</td>
+      <td>names of subfolders that have to be pushed to CDN. The names must be comma separated</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>tenantpath</code></td>
+      <td>Optional</td>
+      <td>path of the tenant folder where the tenant files are expected to be present</td>
+      <td>defaults to absolute path</td>
+    </tr>
+    <tr>
+      <td><code>containerName</code></td>
+      <td>Optional</td>
+      <td>blob container name in CDN service provider</td>
+      <td>defaults to ‘tenants’</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note:</strong> <br />1. If accountName or accessKey is not provided in the arguments then the tenant files are not pushed to CDN, however versioning of files is done and the saved in the folder <code>tenants-build</code> at the same path where <code>gulp-tenant.js</code> is present
+<br />2. For the parameter <code>tenantpath</code> tenant folder is expected at the same path where <code>tenant-gulp.js</code> file present, and if tenant folder path is different and not at the path of <code>tenant-gulp.js</code> then the respective path must be given
+<br />3. For the parameter <code>tenant</code>, by default, all the folders present inside the tenant (source) folder will be processed, and can be overridden by specifying the particular folder names which have to be processed by comma seperated values.Eg: <code>&lt;tenant1&gt;,&lt;tenant2&gt;,&lt;tenant3&gt;</code> <br />4. On completing the script the following message is displayed:
+<code>Success! - All files processing done and pushed to CDN Provider</code>
+<br />5. If the tenant folder is already present in CDN service provider container then this script replaces the existing folder with the latest one.</p>
+
+<h3 id="enabling-cdn-in-player-service">Enabling CDN in Player Service</h3>
+
+<p>To enable the CDN in the player service:</p>
+
+<p><br />1. Set the following environment variable in player service. The <code>contianerName</code> for the variable should be the one which is provided during the script execution</p>
+<pre> sunbird_tenant_cdn_url="&#x3C;baseurl&#x3E;/&#x3C;containerName&#x3E;" </pre>
+
+<p><br /><strong>Note:</strong> <br />1: If the environment variable is not set in the player service then by default all the tenant pages are serverd from the player service tenant folder
+<br />2. If any of the mandatory args are missing on the script execution command then the script is terminated and respective error is displyed in the console
+<br />3. This script does not perform any minifications or optimizations, so for optimized loading of tenant files it is mandatory to remove all the assets and files that are not in use</p>
+
+<h3 id="cache-busting">Cache Busting</h3>
+<p>When the script is executed for pushing tenant pages to CDN, all the files excluding index.html are versioned before pushing the files to cdn inorder to avoid loading of outdated code which will be stored in browser cache. Versioning means random string at the end of your resource will be appended and this keeps updating every time that resource is updated during the script execution.</p>
+

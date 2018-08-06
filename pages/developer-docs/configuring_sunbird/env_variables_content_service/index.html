@@ -7,8 +7,7 @@
       <th>Variable Name</th>
       <th>Description</th>
       <th>Purpose</th>
-      <th>Default Value</th>
-      <th>Path</th>
+      <th>Sample Value</th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +17,6 @@
       <td>Represents the toggle to turn the EkStep telemetry storage on or off</td>
       <td>Used to turn the telemetry off or on</td>
       <td>on</td>
-      <td>Sunbird-LMS</td>
     </tr>
     <tr>
       <td>2</td>
@@ -26,14 +24,12 @@
       <td>Represents the file that stores the whitelisted domains in a comma-separated format</td>
       <td>Used to store the white listed domains</td>
       <td>youtube.com.youtu.be</td>
-      <td>Sunbird-portal</td>
     </tr>
     <tr>
       <td>3</td>
       <td>sunbird_default_channel</td>
       <td>Represents the default channel used to generate telemetry, if nothing is sent from client headers<br />This is the same as specified in the Learner service<br />It should be a valid root org</td>
       <td>Used to ensure there is a channel for each telemetry event generated</td>
-      <td> </td>
       <td> </td>
     </tr>
     <tr>
@@ -42,7 +38,6 @@
       <td>Represents the proxy URL to the content plugins repository<br /> This is needed only in the dev setup. In the server environment, plugins are handled by the nginx proxy</td>
       <td>Used to update the plugins base URL</td>
       <td>https://qa.ekstep.in</td>
-      <td> </td>
     </tr>
     <tr>
       <td>5</td>
@@ -50,14 +45,12 @@
       <td>Represents the base URL of the content provider</td>
       <td>Used to update the content provider URL</td>
       <td>https://qa.ekstep.in/api</td>
-      <td> </td>
     </tr>
     <tr>
       <td>6</td>
       <td>sunbird_content_provider_api_key</td>
       <td>Represents the API Key used to authorize the content provider</td>
       <td>Used to authorize the content provider</td>
-      <td> </td>
       <td> </td>
     </tr>
     <tr>
@@ -66,14 +59,12 @@
       <td>Represents the instance environment</td>
       <td>Used to identify the environment to which to send telemetry data with proper pdata. It is also used for other related purposes</td>
       <td> </td>
-      <td> </td>
     </tr>
     <tr>
       <td>8</td>
       <td>sunbird_instance</td>
       <td>Represents the name of the instance<br /> This should be the same as the value in the player/learner-service</td>
       <td>Used to set the name of the instance</td>
-      <td> </td>
       <td> </td>
     </tr>
     <tr>
@@ -82,7 +73,6 @@
       <td>Represents the IP address of the Cassandra DB to connnect the Sunbird Content service</td>
       <td>Used to connect to cassandra db</td>
       <td>127.0.0.1</td>
-      <td> </td>
     </tr>
     <tr>
       <td>10</td>
@@ -90,7 +80,6 @@
       <td>The port number on which the Cassandra DB is running</td>
       <td>Used to update the Cassandra port number</td>
       <td>9042</td>
-      <td> </td>
     </tr>
     <tr>
       <td>11</td>
@@ -98,7 +87,6 @@
       <td>The URL of the Keycloak auth service to connect the Sunbird Content service</td>
       <td>Used to connect the Keycloak server</td>
       <td>https://staging.open-sunbird.org/auth</td>
-      <td> </td>
     </tr>
     <tr>
       <td>12</td>
@@ -106,7 +94,6 @@
       <td>Represents the keycloak realm value</td>
       <td>Used to update the realm value of Keycloak, per installation</td>
       <td>Sunbird</td>
-      <td> </td>
     </tr>
     <tr>
       <td>13</td>
@@ -114,7 +101,6 @@
       <td>Represents the client ID in Keycloak</td>
       <td>Used to update the client ID in Keycloak</td>
       <td>portal</td>
-      <td> </td>
     </tr>
     <tr>
       <td>14</td>
@@ -122,14 +108,12 @@
       <td>Represents the Keycloak type</td>
       <td>Used to specify the keycloak public type</td>
       <td>true</td>
-      <td> </td>
     </tr>
     <tr>
       <td>15</td>
       <td>sunbird_image_storage_url</td>
       <td>Represents the base URL where images are stored after generating the qrcode images</td>
       <td>Used to edit the storage URL</td>
-      <td> </td>
       <td> </td>
     </tr>
     <tr>
@@ -138,14 +122,12 @@
       <td>Represents the base URL of the qr code image generated</td>
       <td>Used to set the base URL for qr code</td>
       <td> </td>
-      <td> </td>
     </tr>
     <tr>
       <td>17</td>
       <td>sunbird_azure_account_name</td>
       <td>Represents the Azure account name to connect to Azure storage</td>
       <td>Used to connect the Azure account</td>
-      <td> </td>
       <td> </td>
     </tr>
     <tr>
@@ -154,7 +136,6 @@
       <td>Represents the azure account key to connect to the Azure storage</td>
       <td>Used to connect to Azure</td>
       <td> </td>
-      <td> </td>
     </tr>
     <tr>
       <td>19</td>
@@ -162,7 +143,63 @@
       <td>Represents the batch size to sync data</td>
       <td>Used to set the size of events to be synced</td>
       <td>20</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>sunbird_content_service_whitelisted_channels</td>
+      <td>Represents list of whitelisted channels (comma separated)</td>
+      <td>Used to whitelist channels</td>
+      <td>$.instance.all</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>sunbird_content_service_blacklisted_channels</td>
+      <td>Represents list of blacklisted channels (comma seperated)</td>
+      <td>Used to blacklist channels</td>
+      <td>1.23E+19</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>sunbird_content_service_channel_refresh_cron</td>
+      <td>Represents the node cron interval string</td>
+      <td>Used to run cron every 5 minutes. enabled only if $.instance.all is present in whitelisted channels)</td>
+      <td><em>/5</em>***</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>sunbird_content_service_whitelisted_framework</td>
+      <td>Represents list of whitelisted frameworks (comma seperated)</td>
+      <td>Used to whitelist frameworks while searching for content</td>
+      <td>NCF, NCFCOPY</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>sunbird_content_service_blacklisted_contenttype</td>
+      <td>Represents list of blacklisted content types(comma sepertaed)</td>
+      <td>Used to blacklist contenttype while searching for content</td>
+      <td>Asset</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>sunbird_content_service_blacklisted_resourcetype</td>
+      <td>Represents list of blacklisted resource types(comma seperated)</td>
+      <td>Used to blacklist contenttype while searching for content</td>
+      <td>Lesson plan</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>sunbird_content_service_blacklisted_mimetype</td>
+      <td>Represents list of blacklisted mime types(comma seperated)</td>
+      <td>Used to blacklist mimetype while searching for content</td>
+      <td>video/x-youtube</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>sunbird_content_service_enable_logging</td>
+      <td>Required to enable or disable the content service logging</td>
       <td> </td>
+      <td>True</td>
     </tr>
   </tbody>
 </table>
+

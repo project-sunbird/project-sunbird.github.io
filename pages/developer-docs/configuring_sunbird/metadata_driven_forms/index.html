@@ -1,0 +1,1152 @@
+<h2 id="scenario">Scenario</h2>
+
+<p>An organization works in the domain of water conservation and works in multiple Indian states, with NGOs, village panchayats and other authorities. The organization would like to tailor different forms on Sunbird to match their requirements. They want to configure various available forms based on their terminology and needs. They intend to change the display labels, the fields, the types of fields etc. on the forms.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>As the organization administrator ensure the following:
+1. Install  the server instance of Sunbird. For details, refer to<a href="http://www.sunbird.org/developer-docs/installation/server_installation/"> Server Installation </a></p>
+
+<ol>
+  <li>
+    <p>Create a channel for your organization (XYZ corporation). For details, refer to<a href="http://www.sunbird.org/apis/framework/#tag/Channel-APIs"> Channel APIs</a></p>
+  </li>
+  <li>
+    <p>Register  your channel/ organization i.e, (XYZ corporation) with Ekstep. On registration, a unique <strong>Channel ID</strong> is assigned to your organization (XYZ corporation) channel ID is: 12300786</p>
+  </li>
+  <li>
+    <p>Create users for your organization (XYZ corporation) either by:</p>
+    <ul>
+      <li>onboarding XYZ corporation users in bulk, refer to <a href="http://www.sunbird.org/apis/bulkupload/">Bulk upload service APIs</a>, or</li>
+      <li>creating the XYZ corporation  users individually, refer to <a href="http://www.sunbird.org/apis/userapi/">User APIs</a></li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Note:</strong></p>
+
+<p>An Organizational administrator requires to:</p>
+
+<ul>
+  <li>
+    <p>Use an API client (for example Postman) to make Form API calls and perform various operations as mentioned in the Task-flow section</p>
+  </li>
+  <li>
+    <p>Have the API Key for access and basic authentication</p>
+  </li>
+  <li>
+    <p>Have a User Token that authenticates the organization administrator for read-write access</p>
+  </li>
+  <li>
+    <p>Have access to <a href="http://www.sunbird.org/apis/form/">Form APIs</a></p>
+  </li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+
+<p>The architecture of the Sunbird platform is logically divided into following main components.</p>
+
+<ul>
+  <li>
+    <p>Sunbird Editor(s)</p>
+  </li>
+  <li>
+    <p>Sunbird Portal</p>
+  </li>
+  <li>
+    <p>Sunbird Mobile etc.</p>
+  </li>
+</ul>
+
+<p>Each of the component uses a metadata-driven development model to help the adopters to be more productive by allowing the flexibility to tailor these components based on their needs.The platform provides a mechanism where each of the forms in the components are configurable as they are metadata driven. This implies that the basic functionality of elements, such as, the forms, labels, fields, number of fields, types of fields etc. are defined as metadata in a database,instead of hard-coding them in a programming language. When any end user accesses a form on the portal or on mobile, it renders the metadata into the interface of user interface.</p>
+
+<p>To alter the configuration of each of the available metadata driven forms, Sunbird provides a set of <a href="http://www.sunbird.org/apis/form/">Form API</a> endpoints. The administrator uses these APIs to programmatically manage, configure and customize each form.These APIs provide straightforward, powerful, and open ways to programmatically access the form data and provide the capabilities of configuring all the metadata available for forms.</p>
+
+<h2 id="list-of-metadata-driven-forms">List of Metadata driven Forms</h2>
+
+<p>The following table provides a detailed list of all the available metadata driven forms on the Sunbird platform:</p>
+
+<h2 id="forms-in-editor">Forms in Editor</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Form</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Subtype</th>
+      <th>Action</th>
+      <th>Component</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Book Save</strong></td>
+      <td>This form is displayed on clicking <code>edit details</code> in book editor</td>
+      <td>content</td>
+      <td>textbook</td>
+      <td>save</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Book Review</strong></td>
+      <td>This form is displayed on clicking <code>send for review</code> in book editor</td>
+      <td>content</td>
+      <td>textbook</td>
+      <td>review</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Resource Save</strong></td>
+      <td>This form is displayed on clicking <code>edit details</code> in content/generic editors</td>
+      <td>content</td>
+      <td>resource</td>
+      <td>save</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Resource Review</strong></td>
+      <td>This form is displayed on clicking <code>send for review</code> in content/generic editors</td>
+      <td>content</td>
+      <td>resource</td>
+      <td>review</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Course Save</strong></td>
+      <td>This form is displayed on clicking <code>edit details</code> in course editor</td>
+      <td>content</td>
+      <td>course</td>
+      <td>save</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Course Review</strong></td>
+      <td>This form is displayed on clicking <code>send for review</code> in course editor</td>
+      <td>content</td>
+      <td>course</td>
+      <td>review</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Lesson Plan Save</strong></td>
+      <td>This form is displayed on clicking <code>edit details</code> in lesson plan editor</td>
+      <td>content</td>
+      <td>Lessonplan</td>
+      <td>save</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Lesson Plan Review</strong></td>
+      <td>This form is displayed on clicking <code>send for review</code> in lesson plan editor</td>
+      <td>content</td>
+      <td>Lessonplan</td>
+      <td>review</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Collection Save</strong></td>
+      <td>This form is displayed on clicking <code>edit details</code> in collection editor</td>
+      <td>content</td>
+      <td>collection</td>
+      <td>save</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Collection Review</strong></td>
+      <td>This form is displayed on clicking <code>send for review</code> in collection editor</td>
+      <td>content</td>
+      <td>collection</td>
+      <td>review</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Question Save</strong></td>
+      <td>This form is displayed on clicking <code>create question</code> in content editor</td>
+      <td>content</td>
+      <td>questions</td>
+      <td>question-meta-save</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Question Search</strong></td>
+      <td>This form is displayed on clicking <code>search questions</code> in content editor</td>
+      <td>content</td>
+      <td>questions</td>
+      <td>question-filter-view</td>
+      <td>editor</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="supported-input--data-types">Supported Input &amp; Data Types</h3>
+
+<p>The following table lists down the supported input types with corresponding data types in the Sunbird Editor component:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Input Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Text</td>
+      <td>text, select, number</td>
+    </tr>
+    <tr>
+      <td>List</td>
+      <td>multiselect, conceptselector, keywordsuggestion, dialcode, topicselector</td>
+    </tr>
+    <tr>
+      <td>Url</td>
+      <td>file</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="json-structure-definitions">JSON Structure definitions</h3>
+
+<p>The following table lists down the sample JSON structure with descriptions for each form in the Sunbird Editor component:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default Value</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code</td>
+      <td><code>string</code></td>
+      <td>Unique identifier of the field on your form</td>
+      <td>NA</td>
+      <td>name, description etc.</td>
+    </tr>
+    <tr>
+      <td>dataType</td>
+      <td><code>string</code></td>
+      <td>Format of data of the field on your form</td>
+      <td>NA</td>
+      <td><code>list</code>,<code>text</code></td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td><code>string</code></td>
+      <td>Description specific to a field on your form</td>
+      <td>NA</td>
+      <td>Title of the content</td>
+    </tr>
+    <tr>
+      <td>depends</td>
+      <td><code>array</code></td>
+      <td>Describes the dependency in case if a field-A is dependent on field-B on your form</td>
+      <td>NA</td>
+      <td><code>depends: ["subject", "science"]</code></td>
+    </tr>
+    <tr>
+      <td>editable</td>
+      <td><code>boolean</code></td>
+      <td>Defines the mode of the field i.e whether it can be read only or editable</td>
+      <td>true</td>
+      <td>true, false</td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td><code>integer</code></td>
+      <td>Represents the location/ position of the field on your form</td>
+      <td>NA</td>
+      <td><code>1</code></td>
+    </tr>
+    <tr>
+      <td>inputType</td>
+      <td><code>string</code></td>
+      <td>Defines the type of your form field</td>
+      <td>NA</td>
+      <td><code>text</code>,<code>number</code>, <code>select</code>,<code>multiselect</code>,<code>conceptselector</code>, <code>topicselector</code>, <code>keywordsuggestion</code>,<code>dialcode</code></td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td><code>string</code></td>
+      <td>It is the display name of your field</td>
+      <td>NA</td>
+      <td>Title</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td><code>string</code></td>
+      <td>Name of the field</td>
+      <td>None</td>
+      <td>fieldSelect</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td><code>string</code></td>
+      <td>Represents the placeholder for the field</td>
+      <td>NA</td>
+      <td>Enter Title For Book</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td><code>array</code></td>
+      <td>Represents the range of all the values specific to a particular field in a form</td>
+      <td>None</td>
+      <td><code>range: ['story','game','worksheet']</code></td>
+    </tr>
+    <tr>
+      <td>renderingHints</td>
+      <td><code>object</code></td>
+      <td>“renderingHints”: {“width”: “xx%”, maxlength: 00}</td>
+      <td>None</td>
+      <td>Ex: { maxlength : 100 }</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td><code>boolean</code></td>
+      <td>To make a field as mandatory</td>
+      <td>None</td>
+      <td>Ex: false</td>
+    </tr>
+    <tr>
+      <td>visible</td>
+      <td><code>boolean</code></td>
+      <td>To make the field visible or hidden</td>
+      <td>None</td>
+      <td>Ex: true</td>
+    </tr>
+    <tr>
+      <td>validation</td>
+      <td><code>array</code></td>
+      <td>Allows validation on any particular field of your form</td>
+      <td>None</td>
+      <td>Ex: [{ “type”: “regex”, “value”: “[A-Z]”,”message”: “Invalid Input” }]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="forms-in-portal">Forms in Portal</h2>
+
+<p><strong>The following table lists down the available forms in  Sunbird Portal component:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Form</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Subtype</th>
+      <th>Action</th>
+      <th>Component</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Book Create</strong></td>
+      <td>This form is displayed on clicking <code>Book</code> from your workspace</td>
+      <td>content</td>
+      <td>textbook</td>
+      <td>create</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>Course Create</strong></td>
+      <td>This form is displayed on clicking <code>Course</code> from your workspace</td>
+      <td>content</td>
+      <td>course</td>
+      <td>create</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>Collection Create</strong></td>
+      <td>This form is displayed on clicking <code>Collection</code> from your workspace</td>
+      <td>content</td>
+      <td>collection</td>
+      <td>create</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>Lesson Plan Create</strong></td>
+      <td>This form is displayed on clicking <code>Lesson Plan</code> from your workspace</td>
+      <td>content</td>
+      <td>lesson</td>
+      <td>review</td>
+      <td>editor</td>
+    </tr>
+    <tr>
+      <td><strong>Resource create</strong></td>
+      <td>This form is displayed on clicking <code>Resource</code> from your workspace</td>
+      <td>content</td>
+      <td>course</td>
+      <td>save</td>
+      <td>editor</td>
+    </tr>
+    <tr>
+      <td><strong>Library Filters</strong></td>
+      <td>This form is displayed on clicking <code>filters</code> from your library</td>
+      <td>content</td>
+      <td>library</td>
+      <td>search</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>Course Filters</strong></td>
+      <td>This form is displayed on clicking <code>filters</code> from your course</td>
+      <td>content</td>
+      <td>course</td>
+      <td>search</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>All My Contents Filters</strong></td>
+      <td>This form is displayed on clicking <code>filters</code> option from any of the content types in your workspace</td>
+      <td>content</td>
+      <td>allmycontent</td>
+      <td>search</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>Up For Review Filters</strong></td>
+      <td>This form is displayed on clicking <code>Up For Review</code> in the UP FOR REVIEW section in your workspace</td>
+      <td>content</td>
+      <td>upforreview</td>
+      <td>search</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>Explore Filters</strong></td>
+      <td>This form is displayed on clicking <code>filters</code> in the explore page</td>
+      <td>content</td>
+      <td>explore</td>
+      <td>search</td>
+      <td>portal</td>
+    </tr>
+    <tr>
+      <td><strong>Resource Bundle Filters</strong></td>
+      <td>This form is displayed on clicking <code>language drop down</code> in the explore Page</td>
+      <td>content</td>
+      <td>resourcebundle</td>
+      <td>search</td>
+      <td>portal</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="supported-input--data-types-1">Supported Input &amp; Data Types</h3>
+
+<p><strong>The following table lists down the supported input types with corresponding data types in the Sunbird Portal component:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Input Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Text</td>
+      <td>text, select, number</td>
+    </tr>
+    <tr>
+      <td>List</td>
+      <td>multiselect, conceptselector</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="json-structure-definitions-1">JSON Structure definitions</h3>
+
+<p><strong>The following table lists down the example JSON structure with descriptions for each form in the Sunbird Portal component:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default Value</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>code</td>
+      <td><code>string</code></td>
+      <td>Unique identifier of the field on your form</td>
+      <td>None</td>
+      <td>name, description etc.</td>
+    </tr>
+    <tr>
+      <td>dataType</td>
+      <td><code>string</code></td>
+      <td>Format of data of the field on your form</td>
+      <td>None</td>
+      <td><code>list</code>,<code>text</code></td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td><code>string</code></td>
+      <td>Description specific to a field on your form</td>
+      <td>None</td>
+      <td>Title of the content</td>
+    </tr>
+    <tr>
+      <td>editable</td>
+      <td><code>boolean</code></td>
+      <td>Defines the mode of the field i.e either you can keep your field as read only or make it editable</td>
+      <td>true</td>
+      <td>true, false</td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td><code>integer</code></td>
+      <td>Location/ position of the field on your form</td>
+      <td>None</td>
+      <td><code>1</code></td>
+    </tr>
+    <tr>
+      <td>inputType</td>
+      <td><code>string</code></td>
+      <td>Defines the type of your form field</td>
+      <td>None</td>
+      <td><code>text</code>,<code>number</code>, <code>select</code>,<code>multiselect</code>,<code>conceptselector</code></td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td><code>string</code></td>
+      <td>Display name of your field</td>
+      <td>None</td>
+      <td>Title</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td><code>string</code></td>
+      <td>Name of the field</td>
+      <td>None</td>
+      <td>Title</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td><code>string</code></td>
+      <td>Placeholder for the field</td>
+      <td>None</td>
+      <td>Enter Title For Book</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td><code>array</code></td>
+      <td>Used to populate dropdown values</td>
+      <td>None</td>
+      <td><code>range: ['story','game','worksheet']</code></td>
+    </tr>
+    <tr>
+      <td>renderingHints</td>
+      <td><code>object</code></td>
+      <td>“renderingHints”: {“width”: “xx%”, maxlength: 00}</td>
+      <td>None</td>
+      <td>{ semanticColumnWidth : three }</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td><code>boolean</code></td>
+      <td>To make a field a mandatory or optional</td>
+      <td>None</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>visible</td>
+      <td><code>boolean</code></td>
+      <td>To make the field visible or hidden</td>
+      <td>None</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>validation</td>
+      <td><code>array</code></td>
+      <td>Allows validation on a particular field of your form</td>
+      <td>None</td>
+      <td>[{ “type”: “regex”, “value”: “[A-Z]”,”message”: “Invalid Input” }]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="forms-in-mobile-app">Forms in Mobile App</h2>
+
+<p><strong>The following table lists down the available forms in Mobile app component:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Form</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Subtype</th>
+      <th>Action</th>
+      <th>Component</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Onboarding Details</strong></td>
+      <td>This form is used to save/update/read onboarding question details</td>
+      <td>user</td>
+      <td>instructor</td>
+      <td>onboarding</td>
+      <td>app</td>
+    </tr>
+    <tr>
+      <td><strong>Force/Optional Upgrade</strong></td>
+      <td>This form is used to save/update/read or force/optional app upgrade</td>
+      <td>app</td>
+      <td>install</td>
+      <td>upgrade</td>
+      <td>app</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="input--data-types">Input &amp; Data Types</h3>
+
+<p><strong>The following table lists down the supported input types with corresponding data types in Mobile app component:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Input Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>String</td>
+      <td>text, number</td>
+    </tr>
+    <tr>
+      <td>List</td>
+      <td>fields, range</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>force, optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="json-structure-definitions-2">JSON Structure definitions</h3>
+
+<p><strong>The following table lists down the example JSON structure with descriptions for each form in the Mobile app component:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default Value</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>templateName</td>
+      <td><code>string</code></td>
+      <td>The default template used for the form</td>
+      <td>NA</td>
+      <td>defaultTemplate, defaultApp UpgradeTemplate</td>
+    </tr>
+    <tr>
+      <td>code</td>
+      <td><code>string</code></td>
+      <td>Unique identifier of the field on the form</td>
+      <td>NA</td>
+      <td>upgrade, syllabus</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td><code>string</code></td>
+      <td>Name of the field on the form</td>
+      <td>NA</td>
+      <td>Upgrade of the  app, What syllabus do you follow?</td>
+    </tr>
+    <tr>
+      <td>selectLabel</td>
+      <td><code>string</code></td>
+      <td>Represents the display label for a field on the form</td>
+      <td>NA</td>
+      <td>Select Syllabus</td>
+    </tr>
+    <tr>
+      <td>loadingLabel</td>
+      <td><code>string</code></td>
+      <td>Represents the display label for a field on the form</td>
+      <td>NA</td>
+      <td>Loading Syllabus</td>
+    </tr>
+    <tr>
+      <td>language</td>
+      <td><code>string</code></td>
+      <td>Represents the display language of the field on a form</td>
+      <td>NA</td>
+      <td>en,hi,ta</td>
+    </tr>
+    <tr>
+      <td>range</td>
+      <td><code>list</code></td>
+      <td>Represents the range of all the values specific to a particular field in a form</td>
+      <td>NA</td>
+      <td>“templateName”:”defaultTemplate”, “action”:”onboarding”, “fields”:[]</td>
+    </tr>
+    <tr>
+      <td>frameworkId</td>
+      <td><code>string</code></td>
+      <td>Represents a framework uniquely</td>
+      <td>NA</td>
+      <td>ap_k-12,mh_k-12_15</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td><code>string</code></td>
+      <td>Represents a range values within a field on a form</td>
+      <td>NA</td>
+      <td>State (Andhra Pradesh),State (Maharashtra)</td>
+    </tr>
+    <tr>
+      <td>minVersionCode</td>
+      <td><code>string</code></td>
+      <td>Represents the minimum version of the app</td>
+      <td>NA</td>
+      <td>0,9</td>
+    </tr>
+    <tr>
+      <td>maxVersionCode</td>
+      <td><code>string</code></td>
+      <td>Represents the maximum version of the app</td>
+      <td>NA</td>
+      <td>10,15</td>
+    </tr>
+    <tr>
+      <td>versionName</td>
+      <td><code>string</code></td>
+      <td>Represents the name of version</td>
+      <td>NA</td>
+      <td>v1.0.1</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td><code>string</code></td>
+      <td>Represents the type of the upgrade that is required</td>
+      <td>NA</td>
+      <td>optional, force</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>All the available forms exist as a part of creation workflows, updation workflows, review workflows etc within the Sunbird.  The primary usage of these forms is not just limited to adding meta information to the content, but metadata driven forms enable extensive searching capabilities, helps in onboarding in mobile app at the end user level and much more.  Each form supports certain input data types to build on the metadata.</p>
+
+<p><strong>Note:</strong> Each of the form has a specific action associated to it, for example: create, update, save etc.</p>
+
+<h2 id="task-flow">Task Flow</h2>
+
+<p>The form configuration is a post installation task. Being a Sunbird adopter, you can configure an existing form as well as create a new form.</p>
+
+<p><strong>Configure an Existing Form</strong></p>
+
+<p>Follow the steps to configure the forms available:</p>
+
+<ol>
+  <li>Ensure that all the prerequisites are met</li>
+  <li>Get access to <a href="http://www.sunbird.org/apis/form/">Form API</a>Resources</li>
+  <li>Use an API client to perform the update form operation</li>
+  <li>Use<a href="http://www.sunbird.org/apis/form/#operation/FormUpdate">Update Form API</a> to configure the metadata fields on a form, ensure that you provide valid inputs to the configuration parameters in the header, request payload while calling the API.</li>
+</ol>
+
+<p><strong>Configuration Parameters</strong></p>
+
+<p>The following are the header parameters for Update Form API endpoint:</p>
+
+<ol>
+  <li>Authorization</li>
+  <li>Content-Type</li>
+</ol>
+
+<p>For more information about the usage of header parameters refer to the <a href="http://www.sunbird.org/apis/form/#operation/FormUpdate">Update Form API</a> reference document.</p>
+
+<h2 id="sample-payload-for--update-form-api">Sample payload for  Update Form API</h2>
+<pre>
+{
+  "request": {
+            
+            "type": "content",
+            "subType": "resource",
+            "action": "save",
+            "rootOrgId": "*",
+            "framework": "NCF",
+            "data": {
+                "templateName": "defaultTemplate",
+                "action": "save",
+                "fields": [
+                    {
+                        "code": "appicon",
+                        "dataType": "url",
+                        "description": "App Icon",
+                        "editable": true,
+                        "index": 1,
+                        "inputType": "file",
+                        "label": "App Icon",
+                        "name": "App Icon",
+                        "placeholder": "App Icon",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "name",
+                        "dataType": "text",
+                        "description": "Title of the content",
+                        "editable": true,
+                        "index": 2,
+                        "inputType": "text",
+                        "label": "Title",
+                        "name": "Title",
+                        "placeholder": "Enter Title For Book",
+                        "renderingHints": {},
+                        "required": true,
+                        "visible": true
+                    },
+                    {
+                        "code": "description",
+                        "dataType": "text",
+                        "description": "Brief description",
+                        "editable": true,
+                        "index": 3,
+                        "inputType": "textarea",
+                        "label": "Description",
+                        "name": "Description",
+                        "placeholder": "Brief description about the Book",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "keywords",
+                        "dataType": "list",
+                        "description": "Keywords for the content",
+                        "editable": true,
+                        "index": 4,
+                        "inputType": "keywordsuggestion",
+                        "label": "keywords",
+                        "name": "Keywords",
+                        "placeholder": "Enter Keywords",
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "board",
+                        "dataType": "text",
+                        "description": "Curriculum",
+                        "editable": true,
+                        "index": 5,
+                        "inputType": "select",
+                        "label": "Curriculum",
+                        "name": "Curriculum",
+                        "placeholder": "Select Curriculum",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "gradeLevel",
+                        "dataType": "list",
+                        "description": "Class",
+                        "editable": true,
+                        "index": 6,
+                        "inputType": "multiselect",
+                        "label": "Class",
+                        "name": "Class",
+                        "placeholder": "Select Class",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "subject",
+                        "dataType": "text",
+                        "description": "",
+                        "editable": true,
+                        "index": 7,
+                        "inputType": "select",
+                        "label": "Subject",
+                        "name": "Subject",
+                        "placeholder": "Select Subject",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "medium",
+                        "dataType": "text",
+                        "description": "",
+                        "editable": true,
+                        "index": 8,
+                        "inputType": "select",
+                        "label": "Medium",
+                        "name": "medium",
+                        "placeholder": "Select Medium",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "concepts",
+                        "dataType": "list",
+                        "description": "Choose a concept",
+                        "editable": true,
+                        "index": 9,
+                        "inputType": "conceptselector",
+                        "label": "Concepts",
+                        "name": "Concepts",
+                        "placeholder": "Choose Concepts",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "topic",
+                        "dataType": "list",
+                        "description": "Choose a Topics",
+                        "editable": true,
+                        "index": 10,
+                        "inputType": "topicselector",
+                        "label": "Topics",
+                        "name": "Topic",
+                        "placeholder": "Choose Topics",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "resourceType",
+                        "dataType": "text",
+                        "description": "Resource Type",
+                        "editable": true,
+                        "index": 11,
+                        "inputType": "select",
+                        "label": "Resource Type",
+                        "name": "resourceType",
+                        "placeholder": "",
+                        "range": [
+                            "Teach",
+                            "Practice",
+                            "Learn",
+                            "Test",
+                            "Play",
+                            "Read",
+                            "Experiment"
+                        ],
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "attributions",
+                        "dataType": "list",
+                        "description": "Attributions",
+                        "editable": true,
+                        "index": 12,
+                        "inputType": "text",
+                        "label": "Attributions",
+                        "name": "attribution",
+                        "placeholder": "",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "audience",
+                        "dataType": "list",
+                        "description": "",
+                        "editable": true,
+                        "index": 13,
+                        "inputType": "select",
+                        "label": "Audience",
+                        "name": "Audience",
+                        "placeholder": "Select Audience",
+                        "renderingHints": {},
+                        "range": [
+                            "Learner",
+                            "Instructor"
+                        ],
+                        "required": false,
+                        "visible": true
+                    }
+                ]
+            }
+        }
+}
+</pre>
+
+<h2 id="sample-payload-for-read-form-api">Sample Payload for Read Form API</h2>
+<pre>
+ {
+  "request": {
+    "type": "content",
+    "subType": "resource",
+    "action": "save",
+    "rootOrgId": "*",
+    "framework": "NCF"
+  }
+}
+</pre>
+
+<h2 id="sample-payload-for-create-form-api">Sample Payload for Create form API</h2>
+<pre>
+{
+
+  "request": {
+    "type": "content",
+    "subType": "questions",
+    "action": "question-filter-view",
+    "rootOrgId": "*",
+    "framework": "NCF",
+    "data": {
+                "action": "question-filter-view",
+                "templateName": "filterMetaDataTemplate",
+                "fields": [
+                    {
+                        "code": "searchText",
+                        "dataType": "text",
+                        "description": " by question title",
+                        "editable": true,
+                        "inputType": "text",
+                        "label": "Search",
+                        "name": "Search",
+                        "index": 0,
+                        "placeholder": "Search by question title",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "medium",
+                        "dataType": "text",
+                        "description": "",
+                        "editable": true,
+                        "index": 1,
+                        "inputType": "select",
+                        "label": "Language",
+                        "name": "medium",
+                        "placeholder": "Select Language",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "level",
+                        "dataType": "text",
+                        "description": "Add Notes",
+                        "editable": true,
+                        "index": 2,
+                        "inputType": "select",
+                        "label": "Difficulty",
+                        "name": "level",
+                        "placeholder": "Select Level",
+                        "range": [
+                            "EASY",
+                            "MEDIUM",
+                            "DIFFICULT"
+                        ],
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "questionType",
+                        "dataType": "list",
+                        "description": "Class",
+                        "editable": true,
+                        "index": 3,
+                        "inputType": "multiselect",
+                        "label": "Question Type",
+                        "name": "Question Type",
+                        "placeholder": "Question Type",
+                        "range": [
+                            "Multiple Choice Questions",
+                            "Fill in the Blanks",
+                            "Match the Following"
+                        ],
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "gradeLevel",
+                        "dataType": "list",
+                        "description": "Class",
+                        "editable": true,
+                        "index": 4,
+                        "inputType": "multiselect",
+                        "label": "Grade Level",
+                        "name": "Class",
+                        "placeholder": "Select Class",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true
+                    },
+                    {
+                        "code": "concepts",
+                        "dataType": "list",
+                        "description": "Choose a concept",
+                        "editable": true,
+                        "inputType": "conceptselector",
+                        "label": "Concepts",
+                        "name": "Concepts",
+                        "placeholder": "Choose Concepts",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true,
+                        "index": 5
+                    },
+                    {
+                        "code": "myQuestions",
+                        "dataType": "toggle",
+                        "description": "My Questions",
+                        "editable": true,
+                        "inputType": "checkbox",
+                        "label": "My Questions",
+                        "name": "My Questions",
+                        "placeholder": "My Questions",
+                        "renderingHints": {},
+                        "required": false,
+                        "visible": true,
+                        "index": 6
+                    }
+                ]
+            }
+  }
+}
+</pre>
+
+<h2 id="concepts-covered">Concepts Covered</h2>
+
+<ul>
+  <li>Metadata driven forms</li>
+  <li>List of available metadata driven forms</li>
+  <li>Request payload for update metadata form</li>
+</ul>

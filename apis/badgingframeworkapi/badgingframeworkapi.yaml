@@ -286,6 +286,14 @@ paths:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
+        '404':
+          description: >-
+            Resource not found,**Get Issuer ID** operation failed !The possible reason for failure is that the requested is resource not found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+              
         '500':
           description: >-
             INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
@@ -349,6 +357,15 @@ paths:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found,**Get Badge Class by ID** operation failed !The possible reason for failure is that the requested is resource not found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+              
         '500':
           description: >-
             INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
@@ -536,6 +553,15 @@ paths:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
+          
+        '404':
+          description: >-
+            Resource not found,**Delete Issuer by ID** operation failed !The possible reason for failure is that the requested is resource not found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'
+              
         '500':
           description: >-
             INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
@@ -601,6 +627,15 @@ paths:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
+        
+        '404':
+          description: >-
+            Resource not found,**Revoke Badge Assertion by ID** operation failed !The possible reason for failure is that the requested is resource not found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse'  
+              
         '500':
           description: >-
             INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
@@ -655,6 +690,15 @@ paths:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
+              
+        '404':
+          description: >-
+            Resource not found,**Delete Badge Class By Id** operation failed !The possible reason for failure is that the requested is resource not found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse' 
+              
         '500':
           description: >-
             INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
@@ -814,6 +858,15 @@ paths:
              allOf:
               - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
               - $ref: '#/definitions/BadgingErrorResponse'
+              
+        '404':
+          description: >-
+            Resource not found,**Get Badge Assertion by ID** operation failed !The possible reason for failure is that the requested is resource not found.
+          schema:
+             allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+              - $ref: '#/definitions/BadgingErrorResponse' 
+              
         '500':
           description: >-
             INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
@@ -876,11 +929,11 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request4'
+        $ref: '#/definitions/ListBadgeAssertions'
     required:
       - request
-  Request4:
-    title: Request4
+  ListBadgeAssertions:
+    title: ListBadgeAssertions
     example:
       filters:
         assertions:
@@ -888,11 +941,11 @@ definitions:
     type: object
     properties:
       filters:
-        $ref: '#/definitions/Filters5'
+        $ref: '#/definitions/FiltersReqModel'
     required:
       - filters
-  Filters5:
-    title: Filters5
+  FiltersReqModel:
+    title: FiltersReqModel
     example:
       assertions:
         - assertionIds
@@ -912,11 +965,11 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request7'
+        $ref: '#/definitions/CreateBadgeAssertion'
     required:
       - request
-  Request7:
-    title: Request7
+  CreateBadgeAssertion:
+    title: CreateBadgeAssertion
     example:
       recipientId: 6fbd1dd5-418c-4cc5-834b-7e7413192f10
       recipientType: user
@@ -963,11 +1016,11 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request9'
+        $ref: '#/definitions/RevokeBadgeAssertion'
     required:
       - request
-  Request9:
-    title: Request9
+  RevokeBadgeAssertion:
+    title: RevokeBadgeAssertion
     example:
       assertionId: assertion id
       recipientId: recipient id

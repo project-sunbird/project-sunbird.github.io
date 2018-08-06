@@ -682,9 +682,9 @@ paths:
     post:
       description:  >-
        This API is associated with uploading content on the Sunbird Platform .
-          - The**_/upload/{content_ID}** endpoint executes "Create Content" request based on parameters provided as metadata in the request body.
-          - {...}refers to a section of upload endpoint URL path that needs to be replaced by appropriate Id.
-          - You need to provide a valid content ID value in {Content Id} field of API URL.
+          - The**_/upload/{content_ID}** endpoint executes "Upload Content" request based on parameters provided as metadata in the request body.
+          - {...}refers to a section of upload endpoint URL path that needs to be replaced by appropriate ID.
+          - You need to provide a valid content ID value in {Content Id} field of API URL. For instance, consider a textbook ABC, the example content ID can be TB-XYZ-123 | TBXYZ123 etc 
           - It is a must to provide values for the required parameters
       summary: Upload Content
       tags:

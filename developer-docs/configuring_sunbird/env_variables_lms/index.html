@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.5.3/";
+			baseURL.href="/releases/release.1.52.b/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-07-26 15:05:50 +0530">
+<meta name="last-modified" content="2018-08-06 10:11:29 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.5.3" />
-<meta name="buildNo" content="4295" />
+<meta name="buildVersion" content="release.1.52.b" />
+<meta name="buildNo" content="4420" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?26072018"  />
-<link rel="stylesheet" href="css/style.css?26072018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?26072018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?26072018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?26072018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?26072018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?06082018"  />
+<link rel="stylesheet" href="css/style.css?06082018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?06082018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?06082018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?06082018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?06082018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -306,9 +306,9 @@
                 <h4 class="sidebar-group-title">Developer Documentation</h4>
             </a>
             <ul class="sidebar-group developer-docs">
-                <li>
+                <!--<li>
                     <a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
-                </li>           
+                </li>-->          
                 <li>
                     <div class="">
                         <a href="developer-docs/installation/">Installation</a>
@@ -318,12 +318,18 @@
                             </li>
                             <li>
                                 <a href="developer-docs/installation/server_installation/">Server Installation</a>
+                                <li>
+                                    <a href="developer-docs/configuring_sunbird/sso_publickey/">SSO Public Key Configuration</a>
+                                </li>
                             </li>
                             <li>
                                 <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
                             </li>
                             <li>
                                 <a href="developer-docs/upgrading/">Upgrading Sunbird</a>
+                            </li>
+                            <li>
+                                <a href="developer-docs/installation/static_pages_to_cdn/">Migrate Tenant Pages</a>
                             </li>
                         </ul>
                     </div>
@@ -333,13 +339,16 @@
                         <a href="developer-docs/configuring_sunbird/">Configuration</a>
                         <ul class="sidebar-group">
                             <li>
-				                <a href="developer-docs/configuring_sunbird/sso_publickey/">SSO Public Key Configuration</a>
-                            </li>
-			    <li>
 				                <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
+                                <li>
+                                    <a href="developer-docs/configuring_sunbird/configuring_domain_ext_links/">Import External Content</a>
+                                </li>
                             </li>
 			    <li>
 				                <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
+                                <li>
+                                    <a href="developer-docs/configuring_sunbird/channel_based_filtering/">Content Filtering</a>
+                                </li>
                             </li>
 			     <li>
 				                <a href="developer-docs/configuring_sunbird/env_variables_lms/">LMS Service Environment Variables</a>
@@ -551,6 +560,8 @@
       <th>Purpose</th>
       <th>Default Value</th>
       <th>Path</th>
+      <th> </th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -561,6 +572,8 @@
       <td>Used to send notifications to the users</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>2</td>
@@ -569,14 +582,18 @@
       <td>Used to display logo</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>3</td>
       <td>sunird_web_url</td>
       <td>Represents the URL of the home page</td>
-      <td>Used to share in an email, such that the users are able to login</td>
+      <td>Used to share in an email, such that the users can login</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>4</td>
@@ -585,6 +602,8 @@
       <td>Used to share in an email, such that users are able to download the app</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>5</td>
@@ -593,30 +612,38 @@
       <td>Used to display the name that appears on the user’s screen when an SMS is sent from the system</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>6</td>
       <td>sunbird_installation_email</td>
-      <td>Represents the the email address used to send badger system notifications</td>
+      <td>Represents the email address used to send badger system notifications</td>
       <td>Used to notify users when they install the badger system</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>7</td>
       <td>sunbird_installation</td>
       <td>Represents the name of your instance</td>
-      <td>Used to send telemetry and email. The name should be specified without spaces. For example, “SunbirdDev”</td>
+      <td>Used to send telemetry and email. The name must be specified without spaces. For example, “SunbirdDev”</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>8</td>
       <td>sunbird_encryption_key</td>
       <td>Represents the key to encrypt and decrypt the attribute. The key should be set only once. Once set, it cannot be changed</td>
-      <td>Used to to encrypt and decrypt the attribute</td>
+      <td>Used to encrypt and decrypt the attribute</td>
       <td>no default</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>9</td>
@@ -625,6 +652,8 @@
       <td>Used to associate users with the rootOrg</td>
       <td>Each installer needs to add this value after a successful installation</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>10</td>
@@ -633,6 +662,8 @@
       <td>Used to authenticate a user</td>
       <td>Used for authentication<br /> You can get the token from Keycloak by navigating to: (realm-&gt;keys-&gt;public keys)</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>11</td>
@@ -641,6 +672,8 @@
       <td>Used to specify the identifier for the telemetry event data</td>
       <td> </td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>12</td>
@@ -649,6 +682,8 @@
       <td>Used to identify the producer for the telemetry event data</td>
       <td> </td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>13</td>
@@ -657,6 +692,8 @@
       <td>Used to identify the producer or build version that generates the telemetry</td>
       <td> </td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>14</td>
@@ -665,6 +702,8 @@
       <td>Used to specify the location to store telemetry data</td>
       <td>Kafka</td>
       <td>Sunbird-telemetry-service</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>15</td>
@@ -673,6 +712,8 @@
       <td>Used to provide Kafka connection details</td>
       <td>The installer needs to provide appropriate details of the IP address and port</td>
       <td>Sunbird-telemetry-service</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>16</td>
@@ -681,6 +722,8 @@
       <td>Used to provide Kafka topic details</td>
       <td> </td>
       <td>Sunbird-telemetry-service</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>17</td>
@@ -689,6 +732,8 @@
       <td>Used to specify the limit on the number of lines (including header lines) in a CSV file used for bulk upload.</td>
       <td>1001</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>18</td>
@@ -697,14 +742,18 @@
       <td>Used to display the instance name</td>
       <td>sunbird</td>
       <td>Sunbird-LMS</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>19</td>
       <td>telemetry_proxy_enabled</td>
-      <td>Represents if transfering telemetry data to the configured proxy is enabled or disabled.<br /> <strong>Note:</strong> If the telemetry proxy is enabled then telemetry proxy URL and authentication key configuration is mandatory to transfer telemetry events.</td>
+      <td>Denotes if transferring telemetry data to the configured proxy is enabled or disabled.<br /> <strong>Note:</strong> If the telemetry proxy is enabled then telemetry proxy URL and authentication key configuration is mandatory to transfer telemetry events.</td>
       <td>Used to allow transfer of telemetry data to another telemetry proxy, i.e. to the existing data analytics platform telemetry API</td>
       <td>false</td>
       <td>Telemetry-Service</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>20</td>
@@ -713,6 +762,8 @@
       <td>Used to store telemetry data in configured telemetry proxy</td>
       <td> </td>
       <td>Telemetry-Service</td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
       <td>21</td>
@@ -721,10 +772,61 @@
       <td>Used to store telemetry data in configured telemetry proxy.</td>
       <td> </td>
       <td>Telemetry-Service</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>sunbird_app_name</td>
+      <td>Represents app name of the adopter</td>
+      <td>Used for sending welcome message to the user</td>
+      <td>Sample welcome message:   If name is set<Name>, welcome to <environ>. You can login using your mobile number. Use <url> to login using browser, or download the <sunbird_app_name> app from playstore. When the name is not set <Name>, welcome to <environ>. You can login using your mobile number. Login at <url></url></environ></Name></sunbird_app_name></url></environ></Name></td>
+      <td>value  shown on email</td>
+      <td>Sunbird</td>
+      <td>Learner-Service</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>sunbird_registry_service_baseurl</td>
+      <td>This variable is required to connect with Open-saber serve to store user attribute. If the value is not set then the user’s additional attribute is not stored within open-saber</td>
+      <td>To make open-saber call</td>
+      <td> </td>
+      <td>Learner-Service</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>sunbird_open_saber_bridge_enable</td>
+      <td>This variable is required during installation time, to indicate whether adopter needs open-saber or not</td>
+      <td>Values: True, to indicate if open-saber is required and false to indicate its not required. In case its true then the user must provide  sunbird_registry_service_baseurl env value</td>
+      <td>To enable or disable open-saber call</td>
+      <td>false</td>
+      <td>Learner-Service</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>sunbird_analytics_api_base_url</td>
+      <td>This variable is required to configure if the analytics store call happens locally (inside the Sunbird instance) or globally</td>
+      <td>To make analytics api call</td>
+      <td><ekstep_api_base_url>/data/v3</ekstep_api_base_url></td>
+      <td>Learner-Service</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>sunbird_search_service_api_base_url</td>
+      <td>This variable is required to configure if the content store call happens locally (inside the Sunbird instance) or globally</td>
+      <td>To make content search call</td>
+      <td><ekstep_api_base_url>/search</ekstep_api_base_url></td>
+      <td>Learner-Service</td>
+      <td> </td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
-
 
           
           <hr />
