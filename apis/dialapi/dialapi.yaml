@@ -5,7 +5,7 @@ info:
   description: >-
     The D.I.A.L Code (Digital Infrastructure for Augmented Learning) API resources are used for energising the textbooks.
      - D.I.A.L code allows textbook creators to tag various pages and topics in a flexible manner using the DIAL codes (in QR code format) and these codes can be linked with digital content, thus providing easy access for the end users and a seamless physical to digital transition.
-         DIAL codes table
+     - Property description table  
     
           | Property  |	Datatype	| Description |
           |-----------|:-----------|:-------------|
