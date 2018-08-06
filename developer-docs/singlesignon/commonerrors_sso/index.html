@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.52.b/";
+			baseURL.href="/releases/release.1.52.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-08-06 10:11:29 +0530">
+<meta name="last-modified" content="2018-08-06 19:06:13 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.52.b" />
-<meta name="buildNo" content="4420" />
+<meta name="buildVersion" content="release.1.52.c" />
+<meta name="buildNo" content="4440" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -329,6 +329,15 @@
                                 <a href="developer-docs/upgrading/">Upgrading Sunbird</a>
                             </li>
                             <li>
+                                    <div class="">
+                                        <ul class="sidebar-group">
+                                         <li>
+                                            <a href="developer-docs/upgrade/upgrade_angular_node/">Upgrading Angular</a>
+                                         </li>
+                                         </ul>
+                                    </div>
+                            </li>
+                            <li>
                                 <a href="developer-docs/installation/static_pages_to_cdn/">Migrate Tenant Pages</a>
                             </li>
                         </ul>
@@ -339,20 +348,32 @@
                         <a href="developer-docs/configuring_sunbird/">Configuration</a>
                         <ul class="sidebar-group">
                             <li>
-				                <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
-                                <li>
-                                    <a href="developer-docs/configuring_sunbird/configuring_domain_ext_links/">Import External Content</a>
-                                </li>
+                              <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
+                            </li>    
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/configuring_domain_ext_links/">Import External Content</a>
                             </li>
-			    <li>
-				                <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
-                                <li>
-                                    <a href="developer-docs/configuring_sunbird/channel_based_filtering/">Content Filtering</a>
-                                </li>
+                            <li>
+				              <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
+                            </li>    
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/content_filtering/">Content Filtering</a>
                             </li>
-			     <li>
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/metadata_driven_forms/">Configure Metaforms</a>
+                            </li>
+                            <li>
 				                <a href="developer-docs/configuring_sunbird/env_variables_lms/">LMS Service Environment Variables</a>
-			     </li>
+                            </li>
+                            <li>
+                             <div class="">
+                               <ul class="sidebar-group">
+                                <li>
+                                  <a href="developer-docs/configuring_sunbird/sso_otpsms/">Configure OTP based SMS</a>
+                                </li>
+                                </ul>
+                             </div>
+                            </li>
                           </ul>
                     </div>
                 </li>
@@ -361,20 +382,23 @@
                         <a href="developer-docs/onboarding/">Onboarding</a>
                         <ul class="sidebar-group">
                             <li>
-                                           <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
-                                        </li>
-					<li>	
-                                            <a href="features-documentation/badging_framework/creating_badges/">Creating Badges</a>
-					</li>
-					<li>	
-                                             <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
-					</li>
-					<li> 
-				            <a href="developer-docs/configuring_sunbird/configuring_announcement/">Creating Announcements</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
                             </li>
+                            <li>
+                            <a href="developer-docs/how-to-guide/how_to_create_user/">Creating Users</a>
+                            </li>
+					        <li>	
+                            <a href="features-documentation/badging_framework/creating_badges/">Creating Badges</a>
+					        </li>
+					        <li>	
+                            <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
+					        </li>
+					        <li> 
+				            <a href="developer-docs/configuring_sunbird/configuring_announcement/">Creating Announcements</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                         
                 
                 <li>

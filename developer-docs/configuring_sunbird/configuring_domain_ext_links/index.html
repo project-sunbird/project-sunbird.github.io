@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.52.b/";
+			baseURL.href="/releases/release.1.52.c/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-08-06 10:11:29 +0530">
+<meta name="last-modified" content="2018-08-06 19:06:13 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.52.b" />
-<meta name="buildNo" content="4420" />
+<meta name="buildVersion" content="release.1.52.c" />
+<meta name="buildNo" content="4440" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -329,6 +329,15 @@
                                 <a href="developer-docs/upgrading/">Upgrading Sunbird</a>
                             </li>
                             <li>
+                                    <div class="">
+                                        <ul class="sidebar-group">
+                                         <li>
+                                            <a href="developer-docs/upgrade/upgrade_angular_node/">Upgrading Angular</a>
+                                         </li>
+                                         </ul>
+                                    </div>
+                            </li>
+                            <li>
                                 <a href="developer-docs/installation/static_pages_to_cdn/">Migrate Tenant Pages</a>
                             </li>
                         </ul>
@@ -339,20 +348,32 @@
                         <a href="developer-docs/configuring_sunbird/">Configuration</a>
                         <ul class="sidebar-group">
                             <li>
-				                <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
-                                <li>
-                                    <a href="developer-docs/configuring_sunbird/configuring_domain_ext_links/">Import External Content</a>
-                                </li>
+                              <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
+                            </li>    
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/configuring_domain_ext_links/">Import External Content</a>
                             </li>
-			    <li>
-				                <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
-                                <li>
-                                    <a href="developer-docs/configuring_sunbird/channel_based_filtering/">Content Filtering</a>
-                                </li>
+                            <li>
+				              <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
+                            </li>    
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/content_filtering/">Content Filtering</a>
                             </li>
-			     <li>
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/metadata_driven_forms/">Configure Metaforms</a>
+                            </li>
+                            <li>
 				                <a href="developer-docs/configuring_sunbird/env_variables_lms/">LMS Service Environment Variables</a>
-			     </li>
+                            </li>
+                            <li>
+                             <div class="">
+                               <ul class="sidebar-group">
+                                <li>
+                                  <a href="developer-docs/configuring_sunbird/sso_otpsms/">Configure OTP based SMS</a>
+                                </li>
+                                </ul>
+                             </div>
+                            </li>
                           </ul>
                     </div>
                 </li>
@@ -361,20 +382,23 @@
                         <a href="developer-docs/onboarding/">Onboarding</a>
                         <ul class="sidebar-group">
                             <li>
-                                           <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
-                                        </li>
-					<li>	
-                                            <a href="features-documentation/badging_framework/creating_badges/">Creating Badges</a>
-					</li>
-					<li>	
-                                             <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
-					</li>
-					<li> 
-				            <a href="developer-docs/configuring_sunbird/configuring_announcement/">Creating Announcements</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
                             </li>
+                            <li>
+                            <a href="developer-docs/how-to-guide/how_to_create_user/">Creating Users</a>
+                            </li>
+					        <li>	
+                            <a href="features-documentation/badging_framework/creating_badges/">Creating Badges</a>
+					        </li>
+					        <li>	
+                            <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
+					        </li>
+					        <li> 
+				            <a href="developer-docs/configuring_sunbird/configuring_announcement/">Creating Announcements</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                         
                 
                 <li>
@@ -563,10 +587,13 @@
               <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
               <ul>
                 <li class="toc_level-2 toc_section-2">
-                  <a href="#prerequisite"><span class="tocnumber">1.1 .</span> <span class="toctext">Prerequisite</span></a>
+                  <a href="#intended-audience"><span class="tocnumber">1.1 .</span> <span class="toctext">Intended Audience</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-3">
-                  <a href="#checklist-before-whitelisting-a-domain"><span class="tocnumber">1.2 .</span> <span class="toctext">Checklist before Whitelisting a Domain</span></a>
+                  <a href="#prerequisite"><span class="tocnumber">1.2 .</span> <span class="toctext">Prerequisite</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#checklist-before-whitelisting-a-domain"><span class="tocnumber">1.3 .</span> <span class="toctext">Checklist before Whitelisting a Domain</span></a>
                 </li>
               </ul>
             </li>
@@ -576,10 +603,13 @@
     </tbody>
   </table>
 </div><h2 id="overview">Overview</h2>
-<p>Content created or available offline can be uploaded on Sunbird. Organization administrators can upload content available on external sources such as dailymotion.com etc. on Sunbird. This section explains the procedure of how to configure domains to allow hosting content from such external sources.</p>
+<p>Sunbird platform allows adopters/users (content creator) to upload content from external sources. Using this option, users can upload content from the external sources to sunbird content library.They can upload external content from different websites such as youtube, Dailymotion and so on. This section explains the procedure of enabling a domain to host content from external sources.</p>
+
+<h3 id="intended-audience">Intended Audience</h3>
+<p>Instance admin</p>
 
 <h3 id="prerequisite">Prerequisite</h3>
-<p>To configure domains to host external links ensure the following:
+<p>Ensure the following to enable a domain to host content from external links:
 - You are logged in as the organization administrator
 - You have access to set the environment variables</p>
 
@@ -587,8 +617,12 @@
 <will be="" taken="" care="" by="" legal="" team="">
 
 ### Configuring the Domain
-You can set the whitelisted domain in the environment variables of Sunbird to variable 'sunbird_extcont_whitelisted_domains'
-Example: sunbird_extcont_whitelisted_domains='youtube.com,youtu.be,dailymotion.com', where youtube.com and youtu.be are default whitelisted domains, and dailymotion.com is the newly whitelisted domain. 
+To enable a Sunbird instance to host content from external source:
+<br />1. Configure an enviroenment variable
+<br />2. Set the "sunbird_extcont_whitelisted_domains" variable to whitelist an external website. For an example, to allow an instance to host content from an external source like "wordpress.com", you need to configure the environmen variable in the below format:
+SUNBIRD_EXTCONT_WHITELISTED_DOMAINS: env.sunbird_extcont_whitelisted_domains ||'wordpress.com'
+<br />3. On successfully configuring the external domain, it allows content creators of the organisation to upload content from external sources
+For more details on how to upload external content to Sunbird content library, refer to the [Upload Content to Sunbird](http://www.sunbird.org/features-documentation/upload/){:target="_blank"}section.
 
 </will>
 
