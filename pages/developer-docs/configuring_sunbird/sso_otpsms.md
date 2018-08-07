@@ -4,12 +4,13 @@ directory: developer-docs/configuring_sunbird
 title: Configure OTP based SMS
 page_title: Configure OTP based SMS 
 description: How to set up the OTP for SMS
-published: false
-allowSearch: false
+published: true
+allowSearch: true
 keywords: SSO, single sign on, single signon, singlesignon, sign in, SMS, sms, otp, OTP, Keycloak
 ---
 
 ## Overview
+
 An OTP sent via SMS to the user's registered mobile number is one of the most secure and efficient ways to authenticate users for specific transactions. For example, if a user wants to reset the password. You need to configure the text of the message to be sent via SMS along with the generated OTP in Keycloak. This page provides you with instructions to do so.   
 
 <table>
