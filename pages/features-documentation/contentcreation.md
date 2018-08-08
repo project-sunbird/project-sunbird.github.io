@@ -7,8 +7,8 @@ description: Content Creation
 keywords: >-
   content editor, create course, create content, create lesson, textbook,
   collection, course
-published: true
-allowSearch: true
+published: false
+allowSearch: false
 ---
 
 
