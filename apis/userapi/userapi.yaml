@@ -1035,7 +1035,7 @@ paths:
         required: true
         type: string
         description: >-
-        The Content-Type header specifies the media type of the resource. Set this to application/json.
+          The Content-Type header specifies the media type of the resource. Set this to application/json.
       - name: ts
         in: header
         required: false
@@ -2183,4 +2183,3 @@ definitions:
              type: string
     required:
     - endorsedUserId
-

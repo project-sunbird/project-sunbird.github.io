@@ -18,14 +18,14 @@
 
 <p>1.The upload organizations page is displayed<br />
  2.Download the csv file for reference<br />
- 3.You can add or upload details of up to 199 organizations at a time in one csv file<br />
+ 3.You can add or upload details of up to 1000 organizations at a time in one csv file<br />
  4.Enter each organization’s name in a separate row<br />
  5.Descriptions and valid values for each columns are as listed below:<br /></p>
 
 <table>
   <thead>
     <tr>
-      <th>Sl.No</th>
+      <th>Sl No</th>
       <th>Column Name</th>
       <th>Description</th>
       <th>Valid Value</th>
@@ -50,37 +50,37 @@
     <tr>
       <td>3</td>
       <td>channel</td>
-      <td>Unique ID provided by the administrator organization by Sunbird. <br /><strong>Note</strong>: Enter a value in the <strong>channel</strong> column, if the value for the <strong>isRootorg</strong> column is TRUE</td>
+      <td>Unique ID associated with each organization in the system administrator’s repository <br /><strong>Note</strong>: Enter values in both the externalid column and the provider column, or keep both columns blank</td>
       <td>Alphanumeric</td>
       <td>Conditional</td>
     </tr>
     <tr>
       <td>4</td>
       <td>externalId</td>
-      <td>Unique ID associated with each organization in the administrating  organization’s repository. <br /><strong>Note</strong>: Enter values in the <strong>externalid</strong> column and the <strong>provider</strong> column or keep both columns blank</td>
+      <td>Unique ID associated with each organization in the system administrator’s repository <br /><strong>Note</strong>: Enter values in both the externalid column and the provider column, or keep both columns blank</td>
       <td>Alphanumeric</td>
       <td>Co-mandatory</td>
     </tr>
     <tr>
       <td>5</td>
       <td>provider</td>
-      <td>Unique ID provided to the administrator organization by Sunbird. <br /><strong>Note</strong>: Enter values in the <strong>externalid</strong> column and the <strong>provider</strong> column or keep both columns blank</td>
+      <td>Unique ID provided by system administrator <br /><strong>Note</strong>: Enter values in both the externalid column and the provider column, or keep both columns blank</td>
       <td>Alphanumeric</td>
       <td>Co-mandatory</td>
     </tr>
     <tr>
       <td>6</td>
       <td>description</td>
-      <td>Details describing the organization</td>
+      <td>Details about the organization</td>
       <td>Alphanumeric</td>
       <td>Optional</td>
     </tr>
     <tr>
       <td>7</td>
       <td>homeUrl</td>
-      <td>Organization’s homepage url</td>
-      <td> </td>
+      <td>Organization’s homepage URL</td>
       <td>Optional</td>
+      <td> </td>
     </tr>
     <tr>
       <td>8</td>
@@ -107,7 +107,7 @@
       <td>11</td>
       <td>contactDetail</td>
       <td>Organization’s contact detail</td>
-      <td>Enter details within curly brackets in double quotes. Separate each detail with a comma, and detail name and corresponding value with a colon (:). <br />For example [{“address”:”Vizianagaram”,”phone”:”8088407418”,”fax”:”abc@gmail.com”}]</td>
+      <td>Enter details within curly brackets in double quotes. Separate each detail with a comma, and detail name and corresponding value with a colon(:) <br />For example;”address”:”Vizianagaram”,”phone”:”8088407418”,”fax”:”abc@gmail.com”</td>
       <td>Optional</td>
     </tr>
   </tbody>
