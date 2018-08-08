@@ -17,7 +17,7 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
 	</tr>
 	<tr>
 		<td>Click the <b>Explore Sunbird</b></td> 
-	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
+	<td><img src="pages/features-documentation/images/explore-sunbird.png"></td>
 	</tr>
 	</table>
 	

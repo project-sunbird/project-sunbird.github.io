@@ -48,6 +48,7 @@ Authorization| JWT token with keyword "Bearer" example: {Bearer JWT Token}
 
 **Note:** 
 i)While you may provide values for other parameters in the request body, it is essential to provide values in those mentioned in the following table. For more information, refer [User Create API](http://www.sunbird.org/apis/userapi/#operation/Create%20User)
+
 ii)The sample values provided in the table are indicative
 
 |Parameter | Sample Value |Description | Is Mandatory|
@@ -94,56 +95,60 @@ Following is an example of request body for creating a user:
 "ver": "string",
 "ets": 0,
 "params": {
-"msgid": "string",
-"did": "string"
-},
+    "msgid": "string",
+    "did": "string"
+    },
 "request": {
-"email": "john@xyzcorp.com",
-"firstName": "John",
-"lastName": "Pal",
-"password": "password123",
-"avatar": "john.png",
-"language": [
-"English|"
-],
-"phone": "987654321",
+    "email": "john@xyzcorp.com",
+    "firstName": "John", 
+    "lastName": "Pal",
+    "password": "password123",
+    "avatar": "john.png",
+    "language": 
+    [
+     "English|"
+    ],
+"phone": "987654321", 
 "phoneVerified": true,
-"subject": [
-"string"
+"subject": 
+[
+    "string"
 ],
 "channel": "a1234567b890c",
 "userName": "john1"
-"education": [
-{
-"degree": "BA",
-"yearOfPassing": 1934,
-"courseName": "Bachelor of Arts",
-"boardOrUniversity": "ABC University",
-"address": {
-"addType": "Permanent",
-"addressLine1": "#34, ASDF Apartments",
-"addressLine2": "ERTY Lane",
-"city": "Bangalore",
-"state": "Karnataka",
-"zipCode": "560089"
-},
-}
+"education": 
+[{
+    "degree": "BA",
+    "yearOfPassing": 1934,
+    "courseName": "Bachelor of Arts",
+    "boardOrUniversity": "ABC University",
+    "address": 
+    {
+      "addType": "Permanent",
+      "addressLine1": "#34, ASDF Apartments",
+      "addressLine2": "ERTY Lane",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "zipCode": "560089"
+    },
+ }
 ],
-"jobProfile": [
-{
-"jobName": "Manager",
-"role": "L3",
-"joiningDate": "2013-12-01",
-"orgName": "XYZ Corp",
-"address": {
-"addType": "Organization",
-"addressLine1": "#34, QWETY Bldg",
-"addressLine2": "ERTY Lane",
-"city": "Bangalore",
-"state": "Karnataka",
-"zipCode": "560089"
-}
-}
+"jobProfile": 
+[ {
+    "jobName": "Manager",
+    "role": "L3",
+    "joiningDate": "2013-12-01",
+    "orgName": "XYZ Corp",
+    "address": 
+    {
+        "addType": "Organization",
+        "addressLine1": "#34, QWETY Bldg",
+        "addressLine2": "ERTY Lane",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "zipCode": "560089"
+    }
+  }
 ],
 }
 }
@@ -158,6 +163,6 @@ Following is an example of request body for creating a user:
 
 ### Additional Topics
 
-[Creating Organization](http://github.com)
+[Creating Organization](http://www.sunbird.org)
 
-[Map users to different business units within the organisation](http://github.com)
+[Map users to different business units within the organisation](http://www.sunbird.org)
