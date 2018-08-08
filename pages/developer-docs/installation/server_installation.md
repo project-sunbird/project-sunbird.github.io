@@ -77,7 +77,7 @@ The following is a list of ports that must be open:
 
 3.`cd sunbird-devops`
 
-4.Checkout the latest release branch `git checkout tags/release-1.8.3 -b release-1.8.3`
+4.Checkout the latest release branch `git checkout tags/release-1.8.1 -b release-1.8.1`
 
 5.`cd deploy`
 
