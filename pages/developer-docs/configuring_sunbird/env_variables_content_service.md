@@ -39,6 +39,19 @@ The following is a list of environment variables and their default values, as re
 |  25 | sunbird_content_service_blacklisted_resourcetype | Represents list of blacklisted resource types(comma seperated) | Used to blacklist contenttype while searching for content | Lesson plan | 
 |  26 | sunbird_content_service_blacklisted_mimetype | Represents list of blacklisted mime types(comma seperated) | Used to blacklist mimetype while searching for content | video/x-youtube | 
 |  27 | sunbird_content_service_enable_logging | Required to enable or disable the content service logging | | True |
+|  28 | sunbird_content_repo_api_base_url | Represents the proxy URL to the content repository | | https://qa.ekstep.in/api |
+|  29 | sunbird_content_repo_api_key | Represents the proxy URL api key for the content repository | | |
+|  30 | sunbird_search_service_api_base_url | Represents the proxy URL to the search service| | https://qa.ekstep.in/api/search|
+|  31 | sunbird_search_service_api_key | Represents the proxy URL api key for the search service | | True |
+|  32 | sunbird_dial_repo_api_base_url | Represents the proxy URL to the dial repository | | https://qa.ekstep.in/api |
+|  33 | sunbird_dial_repo_api_key | Represents the proxy URL api key for the dial repository | | |
+|  34 | sunbird_plugin_repo_api_base_url | Represents the proxy URL to the plugin repository for searching plugins | | https://qa.ekstep.in/api |
+|  35 | sunbird_plugin_repo_api_key | Represents the proxy URL api key to the plugin repository for searching plugins | | |
+|  36 | sunbird_data_service_api_base_url | Represents the proxy URL to the data service | | https://qa.ekstep.in/api |
+|  37 | sunbird_data_service_api_key | Represents the proxy URL api key for the data service | | |
+|  38 | sunbird_language_service_api_base_url |  Represents the proxy URL to the language service | | https://qa.ekstep.in/api/language|
+|  39 | sunbird_language_service_api_key | Represents the proxy URL api key for the language service | | |
+
 
 
 
