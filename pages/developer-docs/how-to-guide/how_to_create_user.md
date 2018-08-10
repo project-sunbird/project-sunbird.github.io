@@ -89,8 +89,9 @@ state  |Karnataka| The name of the state in the organization's address|Yes
 zipCode  |560089| The zip code in the organization's address|Yes
 
 Following is an example of request body for creating a user:
+<pre>
 
-```{
+{
 "id": "string",
 "ver": "string",
 "ets": 0,
@@ -152,7 +153,9 @@ Following is an example of request body for creating a user:
 ],
 }
 }
-```
+
+</pre>
+
 5.Save the created user ID
 6.The user is created under the organization
 

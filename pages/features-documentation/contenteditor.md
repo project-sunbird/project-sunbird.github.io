@@ -537,6 +537,30 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td><img src="pages/features-documentation/images/contenteditor/videodetail.png"></td>
   </tr>
   </table>
+
+This section explains the procedure of using the math text editor to write complex mathematical formulas on the editor.
+
+### Adding Math Function 
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+  <td>To integrate math function with the editor click <b>Add Activity</b> icon. The Add Activity page is displayed
+  </td>
+  <td><img src="pages/features-documentation/images/mathfunction/math-add-activity.png">
+  </td>
+  </tr>  
+  <tr>
+   <td>1. Enter the keyword <b>math text</b> in the search bar   
+   <br>2. Click <b>Search</b>
+   <br>3. Select the <b>Math Text</b> tile from the search result 
+   <br>4. Click <b>Add</b>. The Math Function symbol appears in the Tool Bar. Refer <a href="features-documentation/math_function" target="_blank">Adding Math Function</a> 
+   </td> 
+   <td><img src="pages/features-documentation/images/mathfunction/math-selector.png"></td>
+
   
 ### Adding Details
 <br>All details associated with the resource must be updated before sending the resource for review.
@@ -550,7 +574,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
    </td>
     <td><img src="pages/features-documentation/images/contenteditor/addmetadata.png"></td>
   </tr>
-  </table>   
+  </table>    
     
 ## Reviewing and Publishing Content 
 
