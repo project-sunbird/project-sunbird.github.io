@@ -147,9 +147,21 @@ All content resources that you have saved on your device or popular artifacts fr
   <td><img src="pages/features-documentation/images/mobileapp/library3.png"></td>
  </tr>
  <tr>
+  <td>On completion of a content, a screen window is displayed with:<br>*<b> Your score</b><br>* <b>Duration of the course</b><br>* <b>Replay</b> button to switch user</td>
+  <td><img src="pages/features-documentation/images/mobileapp/display.png"></td>
+  </tr>
+ <tr>
+  <td><b>Switching user while playing content</b><br><br>1. Click the <b>Replay</b> button.<br>One window appears.<br>You get a list of user with whom you can share the content.</td>
+  <td><img src="pages/features-documentation/images/mobileapp/switchuser1.png"></td>
+  </tr>
+ <tr>
+  <td>2. To switch user, select a new user from the list with whom you wnat to share the course, and click the <b>Play</b> button.<br>The content is replayed for the new user.</td>
+  <td><img src="pages/features-documentation/images/mobileapp/switchuser2.png"></td>
+  </tr>
+ <tr>
    <td><b>Downloading content</b><br><br>1. Tap <b>Download</b> to download the content. <br>2. Tap the <b> View Credits and Licensing Info</b> to view the license, attribution and credit information associated with the content <br>3. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>4. Tap <b>Cancel</b> to cancel the download. <br><br><b>Note:</b> You can download content only when you are connected to the Internet. However, you can view the downloaded content Offline</td>
   <td><img src="pages/features-documentation/images/mobileapp/library4.png"></td> 
- </tr>
+  </tr>
   </table>
  
 ### Profile
