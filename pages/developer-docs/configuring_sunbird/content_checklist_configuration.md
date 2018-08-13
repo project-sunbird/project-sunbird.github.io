@@ -31,7 +31,7 @@ In case if there is a configuration at Channel level, it overrides Instance leve
 **Steps to Configure**
 * Use the create/update form API with below API request.
 
-**Mock API configuration for Request Changes:**
+**Mock API request for Request Changes with configuration:**
 
 <pre>
 {
@@ -93,7 +93,7 @@ In case if there is a configuration at Channel level, it overrides Instance leve
 }
 </pre>
 
-**Mock API configuration for Publish:**
+**Mock API request for Publish with configuration:**
 
 <pre>
 {
