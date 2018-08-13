@@ -41,112 +41,67 @@ The sequence of tasks the organization administrator follows to create users inc
 **Request Body**
 
 <pre>
-
 "request": {
-
     "email": "john@xyzcorp.com",
-
     "firstName": "John", 
-
     "lastName": "Pal",
-
     "password": "password123",
-
     "avatar": "john.png",
-
     "language":  ["English"],
-
 "phone": "987654321", 
-
 "phoneVerified": true,
-
 "subject": [ "string" ],
-
 "channel": "a1234567b890c",
-
 "userName": "john1"
-
 "education": 
-
 [{
-
     "degree": "BA",
-
     "yearOfPassing": 1934,
-
     "courseName": "Bachelor of Arts",
-
     "boardOrUniversity": "ABC University",
-
     "address": 
-
     {
       "addType": "Permanent",
-
       "addressLine1": "#34, ASDF Apartments",
-
       "addressLine2": "ERTY Lane",
-
       "city": "Bangalore",
-
       "state": "Karnataka",
-
       "zipCode": "560089"
-
     },
 }],
-
 "jobProfile": 
-
-[ {
-
+    [
+        {
     "jobName": "Manager",
-
     "role": "L3",
-
     "joiningDate": "2013-12-01",
-
     "orgName": "XYZ Corp",
-
     "address": 
     {
-
         "addType": "Organization",
-
         "addressLine1": "#34, QWETY Bldg",
-
         "addressLine2": "ERTY Lane",
-
         "city": "Bangalore",
-
         "state": "Karnataka",
-
         "zipCode": "560089"
     }
-}],
-
-
+}
+],
 </pre>
-
 
 **Response Body**
 
 <pre>
-
-   "responseCode": "OK",
-
+ "responseCode": "OK",
    "result": {
-
        "response": "SUCCESS",
-
        "accessToken": null,
-
        "userId": "4eec2f70-b821-42b9-9694-8a08587715af"
    }
-
 </pre>
 
 2.Save the created user ID
+
 3.The user is created under the organization
 
 ### Concepts covered

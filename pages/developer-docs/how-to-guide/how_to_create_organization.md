@@ -42,79 +42,36 @@ An organization can be created in a Sunbird instance using ORG API, it can be fu
 Following is an example of request body for creating a user, the sample values provided in the request body are indicative:
 
 **Request Body**
-{
- "params": { },
 
-    "request":{
-
+<pre>
+"request":{
       "orgName":"ORG JP_1",
-
       "description":"Dev Default Org",
-
       "imgUrl":"N/A",
-
       "channel":"channel -12571w1sja",
-
       "preferredLanguage":"English",
-
       "homeUrl":"N/A",
-
       "orgCode":"orgCode123sd",
-
       "isRootOrg":true,
-
       "provider":"1231rwsadk",
-
       "externalId":"exts12w7k",
-
-            "address":{
-
+          "address":{
           "city":"Bangalore",
-
           "state":"KA",
-
           "country":"INDIA",
-
           "zipCode":"566666"
-       }
-    }
-}
- 
+      }
+</pre> 
 
- 
 **Response Body**
 
-{
-
-   "id": "api.org.create",
-
-   "ver": "v1",
-
-   "ts": "2018-08-13 10:40:26:981+0000",
-
-   "params": {
-
-       "resmsgid": null,
-
-       "msgid": "8e27cbf5-e299-43b0-bca7-8347f7e5abcf",
-
-       "err": null,
-
-       "status": "success",
-
-       "errmsg": null
-   },
-
-   "responseCode": "OK",
-
-   "result": {
-
+<pre>
+ "responseCode": "OK",
+ "result": {
        "organisationId": "012567820191629312269",
-
        "response": "SUCCESS"
-   }
-}
-
+    }
+</pre>
 
 ### Concepts Covered
 
