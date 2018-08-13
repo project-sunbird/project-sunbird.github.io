@@ -71,17 +71,17 @@ The following is a list of ports that must be open:
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1.Install git using `sudo apt-get update -y && sudo apt-get install git -y `
+1. Install git using `sudo apt-get update -y && sudo apt-get install git -y `
 
-2.Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
+2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
 
-3.`cd sunbird-devops`
+3. `cd sunbird-devops`
 
-4.Checkout the latest release branch `git checkout tags/release-1.8.2 -b release-1.8.2`
+4. Checkout the latest release branch `git checkout tags/release-1.8.2 -b release-1.8.2`
 
-5.`cd deploy`
+5. `cd deploy`
 
-6.Update the configuration parameters in the `config` file. 
+6. Update the configuration parameters in the `config` file. 
 
 The configuration parameters are explained in the following table: 
 
@@ -121,40 +121,37 @@ The configuration parameters are explained in the following table:
 |**badger_admin_password**| The password for the badger administrator |yes|
 |**badger_admin_email**| The email ID of the badger administrator |yes|   
 |**mail_server_host**| The ID of the mail server host used to send alerts |no|   
-|`mail_server_port`| mail server port used by mail server for alerting  |no|   
-|`mail_server_username`| username of mail |no|   
-|`mail_server_password`| password of mail |no|   
-|`vault_postgres_exporter_password`| postgres vault exporter password |no|   
-|`grafana_admin_password`| password for grafana dashboard |no|   
-|`monitor_alerts_slack_url`| slack app webhook url  |no|   
-|`monitor_alerts_slack_channel`| list of emails to send alerts |no|   
-|`vault_proxy_prometheus_admin_creds`| prometheus admin password |no|   
-|`proxy_prometheus`| Setting up Prometheus Proxy |no| 
-|`sunbird_sso_publickey`| For creation of User, http://<dns_name>/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
-|`sunbird_default_channel`| channel name with which you are creating the organization |yes| 
+|**mail_server_port**| mail server port used by mail server for alerting  |no|   
+|**mail_server_username**| username of mail |no|   
+|**mail_server_password**| password of mail |no|   
+|**vault_postgres_exporter_password**| postgres vault exporter password |no|   
+|**grafana_admin_password**| password for grafana dashboard |no|   
+|**monitor_alerts_slack_url**| slack app webhook url  |no|   
+|**monitor_alerts_slack_channel**| list of emails to send alerts |no|   
+|**vault_proxy_prometheus_admin_creds**| prometheus admin password |no|   
+|**proxy_prometheus**| Setting up Prometheus Proxy |no| 
+|**sunbird_sso_publickey**| For creation of User, http://<dns_name>/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
+|**sunbird_default_channel**| channel name with which you are creating the organization |yes| 
 
-
-1. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.
+7. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table:
 
 |Stage no |Stage name|Description| 
 |:-----      |:-------|:--------|
 |1 |config |Generates configuration file and hosts file |
 |2|dbs|Installs all databases and creates schema  |
-|3 |apis|Sets up API manager kong and Onboard API's and consumer's  |
+|3|apis|Sets up API manager kong and Onboard API's and consumer's  |
 |4|proxy|Deploys and configures Nginx|
 |5|keycloak| Deploys and configures Keycloak |
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
 
-**Note**: The badger service does not work without an Azure storage account name and key.
+<br><b>Note:</b> The badger service does not work without an Azure storage account name and key.
 
 8. Get the public key from keycloak **http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.
 
-**Note**: 
-- If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>`
+<br><b>Note:</b> <li> If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>` </li>
 
-- To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script).
-
+<li>To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script).</li>
 
 ## Post Installation Configuration
 
@@ -189,7 +186,7 @@ curl -X POST  \
     }
    }'
 </pre>
-**Note** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
+**Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
 
 3. Update `sunbird_default_channel` in the `config` file with **{Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
 
@@ -198,8 +195,6 @@ curl -X POST  \
 5. Open **https://[domain-name]** and sign up. 
 
 6. You may choose your own user name and password. The format for the username while login is: username@channelName
-
-
 
 ## Sunbird Install Script 
 
@@ -213,9 +208,9 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 
 * `generate_hosts.sh` - Creates a hosts file (Ansible file format) dynamically to run the Ansible scripts.   
 
-* `install-dbs.sh` - Installs Cassandra, Elasticsearch and Postgres databases
+* `install-dbs.sh` - Installs Cassandra, Elasticsearch and Postgres databases.
 
-* `init-dbs.sh` - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases
+* `init-dbs.sh` - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases.
 
 * `deploy-apis.sh` - Deploys the api gateway (Kong) as a docker service using Ansible. 
 
