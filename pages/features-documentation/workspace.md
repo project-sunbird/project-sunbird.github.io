@@ -11,7 +11,7 @@ allowSearch: true
 ## Overview
 There are various user roles on Sunbird. Each user has a unique role to play in their respective organizations. Organization administrators assign one or many responsibilities to users on Sunbird. Extending the literal meaning of workspace, a space to work, Sunbird provides a unique workspace to suit the work needs of each user.  
 
-In this section of documentation, we discuss the workspace of users who create and curate content on Sunbird.
+In this section we discuss the workspace of users who create and curate content on Sunbird.
 
 ### Prerequisites
 
@@ -33,7 +33,7 @@ In this section of documentation, we discuss the workspace of users who create a
 
 ### Understanding your Workspace
 
-The workspace interface varies based on the role assigned to the user. For instance, a book reviewer has only the create book tile, while a content content would have all the tiles viz., collection, course, lesson plan, and, study material. The image used displays all the options in the workspace as it would appear for an organization administrator.
+The workspace interface varies based on the role assigned to the user. For instance, a book reviewer has only the create book tile, while a content content would have tiles such as collection, course, lesson plan, and, study material. The images used in this section displays all the options in the workspace as it would appear for an organization administrator.
 
 <table>
   <tr>
@@ -41,9 +41,22 @@ The workspace interface varies based on the role assigned to the user. For insta
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>In your Workspace you can: <br>a. Create Book, Course, Study material, Collection, Lesson plan <br>b. View content drafts which are not send for review <br>c. View list of content submitted for review <br>d. View published content <br>e. View all uploaded content <br>f. View list of content submitted for review. This option is available only for a content reviewer <br>g. View all the course batches you are enrolled in <br>h. View all flagged content. This option is available only for a flag content reviewer <br>i. View list of content that which have been shared to a specific audience. To read more on limited sharing feature, refer refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
+    <td>From your Workspace you can: <br>a. Create Book, Course, Study material, Collection, Lesson plan <br>b. View list of content created <br>c. View content drafts which are not send for review <br>d. View list of content submitted for review <br>e. View published content <br>f. View all uploaded content <br>g. View list of content submitted for review. This option is available only for a content reviewer <br>h. View all the course batches you are enrolled in <br>i. View list of content that have been shared to a specific audience. To read more on limited sharing feature, refer refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
     </td>
     <td><img src="pages/features-documentation/images/workspace/workspace1.png"></td>
   </tr>
   </table>
   
+#### Searching and Deleting content
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+  <td>1. Click <b>All My Content</b> to view all the content you have created <br>2. Type on the Search Bar to search for content in the displayed list <br>3. Click <b>Delete</b> icon to the delete the content  <br><b>Note:</b> Content creators can delete only content created by them
+  </td>
+    <td><img src="pages/features-documentation/images/workspace/allmycontent.png"></td>
+  </tr>
+  </table>
+
