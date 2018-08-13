@@ -16,10 +16,12 @@ allowSearch: true
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>1. Click the sigma icon. The math function pop-up is displayed </td>
-    <br>2. Double-click the text box to edit mathematical formula or function
+    <td>1. Click the sigma icon. The math function pop-up is displayed 
+    <br>2.Double-click the text box to edit mathematical formula or function
+    </td>
     <td><img src="pages/features-documentation/images/mathfunction/math-text.png"> </td>
-    <tr>
+  </tr>
+  <tr>
     <td>The <b>Library</b> tab displays the list of extensively used mathematical formulas 
     <br>1. Select <b>Library</b> tab
     <br>2. Select the formula from the list
@@ -28,11 +30,11 @@ allowSearch: true
     </td>
     <td><img src="pages/features-documentation/images/mathfunction/math-library.png">
     </td>
-    </tr>
+  </tr>
   <tr>
     <td>The <b>Symbol</b> tab displays the list of letters in Greek and Hebrew, binary opeartions and relational symbols, different styles of arrows and other related symbols 
     <br>1. Select <b>Symbol</b> tab
-    <br>2. Select the type of symbol from the dropdown 
+    <br>2. Select the type of symbol from the drop-down 
     <br>3. Select the symbol 
     <br>4. The symbol appears in the text box. You can append the values, add constants and variables in the text box 
     <br>5. Click <b>Add</b> to proceed. The symbol is added on the slide in a text box
@@ -51,3 +53,4 @@ allowSearch: true
     <td><img src="pages/features-documentation/images/mathfunction/math-equation.png">
     </td>
   </tr>
+</table>
