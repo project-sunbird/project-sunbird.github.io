@@ -41,9 +41,22 @@ The workspace interface varies based on the role assigned to the user. For insta
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>In your Workspace you can: <br>a. Create Book, Course, Study material, Collection, Lesson plan <br>b. View content drafts which are not send for review <br>c. View list of content submitted for review <br>d. View published content <br>e. View all uploaded content <br>f. View list of content submitted for review. This option is available only for a content reviewer <br>g. View all the course batches you are enrolled in <br>h. View all flagged content. This option is available only for a flag content reviewer <br>i. View list of content that which have been shared to a specific audience. To read more on limited sharing feature, refer refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
+    <td>In your Workspace you can: <br>a. Create Book, Course, Study material, Collection, Lesson plan <br>b. View list of content created <br>c. View content drafts which are not send for review <br>d. View list of content submitted for review <br>e. View published content <br>f. View all uploaded content <br>g. View list of content submitted for review. This option is available only for a content reviewer <br>h. View all the course batches you are enrolled in <br>i. View list of content that which have been shared to a specific audience. To read more on limited sharing feature, refer refer <a href="features-documentation/limitedpublishnshare" target="_blank">Limited Publishing and Sharing</a>
     </td>
     <td><img src="pages/features-documentation/images/workspace/workspace1.png"></td>
   </tr>
   </table>
   
+#### Searching and Deleting content
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+  <td>1. Click <b>All My Content</b> to view list of all the content you have created <br>2. Type to search a content from the list on the search bar<br>3. Click <b>Delete</b> icon to the delete the content from your workspace <br><b>Note:</b> Content creator can delete only content created by them
+  </td>
+    <td><img src="pages/features-documentation/images/workspace/allmycontent.png"></td>
+  </tr>
+  </table>
+
