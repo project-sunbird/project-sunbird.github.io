@@ -187,7 +187,7 @@
 
 <p>3.<code>cd sunbird-devops</code></p>
 
-<p>4.Checkout the latest release branch <code>git checkout tags/release-1.8.1 -b release-1.8.1</code></p>
+<p>4.Checkout the latest release branch <code>git checkout tags/release-1.8.2 -b release-1.8.2</code></p>
 
 <p>5.<code>cd deploy</code></p>
 
@@ -486,7 +486,7 @@
 <p><strong>Note</strong>: The badger service does not work without an Azure storage account name and key.</p>
 
 <ol>
-  <li>Get the public key from keycloak <strong>http://&lt;dns_name / IP&gt;/auth -&gt; realm settings -&gt; keys -&gt; public keys</strong> (click on public keys) and set it for <code>sunbird_sso_publickey</code> parameter in <code>config</code> file. Now, execute the command <code>./sunbird_install.sh -s core</code> to redeploy the core services.</li>
+  <li>Get the public key from keycloak **http://<dns_name or="" IP="">/auth -&gt; Administration console -&gt; realm settings -&gt; keys -&gt; public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.</dns_name></li>
 </ol>
 
 <p><strong>Note</strong>: 
@@ -517,7 +517,7 @@ curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
 </ol>
 
 <pre>
-curl -X POST  \ 
+curl -X POST  \
   {dns_name}/api/org/v1/create \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \

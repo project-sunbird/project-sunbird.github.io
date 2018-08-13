@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.52.h/";
+			baseURL.href="/releases/release.1.52.i/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-08-10 16:33:55 +0530">
+<meta name="last-modified" content="2018-08-13 15:15:49 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.52.h" />
-<meta name="buildNo" content="4487" />
+<meta name="buildVersion" content="release.1.52.i" />
+<meta name="buildNo" content="4493" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?10082018"  />
-<link rel="stylesheet" href="css/style.css?10082018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?10082018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?10082018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?10082018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?10082018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?13082018"  />
+<link rel="stylesheet" href="css/style.css?13082018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?13082018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?13082018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?13082018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?13082018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -795,7 +795,7 @@
 
 <p>3.<code>cd sunbird-devops</code></p>
 
-<p>4.Checkout the latest release branch <code>git checkout tags/release-1.8.1 -b release-1.8.1</code></p>
+<p>4.Checkout the latest release branch <code>git checkout tags/release-1.8.2 -b release-1.8.2</code></p>
 
 <p>5.<code>cd deploy</code></p>
 
@@ -1094,7 +1094,7 @@
 <p><strong>Note</strong>: The badger service does not work without an Azure storage account name and key.</p>
 
 <ol>
-  <li>Get the public key from keycloak <strong>http://&lt;dns_name / IP&gt;/auth -&gt; realm settings -&gt; keys -&gt; public keys</strong> (click on public keys) and set it for <code>sunbird_sso_publickey</code> parameter in <code>config</code> file. Now, execute the command <code>./sunbird_install.sh -s core</code> to redeploy the core services.</li>
+  <li>Get the public key from keycloak **http://<dns_name or="" ip="">/auth -&gt; Administration console -&gt; realm settings -&gt; keys -&gt; public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.</dns_name></li>
 </ol>
 
 <p><strong>Note</strong>: 
@@ -1125,7 +1125,7 @@ curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
 </ol>
 
 <pre>
-curl -X POST  \ 
+curl -X POST  \
   {dns_name}/api/org/v1/create \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
