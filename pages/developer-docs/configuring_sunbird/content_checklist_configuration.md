@@ -28,6 +28,9 @@ In case if there is a configuration at Channel level, it overrides Instance leve
 * If API fails, an error message(default) should be displayed on the toaster.
 * If configuration present, everything should be displayed from the configuration. Publish button should be disabled. It should get enabled once all the reason is checked.
 
+**Steps to Configure**
+* Use the create/update form API with below API request.
+
 **Mock API configuration for Request Changes:**
 
 <pre>
