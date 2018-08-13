@@ -77,7 +77,7 @@ The following is a list of ports that must be open:
 
 3.`cd sunbird-devops`
 
-4.Checkout the latest release branch `git checkout tags/release-1.8.1 -b release-1.8.1`
+4.Checkout the latest release branch `git checkout tags/release-1.8.2 -b release-1.8.2`
 
 5.`cd deploy`
 
@@ -148,7 +148,7 @@ The configuration parameters are explained in the following table:
 
 **Note**: The badger service does not work without an Azure storage account name and key.
 
-8. Get the public key from keycloak **http://<dns_name / IP>/auth -> realm settings -> keys -> public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.
+8. Get the public key from keycloak **http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.
 
 **Note**: 
 - If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>`
@@ -173,7 +173,7 @@ The values in the { } braces should be replaced with your environment values
 2. **Create root organization** - To create a root organization you should the following cURL:
 
 <pre>
-curl -X POST  \ 
+curl -X POST  \
   {dns_name}/api/org/v1/create \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
