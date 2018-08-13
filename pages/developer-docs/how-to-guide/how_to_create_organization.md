@@ -73,6 +73,10 @@ Following is an example of request body for creating a user, the sample values p
     }
 </pre>
 
+2.Save the created organization ID
+
+3.An organization is created in Sunbird
+
 ### Concepts Covered
 
 **Users**: The individual who can sign in and access the Sunbird portal to perform a set of action that is assigned by the system administrator.
