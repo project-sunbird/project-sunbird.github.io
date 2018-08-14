@@ -1,305 +1,52 @@
 <h2 id="scenario">Scenario</h2>
 
-<p>XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization’s administrator needs to create and add user details.</p>
+<p>A company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization’s administrator needs to create and add user details.</p>
+
+<p>Every user belongs to an organization and is identified within the organization through a unique user ID. Sunbird, uniquely identifies every tenant organization through a channel. Hence, when creating a user, its not enough to only add user details and assign a user ID. To enable users, the user ID has to be associated with an organization and channel. Since a user also plays a role within an organization, the user gets fully enabled only after the user ID is associated to a role. For example, John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them.</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
 <p>1.An initialized server instance of Sunbird. Initialization includes creating an org admin user (through Keycloak), creating a channel and associating a first organization with the channel.</p>
 
-<p>For details, refer to:
-* <a href="http://www.sunbird.org/developer-docs/installation/server_installation/">Server Installation</a>
-* <a href="http://www.sunbird.org/apis/framework/#tag/Channel-APIs">Channel APIs</a>
-* <a href="http://www.sunbird.org/developer-docs/initialization">First organization</a> associated with channel ID</p>
+<p>For details, refer to:</p>
+
+<ul>
+  <li>
+    <p><a href="http://www.sunbird.org/developer-docs/installation/server_installation/">Server Installation</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.sunbird.org/apis/framework/#tag/Channel-APIs">Channel APIs</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.sunbird.org/developer-docs/initialization">First organization</a> associated with channel ID</p>
+  </li>
+</ul>
 
 <p>2.The API Key for access and basic authentication</p>
 
 <p>3.An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)</p>
 
-<p>4.Access to the <a href="http://www.sunbird.org/apis/userapi/#tag/User-APIs">Create User API</a></p>
-
-<h2 id="overview">Overview</h2>
-
-<p>Every user belongs to an organization and is identified within the organization through a unique user ID. Sunbird, uniquely identifies every tenant organization through a channel. Hence, when creating a user, its not enough to only add user details and assign a user ID. To enable users, the user ID has to be associated with an organization and channel. Since a user also plays a role within an organization, the user gets fully enabled only after the user ID is associated to a role. For example, John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them.</p>
+<p>4.Access to the <a href="http://www.sunbird.org/apis/userapi/#operation/Create%20User">Create User API</a></p>
 
 <h3 id="taskflow">Taskflow</h3>
 
-<p>Only an org administrator can create users. Follow the sequence of steps provided to create a general user:</p>
+<p>The sequence of tasks the organization administrator follows to create users include:</p>
 
-<ol>
-  <li>Ensure that all prerequisites are met</li>
-  <li>Use postman or curl command to execute Sunbird’s Create User API</li>
-  <li>Specify values in the Create User API header</li>
-</ol>
+<p>1.Specify values for the parameters in the request body of the API. Following is an example of request body for creating a user, the sample values provided in the request body are indicative:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Sample Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>content-Type</td>
-      <td>appilcation/json</td>
-    </tr>
-    <tr>
-      <td>Authorization</td>
-      <td>JWT token with keyword “Bearer” example: {Bearer JWT Token}</td>
-    </tr>
-  </tbody>
-</table>
+<p><strong>Request Body</strong></p>
 
-<p>4.Specify values for the following parameters in the request body of the API</p>
-
-<p><strong>Note:</strong> 
-i)While you may provide values for other parameters in the request body, it is essential to provide values in those mentioned in the following table. For more information, refer <a href="http://www.sunbird.org/apis/userapi/#operation/Create%20User">User Create API</a></p>
-
-<p>ii)The sample values provided in the table are indicative</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Sample Value</th>
-      <th>Description</th>
-      <th>Is Mandatory</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>email</td>
-      <td>john@xyzcorp.com</td>
-      <td>The email ID of the user</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>firstName</td>
-      <td>John</td>
-      <td>The first name of the user</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>lastName</td>
-      <td>Pal</td>
-      <td>The last name of the user</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>password</td>
-      <td>password123</td>
-      <td>The user’s password</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>avatar</td>
-      <td>john.png</td>
-      <td>The user’s photograph. It is recommended that images are in .png format.</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>language</td>
-      <td>English</td>
-      <td>A comma separated list of languages that are known to the user</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>phone</td>
-      <td>987654321</td>
-      <td>The user’s phone number</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>phoneVerified</td>
-      <td>true</td>
-      <td>Indicates if the phone number is verified</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>channel</td>
-      <td>a1234567b890c</td>
-      <td>Represents the channel value. The channel value is got while creating a rootOrg - if you provide channel value, then you will get associated with that particular root organization - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>userName</td>
-      <td>john1</td>
-      <td>The name assigned to the user in Sunbird</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>education</td>
-      <td><strong>Contains the following fields</strong></td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>degree</td>
-      <td>B.A.</td>
-      <td>Represents the academic qualifications obtained by the user</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>yearOfPassing</td>
-      <td>1934</td>
-      <td>The year in which the user obtained the degreee</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>courseName</td>
-      <td>Bachelor of Arts</td>
-      <td>The name of the course that the user attended</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>boardOrUniversity</td>
-      <td>ABC University</td>
-      <td>The name of the board or university that awarded the degree</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>address</td>
-      <td><strong>Contains the following fields</strong></td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>addType</td>
-      <td>Permanent</td>
-      <td>The type of address. For example, permanent, communication, home, office, etc</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>addressLine1</td>
-      <td>#34, ASDF Apartments</td>
-      <td>The first line in the user’s address</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>addressLine2</td>
-      <td>ERTY Lane</td>
-      <td>The second line in the user’s address</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>city</td>
-      <td>Bangalore</td>
-      <td>The name of the city in the user’s address</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>state</td>
-      <td>Karnataka</td>
-      <td>The name of the state in the user’s address</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>zipCode</td>
-      <td>560089</td>
-      <td>The zip code in the user’s address</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>jobProfile</td>
-      <td><strong>Contains the following fields</strong></td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>jobName</td>
-      <td>Manager</td>
-      <td>The name of the job the user does in the organization</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>role</td>
-      <td>L3</td>
-      <td>The hierarchical position of the user in the organization</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>joiningDate</td>
-      <td>2013-12-01</td>
-      <td>The date on which the user joined the organization. The date should be in YYYY-MM-DD</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>orgName</td>
-      <td>XYZ Corp</td>
-      <td>The name of the user’s organization</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>address</td>
-      <td><strong>Contains the following fields</strong></td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>addType</td>
-      <td>Organization</td>
-      <td>The type of address. For example, permanent, communication, home, office, etc</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>addressLine1</td>
-      <td>#34, QWETY Bldg</td>
-      <td>The first line in the organization’s address</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>addressLine2</td>
-      <td>ERTY Lane</td>
-      <td>The second line in the organization’s address</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>city</td>
-      <td>Bangalore</td>
-      <td>The name of the city in the organization’s address</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>state</td>
-      <td>Karnataka</td>
-      <td>The name of the state in the organization’s address</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>zipCode</td>
-      <td>560089</td>
-      <td>The zip code in the organization’s address</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Following is an example of request body for creating a user:</p>
-
-<p><code>{
-"id": "string",
-"ver": "string",
-"ets": 0,
-"params": {
-    "msgid": "string",
-    "did": "string"
-    },
+<pre>
 "request": {
     "email": "john@xyzcorp.com",
     "firstName": "John", 
     "lastName": "Pal",
     "password": "password123",
     "avatar": "john.png",
-    "language": 
-    [
-     "English|"
-    ],
+    "language":  ["English"],
 "phone": "987654321", 
 "phoneVerified": true,
-"subject": 
-[
-    "string"
-],
+"subject": [ "string" ],
 "channel": "a1234567b890c",
 "userName": "john1"
 "education": 
@@ -317,10 +64,10 @@ i)While you may provide values for other parameters in the request body, it is e
       "state": "Karnataka",
       "zipCode": "560089"
     },
- }
-],
+}],
 "jobProfile": 
-[ {
+    [
+        {
     "jobName": "Manager",
     "role": "L3",
     "joiningDate": "2013-12-01",
@@ -334,21 +81,37 @@ i)While you may provide values for other parameters in the request body, it is e
         "state": "Karnataka",
         "zipCode": "560089"
     }
-  }
+}
 ],
-}
-}
-</code>
-5.Save the created user ID
-6.The user is created under the organization</p>
+</pre>
+
+<p><strong>Response Body</strong></p>
+
+<pre>
+ "responseCode": "OK",
+   "result": {
+       "response": "SUCCESS",
+       "accessToken": null,
+       "userId": "4eec2f70-b821-42b9-9694-8a08587715af"
+   }
+</pre>
+
+<p>2.Save the created user ID</p>
+
+<p>3.The user is created under the organization</p>
 
 <h3 id="concepts-covered">Concepts covered</h3>
-<p><strong>Users</strong>: Individuals who can sign in and access the Sunbird portal.
-<strong>Organization</strong>: An Organization is an institute or a body of individuals. 
-<strong>Channel</strong>: A unique identifier associated with the tenant organization</p>
+
+<p><strong>Users</strong>: Individuals who can sign in and access the Sunbird portal.</p>
+
+<p><strong>Organization</strong>: An Organization is an institute or a body of individuals.</p>
+
+<p><strong>Channel</strong>: A unique identifier associated with the tenant organization</p>
 
 <h3 id="additional-topics">Additional Topics</h3>
 
-<p><a href="http://www.sunbird.org">Creating Organization</a></p>
+<p><a href="http://www.sunbird.org/developer-docs/initialization">Creating first organization</a></p>
 
-<p><a href="http://www.sunbird.org">Map users to different business units within the organisation</a></p>
+<p><a href="http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_organization">Creating Organization</a></p>
+
+<p><a href="http://www.sunbird.org/developer-docs/how-to-guide/hohow_to_create_org_add_user">Map users to different business units within the organisation</a></p>

@@ -181,17 +181,26 @@
 
 <p><strong>Note:</strong> Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server.</p>
 
-<p>1.Install git using <code>sudo apt-get update -y &amp;&amp; sudo apt-get install git -y </code></p>
-
-<p>2.Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></p>
-
-<p>3.<code>cd sunbird-devops</code></p>
-
-<p>4.Checkout the latest release branch <code>git checkout tags/release-1.8.2 -b release-1.8.2</code></p>
-
-<p>5.<code>cd deploy</code></p>
-
-<p>6.Update the configuration parameters in the <code>config</code> file.</p>
+<ol>
+  <li>
+    <p>Install git using <code>sudo apt-get update -y &amp;&amp; sudo apt-get install git -y </code></p>
+  </li>
+  <li>
+    <p>Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code></p>
+  </li>
+  <li>
+    <p><code>cd sunbird-devops</code></p>
+  </li>
+  <li>
+    <p>Checkout the latest release branch <code>git checkout tags/release-1.8.2 -b release-1.8.2</code></p>
+  </li>
+  <li>
+    <p><code>cd deploy</code></p>
+  </li>
+  <li>
+    <p>Update the configuration parameters in the <code>config</code> file.</p>
+  </li>
+</ol>
 
 <p>The configuration parameters are explained in the following table:</p>
 
@@ -375,57 +384,57 @@
       <td>no</td>
     </tr>
     <tr>
-      <td><code>mail_server_port</code></td>
+      <td><strong>mail_server_port</strong></td>
       <td>mail server port used by mail server for alerting</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>mail_server_username</code></td>
+      <td><strong>mail_server_username</strong></td>
       <td>username of mail</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>mail_server_password</code></td>
+      <td><strong>mail_server_password</strong></td>
       <td>password of mail</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>vault_postgres_exporter_password</code></td>
+      <td><strong>vault_postgres_exporter_password</strong></td>
       <td>postgres vault exporter password</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>grafana_admin_password</code></td>
+      <td><strong>grafana_admin_password</strong></td>
       <td>password for grafana dashboard</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>monitor_alerts_slack_url</code></td>
+      <td><strong>monitor_alerts_slack_url</strong></td>
       <td>slack app webhook url</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>monitor_alerts_slack_channel</code></td>
+      <td><strong>monitor_alerts_slack_channel</strong></td>
       <td>list of emails to send alerts</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>vault_proxy_prometheus_admin_creds</code></td>
+      <td><strong>vault_proxy_prometheus_admin_creds</strong></td>
       <td>prometheus admin password</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>proxy_prometheus</code></td>
+      <td><strong>proxy_prometheus</strong></td>
       <td>Setting up Prometheus Proxy</td>
       <td>no</td>
     </tr>
     <tr>
-      <td><code>sunbird_sso_publickey</code></td>
+      <td><strong>sunbird_sso_publickey</strong></td>
       <td>For creation of User, http://<dns_name>/auth -&gt; realm settings -&gt; keys -&gt; public keys (click on public keys) and paste the value</dns_name></td>
       <td>yes</td>
     </tr>
     <tr>
-      <td><code>sunbird_default_channel</code></td>
+      <td><strong>sunbird_default_channel</strong></td>
       <td>channel name with which you are creating the organization</td>
       <td>yes</td>
     </tr>
@@ -433,7 +442,7 @@
 </table>
 
 <ol>
-  <li>Run the script <code>./sunbird_install.sh</code>. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table.</li>
+  <li>Run the script <code>./sunbird_install.sh</code>. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table:</li>
 </ol>
 
 <table>
@@ -483,18 +492,15 @@
   </tbody>
 </table>
 
-<p><strong>Note</strong>: The badger service does not work without an Azure storage account name and key.</p>
+<p><br /><b>Note:</b> The badger service does not work without an Azure storage account name and key.</p>
 
 <ol>
   <li>Get the public key from keycloak **http://<dns_name or="" IP="">/auth -&gt; Administration console -&gt; realm settings -&gt; keys -&gt; public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.</dns_name></li>
 </ol>
 
-<p><strong>Note</strong>: 
-- If you want to re-run particular stage in the installation, execute <code>./sunbird_install.sh -s &lt;stage name&gt;</code></p>
+<p><br /><b>Note:</b> &lt;li&gt; If you want to re-run particular stage in the installation, execute <code>./sunbird_install.sh -s &lt;stage name&gt;</code> &lt;/li&gt;</p>
 
-<ul>
-  <li>To know more about the script <code>sunbird_install.sh</code> <a href="developer-docs/installation/server_installation/#sunbird-install-script">refer</a> to the section <a href="developer-docs/installation/server_installation/#sunbird-install-script">below</a>.</li>
-</ul>
+<li>To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script).</li>
 
 <h2 id="post-installation-configuration">Post Installation Configuration</h2>
 
@@ -533,7 +539,7 @@ curl -X POST  \
     }
    }'
 </pre>
-<p><strong>Note</strong> Channel should be a unique name across Sunbird instances who are using the EkStep content repository</p>
+<p><strong>Note:</strong> Channel should be a unique name across Sunbird instances who are using the EkStep content repository</p>
 
 <ol>
   <li>
@@ -568,10 +574,10 @@ curl -X POST  \
     <p><code>generate_hosts.sh</code> - Creates a hosts file (Ansible file format) dynamically to run the Ansible scripts.</p>
   </li>
   <li>
-    <p><code>install-dbs.sh</code> - Installs Cassandra, Elasticsearch and Postgres databases</p>
+    <p><code>install-dbs.sh</code> - Installs Cassandra, Elasticsearch and Postgres databases.</p>
   </li>
   <li>
-    <p><code>init-dbs.sh</code> - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases</p>
+    <p><code>init-dbs.sh</code> - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases.</p>
   </li>
   <li>
     <p><code>deploy-apis.sh</code> - Deploys the api gateway (Kong) as a docker service using Ansible.</p>

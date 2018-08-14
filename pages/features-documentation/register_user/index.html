@@ -17,19 +17,32 @@
 
 <h2 id="uploading-users">Uploading Users</h2>
 
-<p>1.The <strong>Upload Users</strong> page is displayed<br />
-2.Enter Provider details. <strong>Channel ID</strong> of the organization administrator must be entered here<br />
-3.Enter <strong>External ID</strong>. Unique ID of the user that has to be uploaded must be entered here <strong>OR</strong><br />
-4.Enter <strong>OrgID</strong>. Unique ID of the admin organization must be entered here<br /></p>
+<p>1.The <strong>Upload Users</strong> page is displayed</p>
 
-<pre><code> - For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID. &lt;br /&gt; OR
-  - Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.
-</code></pre>
+<p>2.Enter Provider details. <strong>Channel ID</strong> of the organization administrator must be entered here</p>
 
-<p>5.Download the csv file for reference<br />
-6.You can add or upload details of up to 1000 users at a time in one csv file<br />
-7.You can upload users of only a single organization in one csv file<br />
-8.Descriptions and valid values for each columns are as listed below:<br /></p>
+<p>3.Enter <strong>External ID</strong>. Unique ID of the user that has to be uploaded must be entered here <strong>OR</strong></p>
+
+<p>4.Enter <strong>OrgID</strong>. Unique ID of the admin organization must be entered here</p>
+
+<ul>
+  <li>
+    <p>For example, in the case of a state, state repository is the system administrator repository and the ID given to each school, or education body in the state is the External ID.</p>
+
+    <p>OR</p>
+  </li>
+  <li>
+    <p>Enter OrgID. Unique ID of the administration organization that is generated on Sunbird. This ID is generated when the organization is successfully uploaded on Sunbird.</p>
+  </li>
+</ul>
+
+<p>5.Download the csv file for reference</p>
+
+<p>6.You can add or upload details of up to 1000 users at a time in one csv file</p>
+
+<p>7.You can upload users of only a single organization in one csv file</p>
+
+<p>8.Descriptions and valid values for each columns are as listed below:</p>
 
 <table>
   <thead>
@@ -119,7 +132,7 @@
       <td>10</td>
       <td>roles</td>
       <td>User’s role</td>
-      <td>Select one or more of the following roles:<br />CONTENT_CREATOR <br />CONTENT_REVIEWER <br />FLAG_REVIEWER <br />COURSE_MENTOR <br /> BOOK_CREATOR <br /> BOOK_REVIEWER<br />ORG_ADMIN<br /> TEACHER_BADGE_ISSUER<br />BADGE_ISSUER<br /> ANNOUNCEMENT_SENDER <br />PUBLIC</td>
+      <td>Select one or more of the following roles:<br />CONTENT_CREATOR <br />CONTENT_REVIEWER <br />FLAG_REVIEWER <br />COURSE_MENTOR<br />BOOK_CREATOR<br />BOOK_REVIEWER<br />ORG_ADMIN<br />TEACHER_BADGE_ISSUER<br />BADGE_ISSUER<br /> ANNOUNCEMENT_SENDER <br />PUBLIC</td>
       <td>Optional</td>
       <td> </td>
     </tr>
@@ -135,7 +148,7 @@
       <td>12</td>
       <td>grade</td>
       <td>Classes taught by the user</td>
-      <td>Select one or more of the following grades:<br /> Class 1, Class 2, Class 3, Class 4, Class 5, Class 6, Class 7, Class 8, Class 9, Class 10, Kindergarten, Other</td>
+      <td>Select one or more of the following grades:<br /> Class 1, Class 2, Class 3, Class 4,<br /> Class 5, Class 6, Class 7,<br /> Class 8, Class 9, Class 10, Kindergarten, Other</td>
       <td>Optional</td>
       <td> </td>
     </tr>
@@ -167,7 +180,7 @@
       <td>16</td>
       <td>language</td>
       <td>User’s language preferences</td>
-      <td>Select one or more of the following grades: English, Gujarati, Hindi, Kannada, Marathi, Punjabi, Tamil, Telugu</td>
+      <td>Select one or more of the following language: <br />English, Gujarati, Hindi, <br />Kannada, Marathi, Punjabi, <br /> Tamil, Telugu</td>
       <td>Optional</td>
       <td> </td>
     </tr>
@@ -183,7 +196,7 @@
       <td>18</td>
       <td>subject</td>
       <td>Subjects taught by the user</td>
-      <td>Select one or more of the following grades: Assamese, Bengali, English, Hindi, Kannada, Malayalam, Oriya, Punjabi, Tamil, Telugu, Urdu, Biology, Chemistry, Physics, Mathematics, Environmental Studies, Geography, History, Political Science, Economics, Sanskrit, Gujarati, Marathi, Nepali</td>
+      <td>Select one or more of the following subject:<br />Assamese, Bengali, English, <br />Hindi, Kannada, Malayalam,<br /> Oriya, Punjabi, Tamil, <br />Telugu, Urdu, Biology, <br />Chemistry, Physics, Mathematics, <br />Environmental Studies, Geography, <br />History, Political Science, <br /> Economics, Sanskrit, Gujarati,<br /> Marathi, Nepali</td>
       <td>Optional</td>
       <td> </td>
     </tr>
@@ -222,14 +235,20 @@
   </tbody>
 </table>
 
-<p><strong><em>Note</em></strong>: 
-Ensure that you separate the values with a comma when you select more than one value for any column</p>
+<p><strong>Note</strong>: Ensure that you separate the values with a comma when you select more than one value for any column</p>
 
-<p>9.Click <strong>UPLOAD USERS CSV</strong>.The explorer window is displayed<br />
-10.Select the csv file and click <strong>Open</strong><br />
-11.The csv file is uploaded<br />
-12.On successful file upload, a process ID is generated, else an error message is displayed
-13.Possible causes for failure of upload includes:
-  a. The csv file is not saved in the right format. Select CSV (Comma delimited) (.csv) as the file type while saving 
-  b. Using the same email, phonenumber etc. for more than one user. Details must be unique for each user
-  c. Providing invalid values in the csv file. In such cases, the error message denotes the column name for which incorrect value is provided</p>
+<p>9.Click <strong>UPLOAD USERS CSV</strong>.The explorer window is displayed</p>
+
+<p>10.Select the csv file and click <strong>Open</strong></p>
+
+<p>11.The csv file is uploaded</p>
+
+<p>12.On successful file upload, a process ID is generated, else an error message is displayed</p>
+
+<p>13.Possible causes for failure of upload includes:</p>
+
+<p>a. The csv file is not saved in the right format. Select CSV (Comma delimited) (.csv) as the file type while saving</p>
+
+<p>b. Using the same email, phonenumber etc. for more than one user. Details must be unique for each user</p>
+
+<p>c. Providing invalid values in the csv file. In such cases, the error message denotes the column name for which incorrect value is provided</p>
