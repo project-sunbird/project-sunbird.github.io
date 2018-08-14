@@ -83,7 +83,7 @@ The following is a list of ports that must be open:
 
 6. Update the configuration parameters in the `config` file. 
 
-The configuration parameters are explained in the following table: 
+    The configuration parameters are explained in the following table: 
 
 | Variable Name | Description   | Mandatory|                                                                         
 |-------------- |---------------|----------|
@@ -145,13 +145,13 @@ The configuration parameters are explained in the following table:
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
 
-<br><b>Note:</b> The badger service does not work without an Azure storage account name and key.
+  **Note:** The badger service does not work without an Azure storage account name and key.
 
-8. Get the public key from keycloak **http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys** (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.
+8. Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b> (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.
 
-<br><b>Note:</b> <li> If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>` </li>
-
-<li>To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script).</li>
+ **Note:**
+ - If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>` 
+ - To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script).
 
 ## Post Installation Configuration
 
@@ -186,7 +186,7 @@ curl -X POST  \
     }
    }'
 </pre>
-**Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
+  **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
 
 3. Update `sunbird_default_channel` in the `config` file with **{Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
 
