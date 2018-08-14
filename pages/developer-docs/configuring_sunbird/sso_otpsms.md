@@ -10,7 +10,7 @@ keywords: SSO, single sign on, single signon, singlesignon, sign in, SMS, sms, o
 ---
 
 ## Overview
-An OTP sent via SMS to the user's registered mobile number is one of the most secure and efficient ways to authenticate users for specific transactions. For example, if a user wants to reset the password. You need to configure the text of the message to be sent via SMS along with the generated OTP in Keycloak. This page provides you with instructions to do so.   
+An OTP sent via SMS to the user's registered mobile number is one of the most secure and efficient ways to authenticate users for specific transactions. For example, if a user wants to reset the password, configure the text message to be sent via SMS along with the generated OTP in Keycloak. This page provides details on configuring text messages
 
 <table>
 
