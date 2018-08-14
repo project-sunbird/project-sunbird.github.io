@@ -71,19 +71,14 @@ The following is a list of ports that must be open:
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-1. Install git using `sudo apt-get update -y && sudo apt-get install git -y `
-
-2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
-
-3. `cd sunbird-devops`
-
-4. Checkout the latest release branch `git checkout tags/release-1.8.2 -b release-1.8.2`
-
-5. `cd deploy`
-
-6. Update the configuration parameters in the `config` file. 
-
-    The configuration parameters are explained in the following table: 
+<ol>
+<li> Install git using <code>sudo apt-get update -y && sudo apt-get install git -y </code> </li>
+<li> Run <code>git clone https://github.com/project-sunbird/sunbird-devops.git</code> </li>
+<li> <code>cd sunbird-devops</code> </li>
+<li> Checkout the latest release branch <code>git checkout tags/release-1.8.2 -b release-1.8.2</code> </li>
+<li> <code>cd deploy</code> </li>
+<li> Update the configuration parameters in the <code>config</code> file </li>
+<br> The configuration parameters are explained in the following table: 
 
 | Variable Name | Description   | Mandatory|                                                                         
 |-------------- |---------------|----------|
@@ -133,7 +128,7 @@ The following is a list of ports that must be open:
 |**sunbird_sso_publickey**| For creation of User, http://<dns_name>/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
 |**sunbird_default_channel**| channel name with which you are creating the organization |yes| 
 
-7. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table:
+<li> Run the script <code>./sunbird_install.sh</code>. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table: </li>
 
 |Stage no |Stage name|Description| 
 |:-----      |:-------|:--------|
@@ -145,17 +140,21 @@ The following is a list of ports that must be open:
 |6|badger|Deploys the badger service|
 |7|core|Deploys all core services|
 
-  **Note:** The badger service does not work without an Azure storage account name and key.
+<br><b>Note:</b> The badger service does not work without an Azure storage account name and key.
 
-8. Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b> (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services.
+<li> Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b> (click on public keys) and set it for <code>sunbird_sso_publickey</code> parameter in <code>config</code> file. Now, execute the command <code>./sunbird_install.sh -s core</code> to redeploy the core services </li>
 
- **Note:**
- - If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>` 
- - To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script).
+ <br><b>Note:</b> 
+ <ul>
+ <li> If you want to re-run particular stage in the installation, execute <code>./sunbird_install.sh -s <stage name></code> </li>
+ <li> To know more about the script <code>sunbird_install.sh</code> <a href="developer-docs/installation/server_installation/#sunbird-install-script">refer</a> to the section <a href="developer-docs/installation/server_installation/#sunbird-install-script">below</a></li>
+ </ul>
+ </ol>
 
 ## Post Installation Configuration
 
-1. **Create user access token** - To create a user access token you should execute the following cURL:
+<ol>
+<li> <b>Create user access token</b> - To create a user access token you should execute the following cURL: </li>
 
 <pre>
 curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
@@ -163,11 +162,14 @@ curl -X POST {dns_name}/auth/realms/sunbird/protocol/openid-connect/token \
   -H 'content-type: application/x-www-form-urlencoded' \
   -d 'client_id=admin-cli&username=user-manager&password={password}&grant_type=password'
 </pre>
-The values in the { } braces should be replaced with your environment values
-- {dns_name} - Domain or the IP address of your application server.
-- {password} - Password of the `user-manager` user. The one you have provided for `sso_password` parameter in the `config` file above.
 
-2. **Create root organization** - To create a root organization you should the following cURL:
+<br>The values in the { } braces should be replaced with your environment values
+<ul>
+<li> {dns_name} - Domain or the IP address of your application server</li>
+<li>{password} - Password of the <code>user-manager</code> user. The one you have provided for <code>sso_password</code> parameter in the <code>config</code> file above</li>
+</ul>
+
+<li> <b>Create root organization</b> - To create a root organization you should the following cURL: </li>
 
 <pre>
 curl -X POST  \
@@ -186,15 +188,17 @@ curl -X POST  \
     }
    }'
 </pre>
-  **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
 
-3. Update `sunbird_default_channel` in the `config` file with **{Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
+<br><b>Note:</b> Channel should be a unique name across Sunbird instances who are using the EkStep content repository
 
-4. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory will be created.
+<li> Update <code>sunbird_default_channel</code> in the <code>config</code> file with <b>{Your Channel Name}</b> (that was created in previous step) and re-run the command <code>./sunbird_install.sh -s core</code> </li>
 
-5. Open **https://[domain-name]** and sign up. 
+<li>Run <code>./sunbird_install.sh -s posttest</code>, to validate all the services for a successful installation. On executing the script, a file <b>postInstallationLogs.log</>b> in the <b>logs</b> directory will be created </li>
 
-6. You may choose your own user name and password. The format for the username while login is: username@channelName
+<li> Open <b>https://[domain-name]</b> and sign up </li> 
+
+<li>You may choose your own user name and password. The format for the username while login is: username@channelName </li>
+</ol>
 
 ## Sunbird Install Script 
 
