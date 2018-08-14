@@ -147,25 +147,27 @@ The following is a list of ports that must be open:
    
      **Note:** The badger service does not work without an Azure storage account name and key.
 
-8. Get the public key from keycloak **http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys**  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
+8. Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b>  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
 
-     **Note:**
+      
+      **Note:**
      
       - If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>` 
+       
       - To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script">below)
  
 ## Post Installation Configuration
 
 1. **Create user access token** - To create a user access token you should execute the following cURL: 
 
-  <pre>
-  curl -X POST {dns_name}   /auth/realms/sunbird/protocol/openid-connect/token \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'client_id=admin-cli&username=user-manager&password={password}&grant_type=password'
-  </pre>
+   <pre>
+   curl -X POST {dns_name}    /auth/realms/sunbird/protocol/openid-connect/token \
+   -H 'cache-control: no-cache' \
+   -H 'content-type: application/x-www-form-urlencoded' \
+   -d 'client_id=admin-cli&username=user-manager&password={password}&grant_type=password'
+   </pre>
 
-   The values in the { } braces should be replaced with your environment values
+   <br>The values in the { } braces should be replaced with your environment values
    
    - {dns_name} - Domain or the IP address of your application server_installation
    - {password} - Password of the `user-manager` user. The one you have provided for `sso_password` parameter in the `config` file above
@@ -190,7 +192,7 @@ The following is a list of ports that must be open:
     }'
     </pre>
 
-    **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
+      **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
     
 3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
 
