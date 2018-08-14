@@ -35,7 +35,7 @@ The Sunbird Mobile app provides mobility to the feature rich learning platform. 
   <tr>
     <td>4.</td>
     <td>Replace the application id in app/build.gradle with implementation specific application id. <br>
-    <br>**Note**: The application ID for the new build must be unique. Installation on any device fails when for two apps with same app ID are installed.
+    <br>**Note**: The application ID for the new build must be unique. Installation on any device fails if two apps are installed with same app ID.
     <br>Example: <br> <code> applicationId: "org.implementation.app" </code> <br> </td>
   </tr>
   <tr>
