@@ -178,14 +178,14 @@ You can add and update all your profile details on the Profile tab
    <td><img src="pages/features-documentation/images/mobileapp/Profile2.png"></td>
  </tr>
   <tr>
-  <td>1. Tap <b>Users and Group</b> to create users or groups 
+   <td>1. Tap <b>Users and Group</b> to create users or groups </td>
   <td><img src="pages/features-documentation/images/mobileapp/usersandgroup1.png"></td>
  </tr>
   <tr> 
    <br>1. Tap <b>Burger menu</b> to edit or delete the current user profile. For more details on editing user profile, refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> <br>3. Tap <b>Create New User</b> to create a new user </td>
 <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
  </tr>
- </tablr>
+ </table>
  
  #### Creating New Users
  <table>
@@ -248,7 +248,8 @@ You can add and update all your profile details on the Profile tab
  <tr>
  <td>1. Select the medium to share and enter required details </td>
   <td><img src="pages/features-documentation/images/mobileapp/sharing3.png"></td>
- </table>
+  </tr>
+  </table>
  
  #### Viewing Reports
  You can  view details of user or group activity on the app
@@ -258,7 +259,7 @@ You can add and update all your profile details on the Profile tab
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Reports</b> from the burger menu. In the Report screen displayed, you can choose to view either user or group reports. Tap the user name or group name to view the user activity on the portal
+  <td>1. Tap <b>Reports</b> from the burger menu. In the Report screen displayed, you can choose to view either user or group reports. Tap the user name or group name to view the user activity on the portal </td>
 <td><img src="pages/features-documentation/images/mobileapp/reports1.png"></td>
  </tr> 
  </table>
