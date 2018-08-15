@@ -213,7 +213,7 @@ You can add and update all your profile details on the Profile tab
   </tr>
   <tr>
     <td>1.Tap <b>Group</b> to create groups  
-    <td>2.Tap <b>Burger menu</b> to edit or delete the current group 
+    <br>2.Tap <b>Burger menu</b> to edit or delete the current group 
     <br>3.Tap <b>Create New Group</b> to create a new group 
     <br>4. The Create Group screen is displayed 
     <br>5. Enter the <b>Group Name</b> 
