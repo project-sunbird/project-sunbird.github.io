@@ -178,8 +178,12 @@ You can add and update all your profile details on the Profile tab
    <td><img src="pages/features-documentation/images/mobileapp/Profile2.png"></td>
  </tr>
   <tr>
-  <td> Tap <b>Users and Group</b> to create users or groups <br>2. Tap <b>Burger menu</b> to edit or delete the current user profile. For more details on editing user profile, refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> <br>3. Tap <b>Create New User</b> to create a new user </td>
-<td><img src="pages/features-documentation/images/mobileapp/Profile3.png"></td>
+  <td>1. Tap <b>Users and Group</b> to create users or groups 
+  <td><img src="pages/features-documentation/images/mobileapp/usersandgroup1.png"></td>
+ </tr>
+  <tr> 
+   <br>1. Tap <b>Burger menu</b> to edit or delete the current user profile. For more details on editing user profile, refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> <br>3. Tap <b>Create New User</b> to create a new user </td>
+<td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
  </tr>
  </tablr>
  
@@ -190,14 +194,14 @@ You can add and update all your profile details on the Profile tab
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-   <td>1. On tapping <b>Create New User</b> the Create User screen is displayed <br>4. Change the user type to Student or Teacher <br>5. Enter <b>Name</b> of the user <br>6.Select from the following drop-down menus:
+   <td> On tapping <b>Create New User</b> the Create User screen is displayed <br>1. Change the user type to Student or Teacher <br>2. Enter <b>Name</b> of the user <br>3.Select from the following drop-down menus:
    <br>&emsp;a) <b>Syllabus</b>
       <br>&emsp;b) <b>Board</b> 
       <br>&emsp;c) <b>Medium of Instruction</b> 
       <br>&emsp;d) <b>Class</b> 
       <br>&emsp;d) <b>Subjects</b> 
-    <br>6. Tap <b>Save</b> to save the changes </td>
-   <td><img src="pages/features-documentation/images/mobileapp/Profile4.png"></td>
+    <br>4. Tap <b>Save</b> to save the changes </td>
+   <td><img src="pages/features-documentation/images/mobileapp/usersandgroup3.png"></td>
  </tr>
  </table>
  
@@ -208,28 +212,19 @@ You can add and update all your profile details on the Profile tab
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Group</b> to create groups  </td>
-<td><img src="pages/features-documentation/images/mobileapp/Profile5.png"></td>
+  <td>1.Tap <b>Group</b> to create groups  </td>
+<td><img src="pages/features-documentation/images/mobileapp/usersandgroup4.png"></td>
  </tr> 
+ <br>1.Tap <b>Burger menu</b> to edit or delete the current group <br>2.Tap <b>Create New Group</b> to create a new group </td>
+<td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png"></td>
  <tr>
   <td>. The Create Group screen is displayed <br>1. Enter the <b>Group Name</b> <br>2. Select the following from their respective drop-down menus:
    <br>&emsp;a) <b>Syllabus</b>
       <br>&emsp;b) <b>Class</b>
    <br>3. Tap <b>Next</b> </td>
-<td><img src="pages/features-documentation/images/mobileapp/Profile6.png"></td>
+<td><img src="pages/features-documentation/images/mobileapp/usersandgroup6.png"></td>
  </tr>
- <tr>
-  <td> The Create Group screen is displayed <br>1. Enter the <b>Group Name</b> <br>2. Select the following from their respective drop-down menus:
-   <br>&emsp;a) <b>Syllabus</b>
-      <br>&emsp;b) <b>Class</b>
-   <br>3. Tap <b>Next</b> </td>
-<td><img src="pages/features-documentation/images/mobileapp/Profile6.png"></td>
- </tr>
- <tr>
-  <td>1. Tap the <b>Add</b> icon to create a new user. For details on creating new user refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> <br>2. Tap <b>Select All</b> to add users to the group <br>3. Tap <b>Create Group</b> </td>
- <td><img src="pages/features-documentation/images/mobileapp/Profile6.png"></td>
- </tr>
- </table>
+  </table>
  
  #### Sharing User/Group Details
  Details of users or groups created can be shared with other users
@@ -240,16 +235,19 @@ You can add and update all your profile details on the Profile tab
  </tr>
  <tr>
   <td>1. Tap <b>Share</b> icon  </td>
-<td><img src="pages/features-documentation/images/mobileapp/Profile5.png"></td>
+<td><img src="pages/features-documentation/images/mobileapp/sharing1.png"></td>
  </tr> 
  <tr>
   <td>. The Share details screen is displayed <br>1. You can either select:
    <br>&emsp;a) <b>Only Groups</b>, or
       <br>&emsp;b) <b>Only Users</b>, or
    <br>&emsp;c) <b>Both Users and Groups</b>
-   <br>3. Tap <b>Share</b> <br>4. Select the medium to share and enter required details </td>
-<td><img src="pages/features-documentation/images/mobileapp/Profile7.png"></td>
+   <br>2. Tap <b>Share</b> </td>
+<td><img src="pages/features-documentation/images/mobileapp/sharing2.png"></td>
  </tr>
+ <tr>
+ <td>1. Select the medium to share and enter required details </td>
+  <td><img src="pages/features-documentation/images/mobileapp/sharing3.png"></td>
  </table>
  
  #### Viewing Reports
@@ -261,7 +259,7 @@ You can add and update all your profile details on the Profile tab
  </tr>
  <tr>
   <td>1. Tap <b>Reports</b> from the burger menu. In the Report screen displayed, you can choose to view either user or group reports. Tap the user name or group name to view the user activity on the portal
-<td><img src="pages/features-documentation/images/mobileapp/Profile5.png"></td>
+<td><img src="pages/features-documentation/images/mobileapp/reports1.png"></td>
  </tr> 
  </table>
     
