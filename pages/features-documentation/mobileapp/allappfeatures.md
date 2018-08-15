@@ -154,8 +154,117 @@ All content resources that you have saved on your device or popular artifacts fr
  
 ### Profile
 
-You can update your profile using the app
-
+You can add and update all your profile details on the Profile tab
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr> 
+ <tr>
+  <td>1. Tap the profile tab <br>2. Tap <b>Add</b> to edit the following details:
+   <br>&emsp;a) <b>Education</b>
+      <br>&emsp;b) <b>Experience</b> 
+      <br>&emsp;c) <b>Address</b> 
+      <br>&emsp;d) <b>Skills</b> 
+   <br>3. Content created by logged in user is displayed here <br>4. Tap <b>edit</b> icon to edit additional information such as email ID, gender etc. </td>
+   <td><img src="pages/features-documentation/images/mobileapp/Profile1.png"></td>
+ </tr>
+ <tr>
+  <td>1. Tap the <b>Search</b> icon and enter keywords to search for user profiles <br>2. Tap <b>Burger menu</b> icon to select from the following: 
+   <br>&emsp;a) <b>Users and Groups</b>
+      <br>&emsp;b) <b>Reports</b> 
+      <br>&emsp;c) <b>Settings</b> 
+   <br>&emsp;d) <b>Sign Out</b> </td>
+   <td><img src="pages/features-documentation/images/mobileapp/Profile2.png"></td>
+ </tr>
+  <tr>
+  <td> Tap <b>Users and Group</b> to create users or groups <br>2. Tap <b>Burger menu</b> to edit or delete the current user profile. For more details on editing user profile, refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> <br>3. Tap <b>Create New User</b> to create a new user </td>
+<td><img src="pages/features-documentation/images/mobileapp/Profile3.png"></td>
+ </tr>
+ </tablr>
+ 
+ #### Creating New Users
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+   <td>1. On tapping <b>Create New User</b> the Create User screen is displayed <br>4. Change the user type to Student or Teacher <br>5. Enter <b>Name</b> of the user <br>6.Select from the following drop-down menus:
+   <br>&emsp;a) <b>Syllabus</b>
+      <br>&emsp;b) <b>Board</b> 
+      <br>&emsp;c) <b>Medium of Instruction</b> 
+      <br>&emsp;d) <b>Class</b> 
+      <br>&emsp;d) <b>Subjects</b> 
+    <br>6. Tap <b>Save</b> to save the changes </td>
+   <td><img src="pages/features-documentation/images/mobileapp/Profile4.png"></td>
+ </tr>
+ </table>
+ 
+ #### Creating New Groups
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>1. Tap <b>Group</b> to create groups  </td>
+<td><img src="pages/features-documentation/images/mobileapp/Profile5.png"></td>
+ </tr> 
+ <tr>
+  <td>. The Create Group screen is displayed <br>1. Enter the <b>Group Name</b> <br>2. Select the following from their respective drop-down menus:
+   <br>&emsp;a) <b>Syllabus</b>
+      <br>&emsp;b) <b>Class</b>
+   <br>3. Tap <b>Next</b> </td>
+<td><img src="pages/features-documentation/images/mobileapp/Profile6.png"></td>
+ </tr>
+ <tr>
+  <td> The Create Group screen is displayed <br>1. Enter the <b>Group Name</b> <br>2. Select the following from their respective drop-down menus:
+   <br>&emsp;a) <b>Syllabus</b>
+      <br>&emsp;b) <b>Class</b>
+   <br>3. Tap <b>Next</b> </td>
+<td><img src="pages/features-documentation/images/mobileapp/Profile6.png"></td>
+ </tr>
+ <tr>
+  <td>1. Tap the <b>Add</b> icon to create a new user. For details on creating new user refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> <br>2. Tap <b>Select All</b> to add users to the group <br>3. Tap <b>Create Group</b> </td>
+ <td><img src="pages/features-documentation/images/mobileapp/Profile6.png"></td>
+ </tr>
+ </table>
+ 
+ #### Sharing User/Group Details
+ Details of users or groups created can be shared with other users
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>1. Tap <b>Share</b> icon  </td>
+<td><img src="pages/features-documentation/images/mobileapp/Profile5.png"></td>
+ </tr> 
+ <tr>
+  <td>. The Share details screen is displayed <br>1. You can either select:
+   <br>&emsp;a) <b>Only Groups</b>, or
+      <br>&emsp;b) <b>Only Users</b>, or
+   <br>&emsp;c) <b>Both Users and Groups</b>
+   <br>3. Tap <b>Share</b> <br>4. Select the medium to share and enter required details </td>
+<td><img src="pages/features-documentation/images/mobileapp/Profile7.png"></td>
+ </tr>
+ </table>
+ 
+ #### Viewing Reports
+ You can  view details of user or group activity on the app
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>1. Tap <b>Reports</b> from the burger menu. In the Report screen displayed, you can choose to view either user or group reports. Tap the user name or group name to view the user activity on the portal
+<td><img src="pages/features-documentation/images/mobileapp/Profile5.png"></td>
+ </tr> 
+ </table>
+    
 ### Scanning QR Code
 
 The app allows you to scan printed QR codes 
