@@ -237,23 +237,16 @@ Details of users or groups created can be shared with other users
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-  <td>1. Tap <b>Share</b> icon  </td>
-  <td><img src="pages/features-documentation/images/mobileapp/sharing1.png"></td>
-  </tr> 
-  <tr>
-  <td>The Share details screen is displayed 
-    <br>1. You can either select:
+  <td>1. Tap <b>Share</b> icon. The Share details screen is displayed 
+    <br>2. You can either select:
     <br>&emsp;a) <b>Only Groups</b>, or
     <br>&emsp;b) <b>Only Users</b>, or
     <br>&emsp;c) <b>Both Users and Groups</b>
-    <br>2. Tap <b>Share</b> </td>
-    <td><img src="pages/features-documentation/images/mobileapp/sharing2.png"></td>
-  </tr>
- <tr>
- <td>1. Select the medium to share and enter required details </td>
-  <td><img src="pages/features-documentation/images/mobileapp/sharing3.png"></td>
-  </tr>
-  </table>
+    <br>3. Tap <b>Share</b> 
+   <br>4. Select the medium to share and enter required details </td>  
+  <td><img src="pages/features-documentation/images/mobileapp/sharing1.png"></td>
+  </tr> 
+   </table>
  
 #### Viewing Reports
  You can  view details of user or group activity on the app
