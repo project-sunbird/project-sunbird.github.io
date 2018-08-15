@@ -167,7 +167,8 @@ You can add and update all your profile details on the Profile tab
       <br>&emsp;c) <b>Address</b> 
       <br>&emsp;d) <b>Skills</b> 
    <br>3. Content created by logged in user is displayed here 
-   <br>4. Tap <b>edit</b> icon to edit additional information such as email ID, gender etc. </td>
+   <br>4. Tap <b>edit</b> icon to edit additional information such as email ID, gender etc.
+  </td>
    <td><img src="pages/features-documentation/images/mobileapp/Profile1.png"></td>
  </tr>
  </table>
@@ -197,7 +198,8 @@ You can add and update all your profile details on the Profile tab
       <br>&emsp;c) <b>Medium of Instruction</b> 
       <br>&emsp;d) <b>Class</b> 
       <br>&emsp;d) <b>Subjects</b> 
-    <br>7. Tap <b>Save</b> to save the changes </td>
+    <br>7. Tap <b>Save</b> to save the changes
+   </td>
   <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
  </tr>
  </table>
@@ -210,7 +212,7 @@ You can add and update all your profile details on the Profile tab
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Tap <b>Group</b> to create groups  </td>
+    <td>1.Tap <b>Group</b> to create groups  
     <td>2.Tap <b>Burger menu</b> to edit or delete the current group 
     <br>3.Tap <b>Create New Group</b> to create a new group 
     <br>4. The Create Group screen is displayed 
@@ -218,7 +220,7 @@ You can add and update all your profile details on the Profile tab
     <br>6. Select the following from their respective drop-down menus:
     <br>&emsp;a) <b>Syllabus</b>
     <br>&emsp;b) <b>Class</b>
-     <br>7. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> </td>
+     <br>7. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> 
     </td>
     <td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png">
     </td>
