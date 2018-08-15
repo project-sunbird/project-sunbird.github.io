@@ -170,6 +170,14 @@ You can add and update all your profile details on the Profile tab
    <br>4. Tap <b>edit</b> icon to edit additional information such as email ID, gender etc. </td>
    <td><img src="pages/features-documentation/images/mobileapp/Profile1.png"></td>
  </tr>
+ </table>
+ 
+ #### Creating New Users
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
  <tr>
  <td>1. Tap the <b>Search</b> icon and enter keywords to search for user profiles 
  <br>2. Tap <b>Burger menu</b> icon to select from the following: 
@@ -177,35 +185,20 @@ You can add and update all your profile details on the Profile tab
     <br>&emsp;b) <b>Reports</b> 
     <br>&emsp;c) <b>Settings</b> 
    <br>&emsp;d) <b>Sign Out</b>
+   <td>3. Tap <b>Users and Group</b> to create users or groups 
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/Profile2.png"></td>
   </tr>
   <tr>
-  <td>1. Tap <b>Users and Group</b> to create users or groups </td>
-  <td><img src="pages/features-documentation/images/mobileapp/usersandgroup1.png"></td>
-  </tr>
-  <tr>
   <td>1. Tap <b>Burger menu</b> to edit or delete the current user profile. For more details on editing user profile, refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> 
-  <br>2. Tap <b>Create New User</b> to create a new user </td>
-  <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
-  </tr>
-</table>
-
-#### Creating New Users
- <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>
- <tr>
-   <td> On tapping <b>Create New User</b> the Create User screen is displayed <br>1. Change the user type to Student or Teacher <br>2. Enter <b>Name</b> of the user <br>3.Select from the following drop-down menus:
+  <br>2. Tap <b>Create New User</b> to create a new user <br>3. On tapping <b>Create New User</b> the Create User screen is displayed <br>4. Change the user type to Student or Teacher <br>5. Enter <b>Name</b> of the user <br>6.Select from the following drop-down menus:
    <br>&emsp;a) <b>Syllabus</b>
       <br>&emsp;b) <b>Board</b> 
       <br>&emsp;c) <b>Medium of Instruction</b> 
       <br>&emsp;d) <b>Class</b> 
       <br>&emsp;d) <b>Subjects</b> 
-    <br>4. Tap <b>Save</b> to save the changes </td>
-   <td><img src="pages/features-documentation/images/mobileapp/usersandgroup3.png"></td>
+    <br>7. Tap <b>Save</b> to save the changes </td>
+  <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
  </tr>
  </table>
  
@@ -218,24 +211,18 @@ You can add and update all your profile details on the Profile tab
   </tr>
   <tr>
     <td>1.Tap <b>Group</b> to create groups  </td>
-    <td><img src="pages/features-documentation/images/mobileapp/usersandgroup4.png"></td>
-  </tr> 
-  <tr>
-    <td>1.Tap <b>Burger menu</b> to edit or delete the current group 
-    <br>2.Tap <b>Create New Group</b> to create a new group 
+    <td>2.Tap <b>Burger menu</b> to edit or delete the current group 
+    <br>3.Tap <b>Create New Group</b> to create a new group 
+    <br>4. The Create Group screen is displayed 
+    <br>5. Enter the <b>Group Name</b> 
+    <br>6. Select the following from their respective drop-down menus:
+    <br>&emsp;a) <b>Syllabus</b>
+    <br>&emsp;b) <b>Class</b>
+     <br>7. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> </td>
     </td>
     <td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png">
     </td>
-  </tr>
-  <tr>
-    <td>1. The Create Group screen is displayed 
-    <br>1. Enter the <b>Group Name</b> 
-    <br>2. Select the following from their respective drop-down menus:
-    <br>&emsp;a) <b>Syllabus</b>
-    <br>&emsp;b) <b>Class</b>
-    <br>3. Tap <b>Next</b> </td>
-    <td><img src="pages/features-documentation/images/mobileapp/usersandgroup6.png"></td>
-  </tr>
+    </tr>
 </table>
  
 #### Sharing User/Group Details
