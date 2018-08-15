@@ -186,7 +186,7 @@ You can add and update all your profile details on the Profile tab
     <br>&emsp;b) <b>Reports</b> 
     <br>&emsp;c) <b>Settings</b> 
    <br>&emsp;d) <b>Sign Out</b>
-   <td>3. Tap <b>Users and Group</b> to create users or groups 
+   <br>3. Tap <b>Users and Group</b> to create users or groups 
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/Profile2.png"></td>
   </tr>
