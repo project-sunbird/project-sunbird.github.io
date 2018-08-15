@@ -1,4 +1,4 @@
-  ---
+---
 type: landing
 directory: features-documentation/mobileapp
 title: Sunbird Mobile App
