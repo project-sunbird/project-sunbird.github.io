@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation/mobileapp
-title: Sunbird Mobile App
-page_title: Sunbird Mobile App
+title: Mobile Application
+page_title: Mobile Application
 description: The functions and features of the Sunbird Mobile App and its usage 
 published: true
 allowSearch: true
@@ -40,7 +40,10 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>Using the browser on your mobile device, tap this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank">URL</a> or type https://github.com/project-sunbird/sunbird-android/releases  <br><br>1. Tap on <b>sunbird staging.apk</b> link to get the latest mobile build. <br>2. Tap <b>Download</b> to download the app. You are redirected to the installation screen. <br>3. Tap <b>Install</b> to install the app</td>
+  <td>Using the browser on your mobile device, tap this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank">URL</a> or type https://github.com/project-sunbird/sunbird-android/releases
+  <br>1. Tap on <b>sunbird staging.apk</b> link to get the latest mobile build. 
+  <br>2. Tap <b>Download</b> to download the app. You are redirected to the installation screen. 
+  <br>3. Tap <b>Install</b> to install the app</td>
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
@@ -52,7 +55,7 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
   </table>
 
 ## Signing In 
-The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate  content for different user types. For example, anonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library.   
+The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate  content for different user types. For example, anonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library. 
 
 <table>
   <tr>
@@ -113,7 +116,7 @@ The <b>Courses</b> screen lists current courses, courses in progress, latest cou
   <tr>
    <td><b>Sharing, Reporting or Deleting Course Content</b><br><br>1. Tap <b>Share</b> icon to share the course content <b>As Link</b>  or <b>As File</b> through different channels<br>2. Tap on the <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course content <br><br><b>Note:</b> You can select reasons to report content viz., <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li><br><b>Note:</b> The share, report and delete features are common to all content types, viz.Courses, Library resources and content linked to QR and DIAL codes</td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
-  </tr>     
+  </tr> 
   </table>
   
 ### Library
@@ -161,15 +164,16 @@ You can add and update all your profile details on the Profile tab
     <th style="width:65%;">Screen</th>
  </tr> 
  <tr>
-  <td>1. Tap the profile tab <br>2. Tap <b>Add</b> to edit the following details:
+  <td>1. Tap the <b>Profile</b> tab 
+  <br>2. Tap <b>Add</b> corresponding to each option to edit the details:
    <br>&emsp;a) <b>Education</b>
-      <br>&emsp;b) <b>Experience</b> 
-      <br>&emsp;c) <b>Address</b> 
-      <br>&emsp;d) <b>Skills</b> 
+    <br>&emsp;b) <b>Experience</b> 
+    <br>&emsp;c) <b>Address</b> 
+    <br>&emsp;d) <b>Skills</b> 
    <br>3. Content created by logged in user is displayed here 
-   <br>4. Tap <b>edit</b> icon to edit additional information such as email ID, gender etc.
+   <br>4. Tap <b>edit</b> icon to edit additional information such as email ID, gender
   </td>
-   <td><img src="pages/features-documentation/images/mobileapp/Profile1.png"></td>
+  <td><img src="pages/features-documentation/images/mobileapp/Profile1.png"></td>
  </tr>
  </table>
  
@@ -191,15 +195,19 @@ You can add and update all your profile details on the Profile tab
   <td><img src="pages/features-documentation/images/mobileapp/Profile2.png"></td>
   </tr>
   <tr>
-  <td>1. Tap <b>Burger menu</b> to edit or delete the current user profile. For more details on editing user profile, refer <a href="features-documentation/mobileapp/allappfeatures#creating-new-users"> Creating New Users</a> 
-  <br>2. Tap <b>Create New User</b> to create a new user <br>3. On tapping <b>Create New User</b> the Create User screen is displayed <br>4. Change the user type to Student or Teacher <br>5. Enter <b>Name</b> of the user <br>6.Select from the following drop-down menus:
-   <br>&emsp;a) <b>Syllabus</b>
-      <br>&emsp;b) <b>Board</b> 
-      <br>&emsp;c) <b>Medium of Instruction</b> 
-      <br>&emsp;d) <b>Class</b> 
-      <br>&emsp;d) <b>Subjects</b> 
+  <td>1. Tap <b>Burger menu</b> to edit or delete the current user profile
+  <br>2. Tap <b>Create New User</b> to create a new user 
+  <br>3. On tapping <b>Create New User</b> the Create User screen is displayed 
+  <br>4. Change the user type to Student or Teacher 
+  <br>5. Enter <b>Name</b> of the user 
+  <br>6.Select from the following drop-down menus:
+    <br>&emsp;a) <b>Syllabus</b>
+    <br>&emsp;b) <b>Board</b> 
+    <br>&emsp;c) <b>Medium of Instruction</b> 
+    <br>&emsp;d) <b>Class</b> 
+    <br>&emsp;d) <b>Subjects</b> 
     <br>7. Tap <b>Save</b> to save the changes
-   </td>
+  </td>
   <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
  </tr>
  </table>
@@ -212,14 +220,14 @@ You can add and update all your profile details on the Profile tab
     <th style="width:65%;">Screen</th>
   </tr>
   <tr>
-    <td>1.Tap <b>Group</b> to create groups  
+    <td>1.Tap <b>Group</b> to create groups
     <br>2.Tap <b>Burger menu</b> to edit or delete the current group 
-    <br>3.Tap <b>Create New Group</b> to create a new group. The Create Group screen is displayed   
+    <br>3.Tap <b>Create New Group</b> to create a new group. The Create Group screen is displayed 
     <br>4. Enter the <b>Group Name</b> 
     <br>5. Select the following from their respective drop-down menus:
     <br>&emsp;a) <b>Syllabus</b>
     <br>&emsp;b) <b>Class</b>
-     <br>6. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> 
+    <br>6. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> 
     </td>
     <td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png">
     </td>
@@ -241,21 +249,24 @@ Details of users or groups created can be shared with other users
     <br>&emsp;a) <b>Only Groups</b>, or
     <br>&emsp;b) <b>Only Users</b>, or
     <br>&emsp;c) <b>Both Users and Groups</b>
-    <br>3. Tap <b>Share</b> 
-   <br>4. Select the medium to share and enter required details </td>  
+    <br>3. Select the medium to share and enter required details
+    <br>4. Tap <b>Share</b> 
+    </td>
   <td><img src="pages/features-documentation/images/mobileapp/sharing1.png"></td>
   </tr> 
    </table>
  
 #### Viewing Reports
- You can  view details of user or group activity on the app
+ You can view details of user or group activity on the app
   <table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Reports</b> from the burger menu. <br>2. In the Report screen displayed, tap the report name to view the report </td>
+  <td>1. Tap <b>Reports</b> from the burger menu. The report screen is displayed
+  <br>2. Tap the report name to view the report 
+  </td>
 <td><img src="pages/features-documentation/images/mobileapp/reports1.png"></td>
  </tr> 
  <tr>
@@ -324,11 +335,3 @@ You can use the **Browse as Guest** feature to browse the Subird Mobile App with
   <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td>
   </tr>
 </table>
- 
-
-
-  
-  
-
-
-
