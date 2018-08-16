@@ -173,7 +173,7 @@ You can add and update all your profile details on the Profile tab
  </tr>
  </table>
  
- #### Creating New Users
+#### Creating New Users
  <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -255,9 +255,13 @@ Details of users or groups created can be shared with other users
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Reports</b> from the burger menu. In the Report screen displayed, you can choose to view either user or group reports. Tap the user name or group name to view the user activity on the portal </td>
+  <td>1. Tap <b>Reports</b> from the burger menu. <br>2. In the Report screen displayed, tap the report name to view the report </td>
 <td><img src="pages/features-documentation/images/mobileapp/reports1.png"></td>
  </tr> 
+ <tr>
+  <td>1. You can view the report based on the available parameters </td>
+<td><img src="pages/features-documentation/images/mobileapp/reports2.png"></td>
+ </tr>
  </table>
     
 ### Scanning QR Code
