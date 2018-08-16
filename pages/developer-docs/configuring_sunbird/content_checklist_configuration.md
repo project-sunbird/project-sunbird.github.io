@@ -1,3 +1,13 @@
+---
+type: landing
+directory: developer-docs/configuring_sunbird
+title: Configure Reviewer Checklist
+page_title: Configure Reviewer Checklist
+description: Technical document on configuring checklist for reviewer
+published: true
+allowSearch: true
+---
+
 ## Overview
 To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review. 
 
