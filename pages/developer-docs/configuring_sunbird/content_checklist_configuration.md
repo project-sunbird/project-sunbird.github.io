@@ -1,37 +1,37 @@
 ## Overview
+To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review. 
 
-In Sunbird, content reviewer is able to see two buttons. 
+A content reviewer on Sunbird can perform the following activites on SUnbird: 
 * Request changes
 * Publish
 
-When reviewer clicks any of the button a checklist is displayed. The checklist can be configurable.
+This page details the procedure on how to configure the review checklist. Configurations are supported are at the following two levels:
+* Instance level
+* Channel level
 
-**Following are the different levels of configuration to be supported:**
-* Instance level.
-* Channel level.
+When configuration is done at a channel level, it overrides instance level configuration. 
 
-In case if there is a configuration at Channel level, it overrides Instance level configuration. Configuration is not mandatory.
+<b>Note</b>: Configurations are set internally, users can override default configuration to customize checklists for organiational requirements.
 
-**Different configuration can be defined differently for the following content types:**
+Different configuration can be defined differently for the following content types:
 * Course
 * Textbook
 * Resource and Collection
 
-**Following is the behavior for front-end:**
-**Request Changes:**
-* If there is no configuration present, default config should be displayed with a message "Please detail the required changes in the comments:" and the comment box. Request changes button should be disabled. It will get enabled once the comment is filled.
-* If API fails, an error message(default) should be displayed on the toaster.
-* If configuration present, everything should be displayed from the configuration and the comment box. Request changes button should be disabled. It will get enabled once the comment is not empty and a reason is checked.
+### Default UI Behaviour:
+When there sre no configuration set for the checklist, the UI displays the following messages:
 
-**Publish:**
-* If there is no configuration present, default config should be displayed with a message "Are you sure you want to publish?". Publish button should be enabled.
-* If API fails, an error message(default) should be displayed on the toaster.
-* If configuration present, everything should be displayed from the configuration. Publish button should be disabled. It should get enabled once all the reason is checked.
+<br>1. When requesting changes to content:
+<br>&emsp;a) An information message "Please detail the required changes in the comments" is displayed over the comment box. On entering commnets here, the Request Changes button is enabled
+<br>&emsp;b) In case of default API failure, an error message stating the same is displayed
+<br>2. When publishing reviewed content:
+<br>&emsp;a) A confirmation message ""Are you sure you want to publish?"" is displayed. The Publish button is enabled and reviewer clicks the button to publish content
+<br>&emsp;b) In case of default API failure, an error message stating the same is displayed
 
-**Steps to Configure**
-* Use the create/update form API with below API request.
+### Configuring Review Checklist
+* Use the create/update form API with the following API request
 
-**Mock API request for Request Changes with configuration:**
+**Sample API request for Request Changes with configuration:**
 
 <pre>
 {
@@ -93,7 +93,7 @@ In case if there is a configuration at Channel level, it overrides Instance leve
 }
 </pre>
 
-**Mock API request for Publish with configuration:**
+**Sample API request for Publish option with configuration:**
 
 <pre>
 {
