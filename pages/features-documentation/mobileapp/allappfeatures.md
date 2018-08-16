@@ -214,13 +214,12 @@ You can add and update all your profile details on the Profile tab
   <tr>
     <td>1.Tap <b>Group</b> to create groups  
     <br>2.Tap <b>Burger menu</b> to edit or delete the current group 
-    <br>3.Tap <b>Create New Group</b> to create a new group 
-    <br>4. The Create Group screen is displayed 
-    <br>5. Enter the <b>Group Name</b> 
-    <br>6. Select the following from their respective drop-down menus:
+    <br>3.Tap <b>Create New Group</b> to create a new group. The Create Group screen is displayed   
+    <br>4. Enter the <b>Group Name</b> 
+    <br>5. Select the following from their respective drop-down menus:
     <br>&emsp;a) <b>Syllabus</b>
     <br>&emsp;b) <b>Class</b>
-     <br>7. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> 
+     <br>6. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> 
     </td>
     <td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png">
     </td>
