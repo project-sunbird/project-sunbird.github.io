@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation/mobileapp
-title: Sunbird Mobile App
-page_title: Sunbird Mobile App
+title: Mobile Application
+page_title: Mobile Application
 description: The functions and features of the Sunbird Mobile App and its usage 
 published: true
 allowSearch: true
