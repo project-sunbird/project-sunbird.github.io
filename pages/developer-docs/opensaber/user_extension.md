@@ -1,14 +1,21 @@
-## Introduction:
-The main purpose of [Open Saber](https://github.com/project-sunbird/open-saber/wiki) is to serve as an electronic registry of entities (e.g. teacher registry, doctor registry). 
+---
+type: landing
+directory: developer-docs/opensaber
+title: Sunbird Mobile App
+page_title: Sunbird Mobile App
+description: The functions and features of the Sunbird Mobile App and its usage 
+published: true
+allowSearch: true
+---
+## Overview
+The main purpose of [Open Saber](https://github.com/project-sunbird/open-saber/wiki) is to serve as an electronic registry for entities such as  teacher registry, doctor registry etc. Open saber can be used by Sunbird adopters to store custom information about their organization users, user profile data extensions, organisation data extensions etc.
 
-Open saber can be used by Sunbird adopters to store custom information (e.g. user profile data extensions, organisation data extensions).
+### Customization
+Open Saber maintains information in [RDF](https://www.w3.org/RDF/) graph data format. [SHEX](https://shex.io/) is used to define the schema of data stored in Open Saber. The SHEX schema definition can consist of one or more entities e.g. user, organisation etc. whose information can be stored within Open Saber. 
 
-## Customisation
-Open Saber maintains information in [RDF](https://www.w3.org/RDF/) graph data format. [SHEX](https://shex.io/) is used to define the schema of data stored in Open Saber. The SHEX schema definition can consist of one or more entities (e.g. user, organisation) whose information can be stored within Open Saber. 
+Currently all interactions with Open Saber is in [JSON-LD](https://json-ld.org/) format while Sunbird LMS APIs are in JSON format. A java library (Open Saber Client) is available for transforming between JSON-LD and JSON formats. Additionally, Sunbird provides a java library for bridging between Open Saber equivalent JSON and Sunbird API specified JSON format.
 
-Presently, all interaction with Open Saber is in [JSON-LD](https://json-ld.org/) format whereas Sunbird LMS APIs are in JSON format. A java library (Open Saber Client) is available for transforming between JSON-LD and JSON formats. Further, Sunbird provides a java library for bridging between Open Saber equivalent JSON and Sunbird API specified JSON format.
-
-As such, to support customisation of an entity within Sunbird following definitions are required:
+To support customization of an entity within Sunbird, the following definitions are required:
 1. Definition of the entity using SHEX (Open Saber)
 2. Define mapping to transform between JSON-LD and JSON format (Open Saber Client)
 3. Define mapping to transform between Open Saber Client JSON and Sunbird JSON format (Sunbird Open Saber Bridge)
