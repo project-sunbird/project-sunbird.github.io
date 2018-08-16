@@ -4,9 +4,9 @@ title: Import External Content
 page_title: Import External Content
 description: Details on how to configure Sunbird domain to whitelist external domains
 keywords: whitelist, upload external link, upload external video, upload other than youtube
-published: false
+published: true
 type: landing
-allowSearch: false
+allowSearch: true
 ---
 ## Overview
 Sunbird platform allows adopters/users (content creator) to upload content from external sources. Using this option, users can upload content from the external sources to sunbird content library.They can upload external content from different websites such as youtube, Dailymotion and so on. This section explains the procedure of enabling a domain to host content from external sources. 

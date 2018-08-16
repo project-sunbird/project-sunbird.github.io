@@ -437,18 +437,18 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
   
 ### Adding Question Set
   
-  <table>
+<table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
   </tr>  
   <tr>
-    <td>To add question set, click the <b>Add Question Set</b> icon on the toolbar. The question set browser page is displayed.
-<br>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <b>Add Question Set</b> icon on the toolbar. Refer <a href="features-documentation/questionset_create" target="_blank">Adding Question Set</a>
-    </td>
-    <td><img src="pages/features-documentation/images/contenteditor/addquestionset.png"></td>
+  <td>To add question set, click the <b>Add Question Set</b> icon on the toolbar. The question set browser page is displayed.
+  <br>To ensure that the content achieves the learning objective it is important to check and reaffirm the learner’s progress at different points in the study material. Adding questions and question sets is one method <br>1. Click the <b>Add Question Set</b> icon on the toolbar. For further information, refer <a href="features-documentation/questionset_create" target="_blank">Adding Question Set</a>
+  </td>
+  <td><img src="pages/features-documentation/images/contenteditor/addquestionset.png"></td>
   </tr>
-  </table>
+</table>
   
 ### Adding Activity
 
@@ -474,11 +474,11 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td>You can add activities by selecting activities from the list displayed in the activity browser <br>1. Filter the displayed list by selecting the: <br>a) Category <br>b) Concepts <br><b>Note:</b> You can choose to filter the list using more than one category and concept <br>2. Alternatively, you can search for activities by entering key words <br>3. Select the activity and click <b>ADD</b></td>
     <td><img src="pages/features-documentation/images/contenteditor/activitybrowser.png"></td>
  </tr>
- </table> 
+ </table>   
   
   **Adding Details**
 
- <table>
+<table>
  <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -507,8 +507,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
  </table>
    
 ### Adding Video
-  
-  <table>
+<table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -537,10 +536,35 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td><img src="pages/features-documentation/images/contenteditor/videodetail.png"></td>
   </tr>
   </table>
-  
+
+### Adding Math Function
+
+This section explains the procedure of using the math text editor to write complex mathematical formulas on the editor
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+  <td>To integrate math function with the editor click <b>Add Activity</b> icon. The Add Activity page is displayed
+  </td>
+  <td><img src="pages/features-documentation/images/mathfunction/math-add-activity.png">
+  </td>
+  </tr>  
+  <tr>
+   <td>1. Enter the keyword <b>math text</b> in the search bar   
+   <br>2. Click <b>Search</b>
+   <br>3. Select the <b>Math Text</b> tile from the search result 
+   <br>4. Click <b>Add</b>. The Math Function symbol (Sigma) appears in the Tool Bar. For further information, refer <a href="features-documentation/math_function" target="_blank">Adding Math Function</a>
+   </td> 
+   </tr>
+</table>
+
+
 ### Adding Details
-<br>All details associated with the resource must be updated before sending the resource for review.
- <table>
+All details associated with the resource must be updated before sending the resource for review.
+<table>
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
@@ -550,7 +574,7 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
    </td>
     <td><img src="pages/features-documentation/images/contenteditor/addmetadata.png"></td>
   </tr>
-  </table>   
+  </table>    
     
 ## Reviewing and Publishing Content 
 
@@ -565,5 +589,3 @@ the shape <br>b) Use the <b>Transparency</b> slider to modify the transparency l
     <td><img src="pages/features-documentation/images/contenteditor/publish_review.png"></td>
   </tr>
   </table>
-  
- 
