@@ -42,7 +42,6 @@ Add configuration for every custom field in below format. This configuration def
 ~~~
 
 
-
 Property Name  | Field Type  | Description
 -------------- | ----------- | -----------
 fromFieldName  | Optional    | Field name which identifies input of transformation. If not specified, _<customFieldName>_ is used
