@@ -38,7 +38,7 @@ The sequence of tasks the organization administrator follows to create users inc
 
 1.Specify values for the following parameters in the request body of the API 
 
-An organization can be created in a Sunbird instance using ORG API, it can be further associated with a user and channel, refer [Mapping User to Organization](www.sunbird.org). 
+An organization can be created in a Sunbird instance using ORG API, it can be further associated with a user and channel, refer [Mapping User to Organization](http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User). 
 Following is an example of request body for creating a user, the sample values provided in the request body are indicative:
 
 **Request Body**
