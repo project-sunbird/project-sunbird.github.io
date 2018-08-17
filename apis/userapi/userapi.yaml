@@ -4,8 +4,7 @@ info:
   title: User Management  API(s)  
   description: >-
     The User Management API resources are used to manage individual users and their memberships, these resources allow you to add skills, block and unblock users, and encrypt user data. 
-     
-<b>Note:</b> These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
+    <b>Note:</b> These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
 host: staging.open-sunbird.org
 basePath: /api/
 securityDefinitions:
