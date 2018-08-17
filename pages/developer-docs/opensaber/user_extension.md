@@ -68,16 +68,16 @@ filterField    | Optional    | Field to use from selected element in transformat
 
 - _filters_ has the following format. This filter can be used to select an element having specified field name with specified value
 
-<pre>
+~~~
 [{field = <fieldName>, values = [<valueName>]}]
-</pre>
+~~~
 
-**registry-user-read-mapping.conf**: Configuration to map Open Saber Client response JSON format for required extensions into Sunbird User Read API JSON format 
+b) **registry-user-read-mapping.conf**: Configuration to map Open Saber Client response JSON format for required extensions into Sunbird User Read API JSON format 
 The configuration format for read mapping is similar to write mapping. The difference between read and write mapping is due to the input. In case of read, the input is Open Saber Client response JSON whereas in case of write, the input is Sunbird API request JSON format
-**registry-user-enums-mapping.conf**: Configuration which defines enumerations required for mapping between Sunbird User API JSON format and Open Saber Client JSON format
+c) **registry-user-enums-mapping.conf**: Configuration which defines enumerations required for mapping between Sunbird User API JSON format and Open Saber Client JSON format
 The configuration format for enums is as given below:
 
-<pre>
+~~~
 enums {
 	<customEnumName1> {
 		"<sunbirdEnumValue1.1>" = "<openSaberEnumValue1.1>"
@@ -90,14 +90,14 @@ enums {
 		...
 	}
 }
-</pre>
+~~~
 
 Listed are some examples to illustrate configuration of user customisation.
 __Example 1__: Define configuration for a user with a custom field _schoolCode_ of simple type
 
-registry-user-write-mapping.conf
+**registry-user-write-mapping.conf**
 
-<pre>
+~~~
 user {
 	schoolCode {
 		toFieldName	= "teacher.schoolCode"
@@ -105,12 +105,12 @@ user {
 		toType		= "String"
 	}
 }
-</pre>
+~~~
 
 
-registry-user-read-mapping.conf
+**registry-user-read-mapping.conf**
 
-<pre>
+~~~
 teacher {
 	schoolCode {
 		toFieldName	= "schoolCode"
@@ -118,30 +118,31 @@ teacher {
 		toType		= "String"
 	}
 }
-</pre>
+~~~
 
-Sunbird API JSON format
+**Sunbird API JSON format**
 
-<pre>
+~~~
 {
 	"schoolCode": "KV101"
 }
-</pre>
+~~~
 
-Open Saber Client JSON format:
+**Open Saber Client JSON format**
 
-<pre>
+~~~
 {
     "teacher": {
     	"schoolCode": "KV101"
     }
 }
-</pre>
+~~~
 
 __Example 2__: Define configuration for a user with a custom field _highestAcademicQualification_ of _List<T>_ type, where _T_ is a simple type
-registry-user-write-mapping.conf
+
+**registry-user-write-mapping.conf**
 	
-<pre>
+~~~
 user {
 	highestAcademicQualification {
 		toFieldName	= "teacher.highestAcademicQualification"
@@ -150,10 +151,11 @@ user {
 		enum		= "academicQualificationEnum"
 	}
 }
-</pre>
+~~~
 
-registry-user-read-mapping.conf
-<pre>
+**registry-user-read-mapping.conf**
+
+~~~
 teacher {
 	highestAcademicQualification {
 		toFieldName	= "highestAcademicQualification"
@@ -162,10 +164,11 @@ teacher {
 		enum		= "academicQualificationEnum"
 	}
 }
-</pre>
+~~~
 
-registry-user-enums-mapping.conf
-<pre>
+**registry-user-enums-mapping.conf**
+
+~~~
 enums {
     academicQualificationEnum {
 	    "Below Secondary"	= "BelowSecondary"
@@ -178,29 +181,30 @@ enums {
 	    "Post-Doctoral"		= "PostDoctoral"
 	}
 }
-</pre>
+~~~
 
-Sunbird API JSON format
+**Sunbird API JSON format**
 
-<pre>
+~~~
 {
 	"highestAcademicQualification": ["PostGraduate", "Higher Secondary"]
 }
-</pre>
+~~~
 
-Open Saber Client JSON format
-<pre>
+**Open Saber Client JSON format**
+~~~
 {
     "teacher": {
     	"highestAcademicQualification": ["PostGraduate", "HigherSecondary"]
     }
 }
-</pre>
+~~~
 
 __Example 3__: Define configuration for a user with custom field _classSubjectTaught_ of _List<T>_ type, where _T_ is a custom type.
 
-registry-user-write-mapping.conf
-<pre>
+**registry-user-write-mapping.conf**
+
+~~~
 user {
 	classSubjectTaught {
 		toFieldName	= "teacher.teachingExperience"
@@ -222,10 +226,11 @@ classSubjectType {
 		enum		= "subjectsEnum"
 	}
 }
-</pre>
+~~~
 
-registry-user-read-mapping.conf
-<pre>
+**registry-user-read-mapping.conf**
+
+~~~
 teacher {
 	teachingExperience {
 		toFieldName	= "classSubjectTaught"
@@ -247,10 +252,11 @@ classSubjectTaughtType {
 		enum		= "subjectEnum"
 	}
 }
-</pre>
+~~~
 
-registry-user-enums-mapping.conf
-<pre>
+**registry-user-enums-mapping.conf**
+
+~~~
 enums {
 	classEnum {
 		"Class 1"	= "Class1"
@@ -264,10 +270,11 @@ enums {
 		"Computer Science"	= "ComputerScience"
 	}	
 }
-</pre>
+~~~
 
-Sunbird API JSON format
-<pre>
+**Sunbird API JSON format**
+
+~~~
 {
 	"classSubjectTaught": [{
                 "classes": "Class 1",
@@ -278,10 +285,11 @@ Sunbird API JSON format
             }
         ]
 }
-</pre>
+~~~
 
-Open Saber Client JSON format
-<pre>
+**Open Saber Client JSON format**
+
+~~~
 {
     "teacher": {
     	"classSubjectTaught": [{
@@ -294,12 +302,13 @@ Open Saber Client JSON format
         ]
     }
 }
-</pre>
+~~~
 
 __Example 4__: Define configuration for a user with custom field _serviceJoiningDate_ of _DateString_ type.
 
-registry-user-write-mapping.conf
-<pre>
+**registry-user-write-mapping.conf**
+
+~~~
 user {
 	serviceJoiningDate {
 		toFieldName	    = "teacher.serviceJoiningDate"
@@ -309,10 +318,11 @@ user {
 		toDateFormat    = "yyyy-MM-dd"
 	}
 }
-</pre>
+~~~
 
-registry-user-read-mapping.conf
-<pre>
+**registry-user-read-mapping.conf**
+
+~~~
 teacher {
 	serviceJoiningDate {
 		toFieldName	    = "serviceJoiningDate"
@@ -322,28 +332,28 @@ teacher {
 		toDateFormat    = "yyyy-MM-dd"
 	}
 }
-</pre>
+~~~
 
-Sunbird API JSON format
-<pre>
+**Sunbird API JSON format**
+~~~
 {
 	"serviceJoiningDate": "2015-04-07"
 }
-</pre>
+~~~
 
-Open Saber Client JSON format
-<pre>
+**Open Saber Client JSON format**
+~~~
 {
     "teacher": {
     	"serviceJoiningDate": "2015-04-07"
     }
 }
-</pre>
+~~~
 
 __Example 5__: Define configuration for a user with custom field _teacherId_ of _String_ type which is set based on a filter applied on an input _List<T>_ type.
 
-registry-user-write-mapping.conf
-<pre>
+**registry-user-write-mapping.conf**
+~~~
 user {
 	externalIds {
 		toFieldName = "teacher.teacherId"
@@ -353,10 +363,10 @@ user {
 		filterField = "id"
 	}
 }
-</pre>
+~~~
 
-Sunbird API JSON format:
-<pre>
+**Sunbird API JSON format**
+~~~
 {
 	"externalIds": [{
 	    "id": "12345",
@@ -364,13 +374,13 @@ Sunbird API JSON format:
 	    "provider": "SK",
 	}]
 }
-</pre>
+~~~
 
-Open Saber Client JSON format:
-<pre>
+**Open Saber Client JSON format**
+~~~
 {
     "teacher": {
     	"teacherId": "12345"
     }
 }
-</pre>
+~~~
