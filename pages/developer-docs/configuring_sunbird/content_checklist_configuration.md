@@ -11,11 +11,11 @@ allowSearch: true
 ## Overview
 To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review. 
 
-A content reviewer on Sunbird can perform the following activities on Sunbird: 
+A content reviewer on Sunbird can perform the following activities: 
 * Request changes
 * Publish
 
-This page details the procedure on how to configure the review checklist. Configurations are supported are at the following two levels:
+This page details the procedure on how to configure the review checklist. Configurations are supported at the following two levels:
 * Instance level
 * Channel level
 
@@ -29,7 +29,7 @@ Different configuration can be defined differently for the following content typ
 * Resource and Collection
 
 ### Default UI Behaviour:
-When there sre no configuration set for the checklist, the UI displays the following messages:
+When there are no configuration set for the checklist:
 
 <br>1. When requesting changes to content:
 <br>&emsp;a) An information message "Please detail the required changes in the comments" is displayed over the comment box. On entering comments here, the Request Changes button is enabled
@@ -37,6 +37,16 @@ When there sre no configuration set for the checklist, the UI displays the follo
 <br>2. When publishing reviewed content:
 <br>&emsp;a) A confirmation message ""Are you sure you want to publish?"" is displayed. The Publish button is enabled and reviewer clicks the button to publish content
 <br>&emsp;b) In case of default API failure, an error message stating the same is displayed
+
+When configurations are set for the checklist:
+
+<br>1. When requesting changes to content:
+<br>&emsp;a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable Request Changes button
+<br>&emsp;b) In case of default API failure, an error message "Something went wrong. Please try again later" is displayed
+<br>2. When publishing reviewed content:
+<br>&emsp;a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable Publish button
+<br>&emsp;b) In case of default API failure, an error message "Something went wrong. Please try again later" is displayed
+
 
 ### Configuring Review Checklist
 * Use the create/update form API with the following API request
