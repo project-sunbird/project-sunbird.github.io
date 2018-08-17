@@ -12,7 +12,7 @@ allowSearch: true
 
 A company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization's administrator needs to create and add user details with the organization. 
 
-Every user belongs to an organization and is identified within the organization through a unique user ID. To enable users, the user ID has to be associated with an organization and channel and subsequently assigned a role. For example, John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them and associate them with the organization.
+Every user must belongs to an organization and is identified within the organization through a unique user ID. To enable users, the user ID has to be associated with an organization and channel and subsequently assigned a role. For example, John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them and associate them with the organization.
 
 ### Prerequisites
 
@@ -79,6 +79,5 @@ An organization can be created in a Sunbird instance using [ORG API](http://www.
 
 [Creating user](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_user)
 
-[Create Organization](http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs)
+[Create organization](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_organization)
 
-[Map users to different business units within the organisation](http://www.sunbird.org/developer-docs/how-to-guide/hohow_to_create_organization)

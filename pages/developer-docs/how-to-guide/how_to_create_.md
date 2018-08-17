@@ -118,4 +118,4 @@ The sequence of tasks the organization administrator follows to create users inc
 
 [Creating Organization](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_organization)
 
-[Map users to different business units within the organisation](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_org_add_user)
+[Map users to different business units within the organisation](http://www.sunbird.org/developer-docs/how-to-guide/hohow_to_create_org_add_user)
