@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: developer-docs/opensaber
-title: Sunbird Mobile App
-page_title: Sunbird Mobile App
-description: The functions and features of the Sunbird Mobile App and its usage 
+title:  Open Saber Integration
+page_title: Open Saber Integration
+description: Procedure document on how to integrate open saber with to Sunbird 
 published: true
 allowSearch: true
 ---
