@@ -335,6 +335,7 @@ teacher {
 ~~~
 
 **Sunbird API JSON format**
+
 ~~~
 {
 	"serviceJoiningDate": "2015-04-07"
@@ -342,6 +343,7 @@ teacher {
 ~~~
 
 **Open Saber Client JSON format**
+
 ~~~
 {
     "teacher": {
@@ -353,6 +355,7 @@ teacher {
 __Example 5__: Define configuration for a user with custom field _teacherId_ of _String_ type which is set based on a filter applied on an input _List<T>_ type.
 
 **registry-user-write-mapping.conf**
+
 ~~~
 user {
 	externalIds {
@@ -366,6 +369,7 @@ user {
 ~~~
 
 **Sunbird API JSON format**
+
 ~~~
 {
 	"externalIds": [{
@@ -377,6 +381,7 @@ user {
 ~~~
 
 **Open Saber Client JSON format**
+
 ~~~
 {
     "teacher": {
