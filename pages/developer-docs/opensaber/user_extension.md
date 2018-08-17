@@ -7,6 +7,7 @@ description: Procedure document on how to integrate open saber with to Sunbird
 published: true
 allowSearch: true
 ---
+
 ## Overview
 The main purpose of [Open Saber](https://github.com/project-sunbird/open-saber/wiki) is to serve as an electronic registry for entities such as  teacher registry, doctor registry etc. Open saber can be used by Sunbird adopters to store custom information about their organization users, user profile data extensions, organisation data extensions etc.
 
@@ -56,10 +57,15 @@ filterField    | Optional    | Field to use from selected element in transformat
 
 
 **Note**:
+
 - Supported types are _Integer_, _Double_, _Long_, _Boolean_, _String_, _DateString_ and _List<T>_
+
 - In _List<T>_ type, _T_ can be a simple type (e.g. _String_) or a custom type. A custom type can be defined in the configuration
+
 - _filters_ is applicable only if _fromType_ is _List<T>_ and _toType_ is other than list type
+
 - _filterField_ is applicable only if _fromType_ is _List<T> and _filters_ is specified
+
 - _filters_ has the following format. This filter can be used to select an element having specified field name with specified value
 
 <pre>
@@ -70,6 +76,7 @@ filterField    | Optional    | Field to use from selected element in transformat
 The configuration format for read mapping is similar to write mapping. The difference between read and write mapping is due to the input. In case of read, the input is Open Saber Client response JSON whereas in case of write, the input is Sunbird API request JSON format
 **registry-user-enums-mapping.conf**: Configuration which defines enumerations required for mapping between Sunbird User API JSON format and Open Saber Client JSON format
 The configuration format for enums is as given below:
+
 <pre>
 enums {
 	<customEnumName1> {
@@ -89,6 +96,7 @@ Listed are some examples to illustrate configuration of user customisation.
 __Example 1__: Define configuration for a user with a custom field _schoolCode_ of simple type
 
 registry-user-write-mapping.conf
+
 <pre>
 user {
 	schoolCode {
@@ -99,7 +107,9 @@ user {
 }
 </pre>
 
+
 registry-user-read-mapping.conf
+
 <pre>
 teacher {
 	schoolCode {
@@ -111,6 +121,7 @@ teacher {
 </pre>
 
 Sunbird API JSON format
+
 <pre>
 {
 	"schoolCode": "KV101"
@@ -118,6 +129,7 @@ Sunbird API JSON format
 </pre>
 
 Open Saber Client JSON format:
+
 <pre>
 {
     "teacher": {
@@ -169,6 +181,7 @@ enums {
 </pre>
 
 Sunbird API JSON format
+
 <pre>
 {
 	"highestAcademicQualification": ["PostGraduate", "Higher Secondary"]
