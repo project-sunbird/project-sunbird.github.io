@@ -12,12 +12,12 @@ allowSearch: true
 To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review. 
 
 A content reviewer on Sunbird can perform the following activities: 
-* Request changes
-* Publish
+<br>&emsp;a) Request changes
+<br>&emsp;b) Publish
 
 This page details the procedure on how to configure the review checklist. Configurations are supported at the following two levels:
-* Instance level
-* Channel level
+<br>&emsp;a) Instance level
+<br>&emsp;b) Channel level
 
 When configuration is done at a channel level, it overrides instance level configuration. 
 
@@ -28,9 +28,8 @@ Different configuration can be defined differently for the following content typ
 * Textbook
 * Resource and Collection
 
-### Default UI Behaviour:
+### Default UI Behaviour
 When there are no configuration set for the checklist:
-
 <br>1. When requesting changes to content:
 <br>&emsp;a) An information message "Please detail the required changes in the comments" is displayed over the comment box. On entering comments here, the Request Changes button is enabled
 <br>&emsp;b) In case of default API failure, an error message stating the same is displayed
@@ -39,7 +38,6 @@ When there are no configuration set for the checklist:
 <br>&emsp;b) In case of default API failure, an error message stating the same is displayed
 
 When configurations are set for the checklist:
-
 <br>1. When requesting changes to content:
 <br>&emsp;a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable Request Changes button
 <br>&emsp;b) In case of default API failure, an error message "Something went wrong. Please try again later" is displayed
