@@ -2821,7 +2821,7 @@ definitions:
         description: Represents the Response status when an API is called
       errmsg:
         type: string
-        description: Represents the text that is part response status
+        description: Represents the text that is part of response status
   EmptyResult:
     title: Empty Result
     type: object
