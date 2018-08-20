@@ -3,13 +3,13 @@ info:
   version: '1.0'
   title: Framework API(s)
   description: >-
-         The Framework API resources is basically a supporting data structure which serves as a template. 
+         The Framework API resources is basically a supporting data structure which serves as a template 
         
          - It can be used in places where the structure remains the same but only the usage changes are per requirement
          
-         - These resources are used to create, update, search, frameworks, channels, catergories, terms.
+         - These resources are used to create, update, search, frameworks, channels, catergories, terms
             - The Hierarchy is as: Framework-->Category-->Terms
-              - Category: An abstract classification of the terms   partitioned according to requirement.
+              - Category: An abstract classification of the terms partitioned according to requirement
               - Terms: Refers to a keyword or a phrase to descibe a Concept
 host: staging.open-sunbird.org
 basePath: /api
@@ -61,7 +61,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -70,7 +70,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'To make use of the API, you require bearerorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'To make use of the API, you require bearer authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
       responses:
         '200':
           description: 'OK ! Successful operation."Create channel" operation was successfully executed.'
@@ -108,7 +108,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               
               - application/json
@@ -274,7 +274,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -327,7 +327,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -341,7 +341,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It is the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."create framework" operation was successfully executed.'
@@ -443,7 +443,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -457,7 +457,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It is the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."update framework" operation was successfully executed.'
@@ -497,7 +497,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -511,7 +511,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It is the Unique Id to identify the root organisation to which the user belongs'
       responses:
          '200':
           description: 'OK ! Successful operation."list framework" operation was successfully executed.'
@@ -573,7 +573,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It is the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."Copy framework" operation was successfully executed.'
@@ -637,7 +637,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It is the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."Copy framework" operation was successfully executed.'
@@ -686,7 +686,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -700,7 +700,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique Id to identify the root organisation to which the user belongs'
+        description: 'It is the Unique Id to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."create category" operation was successfully executed.'
@@ -717,9 +717,9 @@ paths:
   /framework/v1/category/read/{code}:
     get:
       description: >-
-       This API is associated with fetching a category on Sunbird Platform.
+       This API is associated with fetching a category on Sunbird Platform
           - The **_/category/read/{code}_** endpoint executes the "Fetch a category" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
+          - Required fields cannot be left null or empty 
       summary: Fetch Category
       tags:
       - Framework - Category APIs
@@ -743,7 +743,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -757,7 +757,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique ID to identify the root organisation to which the user belongs'
+        description: 'It is the Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."fetch category" operation was successfully executed.'
@@ -854,7 +854,7 @@ paths:
       description: >-
        This API is associated with searching a category 
           - The **_/category/search_** endpoint executes the "Search category" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
+          - Required fields cannot be left null or empty 
       summary: Search Categories
       tags:
       - Framework - Category APIs
@@ -884,7 +884,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -917,7 +917,7 @@ paths:
       description: >-
        This API is associated with creating a term under a framework category 
           - The **_/framework/v1/term/create_** endpoint executes the "Create term" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.
+          - Required fields cannot be left null or empty 
       summary: Create Term
       tags:
       - Framework - Term APIs
@@ -1045,9 +1045,9 @@ paths:
   /framework/v1/term/update{code}:
     patch:
       description:  >-
-       This API is associated with updating a term under a category in a framework on Sunbird Platform.
+       This API is associated with updating a term under a category in a framework on Sunbird Platform
           - The **_/framework/v1/term/update/{code}_** endpoint executes the "FrameworkV1TermUpdateClass2Patch" request based on parameters provided as metadata in the request body
-          - Required fields cannot be left null or empty API to get list of channels in platform.API to get a channel by identifier.
+          - Required fields cannot be left null or empty 
       summary: Update Term
       tags:
       - Framework - Term APIs
@@ -1088,7 +1088,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - application/json
               - multipart/form-data
@@ -1102,7 +1102,7 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique ID to identify the root organisation to which the user belongs'
+        description: 'It is the Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
           description: 'OK ! Successful operation."update term" operation was successfully executed.'
@@ -1119,7 +1119,7 @@ paths:
   /framework/v1/term/search:
     post:
       description: >-
-       This API is associated with searching the existing terms under a category in a framework on Sunbird Platform.
+       This API is associated with searching the existing terms under a category in a framework on Sunbird Platform
           - The **_/framework/v1/term/search_** endpoint executes the "Search term" request based on parameters provided as metadata in the request body
           - Required fields cannot be left null or empty API to get list of channels in platform.
       summary: Search Term
@@ -1170,10 +1170,10 @@ paths:
         in: header
         required: true
         type: string
-        description: 'It the Unique ID to identify the root organisation to which the user belongs'
+        description: 'It is the Unique ID to identify the root organisation to which the user belongs'
       responses:
         '200':
-          description: 'OK ! Successful operation."search term operation was successfully executed.'
+          description: 'OK ! Successful operation."Search term operation was successfully executed.'
           schema:
             $ref: '#/definitions/FrameworkTermSearch200Response'
         '400':
@@ -1186,7 +1186,7 @@ paths:
       - bearer: []
 definitions:
   CreateFrameworkRequest:
-    description: This is the create Framework request body
+    description: This is the create framework request body
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
@@ -1208,7 +1208,7 @@ definitions:
                 type: string
               description:
                 type: string
-                description: It is the description of the framework.
+                description: It is the description of the framework
               type:
                 type: string
                 description: Represents the type of framework
@@ -1217,6 +1217,9 @@ definitions:
                 description: Represents the channels associated with the framework
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of framework name in different language
               categories:
                 type: array
                 description: Represents the categories associated with the framework
@@ -1242,7 +1245,7 @@ definitions:
                 description: Represents the name of the framework
               description:
                 type: string
-                description: It is the description of the framework.
+                description: It is the description of the framework
               type:
                 type: string
                 description: Represents the type of framework
@@ -1256,6 +1259,9 @@ definitions:
                 description: Represents the categories associated with the framework
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of framework name in different language
   ResultWithNodeId:
     title: Result Containing Node Id
     type: object
@@ -1274,7 +1280,7 @@ definitions:
     properties:
       id:
         type: string
-        description: Represents the API Identifier
+        description: Represents the API identifier
       ver:
         type: string
         description: Represents the API version information
@@ -1292,19 +1298,19 @@ definitions:
     properties:
       resmsgid:
         type: string
-        description: Represents the response Message Identifier
+        description: Represents the response message identifier
       msgid:
         type: string
-        description: Represents the Message uniquely
+        description: Represents the message uniquely
       err:
         type: string
-        description: Represents the Error Code
+        description: Represents the error code
       status:
         type: string
-        description: Represents the response Status
+        description: Represents the response status
       errmsg:
         type: string
-        description: Represents the error Message
+        description: Represents the error message
   EmptyResult:
     title: Empty Result
     type: object
@@ -1321,7 +1327,7 @@ definitions:
         description: Node Identifier
       versionKey:
             type: string
-            description: Represents the version Key of the category Instance
+            description: Represents the version key of the category instance
   ContentCreateErrorResponse:
     title: Create Content Error Response
     type: object
@@ -1339,7 +1345,7 @@ definitions:
             properties:
               name:
                 type: string
-                description: Represents the Name of the channel.
+                description: Represents the name of the channel
               code:
                 description: Represents the unique code of the channel
                 type: string
@@ -1390,7 +1396,7 @@ definitions:
     properties:
       identifier:
         type: string
-        description: Represents the Unique ID of the channel across sunbird installations.
+        description: Represents the Unique ID of the channel across sunbird installations
       code:
         type: string
         description: The code is same as the unique ID of the channel
@@ -1399,7 +1405,7 @@ definitions:
         description: Description of the channel
       defaultFramework:
         type: string
-        description: A Framework identifier which can be used fetch categories for create/update/search other objects
+        description: A framework identifier which can be used fetch categories for create/update/search other objects
       frameworks:
         type: object
         description: List of frameworks subscribed by this channel
@@ -1409,7 +1415,7 @@ definitions:
         items:
           type: object
   ResponseChannelGet200:
-    description: Response of the channel get.
+    description: Response of the channel get
     properties:
       result:
         type: object
@@ -1429,7 +1435,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseChannelCreate400'
   RequestChannelSearch:
-    description: Request map of channel search api.
+    description: Request map of channel search api
     properties:
       request:
         type: object
@@ -1438,7 +1444,7 @@ definitions:
             type: object
 
   ChannelSearchRequest:
-    description: Channel create request.
+    description: Channel create request
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
@@ -1450,7 +1456,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkCreate400'
   ResponseFrameworkCreate400:
-    description: Response of the Framewrk create on client error.
+    description: Response of the framework create on client error
     properties:
       responseCode:
         type: string
@@ -1465,35 +1471,35 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkCreate200'
   ResponseFrameworkCreate200:
-    description: Response body of the create Framework
+    description: Response body of create framework
     properties:
       result:
         type: object
         properties:
           node_id:
             type: string
-            description: Unique identifier of the Framework created.
+            description: Unique identifier of the framework created
           versionKey:
             type: string
-            description: Represents the Version key of the current Framework object.
+            description: Represents the version key of the current framework object
   FrameworkObj:
     type: object
     properties:
       identifier:
         type: string
-        description: Represents the unique ID of the framework across sunbird installations.
+        description: Represents the unique ID of the framework across sunbird installations
       name:
         type: string
-        description: Represents the nName of the framework.
+        description: Represents the name of the framework
       code:
         type: string
-        description: This is same as identifier.
+        description: This is same as identifier
       description: 
         type: string
-        description: Description of the framework.
+        description: Description of the framework
       consumerId:
         type: string
-        description: Represents the consumerId.
+        description: Represents the consumerId
       channel:
         type: string
         description: Channel by which the framework was created
@@ -1513,10 +1519,10 @@ definitions:
           type: object
       appId:
         type: string
-        description: Represents theAppId of the framework
+        description: Represents the AppId of the framework
       lastUpdatedOn:
         type: string
-        description: Represents the last Updation date of the framework.
+        description: Represents the last Updation date of the framework
       status:
         type: string
         description: Represents the status of the framework
@@ -1525,6 +1531,9 @@ definitions:
         description: Represents the categories in a framework
         items:
           type: object
+      translations:
+        type: object
+        description: Represents the translation of framework name in different language.
   ResponseFrameworkGet200:
     description: Response of the Framework get.
     properties:
@@ -1546,7 +1555,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkUpdate400'
   ResponseFrameworkUpdate400:
-    description: Response of the Framewrk update on client error.
+    description: Response of the framewrk update on client error.
     properties:
       responseCode:
         type: string
@@ -1561,19 +1570,19 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkUpdate200'
   ResponseFrameworkUpdate200:
-    description: Response of the Framework update.
+    description: Response of the framework update.
     properties:
       result:
         type: object
         properties:
           node_id:
             type: string
-            description: Identifier of the Framework update.
+            description: Identifier of the framework update.
           versionKey:
             type: string
-            description: Version key of the current Framework object. This is used to all update calls of the same object.
+            description: Version key of the current framework object. This is used for all update calls of the same object
   RequestFrameworkList:
-    description: Request map of framework list api.
+    description: Request map of framework list api
     properties:
       request:
         type: object
@@ -1594,7 +1603,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkList400'
   ResponseFrameworkList400:
-    description: Response of the Framewrk list on client error.
+    description: Response of the framewrk list on client error
     properties:
       responseCode:
         type: string
@@ -1609,27 +1618,27 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkList200'
   ResponseFrameworkList200:
-    description: Response of the Framework list.
+    description: Response of the framework list.
     properties:
       result:
         type: object
         properties:
           frameworks:
             type: array
-            description: List of rframeworks
+            description: List of frameworks
             items:
               type: object
           count:
             type: number
-            description: Number of frameworks searched.
+            description: Number of frameworks searched
   CopyFrameworkRequest:
-    description: Framework copy request.
+    description: Framework copy request
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
       - $ref: '#/definitions/RequestFrameworkCopy'
   RequestFrameworkCopy:
-    description: Request map of framework copy api.
+    description: Request map of framework copy api
     properties:
       request: 
         type: object
@@ -1638,7 +1647,7 @@ definitions:
             type: object
             properties:
               code:
-                description: Unique code of the framework.
+                description: Unique code of the framework
                 type: string
   FrameworkCopy400Response:
     description: 'Framework Copy response for 400.'
@@ -1647,7 +1656,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkCopy400'
   ResponseFrameworkCopy400:
-    description: Response of the Framewrk copy on client error.
+    description: Response of the framework copy on client error
     properties:
       responseCode:
         type: string
@@ -1662,7 +1671,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkCopy200'
   ResponseFrameworkCopy200:
-    description: Response of the Framework copy.
+    description: Response of the framework copy
     properties:
       result:
         type: object
@@ -1694,6 +1703,9 @@ definitions:
               description:
                 description: ''
                 type: string
+              translations:
+                type: object
+                description: Represents the translation of category name in different language.
   CategoryInstanceCreate400Response:
     description: 'CategoryInstance Create response for 400.'
     type: object
@@ -1723,58 +1735,61 @@ definitions:
         properties:
           node_id:
             type: string
-            description: Identifier of the CategoryInstance.
+            description: Identifier of the category instance
           versionKey:
             type: string
-            description: versionKey of the Category Instance
+            description: versionKey of the category instance
   CategoryInstanceObj:
     type: object
     properties:
       identifier:
         type: string
-        description: Unique id of the Category Instance across sunbird installations.
+        description: Unique id of the category instance across sunbird installations
       name:
         type: string
-        description: Name of the Category Instance.
+        description: Name of the category instance
       code:
         type: string
-        description: This is same as identifier.
+        description: This is same as identifier
       description: 
         type: string
-        description: Description of the Category Instance.
+        description: Description of the category instance
       consumerId:
         type: string
         description: consumerId.
       channel:
         type: string
-        description: Channel who created this Category Instance.
+        description: Channel who created this category instance
       createdOn:
         type: string
-        description: Creation date of the Category Instance
+        description: Creation date of the category instance
       versionKey:
         type: string
-        description: Version key of the Category Instance
+        description: Version key of the category instance
       appId:
         type: string
-        description: AppId of the Category Instance
+        description: AppId of the category instance
       lastUpdatedOn:
         type: string
-        description: Last Updation date of the Category Instance.
+        description: Last Updation date of the category instance
       status:
         type: string
-        description: Status of the Category Instance
+        description: Status of the category instance
       frameworks:
         type: array
-        description: Frameworks with which Category Instance is associated
+        description: Frameworks with which category instance is associated
         items:
           type: object
       channels:
         type: array
-        description: Channels with which Category Instance is associated
+        description: Channels with which category instance is associated
         items:
           type: object
+      translations:
+        type: object
+        description: Represents the translation of category name in different language
   ResponseCategoryInstanceGet200:
-    description: Response of the CategoryInstance get.
+    description: Response of the CategoryInstance get
     properties:
       result:
         type: object
@@ -1794,7 +1809,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseCategoryInstanceGet400'
   ResponseCategoryInstanceGet400:
-    description: Response of the CategoryInstance Get on client error.
+    description: Response of the CategoryInstance Get on client error
     properties:
       responseCode:
         type: string
@@ -1803,13 +1818,13 @@ definitions:
         type: object
         description: 'Empty response code.'
   UpdateCategoryInstanceRequest:
-    description: CategoryInstance update request.
+    description: CategoryInstance update request
     type: object
     allOf:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
       - $ref: '#/definitions/RequestCategoryInstanceUpdate'
   RequestCategoryInstanceUpdate:
-    description: Request map of CategoryInstance update api.
+    description: Request map of CategoryInstance update API
     properties:
       request: 
         type: object
@@ -1819,10 +1834,10 @@ definitions:
             properties:
               name:
                 type: string
-                description: Name of the Category Instance.
+                description: Name of the Category Instance
               description: 
                 type: string
-                description: Description of the Category Instance.
+                description: Description of the Category Instance
               frameworks:
                 type: array
                 description: Frameworks with which Category Instance is associated
@@ -1833,6 +1848,9 @@ definitions:
                 description: Channels with which Category Instance is associated
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of category name in different language.
   CategoryInstanceUpdate400Response:
     description: 'CategoryInstance Update response for 400.'
     type: object
@@ -1915,7 +1933,7 @@ definitions:
               type: object
           count:
             type: number
-            description: Number of CategoryInstance searched.
+            description: Number of CategoryInstance searched
   CreateFrameworkTermRequest:
     description: Framework Term create Request
     type: object
@@ -1923,7 +1941,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
       - $ref: '#/definitions/RequestFrameworkTermCreate'
   RequestFrameworkTermCreate:
-    description: Request map of FrameworkTerm Create api.
+    description: Request map of FrameworkTerm Create API
     properties:
       request: 
         type: object
@@ -1971,6 +1989,9 @@ definitions:
                 description: ''
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of term name in different language
   FrameworkTermCreate400Response:
     description: 'Framework Term Create response for 400.'
     type: object
@@ -2000,7 +2021,7 @@ definitions:
         properties:
           node_id:
             type: string
-            description: Identifier of the Framework Term.
+            description: Identifier of the Framework Term
           versionKey:
             type: string
             description: versionKey of the Framework Term
@@ -2018,13 +2039,13 @@ definitions:
         description: Unique ID of the Framework Term 
       description: 
         type: string
-        description: Description of the Framework Term.
+        description: Description of the Framework Term
       consumerId:
         type: string
         description: Represents the consumerId
       channel:
         type: string
-        description: Represents the Channel that created the Framework Term
+        description: Represents the channel that created the Framework Term
       createdOn:
         type: string
         description: Represents the creation date of the Framework Term
@@ -2036,13 +2057,13 @@ definitions:
         description: Represents the AppId of the Framework Term
       lastUpdatedOn:
         type: string
-        description: Represents the last Updation date of the Framework Term
+        description: Represents the last updated date of the Framework Term
       status:
         type: string
         description: Represents the status of the Framework Term
       categoryinstances:
         type: array
-        description: Represents the category Instances with which Framework Term is associated
+        description: Represents the category instances with which Framework Term is associated
         items:
           type: object
       parents:
@@ -2065,6 +2086,9 @@ definitions:
         description: Represents other terms associated with the current term
         items:
           type: object
+      translations:
+        type: object
+        description: Represents the translation of term name in different language
   ResponseFrameworkTermGet200:
     description: Response body of the get Framework Term 
     properties:
@@ -2101,7 +2125,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest"
       - $ref: '#/definitions/RequestFrameworkTermUpdate'
   RequestFrameworkTermUpdate:
-    description: Request map of FrameworkTerm update api.
+    description: Request map of framework term update api.
     properties:
       request: 
         type: object
@@ -2111,13 +2135,13 @@ definitions:
             properties:
               name:
                 type: string
-                description: Name of the Framework Term.
+                description: Name of the framework term
               description: 
                 type: string
-                description: Description of the Framework Term.
+                description: Description of the framework term
               categoryinstances:
                 type: array
-                description: Category Instances with which Framework Term is associated
+                description: Category instances with which framework term is associated
                 items:
                   type: object
               parents:
@@ -2140,6 +2164,9 @@ definitions:
                 description: Represents the terms associated with the current term
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of term name in different language
   FrameworkTermUpdate400Response:
     description: 'FrameworkTerm Update response for 400.'
     type: object
@@ -2240,7 +2267,7 @@ definitions:
       - $ref: "https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse"
       - $ref: '#/definitions/ResponseFrameworkPublish200'
   ResponseFrameworkPublish200:
-    description: Response bosy of copy framework 
+    description: Response body of copy framework 
     properties:
       result:
         type: object
