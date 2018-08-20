@@ -14,18 +14,24 @@ Sunbird enables seamless access and discoverability of content through a taxonom
 
 Let us consider an example of an organization which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. They now need to create the framework. The objective and intent of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when users search for content, they get relevant results. The company may choose a predefined framework or create their own framework. 
 
-Adopters cannot override or add categories on their own and need to send a request to [implementation team](). For details on adding categories, refer [Adding Categories]()
+Adopters cannot override or add categories on their own and need to send a request to [implementation team](). For details on adding categories, refer [Adding Categories]().
+
 However,The Sunbird instance will have predefined frameworks:
 
  - NCF
+
         - Subject 
+
         - Board
+
         - Grade Level
+
         - Medium
+
         - Topic
 
-A category can have either flat or hierarchical terms. Terms can be associated across categories. As a result, it is possible to select a term in the first category and hence restrict the set of available terms for the next category and so on. For example, if you select Board as <>, the Grade list displayed as <1 - 12>. On selecting grade as <>, and the Medium as English, the Subject list appears containing predefined values as <English, Mathematics and more>. Whereas, if you select Grade as <8>, the Subject list displayed is <English, Algebra, Geometry, History, Geography>  
-When creating a new framework, the framework creator can ‘borrow’ concepts from the EkStep concept map and link them into their framework. The objective of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when a user search for content, they get relevant results.
+A category can have either flat or hierarchical terms. Terms can be associated across categories. As a result, it is possible to select a term in the first category and hence restrict the set of available terms for the next category and so on. For example, if you select Board as <>, the Grade list displayed as <1 - 12>. On selecting grade as < >, and the Medium as English, the Subject list appears containing predefined values as <English, Mathematics and more>. Whereas, if you select Grade as <8>, the Subject list displayed is <English, Algebra, Geometry, History, Geography>  
+When creating a new framework, the framework creator can borrow concepts from the EkStep concept map and link them into their framework. The objective of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when a user search for content, they get relevant results.
 
 Vocabulary is the layer below the framework which allows linking of terms across categories into synonym sets. 
 
@@ -54,7 +60,7 @@ For details, refer to:
     - [Associated Users to organization](http://www.sunbird.org/apis/)
 
 
-5. Access to [Framework API](http://www.sunbird.org/apis/framework/)
+5.Access to [Framework API](http://www.sunbird.org/apis/framework/)
 
 ### Taskflow
  
@@ -102,7 +108,7 @@ name": "NCF",
 
 ### Concepts covered
 
-**Framework**
+**Framework**- A structure designed to define the scope of something. On Sunbird, the framework is defined through a string of vocabularies
 
 **Taxonomy**
 
