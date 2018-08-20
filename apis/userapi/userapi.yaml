@@ -3,9 +3,8 @@ info:
   version: '1.0'
   title: User Management  API(s)  
   description: >-
-    The User Management API resources are used to manage individual users and their memberships, also these resources allow you to add skills, block and unblock users, encrypt user data. You can perform various other user management related tasks. 
-     
-    **Note:**  These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
+    The User Management API resources are used to manage individual users and their memberships, these resources allow you to add skills, block and unblock users, and encrypt user data. 
+    <b>Note:</b> These resources can be used as a part of scripts or programs to allow authorized admininstators to manage the users.
 host: staging.open-sunbird.org
 basePath: /api/
 securityDefinitions:
@@ -30,8 +29,8 @@ paths:
     post:
       description: >-
        This API is used to create a user 
-          - **_/v1/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body.
-          - Mandatory fields cannot be null or empty.
+          - **_/v1/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body
+          - Mandatory fields cannot be null or empty
       summary: Create User
       tags:
       - User APIs
@@ -43,8 +42,7 @@ paths:
         in: body
         required: true
         description: >-
-          - The body payload comprises of the metadata about the user to be created.
-          
+          - The body payload comprises of the metadata of the user being created     
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
@@ -65,12 +63,12 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: Authorization
         in: header
         required: true
         type: string
-        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.
+        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here
       responses:
         '200':
           description: 'OK ! Successful operation."Create User" operation was successfully executed.'
@@ -114,16 +112,12 @@ paths:
         in: body
         required: true
         description: >-
-          - The body payload comprises of the metadata about the user to be searched.
-          
+          - The body payload comprises of metadata of the user being searched
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
-             - JSON 
-         
-            
+             - JSON  
            **Note**: You can search the user based on different user attributes
-              
-            - The  attributes need to be passed inside the filters of the request payload
+            - The attributes must be passed inside the filters of the request payload
         schema:
           $ref: '#/definitions/SearchUserRequest'
       - name: Content-Type
@@ -146,13 +140,13 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
+          It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
       - name: ts
         in: header
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the search user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the search user API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.
       responses:
         '200':
           description: 'OK ! Successful operation."Search User" operation was successfully executed.'
@@ -211,7 +205,7 @@ paths:
     post:
       description: >-
         This API is used for getting information about the currently authenticated user
-          - **_/v1/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the User profile.
+          - **_/v1/profile/read_** endpoint executes the "Get User By Login ID" request to fetch the user profile
           - It is mandatory to provide values for required parameters
       summary: Get User by Login ID
       tags:
@@ -224,8 +218,7 @@ paths:
         in: body
         required: true
         description: >-
-          - The body payload comprises of the metadata about the user to be searched.
-          
+          - The body payload comprises of the metadata about the user being searched
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
@@ -245,7 +238,7 @@ paths:
         required: true
         type: string
         description:  >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
+            The Content Type entity is the media type of the resource. Possible media types can be:- 
               - Application/json
               - Multipart/form-data
               - Application/x-www-form-urlencoded
@@ -254,7 +247,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the read user profile API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the read user profile API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: Authorization
         in: header
         required: true
@@ -350,7 +343,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the search specific user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the search specific user API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: Authorization
         in: header
         required: true
@@ -432,7 +425,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+          It is a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       - name: Content-Type
         in: header
         required: true
@@ -447,7 +440,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the update user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the update user API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.
       - name: Authorization
         in: header
         required: true
@@ -484,9 +477,9 @@ paths:
       description: >-
          This API is used to update user login time 
          
-         - This API is called after the user successfully logs in either from portal or the app 
+         - This API is executed after the user successfully logs in either from portal or the app 
          
-         - On Sunbird, User login is handled by SSO(KeyCloak) ,You need to call this API after successful login to update logintime
+         - On Sunbird, user login is handled by SSO(KeyCloak), you must call this API after successful login to update login time
          
           - It is mandatory to provide values for required parameters
       summary: Add Users Current Login Time
@@ -522,7 +515,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the update user login time API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the update user login time API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -607,7 +600,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - Application/json
               - Multipart/form-data
@@ -617,7 +610,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the read user role API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the read user role API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: X-msgid
         in: header
         required: true
@@ -723,7 +716,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the user profile visibility API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the user profile visibility API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: X-msgid
         in: header
         required: true
@@ -792,7 +785,7 @@ paths:
  /user/v1/block:
     post:
       description:  >-
-       This API is used to ban/block a user, banning or blocking a user is done calling this API.  
+       This API is used to ban/block a user  
           - The **_/v1/block_** endpoint executes the "Block user" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: Block user
@@ -831,7 +824,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the block user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the block user API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: X-msgid
         in: header
         required: true
@@ -848,7 +841,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
+          It is a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
@@ -937,7 +930,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the unblock API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the unblock API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: X-msgid
         in: header
         required: true
@@ -954,7 +947,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+          It is a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."user profile visibility" operation was successfully executed.'
@@ -1003,7 +996,7 @@ paths:
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false  
 
- /v1/role/assign:
+ /user/v1/role/assign:
     post:
       description:  >-
        This API is used to assign roles to a user. It can also be used to replace and remove already assigned user roles. If a user should not be assigned any role in the organization, pass the role paramater as an empty array.
@@ -1104,7 +1097,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the encrypt user API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the encrypt user API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second.
       - name: X-msgid
         in: header
         required: true
@@ -1142,11 +1135,175 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+ /user/v1/skill/update:
+    post:
+      description: >-
+       This API is used to assign/update skills to a user. It can also be used to replace and remove already assigned user skills. If a user wants to remove all skills then pass skill paramater as an empty array.
+          - The **_/v1/skill/update_** endpoint executes the "Update user skills" request based on parameters provided as metadata in the request body.
+          - It is mandatory to provide values for required parameters.
+      summary: Update User Skills
+      tags:
+      - User APIs
+      operationId: UpdateUserSkills
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          - The body payload comprises of the metadata required for updating user skills
+        schema:
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/UpdateUserSkillsRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           Type of the request data. Set as application/json.
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: >-
+          Timestamp at which given API request is sent.
+      - name: X-MsgId
+        in: header
+        required: true
+        type: string
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.'
+      - name: X-Authenticated-User-Token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It is a unique token to authenticate the user each time an API is called
+      responses:
+        '200':
+          description: 'OK ! Successful operation. The requested operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/UserSuccessResponse'
+        '400':
+          description: 
+            'CLIENT_ERROR. The Update User Skills operation failed due to bad request from client. Possible reasons for failure:
+              - Mandatory parameter userId is missing.
+              - Mandatory parameter skills is missing.
+              - Invalid userId
+              - skills data type should be of List.
+            '
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+        '401':
+          description: 
+            'UNAUTHORIZED. The Update User Skills operation failed due to unauthorized request from client. Possible reasons for failure:
+              - You are not authorized.
+            '
+          schema:
+            $ref: '#/definitions/UnAuthorizedResponse'
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. The requested operation failed due to a server error.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+      security:
+      - bearer: []
+   
+ /user/v1/skill/endorse/add:
+    post:
+      description: >-
+       This API is used to endorse a skill of a user 
+          - The **_/v1/skill/endorse/add_** endpoint executes the Add User Skill Endorsement request based on parameters provided as metadata in the request body
+          - It is mandatory to provide values for required parameters
+      summary: Add User Skill Endorsement
+      tags:
+      - User APIs
+      operationId: AddUserSkillEndorsement
+      produces:
+      - application/json
+      parameters:
+      - name: Body
+        in: body
+        required: true
+        description: >-
+          - The body payload comprises of the metadata required for endorsing a skill of a user 
+        schema:
+           allOf:
+              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+              - $ref: '#/definitions/AddUserSkillEndorsementRequest'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+           Type of the request data. Set as application/json
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: >-
+          Timestamp at which given API request is sent
+      - name: X-MsgId
+        in: header
+        required: true
+        type: string
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: 'Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.'
+      - name: X-Authenticated-User-Token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It is a unique token to authenticate the user each time an API is called
+      responses:
+        '200':
+          description: 'OK ! Successful operation. The requested operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/UserSuccessResponse'
+        '400':
+          description: 
+            'CLIENT_ERROR. The requested operation failed due to bad request from client. Possible reasons for failure:
+              -Can not endorse since both user belongs to different org.
+              -Invalid endorsed userID.
+              -Invalid skill name {skillName}.
+            '
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+        '401':
+          description: 
+            'UNAUTHORIZED. The Update User Skills operation failed due to unauthorized request from client. Possible reasons for failure:
+              - You are not authorized.
+            '
+          schema:
+            $ref: '#/definitions/UnAuthorizedResponse'
+        '404':
+          description: >-
+            'RESOURCE_NOT_FOUND. The requested operation failed as given resource is not existing on server. Possible reasons for failure:
+            ...'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. The requested operation failed due to a server error.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+      security:
+      - bearer: []
  /user/v1/skill/add:
     post:
       description: >-
        This API is used to add a skill set to the user 
-          - The **_/v1/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body.
+          - The **_/v1/skill/add_** endpoint executes the "add user skills" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
       summary: Add User Skill
       tags:
@@ -1159,8 +1316,7 @@ paths:
         in: body
         required: true
         description: >-
-          - The body payload comprises of the metadata about addinfg skills to a user 
-          
+          - The body payload comprises of the metadata about adding skills to a user       
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
@@ -1173,7 +1329,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - Application/json
               - Multipart/form-data
@@ -1183,7 +1339,7 @@ paths:
         required: true
         type: string
         description: >-
-          Timestamp is a sequence of characters or encoded information identifying when the add user skills API call occurred, usually it gives date and time of day, sometimes accurate to a small fraction of a second.
+          Timestamp is a sequence of characters or encoded information identifying when the add user skills API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
       - name: X-msgid
         in: header
         required: true
@@ -1199,7 +1355,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+          It is a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."add user skills" operation was successfully executed.'
@@ -1254,7 +1410,7 @@ paths:
     post:
       description: >-
        This API is used to read user added skill.
-          - The **_/user/v1/skill/read_** endpoint executes the "read user skill" request based on parameters provided as metadata in the request body.
+          - The **_/user/v1/skill/read_** endpoint executes the "read user skill" request based on parameters provided as metadata in the request body
           - It is mandatory to provide values for required parameters
       summary: get user skill
       tags:
@@ -1268,8 +1424,7 @@ paths:
         required: true
         description: >-
         
-          - The body payload comprises of metadata on adding skills for a user 
-          
+          - The body payload comprises of metadata on adding skills for a user  
           - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
          
              - JSON 
@@ -1282,7 +1437,7 @@ paths:
         required: true
         type: string
         description: >-
-           The Content Type entity is the media type of the resource.
+           The Content Type entity is the media type of the resource
             Possible media types can be:- 
               - Application/json
               - Multipart/form-data
@@ -1308,7 +1463,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
+          It is a unique token/key to authenticate the user each time an API is called. For further sessions this token is exchanged, not the username/password of the user
       responses:
         '200':
           description: 'OK ! Successful operation."add user skills" operation was successfully executed.'
@@ -1364,7 +1519,7 @@ paths:
  /data/v1/skills:
     get:
       description: >-
-       This API is associated with listing all the skills that a user possesses
+       This API is associated with listing all the skills that a user possess
           - The **_/data/v1/skills_** endpoint executes the "list all user skills" request based on parameters provided as metadata in the request body.
           - It is mandatory to provide values for required parameters
       summary: List all Skills
@@ -1400,7 +1555,7 @@ paths:
         required: true
         type: string
         description: >- 
-          It a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
+          It is a unique token/key to authenticate the user each time an API is called. For corresponsing sessions, this token is exchanged, not the username/password of the user
       - name: Authorization
         in: header
         required: true
@@ -1525,9 +1680,8 @@ definitions:
           phoneVerified:
             type: boolean
             description: >-
-              This key is required with value as true, if you passes both the values for phone and provider.
-            
-               - But incases of create user either email or phone is required.'
+              This key is required with value as true, if you pass both the values for phone and provider
+              - But incases of create user either email or phone is required
           subject:
             type: array
             items:
@@ -1537,7 +1691,7 @@ definitions:
             description: >-      
               'Represents the channel value received while creating a rootOrg
               - if you provide channel value, then you will get associated with that particular root organization  
-              - if channel is not provided in request body then system will pick channel set inside Environment variable and uses that to associate you with that root organization
+              - if channel is not provided in request body then system will pick channel set inside Environment variable and use it to associate you with that root organization
               - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
           externalIds:
             type: array
@@ -1648,7 +1802,7 @@ definitions:
             type : string
             description : >-
               Represents the unique identifier for a rootOrg 
-              - A channel is not a primaryKey but a unique value inside sunbird. 
+              - A channel is not a primaryKey but a unique value inside sunbird 
               - This key is applicable for root organization only
           profileSummary:
             type: string
@@ -1672,7 +1826,7 @@ definitions:
           profileVisibility:
             type: object
             description: >-
-              Represents the value for profile visibility, the values can be a map having key as any user attribute also the value can be either public or private. 
+              Represents the value for profile visibility, the values can be a map having key as any user attribute also the value can be either public or private 
           address: 
             type: object
             $ref: "#/definitions/Address"
@@ -1810,7 +1964,7 @@ definitions:
     example:
       request:
         query: >- 
-          Represents text search, if you want enable free text search then pass the query as string
+          Represents text search, if you want to enable free text search then pass the query as string
         filters:
           userAttribute:
           - Represents the value of user attribute, it can be either a string or an array
@@ -2070,7 +2224,7 @@ definitions:
       roles:
 
         description:
-          The role assigned to a user. The role is directly replaced with saved roles, if any. Ensure that the request has a list of all the users roles. To remove all roles assigned to a user, pass an empty array
+          The role assigned to a user. The role is directly replaced with saved roles, if any. Ensure that the request has a list of all the user roles. To remove all roles assigned to a user, pass an empty array
         example:
         - CONTENT_CREATION
         - PUBLIC
@@ -2109,7 +2263,7 @@ definitions:
         description: 'Identity of the user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       provider:
         type: string
-        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user on sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       idType:
         type :  string
         description : 'The type of identity proof. For example, PAN card is an ID type whose provider is the central government.'
@@ -2122,10 +2276,10 @@ definitions:
         description: 'Identity of user in an external system. The externalId helps Sunbird identify and associate the user with another external organization. The combination of the externalId and provider must be unique. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       provider:
         type: string
-        description : 'A Provider is the orgainsation that provides an (external) ID to a user in sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
+        description : 'A Provider is the orgainsation that provides an (external) ID to a user on sunbird. That organisation, may or maynot be part of Sunbird. If the user passes the value for the externalId, then it is mandatory to pass a value for the provider.'
       idType:
         type :  string
-        description : 'The type of indentity proof. For example, PAN card is an ID type whose provider is the central government' 
+        description : 'The type of identity proof. For example, PAN card is an ID type whose provider is the central government' 
       operation:
         type: string
         description : 'possible values are {ADD,EDIT,REMOVE}'
@@ -2183,3 +2337,45 @@ definitions:
              type: string
     required:
     - endorsedUserId
+  UpdateUserSkillsRequest:
+    title: UpdateUserSkillsRequest
+    type: object
+    properties:
+      request:
+       type: object
+       properties:
+         userId:
+          type: string
+         skills:
+          type: array
+          items:
+           type: string
+       required:
+       - skills
+       - userId
+  
+  UserSuccessResponse:
+    description: Common success response for a User API
+    type: object
+    allOf:
+      - $ref: '#/definitions/ResultWithEmptyBody'
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse' 
+  UnAuthorizedResponse:
+    allOf:
+      - $ref: '#/definitions/ResultWithEmptyBody'
+      - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+  AddUserSkillEndorsementRequest:
+    title: AddUserSkillEndorsementRequest
+    type: object
+    properties:
+      request:
+       type: object
+       properties:
+         userId:
+          type: string
+         endorsedUserId:
+          type: string
+         skillName:
+          type: string
+    required:
+    - request

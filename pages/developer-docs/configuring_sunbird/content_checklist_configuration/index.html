@@ -1,0 +1,138 @@
+<h2 id="overview">Overview</h2>
+<p>To ensure that content uploaded and available on Sunbird are quality driven and adheres to standard guidelines, content can be published only after it undergoes a review.</p>
+
+<p>A content reviewer on Sunbird can perform the following activities: 
+<br /> a) Request changes
+<br /> b) Publish</p>
+
+<p>This page details the procedure on how to configure the review checklist. Configurations are supported at the following two levels:
+<br /> a) Instance level
+<br /> b) Channel level</p>
+
+<p>When configuration is done at a channel level, it overrides instance level configuration.</p>
+
+<p><b>Note</b>: Configurations are set internally, users can override default configuration to customize checklists for organizational requirements.</p>
+
+<p>Different configuration can be defined differently for the following content types:
+* Course
+* Textbook
+* Resource and Collection</p>
+
+<h3 id="default-ui-behaviour">Default UI Behaviour</h3>
+<p>When there are no configuration set for the checklist:
+<br />1. When requesting changes to content:
+<br /> a) An information message “Please detail the required changes in the comments” is displayed over the comment box. On entering comments here, the Request Changes button is enabled
+<br /> b) In case of default API failure, an error message stating the same is displayed
+<br />2. When publishing reviewed content:
+<br /> a) A confirmation message ““Are you sure you want to publish?”” is displayed. The Publish button is enabled and reviewer clicks the button to publish content
+<br /> b) In case of default API failure, an error message stating the same is displayed</p>
+
+<p>When configurations are set for the checklist:
+<br />1. When requesting changes to content:
+<br /> a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable Request Changes button
+<br /> b) In case of default API failure, an error message “Something went wrong. Please try again later” is displayed
+<br />2. When publishing reviewed content:
+<br /> a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable Publish button
+<br /> b) In case of default API failure, an error message “Something went wrong. Please try again later” is displayed</p>
+
+<h3 id="configuring-review-checklist">Configuring Review Checklist</h3>
+<ul>
+  <li>Use the create/update form API with the following API request</li>
+</ul>
+
+<p><strong>Sample API request for Request Changes with configuration:</strong></p>
+
+<pre>
+{
+	"request": {
+		"type": "content",
+		"action": "requestForChangesChecklist",
+		"subType": "resource",
+		"data": {
+			"templateName": "defaultTemplate",
+			"action": "requestForChangesChecklist",
+			"fields": [{
+				"title": "Please tick the reasons for requesting changes and provide detailed comments:",
+				"otherReason": "Other Issue(s) (if there are any other issues, tick this and provide details in the comments box)",
+				"contents": [{
+						"name": "Appropriateness",
+						"checkList": [
+							"Has Hate speech, Abuse, Violence, Profanity",
+							"Has Sexual content, Nudity or Vulgarity",
+							"Has Discriminatory or Defamatory content",
+							"Is not suitable for children"
+						]
+					},
+					{
+						"name": "Content details",
+						"checkList": [
+							"Inappropriate Title or Description",
+							"Incorrect Board, Grade, Subject or Medium",
+							"Inappropriate tags such as Resource Type or Concepts",
+							"Irrelevant Keywords"
+						]
+					},
+					{
+						"name": "Usability",
+						"checkList": [
+							"Content is NOT playing correctly",
+							"CANNOT see the content clearly on Desktop and App",
+							"Audio is NOT clear or NOT easy to understand",
+							"Spelling mistakes found in text used",
+							"Language is NOT simple to understand"
+						]
+					}
+				]
+			}]
+		}
+	}
+}
+</pre>
+
+<p><strong>Sample API request for Publish option with configuration:</strong></p>
+
+<pre>
+{
+	"request": {
+		"type": "content",
+		"action": "publishChecklist",
+		"subType": "resource",
+		"data": {
+			"templateName": "defaultTemplate",
+			"action": "publishChecklist",
+			"fields": [{
+				"title": "Please confirm that ALL the following items are verified (by ticking the check-boxes) before you can publish:",
+				"contents": [{
+						"name": "Appropriateness",
+						"checkList": [
+							"No Hate speech, Abuse, Violence, Profanity",
+							"No Sexual content, Nudity or Vulgarity",
+							"No Discrimination or Defamation",
+							"Is suitable for children"
+						]
+					},
+					{
+						"name": "Content details",
+						"checkList": [
+							"Appropriate Title, Description",
+							"Correct Board, Grade, Subject, Medium",
+							"Appropriate tags such as Resource Type, Concepts",
+							"Relevant Keywords"
+						]
+					},
+					{
+						"name": "Usability",
+						"checkList": [
+							"Content plays correctly",
+							"Can see the content clearly on Desktop and App",
+							"Audio (if any) is clear and easy to understand",
+							"No Spelling mistakes in the text",
+							"Language is simple to understand"
+						]
+					}
+				]
+			}]
+		}
+	}
+}
+</pre>

@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<base id="baseURL" href="/" />
+<script>
+	// Dynamic Base URL
+	function getBase(){
+		excludedSites = ["127.0.0.1:4000", "www.sunbird.org"];
+		baseURL = document.getElementById('baseURL');
+		if (excludedSites.indexOf(window.location.host) > -1){
+			baseURL.href="/";
+		} else {
+			baseURL.href="/releases/release.1.6.c/";
+		}
+	}
+	getBase();
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=10, user-scalable=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+<meta name="msapplication-TileColor" content="#65d3f7">
+<meta name="msapplication-TileImage" content="img/favicon/mstile-150x150.png">
+
+<title>Sunbird Open Saber Integration</title>
+<meta name="description" content="Sunbird Site Procedure document on how to integrate open saber with to Sunbird"/>
+
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="last-modified" content="2018-08-20 11:50:07 +0530">
+<meta http-equiv="Expires" content="600" />
+
+<!--Build Details-->
+<meta name="buildVersion" content="release.1.6.c" />
+<meta name="buildNo" content="4581" />
+<!--/Build Details-->
+
+<!-- CDN's-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,600,700" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
+<!-- /CDN's-->
+
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20082018"  />
+<link rel="stylesheet" href="css/style.css?20082018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?20082018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?20082018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?20082018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?20082018"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-106552125-1');
+</script>
+
+	
+		<meta name="robots" content="index, follow">
+	
+  </head>
+  <body id="body" class="doc-layout">
+  <div class="container inner container-height docs">
+    <header class="logo-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/sunbird-logo.png" alt="Sunbird docs" title="Sunbird docs">
+        </a>
+      </div>
+      <button type="button" class="dropdown-toggle collapsed" id="dropdown-trigger" data-toggle="collapse" data-target="#mobile-dropdown" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </header>
+    <nav class="sidebar-container" id="mobile-dropdown">
+      <div class="inner__sidebar">
+        <div id="">
+     <div class="search-cover">
+	<form method="get" action="https://www.google.com/search" target="_blank">
+		<input type="text" value="" name="q" placeholder="Search"/ class="search-input" title="Enter keyword to search">
+		<input type="hidden" value="en" name="hl" />
+		<input type="hidden" name="sitesearch" value="http://www.sunbird.org" />
+		<input type="hidden" value="lang_en" name="lr" />
+		<button type="submit" onclick="submit()" class="search-btn" title="Search">
+			<i class="fa fa-search"></i>
+		</button>
+	</form>
+</div>
+ 
+    <div class="sidebar-wrapper developer-docs-opensaber">
+        <div class="">
+            <a href="architecture/">
+                <h4 class="sidebar-group-title">Architecture</h4>
+            </a>
+            <ul class="sidebar-group architecture">
+                <li>
+                    <a href="architecture/overview/">Overview</a>
+                </li>
+                <li>
+                    <a href="architecture/design/">Design</a>
+                </li>
+                <li>
+                    <div class="">
+                        <a href="architecture/views/elementryview/">Views</a>
+                        <ul class="sidebar-group">
+                            <li>
+                                <a href="architecture/views/logical/">Logical View</a>
+                            </li>
+                            <li>
+                                <a href="architecture/views/physical/">Physical View</a>
+                            </li>
+                            <li>
+                                <a href="architecture/views/conceptual/">Conceptual View</a>
+                            </li>
+                            <li>
+                                <a href="architecture/views/deployment/">Deployment View</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="architecture/usecase/">Use Cases</a>
+                </li>
+            </ul>
+            <a href="features-documentation/">
+                <h4 class="sidebar-group-title">Product Features</h4>
+            </a>
+            <ul class="sidebar-group features-documentation">
+                <li>
+                    <a href="features-documentation/explore_sunbird/">Explore Sunbird</a>
+                </li>
+                <li>
+                    <a href="features-documentation/login/">Sign In</a>
+                </li>
+                <li>
+                    <a href="features-documentation/register_org/">Register Organizations</a>
+                </li>
+                <li>
+                    <a href="features-documentation/register_user/">Register Users</a>
+                </li>
+                <li>
+                    <a href="features-documentation/userrolepermission/">User Roles and Permissions</a>
+                </li>
+                <li>
+                    <div class="">
+                        <ul class="sidebar-group">
+                            <li>
+                                <a href="features-documentation/userrole/">Types of Users</a>
+                            </li>
+                            <li>
+                                <a href="features-documentation/userprofile/">User Profile</a>
+                            </li>
+                            <li>
+                                <a href="features-documentation/workspace/">Workspace</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="features-documentation/admindashboard/">Administrator Dashboard</a>
+                </li>
+                <li>
+                    <a href="features-documentation/lessonplan/">Lesson Plan</a>
+                </li>
+                <li>
+                    <a href="features-documentation/book_creation/">Book</a>
+                </li>
+                <li>
+                    <a href="features-documentation/collection_creation/">Collection</a>
+                </li>
+		<li>
+            <a href="features-documentation/resource_creation/">Resource</a>
+        </li>
+        <li>
+            <a href="features-documentation/course_intro/">Courses</a>
+        </li>
+        <li>
+            <div class="">
+                <ul class="sidebar-group">
+                    <li>
+                    <a href="features-documentation/course_creation/">Course Creation</a>
+                    </li>
+                    <li>
+                    <a href="features-documentation/course_batches/">Batch Creation</a>
+                    </li>
+                    <li>
+                    <a href="features-documentation/course_consumption/">Taking a Course</a>
+                    </li>
+                </ul>
+            </div>
+		</li>
+		<li>
+			    <a href="features-documentation/upload/">Uploading Content</a>
+        </li>	
+		<li>
+            <div class="">
+                <a href="features-documentation/badging_framework/badging_overview/">Badging Framework</a>
+                <ul class="sidebar-group">
+                    <li>	
+                            <a href="features-documentation/badging_framework/content_badges/">Issuing Badges for Content</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <a href="features-documentation/announcement/">Announcement</a>
+        </li>
+        <li>
+            <a href="features-documentation/content_review/">Content Review</a>
+        </li>
+		<li>
+               <a href="features-documentation/library/">Library</a>
+                </li>
+                <li>
+                    <a href="features-documentation/contentlifecycle/">Content Lifecycle</a>
+                </li>
+                <li>
+                    <a href="features-documentation/contenteditor/">Content Editor</a>
+                </li>
+                <li>
+                    <div class="">
+                        <a href="features-documentation/guidelines/">Guidelines</a>
+                        <ul class="sidebar-group">
+                            <li>
+                                <a href="features-documentation/intellectualproperty/">Intellectual Property</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="features-documentation/collaborationpartnership/">Collaboration and Partnership</a>
+				</li>
+				<li>
+					<a href="features-documentation/mobileapp/allappfeatures/">Mobile App Features</a>
+				</li>
+            </ul>
+            <a href="usertaskflow/">
+				<h4 class="sidebar-group-title">User Task Flows</h4>
+			</a>
+				<ul class="sidebar-group usertaskflow">
+					<li>
+						<a href="usertaskflow/how_do_i_create_content/">How do I Create Content</a>
+					</li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_video/">How do I Add a Video</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_text/">How do I Add Text</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_audio/">How do I Add Audio</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_hotspot/">How do I Add a Hotspot</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_image/">How do I Add an Image</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_shape/">How do I Add Shapes</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_scribblepad/">How do I Add the Scribblepad</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_activity/">How do I Add an Activity</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_create_course/">How do I Create a Course</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_create_book/">How do I Create a Book</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_create_book_with_dial_code/">How do I Add DIAL Codes to a Book</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_create_lessonplan/">How do I Create a Lesson Plan</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_create_collection/">How do I Create a Collection</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/reviewer_taskflow/">How do I Review Content</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_uploadcontent/">How do I Upload Content</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_delete_content/">How do I Delete Content</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_metadata/">How do I Add Metadata</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/how_do_i_add_resource/">How do I Add Resource</a>
+						    </li>
+						    <li>
+								<a href="usertaskflow/limited_sharing/">How do I Share Content to a Limited Group</a>
+						    </li>
+					    </ul>
+            <a href="developer-docs/">
+                <h4 class="sidebar-group-title">Developer Documentation</h4>
+            </a>
+            <ul class="sidebar-group developer-docs">
+                <!--<li>
+                    <a href="developer-docs/getting_started/">Getting Started with Sunbird</a>
+                </li>-->          
+                <li>
+                    <div class="">
+                        <a href="developer-docs/installation/">Installation</a>
+                        <ul class="sidebar-group">
+                            <li>
+                                <a href="developer-docs/installation/developer_installation/">Developer Installation</a>
+                            </li>
+                            <li>
+                                <a href="developer-docs/installation/server_installation/">Server Installation</a>
+                                <li>
+                                    <a href="developer-docs/configuring_sunbird/sso_publickey/">SSO Public Key Configuration</a>
+                                </li>
+                            </li>
+                            <li>
+                                <a href="developer-docs/installation/install_mobile_setup/">Mobile App Installation</a>
+                            </li>
+                            <li>
+                                <a href="developer-docs/upgrading/">Upgrading Sunbird</a>
+                            </li>
+                            <li>
+                                    <div class="">
+                                        <ul class="sidebar-group">
+                                         <li>
+                                            <a href="developer-docs/upgrade/upgrade_angular_node/">Upgrading Angular</a>
+                                         </li>
+                                         </ul>
+                                    </div>
+                            </li>
+                            <li>
+                                <a href="developer-docs/installation/static_pages_to_cdn/">Migrate Tenant Pages</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <a href="developer-docs/configuring_sunbird/">Configuration</a>
+                        <ul class="sidebar-group">
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/env_variables_portal/">Portal Service Environment Variables</a>
+                            </li>    
+                            <!--<li>
+                              <a href="developer-docs/configuring_sunbird/configuring_domain_ext_links/">Import External Content</a>
+                            </li>-->
+                            <li>
+				              <a href="developer-docs/configuring_sunbird/env_variables_content_service/">Content Service Environment Variables</a>
+                            </li>    
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/content_filtering/">Content Filtering</a>
+                            </li>
+                            <li>
+                              <a href="developer-docs/configuring_sunbird/metadata_driven_forms/">Configure Metaforms</a>
+                            </li>
+                            <li>
+				                <a href="developer-docs/configuring_sunbird/env_variables_lms/">LMS Service Environment Variables</a>
+                            </li>
+                            <li>
+                             <div class="">
+                               <ul class="sidebar-group">
+                                <!--<li>
+                                  <a href="developer-docs/configuring_sunbird/sso_otpsms/">Configure OTP based SMS</a>
+                                </li>-->
+                                </ul>
+                             </div>
+                            </li>
+                          </ul>
+                    </div>
+                </li>
+		        <li>
+                    <div class="">
+                        <a href="developer-docs/onboarding/">Onboarding</a>
+                        <ul class="sidebar-group">
+                            <li>
+                            <a href="developer-docs/singlesignon/org_user_creation_sso/">Creating Organizations and Users</a>
+                            </li>
+                            <li>
+                            <a href="developer-docs/how-to-guide/how_to_create_user/">Creating Users</a>
+                            </li>
+					        <li>	
+                            <a href="features-documentation/badging_framework/creating_badges/">Creating Badges</a>
+					        </li>
+					        <li>	
+                            <a href="features-documentation/badging_framework/badges_users/">Issuing Badges to Users</a>
+					        </li>
+					        <li> 
+				            <a href="developer-docs/configuring_sunbird/configuring_announcement/">Creating Announcements</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                        
+                
+                <li>
+                    <div class="">
+                        <a href="developer-docs/telemetry/overview/">Telemetry</a>
+                        <ul class="sidebar-group">
+                            <li>
+                                <a href="developer-docs/telemetry/specification/">Telemetry Specifications</a>
+                            </li>
+                            <li>
+                                <a href="developer-docs/telemetry/sending_telemetry/">Sending Telemetry</a>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <ul class="sidebar-group">
+                                        <li>
+                                            <a href="developer-docs/telemetry/consuming_telemetry/#mobile-app-workflow">Mobile App Workflow</a>
+                                        </li>
+                                        <li>
+                                            <a href="developer-docs/telemetry/consuming_telemetry/#web-portal-workflow">Web Portal Workflow</a>
+                                        </li>
+                                        <li>
+                                            <a href="developer-docs/telemetry/consuming_telemetry/#content-editor-workflow">Content Editor Workflow</a>
+                                        </li>
+                                        <li>
+                                            <a href="developer-docs/telemetry/consuming_telemetry/#backend-services-workflow">Backend-services Workflow</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="">
+                        <a href="developer-docs/library_reference/">Library References</a>
+                        <ul class="sidebar-group">
+                            <li>
+                                <a href="developer-docs/telemetry/jslibrary/">Standalone JS Library</a>
+                            </li>
+                            <li>
+                                <a href="developer-docs/telemetry/htmlinterfacelibrary/">HTML Interface Library</a>
+                            </li>
+                            <li>
+                                <a href="developer-docs/telemetry/authtokengenerator_jslibrary/">AuthToken Generator JS Library</a>
+                            </li>
+                            <!--<li>
+                                <a href="pages/developer-docs/content-renderer/" target="_blank">Content Renderer</a>
+                            </li>
+                            <li>
+                                <a href="pages/developer-docs/content-editor-framework/" target="_blank">Content Editor Framework</a>
+                            </li>
+                            <li>
+                                <a href="pages/developer-docs/content-editor-plugins/" target="_blank">Content Editor Plugins</a>
+                            </li>-->
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="developer-docs/troubleshooting/">Troubleshooting</a>
+                </li>
+            </ul>
+            <a href="apis/">
+				<h4 class="sidebar-group-title">API Reference Documentation</h4>
+			</a>
+            <ul class="sidebar-group apis">
+                <li>
+                    <a href="apis/#feature" >Feature</a>
+                </li>
+                <li>
+                    <a href="apis/#admin-apis" >Administration</a>
+                </li>
+                <li>
+                    <a href="apis/#setup-apis" >Setup</a>
+                </li>
+                <li>
+                    <a href="apis/#data-apis" >Data</a>
+                </li>
+            </ul>
+            <a href="contributions/">
+                <h4 class="sidebar-group-title">Contribute to Sunbird</h4>
+            </a>
+            <ul class="sidebar-group contributions">
+                <li>
+                    <a href="contributions/filing_a_bug/">Guidelines for Filing a Bug</a>
+                </li>
+                <li>
+                    <a href="contributions/contribution_guidelines/">Contributing to Sunbird Documentation</a>
+                </li>
+            </ul>
+             <a href="release_notes/">
+                <h4 class="sidebar-group-title">Release Notes</h4>
+            </a> 
+	   <a href="faqs/">
+                <h4 class="sidebar-group-title">Frequently asked questions</h4>
+            </a>
+            <ul class="sidebar-group faqs">
+                <li>
+                    <a href="faqs/audience/">Audience</a>
+                </li>
+                <li>
+                    <a href="faqs/content_format/">Content Format</a>
+                </li>
+                <li>
+                    <a href="faqs/content_repo/">Content Repositories</a>
+                </li>
+                <li>
+                    <a href="faqs/contentreviews/">Content Review</a>
+                </li>
+                <li>
+                    <a href="faqs/content_types/">Content Types</a>
+                </li>
+                <li>
+                    <a href="faqs/content_upload/">Content Upload</a>
+                </li>
+                <li>
+                    <a href="faqs/feature/">Features</a>
+                </li>
+                <li>
+                    <a href="faqs/fixerrors/">Fix Errors</a>
+                </li>
+                <li>
+                    <a href="faqs/helpsupport/">Help Support</a>
+                </li>
+                <li>
+                    <a href="faqs/intellectual_propertylicensesstandards/">Intellectual Property Licenses Standards</a>
+                </li>
+                <li>
+                    <a href="faqs/registrationenrolment/">Registration and Enrollment</a>
+                </li>
+                <li>
+                    <a href="faqs/signin/">Sign In</a>
+                </li>
+                <li>
+                    <a href="faqs/taxonomymetadataframework/">Taxonomy Meta Data Framework</a>
+                </li>
+                <li>
+                    <a href="faqs/user_rightspermissions/">Users Rights and Permission</a>
+                </li>
+            </ul>
+            <a href="glossary/">
+                <h4 class="sidebar-group-title">Glossary</h4>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    $("a[href$='developer-docs/opensaber/user_extension/']").addClass("sidebar-link-selected");
+</script>
+
+      </div>
+    </nav>
+    <div class="content">
+      <div class="inner__content header" id="heading">
+        <h1>Open Saber Integration </h1>
+      </div>
+
+      <div id="main-content" class="inner__content">
+			<p class="edit-para text-right">
+				<span>
+			<a target="_blank" class="contribute" href="contributions/contribution_guidelines">
+				  <i class="fa fa-book" aria-hidden="true"></i> <i>Contribution Guidelines</i>
+			  </a> &nbsp;&nbsp;
+			  
+			 <a target="_blank"  title="Edit this page"class="" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/opensaber/user_extension.md">
+				  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+			  </a> 
+			  | 
+			  <a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+				  Report
+			  </a>
+			  </span>
+			</p>
+          <div id="toc-container">
+  <table class="toc" id="toc">
+    <tbody>
+      <tr>
+        <td>
+          <div id="toctitle">
+            <h2>Contents</h2>
+            <span class="toctoggle">[<a id="toctogglelink" class="internal" href="#">hide</a>]</span>
+          </div>
+          <ul>
+            <li class="toc_level-1 toc_section-1">
+              <a href="#overview"><span class="tocnumber">1 .</span> <span class="toctext">Overview</span></a>
+              <ul>
+                <li class="toc_level-2 toc_section-2">
+                  <a href="#customization"><span class="tocnumber">1.1 .</span> <span class="toctext">Customization</span></a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><h2 id="overview">Overview</h2>
+<p>The main purpose of <a href="https://github.com/project-sunbird/open-saber/wiki">Open Saber</a> is to serve as an electronic registry for entities such as  teacher registry, doctor registry etc. Open saber can be used by Sunbird adopters to store custom information about their organization users, user profile data extensions, organisation data extensions etc.</p>
+
+<h3 id="customization">Customization</h3>
+<p>Open Saber maintains information in <a href="https://www.w3.org/RDF/">RDF</a> graph data format. <a href="https://shex.io/">SHEX</a> is used to define the schema of data stored in Open Saber. The SHEX schema definition can consist of one or more entities e.g. user, organisation etc. whose information can be stored within Open Saber.</p>
+
+<p>Currently all interactions with Open Saber is in <a href="https://json-ld.org/">JSON-LD</a> format while Sunbird LMS APIs are in JSON format. A java library (Open Saber Client) is available for transforming between JSON-LD and JSON formats. Additionally, Sunbird provides a java library for bridging between Open Saber equivalent JSON and Sunbird API specified JSON format.</p>
+
+<p>To support customization of an entity within Sunbird, the following definitions are required:</p>
+
+<ol>
+  <li>
+    <p>Definition of the entity using SHEX (Open Saber). For more details refer <a href="https://github.com/project-sunbird/open-saber/wiki">Open Saber</a></p>
+  </li>
+  <li>
+    <p>Define mapping to transform between JSON-LD and JSON format (Open Saber Client). For more details refer <a href="https://github.com/project-sunbird/open-saber/wiki">Open Saber</a></p>
+  </li>
+  <li>
+    <p>Define mapping to transform between Open Saber Client JSON and Sunbird JSON format (Sunbird Open Saber Bridge). This includes updation of following files within <a href="https://github.com/project-sunbird/sunbird-open-saber-bridge">Sunbird Open Saber Bridge</a></p>
+  </li>
+</ol>
+
+<p>a) <strong>registry-user-write-mapping.conf</strong>: Configuration to map Sunbird User Create and Update API request JSON format for required extensions (i.e. custom fields) into Open Saber Client JSON format</p>
+
+<p>Currently Sunbird only supports customisation of users</p>
+
+<p>Add configuration for every custom field in below format. This configuration definition is as per typesafe format</p>
+
+<pre>
+  <code>
+&lt;customType&gt; {
+    &lt;customFieldName&gt; {
+        &lt;propertyName&gt;: &lt;propertyValue&gt;
+        ...
+    }
+}
+
+</code>
+</pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property Name</th>
+      <th>Field Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fromFieldName</td>
+      <td>Optional</td>
+      <td>Field name which identifies input of transformation. If not specified, _<customfieldname>_ is used</customfieldname></td>
+    </tr>
+    <tr>
+      <td>toFieldName</td>
+      <td>Mandatory</td>
+      <td>Field name which identifies output of transformation</td>
+    </tr>
+    <tr>
+      <td>fromType</td>
+      <td>Mandatory</td>
+      <td>Type of from field name</td>
+    </tr>
+    <tr>
+      <td>toType</td>
+      <td>Mandatory</td>
+      <td>Type of to field name</td>
+    </tr>
+    <tr>
+      <td>fromDateFormat</td>
+      <td>Optional</td>
+      <td>Date format of input if from field type is DateString</td>
+    </tr>
+    <tr>
+      <td>toDateFormat</td>
+      <td>Optional</td>
+      <td>Date format of output if to field type is DateString</td>
+    </tr>
+    <tr>
+      <td>filters</td>
+      <td>Optional</td>
+      <td>Filter for selecting an element to transform from an input of type _List<t>_</t></td>
+    </tr>
+    <tr>
+      <td>filterField</td>
+      <td>Optional</td>
+      <td>Field to use from selected element in transformation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note</strong>:</p>
+
+<ul>
+  <li>
+    <p>Supported types are <em>Integer</em>, <em>Double</em>, <em>Long</em>, <em>Boolean</em>, <em>String</em>, <em>DateString</em> and _List<t>_</t></p>
+  </li>
+  <li>
+    <p>In _List<t>_ type, _T_ can be a simple type (e.g. _String_) or a custom type. A custom type can be defined in the configuration</t></p>
+  </li>
+  <li>
+    <p><em>filters</em> is applicable only if <em>fromType</em> is _List<t>_ and _toType_ is other than list type</t></p>
+  </li>
+  <li>
+    <p><em>filterField</em> is applicable only if <em>fromType</em> is _List<t> and _filters_ is specified</t></p>
+  </li>
+  <li>
+    <p><em>filters</em> has the following format. This filter can be used to select an element having specified field name with specified value</p>
+  </li>
+</ul>
+
+<pre>
+  <code>[{field = &lt;fieldName&gt;, values = [&lt;valueName&gt;]}]
+</code>
+</pre>
+
+<p>b) <strong>registry-user-read-mapping.conf</strong>: Configuration to map Open Saber Client response JSON format for required extensions into Sunbird User Read API JSON format 
+The configuration format for read mapping is similar to write mapping. The difference between read and write mapping is due to the input. In case of read, the input is Open Saber Client response JSON whereas in case of write, the input is Sunbird API request JSON format
+c) <strong>registry-user-enums-mapping.conf</strong>: Configuration which defines enumerations required for mapping between Sunbird User API JSON format and Open Saber Client JSON format
+The configuration format for enums is as given below:</p>
+
+<pre>
+  <code>enums {
+	&lt;customEnumName1&gt; {
+		"&lt;sunbirdEnumValue1.1&gt;" = "&lt;openSaberEnumValue1.1&gt;"
+		"&lt;sunbirdEnumValue1.2&gt;" = "&lt;openSaberEnumValue1.2&gt;"
+		...
+	}
+	&lt;customEnumName2&gt; {
+		"&lt;sunbirdEnumValue2.1&gt;" = "&lt;openSaberEnumValue2.1&gt;"
+		"&lt;sunbirdEnumValue2.2&gt;" = "&lt;openSaberEnumValue2.2&gt;"
+		...
+	}
+}
+</code>
+</pre>
+
+<p>Listed are some examples to illustrate configuration of user customisation.
+<strong>Example 1</strong>: Define configuration for a user with a custom field <em>schoolCode</em> of simple type</p>
+
+<p>
+  <strong>registry-user-write-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>user {
+	schoolCode {
+		toFieldName	= "teacher.schoolCode"
+		fromType	= "String"
+		toType		= "String"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>registry-user-read-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>teacher {
+	schoolCode {
+		toFieldName	= "schoolCode"
+		fromType	= "String"
+		toType		= "String"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>Sunbird API JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+	"schoolCode": "KV101"
+}
+</code>
+</pre>
+
+<p>
+  <strong>Open Saber Client JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+    "teacher": {
+    	"schoolCode": "KV101"
+    }
+}
+</code>
+</pre>
+
+<p><strong>Example 2</strong>: Define configuration for a user with a custom field <em>highestAcademicQualification</em> of _List<t>_ type, where _T_ is a simple type</t></p>
+
+<p>
+  <strong>registry-user-write-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>user {
+	highestAcademicQualification {
+		toFieldName	= "teacher.highestAcademicQualification"
+		fromType	= "List&lt;String&gt;"
+		toType		= "List&lt;String&gt;"
+		enum		= "academicQualificationEnum"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>registry-user-read-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>teacher {
+	highestAcademicQualification {
+		toFieldName	= "highestAcademicQualification"
+		fromType	= "List&lt;String&gt;"
+		toType		= "List&lt;String&gt;"
+		enum		= "academicQualificationEnum"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>registry-user-enums-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>enums {
+    academicQualificationEnum {
+	    "Below Secondary"	= "BelowSecondary"
+	    "Secondary"			= "Secondary"
+	    "Higher Secondary"	= "HigherSecondary"
+	    "Graduate"			= "Graduate"
+	    "PostGraduate"		= "PostGraduate"
+	    "MPhil"				= "MPhil"
+	    "Doctoral"			= "Doctoral"
+	    "Post-Doctoral"		= "PostDoctoral"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>Sunbird API JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+	"highestAcademicQualification": ["PostGraduate", "Higher Secondary"]
+}
+</code>
+</pre>
+
+<p><strong>Open Saber Client JSON format</strong>
+~~~
+{
+    “teacher”: {
+    	“highestAcademicQualification”: [“PostGraduate”, “HigherSecondary”]
+    }
+}
+~~~</p>
+
+<p><strong>Example 3</strong>: Define configuration for a user with custom field <em>classSubjectTaught</em> of _List<t>_ type, where _T_ is a custom type.</t></p>
+
+<p>
+  <strong>registry-user-write-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>user {
+	classSubjectTaught {
+		toFieldName	= "teacher.teachingExperience"
+		fromType	= "List&lt;classSubjectType&gt;"
+		toType		= "List&lt;T&gt;"
+	}
+}
+classSubjectType {
+	classes {
+		toFieldName	= "classesTaught"
+		fromType	= "String"
+		toType		= "String"
+		enum		= "classEnum"
+	}
+	subjects {
+		toFieldName	= "subjectsTaught"
+		fromType	= "List&lt;String&gt;"
+		toType		= "List&lt;String&gt;"
+		enum		= "subjectsEnum"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>registry-user-read-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>teacher {
+	teachingExperience {
+		toFieldName	= "classSubjectTaught"
+		fromType	= "List&lt;classSubjectTaughtType&gt;"
+		toType		= "List&lt;T&gt;"
+	}
+}
+classSubjectTaughtType {
+	classesTaught {
+		toFieldName	= "classes"
+		fromType	= "String"
+		toType		= "String"
+		enum		= "classEnum"
+	}
+	subjectsTaught {
+		toFieldName	= "subjects"
+		fromType	= "List&lt;String&gt;"
+		toType		= "List&lt;String&gt;"
+		enum		= "subjectEnum"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>registry-user-enums-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>enums {
+	classEnum {
+		"Class 1"	= "Class1"
+		"Class 2"	= "Class2"
+		"Class 3"	= "Class3"
+	}
+    subjectEnum {
+		"Accountancy"		= "Accountancy"
+		"Biology"			= "Biology"
+		"Chemistry"			= "Chemistry"
+		"Computer Science"	= "ComputerScience"
+	}	
+}
+</code>
+</pre>
+
+<p>
+  <strong>Sunbird API JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+	"classSubjectTaught": [{
+                "classes": "Class 1",
+                "subjects": ["English", "Foreign Language"]
+            }, {
+                "classes": "Class 8",
+                "subjects": ["Fine Arts", "Foreign Language"]
+            }
+        ]
+}
+</code>
+</pre>
+
+<p>
+  <strong>Open Saber Client JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+    "teacher": {
+    	"classSubjectTaught": [{
+                "classes": "Class 1",
+                "subjects": ["English", "ForeignLanguage"]
+            }, {
+                "classes": "Class 8",
+                "subjects": ["Fine Arts", "ForeignLanguage"]
+            }
+        ]
+    }
+}
+</code>
+</pre>
+
+<p><strong>Example 4</strong>: Define configuration for a user with custom field <em>serviceJoiningDate</em> of <em>DateString</em> type.</p>
+
+<p>
+  <strong>registry-user-write-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>user {
+	serviceJoiningDate {
+		toFieldName	    = "teacher.serviceJoiningDate"
+		fromType	    = "DateString",
+		toType		    = "DateString"
+		fromDateFormat  = "yyyy-MM-dd"
+		toDateFormat    = "yyyy-MM-dd"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>registry-user-read-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>teacher {
+	serviceJoiningDate {
+		toFieldName	    = "serviceJoiningDate"
+		fromType	    = "DateString",
+		toType		    = "DateString"
+		fromDateFormat  = "yyyy-MM-dd"
+		toDateFormat    = "yyyy-MM-dd"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>Sunbird API JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+	"serviceJoiningDate": "2015-04-07"
+}
+</code>
+</pre>
+
+<p>
+  <strong>Open Saber Client JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+    "teacher": {
+    	"serviceJoiningDate": "2015-04-07"
+    }
+}
+</code>
+</pre>
+
+<p><strong>Example 5</strong>: Define configuration for a user with custom field <em>teacherId</em> of <em>String</em> type which is set based on a filter applied on an input _List<t>_ type.</t></p>
+
+<p>
+  <strong>registry-user-write-mapping.conf</strong>
+</p>
+
+<pre>
+  <code>user {
+	externalIds {
+		toFieldName = "teacher.teacherId"
+		fromType	= "List&lt;T&gt;"
+		toType		= "String"
+		filters		= [{field = "provider", values = ["SK"]}]
+		filterField = "id"
+	}
+}
+</code>
+</pre>
+
+<p>
+  <strong>Sunbird API JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+	"externalIds": [{
+	    "id": "12345",
+	    "idType": "UID",
+	    "provider": "SK",
+	}]
+}
+</code>
+</pre>
+
+<p>
+  <strong>Open Saber Client JSON format</strong>
+</p>
+
+<pre>
+  <code>{
+    "teacher": {
+    	"teacherId": "12345"
+    }
+}
+</code>
+</pre>
+
+          
+          <hr />
+          
+          <p class="edit-para text-right">
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/edit/dev/pages/developer-docs/opensaber/user_extension.md" title="Fix this page">
+				<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> |
+			<a target="_blank" href="https://github.com/project-sunbird/project-sunbird.github.io/issues" title="Report issue">
+				<i class="fa fa-exclamation-circle" aria-hidden="true"></i> Report</a>
+		  </p>
+		  <a href="developer-docs/opensaber/user_extension/#heading" class="scrollup"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+          
+      </div>
+    </div>
+    <div class="page-footer">
+		<footer class="footer">
+	<div class="footer__top">
+		<div class="container">
+			<div class="row">
+				
+			<div class="col-md-4 col-sm-12">
+			</div>
+			
+			<div class="col-md-2 col-sm-6 ">
+				<ul>
+					<li><a href="about/">About Sunbird</a></li>
+					<li><a href="contact/">Contact Us</a></li>
+					<li><a href="privacy-policy/">Privacy Policy</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-md-2 col-sm-6 sideline">
+				<ul>
+					<li><a href="docs/">Documentation</a></li>
+					<li><a href="features/">Features</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-2 col-sm-12">
+			</div>
+			
+		</div>
+	</div>
+</footer>
+ 
+
+	</div>
+  </div>
+  <script type="text/javascript">
+	//TOC Toggle
+    $(function() {
+        $.toc.clickHideButton();
+    });
+    //Scroll to top
+    $(document).ready(function () {
+		$(".content").scroll(function () {
+			if ($(this).scrollTop() > 250) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+			}
+		});
+	});
+	$('#toc a').each(function(){
+		var url = this.href.replace(baseURL.href, "");
+		this.href = 'developer-docs/opensaber/user_extension/' + url;
+    })
+	$(".zoomcover").click(function(){
+		if (!$(this).hasClass("fullscreen")){
+			$(this).addClass("fullscreen");
+			$(this).find(".zoom").addClass("enabled").elevateZoom({
+				zoomType: "inner",
+				cursor  : "crosshair",
+				scrollZoom: "true"
+			});
+		} else {
+			$(this).removeClass("fullscreen");
+			$(this).find(".zoom").removeClass("enabled");
+			$(".zoomContainer").hide();
+		}
+	});
+	$(document).keyup(function(e) {
+     if (e.keyCode == 27) { 
+		$(".zoomcover").removeClass("fullscreen");
+		$(".zoomcover").find(".zoom").removeClass("enabled");
+		$(".zoomContainer").hide();
+    }
+});
+  </script>
+  <style>
+  .zoom:hover{
+	cursor:url(img/zoom.png),crosshair;
+  }
+  .zoomWindowContainer:hover div{
+	cursor:url(img/scroll.png),crosshair !important;
+	height:15px;
+	width:15px;
+  }
+  </style>
+  </body>
+</html>
