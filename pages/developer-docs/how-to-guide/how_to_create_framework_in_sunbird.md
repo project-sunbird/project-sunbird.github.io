@@ -103,7 +103,9 @@ name": "NCF",
 ### Concepts covered
 
 **Framework**
+
 **Taxonomy**
+
 **Authentication** 
 
 ### Additional Topics
