@@ -1,8 +1,8 @@
 ---
 type: landing
 directory: features-documentation/mobileapp
-title: Sunbird Mobile App
-page_title: Sunbird Mobile App
+title: Mobile Application
+page_title: Mobile Application
 description: The functions and features of the Sunbird Mobile App and its usage 
 published: true
 allowSearch: true
@@ -40,7 +40,10 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>Using the browser on your mobile device, tap this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank">URL</a> or type https://github.com/project-sunbird/sunbird-android/releases  <br><br>1. Tap on <b>sunbird staging.apk</b> link to get the latest mobile build. <br>2. Tap <b>Download</b> to download the app. You are redirected to the installation screen. <br>3. Tap <b>Install</b> to install the app</td>
+  <td>Using the browser on your mobile device, tap this <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank">URL</a> or type https://github.com/project-sunbird/sunbird-android/releases
+  <br>1. Tap on <b>sunbird staging.apk</b> link to get the latest mobile build. 
+  <br>2. Tap <b>Download</b> to download the app. You are redirected to the installation screen. 
+  <br>3. Tap <b>Install</b> to install the app</td>
    <td><img src="pages/features-documentation/images/mobileapp/download.png"></td>
   </tr>
   <tr>
@@ -52,7 +55,7 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
   </table>
 
 ## Signing In 
-The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate  content for different user types. For example, anonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library.   
+The Sign In feature allows authorized users to access content using the app. Using this feature, it is possible to differentiate  content for different user types. For example, anonymous or guest users can view only some courses, while registered users have access to additional courses and resources from the library. 
 
 <table>
   <tr>
@@ -60,7 +63,7 @@ The Sign In feature allows authorized users to access content using the app. Usi
     <th style="width:65%;">Screen</th>
  </tr>
  <tr>
-  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to the <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><br><b>Note:</b> You can also use the app without providing any credentials. For details, refer to <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
+  <td>1. Tap <b>Sign In</b> on the landing screen. You are redirected to the <b>Login</b> screen <br>2. Login using either: registered <b>Username</b>, <b>Email ID</b> or <b>Phone number</b> <br>3. Enter <b>Password</b> <br>4. Tap <b>Login</b> <br><b>Note:</b> You can also use the app without providing any credentials. For details, refer to <a href="features-documentation/mobileapp/allappfeatures/#browse-as-guest"> Browse as Guest</a>
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/login.png"></td>
   </tr>
@@ -87,7 +90,7 @@ The Home screen of the mobile app is the user's landing page. It can be customiz
   <td>1. All courses that you are enrolled for or that are assigned to you are shown in the <b>To Do</b> section. Swipe to view them or tap <b>View all</b> <br>2.Tap <b>Resume</b> to take up the a course <br>3. Tap <b>View all</b> in the <b>Announcements</b> section to view your announcements <br>4. Tap the <b>QR Code</b> icon to scan QR codes printed in physical textbooks <br>5. Tap <b>Search</b> icon. You are redirected to the next screen <br>6. Type keywords or DIAL codes using your mobile keypad to search content <br>7. Tap <b>Home</b> to return to the home screen from any other screen</td>
   <td><img src="pages/features-documentation/images/mobileapp/home.png"></td>
   </tr>
-  </table>
+</table>
 
 ### Courses
 
@@ -113,7 +116,7 @@ The <b>Courses</b> screen lists current courses, courses in progress, latest cou
   <tr>
    <td><b>Sharing, Reporting or Deleting Course Content</b><br><br>1. Tap <b>Share</b> icon to share the course content <b>As Link</b>  or <b>As File</b> through different channels<br>2. Tap on the <b>Menu</b> icon to <b>Delete</b> or <b>Report</b> course content <br><br><b>Note:</b> You can select reasons to report content viz., <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li><br><b>Note:</b> The share, report and delete features are common to all content types, viz.Courses, Library resources and content linked to QR and DIAL codes</td>
    <td><img src="pages/features-documentation/images/mobileapp/course4.png"></td> 
-  </tr>     
+  </tr> 
   </table>
   
 ### Library
@@ -150,12 +153,128 @@ All content resources that you have saved on your device or popular artifacts fr
    <td><b>Downloading content</b><br><br>1. Tap <b>Download</b> to download the content. <br>2. Tap the <b> View Credits and Licensing Info</b> to view the license, attribution and credit information associated with the content <br>3. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>4. Tap <b>Cancel</b> to cancel the download. <br><br><b>Note:</b> You can download content only when you are connected to the Internet. However, you can view the downloaded content Offline</td>
   <td><img src="pages/features-documentation/images/mobileapp/library4.png"></td> 
  </tr>
-  </table>
+</table>
  
 ### Profile
 
-You can update your profile using the app
+You can add and update all your profile details on the Profile tab
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr> 
+ <tr>
+  <td>1. Tap the <b>Profile</b> tab 
+  <br>2. Tap <b>Add</b> corresponding to each option to edit the details:
+   <br>&emsp;a) <b>Education</b>
+    <br>&emsp;b) <b>Experience</b> 
+    <br>&emsp;c) <b>Address</b> 
+    <br>&emsp;d) <b>Skills</b> 
+   <br>3. Content created by logged in user is displayed here 
+   <br>4. Tap <b>edit</b> icon to edit additional information such as email ID, gender
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/Profile1.png"></td>
+ </tr>
+ </table>
+ 
+#### Creating New Users
+ <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+ <td>1. Tap the <b>Search</b> icon and enter keywords to search for user profiles 
+ <br>2. Tap <b>Burger menu</b> icon to select from the following: 
+    <br>&emsp;a) <b>Users and Groups</b>
+    <br>&emsp;b) <b>Reports</b> 
+    <br>&emsp;c) <b>Settings</b> 
+   <br>&emsp;d) <b>Sign Out</b>
+   <br>3. Tap <b>Users and Group</b> to create users or groups 
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/Profile2.png"></td>
+  </tr>
+  <tr>
+  <td>1. Tap <b>Burger menu</b> to edit or delete the current user profile
+  <br>2. Tap <b>Create New User</b> to create a new user 
+  <br>3. On tapping <b>Create New User</b> the Create User screen is displayed 
+  <br>4. Change the user type to Student or Teacher 
+  <br>5. Enter <b>Name</b> of the user 
+  <br>6.Select from the following drop-down menus:
+    <br>&emsp;a) <b>Syllabus</b>
+    <br>&emsp;b) <b>Board</b> 
+    <br>&emsp;c) <b>Medium of Instruction</b> 
+    <br>&emsp;d) <b>Class</b> 
+    <br>&emsp;d) <b>Subjects</b> 
+    <br>7. Tap <b>Save</b> to save the changes
+  </td>
+  <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
+ </tr>
+ </table>
+ 
+#### Creating New Groups
 
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+    <td>1.Tap <b>Group</b> to create groups
+    <br>2.Tap <b>Burger menu</b> to edit or delete the current group 
+    <br>3.Tap <b>Create New Group</b> to create a new group. The Create Group screen is displayed 
+    <br>4. Enter the <b>Group Name</b> 
+    <br>5. Select the following from their respective drop-down menus:
+    <br>&emsp;a) <b>Syllabus</b>
+    <br>&emsp;b) <b>Class</b>
+    <br>6. Tap <b>Next</b>. Select users to be added to the group and tap <b>Create Group</b> 
+    </td>
+    <td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png">
+    </td>
+    </tr>
+</table>
+ 
+#### Sharing User/Group Details
+
+Details of users or groups created can be shared with other users
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+  </tr>
+  <tr>
+  <td>1. Tap <b>Share</b> icon. The Share details screen is displayed 
+    <br>2. You can either select:
+    <br>&emsp;a) <b>Only Groups</b>, or
+    <br>&emsp;b) <b>Only Users</b>, or
+    <br>&emsp;c) <b>Both Users and Groups</b>
+    <br>3. Select the medium to share and enter required details
+    <br>4. Tap <b>Share</b> 
+    </td>
+  <td><img src="pages/features-documentation/images/mobileapp/sharing1.png"></td>
+  </tr> 
+   </table>
+ 
+#### Viewing Reports
+ You can view details of user or group activity on the app
+  <table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+  <td>1. Tap <b>Reports</b> from the burger menu. The report screen is displayed
+  <br>2. Tap the report name to view the report 
+  </td>
+<td><img src="pages/features-documentation/images/mobileapp/reports1.png"></td>
+ </tr> 
+ <tr>
+  <td>1. You can view the report based on the available parameters </td>
+<td><img src="pages/features-documentation/images/mobileapp/reports2.png"></td>
+ </tr>
+ </table>
+    
 ### Scanning QR Code
 
 The app allows you to scan printed QR codes 
@@ -170,12 +289,16 @@ The app allows you to scan printed QR codes
    <td><img src="pages/features-documentation/images/mobileapp/scan1.png"></td>
  </tr>
  <tr>
-  <td>1. View the content linked to the QR code <br>2. You can <b>Download</b> content <br>3. Use the <b>Menu</b> to <b>Delete</b> or <b>Report</b> content <br><br><b>Note:</b> You can select reasons to report content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li> 4. Use the <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b> </td>
+  <td>1. View the content linked to the QR code 
+  <br>2. You can <b>Download</b> content 
+  <br>3. Use the <b>Menu</b> to <b>Delete</b> or <b>Report</b> content 
+  <br><b>Note:</b> You can select reasons to report content from following available options: <li>Inappropriate content</li> <li>Copyright violation</li> <li>Data privacy violation</li> <li>Other reason</li> 
+  <br>4. Use the <b>Share</b> icon to share the content <b>As Link</b> or <b>As File</b>
+  **Note:** You can scan QR Codes from any screen (except from the Profile screen) as a registered or guest user.
+  </td>
   <td><img src="pages/features-documentation/images/mobileapp/scan2.png"></td>
  </tr>
- </table>
-
-**Note:** You can scan QR Codes from any screen (except from the Profile screen) as a registered or guest user. 
+</table>
 
 ## Browse as Guest
 
@@ -185,24 +308,30 @@ You can use the **Browse as Guest** feature to browse the Subird Mobile App with
   <tr>
     <th style="width:35%;">Step</th>
     <th style="width:65%;">Screen</th>
- </tr> 
- <tr>
-  <td>1. Tap <b>Browse as Guest</b> <br>2. Select your guest mode as <b>Teacher</b> or <b>Student</b> <br>3. Tap <b>Continue</b> You are redirected to the <b>Library</b> screen <br></td>
+  </tr> 
+  <tr>
+  <td>1. Tap <b>Browse as Guest</b> 
+  <br>2. Select your guest mode as <b>Teacher</b> or <b>Student</b> 
+  <br>3. Tap <b>Continue</b> You are redirected to the <b>Library</b> screen
+  </td>
   <td><img src="pages/features-documentation/images/mobileapp/guestmode1.png"></td> 
- </tr>
- <tr>
-  <td> <b> Getting Relevant Content</b> <br><br><b>Note:</b> The user can choose to ignore this section and continue to browse content <br><br> 1. To get relevant content, tap the categories mentioned in the top section of the screen for example; <b>Select Board</b> <br>2. Select the appropriate option from the list displayed for the category <br>3. Tap <b>Save</b> to save your selection <br>4. Tap <b>Cancel</b> to exit screen <br>5. The next category is displayed. Repeat the process for all categories <br>6. You can edit the category selection at any time</td> 
-  <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td> 
- </tr>
- </table>
- 
-<td> <b>Note:</b> <ol> <li> Guest users cannot: <ul><li>Enroll for a Course</li> <li> Edit or update parts of their <b>Profile</b></li> <li>Upload Profile image</li></ul></li>
- 
-<li> Guest users can access the same features of <a href="features-documentation/mobileapp/allappfeatures/#courses"> Courses</a> and the <a href="features-documentation/mobileapp/allappfeatures/#library"> Library</a> as registered users</li></ol>
-</td>
-
-  
-  
-
-
-
+  </tr>
+  <tr>
+  <td><b>Getting Relevant Content</b>
+  <br><b>Note</b>: The user can choose to ignore this section and continue to browse content
+  <br> 1. To get relevant content, tap the categories mentioned in the top section of the screen for example; <b>Select Board</b> 
+  <br>2. Select the appropriate option from the list displayed for the category 
+  <br>3. Tap <b>Save</b> to save your selection 
+  <br>4. Tap <b>Cancel</b> to exit screen 
+  <br>5. The next category is displayed. Repeat the process for all categories 
+  <br>6. You can edit the category selection at any time
+  <br><b>Note:</b> 
+  <ol> <li> Guest users cannot: 
+  <ul><li>Enroll for a Course</li> 
+  <li> Edit or update parts of their <b>Profile</b></li> 
+  <li>Upload Profile image</li></ul></li>
+  <li> Guest users can access the same features of <a href="features-documentation/mobileapp/allappfeatures/#courses"> Courses</a> and the <a href="features-documentation/mobileapp/allappfeatures/#library"> Library</a> as registered users</li></ol>
+  </td> 
+  <td><img src="pages/features-documentation/images/mobileapp/guestmode2.png"></td>
+  </tr>
+</table>
