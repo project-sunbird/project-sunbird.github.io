@@ -1217,6 +1217,9 @@ definitions:
                 description: Represents the channels associated with the framework
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of framework name in different language.
               categories:
                 type: array
                 description: Represents the categories associated with the framework
@@ -1256,6 +1259,9 @@ definitions:
                 description: Represents the categories associated with the framework
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of framework name in different language.
   ResultWithNodeId:
     title: Result Containing Node Id
     type: object
@@ -1525,6 +1531,9 @@ definitions:
         description: Represents the categories in a framework
         items:
           type: object
+      translations:
+        type: object
+        description: Represents the translation of framework name in different language.
   ResponseFrameworkGet200:
     description: Response of the Framework get.
     properties:
