@@ -2038,6 +2038,11 @@ definitions:
       instructions:
         description: 'Instructions'
         type: string
+      ownershipType:
+        description: 'Field for explaining Ownership type. There can be two possible value createdBy/createdFor. Default value is createdBy.'
+        type: array
+        items:
+          type: string
     required:
       - code
       - name
@@ -2148,6 +2153,11 @@ definitions:
           - pdf
           - text
           - other
+      ownershipType:
+        description: 'Field for explaining Ownership type. There can be two possible value createdBy/createdFor. Default value is createdBy.'
+        type: array
+        items:
+          type: string
     required:
       - versionKey
   PublishContentRequest:
@@ -2752,6 +2762,11 @@ definitions:
       board:
         description: Represents the board of the content
         type: string
+      ownershipType:
+        description: 'Field for explaining Ownership type. There can be two possible value createdBy/createdFor. Default value is createdBy.'
+        type: array
+        items:
+          type: string
   ContentHierarchyGetResponse:
     title: Get Content Response
     type: object
