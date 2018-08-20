@@ -1703,6 +1703,9 @@ definitions:
               description:
                 description: ''
                 type: string
+              translations:
+                type: object
+                description: Represents the translation of category name in different language.
   CategoryInstanceCreate400Response:
     description: 'CategoryInstance Create response for 400.'
     type: object
@@ -1782,6 +1785,9 @@ definitions:
         description: Channels with which Category Instance is associated
         items:
           type: object
+      translations:
+        type: object
+        description: Represents the translation of category name in different language.
   ResponseCategoryInstanceGet200:
     description: Response of the CategoryInstance get.
     properties:
@@ -1842,6 +1848,9 @@ definitions:
                 description: Channels with which Category Instance is associated
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of category name in different language.
   CategoryInstanceUpdate400Response:
     description: 'CategoryInstance Update response for 400.'
     type: object
@@ -1980,6 +1989,9 @@ definitions:
                 description: ''
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of term name in different language.
   FrameworkTermCreate400Response:
     description: 'Framework Term Create response for 400.'
     type: object
@@ -2074,6 +2086,9 @@ definitions:
         description: Represents other terms associated with the current term
         items:
           type: object
+      translations:
+        type: object
+        description: Represents the translation of term name in different language.
   ResponseFrameworkTermGet200:
     description: Response body of the get Framework Term 
     properties:
@@ -2149,6 +2164,9 @@ definitions:
                 description: Represents the terms associated with the current term
                 items:
                   type: object
+              translations:
+                type: object
+                description: Represents the translation of term name in different language.
   FrameworkTermUpdate400Response:
     description: 'FrameworkTerm Update response for 400.'
     type: object
