@@ -16,10 +16,11 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-		<td>1.Click <b>Explore Sunbird</b></td>. Refer <a href="pages/features-documentation/explore_sunbird#exploring-sunbird-portal">Exploring Sunbird</a> 
-	<td><img src="pages/features-documentation/images/explore_sunbird/explore_sunbird.png"></td>
+		<td>1.Click <b>Explore Sunbird</b>. Refer <a href="pages/features-documentation/explore_sunbird#exploring-sunbird-portal">Exploring Sunbird</a> 
+    </td>
+	  <td><img src="pages/features-documentation/images/explore_sunbird/explore_sunbird.png"></td>
 	</tr>
-	</table>
+</table>
 	
 ## Exploring Sunbird Portal
 
@@ -42,13 +43,17 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
    <br>5.Click <b>Submit</b> to search using filters
    <br>6.Click <b>Reset</b> to reset filters 
    <br>7.Browse through the list of available content. Use 
-   <br>a.<b>Previous</b> to go to previous set of content 
-   <br>b.<b>Next</b> to go to next set of content </td>
-   <td><img src="pages/features-documentation/images/explore_sunbird/exploring_sunbird.png"></td>
+   <br>&emsp;a.<b>Previous</b> to go to previous set of content 
+   <br>&emsp;b.<b>Next</b> to go to next set of content 
+   </td>
+   <td><img src="pages/features-documentation/images/explore_sunbird/exploring_sunbird.png">
+   </td>
 	</tr>
 </table>
+
    
 ### Searching Content Using DIAL Code
+
 <table>
   <tr>
     <th style="width:35%;"><b>Step</b></th>
