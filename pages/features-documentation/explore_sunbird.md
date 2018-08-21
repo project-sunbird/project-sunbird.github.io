@@ -64,7 +64,7 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
   <br>a.Enter the DIAL Code in <b>Enter DIAL Code here</b> text box
   <br><b>Note</b>:DIAL Code is the 6 digit alphanumeric code found under a QR code in your physical text book. 
   <br>b.Click <b>Submit</b>
-  <td><img src="pages/features-documentation/images/explore_sunbird/explore_sunbird_dial.png"></td>
+  <td><img src="pages/features-documentation/images/explore_sunbird/exploring_sunbird_dial.png"></td>
 	</tr>
 </table>
    
