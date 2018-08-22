@@ -25,4 +25,4 @@ Gemfile.lock
 node.txt
 .idea
 yarn.lock
-#vim.exe.stackdump
+vim.exe.stackdump
