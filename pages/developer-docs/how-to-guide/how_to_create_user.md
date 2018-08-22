@@ -16,7 +16,7 @@ Every user belongs to an organization and is identified within the organization 
 
 ### Prerequisites
 
-1.An initialized server instance of Sunbird. Initialization includes creating an org admin user (through Keycloak), creating a channel and associating a first organization with the channel.
+1.An initialized server instance of Sunbird. Initialization includes creating an organization administrator (through Keycloak), creating a channel and associating a first organization with the channel.
 
 For details, refer to:
 
@@ -118,4 +118,4 @@ The sequence of tasks the organization administrator follows to create users inc
 
 [Creating Organization](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_organization)
 
-[Map users to different business units within the organisation](http://www.sunbird.org/developer-docs/how-to-guide/hohow_to_create_org_add_user)
+[Map users to different business units within the organisation](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_org_add_user)
