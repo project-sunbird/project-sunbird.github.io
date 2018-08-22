@@ -16,11 +16,12 @@ Sign in on Sunbird is a seamless process. Any organization, recognized education
 		<th style="width:65%;">Screen</th>
 	</tr>
 	<tr>
-		<td>User credentials are shared in this email. The user can reset these details on consecutive login to the portal</td> 
-	<td><img src="pages/features-documentation/images/welcomemessage.png"></td>
-	</tr>
-	</table>
-	
+		<td>1. Click <b>Login</b> on the landing page of Sunbird Portal
+    </td>
+    <td><img src="pages/features-documentation/images/landinglogin.png"></td>
+    </tr>
+    </table>
+
 ## Logging to Sunbird Portal
 
 <table>
