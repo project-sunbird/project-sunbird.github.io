@@ -31,24 +31,15 @@ Different configuration can be defined differently for the following content typ
 ### User Interface Details
 
 #### UI Display with Default Configurations
-The UI display when there are no configurations set for the checklist is as described:
-<br>1. When requesting changes to content, an information message "Please detail the required changes in the comments" is displayed over the comment box. On entering comments here, the <b>Request Changes</b> button is enabled
+The UI display, when there are no configurations set for the checklist, is as described:
+<br>1. When requesting changes to content, an information message <b>Please detail the required changes in the comments</b> is displayed over the comment box. On entering comments here, the <b>Request Changes</b> button is enabled
 <br>2. When publishing reviewed content, a confirmation message <b>Are you sure you want to publish?</b> is displayed. The <b>Publish</b> button is enabled and reviewer clicks the button to publish content
 
 #### UI Display with Customized Configurations 
-The UI display when configurations are set for the checklist is as described:
-<br>1. When requesting changes to content:
-<br>&emsp;a) The configured checklist is displayed with a comment box. The reviewer must select atleast one checkbox to enable <b>Request Changes</b> button
-<br>&emsp;b) In case of default API failure, an error message 
-<br>2. When publishing reviewed content:
-<br>&emsp;a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable <b>Publish</b> button
-<br>&emsp;b) In case of default API failure, an error message <b>Something went wrong. Please try again later</b> is displayed
-
-#### UI Display with API Calls
-The UI display when there are APIs calls excecuted to configure the checklist is as described:
-
-<br>1. In case of default API failure, when requesting changes to content or when publishing reviewed content, an error message stating the same is displayed
-<br>2.When configurations are set for the checklist, and there is an API failure, when requesting changes to content or when publishing reviewed content, the  error <b>.Something went wrong. Please try again later</b> is displayed
+The UI display, when configurations are set for the checklist, is as described:
+<br>1. When requesting changes to content, the configured checklist is displayed with a comment box. The reviewer must select atleast one checkbox and provide comments in the comment box to enable <b>Request Changes</b> button 
+<br>2. When publishing reviewed content, the configured checklist is displayed with a comment box. The reviewer must select atleast one checkbox to enable <b>Publish</b> button
+<br>3. In case of any system failure, when requesting changes to content or when publishing reviewed content, an error message <b>.Something went wrong. Please try again later</b> is displayed
 
 ### Configuring Review Checklist
 * Use the create/update form API with the following API request
