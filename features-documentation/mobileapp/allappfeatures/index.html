@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.6.c/";
+			baseURL.href="/releases/release.1.52.l/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-08-20 11:50:07 +0530">
+<meta name="last-modified" content="2018-08-24 08:41:04 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.6.c" />
-<meta name="buildNo" content="4581" />
+<meta name="buildVersion" content="release.1.52.l" />
+<meta name="buildNo" content="4618" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -46,12 +46,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="text/javascript"></script>
 <!-- /CDN's-->
 
-<link rel="stylesheet" href="css/owl/owl.carousel.min.css?20082018"  />
-<link rel="stylesheet" href="css/style.css?20082018"  />
-<script type="text/javascript" src="js/bootstrap.min.js?20082018"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js?20082018"></script>
-<script type="text/javascript" src="js/jquery.tocLight.js?20082018"></script>
-<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?20082018"></script>
+<link rel="stylesheet" href="css/owl/owl.carousel.min.css?24082018"  />
+<link rel="stylesheet" href="css/style.css?24082018"  />
+<script type="text/javascript" src="js/bootstrap.min.js?24082018"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js?24082018"></script>
+<script type="text/javascript" src="js/jquery.tocLight.js?24082018"></script>
+<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js?24082018"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106552125-1"></script>
@@ -134,6 +134,9 @@
             <ul class="sidebar-group features-documentation">
                 <li>
                     <a href="features-documentation/explore_sunbird/">Explore Sunbird</a>
+                </li>
+                <li>
+                    <a href="features-documentation/signup/">Sign Up</a> 
                 </li>
                 <li>
                     <a href="features-documentation/login/">Sign In</a>
@@ -591,42 +594,45 @@
             </li>
             <li class="toc_level-1 toc_section-2">
               <a href="#downloading-and-installing-the-sample-sunbird-mobile-app"><span class="tocnumber">2 .</span> <span class="toctext">Downloading and Installing the Sample Sunbird Mobile App</span></a>
+            </li>
+            <li class="toc_level-1 toc_section-3">
+              <a href="#upgrading-diksha-mobile-app"><span class="tocnumber">3 .</span> <span class="toctext">Upgrading DIKSHA Mobile APP</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-3">
-                  <a href="#prerequisites"><span class="tocnumber">2.1 .</span> <span class="toctext">Prerequisites</span></a>
+                <li class="toc_level-2 toc_section-4">
+                  <a href="#prerequisites"><span class="tocnumber">3.1 .</span> <span class="toctext">Prerequisites</span></a>
                 </li>
               </ul>
             </li>
-            <li class="toc_level-1 toc_section-4">
-              <a href="#signing-in"><span class="tocnumber">3 .</span> <span class="toctext">Signing In</span></a>
+            <li class="toc_level-1 toc_section-5">
+              <a href="#signing-in"><span class="tocnumber">4 .</span> <span class="toctext">Signing In</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-5">
-                  <a href="#recovering-password"><span class="tocnumber">3.1 .</span> <span class="toctext">Recovering Password</span></a>
+                <li class="toc_level-2 toc_section-6">
+                  <a href="#recovering-password"><span class="tocnumber">4.1 .</span> <span class="toctext">Recovering Password</span></a>
                 </li>
               </ul>
             </li>
-            <li class="toc_level-1 toc_section-6">
-              <a href="#exploring-sunbird-mobile-app-features"><span class="tocnumber">4 .</span> <span class="toctext">Exploring Sunbird Mobile App Features</span></a>
+            <li class="toc_level-1 toc_section-7">
+              <a href="#exploring-sunbird-mobile-app-features"><span class="tocnumber">5 .</span> <span class="toctext">Exploring Sunbird Mobile App Features</span></a>
               <ul>
-                <li class="toc_level-2 toc_section-7">
-                  <a href="#home"><span class="tocnumber">4.1 .</span> <span class="toctext">Home</span></a>
-                </li>
                 <li class="toc_level-2 toc_section-8">
-                  <a href="#courses"><span class="tocnumber">4.2 .</span> <span class="toctext">Courses</span></a>
+                  <a href="#home"><span class="tocnumber">5.1 .</span> <span class="toctext">Home</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-9">
-                  <a href="#library"><span class="tocnumber">4.3 .</span> <span class="toctext">Library</span></a>
+                  <a href="#courses"><span class="tocnumber">5.2 .</span> <span class="toctext">Courses</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-10">
-                  <a href="#profile"><span class="tocnumber">4.4 .</span> <span class="toctext">Profile</span></a>
+                  <a href="#library"><span class="tocnumber">5.3 .</span> <span class="toctext">Library</span></a>
                 </li>
                 <li class="toc_level-2 toc_section-11">
-                  <a href="#scanning-qr-code"><span class="tocnumber">4.5 .</span> <span class="toctext">Scanning QR Code</span></a>
+                  <a href="#profile"><span class="tocnumber">5.4 .</span> <span class="toctext">Profile</span></a>
+                </li>
+                <li class="toc_level-2 toc_section-12">
+                  <a href="#scanning-qr-code"><span class="tocnumber">5.5 .</span> <span class="toctext">Scanning QR Code</span></a>
                 </li>
               </ul>
             </li>
-            <li class="toc_level-1 toc_section-12">
-              <a href="#browse-as-guest"><span class="tocnumber">5 .</span> <span class="toctext">Browse as Guest</span></a>
+            <li class="toc_level-1 toc_section-13">
+              <a href="#browse-as-guest"><span class="tocnumber">6 .</span> <span class="toctext">Browse as Guest</span></a>
             </li>
           </ul>
         </td>
@@ -656,6 +662,22 @@
 <h2 id="downloading-and-installing-the-sample-sunbird-mobile-app">Downloading and Installing the Sample Sunbird Mobile App</h2>
 
 <p>The sample Sunbird Mobile App is available for users to test, experiment and understand the various features and functions of the application. To download the app go to the <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> Sunbird Android Release</a>.</p>
+
+<h2 id="upgrading-diksha-mobile-app">Upgrading DIKSHA Mobile APP</h2>
+
+<p>When there is any new version release of Sunbird app, users are notified of the release through a pop-up message in the app. For a better user expereince the user is adviced to update the app. Based on organizational requirements, administrators can configure a forced or an optional upgrade of the app and the users are notified of the same through a pop-up message.</p>
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+ <td>1. In case of an optional update, the pop-up screen displays the <b>Update Now</b> and <b>Update Later</b> buttons.<br />a) To update the app, click the <b>Update Now</b> button.<br />It directs you to the play store. Click the <b>Upgrade App</b> button on Playstore; a new version of the app is launched.<br />b) To update the app later, click the <b>Update Later</b> button. The pop-up screen disappears<br />2. In case of a force update, the pop-up screen displays only the <b>Update Now</b> button.<br />To update the app, click the <b>Update Now</b> button.<br />It directs you to the play store. Click on <b>Upgrade App</b> button; the latest version of the Sunbird app is launched
+</td>
+  <td><img src="pages/features-documentation/images/mobileapp/images/allappfeatures/upgradapp.png" /></td>
+</tr>
+ </table>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
@@ -775,13 +797,40 @@
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/library5.png" /></td>
   </tr>
+  <tr>
+   <td><b>Downloading content</b><br /><br />1. Tap <b>Download</b> to download the content. <br />2. Tap the <b> View Credits and Licensing Info</b> to view the license, attribution and credit information associated with the content <br />3. The progress of the download in <b>(%)</b> is displayed alongside the download button <br />4. Tap <b>Cancel</b> to cancel the download. <br /><br /><b>Note:</b> You can download content only when you are connected to the Internet. However, you can view the downloaded content Offline</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library4.png" /></td> 
+ </tr>
  <tr>
-  <td><b>Playing and rating content</b><br /><br />1. Tap <b>Play</b> to play the content <br />2. Tap the <b>Star</b> icons to rate the content. Sunbird uses the rating system of one to five stars, with five stars being the highest quality and one star being the lowest quality. You can aslo prove additonal feedback, if required <br />3. Tap <b>Submit</b> to submit your rating and feedback <br /><br /><b>Note:</b> Users can rate content only after they have downloaded and played it at least once in their device </td>
+  <td><b>Playing and rating content</b><br /><br />1. Tap <b>Play</b> to play the content <br />2. Tap the <b>Star</b> icons to rate the content. Sunbird uses the rating system of one to five stars, with five stars being the highest quality and one star being the lowest quality. You can also prove additional feedback, if required <br />3. Tap <b>Submit</b> to submit your rating and feedback <br /><br /><b>Note:</b> Users can rate content only after they have downloaded and played it at least once in their device </td>
   <td><img src="pages/features-documentation/images/mobileapp/library3.png" /></td>
  </tr>
  <tr>
-   <td><b>Downloading content</b><br /><br />1. Tap <b>Download</b> to download the content. <br />2. Tap the <b> View Credits and Licensing Info</b> to view the license, attribution and credit information associated with the content <br />3. The progress of the download in <b>(%)</b> is displayed alongside the download button <br />4. Tap <b>Cancel</b> to cancel the download. <br /><br /><b>Note:</b> You can download content only when you are connected to the Internet. However, you can view the downloaded content Offline</td>
-  <td><img src="pages/features-documentation/images/mobileapp/library4.png" /></td> 
+ <td><b>Switching Users and Content from Canvas</b> 
+ <br /><br />1. Tap to open a content from the list <br />2. Tap <b>Arrow</b> icon to view and play a content from the collections 
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/collection.png" /></td>
+ </tr>
+ <tr>
+ <td>1. Once the collection is displayed, tap the <b>Arrow</b> icon beside a content to play the content <br />2. Tap <b>Play</b> to play the content <br />3. Tap <b>CHANGE USER</b> to switch the user <br />4. Tap <b>YES</b> to play content for the selected user 
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/changeuser1.png" /></td>
+ </tr>
+ <tr>
+ <td>1. On tapping the <b>CHANGE USER</b> the <b>Users and Groups</b> screen is displayed <br />2. Select <b>Users</b> from the list <br />3. Tap <b>Play</b> to play the content
+ </td>
+<td><img src="pages/features-documentation/images/mobileapp/changeuser2.png" /></td>
+</tr>
+ <tr>
+ <td>1. Alternately, you can switch user from the last screen of the content canvas <br />2. Tap <b>Replay</b> icon. You are redirected to <b>Users and Groups</b> screen. Select and switch the user from <b>Users and Groups</b> screen <br />3. Tap <b>Next</b> to navigate to the next content <br />4. Tap <b>Previous</b> to navigate to the previous content in the collection 
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/switchuser1.png" /></td>
+ </tr>
+ <tr>
+ <td><b>Sharing, Reporting and Deleting Content</b>
+ <br /><br />1. Tap <b>Share</b> icon to share the content as link or file through different channels. Download the content to share as file <br />2. Tap on the <b>Menu</b> icon to Delete or Report content <br /><br /><b>Note:</b> <br />1. You can select reasons to report content viz., <li> Inappropriate content</li> <li> Copyright violation</li> <li> Data privacy violation </li> <li> Other reason </li> <br />2. The share, report and delete features is common to content linked to QR and DIAL codes
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/sharereportdelete.png" /></td>
  </tr>
 </table>
 
@@ -805,16 +854,9 @@
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/Profile1.png" /></td>
  </tr>
- </table>
-
-<h4 id="creating-new-users">Creating New Users</h4>
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>
  <tr>
- <td>1. Tap the <b>Search</b> icon and enter keywords to search for user profiles 
+ <td><b>Creating New Users</b>
+ <br /><br />1. Tap the <b>Search</b> icon and enter keywords to search for user profiles 
  <br />2. Tap <b>Burger menu</b> icon to select from the following: 
     <br /> a) <b>Users and Groups</b>
     <br /> b) <b>Reports</b> 
@@ -840,17 +882,9 @@
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png" /></td>
  </tr>
- </table>
-
-<h4 id="creating-new-groups">Creating New Groups</h4>
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1.Tap <b>Group</b> to create groups
+ <tr>
+ <td><b>Creating New Groups</b>
+<br /><br />1.Tap <b>Group</b> to create groups
     <br />2.Tap <b>Burger menu</b> to edit or delete the current group 
     <br />3.Tap <b>Create New Group</b> to create a new group. The Create Group screen is displayed 
     <br />4. Enter the <b>Group Name</b> 
@@ -862,19 +896,9 @@
     <td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png" />
     </td>
     </tr>
-</table>
-
-<h4 id="sharing-usergroup-details">Sharing User/Group Details</h4>
-
-<p>Details of users or groups created can be shared with other users</p>
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-  <td>1. Tap <b>Share</b> icon. The Share details screen is displayed 
+<tr>
+<td><b>Sharing User/Group Details</b>
+<br /><br />Details of users or groups created can be shared with other users <br />1. Tap <b>Share</b> icon. The Share details screen is displayed 
     <br />2. You can either select:
     <br /> a) <b>Only Groups</b>, or
     <br /> b) <b>Only Users</b>, or
@@ -884,17 +908,9 @@
     </td>
   <td><img src="pages/features-documentation/images/mobileapp/sharing1.png" /></td>
   </tr> 
-   </table>
-
-<h4 id="viewing-reports">Viewing Reports</h4>
-<p>You can view details of user or group activity on the app</p>
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>
- <tr>
-  <td>1. Tap <b>Reports</b> from the burger menu. The report screen is displayed
+   <tr>
+   <td><b>Viewing Reports</b>
+   <br /><br /> You can view details of user or group activity on the app <br />1. Tap <b>Reports</b> from the burger menu. The report screen is displayed
   <br />2. Tap the report name to view the report 
   </td>
 <td><img src="pages/features-documentation/images/mobileapp/reports1.png" /></td>
@@ -903,7 +919,42 @@
   <td>1. You can view the report based on the available parameters </td>
 <td><img src="pages/features-documentation/images/mobileapp/reports2.png" /></td>
  </tr>
- </table>
+ <tr>
+ <td><b>Editing Application Settings</b> 
+ <br /><br />1. Tap the <b>Menu</b> icon in the Profile <br />2. Tap <b>Settings</b> to view and edit following app settings: 
+ <br /> a) Language Settings 
+ <br /> b) Data Sync 
+ <br /> c) Support
+ <br /> d) Share the Sunbird app 
+ <br /> e) About the app
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/editappsetting.png" /></td>
+</tr>
+<tr>
+<td><b>Language Setting and Data Sync Information</b> 
+<br /><br />1. You can select language from the list for the app <br />2. You can select the data sync option from the following: <br />a) Off <br />b) Over Wifi <br />c) Always on <br />3. Tap <b>Sync Now</b> to sync your data
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/langsetting.png" /></td>
+</tr>
+<tr>
+<td><b>Support</b> 
+<br /><br />1. Tap <b>Support</b> in case you are facing any problem related to app <br />2. Select any channel for sending your text message
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/support.png" /></td>
+</tr>
+<tr>
+<td><b>Sharing Sunbird App and About the App Details</b> 
+<br /><br />1. Tap <b>Share</b> to share the app through various channels <br />2. Tap <b>About the app</b> to view the details: <br />a) Device ID <br />b) App Version
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/aboutandshare.png" /></td>
+</tr>
+<tr>
+<td><b>Signing Out</b>
+<br /><br />1. Tap the <b>Profile</b> tab <br />2. Tap <b>Menu</b> icon <br />3. Tap <b>Sign out</b> to sign out from the app
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/signout.png" /></td>
+</tr>
+</table>
 
 <h3 id="scanning-qr-code">Scanning QR Code</h3>
 

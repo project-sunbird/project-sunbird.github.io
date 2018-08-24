@@ -1,0 +1,78 @@
+<h2 id="scenario">Scenario</h2>
+
+<p>A company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization’s administrator needs to create and add user details with the organization.</p>
+
+<p>Every user must belong to an organization and is identified within the organization through a unique user ID. To enable users, the user ID has to be associated with an organization and channel and subsequently assigned a role. For example, John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them and associate them with the organization.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>1.An initialized server instance of Sunbird. Initialization includes creating an organization administrator (through Keycloak), creating a channel and associating a first organization with the channel.</p>
+
+<p>For details, refer to:</p>
+
+<ul>
+  <li>
+    <p><a href="http://www.sunbird.org/developer-docs/installation/server_installation/">Server Installation</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.sunbird.org/apis/framework/#tag/Channel-APIs">Channel APIs</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.sunbird.org/developer-docs/initialization">First organization</a> associated with channel ID</p>
+  </li>
+</ul>
+
+<p>2.The API Key for access and basic authentication</p>
+
+<p>3.An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)</p>
+
+<p>4.Access to the <a href="http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User">Mapping User to Organization API</a></p>
+
+<h3 id="taskflow">Taskflow</h3>
+
+<p>The sequence of tasks the organization administrator follows to create users include:</p>
+
+<p>1.Specify values for the following parameters in the request body of the API</p>
+
+<p>An organization can be created in a Sunbird instance using <a href="http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs">ORG API</a>, it can be further associated with a user and channel. Following is an example of request body for associating a user to an organization, the sample values provided in the request body are indicative:</p>
+
+<p><strong>Request Body</strong></p>
+<pre>
+ "request": {
+    "id": "string",
+    "organisationId": "0125231248111779848",
+        "roles": ["PUBLIC"],
+    "userId": "d7cce198-a770-490c-9f35-f99cab4fbf05",
+    "userName": "juthikatest10s0ae"
+  }
+</pre>
+
+<p><strong>Response Body</strong></p>
+
+<pre>
+ "responseCode": "OK",
+    "result": {
+        "response": "SUCCESS"
+    }
+</pre>
+
+<h3 id="concepts-covered">Concepts Covered</h3>
+
+<p><strong>Users</strong>: The individual who can sign in and access the Sunbird portal to perform a set of action that is assigned by the system administrator.</p>
+
+<p><strong>Organization</strong>: Organizations can be an institute or a body of individuals.</p>
+
+<p><strong>Channel</strong>: Unique identification number associated with the user or an organization</p>
+
+<p><strong>Root Organization</strong>: All users and sub-organization in an organisation are associated through the rootOrg</p>
+
+<p><strong>System Administrator</strong>: A user who manages end-to-end system from creating an organization, administrators for the organizations, members within the organization, and assign roles to the members</p>
+
+<h3 id="additional-topics">Additional Topics</h3>
+
+<p><a href="http://www.sunbird.org/developer-docs/initialization">Creating first organization</a></p>
+
+<p><a href="http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_user">Creating user</a></p>
+
+<p><a href="http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_organization">Create organization</a></p>
+

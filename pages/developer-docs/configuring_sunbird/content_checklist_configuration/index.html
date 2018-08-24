@@ -18,22 +18,18 @@
 * Textbook
 * Resource and Collection</p>
 
-<h3 id="default-ui-behaviour">Default UI Behaviour</h3>
-<p>When there are no configuration set for the checklist:
-<br />1. When requesting changes to content:
-<br /> a) An information message “Please detail the required changes in the comments” is displayed over the comment box. On entering comments here, the Request Changes button is enabled
-<br /> b) In case of default API failure, an error message stating the same is displayed
-<br />2. When publishing reviewed content:
-<br /> a) A confirmation message ““Are you sure you want to publish?”” is displayed. The Publish button is enabled and reviewer clicks the button to publish content
-<br /> b) In case of default API failure, an error message stating the same is displayed</p>
+<h3 id="user-interface-details">User Interface Details</h3>
 
-<p>When configurations are set for the checklist:
-<br />1. When requesting changes to content:
-<br /> a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable Request Changes button
-<br /> b) In case of default API failure, an error message “Something went wrong. Please try again later” is displayed
-<br />2. When publishing reviewed content:
-<br /> a) The configured checklist is displayed with a comment box. The reviewer must slect atleast one checkbox to enable Publish button
-<br /> b) In case of default API failure, an error message “Something went wrong. Please try again later” is displayed</p>
+<h4 id="ui-display-with-default-configurations">UI Display with Default Configurations</h4>
+<p>The UI display, when there are no configurations set for the checklist, is as described:
+<br />1. When requesting changes to content, an information message <b>Please detail the required changes in the comments</b> is displayed over the comment box. On entering comments here, the <b>Request Changes</b> button is enabled
+<br />2. When publishing reviewed content, a confirmation message <b>Are you sure you want to publish?</b> is displayed. The <b>Publish</b> button is enabled and reviewer clicks the button to publish content</p>
+
+<h4 id="ui-display-with-customized-configurations">UI Display with Customized Configurations</h4>
+<p>The UI display, when configurations are set for the checklist, is as described:
+<br />1. When requesting changes to content, the configured checklist is displayed with a comment box. The reviewer must select atleast one checkbox and provide comments in the comment box to enable <b>Request Changes</b> button 
+<br />2. When publishing reviewed content, the configured checklist is displayed with a comment box. The reviewer must select atleast one checkbox to enable <b>Publish</b> button
+<br />3. In case of any system failure, when requesting changes to content or when publishing reviewed content, an error message <b>.Something went wrong. Please try again later</b> is displayed</p>
 
 <h3 id="configuring-review-checklist">Configuring Review Checklist</h3>
 <ul>
