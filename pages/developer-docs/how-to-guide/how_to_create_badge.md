@@ -1,10 +1,10 @@
 ---
 type: landing
 directory: developer-docs/how-to-guide
-title: Create User
-page_title: Create User
-description: Create a new user in Sunbird instance
-keywords: create user, new user, create, user
+title: Create Badges
+page_title: Create Badges
+description: Create a badge for a user in Sunbird instance
+keywords: create badge, badge issuer, assign badges 
 published: true
 allowSearch: true
 ---
