@@ -30,12 +30,12 @@ An anonymous user can explore Sunbird and access the content avilable in the rep
     <th style="width:65%;"><b>Screen</b></th>
   </tr>
   <tr>
-   <td>On Sunbird you can search the content using
-   <br>1.Enter the text in <b>Search</b> text box. 
+   <td>On Sunbird you can search for content using
+   <br>1.Enter the text in <b>Search</b> text box 
    <br>2.Click <b>search</b> icon 
    <br><b>Note</b>: You can further filter the search result
-   <br>3.Enter the <b>Enter DIAL Code</b> text box. Refer Searching Content Using DIAL Code
-   <br>4.Select following filter from their respective drop-down lists to filter the content: 
+   <br>3.Click <b>Enter DIAL Code</b> to explore content based on DIAL code. Refer <a href="pages/features-documentation/explore_sunbird#searching-content-using-DIAL-code">Searching Content Using DIAL Code</a>
+   <br>4.Select following filters from their respective drop-down lists to filter the content: 
      <br>&emsp;a) Board 
      <br>&emsp;b) Medium  
      <br>&emsp;c) Subject 
