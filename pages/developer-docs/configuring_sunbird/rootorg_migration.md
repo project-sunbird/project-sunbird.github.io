@@ -1,10 +1,10 @@
 ---
 type: landing
-directory: developer-docs/configuration/
-title: 
-page_title: 
-description: 
-allowSearch: true
+directory: developer-docs/configuring_sunbird/
+title: Root org migration
+page_title: Root org migration
+description: Root org migration
+allowSearch: false
 ---
 
 ##Overview

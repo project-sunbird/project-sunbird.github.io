@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: developer-docs/installation/
-title: Server Installation
-page_title: Server Installation
-description: Setting up Sunbird on a server
+title: Prerequisites
+page_title: Prerequisites
+description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
  
@@ -65,7 +65,6 @@ The following is a list of ports that must be open:
   |Elasticsearch        | 5.4 |
   |Postgres | 9.5 |
   |Cassandra            | 3.9 |
-
 
 ## Installation Procedure
 
@@ -231,3 +230,4 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 * `deploy-badger.sh` - Deploys the badger service as docker service.
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
+
