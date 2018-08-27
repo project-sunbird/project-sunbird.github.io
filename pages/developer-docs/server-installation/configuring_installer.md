@@ -20,7 +20,7 @@ Choose one docker swarm manager VM as the installation server and execute the fo
 
 ### Configuring the Installer
 
-1. After cloning the repository, run the following commans:
+1. After cloning the repository, run the following commands:
 
 `git checkout tags/release-1.9
 `cd deploy` 
