@@ -10,14 +10,13 @@ allowSearch: true
 ---
 ## Scenario
 
-As a part of employee development and training program, the Acme Corp., needs to creates and administers a course. On successful completion of the course, the administrator of the course would like to certify these trainees so that it is easy to know who are the employees who have completed this course. 
+As a part of employee development and training program, the Acme Corp., needs to create and administer a course. On successful completion of the course, the course administrator would like to certify these trainees so that it is easy to know who are the employees who have completed this course. 
 
-To help with this, Sunbird provides the ability to create and award badges. The admin can create specific badges for each course and then award it to the employees who completes the course. The admin can also create an entity called a Badge Issuer on behalf of whom the badges are awarded. Once the badge is awarded to an employee, the badge is displayed on that employees profile page.
+To help with this, Sunbird provides the ability to create and award badges. The admin can create specific badges for each course and then award it to the employees who completes the course. The admin can also create an entity called a Badge Issuer who awards the badges. Once the badge is awarded to an employee, the badge is displayed on that employee's profile page.
 This document explains the procedure of creating and awarding badges.
 
-Sunbird also provides the ability to badge content. While this example shows how you award a badge to a user, the same procedure can be followed to award a badge to content.
+Sunbird also provides the ability to badge content. While this example shows how you to award a badge to a user, the same procedure can be followed to award a badge to content.
  
-
 ### Prerequisites
 
 1.The [API Key]() for access and basic authentication
@@ -35,7 +34,6 @@ The sequence of tasks the organization administrator follows to create badges in
     3. Award the badge using the [Badge Assertion API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeAssertionReadByAssertionIdGet)
     
 To issue badges, a badge issuer must be created. It is up to the organization administrator whether to create a single badge issuer to issue all badges or create individual badge issuers for each type of badge to be issued. In this scenario, the organization administrator decides that a single issuer can be used for issuing all badges. 
-
 
 #### Create Issuer API
 
@@ -85,21 +83,22 @@ On successful execution of the issuer creation API, an issuerId is generated and
 }
 </pre>
 
-2.Save the created <pre>issuerId
+1.Save the created <b>issuerId</b>
 
-3.The badge issuer is created, which is required to [Create Badge Class](#create-a-badge-class) and award badge to the user 
+2.The badge issuer is created, which is required to [Create Badge Class](#create-a-badge-class) and award badge to the user 
 
 #### Create a Badge Class
 
 Once the badge issuer has been created, the organization administrator can create new badge classes using the [Create Badge API](). It is recommended to create multiple badge classes, one for each type of accomplishment which is being recognised.
 **Note**: The badge class only needs to be created once for one type of badge. The same badge class can be awarded multiple times to different recipients. 
 
-The organization administrator must
-1. decide what to call the badge and what is the criteria for awarding the badge
-2. use the issuerId received from the [Create Issuer API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/ReadByIssuerIdGet) call to indicate which entity is awarding the badge
-3. choose an image to be associated with the badge. This image will be displayed on the profile page of all the people who receive the badge. 
+The organization administrator must:
+1. Decide a badge name 
+2. Criteria for awarding the badge
+2. Use the issuerId received from the [Create Issuer API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/ReadByIssuerIdGet) call to indicate which entity is awarding the badge
+3. Choose an image to be associated with the badge. This image will be displayed on the profile page of all the people who receive the badge 
 
-Following is an example of request body for creating badge class, the sample values provided in the request body are indicative:
+The following is an example of the request body for creating badge class, the sample values provided in the request body are indicative:
 
 **Request Body**
 
@@ -140,14 +139,14 @@ Following is an example of request body for creating badge class, the sample val
 }
 </pre>
 
-2. Save the created <pre> badgeId</pre>
+1. Save the created <pre> badgeId</pre>
 
-3. The badge ID is created, which is required to [Award the badge](#awarding-the-badge) to a user
+2. The badge ID created is required to [Award the badge](#awarding-the-badge) to a user
 
 #### Awarding the Badge
 
-Now that the badge class is created, the org admin can issue the badge to employees as they finish the course. The badge Assertion API is associated with fetching and listing the assertions of a badge. 
-Note: You would have saved the issuer ID received after creating the issuer and the badge ID received after creating the badge class. You will need them for awarding the badge.
+Once the badge class is created, the org admin issues the badge to employees as they finish the course. The badge Assertion API is associated with fetching and listing the assertions of a badge. 
+Note: You would have saved the issuer ID received after creating the issuer and the badge ID received after creating the badge class. These IDs are required for awarding the badge.
 You will also need the userId of the person who will receive the badge. You can get the user id from the ...
 
 Following is an example of request body for awarding the badge, the sample values provided in the request body are indicative:
@@ -186,7 +185,10 @@ Following is an example of request body for awarding the badge, the sample value
 
 ### Concepts covered
 
-<TBD>
+- Badges 
+- User Badges
+- Content Badges
+
 
 ### Additional Topics
 
