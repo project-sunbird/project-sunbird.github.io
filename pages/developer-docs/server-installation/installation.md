@@ -7,7 +7,11 @@ description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
 
-7. Run the script given below to set up the following services:
+## Installation
+
+### Installing Auxilliary Services
+
+1. Run the script given below to set up the following services:
 
  `./sunbird_install.sh`
 
@@ -23,15 +27,15 @@ allowSearch: true
    
      **Note:** The badger service does not work without an Azure storage account name and key.
 
-8. Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b>  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
+### Getting Authentication Certificate
 
+Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b>  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
       
-      **Note:**
+**Note:**
      
- 
-      - If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>` 
+   - If you want to re-run particular stage in the installation, execute `./sunbird_install.sh -s <stage name>` 
        
-      - To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script">below)
+   - To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script">below)
  
 ## Post Installation Configuration
 
