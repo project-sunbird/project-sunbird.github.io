@@ -76,15 +76,16 @@ Follow the steps mentioned in How to Use Postman to use the create framework API
         "did": "string"
         },
     "request": {
-        "framework": {
-            "name": "string",
-            "code": "string",
-            "description": "string",
-            "type": "string",
-            "channels": [
+    "framework": {
+        "name": "string",
+        "code": "string",
+        "description": "string",
+        "type": "string",
+        "channels": [
                 { }
             ],
-            "categories": [
+        "translations": { },
+        "categories": [
                 { }
             ]
         }
@@ -128,11 +129,12 @@ Follow the steps mentioned in How to Use Postman to use the create framework API
         "msgid": "string",
         "did": "string"
     },
-"request": {
-    "category": {
+    "request": {
+        "category": {
         "code": "string",
         "name": "string",
-        "description": "string"
+        "description": "string",
+        "translations": {}
         }
     }
 }
@@ -141,7 +143,6 @@ Follow the steps mentioned in How to Use Postman to use the create framework API
 **Response Body**
 
 <pre>
-
 {
     "id": "string",
     "ver": "string",
@@ -158,11 +159,11 @@ Follow the steps mentioned in How to Use Postman to use the create framework API
         "result": {
         "node_id": "string",
         "versionKey": "string"
-        }
+    }
 }
 </pre>
 
-3.Use the Add Term API, to create a new term in the category.
+3.Use the Create Term API, to create a new term in the category.
 
 **Request Body**
 
@@ -175,48 +176,64 @@ Follow the steps mentioned in How to Use Postman to use the create framework API
         "msgid": "string",
         "did": "string"
     },
-    "request": {
-        "term": {
-            "code": "string",
-            "name": "string",
-            "description": "string",
-            "category": "string",
-            "index": 0,
-            "categoryinstances": [
-                { }
-            ],
-            "parents": [
-                { }
-            ],
-            "associationswith": [
-                { }
-            ],
-            "children": [
-                { }
-            ],
-            "associations": [
+   "request": {
+       "term": {   
+        "code": "string",
+        "name": "string",
+        "description": "string",
+        "category": "string",
+        "index": 0,
+        "categoryinstances": [
             { }
-            ]
+        ],
+        "parents": [
+            { }
+        ],
+        "associationswith": [
+            { }
+        ],
+        "children": [
+            { }
+        ],
+        "associations": [
+            { }
+        ],
+        "translations": { }
         }
     }
 }
-
 </pre>
 
 **Response Body**
 
 <pre>
-
-
+{
+    "id": "string",
+    "ver": "string",
+    "ets": 0,
+    "params": {
+        "msgid": "string",
+        "resmsgid": "string",
+        "err": null,
+        "err_msg": null,
+        "err_detail": null,
+        "status": "success"
+        },
+    "responseCode": "string",
+    "result": {
+    "node_id": "string",
+    "versionKey": "string"
+    }
+}
 </pre>
 
 ### Concepts covered
 
 **Framework**- A structure designed to define the scope of something. On Sunbird, the framework is defined through a string of vocabularies
 
-**Taxonomy**
+**Taxonomy**-
 
-**Authentication** 
+**Authentication**-
 
 ### Additional Topics
 
