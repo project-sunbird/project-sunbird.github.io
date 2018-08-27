@@ -1,4 +1,3 @@
-
 ---
 type: landing
 directory: developer-docs/server-installation/
@@ -7,6 +6,7 @@ page_title: Configuring the Installer
 description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
+
 ## Installation Procedure
 Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
