@@ -35,9 +35,9 @@ The following parameters needs to be passed as arguments for the channel value m
 
 To migrate channel value for the users:
 
-1.Extract the archive file (sunbird-utils/cassandra-migration-etl/r1.7/UserMigrationUpdateChannelBin.zip) that contains the script for channel value migration
+1. Extract the archive file (sunbird-utils/cassandra-migration-etl/r1.7/UserMigrationUpdateChannelBin.zip) that contains the script for channel value migration
 
-2.Run the corresponding script to migrate the data
+2. Run the corresponding script to migrate the data
  
  - Run the following command:
      ```
