@@ -181,8 +181,9 @@ The delete option is available only for the questions that you have created
   <br>6. Select <b>Add another question answer pair</b> to add another question and answer
   <br>7. Select <b>Refresh</b> icon to preview your question  
   <br>8. Select <b>Partial Scoring</b> to enable scoring for each correct answer
-  <br>9. Click <b>Next</b> to enter the Question Details
-  <br>10. Select <b>Back</b> to go back to the previous page 
+  <br>9. Select <b>Layout</b> from the sample layout
+  <br>10. Click <b>Next</b> to enter the Question Details
+  <br>11. Select <b>Back</b> to go back to the previous page 
   <br><b>Note</b>: Editing a Match the following question displays all the above options 
  </td>
     <td><img src="pages/features-documentation/images/questionset/matchthefollowing.png"></td>
@@ -217,7 +218,8 @@ The delete option is available only for the questions that you have created
     <br>13.Choose <b>Select Layout</b>
     <br>14.Select <b>Shuffle Option</b>    
     <br>15. Click <b>Submit</b> to configure the question details
-    <br>16. Select <b>Back</b> to go back to the previous page 
+    <br>16.Click <b>Save and Create</b> to save the existing question and add another question 
+    <br>17.Click <b>Back</b> to go back to the previous page
   </td>
   <td><img src="pages/features-documentation/images/questionset/questiondetails.png"></td>
  </tr>
