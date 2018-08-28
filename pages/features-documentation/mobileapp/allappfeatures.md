@@ -66,7 +66,7 @@ When there is any new version release of Sunbird app, users are notified of the 
  <tr>
  <td>1. In case of an optional update, the pop-up screen displays the <b>Update Now</b> and <b>Update Later</b> buttons.<br>a) To update the app, click the <b>Update Now</b> button.<br>It directs you to the play store. Click the <b>Upgrade App</b> button on Playstore; a new version of the app is launched.<br>b) To update the app later, click the <b>Update Later</b> button. The pop-up screen disappears<br>2. In case of a force update, the pop-up screen displays only the <b>Update Now</b> button.<br>To update the app, click the <b>Update Now</b> button.<br>It directs you to the play store. Click on <b>Upgrade App</b> button; the latest version of the Sunbird app is launched
 </td>
-  <td><img src="pages/features-documentation/images/mobileapp/images/allappfeatures/upgradapp.png"></td>
+  <td><img src="pages/features-documentation/images/mobileapp/upgradeapp.png"></td>
 </tr>
  </table>
 
