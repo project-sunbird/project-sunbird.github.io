@@ -20,13 +20,14 @@ To run the migration script, ensure you have:
 ## Configuration Parameters
 The following parameters needs to be passed as arguments for the channel value migration job
 
-| S.No. | Parameter | Description | Example |
-| 1 | sunbird_cassandra_server | Cassandra DB IP Address| 198.168.1.1|
-| 2 | sunbird_cassandra_port | Cassandra DB Port Number | 9042 |
-| 3 | sunbird_cassandra_username* | Cassandra DB User Name | username |
-| 4 | sunbird_cassandra_password* | Cassandra DB Password | password |
-| 5 | sunbird_cassandra_keyspace  | Cassandra DB Keyspace Name | demodb |
-| 6 | sunbird_channel_migration_log_file | Path to CSV file where migration logs are stored | \home\channel_migration_log.csv |
+ S.No. | Parameter | Description | Example 
+-------|-----------|-------------|---------
+1 | sunbird_cassandra_server | Cassandra DB IP Address| 198.168.1.1
+2 | sunbird_cassandra_port | Cassandra DB Port Number | 9042 
+3 | sunbird_cassandra_username* | Cassandra DB User Name | username 
+4 | sunbird_cassandra_password* | Cassandra DB Password | password 
+5 | sunbird_cassandra_keyspace  | Cassandra DB Keyspace Name | demodb 
+6 | sunbird_channel_migration_log_file | Path to CSV file where migration logs are stored | \home\channel_migration_log.csv 
 
 > Note: If authentication is not required, pass `""` in this parameter
 
@@ -37,9 +38,9 @@ To migrate channel value for the users:
 1. Extract the archive file (sunbird-utils/cassandra-migration-etl/r1.7/UserMigrationUpdateChannelBin.zip) that contains the script for channel value migration
 
 2. Run the following command to migrate the data
- 
-     UserMigrationUpdateChannel_run.sh --context_param sunbird_cassandra_server="{sunbird_cassandra_server}" --context_param sunbird_cassandra_port="{sunbird_cassandra_port}" --context_param sunbird_cassandra_username="{sunbird_cassandra_username}" --context_param sunbird_cassandra_password="{sunbird_cassandra_password}" --context_param sunbird_cassandra_keyspace="{sunbird_cassandra_keyspace}" --context_param sunbird_channel_migration_log_file="{sunbird_channel_migration_log_file}"
-    
+<pre> 
+UserMigrationUpdateChannel_run.sh --context_param sunbird_cassandra_server="{sunbird_cassandra_server}" 0--context_param sunbird_cassandra_port="{sunbird_cassandra_port}" --context_param sunbird_cassandra_username="{sunbird_cassandra_username}" --context_param sunbird_cassandra_password="{sunbird_cassandra_password}" --context_param sunbird_cassandra_keyspace="{sunbird_cassandra_keyspace}" --context_param sunbird_channel_migration_log_file="{sunbird_channel_migration_log_file}"
+</pre>
 3. On successful migration, the log is available in the configured file {sunbird_channel_migration_log_file}
 
 4. To cross-check whether all users have channel value, the following queries can be used
