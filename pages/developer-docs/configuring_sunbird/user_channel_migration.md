@@ -29,7 +29,7 @@ The following parameters needs to be passed as arguments for the channel value m
 5 | sunbird_cassandra_keyspace  | Cassandra DB Keyspace Name | demodb 
 6 | sunbird_channel_migration_log_file | Path to CSV file where migration logs are stored | \home\channel_migration_log.csv 
 
-> Note: If authentication is not required, pass `""` in this parameter
+> Note: If authentication is not required, pass `""` for parameters, username, and password
 
 ## Migration Script
 
@@ -46,9 +46,7 @@ UserMigrationUpdateChannel_run.sh --context_param sunbird_cassandra_server="{sun
 4. To cross-check whether all users have channel value, the following queries can be used
 
  - Query to fetch number of users
-     select count(*) from user;
-     
-
+     ```select count(*) from user;```
  - Query to fetch number of users with channel value
-     select count(channel) from user;
+     ```select count(channel) from user;```
    
