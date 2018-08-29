@@ -31,7 +31,7 @@ The following parameters needs to be passed as arguments for the channel value m
 
 > Note: If authentication is not required, pass `""` in this parameter
 
-## Run the Migration Script
+## Migration Script
 
 To migrate channel value for the users:
 
