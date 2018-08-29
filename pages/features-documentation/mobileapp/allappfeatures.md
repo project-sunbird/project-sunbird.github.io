@@ -31,8 +31,7 @@ The sample Sunbird Mobile App is available for users to test, experiment and und
 
 ## Selecting Display Language for Sunbird Mobile APP
 
-As a Sunbird app user, you must set the display language for your app.<br> 
-After installing the app, once you open it, you get a screen for selecting the display language for your app.<br>
+As a Sunbird app user, you must set the display language for your app.To select a language of your choice for the app, open the app:
 <table>
   <tr>
     <th style="width:35%;">Step</th>
@@ -40,15 +39,14 @@ After installing the app, once you open it, you get a screen for selecting the d
  </tr>
  <tr>
  <td>To select the display language:<br>
-1. Select a language form the language list<br>
+1. Select a language from the language list<br>
 2. Click <b>Continue</b>
 </td>
   <td><img src="pages/features-documentation/images/mobileapp/language.png"></td>
 </tr>
  <tr>
  <td>Note:
-If you click the <b>Continue</b> button without selecting a language, a message displays " <b>Please select a language</b>".
-
+If you click the <b>Continue</b> button without selecting a language, a message <b>Please select a language</b> is displayed 
 </td>
   <td><img src="pages/features-documentation/images/mobileapp/languagenote.png"></td>
 </tr>
