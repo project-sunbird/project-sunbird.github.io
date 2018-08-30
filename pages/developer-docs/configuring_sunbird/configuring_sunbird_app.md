@@ -1,3 +1,13 @@
+---
+type: landing
+directory: developer-docs/configuring_sunbird
+title: Configuring Sunbird App
+page_title:  Content Filtering
+description: How to configure sunbird app 
+keywords: configuring Sunbird app, dislay sign in page, sunbird property
+published: True
+allowSearch: True
+---
 # Overview
 
 Sunbird adopters have the privilege to decide whether to log in a new user as a registered user or as a guest user. Adopters can customise the app in such a way that once a user installs and open the app, the user can get the login page to enter the details in the login page field or the user can log in as a guest user without sharing any details of his or her.
