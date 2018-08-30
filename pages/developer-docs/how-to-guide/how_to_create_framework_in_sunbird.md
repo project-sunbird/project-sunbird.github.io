@@ -27,7 +27,7 @@ The organizations that are adopting Sunbird can link the categories and change t
 
     - Topic
 
-A user can select one or more category amongst the defined category. Let us consider an example of an organization which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. They now need to create the framework for water management.  The organization may choose a predefined category and associate it to their own framework. The categories in the framework has terms associated with it. These terms are relevant to the created framework and can be created by the organization.  
+A user can select one or more category amongst the defined category. Let us consider an example of an organization, Neerdhara, which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. They now need to create the framework for water management.  The organization may choose a predefined category and associate it to their own framework. The categories in the framework has terms associated with it. These terms are relevant to the created framework and can be created by the organization.  
  
 For example, if you select the category as Subject and change the label as Resource type for the water management framework. 
 <The Grade level appears and they are ranging from 1-12. On selecting grade as 5, and the Medium as English, the Subject list appears containing predefined values as English, Mathematics, Science. Whereas, if you select Grade as 9, the Subject list displayed is English, Mathematics, History, Civics, and Geography.>
@@ -70,10 +70,10 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
       
     "request": {
         "framework": {
-            "name": "string",
-            "code": "string",       //User defined value that is used as framework identifier
-            "description": "string",
-            "type": "string",
+            "name": "Neerdhara",
+            "code": "ndf1",       //User defined value that is used as framework identifier
+            "description": "Neerdhara",
+            "type": "TPD",
             "channels": [           
                 { }                 
             ],
@@ -83,64 +83,52 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
         }
     }
 
-
-
 ##### Response Body for Creating Framework
 
     "responseCode": "OK",
     "result": {
-        "node_id": "string",
-        "versionKey": "string"
+        "node_id": "ndf1",
+        "versionKey": "1535617473332"
     }
 
 
 2.Use the [Add Category API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost), to create a new category in the framework. The sample values provided in the request body are indicative:
 
-##### Request Body for Adding Categories
+##### Request Body for Creating Categories
 
     "request": {
         "category": {
-            "code": "string",
-            "name": "string",
-            "description": "string"
+            "code": "board",
+            "name": "Board",
+            "description": "Board"
         }
     }
 
-##### Response Body for Adding Categories
+##### Response Body for Creating Categories
 
     "responseCode": "OK",
     "result": {
-        "node_id": "string",
-        "versionKey": "string"
-        }
+        "node_id": "ndf1_board",
+        "versionKey": "1535617612483"
+    }
 
 
 3.Use the [Add Term API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1TermCreatePost), to create a new term in the category.
-
+The categories can be retrieved and listed using [Fetch API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CategoryReadClassGet)
 ##### Request Body for Adding Terms 
 
     "request": {
         "term": {
-            "code": "string",
-            "name": "string",
-            "description": "string",
-            "category": "string",       //Is this retrieved and listed using another API
+            "code": "basic",
+            "name": "Basic",
+            "description": "Basic",
+            "category": "Board",       
             "index": 0,
-            "categoryinstances": [
-                { }
-            ],
-            "parents": [
-                { }
-            ],
-            "associationswith": [
-                { }
-            ],
-            "children": [
-                { }
-            ],
-            "associations": [
-                { }
-            ]
+            "categoryinstances": [ ],
+            "parents": [ ],
+            "associationswith": [ ],
+            "children": [ ],
+            "associations": [ ]
         }
     }
 
@@ -148,9 +136,10 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
 
     "responseCode": "OK",
     "result": {
-            "node_id": "string",
-            "versionKey": "string"
-        }
+        "node_id": [
+            "ndf1_board_basic"
+        ]
+    }
 
 
 ### Concepts covered
