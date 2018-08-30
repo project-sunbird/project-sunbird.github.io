@@ -191,7 +191,7 @@ The following is a list of ports that must be open:
     }'
     </pre>
    
-   If ~/jwt_token_player.txt file missing/ lost it then rerun `./sunbird_install.sh -s apis` to recreate it.
+   If ~/jwt_token_player.txt file missing then rerun `./sunbird_install.sh -s apis` to recreate it.
    
    **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
    
