@@ -29,8 +29,7 @@ The organizations that are adopting Sunbird can link the categories and change t
 
 A user can select one or more category amongst the defined category. Let us consider an example of an organization, Neerdhara, which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. They now need to create the framework for water management.  The organization may choose a predefined category and associate it to their own framework. The categories in the framework has terms associated with it. These terms are relevant to the created framework and can be created by the organization.  
  
-For example, if you select the category as Subject and change the label as Resource type for the water management framework. 
-<The Grade level appears and they are ranging from 1-12. On selecting grade as 5, and the Medium as English, the Subject list appears containing predefined values as English, Mathematics, Science. Whereas, if you select Grade as 9, the Subject list displayed is English, Mathematics, History, Civics, and Geography.>
+For example, for the organization Neerdhara the framework name is Neerdhara and code as ndf1; the category selected is Board and change the label as Resource type which defines the various water resources and contains the terms as Rain water, lake, ponds and so on. 
 
 ### Prerequisites
 
