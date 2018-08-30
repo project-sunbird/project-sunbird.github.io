@@ -190,9 +190,11 @@ The following is a list of ports that must be open:
     }
     }'
     </pre>
-
-      **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
-    
+   
+   If ~/jwt_token_player.txt file missing/ lost it then rerun `./sunbird_install.sh -s apis` to recreate it.
+   
+   **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
+   
 3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
 
 4. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory will be created 
