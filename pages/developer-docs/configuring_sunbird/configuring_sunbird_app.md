@@ -8,21 +8,21 @@ keywords: configuring Sunbird app, dislay sign in page, sunbird property
 published: True
 allowSearch: True
 ---
-# Overview
+## Overview
 
 Sunbird adopters have the privilege to decide whether to log in a new user as a registered user or as a guest user. Adopters can customise the app in such a way that once a user installs and open the app, the user can get the login page to enter the details in the login page field or the user can log in as a guest user without sharing any details of his or her.
 
-# Prerequisite:
+## Prerequisite
 
 * An instance of Sunbird that is successfully installed and configured.
 
 * The instance should have access to Sunbird property files.
 
-# Intended Audience:
+## Intended Audience
 
 Instance admin
 
-# Scenario
+## Scenario
 
 The admin can customise several scenarios such as:
 
@@ -34,17 +34,19 @@ The admin can customise several scenarios such as:
 
 * Whether to display categories in the profile page 
 
-# Taskflow:
+## Taskflow
 
 To customise the app, instance admin must set the configuration variable inside the <b>sunbird-mobile repo</b> inside <b>buildConfig</b> folder.
 
-## 1)Scenario: Whether to display Login/Guest page to  new users
+### 1)Scenario: Whether to display Login/Guest page to  new users
 
 Adopters are able to configure whether to display Login/Guest page to new users (If hidden, take directly to user type selection as Guest).
 
-**Taskflow**
+**Taskflow:**
 
 Adopters can set the <b>display_onboarding_page</b> variable as <b>true</b> in <b>sunbird.properties file</b>, if they want to display the Login/Guest page, else by default the value is false.
+
+**Variable Details:**
 
 <table>
   <tr>
@@ -70,7 +72,7 @@ Adopters can set the <b>display_onboarding_page</b> variable as <b>true</b> in <
 </table>
 
 
-## 2) Scenario: Whether to display the Signin footer card on app
+### 2) Scenario: Whether to display the Signin footer card on app
 
  Adopters are able to configure Whether to display Signin footer card on app by configuring the below-mentioned variables.
 
@@ -141,7 +143,7 @@ Adopters can set the <b>display_onboarding_page</b> variable as <b>true</b> in <
 </table>
 
 
-## 3) Scenario: Whether to display onboarding cards or not
+### 3) Scenario: Whether to display onboarding cards or not
 
 Adopters should be able to configure whether to display onboarding cards or not by configuring the below-mentioned variables:
 
@@ -173,7 +175,7 @@ Adopters can set the <b>display_onboarding_cards</b> variable as <b>true </b>in 
 </table>
 
 
-## 4) Scenario: Whether to display categories in profile page or not
+### 4) Scenario: Whether to display categories in profile page or not
 
 Adopters are able to configure whether to display categories in profile page or not by configuring the below-mentioned variables.
 
