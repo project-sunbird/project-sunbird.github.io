@@ -64,7 +64,7 @@ Below is the sample template configuration for different content review workflow
 			"templateName": "requestForChangesTemplate",
 			"action": "requestForChanges",
 			"fields": [{
-				"body": "We acknowledge your contribution and effort in creating content for us. However, we are unable to accept the content that you submitted.<br> We look forward to a more meaningful relationship with you, the next time around.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br><b>Reviewer name: </b>{{Reviewer name}}<br>",
+				"body": "Thank you for your contribution. We appreciate your effort in creating content for us. However, before we publish the content request you to make the necessary changes as mentioned in the comments.<br>We look forward to receiving the revised content.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br><b>Reviewer name: </b>{{Reviewer name}}<br>",
 				"subject": "Our sincere apologies! Content Type: {{Content type}}, Title: {{Content title}}",
 				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 			}]
@@ -84,7 +84,7 @@ Below is the sample template configuration for different content review workflow
 			"templateName": "publishedTemplate",
 			"action": "publish",
 			"fields": [{
-				"body": "Congratulations! The content that you had submitted has been accepted for publication. It will be available for usage shortly.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br>",
+				"body": "This is to inform you that the content submitted has been accepted for publication and will be available on the portal shortly.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br>",
 				"subject": "Congratulations, your content is live! Content Type: {{Content type}}, Title: {{Content title}}",
 				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 			}]
