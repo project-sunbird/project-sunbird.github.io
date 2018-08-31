@@ -178,14 +178,14 @@ Telemetry events are generated based on the configuration of the telemetry libra
   },
 
   "env": "ContentPlayer",
-  "channel": "012315809814749184151",
+  "channel": "XXXX",
   "did": "20d63257084c2dca33f31a8f14d8e94c0d939de4",
   "authtoken": "XXXX",
   "uid": "anonymous",
   "sid": "85e8a2c8-bb8e-4666-a21b-c29ec590d740",
   "batchsize": 20,
   "mode": "play",
-  "host": "",
+  "host": "XXXX",
   "endpoint": "/v3/telemetry",  
   "tags": [],
   "cdata": []
