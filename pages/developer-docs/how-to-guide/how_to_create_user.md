@@ -30,7 +30,7 @@ The sequence of tasks the organization administrator follows to create users inc
 
 1. Specify values for the parameters in the request body of the API. Following is an example of request body for creating a user, the sample values provided in the request body are indicative:
 
-#### Request Body**
+#### Request Body for Creating a User
 
     "request": {
         "email": "john@xyzcorp.com",
@@ -81,7 +81,7 @@ The sequence of tasks the organization administrator follows to create users inc
     }
 
 
-#### Response Body
+#### Response Body 
 
     "responseCode": "OK",
         "result": {
