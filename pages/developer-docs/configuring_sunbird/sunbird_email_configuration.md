@@ -19,7 +19,19 @@ Sunbird comes with default templates for actions in content review workflow. Bel
 
 Default templates will be stored in sunbird middleware(learner service) and configuration for the template will be stored as form config. Default template can also be configured at the installation time using Form API's.
 
-Below is the sample template configuration for different content review workflows stored in form service.
+**Adding an e-mail template to Cassandra DB**
+Sunbird LMS stores email templates in the table 'email_template' within 'sunbird' keyspace. 
+
+Given below is the command to view email templates currently available in Cassandra DB.
+
+<pre>SELECT * from sunbird.email_template;</pre>
+
+Given below is the command to add an email template to Cassandra DB using CQL shell. Ensure that the template name should be unique so that it will not override the existing template information in Cassandra DB.
+
+<pre>INSERT INTO sunbird.email_template(name, template) VALUES('myEmailTemplate', '<!doctype html><html> <head> <meta> <meta> <title></title> </head> <body> <table> <tr> <td>&nbsp;</td><td> <div class="content"> <span class="preheader"></span> <table class="main"> <tr> <td class="wrapper"> <table> <tr> <tr> <td> #if ($orgImageUrl) <p> <img src="$orgImageUrl" alt="logo" align="right" width="180" height="100"> </p>#end </td></tr><td> #if ($name) <p >Hi $name,</p>#end <p >$body</p></body></html>')</pre>
+
+**Configuration using Form API**
+Below is the sample template configuration for different content review workflows stored in form API's.
 
 **Send for review:**
 <pre>
