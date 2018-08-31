@@ -178,14 +178,14 @@ Telemetry events are generated based on the configuration of the telemetry libra
   },
 
   "env": "ContentPlayer",
-  "channel": "in.ekstep",
+  "channel": "012315809814749184151",
   "did": "20d63257084c2dca33f31a8f14d8e94c0d939de4",
   "authtoken": "XXXX",
   "uid": "anonymous",
   "sid": "85e8a2c8-bb8e-4666-a21b-c29ec590d740",
   "batchsize": 20,
   "mode": "play",
-  "host": "https://api.ekstep.in",
+  "host": "",
   "endpoint": "/v3/telemetry",  
   "tags": [],
   "cdata": []
@@ -208,6 +208,20 @@ Send this object as dispatcher in the above sample configuration ("dispatcher":c
 
 ## How to use telemetry JS library
 
+Download the telemetry-sdk npm module from [here](https://www.npmjs.com/package/@project-sunbird/telemetry-sdk) 
+
+<pre>
+npm i @project-sunbird/telemetry-sdk
+</pre>
+
+**Example:**
+
+<pre>
+$t = require('@project-sunbird/telemetry-sdk');   
+$t.start(config, contentId, contentVer,data, options);
+</pre>
+   
+
 To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.
 
 <pre>
@@ -226,11 +240,14 @@ To use the telemetry JS libraries, add the following to your HTML/application. T
           config.authToken = token;
           let startEdata = {};
           let options = {};
-          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata, options );
+          $t.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata, options );
       }
   init()
   &#x3C;/script&#x3E;
 </pre>
+
+
+
 
 ## Telemetry API methods
 
@@ -843,7 +860,7 @@ let data = { // Required
 
 <pre>
  @param {context} Object    - If context is undefined then library will reset to previous event context value.
- Ektelemetry.resetContext(context) 
+ $t.resetContext(context) 
 </pre>
 
 ### ResetObject
@@ -851,7 +868,7 @@ let data = { // Required
 
 <pre>
  @param {obj} Object      - If the Object is undefined then library will reset to previous event object value.
- Ektelemetry.resetObject(obj) 
+ $t.resetObject(obj) 
 </pre>
 
 ### ResetActor
@@ -859,7 +876,7 @@ let data = { // Required
 
 <pre>
  @param {actor} Object    - If the actor is undefined then library will reset to previous event actor value.
- Ektelemetry.resetActor(actor) 
+ $t.resetActor(actor) 
 </pre>
 
 ### ResetTags
@@ -867,7 +884,7 @@ let data = { // Required
 
 <pre>
  @param {tags} Array      - If tags are undefined then library will reset to previous event tags value.
- Ektelemetry.resetTags(tags) 
+ $t.resetTags(tags) 
 </pre>
 
 
