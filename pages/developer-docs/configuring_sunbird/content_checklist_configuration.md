@@ -50,11 +50,11 @@ The UI display, when configurations are set for the checklist, is as described:
 {
 	"request": {
 		"type": "content",
-		"action": "requestForChangesChecklist",
+		"action": "requestforchanges",
 		"subType": "resource",
 		"data": {
 			"templateName": "defaultTemplate",
-			"action": "requestForChangesChecklist",
+			"action": "requestforchanges",
 			"fields": [{
 				"title": "Please tick the reasons for requesting changes and provide detailed comments:",
 				"otherReason": "Other Issue(s) (if there are any other issues, tick this and provide details in the comments box)",
@@ -99,11 +99,11 @@ The UI display, when configurations are set for the checklist, is as described:
 {
 	"request": {
 		"type": "content",
-		"action": "publishChecklist",
+		"action": "publish",
 		"subType": "resource",
 		"data": {
 			"templateName": "defaultTemplate",
-			"action": "publishChecklist",
+			"action": "publish",
 			"fields": [{
 				"title": "Please confirm that ALL the following items are verified (by ticking the check-boxes) before you can publish:",
 				"contents": [{
