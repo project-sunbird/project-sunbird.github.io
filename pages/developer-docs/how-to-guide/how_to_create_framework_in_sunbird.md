@@ -57,12 +57,7 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
             "code": "ndf1",             // User defined value that is used as framework identifier
             "description": "Framework for Neerdhara Management", // Decription related to the framework
             "type": "TPD",              // 
-            "channels": [           
-                { }                 
-            ],
-            "categories": [
-                {Precipitation, Wastewater, Glaciers, Rivers, Lakes, Surface water, Groundwater, Springs}
-            ]
+            "channels": [],
         }
     }
 
@@ -73,7 +68,6 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
         "node_id": "ndf1",
         "versionKey": "1535617473332"
     }
-
 
 2. Use the [Add Category API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost), to create a new category in the framework. The organizations that are adopting Sunbird can link the categories and also change the labels but cannot override or add a new categories on their own. They must send a request to [Sunbird Team](info@sunbird.org) for creating new category. The sample values provided in the request body are indicative:
 
@@ -124,7 +118,6 @@ The categories can be retrieved and listed using [Fetch API](http://www.sunbird.
             "ndf1_board_basic"
         ]
     }
-
 
 ### Concepts covered
 
