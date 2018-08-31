@@ -41,51 +41,35 @@ The [Create Issuer API](http://www.sunbird.org/apis/badgingframeworkapi/#operati
 
 Following is an example of request body for creating a issuer, the sample values provided in the request body are indicative:
 
-**Request Body**
-<pre>
-{
-	"request": {
-		"name":"Badge Issuer",
-		"description":"Issue all badges",
-		"url": "https://abc.org.in/mitra",
-		"email":"aprtestthree@acmecorp.com"
-	}
-}
-</pre>
+##### Request Body
+
+  {
+    "request": {
+      "name":"Badge Issuer",
+      "description":"Issue all badges",			
+      "url": "https://abc.org.in/mitra",		//URL for whom the badge needs to be created  
+      "email":"aprtestthree@acmecorp.com"		//How the email domain and the url domain differ? USer email ID 
+    }
+  }
+
 
 On successful execution of the issuer creation API, an issuerId is generated and following parameters are returned in the response. 
 
-**Response Body**
-<pre>
-{
-  "id": "string",
-  "ver": "string",
-  "ets": 0,
-  "params": {
-  		"msgid": "string",
-    	"resmsgid": "string",
-    	"err": null,
-    	"err_msg": null,
-    	"err_detail": null,
-    	"status": "success"
-  	},
-  	"responseCode": "OK",
-  	"result": {
-    	"issuerId": "issuerslug-174",
-    	"image": null,
-    	"createdDate": "2018-08-07T08:46:44.193012Z",
-    	"issuerUrl: "https://abc.org.in/mitra",
-    	"issuerIdUr: "http://localhost:8000/public/issuers/issuerslug-174",
-    	"name": "Badge Issuer",
-    	"description": "Issue all badges",
-    	"email": "aprtestthree@acmecorp.com"
-  	}
-}
-</pre>
+	"responseCode": "OK",
+	"result": {
+		"issuerId": "issuerslug-174",
+		"image": null,
+		"createdDate": "2018-08-07T08:46:44.193012Z",
+		"issuerUrl: "https://abc.org.in/mitra",
+		"issuerIdUrl: "http://localhost:8000/public/issuers/issuerslug-174",
+		"name": "Badge Issuer",
+		"description": "Issue all badges",
+		"email": "aprtestthree@acmecorp.com"
+	}
 
-1.Save the created <b>issuerId</b>
+1. Save the created <b>issuerId</b>
 
-2.The badge issuer is created, which is required to [Create Badge Class](#create-a-badge-class) and award badge to the user 
+2. The badge issuer is created, which is required to [Create Badge Class](#create-a-badge-class) and award badge to the user 
 
 #### Create a Badge Class
 
@@ -102,7 +86,8 @@ The following is an example of the request body for creating badge class, the sa
 
 **Request Body**
 
-<pre>
+Parameter that are submitted through form application/x-www-form-urlencoded, multipart/formdata or both are usually used as the content type of the request 
+
 	issuerId:issuerslug-66
 	name: Padma
 	description: Badge Issuer 
@@ -112,32 +97,29 @@ The following is an example of the request body for creating badge class, the sa
 	subtype: badge
 	roles: BADGE_ISSUER
 	images : C:\Users\Pictures\badge_logo.png
-</pre>
+
 
 **Response Body**
 
-<pre>
-{
-	"responseCode": "OK"
-	"result": {
-		"badgeId": "badgeslug-66",
-		"criteria": "http://localhost:8000/public/badges/badgeslug-66/criteria",
-		"roles": [
-			"BADGE_ISSUER"
-			],
-		"description": "Badge Issuer",
-		"type": "user",
-		"rootOrgId": "0124758459210711040",
-		"issuerId": "issuerslug-174",
-		"createdDate": "2018-08-07T08:47:32.431314Z",
-		"recipientCount": 0,
-		"subtype": "certificate",
-		"issuerIdUrl": "http://localhost:8000/public/issuers/issuerslug-174",
-		"name": "Padma",
-		"badgeIdUrl": "http://localhost:8000/public/badges/badgeslug-66”
-	}
-}
-</pre>
+    "responseCode": "OK"
+    "result": {
+      "badgeId": "badgeslug-66",
+      "criteria": "http://localhost:8000/public/badges/badgeslug-66/criteria",
+      "roles": [
+        "BADGE_ISSUER"
+        ],
+      "description": "Badge Issuer",
+      "type": "user",
+      "rootOrgId": "0124758459210711040",
+      "issuerId": "issuerslug-174",
+      "createdDate": "2018-08-07T08:47:32.431314Z",
+      "recipientCount": 0,
+      "subtype": "certificate",
+      "issuerIdUrl": "http://localhost:8000/public/issuers/issuerslug-174",
+      "name": "Padma",
+      "badgeIdUrl": "http://localhost:8000/public/badges/badgeslug-66”
+    }
+  }
 
 1. Save the created <pre> badgeId</pre>
 
@@ -152,20 +134,16 @@ You will also need the userId of the person who will receive the badge. You can 
 Following is an example of request body for awarding the badge, the sample values provided in the request body are indicative:
 
 **Request Body**
-<pre>
-{ 
-    "request": {
+
+	"request": {
         "recipientId": "d0e8c059-e038-4baf-834f-c702764a4b58",
         "recipientType": "user",
         "issuerId": "issuerslug-174",
         "badgeId": "badgeslug-66"
     }
-}
-</pre>
 
 **Response Body**
-<pre>
-{
+
     "responseCode": "OK",
     "result": {
         "assertionDate": "2018-08-17T05:16:00.047850",
@@ -180,8 +158,6 @@ Following is an example of request body for awarding the badge, the sample value
         "recipient": {
 		}
 	}
-}
-</pre>
 
 ### Concepts covered
 
