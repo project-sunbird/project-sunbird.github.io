@@ -70,10 +70,10 @@ The following table provides a detailed list of all the available metadata drive
 | **Collection Review** | This form is displayed on clicking `send for review` in collection editor | content | collection | review | editor |  
 | **Question Save** | This form is displayed on clicking `create question` in content editor | content | questions | question-meta-save | editor |
 | **Question Search** | This form is displayed on clicking `search questions` in content editor | content | questions | question-filter-view | editor |
-| **Resource Search** | This form is displayed on clicking `View All` in `Resource Browser` opened from book editor by clicking on `Add Resource` | content | textbook | resource-filters | editor |
-| **Resource Search** | This form is displayed on clicking view all on `resource browser/ add resource` in course editor| content | course | resource-filters | editor |
-| **Resource Search** | This form is displayed on clicking view all on `resource browser/ add resource` in  lesson plan editor| content | lessonplan | resource-filters | editor |
-| **Resource Search** | This form is displayed on clicking view all on `resource browser/ add resource` in collection editor| content | collection | resource-filters | editor |
+| **Resource Search** | This form is displayed on clicking `View All` on `Resource Browser` in book editor | content | textbook | resource-filters | editor |
+| **Resource Search** | This form is displayed on clicking `View All` on `Resource Browser` in course editor| content | course | resource-filters | editor |
+| **Resource Search** | This form is displayed on clicking `View All` on `Resource Browser` in  lesson plan editor| content | lessonplan | resource-filters | editor |
+| **Resource Search** | This form is displayed on clicking `View All` on `Resource Browser` in collection editor| content | collection | resource-filters | editor |
 
 ### Supported Input & Data Types 
 
