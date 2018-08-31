@@ -69,8 +69,8 @@ On successful execution of the issuer creation API, an issuerId is generated and
     	"err_detail": null,
     	"status": "success"
   	},
-  "responseCode": "OK",
-  "result": {
+  	"responseCode": "OK",
+  	"result": {
     	"issuerId": "issuerslug-174",
     	"image": null,
     	"createdDate": "2018-08-07T08:46:44.193012Z",
@@ -124,7 +124,7 @@ The following is an example of the request body for creating badge class, the sa
 		"criteria": "http://localhost:8000/public/badges/badgeslug-66/criteria",
 		"roles": [
 			"BADGE_ISSUER"
-		],
+			],
 		"description": "Badge Issuer",
 		"type": "user",
 		"rootOrgId": "0124758459210711040",
