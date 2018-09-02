@@ -127,7 +127,7 @@ definitions:
         items:
           type: string
       recipientUserIds:
-        description: 'List of recipient user ids. With help of user id system will fetch user email to send email.'
+        description: 'List of recipient user ids. With help of user ids system fetches user email to send mail.'
         type: array
         items:
           type: string
