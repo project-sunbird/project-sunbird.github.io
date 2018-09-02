@@ -840,7 +840,7 @@ let data = { // Required
     "type": "", // Required. app, session, editor, player, workflow, assessment
     "duration": "", // Required. Total duration from start to end in seconds
     "pageid": "", // Optional. Page/Stage id where the end has happened.
-    "summary": [{ "key": "value" }] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+    "summary": [{ "key": "value" }] // Optional. Summary of actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
 };
 </pre>
 
@@ -856,10 +856,10 @@ let data = { // Required
 
 
 ### ResetContext
-  Which is used to reset the current context value with new context  object.
+  This is used to reset the current context value with new context object.
 
 <pre>
- @param {context} Object    - If context is undefined then library will reset to previous event context value.
+ @param {context} Object    - If context is undefined then library is reset to previous event context value.
  $t.resetContext(context) 
 </pre>
 
@@ -867,7 +867,7 @@ let data = { // Required
  Which is used reset the current object value with new obj
 
 <pre>
- @param {obj} Object      - If the Object is undefined then library will reset to previous event object value.
+ @param {obj} Object      - If the Object is undefined then library is reset to previous event object value.
  $t.resetObject(obj) 
 </pre>
 
@@ -875,7 +875,7 @@ let data = { // Required
   Which is used reset the current actor value with new actor   
 
 <pre>
- @param {actor} Object    - If the actor is undefined then library will reset to previous event actor value.
+ @param {actor} Object    - If the actor is undefined then library is reset to previous event actor value.
  $t.resetActor(actor) 
 </pre>
 
@@ -883,7 +883,7 @@ let data = { // Required
   Which is used to reset the current tag's value with new tag's
 
 <pre>
- @param {tags} Array      - If tags are undefined then library will reset to previous event tags value.
+ @param {tags} Array      - If tags are undefined then library is reset to previous event tags value.
  $t.resetTags(tags) 
 </pre>
 
