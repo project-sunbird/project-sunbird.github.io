@@ -23,7 +23,7 @@ This page provides you with information on the prerequisites and the sequence of
 
 * Sunbird requires EkStep API keys to access the EkStep content repository. Follow the steps <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">here</a> to get the keys. If you are creating a test environment, get the QA API keys.
 
-* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server" target="_blank">key based ssh</a>. Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
+* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server" target="_blank">key based ssh</a>. Use an empty passphrase while generating the ssh key to avoid password prompts or unexpected ssh-key errors during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
 
 * Create an <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account" target="_blank">Azure storage account</a> to complete the Sunbird installation. This account is used to store QR code images and achievement badges.
 
