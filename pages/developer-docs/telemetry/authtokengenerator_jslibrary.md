@@ -30,6 +30,10 @@ secret- "secret" of the JWT Credential For ex: '07c6e2t1rb92987fnrd705jkk8582p9e
 refresh: function(oldAuthToken) { }
 </pre>
 
+
+### Generate JWT With Bash
+Authtoken can be generated using the bash script too, please refer blog for this <a href="https://willhaley.com/blog/generate-jwt-with-bash/" target="_blank">https://willhaley.com/blog/generate-jwt-with-bash/</a> 
+
 ## How to generate authorization credentials
 
 This section details the procedure to generate the AuthToken and secret key that is required to access any APIs and to configure the standalone telemetry JS library.
