@@ -29,7 +29,30 @@ You can download the sample version of the Sunbird Mobile App to explore its out
 
 The sample Sunbird Mobile App is available for users to test, experiment and understand the various features and functions of the application. To download the app go to the <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> Sunbird Android Release</a>.
 
-## Upgrading DIKSHA Mobile APP
+## Selecting Display Language for Sunbird Mobile APP
+
+As a Sunbird app user, you must set the display language for your app.To select a language of your choice for the app, open the app:
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+ <td>To select the display language:<br>
+1. Select a language from the language list<br>
+2. Click <b>Continue</b>
+</td>
+  <td><img src="pages/features-documentation/images/mobileapp/language.png"></td>
+</tr>
+ <tr>
+ <td>Note:
+If you click the <b>Continue</b> button without selecting a language, a message <b>Please select a language</b> is displayed 
+</td>
+  <td><img src="pages/features-documentation/images/mobileapp/languagenote.png"></td>
+</tr>
+ </table>
+ 
+## Upgrading Sunbird Mobile APP
 
 When there is any new version release of Sunbird app, users are notified of the release through a pop-up message in the app. For a better user expereince the user is adviced to update the app. Based on organizational requirements, administrators can configure a forced or an optional upgrade of the app and the users are notified of the same through a pop-up message.
 
@@ -41,7 +64,7 @@ When there is any new version release of Sunbird app, users are notified of the 
  <tr>
  <td>1. In case of an optional update, the pop-up screen displays the <b>Update Now</b> and <b>Update Later</b> buttons.<br>a) To update the app, click the <b>Update Now</b> button.<br>It directs you to the play store. Click the <b>Upgrade App</b> button on Playstore; a new version of the app is launched.<br>b) To update the app later, click the <b>Update Later</b> button. The pop-up screen disappears<br>2. In case of a force update, the pop-up screen displays only the <b>Update Now</b> button.<br>To update the app, click the <b>Update Now</b> button.<br>It directs you to the play store. Click on <b>Upgrade App</b> button; the latest version of the Sunbird app is launched
 </td>
-  <td><img src="pages/features-documentation/images/mobileapp/images/allappfeatures/upgradapp.png"></td>
+  <td><img src="pages/features-documentation/images/mobileapp/upgradeapp.png"></td>
 </tr>
  </table>
 
