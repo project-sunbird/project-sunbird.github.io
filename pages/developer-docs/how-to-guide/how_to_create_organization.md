@@ -34,6 +34,7 @@ An organization can be created in a Sunbird instance using ORG API, it can be fu
 
 #### Request Body for Creating an Organization  
 
+    {
     "request":{
         "orgName":"XYZCorp",
         "description":"Dev Default Org",
@@ -50,20 +51,21 @@ An organization can be created in a Sunbird instance using ORG API, it can be fu
             "state":"KA",
             "country":"INDIA",
             "zipCode":"560000"
-        } 
+            } 
+        }
     }
 
 #### Response Body
 
-
-    "responseCode": "OK",
-    "result": {
-        "organisationId": "012567820191629312269",
-        "response": "SUCCESS"
-        }
-
-
-2. Save the created organization ID
+    {
+        "responseCode": "OK",
+        "result": {
+            "organisationId": "012567820191629312269",
+            "response": "SUCCESS"
+            } 
+    }
+   
+2. Save the created organization ID. The organization ID is utilized by [Mapping a user to an organization](http://www.sunbird.org/developer-docs/how-to-guide/associating_organization_and_user)  
 
 3. An organization is created in Sunbird
 

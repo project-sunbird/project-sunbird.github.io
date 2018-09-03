@@ -16,21 +16,13 @@ Every user must belong to an organization and is identified within the organizat
 
 ### Prerequisites
 
-1.An initialized server instance of Sunbird. Initialization includes creating an organization administrator (through Keycloak), creating a channel and associating a first organization with the channel.
+1. An intialized Sunbird instance with channel and an [organization administrator]() generated through Keycloak.
 
-For details, refer to:
-
-* [Server Installation](http://www.sunbird.org/developer-docs/installation/server_installation/)
-
-* [Channel APIs](http://www.sunbird.org/apis/framework/#tag/Channel-APIs)
-
-* [First organization](http://www.sunbird.org/developer-docs/initialization) associated with channel ID
-
-2.The API Key for access and basic authentication
+2. The [API Key for access](http://www.sunbird.org) and basic authentication
   
-3.An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)
+3. An API client to make API calls. For example use Postman refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)
 
-4.Access to the [Mapping User to Organization API](http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User)
+4. Access to the [Mapping User to Organization API](http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User)
 
 ### Taskflow
 
@@ -38,27 +30,29 @@ The sequence of tasks the organization administrator follows to create users inc
 
 1.Specify values for the following parameters in the request body of the API 
 
-An organization can be created in a Sunbird instance using [ORG API](http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs), it can be further associated with a user and channel. Following is an example of request body for associating a user to an organization, the sample values provided in the request body are indicative:
+An organization can be created in a Sunbird instance using [ORG API](http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs), it can be further associated with a [user](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Add%20User). Following is an example of request body for associating a user to an organization, the sample values provided in the request body are indicative:
 
-**Request Body**
-<pre>
- "request": {
-    "id": "string",
-    "organisationId": "0125231248111779848",
+#### Request Body for Mapping User to Organization
+
+    {
+    "request": {
+        "id": "string",
+        "organisationId": "0125231248111779848",
         "roles": ["PUBLIC"],
-    "userId": "d7cce198-a770-490c-9f35-f99cab4fbf05",
-    "userName": "juthikatest10s0ae"
-  }
-</pre>
+        "userId": "d7cce198-a770-490c-9f35-f99cab4fbf05",
+        "userName": "John"
+        }
+    }
 
-**Response Body**
+#### Response Body
 
-<pre>
- "responseCode": "OK",
+    {
+    "responseCode": "OK",
     "result": {
         "response": "SUCCESS"
+        }
     }
-</pre>
+
 
 ### Concepts Covered
 
