@@ -22,7 +22,7 @@ Every user belongs to an organization and is identified within the organization 
   
 3. An API client to make API calls. For example use Postman refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)
 
-4.Access to the [Create User API](http://www.sunbird.org/apis/userapi/#operation/Create%20User)
+4. Access to the [Create User API](http://www.sunbird.org/apis/userapi/#operation/Create%20User)
 
 ### Taskflow
  
@@ -90,9 +90,9 @@ The sequence of tasks the organization administrator follows to create users inc
             "userId": "4eec2f70-b821-42b9-9694-8a08587715af"
         }
 
-2.Save the created user ID
+2. Save the created user ID
 
-3.The user (John Pal), with is created under the XYZ organization
+3. The user (John Pal), with is created under the XYZ organization
 
 ### Concepts covered
 

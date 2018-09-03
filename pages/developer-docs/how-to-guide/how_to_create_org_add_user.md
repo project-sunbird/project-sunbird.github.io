@@ -53,6 +53,7 @@ An organization can be created in a Sunbird instance using [ORG API](http://www.
         }
     }
 
+2. The user is added to the organization
 
 ### Concepts Covered
 
