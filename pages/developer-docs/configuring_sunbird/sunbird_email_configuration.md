@@ -44,7 +44,7 @@ Below is the sample template configuration for different content review workflow
 			"action": "sendForReview",
 			"fields": [{
 				"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
-				"subject": "Content has been submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
+				"subject": "Content submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
 				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
 				"orgName": "Sunbird",
 				"fromEmail": "support-dev@open-sunbird.org"
@@ -143,7 +143,7 @@ For example, If slug is "sunbird" and action is send for review, template name s
 			"action": "sendForReview",
 			"fields": [{
 				"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
-				"subject": "Content has been submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
+				"subject": "Content submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
 				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
 				"orgName": "Sunbird",
 				"fromEmail": "support-dev@open-sunbird.org"
