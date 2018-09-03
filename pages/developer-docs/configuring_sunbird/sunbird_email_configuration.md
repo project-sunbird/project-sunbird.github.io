@@ -100,17 +100,17 @@ Below is the sample template configuration for different content review workflow
 </pre>
 
 In the above request, 
-<br>&emsp;a)type: It is the type of form.
-<br>&emsp;b)action: It is the workFlow action.
-<br>&emsp;c)subType: It is the type of notification.
-<br>&emsp;d)templateName: It is the template name used to store in Cassandra DB.
-<br>&emsp;e)body: It is the body of the email.
-<br>&emsp;f)subject: It is the subject of email.
-<br>&emsp;g)logo: It is the logo attached in the email. If not sent default will be used.
-<br>&emsp;h)orgName: It is the name that will be displayed from whom the mail has been received.
-<br>&emsp;i)fromEmail: It is the email id that will be displayed in support.
+<br>&emsp;a) type: It is the type of form.
+<br>&emsp;b) action: It is the workFlow action.
+<br>&emsp;c) subType: It is the type of notification.
+<br>&emsp;d) templateName: It is the template name used to store in Cassandra DB.
+<br>&emsp;e) body: It is the body of the email.
+<br>&emsp;f) subject: It is the subject of email.
+<br>&emsp;g) logo: It is the logo attached in the email. If not sent default will be used.
+<br>&emsp;h) orgName: It is the name that will be displayed from whom the mail has been received.
+<br>&emsp;i) fromEmail: It is the email id that will be displayed in support.
 
-Below placeholders are used to dynamically change the content information. So, it is recommended to keep this respective fields:
+**Below placeholders are used to dynamically change the content information. So, it is recommended to keep this respective fields:**
 
 <br>&emsp;a) {{Content type}}
 <br>&emsp;b) {{Content title}}
