@@ -61,11 +61,12 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
             "name": "Neerdhara",
             "code": "ndf1",
             "description": "Framework for Neerdhara Management",
-            "translations": {"hi":"एनसीएफ-अनुवाद","ta":"NCF மொழிபெயர்ப்பு"},
+            "translations": {"hi":"एनडीएफ-अनुवाद","ta":"NDF மொழிபெயர்ப்பு"},
             "type": "TPD",
             }
         }
-    }
+    } 
+
 
 **Name** depicts the name of the framework for the organization
 **Code** is user defined value that is used as framework identifier 
