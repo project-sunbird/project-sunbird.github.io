@@ -70,6 +70,8 @@ The following is a list of ports that must be open:
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
+**Note:** Don't use 10.x.x.x network subnet as docker is using this subnet for the internal communication, and might clash with your host ips.
+
 1. Install git using `sudo apt-get update -y && sudo apt-get install git -y ` 
 
 2. Run `git clone https://github.com/project-sunbird/sunbird-devops.git`
