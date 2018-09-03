@@ -50,17 +50,20 @@ The sequence of tasks the organization administrator follows to create a framewo
 Following is an example of request body for creating a framework, the sample values provided in the request body are indicative:
 
 Path for crating the Framework: <pre>{{host}}/framework/v3/create</pre>
+
 ##### Request Body for Creating Framework
 
 To retrieve the channels for the request parameter, use [List Channel API](http://www.sunbird.org/apis/framework/#operation/ChannelV1ListPost)  
+    
     {
     "request": {
         "framework": {
             "name": "Neerdhara",
-            "code": "ndf1",             // User defined value that is used as framework identifier
-            "description": "Framework for Neerdhara Management", // Decription related to the framework
-            "type": "TPD",              // 
-            "channels": [],
+            "code": "ndf1",
+            "description": "Framework for Neerdhara Management",
+            "translations": {"hi":"एनसीएफ-अनुवाद","ta":"NCF மொழிபெயர்ப்பு"},
+            "type": "TPD",
+            }
         }
     }
 
@@ -90,6 +93,7 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
 2. Use the [Add Category API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost), to create a new category in the framework. The organizations that are adopting Sunbird can link the categories and also change the labels but cannot override or add a new categories on their own. They must send a request to [Sunbird Team](info@sunbird.org) for creating new category. The sample values provided in the request body are indicative:
 
 Path for creating category: <pre>{{host}}/framework/v3/category/create?framework=ndf1 </pre>
+
 ##### Request Body for Creating Categories
 
     {
@@ -109,15 +113,16 @@ Path for creating category: <pre>{{host}}/framework/v3/category/create?framework
         "result": {
             "node_id": "ndf1_subject",
             "versionKey": "1535716551605"
-        }
+            }
     }
         
 3. Use the [Add Term API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1TermCreatePost), to create a new term in the category.
 The categories can be retrieved and listed using [Fetch API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CategoryReadClassGet)
 
+Path for creating category: <pre>{{host}}/framework/v3/term/create?framework=ndf1&category=subject</pre>
+
 ##### Request Body for Adding Terms 
 
-Path for creating category: <pre>{{host}}/framework/v3/term/create?framework=ndf1&category=subject</pre>
     {
     "request": {
         "term": [
@@ -141,11 +146,13 @@ Path for creating category: <pre>{{host}}/framework/v3/term/create?framework=ndf
     "responseCode": "OK",
     "result": {
         "node_id": [
-            "ndf1_board_basic"
-        ]
+            "ndf1_subject_river",
+            "ndf1_subject_sea"
+            ]
+        }
     }
 
-### Concepts covered
+### Concepts Covered
 
 **Framework**- A structure designed to define the scope of something. On Sunbird, the framework is defined through a string of vocabularies
 
