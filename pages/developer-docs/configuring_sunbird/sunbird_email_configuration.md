@@ -7,9 +7,10 @@ description: Technical document on configuring Sunbird Email Notification for Re
 published: true
 allowSearch: true
 ---
-
 ## Overview
-To ensure that email templates can be configured on channel level for the review workflow.
+Any content published on Sunbird undergoes a review to ensure that content published adheres to defined guidelines and standards set by the organization. Each organization can set guidelines based on their organization standards. Sunbird provides the feature of notifying content creators about the status of their content sent for review. Any adopter can use this feature and configure email templates and determines how to notify content creators. The pre-defined review workflow on SUnbird includes the following taskflow:
+
+
 
 ## Default Templates
 Sunbird comes with default templates for actions in content review workflow. Below are the default templates present in Sunbird.
@@ -44,11 +45,9 @@ Below is the sample template configuration for different content review workflow
 			"templateName": "sendForReviewTemplate",
 			"action": "sendForReview",
 			"fields": [{
-				"body": "A content has been submitted for review.<br><br><b>Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
+				"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
 				"subject": "Content has been submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
-				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-				"orgName": "Sunbird",
-                "fromEmail": "support-dev@open-sunbird.org"
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 			}]
 		}
 	}
@@ -66,11 +65,9 @@ Below is the sample template configuration for different content review workflow
 			"templateName": "requestForChangesTemplate",
 			"action": "requestForChanges",
 			"fields": [{
-				"body": "Thank you for your contribution. We appreciate your effort in creating content for us. However, before we publish the content request you to make the necessary changes as mentioned in the comments.<br>We look forward to receiving the revised content.<br><br><b>Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br><b>Reviewer name: </b>{{Reviewer name}}<br>",
+				"body": "Thank you for your contribution. We appreciate your effort in creating content for us. However, before we publish the content request you to make the necessary changes as mentioned in the comments.<br>We look forward to receiving the revised content.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br><b>Reviewer name: </b>{{Reviewer name}}<br>",
 				"subject": "Our sincere apologies! Content Type: {{Content type}}, Title: {{Content title}}",
-				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-				"orgName": "Sunbird",
-                "fromEmail": "support-dev@open-sunbird.org"
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 			}]
 		}
 	}
@@ -88,11 +85,9 @@ Below is the sample template configuration for different content review workflow
 			"templateName": "publishedTemplate",
 			"action": "publish",
 			"fields": [{
-				"body": "This is to inform you that the content submitted has been accepted for publication and will be available on the portal shortly.<br><br><b>Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br>",
+				"body": "This is to inform you that the content submitted has been accepted for publication and will be available on the portal shortly.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br>",
 				"subject": "Congratulations, your content is live! Content Type: {{Content type}}, Title: {{Content title}}",
-				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-				"orgName": "Sunbird",
-                "fromEmail": "support-dev@open-sunbird.org"
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 			}]
 		}
 	}
@@ -100,17 +95,15 @@ Below is the sample template configuration for different content review workflow
 </pre>
 
 In the above request, 
-<br>&emsp;a) type: It is the type of form.
-<br>&emsp;b) action: It is the workFlow action.
-<br>&emsp;c) subType: It is the type of notification.
-<br>&emsp;d) templateName: It is the template name used to store in Cassandra DB.
-<br>&emsp;e) body: It is the body of the email.
-<br>&emsp;f) subject: It is the subject of email.
-<br>&emsp;g) logo: It is the logo attached in the email. If not sent default will be used.
-<br>&emsp;h) orgName: It is the name that will be displayed from whom the mail has been received.
-<br>&emsp;i) fromEmail: It is the email id that will be displayed in support.
+<br>&emsp;a)type: It is the type of form.
+<br>&emsp;b)action: It is the workFlow action.
+<br>&emsp;c)subType: It is the type of notification.
+<br>&emsp;d)templateName: It is the template name used to store in Cassandra DB.
+<br>&emsp;e)body: It is the body of the email.
+<br>&emsp;f)subject: It is the subject of email.
+<br>&emsp;g)logo: It is the logo attached in the email. If not sent default will be used.
 
-**Below placeholders are used to dynamically change the content information. So, it is recommended to keep this respective fields:**
+Below placeholders are used to dynamically change the content information. So, it is recommended to keep this respective fields:
 
 <br>&emsp;a) {{Content type}}
 <br>&emsp;b) {{Content title}}
@@ -138,16 +131,15 @@ For example, If slug is "sunbird" and action is send for review, template name s
 		"type": "notification",
 		"action": "sendForReview",
 		"subType": "email",
+
 		"rootOrgId": "0123166367624478721",
 		"data": {
 			"templateName": "sendForReviewTemplate",
 			"action": "sendForReview",
 			"fields": [{
-				"body": "A content has been submitted for review.<br><br><b>Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
+				"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
 				"subject": "Content has been submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
-				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-				"orgName": "Sunbird",
-                "fromEmail": "support-dev@open-sunbird.org"
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 			}]
 		}
 	}
