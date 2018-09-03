@@ -57,11 +57,10 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
     "request": {
         "framework": {
             "name": "Neerdhara",
-            "code": "ndf1",
-            "description": "Framework for Neerdhara Management",
-            "translations": {"hi":"एनसीएफ-अनुवाद","ta":"NCF மொழிபெயர்ப்பு"},
-            "type": "TPD",
-            }
+            "code": "ndf1",             // User defined value that is used as framework identifier
+            "description": "Framework for Neerdhara Management", // Decription related to the framework
+            "type": "TPD",              // 
+            "channels": [],
         }
     }
 
@@ -140,13 +139,12 @@ Path for creating category: <pre>{{host}}/framework/v3/term/create?framework=ndf
 
     {
     "responseCode": "OK",
-        "result": {
-            "node_id": [
-                "ndf1_subject_river",
-                "ndf1_subject_sea"
-                ]
-            }
-    }   
+    "result": {
+        "node_id": [
+            "ndf1_board_basic"
+        ]
+    }
+
 ### Concepts covered
 
 **Framework**- A structure designed to define the scope of something. On Sunbird, the framework is defined through a string of vocabularies

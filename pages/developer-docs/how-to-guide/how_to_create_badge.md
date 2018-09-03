@@ -42,20 +42,18 @@ The [Create Issuer API](http://www.sunbird.org/apis/badgingframeworkapi/#operati
 Following is an example of request body for creating a issuer, the sample values provided in the request body are indicative:
 
 ##### Request Body
-<pre>
-{
-	"request": {
-		"name":"Badge Issuer",
-		"description":"Issue all badges",			
-		"url": "https://abc.org.in/mitra",		//URL for whom the badge needs to be created  
-		"email":"aprtestthree@acmecorp.com"		//How the email domain and the url domain differ? USer email ID 
-	}
-}
-</pre>
+
+  {
+    "request": {
+      "name":"Badge Issuer",
+      "description":"Issue all badges",			
+      "url": "https://abc.org.in/mitra",		//URL for whom the badge needs to be created  
+      "email":"aprtestthree@acmecorp.com"		//How the email domain and the url domain differ? USer email ID 
+    }
+  }
+
 
 On successful execution of the issuer creation API, an issuerId is generated and following parameters are returned in the response. 
-
-##### Response Body
 
 	"responseCode": "OK",
 	"result": {
@@ -103,26 +101,25 @@ Parameter that are submitted through form application/x-www-form-urlencoded, mul
 
 **Response Body**
 
-	"responseCode": "OK"
-	"result": {
-		"badgeId": "badgeslug-66",
-		"criteria": "http://localhost:8000/public/badges/badgeslug-66/criteria",
-		"roles": [
-			"BADGE_ISSUER"
-		],
-		"description": "Badge Issuer",
-		"type": "user",
-		"rootOrgId": "0124758459210711040",
-		"issuerId": "issuerslug-174",
-		"createdDate": "2018-08-07T08:47:32.431314Z",
-		"recipientCount": 0,
-		"subtype": "certificate",
-		"issuerIdUrl": "http://localhost:8000/public/issuers/issuerslug-174",
-		"name": "Padma",
-		"badgeIdUrl": "http://localhost:8000/public/badges/badgeslug-66”
-	}
-}
-</pre>
+    "responseCode": "OK"
+    "result": {
+      "badgeId": "badgeslug-66",
+      "criteria": "http://localhost:8000/public/badges/badgeslug-66/criteria",
+      "roles": [
+        "BADGE_ISSUER"
+        ],
+      "description": "Badge Issuer",
+      "type": "user",
+      "rootOrgId": "0124758459210711040",
+      "issuerId": "issuerslug-174",
+      "createdDate": "2018-08-07T08:47:32.431314Z",
+      "recipientCount": 0,
+      "subtype": "certificate",
+      "issuerIdUrl": "http://localhost:8000/public/issuers/issuerslug-174",
+      "name": "Padma",
+      "badgeIdUrl": "http://localhost:8000/public/badges/badgeslug-66”
+    }
+  }
 
 1. Save the created <pre> badgeId</pre>
 

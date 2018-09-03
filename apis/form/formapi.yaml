@@ -389,4 +389,4 @@ definitions:
               description: Represents the visibility property that is used to set whether a field should be visible or not
             renderingHints:
               type: object
-              description: Quick tips about the rendering of the form
+              description: Quick tips on the rendering of the form
