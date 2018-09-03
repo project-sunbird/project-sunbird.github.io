@@ -16,11 +16,11 @@ Every user must belong to an organization and is identified within the organizat
 
 ### Prerequisites
 
-1. An intialized Sunbird instance with channel and an [organization administrator]() generated through Keycloak.
+1. An intialized Sunbird instance, an [organization](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_organization/) and a [user](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_user).
 
-2. The [API Key for access](http://www.sunbird.org) and basic authentication
+2. The [API Key for access](http://www.sunbird.org) and basic authentication (serverinstallation/postinstallation configuration) and in response the access_token is generated that need to be used for <pre>x-authenticated-user-token</pre> header
   
-3. An API client to make API calls. For example use Postman refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)
+3. An API client to make API calls. For example use Postman #refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)#
 
 4. Access to the [Mapping User to Organization API](http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User)
 
@@ -28,32 +28,32 @@ Every user must belong to an organization and is identified within the organizat
 
 The sequence of tasks the organization administrator follows to create users include:
 
-1.Specify values for the following parameters in the request body of the API 
+1. Specify values for the following parameters in the request body of the API 
 
 An organization can be created in a Sunbird instance using [ORG API](http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs), it can be further associated with a [user](http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Add%20User). Following is an example of request body for associating a user to an organization, the sample values provided in the request body are indicative:
 
 #### Request Body for Mapping User to Organization
 
     {
-    "request": {
-        "id": "string",
+        "request": {
         "organisationId": "0125231248111779848",
+        "provider": "string",
         "roles": ["PUBLIC"],
-        "userId": "d7cce198-a770-490c-9f35-f99cab4fbf05",
-        "userName": "John"
-        }
+        "userId": "4eec2f70-b821-42b9-9694-8a08587715af",
+        "userName": "john1"
+        }    
     }
 
 #### Response Body
 
     {
-    "responseCode": "OK",
-    "result": {
-        "response": "SUCCESS"
+        "responseCode": "OK",
+        "result": {
+            "response": "SUCCESS"
         }
     }
 
-2. The user is added to the organization
+2. The user (John) is added to the organization (XYZ Corp)
 
 ### Concepts Covered
 

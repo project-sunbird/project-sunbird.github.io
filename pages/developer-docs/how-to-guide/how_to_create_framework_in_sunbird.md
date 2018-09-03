@@ -59,7 +59,7 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
     "request": {
         "framework": {
             "name": "Neerdhara",
-            "code": "ndf1",
+            "code": "ndf",
             "description": "Framework for Neerdhara Management",
             "translations": {"hi":"एनडीएफ-अनुवाद","ta":"NDF மொழிபெயர்ப்பு"},
             "type": "TPD",

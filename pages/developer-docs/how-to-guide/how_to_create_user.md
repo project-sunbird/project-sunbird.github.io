@@ -16,7 +16,7 @@ Every user belongs to an organization and is identified within the organization 
 
 ### Prerequisites
 
-1. An intialized Sunbird instance with channel and an [organization administrator]() generated through Keycloak.
+1. An intialized Sunbird instance
 
 2. The [API Key for access](http://www.sunbird.org) and basic authentication
   
