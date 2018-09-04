@@ -1,3 +1,4 @@
+
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
@@ -7,6 +8,7 @@ description: Technical document on configuring Sunbird Email Notification for Re
 published: true
 allowSearch: true
 ---
+
 ## Overview
 Any content published on Sunbird undergoes a review to ensure that content published adheres to defined guidelines and standards set by the organization. Each organization can set standard guidelines based on their organizational ideologies. Sunbird provides the feature of notifying content creators about the status of their content sent for review. Any adopter can use this feature and configure email templates and notify content creators. 
 
