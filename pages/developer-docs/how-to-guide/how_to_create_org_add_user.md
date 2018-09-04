@@ -18,7 +18,7 @@ Every user must belong to an organization and is identified within the organizat
 
 1. An intialized Sunbird instance, an [organization](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_organization/) and a [user](http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_user).
 
-2. The [API Key for access](http://www.sunbird.org) and basic authentication (serverinstallation/postinstallation configuration) and in response the access_token is generated that need to be used for <pre>x-authenticated-user-token</pre> header
+2. The [API Key for access](http://www.sunbird.org) and basic [authentication](http://www.sunbird.org/developer-docs/installation/server_installation/installation/#post_installation_configuration). As a response, the access_token is generated which is used for `x-authenticated-user-token` header 
   
 3. An API client to make API calls. For example use Postman #refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)#
 
