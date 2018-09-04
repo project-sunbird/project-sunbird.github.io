@@ -2,8 +2,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configuring Email Notifications
-page_title: Configuring Email Notifications
+title: Configuring Email Notification
+page_title: Configuring Email Notification
 description: Technical document on configuring Sunbird Email Notification for Review workflow
 published: true
 allowSearch: true
@@ -50,9 +50,7 @@ Sample template configuration for different content review workflows stored in f
 				"fields": [{
 					"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
 					"subject": "Content submitted for Review Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
@@ -72,9 +70,7 @@ Sample template configuration for different content review workflows stored in f
 				"fields": [{
 					"body": "Thank you for your contribution. We appreciate your effort in creating content for us. However, before we publish the content request you to make the necessary changes as mentioned in the comments.<br>We look forward to receiving the revised content.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br><b>Reviewer name: </b>{{Reviewer name}}<br>",
 					"subject": "Our Sincere Apologies! Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
@@ -94,26 +90,22 @@ Sample template configuration for different content review workflows stored in f
 				"fields": [{
 					"body": "This is to inform you that the content submitted has been accepted for publication and will be available on the portal shortly.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br>",
 					"subject": "Congratulations, Your Content is Live! Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
 	}
 
 **Description of Paramaters**
-<br>&emsp;a) type: Type of form
-<br>&emsp;b) action: Workflow action, review, publish etc
-<br>&emsp;c) subType: Type of notification
-<br>&emsp;d) templateName: Template name used to store in Cassandra DB
-<br>&emsp;e) body: Body of the email
-<br>&emsp;f) subject: Subject line of email
-<br>&emsp;g) logo: Logo attached in the email. It is an optional parameter. If you don't provide this, default logo will be displayed.
-<br>&emsp;h) orgName: Name displayed from whom the mail is received. It is an optional parameter. If you don't provide this, default name will be displayed.
-<br>&emsp;i) fromEmail: Email that will be displayed where user can write email. It is an optional parameter. If you don't provide this, default email will be displayed.
+<br>&emsp;a)type: Type of form
+<br>&emsp;b)action: Workflow action, review, publish etc
+<br>&emsp;c)subType: Type of notification
+<br>&emsp;d)templateName: Template name used to store in Cassandra DB
+<br>&emsp;e)body: Body of the email
+<br>&emsp;f)subject: Subject line of email
+<br>&emsp;g)logo: Logo attached in the email, when the logo is not defined, the default logo is used
 
-**Some parameters are used to dynamically change the content information. It is recommended that these parameters are retained in the request body:**
+Some parameters are used to dynamically change the content information. It is recommended that these parameters are retained in the request body:
 <br>&emsp;a) {{Content type}}
 <br>&emsp;b) {{Content title}}
 <br>&emsp;c) {{Content link}}
@@ -150,9 +142,7 @@ For example, if slug is "Sunbird" and action is "send for review", template name
 				"fields": [{
 					"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
 					"subject": "Content has been submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
