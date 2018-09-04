@@ -2,8 +2,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configuring Sunbird Email Notification for Review workflow
-page_title: Configuring Sunbird Email Notification for Review workflow
+title: Configuring Email Notifications
+page_title: Configuring Email Notifications
 description: Technical document on configuring Sunbird Email Notification for Review workflow
 published: true
 allowSearch: true
