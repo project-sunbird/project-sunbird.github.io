@@ -10,9 +10,9 @@ allowSearch: true
 ---
 ## Scenario
 
-Sunbird enables seamless access and discoverability of content through a taxonomy framework. The objective and intent of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when a user search for content, they get relevant results. The framework consists of Categories and Terms within a specific domain. Terms are values for categories. You can extend the core taxonomy via framework. The separation of the taxonomy from its extension in the form of framework(s) provides experts and pedagogues the power and flexibility to model and tag the content.
+Sunbird enables seamless access and discoverability of content through a [taxonomy framework](http://www.sunbird.org/faqs/taxonomymetadataframework/). The objective and intent of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when a user search for content, they get relevant results. The framework consists of categories and terms within a specific domain. Terms are values for Categories. You can extend the core taxonomy via framework. The separation of the taxonomy from its extension in the form of framework(s) provides experts and pedagogues the power and flexibility to model and tag the content.
 
-When creating a new framework, the framework creator can use existing framework term and concepts and link them to their own framework. A category can have terms either in sequential list or in hierarchical structure. Terms can be associated with other terms across categories. As a result, it is possible to select a term in the first category and hence restrict the set of available terms for the next category and so on. However, the Sunbird instance will have the following categories in its predefined frameworks:
+An organization can use existing framework term and concepts and link them to their own framework. While creating a new framework, the framework creator needs to set up a new framework and align it to the categories and terms. A category can have terms either in sequential list or in hierarchical structure. Terms can be associated with other terms across categories. As a result, it is possible to select a term in the first category and hence restrict the set of available terms for the next category and so on. The organizations that are adopting Sunbird can link the categories and also change the labels but cannot override or add a new categories on their own. However, the Sunbird instance will have the following categories in its predefined frameworks:
 
     - Subject: classification of stream specific values
     - Board: certifying body/stream government or private organization
@@ -30,7 +30,7 @@ For example, for the organization Neerdhara the framework name is Neerdhara and 
 
 1. The [API Key for access](http://www.sunbird.org) and basic authentication
   
-1. An API client to make API calls. For example use Postman refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)
+1. ​Software that can make API calls like curl or [POSTMAN](https://www.getpostman.com/docs/v6/postman/api_documentation/intro_to_api_documentation)
 
 1. Onboarding the following with access to the API
     - Admin user     
@@ -49,7 +49,7 @@ The sequence of tasks the organization administrator follows to create a framewo
 1. Use the [Create Framework API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost), to create a new framework. Specify values for the parameters in the request body of the API. 
 Following is an example of request body for creating a framework, the sample values provided in the request body are indicative:
 
-Path for crating the Framework: <pre>{{host}}/framework/v3/create</pre>
+2. Path for creating the Framework: <pre>{{host}}/framework/v1/create</pre>
 
 ##### Request Body for Creating Framework
 
@@ -67,12 +67,13 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
         }
     } 
 
+**Description of Parameters**
 
-**Name** depicts the name of the framework for the organization
-**Code** is user defined value that is used as framework identifier 
-**Description** is related to the framework
-**Translations** enables framework in different languages 
-**Type** defines the type of content
+Name: depicts the name of the framework for the organization
+Code: is user defined value that is used as framework identifier 
+Description: is related to the framework
+Translations: enables framework in different languages 
+Type: defines the type of content
 
 ##### Response Body for Creating Framework
 
@@ -91,23 +92,29 @@ To retrieve the channels for the request parameter, use [List Channel API](http:
         }
     }
 
-2. Use the [Add Category API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost), to create a new category in the framework. The organizations that are adopting Sunbird can link the categories and also change the labels but cannot override or add a new categories on their own. They must send a request to [Sunbird Team](info@sunbird.org) for creating new category. The sample values provided in the request body are indicative:
+#### Rename a Category
 
-Path for creating category: <pre>{{host}}/framework/v3/category/create?framework=ndf1 </pre>
+1. Use the [Add Category API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost), to create a new category in the framework. 
 
-##### Request Body for Creating Categories
+> Note: They must send a request to [Sunbird Team](info@sunbird.org) for creating new category. 
+
+The sample values provided in the request body are indicative. The API describes the procedure to change the label(resources) of an existing category(subject):
+
+2. Path for creating category: `{{host}}/framework/v1/category/create?framework=ndf1`
+
+##### Request Body for Renaming Categories
 
     {
-   "request": {
-      "category":{
-            "name":"Resources",
+    "request": {
+        "category":{
+            "name":"resources",
             "description":"Subject is changed to Resources",
             "code":"subject"
             }
         }
     }
 
-##### Response Body for Creating Categories
+##### Response Body for Renaming Categories
 
     {
         "responseCode": "OK",
@@ -116,11 +123,14 @@ Path for creating category: <pre>{{host}}/framework/v3/category/create?framework
             "versionKey": "1535716551605"
             }
     }
-        
-3. Use the [Add Term API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1TermCreatePost), to create a new term in the category.
-The categories can be retrieved and listed using [Fetch API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CategoryReadClassGet)
 
-Path for creating category: <pre>{{host}}/framework/v3/term/create?framework=ndf1&category=subject</pre>
+
+#### Create a Term
+
+1. Use the [Add Term API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1TermCreatePost), to create a new term in the category.
+The categories can be retrieved and listed using [Fetch API](http://www.sunbird.org/apis/framework/#operation/FrameworkV1CategoryReadClassGet). The sample values provided in the request body are indicative.
+
+2. Path for creating category: `{{host}}/framework/v1/term/create?framework=ndf1&category=subject`
 
 ##### Request Body for Adding Terms 
 
