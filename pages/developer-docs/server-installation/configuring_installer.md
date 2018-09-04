@@ -7,12 +7,11 @@ description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
 
-<<<<<<< HEAD
 Choose the app server VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute these steps from the app server. 
-=======
+
 ## Installation Procedure
 Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
->>>>>>> df736968f0e9a255b53ac281f5ca4aa348257d24
+
 
 ### Getting the Installer
 
