@@ -7,13 +7,11 @@ description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
 
-Choose the app server VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute these steps from the app server. 
-
 ## Installation Procedure
-Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
+To install Sunbird Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
 
-### Getting the Installer
+## Getting the Installer
 
 * Clone the installer repository
 
@@ -22,7 +20,13 @@ Choose one docker swarm manager VM as the installation server and execute the fo
     git checkout tags/release-1.9
     cd deploy
 
-### Configuring the Installer
+** Description of commands:
+git clone: To clone the repository on your local
+cd sunbird-devops: To enter to "sunbird-devops" folder
+git checkout {branch name}: To change from the current branch to tags/release branch
+cd deploy: To enter to deploy folder. You can further run your git commands here
+
+## Configuring the Installer
 
 * Update the configuration parameters in the `config` file. 
 

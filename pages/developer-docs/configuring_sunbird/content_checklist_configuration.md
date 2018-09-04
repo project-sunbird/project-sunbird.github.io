@@ -9,9 +9,7 @@ allowSearch: true
 ---
 
 ## Overview
-Any content published on Sunbird undergoes a review to ensure that published content adheres to defined guidelines and standards set by the organization. Each organization can set guidelines based on their organization standards. Sunbird provides the feature of notifying content creators about the status of their content sent for review. Any adopter can use this feature and configure email templates and determines how to notify content creators. 
-
-A content reviewer on Sunbird can perform the following activities: 
+Any content published on Sunbird undergoes a review to ensure that published content adheres to defined guidelines and standards set by the organization. Each organization can set guidelines based on their organization standards. Sunbird provides the feature of configuring review checklist. Any adopter can use this feature and configure checklists for the review process. A content reviewer on Sunbird can perform the following activities: 
 <br>&emsp;a) Request changes in the content submitted for review
 <br>&emsp;b) Publish the content submitted for review
 
