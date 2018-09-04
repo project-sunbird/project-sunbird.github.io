@@ -29,7 +29,7 @@ Command to view email templates currently available in Cassandra DB:
 
     SELECT * from sunbird.email_template;
 
-Command to add an email template to Cassandra DB using CQL shell. Ensure that the template name is unique so that it doesnot override the existing template information in Cassandra DB:
+Command to add an email template to Cassandra DB using CQL shell. Ensure that the template name is unique so that it does not override the existing template information in Cassandra DB:
 
     INSERT INTO sunbird.email_template(name, template) VALUES('myEmailTemplate', '<!doctype html><html> <head> <meta> <meta> <title></title> </head> <body> <table> <tr> <td>&nbsp;</td><td> <div class="content"> <span class="preheader"></span> <table class="main"> <tr> <td class="wrapper"> <table> <tr> <tr> <td> #if ($orgImageUrl) <p> <img src="$orgImageUrl" alt="logo" align="right" width="180" height="100"> </p>#end </td></tr><td> #if ($name) <p >Hi $name,</p>#end <p >$body</p></body></html>')
 
@@ -102,7 +102,7 @@ Sample template configuration for different content review workflows stored in f
 		}
 	}
 
-**Description of Paramaters**
+**Description of Parameters**
 <br>&emsp;a) type: Type of form
 <br>&emsp;b) action: Workflow action, review, publish etc
 <br>&emsp;c) subType: Type of notification
@@ -121,10 +121,10 @@ Sample template configuration for different content review workflows stored in f
 <br>&emsp;e) {{Reviewer name}}
 
 ## Custom Templates
-You can aslo create custom email templates which are channel/tenant specific. When customized templates are not present, the default template is used to send emails for different actions in review workflows.
+You can also create custom email templates which are channel/tenant specific. When customized templates are not present, the default template is used to send emails for different actions in review workflows.
 
 To configure email template:
-* Addnew email template configurations in Form API 
+* Add new email template configurations in Form API 
 * Manually insert the new template in Casandra DB of Sunbird middleware service
 
 ### Creating Custom Templates
