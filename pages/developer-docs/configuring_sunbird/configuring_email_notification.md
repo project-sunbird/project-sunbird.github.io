@@ -2,8 +2,8 @@
 ---
 type: landing
 directory: developer-docs/configuring_sunbird
-title: Configuring Sunbird Email Notification for Review workflow
-page_title: Configuring Sunbird Email Notification for Review workflow
+title: Configuring Email Notification
+page_title: Configuring Email Notification
 description: Technical document on configuring Sunbird Email Notification for Review workflow
 published: true
 allowSearch: true
@@ -50,9 +50,7 @@ Sample template configuration for different content review workflows stored in f
 				"fields": [{
 					"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
 					"subject": "Content submitted for Review Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
@@ -72,9 +70,7 @@ Sample template configuration for different content review workflows stored in f
 				"fields": [{
 					"body": "Thank you for your contribution. We appreciate your effort in creating content for us. However, before we publish the content request you to make the necessary changes as mentioned in the comments.<br>We look forward to receiving the revised content.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br><b>Reviewer name: </b>{{Reviewer name}}<br>",
 					"subject": "Our Sincere Apologies! Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
@@ -94,9 +90,7 @@ Sample template configuration for different content review workflows stored in f
 				"fields": [{
 					"body": "This is to inform you that the content submitted has been accepted for publication and will be available on the portal shortly.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Link: </b>{{Content link}}<br>",
 					"subject": "Congratulations, Your Content is Live! Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
@@ -150,9 +144,7 @@ For example, if slug is "Sunbird" and action is "send for review", template name
 				"fields": [{
 					"body": "A content has been submitted for review.<br><br><b>Content Type: </b>{{Content type}}<br><b>Title: </b>{{Content title}}<br><b>Creator: </b>{{Creator name}}<br><b>Link: </b>{{Content link}}<br>",
 					"subject": "Content has been submitted for review! Content Type: {{Content type}}, Title: {{Content title}}",
-					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
-					"orgName": "Sunbird",
-					"fromEmail": "support-dev@open-sunbird.org"
+					"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png"
 				}]
 			}
 		}
