@@ -60,10 +60,12 @@ The servers should connect to each other over TCP on the following [ports](devel
 #### Disk Space
 * Minimum 20 GB disk space
 
-<tabe>
-
 #### Utilities
 * git
 * install git executing the following commands
     sudo apt-get update -y 
     sudo apt-get install git -y 
+
+ * Description of commands:
+ sudo apt-get update -y: To install latest updates
+ sudo apt-get install git -y: To install git
