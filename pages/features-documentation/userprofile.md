@@ -40,7 +40,7 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
     <td><img src="pages/features-documentation/images/profileimg1.png"></td>
   </tr>
   <tr>
-    <td>1. Depending on your organization, you can see few information are already available, viz: <b>Username</b>, <b> City</b> you belong to etc <br>2. Click on <b>Edit</b> icon on your profile, to add profile image. For details on adding image to profile, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images</a> <br>3. You can also see your <b>Last Login Time</b> <br><br><b>Note:</b> Maximum image upload size is 4 MB</td>
+    <td>1. Depending on your organization, you can see few information are already available, viz: <b>Username</b>, <b> City</b> you belong to etc <br>2. Click the <b>Edit</b> icon on your profile, to add profile image. For details on adding image to profile, refer <a href="features-documentation/metadata_addingimages" target="_blank">Adding Images</a> <br>3. You can also see your <b>Last Login Time</b> <br><br><b>Note:</b> Maximum image upload size is 4 MB</td>
     <td><img src="pages/features-documentation/images/profileimg2.png"></td>
   </tr>
   </table>
@@ -124,8 +124,8 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
     <td><img src="pages/features-documentation/images/profile_education.png"></td>
   </tr>
   <tr>
-      <td><b>Skill Tags</b> <br>1. Click the <b>Add</b> to open <b>Add Skills</b> page <br>2. You can show or hide your skill details from others <br>3. Enter or select skills from the drop down <br>4. Click <b>Finish</b> to save the details <br>5. Click <b>Cancel</b> to exit the page</td>
-    <td><img src="pages/features-documentation/images/profile_skilltag.png"></td>
+      <td><b>Skill Tags</b> <br>1. Click <b>Edit</b> to open the window to edit your skill <br>2. You can show or hide your skill details from others <br>3. Select the skill set that you want to add from the drop down <br>4. Click <b>Save</b> to save the details <br>
+    <td><img src="pages/features-documentation/images/profile_skill.png"></td>
   </tr>
   <tr>
     <td><b>Skill Endorsement</b> <br>1. Click <b>View More</b> dropdown in <b>Skill Tags</b> section <br>2. Click <b>+</b> icon to endorse for a particular skill <br>3. Click <b>View Less</b> to collapse the Skill Tags page</td>
