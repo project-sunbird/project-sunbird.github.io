@@ -19,19 +19,18 @@ Sunbird also provides the ability to badge content. While this example shows how
  
 ### Prerequisites
 
-1.The [API Key]() for access and basic authentication
+1. The [API Key for access](http://www.sunbird.org/apis/) and basic authentication
 
-2.An API client to make API calls. For example use Postman refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)
+2. An API client to make API calls. For example use Postman refer [Using Postman](http://www.sunbird.org/apis/framework/#tag/usingpostman)
 
-3.Access to the [Badging API](http://www.sunbird.org/apis/badgingframeworkapi/)
-
+3. Access to the [Badging API](http://www.sunbird.org/apis/badgingframeworkapi/)
 
 ### Taskflow
 
 The sequence of tasks the organization administrator follows to create badges include:
-    1. Creating badge issuers using the [Create Badge Issuer API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/CreatePost)
-    2. Creating badges using the [Create Badge Class API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeSearchPost)
-    3. Award the badge using the [Badge Assertion API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeAssertionReadByAssertionIdGet)
+  1. Creating badge issuers using the [Create Badge Issuer API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/CreatePost)
+  2. Creating badges using the [Create Badge Class API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeSearchPost)
+  3. Award the badge using the [Badge Assertion API](http://www.sunbird.org/apis/badgingframeworkapi/#operation/BadgeAssertionReadByAssertionIdGet)
     
 To issue badges, a badge issuer must be created. It is up to the organization administrator whether to create a single badge issuer to issue all badges or create individual badge issuers for each type of badge to be issued. In this scenario, the organization administrator decides that a single issuer can be used for issuing all badges. 
 
@@ -45,29 +44,36 @@ Following is an example of request body for creating a issuer, the sample values
 
   {
     "request": {
-      "name":"Badge Issuer",
-      "description":"Issue all badges",			
-      "url": "https://abc.org.in/mitra",		//URL for whom the badge needs to be created  
-      "email":"aprtestthree@acmecorp.com"		//How the email domain and the url domain differ? USer email ID 
+    "name":"Badge Issuer",
+    "description":"Issue all badges",			
+    "url": "https://abc.org.in/mitra",		  
+    "email":"aprtestthree@acmecorp.com"		
     }
   }
 
+**Name** assigned according to the role
+**Description** of the assigned role
+**URL** URL for the domain for which the badge needs to be created
+**Email** contains users email ID 
 
 On successful execution of the issuer creation API, an issuerId is generated and following parameters are returned in the response. 
 
-	"responseCode": "OK",
-	"result": {
-		"issuerId": "issuerslug-174",
-		"image": null,
-		"createdDate": "2018-08-07T08:46:44.193012Z",
-		"issuerUrl: "https://abc.org.in/mitra",
-		"issuerIdUrl: "http://localhost:8000/public/issuers/issuerslug-174",
-		"name": "Badge Issuer",
-		"description": "Issue all badges",
-		"email": "aprtestthree@acmecorp.com"
-	}
+##### Response Body
+  {
+    "responseCode": "OK",
+    "result": {
+      "issuerId": "issuerslug-174",
+      "image": null,
+      "createdDate": "2018-08-07T08:46:44.193012Z",
+      "issuerUrl: "https://abc.org.in/mitra",
+      "issuerIdUrl: "http://localhost:8000/public/issuers/issuerslug-174",
+      "name": "Badge Issuer",
+      "description": "Issue all badges",
+      "email": "aprtestthree@acmecorp.com"
+    }
+  }	
 
-1. Save the created <b>issuerId</b>
+1. Save the created **issuerId**
 
 2. The badge issuer is created, which is required to [Create Badge Class](#create-a-badge-class) and award badge to the user 
 
@@ -84,7 +90,7 @@ The organization administrator must:
 
 The following is an example of the request body for creating badge class, the sample values provided in the request body are indicative:
 
-**Request Body**
+###### Request Body
 
 Parameter that are submitted through form application/x-www-form-urlencoded, multipart/formdata or both are usually used as the content type of the request 
 
@@ -99,15 +105,14 @@ Parameter that are submitted through form application/x-www-form-urlencoded, mul
 	images : C:\Users\Pictures\badge_logo.png
 
 
-**Response Body**
+##### Response Body**
 
+  {
     "responseCode": "OK"
     "result": {
       "badgeId": "badgeslug-66",
       "criteria": "http://localhost:8000/public/badges/badgeslug-66/criteria",
-      "roles": [
-        "BADGE_ISSUER"
-        ],
+      "roles": ["BADGE_ISSUER"],
       "description": "Badge Issuer",
       "type": "user",
       "rootOrgId": "0124758459210711040",
@@ -118,8 +123,9 @@ Parameter that are submitted through form application/x-www-form-urlencoded, mul
       "issuerIdUrl": "http://localhost:8000/public/issuers/issuerslug-174",
       "name": "Padma",
       "badgeIdUrl": "http://localhost:8000/public/badges/badgeslug-66”
+      }
     }
-  }
+  }  
 
 1. Save the created <pre> badgeId</pre>
 
@@ -133,38 +139,43 @@ You will also need the userId of the person who will receive the badge. You can 
 
 Following is an example of request body for awarding the badge, the sample values provided in the request body are indicative:
 
-**Request Body**
+##### Request Body
 
-	"request": {
-        "recipientId": "d0e8c059-e038-4baf-834f-c702764a4b58",
-        "recipientType": "user",
-        "issuerId": "issuerslug-174",
-        "badgeId": "badgeslug-66"
-    }
+	{
+    "request": {
+      "recipientId": "d0e8c059-e038-4baf-834f-c702764a4b58",
+      "recipientType": "user",
+      "issuerId": "issuerslug-174",
+      "badgeId": "badgeslug-66"
+      }
+  }
 
-**Response Body**
+##### Response Body
 
+  {
     "responseCode": "OK",
     "result": {
-        "assertionDate": "2018-08-17T05:16:00.047850",
-        "assertionImageUrl": "https://ntpstaging.blob.core.windows.net/badgr/uploads/badges/ca19a8e0f7c067fe6429f2a91ac5defe.png",
-        "badgeId": "badgeslug-66",
-        "assertionIdUrl": "http://localhost:8000/public/assertions/9cddb166-eed1-4291-9545-c57a2199f49e",
-        "revoked": false,
-        "issuerId": "issuerslug-",
-        "createdDate": "2018-08-17T05:16:00.071368Z",
-        	"assertionId": "9cddb166-eed1-4291-9545-c57a2199f49e",
-        	"issuerIdUrl": "http://localhost:8000/public/issuers/issuerslug-174",
-        "recipient": {
-		}
-	}
+      "assertionDate": "2018-08-17T05:16:00.047850",
+      "assertionImageUrl": "https://ntpstaging.blob.core.windows.net/badgr/uploads/badges/ca19a8e0f7c067fe6429f2a91ac5defe.png",
+      "badgeId": "badgeslug-66",
+      "assertionIdUrl": "http://localhost:8000/public/assertions/9cddb166-eed1-4291-9545-c57a2199f49e",
+      "revoked": false,
+      "issuerId": "issuerslug-",
+      "createdDate": "2018-08-17T05:16:00.071368Z",
+      "assertionId": "9cddb166-eed1-4291-9545-c57a2199f49e",
+      "issuerIdUrl": "http://localhost:8000/public/issuers/issuerslug-174",
+      "recipient": {
+		  }
+	  }
+  }
 
 ### Concepts covered
 
-- Badges 
-- User Badges
-- Content Badges
+**Badges** 
 
+**User Badges**
+
+**Content Badges**
 
 ### Additional Topics
 

@@ -29,7 +29,7 @@ Command to view email templates currently available in Cassandra DB:
 
     SELECT * from sunbird.email_template;
 
-Command to add an email template to Cassandra DB using CQL shell. Ensure that the template name is unique so that it doesnot override the existing template information in Cassandra DB:
+Command to add an email template to Cassandra DB using CQL shell. Ensure that the template name is unique so that it does not override the existing template information in Cassandra DB:
 
     INSERT INTO sunbird.email_template(name, template) VALUES('myEmailTemplate', '<!doctype html><html> <head> <meta> <meta> <title></title> </head> <body> <table> <tr> <td>&nbsp;</td><td> <div class="content"> <span class="preheader"></span> <table class="main"> <tr> <td class="wrapper"> <table> <tr> <tr> <td> #if ($orgImageUrl) <p> <img src="$orgImageUrl" alt="logo" align="right" width="180" height="100"> </p>#end </td></tr><td> #if ($name) <p >Hi $name,</p>#end <p >$body</p></body></html>')
 
@@ -96,16 +96,18 @@ Sample template configuration for different content review workflows stored in f
 		}
 	}
 
-**Description of Paramaters**
-<br>&emsp;a)type: Type of form
-<br>&emsp;b)action: Workflow action, review, publish etc
-<br>&emsp;c)subType: Type of notification
-<br>&emsp;d)templateName: Template name used to store in Cassandra DB
-<br>&emsp;e)body: Body of the email
-<br>&emsp;f)subject: Subject line of email
-<br>&emsp;g)logo: Logo attached in the email, when the logo is not defined, the default logo is used
+**Description of Parameters**
+<br>&emsp;a) type: Type of form
+<br>&emsp;b) action: Workflow action, review, publish etc
+<br>&emsp;c) subType: Type of notification
+<br>&emsp;d) templateName: Template name used to store in Cassandra DB
+<br>&emsp;e) body: Body of the email
+<br>&emsp;f) subject: Subject line of email
+<br>&emsp;g) logo: Logo attached in the email. It is an optional parameter. If you don't provide this, default logo will be displayed.
+<br>&emsp;h) orgName: Name displayed from whom the mail is received. It is an optional parameter. If you don't provide this, default name will be displayed.
+<br>&emsp;i) fromEmail: Email that will be displayed where user can write email. It is an optional parameter. If you don't provide this, default email will be displayed.
 
-Some parameters are used to dynamically change the content information. It is recommended that these parameters are retained in the request body:
+**Some parameters are used to dynamically change the content information. It is recommended that these parameters are retained in the request body:**
 <br>&emsp;a) {{Content type}}
 <br>&emsp;b) {{Content title}}
 <br>&emsp;c) {{Content link}}
@@ -113,10 +115,10 @@ Some parameters are used to dynamically change the content information. It is re
 <br>&emsp;e) {{Reviewer name}}
 
 ## Custom Templates
-You can aslo create custom email templates which are channel/tenant specific. When customized templates are not present, the default template is used to send emails for different actions in review workflows.
+You can also create custom email templates which are channel/tenant specific. When customized templates are not present, the default template is used to send emails for different actions in review workflows.
 
 To configure email template:
-* Addnew email template configurations in Form API 
+* Add new email template configurations in Form API 
 * Manually insert the new template in Casandra DB of Sunbird middleware service
 
 ### Creating Custom Templates
