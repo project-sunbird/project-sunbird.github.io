@@ -2,12 +2,13 @@
 type: landing
 directory: developer-docs/server-installation/
 title: Installation
-page_title: Prerequisites
+page_title: Installation
 description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
 
 ## Installation
+This section details the procedures for installing auxilliary services and validating the installation.
 
 
 ### Installing Auxilliary Services
@@ -41,7 +42,6 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
     ./sunbird_install.sh -s core
      
 > Note:
->
 >  - Running the installer script with `-s <stage name>` runs only that stage of the installation.
 > 
 >  - To know more about the script `sunbird_install.sh` [refer](developer-docs/installation/server_installation/#sunbird-install-script) to the section [below](developer-docs/installation/server_installation/#sunbird-install-script">below)
@@ -56,7 +56,7 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
     curl -X POST {dns_name}    /auth/realms/sunbird/protocol/openid-connect/token \
     -H 'cache-control: no-cache' \
     -H 'content-type: application/x-www-form-urlencoded' \
-    -d 'client_id=admin-cli&username=user-manager&password={password}&grant_type=password'
+    -d 'client_id=admin-cli&username={user-manager}&password={password}&grant_type=password'
 
 <br>The values in the { } braces should be replaced with your environment values
    
@@ -65,24 +65,23 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
 
 2. **Create root organization** - To create a root organization you should execute the following cURL: 
 
-curl -X POST  \
-{dns_name}/api/org/v1/create \
--H 'Cache-Control: no-cache' \
--H 'Content-Type: application/json' \
--H 'accept: application/json' \
--H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' \
--H 'x-authenticated-user-token: {access token created last step}' \
--d '{
-"request":{
-"orgName": "{Your Organization Name}",
-"description": "{Your organization description}",
-"isRootOrg":true,
-"channel":"{Your Channel Name}"
-    }
-    }'
+  curl -X POST  \
+  {dns_name}/api/org/v1/create \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' \
+  -H 'x-authenticated-user-token: {access token created last step}' \
+  -d '{
+  "request":{
+  "orgName": "{Your Organization Name}",
+  "description": "{Your organization description}",
+  "isRootOrg":true,
+  "channel":"{Your Channel Name}"
+      }
+   }'
+> Note: Channel should be a unique name across Sunbird instances who are using the EkStep content repository
 
-
-      **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
     
 3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step)
 
@@ -91,7 +90,7 @@ curl -X POST  \
 
 ### Validation
 
-1. To validate all the services for a successful installation run 
+To validate all the services for a successful installation run 
     
     ./sunbird_install.sh -s posttest
 
@@ -99,7 +98,7 @@ On executing the script, a file `logs/postInstallationLogs.log` will be created
 
 1. Open `https://[domain-name]/` and sign up  
 
-1. You may choose your own user name and password. The format for the username while login is: username@channelName 
+2. You may choose your own user name and password. The format for the username while login is: username@channelName 
 
 
 ## Sunbird Install Script 

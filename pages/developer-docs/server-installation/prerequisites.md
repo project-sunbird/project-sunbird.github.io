@@ -66,6 +66,6 @@ The servers should connect to each other over TCP on the following [ports](devel
     sudo apt-get update -y 
     sudo apt-get install git -y 
 
- * Description of commands:
- sudo apt-get update -y: To install latest updates
- sudo apt-get install git -y: To install git
+##### Description of commands:
+* sudo apt-get update -y: To install latest updates
+* sudo apt-get install git -y: To install git
