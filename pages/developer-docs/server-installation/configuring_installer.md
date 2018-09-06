@@ -20,11 +20,11 @@ To install Sunbird Choose one docker swarm manager VM as the installation server
     git checkout tags/release-1.9
     cd deploy
 
-** Description of commands:
-git clone: To clone the repository on your local
-cd sunbird-devops: To enter to "sunbird-devops" folder
-git checkout {branch name}: To change from the current branch to tags/release branch
-cd deploy: To enter to deploy folder. You can further run your git commands here
+##### Description of commands:
+* git clone: To clone the repository on your local
+* cd sunbird-devops: To change the directory to "sunbird-devops" folder
+* git checkout {branch name}: To change from the current branch to tags/release branch
+* cd deploy: To change the directory to deploy folder. You can further run your git commands here
 
 ## Configuring the Installer
 
