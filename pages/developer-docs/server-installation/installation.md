@@ -80,7 +80,8 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
   "channel":"{Your Channel Name}"
       }
    }'
-> Note: Channel should be a unique name across Sunbird instances who are using the EkStep content repository
+> Note: Channel should be a unique name across Sunbird instances using the EkStep content repository
+>  - If ~/jwt_token_player.txt file missing then rerun `./sunbird_install.sh -s apis` to recreate it
 
     
 3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step)
