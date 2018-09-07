@@ -58,6 +58,17 @@ Various aspects of the Sunbird mobile app can be configured based on organizatio
 | 11 | display_onboarding_card | set the display__onboarding_cards as true in sunbird.properties file | to display the guest/login page | false
 | 12 | display_framework_categories_in_profile | set the display_framework_categories_in_profile variable as true in sunbird.properties file | to display categories in the guest/login page | false
 
+#### Packaging Framework and Form Data
+Sunbird mobile app supports configuration of the app framework to enable offline usage of the app. To configure the app framework, set the values as listed:
+
+| S No. | Folder | File Name |  Purpose 
+|-------|--------|-----------|-------------
+| 1 | buildConfig/data/framework | framework-<FRAMEWORK_IDENTIFIER>.json | To package the channel for the respective framework. Same framework must be listed in the onboarding form API
+| 2 | buildConfig/data/channel | channel-<CHANNEL_IDENTIFIER>.json | To package the channel. Default framework must be same as the packaged framework for respective channel
+| 3 | buildConfig/data/form | syllabus.json | To onboard form API
+| 4 | buildConfig/data/form | pageassemble_course_filter.json | Page assemble filter for course
+| 5 | buildConfig/data/form | pageassemble_library_filter.json | Page assemble filter for library
+
 ## Changing API Configuration:
 
 **App end-point**:
@@ -150,7 +161,7 @@ $ ionic cordova plugin add *[https://github.com/project-sunbird/cordova-plugin-g
 
 -This plugin displays and hides a splash screen during application launch. 
 
-**You can change the splash screen and splash image**, by going to first                       sunbird-mobile/resources/android/splash update the **drawable-ldpi-splash.png**
+**You can change the splash screen and splash image**, by going to sunbird-mobile/resources/android/splash update the **drawable-ldpi-splash.png**
 
 to your required splash.png file and sunbird-mobile/resources/android/icon update **drawable-ldpi-icon.png **to your required **icon.png file ** in resource folder and  run **ionic cordova run android** and it will generate the resource files for this platform and splash image and splash screen automatically changed and also add in config.xml file.
 
@@ -160,7 +171,7 @@ to your required splash.png file and sunbird-mobile/resources/android/icon updat
 
 $ ionic Cordova plugin add [https://github.com/project-sunbird/cordova-plugin-sunbirdsplash.git](https://github.com/project-sunbird/cordova-plugin-sunbirdsplash.git)
 
-### It will be installed along with other npm packages.
+It will be installed along with other npm packages.
 
 ### Cordova-plugin-geniecanvas
 
