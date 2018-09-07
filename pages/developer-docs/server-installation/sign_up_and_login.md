@@ -1,7 +1,7 @@
  ---
 type: landing
 directory: developer-docs/server-installation/
-title: Sign up & login
+title: Sign up and login
 page_title: Sign up and login
 description: Sign up and login
 allowSearch: true
