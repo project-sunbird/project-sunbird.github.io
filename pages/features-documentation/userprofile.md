@@ -124,7 +124,7 @@ Creating and updating profile on Sunbird platform is a seamless process. This al
     <td><img src="pages/features-documentation/images/profile_education.png"></td>
   </tr>
   <tr>
-      <td><b>Skill Tags</b> <br>1. Click <b>Edit</b> to open the window to edit your skill <br>2. You can show or hide your skill details from others <br>3. Select the skill set that you want to add from the drop down <br>4. Click <b>Save</b> to save the details <br>
+      <td><b>Skill Tags</b> <br>1. Click <b>Edit</b> <br>2. You can show or hide your skill details from others <br>3. Select the skill set that you want to add from the drop down <br>4. Click <b>Save</b> to save the details <br>
     <td><img src="pages/features-documentation/images/profile/skill.png"></td>
   </tr>
   <tr>
