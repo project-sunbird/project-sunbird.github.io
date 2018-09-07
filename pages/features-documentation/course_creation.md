@@ -70,14 +70,16 @@ On Sunbird, you can compile a course by adding content to it. You can create eac
       <br>4. Enter <b>Description</b> 
       <br>5. Enter <b>Keywords</b> 
       <br>6. Select the following from their respective drop-down lists: 
-      <br>&emsp;a) Board 
+      <br>&emsp;a) Curriculum
       <br>&emsp;b) Class 
       <br>&emsp;c) Subject 
       <br>&emsp;d) Medium 
-      <br>7. Select <b>Audience</b> 
-      <br>8. Enter <b>Attributions</b> <br>9. Click <b>Save</b> to save the details <br>10. Click <b>Cancel</b> to exit the page
+      <br>7. Enter <b>Topic</b> 
+      <br>8. Enter <b>Attributions</b> 
+      <br>9. Select <b>Audience</b> from the drop-down.
+      <br>10. Click <b>Save</b> to save the details <br>11. Click <b>Cancel</b> to discard the change
     </td>
-    <td><img src="pages/features-documentation/images/add_details.png"></td>
+    <td><img src="pages/features-documentation/images/course/course_details.png"></td>
   </tr>
  </table>
  

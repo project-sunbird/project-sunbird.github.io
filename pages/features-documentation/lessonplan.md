@@ -81,8 +81,8 @@ Lesson plan is a structured outline of a given topic, unit, chapter to be taught
       <br>&emsp;b) <b>Class</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
-      <br>7. Enter <b>Attributions</b>
-      <br>8. Select <b>Audience</b>
+      <br>7. Enter <b>Topics</b>
+      <br>8. Enter <b>Attribution</b>
       <br>9. Click <b>Save</b> to collectively save all updates.  
       <br>10. Click <b>Cancel</b> to exit the page 
     </td>

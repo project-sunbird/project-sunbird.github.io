@@ -89,10 +89,11 @@ Collection is a compilation of content.	A collection can be compiled on Sunbird 
       <br>&emsp;b) <b>Class</b> 
       <br>&emsp;c) <b>Subject</b> 
       <br>&emsp;d) <b>Medium</b> 
-      <br>7. Enter <b>Attributions</b> 
-      <br>8. Select <b>Audience</b> 
-      <br>9. Click <b>Save</b> on the header to save the details
-      <br>10. Click <b>Cancel</b> to go back to the previous screen
+      <br>7. Enter <b>topic</b> 
+      <br>8. Enter <b>Attributions</b> 
+      <br>9. Select <b>Audience</b> from the drop-down.
+      <br>10. Click <b>Save</b> on the header to save the details
+      <br>11. Click <b>Cancel</b> to go back to the previous screen
     </td>
     <td><img src="pages/features-documentation/images/collection/collection_editdetails.png"></td>
   </tr>
