@@ -13,7 +13,7 @@ This section details the procedures for installing auxilliary services and valid
 
 ### Installing Auxilliary Services
 
-1. Run the installation script 
+Run the installation script 
 
     ./sunbird_install.sh
 
@@ -37,7 +37,7 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
 
 ### Installing Core Services
 
-1. To deploy the core services with the authentication certificate, execute:
+To deploy the core services with the authentication certificate, execute:
 
     ./sunbird_install.sh -s core
      
@@ -51,7 +51,7 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
 
 ### Setup
 
-1. **Create user access token** - To create a user access token you should execute the following cURL: 
+<br>1. **Create user access token** - To create a user access token you should execute the following cURL: 
 
     curl -X POST {dns_name}    /auth/realms/sunbird/protocol/openid-connect/token \
     -H 'cache-control: no-cache' \
@@ -63,7 +63,7 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
    - {dns_name} - Domain or the IP address of your application server_installation
    - {password} - Password of the `user-manager` user. The one you have provided for `sso_password` parameter in the `config` file above
 
-2. **Create root organization** - To create a root organization you should execute the following cURL: 
+<br>2. **Create root organization** - To create a root organization you should execute the following cURL: 
 
   curl -X POST  \
   {dns_name}/api/org/v1/create \
@@ -78,13 +78,14 @@ Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administrati
   "description": "{Your organization description}",
   "isRootOrg":true,
   "channel":"{Your Channel Name}"
-      }
-   }'
+        }
+     }'
+
 > Note: Channel should be a unique name across Sunbird instances using the EkStep content repository
 >  - If ~/jwt_token_player.txt file missing then rerun `./sunbird_install.sh -s apis` to recreate it
 
-    
-3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step)
+
+<br>3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step)
 
     ./sunbird_install.sh -s core
 
