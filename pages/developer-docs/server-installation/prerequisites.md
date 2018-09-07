@@ -5,6 +5,7 @@ title: Prerequisites
 page_title: Server Installation Prerequisites
 description: Setting up Sunbird on a server
 allowSearch: true
+
 ---
 
 To install Sunbird on your server ensure that you have system admninisrtation rights and a proficieny in working on Linux system and a familiarity with docker for running containerized services.
@@ -56,10 +57,15 @@ Ubuntu 16.04 LTS (64 bits)
 #### Ports
 The servers should connect to each other over TCP on the following [ports](developer-docs/installation/server_installation/#mapping-ports) 
 
-<tabe>
+#### Disk Space
+* Minimum 20 GB disk space
 
 #### Utilities
 * git
 * install git executing the following commands
     sudo apt-get update -y 
     sudo apt-get install git -y 
+
+##### Description of commands:
+* sudo apt-get update -y: To install latest updates
+* sudo apt-get install git -y: To install git

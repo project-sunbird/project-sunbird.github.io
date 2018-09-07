@@ -24,8 +24,9 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
     |Cassandra<sup>2</sup>            |Staging&Prod - 1 |CPU: 1core & RAM: 3GB| 1 |
     |Keycloak<sup>1</sup> | Staging&Prod - 1|CPU: 1core & RAM: 4GB|Any |
     
-* When you install Sunbird on 2 servers, all services with a common superscript (e.g. servername<sup>2</sup>) for the Server Name are run on the same server. The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup>. 
-
+On installing Sunbird on 2 servers:
+* All services with a common superscript (e.g. servername<sup>2</sup>) are run on the same server
+* The App server runs services with superscript <sup>1</sup> and the DB server runs services with superscript <sup>2</sup> 
 
 ## Supported application versions
 
@@ -36,4 +37,4 @@ All the stateless services in Sunbird - Portal, LMS Backend, API Gateway and Pro
   |Postgres | 9.5 |
   |Cassandra            | 3.9 |
 
-  This page provides you with information on the prerequisites and the sequence of steps to install Sunbird.
+
