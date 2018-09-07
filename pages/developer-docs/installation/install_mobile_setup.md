@@ -62,8 +62,6 @@ Various aspects of the Sunbird mobile app can be configured based on organizatio
 
 **App end-point**:
 
-APIs work using ‘requests’ and ‘responses.’
-
 Replace redirect base url REDIRECT_BASE_URL and all other base urls with your respective domain name in sunbird.properties
 
 **API Key:**
@@ -87,7 +85,7 @@ curl -X POST \   <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/
      }
    }'
 
-Result will be 
+Response body: 
 
 {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}} Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file. Example:
 
@@ -132,13 +130,13 @@ Now Steps to generate local node module-
 
 **--Clone the sunbird-mobile repo using the following command: **
 
-$ *git clone **[https://github.com/project-sunbird/genie-sdk-wrapper.gi*t](https://github.com/project-sunbird/genie-sdk-wrapper.git)
+$ *git clone [https://github.com/project-sunbird/genie-sdk-wrapper.gi*t](https://github.com/project-sunbird/genie-sdk-wrapper.git)
 
 $ *npm i*
 
 $ *npm run build*
 
-$ *npm pack **path to this folder*
+$ *npm pack** path to this folder
 
 ### Cordova-plugin-genie-sdk
 

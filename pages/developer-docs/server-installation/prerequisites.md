@@ -15,7 +15,8 @@ This section explains the minimum prerequisites that must be ensured before inst
 
 ### API Key
 
-* Sunbird requires EkStep API keys to access the EkStep content repository. For details on how to get access the keys, refer <a href="http://www.sunbird.org/developer-docs/server_installation/ekstep_keys" target="_blank">Ekstep API Keys</a> to get the keys. If you are creating a test environment, get the QA API keys.
+* Sunbird requires EkStep API keys to access the EkStep content repository. For details on how to get access the keys, refer <a href="http://www.sunbird.org/developer-docs/server_installation/ekstep_keys" target="_blank">Ekstep API Keys</a> to get the keys. If you are creating a test environment, get the QA API keys
+* Usee the key and secret to generate JWT Token.  Use the web based tool - http://jwtbuilder.jamiekurtz.com/. Note that when using this tool, the key in the EkStep Developer credentials should be set as the Issuer field and the secret in the Key field
 
 ### Domain Name
 
@@ -53,6 +54,7 @@ Ubuntu 16.04 LTS (64 bits)
 * Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server" target="_blank">key based ssh</a>
 * Use an empty passphrase while generating the ssh key to avoid password prompts during installation 
 * The installation script uses this key (user) to deploy Sunbird, thus, this user must have **sudo** access on the servers
+* Create an <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account" target="_blank">Azure storage account</a> to complete the Sunbird installation. This account is used to store QR code images and achievement badges
 
 #### Ports
 The servers should connect to each other over TCP on the following [ports](developer-docs/installation/server_installation/#mapping-ports) 
