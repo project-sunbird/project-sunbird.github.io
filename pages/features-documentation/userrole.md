@@ -19,7 +19,7 @@ This section elaborates the various user types and their assocated responsibilit
 
 |  User Role    | Content Creation | Review, Reject , & Publish | Upload Content | Other Role Specific Responsibilites |
 |-------------------|---------------------|---------------------|-------------------------|-----------------|
-| An **Organisation Administrator (Org admin)** manages the function of the inivituals of the organisation, and also define and manages users role and permission |       No       |       No       |  No | ✔️   <a href="features-documentation/#adminrole_matrix"> read more</a>
+| An **Organisation Administrator (Org admin)** manages the overall functioning and upkeep of the  organisation, and also define and manages user roles and permissions |       No       |       No       |  No | ✔️   <a href="features-documentation/#adminrole_matrix"> read more</a>
 | A **System Administrator (Sys admin)** manages installation, configuration and operation of the system |       No       |       No       |  No | ✔️   <a href="features-documentation/#adminrole_matrix"> read more</a>
 | A **Course Mentor** guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course and ensure completion of a course within a stipulated time |       No       |       No       |  No | ✔️   <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>~~       
 | A **Content Reviewer** assesses  created content within prescribed guidelines | No | ✔️  | ✔️  | No 
