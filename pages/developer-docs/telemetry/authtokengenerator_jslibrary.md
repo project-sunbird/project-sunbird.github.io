@@ -31,7 +31,7 @@ refresh: function(oldAuthToken) { }
 </pre>
 
 ### Generate JWT With Bash
-Authtoken can be generated using the bash script also, for more details refer blog for this <a href="https://willhaley.com/blog/generate-jwt-with-bash/" target="_blank">https://willhaley.com/blog/generate-jwt-with-bash/</a> 
+Authtoken can be generated using the bash script also, for more details refer <a href="https://willhaley.com/blog/generate-jwt-with-bash/" target="_blank">https://willhaley.com/blog/generate-jwt-with-bash/</a> 
 
 ## How to generate authorization credentials
 
