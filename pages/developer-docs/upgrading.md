@@ -57,7 +57,6 @@ a) api_manager -	Used by kong
 b) badger      -	Used by badger services
 c) Keycloak    -	Used by Keycloak
 d) quartz      -	Used by sunbird backend services
-	
 
 ### Backup Elastic Search 
 
@@ -75,32 +74,15 @@ a) searchindex      - Stores the user, org , course, batch data
 b) sunbirdplugin    - Stores the plugin related data (object API)
 c) sunbirddataaudit - Stores the user & organization audit history data
 
-## Upgrading Sunbird Services 
-
-   1.Pull the latest code of `project-sunbird/sunbird-devops` from its master branch
- 
-   2.It is recommended to take a full backup of all the databases before updating the schema 
-
-   3.Follow the steps [here](developer-docs/upgrading/#backup-and-restore-of-sunbird-databases) to take the backup 
-
-   4.Run the command `./sunbird-install.sh`
-
-**Note:** 
-
-   - Executing the command deploys the latest version of Sunbird services and also updates the latest schema in the databases
-
-   - The latest image versions of all the services are updated in the master branch. To get a hotfix image of any Sunbird service, update the minor version in the `sunbird-devops/deploy/deploy-core.sh` file and re-run the `sunbird-devops/deploy/deploy-core.sh` script.
-
 ## Restore Databases
 
 ### Restore Cassandra
-
 
 1. Copy the Cassandra backup to the instance where you want to restore 
 
 2. Untar the backup
 
-3. It'll create one cassandra_backup directory.
+3. It'll create directory named cassandra_backup.
 
 4. Run cqlsh -f 'cassandra_backup/db_schema.cql'. It'll restore all the schemas.
 
@@ -109,7 +91,6 @@ c) sunbirddataaudit - Stores the user & organization audit history data
    	`./cassandra_restore.py --host <cassandra_host_ip_address> <snapshotdir>`
     
     for example: `./cassandra_restore.py --host 10.10.10.10 cassandra_bakup`
-
 
 ### Restore Elastic Search
 
@@ -121,7 +102,6 @@ To restore the Elastic Search databases, follow these steps:
 
 	`./restore_elasticsearch.sh <path/to/the/restore_file`	
 
-
 ### Restore Postgres
 
 To restore the Postgres database: 
@@ -130,4 +110,16 @@ To restore the Postgres database:
 
 2. Run the command `./restore_postgres.sh`  
 	
+## Upgrading Sunbird Services 
 
+   1.Pull the latest code of `project-sunbird/sunbird-devops` from its master branch
+ 
+   2.It is recommended to take a full backup of all the databases with schema if applicable
+
+   3.Run the command `./sunbird-install.sh`
+
+**Note:** 
+
+   - Executing the command deploys the latest version of Sunbird services and also updates the latest schema in the databases
+
+   - The latest image versions of all the services are updated in the master branch. To get a hotfix image of any Sunbird service, update the minor version in the `sunbird-devops/deploy/deploy-core.sh` file and re-run the `sunbird-devops/deploy/deploy-core.sh` script.
