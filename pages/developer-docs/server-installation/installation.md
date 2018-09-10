@@ -15,21 +15,21 @@ This section details the procedures for installing auxilliary services and valid
 
 Run the installation script 
 
+    cd (path to top level folder of folder where the installer is located)
     ./sunbird_install.sh
 
 The installtion script runs through the following steps
 
-|Stage no |Stage name|Description| 
-|:-----      |:-------|:--------|
-|1 |config |Generates configuration file and hosts file |
-|2|dbs|Installs all databases and creates schema  |
-|3|apis|Sets up API manager kong and Onboard API's and consumer's  |
-|4|proxy|Deploys and configures Nginx|
-|5|keycloak| Deploys and configures Keycloak |
-|6|badger|Deploys the badger service|
-|7|core|Deploys all core services|
-   
-> Note: The badger service does not work without an Azure storage account name and key which you have setup earlier
+|Stage name|Description| 
+|:-------|:--------|
+|config |Generates configuration file and hosts file |
+|dbs|Installs all databases and creates schema  |
+|apis|Sets up API manager kong and Onboard API's and consumer's  |
+|proxy|Deploys and configures Nginx|
+|keycloak| Deploys and configures Keycloak |
+|badger|Deploys the badger service|
+
+> Note: The badger service does not work without an Azure storage account name 
 
 ### Getting Authentication Certificate
 
@@ -48,30 +48,33 @@ To deploy the core services with the authentication certificate, execute:
 
 
 ## Post Installation Configuration
+After completion of Sunbird installation and before it can be used, an API token needs to be created and a top level root organization. The API key is used in REST API commands to authenticate that API calls are being made by an authorized user
 
 ### Setup
 
-<br>1. **Create user access token** - To create a user access token you should execute the following cURL: 
+<br>1. **Create user access token**  (x-authenticated-user-token)
 
-    curl -X POST {dns_name}    /auth/realms/sunbird/protocol/openid-connect/token \
+    curl -X POST {host_name}    /auth/realms/sunbird/protocol/openid-connect/token \
     -H 'cache-control: no-cache' \
     -H 'content-type: application/x-www-form-urlencoded' \
     -d 'client_id=admin-cli&username={user-manager}&password={password}&grant_type=password'
 
-<br>The values in the { } braces should be replaced with your environment values
+The curl command’s response will contain a field called “access token” which will be followed by a long string. That token is called x-authenticated-user token and is required to make API calls
+
+<br>The values in the { } braces should be replaced with values pertinent to your Sunbird environment
    
    - {dns_name} - Domain or the IP address of your application server_installation
    - {password} - Password of the `user-manager` user. The one you have provided for `sso_password` parameter in the `config` file above
 
 <br>2. **Create root organization** - To create a root organization you should execute the following cURL: 
 
-  curl -X POST  \
+  curl -X POST  
   {dns_name}/api/org/v1/create \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -H 'accept: application/json' \
   -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' \
-  -H 'x-authenticated-user-token: {access token created last step}' \
+  -H 'x-authenticated-user-token: {user x-authenticated-user-token}' \
   -d '{
   "request":{
   "orgName": "{Your Organization Name}",
@@ -85,7 +88,7 @@ To deploy the core services with the authentication certificate, execute:
 >  - If ~/jwt_token_player.txt file missing then rerun `./sunbird_install.sh -s apis` to recreate it
 
 
-<br>3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step)
+<br>3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** 
 
     ./sunbird_install.sh -s core
 
