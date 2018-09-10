@@ -29,7 +29,7 @@ To install Sunbird choose one docker swarm manager as the installation server an
 
 ## Configuring the Installer
 
-* Update the configuration parameters in the `config` file. 
+* Update the configuration parameters in the `config` file. The config file is a YAML file.
 
 The configuration parameters are explained in the following table: 
 
