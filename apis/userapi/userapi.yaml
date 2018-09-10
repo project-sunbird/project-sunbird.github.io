@@ -1772,8 +1772,8 @@ definitions:
             description: >-      
               'Represents the channel value received while creating a rootOrg
               - if you provide channel value, then you will get associated with that particular root organization  
-              - if channel is not provided in request body then system will read custodian channel from system setting else will read from Environment variable and use it to associate you with that root organization
-              - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
+              - if the channel is not provided in request body, the system reads the custodian channel from the system setting else reads it from the environment variable and uses it to associate the user with that root organization
+              - if the channel value is not provided in either the request or the envronment variables, then user creation will fail.'
           externalIds:
             type: array
             items:
@@ -1854,8 +1854,8 @@ definitions:
           phoneVerified:
             type: boolean
             description: >-
-              This key is required with value as true, if you pass both the values for phone and provider
-              - But incases of create user either email or phone is required
+              This key is required with value as true, if you pass the values for both phone and provider
+              But while creating a user, either the email or phone is required
           subject:
             type: array
             items:
