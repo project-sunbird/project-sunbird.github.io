@@ -95,6 +95,77 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+ /user/v2/create:
+    post:
+      description: >-
+       This API is used to create a user 
+          - **_/v2/create/_** endpoint executes the "Create User" request based on parameters provided as metadata in the request body
+          - Mandatory fields cannot be null or empty
+      summary: Create User
+      tags:
+      - User APIs
+      operationId: V2 Create User
+      produces:
+      - application/json
+      parameters:
+      - name: request
+        in: body
+        required: true
+        description: >-
+          - The body payload comprises of the metadata of the user being created     
+          - The body parameter refers to the format of the request, the request body (payload) takes the following media types to make the payload:
+         
+             - JSON 
+         
+        schema:
+           $ref: '#/definitions/CreateUserRequestV2'
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: >-
+            The Content Type entity is the media type of the resource.Possible media types can be:- 
+              - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
+      - name: ts
+        in: header
+        required: true
+        type: string
+        description: >-
+          Timestamp is a sequence of characters or encoded information identifying when the API call occurred, usually it gives date and time of day, mostly accurate to a small fraction of a second
+      - name: Authorization
+        in: header
+        required: true
+        type: string
+        description: To make use of any User API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Create User" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/UserCreateResponse'
+        '400':
+          description: 'BAD REQUEST. The "Create User" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.' 
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+        '404':
+          description: 'RESOURSE NOT FOUND. The "Create User" operation failed ! The possible reason for failure is the requested resource is not available.' 
+          schema:
+            $ref: '#/definitions/UserErrorResponse'    
+        '500':
+          description: >-
+            'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          schema:
+            $ref: '#/definitions/UserErrorResponse'
+      security:
+      - bearer: []
+      x-unitTests: []
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
+ 
  /user/v1/search:
     post:
       description: >-
@@ -1583,7 +1654,12 @@ definitions:
     allOf:
        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
        - $ref: '#/definitions/CreateUserSingleResp'
-
+  CreateUserRequestV2:
+    description: User object
+    type: object
+    allOf:
+       - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
+       - $ref: '#/definitions/CreateUserSingleRespV2'
   CreateUserSingleResp:
    description: Represents the  hold single userObject request
    type: object
@@ -1591,7 +1667,13 @@ definitions:
       request:
        type: object
        $ref: '#/definitions/UserReq'
- 
+  CreateUserSingleRespV2:
+   description: Represents the  hold single userObject request
+   type: object
+   properties:
+      request:
+       type: object
+       $ref: '#/definitions/UserReqV2'
   RolesResponse:
    description: Represents the hold roles response
    type: array
@@ -1652,7 +1734,6 @@ definitions:
     type: array
     items:
       type: string
-       
   UserReq:
     title: User Object
     type: object
@@ -1691,8 +1772,98 @@ definitions:
             description: >-      
               'Represents the channel value received while creating a rootOrg
               - if you provide channel value, then you will get associated with that particular root organization  
-              - if channel is not provided in request body then system will pick channel set inside Environment variable and use it to associate you with that root organization
-              - Incase, channel is not provided neither in request nor the Envronment variables, then user creation will fail.'
+              - if the channel is not provided in request body, the system reads the custodian channel from the system setting else reads it from the environment variable and uses it to associate the user with that root organization
+              - if the channel value is not provided in either the request or the envronment variables, then user creation will fail.'
+          externalIds:
+            type: array
+            items:
+              type: object
+              allOf:
+                - $ref: "#/definitions/ExternalId" 
+          profileSummary:
+            type: string
+          userName:
+            type: string
+          dob:
+            type: string
+            format: YYYY-MM-DD
+            example: '2001-02-27'
+          grade:
+            type: string
+          location:
+            type: string
+            description: 'Represents the current location of the  user'
+          education:
+            type: array
+            items:
+             type : object
+             $ref: "#/definitions/Education"
+          profileVisibility:
+            type: object
+            description: 'Represents the profile visibility, it is a map having key as any user attribute and the value can be public or private'
+          address: 
+            type: array
+            items:
+              type: object
+              $ref: "#/definitions/Address"
+            description: 'Represents the address, it contains list of address object'
+          jobProfile:
+            type: array
+            items:
+              type: object
+              $ref: "#/definitions/JobProfile"
+          webPages:
+            type: object
+            properties:
+              type:
+                type: string
+              url:
+                type: string
+    required:
+      - firstName
+      - password 
+      - email
+      - userName
+      - phone
+  UserReqV2:
+    title: User Object
+    type: object
+    properties:
+          email:
+            type: string
+            description: 'Represents the email of the user'
+          firstName:
+            type: string
+          lastName:
+            type: string
+          password:
+            type: string
+          organisationId:
+            type: string
+          avatar:
+            type: string
+          language:
+            type: array
+            items:
+             type: string
+             description: 'Represents the langauage that user is known to'
+          gender:
+            type: string
+          phone:
+            type: string
+          phoneVerified:
+            type: boolean
+            description: >-
+              This key is required with value as true, if you pass the values for both phone and provider
+              But while creating a user, either the email or phone is required
+          subject:
+            type: array
+            items:
+             type: string
+          channel:
+            type: string
+            description: >-      
+              'Represents the channel value received while creating a rootOrg'
           externalIds:
             type: array
             items:
