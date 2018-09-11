@@ -30,9 +30,6 @@ Upgrading to the latest version of Sunbird allows you to avail benefits of:
 
 ### Backup Cassandra
 
-Ensure that the prerequisites are met. To backup the Cassandra database: 
-
-   
 1. Taking the backup
     
    	`./cassandra_backup.py`
@@ -112,11 +109,11 @@ To restore the Postgres database:
 	
 ## Upgrading Sunbird Services 
 
-   1.Pull the latest code of `project-sunbird/sunbird-devops` from its master branch
+   1. Pull the latest code of `project-sunbird/sunbird-devops` from its master branch
  
-   2.It is recommended to take a full backup of all the databases with schema if applicable
-
-   3.Run the command `./sunbird-install.sh`
+        `git -C sunbird-devops pull || git clone https://github.com/project-sunbird/sunbird-devops`
+ 
+   2. Run the command `cd sunbird-devops/deploy && ./sunbird-install.sh`
 
 **Note:** 
 
