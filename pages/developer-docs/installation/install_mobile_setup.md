@@ -115,7 +115,9 @@ Various aspects of the Sunbird mobile app can be configured based on organizatio
 | 12 | display_framework_categories_in_profile | set the display_framework_categories_in_profile variable as true in sunbird.properties file | to display categories in the guest/login page | false
 
 #### Packaging Framework and Form Data
-Sunbird mobile app supports configuration of the app framework to enable offline usage of the app. To configure the app framework, set the values as listed:
+Sunbird mobile app supports configuration of the app framework to enable offline usage of the app. To configure the app framework, Adopter needs to package the channel for the respective framework. 
+Details of the file naming convention and folder location is given below:
+
 
 | S No. | Folder | File Name |  Purpose 
 |-------|--------|-----------|-------------

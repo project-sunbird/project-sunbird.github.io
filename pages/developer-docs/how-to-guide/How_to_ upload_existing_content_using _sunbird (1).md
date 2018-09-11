@@ -1,23 +1,23 @@
 ---
 type: landing
 directory: developer-docs/how-to-guide
-title: Associating Organization and User
-page_title: Associating Organization and User
-description: Create a new user in Sunbird instance
-keywords: create user, new user, create, user
+title: Uploading Existing Content Using Sunbird Portal
+page_title: Uploading Existing Content
+description: Uploading Existing Content
+keywords: uploading content, existing contegn, training meterial
 published: true
 allowSearch: true
 ---
 
 ### Scenario
 
-A company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 7 locations. Employee training and enablement is one of the core values of the organization. To make their training meterial exhaustive and effective many content or coursecreato are creating content using various source To ensure that employees are trained and upskilled. Before they opt for Sunbird platform, they already had many existing content with them. They can still upload the existing content to Sunbird platform to make it accessible to their current employeers.
+A company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 7 locations. Employee training and enablement is one of the core values of the organization. To make their training material exhaustive and effective many content or course  creator are creating content using various source To ensure that employees are trained and upskilled. Before they opt for Sunbird platform, they already had many existing content with them. They can still upload the existing content to Sunbird platform to make it accessible to their current employers.
 
 ### Prerequisite
 
 * Content creation access
 
-* You must have the content object with unique object Id, using this,  available content file can be uploaded.
+* You must have the content object with unique object Id, using this, available content file can be uploaded.
 
 ### Intended Audience
 
@@ -28,7 +28,7 @@ Identify the users who will review the content and assign them <b>content review
 
 >Note:
 
-Reviewer can not do any change in content. He review the content and put review comment for further changes or publish the content.
+A reviewer can not do any change in content. He reviews the content and send  the review comments to the content creatot for further changes or publish the content starighaway.
 
 ### Overview
 
@@ -92,7 +92,7 @@ Maximum file size supported on the platform:
 </table>
 
 
-content object with below mandatory metadata fields should be created: before uploading the content:
+A content object with below mandatory metadata fields should be created: before uploading the content:
 
 - ContentType
 
@@ -104,7 +104,7 @@ You can even upload video content created by other users, provided you have the 
 
 ### Taskflow
 
-To complete this scenario, you need to create the content with appropriate metadata & ownership information, upload the existing  content artifact, and publish the content for public usage.
+To complete this scenario, you need to create the content with appropriate metadata & ownership information, upload the existing content artifact, and publish the content for public usage.
 
 You can upload existing content into the Sunbird platform using User Interface or Upload Content API.
 
@@ -231,13 +231,11 @@ Following is an example of  <b>response body<b/> for <b>uploading content API</b
 
 }
 
-For the youtube content or file url, pass it as fileUrl in **Upload API** or set the artifact Url of the content using **[Update Content AP**I](http://www.sunbird.org/apis/content/#operation/Update%20Content)**.**
+For the youtube content or file url, pass it as fileUrl in <b>Upload API</b> or set the artifact Url of the content using  [Update Content API**](http://www.sunbird.org/apis/content/#operation/Update%20Content)
 
-For more details, refer to the **[Upload Conten**t](http://www.sunbird.org/apis/content/#operation/Upload%20Content)[ API](http://www.sunbird.org/apis/content/#operation/Upload%20Content). 
+After you uploading the content, publish the content using **[Publish Content API**](http://www.sunbird.org/apis/content/#operation/Publish%20Content). 
 
-After you uploading the content, publish the content using **[Publish Content AP**I](http://www.sunbird.org/apis/content/#operation/Publish%20Content). 
-
-**Request body:**
+Request Body for Publish Content API
 
 {
 
@@ -259,7 +257,7 @@ After you uploading the content, publish the content using **[Publish Content AP
 
 }
 
-**Response body:**
+Response Body for Publish Content API
 
 {
 
@@ -295,9 +293,7 @@ After you uploading the content, publish the content using **[Publish Content AP
 
 }
 
->Note:
-
-Reviewer has the right to publish content. Use id of one of the selected reviewers as publisher user id.
+>Note: Reviewer has the right to publish content. Use id of one of the selected reviewers as publisher user id.
 
 
 
