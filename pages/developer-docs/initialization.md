@@ -1,93 +1,58 @@
 ---
 type: landing
 directory: developer-docs
-title: Initialization Setup
-page_title: Initialization Setup
-description: Initialization Setup
-keywords: Initialize Sunbird, create root org, root org, channel setup, rootorg, rootOrg
+title: Initialisation Setup
+page_title: Initialisation Setup
+description: Initialisation Setup
+keywords: Initialise Sunbird, create root org, root org, channel setup, rootorg, rootOrg
 published: true
 allowSearch: true
 ---
 ## Overview
-After successfully installing Sunbird, to make it functional, it is important to create users and organizations. However, before creating users, it is necessary to create the channel (rootOrg).
+Sunbird Initialisation script initialises the system settings for new adopters as well as old adopters.
 
-### Create First RootOrg 
-Use the Initialise api (/v1/system/init) to create the First rootOrg. Use the following curl command :
+For New Adopters:
+- Creates first tenant organisation
+- Registers the channel of the first tenant organisation
+- Registers the hashTagId of the first tenant organisation
+- Creates sunbird admin user with ORG_ADMIN role
+- Initialises the system settings
 
-```
-curl -X POST \
+For Old Adopters:
+- Checks whether the tenant organisation exists with the configured channel
+- Initialises the system settings
 
-{{learner_service_host}}/v1/system/init \
- 
- -H 'Accept: application/json' \
- 
- -H 'Content-Type: application/json' \
- 
- -d '{
- 
- "id":"api.system.init",
- 
- "ts":"{{current_timestamp}}",
- 
- "params": { },
- 
- "request":{
- 
- "orgName":"{{organisation_name}}",
- 
- "channel": "{{org_channel}}"        
-    }       
-}'
-```
+## New Adopters
 
-**Note:** The values for the variables in the command are as follows:
+### Configuration
 
-- **learner_service_host** http host address where learner service is running
+Configure these fields in the config file in the deploy folder. First organisation and user in Sunbird will be created with these details
 
-- **current_timestamp** valid timestamp in format of 'yyyy-mm-dd hh:mm:ss' 
+- sunbird_custodian_tenant_name (Custodian Organisation Name)
+- sunbird_custodian_tenant_description (Custodian Organisation Description)
+- sunbird_custodian_tenant_channel (Custodian Organisation Channel)
+- sunbird_root_user_firstname (first name of the Sunbird admin user)
+- sunbird_root_user_lastname (last name of the Sunbird admin user - optional field)
+- sunbird_root_user_username (username to be used for login to Sunbird)
+- sunbird_root_user_password (password to be used for login to Sunbird)
+- sunbird_root_user_email (email address of the Sunbird admin user)
+- sunbird_root_user_phone (mobile number of the Sunbird admin user)
 
-- **organisation_name** valid organisation name
+### How to run the script
 
-- **channel** valid channel to be used for the created rootOrg (should be provided while adding users later)
+By default, system initialisation script will run at the end of the sunbird installation script(`sunbird_install.sh`).
 
-The API response is as follows:
+If needed, it can be run separately using the following command
+`sunbird_install.sh -s systeminit`
 
-```
-  {
-    "id": "api.system.init",
-    "ver": "v1",
-    "ts": "2018-07-10 20:10:44:139+0530",
-    "params": {
-        "resmsgid": null,
-        "msgid": "41626e26-1b9b-414d-99ea-d563336fb106",
-        "err": null,
-        "status": "success",
-        "errmsg": null
-    },
-    
-   "responseCode": "OK",
-   "result": {
-        "organisationId": "0125438741727805440",
-        "response": "SUCCESS"
-    }
-}
-```
+## Existing Adopter
 
-**Note** The Intialise API can be used only once to create the first rootOrg. If you try to execute it again, it will return the following error response:
+### Configuration
 
- ```
- {
-    "id": "api.system.init",
-    "ver": "v1",
-    "ts": "2018-07-11 15:38:00:213+0530",
-    "params": {
-        "resmsgid": null,
-        "msgid": "3db7ee89-edc9-4fcf-b463-dc7aa46a309e",
-        "err": "SYSTEM_ALREADY_INITIALISED",
-        "status": "SYSTEM_ALREADY_INITIALISED",
-        "errmsg": "System already initialised.Cannot initialise again."
-    },
-    "responseCode": "CLIENT_ERROR",
-    "result": {}
-}
-```
+Configure these fields in the config file in the deploy folder. The organisation with the configured channel will be made as the custodian organisation during system initialisation
+
+- sunbird_custodian_tenant_channel (Custodian Organisation Channel)
+
+### How to run the script
+
+The script can be run by running the `sunbird_upgrade.sh` script
