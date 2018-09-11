@@ -224,7 +224,8 @@ definitions:
       dataset_id:
         x-go-name: dataset_id
         type: string
-        description: To identify the dataset to fetch the data
+        description: To identify the dataset to fetch the data. 
+        # `Valid values for dataset_id are`: `eks-consumption-raw, eks-consumption-summary, eks-consumption-metrics, eks-creation-raw, eks-creation-summary, eks-creation-metrics`
       filter:
         $ref: '#/definitions/DataExhaustFilter'
       output_format:
@@ -239,10 +240,10 @@ definitions:
     properties:
       start_date:
         type: string
-        description: Start date of the data exhaust
+        description: Start date of the data exhaust in YYYY-MM-DD format
       end_date:
         type: string
-        description: End date of the data exhaust
+        description: End date of the data exhaust in YYYY-MM-DD format
       app_id:
         type: string
         description: Filter by app_id. (Optional)
@@ -253,7 +254,7 @@ definitions:
         type: array
         items:
           type: string
-          description: List of events to filter and return.(Optional)
+          description: List of events to filter and return. Event name should be in all upper case. Any event from the telemetry event specification as on Sunbird.org website.(Optional)
       tags:
         type: array
         items:
