@@ -20,56 +20,21 @@ To set up Sunbird mobile app, ensure you have installed the following:
 * Ionic Version - 3.20.0
 
 ## Build APK from Git Repository
-To build the apk:
+Sunbird mobile app can be built from the main source code which lies at [project-sunbird](https://github.com/project-sunbird)/[sunbird-mobile](https://github.com/project-sunbird/sunbird-mobile).
 
-* Fork the repository
-* Make the fix
-* Submit a *pull request* to the project owner.
-<br>&emsp;a)On GitHub, navigate to the [project-sunbird](https://github.com/project-sunbird)/[sunbird-mobile](https://github.com/project-sunbird/sunbird-mobile) repository
+Sample properties file is kept inside buildConfig folder. This has to be renamed to sunbird.properties and appropriate avalues should be provided.
 
-**Role of sunbird.properties:**
+**app_id**
 
-     App properties (app_id, app_name and app_version_code), Dev properties(dev_base_url= [https://dev.open-sunbird.org](https://dev.open-sunbird.org)) , Febric Keys , Secret code are sunbird properties used for  build the sunbird app.
+Unique identifier for the app
+	
+**app_name**
 
-### Changing App Configuration
+Name of the application
 
-Various aspects of the Sunbird mobile app can be configured based on organization/user requirments such as:
-
-* App name
-* App logo
-* Login/Guest page to new users
-* Sign in footer card on the app
-* Onboarding cards
-* Categories in the profile page 
-
-
-| S No. | Variable Name | Description | Purpose | Default Value
-|-------|---------------|--------------|--------|--------------
-| 1 | appId | the app id in sunbird-mobile/config.xml with implementation specific application ID | To change the app ID | appId: "org.sunbird.app"
-| 2 | app name | navigate to sunbird-mobile/config.xml and enter the required app name | To change the app name | 
-| 3 | app logo | navigate to sunbird-mobile/resources/android/icon and sunbird-mobile/resources/android/splash. In all the mipmap and drawable folders, replace ic_launcher.png image with your desired logo. The logo name should exactly match the text **drawable-ldpi-icon.png** | To change the app logo |
-| 4 | app | set the configuration variable inside the <b>sunbird-mobile repo</b> inside <b>buildConfig</b> folder | | 
-| 5 | display_onboarding_page | set the configuration variable inside the <b>sunbird-mobile repo</b> inside <b>buildConfig</b> folder | to display the onboarding page | false
-| 6 | display_signin_footer_card_in_course_tab_for_teacher | set the <b>display_signin_footer_card_in_course_tab_for_teacher</b>variable as <b>true</b> in sunbird.properties file | to show the sign-in footer in the course tab for teachers | false
-| 7 | display_signin_footer_card_in_library_tab_for_teacher | Set the <b>display_signin_footer_card_in_library_tab_for_teacher</b> variable <b>true</b> in sunbird.properties file | to show the sign-in footer in the library tab for teachers | false
-| 8 | display_signin_footer_card_in_profile_tab_for_teacher | Set the <b>display_signin_footer_card_in_profile_tab_for_teacher</b>as <b>true</b> in sunbird.properties file | to show the sign-in footer in the profile tab for teachers | false
-| 9 | display_signin_footer_card_in_profile_tab_for_student | Set the <b>display_signin_footer_card_in_profile_tab_for_student</b>as <b>true</b> in sunbird.properties file | to show the sign-in footer in the profile tab for students | false
-| 10 | display_signin_footer_card_in_library_tab_for_student | Set the <b>display_signin_footer_card_in_library_tab_for_student</b>as <b>true</b> in sunbird.properties file | to show the sign-in footer in the profile tab for students | false
-| 11 | display_onboarding_card | set the display__onboarding_cards as true in sunbird.properties file | to display the guest/login page | false
-| 12 | display_framework_categories_in_profile | set the display_framework_categories_in_profile variable as true in sunbird.properties file | to display categories in the guest/login page | false
-
-#### Packaging Framework and Form Data
-Sunbird mobile app supports configuration of the app framework to enable offline usage of the app. To configure the app framework, set the values as listed:
-
-| S No. | Folder | File Name |  Purpose 
-|-------|--------|-----------|-------------
-| 1 | buildConfig/data/framework | framework-<FRAMEWORK_IDENTIFIER>.json | To package the channel for the respective framework. Same framework must be listed in the onboarding form API
-| 2 | buildConfig/data/channel | channel-<CHANNEL_IDENTIFIER>.json | To package the channel. Default framework must be same as the packaged framework for respective channel
-| 3 | buildConfig/data/form | syllabus.json | To onboard form API
-| 4 | buildConfig/data/form | pageassemble_course_filter.json | Page assemble filter for course
-| 5 | buildConfig/data/form | pageassemble_library_filter.json | Page assemble filter for library
-
-## Changing API Configuration:
+**app_version_code**
+	
+Version code for the app release.
 
 **App end-point**:
 
@@ -118,6 +83,48 @@ Replace `release_fabric_api_key` in `sunbird.properties` with your fabric API Ke
 This plugin handles deeplinks on iOS and Android for both custom URL scheme links and Universal App Links. We can change the Deep link schema from sunbird.properties.
 
 Change the   "dev_deeplink_base_url = dev.open-sunbird.org" to your require name
+
+
+     App properties (app_id, app_name and app_version_code), Dev properties(dev_base_url= [https://dev.open-sunbird.org](https://dev.open-sunbird.org)) , Febric Keys , Secret code are sunbird properties used for  build the sunbird app.
+
+### Changing App Configuration
+
+Various aspects of the Sunbird mobile app can be configured based on organization/user requirments such as:
+
+* App name
+* App logo
+* Login/Guest page to new users
+* Sign in footer card on the app
+* Onboarding cards
+* Categories in the profile page 
+
+
+| S No. | Variable Name | Description | Purpose | Default Value
+|-------|---------------|--------------|--------|--------------
+| 1 | appId | the app id in sunbird-mobile/config.xml with implementation specific application ID | To change the app ID | appId: "org.sunbird.app"
+| 2 | app name | navigate to sunbird-mobile/config.xml and enter the required app name | To change the app name | 
+| 3 | app logo | navigate to sunbird-mobile/resources/android/icon and sunbird-mobile/resources/android/splash. In all the mipmap and drawable folders, replace ic_launcher.png image with your desired logo. The logo name should exactly match the text **drawable-ldpi-icon.png** | To change the app logo |
+| 4 | app | set the configuration variable inside the <b>sunbird-mobile repo</b> inside <b>buildConfig</b> folder | | 
+| 5 | display_onboarding_page | set the configuration variable inside the <b>sunbird-mobile repo</b> inside <b>buildConfig</b> folder | to display the onboarding page | false
+| 6 | display_signin_footer_card_in_course_tab_for_teacher | set the <b>display_signin_footer_card_in_course_tab_for_teacher</b>variable as <b>true</b> in sunbird.properties file | to show the sign-in footer in the course tab for teachers | false
+| 7 | display_signin_footer_card_in_library_tab_for_teacher | Set the <b>display_signin_footer_card_in_library_tab_for_teacher</b> variable <b>true</b> in sunbird.properties file | to show the sign-in footer in the library tab for teachers | false
+| 8 | display_signin_footer_card_in_profile_tab_for_teacher | Set the <b>display_signin_footer_card_in_profile_tab_for_teacher</b>as <b>true</b> in sunbird.properties file | to show the sign-in footer in the profile tab for teachers | false
+| 9 | display_signin_footer_card_in_profile_tab_for_student | Set the <b>display_signin_footer_card_in_profile_tab_for_student</b>as <b>true</b> in sunbird.properties file | to show the sign-in footer in the profile tab for students | false
+| 10 | display_signin_footer_card_in_library_tab_for_student | Set the <b>display_signin_footer_card_in_library_tab_for_student</b>as <b>true</b> in sunbird.properties file | to show the sign-in footer in the profile tab for students | false
+| 11 | display_onboarding_card | set the display__onboarding_cards as true in sunbird.properties file | to display the guest/login page | false
+| 12 | display_framework_categories_in_profile | set the display_framework_categories_in_profile variable as true in sunbird.properties file | to display categories in the guest/login page | false
+
+#### Packaging Framework and Form Data
+Sunbird mobile app supports configuration of the app framework to enable offline usage of the app. To configure the app framework, set the values as listed:
+
+| S No. | Folder | File Name |  Purpose 
+|-------|--------|-----------|-------------
+| 1 | buildConfig/data/framework | framework-<FRAMEWORK_IDENTIFIER>.json | To package the channel for the respective framework. Same framework must be listed in the onboarding form API
+| 2 | buildConfig/data/channel | channel-<CHANNEL_IDENTIFIER>.json | To package the channel. Default framework must be same as the packaged framework for respective channel
+| 3 | buildConfig/data/form | syllabus.json | To onboard form API
+| 4 | buildConfig/data/form | pageassemble_course_filter.json | Page assemble filter for course
+| 5 | buildConfig/data/form | pageassemble_library_filter.json | Page assemble filter for library
+
 
 # Detail Adoption
 
