@@ -8,8 +8,7 @@ allowSearch: true
 ---
 
 ## Installation
-This section details the procedures for installing auxilliary services and validating the installation.
-
+This section details the procedures for installing auxilliary services and validating the installation
 
 ### Installing Auxilliary Services
 
@@ -135,3 +134,6 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 * `deploy-badger.sh` - Deploys the badger service as docker service.
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
+
+
+Signing up on Sunbird is a seamless process. Once you have successfully installed Sunbird on your server, you can create sing up credentials on the portal. For details on signing up on Sunbird, refer <a href="http://www.sunbird.org/features-documentation/signup/" target="_blank">Sign Up on Sunbird</a>
