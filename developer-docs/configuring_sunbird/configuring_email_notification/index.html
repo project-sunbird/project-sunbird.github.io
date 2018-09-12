@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.52.p/";
+			baseURL.href="/releases/release.1.52.q/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-09-12 14:44:49 +0530">
+<meta name="last-modified" content="2018-09-12 15:18:00 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.52.p" />
-<meta name="buildNo" content="4801" />
+<meta name="buildVersion" content="release.1.52.q" />
+<meta name="buildNo" content="4805" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -765,11 +765,11 @@
 <br /> g)logo: Logo attached in the email, when the logo is not defined, the default logo is used</p>
 
 <p>Some parameters are used to dynamically change the content information. It is recommended that these parameters are retained in the request body:
-<br /> a) 
-<br /> b) 
-<br /> c) 
-<br /> d) 
-<br /> e)</p>
+<br /> a) Content type
+<br /> b) Content title
+<br /> c) Content link
+<br /> d) Creator name
+<br /> e) Reviewer name</p>
 
 <h2 id="custom-templates">Custom Templates</h2>
 <p>You can aslo create custom email templates which are channel/tenant specific. When customized templates are not present, the default template is used to send emails for different actions in review workflows.</p>
