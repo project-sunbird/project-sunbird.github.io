@@ -10,7 +10,7 @@ allowSearch: true
 ---
 ## Introduction
 
-The Sunbird Mobile app provides mobility to the feature-rich learning platform. It provides flexibility to learners to learn anywhere, anytime and even without an Internet connection.
+The Sunbird Mobile app provides mobility to the feature-rich learning platform. It provides flexibility to learners to learn anywhere, anytime and even without an internet connection.
 
 ## Prerequisites
 
