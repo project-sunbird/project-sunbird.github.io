@@ -18,7 +18,7 @@ To install Sunbird choose one docker swarm manager as the installation server an
 
     git clone https://github.com/project-sunbird/sunbird-devops.git
     cd sunbird-devops
-    git checkout tags/release-1.9
+    git checkout tags/release-1.10
     cd deploy
 
 ##### Description of commands:

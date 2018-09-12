@@ -4,6 +4,7 @@ directory: developer-docs/configuring_sunbird/
 title: User channel migration
 page_title: User channel migration
 description: User channel migration
+published: true
 allowSearch: true
 ---
 
