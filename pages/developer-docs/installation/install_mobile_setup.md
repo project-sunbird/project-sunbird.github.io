@@ -32,10 +32,6 @@ Unique identifier for the app
 
 Name of the application
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 84b294c88350e764a7b6ad3dbfff43c024af5e06
 ## Changing API Configuration
 
 **app_version_code**
