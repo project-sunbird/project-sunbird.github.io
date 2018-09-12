@@ -92,9 +92,9 @@ Change the "dev_deeplink_base_url = dev.open-sunbird.org" as required.
     Dev properties(dev_base_url= [https://dev.open-sunbird.org](https://dev.open-sunbird.org)
     Febric Keys, Secret code are sunbird properties used for  building the sunbird app.
 
-### Changing App Configuration
+### Customising App Configuration
 
-Various aspects of the Sunbird mobile app can be configured based on organization/user requirments such as:
+Instance admin of Sunbird adopters can configure various aspects of the Sunbird mobile app based on requirement of organization.They can configure the aspects such as:
 
 * App name
 * App logo
@@ -204,7 +204,7 @@ $ ionic cordova plugin add [https://github.com/project-sunbird/cordova-plugin-qr
 
 It will be installed along with other npm packages.
 
-### Consolidated flow
+## Consolidated flow
 
   1. Create one workspace (i.e Folder Hierarchy) and Clone the above mentioned Git Repositories into that. 
 
