@@ -14,7 +14,7 @@ The Sunbird Mobile app provides mobility to the feature-rich learning platform. 
 
 ## Prerequisites
 
-To set up Sunbird mobile app, ensure you have installed the following:
+Ensure you have installed the following to set up Sunbird mobile app:
 
 * NPM Version - 3.5.2
 * Node JS Version - above 6
