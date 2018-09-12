@@ -1,118 +1,190 @@
 <h2 id="scenario">Scenario</h2>
 
-<p>Sunbird enables seamless access and discoverability of content through a taxonomy framework. The framework consists of Categories and Terms within a specific domain. Terms are values for categories.</p>
+<p>Sunbird enables seamless access and discoverability of content through a <a href="http://www.sunbird.org/faqs/taxonomymetadataframework/">taxonomy framework</a>. The objective and intent of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when a user search for content, they get relevant results. The framework consists of categories and terms within a specific domain. Terms are values for Categories. You can extend the core taxonomy via framework. The separation of the taxonomy from its extension in the form of framework(s) provides experts and pedagogues the power and flexibility to model and tag the content.</p>
 
-<p>Let us consider an example of an organization which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. They now need to create the framework. The objective and intent of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when users search for content, they get relevant results. The company may choose a predefined framework or create their own framework.</p>
+<p>An organization can use existing framework term and concepts and link them to their own framework. While creating a new framework, the framework creator needs to set up a new framework and align it to the categories and terms. A category can have terms either in sequential list or in hierarchical structure. Terms can be associated with other terms across categories. As a result, it is possible to select a term in the first category and hence restrict the set of available terms for the next category and so on. The organizations that are adopting Sunbird can link the categories and also change the labels but cannot override or add a new categories on their own. However, the Sunbird instance will have the following categories in its predefined frameworks:</p>
 
-<p>Adopters cannot override or add categories on their own and need to send a request to <a href="">implementation team</a>. For details on adding categories, refer <a href="">Adding Categories</a>.</p>
-
-<p>However,The Sunbird instance will have predefined frameworks:</p>
-
-<ul>
-  <li>
-    <p>NCF</p>
-
-    <pre><code> - Subject 
-
- - Board
-
- - Grade Level
-
- - Medium
-
- - Topic
+<pre><code>- Subject: classification of stream specific values
+- Board: certifying body/stream government or private organization
+- Grade Level: maturity level for knowledge  
+- Medium: language of the course 
+- Topic: detail of the concepts 
 </code></pre>
-  </li>
-</ul>
 
-<p>A category can have either flat or hierarchical terms. Terms can be associated across categories. As a result, it is possible to select a term in the first category and hence restrict the set of available terms for the next category and so on. For example, if you select Board as &lt;&gt;, the Grade list displayed as &lt;1 - 12&gt;. On selecting grade as &lt; &gt;, and the Medium as English, the Subject list appears containing predefined values as &lt;English, Mathematics and more&gt;. Whereas, if you select Grade as &lt;8&gt;, the Subject list displayed is &lt;English, Algebra, Geometry, History, Geography&gt;<br />
-When creating a new framework, the framework creator can borrow concepts from the EkStep concept map and link them into their framework. The objective of the framework is to ensure that content creators have an easy interface to tag content appropriately such that when a user search for content, they get relevant results.</p>
+<p>A user can select one or more category amongst the defined category. Let us consider an example of an organization, Neerdhara, which works in the domain of water conservation and works with multiple NGOs, village panchayats, and district administration authorities in multiple states of India. They now need to create the framework for water management.  The organization may choose a predefined category and associate it to their own framework. The categories in the framework has terms associated with it. These terms are relevant to the created framework and can be created by the organization.</p>
 
-<p>Vocabulary is the layer below the framework which allows linking of terms across categories into synonym sets.</p>
-
-<p>You can extend the core taxonomy via the framework. The separation of the taxonomy from its extension in the form of framework(s) provides experts and pedagogues the power and flexibility to model and tag the content.</p>
+<p>For example, for the organization Neerdhara the framework name is Neerdhara and code as ndf1; the category selected is subject and change the label as Resource type which defines the various water resources and contains the terms as Rain water, lake, ponds and so on.</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
-<p>1.An initialized server instance of Sunbird. Initialization includes creating an organization administrator (through Keycloak), registering a channel and creating a unique Channel ID and associating a first organization with the channel.</p>
-
-<p>For details, refer to:</p>
-
-<ul>
+<ol>
   <li>
-    <p><a href="http://www.sunbird.org/developer-docs/installation/server_installation/">Server Installation</a></p>
+    <p>An intialized Sunbird instance with channel</p>
   </li>
   <li>
-    <p><a href="http://www.sunbird.org/apis/framework/#tag/Channel-APIs">Channel APIs</a></p>
+    <p>The <a href="http://www.sunbird.org">API Key for access</a> and basic authentication</p>
   </li>
   <li>
-    <p><a href="http://www.sunbird.org/developer-docs/initialization">First organization</a> associated with channel ID</p>
+    <p>​Software that can make API calls like curl or <a href="https://www.getpostman.com/docs/v6/postman/api_documentation/intro_to_api_documentation">POSTMAN</a></p>
   </li>
-</ul>
-
-<p>2.The API Key for access and basic authentication</p>
-
-<p>3.An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)</p>
-
-<p>4.Onboarding the following with access to the API
-    - Admin user 
-    - Other <a href="http://www.sunbird.org/apis/userapi/#operation/Create%20User">individual users</a> and <a href="http://www.sunbird.org/apis/bulkupload/#operation/bulk%20upload%20user%20req1">Bulk upload user</a>
-    - <a href="http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create">Individual Organization</a> and <a href="http://www.sunbird.org/apis/bulkupload/#operation/bulk%20org%20upload%20req">Bulk upload organization</a>
-    - <a href="http://www.sunbird.org/apis/">Associated Users to organization</a></p>
-
-<p>5.Access to <a href="http://www.sunbird.org/apis/framework/">Framework API</a></p>
+  <li>Onboarding the following with access to the API
+    <ul>
+      <li>Admin user</li>
+      <li><a href="http://www.sunbird.org/apis/userapi/#operation/Create%20User">Individual user</a></li>
+      <li><a href="http://www.sunbird.org/apis/orgapi/#operation/Organisation%20Create">Individual Organization</a> access</li>
+      <li><a href="http://www.sunbird.org/apis/">Associated Users to organization</a></li>
+    </ul>
+  </li>
+  <li>Access to <a href="http://www.sunbird.org/apis/framework/">Framework API</a></li>
+</ol>
 
 <h3 id="taskflow">Taskflow</h3>
 
-<p>The sequence of tasks the organization administrator follows to create users include:</p>
+<p>The sequence of tasks the organization administrator follows to create a framework includes:</p>
 
-<p>Use the  Create Framework API, to create a new framework
-Follow the steps mentioned in How to Use Postman to use the create framework API
-Provide the appropriate values to the request body parameters in the payload.</p>
+<h4 id="create-a-framework">Create a Framework</h4>
 
-<p>Note: For details of API parameters, refer to the Framework API  reference document</p>
+<ol>
+  <li>
+    <p>Use the <a href="http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost">Create Framework API</a>, to create a new framework. Specify values for the parameters in the request body of the API. 
+Following is an example of request body for creating a framework, the sample values provided in the request body are indicative:</p>
+  </li>
+  <li>
+    <p>Path for creating the Framework: &lt;pre&gt;/framework/v1/create&lt;/pre&gt;</p>
+  </li>
+</ol>
 
-<p>1.Specify values for the parameters in the request body of the API. Following is an example of request body for creating a framework, the sample values provided in the request body are indicative:</p>
+<h5 id="request-body-for-creating-framework">Request Body for Creating Framework</h5>
 
-<p><strong>Request Body</strong></p>
+<p>To retrieve the channels for the request parameter, use <a href="http://www.sunbird.org/apis/framework/#operation/ChannelV1ListPost">List Channel API</a></p>
 
-<pre>
-"request": 
-{
-"framework": 
-{
-name": "NCF",
-"code": "ncf",
-"description": "NCF framework",
-"type": "K-12",
-"channels": [
-{ }
-],
-"categories": [{ }]
-</pre>
+<pre><code>{
+"request": {
+    "framework": {
+        "name": "Neerdhara",
+        "code": "ndf",
+        "description": "Framework for Neerdhara Management",
+        "translations": {"hi":"एनडीएफ-अनुवाद","ta":"NDF மொழிபெயர்ப்பு"},
+        "type": "TPD",
+        }
+    }
+} 
+</code></pre>
 
-<p><strong>Response Body</strong></p>
+<p><strong>Description of Parameters</strong></p>
 
-<pre>
+<p>Name: depicts the name of the framework for the organization
+Code: is user defined value that is used as framework identifier 
+Description: is related to the framework
+Translations: enables framework in different languages 
+Type: defines the type of content</p>
+
+<h5 id="response-body-for-creating-framework">Response Body for Creating Framework</h5>
+
+<pre><code>{
 "responseCode": "OK",
 "result": {
-"node_id": "ncf",
-"versionKey": "1534745974986"
+    "framework": {
+        "identifier": "ndf1",
+        "code": "ndf1",
+        "translations": "{\"hi\":\"एनसीएफ-अनुवाद\",\"ta\":\"NCF மொழிபெயர்ப்பு\"}",
+        "name": "Neerdhara",
+        "description": "Framework for Neerdhara Management",
+        "type": "TPD",
+        "objectType": "Framework"
+        }
+    }
 }
+</code></pre>
 
-</pre>
+<h4 id="rename-a-category">Rename a Category</h4>
 
-<p>2.Save the created version ID</p>
+<ol>
+  <li>Use the <a href="http://www.sunbird.org/apis/framework/#operation/FrameworkV1CreatePost">Add Category API</a>, to create a new category in the framework.</li>
+</ol>
 
-<p>3.The framework category is created</p>
+<blockquote>
+  <p>Note: They must send a request to <a href="info@sunbird.org">Sunbird Team</a> for creating new category.</p>
+</blockquote>
 
-<h3 id="concepts-covered">Concepts covered</h3>
+<p>The sample values provided in the request body are indicative. The API describes the procedure to change the label(resources) of an existing category(subject):</p>
+
+<ol>
+  <li>Path for creating category: <code>/framework/v1/category/create?framework=ndf1</code></li>
+</ol>
+
+<h5 id="request-body-for-renaming-categories">Request Body for Renaming Categories</h5>
+
+<pre><code>{
+"request": {
+    "category":{
+        "name":"resources",
+        "description":"Subject is changed to Resources",
+        "code":"subject"
+        }
+    }
+}
+</code></pre>
+
+<h5 id="response-body-for-renaming-categories">Response Body for Renaming Categories</h5>
+
+<pre><code>{
+    "responseCode": "OK",
+    "result": {
+        "node_id": "ndf1_subject",
+        "versionKey": "1535716551605"
+        }
+}
+</code></pre>
+
+<h4 id="create-a-term">Create a Term</h4>
+
+<ol>
+  <li>
+    <p>Use the <a href="http://www.sunbird.org/apis/framework/#operation/FrameworkV1TermCreatePost">Add Term API</a>, to create a new term in the category.
+The categories can be retrieved and listed using <a href="http://www.sunbird.org/apis/framework/#operation/FrameworkV1CategoryReadClassGet">Fetch API</a>. The sample values provided in the request body are indicative.</p>
+  </li>
+  <li>
+    <p>Path for creating category: <code>/framework/v1/term/create?framework=ndf1&amp;category=subject</code></p>
+  </li>
+</ol>
+
+<h5 id="request-body-for-adding-terms">Request Body for Adding Terms</h5>
+
+<pre><code>{
+"request": {
+    "term": [
+        {
+        "code": "river",
+        "name": "River",
+        "description":"Describes River"
+        },
+        {
+        "code": "sea",
+        "name": "Sea",
+        "description":"Describes Sea"
+        }
+        ]
+    }
+}
+</code></pre>
+
+<h5 id="response-body-for-adding-terms">Response Body for Adding Terms</h5>
+
+<pre><code>{
+"responseCode": "OK",
+"result": {
+    "node_id": [
+        "ndf1_subject_river",
+        "ndf1_subject_sea"
+        ]
+    }
+}
+</code></pre>
+
+<h3 id="concepts-covered">Concepts Covered</h3>
 
 <p><strong>Framework</strong>- A structure designed to define the scope of something. On Sunbird, the framework is defined through a string of vocabularies</p>
-
-<p><strong>Taxonomy</strong></p>
-
-<p><strong>Authentication</strong></p>
 
 <h3 id="additional-topics">Additional Topics</h3>
 

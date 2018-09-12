@@ -1,0 +1,187 @@
+<h2 id="installation">Installation</h2>
+<p>This section details the procedures for installing auxilliary services and validating the installation</p>
+
+<h3 id="installing-auxilliary-services">Installing Auxilliary Services</h3>
+
+<p>Run the installation script</p>
+
+<pre><code>cd (path to top level folder of folder where the installer is located)
+./sunbird_install.sh
+</code></pre>
+
+<p>The installtion script runs through the following steps</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Stage name</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">config</td>
+      <td style="text-align: left">Generates configuration file and hosts file</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">dbs</td>
+      <td style="text-align: left">Installs all databases and creates schema</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">apis</td>
+      <td style="text-align: left">Sets up API manager kong and Onboard API’s and consumer’s</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">proxy</td>
+      <td style="text-align: left">Deploys and configures Nginx</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">keycloak</td>
+      <td style="text-align: left">Deploys and configures Keycloak</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">badger</td>
+      <td style="text-align: left">Deploys the badger service</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Note: The badger service does not work without an Azure storage account name</p>
+</blockquote>
+
+<h3 id="getting-authentication-certificate">Getting Authentication Certificate</h3>
+
+<p>Get the public key from keycloak <b>http://<dns_name or="" IP="">/auth -&gt; Administration console -&gt; realm settings -&gt; keys -&gt; public keys&lt;/b&gt;  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file.</dns_name></b></p>
+
+<h3 id="installing-core-services">Installing Core Services</h3>
+
+<p>To deploy the core services with the authentication certificate, execute:</p>
+
+<pre><code>./sunbird_install.sh -s core
+</code></pre>
+
+<blockquote>
+  <p>Note:
+ - Running the installer script with <code>-s &lt;stage name&gt;</code> runs only that stage of the installation.</p>
+
+  <ul>
+    <li>To know more about the script <code>sunbird_install.sh</code> <a href="developer-docs/installation/server_installation/#sunbird-install-script">refer</a> to the section <a href="developer-docs/installation/server_installation/#sunbird-install-script&quot;&gt;below">below</a></li>
+  </ul>
+</blockquote>
+
+<h2 id="post-installation-configuration">Post Installation Configuration</h2>
+<p>After completion of Sunbird installation and before it can be used, an API token needs to be created and a top level root organization. The API key is used in REST API commands to authenticate that API calls are being made by an authorized user</p>
+
+<h3 id="setup">Setup</h3>
+
+<p><br />1. <strong>Create user access token</strong>  (x-authenticated-user-token)</p>
+
+<pre><code>curl -X POST {host_name}    /auth/realms/sunbird/protocol/openid-connect/token \
+-H 'cache-control: no-cache' \
+-H 'content-type: application/x-www-form-urlencoded' \
+-d 'client_id=admin-cli&amp;username={user-manager}&amp;password={password}&amp;grant_type=password'
+</code></pre>
+
+<p>The curl command’s response will contain a field called “access token” which will be followed by a long string. That token is called x-authenticated-user token and is required to make API calls</p>
+
+<p><br />The values in the { } braces should be replaced with values pertinent to your Sunbird environment</p>
+
+<ul>
+  <li>{dns_name} - Domain or the IP address of your application server_installation</li>
+  <li>{password} - Password of the <code>user-manager</code> user. The one you have provided for <code>sso_password</code> parameter in the <code>config</code> file above</li>
+</ul>
+
+<p><br />2. <strong>Create root organization</strong> - To create a root organization you should execute the following cURL:</p>
+
+<p>curl -X POST<br />
+  {dns_name}/api/org/v1/create \
+  -H ‘Cache-Control: no-cache’ \
+  -H ‘Content-Type: application/json’ \
+  -H ‘accept: application/json’ \
+  -H ‘authorization: Bearer {jwt token from ~/jwt_token_player.txt}’ \
+  -H ‘x-authenticated-user-token: {user x-authenticated-user-token}’ \
+  -d ‘{
+  “request”:{
+  “orgName”: “{Your Organization Name}”,
+  “description”: “{Your organization description}”,
+  “isRootOrg”:true,
+  “channel”:”{Your Channel Name}”
+        }
+     }’</p>
+
+<blockquote>
+  <p>Note: Channel should be a unique name across Sunbird instances using the EkStep content repository
+ - If ~/jwt_token_player.txt file missing then rerun <code>./sunbird_install.sh -s apis</code> to recreate it</p>
+</blockquote>
+
+<p><br />3. Update <code>sunbird_default_channel</code> in the <code>config</code> file with <strong>Your Channel Name}</strong></p>
+
+<pre><code>./sunbird_install.sh -s core
+</code></pre>
+
+<h3 id="validation">Validation</h3>
+
+<p>To validate all the services for a successful installation run</p>
+
+<pre><code>./sunbird_install.sh -s posttest
+</code></pre>
+
+<p>On executing the script, a file <code>logs/postInstallationLogs.log</code> will be created</p>
+
+<ol>
+  <li>
+    <p>Open <code>https://[domain-name]/</code> and sign up</p>
+  </li>
+  <li>
+    <p>You may choose your own user name and password. The format for the username while login is: username@channelName</p>
+  </li>
+</ol>
+
+<h2 id="sunbird-install-script">Sunbird Install Script</h2>
+
+<p>The Sunbird installation script <code>./sunbird_install.sh</code> is a wrapper shell script that invokes other scripts or Ansible playbooks. It fetches all the docker images from the Sunbird DockerHub repository.</p>
+
+<ul>
+  <li>
+    <p><code>sanity.sh</code> - Basic Sunbird prerequisites check.</p>
+  </li>
+  <li>
+    <p><code>install-deps.sh</code> - Installs Ansible v2.4.1.0 on the installation server to provision and deploy Sunbird. This script also sets up the docker swarm.</p>
+  </li>
+  <li>
+    <p><code>generate_config.sh</code> - Creates a workspace for the installation and sets up necessary config files.</p>
+  </li>
+  <li>
+    <p><code>generate_hosts.sh</code> - Creates a hosts file (Ansible file format) dynamically to run the Ansible scripts.</p>
+  </li>
+  <li>
+    <p><code>install-dbs.sh</code> - Installs Cassandra, Elasticsearch and Postgres databases.</p>
+  </li>
+  <li>
+    <p><code>init-dbs.sh</code> - Sets up the required schema for Cassandra, Elasticsearch and Postgres databases.</p>
+  </li>
+  <li>
+    <p><code>deploy-apis.sh</code> - Deploys the api gateway (Kong) as a docker service using Ansible.</p>
+  </li>
+  <li>
+    <p><code>deploy-proxy.sh</code> - Deploys the proxy (Nginx) as a docker service.</p>
+  </li>
+  <li>
+    <p><code>provision-keycloak.sh</code> - Installs Keycloak.</p>
+  </li>
+  <li>
+    <p><code>deploy-keycloak-vm.sh</code> - Deploys the OAuth service (Keycloak) on the VM. The Keycloak service runs outside the swarm.</p>
+  </li>
+  <li>
+    <p><code>bootstrap-keycloak.sh</code> - Imports the auth realm and configures Keycloak.</p>
+  </li>
+  <li>
+    <p><code>deploy-badger.sh</code> - Deploys the badger service as docker service.</p>
+  </li>
+  <li>
+    <p><code>deploy-core.sh</code> - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend.</p>
+  </li>
+</ul>
+
+<p>Signing up on Sunbird is a seamless process. Once you have successfully installed Sunbird on your server, you can create sing up credentials on the portal. For details on signing up on Sunbird, refer <a href="http://www.sunbird.org/features-documentation/signup/" target="_blank">Sign Up on Sunbird</a></p>

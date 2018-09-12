@@ -1,0 +1,154 @@
+<h2 id="overview">Overview</h2>
+<p>Any content published on Sunbird undergoes a review to ensure that content published adheres to defined guidelines and standards set by the organization. Each organization can set standard guidelines based on their organizational ideologies. Sunbird provides the feature of notifying content creators about the status of their content sent for review. Any adopter can use this feature and configure email templates and notify content creators.</p>
+
+<p>The default email templates available on Sunbird are:
+<br /> a) Send for review - sendForReview
+<br /> b) Request for changes - requestForChanges
+<br /> b) Publish - publish</p>
+
+<p>Default templates are stored in Sunbird middleware(learner service) and configuration for the template are stored as form config. The default templates can also be configured during installation using Form APIs</p>
+
+<h2 id="customizing-email-templates">Customizing Email Templates</h2>
+
+<h3 id="adding-email-template-to-cassandra-db">Adding Email Template to Cassandra DB**</h3>
+
+<p>Sunbird LMS stores email templates in the table ‘email_template’ within ‘sunbird’ keyspace</p>
+
+<p>Command to view email templates currently available in Cassandra DB:</p>
+
+<pre><code>SELECT * from sunbird.email_template;
+</code></pre>
+
+<p>Command to add an email template to Cassandra DB using CQL shell. Ensure that the template name is unique so that it doesnot override the existing template information in Cassandra DB:</p>
+
+<pre><code>INSERT INTO sunbird.email_template(name, template) VALUES('myEmailTemplate', '&lt;!doctype html&gt;&lt;html&gt; &lt;head&gt; &lt;meta&gt; &lt;meta&gt; &lt;title&gt;&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;table&gt; &lt;tr&gt; &lt;td&gt;&amp;nbsp;&lt;/td&gt;&lt;td&gt; &lt;div class="content"&gt; &lt;span class="preheader"&gt;&lt;/span&gt; &lt;table class="main"&gt; &lt;tr&gt; &lt;td class="wrapper"&gt; &lt;table&gt; &lt;tr&gt; &lt;tr&gt; &lt;td&gt; #if ($orgImageUrl) &lt;p&gt; &lt;img src="$orgImageUrl" alt="logo" align="right" width="180" height="100"&gt; &lt;/p&gt;#end &lt;/td&gt;&lt;/tr&gt;&lt;td&gt; #if ($name) &lt;p &gt;Hi $name,&lt;/p&gt;#end &lt;p &gt;$body&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;')
+</code></pre>
+
+<h3 id="configuring-using-form-api">Configuring using Form API**</h3>
+
+<p>Sample template configuration for different content review workflows stored in form APIs:</p>
+
+<h4 id="send-for-review">Send for review:</h4>
+
+<pre><code>{
+	"request": {
+		"type": "notification",
+		"action": "sendForReview",
+		"subType": "email",
+		"data": {
+			"templateName": "sendForReviewTemplate",
+			"action": "sendForReview",
+			"fields": [{
+				"body": "A content has been submitted for review.&lt;br&gt;&lt;br&gt;&lt;b&gt;Content Type: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Title: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Creator: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Link: &lt;/b&gt;&lt;br&gt;",
+				"subject": "Content submitted for Review Content Type: , Title: ",
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
+				"orgName": "Sunbird",	
+				"fromEmail": "support-dev@open-sunbird.org"
+			}]
+		}
+	}
+}
+</code></pre>
+
+<h4 id="request-for-changes">Request for changes</h4>
+
+<pre><code>{
+	"request": {
+		"type": "notification",
+		"action": "requestForChanges",
+		"subType": "email",
+		"data": {
+			"templateName": "requestForChangesTemplate",
+			"action": "requestForChanges",
+			"fields": [{
+				"body": "Thank you for your contribution. We appreciate your effort in creating content for us. However, before we publish the content request you to make the necessary changes as mentioned in the comments.&lt;br&gt;We look forward to receiving the revised content.&lt;br&gt;&lt;br&gt;&lt;b&gt;Content Type: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Title: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Link: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Reviewer name: &lt;/b&gt;&lt;br&gt;",
+				"subject": "Our Sincere Apologies! Content Type: , Title: ",
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
+				"orgName": "Sunbird",	
+				"fromEmail": "support-dev@open-sunbird.org"
+			}]
+		}
+	}
+}
+</code></pre>
+
+<h4 id="publish">Publish</h4>
+
+<pre><code>{
+	"request": {
+		"type": "notification",
+		"action": "publish",
+		"subType": "email",
+		"data": {
+			"templateName": "publishedTemplate",
+			"action": "publish",
+			"fields": [{
+				"body": "This is to inform you that the content submitted has been accepted for publication and will be available on the portal shortly.&lt;br&gt;&lt;br&gt;&lt;b&gt;Content Type: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Title: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Link: &lt;/b&gt;&lt;br&gt;",
+				"subject": "Congratulations, Your Content is Live! Content Type: , Title: ",
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
+				"orgName": "Sunbird",	
+				"fromEmail": "support-dev@open-sunbird.org"
+			}]
+		}
+	}
+}
+</code></pre>
+
+<p><strong>Description of Paramaters</strong>
+<br /> a)type: Type of form
+<br /> b)action: Workflow action, review, publish etc
+<br /> c)subType: Type of notification
+<br /> d)templateName: Template name used to store in Cassandra DB
+<br /> e)body: Body of the email
+<br /> f)subject: Subject line of email
+<br /> g)logo: Logo attached in the email, when the logo is not defined, the default logo is used</p>
+
+<p>Some parameters are used to dynamically change the content information. It is recommended that these parameters are retained in the request body:
+<br /> a) 
+<br /> b) 
+<br /> c) 
+<br /> d) 
+<br /> e)</p>
+
+<h2 id="custom-templates">Custom Templates</h2>
+<p>You can aslo create custom email templates which are channel/tenant specific. When customized templates are not present, the default template is used to send emails for different actions in review workflows.</p>
+
+<p>To configure email template:
+* Addnew email template configurations in Form API 
+* Manually insert the new template in Casandra DB of Sunbird middleware service</p>
+
+<h3 id="creating-custom-templates">Creating Custom Templates</h3>
+<p><br /> a) Name the templates in the form API in “slug_workflowAction” format
+<br /> b) Store the template in Cassandra DB same as the configured Form API
+<br /> c) Add rootOrgId in form API request along with other fields which is the channel
+<br /> d) Placeholders should be present in their respective fields
+<br /> e) If the custom template is configured in form service, then custom template with the same name should also be added in learner service(Sunbird middleware). If not added,  Learner service displays an error</p>
+
+<p>For example, if slug is “Sunbird” and action is “send for review”, template name should be “sunbird_sendforReviewTemplate”</p>
+
+<p>** Sample Custom Template Configuration**</p>
+
+<pre><code>{
+	"request": {
+		"type": "notification",
+		"action": "sendForReview",
+		"subType": "email",
+		"rootOrgId": "0123166367624478721",
+		"data": {
+			"templateName": "sendForReviewTemplate",
+			"action": "sendForReview",
+			"fields": [{
+				"body": "A content has been submitted for review.&lt;br&gt;&lt;br&gt;&lt;b&gt;Content Type: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Title: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Creator: &lt;/b&gt;&lt;br&gt;&lt;b&gt;Link: &lt;/b&gt;&lt;br&gt;",
+				"subject": "Content has been submitted for review! Content Type: , Title: ",
+				"logo": "https://dev.open-sunbird.org/assets/images/sunbird_logo.png",
+				"orgName": "Sunbird",	
+				"fromEmail": "support-dev@open-sunbird.org"
+			}]
+		}
+	}
+}
+</code></pre>
+
+<blockquote>
+  <p>Note: In the email templates, only predefined parameters can be dynamically replaced with content data while sending the email.</p>
+</blockquote>

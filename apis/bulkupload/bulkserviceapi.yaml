@@ -8,7 +8,7 @@ info:
   description: >-
         The  Bulk Upload resources perform operations related to uploads on the Sunbird Platform. The Bulk Upload API(s) operations include Uploads, Updations
 host: staging.open-sunbird.org
-basePath: /api/v1
+basePath: /api
 securityDefinitions:
   bearer:
       type: apiKey  # arbitrary name for the security scheme
@@ -27,7 +27,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /bulk/user/upload:
+  /user/v1/upload:
     post:
       description: >-
        This API is associated with upload users in bulk on the Sunbird Platform.
@@ -84,6 +84,13 @@ paths:
         required: true
         type: string
         description: To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
+      
       responses:
         '200':
           description: 'OK ! Successful operation."bulk upload user" operation was successfully executed.'
@@ -103,7 +110,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /batch/bulk/enrollment:
+  /course/v1/batch/bulk/enrollment:
     post:
       description: >-
        This API is used for enrolling batches in bulk
@@ -136,6 +143,13 @@ paths:
         required: true
         type: string
         description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
+      
       responses:
         '200':
           description: 'OK ! Successful operation."bulk batch enrollment " operation was successfully executed.'
@@ -155,7 +169,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /upload/status/{Job_ID}:
+  /data/v1/upload/status/{processId}:
     get:
       description: >-
        This API is used to check the upload status
@@ -169,10 +183,10 @@ paths:
       - application/json
       parameters:
       - in: path
-        name: Job_ID
+        name: processId
         type: string
         required: true
-        description: 'Please append a valid Job ID to the Request URL'
+        description: 'Please append a valid process id to the Request URL'
       - name: Accept
         in: header
         required: true
@@ -192,6 +206,13 @@ paths:
         required: true
         type: string
         description: 'To make use of the API, you require bearerorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
+      
       responses:
         '200':
           description: 'OK ! Successful operation." check upload status" operation was successfully executed.'
@@ -229,7 +250,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /org/upload:
+  /org/v1/upload :
     post:
       description: >-
        This API is associated with bulk uploading organisations on the Sunbird Platform.
@@ -274,6 +295,13 @@ paths:
         required: true
         type: string
         description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+      - name: x-authenticated-user-token
+        in: header
+        required: true
+        type: string
+        description: >- 
+          It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
+      
       responses:
         '200':
           description: 'OK ! Successful operation."bulk org upload " operation was successfully executed.'
@@ -293,7 +321,7 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
-  /bulk/location/upload:
+  /data/v1/bulk/location/upload :
     post:
       summary: Upload Location Data in Bulk
       description: >-
@@ -334,6 +362,13 @@ paths:
             To make use of any Location API, you require authorization. Raise a
             request to the administrator for the use of the API. You will
             receive the authorization key. Specify the key received, here.
+        - name: x-authenticated-user-token
+          in: header
+          required: true
+          type: string
+          description: >- 
+            It is a unique token/key to authenticate the user each time an API is called. For corresponding sessions this token is used, not your actual username/password
+      
       responses:
         '200':
           description: >-
@@ -357,53 +392,55 @@ paths:
           schema:
             $ref: '#/definitions/CommonErrorResponse'        
 definitions:
-
   BulkUploadStatusResponse:
-    description: Bulk Upload status response
+    description: Bulk upload status response
     type: object
     properties: 
       objectType:
        type: string
-       description: Type of object uploaded i.e. User, Organization, Location, or  Batch enrollment
+       description: Type of object in bulk upload request. Supported types are user, organisation, location, batch enrollment
       processId:
        type: string
-       description: ID that uniquely identifies the bulk upload process.
+       description: ID that uniquely identifies the bulk upload request.
+      status:
+       type: string
+       description: Specifies current status of bulk upload request. Supported values are {"NOT STARTED", "IN PROGRESS" and "COMPLETED"}.
+      message:
+       type: string
+       description: Descriptive message for current status of bulk upload request.
       successResult:
        type: array
        items:
          type: object
-         description: Represents each row of successful uploads
+         description: Represents each row (e.g. user) in the bulk upload request CSV file that is successfully created or updated in Sunbird. 
          properties:
           id:
             type: string
-            description: unique identifier of the row
+            description: Unique identifier for the entity
           operation:
             type: string
-            description : Represents the possible values for create or update
+            description : Indicates whether a create or update operation is performed
       failureResult:
        type: array
        items:
          type: object
-         description: Represents each row of failed uploads
+         description: Represents each row (e.g. user) in the bulk upload request CSV file that failed during creation or updation in Sunbird.
          properties:
           err_msg:
             type: string
-            description: Represents the error message that occurrs while processing a data row.
-          operation:
-            type: string
-            description : Reprents the possible values for create or update
+            description: Represents the error message that occurred while processing given row.
   BulkUploadResponse:
     description: Bulk Upload Response
     type: object
     allOf:
-      - $ref: '#/definitions/ResultWithNodeId'
+      - $ref: '#/definitions/ResultWithProcessId'
       - $ref: '#/definitions/ResponseHeader'
-  ResultWithNodeId:
-    title: Result Containing Node Id
+  ResultWithProcessId:
+    title: Result Containing upload process Id
     type: object
     properties:
       result:
-        $ref: '#/definitions/NodeId'
+        $ref: '#/definitions/ProcessId'
   ResponseHeader:
     title: ResponseHeader
     type: object
@@ -422,13 +459,13 @@ definitions:
       responseCode:
         type: object
         description: 'API response code '
-  NodeId:
-    title: Node Id
+  ProcessId:
+    title: processId
     type: object
     properties:
-      node_id:
+      processId:
         type: string
-        description: Node Identifier
+        description: Process id of bulk upload request
   ResponseParams:
     title: Response Parameter
     type: object
@@ -488,4 +525,4 @@ definitions:
         properties:
           result:
             description: Error message for failed location data bulk upload API request
-            type: object      
+            type: object

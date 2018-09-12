@@ -1,77 +1,79 @@
 <h2 id="scenario">Scenario</h2>
 
-<p>A company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization’s administrator needs to create an organization.</p>
+<p>Sunbird identifies every tenant organization uniquely through a channel. When creating an organization, in addition, to organization details, Organization ID must be assigned. The organization ID has to be associated with an organization and a channel.</p>
 
-<p>Sunbird identifies every tenant organization uniquely through a channel. When creating an organization, in addition, to organization details, Organization ID must be assigned. The organization ID has to be associated with an organization and a channel. For example, John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them.</p>
+<p>For example: a company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization’s administrator needs to create an organization.</p>
+
+<p>John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them.</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
-<p>1.An initialized server instance of Sunbird. Initialization includes creating an org admin user (through Keycloak), creating a channel and associating a first organization with the channel.</p>
-
-<p>For details, refer to:</p>
-
-<ul>
+<ol>
   <li>
-    <p><a href="http://www.sunbird.org/developer-docs/installation/server_installation/">Server Installation</a></p>
+    <p>An intialized Sunbird instance</p>
   </li>
   <li>
-    <p><a href="http://www.sunbird.org/apis/framework/#tag/Channel-APIs">Channel APIs</a></p>
+    <p>The <a href="http://www.sunbird.org">API Key for access</a> and basic authentication</p>
   </li>
   <li>
-    <p><a href="http://www.sunbird.org/developer-docs/initialization">First organization</a> associated with channel ID</p>
+    <p>An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)</p>
   </li>
-</ul>
-
-<p>2.The API Key for access and basic authentication</p>
-
-<p>3.An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)</p>
-
-<p>4.Access to the <a href="http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs">Create Organization API</a></p>
+  <li>
+    <p>Access to the <a href="http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs">Create Organization API</a></p>
+  </li>
+</ol>
 
 <h3 id="taskflow">Taskflow</h3>
 
-<p>The sequence of tasks the organization administrator follows to create users include:</p>
+<p>An organization can be created in a Sunbird instance using ORG API, it can be further associated with a user and channel, refer <a href="http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User">Mapping User to Organization</a>. The sequence of tasks the administrator follows to create organization include:</p>
 
-<p>1.Specify values for the following parameters in the request body of the API</p>
+<ol>
+  <li>Specify values for the following parameters in the request body of the API. Following is an example of request body for creating a user, the sample values provided in the request body are indicative:</li>
+</ol>
 
-<p>An organization can be created in a Sunbird instance using ORG API, it can be further associated with a user and channel, refer <a href="http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User">Mapping User to Organization</a>. 
-Following is an example of request body for creating a user, the sample values provided in the request body are indicative:</p>
+<h4 id="request-body-for-creating-an-organization">Request Body for Creating an Organization</h4>
 
-<p><strong>Request Body</strong></p>
-
-<pre>
+<pre><code>{
 "request":{
-      "orgName":"ORG JP_1",
-      "description":"Dev Default Org",
-      "imgUrl":"N/A",
-      "channel":"channel -12571w1sja",
-      "preferredLanguage":"English",
-      "homeUrl":"N/A",
-      "orgCode":"orgCode123sd",
-      "isRootOrg":true,
-      "provider":"1231rwsadk",
-      "externalId":"exts12w7k",
-          "address":{
-          "city":"Bangalore",
-          "state":"KA",
-          "country":"INDIA",
-          "zipCode":"566666"
-      }
-</pre>
-
-<p><strong>Response Body</strong></p>
-
-<pre>
- "responseCode": "OK",
- "result": {
-       "organisationId": "012567820191629312269",
-       "response": "SUCCESS"
+    "orgName":"XYZCorp",
+    "description":"Dev Default Org",
+    "imgUrl":"N/A",
+    "channel":"channel -12571w1sja",
+    "preferredLanguage":"English",
+    "homeUrl":"N/A",
+    "orgCode":"orgCode123sd",
+    "isRootOrg":true,
+    "provider":"1231rwsadk",
+    "externalId":"exts12w7k",
+        "address":{
+        "city":"Bangalore",
+        "state":"KA",
+        "country":"INDIA",
+        "zipCode":"560000"
+        } 
     }
-</pre>
+}
+</code></pre>
 
-<p>2.Save the created organization ID</p>
+<h4 id="response-body">Response Body</h4>
 
-<p>3.An organization is created in Sunbird</p>
+<pre><code>{
+    "responseCode": "OK",
+    "result": {
+        "organisationId": "012567820191629312269",
+        "response": "SUCCESS"
+        } 
+}
+</code></pre>
+
+<ol>
+  <li>
+    <p>Save the created organization ID. The organization ID is utilized by <a href="http://www.sunbird.org/developer-docs/how-to-guide/associating_organization_and_user">Mapping a user to an organization</a></p>
+  </li>
+  <li>
+    <p>An organization is created in Sunbird</p>
+  </li>
+</ol>
 
 <h3 id="concepts-covered">Concepts Covered</h3>
 

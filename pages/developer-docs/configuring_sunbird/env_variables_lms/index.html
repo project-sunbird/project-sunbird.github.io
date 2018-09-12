@@ -190,35 +190,51 @@
     </tr>
     <tr>
       <td>23</td>
-      <td>sunbird_registry_service_baseurl</td>
-      <td>This variable is required to connect with Open-saber serve to store user attribute. If the value is not set then the user’s additional attribute is not stored within open-saber</td>
-      <td>To make open-saber call</td>
-      <td> </td>
+      <td>sunbird_open_saber_bridge_enable</td>
+      <td>Enable or disable open saber bridge which is used to store custom information (e.g. user or organisation profile fields) in open saber registry</td>
+      <td>Used to store Sunbird adopter specific profile information in open saber registry as per pre-defined configuration</td>
+      <td>false</td>
       <td>Learner-Service</td>
     </tr>
     <tr>
       <td>24</td>
-      <td>sunbird_open_saber_bridge_enable</td>
-      <td>This variable is required during installation time, to indicate whether adopter needs open-saber or not</td>
-      <td>Values: True, to indicate if open-saber is required and false to indicate its not required. In case its true then the user must provide  sunbird_registry_service_baseurl env value</td>
-      <td>To enable or disable open-saber call set it to false</td>
+      <td>sunbird_registry_service_baseurl</td>
+      <td>Base URL of open saber registry. This configuration is required if sunbird_open_saber_bridge_enable is set to true</td>
+      <td>Used to store Sunbird adopter specific profile information in open saber registry as per pre-defined configuration</td>
+      <td> </td>
       <td>Learner-Service</td>
     </tr>
     <tr>
       <td>25</td>
       <td>sunbird_analytics_api_base_url</td>
-      <td>This variable is required to configure if the analytics store call happens locally (inside the Sunbird instance) or globally</td>
-      <td>To make analytics api call(Default value is provided for dev server on production, it should point to ekstep production url)</td>
-      <td>https://dev.ekstep.in/api/data/v3</td>
+      <td>Configuration to choose data analytics pipeline (Local vs Global) e.g. <data-pipeline-base-url>/data/v3</data-pipeline-base-url></td>
+      <td>Track and analyse usage</td>
+      <td> </td>
       <td>Learner-Service</td>
     </tr>
     <tr>
       <td>26</td>
       <td>sunbird_search_service_api_base_url</td>
-      <td>This variable is required to configure if the content store call happens locally (inside the Sunbird instance) or globally</td>
-      <td>To make content search call(Default value is provided for dev server on production, it should point to ekstep production url)</td>
-      <td>https://dev.ekstep.in/api/search</td>
+      <td>Configuration to limit the maximum number of recipients in an email notification (e.g. notification to reviewers) sent by Sunbird platform</td>
+      <td>Discovery of content</td>
+      <td> </td>
       <td>Learner-Service</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>sunbird_email_max_recipients_limit</td>
+      <td>Configuration to limit the maximum number of recipients in an email notification (e.g. notification to reviewers) sent by Sunbird platform</td>
+      <td>Configuration to restrict mass mailers from platform beyond configured limit</td>
+      <td>100</td>
+      <td>Learner-Service</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>sunbird_cassandra_consistency_level</td>
+      <td>Configuration to set default consistency level for Cassandra read and write operations. For more information about consistency level, please refer Cassandra documentation.</td>
+      <td>Configuration to set Cassandra consistency level, this is required when using a multi-node Cassandra cluster for Sunbird</td>
+      <td> </td>
+      <td>Cassandra DB</td>
     </tr>
   </tbody>
 </table>
