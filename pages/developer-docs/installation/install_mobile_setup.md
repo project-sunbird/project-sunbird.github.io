@@ -32,13 +32,11 @@ Unique identifier for the app
 
 Name of the application
 
-<<<<<<< HEAD
 ## Changing API Configuration
 =======
 **app_version_code**
 	
 Version code for the app release.
->>>>>>> 4f4387cb6f5d9f73a0d320a05df7ad801c416ae2
 
 To customize the end points in the app:
 
