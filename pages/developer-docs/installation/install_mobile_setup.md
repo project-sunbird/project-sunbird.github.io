@@ -32,11 +32,15 @@ Unique identifier for the app
 
 Name of the application
 
+<<<<<<< HEAD
+## Changing API Configuration
+=======
 **app_version_code**
 	
 Version code for the app release.
+>>>>>>> 4f4387cb6f5d9f73a0d320a05df7ad801c416ae2
 
-**App end-point**:
+To customize the end points in the app:
 
 Replace redirect base url REDIRECT_BASE_URL and all other base urls with your respective domain name in sunbird.properties
 
@@ -50,20 +54,23 @@ Generate the key and secret for mobile_app user using the JWT token of the mobil
 
 * **server folder /where-you-cloned-sunbird-devops-repo/sunbird-devops/deploy/logs/apis.log.*
 
-Please invoke the below API to generate the key and secret for the mobile app:
 
-curl -X POST \   <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
-     -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
-     -H 'content-type: application/json' \
-     -d '{
-     "request": {
-       "key": "<implementation-name>-mobile-app-<version-number>"
-     }
-   }'
+Execute the listed API to generate the key and secret for the mobile app:
+
+  curl -X POST \   <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
+       -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
+       -H 'content-type: application/json' \
+       -d '{
+       "request": {
+         "key": "<implementation-name>-mobile-app-<version-number>"
+       }
+     }'
 
 Response body: 
 
-{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}} Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file. Example:
+{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}} 
+
+Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file. Example:
 
 **dev_mobile_app_key = "<implementation-name>-mobile-app-<version-number>"
 dev_mobile_app_secret = "<secret>"**
