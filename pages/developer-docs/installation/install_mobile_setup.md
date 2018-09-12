@@ -20,14 +20,77 @@ To set up Sunbird mobile app, ensure you have installed the following:
 * Ionic Version - 3.20.0
 
 ## Build APK from Git Repository
-To build the apk:
+Sunbird mobile app can be built from the main source code which lies at [project-sunbird](https://github.com/project-sunbird)/[sunbird-mobile](https://github.com/project-sunbird/sunbird-mobile).
 
-* Fork the repository
-* Make the fix
-* Submit a *pull request* to the project owner.
-<br>&emsp;a)On GitHub, navigate to the [project-sunbird](https://github.com/project-sunbird)/[sunbird-mobile](https://github.com/project-sunbird/sunbird-mobile) repository
+Sample properties file is kept inside buildConfig folder. This has to be renamed to sunbird.properties and appropriate avalues should be provided.
 
-**Role of sunbird.properties:**
+**app_id**
+
+Unique identifier for the app
+	
+**app_name**
+
+Name of the application
+
+<<<<<<< HEAD
+## Changing API Configuration
+=======
+**app_version_code**
+	
+Version code for the app release.
+>>>>>>> 4f4387cb6f5d9f73a0d320a05df7ad801c416ae2
+
+To customize the end points in the app:
+
+Replace redirect base url REDIRECT_BASE_URL and all other base urls with your respective domain name in sunbird.properties
+
+**API Key:**
+
+   Replace `release_fabric_api_key` in `sunbird.properties` with your fabric API Key. Please create an account in [fabric.io](https://get.fabric.io/) and register the app to get the API key.
+
+**Secret:**
+
+Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user. The JWT token for mobile_admin user will be printed on the application
+
+* **server folder /where-you-cloned-sunbird-devops-repo/sunbird-devops/deploy/logs/apis.log.*
+
+
+Execute the listed API to generate the key and secret for the mobile app:
+
+  curl -X POST \   <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
+       -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
+       -H 'content-type: application/json' \
+       -d '{
+       "request": {
+         "key": "<implementation-name>-mobile-app-<version-number>"
+       }
+     }'
+
+Response body: 
+
+{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}} 
+
+Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file. Example:
+
+**dev_mobile_app_key = "<implementation-name>-mobile-app-<version-number>"
+dev_mobile_app_secret = "<secret>"**
+
+**Producer Key**
+
+Replace the producer id PRODUCER_ID for respective environments in sunbird.properties 
+
+Like "dev.sunbird.app".
+
+**Fabric credentials:**
+
+Replace `release_fabric_api_key` in `sunbird.properties` with your fabric API Key. Please create an account in [fabric.io](https://get.fabric.io/) and register the app to get the API key.
+
+### Changing Deep link schema
+
+This plugin handles deeplinks on iOS and Android for both custom URL scheme links and Universal App Links. We can change the Deep link schema from sunbird.properties.
+
+Change the   "dev_deeplink_base_url = dev.open-sunbird.org" to your require name
+
 
      App properties (app_id, app_name and app_version_code), Dev properties(dev_base_url= [https://dev.open-sunbird.org](https://dev.open-sunbird.org)) , Febric Keys , Secret code are sunbird properties used for  build the sunbird app.
 
@@ -58,57 +121,17 @@ Various aspects of the Sunbird mobile app can be configured based on organizatio
 | 11 | display_onboarding_card | set the display__onboarding_cards as true in sunbird.properties file | to display the guest/login page | false
 | 12 | display_framework_categories_in_profile | set the display_framework_categories_in_profile variable as true in sunbird.properties file | to display categories in the guest/login page | false
 
-## Changing API Configuration:
+#### Packaging Framework and Form Data
+Sunbird mobile app supports configuration of the app framework to enable offline usage of the app. To configure the app framework, set the values as listed:
 
-**App end-point**:
+| S No. | Folder | File Name |  Purpose 
+|-------|--------|-----------|-------------
+| 1 | buildConfig/data/framework | framework-<FRAMEWORK_IDENTIFIER>.json | To package the channel for the respective framework. Same framework must be listed in the onboarding form API
+| 2 | buildConfig/data/channel | channel-<CHANNEL_IDENTIFIER>.json | To package the channel. Default framework must be same as the packaged framework for respective channel
+| 3 | buildConfig/data/form | syllabus.json | To onboard form API
+| 4 | buildConfig/data/form | pageassemble_course_filter.json | Page assemble filter for course
+| 5 | buildConfig/data/form | pageassemble_library_filter.json | Page assemble filter for library
 
-APIs work using ‘requests’ and ‘responses.’
-
-Replace redirect base url REDIRECT_BASE_URL and all other base urls with your respective domain name in sunbird.properties
-
-**API Key:**
-
-   Replace `release_fabric_api_key` in `sunbird.properties` with your fabric API Key. Please create an account in [fabric.io](https://get.fabric.io/) and register the app to get the API key.
-
-**Secret:**
-
-Generate the key and secret for mobile_app user using the JWT token of the mobile_admin user. The JWT token for mobile_admin user will be printed on the application
-
-* **server folder /where-you-cloned-sunbird-devops-repo/sunbird-devops/deploy/logs/apis.log.*
-
-Please invoke the below API to generate the key and secret for the mobile app:
-
-curl -X POST \   <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
-     -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
-     -H 'content-type: application/json' \
-     -d '{
-     "request": {
-       "key": "<implementation-name>-mobile-app-<version-number>"
-     }
-   }'
-
-Result will be 
-
-{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}} Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file. Example:
-
-**dev_mobile_app_key = "<implementation-name>-mobile-app-<version-number>"
-dev_mobile_app_secret = "<secret>"**
-
-**Producer Key**
-
-Replace the producer id PRODUCER_ID for respective environments in sunbird.properties 
-
-Like "dev.sunbird.app".
-
-**Fabric credentials:**
-
-Replace `release_fabric_api_key` in `sunbird.properties` with your fabric API Key. Please create an account in [fabric.io](https://get.fabric.io/) and register the app to get the API key.
-
-### Changing Deep link schema
-
-This plugin handles deeplinks on iOS and Android for both custom URL scheme links and Universal App Links. We can change the Deep link schema from sunbird.properties.
-
-Change the   "dev_deeplink_base_url = dev.open-sunbird.org" to your require name
 
 # Detail Adoption
 
@@ -132,13 +155,13 @@ Now Steps to generate local node module-
 
 **--Clone the sunbird-mobile repo using the following command: **
 
-$ *git clone **[https://github.com/project-sunbird/genie-sdk-wrapper.gi*t](https://github.com/project-sunbird/genie-sdk-wrapper.git)
+$ *git clone [https://github.com/project-sunbird/genie-sdk-wrapper.gi*t](https://github.com/project-sunbird/genie-sdk-wrapper.git)
 
 $ *npm i*
 
 $ *npm run build*
 
-$ *npm pack **path to this folder*
+$ *npm pack** path to this folder
 
 ### Cordova-plugin-genie-sdk
 
@@ -152,7 +175,7 @@ $ ionic cordova plugin add *[https://github.com/project-sunbird/cordova-plugin-g
 
 -This plugin displays and hides a splash screen during application launch. 
 
-**You can change the splash screen and splash image**, by going to first                       sunbird-mobile/resources/android/splash update the **drawable-ldpi-splash.png**
+**You can change the splash screen and splash image**, by going to sunbird-mobile/resources/android/splash update the **drawable-ldpi-splash.png**
 
 to your required splash.png file and sunbird-mobile/resources/android/icon update **drawable-ldpi-icon.png **to your required **icon.png file ** in resource folder and  run **ionic cordova run android** and it will generate the resource files for this platform and splash image and splash screen automatically changed and also add in config.xml file.
 
@@ -162,7 +185,7 @@ to your required splash.png file and sunbird-mobile/resources/android/icon updat
 
 $ ionic Cordova plugin add [https://github.com/project-sunbird/cordova-plugin-sunbirdsplash.git](https://github.com/project-sunbird/cordova-plugin-sunbirdsplash.git)
 
-### It will be installed along with other npm packages.
+It will be installed along with other npm packages.
 
 ### Cordova-plugin-geniecanvas
 

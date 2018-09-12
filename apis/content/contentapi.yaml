@@ -510,8 +510,6 @@ paths:
           description:  >-
             The Content Type entity is the media type of the resource.Possible media types can be:- 
               - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
         - name: X-Authenticated-Userid
           in: header
           required: true
@@ -761,6 +759,7 @@ paths:
           - The**_/search/_** endpoint executes "Search Content" request for fetching the contents as results for a particular search criterion.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
+          - Filter can be applied on any [metadata](http://www.sunbird.org/apis/content/#operation/Create%20Content) of content. 
       summary: Search Content
       tags:
         - Content APIs
@@ -787,8 +786,6 @@ paths:
           description:  >-
             The Content Type entity is the media type of the resource.Possible media types can be:- 
               - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
         - name: Authorization
           in: header
           required: true
@@ -834,12 +831,7 @@ paths:
             body: |-
               {
                   "request": {
-                      "filters":{
-                          "channel": "505c7c48ac6dc1edc9b08f21db5a571d",
-                          "objectType": ["Content"],
-                          "contentType": ["Resource", "Collection", "TextBook", "LessonPlan", "Course", "Template", "Asset", "Plugin", "LessonPlanUnit", "CourseUnit", "TextBookUnit"],
-                    "status":["Live"]
-                      },
+                      "filters":{"metadata of content"}
                       "sort_by": {"createdOn": "asc"},
                       "fields": ["name", "contentType", "createdFor", "createdBy", "createdOn", "status", "mimeType", "channel", "lastUpdatedOn"]
                   }

@@ -11,11 +11,32 @@ allowSearch: true
 
 This section details the procedure to generate the AuthToken and secret key that is required to access any APIs
 
+### Generate new AuthToken
+
+<pre>
+generate: function(key, secret){}
+</pre> 
+
+Request Arguments:
+
+<pre>
+key- "key" of the JWT Credential For ex: '398e54e888da42f8d089je28c298o42b'
+secret- "secret" of the JWT Credential For ex: '07c6e2t1rb92987fnrd705jkk8582p9e'
+</pre>
+
+### Regenerate Expired AuthToken
+
+<pre>
+refresh: function(oldAuthToken) { }
+</pre>
+
+### Generate JWT With Bash
+Authtoken can be generated using the bash script also, for more details refer blog for this <a href="https://willhaley.com/blog/generate-jwt-with-bash/" target="_blank">https://willhaley.com/blog/generate-jwt-with-bash/</a> 
+
 ## Prerequisites
 * Browse for <a href="<a href="https://letsencrypt.org/" target="_blank">Ekstep Community Portal</a>
 * Login to the portal using your Google or Facebook account
-
-
+ 
 ## Requesting Access
 
 <table>
