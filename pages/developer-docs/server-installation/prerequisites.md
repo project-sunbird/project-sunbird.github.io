@@ -19,7 +19,7 @@ This section explains the minimum prerequisites that must be ensured before inst
 ## API Key
 
 * Sunbird requires EkStep API keys to access the EkStep content repository. For details on how to get access the keys, refer <a href="http://www.sunbird.org/developer-docs/server_installation/ekstep_keys" target="_blank">Ekstep API Keys</a> to get the keys. If you are creating a test environment, get the QA API keys
-* Use the key and secret to generate JWT Token.  Use the web based tool - http://jwtbuilder.jamiekurtz.com/. Note that when using this tool, the key in the EkStep Developer credentials should be set as the Issuer field and the secret in the Key field
+* Use the key and secret to generate JWT.  Use the web based tool - http://jwtbuilder.jamiekurtz.com/. Note that when using this tool, the key in the EkStep Developer credentials should be set as the Issuer field and the secret in the Key field
 
 ## Domain Name
 
@@ -34,15 +34,16 @@ This section explains the minimum prerequisites that must be ensured before inst
 
 #### Cloud Servers
 
-* Supported: AWS and Azure
+* Supported Providers: AWS and Azure
 
-* Minimum 2 servers with 7 GB RAM, running Ubuntu server 16.04 LTS
+* A general purpose server with 7 GB RAM on Azure, running Ubuntu server 16.04 LTS
+* A general purpose server with 8 GB RAM on AWS, running Ubuntu server 16.04 LTS
 * You can scale the infrastructure by adding servers. Sunbird is designed to scale horizontally
 * The scripts do not work on virtual machines created locally (using VMware/VirtualBox) and have been tested on Azure and AWS VMs
 
 #### Cloud Blob Storage
 * Sunbird requires an Azure BLOB storage account, for details on creating an account, refer <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account" target="_blank">Azure storage account</a> 
-* This account is used to store QR code images and achievement badges.
+* This account is used to store QR code images and achievement badges
 
 #### Operating System
 Ubuntu 16.04 LTS (64 bit)

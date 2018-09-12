@@ -34,11 +34,13 @@ Unique identifier for the app
 
 Name of the application
 
+## Changing API Configuration
+
 **app_version_code**
 	
 Version code for the app release
 
-**App end-point**:
+To customize the end points in the app:
 
 Replace redirect base url <b>REDIRECT_BASE_URL</b> and all other base urls with your respective domain name in <b>sunbird.properties</b>
 
@@ -52,24 +54,35 @@ Generate <b>Key</b> and <b>Secret</b> for mobile_app user using the JWT token of
 
 **Server folder:**
 
+<<<<<<< HEAD
 Cloned-sunbird-devops-repo in /sunbird-devops/deploy/logs/apis.log.
 
 Use the below API to generate the key and secret for the mobile app:
+=======
+>>>>>>> 558454d80b192104cdc6610c49594e56f054778d
 
-curl -X POST \   <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
-     -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
-     -H 'content-type: application/json' \
-     -d '{
-     "request": {
-       "key": "<implementation-name>-mobile-app-<version-number>"
-     }
-   }'
+Execute the listed API to generate the key and secret for the mobile app:
+
+  curl -X POST \   <your-sunbird-base-url>/api/api-manager/v1/consumer/mobile_app/credential/register \
+       -H 'authorization: Bearer <mobile_admin_jwt_token_from_apis_log_file>' \
+       -H 'content-type: application/json' \
+       -d '{
+       "request": {
+         "key": "<implementation-name>-mobile-app-<version-number>"
+       }
+     }'
 
 Response body: 
 
+<<<<<<< HEAD
 {"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}} Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file.
 
 The following are examples:
+=======
+{"result":{"key":"<implementation-name>-mobile-app-<version-number>","secret":"<secret>"}} 
+
+Use the value of "key" and "secret" from the response above for MOBILE_APP_KEY and MOBILE_APP_SECRET configuration in respective environments in gradle.properties file. Example:
+>>>>>>> 558454d80b192104cdc6610c49594e56f054778d
 
 **dev_mobile_app_key = "<implementation-name>-mobile-app-<version-number>"
 dev_mobile_app_secret = "<secret>"**
