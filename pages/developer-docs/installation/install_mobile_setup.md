@@ -4,7 +4,7 @@ directory: developer-docs/installation/
 title: Setting Up Mobile App
 page_title: Setting Up Mobile App
 description: Setting Up Mobile App
-keywords: Set up, Subird Mobile App, Install, Cofigure, Build APK
+keywords: Setup, Subird Mobile App, Install, Cofigure, Build APK
 published: true
 allowSearch: true
 ---
