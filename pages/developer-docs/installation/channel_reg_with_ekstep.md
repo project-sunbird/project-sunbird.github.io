@@ -1,3 +1,11 @@
+---
+type: landing
+directory: developer-docs/installation/
+title: Check Installation
+page_title: Check Installation
+description: About Installation
+allowSearch: true
+---
 ## Overview
 This section guides you with the necessary steps for registering a channel with Ekstep. Since, registering a channel serves as a pre-requisite for creation of a root Organization. 
 The following sections provide detailed instructions as how you can register a channel with Ekstep? 
