@@ -111,11 +111,11 @@ Sample template configuration for different content review workflows stored in f
 <br>&emsp;g)logo: Logo attached in the email, when the logo is not defined, the default logo is used
 
 Some parameters are used to dynamically change the content information. It is recommended that these parameters are retained in the request body:
-<br>&emsp;a) {{Content type}}
-<br>&emsp;b) {{Content title}}
-<br>&emsp;c) {{Content link}}
-<br>&emsp;d) {{Creator name}}
-<br>&emsp;e) {{Reviewer name}}
+<br>&emsp;a) Content type
+<br>&emsp;b) Content title
+<br>&emsp;c) Content link
+<br>&emsp;d) Creator name
+<br>&emsp;e) Reviewer name
 
 ## Custom Templates
 You can aslo create custom email templates which are channel/tenant specific. When customized templates are not present, the default template is used to send emails for different actions in review workflows.
