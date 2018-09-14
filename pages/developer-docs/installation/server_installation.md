@@ -78,7 +78,7 @@ The following is a list of ports that must be open:
 
 3. `cd sunbird-devops`
 
-4. Checkout the latest release branch `git checkout tags/release-1.8.2 -b release-1.8.2`
+4. Checkout the latest release branch `git checkout tags/release-1.9 -b release-1.9`
 
 5. `cd deploy`
 
@@ -148,7 +148,7 @@ The following is a list of ports that must be open:
    
      **Note:** The badger service does not work without an Azure storage account name and key.
 
-8. Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b>  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
+8. Get the public key from keycloak <b>http://< dns_name or IP >/auth -> Administration console -> realm settings -> keys -> public keys</b>  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
 
       
       **Note:**
