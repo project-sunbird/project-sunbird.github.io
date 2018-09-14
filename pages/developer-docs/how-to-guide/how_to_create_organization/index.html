@@ -1,96 +1,77 @@
 <h2 id="scenario">Scenario</h2>
 
-<p>Sunbird identifies every tenant organization uniquely through a channel. When creating an organization, in addition, to organization details, Organization ID must be assigned. The organization ID has to be associated with an organization and a channel.</p>
-
-<p>For example: a company, XYZ Corp, is a global conglomerate with over ten thousand employees, spread across 5 locations. Employee training and enablement is one of the core values of the organization. To ensure that employees are regularly trained and upskilled, XYZ Corp has decided to use Sunbird for its learning and training solution. To give employees access to the learning platform, the organization’s administrator needs to create an organization.</p>
-
-<p>John is a manager in XYZ corporation, who can create, review and take courses. He is also an administrator in the system, in which capacity he can add users and assign permissions to them.</p>
-
 <h3 id="prerequisites">Prerequisites</h3>
+<ul>
+  <li>Postman app is installed, refer [How to install and call an API using Postman]</li>
+  <li>First Organization with channel ID</li>
+  <li>Access API using
+    <ul>
+      <li>Authorization header with Bearer</li>
+      <li>Organization authentication key</li>
+    </ul>
+  </li>
+  <li>Create Org API - To create an organisation and sub-organizations</li>
+  <li>A system administrator user is created</li>
+</ul>
 
-<ol>
-  <li>
-    <p>An intialized Sunbird instance</p>
-  </li>
-  <li>
-    <p>The <a href="http://www.sunbird.org">API Key for access</a> and basic authentication</p>
-  </li>
-  <li>
-    <p>An API client to make API calls. For example use Postman refer [Using Postman] (http://www.sunbird.org/apis/framework/#tag/usingpostman)</p>
-  </li>
-  <li>
-    <p>Access to the <a href="http://www.sunbird.org/apis/userapi/#tag/Orgs-APIs">Create Organization API</a></p>
-  </li>
-</ol>
+<h2 id="overview">Overview</h2>
+
+<p>Organizations, on Sunbird can be an institute or a body of individuals. To utilize Sunbird for organizational needs, an orgnization needs to be created on Sunbird.</p>
+
+<p>create an organization account replicating the organization containing multiple employees or users and  . To create an organization, the organization administrator user needs to be created under root organization. System Administrator can to generate an authorization token for creating organizations.</p>
 
 <h3 id="taskflow">Taskflow</h3>
 
-<p>An organization can be created in a Sunbird instance using ORG API, it can be further associated with a user and channel, refer <a href="http://www.sunbird.org//apis/orgapi/#operation/Organisation%20Add%20User">Mapping User to Organization</a>. The sequence of tasks the administrator follows to create organization include:</p>
+<p>An organization can be created in a Sunbird instance using ORG API, it can be further associated with a user and channel, refer <a href="www.sunbird.org">Mapping User to Organization</a>. For creating an organization follow the steps:</p>
 
-<ol>
-  <li>Specify values for the following parameters in the request body of the API. Following is an example of request body for creating a user, the sample values provided in the request body are indicative:</li>
-</ol>
-
-<h4 id="request-body-for-creating-an-organization">Request Body for Creating an Organization</h4>
-
-<pre><code>{
-"request":{
-    "orgName":"XYZCorp",
-    "description":"Dev Default Org",
-    "imgUrl":"N/A",
-    "channel":"channel -12571w1sja",
-    "preferredLanguage":"English",
-    "homeUrl":"N/A",
-    "orgCode":"orgCode123sd",
-    "isRootOrg":true,
-    "provider":"1231rwsadk",
-    "externalId":"exts12w7k",
-        "address":{
-        "city":"Bangalore",
-        "state":"KA",
-        "country":"INDIA",
-        "zipCode":"560000"
-        } 
-    }
-}
-</code></pre>
-
-<h4 id="response-body">Response Body</h4>
-
-<pre><code>{
-    "responseCode": "OK",
-    "result": {
-        "organisationId": "012567820191629312269",
-        "response": "SUCCESS"
-        } 
-}
-</code></pre>
-
-<ol>
-  <li>
-    <p>Save the created organization ID. The organization ID is utilized by <a href="http://www.sunbird.org/developer-docs/how-to-guide/associating_organization_and_user">Mapping a user to an organization</a></p>
-  </li>
-  <li>
-    <p>An organization is created in Sunbird</p>
-  </li>
-</ol>
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Authentication</td>
+      <td>Enter the Bearer  to pass the Authorization header</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Create first Organization</td>
+      <td>To create first organization or a tenant for an installed instance on Sunbird, refer Initialize Sunbird</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Credentials</td>
+      <td>Use System administrator credentials to create the following instances Root Organization New User Root Org Admin</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Create root organization</td>
+      <td>Create an organisation using Org API document <strong>Note</strong>: To create rootOrg, pass the following attribute along with API    isRootOrg : true channel : a unique string value that can be used for filtering the data</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Save</td>
+      <td>Save the created organization ID</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="concepts-covered">Concepts Covered</h3>
-
-<p><strong>Users</strong>: The individual who can sign in and access the Sunbird portal to perform a set of action that is assigned by the system administrator.</p>
-
-<p><strong>Organization</strong>: Organizations can be an institute or a body of individuals.</p>
-
-<p><strong>Channel</strong>: Unique identification number associated with the user or an organization</p>
-
-<p><strong>Root Organization</strong>: All users and sub-organization in an organisation are associated through the rootOrg</p>
-
-<p><strong>System Administrator</strong>: A user who manages end-to-end system from creating an organization, administrators for the organizations, members within the organization, and assign roles to the members</p>
+<p><strong>Users</strong>: The individual who can sign in and access the Sunbird portal to perform a set of action that is assigned by the system administrator.
+<strong>Organization</strong>: Organizations can be an institute or a body of individuals. 
+<strong>Channel</strong>: Unique identification number associated with the user or an organization
+<strong>Root Organization</strong>: All users and sub-organization in an organisation are associated through the rootOrg
+<strong>System Administrator</strong>: A user who manages end-to-end system from creating an organization, administrators for the organizations, members within the organization, and assign roles to the members</p>
 
 <h3 id="additional-topics">Additional Topics</h3>
 
-<p><a href="http://www.sunbird.org/developer-docs/initialization">Creating first organization</a></p>
+<p><a href="http://www.sunbird.org">Creating Organization</a></p>
 
-<p><a href="http://www.sunbird.org/developer-docs/how-to-guide/how_to_create_user">Creating user</a></p>
+<p><a href="http://www.sunbird.org">Map users to different business units within the organisation</a></p>
 
-<p><a href="http://www.sunbird.org/developer-docs/how-to-guide/hohow_to_create_org_add_user">Map users to different business units within the organisation</a></p>
+<p><a href="http://www.sunbird.org">Creating first organization</a></p>

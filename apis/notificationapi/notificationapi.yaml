@@ -49,7 +49,7 @@ paths:
             The body refers to the format of the request.
               - The body contains metadata about the notification to be sent.
         schema:
-          $ref: '#/definitions/emailRequest'
+          $ref: '#/definitions/{{host}}~1v1~1notification~1emailRequest'
       - name: Content-Type
         in: header
         required: true
@@ -75,10 +75,33 @@ paths:
             $ref: '#/definitions/ContentCreateErrorResponse'
         '500':
           description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
-     
+      security: []
+      x-unitTests:
+      - request:
+          method: POST
+          uri: '/email '
+          headers:
+            Content-Type: application/json
+          body: "{\r\n\r\n    \"request\":{                 \r\n      \"name\": \"Amit\",\r\n      \"subject\": \"test email\",\r\n      \"body\": \"Hello Amit.\",\r\n      \"downloadUrl\": \"https://www.google.com/\",\r\n      \"recipientEmails\":[\"amit.kumar@tarento.com\",\"amit1.kumar@tarento.com\"],\r\n      \"recipientUserIds\": [\"bda45d96-cb3b-4e62-be87-3d0348063892\"] \r\n    }\r\n}  "
+        expectedResponse:
+          x-allowExtraHeaders: true
+          x-bodyMatchMode: NONE
+          x-arrayOrderedMatching: false
+          x-arrayCheckCount: false
+          x-matchResponseSchema: true
+          headers: {}
+        x-testShouldPass: true
+        x-testEnabled: true
+        x-testName: '{{host}}/user/v1/notification/email '
+        x-testDescription: ''
+      x-operation-settings:
+        CollectParameters: false
+        AllowDynamicQueryParameters: false
+        AllowDynamicFormParameters: false
+        IsMultiContentStreaming: false
 definitions:
-  emailRequest:
-    title: 'Request structure for sending email notification'
+  '{{host}}/v1/notification/emailRequest':
+    title: '{{host}}/user/v1/notification/email Request'
     example:
       request:
         name: Amit
@@ -89,22 +112,13 @@ definitions:
         - amit.kumar@tarento.com
         - amit1.kumar@tarento.com
         recipientUserIds:
-        - valid userId
-        recipentSearchQuery: {
-          "filters":{
-           "channel":"nameof channel",
-           "rootOrgId" : "rootOrgIds",
-            "organisations.roles":["valid roles"]
-          }
-        }
-         
+        - bda45d96-cb3b-4e62-be87-3d0348063892
     type: object
     properties:
       request:
         $ref: '#/definitions/Request'
     required:
     - request
-  
   Request:
     title: Request
     type: object
@@ -127,16 +141,10 @@ definitions:
         items:
           type: string
       recipientUserIds:
-        description: 'List of recipient user ids. With help of user ids system fetches user email to send mail.'
+        description: 'List of recipient user ids . With help of user id fetch the user mail id and send mail to that user.'
         type: array
         items:
           type: string
-      recipientSearchQuery:
-        description: 'Filter query to find user based on some criteria, Example: send all users with particular rootOrgId and having certain roles. among recipientEmails,recipientUserIds,recipientSearchQuery any one is mandatory.'
-        type: object
-        properties:
-          filters:
-            type: object
     required:
     - name
     - subject
@@ -144,7 +152,6 @@ definitions:
     - downloadUrl
     - recipientEmails
     - recipientUserIds
-  
   ContentCreateResponse:
     description: Create Content Response
     type: object

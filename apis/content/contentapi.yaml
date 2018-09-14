@@ -510,6 +510,8 @@ paths:
           description:  >-
             The Content Type entity is the media type of the resource.Possible media types can be:- 
               - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
         - name: X-Authenticated-Userid
           in: header
           required: true
@@ -759,7 +761,6 @@ paths:
           - The**_/search/_** endpoint executes "Search Content" request for fetching the contents as results for a particular search criterion.
           - It is mandatory to provide values for parameters marked with *. 
           - Mandatory fields cannot be null or empty.
-          - Filter can be applied on any [metadata](http://www.sunbird.org/apis/content/#operation/Create%20Content) of content. 
       summary: Search Content
       tags:
         - Content APIs
@@ -786,6 +787,8 @@ paths:
           description:  >-
             The Content Type entity is the media type of the resource.Possible media types can be:- 
               - Application/json
+              - Multipart/form-data
+              - Application/x-www-form-urlencoded
         - name: Authorization
           in: header
           required: true
@@ -831,7 +834,12 @@ paths:
             body: |-
               {
                   "request": {
-                      "filters":{"metadata of content"}
+                      "filters":{
+                          "channel": "505c7c48ac6dc1edc9b08f21db5a571d",
+                          "objectType": ["Content"],
+                          "contentType": ["Resource", "Collection", "TextBook", "LessonPlan", "Course", "Template", "Asset", "Plugin", "LessonPlanUnit", "CourseUnit", "TextBookUnit"],
+                    "status":["Live"]
+                      },
                       "sort_by": {"createdOn": "asc"},
                       "fields": ["name", "contentType", "createdFor", "createdBy", "createdOn", "status", "mimeType", "channel", "lastUpdatedOn"]
                   }
@@ -2030,11 +2038,6 @@ definitions:
       instructions:
         description: 'Instructions'
         type: string
-      ownershipType:
-        description: 'Field for explaining Ownership type. There can be two possible value createdBy/createdFor. Default value is createdBy.'
-        type: array
-        items:
-          type: string
     required:
       - code
       - name
@@ -2145,11 +2148,6 @@ definitions:
           - pdf
           - text
           - other
-      ownershipType:
-        description: 'Field for explaining Ownership type. There can be two possible value createdBy/createdFor. Default value is createdBy.'
-        type: array
-        items:
-          type: string
     required:
       - versionKey
   PublishContentRequest:
@@ -2754,11 +2752,6 @@ definitions:
       board:
         description: Represents the board of the content
         type: string
-      ownershipType:
-        description: 'Field for explaining Ownership type. There can be two possible value createdBy/createdFor. Default value is createdBy.'
-        type: array
-        items:
-          type: string
   ContentHierarchyGetResponse:
     title: Get Content Response
     type: object
@@ -2813,7 +2806,7 @@ definitions:
         description: Represents the Response status when an API is called
       errmsg:
         type: string
-        description: Represents the text that is part of response status
+        description: Represents the text that is part response status
   EmptyResult:
     title: Empty Result
     type: object
