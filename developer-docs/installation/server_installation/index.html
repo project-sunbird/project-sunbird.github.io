@@ -10,7 +10,7 @@
 		if (excludedSites.indexOf(window.location.host) > -1){
 			baseURL.href="/";
 		} else {
-			baseURL.href="/releases/release.1.52.r/";
+			baseURL.href="/releases/release.1.52.q/";
 		}
 	}
 	getBase();
@@ -30,12 +30,12 @@
 <meta http-equiv="cache-control" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-store" />
 <meta http-equiv="pragma" content="no-cache" />
-<meta name="last-modified" content="2018-09-14 14:08:13 +0530">
+<meta name="last-modified" content="2018-09-14 14:21:47 +0530">
 <meta http-equiv="Expires" content="600" />
 
 <!--Build Details-->
-<meta name="buildVersion" content="release.1.52.r" />
-<meta name="buildNo" content="4816" />
+<meta name="buildVersion" content="release.1.52.q" />
+<meta name="buildNo" content="4821" />
 <!--/Build Details-->
 
 <!-- CDN's-->
@@ -841,7 +841,7 @@
     <p><code>cd sunbird-devops</code></p>
   </li>
   <li>
-    <p>Checkout the latest release branch <code>git checkout tags/release-1.9 -b release-1.9</code></p>
+    <p>Checkout the latest release branch <code>git checkout tags/release-1.8.2 -b release-1.8.2</code></p>
   </li>
   <li>
     <p><code>cd deploy</code></p>
@@ -1141,7 +1141,7 @@
     <p><strong>Note:</strong> The badger service does not work without an Azure storage account name and key.</p>
   </li>
   <li>
-    <p>Get the public key from keycloak <b>http://&lt; dns_name or IP &gt;/auth -&gt; Administration console -&gt; realm settings -&gt; keys -&gt; public keys</b>  (click on public keys) and set it for <code>sunbird_sso_publickey</code> parameter in <code>config</code> file. Now, execute the command <code>./sunbird_install.sh -s core</code> to redeploy the core services</p>
+    <p>Get the public key from keycloak <b>http://<dns_name or="" ip="">/auth -&gt; Administration console -&gt; realm settings -&gt; keys -&gt; public keys&lt;/b&gt;  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services</dns_name></b></p>
 
     <p><strong>Note:</strong></p>
 
