@@ -1,32 +1,32 @@
 ---
 type: landing
 directory: developer-docs
-title: Initialisation Setup
-page_title: Initialisation Setup
-description: Initialisation Setup
-keywords: Initialise Sunbird, create root org, root org, channel setup, rootorg, rootOrg
+title: Initialization Setup
+page_title: Initialization Setup
+description: Initialization Setup
+keywords: Initialize Sunbird, create root org, root org, channel setup, rootorg, rootOrg
 published: true
 allowSearch: true
 ---
 ## Overview
-Sunbird Initialisation script initialises the system settings for new adopters as well as old adopters.
+The Sunbird Initialization script initialises the system settings for new adopters as well as existing adopters. This page provides information for both scenarios. 
 
-For New Adopters:
+In case of new adopters, the script:
 - Creates first tenant organisation
 - Registers the channel of the first tenant organisation
 - Registers the hashTagId of the first tenant organisation
 - Creates sunbird admin user with ORG_ADMIN role
-- Initialises the system settings
+- Initializes the system settings
 
-For Old Adopters:
+In case of existing adopters, the script:
 - Checks whether the tenant organisation exists with the configured channel
-- Initialises the system settings
+- Initializes the system settings
 
-## New Adopters
+## New Adopter Initialization
 
 ### Configuration
 
-Configure these fields in the config file in the deploy folder. First organisation and user in Sunbird will be created with these details
+Configure the following fields in the config file available in the deploy folder to create the first organisation and user in Sunbird
 
 - sunbird_custodian_tenant_name (Custodian Organisation Name)
 - sunbird_custodian_tenant_description (Custodian Organisation Description)
