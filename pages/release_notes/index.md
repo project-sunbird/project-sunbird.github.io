@@ -40,7 +40,7 @@ To download the release notes, click the download icon that corresponds to the r
     </tr>
       <tr>
         <td align="left">Release 1.10</td>
-         <td>06/08/2018</td>
+         <td>12/09/2018</td>
         <td align="center"><a href="release_notes/view_pdf/ver1-10/" target="_blank">
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
@@ -52,7 +52,7 @@ To download the release notes, click the download icon that corresponds to the r
     </tr>
       <tr>
         <td align="left">Release 1.9.1</td>
-         <td>06/08/2018</td>
+         <td>22/08/2018</td>
         <td align="center"><a href="release_notes/view_pdf/ver1-9-1/" target="_blank">
             <img src="pages/release_notes/icons_used/viewicon.png" alt="View" style="width:25px;height:25px;border:0;">
             </a>
