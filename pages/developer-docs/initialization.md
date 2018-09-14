@@ -12,6 +12,7 @@ allowSearch: true
 The Sunbird Initialization script initialises the system settings for new adopters as well as existing adopters. This page provides information for both scenarios. 
 
 In case of new adopters, the script:
+
 - Creates first tenant organisation
 - Registers the channel of the first tenant organisation
 - Registers the hashTagId of the first tenant organisation
@@ -19,6 +20,7 @@ In case of new adopters, the script:
 - Initializes the system settings
 
 In case of existing adopters, the script:
+
 - Checks whether the tenant organisation exists with the configured channel
 - Initializes the system settings
 
