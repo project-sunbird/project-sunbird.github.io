@@ -11,7 +11,7 @@ allowSearch: true
 
 ## Overview
 
-This functionality is used for adding a video within the content, using Sunbird's inbuilt content editor  
+This functionality is used to add videos to slides, using Sunbird's in-built content editor  
 
 ## Adding Video
 <table>
