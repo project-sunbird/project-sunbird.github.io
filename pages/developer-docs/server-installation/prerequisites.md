@@ -10,7 +10,7 @@ allowSearch: true
 
 ## Overview
 
-To install Sunbird you require system admninisrtation rights and must have hands on experience with Linux systems administration and Docker for running containerized services.
+To install Sunbird you require system administration rights and must have hands on experience with Linux systems administration and Docker for running containerized services.
 
 Sunbird has been tested on cloud hosted Linux servers (Azure & AWS). Sunbird will not function correctly if deployed on virtual machines or in-premise infrastructure, like rack mounted servers or blades. Sunbird has not been tested on any Microsoft® operating systems
 

@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: developer-docs/installation/
-title: Overview
-page_title: Overview
-description: Setting up Sunbird server
+title: Prerequisites
+page_title: Prerequisites
+description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
  

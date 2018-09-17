@@ -18,7 +18,7 @@ To install Sunbird choose one docker swarm manager as the installation server an
 
     git clone https://github.com/project-sunbird/sunbird-devops.git
     cd sunbird-devops
-    git checkout tags/release-1.10
+    git checkout tags/release-1.9
     cd deploy
 
 ##### Description of commands:
@@ -76,7 +76,7 @@ The configuration parameters are explained in the following table:
    |**sunbird_installation_email**| The Sunbird installation email ID |no|
    |**sunbird_telemetry_pdata_id**| The Sunbird telemetry pdata ID, for example <br> {env}.{implimentation_name}.learning.service |no| 
    | **sudo_passwd**       |In case passwordless SSH has not been enabled, this will be the plaintext password of the user account which will log into all other servers in the Sunbird setup|NO|  
-   |**sunbird_sso_publickey**| For creation of User, http://<dns_name>/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |YES|  
+   |**sunbird_sso_publickey**| For creation of User, http://< dns_name >/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |YES|  
    |**trampoline_secret**|The Trampoline secret for Keycloak. The secret must be a minimum of 8 characters   |no|
    |**vault_postgres_exporter_password**| postgres vault exporter password |no|  
    |**vault_proxy_prometheus_admin_creds**| prometheus admin password |no|    
