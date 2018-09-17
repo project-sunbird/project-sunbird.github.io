@@ -11,7 +11,7 @@ allowSearch: true
 
 ## Overview
 
-This functionality is used for adding a video in the content  
+This functionality is used for adding a video within the content, using Sunbird's inbuilt content editor  
 
 ## Adding Video
 <table>
@@ -24,7 +24,7 @@ This functionality is used for adding a video in the content
     <br>The content editor supports video links from 
     <br>&emsp; publicly shared videos 
     <br>&emsp; from Google Drive 
-    <br>&emsp; direct URL of an mp4 video from online. 
+    <br>&emsp; direct URL of an mp4 video from online 
     <br>1. Paste the video URL 
     <br>2. Click <b>Go</b> 
     <br>3. The preview is displayed in the preview pane 
@@ -35,7 +35,7 @@ This functionality is used for adding a video in the content
   </tr>
 </table>
 
-**Configuring Video Details**
+**Copying Video from One Slide to Another**
 
 <table>
   <tr>
