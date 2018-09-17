@@ -136,12 +136,12 @@ The following is a list of ports that must be open:
    |**sunbird_init_custodian_tenant_name**| name of first tenant organisation |yes|
    |**sunbird_init_custodian_tenant_description**| description of first tenant organisation |yes|
    |**sunbird_init_custodian_tenant_channel**| channel value of first tenant organisation |yes|
-   |**sunbird_init_admin_user_firstname**| firstname of first sunbird admin user |yes|
-   |**sunbird_init_admin_user_lastname**| lastname of first sunbird admin user |no|
-   |**sunbird_init_admin_user_username**| username of first sunbird admin user |yes|
+   |**sunbird_init_admin_user_firstname**| first name of first sunbird admin user |yes|
+   |**sunbird_init_admin_user_lastname**| last name of first sunbird admin user |no|
+   |**sunbird_init_admin_user_username**| user name of first sunbird admin user |yes|
    |**sunbird_init_admin_user_password**| password of first sunbird admin user |yes|
    |**sunbird_init_admin_user_email**| email of first sunbird admin user |yes|
-   |**sunbird_init_admin_user_phone**| phone of first sunbird admin user |yes|
+   |**sunbird_init_admin_user_phone**| phone (without country code) of first sunbird admin user e.g. 9090909090 |yes|
 
 7. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 8 in a sequence as mentioned in the following table: 
 
