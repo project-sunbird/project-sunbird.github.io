@@ -40,7 +40,7 @@ To migrate channel value for the users:
 
 2. Run the following command to migrate the data
 <pre> 
-UserMigrationUpdateChannel_run.sh --context_param sunbird_cassandra_server="{sunbird_cassandra_server}" 0--context_param sunbird_cassandra_port="{sunbird_cassandra_port}" --context_param sunbird_cassandra_username="{sunbird_cassandra_username}" --context_param sunbird_cassandra_password="{sunbird_cassandra_password}" --context_param sunbird_cassandra_keyspace="{sunbird_cassandra_keyspace}" --context_param sunbird_channel_migration_log_file="{sunbird_channel_migration_log_file}"
+UserMigrationUpdateChannel_run.sh --context_param sunbird_cassandra_server="{sunbird_cassandra_server}" --context_param sunbird_cassandra_port="{sunbird_cassandra_port}" --context_param sunbird_cassandra_username="{sunbird_cassandra_username}" --context_param sunbird_cassandra_password="{sunbird_cassandra_password}" --context_param sunbird_cassandra_keyspace="{sunbird_cassandra_keyspace}" --context_param sunbird_channel_migration_log_file="{sunbird_channel_migration_log_file}"
 </pre>
 3. On successful migration, the log is available in the configured file {sunbird_channel_migration_log_file}
 
