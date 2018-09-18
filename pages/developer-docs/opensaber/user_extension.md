@@ -1,30 +1,30 @@
 ---
 type: landing
 directory: developer-docs/opensaber
-title:  Open Saber Integration
-page_title: Open Saber Integration
-description: Procedure document on how to integrate open saber with to Sunbird 
+title:  OpenSaber Integration
+page_title: OpenSaber Integration
+description: Procedure document on how to integrate OpenSaber with to Sunbird 
 published: true
 allowSearch: true
 ---
 
 ## Overview
-The main purpose of [Open Saber](https://github.com/project-sunbird/open-saber/wiki) is to serve as an electronic registry for entities such as  teacher registry, doctor registry etc. Open saber can be used by Sunbird adopters to store custom information about their organization users, user profile data extensions, organisation data extensions etc.
+The main purpose of [OpenSaber](https://github.com/project-sunbird/open-saber/wiki) is to serve as an electronic registry for entities such as  teacher registry, doctor registry etc. OpenSaber can be used by Sunbird adopters to store custom information about their organization users, user profile data extensions, organisation data extensions etc.
 
 ### Customization
-Open Saber maintains information in [RDF](https://www.w3.org/RDF/) graph data format. [SHEX](https://shex.io/) is used to define the schema of data stored in Open Saber. The SHEX schema definition can consist of one or more entities e.g. user, organisation etc. whose information can be stored within Open Saber. 
+OpenSaber maintains information in [RDF](https://www.w3.org/RDF/) graph data format. [SHEX](https://shex.io/) is used to define the schema of data stored in OpenSaber. The SHEX schema definition can consist of one or more entities e.g. user, organisation etc. whose information can be stored within OpenSaber. 
 
-Currently all interactions with Open Saber is in [JSON-LD](https://json-ld.org/) format while Sunbird LMS APIs are in JSON format. A java library (Open Saber Client) is available for transforming between JSON-LD and JSON formats. Additionally, Sunbird provides a java library for bridging between Open Saber equivalent JSON and Sunbird API specified JSON format.
+Currently all interactions with OpenSaber is in [JSON-LD](https://json-ld.org/) format while Sunbird LMS APIs are in JSON format. A java library (OpenSaber Client) is available for transforming between JSON-LD and JSON formats. Additionally, Sunbird provides a java library for bridging between OpenSaber equivalent JSON and Sunbird API specified JSON format.
 
 To support customization of an entity within Sunbird, the following definitions are required:
 
-1. Definition of the entity using SHEX (Open Saber). For more details refer [Open Saber](https://github.com/project-sunbird/open-saber/wiki)
+1. Definition of the entity using SHEX (OpenSaber). For more details refer [OpenSaber](https://github.com/project-sunbird/open-saber/wiki)
 
-2. Define mapping to transform between JSON-LD and JSON format (Open Saber Client). For more details refer [Open Saber](https://github.com/project-sunbird/open-saber/wiki)
+2. Define mapping to transform between JSON-LD and JSON format (OpenSaber Client). For more details refer [OpenSaber](https://github.com/project-sunbird/open-saber/wiki)
 
-3. Define mapping to transform between Open Saber Client JSON and Sunbird JSON format (Sunbird Open Saber Bridge). This includes updation of following files within [Sunbird Open Saber Bridge](https://github.com/project-sunbird/sunbird-open-saber-bridge)
+3. Define mapping to transform between OpenSaber Client JSON and Sunbird JSON format (Sunbird OpenSaber Bridge). This includes updation of following files within [Sunbird OpenSaber Bridge](https://github.com/project-sunbird/sunbird-open-saber-bridge)
 
-a) **registry-user-write-mapping.conf**: Configuration to map Sunbird User Create and Update API request JSON format for required extensions (i.e. custom fields) into Open Saber Client JSON format
+a) **registry-user-write-mapping.conf**: Configuration to map Sunbird User Create and Update API request JSON format for required extensions (i.e. custom fields) into OpenSaber Client JSON format
 
 Currently Sunbird only supports customisation of users
 
@@ -72,9 +72,9 @@ filterField    | Optional    | Field to use from selected element in transformat
 [{field = <fieldName>, values = [<valueName>]}]
 ~~~
 
-b) **registry-user-read-mapping.conf**: Configuration to map Open Saber Client response JSON format for required extensions into Sunbird User Read API JSON format 
-The configuration format for read mapping is similar to write mapping. The difference between read and write mapping is due to the input. In case of read, the input is Open Saber Client response JSON whereas in case of write, the input is Sunbird API request JSON format
-c) **registry-user-enums-mapping.conf**: Configuration which defines enumerations required for mapping between Sunbird User API JSON format and Open Saber Client JSON format
+b) **registry-user-read-mapping.conf**: Configuration to map OpenSaber Client response JSON format for required extensions into Sunbird User Read API JSON format 
+The configuration format for read mapping is similar to write mapping. The difference between read and write mapping is due to the input. In case of read, the input is OpenSaber Client response JSON whereas in case of write, the input is Sunbird API request JSON format
+c) **registry-user-enums-mapping.conf**: Configuration which defines enumerations required for mapping between Sunbird User API JSON format and OpenSaber Client JSON format
 The configuration format for enums is as given below:
 
 ~~~
@@ -128,7 +128,7 @@ teacher {
 }
 ~~~
 
-**Open Saber Client JSON format**
+**OpenSaber Client JSON format**
 
 ~~~
 {
@@ -191,7 +191,7 @@ enums {
 }
 ~~~
 
-**Open Saber Client JSON format**
+**OpenSaber Client JSON format**
 ~~~
 {
     "teacher": {
@@ -287,7 +287,7 @@ enums {
 }
 ~~~
 
-**Open Saber Client JSON format**
+**OpenSaber Client JSON format**
 
 ~~~
 {
@@ -342,7 +342,7 @@ teacher {
 }
 ~~~
 
-**Open Saber Client JSON format**
+**OpenSaber Client JSON format**
 
 ~~~
 {
@@ -380,7 +380,7 @@ user {
 }
 ~~~
 
-**Open Saber Client JSON format**
+**OpenSaber Client JSON format**
 
 ~~~
 {
