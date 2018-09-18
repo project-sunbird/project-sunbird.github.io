@@ -40,3 +40,4 @@ This document provides a list of environment variables and their default values 
 |  26 | sunbird_api_response_cache_ttl | Represents the Time-to-Live (TTL) for the API response cache in seconds | Used to set cache for API responses in seconds | 600 | Sunbird Portal |
 |  27 | sunbird_tenant_cdn_url | Represents the URL of the CDN, the tenant specific files are stored here | Used to render the static tenant pages from the CDN |  | Sunbird Portal |
 |  28 | sunbird_cloud_storage_urls | These are the urls used to store and get the assets passed to editors from portal as config | Used to change the assets and data storage by setting this env |  | Sunbird Portal |
+|  29 | sunbird_portal_user_upload_ref_link | Represent the URL of the user upload instruction document. | Used to get the instruction about user upload. | http://www.sunbird.org/features-documentation/register_user | Sunbird Portal |
