@@ -742,7 +742,7 @@ definitions:
     type: object
     properties:
       request:
-        $ref: '#/definitions/Request7'
+        $ref: '#/definitions/BatchUpdateReq'
     required:
     - request
   EnrollBatchReq:
@@ -781,8 +781,8 @@ definitions:
     - courseId
     - userId
     - batchId
-  Request7:
-    title: Request7
+  BatchUpdateReq:
+    title: Batch update request
     type: object
     properties:
       createdFor:
