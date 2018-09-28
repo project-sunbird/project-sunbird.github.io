@@ -411,11 +411,9 @@ paths:
   /enrol:
     post:
       description: >-
-        This API is associated with enrollment of user in a particular course batch of type open. User can do enrollment for open batch only.
-          - The Format of the resource URL is '{{host}}//course/v1/enrol' 
-          - The **_/course/v1/enrol_** endpoint executes "enroll to given batch" request.
-          - It is a must to provide values for required parameters  
-      summary: User self enrollment for open batch.
+        This API is associated with enrolment of user in a particular course batch. User can do enrolment for open batch only.
+          - The format of the resource URL is '{{host}}/course/v1/enrol'
+      summary: Open Course Batch Self Enrol by User
       tags:
       - Course Batch APIs
       operationId: '{{host}}/course/v1/enrol'
@@ -426,77 +424,79 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the batch user wants to enroll.
+            The body contains metadata about course batch that the user wants to enrol.
         schema:
           allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-             -  $ref: '#/definitions/EnrollBatchReq'
+             -  $ref: '#/definitions/EnrolBatchRequest'
       - name: Content-Type
         in: header
         required: true
         type: string
         description: >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+            Type of the request data. Set as application/json.
       - name: ts
         in: header
         required: true
         type: string
-        description: 'The Time Stamp at which the **enroll to batch** request was sent. '
+        description: 'Timestamp at which given API request is sent.'
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
-      - name: x-authenticated-user-token
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Authenticated-User-Token
         in: header
         required: true
         type: string
-        description: 'The alphanumeric string for accessing the API'
+        description: 'Access token of registered user performing given API request.'
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.'
       responses:
         '200':
-          description: 'SUCCESS. The **enroll to batch** operation was successful!'
+          description: 'OK. Successful operation. The operation was successfully executed.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/EnrollBatchResponse'
+             - $ref: '#/definitions/CommonErrorResponse'
         '400':
-          description:  'BAD REQUEST,**EnrollBatch** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
+          description:
+            'CLIENT_ERROR. The request failed due to bad request from client. Possible reasons for failure:
+            Mandatory parameter courseId is missing.
+            Mandatory parameter batchId is missing.
+            Mandatory parameter userId is missing.' 
           schema:  
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/BatchCreateErrorResponse'
+             - $ref: '#/definitions/CommonErrorResponse'
         '404':
-          description: 'RESOURCE NOT FOUND ! **EnrollBatch**operation failed ! The possible reason for failure is that either of provided batch Id,course Id, User Id is invalid.'
+          description: 
+            'RESOURCE_NOT_FOUND. The requested operation failed as given resource is not existing on server. Possible reasons for failure:
+            Invalid value for parameter courseId.
+            Invalid value for parameter batchId.
+            Invalid value for parameter userId.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/BatchCreateErrorResponse'     
+             - $ref: '#/definitions/CommonErrorResponse'     
         '500':
-          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          description: 'INTERNAL SERVER ERROR. The request failed due to a server error.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/BatchCreateErrorResponse'
-  /unenroll:
+             - $ref: '#/definitions/CommonErrorResponse'
+  /unenrol:
     post:
       description: >-
-        This API is associated with un-enrollment of user in a particular course batch
-          - The Format of the resource URL is '{{host}}/course/v1/unenroll' 
-          - The **_/course/v1/unenroll_** endpoint executes "enroll to given batch" request.
-          - It is a must to provide values for required parameters  
-      summary: Unenrolls a user from Batch
+        This API is associated with unenrolment of user from a particular course batch. User can do unenrolment for open batch only.
+          - The format of the resource URL is '{{host}}/course/v1/unenrol' 
+      summary: Open Course Batch Self Unenrol by User
       tags:
       - Course Batch APIs
-      operationId: '{{host}}/course/v1/unenroll'
+      operationId: '{{host}}/course/v1/unenrol'
       produces:
       - application/json
       parameters:
@@ -504,66 +504,70 @@ paths:
         in: body
         required: true
         description: >-
-            The body refers to the format of the request.
-              - The body contains metadata about the batch user wants to unenroll.
+            The body contains metadata about course batch that the user wants to enrol.
         schema:
           allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
-             -  $ref: '#/definitions/UnenrollBatchReq'
+             -  $ref: '#/definitions/UnenrolBatchRequest'
       - name: Content-Type
         in: header
         required: true
         type: string
         description: >-
-            The Content Type entity is the media type of the resource.Possible media types can be:- 
-              - Application/json
-              - Multipart/form-data
-              - Application/x-www-form-urlencoded
+            Type of the request data. Set as application/json.
       - name: ts
         in: header
         required: true
         type: string
-        description: 'The Time Stamp at which the **unenroll from batch** request was sent. '
+        description: 'Timestamp at which given API request is sent.'
       - name: X-msgid
         in: header
         required: true
         type: string
-        description: 'It is a Unique ID which identifies the request incase the same API is executed multiple times.'
-      - name: x-authenticated-user-token
+        description: 'This ID uniquely identifies a request if the same API is executed multiple times.'
+      - name: X-Authenticated-User-Token
         in: header
         required: true
         type: string
-        description: 'The alphanumeric string for accessing the API'
+        description: 'Access token of registered user performing given API request.'
       - name: Authorization
         in: header
         required: true
         type: string
-        description: 'To make use of the API, you require authorization. Raise a request to the administrator for the use of the API. You will receive the authorization key. Specify the key received, here.'
+        description: 'Specify authorization key (format: Bearer api-key) received from administrator when performing given API request.'
       responses:
         '200':
-          description: 'SUCCESS. The **unenroll from batch** operation was successful!'
+          description: 'OK. Successful operation. The operation was successfully executed.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/UnenrollBatchResponse'
+             - $ref: '#/definitions/UnenrolBatchResponse'
         '400':
-          description:  'BAD REQUEST,**UnenrollBatch** operation failed !The possible reason for failure is that you may have missed providing input for a mandatory parameter' 
+          description:
+            'CLIENT_ERROR. The request failed due to bad request from client. Possible reasons for failure:
+            Mandatory parameter courseId is missing.
+            Mandatory parameter batchId is missing.
+            Mandatory parameter userId is missing.' 
           schema:  
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/BatchCreateErrorResponse'
+             - $ref: '#/definitions/CommonErrorResponse'
         '404':
-          description: 'RESOURCE NOT FOUND ! **UnenrollBatch**operation failed ! The possible reason for failure is that either of provided batch Id,course Id, User Id is invalid.'
+          description: 
+            'RESOURCE_NOT_FOUND. The requested operation failed as given resource is not existing on server. Possible reasons for failure:
+            Invalid value for parameter courseId.
+            Invalid value for parameter batchId.
+            Invalid value for parameter userId.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/BatchCreateErrorResponse'     
+             - $ref: '#/definitions/CommonErrorResponse'     
         '500':
-          description: 'INTERNAL SERVER ERROR. We track these errors automatically and try to set it right at the earliest. Try refreshing the page. If the problem persists contact us at info@sunbird.org.'
+          description: 'INTERNAL SERVER ERROR. The request failed due to a server error.'
           schema:
             allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/BatchCreateErrorResponse'
+             - $ref: '#/definitions/CommonErrorResponse'
 definitions:
   AddUserToBatchResp:
    description: ''
@@ -745,8 +749,8 @@ definitions:
         $ref: '#/definitions/BatchUpdateReq'
     required:
     - request
-  EnrollBatchReq:
-    description: request body for enrolling user to batch.
+  EnrolBatchRequest:
+    description: Request for enroling user to a course batch.
     type: object
     properties:
       courseId:
@@ -762,21 +766,19 @@ definitions:
     - courseId
     - userId
     - batchId
-  UnenrollBatchReq:
-    description: request body for enrolling user to batch.
+  UnenrolBatchRequest:
+    description: Request for unenroling user from a previously enroled course batch.
     type: object
     properties:
       courseId:
         type: string
-        description: 'content id for which user want to create a course'
+        description: 'Course ID '
       batchId:
         type: string
-        description: 'name of the course'
-      userIds:
-        type: array
-        description: 'list of user ids'
-        items:
-         type: string
+        description: 'Batch ID corresponding to specified Course ID'
+      userId:
+        type: string
+        description: 'User ID'
     required:
     - courseId
     - userId
@@ -809,8 +811,8 @@ definitions:
     - name
     - id
     - enrollmentType
-  EnrollBatchResponse:
-    description: 'contains response for created batch'
+  EnrolBatchResponse:
+    description: 'Response for enrol course batch request'
     type: object
     properties:
       result:
@@ -818,8 +820,8 @@ definitions:
        properties:
         response: 
           type: string
-  UnenrollBatchResponse:
-    description: 'contains response for created batch'
+  UnenrolBatchResponse:
+    description: 'Response for unenrol course batch request'
     type: object
     properties:
       result:
@@ -827,6 +829,14 @@ definitions:
        properties:
         response: 
           type: string
+  CommonErrorResponse:
+      title: Common error response
+      allOf:
+        - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+        - type: object
+          properties:
+            result:
+              type: object
   BatchCreateErrorResponse:
     title: Create Content Error Response
     type: object
