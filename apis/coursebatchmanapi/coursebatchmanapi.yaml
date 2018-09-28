@@ -353,7 +353,7 @@ paths:
         schema:
           allOf:
              - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
-             - $ref: '#/definitions/CourseBatchUpdaterequest'
+             - $ref: '#/definitions/CourseBatchUpdateRequest'
       - name: Accept
         in: header
         required: true
@@ -741,12 +741,12 @@ definitions:
             objectType: 
              type: string
              description: 'which object you need to search'
-  CourseBatchUpdaterequest:
-    title: Course Batch UpdateRequest
+  CourseBatchUpdateRequest:
+    title: Course Batch Update Request
     type: object
     properties:
       request:
-        $ref: '#/definitions/BatchUpdateReq'
+        $ref: '#/definitions/BatchUpdateRequest'
     required:
     - request
   EnrolBatchRequest:
@@ -783,7 +783,7 @@ definitions:
     - courseId
     - userId
     - batchId
-  BatchUpdateReq:
+  BatchUpdateRequest:
     title: Batch update request
     type: object
     properties:
