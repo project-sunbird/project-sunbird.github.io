@@ -760,13 +760,13 @@ definitions:
     properties:
       courseId:
         type: string
-        description: 'content id for which user want to create a course'
+        description: 'Course ID '
       batchId:
         type: string
-        description: 'name of the course'
+        description: 'Batch ID corresponding to specified Course ID'
       userId:
         type: string
-        description: 'about courses'
+        description: 'User ID'
     required:
     - courseId
     - userId
