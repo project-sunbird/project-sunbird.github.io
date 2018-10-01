@@ -208,7 +208,7 @@ paths:
               - The body contains metadata about the user to be added to a specific batch
         schema:
           allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
              - $ref: '#/definitions/AddUserToBatchReq'
       - name: Content-Type
         in: header
@@ -280,7 +280,7 @@ paths:
               - The body contains metadata about the batches to be listed
         schema:
          allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
              - $ref: '#/definitions/CourseBatchSearchReq'
       
       - name: Content-Type
@@ -352,7 +352,7 @@ paths:
               - The body contains metadata about the batch to be updated.
         schema:
           allOf:
-             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiResponse'
+             - $ref: 'https://raw.githubusercontent.com/project-sunbird/project-sunbird.github.io/dev/apis/definitions/envelope.yaml#/ApiRequest'
              - $ref: '#/definitions/CourseBatchUpdateRequest'
       - name: Accept
         in: header
@@ -602,37 +602,42 @@ definitions:
       request:
         $ref: '#/definitions/CreateBatchRequest'
   CreateBatchRequest:
-    description: request body for creating a batch from a course.
+    description: Request body for creating a batch for a course
     type: object
     properties:
       courseId:
         type: string
-        description: 'content id for which user want to create a course'
+        description: 'Course ID'
       name:
         type: string
-        description: 'name of the course'
+        description: 'Batch name'
       description:
         type: string
-        description: 'about courses'
+        description: 'Batch description'
       enrollmentType:
         type: string
-        description: 'possible values are {invite-only and open}'
+        description: 'Batch enrollment type. Supported types are: invite-only and open'
       startDate: 
         type: string
-        description: 'start data of the batch valid format is yyyy-MM-dd'
+        description: 'Batch start date in YYYY-MM-DD format'
       endDate:
         type: string
-        description: 'end data of batch valid format is yyyy-MM-dd'
+        description: 'Batch end date in YYYY-MM-DD format'
       createdFor:
         type: array
         items:
           type: string
-          description: 'this will hold list of organisations id.this is mandatory in case of invite-only badge'
+          description: 'List of organisation IDs for which this batch is created. This field is mandatory in case of invite-only batch enrollment.'
       mentors:
         type: array
         items:
           type: string
-          description: 'list of user id who will take care of course'
+          description: 'List of mentor user IDs'
+      participants:
+        type: array
+        items:
+          type: string
+          description: 'List of participant user IDs'
     required:
     - courseId
     - name
@@ -787,30 +792,40 @@ definitions:
     title: Batch update request
     type: object
     properties:
+      id:
+        type: string
+        description: 'Batch ID'
+      name:
+        type: string
+        description: 'Batch name'
+      description:
+        type: string
+        description: 'Batch description'
+      startDate: 
+        type: string
+        description: 'Batch start date in YYYY-MM-DD format'
+      endDate:
+        type: string
+        description: 'Batch end date in YYYY-MM-DD format'
       createdFor:
-        description: 'org id can be added'
         type: array
         items:
           type: string
-      endDate:
-        description: 'batch end date can be updated if end date hasnt expired'
-        type: string
-      description:
-        description: ''
-        type: string
-      name:
-        description: ''
-        type: string
-      id:
-        description: ''
-        type: string
+          description: 'List of organisation IDs for which this batch is created. This field is mandatory in case of invite-only batch enrollment.'
+      mentors:
+        type: array
+        items:
+          type: string
+          description: 'List of mentor user IDs. This list replaces existing mentors.'
+      participants:
+        type: array
+        items:
+          type: string
+          description: 'List of participant user IDs. This list replaces existing participants.'
     required:
-    - createdFor
-    - endDate
-    - description
-    - name
     - id
-    - enrollmentType
+    - name
+    - startDate
   EnrolBatchResponse:
     description: 'Response for enrol course batch request'
     type: object
