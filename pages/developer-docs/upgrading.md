@@ -117,6 +117,7 @@ To restore the Postgres database:
 
    <pre>
    cd sunbird-devops/deploy 
+  ./sunbird-install.sh -s config
   ./sunbird-install.sh -s dbs
   ./sunbird-install.sh -s apis
   ./sunbird-install.sh -s core
