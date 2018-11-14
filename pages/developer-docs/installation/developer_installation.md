@@ -69,7 +69,7 @@ The following sections provide you with the sequence to set up the Sunbird porta
 <pre>
 sunbird_environment=local 
 sunbird_instance=sunbird
-sunbird_default_tenant=sunbird
+sunbird_default_channel=sunbird
 </pre>
 
 ## Configure the Service Stack

@@ -178,14 +178,14 @@ Telemetry events are generated based on the configuration of the telemetry libra
   },
 
   "env": "ContentPlayer",
-  "channel": "in.ekstep",
+  "channel": "XXXX",
   "did": "20d63257084c2dca33f31a8f14d8e94c0d939de4",
   "authtoken": "XXXX",
   "uid": "anonymous",
   "sid": "85e8a2c8-bb8e-4666-a21b-c29ec590d740",
   "batchsize": 20,
   "mode": "play",
-  "host": "https://api.ekstep.in",
+  "host": "XXXX",
   "endpoint": "/v3/telemetry",  
   "tags": [],
   "cdata": []
@@ -208,6 +208,20 @@ Send this object as dispatcher in the above sample configuration ("dispatcher":c
 
 ## How to use telemetry JS library
 
+Download the telemetry-sdk npm module from [here](https://www.npmjs.com/package/@project-sunbird/telemetry-sdk) 
+
+<pre>
+npm i @project-sunbird/telemetry-sdk
+</pre>
+
+**Example:**
+
+<pre>
+$t = require('@project-sunbird/telemetry-sdk');   
+$t.start(config, contentId, contentVer,data, options);
+</pre>
+   
+
 To use the telemetry JS libraries, add the following to your HTML/application. The file path is a relative path, for example; assets/js to the associated files within the html content.
 
 <pre>
@@ -226,11 +240,14 @@ To use the telemetry JS libraries, add the following to your HTML/application. T
           config.authToken = token;
           let startEdata = {};
           let options = {};
-          EkTelemetry.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata, options );
+          $t.start(config, &#x22;content_id, &#x22;contetn_ver&#x22;, startEdata, options );
       }
   init()
   &#x3C;/script&#x3E;
 </pre>
+
+
+
 
 ## Telemetry API methods
 
@@ -823,7 +840,7 @@ let data = { // Required
     "type": "", // Required. app, session, editor, player, workflow, assessment
     "duration": "", // Required. Total duration from start to end in seconds
     "pageid": "", // Optional. Page/Stage id where the end has happened.
-    "summary": [{ "key": "value" }] // Optional. Summary of the actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
+    "summary": [{ "key": "value" }] // Optional. Summary of actions done between start and end. For ex: "progress" for player session, "nodesModified" for collection editor
 };
 </pre>
 
@@ -839,35 +856,35 @@ let data = { // Required
 
 
 ### ResetContext
-  Which is used to reset the current context value with new context  object.
+  This is used to reset the current context value with new context object.
 
 <pre>
- @param {context} Object    - If context is undefined then library will reset to previous event context value.
- Ektelemetry.resetContext(context) 
+ @param {context} Object    - If context is undefined then library is reset to previous event context value.
+ $t.resetContext(context) 
 </pre>
 
 ### ResetObject
  Which is used reset the current object value with new obj
 
 <pre>
- @param {obj} Object      - If the Object is undefined then library will reset to previous event object value.
- Ektelemetry.resetObject(obj) 
+ @param {obj} Object      - If the Object is undefined then library is reset to previous event object value.
+ $t.resetObject(obj) 
 </pre>
 
 ### ResetActor
   Which is used reset the current actor value with new actor   
 
 <pre>
- @param {actor} Object    - If the actor is undefined then library will reset to previous event actor value.
- Ektelemetry.resetActor(actor) 
+ @param {actor} Object    - If the actor is undefined then library is reset to previous event actor value.
+ $t.resetActor(actor) 
 </pre>
 
 ### ResetTags
   Which is used to reset the current tag's value with new tag's
 
 <pre>
- @param {tags} Array      - If tags are undefined then library will reset to previous event tags value.
- Ektelemetry.resetTags(tags) 
+ @param {tags} Array      - If tags are undefined then library is reset to previous event tags value.
+ $t.resetTags(tags) 
 </pre>
 
 

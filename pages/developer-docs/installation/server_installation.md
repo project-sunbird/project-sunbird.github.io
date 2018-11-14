@@ -1,9 +1,9 @@
 ---
 type: landing
 directory: developer-docs/installation/
-title: Server Installation
-page_title: Server Installation
-description: Setting up Sunbird on a server
+title: Prerequisites
+page_title: Prerequisites
+description: Prerequisites for setting up Sunbird on a server
 allowSearch: true
 ---
  
@@ -23,7 +23,7 @@ This page provides you with information on the prerequisites and the sequence of
 
 * Sunbird requires EkStep API keys to access the EkStep content repository. Follow the steps <a href="http://www.sunbird.org/developer-docs/telemetry/authtokengenerator_jslibrary/#how-to-generate-authorization-credentials" target="_blank">here</a> to get the keys. If you are creating a test environment, get the QA API keys.
 
-* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server" target="_blank">key based ssh</a>. Use an empty passphrase while generating the ssh key to avoid password prompts during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
+* Create a common linux user (e.g. deployer) on all the servers. Configure this user to use <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server" target="_blank">key based ssh</a>. Use an empty passphrase while generating the ssh key to avoid password prompts or unexpected ssh-key errors during installation. Since the installation script uses this key (user) to deploy Sunbird, this user must have **sudo** access on the servers.
 
 * Create an <a href="https://docs.microsoft.com/en-us/azure/storage/common/storage-create-storage-account" target="_blank">Azure storage account</a> to complete the Sunbird installation. This account is used to store QR code images and achievement badges.
 
@@ -66,10 +66,11 @@ The following is a list of ports that must be open:
   |Postgres | 9.5 |
   |Cassandra            | 3.9 |
 
-
 ## Installation Procedure
 
 **Note:** Choose one docker swarm manager VM as the installation server and execute the following steps from that server. If you are installing Sunbird on two servers, execute the steps from the app server. 
+
+**Note:** Don't use 10.x.x.x network subnet as docker is using this subnet for the internal communication, and might clash with your host ips.
 
 1. Install git using `sudo apt-get update -y && sudo apt-get install git -y ` 
 
@@ -77,7 +78,7 @@ The following is a list of ports that must be open:
 
 3. `cd sunbird-devops`
 
-4. Checkout the latest release branch `git checkout tags/release-1.8.2 -b release-1.8.2`
+4. Checkout the latest release branch `git checkout tags/release-1.9 -b release-1.9`
 
 5. `cd deploy`
 
@@ -147,7 +148,7 @@ The following is a list of ports that must be open:
    
      **Note:** The badger service does not work without an Azure storage account name and key.
 
-8. Get the public key from keycloak <b>http://<dns_name or IP>/auth -> Administration console -> realm settings -> keys -> public keys</b>  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
+8. Get the public key from keycloak <b>http://< dns_name or IP >/auth -> Administration console -> realm settings -> keys -> public keys</b>  (click on public keys) and set it for `sunbird_sso_publickey` parameter in `config` file. Now, execute the command `./sunbird_install.sh -s core` to redeploy the core services 
 
       
       **Note:**
@@ -191,9 +192,11 @@ The following is a list of ports that must be open:
     }
     }'
     </pre>
-
-      **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
-    
+   
+   If ~/jwt_token_player.txt file missing then rerun `./sunbird_install.sh -s apis` to recreate it.
+   
+   **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
+   
 3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
 
 4. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory will be created 
@@ -231,3 +234,4 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 * `deploy-badger.sh` - Deploys the badger service as docker service.
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
+

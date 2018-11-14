@@ -19,7 +19,9 @@ This section elaborates the various user types and their assocated responsibilit
 
 |  User Role    | Content Creation | Review, Reject , & Publish | Upload Content | Other Role Specific Responsibilites |
 |-------------------|---------------------|---------------------|-------------------------|-----------------|
-| A **Course Mentor** guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course and ensure completion of a course within a stipulated time |       No       |       No       |  No | ✔️   <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>       
+| An **Organisation Administrator (Org admin)** manages the overall functioning and upkeep of the  organisation, and also define and manages user roles and permissions |       No       |       No       |  No | ✔️   <a href="features-documentation/#adminrole_matrix"> read more</a>
+| A **System Administrator (Sys admin)** manages installation, configuration and operation of the system |       No       |       No       |  No | ✔️   <a href="features-documentation/#adminrole_matrix"> read more</a>
+| A **Course Mentor** guides and instructs learners on how to undertake a course. They create batches of users to enrol for a course and ensure completion of a course within a stipulated time |       No       |       No       |  No | ✔️   <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>~~       
 | A **Content Reviewer** assesses  created content within prescribed guidelines | No | ✔️  | ✔️  | No 
 | A **Teacher Badge Issuer** is responsible for assigning badges to teachers based on the discretion of the concerned organization | No | No | No | ✔️  <a href="features-documentation/userrole/#role-specific-responsibilites"> read more</a>
 | A **Book Creator** curates and compiles books. Registered users become book creators when book creation rights are assigned to them | ✔️  (Only Books) | No | No | No 

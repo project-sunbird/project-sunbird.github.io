@@ -29,6 +29,45 @@ You can download the sample version of the Sunbird Mobile App to explore its out
 
 The sample Sunbird Mobile App is available for users to test, experiment and understand the various features and functions of the application. To download the app go to the <a href="http://github.com/project-sunbird/sunbird-android/releases" target="_blank"> Sunbird Android Release</a>.
 
+## Selecting Display Language for Sunbird Mobile APP
+
+As a Sunbird app user, you must set the display language for your app.To select a language of your choice for the app, open the app:
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+ <td>To select the display language:<br>
+1. Select a language from the language list<br>
+2. Click <b>Continue</b>
+</td>
+  <td><img src="pages/features-documentation/images/mobileapp/language.png"></td>
+</tr>
+ <tr>
+ <td>Note:
+If you click the <b>Continue</b> button without selecting a language, a message <b>Please select a language</b> is displayed 
+</td>
+  <td><img src="pages/features-documentation/images/mobileapp/languagenote.png"></td>
+</tr>
+ </table>
+ 
+## Upgrading Sunbird Mobile APP
+
+When there is any new version release of Sunbird app, users are notified of the release through a pop-up message in the app. For a better user expereince the user is adviced to update the app. Based on organizational requirements, administrators can configure a forced or an optional upgrade of the app and the users are notified of the same through a pop-up message.
+
+<table>
+  <tr>
+    <th style="width:35%;">Step</th>
+    <th style="width:65%;">Screen</th>
+ </tr>
+ <tr>
+ <td>1. In case of an optional update, the pop-up screen displays the <b>Update Now</b> and <b>Update Later</b> buttons.<br>a) To update the app, click the <b>Update Now</b> button.<br>It directs you to the play store. Click the <b>Upgrade App</b> button on Playstore; a new version of the app is launched.<br>b) To update the app later, click the <b>Update Later</b> button. The pop-up screen disappears<br>2. In case of a force update, the pop-up screen displays only the <b>Update Now</b> button.<br>To update the app, click the <b>Update Now</b> button.<br>It directs you to the play store. Click on <b>Upgrade App</b> button; the latest version of the Sunbird app is launched
+</td>
+  <td><img src="pages/features-documentation/images/mobileapp/upgradeapp.png"></td>
+</tr>
+ </table>
+
 ### Prerequisites
 
 * A mobile device with Android OS 5.0 and above 
@@ -145,13 +184,40 @@ All content resources that you have saved on your device or popular artifacts fr
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/library5.png"></td>
   </tr>
+  <tr>
+   <td><b>Downloading content</b><br><br>1. Tap <b>Download</b> to download the content. <br>2. Tap the <b> View Credits and Licensing Info</b> to view the license, attribution and credit information associated with the content <br>3. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>4. Tap <b>Cancel</b> to cancel the download. <br><br><b>Note:</b> You can download content only when you are connected to the Internet. However, you can view the downloaded content Offline</td>
+  <td><img src="pages/features-documentation/images/mobileapp/library4.png"></td> 
+ </tr>
  <tr>
-  <td><b>Playing and rating content</b><br><br>1. Tap <b>Play</b> to play the content <br>2. Tap the <b>Star</b> icons to rate the content. Sunbird uses the rating system of one to five stars, with five stars being the highest quality and one star being the lowest quality. You can aslo prove additonal feedback, if required <br>3. Tap <b>Submit</b> to submit your rating and feedback <br><br><b>Note:</b> Users can rate content only after they have downloaded and played it at least once in their device </td>
+  <td><b>Playing and rating content</b><br><br>1. Tap <b>Play</b> to play the content <br>2. Tap the <b>Star</b> icons to rate the content. Sunbird uses the rating system of one to five stars, with five stars being the highest quality and one star being the lowest quality. You can also prove additional feedback, if required <br>3. Tap <b>Submit</b> to submit your rating and feedback <br><br><b>Note:</b> Users can rate content only after they have downloaded and played it at least once in their device </td>
   <td><img src="pages/features-documentation/images/mobileapp/library3.png"></td>
  </tr>
  <tr>
-   <td><b>Downloading content</b><br><br>1. Tap <b>Download</b> to download the content. <br>2. Tap the <b> View Credits and Licensing Info</b> to view the license, attribution and credit information associated with the content <br>3. The progress of the download in <b>(%)</b> is displayed alongside the download button <br>4. Tap <b>Cancel</b> to cancel the download. <br><br><b>Note:</b> You can download content only when you are connected to the Internet. However, you can view the downloaded content Offline</td>
-  <td><img src="pages/features-documentation/images/mobileapp/library4.png"></td> 
+ <td><b>Switching Users and Content from Canvas</b> 
+ <br><br>1. Tap to open a content from the list <br>2. Tap <b>Arrow</b> icon to view and play a content from the collections 
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/collection.png"></td>
+ </tr>
+ <tr>
+ <td>1. Once the collection is displayed, tap the <b>Arrow</b> icon beside a content to play the content <br>2. Tap <b>Play</b> to play the content <br>3. Tap <b>CHANGE USER</b> to switch the user <br>4. Tap <b>YES</b> to play content for the selected user 
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/changeuser1.png"></td>
+ </tr>
+ <tr>
+ <td>1. On tapping the <b>CHANGE USER</b> the <b>Users and Groups</b> screen is displayed <br>2. Select <b>Users</b> from the list <br>3. Tap <b>Play</b> to play the content
+ </td>
+<td><img src="pages/features-documentation/images/mobileapp/changeuser2.png"></td>
+</tr>
+ <tr>
+ <td>1. Alternately, you can switch user from the last screen of the content canvas <br>2. Tap <b>Replay</b> icon. You are redirected to <b>Users and Groups</b> screen. Select and switch the user from <b>Users and Groups</b> screen <br>3. Tap <b>Next</b> to navigate to the next content <br>4. Tap <b>Previous</b> to navigate to the previous content in the collection 
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/switchuser1.png"></td>
+ </tr>
+ <tr>
+ <td><b>Sharing, Reporting and Deleting Content</b>
+ <br><br>1. Tap <b>Share</b> icon to share the content as link or file through different channels. Download the content to share as file <br>2. Tap on the <b>Menu</b> icon to Delete or Report content <br><br><b>Note:</b> <br>1. You can select reasons to report content viz., <li> Inappropriate content</li> <li> Copyright violation</li> <li> Data privacy violation </li> <li> Other reason </li> <br>2. The share, report and delete features is common to content linked to QR and DIAL codes
+ </td>
+ <td><img src="pages/features-documentation/images/mobileapp/sharereportdelete.png"></td>
  </tr>
 </table>
  
@@ -175,16 +241,9 @@ You can add and update all your profile details on the Profile tab
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/Profile1.png"></td>
  </tr>
- </table>
- 
-#### Creating New Users
- <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>
  <tr>
- <td>1. Tap the <b>Search</b> icon and enter keywords to search for user profiles 
+ <td><b>Creating New Users</b>
+ <br><br>1. Tap the <b>Search</b> icon and enter keywords to search for user profiles 
  <br>2. Tap <b>Burger menu</b> icon to select from the following: 
     <br>&emsp;a) <b>Users and Groups</b>
     <br>&emsp;b) <b>Reports</b> 
@@ -210,17 +269,9 @@ You can add and update all your profile details on the Profile tab
   </td>
   <td><img src="pages/features-documentation/images/mobileapp/usersandgroup2.png"></td>
  </tr>
- </table>
- 
-#### Creating New Groups
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-    <td>1.Tap <b>Group</b> to create groups
+ <tr>
+ <td><b>Creating New Groups</b>
+<br><br>1.Tap <b>Group</b> to create groups
     <br>2.Tap <b>Burger menu</b> to edit or delete the current group 
     <br>3.Tap <b>Create New Group</b> to create a new group. The Create Group screen is displayed 
     <br>4. Enter the <b>Group Name</b> 
@@ -232,19 +283,9 @@ You can add and update all your profile details on the Profile tab
     <td><img src="pages/features-documentation/images/mobileapp/usersandgroup5.png">
     </td>
     </tr>
-</table>
- 
-#### Sharing User/Group Details
-
-Details of users or groups created can be shared with other users
-
-<table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
-  </tr>
-  <tr>
-  <td>1. Tap <b>Share</b> icon. The Share details screen is displayed 
+<tr>
+<td><b>Sharing User/Group Details</b>
+<br><br>Details of users or groups created can be shared with other users <br>1. Tap <b>Share</b> icon. The Share details screen is displayed 
     <br>2. You can either select:
     <br>&emsp;a) <b>Only Groups</b>, or
     <br>&emsp;b) <b>Only Users</b>, or
@@ -254,17 +295,9 @@ Details of users or groups created can be shared with other users
     </td>
   <td><img src="pages/features-documentation/images/mobileapp/sharing1.png"></td>
   </tr> 
-   </table>
- 
-#### Viewing Reports
- You can view details of user or group activity on the app
-  <table>
-  <tr>
-    <th style="width:35%;">Step</th>
-    <th style="width:65%;">Screen</th>
- </tr>
- <tr>
-  <td>1. Tap <b>Reports</b> from the burger menu. The report screen is displayed
+   <tr>
+   <td><b>Viewing Reports</b>
+   <br><br> You can view details of user or group activity on the app <br>1. Tap <b>Reports</b> from the burger menu. The report screen is displayed
   <br>2. Tap the report name to view the report 
   </td>
 <td><img src="pages/features-documentation/images/mobileapp/reports1.png"></td>
@@ -273,8 +306,43 @@ Details of users or groups created can be shared with other users
   <td>1. You can view the report based on the available parameters </td>
 <td><img src="pages/features-documentation/images/mobileapp/reports2.png"></td>
  </tr>
- </table>
-    
+ <tr>
+ <td><b>Editing Application Settings</b> 
+ <br><br>1. Tap the <b>Menu</b> icon in the Profile <br>2. Tap <b>Settings</b> to view and edit following app settings: 
+ <br>&emsp;a) Language Settings 
+ <br>&emsp;b) Data Sync 
+ <br>&emsp;c) Support
+ <br>&emsp;d) Share the Sunbird app 
+ <br>&emsp;e) About the app
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/editappsetting.png"></td>
+</tr>
+<tr>
+<td><b>Language Setting and Data Sync Information</b> 
+<br><br>1. You can select language from the list for the app <br>2. You can select the data sync option from the following: <br>a) Off <br>b) Over Wifi <br>c) Always on <br>3. Tap <b>Sync Now</b> to sync your data
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/langsetting.png"></td>
+</tr>
+<tr>
+<td><b>Support</b> 
+<br><br>1. Tap <b>Support</b> in case you are facing any problem related to app <br>2. Select any channel for sending your text message
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/support.png"></td>
+</tr>
+<tr>
+<td><b>Sharing Sunbird App and About the App Details</b> 
+<br><br>1. Tap <b>Share</b> to share the app through various channels <br>2. Tap <b>About the app</b> to view the details: <br>a) Device ID <br>b) App Version
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/aboutandshare.png"></td>
+</tr>
+<tr>
+<td><b>Signing Out</b>
+<br><br>1. Tap the <b>Profile</b> tab <br>2. Tap <b>Menu</b> icon <br>3. Tap <b>Sign out</b> to sign out from the app
+</td>
+<td><img src="pages/features-documentation/images/mobileapp/signout.png"></td>
+</tr>
+</table>
+ 
 ### Scanning QR Code
 
 The app allows you to scan printed QR codes 
