@@ -961,7 +961,198 @@ paths:
         AllowDynamicQueryParameters: false
         AllowDynamicFormParameters: false
         IsMultiContentStreaming: false
+  /reserve/{contentId}:
+    post:
+      description: The API generates and reserv dialcodes for a particular Textbook.
+        - The **_/dialcode/reserve/{contentId}** endpoint executes the "Reserve DIAL code" request based on parameters provided as metadata in the request body to be replaced by appropriate value.
+        - {contentId} refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+        - Required fields cannot be left null or empty
+      summary: Reserve Dialcode
+      tags:
+        - DIAL APIs
+      operationId: ReservePost
+      produces:
+        - application/json
+      parameters:
+        - name: contentId
+          in: path
+          required: true
+          type: string
+          description: 'It identifies a content uniquely'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: X-Channel-Id
+          in: header
+          required: true
+          type: string
+          description: 'channel the content belongs.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: Body
+          in: body
+          required: true
+          description: ' request body contains mandatory fields'
+          schema:
+            $ref: '#/definitions/ReserveDialcodeRequest'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Reserve DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/DialcodeReserveResponse'
+        '400':
+          description: 'BAD REQUEST. The "Reserve Dialcode" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
+  /release/{contentId}:
+    patch:
+      description: The API releases reserved dialcodes from the Textbook.
+        - The **_/dialcode/release/{contentId}** endpoint executes the "Release DIAL code" request based on parameters provided as metadata in the request body to be replaced by appropriate value.
+        - {contentId} refers to a section of endpoint URL path that needs to be replaced by appropriate Id
+        - Required fields cannot be left null or empty
+      summary: Release Dialcode
+      tags:
+        - DIAL APIs
+      operationId: ReleasePatch
+      produces:
+        - application/json
+      parameters:
+        - name: contentId
+          in: path
+          required: true
+          type: string
+          description: 'It identifies a content uniquely'
+        - name: Content-Type
+          in: header
+          required: true
+          type: string
+          description: ''
+        - name: X-Channel-Id
+          in: header
+          required: true
+          type: string
+          description: 'channel the content belongs.'
+        - name: Authorization
+          in: header
+          required: true
+          type: string
+          description: 'All User APIs require authorization for use. Specify the authorization key received from the administrator when placing the request for use of the API.'
+        - name: Body
+          in: body
+          required: true
+          description: ' request body contains mandatory fields'
+          schema:
+            $ref: '#/definitions/ReleseDialcodeRequest'
+      responses:
+        '200':
+          description: 'OK ! Successful operation."Reserve DIAL code" operation was successfully executed.'
+          schema:
+            $ref: '#/definitions/DialcodeReleaseResponse'
+        '400':
+          description: 'BAD REQUEST. The "Release Dialcode" operation failed ! The possible reason for failure is that you may have missed providing input for a mandatory parameter.'
+          schema:
+            $ref: '#/definitions/ContentCreateErrorResponse'
+        '500':
+          description: 'INTERNAL SERVER ERROR ! Looks like something went wrong! These errors are tracked automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.'
 definitions:
+  ReleseDialcodeRequest:
+    title: ReleseDialcodeRequest
+    type: object
+  ReserveDialcodeRequest:
+    title: ReserveDialcodeRequest
+    type: object
+    properties:
+      request:
+        $ref: '#/definitions/DialcodeRequest'
+    required:
+      - request
+  DialcodeRequest:
+    title: Request
+    type: object
+    properties:
+      dialcodes:
+        $ref: '#/definitions/ReserveDialcodes'
+    required:
+      - dialcodes
+  ReserveDialcodes:
+    title: ReserveDialcodes
+    type: object
+    properties:
+      count:
+        type: integer
+        format: int32
+      publisher:
+        type: string
+    required:
+      - count
+      - publisher
+  DialcodeReserveResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ReserveResult'
+      - $ref: '#/definitions/ResponseHeader'
+  ReserveResult:
+    title: Result Containing Content And DialcodeDetails
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ContentAndDialcodeDetailsReserve'
+  ContentAndDialcodeDetailsReserve:
+    title: Content And Dialcode Details
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+      versionKey:
+        type: string
+        description: version key of the node
+      reservedDialcodes:
+        type: array
+        description: list of reserved dialcodes
+        items:
+          type: string
+      count:
+        type: integer
+        description: Number of dialcodes reserved.
+  DialcodeReleaseResponse:
+    description: Create Content Response
+    type: object
+    allOf:
+      - $ref: '#/definitions/ReleaseResult'
+      - $ref: '#/definitions/ResponseHeader'
+  ReleaseResult:
+    title: Result Containing Content And DialcodeDetails
+    type: object
+    properties:
+      result:
+        $ref: '#/definitions/ContentAndDialcodeDetailsRelease'
+  ContentAndDialcodeDetailsRelease:
+    title: Content And Dialcode Details
+    type: object
+    properties:
+      node_id:
+        type: string
+        description: Node Identifier
+      versionKey:
+        type: string
+        description: version key of the node
+      releasedDialcodes:
+        type: array
+        description: list of reserved dialcodes
+        items:
+          type: string
+      count:
+        type: integer
+        description: Number of dialcodes released.
   GenerateDialcoderequest:
     title: Generate dialcodeRequest
     example:
