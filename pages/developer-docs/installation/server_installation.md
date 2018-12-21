@@ -169,9 +169,9 @@ The following is a list of ports that must be open:
  
 ## Post Installation Configuration
 
-1. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory will be created 
+1. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** is created in the **logs** directory  
 
-2. Open **https://[domain-name]** and login with the configured login id/password to access sunbird portal. The format of the login id is `sunbird_init_admin_user_username@sunbird_init_custodian_tenant_channel`
+2. Open **https://[domain-name]** and login with the configured login id/password to access sunbird portal. The format of the login  is `sunbird_init_admin_user_username@sunbird_init_custodian_tenant_channel`
 
 ## Sunbird Install Script 
 
