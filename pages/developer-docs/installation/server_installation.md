@@ -143,7 +143,7 @@ The following is a list of ports that must be open:
    |**sunbird_init_admin_user_email**| email of first sunbird admin user |yes|
    |**sunbird_init_admin_user_phone**| phone (without country code) of first sunbird admin user e.g. 9090909090 |yes|
 
-7. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 8 in a sequence as mentioned in the following table: 
+7. Run the script `./sunbird_install.sh`. This script sets up the infra from stage 1 to stage 8 in a sequence as mentioned in the following table: 
 
    |Stage no |Stage name|Description| 
    |:-----      |:-------|:--------|
