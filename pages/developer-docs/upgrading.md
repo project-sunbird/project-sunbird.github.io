@@ -109,14 +109,33 @@ To restore the Postgres database:
 	
 ## Upgrading Sunbird Services 
 
-   1. Pull the latest code of `project-sunbird/sunbird-devops` from its master branch
- 
+   1. Pull the latest code of `project-sunbird/sunbird-devops` from its master branch or tag, follow **a or b**
+     
+   - a. pulling the latest code in same folder
+   
         `git -C sunbird-devops pull || git clone https://github.com/project-sunbird/sunbird-devops`
- 
-   2. Run the command `cd sunbird-devops/deploy && ./sunbird-install.sh`
+        
+        update the config file if necessary
+     
+  - b. if you don't want to deal with merge conflicts, clone a fresh repo, create a new directory
+	
+	`git clone https://github.com/project-sunbird/sunbird-devops`
+	`git checkout <tag>/<branch>`
+	
+	update values for `deploy/config` file
+	
+   2. Run the followig commands
+
+   <pre>
+   cd sunbird-devops/deploy 
+  ./sunbird-install.sh -s config
+  ./sunbird-install.sh -s dbs
+  ./sunbird-install.sh -s apis
+  ./sunbird-install.sh -s core
+   </pre>
 
 **Note:** 
 
    - Executing the command deploys the latest version of Sunbird services and also updates the latest schema in the databases
 
-   - The latest image versions of all the services are updated in the master branch. To get a hotfix image of any Sunbird service, update the minor version in the `sunbird-devops/deploy/deploy-core.sh` file and re-run the `sunbird-devops/deploy/deploy-core.sh` script.
+   - The latest image versions of all the services are updated in the master branch. To get a hotfix image of any Sunbird service, update the minor version in the `sunbird-devops/deploy/version.env` file and re-run the `sunbird-devops/deploy/deploy-core.sh` script.
