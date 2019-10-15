@@ -133,8 +133,17 @@ The following is a list of ports that must be open:
    |**proxy_prometheus**| Setting up Prometheus Proxy |no| 
    |**sunbird_sso_publickey**| For creation of User, http://<dns_name>/auth -> realm settings -> keys -> public keys (click on public keys) and paste the value |yes| 
    |**sunbird_default_channel**| channel name with which you are creating the organization |yes| 
+   |**sunbird_init_custodian_tenant_name**| name of first tenant organisation |yes|
+   |**sunbird_init_custodian_tenant_description**| description of first tenant organisation |yes|
+   |**sunbird_init_custodian_tenant_channel**| channel value of first tenant organisation |yes|
+   |**sunbird_init_admin_user_firstname**| first name of first sunbird admin user |yes|
+   |**sunbird_init_admin_user_lastname**| last name of first sunbird admin user |no|
+   |**sunbird_init_admin_user_username**| user name of first sunbird admin user |yes|
+   |**sunbird_init_admin_user_password**| password of first sunbird admin user |yes|
+   |**sunbird_init_admin_user_email**| email of first sunbird admin user |yes|
+   |**sunbird_init_admin_user_phone**| phone (without country code) of first sunbird admin user e.g. 9090909090 |yes|
 
-7. Run the script `./sunbird_install.sh`. This script sets up the infra setup from  stage 1 to stage 6 in a sequence as mentioned in the following table: 
+7. Run the script `./sunbird_install.sh`. This script sets up the infra from stage 1 to stage 8 in a sequence as mentioned in the following table: 
 
    |Stage no |Stage name|Description| 
    |:-----      |:-------|:--------|
@@ -145,6 +154,7 @@ The following is a list of ports that must be open:
    |5|keycloak| Deploys and configures Keycloak |
    |6|badger|Deploys the badger service|
    |7|core|Deploys all core services|
+   |8|systeminit|Initializes the system by creating first organisation and admin user|
    
      **Note:** The badger service does not work without an Azure storage account name and key.
 
@@ -159,51 +169,9 @@ The following is a list of ports that must be open:
  
 ## Post Installation Configuration
 
-1. **Create user access token** - To create a user access token you should execute the following cURL: 
+1. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** is created in the **logs** directory  
 
-   <pre>
-   curl -X POST {dns_name}    /auth/realms/sunbird/protocol/openid-connect/token \
-   -H 'cache-control: no-cache' \
-   -H 'content-type: application/x-www-form-urlencoded' \
-   -d 'client_id=admin-cli&username=user-manager&password={password}&grant_type=password'
-   </pre>
-
-   <br>The values in the { } braces should be replaced with your environment values
-   
-   - {dns_name} - Domain or the IP address of your application server_installation
-   - {password} - Password of the `user-manager` user. The one you have provided for `sso_password` parameter in the `config` file above
-
-2. **Create root organization** - To create a root organization you should the following cURL: 
-
-   <pre>
-   curl -X POST  \
-   {dns_name}/api/org/v1/create \
-   -H 'Cache-Control: no-cache' \
-   -H 'Content-Type: application/json' \
-   -H 'accept: application/json' \
-   -H 'authorization: Bearer {jwt token from ~/jwt_token_player.txt}' \
-   -H 'x-authenticated-user-token: {access token created last step}' \
-   -d '{
-   "request":{
-     "orgName": "{Your Organization Name}",
-     "description": "{Your organization description}",
-     "isRootOrg":true,
-     "channel":"{Your Channel Name}"
-    }
-    }'
-    </pre>
-   
-   If ~/jwt_token_player.txt file missing then rerun `./sunbird_install.sh -s apis` to recreate it.
-   
-   **Note:** Channel should be a unique name across Sunbird instances who are using the EkStep content repository
-   
-3. Update `sunbird_default_channel` in the `config` file with **Your Channel Name}** (that was created in previous step) and re-run the command `./sunbird_install.sh -s core`
-
-4. Run `./sunbird_install.sh -s posttest`, to validate all the services for a successful installation. On executing the script, a file **postInstallationLogs.log** in the **logs** directory will be created 
-
-5. Open **https://[domain-name]** and sign up  
-
-6. You may choose your own user name and password. The format for the username while login is: username@channelName 
+2. Open **https://[domain-name]** and login with the configured login id/password to access sunbird portal. The format of the login  is `sunbird_init_admin_user_username@sunbird_init_custodian_tenant_channel`
 
 ## Sunbird Install Script 
 
@@ -234,4 +202,6 @@ The Sunbird installation script `./sunbird_install.sh` is a wrapper shell script
 * `deploy-badger.sh` - Deploys the badger service as docker service.
 
 * `deploy-core.sh` - Deploys the core services player, content, actor and learner service as docker services. The content, actor and learner service together form the LMS backend. 
+
+* `system-init.sh` - Initializes the system by creating the first organisation and first user with admin role of the sunbird platform
 
